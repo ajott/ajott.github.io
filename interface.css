@@ -1,0 +1,64 @@
+td {
+	text-align: center;
+/*	border-width: 1px;
+	border-style: solid;*/
+}
+
+#dollarTD {
+	font-size: 2em;
+	padding-top:10px;
+}
+
+.centerTable {
+	width:60%;
+	margin: auto;
+/*	float: center;*/
+}
+
+.hire {
+	width:50%;
+}
+
+#clickCell {
+	height: 50px;
+	width: 60%;
+}
+
+#hiring {
+	width: 100%;
+	margin: auto;
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+
+#clickTable {
+	width:100%;
+	margin-top: 5%;
+}
+
+#clickButton {
+/*	background-color: #77876B;
+	border: 2px, #033617;
+	color: white;
+	text-align: center;
+	height:150%;
+	width: 20%;*/
+}
+
+
+#dollars {
+	font-weight: bold;
+}
+
+
+#investmentEntry {
+	width:100px;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}

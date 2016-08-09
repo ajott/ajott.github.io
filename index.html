@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html>
+
+<head><link rel="stylesheet" type="text/css" href="interface.css" /></head>
+
+<body>
+		<table id="clickTable">
+		<tr>
+			<td id="clickCell">
+				<button id="clickButton" onclick="moneyClick(1)">Money Go Up!</button>
+			</td>
+		</tr>
+		<tr>
+			<td id="dollarTD">
+				$<span id="dollars">0</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				$<span id="moneyPerSec">0.0</span> /second
+			</td>
+		</tr>
+		</table>
+
+
+
+		<table id="clickHead" class="centerTable">
+			<br />
+			<tr>
+				<td>
+					<button onclick="increasePower()">Improve Click Power</button>
+				</td>
+			</tr>
+			<tr></tr>
+			<tr>
+				<td>
+				Click Power: <span id="clickPower">1</span>
+				</td>
+			</tr>
+			<tr>
+				<td>Power Cost: $<span id="powerCost">30</span></td>
+			</tr>
+		</table>
+
+
+
+
+	<table id="hiring">
+		<br />
+		<br />
+		<tr id="laborRow">
+			<td>
+				<button class="hire" onclick="hireLaborer()">Hire Laborer</button>
+			</td>
+			<td>
+				Cost <br /> $<span id="laborerCost">15</span>
+			</td>
+			<td>
+				Laborers <br /> <span id="laborers">0</span>
+			</td>
+			<td>
+				Productivity <br /> $0.1/s
+			</td>
+		</tr>
+		<tr id="techRow">
+			<td>
+				<button class="hire" onclick="hireTech()">Hire Tech</button>
+			</td>
+			<td>
+				Cost: <br /> $<span id="techCost">100</span>
+			</td>
+			<td>
+				Technicians <br /> <span id="techs">0</span>	
+			</td>
+			<td>
+				Productivity <br /> $1/s
+			</td>
+		</tr>
+		<tr id="engRow">
+			<td>
+				<button class="hire" onclick="hireEngineer()">Hire Engineer</button>
+			</td>
+			<td>
+				Cost <br /> $<span id="engCost">1100</span>
+			</td>
+			<td>
+				Engineers <br /> <span id="engineers">0</span>
+			</td>
+			<td>
+				Productivity <br /> $8/s
+			</td>
+		</tr>		
+	</table>
+
+
+
+	<table id="bankTable" width="100%">
+		<br />
+		<tr>
+			<td>Banked Money: <br /> $<span id="inBank">0</span></td>
+		</tr>
+		<tr>
+			<td>Transaction: <br /> <input type="number" id="investmentEntry"></td>
+		</tr>
+		<tr>
+			<td><button onclick="deposit()">Deposit</button>
+				<button onclick="withdraw()">Withdraw</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="maxDeposit()" id="depositMax">Max Deposit</button>
+				<button onclick="maxWithdraw()" id="withdrawMax">Max Withdrawl</button></td>
+		</tr>
+		<tr>
+			<td><br />Interest Rate: <span id="intRate">0.3%</span></td>
+		</tr>
+		<tr>
+			<td>
+				Total money earned from interest: $<span id="totalInterest">0</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Interest per 10 seconds: $<span id="intPer10">0</span>
+			</td>
+		</tr>
+
+	</table>
+
+
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript" src="hiring.js"></script>
+	<script type="text/javascript" src="bank.js"></script>	
+</body>
+
+</html>

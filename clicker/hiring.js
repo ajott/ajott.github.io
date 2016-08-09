@@ -1,11 +1,11 @@
 
-var workers = [0, 0, 0, 0];
-var costs = [15,100,1100,12000];
-var workerProds = [0.1,1,8,47];
+var workers = [0, 0, 0, 0,0];
+var costs = [15,100,1100,12000,130000];
+var workerProds = [0.1,1,8,47,260];
 
-var workerIDs = ['laborers','techs','clerks','engineers'];
-var workerCostIDs = ['laborerCost','techCost','clerkCost','engCost'];
-var workerProdIDs = ['laborProd','techProd','clerkProd','engProd'];
+var workerIDs = ['laborers','techs','clerks','engineers','managers'];
+var workerCostIDs = ['laborerCost','techCost','clerkCost','engCost','managerCost'];
+var workerProdIDs = ['laborProd','techProd','clerkProd','engProd','managerProd'];
 
 
 

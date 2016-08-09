@@ -107,7 +107,21 @@
 			<td>
 				Productivity <br> $<span id="engProd">47</span>/s
 			</td>
-		</tr>		
+		</tr>
+		<tr id="managerRow">
+			<td>
+				<button class="hire" onclick="hire(4)">Hire Manager</button>
+			</td>
+			<td>
+				Cost<br> $<span id="managerCost">130000</span>
+			</td>
+			<td>
+				Managers <br> <span id="managers">0</span>
+			</td>
+			<td>
+				Productivity <br> $<span id="managerProd">260</span>/s
+			</td>
+		</tr>			
 	</table>
 
 
@@ -188,7 +202,7 @@
 	<button id="reset" onClick="reset()">Reset</button>
 	<button id="chimp" onClick="getMonkey()">getMonkey()</button>
 	<br>
-	Version: Alpha 0.5.1
+	Version: Alpha 0.5.5
 	<br>
 <!-- 	<button id="export" onClick="exportSave()">Export Save Data</button> <input type="text" id="exportText" style="visibility:hidden;">
 	<br>

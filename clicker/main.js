@@ -1,4 +1,4 @@
-var dollars = 0;
+var dollars = 500000;
 var clickPower = 1;
 
 
@@ -14,7 +14,7 @@ function getMoney(number){
 };
 
 function updateMPS(){
-    document.getElementById("moneyPerSec").innerHTML = (((workers[0] / 10) + (workers[1]) + (workers[2] * 8) + (workers[3] * 47)) * karmaMult).toFixed(1);
+    document.getElementById("moneyPerSec").innerHTML = (((workers[0] / 10) + (workers[1]) + (workers[2] * 8) + (workers[3] * 47) + (workers[4] * 260)) * karmaMult).toFixed(1);
 }
 
 function increasePower(){
@@ -56,9 +56,9 @@ function reset() {
         totalInterest = 0
         document.getElementById('totalInterest').innerHTML = totalInterest.toFixed(0);
 
-        workers=[0,0,0,0];
+        workers=[0,0,0,0,0];
 
-        for (i=0; i<4; i++){
+        for (i=0; i<5; i++){
             document.getElementById(workerIDs[i]).innerHTML = workers[i];
         };
 
@@ -66,8 +66,8 @@ function reset() {
         document.getElementById('powerCost').innerHTML = powerCost;
 
 
-        costs = [15,100,1100,12000];
-        for (i=0; i<4; i++){
+        costs = [15,100,1100,12000,130000];
+        for (i=0; i<5; i++){
             document.getElementById(workerCostIDs[i]).innerHTML = costs[i];
         }
 
@@ -80,7 +80,7 @@ function reset() {
 
         updateMPS();
 
-        for (i=0; i < 4; i++) {
+        for (i=0; i < 5; i++) {
             workerProds[i] = workerProds[i] * karmaMult
             document.getElementById(workerProdIDs[i]).innerHTML = workerProds[i];
         };

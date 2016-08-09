@@ -77,3 +77,8 @@ input::-webkit-inner-spin-button {
 #reset {
 	background-color: #FA9696;
 }
+
+#chimp {
+	background-color: #875514;
+	color: white;
+}

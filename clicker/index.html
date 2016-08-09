@@ -54,7 +54,7 @@
 		<br>
 		<tr id="laborRow">
 			<td>
-				<button class="hire" onclick="hireLaborer()">Hire Laborer</button>
+				<button class="hire" onclick="hire(0)">Hire Laborer</button>
 			</td>
 			<td>
 				Cost<br> $<span id="laborerCost">15</span>
@@ -68,7 +68,7 @@
 		</tr>
 		<tr id="techRow">
 			<td>
-				<button class="hire" onclick="hireTech()">Hire Tech</button>
+				<button class="hire" onclick="hire(1)">Hire Tech</button>
 			</td>
 			<td>
 				Cost<br> $<span id="techCost">100</span>
@@ -80,9 +80,9 @@
 				Productivity <br> $<span id="techProd">1</span>/s
 			</td>
 		</tr>
-		<tr id="clerkRos"> 
+		<tr id="clerkRow"> 
 			<td>
-				<button class="hire" onclick="hireClerk()">Hire Clerk</button>
+				<button class="hire" onclick="hire(2)">Hire Clerk</button>
 			</td>
 			<td>
 				Cost<br> $<span id="clerkCost">1100</span>
@@ -96,7 +96,7 @@
 		</tr>
 		<tr id="engRow">
 			<td>
-				<button class="hire" onclick="hireEngineer()">Hire Engineer</button>
+				<button class="hire" onclick="hire(3)">Hire Engineer</button>
 			</td>
 			<td>
 				Cost<br> $<span id="engCost">12000</span>
@@ -125,8 +125,8 @@
 				<button onclick="withdraw()">Withdraw</button></td>
 		</tr>
 		<tr>
-			<td><button onclick="maxDeposit()" id="depositMax">Max Deposit</button>
-				<button onclick="maxWithdraw()" id="withdrawMax">Max Withdrawl</button></td>
+			<td><button onclick="deposit(dollars)" id="depositMax">Max Deposit</button>
+				<button onclick="withdraw(inBank)" id="withdrawMax">Max Withdrawl</button></td>
 		</tr>
 		<tr>
 			<td><br>Interest Rate: <span id="intRate">0.3%</span></td>
@@ -186,8 +186,9 @@
 
 	<br><br>
 	<button id="reset" onClick="reset()">Reset</button>
+	<button id="chimp" onClick="getMonkey()">getMonkey()</button>
 	<br>
-	Version: Alpha 0.3
+	Version: Alpha 0.5
 	<script type="text/javascript" src="main.js"></script>
 	<script type="text/javascript" src="hiring.js"></script>
 	<script type="text/javascript" src="bank.js"></script>

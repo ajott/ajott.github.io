@@ -14,7 +14,7 @@ function getMoney(number){
 };
 
 function updateMPS(){
-    document.getElementById("moneyPerSec").innerHTML = (((laborers / 10) + (techs) + (clerks * 8) + (engineers * 47))).toFixed(1);
+    document.getElementById("moneyPerSec").innerHTML = (((workers[0] / 10) + (workers[1]) + (workers[2] * 8) + (workers[3] * 47)) * karmaMult).toFixed(1);
 }
 
 function increasePower(){
@@ -39,48 +39,63 @@ function reset() {
     if(confirm('Are you sure you want to reset? \nYou will receive ' + karmaString + ' karma for money donated to charity.')) {
         dollars = 0;
         document.getElementById('dollars').innerHTML = dollars;
+        
         clickPower = 1;
         document.getElementById('clickPower').innerHTML = clickPower;
+        
         investEntry = 0;
         document.getElementById('investmentEntry').value = null;
+        
         inBank = 0;
         document.getElementById('inBank').innerHTML = inBank;
+        
         interestRate = .003;
         intRateString = (interestRate*100).toFixed(1).toString();
         document.getElementById('intRate').innerHTML = intRateString + "%";
+        
         totalInterest = 0
         document.getElementById('totalInterest').innerHTML = totalInterest.toFixed(0);
-        laborers = 0;
-        document.getElementById('laborers').innerHTML = laborers;
-        techs = 0;
-        document.getElementById('techs').innerHTML = techs;
-        clerks = 0;
-        document.getElementById('clerks').innerHTML = clerks;
-        engineers = 0;
-        document.getElementById('engineers').innerHTML = engineers;
+
+        workers=[0,0,0,0];
+
+        for (i=0; i<4; i++){
+            document.getElementById(workerIDs[i]).innerHTML = workers[i];
+        };
+
         powerCost = 30;
         document.getElementById('powerCost').innerHTML = powerCost;
-        laborerCost = 15;
-        document.getElementById('laborerCost').innerHTML = laborerCost;
-        techCost = 100;
-        document.getElementById('techCost').innerHTML = techCost;
-        clerkCost = 1100;
-        document.getElementById('clerkCost').innerHTML = clerkCost;
-        engCost = 12000;
-        document.getElementById('engCost').innerHTML = engCost;
+
+
+        costs = [15,100,1100,12000];
+        for (i=0; i<4; i++){
+            document.getElementById(workerCostIDs[i]).innerHTML = costs[i];
+        }
 
         karmaCalc(totalDonated);
 
         totalDonated = 0;
         document.getElementById('totalDonated').innerHTML = totalDonated;
 
-        document.getElementById('laborProd').innerHTML = 0.1*karmaMult;
-        document.getElementById('techProd').innerHTML = 1*karmaMult;
-        document.getElementById('clerkProd').innerHTML = 8 * karmaMult;
-        document.getElementById('engProd').innerHTML = 47*karmaMult;
         document.getElementById('clickPower').innerHTML = 1*karmaMult;
+
+        updateMPS();
+
+        for (i=0; i < 4; i++) {
+            workerProds[i] = workerProds[i] * karmaMult
+            document.getElementById(workerProdIDs[i]).innerHTML = workerProds[i];
+        };
+
+        
     }
     else {
         return false
     }
+}
+
+
+
+var chimp = new Audio("chimp.mp3");
+
+function getMonkey(){
+    chimp.play();
 }

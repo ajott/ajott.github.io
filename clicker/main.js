@@ -1,4 +1,4 @@
-var dollars = 500000;
+var dollars = 0;
 var clickPower = 1;
 
 

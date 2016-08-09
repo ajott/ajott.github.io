@@ -1,4 +1,3 @@
-
 var workers = [0, 0, 0, 0,0];
 var costs = [15,100,1100,12000,130000];
 var workerProds = [0.1,1,8,47,260];
@@ -22,5 +21,18 @@ function hire(index) {
     }
     var nextCost = Math.floor(costs[index] * Math.pow(1.15,workers[index]));
     document.getElementById(workerCostIDs[index]).innerHTML = nextCost;
+}
+
+
+
+var laborerQueue = 0;
+function checkLabor(number){
+    laborerQueue = laborerQueue + workerProds[0]*number;
+
+    if (Math.floor(laborerQueue) >= 1){
+        sendMoney = Math.floor(laborerQueue);
+        laborerQueue = laborerQueue - sendMoney;
+        getMoney(sendMoney);
+    }
 }
 

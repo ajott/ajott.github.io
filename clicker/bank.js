@@ -2,6 +2,7 @@ var investEntry = 0;
 var inBank = 0;
 var interestRate = .003;
 var totalInterest = 0
+var totalCheck = 50000;
 var increase50K = 0;
 
 
@@ -67,13 +68,14 @@ function increaseInterest() {
     interestRate = (interestRate + .001);
     intRateString = (interestRate*100).toFixed(1).toString();
     document.getElementById('intRate').innerHTML = intRateString + "%";
+    document.getElementById('intPer10').innerHTML = (Number(inBank)*interestRate).toFixed(0);
 }
 
 function checkTotalInterest() {
-    if (totalInterest >= 50000) {
-        if (increase50K == 0) {
-            increaseInterest();
-            increase50K = 1;
-        }
+    if (totalInterest >= totalCheck) {
+        
+        increaseInterest();
+        totalCheck = totalCheck * 10;
+        
     }
 }

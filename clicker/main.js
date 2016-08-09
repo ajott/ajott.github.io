@@ -53,6 +53,8 @@ function reset() {
         intRateString = (interestRate*100).toFixed(1).toString();
         document.getElementById('intRate').innerHTML = intRateString + "%";
         
+        totalCheck = 50000;
+
         totalInterest = 0
         document.getElementById('totalInterest').innerHTML = totalInterest.toFixed(0);
 

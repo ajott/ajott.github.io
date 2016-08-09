@@ -6,9 +6,9 @@ var increase50K = 0;
 
 
 function deposit(depAmount){
-    if (depAmount == 0) {
+    if (depAmount == null) {
         investEntry = document.getElementById('investmentEntry').value;
-        if (investEntry >= 0){
+        if (investEntry > 0){
         if(dollars >= investEntry){                                        
             inBank = Number(inBank) + Number(investEntry);                                   
             dollars = dollars - investEntry;                             
@@ -30,9 +30,9 @@ function deposit(depAmount){
 };
 
 function withdraw(withAmount){
-    if (withAmount == 0) {
+    if (withAmount == null) {
         investEntry = document.getElementById('investmentEntry').value;
-        if (investEntry >= 0){
+        if (investEntry > 0){
             if(Number(inBank) >= Number(investEntry)){
                 inBank = Number(inBank) - Number(investEntry);
                 dollars = dollars + Number(investEntry);

@@ -3,18 +3,16 @@ var clickPower = 1;
 
 
 function moneyClick(numClicks){
-    for (i = 0; i < numClicks; i++){
     getMoney(clickPower);
-    }
 }
 
 function getMoney(number){
     dollars = dollars + (number * karmaMult);
-    document.getElementById("dollars").innerHTML = dollars;
+    document.getElementById("dollars").innerHTML = comma(dollars);
 };
 
 function updateMPS(){
-    document.getElementById("moneyPerSec").innerHTML = (((workers[0] / 10) + (workers[1]) + (workers[2] * 8) + (workers[3] * 47) + (workers[4] * 260)) * karmaMult).toFixed(1);
+    document.getElementById("moneyPerSec").innerHTML = comma((((workers[0] / 10) + (workers[1]) + (workers[2] * 8) + (workers[3] * 47) + (workers[4] * 260) + workers[5] * 1400) * karmaMult).toFixed(1));
 }
 
 function increasePower(){
@@ -23,11 +21,11 @@ function increasePower(){
         clickPower = clickPower + 1;                                 //increases number of laborers
         dollars = dollars - powerCost;                              //removes the dollars spent
         document.getElementById('clickPower').innerHTML = clickPower * karmaMult;      //updates the number of laborers for the user
-        document.getElementById('dollars').innerHTML = dollars;      //updates the number of dollars for the user
+        document.getElementById('dollars').innerHTML = comma(dollars);      //updates the number of dollars for the user
         updateMPS();
     };
     var nextCost = Math.floor(30 * Math.pow(2.25,clickPower-1));       //works out the cost of the next click power upgrade
-    document.getElementById('powerCost').innerHTML = nextCost;  //updates the click power upgrade cost for the user
+    document.getElementById('powerCost').innerHTML = comma(nextCost);  //updates the click power upgrade cost for the user
 };
 
 
@@ -58,9 +56,9 @@ function reset() {
         totalInterest = 0
         document.getElementById('totalInterest').innerHTML = totalInterest.toFixed(0);
 
-        workers=[0,0,0,0,0];
+        workers=[0,0,0,0,0,0];
 
-        for (i=0; i<5; i++){
+        for (i=0; i<6; i++){
             document.getElementById(workerIDs[i]).innerHTML = workers[i];
         };
 
@@ -68,9 +66,9 @@ function reset() {
         document.getElementById('powerCost').innerHTML = powerCost;
 
 
-        costs = [15,100,1100,12000,130000];
-        for (i=0; i<5; i++){
-            document.getElementById(workerCostIDs[i]).innerHTML = costs[i];
+        costs = [15,100,1100,12000,130000,1400000];
+        for (i=0; i<6; i++){
+            document.getElementById(workerCostIDs[i]).innerHTML = comma(costs[i]);
         }
 
         karmaCalc(totalDonated);
@@ -82,7 +80,7 @@ function reset() {
 
         updateMPS();
 
-        for (i=0; i < 5; i++) {
+        for (i=0; i < 6; i++) {
             workerProds[i] = workerProds[i] * karmaMult
             document.getElementById(workerProdIDs[i]).innerHTML = workerProds[i];
         };
@@ -94,6 +92,10 @@ function reset() {
     }
 }
 
+
+function comma(x){
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 
 var chimp = new Audio("chimp.mp3");

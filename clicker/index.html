@@ -85,7 +85,7 @@
 				<button class="hire" onclick="hire(2)">Hire Clerk</button>
 			</td>
 			<td>
-				Cost<br> $<span id="clerkCost">1100</span>
+				Cost<br> $<span id="clerkCost">1,100</span>
 			</td>
 			<td>
 				Clerks <br> <span id="clerks">0</span>
@@ -99,7 +99,7 @@
 				<button class="hire" onclick="hire(3)">Hire Engineer</button>
 			</td>
 			<td>
-				Cost<br> $<span id="engCost">12000</span>
+				Cost<br> $<span id="engCost">12,000</span>
 			</td>
 			<td>
 				Engineers <br> <span id="engineers">0</span>
@@ -113,13 +113,27 @@
 				<button class="hire" onclick="hire(4)">Hire Manager</button>
 			</td>
 			<td>
-				Cost<br> $<span id="managerCost">130000</span>
+				Cost<br> $<span id="managerCost">130,000</span>
 			</td>
 			<td>
 				Managers <br> <span id="managers">0</span>
 			</td>
 			<td>
 				Productivity <br> $<span id="managerProd">260</span>/s
+			</td>
+		</tr>
+		<tr id="directorRow">
+			<td>
+				<button class="hire" onclick="hire(5)">Hire Director</button>
+			</td>
+			<td>
+				Cost<br> $<span id="directorCost">1,400,000</span>
+			</td>
+			<td>
+				Directors <br> <span id="directors">0</span>
+			</td>
+			<td>
+				Productivity <br> $<span id="directorProd">1,400</span>/s
 			</td>
 		</tr>			
 	</table>
@@ -202,7 +216,7 @@
 	<button id="reset" onClick="reset()">Reset</button>
 	<button id="chimp" onClick="getMonkey()">getMonkey()</button>
 	<br>
-	Version: Alpha 0.6.0
+	Version: Alpha 0.6.5
 	<br>
 <!-- 	<button id="export" onClick="exportSave()">Export Save Data</button> <input type="text" id="exportText" style="visibility:hidden;">
 	<br>

@@ -13,18 +13,18 @@ function deposit(depAmount){
         if(dollars >= investEntry){                                        
             inBank = Number(inBank) + Number(investEntry);                                   
             dollars = dollars - investEntry;                             
-            document.getElementById('inBank').innerHTML = inBank;      
-            document.getElementById('dollars').innerHTML = dollars;
+            document.getElementById('inBank').innerHTML = comma(inBank);      
+            document.getElementById('dollars').innerHTML = comma(dollars);
             document.getElementById('investmentEntry').value = null;
-            document.getElementById('intPer10').innerHTML = (Number(inBank)*interestRate).toFixed(0);  
+            document.getElementById('intPer10').innerHTML = comma((Number(inBank)*interestRate).toFixed(0));  
         };
     }
     } else {
         inBank = Number(inBank) + depAmount;
         dollars = dollars - depAmount;
-        document.getElementById('inBank').innerHTML = inBank;      
-        document.getElementById('dollars').innerHTML = dollars;
-        document.getElementById('intPer10').innerHTML = (Number(inBank)*interestRate).toFixed(0);       
+        document.getElementById('inBank').innerHTML = comma(inBank);      
+        document.getElementById('dollars').innerHTML = comma(dollars);
+        document.getElementById('intPer10').innerHTML = comma((Number(inBank)*interestRate).toFixed(0);      ) 
     }
 
     
@@ -37,18 +37,18 @@ function withdraw(withAmount){
             if(Number(inBank) >= Number(investEntry)){
                 inBank = Number(inBank) - Number(investEntry);
                 dollars = dollars + Number(investEntry);
-                document.getElementById('inBank').innerHTML = inBank;
-                document.getElementById('dollars').innerHTML = dollars;
+                document.getElementById('inBank').innerHTML = comma(inBank);
+                document.getElementById('dollars').innerHTML = comma(dollars);
                 document.getElementById('investmentEntry').value = null;
-                document.getElementById('intPer10').innerHTML = (Number(inBank)*interestRate).toFixed(0);
+                document.getElementById('intPer10').innerHTML = comma((Number(inBank)*interestRate).toFixed(0));
             }
         }  
     } else {
         inBank = Number(inBank) - withAmount;
         dollars = dollars + withAmount;
-        document.getElementById('inBank').innerHTML = inBank;      
-        document.getElementById('dollars').innerHTML = dollars;
-        document.getElementById('intPer10').innerHTML = (Number(inBank)*interestRate).toFixed(0);
+        document.getElementById('inBank').innerHTML = comma(inBank);
+        document.getElementById('dollars').innerHTML = comma(dollars);
+        document.getElementById('intPer10').innerHTML = comma((Number(inBank)*interestRate).toFixed(0));
     }
 
        
@@ -57,9 +57,9 @@ function withdraw(withAmount){
 function investInterest(){
     inBank = Math.floor(Number(inBank) + (Number(inBank)*interestRate));
     totalInterest = Math.floor(totalInterest + (Number(inBank)*interestRate));
-    document.getElementById('totalInterest').innerHTML = totalInterest.toFixed(0);
-    document.getElementById('inBank').innerHTML = inBank.toFixed(0);
-    document.getElementById('intPer10').innerHTML = (Number(inBank)*interestRate).toFixed(0);
+    document.getElementById('totalInterest').innerHTML = comma(totalInterest.toFixed(0));
+    document.getElementById('inBank').innerHTML = comma(inBank.toFixed(0));
+    document.getElementById('intPer10').innerHTML = comma((Number(inBank)*interestRate).toFixed(0));
 }
 
 
@@ -68,7 +68,7 @@ function increaseInterest() {
     interestRate = (interestRate + .001);
     intRateString = (interestRate*100).toFixed(1).toString();
     document.getElementById('intRate').innerHTML = intRateString + "%";
-    document.getElementById('intPer10').innerHTML = (Number(inBank)*interestRate).toFixed(0);
+    document.getElementById('intPer10').innerHTML = comma((Number(inBank)*interestRate).toFixed(0));
 }
 
 function checkTotalInterest() {

@@ -10,8 +10,8 @@ function donate() {
         if(dollars >= donation){                                        
             totalDonated = Number(totalDonated) + Number(donation);                                   
             dollars = dollars - donation;                             
-            document.getElementById('totalDonated').innerHTML = Number(totalDonated);      
-            document.getElementById('dollars').innerHTML = dollars;
+            document.getElementById('totalDonated').innerHTML = comma(Number(totalDonated));
+            document.getElementById('dollars').innerHTML = comma(dollars);
             document.getElementById('donationEntry').value = null;
         };
     }
@@ -20,10 +20,11 @@ function donate() {
 
 
 function karmaCalc(tD) {
-    karma = tD / 100000;
-    // karma = floor(totalDonated);
+    karma = (tD / 100000);
     document.getElementById('karma').innerHTML = karma;
 
-    karmaMult = (Math.pow(2,(Math.log(karma)/Math.log(5)))).toFixed(0);
+
+    karmaMult = Math.max((Math.pow(2,(Math.log(karma)/Math.log(5)))).toFixed(0),1);
+
     document.getElementById('karmaMult').innerHTML = karmaMult;
 }

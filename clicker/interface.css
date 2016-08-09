@@ -29,6 +29,12 @@ td {
 	margin: auto;
 	table-layout: fixed;
 	border-collapse: collapse;
+	border-width: .50px;
+	border-style: solid;
+}
+
+#hiring td {
+	border-bottom: .50px solid black;
 }
 
 #clickTable {
@@ -56,9 +62,18 @@ td {
 }
 
 
+#charity {
+	width:100%;
+	table-layout: fixed;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+#reset {
+	background-color: #FA9696;
 }

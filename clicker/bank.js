@@ -1,28 +1,35 @@
-increase50K = 0;
+var investEntry = 0;
+var inBank = 0;
+var interestRate = .003;
+var totalInterest = 0
+var increase50K = 0;
 
 
 function deposit(){
     investEntry = document.getElementById('investmentEntry').value;
-    if(dollars >= investEntry){                                        
-        inBank = Number(inBank) + Number(investEntry);                                   
-        dollars = dollars - investEntry;                             
-        document.getElementById('inBank').innerHTML = inBank;      
-        document.getElementById('dollars').innerHTML = dollars;
-        document.getElementById('investmentEntry').value = null;
-        document.getElementById('intPer10').innerHTML = (Number(inBank)*interestRate).toFixed(0);  
-    };
-
+    if (investEntry >= 0){
+        if(dollars >= investEntry){                                        
+            inBank = Number(inBank) + Number(investEntry);                                   
+            dollars = dollars - investEntry;                             
+            document.getElementById('inBank').innerHTML = inBank;      
+            document.getElementById('dollars').innerHTML = dollars;
+            document.getElementById('investmentEntry').value = null;
+            document.getElementById('intPer10').innerHTML = (Number(inBank)*interestRate).toFixed(0);  
+        };
+    }
 };
 
 function withdraw(){
     investEntry = document.getElementById('investmentEntry').value;
-    if(Number(inBank) >= Number(investEntry)){
-        inBank = Number(inBank) - Number(investEntry);
-        dollars = dollars + Number(investEntry);
-        document.getElementById('inBank').innerHTML = inBank;
-        document.getElementById('dollars').innerHTML = dollars;
-        document.getElementById('investmentEntry').value = null;
-        document.getElementById('intPer10').innerHTML = (Number(inBank)*interestRate).toFixed(0);
+    if (investEntry >= 0){
+        if(Number(inBank) >= Number(investEntry)){
+            inBank = Number(inBank) - Number(investEntry);
+            dollars = dollars + Number(investEntry);
+            document.getElementById('inBank').innerHTML = inBank;
+            document.getElementById('dollars').innerHTML = dollars;
+            document.getElementById('investmentEntry').value = null;
+            document.getElementById('intPer10').innerHTML = (Number(inBank)*interestRate).toFixed(0);
+        }
     }
 }
 

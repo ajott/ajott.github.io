@@ -79,7 +79,7 @@ function reset() {
         updateMPS();
 
         for (i=0; i < 6; i++) {
-            workerProds[i] = workerProds[i] * karmaMult
+            workerProds[i] = defaultProds[i] * karmaMult
             document.getElementById(workerProdIDs[i]).innerHTML = workerProds[i];
         };
 

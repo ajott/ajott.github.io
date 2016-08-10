@@ -1,6 +1,7 @@
 var workers = [0, 0, 0, 0, 0, 0];
 var costs = [15,100,1100,12000,130000,1400000];
 var workerProds = [0.1,1,8,47,260,1400];
+var defaultProds = [0.1,1,8,47,260,1400]
 
 var workerIDs = ['laborers','techs','clerks','engineers','managers','directors'];
 var workerCostIDs = ['laborerCost','techCost','clerkCost','engCost','managerCost','directorCost'];

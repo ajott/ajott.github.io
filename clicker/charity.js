@@ -20,7 +20,9 @@ function donate() {
 
 
 function karmaCalc(tD) {
-    karma = (tD / 100000);
+    karmaTemp = (tD / 1000000);
+    karma = karma + karmaTemp;
+
     document.getElementById('karma').innerHTML = karma;
 
 

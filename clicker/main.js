@@ -30,10 +30,8 @@ function increasePower(){
 
 
 
-
-
 function reset() {
-    karmaString = (totalDonated/100000).toString();
+    karmaString = (totalDonated/1000000).toString();
     if(confirm('Are you sure you want to reset? \nYou will receive ' + karmaString + ' karma for money donated to charity.')) {
         dollars = 0;
         document.getElementById('dollars').innerHTML = dollars;

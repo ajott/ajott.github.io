@@ -1,13 +1,13 @@
 window.setInterval(function(){
 
 
-    getMoney(workers[1]);
-    getMoney(workers[2]*8);
-	getMoney(workers[3]*47);
-	getMoney(workers[4]*260);
-    getMoney(workers[5]*1400);
+    getMoney(player.workers[1]);
+    getMoney(player.workers[2]*8);
+	getMoney(player.workers[3]*47);
+	getMoney(player.workers[4]*260);
+    getMoney(player.workers[5]*1400);
 
-	checkLabor(workers[0]);
+	checkLabor(player.workers[0]);
   
 	
 }, 1000);
@@ -20,3 +20,7 @@ window.setInterval(function(){
     checkTotalInterest();
     
 }, 10000);
+
+window.setInterval(function(){
+    saveToLocal();
+}, 30000);

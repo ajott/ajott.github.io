@@ -215,8 +215,10 @@
 	<br><br>
 	<button id="reset" onClick="reset()">Reset</button>
 	<button id="chimp" onClick="getMonkey()">getMonkey()</button>
+	<br><br>
+	<span id="optionsPanel" >
 	<br>
-	Version: Alpha 0.7.0
+	Version: Alpha 0.8.0 Umpire
 	<br>
 	<button id="save" onClick="saveToLocal()">Save</button>
 	<button id="load" onClick="loadFromLocal()">Load</button>
@@ -226,6 +228,11 @@
 	<button id="export" onClick="exportSave()">Export Save Data</button> <input type="text" id="exportText">
 	<br><br>
 	<button id="import" onClick="importSave()">Import Save Data</button> <input type="text" id="importText">
+	<br><br><br>
+	<button id="clearSave" onClick="clearSave()">Clear Local Save Data</button>
+	
+	<button id="hardReset" style="background-color:red; color:white;" onClick="hardReset()">Nuke from Orbit</button>
+	</span>
 	<script type="text/javascript" src="main.js"></script>
 	<script type="text/javascript" src="hiring.js"></script>
 	<script type="text/javascript" src="bank.js"></script>

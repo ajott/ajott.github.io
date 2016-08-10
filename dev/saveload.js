@@ -23,3 +23,15 @@ function loadFromLocal() {
 	player = JSON.parse(localStorage.getItem("playerStored"));
 }
 
+function clearSave() {
+	localStorage.removeItem("playerStored");
+}
+
+function hardReset() {
+	r=confirm('This will delete local save data and refresh the page.\nYou will lose everything.\nContinue?');
+	if (r==true){
+		localStorage.removeItem("playerStored");
+		location.reload();
+	}
+	else {};
+}

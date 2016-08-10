@@ -23,4 +23,4 @@ window.setInterval(function(){
 
 window.setInterval(function(){
     saveToLocal();
-}, 60000);
+}, 30000);

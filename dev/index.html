@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="interface.css" />
+	<title>CAMCAD Documentation</title>
+</head>
+
+<body>
+		<table id="clickTable">
+		<tr>
+			<td id="dollarTD">
+				$<span id="dollars">0</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				$<span id="moneyPerSec">0.0</span> /second
+			</td>
+		</tr>
+		<tr>
+			<td id="clickCell">
+				<button id="clickButton" onclick="moneyClick(1)">Money Go Up!</button>
+			</td>
+		</tr>
+		</table>
+
+
+
+		<table id="clickHead" class="centerTable">
+
+			<tr>
+				<td>
+					<button onclick="increasePower()">Improve Click Power</button>
+				</td>
+			</tr>
+			<tr></tr>
+			<tr>
+				<td>
+				Click Power: <span id="clickPower">1</span>
+				</td>
+			</tr>
+			<tr>
+				<td>Power Cost: $<span id="powerCost">30</span></td>
+			</tr>
+		</table>
+
+
+
+
+	<table id="hiring">
+		<br>
+		<br>
+		<tr id="laborRow">
+			<td>
+				<button class="hire" onclick="hire(0)">Hire Laborer</button>
+			</td>
+			<td>
+				Cost<br> $<span id="laborerCost">15</span>
+			</td>
+			<td>
+				Laborers <br> <span id="laborers">0</span>
+			</td>
+			<td>
+				Productivity <br> $<span id="laborProd">0.1</span>/s
+			</td>
+		</tr>
+		<tr id="techRow">
+			<td>
+				<button class="hire" onclick="hire(1)">Hire Tech</button>
+			</td>
+			<td>
+				Cost<br> $<span id="techCost">100</span>
+			</td>
+			<td>
+				Technicians <br> <span id="techs">0</span>	
+			</td>
+			<td>
+				Productivity <br> $<span id="techProd">1</span>/s
+			</td>
+		</tr>
+		<tr id="clerkRow"> 
+			<td>
+				<button class="hire" onclick="hire(2)">Hire Clerk</button>
+			</td>
+			<td>
+				Cost<br> $<span id="clerkCost">1,100</span>
+			</td>
+			<td>
+				Clerks <br> <span id="clerks">0</span>
+			</td>
+			<td>
+				Productivity <br> $<span id="clerkProd">8</span>/s
+			</td>
+		</tr>
+		<tr id="engRow">
+			<td>
+				<button class="hire" onclick="hire(3)">Hire Engineer</button>
+			</td>
+			<td>
+				Cost<br> $<span id="engCost">12,000</span>
+			</td>
+			<td>
+				Engineers <br> <span id="engineers">0</span>
+			</td>
+			<td>
+				Productivity <br> $<span id="engProd">47</span>/s
+			</td>
+		</tr>
+		<tr id="managerRow">
+			<td>
+				<button class="hire" onclick="hire(4)">Hire Manager</button>
+			</td>
+			<td>
+				Cost<br> $<span id="managerCost">130,000</span>
+			</td>
+			<td>
+				Managers <br> <span id="managers">0</span>
+			</td>
+			<td>
+				Productivity <br> $<span id="managerProd">260</span>/s
+			</td>
+		</tr>
+		<tr id="directorRow">
+			<td>
+				<button class="hire" onclick="hire(5)">Hire Director</button>
+			</td>
+			<td>
+				Cost<br> $<span id="directorCost">1,400,000</span>
+			</td>
+			<td>
+				Directors <br> <span id="directors">0</span>
+			</td>
+			<td>
+				Productivity <br> $<span id="directorProd">1,400</span>/s
+			</td>
+		</tr>			
+	</table>
+
+
+
+	<table id="bankTable" width="100%">
+		<br>
+		<tr>
+			<td>Banked Money: <br> $<span id="inBank">0</span></td>
+		</tr>
+		<tr>
+			<td>Transaction: <br> <input type="number" id="investmentEntry"></td>
+		</tr>
+		<tr>
+			<td><button onclick="deposit()">Deposit</button>
+				<button onclick="withdraw()">Withdraw</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="deposit(player.dollars)" id="depositMax">Max Deposit</button>
+				<button onclick="withdraw(player.inBank)" id="withdrawMax">Max Withdrawl</button></td>
+		</tr>
+		<tr>
+			<td><br>Interest Rate: <span id="intRate">0.3%</span></td>
+		</tr>
+		<tr>
+			<td>
+				Total money earned from interest: $<span id="totalInterest">0</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Interest per 10 seconds: $<span id="intPer10">0</span>
+			</td>
+		</tr>
+
+	</table>
+
+	<table id="charity">
+		<br><br><br>
+		<tr>
+			<td>Donate to Charity</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="number" id="donationEntry">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button onclick="donate()" id="donate">Donate</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Total Donated: <br>
+				$<span id="totalDonated">0</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Karma
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span id="karma">0</span>
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+				Karma Multiplier: <br>
+				<span id="karmaMult">1</span>x
+			</td>
+		</tr>
+	</table>
+
+	<br><br>
+	<button id="reset" onClick="reset()">Reset</button>
+	<button id="chimp" onClick="getMonkey()">getMonkey()</button>
+	<br>
+	Version: Alpha 0.7.0
+	<br><button id="export" onClick="exportSave()">Export Save Data</button> <input type="text" id="exportText">
+	<br><br>
+	<button id="import" onClick="importSave()">Import Save Data</button> <input type="text" id="importText">
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript" src="hiring.js"></script>
+	<script type="text/javascript" src="bank.js"></script>
+	<script type="text/javascript" src="periodic.js"></script>	
+	<script type="text/javascript" src="charity.js"></script>
+	<script type="text/javascript" src="saveload.js"></script>
+</body>
+
+</html>

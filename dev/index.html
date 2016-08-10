@@ -217,18 +217,27 @@
 	<button id="chimp" onClick="getMonkey()">getMonkey()</button>
 	<br>
 	Version: Alpha 0.7.0
-	<br><button id="export" onClick="exportSave()">Export Save Data</button> <input type="text" id="exportText">
-	<br><br>
-	<button id="import" onClick="importSave()">Import Save Data</button> <input type="text" id="importText">
-	<br><br>
+	<br>
 	<button id="save" onClick="saveToLocal()">Save</button>
 	<button id="load" onClick="loadFromLocal()">Load</button>
+	<br>
+	Last Save: <span id="lastSave"></span>	
+	<br><br>
+	<button id="export" onClick="exportSave()">Export Save Data</button> <input type="text" id="exportText">
+	<br><br>
+	<button id="import" onClick="importSave()">Import Save Data</button> <input type="text" id="importText">
 	<script type="text/javascript" src="main.js"></script>
 	<script type="text/javascript" src="hiring.js"></script>
 	<script type="text/javascript" src="bank.js"></script>
 	<script type="text/javascript" src="periodic.js"></script>	
 	<script type="text/javascript" src="charity.js"></script>
 	<script type="text/javascript" src="saveload.js"></script>
+	<script type="text/javascript">
+		function checkAndLoad() {
+			if(localStorage.getItem("playerStored") != null) loadFromLocal();
+		}
+	window.onload = checkAndLoad;
+	</script>
 </body>
 
 </html>

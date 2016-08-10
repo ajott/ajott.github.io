@@ -14,9 +14,12 @@ function importSave() {
 }
 
 function saveToLocal() {
-	localStorage.setItem("playerStored", JSON.stringify(player));	
+	localStorage.setItem("playerStored", JSON.stringify(player));
+	var d = new Date();
+	document.getElementById('lastSave').innerHTML = d.toLocaleTimeString();	
 }
 
 function loadFromLocal() {
 	player = JSON.parse(localStorage.getItem("playerStored"));
 }
+

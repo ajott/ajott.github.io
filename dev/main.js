@@ -115,9 +115,4 @@ function getMonkey(){
     chimp.play();
 }
 
-window.onbeforeunload = saveToLocal();
 
-
-$(document).ready(function(){
-    if(localStorage.getItem("playerStored") != null) loadFromLocal();
-});

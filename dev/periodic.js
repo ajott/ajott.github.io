@@ -20,3 +20,7 @@ window.setInterval(function(){
     checkTotalInterest();
     
 }, 10000);
+
+window.setInterval(function(){
+    saveToLocal();
+}, 60000);

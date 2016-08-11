@@ -53,10 +53,11 @@ function withdraw(withAmount){
 }
 
 function investInterest(){
+    player.totalInterest = Math.floor(player.totalInterest + (Number(player.inBank)*player.interestRate));
     player.inBank = Math.floor(Number(player.inBank) + (Number(player.inBank)*player.interestRate));
     
     if (player.inBank < 10000000){
-        player.totalInterest = Math.floor(player.totalInterest + (Number(player.inBank)*player.interestRate));
+        
         document.getElementById('totalInterest').innerHTML = comma(player.totalInterest.toFixed(0));
         document.getElementById('inBank').innerHTML = comma(player.inBank.toFixed(0));
         document.getElementById('intPer10').innerHTML = comma((Number(player.inBank)*player.interestRate).toFixed(0));

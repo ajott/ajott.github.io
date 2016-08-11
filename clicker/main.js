@@ -54,9 +54,10 @@ function decreaseTick(){
         document.getElementById('tickTime').innerHTML = player.tickLength.toFixed(0);   
         document.getElementById('dollars').innerHTML = comma(player.dollars);     
         updateMPS();
+        var nextCost = Math.floor(10000 * Math.pow(2.75,player.tickLevel-1));      
+        document.getElementById('tickCost').innerHTML = comma(nextCost);
     };
-    var nextCost = Math.floor(10000 * Math.pow(2.75,player.tickLevel-1));      
-    document.getElementById('tickCost').innerHTML = comma(nextCost);    
+        
 }
 
 
@@ -87,7 +88,7 @@ function reset() {
         player.workers=[0,0,0,0,0,0];
 
         for (i=0; i<6; i++){
-            document.getElementById(player.workerIDs[i]).innerHTML = player.workers[i];
+            document.getElementById(workerIDs[i]).innerHTML = player.workers[i];
         };
 
         powerCost = 30;

@@ -11,8 +11,12 @@ var player = {
     increase50K:0,
     totalDonated:0,
     karma:0,
-    karmaMult:1
+    karmaMult:1,
+    tickLength:1000,
+    tickLevel:1
 };
+
+var version = "Alpha 0.9.0 Pinup"
 
 
 function moneyClick(numClicks){
@@ -42,6 +46,20 @@ function increasePower(){
 };
 
 
+function decreaseTick(){
+    var tickCost = Math.floor(10000 * Math.pow(2.75,player.tickLevel-1));  
+    if(player.dollars >= tickCost){                                       
+        player.tickLevel = player.tickLevel + 1;
+        player.tickLength = player.tickLength * .99;
+        player.dollars = player.dollars - tickCost;
+        document.getElementById('tickTime').innerHTML = player.tickLength.toFixed(0);   
+        document.getElementById('dollars').innerHTML = comma(player.dollars);     
+        updateMPS();
+    };
+    var nextCost = Math.floor(10000 * Math.pow(2.75,player.tickLevel-1));      
+    document.getElementById('tickCost').innerHTML = comma(nextCost);    
+}
+
 
 function reset() {
     karmaString = (player.totalDonated/1000000).toString();
@@ -70,12 +88,19 @@ function reset() {
         player.workers=[0,0,0,0,0,0];
 
         for (i=0; i<6; i++){
-            document.getElementById(player.workerIDs[i]).innerHTML = player.workers[i];
+            document.getElementById(workerIDs[i]).innerHTML = player.workers[i];
         };
 
         powerCost = 30;
         document.getElementById('powerCost').innerHTML = powerCost;
 
+        player.tickLevel = 1;
+
+        player.tickLength = 1000;
+        document.getElementById('tickTime').innerHTML = player.tickLength;
+
+        tickCost = 10000;
+        document.getElementById('tickCost').innerHTML = tickCost;
 
         player.costs = [15,100,1100,12000,130000,1400000];
         for (i=0; i<6; i++){
@@ -91,7 +116,10 @@ function reset() {
 
         updateMPS();
 
-        for (i=0; i < 6; i++) {
+        player.workerProds[0] = (defaultProds[0] * player.karmaMult).toFixed(1)
+        document.getElementById(workerProdIDs[0]) = player.workerProds[0]
+
+        for (i=1; i < 6; i++) {
             player.workerProds[i] = defaultProds[i] * player.karmaMult;
             document.getElementById(workerProdIDs[i]).innerHTML = player.workerProds[i];
         }
@@ -108,6 +136,55 @@ function comma(x){
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+
+
+function togglePanel(panel) {
+    if (panel == 0) {
+        document.getElementById('staff').style = "display:inline;"
+        document.getElementById('bankTable').style = "display:none;"
+        document.getElementById('charityTable').style = "display:none;"
+        document.getElementById('optionsPanel').style = "display.none;"
+        
+        document.getElementById('staffTab').className = "btn btn-info"
+        document.getElementById('bankTab').className = "btn"
+        document.getElementById('charityTab').className = "btn"
+        document.getElementById('optionsTab').className = "btn"
+
+    } else if (panel == 1) {
+        document.getElementById('staff').style = "display:none;"
+        document.getElementById('bankTable').style = "display:inline;"
+        document.getElementById('charityTable').style = "display:none;"
+        document.getElementById('optionsPanel').style = "display.none;"
+
+        document.getElementById('staffTab').className = "btn"
+        document.getElementById('bankTab').className = "btn btn-info"
+        document.getElementById('charityTab').className = "btn"
+        document.getElementById('optionsTab').className = "btn"
+
+    } else if (panel == 2) {
+        document.getElementById('staff').style = "display:none;"
+        document.getElementById('bankTable').style = "display:none;"
+        document.getElementById('charityTable').style = "display:inline;"
+        document.getElementById('optionsPanel').style = "display.none;"
+
+        document.getElementById('staffTab').className = "btn"
+        document.getElementById('bankTab').className = "btn"
+        document.getElementById('charityTab').className = "btn btn-info"
+        document.getElementById('optionsTab').className = "btn"
+
+    } else if (panel == 3) {
+        document.getElementById('staff').style = "display:none;"
+        document.getElementById('bankTable').style = "display:none;"
+        document.getElementById('charityTable').style = "display:none;"
+        document.getElementById('optionsPanel').style = "display:inline;"
+
+        document.getElementById('staffTab').className = "btn"
+        document.getElementById('bankTab').className = "btn"
+        document.getElementById('charityTab').className = "btn"
+        document.getElementById('optionsTab').className = "btn btn-info"
+    }
+
+}
 
 var chimp = new Audio("chimp.mp3");
 

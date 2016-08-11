@@ -1,57 +1,92 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="interface.css" />
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<title>CAMCAD Documentation</title>
 </head>
 
 <body>
-		<table id="clickTable">
-		<tr>
-			<td id="dollarTD">
-				$<span id="dollars">0</span>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				$<span id="moneyPerSec">0.0</span> /second
-			</td>
-		</tr>
-		<tr>
-			<td id="clickCell">
-				<button id="clickButton" onclick="moneyClick(1)">Money Go Up!</button>
-			</td>
-		</tr>
-		</table>
+<div class="container-fluid centerTable" id="clickTable">
+	<div class="row">
+		<div class="col-xs-12" id="dollarTD">
+			$<span id="dollars">0</span>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			$<span id="moneyPerSec">0.0</span> /tick
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" style="padding:1%">
+			<button id="clickButton" class="btn" onclick="moneyClick(1)">Money Go Up!</button>
+		</div>
+	</div>
+</div>
+
+<br><br>
+
+<div class="container-fluid centerTable">
+	<div class="btn-group btn-group-justified">
+		<div class="btn-group">	
+			<button type="button" id="staffTab" class="btn btn-info" onClick="togglePanel(0)">Staff</button>
+		</div>
+		<div class="btn-group">	
+			<button type="button" id="bankTab" class="btn" onClick="togglePanel(1)">Bank</button>
+		</div>
+		<div class="btn-group">
+			<button type="button" id="charityTab" class="btn" onClick="togglePanel(2)">Charity</button>
+		</div>
+		<div class="btn-group">
+			<button type="button" id="optionsTab" class="btn" onClick="togglePanel(3)">Options</button>
+		</div>
+	</div>
+</div>
 
 
+<div id="staff">
+<br><br>
+<div class="container-fluid centerTable" id="clickHead">
+	<div class="row">
+		<div class="col-xs-6">
+			<button onclick="increasePower()">Improve Click Power</button>
+		</div>
+		<div class="col-xs-6">
+			<button onclick="decreaseTick()">Decrease Tick Time</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6">
+			Click Power: <span id="clickPower">1</span>
+		</div>
+		<div class="col-xs-6">
+			Tick Time: <span id="tickTime">1000</span> ms
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6">
+			Cost: $<span id="powerCost">30</span>
+		</div>
+		<div class="col-xs-6">
+			Cost: $<span id="tickCost">10,000</span>
+		</div>
+	</div>
+</div>
 
-		<table id="clickHead" class="centerTable">
+<br> <br>
 
-			<tr>
-				<td>
-					<button onclick="increasePower()">Improve Click Power</button>
-				</td>
-			</tr>
-			<tr></tr>
-			<tr>
-				<td>
-				Click Power: <span id="clickPower">1</span>
-				</td>
-			</tr>
-			<tr>
-				<td>Power Cost: $<span id="powerCost">30</span></td>
-			</tr>
-		</table>
+<div class="container-fluid centerTable" id="hiring">
+	<table class="table table-bordered table-condensed">
 
-
-
-
-	<table id="hiring">
-		<br>
-		<br>
 		<tr id="laborRow">
 			<td>
 				<button class="hire" onclick="hire(0)">Hire Laborer</button>
@@ -63,7 +98,7 @@
 				Laborers <br> <span id="laborers">0</span>
 			</td>
 			<td>
-				Productivity <br> $<span id="laborProd">0.1</span>/s
+				Productivity <br> $<span id="laborProd">0.1</span>/tick
 			</td>
 		</tr>
 		<tr id="techRow">
@@ -77,7 +112,7 @@
 				Technicians <br> <span id="techs">0</span>	
 			</td>
 			<td>
-				Productivity <br> $<span id="techProd">1</span>/s
+				Productivity <br> $<span id="techProd">1</span>/tick
 			</td>
 		</tr>
 		<tr id="clerkRow"> 
@@ -91,7 +126,7 @@
 				Clerks <br> <span id="clerks">0</span>
 			</td>
 			<td>
-				Productivity <br> $<span id="clerkProd">8</span>/s
+				Productivity <br> $<span id="clerkProd">8</span>/tick
 			</td>
 		</tr>
 		<tr id="engRow">
@@ -105,7 +140,7 @@
 				Engineers <br> <span id="engineers">0</span>
 			</td>
 			<td>
-				Productivity <br> $<span id="engProd">47</span>/s
+				Productivity <br> $<span id="engProd">47</span>/tick
 			</td>
 		</tr>
 		<tr id="managerRow">
@@ -119,7 +154,7 @@
 				Managers <br> <span id="managers">0</span>
 			</td>
 			<td>
-				Productivity <br> $<span id="managerProd">260</span>/s
+				Productivity <br> $<span id="managerProd">260</span>/tick
 			</td>
 		</tr>
 		<tr id="directorRow">
@@ -133,118 +168,170 @@
 				Directors <br> <span id="directors">0</span>
 			</td>
 			<td>
-				Productivity <br> $<span id="directorProd">1,400</span>/s
+				Productivity <br> $<span id="directorProd">1,400</span>/tick
 			</td>
 		</tr>			
 	</table>
+</div>
+</div>
 
 
+<div class="container-fluid centerTable" id="bankTable">
+		<div class="row">
+		<div class="col-xs-12">
+			Banked Money<br>$<span id="inBank">0</span>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<br>Transaction<br> <input type="number" id="investmentEntry">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" style="padding-top:1%">
+			<button onclick="deposit()">Deposit</button>
+			<button onclick="withdraw()">Withdraw</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" style="padding-top:1%">
+			<button onclick="deposit(player.dollars)" id="depositMax">Max Deposit</button>
+			<button onclick="withdraw(player.inBank)" id="withdrawMax">Max Withdrawl</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<br>Interest Rate: <span id="intRate">0.3%</span>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			Interest per 10 ticks: $<span id="intPer10">0</span>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			Total money earned from interest: $<span id="totalInterest">0</span>
+		</div>
+	</div>
+	<div class="progress">
+	  	<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="70" id="progressBar"
+	 		 aria-valuemin="0" aria-valuemax="100" style="width:0%">
+	 	</div>
+	</div>
+</div>
 
-	<table id="bankTable" width="100%">
-		<br>
-		<tr>
-			<td>Banked Money: <br> $<span id="inBank">0</span></td>
-		</tr>
-		<tr>
-			<td>Transaction: <br> <input type="number" id="investmentEntry"></td>
-		</tr>
-		<tr>
-			<td><button onclick="deposit()">Deposit</button>
-				<button onclick="withdraw()">Withdraw</button></td>
-		</tr>
-		<tr>
-			<td><button onclick="deposit(player.dollars)" id="depositMax">Max Deposit</button>
-				<button onclick="withdraw(player.inBank)" id="withdrawMax">Max Withdrawl</button></td>
-		</tr>
-		<tr>
-			<td><br>Interest Rate: <span id="intRate">0.3%</span></td>
-		</tr>
-		<tr>
-			<td>
-				Total money earned from interest: $<span id="totalInterest">0</span>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Interest per 10 seconds: $<span id="intPer10">0</span>
-			</td>
-		</tr>
 
-	</table>
+<div class="container-fluid centerTable" id="charityTable">
+	<div class="row">
+		<div class="col-xs-12">
+			Donate to Charity
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<input type="number" id="donationEntry">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" style="padding:1%">
+			<button onclick="donate()" id="donate">Donate</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6">
+			Total Donated
+		</div>
+		<div class="col-xs-6">
+			Karma Multiplier
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6">
+			$<span id="totalDonated">0</span>
+		</div>
+		<div class="col-xs-6">
+			<span id="karmaMult">1</span>x
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6">
+			<br>
+			Karma<br>
+			<span id="karma">0</span>
+		</div>
+		<div class="col-xs-6">
+			<br>
+			<button id="reset" class="btn btn-success" onClick="reset()">Reset</button>
+		</div>
+	</div>
+</div>
 
-	<table id="charity">
-		<br><br><br>
-		<tr>
-			<td>Donate to Charity</td>
-		</tr>
-		<tr>
-			<td>
-				<input type="number" id="donationEntry">
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<button onclick="donate()" id="donate">Donate</button>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Total Donated: <br>
-				$<span id="totalDonated">0</span>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Karma
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<span id="karma">0</span>
-			</td>
 
-		</tr>
-		<tr>
-			<td>
-				Karma Multiplier: <br>
-				<span id="karmaMult">1</span>x
-			</td>
-		</tr>
-	</table>
-
-	<br><br>
-	<button id="reset" onClick="reset()">Reset</button>
-	<button id="chimp" onClick="getMonkey()">getMonkey()</button>
-	<br><br>
-	<span id="optionsPanel" >
-	<br>
-	Version: Alpha 0.8.0 Umpire
-	<br>
-	<button id="save" onClick="saveToLocal()">Save</button>
-	<button id="load" onClick="loadFromLocal()">Load</button>
-	<br>
-	Last Save: <span id="lastSave"></span>	
-	<br><br>
-	<button id="export" onClick="exportSave()">Export Save Data</button> <input type="text" id="exportText">
-	<br><br>
-	<button id="import" onClick="importSave()">Import Save Data</button> <input type="text" id="importText">
-	<br><br><br>
-	<button id="clearSave" onClick="clearSave()">Clear Local Save Data</button>
 	
-	<button id="hardReset" style="background-color:red; color:white;" onClick="hardReset()">Nuke from Orbit</button>
-	</span>
+<div class="container-fluid centerTable" id="optionsPanel">
+	<div class="row">
+		<div class="col-xs-12">
+		<button id="save" class="btn btn-default btn-sm" onClick="saveToLocal()">Save</button>
+		<button id="load" class="btn btn-default btn-sm" onClick="loadFromLocal()">Load</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<span id="lastSave"></span>	
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" style="padding:1%">
+			<button id="export" class="btn btn-default btn-sm" onClick="exportSave()">Export Save Data</button>
+			<input type="text" id="exportText">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" style="padding:1%">
+				<button id="import" class="btn btn-default btn-sm" onClick="importSave()">Import Save Data</button>
+				<input type="text" id="importText">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" style="padding:1%">
+			<button class="btn btn-warning btn-sm" onClick="clearSave()">Clear Local Save Data</button>
+			<button class="btn btn-danger btn-sm" style="background-color:red; color:white;" onClick="hardReset()">Nuke from Orbit</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" style="padding:1%">
+			Version: <span id="verName"></span>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" style="padding:1%">
+			<button id="chimp" class="btn btn-sm" onClick="getMonkey()">getMonkey()</button>
+		</div>
+	</div>
+</div>
+
+
+
+
+	
+
+
 	<script type="text/javascript" src="main.js"></script>
 	<script type="text/javascript" src="hiring.js"></script>
 	<script type="text/javascript" src="bank.js"></script>
 	<script type="text/javascript" src="periodic.js"></script>	
 	<script type="text/javascript" src="charity.js"></script>
 	<script type="text/javascript" src="saveload.js"></script>
+	
 	<script type="text/javascript">
 		function checkAndLoad() {
 			if(localStorage.getItem("playerStored") != null) loadFromLocal();
+			document.getElementById('verName').innerHTML = version;
 		}
 	window.onload = checkAndLoad;
 	</script>
+
 </body>
 
 </html>

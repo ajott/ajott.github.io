@@ -1,9 +1,5 @@
 var investEntry = 0;
-// var inBank = 0;
-// var interestRate = .003;
-// var totalInterest = 0;
-// var totalCheck = 50000;
-// var increase50K = 0;
+
 
 
 function deposit(depAmount){
@@ -53,10 +49,11 @@ function withdraw(withAmount){
 }
 
 function investInterest(){
+    player.totalInterest = Math.floor(player.totalInterest + (Number(player.inBank)*player.interestRate));
     player.inBank = Math.floor(Number(player.inBank) + (Number(player.inBank)*player.interestRate));
     
     if (player.inBank < 10000000){
-        player.totalInterest = Math.floor(player.totalInterest + (Number(player.inBank)*player.interestRate));
+        
         document.getElementById('totalInterest').innerHTML = comma(player.totalInterest.toFixed(0));
         document.getElementById('inBank').innerHTML = comma(player.inBank.toFixed(0));
         document.getElementById('intPer10').innerHTML = comma((Number(player.inBank)*player.interestRate).toFixed(0));
@@ -81,4 +78,23 @@ function checkTotalInterest() {
         player.totalCheck = player.totalCheck * 10;
         
     }
+}
+
+function bankBarUpdate() {
+    wdth = document.getElementById('progressBar').style.width.toString()
+    wdth = Number(wdth.substring(0,wdth.length-1))
+
+    if (wdth < 100){
+        wdth = wdth + 1;
+        document.getElementById('progressBar').className = "progress-bar progress-bar-success progress-bar-striped active"
+    } else if (wdth == 100){
+        wdth = 1;
+        document.getElementById('progressBar').className = "progress-bar progress-bar-success progress-bar-striped active notransition"
+    }
+
+    wdth = wdth.toString()
+    wdth = wdth + "%"
+
+    document.getElementById('progressBar').style.width = wdth
+    
 }

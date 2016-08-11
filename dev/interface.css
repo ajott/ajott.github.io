@@ -1,7 +1,10 @@
+
+/*body {
+	background-color: #EFEFF0;
+}*/
+
 td {
 	text-align: center;
-/*	border-width: 1px;
-	border-style: solid;*/
 }
 
 #dollarTD {
@@ -10,14 +13,13 @@ td {
 }
 
 .centerTable {
-	width:60%;
-	margin: auto;
-/*	float: center;*/
+	text-align:center;
 }
 
 .hire {
-	width:50%;
+	width:75%;
 }
+
 
 #clickCell {
 	height: 50px;
@@ -25,30 +27,28 @@ td {
 }
 
 #hiring {
-	width: 100%;
-	margin: auto;
-	table-layout: fixed;
-	border-collapse: collapse;
+/*	border-collapse: collapse;
 	border-width: .50px;
 	border-style: solid;
+	border-bottom: 0px;*/
+	float:none;
+	vertical-align: middle;
 }
 
-#hiring td {
+/*#hiring .row {
 	border-bottom: .50px solid black;
-}
+	border-collapse: collapse;
+}*/
 
 #clickTable {
-	width:100%;
-	margin-top: 5%;
+	margin-top: 2%;
 }
 
 #clickButton {
-/*	background-color: #77876B;
-	border: 2px, #033617;
+	background-color: #77876B;
+
 	color: white;
-	text-align: center;
-	height:150%;
-	width: 20%;*/
+
 }
 
 
@@ -56,26 +56,36 @@ td {
 	font-weight: bold;
 }
 
-
-#investmentEntry {
-	width:100px;
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
 }
 
-
-#charity {
-	width:100%;
-	table-layout: fixed;
-}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
+    /* display: none; <- Crashes Chrome on hover 
     -webkit-appearance: none;
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
-#reset {
-	background-color: #FA9696;
+#staff {
+	display:inline;
+}
+
+#bankTable {
+	display:none;
+}
+
+#charityTable {
+	display:none;
+}
+
+#optionsPanel {
+	display:none;
 }
 
 #chimp {

@@ -1,4 +1,4 @@
-
+var lastSaveText = "Last Save: "
 
 
 function exportSave() {
@@ -16,7 +16,7 @@ function importSave() {
 function saveToLocal() {
 	localStorage.setItem("playerStored", JSON.stringify(player));
 	var d = new Date();
-	document.getElementById('lastSave').innerHTML = d.toLocaleTimeString();	
+	document.getElementById('lastSave').innerHTML = lastSaveText + d.toLocaleTimeString();	
 }
 
 function loadFromLocal() {

@@ -11,8 +11,11 @@ var player = {
     increase50K:0,
     totalDonated:0,
     karma:0,
-    karmaMult:1
+    karmaMult:1,
+    tickLength:1000,
+    tickLevel:1
 };
+
 
 
 function moneyClick(numClicks){
@@ -41,6 +44,20 @@ function increasePower(){
     document.getElementById('powerCost').innerHTML = comma(nextCost);  //updates the click power upgrade cost for the user
 };
 
+
+function decreaseTick(){
+    var tickCost = Math.floor(10000 * Math.pow(2.75,player.tickLevel-1));  
+    if(player.dollars >= tickCost){                                       
+        player.tickLevel = player.tickLevel + 1;
+        player.tickLength = player.tickLength * .99;
+        player.dollars = player.dollars - tickCost;
+        document.getElementById('tickTime').innerHTML = player.tickLength.toFixed(0);   
+        document.getElementById('dollars').innerHTML = comma(player.dollars);     
+        updateMPS();
+    };
+    var nextCost = Math.floor(10000 * Math.pow(2.75,player.tickLevel-1));      
+    document.getElementById('tickCost').innerHTML = comma(nextCost);    
+}
 
 
 function reset() {
@@ -76,6 +93,13 @@ function reset() {
         powerCost = 30;
         document.getElementById('powerCost').innerHTML = powerCost;
 
+        player.tickLevel = 1;
+
+        player.tickLength = 1000;
+        document.getElementById('tickTime').innerHTML = player.tickLength;
+
+        tickCost = 10000;
+        document.getElementById('tickCost').innerHTML = tickCost;
 
         player.costs = [15,100,1100,12000,130000,1400000];
         for (i=0; i<6; i++){

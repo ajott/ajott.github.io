@@ -62,10 +62,10 @@ td {
 }
 
 
-#charity {
+/*#charity {
 	width:100%;
 	table-layout: fixed;
-}
+} */
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

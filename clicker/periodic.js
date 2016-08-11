@@ -10,7 +10,7 @@ window.setInterval(function(){
 	checkLabor(player.workers[0]);
   
 	
-}, 1000);
+}, player.tickLength);
 
 window.setInterval(function(){
     
@@ -19,7 +19,7 @@ window.setInterval(function(){
     // getMoney(workers[0]);
     checkTotalInterest();
     
-}, 10000);
+}, 10 * player.tickLength);
 
 window.setInterval(function(){
     saveToLocal();

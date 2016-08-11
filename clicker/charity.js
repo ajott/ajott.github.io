@@ -1,6 +1,3 @@
-// var totalDonated = 0;
-// var karma = 0;
-// var karmaMult = 1;
 
 
 function donate() {
@@ -26,7 +23,7 @@ function karmaCalc(tD) {
     document.getElementById('karma').innerHTML = player.karma;
 
 
-    player.karmaMult = Math.max((Math.pow(2,(Math.log(player.karma)/Math.log(5)))).toFixed(0),1);
+    player.karmaMult = Math.max((Math.pow(2,(Math.log(player.karma)/Math.log(10)))).toFixed(0),1);
 
     document.getElementById('karmaMult').innerHTML = player.karmaMult;
 }

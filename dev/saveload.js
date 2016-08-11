@@ -35,3 +35,18 @@ function hardReset() {
 	}
 	else {};
 }
+
+function verifyValues() {
+	updateMPS();
+	for (i=0; i<6; i++){
+            document.getElementById(workerIDs[i]).innerHTML = player.workers[i];
+    };
+
+    for (i=0; i<6; i++){
+            document.getElementById(workerCostIDs[i]).innerHTML = Math.floor(player.costs[index] * Math.pow(1.15,player.workers[index]));
+    }
+
+    document.getElementById('clickPower').innerHTML = player.clickPower * player.karmaMult;
+    document.getElementById('tickTime').innerHTML = player.tickLength.toFixed(0);
+
+}

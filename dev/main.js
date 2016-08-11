@@ -16,7 +16,7 @@ var player = {
     tickLevel:1
 };
 
-var version = "Alpha 0.9.0 Pinup"
+var version = "Alpha 0.9.1 Pinup"
 
 
 function moneyClick(numClicks){

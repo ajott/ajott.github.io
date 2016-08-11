@@ -89,7 +89,7 @@
 
 		<tr id="laborRow">
 			<td>
-				<button class="hire" onclick="hire(0)">Hire Laborer</button>
+				<button class="hire btn" onclick="hire(0)">Hire Laborer</button>
 			</td>
 			<td>
 				Cost<br> $<span id="laborerCost">15</span>
@@ -103,7 +103,7 @@
 		</tr>
 		<tr id="techRow">
 			<td>
-				<button class="hire" onclick="hire(1)">Hire Tech</button>
+				<button class="hire btn" onclick="hire(1)">Hire Tech</button>
 			</td>
 			<td>
 				Cost<br> $<span id="techCost">100</span>
@@ -117,7 +117,7 @@
 		</tr>
 		<tr id="clerkRow"> 
 			<td>
-				<button class="hire" onclick="hire(2)">Hire Clerk</button>
+				<button class="hire btn" onclick="hire(2)">Hire Clerk</button>
 			</td>
 			<td>
 				Cost<br> $<span id="clerkCost">1,100</span>
@@ -131,7 +131,7 @@
 		</tr>
 		<tr id="engRow">
 			<td>
-				<button class="hire" onclick="hire(3)">Hire Engineer</button>
+				<button class="hire btn" onclick="hire(3)">Hire Engineer</button>
 			</td>
 			<td>
 				Cost<br> $<span id="engCost">12,000</span>
@@ -145,7 +145,7 @@
 		</tr>
 		<tr id="managerRow">
 			<td>
-				<button class="hire" onclick="hire(4)">Hire Manager</button>
+				<button class="hire btn" onclick="hire(4)">Hire Manager</button>
 			</td>
 			<td>
 				Cost<br> $<span id="managerCost">130,000</span>
@@ -159,7 +159,7 @@
 		</tr>
 		<tr id="directorRow">
 			<td>
-				<button class="hire" onclick="hire(5)">Hire Director</button>
+				<button class="hire btn" onclick="hire(5)">Hire Director</button>
 			</td>
 			<td>
 				Cost<br> $<span id="directorCost">1,400,000</span>
@@ -328,6 +328,7 @@
 		function checkAndLoad() {
 			if(localStorage.getItem("playerStored") != null) loadFromLocal();
 			document.getElementById('verName').innerHTML = version;
+			verifyValues();
 		}
 	window.onload = checkAndLoad;
 	</script>

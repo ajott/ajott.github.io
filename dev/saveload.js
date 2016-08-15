@@ -9,15 +9,7 @@ function exportSave() {
 function importSave() {
 	var importString = window.atob($('#importText').val());
 
-	if (window.btoa(importString == "rosebud")){
-		player.dollars = player.dollars + 1000000;
-		$('#dollars').text(comma(player.dollars));
-		$('#importText').val(null);
-	} else {
-		player = JSON.parse(importString);
-	}
-
-
+	player = JSON.parse(importString);
 }
 
 function saveToLocal() {

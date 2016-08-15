@@ -2,9 +2,9 @@ var player = {
     dollars:0,
     clickPower:1,
     powerCost:30,
-    workers:[0, 0, 0, 0, 0, 0, 0],
-    costs:[15,100,1100,12000,130000,1400000,15000000],
-    workerProds:[0.1,1,8,47,260,1400,16000],
+    workers:[0, 0, 0, 0, 0, 0, 0, 0],
+    costs:[15,100,1100,12000,130000,1400000,15000000, 99000000],
+    workerProds:[0.1,1,8,47,260,1400,16000, 44000],
     inBank:0,
     interestRate:.003,
     totalInterest:0,
@@ -17,7 +17,7 @@ var player = {
     tickLevel:1,
     tickCost:10000,
     resets:0,
-    version:"Alpha 0.9.6 Jerry was Naughty"
+    version:"Alpha 0.9.7 Jerry was helpful, but still generally kind of naughty"
 };
 
 
@@ -93,7 +93,9 @@ function reset() {
         player.totalInterest = 0;
         $('#totalInterest').text(player.totalInterest.toFixed(0));
 
-        player.workers=[0,0,0,0,0,0,0];
+        for (i=0;i<(player.workers.length);i++){
+            player.workers[i]=0;
+        }
 
         for (i=0;i<(player.workers.length);i++){
             $(workerIDs[i]).text(player.workers[i]);
@@ -193,10 +195,16 @@ function togglePanel(panel) {
 
 }
 
+var monkeyClicks = 0;
+
 var chimp = new Audio("chimp.mp3");
 
 function getMonkey(){
-    chimp.play();
+    monkeyClicks ++;
+    if (monkeyClicks < 5){
+        chimp.play();    
+    } else {
+        chimp.play();
+        getMoney(1000000);
+    }    
 }
-
-

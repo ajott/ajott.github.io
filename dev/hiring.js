@@ -1,6 +1,3 @@
-// var workers = [0, 0, 0, 0, 0, 0];
-// var costs = [15,100,1100,12000,130000,1400000];
-// var workerProds = [0.1,1,8,47,260,1400];
 
 var defaultProds = [0.1,1,8,47,260,1400,16000]
 var defaultCosts = [15,100,1100,12000,130000,1400000,15000000]
@@ -12,7 +9,7 @@ var workerProdIDs = ['#laborProd','#techProd','#clerkProd','#engProd','#managerP
 
 
 function hire(index) {
-    var workerCost = Math.floor(player.costs[index] * Math.pow(1.15,player.workers[index]));
+    var workerCost = player.costs[index];
     if(player.dollars >= workerCost) {
         player.workers[index] = player.workers[index] + 1
         player.dollars = player.dollars - workerCost
@@ -26,7 +23,6 @@ function hire(index) {
     }
     
 }
-
 
 
 var laborerQueue = 0;

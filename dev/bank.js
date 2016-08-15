@@ -1,5 +1,5 @@
 var investEntry = 0;
-
+var maxBalance = 10000000*Math.pow(10,player.resets)
 
 
 function deposit(depAmount){
@@ -52,7 +52,7 @@ function investInterest(){
     player.totalInterest = Math.floor(player.totalInterest + (Number(player.inBank)*player.interestRate));
     player.inBank = Math.floor(Number(player.inBank) + (Number(player.inBank)*player.interestRate));
     
-    if (player.inBank < 10000000){
+    if (player.inBank < maxBalance){
         
         document.getElementById('totalInterest').innerHTML = comma(player.totalInterest.toFixed(0));
         document.getElementById('inBank').innerHTML = comma(player.inBank.toFixed(0));
@@ -80,21 +80,21 @@ function checkTotalInterest() {
     }
 }
 
-function bankBarUpdate() {
-    wdth = document.getElementById('progressBar').style.width.toString()
-    wdth = Number(wdth.substring(0,wdth.length-1))
+// function bankBarUpdate() {
+//     wdth = document.getElementById('progressBar').style.width.toString()
+//     wdth = Number(wdth.substring(0,wdth.length-1))
 
-    if (wdth < 100){
-        wdth = wdth + 1;
-        document.getElementById('progressBar').className = "progress-bar progress-bar-success progress-bar-striped active"
-    } else if (wdth == 100){
-        wdth = 1;
-        document.getElementById('progressBar').className = "progress-bar progress-bar-success progress-bar-striped active notransition"
-    }
+//     if (wdth < 100){
+//         wdth = wdth + 10;
+//         document.getElementById('progressBar').className = "progress-bar progress-bar-success progress-bar-striped active"
+//     } else if (wdth == 100){
+//         wdth = 10;
+//         document.getElementById('progressBar').className = "progress-bar progress-bar-success progress-bar-striped active notransition"
+//     }
 
-    wdth = wdth.toString()
-    wdth = wdth + "%"
+//     wdth = wdth.toString()
+//     wdth = wdth + "%"
 
-    document.getElementById('progressBar').style.width = wdth
+//     document.getElementById('progressBar').style.width = wdth
     
-}
+// }

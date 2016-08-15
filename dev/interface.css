@@ -1,7 +1,4 @@
 
-/*body {
-	background-color: #EFEFF0;
-}*/
 
 td {
 	text-align: center;
@@ -17,7 +14,6 @@ td {
 }
 
 .hire {
-/*	width:75%;*/
 }
 
 
@@ -27,30 +23,20 @@ td {
 }
 
 #hiring {
-/*	border-collapse: collapse;
-	border-width: .50px;
-	border-style: solid;
-	border-bottom: 0px;*/
 	float:none;
 	vertical-align: middle;
 }
 
-/*#hiring .row {
-	border-bottom: .50px solid black;
-	border-collapse: collapse;
-}*/
 
 #clickTable {
 	margin-top: 2%;
+	max-width:75%;
 }
 
 #clickButton {
 	background-color: #77876B;
-
 	color: white;
-
 }
-
 
 #dollars {
 	font-weight: bold;
@@ -65,11 +51,10 @@ td {
 }
 
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover 
-    -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
 #staff {

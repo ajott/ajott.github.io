@@ -2,11 +2,12 @@
 // var costs = [15,100,1100,12000,130000,1400000];
 // var workerProds = [0.1,1,8,47,260,1400];
 
-var defaultProds = [0.1,1,8,47,260,1400]
+var defaultProds = [0.1,1,8,47,260,1400,16000]
+var defaultCosts = [15,100,1100,12000,130000,1400000,15000000]
 
-var workerIDs = ['laborers','techs','clerks','engineers','managers','directors'];
-var workerCostIDs = ['laborerCost','techCost','clerkCost','engCost','managerCost','directorCost'];
-var workerProdIDs = ['laborProd','techProd','clerkProd','engProd','managerProd','directorProd'];
+var workerIDs = ['#laborers','#techs','#clerks','#engineers','#managers','#directors','#vps'];
+var workerCostIDs = ['#laborerCost','#techCost','#clerkCost','#engCost','#managerCost','#directorCost','#vpCost'];
+var workerProdIDs = ['#laborProd','#techProd','#clerkProd','#engProd','#managerProd','#directorProd','#vpProd'];
 
 
 
@@ -16,13 +17,13 @@ function hire(index) {
         player.workers[index] = player.workers[index] + 1
         player.dollars = player.dollars - workerCost
 
-        document.getElementById(workerIDs[index]).innerHTML = player.workers[index];
-        document.getElementById('dollars').innerHTML = comma(player.dollars);
+        $(workerIDs[index]).text(player.workers[index]);
+        $('#dollars').text(comma(player.dollars));
 
         updateMPS();
     }
-    var nextCost = Math.floor(player.costs[index] * Math.pow(1.15,player.workers[index]));
-    document.getElementById(workerCostIDs[index]).innerHTML = comma(nextCost);
+    player.costs[index] = Math.floor(player.costs[index] * Math.pow(1.15,player.workers[index]));
+    $(workerCostIDs[index]).text(comma(player.costs[index]))
 }
 
 

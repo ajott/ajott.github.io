@@ -3,8 +3,8 @@ var lastSaveText = "Last Save: "
 
 function exportSave() {
 	//$('#dollars').val(100);
-	document.getElementById('exportText').value = window.btoa(JSON.stringify(player));
-	document.getElementById('exportText').select();
+	$('#exportText').val(window.btoa(JSON.stringify(player)));
+	$('#exportText').select();
 	//document.getElementById('importText').value = window.atob(window.btoa(JSON.stringify(player)));
 }
 
@@ -16,7 +16,7 @@ function importSave() {
 function saveToLocal() {
 	localStorage.setItem("playerStored", JSON.stringify(player));
 	var d = new Date();
-	document.getElementById('lastSave').innerHTML = lastSaveText + d.toLocaleTimeString();	
+	$('#lastSave').text(lastSaveText + d.toLocaleTimeString());	
 }
 
 function loadFromLocal() {
@@ -38,15 +38,30 @@ function hardReset() {
 
 function verifyValues() {
 	updateMPS();
-	for (i=0; i<6; i++){
-            document.getElementById(workerIDs[i]).innerHTML = player.workers[i];
+	for (i=0;i<(player.workers.length);i++){
+            $(workerIDs[i]).text(player.workers[i]);
     };
 
-    for (i=0; i<6; i++){
-            document.getElementById(workerCostIDs[i]).innerHTML = Math.floor(player.costs[index] * Math.pow(1.15,player.workers[index]));
-    }
+    for (i=0;i<(player.workers.length);i++){
+            $(workerCostIDs[i]).text(comma(player.costs[i]));
+    };
+	
+	for (i=0;i<(player.workers.length);i++){
+            $(workerProdIDs[i]).text(comma(player.workerProds[i]));
+    };
 
-    document.getElementById('clickPower').innerHTML = player.clickPower * player.karmaMult;
-    document.getElementById('tickTime').innerHTML = player.tickLength.toFixed(0);
+    intRateString = (player.interestRate*100).toFixed(1).toString();
+
+    
+    $('#dollars').text(comma(player.dollars));
+    $('#inBank').text(comma(player.inBank));
+    $('#intRate').text(intRateString + "%");
+    $('#intPer10').text(comma((Number(player.inBank)*player.interestRate).toFixed(0)));
+    $('#karma').text(comma(player.karma));
+    $('#karmaMult').text(player.karmaMult);
+   	$('#clickPower').text(player.clickPower * player.karmaMult);
+   	$('#powerCost').text(comma(player.powerCost));
+    $('#tickTime').text(player.tickLength.toFixed(0))
+    $('#tickCost').text(comma(player.tickCost));
 
 }

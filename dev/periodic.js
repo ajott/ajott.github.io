@@ -1,29 +1,22 @@
 window.setInterval(function(){
 
-
-    getMoney(player.workers[1]);
-    getMoney(player.workers[2]*8);
-	getMoney(player.workers[3]*47);
-	getMoney(player.workers[4]*260);
-    getMoney(player.workers[5]*1400);
+    for (i=1;i<(player.workers.length);i++){
+        getMoney(player.workers[i]*player.workerProds[i]);
+    }
 
 	checkLabor(player.workers[0]);
-  
+    updateMPS();    
+    //bankBarUpdate();  
 	
 }, player.tickLength);
 
 window.setInterval(function(){
     
     investInterest();
-    updateMPS();
-    // getMoney(workers[0]);
+
     checkTotalInterest();
     
 }, 10 * player.tickLength);
-
-window.setInterval(function(){
-    bankBarUpdate();
-}, (player.tickLength/10))
 
 window.setInterval(function(){
     saveToLocal();

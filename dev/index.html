@@ -170,6 +170,20 @@
 			<td>
 				Productivity <br> $<span id="directorProd">1,400</span>/tick
 			</td>
+		</tr>
+		<tr id="vpRow">
+			<td>
+				<button class="hire btn" onclick="hire(6)">Hire VP</button>
+			</td>
+			<td>
+				Cost<br> $<span id="vpCost">15,000,000</span>
+			</td>
+			<td>
+				Vice Presidents <br> <span id="vps">0</span>
+			</td>
+			<td>
+				Productivity <br> $<span id="vpProd">16,000</span>/tick
+			</td>
 		</tr>			
 	</table>
 </div>
@@ -179,7 +193,7 @@
 <div class="container-fluid centerTable" id="bankTable">
 		<div class="row">
 		<div class="col-xs-12">
-			Banked Money<br>$<span id="inBank">0</span>
+			<br>Banked Money<br>$<span id="inBank">0</span>
 		</div>
 	</div>
 	<div class="row">
@@ -214,18 +228,19 @@
 			Total money earned from interest: $<span id="totalInterest">0</span>
 		</div>
 	</div>
-	<div class="progress">
+	<!-- <div class="progress">
 	  	<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="70" id="progressBar"
 	 		 aria-valuemin="0" aria-valuemax="100" style="width:0%">
 	 	</div>
-	</div>
+	</div> -->
 </div>
 
 
 <div class="container-fluid centerTable" id="charityTable">
 	<div class="row">
 		<div class="col-xs-12">
-			Donate to Charity
+			<br>Donate to Charity <br>
+			<span style="color:red" data-toggle="tooltip" title="In bird culture, that is considered a &quot;dick move&quot;">Please note that you can't take money back from charity.</span>
 		</div>
 	</div>
 	<div class="row">
@@ -236,6 +251,11 @@
 	<div class="row">
 		<div class="col-xs-12" style="padding:1%">
 			<button onclick="donate()" id="donate">Donate</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" >
+			<button onclick="donate(player.dollars)" id="donate">Max Donation</button>
 		</div>
 	</div>
 	<div class="row">
@@ -272,7 +292,7 @@
 <div class="container-fluid centerTable" id="optionsPanel">
 	<div class="row">
 		<div class="col-xs-12">
-		<button id="save" class="btn btn-default btn-sm" onClick="saveToLocal()">Save</button>
+		<br><button id="save" class="btn btn-default btn-sm" onClick="saveToLocal()">Save</button>
 		<button id="load" class="btn btn-default btn-sm" onClick="loadFromLocal()">Load</button>
 		</div>
 	</div>
@@ -301,7 +321,7 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12" style="padding:1%">
-			Version: <span id="verName"></span>
+			Version: <span onClick="getMoney(1000000)" id="verName"></span>
 		</div>
 	</div>
 	<div class="row">
@@ -327,7 +347,7 @@
 	<script type="text/javascript">
 		function checkAndLoad() {
 			if(localStorage.getItem("playerStored") != null) loadFromLocal();
-			document.getElementById('verName').innerHTML = version;
+			$('#verName').text(player.version);
 			verifyValues();
 		}
 	window.onload = checkAndLoad;

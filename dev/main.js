@@ -1,9 +1,10 @@
 var player = {
     dollars:0,
     clickPower:1,
-    workers:[0, 0, 0, 0, 0, 0],
-    costs:[15,100,1100,12000,130000,1400000],
-    workerProds:[0.1,1,8,47,260,1400],
+    powerCost:30,
+    workers:[0, 0, 0, 0, 0, 0, 0],
+    costs:[15,100,1100,12000,130000,1400000,15000000],
+    workerProds:[0.1,1,8,47,260,1400,16000],
     inBank:0,
     interestRate:.003,
     totalInterest:0,
@@ -13,10 +14,11 @@ var player = {
     karma:0,
     karmaMult:1,
     tickLength:1000,
-    tickLevel:1
+    tickLevel:1,
+    tickCost:10000,
+    resets:0,
+    version:"Alpha 0.9.3 ¿Que?"
 };
-
-var version = "Alpha 0.9.1 Pinup"
 
 
 function moneyClick(numClicks){
@@ -25,103 +27,108 @@ function moneyClick(numClicks){
 
 function getMoney(number){
     player.dollars = player.dollars + (number * player.karmaMult);
-    document.getElementById("dollars").innerHTML = comma(player.dollars);
+    $("#dollars").text(comma(player.dollars));
 }
 
 function updateMPS(){
-    document.getElementById("moneyPerSec").innerHTML = comma((((player.workers[0] / 10) + (player.workers[1]) + (player.workers[2] * 8) + (player.workers[3] * 47) + (player.workers[4] * 260) + player.workers[5] * 1400) * player.karmaMult).toFixed(1));
+    MPS = 0;
+    for (i=0;i<(player.workers.length);i++){
+        MPS = MPS + (player.workers[i]*player.workerProds[i]);
+    }
+    $("#moneyPerSec").text(comma(MPS.toFixed(1)));
 }
 
 function increasePower(){
-    var powerCost = Math.floor(30 * Math.pow(2.25,player.clickPower-1));     //works out the cost of this click power upgrade
-    if(player.dollars >= powerCost){                                        //checks that the player can afford the click power upgrade
-        player.clickPower = player.clickPower + 1;                                 //increases number of laborers
-        player.dollars = player.dollars - powerCost;                              //removes the dollars spent
-        document.getElementById('clickPower').innerHTML = player.clickPower * player.karmaMult;      //updates the number of laborers for the user
-        document.getElementById('dollars').innerHTML = comma(player.dollars);      //updates the number of dollars for the user
+         
+    if(player.dollars >= player.powerCost){                                       
+        player.clickPower = player.clickPower + 1;                              
+        player.dollars = player.dollars - player.powerCost;                              
+        $('#clickPower').text(player.clickPower * player.karmaMult);
+        $('#dollars').text(comma(player.dollars));   
         updateMPS();
     };
-    var nextCost = Math.floor(30 * Math.pow(2.25,player.clickPower-1));       //works out the cost of the next click power upgrade
-    document.getElementById('powerCost').innerHTML = comma(nextCost);  //updates the click power upgrade cost for the user
+    player.powerCost = Math.floor(30 * Math.pow(2.25,player.clickPower-1));      
+    $('#powerCost').text(comma(player.powerCost));
 };
 
 
 function decreaseTick(){
-    var tickCost = Math.floor(10000 * Math.pow(2.75,player.tickLevel-1));  
-    if(player.dollars >= tickCost){                                       
+      
+    if(player.dollars >= player.tickCost){                                       
         player.tickLevel = player.tickLevel + 1;
         player.tickLength = player.tickLength * .99;
-        player.dollars = player.dollars - tickCost;
-        document.getElementById('tickTime').innerHTML = player.tickLength.toFixed(0);   
-        document.getElementById('dollars').innerHTML = comma(player.dollars);     
+        player.dollars = player.dollars - player.tickCost;
+        $('#tickTime').text(player.tickLength.toFixed(0));   
+        $('#dollars').text(comma(player.dollars));
         updateMPS();
     };
-    var nextCost = Math.floor(10000 * Math.pow(2.75,player.tickLevel-1));      
-    document.getElementById('tickCost').innerHTML = comma(nextCost);    
+    player.tickCost = Math.floor(10000 * Math.pow(2.75,player.tickLevel-1));
+    $('#tickCost').text(comma(player.tickCost));    
 }
 
 
 function reset() {
     karmaString = (player.totalDonated/1000000).toString();
     if(confirm('Are you sure you want to reset? \nYou will receive ' + karmaString + ' karma for money donated to charity.')) {
+        player.resets ++;
+
         player.dollars = 0;
-        document.getElementById('dollars').innerHTML = player.dollars;
+        $('#dollars').text(player.dollars);
         
         player.clickPower = 1;
-        document.getElementById('clickPower').innerHTML = player.clickPower;
+        $('#clickPower').text(player.clickPower);
         
         investEntry = 0;
-        document.getElementById('investmentEntry').value = null;
+        $('#investmentEntry').val(null);
         
         player.inBank = 0;
-        document.getElementById('inBank').innerHTML = player.inBank;
+        $('#inBank').text(player.inBank);
         
         player.interestRate = .003;
         intRateString = (player.interestRate*100).toFixed(1).toString();
-        document.getElementById('intRate').innerHTML = intRateString + "%";
+        $('#intRate').text(intRateString + "%");
         
         player.totalCheck = 50000;
 
         player.totalInterest = 0;
-        document.getElementById('totalInterest').innerHTML = player.totalInterest.toFixed(0);
+        $('#totalInterest').text(player.totalInterest.toFixed(0));
 
-        player.workers=[0,0,0,0,0,0];
+        player.workers=[0,0,0,0,0,0,0];
 
-        for (i=0; i<6; i++){
-            document.getElementById(workerIDs[i]).innerHTML = player.workers[i];
+        for (i=0;i<(player.workers.length);i++){
+            $(workerIDs[i]).text(player.workers[i]);
         };
 
-        powerCost = 30;
-        document.getElementById('powerCost').innerHTML = powerCost;
+        player.powerCost = 30;
+        $('#powerCost').text(player.powerCost);
 
         player.tickLevel = 1;
 
         player.tickLength = 1000;
-        document.getElementById('tickTime').innerHTML = player.tickLength;
+        $('#tickTime').text(player.tickLength);
 
-        tickCost = 10000;
-        document.getElementById('tickCost').innerHTML = tickCost;
+        player.tickCost = 10000;
+        $('#tickCost').text(player.tickCost);
 
-        player.costs = [15,100,1100,12000,130000,1400000];
-        for (i=0; i<6; i++){
-            document.getElementById(workerCostIDs[i]).innerHTML = comma(player.costs[i]);
+        player.costs = defaultCosts;
+
+        for (i=0;i<(player.workers.length);i++){
+            $(workerCostIDs[i]).text(comma(player.costs[i]));
         }
 
         karmaCalc(player.totalDonated);
 
         player.totalDonated = 0;
-        document.getElementById('totalDonated').innerHTML = player.totalDonated;
+        $('#totalDonated').text(player.totalDonated);
 
-        document.getElementById('clickPower').innerHTML = 1*player.karmaMult;
+        $('#clickPower').text(1*player.karmaMult);
 
         updateMPS();
 
-        player.workerProds[0] = (defaultProds[0] * player.karmaMult).toFixed(1)
-        document.getElementById(workerProdIDs[0]) = player.workerProds[0]
 
-        for (i=1; i < 6; i++) {
+        for (i=0;i<(player.workers.length+1);i++) {
             player.workerProds[i] = defaultProds[i] * player.karmaMult;
-            document.getElementById(workerProdIDs[i]).innerHTML = player.workerProds[i];
+            $(workerProdIDs[i]).text(player.workerProds[i]);
         }
 
         
@@ -140,48 +147,48 @@ function comma(x){
 
 function togglePanel(panel) {
     if (panel == 0) {
-        document.getElementById('staff').style = "display:inline;"
-        document.getElementById('bankTable').style = "display:none;"
-        document.getElementById('charityTable').style = "display:none;"
-        document.getElementById('optionsPanel').style = "display.none;"
+        $('#staff').show()
+        $('#bankTable').hide()
+        $('#charityTable').hide()
+        $('#optionsPanel').hide()
         
-        document.getElementById('staffTab').className = "btn btn-info"
-        document.getElementById('bankTab').className = "btn"
-        document.getElementById('charityTab').className = "btn"
-        document.getElementById('optionsTab').className = "btn"
+        $('#staffTab').addClass("btn-info")
+        $('#bankTab').removeClass("btn-info")
+        $('#charityTab').removeClass("btn-info")
+        $('#optionsTab').removeClass("btn-info")
 
     } else if (panel == 1) {
-        document.getElementById('staff').style = "display:none;"
-        document.getElementById('bankTable').style = "display:inline;"
-        document.getElementById('charityTable').style = "display:none;"
-        document.getElementById('optionsPanel').style = "display.none;"
+        $('#staff').hide()
+        $('#bankTable').show()
+        $('#charityTable').hide()
+        $('#optionsPanel').hide()
 
-        document.getElementById('staffTab').className = "btn"
-        document.getElementById('bankTab').className = "btn btn-info"
-        document.getElementById('charityTab').className = "btn"
-        document.getElementById('optionsTab').className = "btn"
+        $('#staffTab').removeClass("btn-info")
+        $('#bankTab').addClass("btn-info")
+        $('#charityTab').removeClass("btn-info")
+        $('#optionsTab').removeClass("btn-info")
 
     } else if (panel == 2) {
-        document.getElementById('staff').style = "display:none;"
-        document.getElementById('bankTable').style = "display:none;"
-        document.getElementById('charityTable').style = "display:inline;"
-        document.getElementById('optionsPanel').style = "display.none;"
+        $('#staff').hide()
+        $('#bankTable').hide()
+        $('#charityTable').show()
+        $('#optionsPanel').hide()
 
-        document.getElementById('staffTab').className = "btn"
-        document.getElementById('bankTab').className = "btn"
-        document.getElementById('charityTab').className = "btn btn-info"
-        document.getElementById('optionsTab').className = "btn"
+        $('#staffTab').removeClass("btn-info")
+        $('#bankTab').removeClass("btn-info")
+        $('#charityTab').addClass("btn-info")
+        $('#optionsTab').removeClass("btn-info")
 
     } else if (panel == 3) {
-        document.getElementById('staff').style = "display:none;"
-        document.getElementById('bankTable').style = "display:none;"
-        document.getElementById('charityTable').style = "display:none;"
-        document.getElementById('optionsPanel').style = "display:inline;"
+        $('#staff').hide()
+        $('#bankTable').hide()
+        $('#charityTable').hide()
+        $('#optionsPanel').show()
 
-        document.getElementById('staffTab').className = "btn"
-        document.getElementById('bankTab').className = "btn"
-        document.getElementById('charityTab').className = "btn"
-        document.getElementById('optionsTab').className = "btn btn-info"
+        $('#staffTab').removeClass("btn-info")
+        $('#bankTab').removeClass("btn-info")
+        $('#charityTab').removeClass("btn-info")
+        $('#optionsTab').addClass("btn-info")
     }
 
 }

@@ -21,9 +21,10 @@ function hire(index) {
         $('#dollars').text(comma(player.dollars));
 
         updateMPS();
+        player.costs[index] = Math.floor(player.costs[index] * Math.pow(1.15,player.workers[index]));
+        $(workerCostIDs[index]).text(comma(player.costs[index]))
     }
-    player.costs[index] = Math.floor(player.costs[index] * Math.pow(1.15,player.workers[index]));
-    $(workerCostIDs[index]).text(comma(player.costs[index]))
+    
 }
 
 

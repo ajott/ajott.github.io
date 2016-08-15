@@ -17,7 +17,7 @@ var player = {
     tickLevel:1,
     tickCost:10000,
     resets:0,
-    version:"Alpha 0.9.3 ¿Que?"
+    version:"Alpha 0.9.4 Queso?"
 };
 
 

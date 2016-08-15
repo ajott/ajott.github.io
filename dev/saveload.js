@@ -2,15 +2,22 @@ var lastSaveText = "Last Save: "
 
 
 function exportSave() {
-	//$('#dollars').val(100);
 	$('#exportText').val(window.btoa(JSON.stringify(player)));
 	$('#exportText').select();
-	//document.getElementById('importText').value = window.atob(window.btoa(JSON.stringify(player)));
-}
+}	
 
 function importSave() {
-	importString = window.atob(document.getElementById('importText').value);
-	player = JSON.parse(importString);
+	var importString = window.atob($('#importText').val());
+
+	if (window.btoa(importString == "rosebud")){
+		player.dollars = player.dollars + 1000000;
+		$('#dollars').text(comma(player.dollars));
+		$('#importText').val(null);
+	} else {
+		player = JSON.parse(importString);
+	}
+
+
 }
 
 function saveToLocal() {

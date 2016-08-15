@@ -17,7 +17,7 @@ var player = {
     tickLevel:1,
     tickCost:10000,
     resets:0,
-    version:"Alpha 0.9.5 Mucho Queso"
+    version:"Alpha 0.9.6 Jerry was Naughty"
 };
 
 

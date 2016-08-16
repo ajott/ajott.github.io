@@ -4,6 +4,8 @@ window.setInterval(function(){
         getMoney(player.workers[i]*player.workerProds[i]);
     }
 
+    checkInterest();
+
 	checkLabor(player.workers[0]);
     updateMPS();    
     //bankBarUpdate();  
@@ -12,7 +14,7 @@ window.setInterval(function(){
 
 window.setInterval(function(){
     
-    investInterest();
+    //investInterest();
 
     checkTotalInterest();
     

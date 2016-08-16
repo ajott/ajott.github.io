@@ -23,6 +23,13 @@ function donate(donAmount){
 
 function karmaCalc(tD) {
     karmaTemp = (tD / 1000000);
+
+    if (karmaTemp > 0){
+        player.resets ++;
+    } else {
+
+    }
+
     player.karma = player.karma + karmaTemp;
 
     $("#karma").text(comma(player.karma));

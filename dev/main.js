@@ -5,6 +5,7 @@ var player = {
     workers:[0, 0, 0, 0, 0, 0, 0, 0],
     costs:[15,100,1100,12000,130000,1400000,15000000, 99000000],
     workerProds:[0.1,1,8,47,260,1400,16000, 44000],
+    workerMults:[1, 1, 1, 1, 1, 1, 1, 1],
     inBank:0,
     interestRate:.003,
     totalInterest:0,
@@ -17,23 +18,23 @@ var player = {
     tickLevel:1,
     tickCost:10000,
     resets:0,
-    version:"Alpha 0.9.7 Jerry was helpful, but still generally kind of naughty"
+    version:"Alpha 0.9.8 Reddit Revision"
 };
 
 
 function moneyClick(numClicks){
-   getMoney(player.clickPower);
+   getMoney(player.clickPower * player.karmaMult);
 }
 
 function getMoney(number){
-    player.dollars = player.dollars + (number * player.karmaMult);
+    player.dollars = player.dollars + (number);
     $("#dollars").text(comma(player.dollars));
 }
 
 function updateMPS(){
     MPS = 0;
-    for (i=0;i<(player.workers.length);i++){
-        MPS = MPS + (player.workers[i]*player.workerProds[i]);
+    for (i=0;i<(player.workers.length);i+=1){
+        MPS = MPS + (player.workers[i]*player.workerProds[i]*player.workerMults[i]);
     }
     $("#moneyPerSec").text(comma(MPS.toFixed(1)));
 }
@@ -47,45 +48,56 @@ function increasePower(){
         $('#dollars').text(comma(player.dollars));   
         updateMPS();
     };
-    player.powerCost = Math.floor(30 * Math.pow(2.25,player.clickPower-1));      
+    player.powerCost = Math.floor(30 * Math.pow(2,player.clickPower-1));      
     $('#powerCost').text(comma(player.powerCost));
 };
 
+var minTickTime = 250;
 
 function decreaseTick(){
       
-    if(player.dollars >= player.tickCost){                                       
-        player.tickLevel = player.tickLevel + 1;
-        player.tickLength = player.tickLength * .99;
-        player.dollars = player.dollars - player.tickCost;
-        $('#tickTime').text(player.tickLength.toFixed(0));   
-        $('#dollars').text(comma(player.dollars));
-        updateMPS();
+    if(player.dollars >= player.tickCost){
+        if(player.tickLength > minTickTime) {
+            if ((player.tickLength * 0.9) >= minTickTime) {                                  
+                player.tickLevel = player.tickLevel + 1;
+                player.tickLength = player.tickLength * .90;
+                player.dollars = player.dollars - player.tickCost;
+                $('#tickTime').text(player.tickLength.toFixed(0));   
+                $('#dollars').text(comma(player.dollars));
+                updateMPS();
+            } else {
+                player.tickLevel = player.tickLevel + 1;
+                player.tickLength = minTickTime;
+                player.dollars = player.dollars - player.tickCost;
+                $('#tickTime').text(player.tickLength.toFixed(0));   
+                $('#dollars').text(comma(player.dollars));
+                $('#tickDecrease').addClass("disabled");
+                updateMPS();
+            }
+        }
     };
-    player.tickCost = Math.floor(10000 * Math.pow(2.75,player.tickLevel-1));
+    player.tickCost = Math.floor(10000 * Math.pow(1,player.tickLevel-1));
     $('#tickCost').text(comma(player.tickCost));    
 }
 
 
 function reset() {
-    karmaString = (player.totalDonated/1000000).toString();
+    var karmaString = (player.totalDonated/1000000).toString();
     if(confirm('Are you sure you want to reset? \nYou will receive ' + karmaString + ' karma for money donated to charity.')) {
-        player.resets ++;
-
+        var i = 0;
         player.dollars = 0;
         $('#dollars').text(player.dollars);
         
         player.clickPower = 1;
         $('#clickPower').text(player.clickPower);
         
-        investEntry = 0;
         $('#investmentEntry').val(null);
         
         player.inBank = 0;
         $('#inBank').text(player.inBank);
         
-        player.interestRate = .003;
-        intRateString = (player.interestRate*100).toFixed(1).toString();
+        player.interestRate = 0.003;
+        var intRateString = (player.interestRate*100).toFixed(1).toString();
         $('#intRate').text(intRateString + "%");
         
         player.totalCheck = 50000;
@@ -93,13 +105,13 @@ function reset() {
         player.totalInterest = 0;
         $('#totalInterest').text(player.totalInterest.toFixed(0));
 
-        for (i=0;i<(player.workers.length);i++){
+        for (i=0;i<(player.workers.length);i+=1){
             player.workers[i]=0;
         }
 
-        for (i=0;i<(player.workers.length);i++){
+        for (i=0;i<(player.workers.length);i+=1){
             $(workerIDs[i]).text(player.workers[i]);
-        };
+        }
 
         player.powerCost = 30;
         $('#powerCost').text(player.powerCost);
@@ -110,11 +122,13 @@ function reset() {
         $('#tickTime').text(player.tickLength);
 
         player.tickCost = 10000;
-        $('#tickCost').text(player.tickCost);
+        $('#tickCost').text(comma(player.tickCost));
 
-        player.costs = defaultCosts;
+        for (i=0;i<(player.workers.length);i+=1){
+           player.costs[i] = defaultCosts[i];
+        }
 
-        for (i=0;i<(player.workers.length);i++){
+        for (i=0;i<(player.workers.length);i+=1){
             $(workerCostIDs[i]).text(comma(player.costs[i]));
         }
 
@@ -127,18 +141,25 @@ function reset() {
 
         updateMPS();
 
-
-        for (i=0;i<(player.workers.length+1);i++) {
+        for (i=0;i<(player.workers.length+1);i+=1) {
             player.workerProds[i] = defaultProds[i] * player.karmaMult;
-            $(workerProdIDs[i]).text(player.workerProds[i]);
+            $(workerProdIDs[i]).text(comma(player.workerProds[i]));
         }
 
-        
+        for (i=0;i<(player.workers.length+1);i+=1) {
+            player.workerMults[i] = 1;
+        }
+
+        $('#tickDecrease').removeClass("disabled");
+
+        investInterest();
+        interestTicks = 0;
+        togglePanel(0);
     }
     else {
-        return false
+        return false;
     }
-};
+}
 
 
 function comma(x){
@@ -200,11 +221,21 @@ var monkeyClicks = 0;
 var chimp = new Audio("chimp.mp3");
 
 function getMonkey(){
-    monkeyClicks ++;
-    if (monkeyClicks < 5){
-        chimp.play();    
-    } else {
+    if (monkeyClicks == 0){
+        if(confirm("This was added as a reference to a typo in the code. \n If you click it again, it WILL make a chimpanzee noise. It's loud.")){
+            monkeyClicks ++;
+        }
+    }
+    else if (monkeyClicks < 5){
+        chimp.play(); 
+        monkeyClicks ++;   
+    } else if (monkeyClicks >= 5) {
         chimp.play();
         getMoney(1000000);
+        monkeyClicks ++;
     }    
+}
+
+function showCredits() {
+    $('#creditsWell').toggle();
 }

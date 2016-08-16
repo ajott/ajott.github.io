@@ -58,10 +58,10 @@
 <div class="container-fluid centerTable" id="clickHead">
 	<div class="row">
 		<div class="col-xs-6">
-			<button onclick="increasePower()">Improve Click Power</button>
+			<button class="btn" onclick="increasePower()">Improve Click Power</button>
 		</div>
 		<div class="col-xs-6">
-			<button onclick="decreaseTick()">Decrease Tick Time</button>
+			<button class="btn" id="tickDecrease" onclick="decreaseTick()">Decrease Tick Time</button>
 		</div>
 	</div>
 	<div class="row">
@@ -208,6 +208,16 @@
 			</td>
 		</tr>			
 	</table>
+	<br>
+	<div class="col-xs-1">
+		</div>
+		<div class="col-xs-10 well well-m">
+			Workers will earn money for you without the need to click. <br><br>
+			In general, your employees like each other - so you get a multiplier on production when you've hired enough of a given type. <br>
+			That is, you'll get your first bonus to production with a given worker when you have 10 of them.
+		</div>
+		<div class="col-xs-1">
+		</div>
 </div>
 </div>
 
@@ -248,6 +258,28 @@
 	<div class="row">
 		<div class="col-xs-12">
 			Total money earned from interest: $<span id="totalInterest">0</span>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-xs-12">
+			Current maximum balance: $<span id="maxBalance">10,000,000</span>
+		</div>
+	</div>
+	<br>
+	<div class="row" id="bankInfo">
+		<div class="col-xs-1">
+		</div>
+		<div class="col-xs-10 well well-m">
+			Money deposited in the bank will earn you interest. <br>
+			This interest is calculated every 10 ticks - but the counter will restart upon deposit or withdrawl. <br>
+			You will earn interest up to your maximum balance - at which point you can deposit more money, but it will not accrue any interest.	<br><br>
+			Your maximum balance depends on the number of times you reset your game. <br>
+			It starts at $10,000,000, and is increased by 10 with each reset - but only if you gain Karma upon resetting. <br><br>
+			The bank is happy to have you keep your money with them. <br>
+			Accordingly, your interest rate will periodically increase based on the total amount of interest you've accrued.
+		</div>
+		<div class="col-xs-1">
 		</div>
 	</div>
 	<!-- <div class="progress">
@@ -307,6 +339,19 @@
 			<button id="reset" class="btn btn-success" onClick="reset()">Reset</button>
 		</div>
 	</div>
+	<br>
+	<div class="row" id="charityInfo">
+		<div class="col-xs-1">
+		</div>
+		<div class="col-xs-10 well well-m">
+			Money given to charity will grant you karma upon reset. <br>
+			Every $1,000,000 will grant 1 karma. <br>
+			You will gain a bonus multiplier to your income based on your karma. <br>
+			You will attain a 2x multiplier at 10 karma, and it will double at powers of 10 - at 100, 1,000, and so on.
+		</div>
+		<div class="col-xs-1">
+		</div>
+	</div>
 </div>
 
 
@@ -349,6 +394,23 @@
 	<div class="row">
 		<div class="col-xs-12" style="padding:1%">
 			<button id="chimp" class="btn btn-sm" onClick="getMonkey()">getMonkey()</button>
+			<button class="btn btn-sm" onClick="showCredits()">Show/Hide Credits</button>
+		</div>
+	</div>
+	<div class="row" id="creditsWell">
+		<div class="col-xs-1">
+		</div>
+		<div class="col-xs-10 well well-m">
+			Thank you to: <br><br>
+			Jerry <br>
+			/u/Mitschu <br>
+			/u/Saticmotion <br>
+			/u/Eclipse1agg <br>
+			/u/MasterYinan <br>
+			/u/Katr7 <br>
+			/u/JoergR
+		</div>
+		<div class="col-xs-1">
 		</div>
 	</div>
 </div>
@@ -369,6 +431,7 @@
 	<script type="text/javascript">
 		function checkAndLoad() {
 			if(localStorage.getItem("playerStored") != null) loadFromLocal();
+			
 			$('#verName').text(player.version);
 			verifyValues();
 		}

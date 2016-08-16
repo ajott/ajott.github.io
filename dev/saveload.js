@@ -20,6 +20,7 @@ function saveToLocal() {
 
 function loadFromLocal() {
 	player = JSON.parse(localStorage.getItem("playerStored"));
+
 }
 
 function clearSave() {
@@ -36,6 +37,7 @@ function hardReset() {
 }
 
 function verifyValues() {
+	
 	updateMPS();
 	for (i=0;i<(player.workers.length);i++){
             $(workerIDs[i]).text(player.workers[i]);
@@ -62,5 +64,8 @@ function verifyValues() {
    	$('#powerCost').text(comma(player.powerCost));
     $('#tickTime').text(player.tickLength.toFixed(0))
     $('#tickCost').text(comma(player.tickCost));
+	
 
 }
+
+// mystring.replace(/\./g,'')

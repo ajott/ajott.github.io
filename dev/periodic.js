@@ -1,7 +1,7 @@
 window.setInterval(function(){
 
     for (i=1;i<(player.workers.length);i++){
-        getMoney(player.workers[i]*player.workerProds[i]);
+        getMoney(player.workers[i]*player.workerProds[i]*player.workerMults[i]);
     }
 
     checkInterest();

@@ -43,7 +43,7 @@ function hire(index) {
 
 var laborerQueue = 0;
 function checkLabor(number){
-    laborerQueue = laborerQueue + player.workerProds[0]*number;
+    laborerQueue = laborerQueue + player.workerProds[0]*number*player.workerMults[0];
 
     if (Math.floor(laborerQueue) >= 1){
         sendMoney = Math.floor(laborerQueue);

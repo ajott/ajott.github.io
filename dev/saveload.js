@@ -48,7 +48,7 @@ function verifyValues() {
     };
 	
 	for (i=0;i<(player.workers.length);i++){
-            $(workerProdIDs[i]).text(comma(player.workerProds[i]));
+            $(workerProdIDs[i]).text(comma(player.workerProds[i] * player.workerMults[i]));
     };
 
     intRateString = (player.interestRate*100).toFixed(1).toString();

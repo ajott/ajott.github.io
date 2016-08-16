@@ -25,7 +25,7 @@ function hire(index) {
 
         for (i=0;i<multValues.length;i++){
             if(player.workers[index] == multCounts[i]){
-                player.workerMults[index] = multValues[i];
+                player.workerMults[index] = player.workerMults[index] * multValues[i];
             }
         }
 

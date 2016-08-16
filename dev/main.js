@@ -77,11 +77,7 @@ function decreaseTick(){
         }
     };
     player.tickCost = Math.floor(10000 * Math.pow(2.75,player.tickLevel-1));
-<<<<<<< HEAD
     $('#tickCost').text(comma(player.tickCost));   
-=======
-    $('#tickCost').text(comma(player.tickCost));    
->>>>>>> origin/master
 }
 
 

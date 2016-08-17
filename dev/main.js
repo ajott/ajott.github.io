@@ -82,7 +82,7 @@ function decreaseTick(){
             }
         }
     };
-    player.tickCost = Math.floor(10000 * Math.pow(2.75,player.tickLevel-1));
+    player.tickCost = Math.floor(10000 * Math.pow(2.5,player.tickLevel-1));
     $('#tickCost').text(comma(player.tickCost));
     validateButtons();
 }

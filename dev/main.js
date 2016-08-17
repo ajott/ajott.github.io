@@ -262,10 +262,13 @@ function validateButtons() {
         $('#powerButton').removeClass('disabled darkButton');
     }
 
-    if (player.dollars < player.tickCost){
+    if (player.dollars < player.tickCost && player.tickLength > minTickTime){
         $('#tickDecrease').addClass('disabled darkButton');
-    } else {
+    } else if (player.dollars > player.tickCost && player.tickLength > minTickTime) {
         $('#tickDecrease').removeClass('disabled darkButton');
+    } else {        
+        $('#tickDecrease').addClass("disabled");
+        $('#tickDecrease').text("Sold Out")
     }
 
     for (var i = 0; i<(player.workers.length); i += 1){

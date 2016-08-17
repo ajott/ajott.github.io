@@ -20,6 +20,11 @@ td {
 .hire {
 }
 
+.darkButton {
+	background-color: #61605f;
+	color: white;
+	text-decoration: line-through;
+}
 
 #clickCell {
 	height: 50px;

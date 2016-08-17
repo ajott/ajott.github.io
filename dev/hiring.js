@@ -7,6 +7,7 @@ var multCounts = [10,25,50,100,200,500];
 var workerIDs = ['#laborers','#techs','#clerks','#engineers','#managers','#directors','#vps','#pres'];
 var workerCostIDs = ['#laborerCost','#techCost','#clerkCost','#engCost','#managerCost','#directorCost','#vpCost','#presCost'];
 var workerProdIDs = ['#laborProd','#techProd','#clerkProd','#engProd','#managerProd','#directorProd','#vpProd','#presProd'];
+var workerBtnIDs = ['#hire0','#hire1','#hire2','#hire3','#hire4','#hire5','#hire6','#hire7'];
 
 
 
@@ -35,7 +36,7 @@ function hire(index) {
         else {
             $(workerProdIDs[index]).text(comma(Math.floor(player.workerProds[index]*player.workerMults[index])));
         }
-
+    validateButtons();
     }
     
 }

@@ -53,6 +53,7 @@ function verifyValues() {
 
     intRateString = (player.interestRate*100).toFixed(1).toString();
 
+    validateButtons();
     
     $('#dollars').text(comma(player.dollars));
     $('#inBank').text(comma(player.inBank));

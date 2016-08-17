@@ -64,9 +64,13 @@ function investInterest(){
         $('#totalInterest').text(comma(player.totalInterest.toFixed(0)));
         $('#inBank').text(comma(player.inBank.toFixed(0)));
         $('#intPer10').text(comma((Number(player.inBank)*player.interestRate).toFixed(0)));
-    } else {
+    } else if (player.inBank < maxBalance && ((player.inBank + (Number(player.inBank)*player.interestRate)) >= maxBalance)) {
         player.totalInterest = Math.floor(player.totalInterest + (maxBalance - player.inBank));
         player.inBank = Math.floor(player.inBank + (maxBalance - player.inBank));
+        $('#totalInterest').text(comma(player.totalInterest.toFixed(0)));
+        $('#inBank').text(comma(player.inBank.toFixed(0)));
+        $('#intPer10').text("0 - Balance Maxed");
+    } else {
         $('#totalInterest').text(comma(player.totalInterest.toFixed(0)));
         $('#inBank').text(comma(player.inBank.toFixed(0)));
         $('#intPer10').text("0 - Balance Maxed");
@@ -98,6 +102,7 @@ function checkInterest() {
     } else if (interestTicks == 10){
         interestTicks = 1;
         investInterest();
+        checkTotalInterest();  
     }
 }
 

@@ -11,7 +11,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Latest compiled JavaScript -->
 	<script src="bootstrap.min.js"></script>
-	<title>CAMCAD Documentation</title>
+	<title id="title">CAMCAD Documentation</title>
 </head>
 
 <body>
@@ -58,7 +58,7 @@
 <div class="container-fluid centerTable" id="clickHead">
 	<div class="row">
 		<div class="col-xs-6">
-			<button class="btn" onclick="increasePower()">Improve Click Power</button>
+			<button class="btn" id="powerButton" onclick="increasePower()">Improve Click Power</button>
 		</div>
 		<div class="col-xs-6">
 			<button class="btn" id="tickDecrease" onclick="decreaseTick()">Decrease Tick Time</button>
@@ -89,7 +89,7 @@
 
 		<tr id="laborRow">
 			<td>
-				<button class="hire btn" onclick="hire(0)">Hire Laborer</button>
+				<button id="hire0" class="hire btn" onclick="hire(0)">Hire Laborer</button>
 				<br>$<span id="laborerCost">15</span>
 			</td>
 			<!-- <td>
@@ -104,7 +104,7 @@
 		</tr>
 		<tr id="techRow">
 			<td>
-				<button class="hire btn" onclick="hire(1)">Hire Tech</button>
+				<button id="hire1" class="hire btn" onclick="hire(1)">Hire Tech</button>
 				<br>$<span id="techCost">100</span>
 			</td>
 			<!-- <td>
@@ -119,7 +119,7 @@
 		</tr>
 		<tr id="clerkRow"> 
 			<td>
-				<button class="hire btn" onclick="hire(2)">Hire Clerk</button>
+				<button id="hire2" class="hire btn" onclick="hire(2)">Hire Clerk</button>
 				<br>$<span id="clerkCost">1,100</span>
 			</td>
 			<!-- <td>
@@ -134,7 +134,7 @@
 		</tr>
 		<tr id="engRow">
 			<td>
-				<button class="hire btn" onclick="hire(3)">Hire Engineer</button>
+				<button id="hire3" class="hire btn" onclick="hire(3)">Hire Engineer</button>
 				<br>$<span id="engCost">12,000</span>
 			</td>
 			<!-- <td>
@@ -149,7 +149,7 @@
 		</tr>
 		<tr id="managerRow">
 			<td>
-				<button class="hire btn" onclick="hire(4)">Hire Manager</button>
+				<button id="hire4" class="hire btn" onclick="hire(4)">Hire Manager</button>
 				<br>$<span id="managerCost">130,000</span>
 			</td>
 			<!-- <td>
@@ -164,7 +164,7 @@
 		</tr>
 		<tr id="directorRow">
 			<td>
-				<button class="hire btn" onclick="hire(5)">Hire Director</button>
+				<button id="hire5" class="hire btn" onclick="hire(5)">Hire Director</button>
 				<br>$<span id="directorCost">1,400,000</span>
 			</td>
 			<!-- <td>
@@ -179,7 +179,7 @@
 		</tr>
 		<tr id="vpRow">
 			<td>
-				<button class="hire btn" onclick="hire(6)">Hire VP</button>
+				<button id="hire6" class="hire btn" onclick="hire(6)">Hire VP</button>
 				<br>$<span id="vpCost">15,000,000</span>
 			</td>
 			<!-- <td>
@@ -194,7 +194,7 @@
 		</tr>
 		<tr id="presRow">
 			<td>
-				<button class="hire btn" onclick="hire(7)">Hire President</button>
+				<button id="hire7" class="hire btn" onclick="hire(7)">Hire President</button>
 				<br>$<span id="presCost">99,000,000</span>
 			</td>
 			<!-- <td>
@@ -393,6 +393,11 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12" style="padding:1%">
+			<input type="text" id="titleInput"/> <button class="btn btn-default btn-sm" onClick="setTitle()">Set Page Title</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" style="padding:1%">
 			<button id="chimp" class="btn btn-sm" onClick="getMonkey()">getMonkey()</button>
 			<button class="btn btn-sm" onClick="showCredits()">Show/Hide Credits</button>
 		</div>
@@ -408,7 +413,10 @@
 			/u/Eclipse1agg <br>
 			/u/MasterYinan <br>
 			/u/Katr7 <br>
-			/u/JoergR
+			/u/JoergR <br>
+			/u/Sevaloc <br>
+			/u/Insane96MCP <br>
+			/u/ascii122
 		</div>
 		<div class="col-xs-1">
 		</div>
@@ -434,6 +442,7 @@
 			
 			$('#verName').text(player.version);
 			verifyValues();
+			validateButtons();
 		}
 	window.onload = checkAndLoad;
 	</script>

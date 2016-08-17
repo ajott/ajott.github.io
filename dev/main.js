@@ -18,12 +18,13 @@ var player = {
     tickLevel:1,
     tickCost:10000,
     resets:0,
-    version:"Alpha 0.9.8 Reddit Revision"
+    version:"Alpha 0.9.8.5 Reddit Revision Redeux"
 };
 
 
 function moneyClick(numClicks){
    getMoney(player.clickPower * player.karmaMult);
+   validateButtons();
 }
 
 function getMoney(number){
@@ -50,6 +51,7 @@ function increasePower(){
     };
     player.powerCost = Math.floor(30 * Math.pow(2,player.clickPower-1));      
     $('#powerCost').text(comma(player.powerCost));
+    validateButtons();
 };
 
 var minTickTime = 250;
@@ -65,6 +67,7 @@ function decreaseTick(){
                 $('#tickTime').text(player.tickLength.toFixed(0));   
                 $('#dollars').text(comma(player.dollars));
                 updateMPS();
+                resetIntervals(player.tickLength);
             } else {
                 player.tickLevel = player.tickLevel + 1;
                 player.tickLength = minTickTime;
@@ -72,12 +75,15 @@ function decreaseTick(){
                 $('#tickTime').text(player.tickLength.toFixed(0));   
                 $('#dollars').text(comma(player.dollars));
                 $('#tickDecrease').addClass("disabled");
+                $('#tickDecrease').text("Sold Out")
                 updateMPS();
+                resetIntervals(player.tickLength);
             }
         }
     };
     player.tickCost = Math.floor(10000 * Math.pow(2.75,player.tickLevel-1));
-    $('#tickCost').text(comma(player.tickCost));   
+    $('#tickCost').text(comma(player.tickCost));
+    validateButtons();
 }
 
 
@@ -151,10 +157,12 @@ function reset() {
         }
 
         $('#tickDecrease').removeClass("disabled");
+        $('#tickDecrease').text("Decrease Tick Time")
 
         investInterest();
         interestTicks = 0;
         togglePanel(0);
+        validateButtons();
     }
     else {
         return false;
@@ -179,6 +187,8 @@ function togglePanel(panel) {
         $('#bankTab').removeClass("btn-info")
         $('#charityTab').removeClass("btn-info")
         $('#optionsTab').removeClass("btn-info")
+
+        validateButtons();
 
     } else if (panel == 1) {
         $('#staff').hide()
@@ -238,4 +248,32 @@ function getMonkey(){
 
 function showCredits() {
     $('#creditsWell').toggle();
+}
+
+function setTitle() {
+    $('#title').text($('#titleInput').val())
+    $('#titleInput').val(null);
+}
+
+
+function validateButtons() {
+    if (player.dollars < player.powerCost){
+        $('#powerButton').addClass('disabled darkButton');
+    } else {
+        $('#powerButton').removeClass('disabled darkButton');
+    }
+
+    if (player.dollars < player.tickCost){
+        $('#tickDecrease').addClass('disabled darkButton');
+    } else {
+        $('#tickDecrease').removeClass('disabled darkButton');
+    }
+
+    for (var i = 0; i<(player.workers.length); i += 1){
+        if (player.dollars < player.costs[i]){
+            $(workerBtnIDs[i]).addClass('disabled darkButton');
+        } else {
+            $(workerBtnIDs[i]).removeClass('disabled darkButton');
+        }
+    }
 }

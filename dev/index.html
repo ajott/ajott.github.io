@@ -12,6 +12,10 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="bootstrap.min.js"></script>
 	<title id="title">CAMCAD Documentation</title>
+
+	<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -28,7 +32,7 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12" style="padding:1%">
-			<button id="clickButton" class="btn" onclick="moneyClick(1)">Money Go Up!</button>
+			<div id="clickButton" class="btn" onclick="moneyClick(1)">Money Go Up!</div>
 		</div>
 	</div>
 </div>
@@ -336,7 +340,9 @@
 		</div>
 		<div class="col-xs-6">
 			<br>
-			<button id="reset" class="btn btn-success" onClick="reset()">Reset</button>
+			<button id="reset" class="btn btn-success">Reset</button>
+		</div>
+		<div id="resetDialog" title="Alert!">Are you sure you want to reset? <br> You will receive  <span id="karmaString"></span>  karma for money donated to charity.
 		</div>
 	</div>
 	<br>
@@ -383,7 +389,9 @@
 	<div class="row">
 		<div class="col-xs-12" style="padding:1%">
 			<button class="btn btn-warning btn-sm" onClick="clearSave()">Clear Local Save Data</button>
-			<button class="btn btn-danger btn-sm" style="background-color:red; color:white;" onClick="hardReset()">Nuke from Orbit</button>
+			<button class="btn btn-danger btn-sm" id="nukeButton" style="background-color:red; color:white;" >Nuke from Orbit</button>
+		</div>
+		<div id="nukeDialog" title="Warning!">This will delete local save data and refresh the page. <br> You will lose everything. Continue?
 		</div>
 	</div>
 	<div class="row">
@@ -394,7 +402,7 @@
 	<div class="row">
 		<div class="col-xs-12" style="padding:1%">
 			<input type="text" id="titleInput"/> <button class="btn btn-default btn-sm" onClick="setTitle()">Set Page Title</button>
-		</div>
+		</div>		
 	</div>
 	<div class="row">
 		<div class="col-xs-12" style="padding:1%">
@@ -416,16 +424,13 @@
 			/u/JoergR <br>
 			/u/Sevaloc <br>
 			/u/Insane96MCP <br>
-			/u/ascii122
+			/u/ascii122 <br>
+			/u/theharber
 		</div>
 		<div class="col-xs-1">
 		</div>
 	</div>
 </div>
-
-
-
-
 	
 
 

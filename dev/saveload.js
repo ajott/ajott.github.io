@@ -19,7 +19,18 @@ function saveToLocal() {
 }
 
 function loadFromLocal() {
+	var date = new Date();
+    var currTickTime = date.getTime();
+
 	player = JSON.parse(localStorage.getItem("playerStored"));
+
+	var tickDifference = currTickTime - player.lastTickTime;
+	var numMissedTicks = (tickDifference / player.tickLength).toFixed(0);
+
+	$('#lastSave').text(numMissedTicks.toString());
+
+	
+	tickMakeupFunction(numMissedTicks);
 
 }
 
@@ -28,12 +39,10 @@ function clearSave() {
 }
 
 function hardReset() {
-	r=confirm('This will delete local save data and refresh the page.\nYou will lose everything.\nContinue?');
-	if (r==true){
-		localStorage.removeItem("playerStored");
-		location.reload();
-	}
-	else {};
+	
+	localStorage.removeItem("playerStored");
+	location.reload();
+	
 }
 
 function verifyValues() {

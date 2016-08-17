@@ -40,3 +40,27 @@ function karmaCalc(tD) {
 
     $("#karmaMult").text(player.karmaMult);
 }
+
+
+$(function() {
+    $( "#resetDialog" ).dialog({
+        autoOpen:false,
+        resizable: false,
+        height: "auto",
+        width: "auto",
+        modal: true,
+        buttons: {
+            "Burn it all!": function() {
+                $( this ).dialog( "close" );
+                reset();
+            },
+            Cancel: function() {
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+    $( "#reset" ).click(function() {
+        $( "#karmaString").text((player.totalDonated/1000000).toString());
+        $( "#resetDialog" ).dialog( "open" );
+    });
+});

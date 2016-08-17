@@ -18,7 +18,8 @@ var player = {
     tickLevel:1,
     tickCost:10000,
     resets:0,
-    version:"Alpha 0.9.8.5 Reddit Revision Redeux"
+    lastTickTime: 0,
+    version:"Alpha 0.9.9 Just Get Up and Walk Away"
 };
 
 
@@ -62,7 +63,7 @@ function decreaseTick(){
         if(player.tickLength > minTickTime) {
             if ((player.tickLength * 0.9) >= minTickTime) {                                  
                 player.tickLevel = player.tickLevel + 1;
-                player.tickLength = player.tickLength * .90;
+                player.tickLength = player.tickLength - 50;
                 player.dollars = player.dollars - player.tickCost;
                 $('#tickTime').text(player.tickLength.toFixed(0));   
                 $('#dollars').text(comma(player.dollars));
@@ -87,86 +88,84 @@ function decreaseTick(){
 }
 
 
-function reset() {
-    var karmaString = (player.totalDonated/1000000).toString();
-    if(confirm('Are you sure you want to reset? \nYou will receive ' + karmaString + ' karma for money donated to charity.')) {
-        var i = 0;
-        player.dollars = 0;
-        $('#dollars').text(player.dollars);
-        
-        player.clickPower = 1;
-        $('#clickPower').text(player.clickPower);
-        
-        $('#investmentEntry').val(null);
-        
-        player.inBank = 0;
-        $('#inBank').text(player.inBank);
-        
-        player.interestRate = 0.003;
-        var intRateString = (player.interestRate*100).toFixed(1).toString();
-        $('#intRate').text(intRateString + "%");
-        
-        player.totalCheck = 50000;
+function reset() {       
+    var i = 0;
+    player.dollars = 0;
+    $('#dollars').text(player.dollars);
+    
+    player.clickPower = 1;
+    $('#clickPower').text(player.clickPower);
+    
+    $('#investmentEntry').val(null);
+    
+    player.inBank = 0;
+    $('#inBank').text(player.inBank);
+    
+    player.interestRate = 0.003;
+    var intRateString = (player.interestRate*100).toFixed(1).toString();
+    $('#intRate').text(intRateString + "%");
+    
+    player.totalCheck = 50000;
 
-        player.totalInterest = 0;
-        $('#totalInterest').text(player.totalInterest.toFixed(0));
+    player.totalInterest = 0;
+    $('#totalInterest').text(player.totalInterest.toFixed(0));
 
-        for (i=0;i<(player.workers.length);i+=1){
-            player.workers[i]=0;
-        }
-
-        for (i=0;i<(player.workers.length);i+=1){
-            $(workerIDs[i]).text(player.workers[i]);
-        }
-
-        player.powerCost = 30;
-        $('#powerCost').text(player.powerCost);
-
-        player.tickLevel = 1;
-
-        player.tickLength = 1000;
-        $('#tickTime').text(player.tickLength);
-
-        player.tickCost = 10000;
-        $('#tickCost').text(comma(player.tickCost));
-
-        for (i=0;i<(player.workers.length);i+=1){
-           player.costs[i] = defaultCosts[i];
-        }
-
-        for (i=0;i<(player.workers.length);i+=1){
-            $(workerCostIDs[i]).text(comma(player.costs[i]));
-        }
-
-        karmaCalc(player.totalDonated);
-
-        player.totalDonated = 0;
-        $('#totalDonated').text(player.totalDonated);
-
-        $('#clickPower').text(1*player.karmaMult);
-
-        updateMPS();
-
-        for (i=0;i<(player.workers.length+1);i+=1) {
-            player.workerProds[i] = defaultProds[i] * player.karmaMult;
-            $(workerProdIDs[i]).text(comma(player.workerProds[i]));
-        }
-
-        for (i=0;i<(player.workers.length+1);i+=1) {
-            player.workerMults[i] = 1;
-        }
-
-        $('#tickDecrease').removeClass("disabled");
-        $('#tickDecrease').text("Decrease Tick Time")
-
-        investInterest();
-        interestTicks = 0;
-        togglePanel(0);
-        validateButtons();
+    for (i=0;i<(player.workers.length);i+=1){
+        player.workers[i]=0;
     }
-    else {
-        return false;
+
+    for (i=0;i<(player.workers.length);i+=1){
+        $(workerIDs[i]).text(player.workers[i]);
     }
+
+    player.powerCost = 30;
+    $('#powerCost').text(player.powerCost);
+
+    player.tickLevel = 1;
+
+    player.tickLength = 1000;
+    $('#tickTime').text(player.tickLength);
+    resetIntervals(player.tickLength);
+
+    player.tickCost = 10000;
+    $('#tickCost').text(comma(player.tickCost));
+
+    for (i=0;i<(player.workers.length);i+=1){
+       player.costs[i] = defaultCosts[i];
+    }
+
+    for (i=0;i<(player.workers.length);i+=1){
+        $(workerCostIDs[i]).text(comma(player.costs[i]));
+    }
+
+    karmaCalc(player.totalDonated);
+
+    player.totalDonated = 0;
+    $('#totalDonated').text(player.totalDonated);
+
+    $('#clickPower').text(1*player.karmaMult);
+
+    updateMPS();
+
+    player.workerProds[0] = defaultProds[0] * player.karmaMult;
+    $(workerProdIDs[0]).text(player.workerProds[0].toFixed(1));
+
+    for (i=1;i<(player.workers.length+1);i+=1) {
+        player.workerProds[i] = defaultProds[i] * player.karmaMult;
+        $(workerProdIDs[i]).text(comma(player.workerProds[i]));
+    }
+
+    for (i=0;i<(player.workers.length+1);i+=1) {
+        player.workerMults[i] = 1;
+    }
+
+    $('#tickDecrease').removeClass("disabled");
+    $('#tickDecrease').text("Decrease Tick Time")
+
+    investInterest();
+    interestTicks = 0;
+    togglePanel(0);
+    validateButtons();
 }
 
 
@@ -277,3 +276,26 @@ function validateButtons() {
         }
     }
 }
+
+
+$(function() {
+    $( "#nukeDialog" ).dialog({
+        autoOpen:false,
+        resizable: false,
+        height: "auto",
+        width: "auto",
+        modal: true,
+        buttons: {
+            "Burn it all!": function() {
+                $( this ).dialog( "close" );
+                hardReset();
+            },
+            Cancel: function() {
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+    $( "#nukeButton" ).click(function() {
+        $( "#nukeDialog" ).dialog( "open" );
+    });
+});

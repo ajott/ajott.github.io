@@ -56,7 +56,7 @@ function verifyValues() {
             $(workerCostIDs[i]).text(comma(player.costs[i]));
     };
 	
-	$(workerProdIDs[0]).text(comma(player.workerProds[0] * player.workerMults[0]).toFixed(1));
+	$(workerProdIDs[0]).text((player.workerProds[0] * player.workerMults[0]).toFixed(1));
 	
 	for (i=1;i<(player.workers.length);i++){
             $(workerProdIDs[i]).text(comma(player.workerProds[i] * player.workerMults[i]));

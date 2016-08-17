@@ -19,7 +19,7 @@ var player = {
     tickCost:10000,
     resets:0,
     lastTickTime: 0,
-    version:"Alpha 0.9.9 Just Get Up and Walk Away"
+    version:"Alpha 0.9.9.1 Just Get Up and Walk Away"
 };
 
 

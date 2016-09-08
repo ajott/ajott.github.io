@@ -1,26 +1,54 @@
-window.setInterval(function(){
+tickOneTimer = window.setInterval(function(){
 
-
-    getMoney(player.workers[1]);
-    getMoney(player.workers[2]*8);
-	getMoney(player.workers[3]*47);
-	getMoney(player.workers[4]*260);
-    getMoney(player.workers[5]*1400);
-
-	checkLabor(player.workers[0]);
-  
+    tickOneFunction();
+    //bankBarUpdate();  
 	
 }, player.tickLength);
 
-window.setInterval(function(){
+
+function tickOneFunction() {
+    for (i=1;i<(player.workers.length);i++){
+        getMoney(player.workers[i]*player.workerProds[i]*player.workerMults[i]);
+    }
+
+    checkInterest();
+
+    validateButtons();
+    playerStats();
+
+    var date = new Date();
+    var lastTickTime = date.getTime();
+
+    player.lastTickTime = lastTickTime;
+
+    checkLabor(player.workers[0]);
+    updateMPS();  
+}
+
+function tickMakeupFunction(numTicks) {
+    for (i=1;i<(player.workers.length);i++){
+        getMoney(player.workers[i]*player.workerProds[i]*player.workerMults[i]*numTicks);
+    }
+
+    for (i=0;i<numTicks;i++){
+        checkInterest();
+        checkLabor(player.workers[0]);
+    }   
     
-    investInterest();
-    updateMPS();
-    // getMoney(workers[0]);
-    checkTotalInterest();
+
+    validateButtons();
+    updateMPS(); 
     
-}, 10 * player.tickLength);
+    
+}
+
+
 
 window.setInterval(function(){
     saveToLocal();
 }, 30000);
+
+function resetIntervals(tick){
+    clearInterval(tickOneTimer);
+    tickOneTimer = setInterval(function(){tickOneFunction();},tick);
+}

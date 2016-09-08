@@ -33,6 +33,7 @@ function withdraw(withAmount){
             if(Number(player.inBank) >= Number(investEntry)){
                 player.inBank = Number(player.inBank) - Number(investEntry);
                 player.dollars = player.dollars + Number(investEntry);
+                player.totalDollars += Number(investEntry);
                 interestTicks = 0;
                 $('#inBank').text(comma(player.inBank));
                 $('#dollars').text(comma(player.dollars));
@@ -43,6 +44,7 @@ function withdraw(withAmount){
     } else {
         player.inBank = Number(player.inBank) - withAmount;
         player.dollars = player.dollars + withAmount;
+        player.totalDollars += withAmount;
         interestTicks = 0;
         $('#inBank').text(comma(player.inBank));
         $('#dollars').text(comma(player.dollars));

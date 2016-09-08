@@ -1,9 +1,5 @@
 var investEntry = 0;
-// var inBank = 0;
-// var interestRate = .003;
-// var totalInterest = 0;
-// var totalCheck = 50000;
-// var increase50K = 0;
+var interestTicks = 0;
 
 
 function deposit(depAmount){
@@ -12,19 +8,21 @@ function deposit(depAmount){
         if (investEntry > 0){
             if(player.dollars >= investEntry){                                        
                 player.inBank = Number(player.inBank) + Number(investEntry);                                   
-                player.dollars = player.dollars - investEntry;                             
-                document.getElementById('inBank').innerHTML = comma(player.inBank);
-                document.getElementById('dollars').innerHTML = comma(player.dollars);
-                document.getElementById('investmentEntry').value = null;
-                document.getElementById('intPer10').innerHTML = comma((Number(player.inBank)*player.interestRate).toFixed(0));
+                player.dollars = player.dollars - investEntry;
+                interestTicks = 0;
+                $('#inBank').text(comma(player.inBank));
+                $('#dollars').text(comma(player.dollars));
+                $('#investmentEntry').val(null);
+                $('#intPer10').text(comma((Number(player.inBank)*player.interestRate).toFixed(0)));
             }
         }
     }   else {
            player.inBank = Number(player.inBank) + depAmount;
             player.dollars = player.dollars - depAmount;
-            document.getElementById('inBank').innerHTML = comma(player.inBank);      
-            document.getElementById('dollars').innerHTML = comma(player.dollars);
-            document.getElementById('intPer10').innerHTML = comma((Number(player.inBank)*player.interestRate).toFixed(0)); 
+            interestTicks = 0;
+            $('#inBank').text(comma(player.inBank));
+            $('#dollars').text(comma(player.dollars));
+            $('#intPer10').text(comma((Number(player.inBank)*player.interestRate).toFixed(0))); 
         }
 }
 
@@ -35,34 +33,49 @@ function withdraw(withAmount){
             if(Number(player.inBank) >= Number(investEntry)){
                 player.inBank = Number(player.inBank) - Number(investEntry);
                 player.dollars = player.dollars + Number(investEntry);
-                document.getElementById('inBank').innerHTML = comma(player.inBank);
-                document.getElementById('dollars').innerHTML = comma(player.dollars);
-                document.getElementById('investmentEntry').value = null;
-                document.getElementById('intPer10').innerHTML = comma((Number(player.inBank)*player.interestRate).toFixed(0));
+                player.totalDollars += Number(investEntry);
+                interestTicks = 0;
+                $('#inBank').text(comma(player.inBank));
+                $('#dollars').text(comma(player.dollars));
+                $('#investmentEntry').val(null);
+                $('#intPer10').text(comma((Number(player.inBank)*player.interestRate).toFixed(0)));
             }
         }  
     } else {
         player.inBank = Number(player.inBank) - withAmount;
         player.dollars = player.dollars + withAmount;
-        document.getElementById('inBank').innerHTML = comma(player.inBank);
-        document.getElementById('dollars').innerHTML = comma(player.dollars);
-        document.getElementById('intPer10').innerHTML = comma((Number(player.inBank)*player.interestRate).toFixed(0));
+        player.totalDollars += withAmount;
+        interestTicks = 0;
+        $('#inBank').text(comma(player.inBank));
+        $('#dollars').text(comma(player.dollars));
+        $('#intPer10').text(comma((Number(player.inBank)*player.interestRate).toFixed(0)));
     }
 
        
 }
 
 function investInterest(){
-    player.totalInterest = Math.floor(player.totalInterest + (Number(player.inBank)*player.interestRate));
-    player.inBank = Math.floor(Number(player.inBank) + (Number(player.inBank)*player.interestRate));
-    
-    if (player.inBank < 10000000){
-        
-        document.getElementById('totalInterest').innerHTML = comma(player.totalInterest.toFixed(0));
-        document.getElementById('inBank').innerHTML = comma(player.inBank.toFixed(0));
-        document.getElementById('intPer10').innerHTML = comma((Number(player.inBank)*player.interestRate).toFixed(0));
+    var maxBalance = 10000000*Math.pow(10,player.resets)
+    $('#maxBalance').text(comma(maxBalance));
+      
+    if ((player.inBank + (Number(player.inBank)*player.interestRate)) < maxBalance){
+            
+        player.totalInterest = Math.floor(player.totalInterest + (Number(player.inBank)*player.interestRate));
+        player.inBank = Math.floor(Number(player.inBank) + (Number(player.inBank)*player.interestRate));
+
+        $('#totalInterest').text(comma(player.totalInterest.toFixed(0)));
+        $('#inBank').text(comma(player.inBank.toFixed(0)));
+        $('#intPer10').text(comma((Number(player.inBank)*player.interestRate).toFixed(0)));
+    } else if (player.inBank < maxBalance && ((player.inBank + (Number(player.inBank)*player.interestRate)) >= maxBalance)) {
+        player.totalInterest = Math.floor(player.totalInterest + (maxBalance - player.inBank));
+        player.inBank = Math.floor(player.inBank + (maxBalance - player.inBank));
+        $('#totalInterest').text(comma(player.totalInterest.toFixed(0)));
+        $('#inBank').text(comma(player.inBank.toFixed(0)));
+        $('#intPer10').text("0 - Balance Maxed");
     } else {
-        document.getElementById('intPer10').innerHTML = "0 - Balance Maxed"
+        $('#totalInterest').text(comma(player.totalInterest.toFixed(0)));
+        $('#inBank').text(comma(player.inBank.toFixed(0)));
+        $('#intPer10').text("0 - Balance Maxed");
     }
 }
 
@@ -83,3 +96,34 @@ function checkTotalInterest() {
         
     }
 }
+
+function checkInterest() {
+    if (interestTicks < 10) {
+        interestTicks = interestTicks + 1;
+
+    } else if (interestTicks == 10){
+        interestTicks = 1;
+        investInterest();
+        checkTotalInterest();  
+    }
+}
+
+
+// function bankBarUpdate() {
+//     wdth = document.getElementById('progressBar').style.width.toString()
+//     wdth = Number(wdth.substring(0,wdth.length-1))
+
+//     if (wdth < 100){
+//         wdth = wdth + 10;
+//         document.getElementById('progressBar').className = "progress-bar progress-bar-success progress-bar-striped active"
+//     } else if (wdth == 100){
+//         wdth = 10;
+//         document.getElementById('progressBar').className = "progress-bar progress-bar-success progress-bar-striped active notransition"
+//     }
+
+//     wdth = wdth.toString()
+//     wdth = wdth + "%"
+
+//     document.getElementById('progressBar').style.width = wdth
+    
+// }

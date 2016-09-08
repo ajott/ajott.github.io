@@ -11,7 +11,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Latest compiled JavaScript -->
 	<script src="bootstrap.min.js"></script>
-	<title id="title">CAMCAD Documentation</title>
+	<title id="title">CAMCAD Clicker</title>
 
 	<link href="jquery-ui.css" rel="stylesheet">
     <script src="jquery-1.10.2.js"></script>
@@ -40,9 +40,15 @@
 <br><br>
 
 <div class="container-fluid centerTable">
+	<div class="row">
+	<div class="col-md-2 col-sm-1 col-xs-0"></div>
+	<div class="col-md-8 col-sm-10 col-xs-12">
 	<div class="btn-group btn-group-justified">
 		<div class="btn-group">	
 			<button type="button" id="staffTab" class="btn btn-info" onClick="togglePanel(0)">Staff</button>
+		</div>
+		<div class="btn-group" id="upgradeCont" style="display:none">	
+			<button type="button" id="upgradeTab" class="btn" onClick="togglePanel(5)">Upgrades</button>
 		</div>
 		<div class="btn-group">	
 			<button type="button" id="bankTab" class="btn" onClick="togglePanel(1)">Bank</button>
@@ -51,8 +57,14 @@
 			<button type="button" id="charityTab" class="btn" onClick="togglePanel(2)">Charity</button>
 		</div>
 		<div class="btn-group">
+			<button type="button" id="statsTab" class="btn" onClick="togglePanel(4)">Stats</button>
+		</div>
+		<div class="btn-group">
 			<button type="button" id="optionsTab" class="btn" onClick="togglePanel(3)">Options</button>
 		</div>
+	</div>
+	</div>
+	<div class="col-md-2 col-sm-1 col-xs-0"></div>
 	</div>
 </div>
 
@@ -61,46 +73,52 @@
 <br><br>
 <div class="container-fluid centerTable" id="clickHead">
 	<div class="row">
-		<div class="col-xs-6">
+		<div class="col-md-2 col-sm-1 col-xs-0"></div>
+		<div class="col-md-4 col-sm-5 col-xs-6">
 			<button class="btn" id="powerButton" onclick="increasePower()">Improve Click Power</button>
 		</div>
-		<div class="col-xs-6">
+		<div class="col-md-4 col-sm-5 col-xs-6">
 			<button class="btn" id="tickDecrease" onclick="decreaseTick()">Decrease Tick Time</button>
 		</div>
+		<div class="col-md-2 col-sm-1 col-xs-0"></div>
 	</div>
 	<div class="row">
-		<div class="col-xs-6">
+		<div class="col-md-2 col-sm-1 col-xs-0"></div>
+		<div class="col-md-4 col-sm-5 col-xs-6">
 			Click Power: <span id="clickPower">1</span>
 		</div>
-		<div class="col-xs-6">
+		<div class="col-md-4 col-sm-5 col-xs-6">
 			Tick Time: <span id="tickTime">1000</span> ms
 		</div>
+		<div class="col-md-2 col-sm-1 col-xs-0"></div>
 	</div>
 	<div class="row">
-		<div class="col-xs-6">
+		<div class="col-md-2 col-sm-1 col-xs-0"></div>
+		<div class="col-md-4 col-sm-5 col-xs-6">
 			Cost: $<span id="powerCost">30</span>
 		</div>
-		<div class="col-xs-6">
+		<div class="col-md-4 col-sm-5 col-xs-6">
 			Cost: $<span id="tickCost">10,000</span>
 		</div>
+		<div class="col-md-2 col-sm-1 col-xs-0"></div>
 	</div>
 </div>
 
 <br> <br>
 
 <div class="container-fluid centerTable" id="hiring">
-	<table class="table table-bordered table-condensed">
+	<div class="row">
+	<div class="col-md-2 col-sm-1 col-xs-0"></div>
+	<div class="col-md-8 col-sm-10 col-xs-12">
+	<table class="table table-striped table-condensed" style="table-layout: fixed;">
 
 		<tr id="laborRow">
 			<td>
-				<button id="hire0" class="hire btn" onclick="hire(0)">Hire Laborer</button>
+				<button id="hire0" class="hire btn" onclick="hire(0)">Hire Laborer <span class="badge" id="laborBadge"></span></button>
 				<br>$<span id="laborerCost">15</span>
 			</td>
-			<!-- <td>
-				Cost<br> $<span id="laborerCost">15</span>
-			</td> -->
 			<td>
-				Laborers <br> <span id="laborers">0</span>
+				Laborers <br> <span id="laborers">0</span>/200
 			</td>
 			<td>
 				Productivity <br> $<span id="laborProd">0.1</span>/tick
@@ -108,14 +126,11 @@
 		</tr>
 		<tr id="techRow">
 			<td>
-				<button id="hire1" class="hire btn" onclick="hire(1)">Hire Tech</button>
+				<button id="hire1" class="hire btn" onclick="hire(1)">Hire Tech <span class="badge" id="techBadge"></span></button>
 				<br>$<span id="techCost">100</span>
 			</td>
-			<!-- <td>
-				Cost<br> $<span id="techCost">100</span>
-			</td> -->
 			<td>
-				Technicians <br> <span id="techs">0</span>	
+				Technicians <br> <span id="techs">0</span>/200	
 			</td>
 			<td>
 				Productivity <br> $<span id="techProd">1</span>/tick
@@ -123,14 +138,11 @@
 		</tr>
 		<tr id="clerkRow"> 
 			<td>
-				<button id="hire2" class="hire btn" onclick="hire(2)">Hire Clerk</button>
+				<button id="hire2" class="hire btn" onclick="hire(2)">Hire Clerk <span class="badge" id="clerkBadge"></span></button>
 				<br>$<span id="clerkCost">1,100</span>
 			</td>
-			<!-- <td>
-				Cost<br> $<span id="clerkCost">1,100</span>
-			</td> -->
 			<td>
-				Clerks <br> <span id="clerks">0</span>
+				Clerks <br> <span id="clerks">0</span>/200
 			</td>
 			<td>
 				Productivity <br> $<span id="clerkProd">8</span>/tick
@@ -138,14 +150,11 @@
 		</tr>
 		<tr id="engRow">
 			<td>
-				<button id="hire3" class="hire btn" onclick="hire(3)">Hire Engineer</button>
+				<button id="hire3" class="hire btn" onclick="hire(3)">Hire Engineer <span class="badge" id="engBadge"></span></button>
 				<br>$<span id="engCost">12,000</span>
 			</td>
-			<!-- <td>
-				Cost<br> $<span id="engCost">12,000</span>
-			</td> -->
 			<td>
-				Engineers <br> <span id="engineers">0</span>
+				Engineers <br> <span id="engineers">0</span>/200
 			</td>
 			<td>
 				Productivity <br> $<span id="engProd">47</span>/tick
@@ -153,14 +162,11 @@
 		</tr>
 		<tr id="managerRow">
 			<td>
-				<button id="hire4" class="hire btn" onclick="hire(4)">Hire Manager</button>
+				<button id="hire4" class="hire btn" onclick="hire(4)">Hire Manager <span class="badge" id="managerBadge"></span></button>
 				<br>$<span id="managerCost">130,000</span>
 			</td>
-			<!-- <td>
-				Cost<br> $<span id="managerCost">130,000</span>
-			</td> -->
 			<td>
-				Managers <br> <span id="managers">0</span>
+				Managers <br> <span id="managers">0</span>/200
 			</td>
 			<td>
 				Productivity <br> $<span id="managerProd">260</span>/tick
@@ -168,14 +174,11 @@
 		</tr>
 		<tr id="directorRow">
 			<td>
-				<button id="hire5" class="hire btn" onclick="hire(5)">Hire Director</button>
+				<button id="hire5" class="hire btn" onclick="hire(5)">Hire Director <span class="badge" id="directorBadge"></span></button>
 				<br>$<span id="directorCost">1,400,000</span>
 			</td>
-			<!-- <td>
-				Cost<br> $<span id="directorCost">1,400,000</span>
-			</td> -->
 			<td>
-				Directors <br> <span id="directors">0</span>
+				Directors <br> <span id="directors">0</span>/200
 			</td>
 			<td>
 				Productivity <br> $<span id="directorProd">1,400</span>/tick
@@ -183,14 +186,11 @@
 		</tr>
 		<tr id="vpRow">
 			<td>
-				<button id="hire6" class="hire btn" onclick="hire(6)">Hire VP</button>
+				<button id="hire6" class="hire btn" onclick="hire(6)">Hire VP <span class="badge" id="vpBadge"></span></button>
 				<br>$<span id="vpCost">15,000,000</span>
 			</td>
-			<!-- <td>
-				Cost<br> $<span id="vpCost">15,000,000</span>
-			</td> -->
 			<td>
-				Vice Presidents <br> <span id="vps">0</span>
+				Vice Presidents <br> <span id="vps">0</span>/200
 			</td>
 			<td>
 				Productivity <br> $<span id="vpProd">16,000</span>/tick
@@ -198,31 +198,73 @@
 		</tr>
 		<tr id="presRow">
 			<td>
-				<button id="hire7" class="hire btn" onclick="hire(7)">Hire President</button>
+				<button id="hire7" class="hire btn" onclick="hire(7)">Hire President <span class="badge" id="presBadge"></span></button>
 				<br>$<span id="presCost">99,000,000</span>
 			</td>
-			<!-- <td>
-				Cost<br> $<span id="vpCost">15,000,000</span>
-			</td> -->
 			<td>
-				Presidents <br> <span id="pres">0</span>
+				Presidents <br> <span id="pres">0</span>/200
 			</td>
 			<td>
 				Productivity <br> $<span id="presProd">44,000</span>/tick
 			</td>
 		</tr>			
 	</table>
+	</div>
+	
+	<div class="col-md-2 col-sm-1 col-xs-0"></div>
+	</div>
 	<br>
-	<div class="col-xs-1">
+	<div class="col-md-2 col-sm-1 col-xs-0">
 		</div>
-		<div class="col-xs-10 well well-m">
+		<div class="col-md-8 col-sm-10 col-xs-12 well well-m">
 			Workers will earn money for you without the need to click. <br><br>
 			In general, your employees like each other - so you get a multiplier on production when you've hired enough of a given type. <br>
-			That is, you'll get your first bonus to production with a given worker when you have 10 of them.
+			You'll get your first bonus to production with a given worker when you have 10 of them.
 		</div>
-		<div class="col-xs-1">
+		<div class="col-md-2 col-sm-1 col-xs-0">
 		</div>
 </div>
+</div>
+
+
+<div class="container-fluid centerTable" id="upgradePanel">
+	<br><br><div class="row">
+	<div class="col-md-2 col-sm-1 col-xs-0"></div>
+	<div class="col-md-8 col-sm-10 col-xs-12">
+	<table class="table table-bordered table-striped">
+	<tr>
+		<td>
+			<button id="clickUpgradeButton" class="btn" onclick="buyClickUpgrade()"><span class="karmaSymbol">K</span> <span id="clickUpgradeCost">5</span></button>
+		</td>
+		<td>
+			Increase Click Power  (10% of Money Per Second) <br> <strong> Multiple Upgrades Possible </strong>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<button id="buyMaxHireBtn" class="btn" onclick="buyMaxHire()"><span class="karmaSymbol">K</span> 10</button>
+		</td>
+		<td>
+			Unlock Max Hire Ability <br> <strong>One Time Purchase</strong>
+		</td>
+	</tr>
+	</table>
+	</div>
+	<div class="col-md-2 col-sm-1 col-xs-0"></div>
+	</div>
+
+	<div class="row" id="upgradeInfo">
+		<div class="col-md-2 col-sm-1 col-xs-0">
+		</div>
+		<div class="col-md-8 col-sm-10 col-xs-12 well well-m">
+			You found the upgrades! These are only unlocked after your first karma reset.<br>
+			You can trade your earned karma (<span class="karmaSymbol">K</span>) for certain upgrades here. <br>
+			When you spend karma, though, your multiplier will decrease accordingly. Spend wisely.
+		</div>
+		<div class="col-md-2 col-sm-1 col-xs-0">
+		</div>
+	</div>
+	
 </div>
 
 
@@ -272,9 +314,9 @@
 	</div>
 	<br>
 	<div class="row" id="bankInfo">
-		<div class="col-xs-1">
+		<div class="col-md-2 col-sm-1 col-xs-0">
 		</div>
-		<div class="col-xs-10 well well-m">
+		<div class="col-md-8 col-sm-10 col-xs-12 well well-m">
 			Money deposited in the bank will earn you interest. <br>
 			This interest is calculated every 10 ticks - but the counter will restart upon deposit or withdrawl. <br>
 			You will earn interest up to your maximum balance - at which point you can deposit more money, but it will not accrue any interest.	<br><br>
@@ -283,7 +325,7 @@
 			The bank is happy to have you keep your money with them. <br>
 			Accordingly, your interest rate will periodically increase based on the total amount of interest you've accrued.
 		</div>
-		<div class="col-xs-1">
+		<div class="col-md-2 col-sm-1 col-xs-0">
 		</div>
 	</div>
 	<!-- <div class="progress">
@@ -294,13 +336,17 @@
 </div>
 
 
+
+
+
 <div class="container-fluid centerTable" id="charityTable">
 	<div class="row">
 		<div class="col-xs-12">
-			<br>Donate to Charity <br>
-			<span style="color:red" data-toggle="tooltip" title="In bird culture, that is considered a &quot;dick move&quot;">Please note that you can't take money back from charity.</span>
+			<br><strong>Donate to Charity</strong><br>
+			<span id="charityWarning" data-toggle="tooltip" title="In bird culture, that is considered a &quot;dick move&quot;">Please note that you can't take money back from charity.</span>
 		</div>
 	</div>
+	<br>
 	<div class="row">
 		<div class="col-xs-12">
 			<input type="number" id="donationEntry">
@@ -335,7 +381,7 @@
 	<div class="row">
 		<div class="col-xs-6">
 			<br>
-			Karma<br>
+			Karma (<span class="karmaSymbol">K</span>)<br>
 			<span id="karma">0</span>
 		</div>
 		<div class="col-xs-6">
@@ -347,20 +393,90 @@
 	</div>
 	<br>
 	<div class="row" id="charityInfo">
-		<div class="col-xs-1">
+		<div class="col-md-2 col-sm-1 col-xs-0">
 		</div>
-		<div class="col-xs-10 well well-m">
+		<div class="col-md-8 col-sm-10 col-xs-12 well well-m">
 			Money given to charity will grant you karma upon reset. <br>
 			Every $1,000,000 will grant 1 karma. <br>
 			You will gain a bonus multiplier to your income based on your karma. <br>
 			You will attain a 2x multiplier at 10 karma, and it will double at powers of 10 - at 100, 1,000, and so on.
 		</div>
-		<div class="col-xs-1">
+		<div class="col-md-2 col-sm-1 col-xs-0">
 		</div>
 	</div>
 </div>
 
-
+<div class="container-fluid centerTable" id="statsPanel">
+	<div class="row">
+		<div class="col-md-3 col-sm-1 col-xs-0"></div>
+		<div class="col-md-6 col-sm-10 col-xs-12">
+			<br><table style="width:100%; table-layout:fixed;" id="pctTable" class="table-striped table-bordered table-hover">
+			<td class="thSub">Worker</td><td class="thSub">Money Per Second ($)</td><td class="thSub">Percentage of Income</td>
+			<tr id="laborPctRow">
+			<td>Laborers</td>
+			<td><span id="laborMPS">0</span></td>
+			<td><span id="laborPct">0%</span></td>
+			</tr>
+			<tr id="techPctRow">
+			<td>Technicians</td>
+			<td><span id="techMPS">0</span></td>
+			<td><span id="techPct">0%</span></td>
+			</tr>
+			<tr id="clerkPctRow">
+			<td>Clerks</td>
+			<td><span id="clerkMPS">0</span></td>
+			<td><span id="clerkPct">0%</span></td>
+			</tr>
+			<tr id="engPctRow">
+			<td>Engineers</td>
+			<td><span id="engMPS">0</span></td>
+			<td><span id="engPct">0%</span></td>
+			</tr>
+			<tr id="managerPctRow">
+			<td>Managers</td>
+			<td><span id="managerMPS">0</span></td>
+			<td><span id="managerPct">0%</span></td>
+			</tr>
+			<tr id="directorPctRow">
+			<td>Directors</td>
+			<td><span id="directorMPS">0</span></td>
+			<td><span id="directorPct">0%</span></td>
+			</tr>
+			<tr id="vpPctRow">
+			<td>VPs</td>
+			<td><span id="vpMPS">0</span></td>
+			<td><span id="vpPct">0%</span></td>
+			</tr>
+			<tr id="presPctRow">
+			<td>Presidents</td>
+			<td><span id="presMPS">0</span></td>
+			<td><span id="presPct">0%</span></td>
+			</tr>
+			</table>
+		</div>
+		<div class="col-md-3 col-sm-1 col-xs-0"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 col-sm-2 col-xs-0"></div>
+			<div class="col-md-4 col-sm-8 col-xs-12">
+				<br><br><table style="width:100%; table-layout:fixed;" class="table-condensed">
+				<tr>
+				<td>Clicks:</td><td><span id="clickNoSpan"></span></td>
+				</tr>
+				<tr>
+				<td>Total Money Earned:</td><td>$<span id="totalDollarSpan"></span></td>
+				</tr>
+				<tr>
+				<td>Karma Resets:</td><td><span id="resetSpan"></span></td>
+				</tr>
+				<tr id="monkeyTd" style="display:none;">
+				<td>Monkeys Annoyed:</td><td><span id="monkeySpan"></span></td>
+				</tr>
+				</table>
+			</div>
+		<div class="col-md-4 col-sm-2 col-xs-0"></div>
+	</div>
+</div>
 	
 <div class="container-fluid centerTable" id="optionsPanel">
 	<div class="row">
@@ -411,9 +527,9 @@
 		</div>
 	</div>
 	<div class="row" id="creditsWell">
-		<div class="col-xs-1">
+		<div class="col-md-2 col-sm-1 col-xs-0">
 		</div>
-		<div class="col-xs-10 well well-m">
+		<div class="col-md-8 col-sm-10 col-xs-12 well well-m">
 			Thank you to: <br><br>
 			Jerry <br>
 			/u/Mitschu <br>
@@ -425,9 +541,9 @@
 			/u/Sevaloc <br>
 			/u/Insane96MCP <br>
 			/u/ascii122 <br>
-			/u/theharber
+			/u/theharber<br>			
 		</div>
-		<div class="col-xs-1">
+		<div class="col-md-2 col-sm-1 col-xs-0">
 		</div>
 	</div>
 </div>
@@ -440,6 +556,8 @@
 	<script type="text/javascript" src="periodic.js"></script>	
 	<script type="text/javascript" src="charity.js"></script>
 	<script type="text/javascript" src="saveload.js"></script>
+	<script type="text/javascript" src="stats.js"></script>
+	<script type="text/javascript" src="upgrades.js"></script>
 	
 	<script type="text/javascript">
 		function checkAndLoad() {
@@ -450,6 +568,10 @@
 			validateButtons();
 		}
 	window.onload = checkAndLoad;
+	window.onload = buildCosts();
+	$(document).ready(function(){
+   		$('[data-toggle="tooltip"]').tooltip(); 
+	});
 	</script>
 
 </body>

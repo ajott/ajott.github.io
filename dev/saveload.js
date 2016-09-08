@@ -10,6 +10,7 @@ function importSave() {
 	var importString = window.atob($('#importText').val());
 
 	player = JSON.parse(importString);
+	verifyValues()
 }
 
 function saveToLocal() {
@@ -27,10 +28,12 @@ function loadFromLocal() {
 	var tickDifference = currTickTime - player.lastTickTime;
 	var numMissedTicks = (tickDifference / player.tickLength).toFixed(0);
 
-	$('#lastSave').text(numMissedTicks.toString());
+	$('#lastSave').text("Missed ticks: " + numMissedTicks.toString());
 
 	
 	tickMakeupFunction(numMissedTicks);
+
+	verifyValues();
 
 }
 
@@ -79,6 +82,7 @@ function verifyValues() {
     $('#tickTime').text(player.tickLength.toFixed(0))
     $('#tickCost').text(comma(player.tickCost));
 	
+	prodPercents();
 
 }
 

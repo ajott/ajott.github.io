@@ -4,11 +4,34 @@ var defaultCosts = [15,100,1100,12000,130000,1400000,15000000,99000000]
 var multValues = [2,3,3,5,5,10,25];
 var multCounts = [10,25,50,100,200,500];
 
+var costCheckOb = {
+    laborers:[],
+    techs:[],
+    clerks:[],
+    engineers:[],
+    managers:[],
+    directors:[],
+    vps:[],
+    pres:[]
+}
+
+function buildCosts(){
+    for (i=0;i<8;i+=1) {
+        for(j=0;j<200;j+=1){
+            costCheckOb[workerObNames[i]][j]=Math.floor(defaultCosts[i] * Math.pow(1.15,j));
+        }
+    }
+}
+
+
+
+var workerObNames = ['laborers','techs','clerks','engineers','managers','directors','vps','pres'];
 var workerIDs = ['#laborers','#techs','#clerks','#engineers','#managers','#directors','#vps','#pres'];
 var workerCostIDs = ['#laborerCost','#techCost','#clerkCost','#engCost','#managerCost','#directorCost','#vpCost','#presCost'];
 var workerProdIDs = ['#laborProd','#techProd','#clerkProd','#engProd','#managerProd','#directorProd','#vpProd','#presProd'];
 var workerBtnIDs = ['#hire0','#hire1','#hire2','#hire3','#hire4','#hire5','#hire6','#hire7'];
-
+var workerRowIDs = ['#laborRow','#techRow','#clerkRow','#engRow','#managerRow','#directorRow','#vpRow','#presRow']
+var workerBadgeIDs = ['#laborBadge','#techBadge','#clerkBadge','#engBadge','#managerBadge','#directorBadge','#vpBadge','#presBadge']
 
 
 function hire(index) {
@@ -31,15 +54,27 @@ function hire(index) {
         }
 
         if (index == 0){
-            $(workerProdIDs[index]).text((player.workerProds[index]*player.workerMults[index]).toFixed(1));
+            $(workerProdIDs[index]).text(comma((player.workerProds[index]*player.workerMults[index]).toFixed(1)));
         }
         else {
             $(workerProdIDs[index]).text(comma(Math.floor(player.workerProds[index]*player.workerMults[index])));
         }
+    unfold(index);
+    prodPercents();
     validateButtons();
     }
     
 }
+
+function hireMax(index){
+    var max = maxHireCalc(index)
+    for (var i = 0; i < max; i+=1){
+        hire(index);
+    }
+}
+
+
+
 
 
 var laborerQueue = 0;

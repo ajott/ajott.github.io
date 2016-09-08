@@ -14,6 +14,7 @@ function tickOneFunction() {
     checkInterest();
 
     validateButtons();
+    playerStats();
 
     var date = new Date();
     var lastTickTime = date.getTime();

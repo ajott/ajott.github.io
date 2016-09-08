@@ -1,35 +1,85 @@
-// var workers = [0, 0, 0, 0, 0, 0];
-// var costs = [15,100,1100,12000,130000,1400000];
-// var workerProds = [0.1,1,8,47,260,1400];
 
-var defaultProds = [0.1,1,8,47,260,1400]
+var defaultProds = [0.1,1,8,47,260,1400,16000,44000]
+var defaultCosts = [15,100,1100,12000,130000,1400000,15000000,99000000]
+var multValues = [2,3,3,5,5,10,25];
+var multCounts = [10,25,50,100,200,500];
 
-var workerIDs = ['laborers','techs','clerks','engineers','managers','directors'];
-var workerCostIDs = ['laborerCost','techCost','clerkCost','engCost','managerCost','directorCost'];
-var workerProdIDs = ['laborProd','techProd','clerkProd','engProd','managerProd','directorProd'];
+var costCheckOb = {
+    laborers:[],
+    techs:[],
+    clerks:[],
+    engineers:[],
+    managers:[],
+    directors:[],
+    vps:[],
+    pres:[]
+}
 
+function buildCosts(){
+    for (i=0;i<8;i+=1) {
+        for(j=0;j<200;j+=1){
+            costCheckOb[workerObNames[i]][j]=Math.floor(defaultCosts[i] * Math.pow(1.15,j));
+        }
+    }
+}
+
+
+
+var workerObNames = ['laborers','techs','clerks','engineers','managers','directors','vps','pres'];
+var workerIDs = ['#laborers','#techs','#clerks','#engineers','#managers','#directors','#vps','#pres'];
+var workerCostIDs = ['#laborerCost','#techCost','#clerkCost','#engCost','#managerCost','#directorCost','#vpCost','#presCost'];
+var workerProdIDs = ['#laborProd','#techProd','#clerkProd','#engProd','#managerProd','#directorProd','#vpProd','#presProd'];
+var workerBtnIDs = ['#hire0','#hire1','#hire2','#hire3','#hire4','#hire5','#hire6','#hire7'];
+var workerRowIDs = ['#laborRow','#techRow','#clerkRow','#engRow','#managerRow','#directorRow','#vpRow','#presRow']
+var workerBadgeIDs = ['#laborBadge','#techBadge','#clerkBadge','#engBadge','#managerBadge','#directorBadge','#vpBadge','#presBadge']
 
 
 function hire(index) {
-    var workerCost = Math.floor(player.costs[index] * Math.pow(1.15,player.workers[index]));
+    var workerCost = player.costs[index];
     if(player.dollars >= workerCost) {
         player.workers[index] = player.workers[index] + 1
         player.dollars = player.dollars - workerCost
 
-        document.getElementById(workerIDs[index]).innerHTML = player.workers[index];
-        document.getElementById('dollars').innerHTML = comma(player.dollars);
+        $(workerIDs[index]).text(player.workers[index]);
+        $('#dollars').text(comma(player.dollars));
 
         updateMPS();
+        player.costs[index] = Math.floor(defaultCosts[index] * Math.pow(1.15,player.workers[index]));
+        $(workerCostIDs[index]).text(comma(player.costs[index]))
+
+        for (i=0;i<multValues.length;i++){
+            if(player.workers[index] == multCounts[i]){
+                player.workerMults[index] = player.workerMults[index] * multValues[i];
+            }
+        }
+
+        if (index == 0){
+            $(workerProdIDs[index]).text(comma((player.workerProds[index]*player.workerMults[index]).toFixed(1)));
+        }
+        else {
+            $(workerProdIDs[index]).text(comma(Math.floor(player.workerProds[index]*player.workerMults[index])));
+        }
+    unfold(index);
+    prodPercents();
+    validateButtons();
     }
-    var nextCost = Math.floor(player.costs[index] * Math.pow(1.15,player.workers[index]));
-    document.getElementById(workerCostIDs[index]).innerHTML = comma(nextCost);
+    
 }
+
+function hireMax(index){
+    var max = maxHireCalc(index)
+    for (var i = 0; i < max; i+=1){
+        hire(index);
+    }
+}
+
+
 
 
 
 var laborerQueue = 0;
 function checkLabor(number){
-    laborerQueue = laborerQueue + player.workerProds[0]*number;
+    laborerQueue = laborerQueue + player.workerProds[0]*number*player.workerMults[0];
 
     if (Math.floor(laborerQueue) >= 1){
         sendMoney = Math.floor(laborerQueue);

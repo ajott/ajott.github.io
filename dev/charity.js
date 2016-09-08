@@ -30,11 +30,11 @@ function karmaCalc(tD) {
 
     }
 
-    player.karma = player.karma + karmaTemp;
+    player.karma = (player.karma + karmaTemp);
 
     $("#karma").text(comma(player.karma));
 
-    karmaMultTemp = Math.max((Math.pow(2,(Math.log(player.karma)/Math.log(10)))).toFixed(0),1);
+    karmaMultTemp = Math.max(Math.floor((Math.pow(2,(Math.log(player.karma)/Math.log(10))))).toFixed(0),1);
 
     player.karmaMult = karmaMultTemp;
 
@@ -50,7 +50,7 @@ $(function() {
         width: "auto",
         modal: true,
         buttons: {
-            "Burn it all!": function() {
+            "I'm sure": function() {
                 $( this ).dialog( "close" );
                 reset();
             },
@@ -60,7 +60,7 @@ $(function() {
         }
     });
     $( "#reset" ).click(function() {
-        $( "#karmaString").text((player.totalDonated/1000000).toString());
+        $( "#karmaString").text((player.totalDonated/1000000).toFixed(0).toString());
         $( "#resetDialog" ).dialog( "open" );
     });
 });

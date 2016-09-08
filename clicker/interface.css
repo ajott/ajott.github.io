@@ -1,7 +1,10 @@
+.thSub {
+	text-align: center;
+	font-weight:bold;
+}
+
 td {
 	text-align: center;
-/*	border-width: 1px;
-	border-style: solid;*/
 }
 
 #dollarTD {
@@ -10,13 +13,25 @@ td {
 }
 
 .centerTable {
-	width:60%;
-	margin: auto;
-/*	float: center;*/
+	text-align:center;
+}
+
+.centerTable td {
+	padding: 2px;
 }
 
 .hire {
-	width:50%;
+}
+
+.darkButton {
+	background-color: #61605f;
+	color: white;
+	text-decoration: line-through;
+}
+
+.karmaSymbol {
+	font-weight: bold;
+	text-decoration: line-through;
 }
 
 #clickCell {
@@ -25,58 +40,95 @@ td {
 }
 
 #hiring {
-	width: 100%;
-	margin: auto;
-	table-layout: fixed;
-	border-collapse: collapse;
-	border-width: .50px;
-	border-style: solid;
+	float:none;
+	vertical-align: middle;
 }
 
-#hiring td {
-	border-bottom: .50px solid black;
+#upgradePanel {
+	display:none;
 }
 
 #clickTable {
-	width:100%;
-	margin-top: 5%;
+	margin-top: 2%;
+	max-width:75%;
 }
 
 #clickButton {
-/*	background-color: #77876B;
-	border: 2px, #033617;
+	background-color: #77876B;
 	color: white;
-	text-align: center;
-	height:150%;
-	width: 20%;*/
 }
-
 
 #dollars {
 	font-weight: bold;
 }
 
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
+}
 
-#investmentEntry {
-	width:100px;
+#charityWarning {
+	color:red;
+	border-bottom: 1px dotted #ff0000;
+    text-decoration: none;
 }
 
 
-/*#charity {
-	width:100%;
-	table-layout: fixed;
-} */
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
-#reset {
-	background-color: #FA9696;
+#staff {
+	display:inline;
 }
+
+#bankTable {
+	display:none;
+}
+
+#charityTable {
+	display:none;
+}
+
+#optionsPanel {
+	display:none;
+}
+
+#statsPanel {
+	display:none;
+}
+
+#creditsWell {
+	display:none;
+}
+
+#techRow{
+	display:none;
+}
+#clerkRow{
+	display:none;
+}
+#engRow{
+	display:none;
+}
+#managerRow{
+	display:none;
+}
+#directorRow{
+	display:none;
+}
+#vpRow{
+	display:none;
+}
+#presRow{
+	display:none;
+}
+
 
 #chimp {
 	background-color: #875514;

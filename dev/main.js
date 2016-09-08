@@ -18,19 +18,29 @@ var player = {
     tickLevel:1,
     tickCost:10000,
     resets:0,
+    monkeyClicks: 0,
+    clicks:0,
     lastTickTime: 0,
-    version:"Alpha 0.9.9.1 Just Get Up and Walk Away"
+    buyMax:false,
+    clickUpgrades:0,
+    clickPowString:"",
+    totalDollars:0,
+    version:"Beta 0.10.1"
 };
 
 
+
 function moneyClick(numClicks){
-   getMoney(player.clickPower * player.karmaMult);
+   getMoney(player.clickPower * player.karmaMult + Math.floor((player.clickUpgrades * 0.1 * MPS).toFixed(0)));
+   player.clicks += 1;
    validateButtons();
 }
 
 function getMoney(number){
     player.dollars = player.dollars + (number);
+    player.totalDollars += number;
     $("#dollars").text(comma(player.dollars));
+    validateButtons();
 }
 
 function updateMPS(){
@@ -39,14 +49,20 @@ function updateMPS(){
         MPS = MPS + (player.workers[i]*player.workerProds[i]*player.workerMults[i]);
     }
     $("#moneyPerSec").text(comma(MPS.toFixed(1)));
+    $('#clickPower').text(player.clickPower * player.karmaMult + Math.floor((player.clickUpgrades * 0.1 * MPS).toFixed(0)) + player.clickPowString);
 }
 
 function increasePower(){
          
     if(player.dollars >= player.powerCost){                                       
         player.clickPower = player.clickPower + 1;                              
-        player.dollars = player.dollars - player.powerCost;                              
-        $('#clickPower').text(player.clickPower * player.karmaMult);
+        player.dollars = player.dollars - player.powerCost;
+        if (player.clickUpgrades > 0){
+            player.clickPowString = " (" + (player.clickPower * player.karmaMult).toString()+" + "+(player.clickUpgrades * 10).toString()+"% of MPS)"
+        }
+
+        
+        $('#clickPower').text(player.clickPower * player.karmaMult + Math.floor((player.clickUpgrades * 0.1 * MPS).toFixed(0)) + player.clickPowString);
         $('#dollars').text(comma(player.dollars));   
         updateMPS();
     };
@@ -148,7 +164,7 @@ function reset() {
     updateMPS();
 
     player.workerProds[0] = defaultProds[0] * player.karmaMult;
-    $(workerProdIDs[0]).text(player.workerProds[0].toFixed(1));
+    $(workerProdIDs[0]).text(comma(player.workerProds[0].toFixed(1)));
 
     for (i=1;i<(player.workers.length+1);i+=1) {
         player.workerProds[i] = defaultProds[i] * player.karmaMult;
@@ -173,7 +189,11 @@ function comma(x){
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-
+function unfold(index){
+    if (index < 7){
+        $(workerRowIDs[index+1]).show();
+    }
+}
 
 function togglePanel(panel) {
     if (panel == 0) {
@@ -181,11 +201,15 @@ function togglePanel(panel) {
         $('#bankTable').hide()
         $('#charityTable').hide()
         $('#optionsPanel').hide()
+        $('#statsPanel').hide()
+        $('#upgradePanel').hide()
         
         $('#staffTab').addClass("btn-info")
         $('#bankTab').removeClass("btn-info")
         $('#charityTab').removeClass("btn-info")
         $('#optionsTab').removeClass("btn-info")
+        $('#statsTab').removeClass("btn-info")
+        $('#upgradeTab').removeClass("btn-info")
 
         validateButtons();
 
@@ -194,55 +218,93 @@ function togglePanel(panel) {
         $('#bankTable').show()
         $('#charityTable').hide()
         $('#optionsPanel').hide()
+        $('#statsPanel').hide()
+        $('#upgradePanel').hide()
 
         $('#staffTab').removeClass("btn-info")
         $('#bankTab').addClass("btn-info")
         $('#charityTab').removeClass("btn-info")
         $('#optionsTab').removeClass("btn-info")
+        $('#statsTab').removeClass("btn-info")
+        $('#upgradeTab').removeClass("btn-info")
 
     } else if (panel == 2) {
         $('#staff').hide()
         $('#bankTable').hide()
         $('#charityTable').show()
         $('#optionsPanel').hide()
+        $('#statsPanel').hide()
+        $('#upgradePanel').hide()
 
         $('#staffTab').removeClass("btn-info")
         $('#bankTab').removeClass("btn-info")
         $('#charityTab').addClass("btn-info")
         $('#optionsTab').removeClass("btn-info")
+        $('#statsTab').removeClass("btn-info")
+        $('#upgradeTab').removeClass("btn-info")
 
     } else if (panel == 3) {
         $('#staff').hide()
         $('#bankTable').hide()
         $('#charityTable').hide()
         $('#optionsPanel').show()
+        $('#statsPanel').hide()
+        $('#upgradePanel').hide()
 
         $('#staffTab').removeClass("btn-info")
         $('#bankTab').removeClass("btn-info")
         $('#charityTab').removeClass("btn-info")
         $('#optionsTab').addClass("btn-info")
+        $('#statsTab').removeClass("btn-info")
+        $('#upgradeTab').removeClass("btn-info")
+
+    } else if (panel == 4) {
+        $('#staff').hide()
+        $('#bankTable').hide()
+        $('#charityTable').hide()
+        $('#optionsPanel').hide()
+        $('#statsPanel').show()
+        $('#upgradePanel').hide()
+
+        $('#staffTab').removeClass("btn-info")
+        $('#bankTab').removeClass("btn-info")
+        $('#charityTab').removeClass("btn-info")
+        $('#optionsTab').removeClass("btn-info")
+        $('#statsTab').addClass("btn-info")
+        $('#upgradeTab').removeClass("btn-info")
+    }
+    else if (panel == 5) {
+        $('#staff').hide()
+        $('#bankTable').hide()
+        $('#charityTable').hide()
+        $('#optionsPanel').hide()
+        $('#statsPanel').hide()
+        $('#upgradePanel').show()
+
+        $('#staffTab').removeClass("btn-info")
+        $('#bankTab').removeClass("btn-info")
+        $('#charityTab').removeClass("btn-info")
+        $('#optionsTab').removeClass("btn-info")
+        $('#statsTab').removeClass("btn-info")
+        $('#upgradeTab').addClass("btn-info")
     }
 
 }
 
-var monkeyClicks = 0;
 
 var chimp = new Audio("chimp.mp3");
 
 function getMonkey(){
-    if (monkeyClicks == 0){
+    if (player.monkeyClicks == 0){
         if(confirm("This was added as a reference to a typo in the code. \n If you click it again, it WILL make a chimpanzee noise. It's loud.")){
-            monkeyClicks ++;
+            player.monkeyClicks ++;
+            $('#monkeyTd').show();
         }
     }
-    else if (monkeyClicks < 5){
+    else if (player.monkeyClicks > 0){
         chimp.play(); 
-        monkeyClicks ++;   
-    } else if (monkeyClicks >= 5) {
-        chimp.play();
-        getMoney(1000000);
-        monkeyClicks ++;
-    }    
+        player.monkeyClicks ++;   
+    }  
 }
 
 function showCredits() {
@@ -252,6 +314,27 @@ function showCredits() {
 function setTitle() {
     $('#title').text($('#titleInput').val())
     $('#titleInput').val(null);
+}
+
+function maxHireCalc(index){
+    var tempCount = player.workers[index];
+    var buyCount = 0;
+
+
+    var tempDollars = player.dollars;
+
+
+    while (tempDollars >= costCheckOb[workerObNames[index]][tempCount]){
+        tempDollars -= costCheckOb[workerObNames[index]][tempCount]    
+        buyCount += 1
+        tempCount+= 1
+    }
+
+    if (tempDollars >= 0){
+        return buyCount;
+    } else {
+        return buyCount-1;
+    }
 }
 
 
@@ -277,6 +360,42 @@ function validateButtons() {
         } else {
             $(workerBtnIDs[i]).removeClass('disabled darkButton');
         }
+
+        if (player.workers[i]==200){
+            $(workerBtnIDs[i]).addClass('disabled darkButton');
+            $(workerBtnIDs[i]).attr('disabled','disabled');
+        }
+    }
+    playerStats();
+
+    if (player.karma < 10 && (player.buyMax===false)){
+        $('#buyMaxHireBtn').addClass('disabled darkButton');
+    } else if (player.karma >= 10 && (player.buyMax===false)) {
+        $('#buyMaxHireBtn').removeClass('disabled darkButton');
+    } else {
+        $('#buyMaxHireBtn').addClass('disabled darkButton');
+        $('#buyMaxHireBtn').text("Owned")
+    }
+
+    if (player.karma < (Math.floor(5 * Math.pow(2,player.clickUpgrades)))){
+        $('#clickUpgradeButton').addClass('disabled darkButton');
+    } else if (player.karma >= (Math.floor(5 * Math.pow(2,player.clickUpgrades)))) {
+        $('#clickUpgradeButton').removeClass('disabled darkButton');
+    }
+
+
+    if (player.buyMax){
+        for (var i = 0; i < player.workers.length; i += 1){
+            $(workerBadgeIDs[i]).text(maxHireCalc(i));
+        }
+    } else {
+        for (var i = 0; i < player.workers.length; i += 1){
+            $(workerBadgeIDs[i]).text();
+        }
+    }
+
+    if (player.resets > 0){
+        $('#upgradeCont').show();
     }
 }
 

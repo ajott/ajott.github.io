@@ -5,8 +5,12 @@ var percentIDs = ['#laborPct','#techPct','#clerkPct','#engPct','#managerPct','#d
 function prodPercents() {
 	for (var i = 0; i < player.workers.length; i+=1){
 		percents[i] = (player.workers[i] * player.workerProds[i]*player.workerMults[i]) / MPS;
-		var pctString = (percents[i].toFixed(2)*100).toString();
-		$(mpsIDs[i]).text(player.workers[i] * player.workerProds[i]*player.workerMults[i])
+		var pctString = ((percents[i].toFixed(2)*100).toFixed(0)).toString();
+		if (i == 0){
+			$(mpsIDs[i]).text((player.workers[i] * player.workerProds[i]*player.workerMults[i]).toFixed(1))
+		} else {
+			$(mpsIDs[i]).text((player.workers[i] * player.workerProds[i]*player.workerMults[i]).toFixed(0))
+		}
 		$(percentIDs[i]).text(pctString + "%");
 	}
 }

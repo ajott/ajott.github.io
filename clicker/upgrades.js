@@ -27,25 +27,6 @@ function buyMaxHire(){
 var maxBuyOn = false;
 
 function toggleMaxBuy(){
-    // if (maxBuyOn === true){
-    //     for (i=0;i<player.workers.length;i++){
-    //             $(workerBtnIDs[i]).attr('onclick', 'hireMax('+i+')');
-    //     }
-    //     for (var i = 0; i < player.workers.length; i += 1){
-    //         $(workerBadgeIDs[i]).text("");
-    //     }
-    //     maxBuyOn = false;
-    // } else {
-        // for (i=0;i<player.workers.length;i++){
-        //         $(workerBtnIDs[i]).attr('onclick', 'hire('+i+')');
-        // }
-        // for (var i = 0; i < player.workers.length; i += 1){
-        //     $(workerBadgeIDs[i]).text(maxHireCalc(i));
-        // }
-    //     maxBuyOn = true;
-    //     $("#toggleMaxBuy").addClass("btn-success")
-    // }
-
     buyNum = 1;
 
     maxBuyOn = true;

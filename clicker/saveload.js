@@ -85,6 +85,10 @@ function verifyValues() {
    	$('#powerCost').text(comma(player.powerCost));
     $('#tickTime').text(player.tickLength.toFixed(0))
     $('#tickCost').text(comma(player.tickCost));
+
+    if (player.buyMax){
+    	$('#maxBuyCont').show()
+    }
 	
 	prodPercents();
 

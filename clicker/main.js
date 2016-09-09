@@ -355,7 +355,13 @@ function validateButtons() {
     }
 
     for (var i = 0; i<(player.workers.length); i += 1){
-        if (player.dollars < player.costs[i]){
+        // if (player.dollars < player.costs[i]){
+        //     $(workerBtnIDs[i]).addClass('disabled darkButton');
+        // } else {
+        //     $(workerBtnIDs[i]).removeClass('disabled darkButton');
+        // }
+
+        if (maxHireCalc(i) < buyNum){
             $(workerBtnIDs[i]).addClass('disabled darkButton');
         } else {
             $(workerBtnIDs[i]).removeClass('disabled darkButton');
@@ -366,6 +372,7 @@ function validateButtons() {
             $(workerBtnIDs[i]).attr('disabled','disabled');
         }
     }
+
     playerStats();
 
     if (player.karma < 10 && (player.buyMax===false)){
@@ -384,13 +391,13 @@ function validateButtons() {
     }
 
 
-    if (player.buyMax){
+    if (maxBuyOn){
         for (var i = 0; i < player.workers.length; i += 1){
             $(workerBadgeIDs[i]).text(maxHireCalc(i));
         }
     } else {
         for (var i = 0; i < player.workers.length; i += 1){
-            $(workerBadgeIDs[i]).text();
+            $(workerBadgeIDs[i]).text("");
         }
     }
 

@@ -5,5 +5,52 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="interface.css" />
 	<script type="text/javascript" src="main.js"></script>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
+<body>
+	<div>
+		<table>
+			<tr>
+				<td>Current Player</td>
+			</tr>
+			<tr>				
+				<td id="currPlayer"></td>
+			</tr>
+		</table>
+		<br>
+		<table>
+			<tr>
+				<td style="text-align: left;">Player 1</td>
+				<td>	&nbsp;|	&nbsp;</td>
+				<td style="text-align: right;">Player 2</td>
+			</tr>
+			<tr>
+				<td id="player1Money"></td>
+				<td>	&nbsp;|	&nbsp;</td>
+				<td id="player2Money"></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td><img id="dieB" class="die" src="images/die1Blue.png"/></td>
+				<td><img id="dieG" class="die" src="images/die1Green.png"/></td>
+			</tr>
+			<tr>
+				<td><button id="roll1" onclick="rollPhase(currentPlayer, 1)">Roll 1 Die</button></td>
+				<td><button id="roll2" onclick="rollPhase(currentPlayer, 2)" disabled>Roll 2 Dice</button></td>
+			</tr>			
+		</table>
+		<br>
+		<table>
+			<tr>
+				<td><button id="endTurn" onclick="advanceTurn()" disabled>End Turn</button></td>
+			</tr>
+		</table>
+	</div>
+	<script type="text/javascript">
+		window.onload = setupGame(2);
+	</script>
+</body>

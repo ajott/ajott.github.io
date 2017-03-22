@@ -198,99 +198,19 @@ function unfold(index){
 }
 
 function togglePanel(panel) {
-    if (panel == 0) {
-        $('#staff').show()
-        $('#bankTable').hide()
-        $('#charityTable').hide()
-        $('#optionsPanel').hide()
-        $('#statsPanel').hide()
-        $('#upgradePanel').hide()
-        
-        $('#staffTab').addClass("btn-info")
-        $('#bankTab').removeClass("btn-info")
-        $('#charityTab').removeClass("btn-info")
-        $('#optionsTab').removeClass("btn-info")
-        $('#statsTab').removeClass("btn-info")
-        $('#upgradeTab').removeClass("btn-info")
+    var panels = ['#staff','#bankTable','#charityTable','#optionsPanel','#statsPanel','#upgradePanel'];
+    var tabs = ['#staffTab','#bankTab','#charityTab','#optionsTab','#statsTab','#upgradeTab']
 
-        validateButtons();
-
-    } else if (panel == 1) {
-        $('#staff').hide()
-        $('#bankTable').show()
-        $('#charityTable').hide()
-        $('#optionsPanel').hide()
-        $('#statsPanel').hide()
-        $('#upgradePanel').hide()
-
-        $('#staffTab').removeClass("btn-info")
-        $('#bankTab').addClass("btn-info")
-        $('#charityTab').removeClass("btn-info")
-        $('#optionsTab').removeClass("btn-info")
-        $('#statsTab').removeClass("btn-info")
-        $('#upgradeTab').removeClass("btn-info")
-
-    } else if (panel == 2) {
-        $('#staff').hide()
-        $('#bankTable').hide()
-        $('#charityTable').show()
-        $('#optionsPanel').hide()
-        $('#statsPanel').hide()
-        $('#upgradePanel').hide()
-
-        $('#staffTab').removeClass("btn-info")
-        $('#bankTab').removeClass("btn-info")
-        $('#charityTab').addClass("btn-info")
-        $('#optionsTab').removeClass("btn-info")
-        $('#statsTab').removeClass("btn-info")
-        $('#upgradeTab').removeClass("btn-info")
-
-    } else if (panel == 3) {
-        $('#staff').hide()
-        $('#bankTable').hide()
-        $('#charityTable').hide()
-        $('#optionsPanel').show()
-        $('#statsPanel').hide()
-        $('#upgradePanel').hide()
-
-        $('#staffTab').removeClass("btn-info")
-        $('#bankTab').removeClass("btn-info")
-        $('#charityTab').removeClass("btn-info")
-        $('#optionsTab').addClass("btn-info")
-        $('#statsTab').removeClass("btn-info")
-        $('#upgradeTab').removeClass("btn-info")
-
-    } else if (panel == 4) {
-        $('#staff').hide()
-        $('#bankTable').hide()
-        $('#charityTable').hide()
-        $('#optionsPanel').hide()
-        $('#statsPanel').show()
-        $('#upgradePanel').hide()
-
-        $('#staffTab').removeClass("btn-info")
-        $('#bankTab').removeClass("btn-info")
-        $('#charityTab').removeClass("btn-info")
-        $('#optionsTab').removeClass("btn-info")
-        $('#statsTab').addClass("btn-info")
-        $('#upgradeTab').removeClass("btn-info")
+    for (i = 0; i < panels.length; i ++){
+        if (i == panel){
+            $(panels[i]).show();
+            $(tabs[i]).addClass("btn-info");
+        } else {
+            $(panels[i]).hide();
+            $(tabs[i]).removeClass("btn-info");
+        }
     }
-    else if (panel == 5) {
-        $('#staff').hide()
-        $('#bankTable').hide()
-        $('#charityTable').hide()
-        $('#optionsPanel').hide()
-        $('#statsPanel').hide()
-        $('#upgradePanel').show()
-
-        $('#staffTab').removeClass("btn-info")
-        $('#bankTab').removeClass("btn-info")
-        $('#charityTab').removeClass("btn-info")
-        $('#optionsTab').removeClass("btn-info")
-        $('#statsTab').removeClass("btn-info")
-        $('#upgradeTab').addClass("btn-info")
-    }
-
+    validateButtons();
 }
 
 

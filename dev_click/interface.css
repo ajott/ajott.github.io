@@ -23,10 +23,26 @@ td {
 .hire {
 }
 
+/*#maxBuyCont {
+	display: none;
+}*/
+
+.btn-grey {
+	border: 1px solid;
+}
+
+.btn-grey:hover{
+	background-color: #cccccc;
+}
+
 .darkButton {
 	background-color: #61605f;
 	color: white;
 	text-decoration: line-through;
+}
+
+#nukeButton:hover{
+	background-color: maroon;
 }
 
 .karmaSymbol {

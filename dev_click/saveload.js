@@ -63,8 +63,12 @@ function verifyValues() {
     $(workerProdIDs[0]).text((player.workerProds[0] * player.workerMults[0]).toFixed(1));
 	
 
-	for (i=1;i<(player.workers.length);i++){
+	for (i=0;i<(player.workers.length);i++){
             $(workerProdIDs[i]).text(comma(player.workerProds[i] * player.workerMults[i]));
+
+            if (player.workers[i] > 0){
+            	unfold(i);
+            }
     };
 
     intRateString = (player.interestRate*100).toFixed(1).toString();
@@ -81,6 +85,10 @@ function verifyValues() {
    	$('#powerCost').text(comma(player.powerCost));
     $('#tickTime').text(player.tickLength.toFixed(0))
     $('#tickCost').text(comma(player.tickCost));
+
+    if (player.buyMax){
+    	$('#maxBuyCont').show()
+    }
 	
 	prodPercents();
 

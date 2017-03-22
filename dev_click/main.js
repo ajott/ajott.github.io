@@ -25,7 +25,7 @@ var player = {
     clickUpgrades:0,
     clickPowString:"",
     totalDollars:0,
-    version:"Beta 0.10.1"
+    version:"Beta 0.10.2.2"
 };
 
 
@@ -132,6 +132,8 @@ function reset() {
 
     for (i=0;i<(player.workers.length);i+=1){
         $(workerIDs[i]).text(player.workers[i]);
+        $(workerBtnIDs[i]).removeClass('disabled darkButton');
+        $(workerBtnIDs[i]).attr('disabled',false);
     }
 
     player.powerCost = 30;
@@ -196,99 +198,19 @@ function unfold(index){
 }
 
 function togglePanel(panel) {
-    if (panel == 0) {
-        $('#staff').show()
-        $('#bankTable').hide()
-        $('#charityTable').hide()
-        $('#optionsPanel').hide()
-        $('#statsPanel').hide()
-        $('#upgradePanel').hide()
-        
-        $('#staffTab').addClass("btn-info")
-        $('#bankTab').removeClass("btn-info")
-        $('#charityTab').removeClass("btn-info")
-        $('#optionsTab').removeClass("btn-info")
-        $('#statsTab').removeClass("btn-info")
-        $('#upgradeTab').removeClass("btn-info")
+    var panels = ['#staff','#bankTable','#charityTable','#optionsPanel','#statsPanel','#upgradePanel'];
+    var tabs = ['#staffTab','#bankTab','#charityTab','#optionsTab','#statsTab','#upgradeTab']
 
-        validateButtons();
-
-    } else if (panel == 1) {
-        $('#staff').hide()
-        $('#bankTable').show()
-        $('#charityTable').hide()
-        $('#optionsPanel').hide()
-        $('#statsPanel').hide()
-        $('#upgradePanel').hide()
-
-        $('#staffTab').removeClass("btn-info")
-        $('#bankTab').addClass("btn-info")
-        $('#charityTab').removeClass("btn-info")
-        $('#optionsTab').removeClass("btn-info")
-        $('#statsTab').removeClass("btn-info")
-        $('#upgradeTab').removeClass("btn-info")
-
-    } else if (panel == 2) {
-        $('#staff').hide()
-        $('#bankTable').hide()
-        $('#charityTable').show()
-        $('#optionsPanel').hide()
-        $('#statsPanel').hide()
-        $('#upgradePanel').hide()
-
-        $('#staffTab').removeClass("btn-info")
-        $('#bankTab').removeClass("btn-info")
-        $('#charityTab').addClass("btn-info")
-        $('#optionsTab').removeClass("btn-info")
-        $('#statsTab').removeClass("btn-info")
-        $('#upgradeTab').removeClass("btn-info")
-
-    } else if (panel == 3) {
-        $('#staff').hide()
-        $('#bankTable').hide()
-        $('#charityTable').hide()
-        $('#optionsPanel').show()
-        $('#statsPanel').hide()
-        $('#upgradePanel').hide()
-
-        $('#staffTab').removeClass("btn-info")
-        $('#bankTab').removeClass("btn-info")
-        $('#charityTab').removeClass("btn-info")
-        $('#optionsTab').addClass("btn-info")
-        $('#statsTab').removeClass("btn-info")
-        $('#upgradeTab').removeClass("btn-info")
-
-    } else if (panel == 4) {
-        $('#staff').hide()
-        $('#bankTable').hide()
-        $('#charityTable').hide()
-        $('#optionsPanel').hide()
-        $('#statsPanel').show()
-        $('#upgradePanel').hide()
-
-        $('#staffTab').removeClass("btn-info")
-        $('#bankTab').removeClass("btn-info")
-        $('#charityTab').removeClass("btn-info")
-        $('#optionsTab').removeClass("btn-info")
-        $('#statsTab').addClass("btn-info")
-        $('#upgradeTab').removeClass("btn-info")
+    for (i = 0; i < panels.length; i ++){
+        if (i == panel){
+            $(panels[i]).show();
+            $(tabs[i]).addClass("btn-info");
+        } else {
+            $(panels[i]).hide();
+            $(tabs[i]).removeClass("btn-info");
+        }
     }
-    else if (panel == 5) {
-        $('#staff').hide()
-        $('#bankTable').hide()
-        $('#charityTable').hide()
-        $('#optionsPanel').hide()
-        $('#statsPanel').hide()
-        $('#upgradePanel').show()
-
-        $('#staffTab').removeClass("btn-info")
-        $('#bankTab').removeClass("btn-info")
-        $('#charityTab').removeClass("btn-info")
-        $('#optionsTab').removeClass("btn-info")
-        $('#statsTab').removeClass("btn-info")
-        $('#upgradeTab').addClass("btn-info")
-    }
-
+    validateButtons();
 }
 
 
@@ -355,7 +277,13 @@ function validateButtons() {
     }
 
     for (var i = 0; i<(player.workers.length); i += 1){
-        if (player.dollars < player.costs[i]){
+        // if (player.dollars < player.costs[i]){
+        //     $(workerBtnIDs[i]).addClass('disabled darkButton');
+        // } else {
+        //     $(workerBtnIDs[i]).removeClass('disabled darkButton');
+        // }
+
+        if (maxHireCalc(i) < buyNum){
             $(workerBtnIDs[i]).addClass('disabled darkButton');
         } else {
             $(workerBtnIDs[i]).removeClass('disabled darkButton');
@@ -366,6 +294,7 @@ function validateButtons() {
             $(workerBtnIDs[i]).attr('disabled','disabled');
         }
     }
+
     playerStats();
 
     if (player.karma < 10 && (player.buyMax===false)){
@@ -384,13 +313,13 @@ function validateButtons() {
     }
 
 
-    if (player.buyMax){
+    if (maxBuyOn){
         for (var i = 0; i < player.workers.length; i += 1){
             $(workerBadgeIDs[i]).text(maxHireCalc(i));
         }
     } else {
         for (var i = 0; i < player.workers.length; i += 1){
-            $(workerBadgeIDs[i]).text();
+            $(workerBadgeIDs[i]).text("");
         }
     }
 

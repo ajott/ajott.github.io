@@ -66,6 +66,15 @@ function hire(index) {
     
 }
 
+function hireX(n,index){
+    var max = maxHireCalc(index)
+    if (max >= n){
+        for (var i = 0; i < n; i += 1){
+            hire(index)
+        }        
+    }
+}
+
 function hireMax(index){
     var max = maxHireCalc(index)
     for (var i = 0; i < max; i+=1){
@@ -73,8 +82,37 @@ function hireMax(index){
     }
 }
 
+var buyNum = 1;
 
+function setBuyNum(n){
+    for (i=0;i<player.workers.length;i++){
+            $(workerBtnIDs[i]).attr('onclick', 'hireX('+n+','+i+')');
+    }
 
+    if (n==1){
+        $('#buy1Button').addClass('btn-success')
+        $('#buy5Button').removeClass('btn-success')
+        $('#buy10Button').removeClass('btn-success')
+        $("#toggleMaxBuy").removeClass("btn-success")
+        maxBuyOn = false;
+        buyNum = 1;
+    } else if (n==5){
+        $('#buy1Button').removeClass('btn-success')
+        $('#buy5Button').addClass('btn-success')
+        $('#buy10Button').removeClass('btn-success')
+        $("#toggleMaxBuy").removeClass("btn-success")
+        maxBuyOn = false;
+        buyNum = 5;
+    } else if (n==10){
+        $('#buy1Button').removeClass('btn-success')
+        $('#buy5Button').removeClass('btn-success')
+        $('#buy10Button').addClass('btn-success')
+        $("#toggleMaxBuy").removeClass("btn-success")
+        maxBuyOn = false;
+        buyNum = 10;
+    }
+    validateButtons();
+}
 
 
 var laborerQueue = 0;

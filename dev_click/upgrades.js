@@ -17,17 +17,33 @@ function buyMaxHire(){
     if (player.karma >= cost){
         karmaDeduct(cost)
         player.buyMax = true;
+        $('#maxBuyCont').show()
         $('#buyMaxHireBtn').addClass('disabled darkButton');
-        $('#buyMaxHireBtn').text("Owned")
-
-        for (i=0;i<player.workers.length;i++){
-            $(workerBtnIDs[i]).attr('onclick', 'hireMax('+i+')');
-
-        }
+        $('#buyMaxHireBtn').text("Owned")      
     }
+    validateButtons()
 }
 
+var maxBuyOn = false;
 
+function toggleMaxBuy(){
+    buyNum = 1;
+
+    maxBuyOn = true;
+
+    $('#buy1Button').removeClass('btn-success')
+    $('#buy5Button').removeClass('btn-success')
+    $('#buy10Button').removeClass('btn-success')
+    $("#toggleMaxBuy").addClass("btn-success")
+
+    for (i=0;i<player.workers.length;i++){
+        $(workerBtnIDs[i]).attr('onclick', 'hireMax('+i+')');
+    }
+    for (var i = 0; i < player.workers.length; i += 1){
+        $(workerBadgeIDs[i]).text(maxHireCalc(i));
+    }
+
+}
 
 function karmaDeduct(price){
 

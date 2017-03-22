@@ -25,7 +25,7 @@ var player = {
     clickUpgrades:0,
     clickPowString:"",
     totalDollars:0,
-    version:"Beta 0.10.1"
+    version:"Beta 0.10.2.2"
 };
 
 
@@ -132,6 +132,8 @@ function reset() {
 
     for (i=0;i<(player.workers.length);i+=1){
         $(workerIDs[i]).text(player.workers[i]);
+        $(workerBtnIDs[i]).removeClass('disabled darkButton');
+        $(workerBtnIDs[i]).attr('disabled',false);
     }
 
     player.powerCost = 30;

@@ -190,8 +190,11 @@ function reset() {
 function comma(x){
     if (x > 100){
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    } else {
+    } else if ((parseFloat(x) - parseFloat(x).toFixed(0)) != 0) {
         x = parseFloat(x).toFixed(1);
+        return x.toString();
+    } else {
+        x = parseFloat(x).toFixed(0);
         return x.toString();
     }
 }

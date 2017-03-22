@@ -109,21 +109,21 @@ function checkInterest() {
 }
 
 
-// function bankBarUpdate() {
-//     wdth = document.getElementById('progressBar').style.width.toString()
-//     wdth = Number(wdth.substring(0,wdth.length-1))
+function bankBarUpdate() {
+    wdth = document.getElementById('progressBar').style.width.toString()
+    wdth = Number(wdth.substring(0,wdth.length-1))
 
-//     if (wdth < 100){
-//         wdth = wdth + 10;
-//         document.getElementById('progressBar').className = "progress-bar progress-bar-success progress-bar-striped active"
-//     } else if (wdth == 100){
-//         wdth = 10;
-//         document.getElementById('progressBar').className = "progress-bar progress-bar-success progress-bar-striped active notransition"
-//     }
+    if (wdth < 100){
+        wdth = wdth + 10;
+        document.getElementById('progressBar').className = "progress-bar progress-bar-success progress-bar-striped active"
+    } else if (wdth == 100){
+        wdth = 10;
+        document.getElementById('progressBar').className = "progress-bar progress-bar-success progress-bar-striped active notransition"
+    }
 
-//     wdth = wdth.toString()
-//     wdth = wdth + "%"
+    wdth = wdth.toString()
+    wdth = wdth + "%"
 
-//     document.getElementById('progressBar').style.width = wdth
+    document.getElementById('progressBar').style.width = wdth
     
-// }
+}

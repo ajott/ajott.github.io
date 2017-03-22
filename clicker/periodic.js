@@ -1,7 +1,7 @@
 tickOneTimer = window.setInterval(function(){
 
     tickOneFunction();
-    //bankBarUpdate();  
+    bankBarUpdate();  
 	
 }, player.tickLength);
 

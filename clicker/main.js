@@ -188,7 +188,11 @@ function reset() {
 
 
 function comma(x){
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    if (x > 100){
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    } else {
+        return x;
+    }
 }
 
 function unfold(index){

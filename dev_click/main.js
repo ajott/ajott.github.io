@@ -277,11 +277,11 @@ function validateButtons() {
     }
 
     for (var i = 0; i<(player.workers.length); i += 1){
-        // if (player.dollars < player.costs[i]){
-        //     $(workerBtnIDs[i]).addClass('disabled darkButton');
-        // } else {
-        //     $(workerBtnIDs[i]).removeClass('disabled darkButton');
-        // }
+        if (player.dollars < player.costs[i]){
+            $(workerBtnIDs[i]).addClass('disabled darkButton');
+        } else {
+            $(workerBtnIDs[i]).removeClass('disabled darkButton');
+        }
 
         if (maxHireCalc(i) < buyNum){
             $(workerBtnIDs[i]).addClass('disabled darkButton');

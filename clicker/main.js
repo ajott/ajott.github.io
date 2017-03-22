@@ -191,7 +191,8 @@ function comma(x){
     if (x > 100){
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     } else {
-        return x;
+        x = parseFloat(x).toFixed(1);
+        return x.toString();
     }
 }
 

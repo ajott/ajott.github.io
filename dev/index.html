@@ -9,6 +9,8 @@
 	<script type="text/javascript" src="main.js"></script>
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	  </script>
 </head>
 <body>
 	<div>
@@ -35,20 +37,105 @@
 		</table>
 		<table>
 			<tr>
-				<td><img id="dieB" class="die" src="images/die1Blue.png"/></td>
-				<td><img id="dieG" class="die" src="images/die1Green.png"/></td>
+				<td class="dieTD"><img id="dieB" class="die" src="images/die1Blue.png"/></td>
+				<td class="dieTD"><img id="dieG" class="die" src="images/die1Green.png"/></td>
 			</tr>
-			<tr>
+			<tr id="phase0">
 				<td><button id="roll1" onclick="rollPhase(currentPlayer, 1)">Roll 1 Die</button></td>
 				<td><button id="roll2" onclick="rollPhase(currentPlayer, 2)" disabled>Roll 2 Dice</button></td>
-			</tr>			
+			</tr>
+			<tr id="phase1">
+				<table id="buildTable">
+					<tr>
+						<td>
+							<button title="" id="build0" class="primary" onclick="buyBuilding(currentPlayer,0)"> [1] <br><br>  Wheat <br> $1 <p id="deck0">6</p></button>
+						</td>
+						<td>
+							<button title="" id="build1" class="primary" onclick="buyBuilding(currentPlayer,1)"> [2] <br><br>  Ranch <br> $1 <p id="deck1">6</p> </button>
+						</td>
+						<td>
+							<button title="" id="build2" class="primary" onclick="buyBuilding(currentPlayer,2)"> [5] <br><br>  Forest <br> $3 <p id="deck2">6</p> </button>
+						</td>
+						<td>
+							<button title="" id="build3" class="primary" onclick="buyBuilding(currentPlayer,3)"> [9] <br><br>  Mine <br> $6 <p id="deck3">6</p> </button>
+						</td>
+						<td>
+							<button title="" id="build4" class="primary" onclick="buyBuilding(currentPlayer,4)"> [10] <br><br>  Orchard <br> $3 <p id="deck4">6</p> </button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<button title="" id="build10" class="secondary" onclick="buyBuilding(currentPlayer,10)"> [2-3] <br><br>  Bakery <br> $1 <p id="deck10">6</p>  </button>
+						</td>
+						<td>
+							<button title="" id="build11" class="secondary" onclick="buyBuilding(currentPlayer,11)"> [4] <br><br>  Store <br> $2 <p id="deck11">6</p>  </button>
+						</td>
+						<td>
+							<button title="" id="build12" class="secondary" onclick="buyBuilding(currentPlayer,12)"> [7] <br><br>  Cheese <br> $5 <p id="deck12">6</p>  </button>
+						</td>
+						<td>
+							<button title="" id="build13" class="secondary" onclick="buyBuilding(currentPlayer,13)"> [8] <br><br>  Furniture <br> $3 <p id="deck13">6</p>  </button>
+						</td>
+						<td>
+							<button title="" id="build14" class="secondary" onclick="buyBuilding(currentPlayer,14)"> [11-12] <br><br>  Market <br> $2 <p id="deck14">6</p>  </button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<button title="" id="build20" class="rest" onclick="buyBuilding(currentPlayer,20)"> [3] <br><br>  Cafe <br> $2 <p id="deck20">6</p> </button>
+						</td>
+						<td>
+							<button title="" id="build21" class="rest" onclick="buyBuilding(currentPlayer,21)"> [9-10] <br><br>  Restaurant <br> $3 <p id="deck21">6</p> </button>
+						</td>
+						<td>
+							<button title="" id="build30" class="major" onclick="buyBuilding(currentPlayer,30)"> [6] <br><br>  Stadium <br> $6 <p id="deck30">4</p> </button>
+						</td>
+						<td>
+							<button title="" id="build31" class="major" onclick="buyBuilding(currentPlayer,31)"> [6] <br><br>  TV Station <br> $7 <p id="deck31">4</p> </button>
+						</td>
+						<td>
+							<button title="" id="build32" class="major" onclick="buyBuilding(currentPlayer,32)"> [6] <br><br>  Business <br> $8 <p id="deck32">4</p> </button>
+						</td>
+					</tr>
+				</table>
+				<table id="landmarkTable">
+					<tr>
+						<td id="trainTD">
+							<button id="build50" class="landmark" onclick="buyBuilding(currentPlayer,50)">Train <br> $4 <p id="deck50"> </p> </button>
+						</td>
+						<td id="mallTD">
+							<button id="build51" class="landmark" onclick="buyBuilding(currentPlayer,51)">Mall <br> $10 <p id="deck51"> </p> </button>
+						</td>
+						<td id="parkTD">
+							<button id="build52" class="landmark" onclick="buyBuilding(currentPlayer,52)">Park <br> $16 <p id="deck52"> </p> </button>
+						</td>
+						<td id="radioTD">
+							<button id="build53" class="landmark" onclick="buyBuilding(currentPlayer,53)">Radio <br> $22 <p id="deck53"> </p> </button>
+						</td>
+					</tr>
+				</table>
+			</tr>	
 		</table>
+
 		<br>
 		<table>
 			<tr>
-				<td><button id="endTurn" onclick="advanceTurn()" disabled>End Turn</button></td>
+				<td><button id="endTurn" onclick="advanceTurn()">End Turn</button></td>
 			</tr>
 		</table>
+	</div>
+	<div>
+	<table>
+	<tr><td>Player 1 Deck</td></tr>
+	<tr>
+		<td id="player1Deck"></td>
+	</tr>
+	<tr><td><br></td></tr>
+	<tr><td>Player 2 Deck</td></tr>
+	<tr>
+		<td id="player2Deck"></td>
+	</tr>		
+	</table>
 	</div>
 	<script type="text/javascript">
 		window.onload = setupGame(2);

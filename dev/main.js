@@ -41,37 +41,17 @@ var deck = {
 	32: 	4, 	// business
 }
 
+var buildIDs = ["#build0","#build1","#build2","#build3","#build4","#build10","#build11","#build12","#build13","#build14","#build20","#build21","#build30","#build31","#build32","#build50","#build51","#build52","#build53"]
+var deckIDs = ["#deck0","#deck1","#deck2","#deck3","#deck4","#deck10","#deck11","#deck12","#deck13","#deck14","#deck20","#deck21","#deck30","#deck31","#deck32","#deck50","#deck51","#deck52","#deck53"]
+var buildNumbers = [0,1,2,3,4,10,11,12,13,14,20,21,30,31,32,50,51,52,53];
+
 var doubles = 0;
 var phase = 0; // 0: Roll  1: Build
 
-function dieFunction(){
-	"use strict"
-  	//var x = Math.max(1,Math.floor(Math.random()*7));
-  	var x = (1+ Math.floor(Math.random()*6));
-	return x;
-}
-
-function rollOne(){
-	x = dieFunction()
-	diceAnimate(x);
-	phase = 1;
-	return x;
-}
-
-function rollTwo(){
-	x = [dieFunction(), dieFunction()];
-	x[2] = x[0]+x[1];
-	diceAnimate(x[0],x[1])
-	if (x[0] == x[1]){
-		doubles = 1;
-	} else {
-		doubles = 0;
-	}
-	phase = 1;
-	return x;
-}
-
 var currentPlayer = 1;
+
+var playerObject = [];
+var numPlayers = 0;
 
 var buildCosts = {
 	0: 		1,	// wheat
@@ -132,17 +112,72 @@ var buildNames = {
 	53: 	"radio"  
 }
 
+var titles = ["Wheat fields give you $1 when a [1] is rolled on anyone's turn.","Ranches give you $1 when a [2] is rolled on anyone's turn.","Forests give you $1 when a [5] is rolled on anyone's turn.","Mines give you $5 when a [9] is rolled on anyone's turn.", "Orchards give you $3 when a [10] is rolled on anyone's turn.","Bakeries give you $1 when a [2] or [3] is rolled on your turn only.","Convenience stores give you $3 when a [4] is rolled on your turn only.","Cheese factories give you $3 per Ranch owned when a [7] is rolled on your turn only.","Furniture factories give you $3 for each Forest and Mine owned when an [8] is rolled on your turn only.","Markets give $3 per Wheat Field and Orchard when an [11] or [12] is rolled on your turn only.","A cafe will take $1 from the active player if they roll a [3] on their turn.","A Restaurant will take $2 from the active player if they roll a [9] or [10] on their turn.", "A Stadium will take $2 from the other player when a [6] is rolled on your turn only. You may only own one.","A TV Station will take $5 from the other player when a [6] is rolled on your turn only. You may only own one.","A Business Center will do nothing and take your money. Consider it a failed startup.","A Train Station will allow you to roll either 1 or 2 dice.","A Mall will increase the income of all your Bakeries, Convenience Stores, Cafes, and Restaurants by $1.","A Park will allow you to take another turn immediately after this one, if you roll doubles.","A radio tower will do nothing for you currently, but is required to win."]
 
-var playerObject = [];
-numPlayers = 0;
+// Simple functions
+function dieFunction(){
+	"use strict"
+  	var x = (1+ Math.floor(Math.random()*6));
+	return x;
+}
+
+function rollOne(){
+	x = dieFunction()
+	diceAnimate(x);
+	phase = 1;
+	return x;
+}
+
+function rollTwo(){
+	x = [dieFunction(), dieFunction()];
+	x[2] = x[0]+x[1];
+	diceAnimate(x[0],x[1])
+	if (x[0] == x[1]){
+		doubles = 1;
+	} else {
+		doubles = 0;
+	}
+	phase = 1;
+	return x;
+}
 
 function setupGame(players){
 	for (var i = 0; i < players; i ++){
 		playerObject[i+1] = JSON.parse(JSON.stringify(defaultPlayer));
 		numPlayers += 1;
 	}
+	for (i = 0; i < buildIDs.length; i++){
+		$(buildIDs[i]).attr("title",titles[i])
+	}
 	validate();
 }
+
+function rollPhase(playerNum,n){
+	if (n == 1){
+		$('#roll1').prop("disabled",true)
+		$('#roll2').prop("disabled",true)
+		x = rollOne();
+		buildingActivate(playerNum,x);
+	} else {
+		$('#roll1').prop("disabled",true)
+		$('#roll2').prop("disabled",true)
+		x = rollTwo();
+		buildingActivate(playerNum,x[2])
+	}
+	phase = 1;
+}
+
+function victoryCheck(playerNum){
+	var resetBool = false;
+	if (playerObject[playerNum]["buildings"][50] == 1 && playerObject[playerNum]["buildings"][51] == 1 && playerObject[playerNum]["buildings"][52] == 1 && playerObject[playerNum]["buildings"][53] == 1){
+		resetBool = confirm("Player " + playerNum + " wins!");
+	}
+	if (resetBool){
+		location.reload(true)
+	}
+}
+
+// Complex functions
 
 function buildingActivate(playerNum,dieRoll){
 	switch (dieRoll){
@@ -192,7 +227,7 @@ function buildingActivate(playerNum,dieRoll){
 		case 6:
 			// Stadium
 			for (p = 1; p <= numPlayers; p++){
-				if (p != playerNum && playerObject[playerNum]["buildings"][50] > 0){
+				if (p != playerNum && playerObject[playerNum]["buildings"][30] > 0){
 					var temp = playerObject[p]["money"]
 					playerObject[p]["money"] = Math.max(playerObject[p]["money"] - 2, 0)
 					playerObject[playerNum]["money"] += temp - playerObject[playerNum]["money"]
@@ -201,7 +236,7 @@ function buildingActivate(playerNum,dieRoll){
 
 			// TV Station
 			for (p = 1; p <= numPlayers; p++){
-				if (p != playerNum && (playerObject[p]["money"] >= 5 && playerObject[playerNum]["buildings"][51] > 0)){
+				if (p != playerNum && (playerObject[p]["money"] >= 5 && playerObject[playerNum]["buildings"][31] > 0)){
 					playerObject[p]["money"] -= 5;
 					playerObject[playerNum]["money"] += 5;
 				}
@@ -290,17 +325,9 @@ function buyBuilding(playerNum, buildingNum){
 			victoryCheck(playerNum);
 		}
 	}
+	phase = 3;
+	validate();
 
-}
-
-function victoryCheck(playerNum){
-	var resetBool = false;
-	if (playerObject[playerNum]["buildings"][50] == 1 && playerObject[playerNum]["buildings"][51] == 1 && playerObject[playerNum]["buildings"][52] == 1 && playerObject[playerNum]["buildings"][53] == 1){
-		resetBool = confirm("Player " + playerNum + " wins!");
-	}
-	if (resetBool){
-		location.reload(true)
-	}
 }
 
 
@@ -332,19 +359,67 @@ function advanceTurn(){
 	validate();
 }
 
+function getPlayerDeck(playerNum){
+	x = {};
+	for (i = 0; i < buildNumbers.length; i ++){
+		x[buildNames[buildNumbers[i]]] = playerObject[playerNum]["buildings"][buildNumbers[i]];
+	}
+	x = JSON.stringify(x);
+	x = x.replace(/[&\/\\#,+()$~%.'"*?<>{}]/g, ' ');
+	return x;
+}
+
 function validate(){
 	$('#currPlayer').text(currentPlayer);
 	$('#player1Money').text("$" + playerObject[1]['money']);
 	$('#player2Money').text("$" + playerObject[2]['money']);
+	// for (i = 1; i <= numPlayers; i ++){
+	// 	$('#player'+i+'Deck').text(JSON.stringify(getPlayerDeck(i)));
+	// }	
+	$('#player1Deck').text(getPlayerDeck(1));
+	$('#player2Deck').text(getPlayerDeck(2));
 	if (phase == 1){
 		$('#roll1').prop("disabled",true)
 		$('#roll2').prop("disabled",true)
-		$('#endTurn').prop("disabled",false)
-	} else {
+		$('#phase0').hide();
+		$('#buildTable').show();
+		$('#landmarkTable').show();
+		$('#endTurn').show();
+		for (i = 0; i < buildIDs.length; i++){
+			if (playerObject[currentPlayer]["money"] < buildCosts[buildNumbers[i]]){
+				$(buildIDs[i]).prop("disabled",true);				
+				$(buildIDs[i]).addClass("greyed");
+			}
+			else{
+				$(buildIDs[i]).prop("disabled",false);				
+				$(buildIDs[i]).removeClass("greyed");
+			}
+		}
+		for (i = 50; i < 54; i++){
+			if (playerObject[currentPlayer]["buildings"][i] > 0){
+				$(buildIDs[buildNumbers.indexOf(i)]).hide();
+			} else {
+				$(buildIDs[buildNumbers.indexOf(i)]).show();
+			}
+		}
+	} else if (phase == 0){
 		$('#roll1').prop("disabled",false)
-		$('#endTurn').prop("disabled",true)
+		$('#endTurn').hide();
 		if (playerObject[currentPlayer]["buildings"][50] == 1){
 			$('#roll2').prop("disabled",false)
+		}
+		$('#buildTable').hide();
+		$('#landmarkTable').hide();
+		$('#phase0').show();
+	} else {
+		$('#roll1').prop("disabled",true)
+		$('#roll2').prop("disabled",true)
+		$('#phase0').hide();
+		for (i = 0; i < buildIDs.length; i++){		
+			$(buildIDs[i]).prop("disabled",true);
+			$(buildIDs[i]).addClass("greyed");
+			console.log(deck[i])
+			$(deckIDs[i]).text(deck[buildNumbers[i]])
 		}
 	}
 }
@@ -392,13 +467,3 @@ function diceAnimate(die1,die2){
 
 }
 
-function rollPhase(playerNum,n){
-	if (n == 1){
-		x = rollOne();
-		buildingActivate(playerNum,x);
-	} else {
-		x = rollTwo();
-		buildingActivate(playerNum,x[2])
-	}
-	phase = 1;
-}

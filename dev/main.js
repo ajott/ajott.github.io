@@ -364,6 +364,7 @@ function advanceTurn(){
 
 function getPlayerDecks(){
 	var tbody = document.getElementById('playerDeck');
+	tbody.innerHTML = "";
 	var tr = "<tr>"
 	tr += "<td>" + "Player 1 Deck" + "</td>" + "<td></td>" + "<td></td>" + "<td>" + "Player 2 Deck" + "</td></tr>"
 	tbody.innerHTML += tr;
@@ -380,6 +381,14 @@ function validate(){
 	$('#player1Money').text("$" + playerObject[1]['money']);
 	$('#player2Money').text("$" + playerObject[2]['money']);
 	
+	if (playerObject[currentPlayer]["buildings"][50] > 0){
+		$('#dieG').show();
+		$('#roll2').show();
+	} else {
+		$('#dieG').hide();
+		$('#roll2').hide();
+	}
+
 	getPlayerDecks();
 
 	if (phase == 1){

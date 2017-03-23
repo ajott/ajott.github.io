@@ -10,6 +10,15 @@ function importSave() {
 	var importString = window.atob($('#importText').val());
 
 	player = JSON.parse(importString);
+
+	var tickDifference = currTickTime - player.lastTickTime;
+	var numMissedTicks = (tickDifference / player.tickLength).toFixed(0);
+
+	$('#lastSave').text("Missed ticks: " + numMissedTicks.toString());
+
+	
+	tickMakeupFunction(numMissedTicks);
+	
 	verifyValues()
 }
 
@@ -78,13 +87,15 @@ function verifyValues() {
     $('#dollars').text(comma(player.dollars));
     $('#inBank').text(comma(player.inBank));
     $('#intRate').text(intRateString + "%");
-    $('#intPer10').text(comma((Number(player.inBank)*player.interestRate).toFixed(0)));
-    $('#karma').text(comma(player.karma));
+    $('#intPer10').text(comma(Math.floor(Number(player.inBank)*player.interestRate)));
+    $('#karma').text(comma(Math.floor(parseFloat(player.karma)).toString()));
+    $('#karmaOnUpgrades').text(comma(Math.floor(parseFloat(player.karma)).toString()));
     $('#karmaMult').text(player.karmaMult);
    	$('#clickPower').text(player.clickPower * player.karmaMult);
    	$('#powerCost').text(comma(player.powerCost));
     $('#tickTime').text(player.tickLength.toFixed(0))
     $('#tickCost').text(comma(player.tickCost));
+    $('#totalDonated').text(comma(Math.floor(player.totalDonated)));
 
     if (player.buyMax){
     	$('#maxBuyCont').show()

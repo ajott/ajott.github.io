@@ -25,7 +25,7 @@ var player = {
     clickUpgrades:0,
     clickPowString:"",
     totalDollars:0,
-    version:"Beta 0.10.2.2"
+    version:"Beta 0.10.4.0 Socket Wrench"
 };
 
 
@@ -267,6 +267,30 @@ function maxHireCalc(index){
     }
 }
 
+function hirePrice(index,Max){
+    var isMax = (Max || false)
+    var tempCount = player.workers[index];
+    var buyCount = 0;
+
+
+    var tempDollars = player.dollars;
+    if (isMax){
+        while (buyCount < maxHireCalc(index)){
+            tempDollars -= costCheckOb[workerObNames[index]][tempCount]    
+            buyCount += 1
+            tempCount+= 1
+        }
+        return (player.dollars - tempDollars);
+    } else {
+        while (buyCount < buyNum){
+            tempDollars -= costCheckOb[workerObNames[index]][tempCount]    
+            buyCount += 1
+            tempCount+= 1
+        }
+    return (player.dollars - tempDollars);
+    }    
+}
+
 
 function validateButtons() {
     if (player.dollars < player.powerCost){
@@ -293,8 +317,19 @@ function validateButtons() {
 
         if (maxHireCalc(i) < buyNum){
             $(workerBtnIDs[i]).addClass('disabled darkButton');
+            if (buyNum == 1){
+                $(workerCostIDs[i]).text(comma(player.costs[i]));
+            } else {
+                $(workerCostIDs[i]).text(comma(hirePrice(i,maxBuyOn)));
+            }
+            
         } else {
             $(workerBtnIDs[i]).removeClass('disabled darkButton');
+            if (buyNum == 1){
+                $(workerCostIDs[i]).text(comma(player.costs[i]));
+            } else {
+                $(workerCostIDs[i]).text(comma(hirePrice(i,maxBuyOn)));
+            }
         }
 
         if (player.workers[i]==200){

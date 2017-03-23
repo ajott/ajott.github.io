@@ -7,9 +7,9 @@ function prodPercents() {
 		percents[i] = (player.workers[i] * player.workerProds[i]*player.workerMults[i]) / MPS;
 		var pctString = ((percents[i].toFixed(2)*100).toFixed(0)).toString();
 		if (i == 0){
-			$(mpsIDs[i]).text((player.workers[i] * player.workerProds[i]*player.workerMults[i]).toFixed(1))
+			$(mpsIDs[i]).text(comma((player.workers[i] * player.workerProds[i]*player.workerMults[i]).toFixed(1)))
 		} else {
-			$(mpsIDs[i]).text((player.workers[i] * player.workerProds[i]*player.workerMults[i]).toFixed(0))
+			$(mpsIDs[i]).text(comma((player.workers[i] * player.workerProds[i]*player.workerMults[i]).toFixed(0)))
 		}
 		$(percentIDs[i]).text(pctString + "%");
 	}

@@ -27,7 +27,7 @@ function buyMaxHire(){
 var maxBuyOn = false;
 
 function toggleMaxBuy(){
-    buyNum = 1;
+    buyNum = -1;
 
     maxBuyOn = true;
 

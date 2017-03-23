@@ -99,10 +99,14 @@ function verifyValues() {
     $('#tickCost').text(comma(player.tickCost));
     $('#totalDonated').text(comma(Math.floor(player.totalDonated)));
 
+    resetIntervals(player.tickLength);
+
     if (player.buyMax){
     	$('#maxBuyCont').show()
     }
 	
+    $('#verName').text(version)
+
 	prodPercents();
 
 }

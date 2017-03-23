@@ -25,9 +25,10 @@ var player = {
     clickUpgrades:0,
     clickPowString:"",
     totalDollars:0,
-    version:"Beta 0.10.4.1 Socket Wrench"
+    version: ""
 };
 
+var version = "Beta 0.10.4.5 Socket Wrench"
 
 
 function moneyClick(numClicks){

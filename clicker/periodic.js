@@ -17,6 +17,8 @@ function tickOneFunction() {
     playerStats();
     prodPercents();
 
+    bankBarUpdate();
+
     var date = new Date();
     var lastTickTime = date.getTime();
 

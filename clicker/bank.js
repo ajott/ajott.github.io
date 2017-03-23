@@ -13,7 +13,7 @@ function deposit(depAmount){
                 $('#inBank').text(comma(player.inBank));
                 $('#dollars').text(comma(player.dollars));
                 $('#investmentEntry').val(null);
-                $('#intPer10').text(comma((Number(player.inBank)*player.interestRate).toFixed(0)));
+                $('#intPer10').text(comma(Math.floor(Number(player.inBank)*player.interestRate)));
             }
         }
     }   else {
@@ -22,7 +22,7 @@ function deposit(depAmount){
             interestTicks = 0;
             $('#inBank').text(comma(player.inBank));
             $('#dollars').text(comma(player.dollars));
-            $('#intPer10').text(comma((Number(player.inBank)*player.interestRate).toFixed(0))); 
+            $('#intPer10').text(comma(Math.floor(Number(player.inBank)*player.interestRate)));
         }
 }
 
@@ -38,7 +38,7 @@ function withdraw(withAmount){
                 $('#inBank').text(comma(player.inBank));
                 $('#dollars').text(comma(player.dollars));
                 $('#investmentEntry').val(null);
-                $('#intPer10').text(comma((Number(player.inBank)*player.interestRate).toFixed(0)));
+                $('#intPer10').text(comma(Math.floor(Number(player.inBank)*player.interestRate)));
             }
         }  
     } else {
@@ -48,7 +48,7 @@ function withdraw(withAmount){
         interestTicks = 0;
         $('#inBank').text(comma(player.inBank));
         $('#dollars').text(comma(player.dollars));
-        $('#intPer10').text(comma((Number(player.inBank)*player.interestRate).toFixed(0)));
+        $('#intPer10').text(comma(Math.floor(Number(player.inBank)*player.interestRate)));
     }
 
        
@@ -65,7 +65,7 @@ function investInterest(){
 
         $('#totalInterest').text(comma(player.totalInterest.toFixed(0)));
         $('#inBank').text(comma(player.inBank.toFixed(0)));
-        $('#intPer10').text(comma((Number(player.inBank)*player.interestRate).toFixed(0)));
+        $('#intPer10').text(comma(Math.floor(Number(player.inBank)*player.interestRate)));
     } else if (player.inBank < maxBalance && ((player.inBank + (Number(player.inBank)*player.interestRate)) >= maxBalance)) {
         player.totalInterest = Math.floor(player.totalInterest + (maxBalance - player.inBank));
         player.inBank = Math.floor(player.inBank + (maxBalance - player.inBank));
@@ -85,7 +85,7 @@ function increaseInterest() {
     player.interestRate = (player.interestRate + .001);
     intRateString = (player.interestRate*100).toFixed(1).toString();
     document.getElementById('intRate').innerHTML = intRateString + "%";
-    document.getElementById('intPer10').innerHTML = comma((Number(player.inBank)*player.interestRate).toFixed(0));
+    $('#intPer10').text(comma(Math.floor(Number(player.inBank)*player.interestRate)));
 }
 
 function checkTotalInterest() {

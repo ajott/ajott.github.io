@@ -106,6 +106,7 @@ function verifyValues() {
     }
 	
     $('#verName').text(version)
+    $('#clickUpgradeCost').text(Math.floor(5 * Math.pow(2,player.clickUpgrades)))
 
 	prodPercents();
 

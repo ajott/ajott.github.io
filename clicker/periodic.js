@@ -15,6 +15,7 @@ function tickOneFunction() {
 
     validateButtons();
     playerStats();
+    prodPercents();
 
     var date = new Date();
     var lastTickTime = date.getTime();

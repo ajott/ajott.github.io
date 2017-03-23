@@ -7,6 +7,7 @@ function exportSave() {
 }	
 
 function importSave() {
+	var date = new Date();
 	var importString = window.atob($('#importText').val());
 	var currTickTime = date.getTime();
 

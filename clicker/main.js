@@ -48,6 +48,9 @@ function updateMPS(){
     for (i=0;i<(player.workers.length);i+=1){
         MPS = MPS + (player.workers[i]*player.workerProds[i]*player.workerMults[i]);
     }
+    if (player.clickUpgrades > 0){
+            player.clickPowString = " (" + (player.clickPower * player.karmaMult).toString()+" + "+(player.clickUpgrades * 10).toString()+"% of MPS)"
+    }
     $("#moneyPerSec").text(comma(MPS.toFixed(1)));
     $('#clickPower').text(player.clickPower * player.karmaMult + Math.floor((player.clickUpgrades * 0.1 * MPS).toFixed(0)) + player.clickPowString);
 }

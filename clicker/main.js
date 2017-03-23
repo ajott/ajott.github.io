@@ -25,7 +25,7 @@ var player = {
     clickUpgrades:0,
     clickPowString:"",
     totalDollars:0,
-    version:"Beta 0.10.4.0 Socket Wrench"
+    version:"Beta 0.10.4.1 Socket Wrench"
 };
 
 
@@ -355,8 +355,11 @@ function validateButtons() {
         $('#clickUpgradeButton').removeClass('disabled darkButton');
     }
 
-
-    if (maxBuyOn){
+    if (buyNum > 1){
+        for (var i = 0; i < player.workers.length; i += 1){
+            $(workerBadgeIDs[i]).text(buyNum);
+        }
+    } else if (maxBuyOn){
         for (var i = 0; i < player.workers.length; i += 1){
             $(workerBadgeIDs[i]).text(maxHireCalc(i));
         }

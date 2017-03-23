@@ -8,6 +8,7 @@ function exportSave() {
 
 function importSave() {
 	var importString = window.atob($('#importText').val());
+	var currTickTime = date.getTime();
 
 	player = JSON.parse(importString);
 

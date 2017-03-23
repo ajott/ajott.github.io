@@ -30,7 +30,7 @@ function karmaCalc(tD) {
 
     }
 
-    player.karma = (player.karma + karmaTemp);
+    player.karma = Math.floor(player.karma + karmaTemp);
 
     $("#karma").text(comma(player.karma));
 

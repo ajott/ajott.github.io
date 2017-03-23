@@ -188,8 +188,8 @@ function reset() {
 
 
 function comma(x){
-    if (x > 100){
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    if (x > 999){
+        return (Math.floor(parseFloat(x))).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     } else if ((parseFloat(x) - parseFloat(x).toFixed(0)) != 0) {
         x = parseFloat(x).toFixed(1);
         return x.toString();

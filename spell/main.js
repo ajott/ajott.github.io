@@ -1,6 +1,6 @@
-var displayWord = "beginning";
+var displayWord = "start";
 var activeChar = 0;
-var cacheWord = "beginning";
+var cacheWord = "start";
 var exp = 0;
 var errors = 0;
 
@@ -27,15 +27,18 @@ function keyListen(e){
 			displayWord = cacheWord;
 			activeChar = 0;
 			errors += 1;
+			if (exp > 0){
+				exp -= 1;
+			}
 		}
 
 		updateDisplay();
 	}
 	else if (activeChar == displayWord.length){
-		if (e.code == "Space"){			
+		if (e.code == "Space"){				
+			exp += displayWord.length;
 			changeWord();
 			activeChar = 0;
-			exp += 1;
 		}
 
 		updateDisplay();

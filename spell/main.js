@@ -5,7 +5,11 @@ var exp = 0;
 var errors = 0;
 var sorted = 0;
 
-var version = "0.0.3"
+var version = "0.0.4"
+
+document.addEventListener("DOMContentLoaded", function(){
+    document.getElementById("verName").innerHTML = version;
+});
 
 function changeWord(){
 	if (sorted == 0){

@@ -3,14 +3,36 @@ var activeChar = 0;
 var cacheWord = "start";
 var exp = 0;
 var errors = 0;
+var sorted = 0;
+
+var version = "0.0.3"
 
 function changeWord(){
-	var x = (1+ Math.floor(Math.random()*(wordList.length-1)));
+	if (sorted == 0){
+		wordList = wordList.sort(function(a,b){return a.length-b.length})
+		sorted = 1;
+	}
+
+	if (exp < 10){
+		wordDiff = 101
+	} else if (exp >= 10 && exp < 50){
+		wordDiff = 401
+	} else if (exp >= 50 && exp < 100){
+		wordDiff = 501
+	} else if (exp >= 100 && exp < 150){
+		wordDiff = 601
+	} else if (exp >= 150 && exp < 200){
+		wordDiff = 701
+	} else {
+		wordDiff = wordList.length
+	}
+
+	
+
+	var x = (1+ Math.floor(Math.random()*(wordDiff-1)));
 
 	displayWord = wordList[x];
-
 	cacheWord = displayWord;
-
 	updateDisplay();
 }
 

@@ -17,11 +17,12 @@ var rightPressed= false;
 var leftPressed=false;
 var brickRowCount = 3;
 var brickColumnCount = 5;
-var brickWidth = 75;
 var brickHeight = 20;
 var brickPadding = 10;
 var brickOffsetTop = 30;
 var brickOffsetLeft = 30;
+var brickWidth = ((canvas.width - (brickOffsetLeft * 2)) - (brickPadding * (brickColumnCount-1)))/brickColumnCount
+
 document.addEventListener("keydown",keyDownHandler,false);
 document.addEventListener("keyup",keyUpHandler,false);
 
@@ -38,6 +39,13 @@ var score = 0;
 var gameScore = 0;
 var lives = 3;
 var level = 1;
+var gameOver = false;
+var ballPoints = {
+    left : {x: 0, y: 0},
+    top : {x: 0, y: 0},
+    right : {x: 0, y: 0},
+    bottom : {x: 0, y: 0}
+}
 
 
 function keyDownHandler(e){
@@ -47,13 +55,14 @@ function keyDownHandler(e){
 		
 		}
 		else if(e.keyCode==37){
-		
-		leftPressed=true;
-		
+		  leftPressed=true;
 		}
 		// else if(e.keyCode==69){
 		// 	gameScore = (brickColumnCount * brickRowCount) -1
 		// }
+        else if (e.keyCode==82){
+            location.reload()
+        }
 		
 }
 	
@@ -67,7 +76,7 @@ function keyUpHandler(e){
 		
 		leftPressed=false;
 		
-		}
+	} 
 }
 
 function drawBall(){
@@ -109,25 +118,63 @@ function drawBricks() {
 }
 
 function collisionDetection() {
+    if (y < canvas.height / 2){
+    ballPoints.left.x = x-ballRadius;
+    ballPoints.left.y = y;
+    ballPoints.top.x = x;
+    ballPoints.top.y = y-ballRadius;
+    ballPoints.right.x = x+ballRadius;
+    ballPoints.right.y = y;
+    ballPoints.bottom.x = x;
+    ballPoints.bottom.y = y+ballRadius;
+    var vertColl = false;
+    var horzColl = false;
+
     for(c=0; c<brickColumnCount; c++) {
         for(r=0; r<brickRowCount; r++) {
             var b = bricks[c][r];
             if(b.status == 1) {
-                if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
-                    dy = -dy;
+                if((ballPoints.left.x > b.x && ballPoints.left.x < b.x+brickWidth && ballPoints.left.y > b.y && ballPoints.left.y < b.y+brickHeight) ||
+                   (ballPoints.right.x > b.x && ballPoints.right.x < b.x+brickWidth && ballPoints.right.y > b.y && ballPoints.right.y < b.y+brickHeight)){
+                    horzColl = true;
+                } else if ((ballPoints.top.x > b.x && ballPoints.top.x < b.x+brickWidth && ballPoints.top.y > b.y && ballPoints.top.y < b.y+brickHeight) ||
+                            (ballPoints.bottom.x > b.x && ballPoints.bottom.x < b.x+brickWidth && ballPoints.bottom.y > b.y && ballPoints.bottom.y < b.y+brickHeight)) {
+                    vertColl = true;
+                }
+                if((ballPoints.left.x > b.x && ballPoints.left.x < b.x+brickWidth && ballPoints.left.y > b.y && ballPoints.left.y < b.y+brickHeight) ||
+                   (ballPoints.top.x > b.x && ballPoints.top.x < b.x+brickWidth && ballPoints.top.y > b.y && ballPoints.top.y < b.y+brickHeight) ||
+                   (ballPoints.right.x > b.x && ballPoints.right.x < b.x+brickWidth && ballPoints.right.y > b.y && ballPoints.right.y < b.y+brickHeight) ||
+                   (ballPoints.bottom.x > b.x && ballPoints.bottom.x < b.x+brickWidth && ballPoints.bottom.y > b.y && ballPoints.bottom.y < b.y+brickHeight)) {
+
+                    if (vertColl){
+                        dy = -dy;
+                    } else if (horzColl){
+                        dx = -dx;
+                    }
                     b.status = 0;
                     score ++;
                     gameScore ++;
 
-                    if(gameScore == brickColumnCount * brickRowCount){
+                    if(gameScore == brickColumnCount * brickRowCount){ // Win condition
                     	gameScore = 0;
-                    	// brickColumnCount += 1;
-                    	// brickRowCount += 1;
+                        flashColor("black");
+                        drawBricks();
+                        drawBall();
+                        drawPaddle();
+                        collisionDetection();
+                        drawScore();
+                        drawLives();
+                        drawLevel();
+                        if (level % 3 == 0){
+                            brickColumnCount += 1;
+                            brickWidth = ((canvas.width - (brickOffsetLeft * 2)) - (brickPadding * (brickColumnCount-1)))/brickColumnCount
+                        }
+                       
                     	paddleWidth -= 1.5;
                     	lives += 1;
                     	level += 1;
-                    	dy += .25
-                    	dx += .25
+                    	dy *= 1.05;
+                    	dx *= 1.05;
                     	bricks = [];
                     	for(c=0; c<brickColumnCount; c++) {
                     	    bricks[c] = [];
@@ -158,6 +205,7 @@ function collisionDetection() {
         }
     }
 }
+}
 
 function drawScore(){
 	ctx.font = "16px Arial";
@@ -177,6 +225,23 @@ function drawLevel() {
     ctx.fillText("Level: "+level, (canvas.width/2)-30, 20);
 }
 
+function drawGameOver() {
+    ctx.font = "24px Arial";
+    ctx.fillStyle = ballColor;
+    ctx.textAlign="center"
+    ctx.fillText("Game Over", (canvas.width/2), canvas.height/2-20)
+    ctx.font = "16px Arial";
+    ctx.textAlign="center"
+    ctx.fillText("Press R to Restart",canvas.width/2,(canvas.height/2));
+}
+
+function flashColor(color){
+    ctx.beginPath();
+    ctx.rect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = color;
+    ctx.fill();
+}
+
 function draw(){
 	ctx.clearRect(0,0,canvas.width,canvas.height);
 	drawBricks();
@@ -192,21 +257,24 @@ function draw(){
 
     if(y + dy < ballRadius) {
         dy = -dy;
-    } else if(y + dy > canvas.height-ballRadius) {
+    } else if(y + dy > canvas.height-ballRadius-(paddleHeight/2)) {
         if(x > paddleX && x < paddleX + paddleWidth) {
-			 if(y= y-paddleHeight){
-            dy = -dy  ;
+			 if(y = y-paddleHeight){
+                dy = -dy  ;
 			 }
         }
         else {
             lives --
             if (!lives){
-            	document.location.reload();
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+                drawGameOver();
+                gameOver = true;
             } else {
+                flashColor("red");
             	x = canvas.width/2;
 				y = canvas.height-30;
-				dx = 3;
-				dy = -3;
+				dx = Math.abs(dx)
+				dy = -dy
 				paddleX = (canvas.width-paddleWidth)/2;
             }
         }
@@ -223,8 +291,10 @@ function draw(){
 		 
 		 x=x+dx;
 	     y=y+dy;
-
-	requestAnimationFrame(draw);
+    if(!gameOver){
+        requestAnimationFrame(draw);    
+    }
+	
 
 }
 

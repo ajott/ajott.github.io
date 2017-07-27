@@ -1,11 +1,12 @@
 var displayWord = "start";
 var activeChar = 0;
 var cacheWord = "start";
+var nextWord = "next";
 var exp = 0;
 var errors = 0;
 var sorted = 0;
 
-var version = "0.0.4";
+var version = "0.0.5";
 
 document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("verName").innerHTML = version;
@@ -37,7 +38,8 @@ function changeWord() {
 
   var x = (1 + Math.floor(Math.random() * (wordDiff - 1)));
 
-  displayWord = wordList[x];
+  displayWord = nextWord;
+  nextWord = wordList[x];
   cacheWord = displayWord;
   updateDisplay();
 }
@@ -80,4 +82,5 @@ function updateDisplay() {
   document.getElementById("word").innerHTML = displayWord;
   document.getElementById("exp").innerHTML = exp;
   document.getElementById("errors").innerHTML = errors;
+  document.getElementById("next").innerHTML = nextWord;
 }

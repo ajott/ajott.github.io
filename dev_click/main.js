@@ -334,7 +334,7 @@ function validateButtons() {
     //     $(workerBtnIDs[i]).removeClass('disabled darkButton');
     // }
 
-    if (maxHireCalc(i) < buyNum) {
+    if (maxHireCalc(i) < buyNum || maxHireCalc(i) == 0) {
       $(workerBtnIDs[i]).addClass('disabled darkButton');
       if (buyNum == 1) {
         $(workerCostIDs[i]).text(comma(player.costs[i]));

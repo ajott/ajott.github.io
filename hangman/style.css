@@ -15,6 +15,14 @@ td {
   /*font-family: monospace;*/
 }
 
+#wordTable {
+  table-layout: fixed;
+}
+
+tr {
+  max-width 400px;
+}
+
 .hiddenLetter {
   border-bottom: 1px solid black;
   font-size: 3em;
@@ -28,6 +36,7 @@ td {
 
 .hanged {
   color: white;
+  font-weight: bold;
 }
 
 #winButton {

@@ -3,7 +3,7 @@ var newWord = '';
 var over = false;
 var strikes = 0;
 var bodyParts = ["hangHead", "hangLArm", "hangBody", "hangRArm", "hangLLeg", "hangRLeg"];
-var version = "0.0.5 Typist";
+var version = "0.1.0 Reinventing the Wheel";
 var guessedArray = [];
 
 function buildLetters() {
@@ -18,15 +18,18 @@ function buildLetters() {
   }
 }
 
-function getWord() {
-  var x = (1 + Math.floor(Math.random() * (wordList.length - 1)));
-  newWord = wordList[x].toUpperCase();
+function buildWord() {
+  var x = (1 + Math.floor(Math.random() * (phraseList.length - 1)));
+  newWord = phraseList[x].toUpperCase();
+  newWord = newWord.replace(/ /g, " ");
   for (i = 0; i < newWord.length; i++) {
     if (alphabet.includes(newWord[i])) {
       document.getElementById("word").innerHTML += "<td id=\'" +
         i + "\' class=\'hiddenLetter\'>" + newWord[i].toUpperCase() + "</td>";
     } else {
-      document.getElementById("word").innerHTML += "<td class=\'hiddenPunc\'>" + newWord[i] + "</td>";
+      document.getElementById("word").innerHTML += "<td id=\'" +
+        i + "\' class=\'letterPunc\'>" + newWord[i] + "</td>";
+      document.getElementById(i).setAttribute("style", "color:black;");
     }
   }
 }
@@ -42,7 +45,7 @@ function guess(letter) {
       }
     }
     if (!gotOne) {
-      document.getElementById(bodyParts[strikes]).setAttribute("style", "color:black;");
+      document.getElementById(bodyParts[strikes]).setAttribute("style", "color:red;");
       strikes += 1;
     }
     for (j = 0; j < newWord.length; j++) {
@@ -75,7 +78,7 @@ function winner() {
   document.getElementById("AL").innerHTML = "";
   document.getElementById("MZ").innerHTML = "";
   buildLetters();
-  getWord();
+  buildWord();
   document.getElementById("winButton").setAttribute("style", "visibility:hidden;");
   document.getElementById("loseButton").setAttribute("style", "visibility:hidden;");
   document.getElementById("AL").setAttribute("style", "visibility:visible;");
@@ -87,11 +90,6 @@ function winner() {
   guessedArray = [];
   over = false;
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-  buildLetters();
-  getWord();
-});
 
 function youLose() {
   for (j = 0; j < newWord.length; j++) {
@@ -115,3 +113,9 @@ function keyListen(e) {
     }
   }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  buildLetters();
+  buildWord();
+  document.getElementById("verNum").innerHTML = version;
+});

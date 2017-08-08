@@ -18,7 +18,6 @@ function buildLetters() {
 }
 
 function guess(letter) {
-  console.log(letter);
   document.getElementById(letter).setAttribute("style", "opacity:0;");
   var guessed = [];
   var gotOne = false;

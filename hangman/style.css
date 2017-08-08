@@ -22,6 +22,10 @@ td {
   color: white;
 }
 
+.letterPunc {
+  font-size: 3em;
+}
+
 .hanged {
   color: white;
 }

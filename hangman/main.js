@@ -79,6 +79,11 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function youLose() {
+  for (j = 0; j < newWord.length; j++) {
+    if (!document.getElementById(j).hasAttribute("style")) {
+      document.getElementById(j).setAttribute("style","color:red;");
+    }
+  }
   document.getElementById("loseButton").setAttribute("style", "visibility: visible;");
   document.getElementById("AL").setAttribute("style","visibility:hidden;");
   document.getElementById("MZ").setAttribute("style","visibility:hidden;");

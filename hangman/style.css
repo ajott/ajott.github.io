@@ -1,0 +1,37 @@
+::selection {
+  background: white;
+}
+::-moz-selection {
+  background: white;
+}
+
+body {
+  font-family: monospace;
+}
+
+td {
+  text-align: center;
+  font-size: 1.5em;
+  /*font-family: monospace;*/
+}
+
+.hiddenLetter {
+  border-bottom: 1px solid black;
+  font-size: 3em;
+  /*font-family: monospace;*/
+  color: white;
+}
+
+.hanged {
+  color: white;
+}
+
+#winButton {
+  visibility: hidden;
+  background-color: gold;
+}
+#loseButton {
+  visibility: hidden;
+  background-color: maroon;
+  color: white;
+}

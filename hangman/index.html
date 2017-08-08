@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css" />
+  <title>Hangman</title>
+</head>
+
+<body>
+  <section>
+    <p> 
+      ____________ <br>
+       |____________| <br>
+         | |    |<br>
+         | |    |<br>
+         | |    <span class="hanged" id="hangHead">O</span><br>
+         | |   <span class="hanged" id="hangLArm">/</span><span class="hanged" id="hangBody">|</span><span class="hanged" id="hangRArm">\</span><br>
+         | |   <span class="hanged" id="hangLLeg">/</span> <span class="hanged" id="hangRLeg">\</span><br>
+         | |<br>
+         | |<br>
+      ___|_|______________<br>
+      |__________________|<br>
+  </p>
+</section>
+  <section style="padding-left: 40px;">
+    <table>
+      <tr id="word">
+
+      </tr>
+    </table>
+  </section>
+  &nbsp;
+  <section style="padding-left: 30px;" id="letters">
+    <table>
+      <tr id="AL">
+
+      </tr>
+      <tr id="MZ">
+
+
+      </tr>
+    </table>
+  </section>
+  &nbsp;
+  <section style="padding-left: 40px;">
+    <button id="winButton" onclick="winner()">Winner!</button>
+    <button id="loseButton" onclick="winner()">You Lost</button>
+  </section>
+
+
+</body>
+<footer>
+  <script src="main.js"></script>
+  <script src="lists.js"></script>
+</footer>
+
+</html>

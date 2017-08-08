@@ -1,9 +1,9 @@
 var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 var newWord = '';
-var won = false;
+var over = false;
 var strikes = 0;
 var bodyParts = ["hangHead", "hangLArm", "hangBody", "hangRArm", "hangLLeg", "hangRLeg"];
-var version = "0.0.1 Initial";
+var version = "0.0.3 Typist";
 
 function buildLetters() {
   for (var j = 0; j < 13; j++) {
@@ -18,6 +18,7 @@ function buildLetters() {
 }
 
 function guess(letter) {
+  console.log(letter);
   document.getElementById(letter).setAttribute("style", "opacity:0;");
   var guessed = [];
   var gotOne = false;
@@ -40,10 +41,11 @@ function guess(letter) {
     document.getElementById("winButton").setAttribute("style", "visibility: visible;");
     document.getElementById("AL").setAttribute("style","visibility:hidden;");
     document.getElementById("MZ").setAttribute("style","visibility:hidden;");
-    won = true;
+    over = true;
   }
   if (strikes === 6){
     youLose();
+    over = true;
   }
 }
 
@@ -70,7 +72,7 @@ function winner() {
   for (i = 0; i < bodyParts.length; i ++){
     document.getElementById(bodyParts[i]).setAttribute("style","color:white;");
   }
-  won = false;
+  over = false;
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -92,10 +94,8 @@ function youLose() {
 window.addEventListener("keypress", keyListen, false);
 
 function keyListen(e) {
-  if (!won) {
-    toGuess = ("\'" + e.key.toUpperCase() + "\'");
-    console.log(toGuess);
-    guess(toGuess);
+  if (!over) {
+    guess(e.key.toUpperCase());
   } else {
     if (e.code == "Space") {
       winner();

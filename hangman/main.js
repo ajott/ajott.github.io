@@ -3,7 +3,7 @@ var newWord = '';
 var over = false;
 var strikes = 0;
 var hangBodyParts = ["hangHead", "hangLArm", "hangBody", "hangRArm", "hangLLeg", "hangRLeg"];
-var version = "0.1.3 I\'m Not Passive-Aggressive, You\'re Passive-Aggressive";
+var version = "0.1.3.1 I\'m Not Passive-Aggressive, You\'re Passive-Aggressive";
 var guessedArray = [];
 
 function buildLetters() {

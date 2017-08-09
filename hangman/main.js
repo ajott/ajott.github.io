@@ -3,7 +3,7 @@ var newWord = '';
 var over = false;
 var strikes = 0;
 var bodyParts = ["hangHead", "hangLArm", "hangBody", "hangRArm", "hangLLeg", "hangRLeg"];
-var version = "0.1.1 Reinventing the Wheel";
+var version = "0.1.2 I\'m Not Passive-Aggressive, You\'re Passive-Aggressive";
 var guessedArray = [];
 
 function buildLetters() {
@@ -19,7 +19,7 @@ function buildLetters() {
 }
 
 function buildWord() {
-  var x = (1 + Math.floor(Math.random() * (phraseList.length - 1)));
+  var x = (Math.floor(Math.random() * (phraseList.length - 1)));
   newWord = phraseList[x].toUpperCase();
   newWord = newWord.replace(/ /g, " ");
   for (i = 0; i < newWord.length; i++) {
@@ -54,6 +54,13 @@ function guess(letter) {
       }
     }
     if (guessed.length === 0) {
+      if (strikes < 5){
+        document.getElementById("deadTalk").innerHTML = "Hooray!";
+      } else {
+        document.getElementById("deadTalk").innerHTML = "That was close";
+      }
+      document.getElementById("speechLeader").setAttribute("style","color:black");
+      document.getElementById("deadTalk").setAttribute("style","color:black;");
       document.getElementById("winButton").setAttribute("style", "visibility: visible;");
       document.getElementById("AL").setAttribute("style", "visibility:hidden;");
       document.getElementById("MZ").setAttribute("style", "visibility:hidden;");
@@ -64,7 +71,9 @@ function guess(letter) {
       over = true;
     }
   }
-  guessedArray.push(letter);
+  if (alphabet.includes(letter)){
+    guessedArray.push(letter);
+  }
   for (i = 0; i < guessedArray.length; i++) {
     document.getElementById(guessedArray[i]).setAttribute("style", "opacity:0;");
     document.getElementById(guessedArray[i]).setAttribute("onclick", "");
@@ -87,6 +96,8 @@ function winner() {
   for (i = 0; i < bodyParts.length; i++) {
     document.getElementById(bodyParts[i]).setAttribute("style", "color:white;");
   }
+  document.getElementById("deadTalk").setAttribute("style","color:white;");
+  document.getElementById("speechLeader").setAttribute("style","color:white;");
   guessedArray = [];
   over = false;
 }
@@ -97,6 +108,11 @@ function youLose() {
       document.getElementById(j).setAttribute("style", "color:red;");
     }
   }
+  var x = (Math.floor(Math.random() * (deathSayings.length)));
+  var dedManSez = deathSayings[x];
+  document.getElementById("deadTalk").innerHTML = dedManSez;
+  document.getElementById("deadTalk").setAttribute("style","color:black;");
+  document.getElementById("speechLeader").setAttribute("style","color:black;");
   document.getElementById("loseButton").setAttribute("style", "visibility: visible;");
   document.getElementById("AL").setAttribute("style", "visibility:hidden;");
   document.getElementById("MZ").setAttribute("style", "visibility:hidden;");
@@ -107,7 +123,10 @@ window.addEventListener("keypress", keyListen, false);
 function keyListen(e) {
   if (!over && alphabet.includes(e.key.toUpperCase())) {
     guess(e.key.toUpperCase());
-  } else {
+  } else if (e.key == "\\"){
+    guess(e.key);
+  }
+   else {
     if (e.code == "Space" && over) {
       winner();
     }

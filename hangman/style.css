@@ -39,6 +39,10 @@ tr {
   font-weight: bold;
 }
 
+.speech {
+  color:white;
+}
+
 #winButton {
   visibility: hidden;
   background-color: gold;

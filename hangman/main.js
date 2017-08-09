@@ -3,7 +3,7 @@ var newWord = '';
 var over = false;
 var strikes = 0;
 var bodyParts = ["hangHead", "hangLArm", "hangBody", "hangRArm", "hangLLeg", "hangRLeg"];
-var version = "0.1.0 Reinventing the Wheel";
+var version = "0.1.1 Reinventing the Wheel";
 var guessedArray = [];
 
 function buildLetters() {
@@ -105,10 +105,10 @@ function youLose() {
 window.addEventListener("keypress", keyListen, false);
 
 function keyListen(e) {
-  if (!over) {
+  if (!over && alphabet.includes(e.key.toUpperCase())) {
     guess(e.key.toUpperCase());
   } else {
-    if (e.code == "Space") {
+    if (e.code == "Space" && over) {
       winner();
     }
   }

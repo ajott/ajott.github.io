@@ -2,7 +2,7 @@ window.addEventListener ?
   window.addEventListener("load", setupGame, false) :
   window.attachEvent && window.attachEvent("onload", setupGame);
 
-var defaultPlayer = {
+const defaultPlayer = {
   money: 3,
   buildings: {
     0: 1, // wheat
@@ -25,7 +25,7 @@ var defaultPlayer = {
     52: 0, //park
     53: 0 //radio
   }
-};
+}
 
 var deck = {
   0: 6, // wheat
@@ -116,8 +116,25 @@ var buildNames = {
   53: "radio"
 };
 
-var titles = ["Wheat fields give you $1 when a [1] is rolled on anyone's turn.", "Ranches give you $1 when a [2] is rolled on anyone's turn.", "Forests give you $1 when a [5] is rolled on anyone's turn.", "Mines give you $5 when a [9] is rolled on anyone's turn.", "Orchards give you $3 when a [10] is rolled on anyone's turn.", "Bakeries give you $1 when a [2] or [3] is rolled on your turn only.", "Convenience stores give you $3 when a [4] is rolled on your turn only.", "Cheese factories give you $3 per Ranch owned when a [7] is rolled on your turn only.", "Furniture factories give you $3 for each Forest and Mine owned when an [8] is rolled on your turn only.", "Markets give $3 per Wheat Field and Orchard when an [11] or [12] is rolled on your turn only.", "A cafe will take $1 from the active player if they roll a [3] on their turn.", "A Restaurant will take $2 from the active player if they roll a [9] or [10] on their turn.", "A Stadium will take $2 from the other player when a [6] is rolled on your turn only. You may only own one.", "A TV Station will take $5 from the other player when a [6] is rolled on your turn only. You may only own one.", "A Business Center will do nothing and take your money. Consider it a failed startup.", "A Train Station will allow you to roll either 1 or 2 dice.", "A Mall will increase the income of all your Bakeries, Convenience Stores, Cafes, and Restaurants by $1.", "A Park will allow you to take another turn immediately after this one, if you roll doubles.", "A radio tower will do nothing for you currently, but is required to win."];
-
+var titles = ["Wheat fields give you $1 when a [1] is rolled on anyone's turn.",
+"Ranches give you $1 when a [2] is rolled on anyone's turn.",
+"Forests give you $1 when a [5] is rolled on anyone's turn.",
+"Mines give you $5 when a [9] is rolled on anyone's turn.",
+"Orchards give you $3 when a [10] is rolled on anyone's turn.",
+"Bakeries give you $1 when a [2] or [3] is rolled on your turn only.",
+"Convenience stores give you $3 when a [4] is rolled on your turn only.",
+"Cheese factories give you $3 per Ranch owned when a [7] is rolled on your turn only.",
+"Furniture factories give you $3 for each Forest and Mine owned when an [8] is rolled on your turn only.",
+"Markets give $3 per Wheat Field and Orchard when an [11] or [12] is rolled on your turn only.",
+"A cafe will take $1 from the active player if they roll a [3] on their turn.",
+"A Restaurant will take $2 from the active player if they roll a [9] or [10] on their turn.",
+"A Stadium will take $2 from the other player when a [6] is rolled on your turn only. You may only own one.",
+"A TV Station will take $5 from the other player when a [6] is rolled on your turn only. You may only own one.",
+"A Business Center will do nothing and take your money. Consider it a failed startup.",
+"A Train Station will allow you to roll either 1 or 2 dice.",
+"A Mall will increase the income of all your Bakeries, Convenience Stores, Cafes, and Restaurants by $1.",
+"A Park will allow you to take another turn immediately after this one, if you roll doubles.",
+"A radio tower will do nothing for you currently, but is required to win."];
 
 // Simple functions
 function dieFunction() {
@@ -378,6 +395,13 @@ function getPlayerDecks() {
 
 function validate() {
   $('#currPlayer').text(currentPlayer);
+  if (currentPlayer == 1){
+    $('#p1').css({'background-color': 'green', 'color':'white'});
+    $('#p2').css({'background-color': 'white', 'color':'black'});
+  } else {
+    $('#p2').css({'background-color': 'green', 'color':'white'});
+    $('#p1').css({'background-color': 'white', 'color':'black'});
+  }
   $('#player1Money').text("$" + playerObject[1].money);
   $('#player2Money').text("$" + playerObject[2].money);
 
@@ -423,7 +447,10 @@ function validate() {
     $('#buildTable').hide();
     $('#landmarkTable').hide();
     $('#phase0').show();
-  } else {
+  } else if (phase === 2){
+
+  }
+  else {
     $('#roll1').prop("disabled", true);
     $('#roll2').prop("disabled", true);
     $('#phase0').hide();

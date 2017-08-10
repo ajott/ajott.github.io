@@ -1,35 +1,49 @@
 var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-var newWord = '';
+var newPhrase = '';
 var over = false;
 var strikes = 0;
 var hangBodyParts = ["hangHead", "hangLArm", "hangBody", "hangRArm", "hangLLeg", "hangRLeg"];
-var version = "0.1.3.1 I\'m Not Passive-Aggressive, You\'re Passive-Aggressive";
+var version = "0.1.4 I\'m Not Asking Again";
 var guessedArray = [];
+var usedPhrases = [];
+
+function el(id) {
+  return document.getElementById(id);
+}
 
 function buildLetters() {
   for (var j = 0; j < 13; j++) {
-    document.getElementById("AL").innerHTML += "<td id=\'" + alphabet[j] + "\'> " + alphabet[j] + "</td>";
+    el("AL").innerHTML += "<td id=\'" + alphabet[j] + "\'> " + alphabet[j] + "</td>";
   }
   for (j = 13; j < 26; j++) {
-    document.getElementById("MZ").innerHTML += "<td id=\'" + alphabet[j] + "\'> " + alphabet[j] + "</td>";
+    el("MZ").innerHTML += "<td id=\'" + alphabet[j] + "\'> " + alphabet[j] + "</td>";
   }
   for (var i = 0; i < 26; i++) {
-    document.getElementById(alphabet[i]).setAttribute("onclick", "guess(\"" + alphabet[i] + "\")");
+    el(alphabet[i]).setAttribute("onclick", "guess(\"" + alphabet[i] + "\")");
   }
 }
 
 function buildWord() {
-  var x = (Math.floor(Math.random() * (phraseList.length - 1)));
-  newWord = phraseList[x].toUpperCase();
-  newWord = newWord.replace(/ /g, " ");
-  for (i = 0; i < newWord.length; i++) {
-    if (alphabet.includes(newWord[i])) {
-      document.getElementById("word").innerHTML += "<td id=\'" +
-        i + "\' class=\'hiddenLetter\'>" + newWord[i].toUpperCase() + "</td>";
-    } else {
-      document.getElementById("word").innerHTML += "<td id=\'" +
-        i + "\' class=\'letterPunc\'>" + newWord[i] + "</td>";
-      document.getElementById(i).setAttribute("style", "color:black;");
+  var x = (Math.floor(Math.random() * (phraseList.length)));
+  newPhrase = phraseList[x].toUpperCase();
+  newPhrase = newPhrase.replace(/ /g, " ");
+  if (!usedPhrases.includes(newPhrase)) {
+    for (i = 0; i < newPhrase.length; i++) {
+      if (alphabet.includes(newPhrase[i])) {
+        el("word").innerHTML += "<td id=\'" +
+          i + "\' class=\'hiddenLetter\'>" + newPhrase[i].toUpperCase() + "</td>";
+      } else {
+        el("word").innerHTML += "<td id=\'" +
+          i + "\' class=\'letterPunc\'>" + newPhrase[i] + "</td>";
+        el(i).setAttribute("style", "color:black;");
+      }
+    }
+    usedPhrases.push(newPhrase);
+  } else {
+    try {
+      buildWord();
+    } catch (err) {
+      location.reload();
     }
   }
 }
@@ -38,97 +52,101 @@ function guess(letter) {
   if (!guessedArray.includes(letter)) {
     var guessed = [];
     var gotOne = false;
-    for (i = 0; i < newWord.length; i++) {
-      if (letter === newWord[i]) {
-        document.getElementById(i).setAttribute("style", "color:black;");
+    for (i = 0; i < newPhrase.length; i++) {
+      if (letter === newPhrase[i]) {
+        el(i).setAttribute("style", "color:black;");
         gotOne = true;
       }
     }
     if (!gotOne) {
-      document.getElementById(hangBodyParts[strikes]).setAttribute("style", "color:red;");
+      el(hangBodyParts[strikes]).setAttribute("style", "color:red;");
       strikes += 1;
     }
-    for (j = 0; j < newWord.length; j++) {
-      if (!document.getElementById(j).hasAttribute("style")) {
+    for (j = 0; j < newPhrase.length; j++) {
+      if (!el(j).hasAttribute("style")) {
         guessed.push(false);
       }
     }
     if (guessed.length === 0) {
-      if (strikes === 0){
-        document.getElementById("liveTalk").innerHTML = "No sweat";
-      }
-      else if (strikes < 5){
-        document.getElementById("liveTalk").innerHTML = "Hooray!";
-      } else {
-        document.getElementById("liveTalk").innerHTML = "That was close";
-      }
-      var living = document.getElementsByClassName("live");
-      for (i=0; i<living.length;i++){
-        living[i].style.color = "black";
-      }
-      for (i = 0; i < hangBodyParts.length; i++) {
-        document.getElementById(hangBodyParts[i]).setAttribute("style", "color:white;");
-      }
-      document.getElementById("liveTalk").setAttribute("style","color:black;");
-      document.getElementById("winButton").setAttribute("style", "visibility: visible;");
-      document.getElementById("AL").setAttribute("style", "visibility:hidden;");
-      document.getElementById("MZ").setAttribute("style", "visibility:hidden;");
-      over = true;
+      youWon();
     }
     if (strikes === 6) {
       youLose();
-      over = true;
     }
   }
-  if (alphabet.includes(letter)){
+  if (alphabet.includes(letter)) {
     guessedArray.push(letter);
   }
   for (i = 0; i < guessedArray.length; i++) {
-    document.getElementById(guessedArray[i]).setAttribute("style", "opacity:0;");
-    document.getElementById(guessedArray[i]).setAttribute("onclick", "");
+    el(guessedArray[i]).setAttribute("style", "opacity:0;");
+    el(guessedArray[i]).setAttribute("onclick", "");
   }
-
 }
 
-
-function gameWon() {
-  document.getElementById("word").innerHTML = "";
-  document.getElementById("AL").innerHTML = "";
-  document.getElementById("MZ").innerHTML = "";
+function reset() {
+  el("word").innerHTML = "";
+  el("AL").innerHTML = "";
+  el("MZ").innerHTML = "";
   buildLetters();
   buildWord();
-  document.getElementById("winButton").setAttribute("style", "visibility:hidden;");
-  document.getElementById("loseButton").setAttribute("style", "visibility:hidden;");
-  document.getElementById("AL").setAttribute("style", "visibility:visible;");
-  document.getElementById("MZ").setAttribute("style", "visibility:visible;");
+  el("winButton").setAttribute("style", "visibility:hidden;");
+  el("loseButton").setAttribute("style", "visibility:hidden;");
+  el("AL").setAttribute("style", "visibility:visible;");
+  el("MZ").setAttribute("style", "visibility:visible;");
   strikes = 0;
   for (i = 0; i < hangBodyParts.length; i++) {
-    document.getElementById(hangBodyParts[i]).setAttribute("style", "color:white;");
+    el(hangBodyParts[i]).setAttribute("style", "color:white;");
   }
   var living = document.getElementsByClassName("live");
-  for (i=0; i<living.length;i++){
+  for (i = 0; i < living.length; i++) {
     living[i].style.color = "white";
   }
-  document.getElementById("deadTalk").setAttribute("style","color:white;");
-  document.getElementById("speechLeader").setAttribute("style","color:white;");
+  el("deadTalk").setAttribute("style", "color:white;");
+  el("speechLeader").setAttribute("style", "color:white;");
   guessedArray = [];
   over = false;
+  el("question").style.visibility = "hidden";
+}
+
+function youWon() {
+  if (strikes === 0) {
+    el("liveTalk").innerHTML = "No sweat";
+  } else if (strikes < 5) {
+    el("liveTalk").innerHTML = "Hooray!";
+  } else {
+    el("liveTalk").innerHTML = "That was close";
+  }
+  var living = document.getElementsByClassName("live");
+  for (i = 0; i < living.length; i++) {
+    living[i].style.color = "black";
+  }
+  for (i = 0; i < hangBodyParts.length; i++) {
+    el(hangBodyParts[i]).setAttribute("style", "color:white;");
+  }
+  el("liveTalk").setAttribute("style", "color:black;");
+  el("winButton").setAttribute("style", "visibility: visible;");
+  el("AL").setAttribute("style", "visibility:hidden;");
+  el("MZ").setAttribute("style", "visibility:hidden;");
+  over = true;
+  el("question").style.visibility = "visible";
 }
 
 function youLose() {
-  for (j = 0; j < newWord.length; j++) {
-    if (!document.getElementById(j).hasAttribute("style")) {
-      document.getElementById(j).setAttribute("style", "color:red;");
+  for (j = 0; j < newPhrase.length; j++) {
+    if (!el(j).hasAttribute("style")) {
+      el(j).setAttribute("style", "color:red;");
     }
   }
   var x = (Math.floor(Math.random() * (deathSayings.length)));
   var dedManSez = deathSayings[x];
-  document.getElementById("deadTalk").innerHTML = dedManSez;
-  document.getElementById("deadTalk").setAttribute("style","color:black;");
-  document.getElementById("speechLeader").setAttribute("style","color:black;");
-  document.getElementById("loseButton").setAttribute("style", "visibility: visible;");
-  document.getElementById("AL").setAttribute("style", "visibility:hidden;");
-  document.getElementById("MZ").setAttribute("style", "visibility:hidden;");
+  el("deadTalk").innerHTML = dedManSez;
+  el("deadTalk").setAttribute("style", "color:black;");
+  el("speechLeader").setAttribute("style", "color:black;");
+  el("loseButton").setAttribute("style", "visibility: visible;");
+  el("AL").setAttribute("style", "visibility:hidden;");
+  el("MZ").setAttribute("style", "visibility:hidden;");
+  el("question").style.visibility = "visible";
+  over = true;
 }
 
 window.addEventListener("keypress", keyListen, false);
@@ -136,12 +154,11 @@ window.addEventListener("keypress", keyListen, false);
 function keyListen(e) {
   if (!over && alphabet.includes(e.key.toUpperCase())) {
     guess(e.key.toUpperCase());
-  } else if (e.key == "\\"){
+  } else if (e.key == "\\") {
     guess(e.key);
-  }
-   else {
+  } else {
     if (e.code == "Space" && over) {
-      gameWon();
+      reset();
     }
   }
 }
@@ -149,5 +166,5 @@ function keyListen(e) {
 document.addEventListener("DOMContentLoaded", function() {
   buildLetters();
   buildWord();
-  document.getElementById("verNum").innerHTML = version;
+  el("verNum").innerHTML = version;
 });

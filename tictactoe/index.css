@@ -1,0 +1,66 @@
+td{
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 2em;
+}
+
+.noBorder{
+  border-style: none;
+}
+
+.winningRow {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+}
+
+#reset {
+  visibility: hidden;
+  background-color: green;
+  color: white;
+  font-weight: bold;
+}
+
+#td00 {
+  border-left: 0px;
+  border-top: 0px;
+}
+
+#td01 {
+  border-top: 0px;
+}
+
+#td02 {
+  border-top: 0px;
+  border-right: 0px;
+}
+
+#td10 {
+  border-left: 0px;
+}
+
+#td11 {
+
+}
+
+#td12 {
+  border-right: 0px;
+}
+
+#td20 {
+  border-left: 0px;
+  border-bottom: 0px;
+}
+
+#td21 {
+  border-bottom: 0px;
+}
+
+#td22 {
+  border-bottom: 0px;
+  border-right: 0px;
+}

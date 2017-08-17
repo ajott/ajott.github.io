@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="index.css" />
+  <script src="index.js"></script>
+  <title>Tic-Tac-Toe</title>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td class="playable" id="td00" onclick="placePiece('td00')"></td>
+      <td class="playable" id="td01" onclick="placePiece('td01')"></td>
+      <td class="playable" id="td02" onclick="placePiece('td02')"></td>
+    </tr>
+    <tr>
+      <td class="playable" id="td10" onclick="placePiece('td10')"></td>
+      <td class="playable" id="td11" onclick="placePiece('td11')"></td>
+      <td class="playable" id="td12" onclick="placePiece('td12')"></td>
+    </tr>
+    <tr>
+      <td class="playable" id="td20" onclick="placePiece('td20')"></td>
+      <td class="playable" id="td21" onclick="placePiece('td21')"></td>
+      <td class="playable" id="td22" onclick="placePiece('td22')"></td>
+    </tr>
+    <tr>
+      <td class="noBorder"></td>
+      <td class="noBorder"><button id="reset" onclick="reset()">Reset Game</button>
+</td>
+      <td class="noBorder"></td>
+    </tr>
+  </table>
+</body>
+
+</html>

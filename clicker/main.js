@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 // First thing's first - intializes the "player" object
 var player = {
   dollars: 0,
@@ -8,7 +10,7 @@ var player = {
   workerProds: [0.1, 1, 8, 47, 260, 1400, 16000, 44000],
   workerMults: [1, 1, 1, 1, 1, 1, 1, 1],
   inBank: 0,
-  interestRate: .003,
+  interestRate: 0.003,
   totalInterest: 0,
   totalCheck: 50000,
   increase50K: 0,
@@ -39,7 +41,7 @@ var resetPlayer = {
   costs: [15, 100, 1100, 12000, 130000, 1400000, 15000000, 99000000],
   workerMults: [1, 1, 1, 1, 1, 1, 1, 1],
   inBank: 0,
-  interestRate: .003,
+  interestRate: 0.003,
   totalInterest: 0,
   totalCheck: 50000,
   totalDonated: 0,
@@ -54,7 +56,7 @@ var resetPlayer = {
 // The tick time will never be below 250 milliseconds
 var minTickTime = 250;
 
-var version = "Beta 0.10.5.0 Pedantic"
+var version = "Beta 0.10.5.0 Pedantic";
 
 // Calculates money received per click, passes to the getMoney() function
 // Increments the "number of clicks" statistic
@@ -80,7 +82,7 @@ function updateMPS() {
     MPS = MPS + (player.workers[i] * player.workerProds[i] * player.workerMults[i]);
   }
   if (player.clickUpgrades > 0) {
-    player.clickPowString = " (" + (player.clickPower * player.karmaMult).toString() + " + " + (player.clickUpgrades * 10).toString() + "% of MPT)"
+    player.clickPowString = " (" + (player.clickPower * player.karmaMult).toString() + " + " + (player.clickUpgrades * 10).toString() + "% of MPT)";
   }
   $("#moneyPerSec").text(comma(MPS.toFixed(1)));
   $('#clickPower').text(player.clickPower * player.karmaMult + Math.floor((player.clickUpgrades * 0.1 * MPS).toFixed(0)) + player.clickPowString);
@@ -95,17 +97,17 @@ function increasePower() {
     if (player.clickUpgrades > 0) {
       // If the player has the Karma upgrade that gives a % of moneyPerSec
       // per click, include that in the calculation (and displayed string)
-      player.clickPowString = " (" + (player.clickPower * player.karmaMult).toString() + " + " + (player.clickUpgrades * 10).toString() + "% of MPT)"
+      player.clickPowString = " (" + (player.clickPower * player.karmaMult).toString() + " + " + (player.clickUpgrades * 10).toString() + "% of MPT)";
     }
     $('#clickPower').text(player.clickPower * player.karmaMult + Math.floor((player.clickUpgrades * 0.1 * MPS).toFixed(0)) + player.clickPowString);
     $('#dollars').text(comma(player.dollars));
     updateMPS();
-  };
+  }
   // Increases the cost of the upgrade.
   player.powerCost = Math.floor(30 * Math.pow(2, player.clickPower - 1));
   $('#powerCost').text(comma(player.powerCost));
   validateButtons();
-};
+}
 
 
 // Decreases the tick time
@@ -127,12 +129,12 @@ function decreaseTick() {
         $('#tickTime').text(player.tickLength.toFixed(0));
         $('#dollars').text(comma(player.dollars));
         $('#tickDecrease').addClass("disabled");
-        $('#tickDecrease').text("Sold Out")
+        $('#tickDecrease').text("Sold Out");
         updateMPS();
         resetIntervals(player.tickLength);
       }
     }
-  };
+  }
   player.tickCost = Math.floor(10000 * Math.pow(2.5, player.tickLevel - 1));
   $('#tickCost').text(comma(player.tickCost));
   validateButtons();
@@ -219,7 +221,7 @@ function reset() {
   // }
 
   $('#tickDecrease').removeClass("disabled");
-  $('#tickDecrease').text("Decrease Tick Time")
+  $('#tickDecrease').text("Decrease Tick Time");
 
   investInterest();
   interestTicks = 0;
@@ -252,7 +254,7 @@ function unfold(index) {
 // When the player switches panels, show/hide appropriately, change display.
 function togglePanel(panel) {
   var panels = ['#staff', '#bankTable', '#charityTable', '#optionsPanel', '#statsPanel', '#upgradePanel'];
-  var tabs = ['#staffTab', '#bankTab', '#charityTab', '#optionsTab', '#statsTab', '#upgradeTab']
+  var tabs = ['#staffTab', '#bankTab', '#charityTab', '#optionsTab', '#statsTab', '#upgradeTab'];
 
   for (i = 0; i < panels.length; i++) {
     if (i == panel) {
@@ -273,7 +275,7 @@ function showCredits() {
 
 // Allows the player to change the title text for the page/tab.
 function setTitle() {
-  $('#title').text($('#titleInput').val())
+  $('#title').text($('#titleInput').val());
   $('#titleInput').val(null);
 }
 
@@ -285,9 +287,9 @@ function maxHireCalc(index) {
   var tempDollars = player.dollars;
 
   while (tempDollars >= costCheckOb[workerObNames[index]][tempCount]) {
-    tempDollars -= costCheckOb[workerObNames[index]][tempCount]
-    buyCount += 1
-    tempCount += 1
+    tempDollars -= costCheckOb[workerObNames[index]][tempCount];
+    buyCount += 1;
+    tempCount += 1;
   }
 
   if (tempDollars >= 0) {
@@ -299,7 +301,7 @@ function maxHireCalc(index) {
 
 
 function hirePrice(index, Max) {
-  var isMax = (Max || false)
+  var isMax = (Max || false);
   var tempCount = player.workers[index];
   var buyCount = 0;
 
@@ -307,16 +309,16 @@ function hirePrice(index, Max) {
   var tempDollars = player.dollars;
   if (isMax) {
     while (buyCount < maxHireCalc(index)) {
-      tempDollars -= costCheckOb[workerObNames[index]][tempCount]
-      buyCount += 1
-      tempCount += 1
+      tempDollars -= costCheckOb[workerObNames[index]][tempCount];
+      buyCount += 1;
+      tempCount += 1;
     }
     return (player.dollars - tempDollars);
   } else {
     while (buyCount < buyNum) {
-      tempDollars -= costCheckOb[workerObNames[index]][tempCount]
-      buyCount += 1
-      tempCount += 1
+      tempDollars -= costCheckOb[workerObNames[index]][tempCount];
+      buyCount += 1;
+      tempCount += 1;
     }
     return (player.dollars - tempDollars);
   }
@@ -338,7 +340,7 @@ function validateButtons() {
     $('#tickDecrease').removeClass('disabled darkButton');
   } else {
     $('#tickDecrease').addClass("disabled");
-    $('#tickDecrease').text("Sold Out")
+    $('#tickDecrease').text("Sold Out");
   }
 
   // Hire buttons
@@ -383,7 +385,7 @@ function validateButtons() {
     $('#buyMaxHireBtn').removeClass('disabled darkButton');
   } else {
     $('#buyMaxHireBtn').addClass('disabled darkButton');
-    $('#buyMaxHireBtn').text("Owned")
+    $('#buyMaxHireBtn').text("Owned");
   }
 
   // Handles if the player can buy the "% of MPT" upgrade.
@@ -396,15 +398,15 @@ function validateButtons() {
   // Adds badges to the hiring buttons, if the player is attempting to ..
   // buy more than 1 of a worker.
   if (buyNum > 1) {
-    for (var i = 0; i < player.workers.length; i += 1) {
+    for (let i = 0; i < player.workers.length; i += 1) {
       $(workerBadgeIDs[i]).text(buyNum);
     }
   } else if (maxBuyOn) {
-    for (var i = 0; i < player.workers.length; i += 1) {
+    for (let i = 0; i < player.workers.length; i += 1) {
       $(workerBadgeIDs[i]).text(maxHireCalc(i));
     }
   } else {
-    for (var i = 0; i < player.workers.length; i += 1) {
+    for (let i = 0; i < player.workers.length; i += 1) {
       $(workerBadgeIDs[i]).text("");
     }
   }

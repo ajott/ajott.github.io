@@ -1,3 +1,7 @@
+body{
+  font-family: sans-serif;
+}
+
 td{
   border-style: solid;
   border-width: 1px;
@@ -18,11 +22,21 @@ td{
   font-weight: bold;
 }
 
+.tied {
+  background-color: orange;
+  
+}
+
 #reset {
   visibility: hidden;
   background-color: green;
   color: white;
   font-weight: bold;
+}
+
+#winner {
+  text-align: center;
+  width: 100%;
 }
 
 #td00 {

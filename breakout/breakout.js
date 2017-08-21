@@ -225,6 +225,10 @@ function drawScore() {
   ctx.font = "16px Arial";
   ctx.fillStyle = ballColor;
   ctx.fillText("Score: " + score, 50, 20);
+  if (score > $('#high').val()){
+    $('#high').text(score);
+    $('#high').val(score);
+  }
 }
 
 function drawLives() {
@@ -281,6 +285,7 @@ function draw() {
         drawGameOver();
         gameOver = true;
         postScore();
+        maxScore();
         document.getElementById("high").innerHTML = score;
       } else {
         flashColor("red");

@@ -251,6 +251,9 @@ function drawGameOver() {
   ctx.font = "16px Arial";
   ctx.textAlign = "center";
   ctx.fillText("Press R to Restart", canvas.width / 2, (canvas.height / 2));
+
+  setTimeout(postScore(),3000);
+  setTimeout(maxScore(),3000);
 }
 
 function flashColor(color) {
@@ -284,8 +287,6 @@ function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawGameOver();
         gameOver = true;
-        postScore();
-        maxScore();
         document.getElementById("high").innerHTML = score;
       } else {
         flashColor("red");

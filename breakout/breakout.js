@@ -22,6 +22,12 @@ var brickOffsetTop = 30;
 var brickOffsetLeft = 30;
 var brickWidth = ((canvas.width - (brickOffsetLeft * 2)) - (brickPadding * (brickColumnCount - 1))) / brickColumnCount;
 
+var score = 0;
+var gameScore = 0;
+var lives = 3;
+var level = 1;
+var gameOver = false;
+
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
@@ -37,12 +43,6 @@ for (c = 0; c < brickColumnCount; c++) {
   }
 }
 
-
-var score = 0;
-var gameScore = 0;
-var lives = 3;
-var level = 1;
-var gameOver = false;
 var ballPoints = {
   left: {
     x: 0,
@@ -71,11 +71,8 @@ function keyDownHandler(e) {
   } else if (e.keyCode == 37) {
     leftPressed = true;
   }
-  // else if(e.keyCode==69){
-  // 	gameScore = (brickColumnCount * brickRowCount) -1
-  // }
   else if (e.keyCode == 82) {
-    location.reload();
+    reset();
   }
 
 }
@@ -227,7 +224,7 @@ function collisionDetection() {
 function drawScore() {
   ctx.font = "16px Arial";
   ctx.fillStyle = ballColor;
-  ctx.fillText("Score: " + score, 8, 20);
+  ctx.fillText("Score: " + score, 50, 20);
 }
 
 function drawLives() {
@@ -239,7 +236,7 @@ function drawLives() {
 function drawLevel() {
   ctx.font = "16px Arial";
   ctx.fillStyle = ballColor;
-  ctx.fillText("Level: " + level, (canvas.width / 2) - 30, 20);
+  ctx.fillText("Level: " + level, (canvas.width / 2) - 20, 20);
 }
 
 function drawGameOver() {
@@ -283,6 +280,8 @@ function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawGameOver();
         gameOver = true;
+        postScore();
+        document.getElementById("high").innerHTML = score;
       } else {
         flashColor("red");
         x = canvas.width / 2;
@@ -330,4 +329,54 @@ function verifyNewColor(tempColor) {
   }
 }
 
+function reset() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ballRadius = 10;
+  ballColor = ballColors[0];
+  lastBallColor = 0;
+
+  x = canvas.width / 2;
+  y = canvas.height - 30;
+  dx = 3;
+  dy = -3;
+  paddleHeight = 10;
+  paddleWidth = 75;
+  paddleX = (canvas.width - paddleWidth) / 2;
+  rightPressed = false;
+  leftPressed = false;
+  brickRowCount = 3;
+  brickColumnCount = 5;
+  brickHeight = 20;
+  brickPadding = 10;
+  brickOffsetTop = 30;
+  brickOffsetLeft = 30;
+  brickWidth = ((canvas.width - (brickOffsetLeft * 2)) - (brickPadding * (brickColumnCount - 1))) / brickColumnCount;
+
+  score = 0;
+  gameScore = 0;
+  lives = 3;
+  level = 1;
+  drawScore();
+  drawLives();
+  drawLevel();
+  maxScore();
+
+  for (c = 0; c < brickColumnCount; c++) {
+    bricks[c] = [];
+    for (r = 0; r < brickRowCount; r++) {
+      bricks[c][r] = {
+        x: 0,
+        y: 0,
+        status: 1
+      };
+    }
+  }
+  if (gameOver){
+    gameOver = false;
+    draw();
+    reset();
+  }
+}
+
 draw();
+maxScore();

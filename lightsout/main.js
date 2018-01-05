@@ -91,11 +91,13 @@ function arrBoolCheck(arr){
     return result;
 }
 
-function checkLights(){
+function checkLights(){    
+    
     el("moves").innerHTML = "Moves: "+numMoves;
+
     if (!arrBoolCheck(state)){
         alert("You won in "+numMoves+" moves!");
-        location.reload();
+        resetGame();
     }
      for (let i = 0; i < state.length; i ++){
          if (state[i]){
@@ -104,4 +106,12 @@ function checkLights(){
             el("btn"+i).setAttribute("style","background-color:none");
          }
      }
+}
+
+
+function resetGame(){
+    makeState();
+    numMoves = 0;
+    playerActive = true;
+    checkLights();
 }

@@ -1,0 +1,37 @@
+html {
+    background-color: #fbf8ee;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+body {
+    margin-left: 100px;
+}
+
+a {
+    font: 'Open Sans', Arial, sans-serif;
+    text-decoration: none;
+    color: #369;
+}
+
+a:hover, a:active {
+    text-decoration: underline;
+}
+
+
+#subjectTable{
+    outline-style: solid;
+    outline-width: 0.5px;
+    outline-color: black;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border: 0.25px dotted black;
+}
+
+#courseBody{
+    width: 75%;
+}

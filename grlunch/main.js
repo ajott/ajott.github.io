@@ -93,6 +93,36 @@ var lunchList = {
         Name: "Ando",
         Area: "West Grand",
         Type: "Ramen/Sushi"
+    }, 
+    19: {
+        Name: "Schnitz Deli",
+        Area: "Downtown",
+        Type: "Deli"
+    },
+    20: {
+        Name: "Blue Dog",
+        Area: "West Grand",
+        Type: "Bar/Pub"
+    }, 
+    21: {
+        Name: "Big Willy's Italian Beef",
+        Area: "East Hills",
+        Type: "Sandwiches"
+    }, 
+    22: {
+        Name: "Wok & Mortar",
+        Area: "Eastown",
+        Type: "Asian/Sushi"
+    }, 
+    23: {
+        Name: "Peaches Cafe",
+        Area: "East Hills",
+        Type: "Deli"
+    }, 
+    24: {
+        Name: "Wolfgang's",
+        Area: "Eastown",
+        Type: "Brunch"
     }
 };
 

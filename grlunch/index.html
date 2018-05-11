@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css" />
+  <title>GR Lunch</title>
+</head>
+
+<body>
+    Origin: <br/>
+    <input id="origin" placeholder="Dematic" type="text"/>
+    <br/>
+    <button id="goButt" onclick=getDirections(randRest())>Random Restaurant</button>
+    <br/>
+    <br/>
+    <span id="restLabel" style="display:none">Your restaurant is:</span>
+    <br/>
+    <a style="font-size: 1.5em" href="" target="_blank" id="result"></a>
+    <br/>
+    <span id="clickInstructions" style="display:none">(click for directions)</span>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="main.js"></script>

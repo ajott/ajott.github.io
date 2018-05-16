@@ -93,7 +93,7 @@ var lunchList = {
         Name: "Ando",
         Area: "West Grand",
         Type: "Ramen/Sushi"
-    }, 
+    },
     19: {
         Name: "Schnitz Deli",
         Area: "Downtown",
@@ -103,22 +103,22 @@ var lunchList = {
         Name: "Blue Dog",
         Area: "West Grand",
         Type: "Bar/Pub"
-    }, 
+    },
     21: {
         Name: "Big Willy's Italian Beef",
         Area: "East Hills",
         Type: "Sandwiches"
-    }, 
+    },
     22: {
         Name: "Wok & Mortar",
         Area: "Eastown",
         Type: "Asian/Sushi"
-    }, 
+    },
     23: {
         Name: "Peaches Cafe",
         Area: "East Hills",
         Type: "Deli"
-    }, 
+    },
     24: {
         Name: "Wolfgang's",
         Area: "Eastown",
@@ -126,40 +126,67 @@ var lunchList = {
     }
 };
 
-Object.size = function(obj) {
-    var size = 0, key;
+Object.size = function (obj) {
+    var size = 0,
+        key;
     for (key in obj) {
         if (obj.hasOwnProperty(key)) size++;
     }
     return size;
 };
 
-function loadOrigin(){
-    let text = document.getElementById("origin").value;
-    if (text == ""){
+function docEl(id) {
+    return document.getElementById(id);
+}
+
+function loadOrigin() {
+    let text = docEl("origin").value;
+    if (text == "") {
         text = "Dematic";
     }
     text = text.replace(/\s/g, "+");
     return text + "+Grand+Rapids,+MI";
 }
 
-function randRest(){
+function randRest() {
     return Math.floor(Math.random() * Object.size(lunchList));
 }
 
-function getDirections(dest){
-    let origin = loadOrigin();
+function getDirections(dest) {
+    let origin = loadOrigin();    
     var preOriginString = "www.google.com/maps/dir/?api=1&origin=";
-    var destinationString = "&destination="+lunchList[dest].Name + " Grand Rapids, MI";
+    var destinationString = "&destination=" + lunchList[dest].Name + " Grand Rapids, MI";
     destinationString = destinationString.replace(/\s/g, "+");
-    var modeString = "&travelmode=driving"
+    var modeString = "&travelmode=driving";
 
     var endString = "http://" + preOriginString + origin + destinationString + modeString;
 
-    document.getElementById("restLabel").style = "display:inline";
-    document.getElementById("clickInstructions").style = "display:inline";
-    //console.log(endString);
+    return endString;
+}
 
-    document.getElementById("result").href = endString;
-    document.getElementById("result").innerHTML = lunchList[dest].Name;
+function loadRest(dest) {
+
+    docEl("restCard").style = "display:inline";
+
+    docEl("clickInstructions").href = getDirections(dest);
+    docEl("result").innerHTML = lunchList[dest].Name;
+    docEl("restDetails").innerHTML = "Style: " + lunchList[dest].Type;
+    docEl("restArea").innerHTML = "Area: " + lunchList[dest].Area;
+}
+
+function loadRestTable() {
+    docEl("restTable").style = "display:inline";
+    docEl("buildTableButt").style = "display:none";
+    let origin = loadOrigin();
+    origin = origin.replace("+Grand+Rapids,+MI", "");
+    origin = origin.replace(/\+/g, " ");
+    for (let i = 0; i < Object.size(lunchList); i++) {
+        let htmlString = "<tr><td>";
+        htmlString += lunchList[i].Name + "</td><td>";
+        htmlString += lunchList[i].Area + "</td><td>";
+        htmlString += lunchList[i].Type + "</td><td class=\"directions\">";
+        htmlString += "<a target=\"_blank\" href=\"";
+        htmlString += getDirections(i) + "\">from "+origin+"</a></td></tr>";
+        docEl("restTable").innerHTML += htmlString;
+    }
 }

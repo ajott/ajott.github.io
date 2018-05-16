@@ -1,0 +1,24 @@
+body {
+    background-color: lightgrey;
+    text-align: center;
+}
+
+#tableHeader{
+    font: 1.25em bold black;
+}
+
+#tableHeader td {
+    border-bottom: 1px solid black;
+}
+
+#restTable {
+    text-align: left;
+}
+
+.directions{
+    text-align: right;
+}
+
+#result{
+    font-size: 1.5em;
+}

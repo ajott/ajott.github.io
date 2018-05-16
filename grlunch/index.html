@@ -9,17 +9,36 @@
 </head>
 
 <body>
-    Origin: <br/>
-    <input id="origin" placeholder="Dematic" type="text"/>
+  Origin:
+  <br/>
+  <input id="origin" placeholder="Dematic" type="text" />
+  <br/>
+  <button id="goButt" onclick=loadRest(randRest())>Random Restaurant</button>
+  <br/>
+  <br/>
+  <div id="restCard" style="display: none">
+    <!-- <span id="restLabel">Your restaurant is:</span> -->
+    <!-- <br/> -->
+    <span id="result"></span>
     <br/>
-    <button id="goButt" onclick=getDirections(randRest())>Random Restaurant</button>
+    <span id="restDetails"></span>
     <br/>
+    <span id="restArea"></span>
     <br/>
-    <span id="restLabel" style="display:none">Your restaurant is:</span>
-    <br/>
-    <a style="font-size: 1.5em" href="" target="_blank" id="result"></a>
-    <br/>
-    <span id="clickInstructions" style="display:none">(click for directions)</span>
+    <a href="" target="_blank" id="clickInstructions">(click for directions)</a>
+  </div>
+  <br/>
+  <br/>
+  <button id=buildTableButt onclick="loadRestTable()">All Restaurants</button>
+  <br/>
+  <table id="restTable" style="display:none;">
+    <tr id="tableHeader">
+      <td>Restaurant</td>
+      <td>Area</td>
+      <td>Style</td>
+      <td class="directions">Directions</td>
+    </tr>
+  </table>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>

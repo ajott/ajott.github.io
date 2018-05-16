@@ -154,8 +154,10 @@ function randRest() {
 
 function getDirections(dest) {
     let origin = loadOrigin();    
+    let restaurant = lunchList[dest].Name;    
+    restaurant = restaurant.replace(/\&/g, "%26");
     var preOriginString = "www.google.com/maps/dir/?api=1&origin=";
-    var destinationString = "&destination=" + lunchList[dest].Name + " Grand Rapids, MI";
+    var destinationString = "&destination=" + restaurant + " Grand Rapids, MI";
     destinationString = destinationString.replace(/\s/g, "+");
     var modeString = "&travelmode=driving";
 

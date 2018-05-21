@@ -187,8 +187,18 @@ function loadRestTable() {
         htmlString += lunchList[i].Name + "</td><td>";
         htmlString += lunchList[i].Area + "</td><td>";
         htmlString += lunchList[i].Type + "</td><td class=\"directions\">";
-        htmlString += "<a target=\"_blank\" href=\"";
+        htmlString += "<a target=\"_blank\" id=\"direct"+i+"\" href=\"";
         htmlString += getDirections(i) + "\">from "+origin+"</a></td></tr>";
         docEl("restTable").innerHTML += htmlString;
+    }
+}
+
+function updateOrigin(){
+    let origin = loadOrigin();
+    origin = origin.replace("+Grand+Rapids,+MI", "");
+    origin = origin.replace(/\+/g, " ");
+    for (let i = 0; i < Object.size(lunchList); i++){
+        docEl("direct"+i).innerHTML = "from " + origin;
+        docEl("direct"+i).href = getDirections(i);
     }
 }

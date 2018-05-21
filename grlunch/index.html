@@ -4,9 +4,11 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="../libs/bs/bootstrap.min.css">
   <script src="../libs/bs/bootstrap.min.js"></script>
+
   <title>GR Lunch</title>
 </head>
 
@@ -43,19 +45,19 @@
     </div>
     <br/>
     <br/>
-      <div class="row">
-        <button id=buildTableButt onclick="loadRestTable()">All Restaurants</button>
-      </div>
-      <div class="row">
-        <table id="restTable" style="display:none;">
-          <tr id="tableHeader">
-            <td>Restaurant</td>
-            <td>Area</td>
-            <td>Style</td>
-            <td class="directions">Directions</td>
-          </tr>
-        </table>
-      </div>
+    <div class="row">
+      <button id=buildTableButt onclick="loadRestTable()">All Restaurants</button>
+    </div>
+    <div class="row">
+      <table id="restTable" style="display:none;">
+        <tr id="tableHeader">
+          <td>Restaurant</td>
+          <td>Area</td>
+          <td>Style</td>
+          <td class="directions">Directions</td>
+        </tr>
+      </table>
+    </div>
   </div>
 </body>
 

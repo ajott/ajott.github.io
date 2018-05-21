@@ -184,7 +184,7 @@ function loadRestTable() {
         htmlString += lunchList[i].Type + "</td><td class=\"directions\">";
         htmlString += "<a target=\"_blank\" id=\"direct"+i+"\" href=\"";
         htmlString += getDirections(i) + "\">from "+origin+"</a></td></tr>";
-        docEl("restTable").innerHTML += htmlString;
+        docEl("restBody").innerHTML += htmlString;
     }
 }
 

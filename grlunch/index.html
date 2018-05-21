@@ -48,14 +48,20 @@
     <div class="row">
       <button id=buildTableButt onclick="loadRestTable()">All Restaurants</button>
     </div>
+
     <div class="row">
-      <table id="restTable" style="display:none;">
+      <table class="table table-striped" id="restTable" style="display:none;">
+        <thead>
         <tr id="tableHeader">
           <td>Restaurant</td>
           <td>Area</td>
           <td>Style</td>
           <td class="directions">Directions</td>
         </tr>
+      </thead>
+      <tbody id="restBody">
+
+      </tbody>
       </table>
     </div>
   </div>

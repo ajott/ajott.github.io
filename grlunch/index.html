@@ -5,38 +5,58 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../libs/bs/bootstrap.min.css">
+  <script src="../libs/bs/bootstrap.min.js"></script>
   <title>GR Lunch</title>
 </head>
 
 <body>
-  Origin:
-  <br/>
-  <input id="origin" placeholder="Dematic" type="text" onchange=updateOrigin() />
-  <br/>
-  <button id="goButt" onclick=loadRest(randRest())>Random Restaurant</button>
-  <br/>
-  <br/>
-  <div id="restCard" style="display: none">
-    <span id="result"></span>
+  <div class="container-fluid centertable">
+    <div class="row">
+      <br/> Origin:
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <input id="origin" placeholder="Dematic" type="text" onchange=updateOrigin() />
+
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <br/>
+          <button id="goButt" onclick=loadRest(randRest())>Random Restaurant</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="restCard" style="display: none">
+      <div class="col-m-5 col-s-3 col-xs-0"></div>
+      <div class="col-m-2 col-s-6 col-xs-12">
+        <span id="result"></span>
+        <br/>
+        <span id="restDetails"></span>
+        <br/>
+        <span id="restArea"></span>
+        <br/>
+        <a href="" target="_blank" id="clickInstructions">(click for directions)</a>
+      </div>
+      <div class="col-m-5 col-s-3 col-xs-0"></div>
+    </div>
     <br/>
-    <span id="restDetails"></span>
     <br/>
-    <span id="restArea"></span>
-    <br/>
-    <a href="" target="_blank" id="clickInstructions">(click for directions)</a>
+      <div class="row">
+        <button id=buildTableButt onclick="loadRestTable()">All Restaurants</button>
+      </div>
+      <div class="row">
+        <table id="restTable" style="display:none;">
+          <tr id="tableHeader">
+            <td>Restaurant</td>
+            <td>Area</td>
+            <td>Style</td>
+            <td class="directions">Directions</td>
+          </tr>
+        </table>
+      </div>
   </div>
-  <br/>
-  <br/>
-  <button id=buildTableButt onclick="loadRestTable()">All Restaurants</button>
-  <br/>
-  <table id="restTable" style="display:none;">
-    <tr id="tableHeader">
-      <td>Restaurant</td>
-      <td>Area</td>
-      <td>Style</td>
-      <td class="directions">Directions</td>
-    </tr>
-  </table>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>

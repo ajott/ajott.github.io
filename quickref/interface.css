@@ -1,9 +1,12 @@
+
+
+
 .biomancy {
     background: skyblue;
 }
 
 .divination {
-    background: lavender;
+    background: plum;
 }
 
 .pyromancy {
@@ -16,4 +19,21 @@
 
 .telepathy {
     background: turquoise;
+}
+
+.tier1 {
+    background: lightgreen;
+}
+
+.tier2{
+    background: skyblue;
+}
+
+.tier3{
+    background: orangered;
+    color: white;
+}
+
+td:first-child{
+    font-weight: bold;
 }

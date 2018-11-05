@@ -1,0 +1,124 @@
+{
+    "Gear": [{
+            "Name": "Backpack",
+            "Weight": "2 kg",
+            "Availability": "Abundant",
+            "Notes": "Allows 30 kg of extra weight but requires a full action to remove object. Backpack or Combat vest can be worn at the same time.",
+            "Page": "PG 170 CB"
+        },
+        {
+            "Name": "Chameleoline Cloak",
+            "Weight": "0.5 kg",
+            "Availability": "Rare",
+            "Notes": "Gains +20 to stealth tests.",
+            "Page": "PG 170 CB"
+        },
+        {
+            "Name": "Chrono",
+            "Weight": "0 kg",
+            "Availability": "Plentiful",
+            "Notes": "Keeps time.",
+            "Page": "PG 170 CB"
+        },
+        {
+            "Name": "Clothing",
+            "Weight": "2 kg",
+            "Availability": "Abundant",
+            "Notes": "Cloths.",
+            "Page": "PG 170 CB"
+        },
+        {
+            "Name": "Combat Vest",
+            "Weight": "2 kg",
+            "Availability": "Scarce",
+            "Notes": "Holds 15 kg of items and can draw items in combat as Free Action. Backpack or Combat vest can be worn at the same time.",
+            "Page": "PG 170 CB"
+        },
+        {
+            "Name": "Concealed Holster",
+            "Weight": "1 kg",
+            "Availability": "Average",
+            "Notes": "Attempts to detect weapon suffers -20 penalty and ready actions cost a Half Action more.",
+            "Page": "PG 170 CB"
+        },
+        {
+            "Name": "Dead Space Earpiece",
+            "Weight": "-",
+            "Availability": "Very Rare",
+            "Notes": "Grants +20 against Concussive tests",
+            "Page": "PG 170 CB"
+        },
+        {
+            "Name": "Explosive Collar",
+            "Weight": "3 kg",
+            "Availability": "Scarce",
+            "Notes": "Rang of 1 km and if out of range for more than 5 minutes collar detonates and kills the wearer instantly. Removing requires a -20 Tech-Use. If failed by 2 degrees it explodes.",
+            "Page": "PG 170 CB"
+        },
+        {
+            "Name": "Filtration Plugs",
+            "Weight": "-",
+            "Availability": "Common",
+            "Notes": "grants +20 against gas.",
+            "Page": "PG 171 CB"
+        },
+        {
+            "Name": "Photo-Visors/Contacts",
+            "Weight": "0.5 kg",
+            "Availability": "Scarce",
+            "Notes": "Grants Dark-Sight trait.",
+            "Page": "PG 171 CB"
+        },
+        {
+            "Name": "Preysense Goggles",
+            "Weight": "0.5 kg",
+            "Availability": "Very Rare",
+            "Notes": "Grants +20 to vision in darkness.",
+            "Page": "PG 171 CB"
+        },
+        {
+            "Name": "Rebreather",
+            "Weight": "1 kg",
+            "Availability": "Scarce",
+            "Notes": "Immune to toxic atmospheres, even allowing him to survive underwater. Last for 1 hour and Full Action to replace.",
+            "Page": "PG 171 CB"
+        },
+        {
+            "Name": "Recoil Glove",
+            "Weight": "0.5 kg",
+            "Availability": "Rare",
+            "Notes": "Can fire weapons one-handed without -20 penalty.",
+            "Page": "PG 171 CB"
+        },
+        {
+            "Name": "Respirator/Gas Mask",
+            "Weight": "0.5 kg",
+            "Availability": "Average",
+            "Notes": "Grants +30 to resist effects of gas and can re-roll if failed.",
+            "Page": "PG 171 CB"
+        },
+        {
+            "Name": "Survival Suit",
+            "Weight": "-",
+            "Availability": "Average",
+            "Notes": "Grants +20 to resist extreme environments.",
+            "Page": "PG 172 CB"
+        },
+        {
+            "Name": "Synskin",
+            "Weight": "2 kg",
+            "Availability": "Very Rare",
+            "Notes": "Grants 2 Armor to all locations not already armoured and +10 to Stealth tests. Also immuned to presysense goggles and Dark-sight trait.",
+            "Page": "PG 172 CB"
+        },
+        {
+            "Name": "Void Suit",
+            "Weight": "8 kg",
+            "Availability": "Scarce",
+            "Notes": "Enclosed suit for space. 12 hours of air and imposes a -10 to Agility tests",
+            "Page": "PG 172 CB"
+        }
+    ],
+    "queryRecordCount": 17,
+    "totalRecordCount": 17
+}

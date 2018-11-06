@@ -91,6 +91,10 @@
                             <a class="dropdown-item btn" href="#" onclick="togglePanel(15)">Mutations</a>
                             <a class="dropdown-item btn" href="#" onclick="togglePanel(16)">Malignancies</a>
                             <a class="dropdown-item btn" href="#" onclick="togglePanel(17)">Shock</a>
+                            <a class="dropdown-item btn" href="#" onclick="togglePanel(25)">Homeworlds</a>
+                            <a class="dropdown-item btn" href="#" onclick="togglePanel(26)">Backgrounds</a>
+                            <a class="dropdown-item btn" href="#" onclick="togglePanel(27)">Roles</a>
+                            <a class="dropdown-item btn" href="#" onclick="togglePanel(28)">Divinations</a>
                         </div>
                     </div>
                 </div>
@@ -8287,6 +8291,395 @@
                             </tr>
                         </tbody>
                     </table>
+                </div>
+
+                <div id="homeworlds" style="display:none">
+                        <h3>Homeworlds</h3>
+                        <table class="table table-bordered table-hover table-striped table-condensed">
+                                <thead>
+                                        <tr>
+                                            <th>Homeworlds</th>
+                                            <th>Char +</th>
+                                            <th>Char +</th>
+                                            <th>Char -</th>
+                                            <th>Fate Base</th>
+                                            <th>Emperor's Blessing</th>
+                                            <th>Home World Bonus</th>
+                                            <th>Aptitude</th>
+                                            <th>Wounds</th>
+                                            <th>Page</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Feral World</td>
+                                            <td>Strength</td>
+                                            <td>Toughness</td>
+                                            <td>Influence</td>
+                                            <td>2</td>
+                                            <td>3+</td>
+                                            <td>The Old Ways: A Feral World character's Low-Tech weapons lose any present Primitive Qualities and gain the Proven (3) Quality.</td>
+                                            <td>Toughness</td>
+                                            <td>9+1d5</td>
+                                            <td>PG 32 CB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Forge World</td>
+                                            <td>Intelligence</td>
+                                            <td>Toughness</td>
+                                            <td>Fellowship</td>
+                                            <td>3</td>
+                                            <td>8+</td>
+                                            <td>Omnissiah's Chosen: A Forge World character gains the Technical Knock or Weapon-Tech Talent.</td>
+                                            <td>Intelligence</td>
+                                            <td>8+1d5</td>
+                                            <td>PG 34 CB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Highborn</td>
+                                            <td>Fellowship</td>
+                                            <td>Influence</td>
+                                            <td>Toughness</td>
+                                            <td>4</td>
+                                            <td>10+</td>
+                                            <td>Breeding Counts: A Highborn character reduces Influence losses by 1, to a minimum loss of 1.</td>
+                                            <td>Fellowship</td>
+                                            <td>9+1d5</td>
+                                            <td>PG 36 CB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Hive World</td>
+                                            <td>Agility</td>
+                                            <td>Perception</td>
+                                            <td>Willpower</td>
+                                            <td>2</td>
+                                            <td>6+</td>
+                                            <td>Teeming Masses in Metal Mountains: A Hive World character moves through crowds as if they were open terrain and gains a +20 bonus to Navigate (Surface) Tests in closed spaces.</td>
+                                            <td>Perception</td>
+                                            <td>7+1d5</td>
+                                            <td>PG 38 CB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Shrine World</td>
+                                            <td>Fellowship</td>
+                                            <td>Willpower</td>
+                                            <td>Perception</td>
+                                            <td>3</td>
+                                            <td>6+</td>
+                                            <td>Faith in the Creed: When spending a Fate Point, a Shrine World character's number of Fate Points are not reduced on a 1d10 result of 1.</td>
+                                            <td>Willpower</td>
+                                            <td>8+1d5</td>
+                                            <td>PG 40 CB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Voidborn</td>
+                                            <td>Intelligence</td>
+                                            <td>Willpower</td>
+                                            <td>Strength</td>
+                                            <td>3</td>
+                                            <td>5+</td>
+                                            <td>Child of the Dark: A voidborn character starts with the Strong Minded talent, and gains a +30 bonus to tests for moving in zero-gravity</td>
+                                            <td>Intelligence</td>
+                                            <td>7+1d5</td>
+                                            <td>PG 42 CB</td>
+                                        </tr>
+                                    </tbody>
+                        </table>
+                </div>
+
+                <div id="backgrounds" style="display:none">
+                        <h3>Backgrounds</h3>
+                        <table class="table table-bordered table-hover table-striped table-condensed">
+                                <thead>
+                                        <tr>
+                                            <th>Backgrounds</th>
+                                            <th>Starting Skills</th>
+                                            <th>Starting Talents</th>
+                                            <th>Starting Equipment</th>
+                                            <th>Background Bonus</th>
+                                            <th>Background Aptitude</th>
+                                            <th>Page</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Adeptus Administratum</td>
+                                            <td>Commerce or Medicae, Common Lore (Adeptus Administratum), Linguistics (High Gothic),Logic, Scholastic Lore (Pick One)</td>
+                                            <td>Weapon Training (Las or Solid Projectile)</td>
+                                            <td>Laspistol or stub automatic, Imperial robes, autoquill, Chrono, dataslate, medi-kit</td>
+                                            <td>Master of Paperwork: An Adeptus Administratum character counts the Availability of all items as one level more available (Very Rare items count as Rare, Average items count as Common, etc.).</td>
+                                            <td>Knowledge or Social</td>
+                                            <td>PG 46 CB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Adeptus Arbites</td>
+                                            <td>Awareness, Common Lore (Adeptus Arbites, Underworld), Inquiry or Interrogation, Intimidate, Scrutiny</td>
+                                            <td>Weapon Training (Shock or Solid Projectile)</td>
+                                            <td>Shotgun or shock maul, Enforcer light carapace armor or carapace chest plate, 3 doses of stimm, manacles, 12 lho sticks</td>
+                                            <td>The Face of the Law: An Arbitrator can intimidation and Interrogation test, and can substitute his Willpower bonus for his degrees of success on these tests.</td>
+                                            <td>Offence or Defense</td>
+                                            <td>PG 48 CB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Adeptus Astra Telepathica</td>
+                                            <td>Awareness, Common Lore (Adeptus Astra Telepathica), Deceive or Interrogation, Forbidden Lore (the Warp),Psyniscience or Scrutiny</td>
+                                            <td>Weapon Training (Las, Low-Tech)</td>
+                                            <td>Laspistol, staff or whip, light flak cloak or flak vest, micro-bead or psy focus</td>
+                                            <td>The Constant Threat: When the character or an ally within 10 meters triggers a roll on the Table 6-2: Psychic Phenomenon (pg 196). Adeptus Astra Telepathica character can increase or decrease the result by amount equal to his Willpower bonus. Tested on Terra: If the character takes the Psyker elite advance during character creation, he also gains the Sanctioned trait (pg 138).</td>
+                                            <td>Defense or Psyker</td>
+                                            <td>PG 50 CB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Adeptus Mechanicus</td>
+                                            <td>Awareness or Operate (Pick One), Common Lore (Adeptus Mechanicus), Logic, Security, Tech</td>
+                                            <td>Mechadendrite Use (Utility),Weapon Training (Solid Projectile)</td>
+                                            <td>Autogun or hand cannon, monotask servo-skull (utility) or optical Mechadendrite, Imperial robes, 2 vials of sacred unguents</td>
+                                            <td>Replace the Weak Flesh: An Adeptus Mechanicus character counts the Availability of all cybernetics as two levels more available (Rare items count as Average, Very Rare items count as Scarce, etc.).Starting Trait: Mechanicus Implants (pg 137).</td>
+                                            <td>Knowledge or Tech</td>
+                                            <td>PG 52 CB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Adeptus Ministorum</td>
+                                            <td>Charm, Command, Common Lore (Adeptus Ministorum),Inquiry or Scrutiny, Linguistics (High Gothic)</td>
+                                            <td>Weapon Training (Flame) or Weapon Training (Low-Tech, Solid Projectile)</td>
+                                            <td>Hand flamer (or Warhammer and stub revolver), Imperial robes or flak vest, backpack, glow-globe, monotask servo</td>
+                                            <td>Faith is All: When spending a Fate point to gain a+10 bonus to any one test, an Adeptus Ministorum character gains a +20 bonus instead.</td>
+                                            <td>Leadership or Social</td>
+                                            <td>PG 54 CB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Imperial Guard</td>
+                                            <td>Athletics, Command, Common Lore (Imperial Guard), Medicae or Operate (Surface), Navigate (Surface)</td>
+                                            <td>Weapon Training (Las, Low-Tech)</td>
+                                            <td>Lasgun (or laspistol and sword), combat vest, Imperial Guard flak armor, grapnel and line,12 lho sticks, magnoculars</td>
+                                            <td>Hammer of the Emperor: When attacking a target that an ally attacked since the end of the Guardsman's last turn, the Guardsman can re-roll any results of 1 or 2 damage rolls.</td>
+                                            <td>Fieldcraft or Leadership</td>
+                                            <td>PG 56 CB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Outcast</td>
+                                            <td>Acrobatics or Sleight of Hand, Common Lore (Underworld), Deceive, Dodge, Stealth</td>
+                                            <td>Weapon Training (Chain, and Las or Solid Projectile)</td>
+                                            <td>Autopistol or laspistol, chainsword, armored body glove or flak vest, injector, 2 doses of obscura or slaught</td>
+                                            <td>Never Quit: An Outcast character counts his Toughness bonus as two higher for purposes of determining Fatigue.</td>
+                                            <td>Fieldcraft or Social</td>
+                                            <td>PG 58 CB</td>
+                                        </tr>
+                                    </tbody>
+                        </table>
+                </div>
+
+                <div id="roles" style="display:none">
+                        <h3>Roles</h3>
+                        <table class="table table-bordered table-hover table-striped table-condensed">
+                                <thead>
+                                        <tr>
+                                            <th>Role</th>
+                                            <th>Role Aptitudes</th>
+                                            <th>Role Talent</th>
+                                            <th>Role Bonus</th>
+                                            <th>Page</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Assassin</td>
+                                            <td>Agility, Ballistic Skill or Weapon Skill, Fieldcraft, Finesse, Perception</td>
+                                            <td>Jaded or Leap Up</td>
+                                            <td>Sure Kill: In addition to the normal uses of Fate points(pg 293), when an Assassin successfully hits with an attack, he may spend a Fate point to inflict additional damage equal to his degrees of success on the attack roll on the first hit the attack inflicts.</td>
+                                            <td>PG 62 CB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chirurgeon</td>
+                                            <td>Fieldcraft, Intelligence, Knowledge, Strength, Toughness</td>
+                                            <td>Resistance (Pick One) or Takedown</td>
+                                            <td>Dedicated Healer: In addition to the normal uses of Fate points (pg 293), when a Chirurgeon character fails a test to provide First Aid, he can spend a Fate point to automatically succeed instead with the degrees of success equal to his Intelligence bonus.</td>
+                                            <td>PG 64 CB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Desperado</td>
+                                            <td>Agility, Ballistic Skill, Defense, Fellowship, Finesse</td>
+                                            <td>Catfall or Quick Draw</td>
+                                            <td>Move and Shoot: Once per round, after performing Move action, a Desperado character may perform a single Standard Attack with a Pistol weapon he is currently wielding as a Free Action.</td>
+                                            <td>PG 66 CB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Hierophant</td>
+                                            <td>Fellowship, Offence, Social, Toughness, Willpower</td>
+                                            <td>Double Team or Hatred (Pick One)</td>
+                                            <td>Sway the Masses: In addition to the normal uses of Fate points (pg 293), a Hierophant character may spend a Fate point to automatically succeed at a Charm, Command, or Intimidate skill test with a number of degrees of success equal to his Willpower bonus.</td>
+                                            <td>PG 68 CB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mystic</td>
+                                            <td>Defense, Intelligence, Knowledge, Perception, Willpower</td>
+                                            <td>Resistance (Psychic Powers) or Warp Sense</td>
+                                            <td>Stare into the Warp: A Mystic character starts the game with the Psyker elite advance (pg 90). It is recommended that a character who wishes to be a Mystic have a Willpower of at least 35.</td>
+                                            <td>PG 70 CB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sage</td>
+                                            <td>Intelligence, Knowledge, Perception, Tech, Willpower</td>
+                                            <td>Ambidextrous or Clues from the Crowds</td>
+                                            <td>Quest for Knowledge: In addition to the normal uses of Fate points (pg 293), a Sage character may spend a Fate point to automatically succeed at a Logic or any Lore skill test with a number of degrees of success equal to his Intelligence bonus.</td>
+                                            <td>PG 72 CB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Seeker</td>
+                                            <td>Fellowship, Intelligence, Perception, Social, Tech</td>
+                                            <td>Keen Intuition or Disarm</td>
+                                            <td>Nothing Escapes My Sight: In addition to the normal uses of Fate points (pg 293), a Seeker character may spend a Fate point to automatically succeed at an Awareness or Inquiry skill test with a number of degrees of success equal to his Perception bonus.</td>
+                                            <td>PG 74 CB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Warrior</td>
+                                            <td>Ballistic Skill, Defense, Offence, Strength, Weapon Skill</td>
+                                            <td>Iron Jaw or Rapid Reload</td>
+                                            <td>Expert at Violence: In addition to the normal uses of Fate points (pg 293), after making a successful attack test, but before determining hits, a Warrior character may spend a Fate point to substitute his Weapon Skill (for melee) or Ballistic Skill (for ranged) bonus for the degrees of success scored on the attack test.</td>
+                                            <td>PG 76 CB</td>
+                                        </tr>
+                                    </tbody>
+                        </table>    
+                </div>
+
+                <div id="divinations" style="display:none">
+                        <h3>Divinations</h3>
+                        <table class="table table-bordered table-hover table-striped table-condensed">
+                                <thead>
+                                        <tr>
+                                            <th> Rolls</th>
+                                            <th>Divination Prophecies</th>
+                                            <th>Divination Effects</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Mutation without, corruption within.</td>
+                                            <td>Roll once on the Malignancies table and apply the result.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>02-05</td>
+                                            <td>Trust in your fear.</td>
+                                            <td>Increase this character's Perception by 5. He also gains the Phobia Mental Disorder.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>06-09</td>
+                                            <td>Humans must die so that humanity can endure.</td>
+                                            <td>This character gains the Jaded talent. If he already possesses this talent, increase his Willpower characteristic by 2 instead.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10-13</td>
+                                            <td>The pain of the bullet is ecstasy compared to damnation.</td>
+                                            <td>Reduce this character's Agility characteristic by 3. The first time this character suffers Critical damage each session, roll a 1d10. On a result of 10, he does not suffer any Critical Effects, though the damage still counts as Critical Damage.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>14-17</td>
+                                            <td>Be a boon to your allies and the bane of your enemies.</td>
+                                            <td>The character gains the Hatred (choose any one) talent. If he already possessed this talent, increase his Strength characteristic by 2 instead.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>18-21</td>
+                                            <td>The wise learn from the deaths of others.</td>
+                                            <td>Increase this character's Agility or Intelligence Characteristic by 3. Reduce his Weapon Skill of Ballistic skill characteristic by 3.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>22-25</td>
+                                            <td>Kill the alien before it can speak its lies.</td>
+                                            <td>This character gains the Quick Draw talent. If he already possesses this talent, increase his Agility characteristic by 2 instead.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>26-29</td>
+                                            <td>Truth is subjective.</td>
+                                            <td>Increase this character's Perception by 3. The first time he would gain 1 or more Corruption points each session, he gains that amount plus 1 instead.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>30-33</td>
+                                            <td>Thought begets Heresy.</td>
+                                            <td>Reduce this character's Intelligence by 3. The first time he would gain 1 or more Corruption points each session, he reduces that amount by 1 (to a minimum of 0) instead.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>34-38</td>
+                                            <td>Heresy begets Retribution.</td>
+                                            <td>Increase this character's Fellowship or Strength characteristic by 3. Reduce his Toughness or Willpower characteristic by 3.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>39-43</td>
+                                            <td>A mind without purpose wanders in dark places.</td>
+                                            <td>When gaining Mental Disorders, the character may choose to gain a new Disorder instead of increasing the severity of an existing Disorder.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>44-49</td>
+                                            <td>If a job is worth doing, it is worth dying for.</td>
+                                            <td>Increase this character's Toughness or Willpower characteristic by 3. Reduce his Fellowship or Strength characteristic by 3.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>50-54</td>
+                                            <td>Dark dreams lie upon the heart.</td>
+                                            <td>Whenever this character would roll on the Malignancies table, he may instead select any one result and gain that Malignancy.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>55-59</td>
+                                            <td>Violence solves everything.</td>
+                                            <td>Increase this character's Weapon Skill or Ballistic Skill characteristic by 3. Reduce his Agility or Intelligence characteristic by 3.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>60-63</td>
+                                            <td>Ignorance is a wisdom of its own.</td>
+                                            <td>Reduce this character's Perception characteristic by 3. The first time he would gain 1 or more Insanity points each session, he reduces that amount by 1 (to a minimum of 0) instead.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>64-67</td>
+                                            <td>Only the insane have the strength to prosper.</td>
+                                            <td>Increase this character's Willpower characteristic by 3. The first time he would gain 1 or more Insanity points each session, he gains that amount plus 1 instead.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>68-71</td>
+                                            <td>A suspicious mind is a healthy mind.</td>
+                                            <td>Increase this character's Perception characteristic by 2. Additionally, he may re-roll Awareness tests to avoid being Surprised.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>72-75</td>
+                                            <td>Suffering is an unrelenting instructor.</td>
+                                            <td>Reduce this character's Toughness characteristic by 3. The first time that this character suffers any damage each session, he gains a +20 bonus to the next test he makes before the end of his next turn.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>76-79</td>
+                                            <td>The only true fear is dying without your duty done.</td>
+                                            <td>This character gains the Resistance (Cold, Heat, or Fear) talent. If he already possesses this Talent, increase his Toughness characteristic by 2 instead.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>80-83</td>
+                                            <td>Only in death does duty end.</td>
+                                            <td>The first time this character would suffer Fatigue each session, he suffers that amount of Fatigue minus 1 (to a minimum of 0) instead.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>84-87</td>
+                                            <td>Innocence is an illusion.</td>
+                                            <td>This character gains the Keen Intuition talent. If he already possesses this talent, increase his Intelligence characteristic by 2 instead.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>88-91</td>
+                                            <td>To war is human.</td>
+                                            <td>This character gains the Dodge skill as a Known skill (rank 1). If he already posses this skill, increase his Agility characteristic by 2 instead.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>92-95</td>
+                                            <td>There is no substitute for zeal.</td>
+                                            <td>This character gains the Clues from the Crowds talent. If he already possesses this talent, increase his Fellowship characteristic by 2 instead.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>96-99</td>
+                                            <td>Even one who has nothing can still offer his life.</td>
+                                            <td>When this character burns Fate threshold to survive a lethal injury, roll 1d10. On a result of 10, he survives whatever grievous wound would have killed him but does not reduce his Fate threshold.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>100</td>
+                                            <td>Do not ask why you serve. Only ask how.</td>
+                                            <td>Increase this character's Fate threshold by 1.</td>
+                                        </tr>
+                                    </tbody>
+                        </table>
                 </div>
 
             </div>

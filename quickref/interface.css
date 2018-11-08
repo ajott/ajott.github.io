@@ -1,3 +1,24 @@
+.info {
+    padding-top: 60px;    
+}
+
+#psykerTab.btn-danger{
+    background: purple !important;
+}
+
+h3,h4 {
+    color: maroon !important;
+}
+
+.btn {
+    color:black !important;
+}
+
+.btn-danger{
+    color:white !important;
+    background: maroon !important;
+}
+
 footer{
     padding-bottom: 10px;
 }

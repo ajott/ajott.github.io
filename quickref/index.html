@@ -5,17 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DH 2e QuickRef</title>
-    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
     <link rel="stylesheet" href="interface.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="../libs/bs/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../libs/bs/bootstrap.min.css">
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
 </head>
 
 <body>
-    &nbsp;
-    <div class="container-fluid centerTable">
+    <div class="container-fluid centerTable" id="headerDiv">
         <div class="row">
             <div class="col-md-1 col-sm-1 col-xs-0"></div>
             <div class="col-md-10 col-sm-10 col-xs-12">
@@ -104,8 +103,7 @@
         </div>
     </div>
 
-
-    <div class="container-fluid centerTable">
+    <div class="container-fluid centerTable" id="main">
         <div class="row">
             <div class="col-md-1 col-sm-1 col-xs-0"></div>
             <div class="col-md-10 col-sm-10 col-xs-12">
@@ -5011,7 +5009,7 @@
                                     </td>
                                     <td>No</td>
                                     <td>Attack, Concentration</td>
-                                    <td><strong>Psychic Barrage</strong> Discharge lightning at enemies. Does 1d10+<strong>PR</strong> Energy damage, Pen: 4</td>
+                                    <td><span class="psyTooltip" data-toggle="tooltip" title="Works like a semi-auto weapon; total hits cannot exceed Psy Rating used for power."><strong>Psychic Barrage</strong></span> Discharge lightning at enemies. Does 1d10+<strong>PR</strong> Energy damage, Pen: 4</td>
                                     <td>PG 202 CB</td>
                                 </tr>
                                 <tr>
@@ -5283,7 +5281,7 @@
                                     <td>Half Action</td>
                                     <td>Concentration</td>
                                     <td>While sustained, all of the psyker's melee attacks deal additional Energy damage equal to <strong>PR</strong> and gain the Flame quality. 
-                                        In addition, at the end of each of the psyker's turns, a <strong>Psychic Blast</strong> centered on his location occurs.
+                                        In addition, at the end of each of the psyker's turns, a <span class="psyTooltip" data-toggle="tooltip" title="Radius is determined by Psy Rating. Equivalent of the Blast (X) Weapon Quality."><strong>Psychic Blast</strong></span> centered on his location occurs.
                                         All characters within <strong>PR</strong> metres, with the exception of the psyker himself, are struck for 1d10+<strong>PR</strong> Energy damage.
                                         Any target struck has a chance of catching ablaze.</td>
                                     <td>PG 206 CB</td>
@@ -5299,7 +5297,7 @@
                                     <td>Free Action</td>
                                     <td>Concentration</td>
                                     <td>While sustained, any attacker in range who successfully strikes the psyker suffers retribution. 
-                                        A <strong>Psychic Bolt</strong> dealing <strong>PR</strong> Energy damage immediately strikes the attacker.
+                                        A <span class="psyTooltip" data-toggle="tooltip" title="Determine hit location using Focus Power. Works like a single-fire weapon."><strong>Psychic Bolt</strong></span> dealing <strong>PR</strong> Energy damage immediately strikes the attacker.
                                         This damage is not reduced by Armour or Toughness bonus. The target has a chance of catching ablaze.</td>
                                     <td>PG 206 CB</td>
                                 </tr>
@@ -5313,7 +5311,7 @@
                                     <td>20 metres x <strong>PR</strong></td>
                                     <td>No</td>
                                     <td>Attack</td>
-                                    <td><strong>Psychic Bolt</strong> the psyker lashes out with his power, dealing 1d10+2+2x<strong>PR</strong> Energy damage.
+                                    <td><span class="psyTooltip" data-toggle="tooltip" title="Determine hit location using Focus Power. Works like a single-fire weapon."><strong>Psychic Bolt</strong></span> the psyker lashes out with his power, dealing 1d10+2+2x<strong>PR</strong> Energy damage.
                                         The psyker uses his Focus Power test to determine if the attack is successful, as well as to determine hit location.
                                         If successful, the target has a chance of catching ablaze.</td>
                                     <td>PG 208 CB</td>
@@ -5328,7 +5326,7 @@
                                     <td>20 metres x <strong>PR</strong></td>
                                     <td>No</td>
                                     <td>Attack</td>
-                                    <td><strong>Psychic Barrage</strong>. The psyker attempts to strike for 1d10+2+2x<strong>PR</strong> Energy damage.
+                                    <td><span class="psyTooltip" data-toggle="tooltip" title="Works like a semi-auto weapon; total hits cannot exceed Psy Rating used for power."><strong>Psychic Barrage</strong></span>. The psyker attempts to strike for 1d10+2+2x<strong>PR</strong> Energy damage.
                                         If successful, any target struck has a chance of catching ablaze.</td>
                                     <td>PG 206 CB</td>
                                 </tr>
@@ -5356,7 +5354,7 @@
                                     <td>5 metres x <strong>PR</strong></td>
                                     <td>No</td>
                                     <td>Attack</td>
-                                    <td><strong>Psychic Bolt</strong>. The psyker fires a blindingly-bring beam of sun-hot energy dealing 1d10+5+3x<strong>PR</strong> Energy damage.
+                                    <td><span class="psyTooltip" data-toggle="tooltip" title="Determine hit location using Focus Power. Works like a single-fire weapon."><strong>Psychic Bolt</strong></span>. The psyker fires a blindingly-bring beam of sun-hot energy dealing 1d10+5+3x<strong>PR</strong> Energy damage.
                                         Pen: 2x<strong>PR</strong>. If attacking at Short Range, the Pen is doubled.</td>
                                     <td>PG 208 CB</td>
                                 </tr>
@@ -5370,7 +5368,7 @@
                                     <td>20 metres x <strong>PR</strong></td>
                                     <td>No</td>
                                     <td>Attack</td>
-                                    <td><strong>Psychic Storm</strong>. The psyker gathers a nova of firey energy around his body, before releasing it in all directions.
+                                    <td><span class="psyTooltip" data-toggle="tooltip" title="Works like a full-auto weapon; total hits cannot exceed Psy Rating used for power."><strong>Psychic Storm</strong></span>. The psyker gathers a nova of firey energy around his body, before releasing it in all directions.
                                         Deals 1d10+2+2x<strong>PR</strong> Energy damage. 
                                         Any target successfully hit has a chance of catching ablaze.</td>
                                     <td>PG 208 CB</td>
@@ -5385,7 +5383,7 @@
                                     <td>10 metres x <strong>PR</strong></td>
                                     <td>No</td>
                                     <td>Attack, Concentration</td>
-                                    <td><strong>Psychic Blast</strong>. The psyker creates an explosion of flame centered on his target, with no chance of escape.
+                                    <td><span class="psyTooltip" data-toggle="tooltip" title="Radius is determined by Psy Rating. Equivalent of the Blast (X) Weapon Quality."><strong>Psychic Blast</strong></span>. The psyker creates an explosion of flame centered on his target, with no chance of escape.
                                         All targets within <strong>PR</strong> metres of the target take 2d10+3x<strong>PR</strong> Energy damage.
                                         All targets within range have a chance of catching ablaze.</td>
                                     <td>PG 207 CB</td>
@@ -5415,7 +5413,7 @@
                                     </td>
                                     <td>No</td>
                                     <td>Attack, Concentration</td>
-                                    <td><strong>Psychic Bolt</strong>. The psyker hurls objects or, failing to find any, his mental energy at the target dealing
+                                    <td><span class="psyTooltip" data-toggle="tooltip" title="Determine hit location using Focus Power. Works like a single-fire weapon."><strong>Psychic Bolt</strong></span>. The psyker hurls objects or, failing to find any, his mental energy at the target dealing
                                     1d10+<strong>PR</strong> Impact damage. Pen: 2. If the pysker succeeds in hitting with 3+ DoS, the target is also thrown 1d5 metres and knocked Prone.</td>
                                     <td>PG 209 CB</td>
                                 </tr>
@@ -5446,7 +5444,7 @@
                                     </td>
                                     <td>No</td>
                                     <td>Attack, Concentration</td>
-                                    <td><strong>Psychic Bolt</strong>. The target makes a Toughness save against the psyker's Focus Power test. Upon failure,
+                                    <td><span class="psyTooltip" data-toggle="tooltip" title="Determine hit location using Focus Power. Works like a single-fire weapon."><strong>Psychic Bolt</strong></span>. The target makes a Toughness save against the psyker's Focus Power test. Upon failure,
                                         the target suffers 1d10+<strong>PR</strong> Impact damage. Pen 2.
                                         This attack carries the Snare (<strong>PR</strong>/2) quality.</td>
                                     <td>PG 209 CB</td>
@@ -5493,7 +5491,7 @@
                                     <td>Self</td>
                                     <td>No</td>
                                     <td>Attack, Concentration</td>
-                                    <td><strong>Psychic Blast</strong>. Each character in within <strong>PR</strong> metres of the psyker, but not the psyker himeself, 
+                                    <td><span class="psyTooltip" data-toggle="tooltip" title="Radius is determined by Psy Rating. Equivalent of the Blast (X) Weapon Quality."><strong>Psychic Blast</strong></span>. Each character in within <strong>PR</strong> metres of the psyker, but not the psyker himeself, 
                                         suffers 1d10+<strong>PR</strong> Explosive damage. They are also pushed <strong>PR</strong> metres directly away from the psyker.</td>
                                     <td>PG 210 CB</td>
                                 </tr>
@@ -5598,7 +5596,7 @@
                                     </td>
                                     <td>No</td>
                                     <td>Attack</td>
-                                    <td><strong>Psychic Bolt</strong>. Target suffers 1d10+2+2x<strong>PR</strong> Explosive damage. Applies the Concussive(1) Weapon Quality.</td>
+                                    <td><span class="psyTooltip" data-toggle="tooltip" title="Determine hit location using Focus Power. Works like a single-fire weapon."><strong>Psychic Bolt</strong></span>. Target suffers 1d10+2+2x<strong>PR</strong> Explosive damage. Applies the Concussive(1) Weapon Quality.</td>
                                     <td>PG 213 CB</td>
                                 </tr>
                                 <tr>
@@ -8894,6 +8892,9 @@
             $(panels[panel]).show();
             $(tabs[panel]).addClass("btn-danger");
         }
+        $(document).ready(function(){
+   		$('[data-toggle="tooltip"]').tooltip();
+	});
     </script>
 </footer>
 

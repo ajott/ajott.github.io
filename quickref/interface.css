@@ -6,6 +6,12 @@
     background: purple !important;
 }
 
+.psyTooltip {
+	color:purple;
+	border-bottom: 1px dotted purple;
+    text-decoration: none;
+}
+
 h3,h4 {
     color: maroon !important;
 }

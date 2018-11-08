@@ -4,6 +4,7 @@
 
 #psykerTab.btn-danger{
     background: purple !important;
+    border-color: purple !important;
 }
 
 .psyTooltip {
@@ -23,6 +24,7 @@ h3,h4 {
 .btn-danger{
     color:white !important;
     background: maroon !important;
+    border-color: maroon !important;
 }
 
 footer{

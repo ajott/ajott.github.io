@@ -2,26 +2,58 @@
     padding-top: 60px;    
 }
 
+.body-dark {
+    background-color: #151515 !important;
+    color: white !important;
+}
+
+.dropdown-toggle{
+    color: black !important;
+}
+
+.dropdown-dark{
+    background-color: #343a40 !important;
+    color: white !important;
+}
+
 #psykerTab.btn-danger{
     background: purple !important;
     border-color: purple !important;
 }
 
-.psyTooltip {
+.psyTooltipLight {
 	color:purple;
 	border-bottom: 1px dotted purple;
     text-decoration: none;
 }
 
-h3,h4 {
+.psyTooltipDark {
+	color:magenta;
+	border-bottom: 1px dotted magenta;
+    text-decoration: none;
+}
+
+.headingLight {
     color: maroon !important;
 }
 
-.btn {
+.headingDark {
+    color: red !important;
+}
+
+.btn-lightMode {
     color:black !important;
 }
 
-.btn-danger{
+.btn-darkMode {
+    color: white !important;
+}
+
+.btn-dark {
+    color: white !important;
+}
+
+.btn-selected{
     color:white !important;
     background: maroon !important;
     border-color: maroon !important;
@@ -33,30 +65,37 @@ footer{
 
 .biomancy {
     background: skyblue;
+    color: black !important;
 }
 
 .divination {
     background: plum;
+    color: black !important;
 }
 
 .pyromancy {
     background: orange;
+    color: black !important;
 }
 
 .telekinesis {
     background: lightblue;
+    color: black !important;
 }
 
 .telepathy {
     background: turquoise;
+    color: black !important;
 }
 
 .tier1 {
     background: lightgreen;
+    color: black !important;
 }
 
 .tier2{
     background: skyblue;
+    color: black !important;
 }
 
 .tier3{

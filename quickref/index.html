@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype HTML>
 <html lang="en">
 
 <head>
@@ -10,100 +10,108 @@
     <link rel="stylesheet" href="interface.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="../libs/bs/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../libs/bs/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
 </head>
 
 <body>
-    <div class="container-fluid centerTable" id="headerDiv">
-        <div class="row">
-            <div class="col-md-1 col-sm-1 col-xs-0"></div>
-            <div class="col-md-10 col-sm-10 col-xs-12">
-                <div class="navbar navbar-default navbar-fixed-top" style="border-bottom: 1px solid maroon">
-                    <h4>&emsp;Dark Heresy 2e Quick Reference</h4>
-                    <div class="btn-group btn-group-justified">
-                        <div class="btn-group">
-                            <a type="button" id="expTab" class="btn btn-danger" href="#exp" onclick="togglePanel(0)">Exp Costs</a>
-                        </div>
-                        <div class="btn-group">
-                            <a type="button" id="combatTab" class="btn" href="#combat" onclick="togglePanel(1)">Combat Actions</a>
-                        </div>
-                        <div class="btn-group" role="group">
-                            <button id="critTab" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                Critical Hits ▼</button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item btn" href="#energyCrit" onclick="togglePanel(2)">Energy</a>
-                                <a class="dropdown-item btn" href="#explosiveCrit" onclick="togglePanel(2)">Explosive</a>
-                                <a class="dropdown-item btn" href="#impactCrit" onclick="togglePanel(2)">Impact</a>
-                                <a class="dropdown-item btn" href="#rendingCrit" onclick="togglePanel(2)">Rending</a>
-                            </div>
-                        </div>
-                        <div class="btn-group" role="group">
-                            <button id="gearTab" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                Equipment ▼</button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item btn" href="#gear" onclick="togglePanel(3)">Gear</a>
-                                <a class="dropdown-item btn" href="#tools" onclick="togglePanel(3)">Tools</a>
-                                <a class="dropdown-item btn" href="#cybernetics" onclick="togglePanel(3)">Cybernetics</a>
-                                <a class="dropdown-item btn" href="#consumables" onclick="togglePanel(3)">Drugs & Consumables</a>
-                            </div>
-                        </div>
-                        <div class="btn-group" role="group">
-                            <button id="weaponTab" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                Weapons ▼</button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item btn" href="#" onclick="togglePanel(4)">Weapons</a>
-                                <a class="dropdown-item btn" href="#weaponQual" onclick="togglePanel(4)">Weapon Qualities</a>
-                                <a class="dropdown-item btn" href="#weaponMods" onclick="togglePanel(4)">Weapon Mods</a>
-                                <a class="dropdown-item btn" href="#ammo" onclick="togglePanel(4)">Special Ammo</a>
-                            </div>
-                        </div>
-                        <div class="btn-group" role="group">
-                            <button id="armourTab" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                Armour ▼</button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item btn" href="#armour" onclick="togglePanel(5)">Armour</a>
-                                <a class="dropdown-item btn" href="#armourMods" onclick="togglePanel(5)">Armour Mods</a>
-                            </div>
-                        </div>
-                        <div class="btn-group" role="group">
-                            <button id="psykerTab" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                Psyker ▼</button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item btn" href="#psyPowers" onclick="togglePanel(6)">Psychic Powers</a>
-                                <a class="dropdown-item btn" href="#psyPhenom" onclick="togglePanel(6)">Psychic Phenomena</a>
-                                <a class="dropdown-item btn" href="#psyPerils" onclick="togglePanel(6)">Perils of the Warp</a>
-                            </div>
-                        </div>
-                        <div class="btn-group" role="group">
-                            <button id="charTab" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                Character ▼</button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item btn" href="#skills" onclick="togglePanel(7)">Skills</a>
-                                <a class="dropdown-item btn" href="#talents" onclick="togglePanel(7)">Talents</a>
-                                <a class="dropdown-item btn" href="#traits" onclick="togglePanel(7)">Traits</a>
-                                <a class="dropdown-item btn" href="#mutations" onclick="togglePanel(7)">Mutations</a>
-                                <a class="dropdown-item btn" href="#maligna" onclick="togglePanel(7)">Malignancies</a>
-                                <a class="dropdown-item btn" href="#shock" onclick="togglePanel(7)">Shock</a>
-                                <a class="dropdown-item btn" href="#homeworlds" onclick="togglePanel(7)">Homeworlds</a>
-                                <a class="dropdown-item btn" href="#backgrounds" onclick="togglePanel(7)">Backgrounds</a>
-                                <a class="dropdown-item btn" href="#roles" onclick="togglePanel(7)">Roles</a>
-                                <a class="dropdown-item btn" href="#divinations" onclick="togglePanel(7)">Divinations</a>
-                            </div>
-                        </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="headBar" style="padding:0px; padding-top:5px !important;">
+        &emsp;<h4 class="headingLight">Dark Heresy 2e Quick Reference Guide</h4>
+    </nav>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light" id="navBar" style="border-bottom: 1px solid maroon; padding-bottom: 0px !important;">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a type="button" id="expTab" class="btn btn-lightMode btn-selected" href="#exp" onclick="togglePanel(0)">Exp Costs</a>
+                </li>
+                <li class="nav-item">
+                    <a type="button" id="combatTab" class="btn btn-lightMode" href="#combat" onclick="togglePanel(1)">Combat Actions</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="critTab" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Critical Hits
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="critTab">
+                        <a class="dropdown-item" href="#energyCrit" onclick="togglePanel(2)">Energy</a>
+                        <a class="dropdown-item" href="#explosiveCrit" onclick="togglePanel(2)">Explosive</a>
+                        <a class="dropdown-item" href="#impactCrit" onclick="togglePanel(2)">Impact</a>
+                        <a class="dropdown-item" href="#rendingCrit" onclick="togglePanel(2)">Rending</a>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-1 col-sm-1 col-xs-0"></div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="gearTab" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Equipment
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="gearTab">
+                        <a class="dropdown-item btn" href="#gear" onclick="togglePanel(3)">Gear</a>
+                        <a class="dropdown-item btn" href="#tools" onclick="togglePanel(3)">Tools</a>
+                        <a class="dropdown-item btn" href="#cybernetics" onclick="togglePanel(3)">Cybernetics</a>
+                        <a class="dropdown-item btn" href="#consumables" onclick="togglePanel(3)">Drugs & Consumables</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="weaponTab" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Weapons
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="weaponTab">
+                        <a class="dropdown-item btn" href="#" onclick="togglePanel(4)">Weapons</a>
+                        <a class="dropdown-item btn" href="#weaponQual" onclick="togglePanel(4)">Weapon Qualities</a>
+                        <a class="dropdown-item btn" href="#weaponMods" onclick="togglePanel(4)">Weapon Mods</a>
+                        <a class="dropdown-item btn" href="#ammo" onclick="togglePanel(4)">Special Ammo</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="armourTab" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Armour
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="armourTab">
+                        <a class="dropdown-item btn" href="#armour" onclick="togglePanel(5)">Armour</a>
+                        <a class="dropdown-item btn" href="#armourMods" onclick="togglePanel(5)">Armour Mods</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="psykerTab" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Psyker
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="psykerTab">
+                        <a class="dropdown-item btn" href="#psyPowers" onclick="togglePanel(6)">Psychic Powers</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item btn" href="#psyPhenom" onclick="togglePanel(6)">Psychic Phenomena</a>
+                        <a class="dropdown-item btn" href="#psyPerils" onclick="togglePanel(6)">Perils of the Warp</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="charTab" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Character
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="charTab">
+                        <a class="dropdown-item btn" href="#skills" onclick="togglePanel(7)">Skills</a>
+                        <a class="dropdown-item btn" href="#talents" onclick="togglePanel(7)">Talents</a>
+                        <a class="dropdown-item btn" href="#traits" onclick="togglePanel(7)">Traits</a>
+                        <a class="dropdown-item btn" href="#mutations" onclick="togglePanel(7)">Mutations</a>
+                        <a class="dropdown-item btn" href="#maligna" onclick="togglePanel(7)">Malignancies</a>
+                        <a class="dropdown-item btn" href="#shock" onclick="togglePanel(7)">Shock</a>                        
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item btn" href="#homeworlds" onclick="togglePanel(7)">Homeworlds</a>
+                        <a class="dropdown-item btn" href="#backgrounds" onclick="togglePanel(7)">Backgrounds</a>
+                        <a class="dropdown-item btn" href="#roles" onclick="togglePanel(7)">Roles</a>
+                        <a class="dropdown-item btn" href="#divinations" onclick="togglePanel(7)">Divinations</a>
+                    </div>
+                </li>
+            </ul>
         </div>
-    </div>
+        <div>
+            <button class="form-inline btn btn-dark" id="darkBtn" onclick="toDark()">Dark Mode</button>
+            <button class="form-inline btn btn-warning" id="lightBtn" onclick="toLight()" style="display:none;">Light Mode</button>
+        </div>
+    </nav>
 
     <div class="container-fluid centerTable" id="main">
         <div class="row">
@@ -111,17 +119,18 @@
             <div class="col-md-10 col-sm-10 col-xs-12">
 
                 <div id="exp" class="info">
-                    <h3>Experience Costs</h3>
+                    <h3 class="headingLight">Experience Costs</h3>
                     <p>Characters may spend experience to improve their characteristics, gain or improve skills, or learn new
-                        talents.</p>
+                        talents.
+                    </p>
                     <p>The cost of these are dictated by the level to which they are being trained, and the number of relevant
                         aptitudes a character has.</p>
                     <p>The experience costs for talents are listed on the
                         <a href="#talents" onclick="togglePanel(7)">Talents</a> page.</p>
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                            <h4>Skills</h5>
-                                <table class="table table-bordered table-hover table-striped table-condensed">
+                            <h4 class="headingLight">Skills</h5>
+                                <table class="table table-striped table-hover table-bordered table-sm">
                                     <thead>
                                         <tr>
                                             <th>Aptitudes</th>
@@ -157,8 +166,8 @@
                                 </table>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                            <h4>Characteristics</h5>
-                                <table class="table table-bordered table-hover table-striped table-condensed">
+                            <h4 class="headingLight">Characteristics</h5>
+                                <table class="table table-striped table-hover table-bordered table-sm">
                                     <thead>
                                         <tr>
                                             <th>Aptitudes</th>
@@ -200,7 +209,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                            <table class="table table-bordered table-hover table-striped table-condensed">
+                            <table class="table table-striped table-hover table-bordered table-sm">
                                 <thead>
                                     <tr>
                                         <th>Skill</th>
@@ -354,7 +363,7 @@
 
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                            <table class="table table-bordered table-hover table-striped table-condensed">
+                            <table class="table table-striped table-hover table-bordered table-sm">
                                 <thead>
                                     <tr>
                                         <th>Characteristic</th>
@@ -416,11 +425,12 @@
                 </div>
 
                 <div id="combat" class="info" style="display:none">
-                    <h3>Combat Actions</h3>
+                    <h3 class="headingLight">Combat Actions</h3>
                     <p>Characters may take many actions in Combat. These are listed below.</p>
-                    <p>The Subtype of an attack is important; a character may only take one Attack and one Concentration action per
-                        round.</p>
-                    <table id="combatTable" class="table table-bordered table-hover table-striped table-condensed">
+                    <p>The Subtype of an attack is important; a character may only take one Attack and one Concentration action
+                        per round.
+                    </p>
+                    <table id="combatTable" class="table table-striped table-hover table-bordered table-sm">
                         <thead>
                             <tr>
                                 <th>Action</th>
@@ -641,10 +651,10 @@
 
                 <div id="critPane" style="display:none">
                     <div id="energyCrit" class="info">
-                        <h3>Energy Damage Critical Effects</h3>
+                        <h3 class="headingLight">Energy Damage Critical Effects</h3>
                         <br/>
-                        <h4>Arm</h4>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h4 class="headingLight">Arm</h4>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Damage</th>
@@ -718,8 +728,8 @@
                             </tbody>
                         </table>
                         <br/>
-                        <h4>Body</h4>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h4 class="headingLight">Body</h4>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Damage</th>
@@ -797,8 +807,8 @@
                             </tbody>
                         </table>
                         <br/>
-                        <h4>Head</h4>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h4 class="headingLight">Head</h4>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Damage</th>
@@ -868,8 +878,8 @@
                             </tbody>
                         </table>
                         <br/>
-                        <h4>Leg</h4>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h4 class="headingLight">Leg</h4>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Damage</th>
@@ -945,10 +955,10 @@
                     </div>
 
                     <div id="explosiveCrit" class="info">
-                        <h3>Explosive Damage Critical Effects</h3>
+                        <h3 class="headingLight">Explosive Damage Critical Effects</h3>
                         <br/>
-                        <h4>Arm</h4>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h4 class="headingLight">Arm</h4>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Damage</th>
@@ -1024,8 +1034,8 @@
                             </tbody>
                         </table>
                         <br/>
-                        <h4>Body</h4>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h4 class="headingLight">Body</h4>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Damage</th>
@@ -1094,8 +1104,8 @@
                             </tbody>
                         </table>
                         <br/>
-                        <h4>Head</h4>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h4 class="headingLight">Head</h4>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Damage</th>
@@ -1170,8 +1180,8 @@
                             </tbody>
                         </table>
                         <br/>
-                        <h4>Leg</h4>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h4 class="headingLight">Leg</h4>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Damage</th>
@@ -1245,10 +1255,10 @@
                     </div>
 
                     <div id="impactCrit" class="info">
-                        <h3>Impact Damage Critical Effects</h3>
+                        <h3 class="headingLight">Impact Damage Critical Effects</h3>
                         <br/>
-                        <h4>Arm</h4>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h4 class="headingLight">Arm</h4>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Damage</th>
@@ -1322,8 +1332,8 @@
                             </tbody>
                         </table>
                         <br/>
-                        <h4>Body</h4>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h4 class="headingLight">Body</h4>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Damage</th>
@@ -1393,8 +1403,8 @@
                             </tbody>
                         </table>
                         <br/>
-                        <h4>Head</h4>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h4 class="headingLight">Head</h4>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Damage</th>
@@ -1467,8 +1477,8 @@
                             </tbody>
                         </table>
                         <br/>
-                        <h4>Leg</h4>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h4 class="headingLight">Leg</h4>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Damage</th>
@@ -1539,10 +1549,10 @@
                     </div>
 
                     <div id="rendingCrit" class="info">
-                        <h3>Rending Damage Critical Effects</h3>
+                        <h3 class="headingLight">Rending Damage Critical Effects</h3>
                         <br/>
-                        <h4>Arm</h4>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h4 class="headingLight">Arm</h4>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Damage</th>
@@ -1615,8 +1625,8 @@
                             </tbody>
                         </table>
                         <br/>
-                        <h4>Body</h4>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h4 class="headingLight">Body</h4>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Damage</th>
@@ -1692,8 +1702,8 @@
                             </tbody>
                         </table>
                         <br/>
-                        <h4>Head</h4>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h4 class="headingLight">Head</h4>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Damage</th>
@@ -1770,8 +1780,8 @@
                             </tbody>
                         </table>
                         <br/>
-                        <h4>Leg</h4>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h4 class="headingLight">Leg</h4>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Damage</th>
@@ -1845,8 +1855,8 @@
 
                 <div id="gearPane" style="display:none">
                     <div id="gear" class="info">
-                        <h3>Gear</h3>
-                        <table id="gearTable" class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Gear</h3>
+                        <table id="gearTable" class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -1991,8 +2001,8 @@
                         </table>
                     </div>
                     <div id="tools" class="info">
-                        <h3>Tools</h3>
-                        <table id="toolTable" class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Tools</h3>
+                        <table id="toolTable" class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -2294,8 +2304,8 @@
                     </div>
 
                     <div id="cybernetics" class="info">
-                        <h3>Cybernetics</h3>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Cybernetics</h3>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -2491,8 +2501,8 @@
                     </div>
 
                     <div id="consumables" class="info">
-                        <h3>Drugs & Consumables</h3>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Drugs & Consumables</h3>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -2608,10 +2618,12 @@
 
                 <div id="weaponPane" style="display:none">
                     <div id="weapons" class="info">
-                        <h3>Weapons</h3>
-                        <p>Weapons come in all shapes and sizes across the Imperium. It is important to be trained in how to use your weapon of choice;<br/>
-                            an acolyte not trained in the use of a Boltgun - "Weapon Training (Bolt)" - would suffer a -20 penalty on all attempts to use the weapon.</p>
-                        <table id="weaponTable" class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Weapons</h3>
+                        <p>Weapons come in all shapes and sizes across the Imperium. It is important to be trained in how to
+                            use your weapon of choice;
+                            <br/> an acolyte not trained in the use of a Boltgun - "Weapon Training (Bolt)" - would suffer a -20
+                            penalty on all attempts to use the weapon.</p>
+                        <table id="weaponTable" class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -3909,8 +3921,8 @@
                     </div>
 
                     <div id="weaponQual" class="info">
-                        <h3>Special Weapon Qualities</h3>
-                        <table id="weapQualTable" class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Special Weapon Qualities</h3>
+                        <table id="weapQualTable" class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -4138,8 +4150,8 @@
                     </div>
 
                     <div id="weaponMods" class="info">
-                        <h3>Weapon Mods</h3>
-                        <table id="weapModTable" class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Weapon Mods</h3>
+                        <table id="weapModTable" class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -4408,8 +4420,8 @@
                     </div>
 
                     <div id="ammo" class="info">
-                        <h3>Special Ammunition Types</h3>
-                        <table id="ammoTable" class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Special Ammunition Types</h3>
+                        <table id="ammoTable" class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -4508,8 +4520,8 @@
 
                 <div id="armourPane" style="display:none">
                     <div id="armour" class="info">
-                        <h3>Armour</h3>
-                        <table id="armourTable" class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Armour</h3>
+                        <table id="armourTable" class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -4880,8 +4892,8 @@
 
                     </div>
                     <div id="armourMods" class="info">
-                        <h3>Armour Mods</h3>
-                        <table id="armourModTable" class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Armour Mods</h3>
+                        <table id="armourModTable" class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -4999,7 +5011,7 @@
 
                 <div id="psyPane" style="display:none">
                     <div id="psyPowers" class="info">
-                        <h3>Psychic Powers</h3>
+                        <h3 class="headingLight">Psychic Powers</h3>
 
                         <strong>Psychic Bolt:</strong> Determine hit location using Focus Power. Works like a single-fire weapon.
                         <br/>
@@ -5010,8 +5022,7 @@
                         power.
                         <br/>
                         <strong>Psychic Blast:</strong> Radius is determined by Psy Rating. Equivalent of the
-                        <a href="#weaponQual"
-                            onclick="togglePanel(4)">Weapon Quality</a> Blast (X).
+                        <a href="#weaponQual" onclick="togglePanel(4)">Weapon Quality</a> Blast (X).
                         <br/>
                         <strong>Concentration:</strong> Characters may only take one Attack and one Concentration action per turn.
                         <br/>
@@ -5019,7 +5030,7 @@
                         <br/>
                         <br/>
 
-                        <table id="psyPowerTable" class="table table-bordered table-hover table-striped table-condensed">
+                        <table id="psyPowerTable" class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Power</th>
@@ -5065,7 +5076,7 @@
                                     <td>No</td>
                                     <td>Attack, Concentration</td>
                                     <td>
-                                        <span class="psyTooltip" data-toggle="tooltip" title="Works like a semi-auto weapon; total hits cannot exceed Psy Rating used for power.">
+                                        <span class="psyTooltipLight" data-toggle="tooltip" title="Works like a semi-auto weapon; total hits cannot exceed Psy Rating used for power.">
                                             <strong>Psychic Barrage</strong>
                                         </span> Discharge lightning at enemies. Does 1d10+
                                         <strong>PR</strong> Energy damage, Pen: 4</td>
@@ -5138,7 +5149,8 @@
                                     <td>Allies in range numbering up to
                                         <strong>PR</strong>, plus the psyker, recover wounds equal to half the psyker's
                                         <strong>PR</strong> rounded up, and recover from Pinning. This power requires 12 hours of
-                                        recovery.</td>
+                                        recovery.
+                                    </td>
                                     <td>PG 200 CB</td>
                                 </tr>
                                 <tr>
@@ -5324,7 +5336,8 @@
                                         of seconds equal to 2x
                                         <strong>PR</strong>. The higher the
                                         <strong>PR</strong>, the more the psyker can control what his flashes focus on (at the GM's
-                                        discretion).</td>
+                                        discretion).
+                                    </td>
                                     <td>PG 205 CB</td>
                                 </tr>
                                 <tr>
@@ -5378,7 +5391,7 @@
                                         to
                                         <strong>PR</strong> and gain the Flame quality. In addition, at the end of each of the psyker's
                                         turns, a
-                                        <span class="psyTooltip" data-toggle="tooltip" title="Radius is determined by Psy Rating. Equivalent of the Blast (X) Weapon Quality.">
+                                        <span class="psyTooltipLight" data-toggle="tooltip" title="Radius is determined by Psy Rating. Equivalent of the Blast (X) Weapon Quality.">
                                             <strong>Psychic Blast</strong>
                                         </span> centered on his location occurs. All characters within
                                         <strong>PR</strong> metres, with the exception of the psyker himself, are struck for 1d10+
@@ -5399,7 +5412,7 @@
                                     <td>Concentration</td>
                                     <td>While sustained, any attacker in range who successfully strikes the psyker suffers retribution.
                                         A
-                                        <span class="psyTooltip" data-toggle="tooltip" title="Determine hit location using Focus Power. Works like a single-fire weapon.">
+                                        <span class="psyTooltipLight" data-toggle="tooltip" title="Determine hit location using Focus Power. Works like a single-fire weapon.">
                                             <strong>Psychic Bolt</strong>
                                         </span> dealing
                                         <strong>PR</strong> Energy damage immediately strikes the attacker. This damage is not reduced
@@ -5419,7 +5432,7 @@
                                     <td>No</td>
                                     <td>Attack</td>
                                     <td>
-                                        <span class="psyTooltip" data-toggle="tooltip" title="Determine hit location using Focus Power. Works like a single-fire weapon.">
+                                        <span class="psyTooltipLight" data-toggle="tooltip" title="Determine hit location using Focus Power. Works like a single-fire weapon.">
                                             <strong>Psychic Bolt</strong>
                                         </span> the psyker lashes out with his power, dealing 1d10+2+2x
                                         <strong>PR</strong> Energy damage. The psyker uses his Focus Power test to determine if the
@@ -5440,11 +5453,12 @@
                                     <td>No</td>
                                     <td>Attack</td>
                                     <td>
-                                        <span class="psyTooltip" data-toggle="tooltip" title="Works like a semi-auto weapon; total hits cannot exceed Psy Rating used for power.">
+                                        <span class="psyTooltipLight" data-toggle="tooltip" title="Works like a semi-auto weapon; total hits cannot exceed Psy Rating used for power.">
                                             <strong>Psychic Barrage</strong>
                                         </span>. The psyker attempts to strike for 1d10+2+2x
                                         <strong>PR</strong> Energy damage. If successful, any target struck has a chance of catching
-                                        ablaze.</td>
+                                        ablaze.
+                                    </td>
                                     <td>PG 206 CB</td>
                                 </tr>
                                 <tr>
@@ -5474,7 +5488,7 @@
                                     <td>No</td>
                                     <td>Attack</td>
                                     <td>
-                                        <span class="psyTooltip" data-toggle="tooltip" title="Determine hit location using Focus Power. Works like a single-fire weapon.">
+                                        <span class="psyTooltipLight" data-toggle="tooltip" title="Determine hit location using Focus Power. Works like a single-fire weapon.">
                                             <strong>Psychic Bolt</strong>
                                         </span>. The psyker fires a blindingly-bring beam of sun-hot energy dealing 1d10+5+3x
                                         <strong>PR</strong> Energy damage. Pen: 2x
@@ -5494,7 +5508,7 @@
                                     <td>No</td>
                                     <td>Attack</td>
                                     <td>
-                                        <span class="psyTooltip" data-toggle="tooltip" title="Works like a full-auto weapon; total hits cannot exceed Psy Rating used for power.">
+                                        <span class="psyTooltipLight" data-toggle="tooltip" title="Works like a full-auto weapon; total hits cannot exceed Psy Rating used for power.">
                                             <strong>Psychic Storm</strong>
                                         </span>. The psyker gathers a nova of firey energy around his body, before releasing it
                                         in all directions. Deals 1d10+2+2x
@@ -5514,7 +5528,7 @@
                                     <td>No</td>
                                     <td>Attack, Concentration</td>
                                     <td>
-                                        <span class="psyTooltip" data-toggle="tooltip" title="Radius is determined by Psy Rating. Equivalent of the Blast (X) Weapon Quality.">
+                                        <span class="psyTooltipLight" data-toggle="tooltip" title="Radius is determined by Psy Rating. Equivalent of the Blast (X) Weapon Quality.">
                                             <strong>Psychic Blast</strong>
                                         </span>. The psyker creates an explosion of flame centered on his target, with no chance
                                         of escape. All targets within
@@ -5552,7 +5566,7 @@
                                     <td>No</td>
                                     <td>Attack, Concentration</td>
                                     <td>
-                                        <span class="psyTooltip" data-toggle="tooltip" title="Determine hit location using Focus Power. Works like a single-fire weapon.">
+                                        <span class="psyTooltipLight" data-toggle="tooltip" title="Determine hit location using Focus Power. Works like a single-fire weapon.">
                                             <strong>Psychic Bolt</strong>
                                         </span>. The psyker hurls objects or, failing to find any, his mental energy at the target
                                         dealing 1d10+
@@ -5591,7 +5605,7 @@
                                     <td>No</td>
                                     <td>Attack, Concentration</td>
                                     <td>
-                                        <span class="psyTooltip" data-toggle="tooltip" title="Determine hit location using Focus Power. Works like a single-fire weapon.">
+                                        <span class="psyTooltipLight" data-toggle="tooltip" title="Determine hit location using Focus Power. Works like a single-fire weapon.">
                                             <strong>Psychic Bolt</strong>
                                         </span>. The target makes a Toughness save against the psyker's Focus Power test. Upon failure,
                                         the target suffers 1d10+
@@ -5648,7 +5662,7 @@
                                     <td>No</td>
                                     <td>Attack, Concentration</td>
                                     <td>
-                                        <span class="psyTooltip" data-toggle="tooltip" title="Radius is determined by Psy Rating. Equivalent of the Blast (X) Weapon Quality.">
+                                        <span class="psyTooltipLight" data-toggle="tooltip" title="Radius is determined by Psy Rating. Equivalent of the Blast (X) Weapon Quality.">
                                             <strong>Psychic Blast</strong>
                                         </span>. Each character in within
                                         <strong>PR</strong> metres of the psyker, but not the psyker himeself, suffers 1d10+
@@ -5777,7 +5791,7 @@
                                     <td>No</td>
                                     <td>Attack</td>
                                     <td>
-                                        <span class="psyTooltip" data-toggle="tooltip" title="Determine hit location using Focus Power. Works like a single-fire weapon.">
+                                        <span class="psyTooltipLight" data-toggle="tooltip" title="Determine hit location using Focus Power. Works like a single-fire weapon.">
                                             <strong>Psychic Bolt</strong>
                                         </span>. Target suffers 1d10+2+2x
                                         <strong>PR</strong> Explosive damage. Applies the Concussive(1) Weapon Quality.</td>
@@ -5885,8 +5899,8 @@
                     </div>
 
                     <div id="psyPhenom" class="info">
-                        <h3>Psychic Phenomena</h3>
-                        <table id="psyPhenomTable" class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Psychic Phenomena</h3>
+                        <table id="psyPhenomTable" class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Roll</th>
@@ -5984,16 +5998,16 @@
                                 </tr>
                                 <tr>
                                     <td>51-53</td>
-                                    <td>Actinic Discharge: Static electricity fills the air within 5d10 metres causing hair
-                                        to stand on end and unprotected electronics to short out, while the psyker is wreathed
+                                    <td>Actinic Discharge: Static electricity fills the air within 5d10 metres causing hair to
+                                        stand on end and unprotected electronics to short out, while the psyker is wreathed
                                         in eldritch lightning.
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>54-56</td>
-                                    <td>Warp Ghosts: Ghostly apparitions fill the air within 3d10 metres around the psyker,
-                                        flflying about and howling in pain for a few brief moments. Everyone in the radius
-                                        (except the psyker himself ) must test against a Fear rating of 1.</td>
+                                    <td>Warp Ghosts: Ghostly apparitions fill the air within 3d10 metres around the psyker, flflying
+                                        about and howling in pain for a few brief moments. Everyone in the radius (except
+                                        the psyker himself ) must test against a Fear rating of 1.</td>
                                 </tr>
                                 <tr>
                                     <td>57-59</td>
@@ -6044,8 +6058,8 @@
                         </table>
                     </div>
                     <div id="psyPerils" class="info">
-                        <h3>Perils of the Warp</h3>
-                        <table id="psyPerilsTable" class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Perils of the Warp</h3>
+                        <table id="psyPerilsTable" class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Roll</th>
@@ -6205,7 +6219,7 @@
 
                 <div id="charPane" style="display:none">
                     <div id="skills" class="info">
-                        <h3>Skill Descriptions</h3>
+                        <h3 class="headingLight">Skill Descriptions</h3>
                         <p>Generally, a player will make a test with the main characteristic for a skill. However, sometimes
                             the GM determines that an alternate characteristic would make more sense in a given situation
                             - perhaps an attempt to use Deceive to craft a disguise would rely on a character's Intelligence,
@@ -6214,7 +6228,7 @@
                         </p>
                         <hr/>
                         <p>Recommended alternate characteristics for skills can be found in Table 3-3: Skill List on CB p. 99</p>
-                        <table id="skillTable" class="table table-bordered table-hover table-striped table-condensed">
+                        <table id="skillTable" class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -6378,7 +6392,8 @@
                                     <td>Strength</td>
                                     <td>Full Action</td>
                                     <td>Coerce someone into acting a certain way, or try to make an opponent back down from a
-                                        fight.</td>
+                                        fight.
+                                    </td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
@@ -6388,7 +6403,8 @@
                                     <td>Intelligence</td>
                                     <td>Free Action</td>
                                     <td>Decipher an archaic text, compose a moving piece of prose, or convey a message with limited
-                                        vocabulary.</td>
+                                        vocabulary.
+                                    </td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
@@ -6474,7 +6490,8 @@
                                     <td>Agility</td>
                                     <td>Half Action</td>
                                     <td>Pilot an aero in a combat situation, fly beyond its limit, or try to land on difficult
-                                        terrain.</td>
+                                        terrain.
+                                    </td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
@@ -6615,11 +6632,11 @@
                     </div>
 
                     <div id="talents" class="info">
-                        <h3>Talents</h3>
+                        <h3 class="headingLight">Talents</h3>
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-6">
-                                <h4>Exp Costs:</h4>
-                                <table class="table table-bordered table-hover table-striped table-condensed">
+                                <h4 class="headingLight">Exp Costs:</h4>
+                                <table class="table table-striped table-hover table-bordered table-sm">
                                     <thead>
                                         <tr>
                                             <td>Aptitudes</td>
@@ -6653,7 +6670,7 @@
                             <div class="col-md-6 col-sm-6 col-xs-6"></div>
                         </div>
                         <br/>
-                        <table id="talentTable" class="table table-bordered table-hover table-striped table-condensed">
+                        <table id="talentTable" class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -7889,8 +7906,8 @@
                     </div>
 
                     <div id="traits" class="info">
-                        <h3>Traits</h3>
-                        <table id="traitTable" class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Traits</h3>
+                        <table id="traitTable" class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -8190,8 +8207,8 @@
                     </div>
 
                     <div id="mutations" class="info">
-                        <h3>Mutations</h3>
-                        <table id="mutantTable" class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Mutations</h3>
+                        <table id="mutantTable" class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Roll</th>
@@ -8333,8 +8350,8 @@
                     </div>
 
                     <div id="maligna" class="info">
-                        <h3>Malignancies</h3>
-                        <table id="malignaTable" class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Malignancies</h3>
+                        <table id="malignaTable" class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Roll</th>
@@ -8461,10 +8478,13 @@
                     </div>
 
                     <div id="shock" class="info">
-                        <h3>Shock</h3>
-                        <h4>Roll 1d100, add +10 for each degree of failure after the first on a Fear test.</h4>
-                        <h5><strong>Fear tests impose a -10 penalty for each level above the first - <em>eg</em> Fear(3) is at a -20</strong></h5>
-                        <table id="shockTable" class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Shock</h3>
+                        <h4 class="headingLight">Roll 1d100, add +10 for each degree of failure after the first on a Fear test.</h4>
+                        <h5>
+                            <strong>Fear tests impose a -10 penalty for each level above the first -
+                                <em>eg</em> Fear(3) is at a -20</strong>
+                        </h5>
+                        <table id="shockTable" class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Roll</th>
@@ -8545,8 +8565,8 @@
                     </div>
 
                     <div id="homeworlds" class="info">
-                        <h3>Homeworlds</h3>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Homeworlds</h3>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Homeworlds</th>
@@ -8649,8 +8669,8 @@
                     </div>
 
                     <div id="backgrounds" class="info">
-                        <h3>Backgrounds</h3>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Backgrounds</h3>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Backgrounds</th>
@@ -8759,8 +8779,8 @@
                     </div>
 
                     <div id="roles" class="info">
-                        <h3>Roles</h3>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Roles</h3>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th>Role</th>
@@ -8851,8 +8871,8 @@
                     </div>
 
                     <div id="divinations" class="info">
-                        <h3>Divinations</h3>
-                        <table class="table table-bordered table-hover table-striped table-condensed">
+                        <h3 class="headingLight">Divinations</h3>
+                        <table class="table table-striped table-hover table-bordered table-sm">
                             <thead>
                                 <tr>
                                     <th> Rolls</th>
@@ -9046,10 +9066,42 @@
 
             for (i = 0; i < panels.length; i++) {
                 $(panels[i]).hide();
-                $(tabs[i]).removeClass("btn-danger");
+                $(tabs[i]).removeClass("btn-selected");
             }
             $(panels[panel]).show();
-            $(tabs[panel]).addClass("btn-danger");
+            $(tabs[panel]).addClass("btn-selected");
+        }
+
+        function toDark(){
+            $("table").addClass("table-dark");
+            $("body").addClass("body-dark");
+            $("h3").addClass("headingDark");
+            $("h4").addClass("headingDark");
+            $(".psyTooltipLight").addClass("psyTooltipDark").removeClass("psyTooltipLight");
+            $(".btn-lightMode").addClass("btn-darkMode").removeClass("btn-lightMode");
+            $(".dropdown-toggle").addClass("dropdown-dark");
+            $(".dropdown-item").addClass("dropdown-dark");
+            $(".dropdown-menu").addClass("dropdown-dark");
+            $("#navBar").addClass("navbar-dark bg-dark");
+            $("#headBar").addClass("navbar-dark bg-dark");
+            $("#lightBtn").show();
+            $("#darkBtn").hide();
+        }
+        
+        function toLight(){
+            $("table").removeClass("table-dark");
+            $("body").removeClass("body-dark");
+            $("h3").removeClass("headingDark");
+            $("h4").removeClass("headingDark");
+            $(".psyTooltipDark").addClass("psyTooltipLight").removeClass("psyTooltipDark");
+            $(".btn-darkMode").addClass("btn-lightMode").removeClass("btn-darkMode");
+            $(".dropdown-toggle").removeClass("dropdown-dark");
+            $(".dropdown-item").removeClass("dropdown-dark");
+            $(".dropdown-menu").removeClass("dropdown-dark");
+            $("#navBar").removeClass("navbar-dark bg-dark");
+            $("#headBar").removeClass("navbar-dark bg-dark");
+            $("#lightBtn").hide();
+            $("#darkBtn").show();
         }
         $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip();

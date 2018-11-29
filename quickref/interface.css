@@ -16,9 +16,14 @@
     color: white !important;
 }
 
-#psykerTab.btn-danger{
+#psykerTab.btn-selected{
     background: purple !important;
     border-color: purple !important;
+}
+
+#showAll.btn-selected{
+    background: darkgreen !important;
+    border-color: darkgreen !important;
 }
 
 .psyTooltipLight {

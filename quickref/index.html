@@ -18,17 +18,18 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="headBar" style="padding:0px; padding-top:5px !important;">
-        &emsp;<h4 class="headingLight">Dark Heresy 2e Quick Reference Guide</h4>
+        &emsp;
+        <h4 class="headingLight">Dark Heresy 2e Quick Reference Guide</h4>
     </nav>
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light" id="navBar" style="border-bottom: 1px solid maroon; padding-bottom: 0px !important;">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a id="expTab" class="btn btn-lightMode btn-selected" href="#exp" onclick="togglePanel(0)">Exp Costs</a>
                 </li>
                 <li class="nav-item">
@@ -39,6 +40,8 @@
                         Critical Hits
                     </a>
                     <div class="dropdown-menu" aria-labelledby="critTab">
+                        <a class="dropdown-item" href="#crits" onclick="togglePanel(2)">Critical Rolls</a>
+                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#energyCrit" onclick="togglePanel(2)">Energy</a>
                         <a class="dropdown-item" href="#explosiveCrit" onclick="togglePanel(2)">Explosive</a>
                         <a class="dropdown-item" href="#impactCrit" onclick="togglePanel(2)">Impact</a>
@@ -95,9 +98,6 @@
                         <a class="dropdown-item btn" href="#skills" onclick="togglePanel(7)">Skills</a>
                         <a class="dropdown-item btn" href="#talents" onclick="togglePanel(7)">Talents</a>
                         <a class="dropdown-item btn" href="#traits" onclick="togglePanel(7)">Traits</a>
-                        <a class="dropdown-item btn" href="#mutations" onclick="togglePanel(7)">Mutations</a>
-                        <a class="dropdown-item btn" href="#maligna" onclick="togglePanel(7)">Malignancies</a>
-                        <a class="dropdown-item btn" href="#shock" onclick="togglePanel(7)">Shock</a>                        
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item btn" href="#homeworlds" onclick="togglePanel(7)">Homeworlds</a>
                         <a class="dropdown-item btn" href="#backgrounds" onclick="togglePanel(7)">Backgrounds</a>
@@ -105,9 +105,20 @@
                         <a class="dropdown-item btn" href="#divinations" onclick="togglePanel(7)">Divinations</a>
                     </div>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="effectTab" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Effects
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="effectTab">
+                        <a class="dropdown-item btn" href="#mutations" onclick="togglePanel(8)">Mutations</a>
+                        <a class="dropdown-item btn" href="#maligna" onclick="togglePanel(8)">Malignancies</a>
+                        <a class="dropdown-item btn" href="#shock" onclick="togglePanel(8)">Shock</a>
+                    </div>
+                </li>
             </ul>
         </div>
         <div>
+            <a class="btn btn-selected" id="showAll" href="#main" onclick="togglePanel(-1)">Show All</a>
             <button class="form-inline btn btn-dark" id="darkBtn" onclick="toDark()">Dark Mode</button>
             <button class="form-inline btn btn-warning" id="lightBtn" onclick="toLight()" style="display:none;">Light Mode</button>
         </div>
@@ -117,7 +128,6 @@
         <div class="row">
             <div class="col-md-1 col-sm-1 col-xs-0"></div>
             <div class="col-md-10 col-sm-10 col-xs-12">
-
                 <div id="exp" class="info">
                     <h3 class="headingLight">Experience Costs</h3>
                     <p>Characters may spend experience to improve their characteristics, gain or improve skills, or learn new
@@ -650,6 +660,31 @@
                 </div>
 
                 <div id="critPane" style="display:none">
+                    <div id="crits" class="info">
+                        <h3 class="headingLight">Critical Damage Rolls - Righteous Fury</h3>
+                        <br/>
+                        <p>A critical roll is considered to be an unmodified 10 on a damage roll. If the roll is 1d10, this
+                            is pretty obvious. If the roll is 1d5, one must remember that a d5 in Dark Heresy is a d10, counting
+                            1-2 as
+                            <strong>1</strong>, 3-4 as
+                            <strong>2</strong>, etc. Therefore, it is just as likely to critically roll with a d5. </p>
+                        <p>Should a character make a critical roll on an attack, and if the attack inflicts damage (is not completely
+                            negated by
+                            <span class="psyTooltipLight" data-toggle="tooltip" title="Hit location AP + target's TB">
+                                <strong>Total Soak</strong>
+                            </span>), the player then rolls 1d5 and finds the appropriate result on the Critical Effects tables
+                            (below) for their weapon's damage type.</p>
+                        <p>Some considerations:
+                            <br/> &emsp;- Critical effects inflicted from Righteous Fury do not inflict Critical Damage
+                            <br/> &emsp;- Unnamed "troop"-class enemies are considered to have been immediately slain by Righteous
+                            Fury
+                            <br/> &emsp;- Unnamed "troop"-class enemies cannot inflict Righteous Fury on player characters
+                            <br/> &emsp;&emsp;- The previous two considerations are by default, but may be changed as house rules
+                            (
+                            <a href="https://1d4chan.org/wiki/Rule_Zero" target=_blank>Rule Zero</a>)
+                            <br/> &emsp;- Weapons with the
+                            <a href="#weaponQual" onclick="togglePanel(4)">Vengeful(X) Quality</a> inflict Righteous Fury upon rolling X or higher, rather than at 10 exclusively.</p>
+                    </div>
                     <div id="energyCrit" class="info">
                         <h3 class="headingLight">Energy Damage Critical Effects</h3>
                         <br/>
@@ -6784,15 +6819,6 @@
                                     <td>PG 127 CB</td>
                                 </tr>
                                 <tr>
-                                    <td>Flagellant</td>
-                                    <td>WP 30</td>
-                                    <td>Offence</td>
-                                    <td>Toughness</td>
-                                    <td class="tier1">T1</td>
-                                    <td>a Full Action, suffering 1d5-2 for +10 WP.</td>
-                                    <td>PG 57 EI</td>
-                                </tr>
-                                <tr>
                                     <td>Frenzy</td>
                                     <td>-</td>
                                     <td>Strength</td>
@@ -6831,7 +6857,10 @@
                                     <td>Willpower</td>
                                     <td>Defence</td>
                                     <td class="tier1">T1</td>
-                                    <td>Ignore mundane horrors.</td>
+                                    <td>Ignore mundane horrors - dead bodies, xenos abominations, etc. do not cause the Acolyte
+                                        to gain Insanity points, nor do they require a fear rolls. Daemons, manifestations
+                                        of the Warp, and other unnatural or supernatural horrors still inflict their effects.
+                                    </td>
                                     <td>PG 128 CB</td>
                                 </tr>
                                 <tr>
@@ -8206,364 +8235,6 @@
                         </table>
                     </div>
 
-                    <div id="mutations" class="info">
-                        <h3 class="headingLight">Mutations</h3>
-                        <table id="mutantTable" class="table table-striped table-hover table-bordered table-sm">
-                            <thead>
-                                <tr>
-                                    <th>Roll</th>
-                                    <th>Effect</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>01-06</td>
-                                    <td>Bestial Hide: The character's skin becomes toughened with layers of thick scales or chitin,
-                                        and he gains the Natural Armour (2) trait.</td>
-                                </tr>
-                                <tr>
-                                    <td>07-11</td>
-                                    <td>Unnatural Arms: Twisted appendages (shrivelled arms, hooked talons, or fleshy tendrils)
-                                        emerge from this character's spine or torso. He gains the Multiple Arms (CB) trait.</td>
-                                </tr>
-                                <tr>
-                                    <td>12-17</td>
-                                    <td>Sightless Orbs: This character's eyes become sightless, cracked windows into a soul afflicted
-                                        with a growing corruption. He gains Blind and Unnatural Senses (CBx10) traits.</td>
-                                </tr>
-                                <tr>
-                                    <td>18-25</td>
-                                    <td>Swollen Brute: This character becomes bloated, his muscles expanding and his form becoming
-                                        excessively corpulent or disturbingl ymuscular (or perhaps both). This character's
-                                        Toughness and Strength characteristics are permanently increased by 10, but his Agility
-                                        bonus is reduced by 1 for purposes of movement.</td>
-                                </tr>
-                                <tr>
-                                    <td>26-30</td>
-                                    <td>Deathsight: This character's mind becomes twisted, his eyes showing him countless possible
-                                        annihilations of anything or anyone hegazes upon for more than a few moments. Once
-                                        per game session, this character may increase the damage of one attack he has madeby
-                                        his Corruption bonus. If he does so, he gains 1 Corruption point.</td>
-                                </tr>
-                                <tr>
-                                    <td>31-36</td>
-                                    <td>Cursed Fleshmetal: This character's armour and cybernetic implants become fused with
-                                        his flesh, and even regenerate. Removing any of these items requires a Challenging
-                                        (+0) Medicae test; if the test fails, he suffers 1d5 Rending damage to a randomly
-                                        selected limb that ignores Armour. He can make an Ordinary (+10) Toughness test to
-                                        repair items merged with him, in the same manner as a Tech-Use test to repair the
-                                        same equipment, but suffers 1 Corruption point.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>37-43</td>
-                                    <td>Razor Fangs: This character's teeth grow long, turning into tearing fangs. This character
-                                        gains an unarmed attack that inflicts 1d5+CB Rending damage, pen 2. He permanently
-                                        reduces his Fellowship characteristic by 1d5.</td>
-                                </tr>
-                                <tr>
-                                    <td>44-49</td>
-                                    <td>Excessive Legs: This character develops extra legs that support his form, suspending
-                                        his upper torso above a centauroid lower body. This character gains the Quadruped
-                                        trait with a number of extra legs equal half to his Corruption bonus (rounded up).</td>
-                                </tr>
-                                <tr>
-                                    <td>50-54</td>
-                                    <td>Wings: Massive feathered or leathery wings erupt from this character's spine, and he
-                                        gains the Flyer (CBx2) trait.</td>
-                                </tr>
-                                <tr>
-                                    <td>55-60</td>
-                                    <td>Serpentine Tail: This character's legs wither while his spine elongates into a serpentine
-                                        tail that supports his body. He gains the Crawler trait and gains an unarmed attack
-                                        that can strike for 1d10 Impact damage, Pen 0.</td>
-                                </tr>
-                                <tr>
-                                    <td>61-69</td>
-                                    <td>Searing Blood: This character's veins are filled with searing acids in place of blood,
-                                        though somehow the corrosive effects do not burn his own flesh. Whenever he suffers
-                                        Blood Loss, the foul liquid erupts and inflicts 1d5+CB Energy damage, Pen 0, to each
-                                        other character within 1d5 metres.</td>
-                                </tr>
-                                <tr>
-                                    <td>70-77</td>
-                                    <td>Witch-Curse: A small stigma in the shape of a maddening rune appears on this character's
-                                        body, marking him as touched by Chaos. He gains the Psyker trait (or adds 1 to an
-                                        existing psy rating) and freely learns any 1 psychic power that costs 100 xp or less.
-                                        Whenever he attempts to use this power, he gains 1d5 Corruption points.</td>
-                                </tr>
-                                <tr>
-                                    <td>78-84</td>
-                                    <td>Bone-Blades: This character's bones grow long, twisted spurs that sprout painfully from
-                                        his flesh on his command. This character gains an unarmed attack that inflicts 1d10+CB
-                                        Rending damage, Pen 0. Whenever he makes an attack with this weapon, this character
-                                        suffers Blood Loss unless he passes a Challenging (+0) Toughness test.</td>
-                                </tr>
-                                <tr>
-                                    <td>85-89</td>
-                                    <td>Cannibalistic Urge: Blood and marrow become as wine and bread to this character, and
-                                        normal food no longer sates the hunger of his soul. Once per game session, he can
-                                        remove 1d5 damage by consuming human flesh. Each time he does so, he gains 1 Corruption
-                                        point.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>90-92</td>
-                                    <td>Corrupted Flesh: Instead of blood, when this character's flesh is torn asunder, horrific
-                                        insects, worms, or flitting creatures spill forth. Whenever he suffers damage, this
-                                        character gains the Fear (1) trait for 1d5 rounds.</td>
-                                </tr>
-                                <tr>
-                                    <td>93-94</td>
-                                    <td>It Will Not Die!: This character is touched by the power of the Warp, and fortune twists
-                                        to keep him alive regardless of the terrible wounds he suffers, as if it is the will
-                                        of some dark being that resides beyond the veil of reality. He can no longer burn
-                                        a Fate point to survive lethal injuries. Whenever this character would die, he instead
-                                        survives by the narrowest margin as if he had burned a Fate point and gains 1d10+5
-                                        Corruption points.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>95-97</td>
-                                    <td>Warp Gaze: Whatever this character looks upon burns with the fire of the Warp, and all
-                                        who see his eyes despair. This character gainsa 20m ranged attack that strikes with
-                                        1d10+CB Energy damage and the Spray quality. Each time he uses this attack, he gains
-                                        1d5Corruption points. Characters struck with this attack must make a Challenging
-                                        (+0) Fear (1) test.</td>
-                                </tr>
-                                <tr>
-                                    <td>98-99</td>
-                                    <td>Warp Regeneration: Corruption seethes through this character's flesh, sewing his body
-                                        back together time and time again whether he wills it or not. Whenever this character
-                                        suffers damage, he makes a Challenging (+0) Toughness test. If he succeeds, he gains
-                                        the Regeneration (CB) trait for 1 round and gains 1d5 Corruption points.</td>
-                                </tr>
-                                <tr>
-                                    <td>100</td>
-                                    <td>The Warp Made Manifest: This character becomes a Daemon-like creature, capable of reshaping
-                                        reality itself at his whim. He gains the Daemonic (CB), Fear (2), From Beyond, and
-                                        Warp Instability traits. He can also use his Willpower characteristic in place of
-                                        anyother characteristic for any test he is called upon to take.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div id="maligna" class="info">
-                        <h3 class="headingLight">Malignancies</h3>
-                        <table id="malignaTable" class="table table-striped table-hover table-bordered table-sm">
-                            <thead>
-                                <tr>
-                                    <th>Roll</th>
-                                    <th>Effect</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>01-10</td>
-                                    <td>Palsy: The character suffers from numerous minor tics, shakes, and tremors with no medical
-                                        cause. Reduce his Agility by 1d10.</td>
-                                </tr>
-                                <tr>
-                                    <td>11-15</td>
-                                    <td>Dark-hearted: The character grows increasingly cruel, callous, and vindictive. Reduce
-                                        his Fellowship by 1d10.</td>
-                                </tr>
-                                <tr>
-                                    <td>16-20</td>
-                                    <td>Ill-fortuned: Chance seems to mock this Acolyte at the most crucial of opportunities.
-                                        Whenever this character uses a Fate point, roll 1d10. On a result of 7-10, the Fate
-                                        point has no effect but is spent anyway.</td>
-                                </tr>
-                                <tr>
-                                    <td>21-25</td>
-                                    <td>Skin Afflictions: The character is plagued by boils, scabs, weeping sores and other disgusting
-                                        features across his body. He suffers a -20 penalty to all Charm tests.</td>
-                                </tr>
-                                <tr>
-                                    <td>26-30</td>
-                                    <td>Night Eyes: Light pains the character, echoing the growing stain on his soul. Unless
-                                        he shields his eyes, he suffers a -10 penalty on all tests made in an area of bright
-                                        light.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>31-33</td>
-                                    <td>Morbid: The character finds it hard to concentrate as his mind turns increasingly macabre
-                                        and he becomes prone to tortured, gloom filled trains of thought. Reduce his Intelligence
-                                        by 1d10.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>34-45</td>
-                                    <td>Witch Mark: The character develops some minor physical deformity or easily concealable
-                                        mutation. It is small, but perhaps enough to consign him to death if found out by
-                                        a fanatical witch hunter.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>46-50</td>
-                                    <td>Fell Obsession: This functions like the Obsession Disorder on page 288, but in this case
-                                        the character is obsessed by something sinister or malign (such as collecting finger-bone
-                                        trophies, etc.).
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>51-55</td>
-                                    <td>Irrational Nausea: The character feels sick at the sight, sound, or smell of something
-                                        otherwise innocuous (such as prayer books and holy items, bare flesh, human laughter,
-                                        fresh food, etc.). When he encounters an object of his revulsion he must make a Toughnesstest
-                                        or suffer a -10 penalty to all tests as long as he remains in its presence.</td>
-                                </tr>
-                                <tr>
-                                    <td>56-60</td>
-                                    <td>Wasted Frame: The character's pallor becomes corpse-like and his muscles waste away.
-                                        Reduce his Strength by 1d10.</td>
-                                </tr>
-                                <tr>
-                                    <td>61-63</td>
-                                    <td>Night Terrors: The character is plagued by daemonic visions in his sleep. This functions
-                                        identically to the Horrific Nightmares Disorder on page 289.</td>
-                                </tr>
-                                <tr>
-                                    <td>64-70</td>
-                                    <td>Poor Health: The character constantly suffers petty illnesses and phantom pains, and
-                                        his wounds never seem to fully heal. Reduce the character's Toughness by 1d10.</td>
-                                </tr>
-                                <tr>
-                                    <td>71-75</td>
-                                    <td>Distrustful: The character cannot conceal the distrust and antipathy he has for others.
-                                        He suffers a -10 penalty to Fellowship tests when dealing with strangers.</td>
-                                </tr>
-                                <tr>
-                                    <td>76-80</td>
-                                    <td>Malign Sight: The world seems to darken, tarnish, and rot if the character looks at anything
-                                        too long. Reduce the character's Perception by 1d10.</td>
-                                </tr>
-                                <tr>
-                                    <td>81-83</td>
-                                    <td>Ashen Taste: Food and drink taste foul and provide little sustenance to the character,
-                                        and he can barely stomach eating. Recovering levels of Fatigue takes twice as long
-                                        for him than normal (see page 233).</td>
-                                </tr>
-                                <tr>
-                                    <td>84-90</td>
-                                    <td>Bloodlust: Murderous rage is never far from the character's mind. After suffering damage
-                                        (after Armour and Toughness bonus) in combat, he must succeed at a Willpower test
-                                        to allow his enemies to flee, be captured, or incapacitated, rather than killing
-                                        them outright, even if his intent is otherwise.</td>
-                                </tr>
-                                <tr>
-                                    <td>91-93</td>
-                                    <td>Blackout: The character suffers from inexplicable blackouts. When they occur and what
-                                        happens during them is up to the GM, who should inform the player the details of
-                                        what (if anything) he remembers on awakening.</td>
-                                </tr>
-                                <tr>
-                                    <td>94-100</td>
-                                    <td>Strange Addiction: The character has a near-uncontrollable craving for some bizarre and
-                                        unnatural substance (such as rose petals, fresh blood, widows' tears, etc.). This
-                                        acts like a Minor Disorder for Compulsion (see page 288), but is freakish enough
-                                        to cause serious suspicion if discovered.</td>
-                                </tr>
-                                <tr>
-                                    <td>100</td>
-                                    <td>The Warp Made Manifest: This character becomes a Daemon-like creature, capable of reshaping
-                                        reality itself at his whim. He gains the Daemonic (CB), Fear (2), From Beyond, and
-                                        Warp Instability traits. He can also use his Willpower characteristic in place of
-                                        anyother characteristic for any test he is called upon to take.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div id="shock" class="info">
-                        <h3 class="headingLight">Shock</h3>
-                        <h4 class="headingLight">Roll 1d100, add +10 for each degree of failure after the first on a Fear test.</h4>
-                        <h5>
-                            <strong>Fear tests impose a -10 penalty for each level above the first -
-                                <em>eg</em> Fear(3) is at a -20</strong>
-                        </h5>
-                        <table id="shockTable" class="table table-striped table-hover table-bordered table-sm">
-                            <thead>
-                                <tr>
-                                    <th>Roll</th>
-                                    <th>Result</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>01-20</td>
-                                    <td>The character is badly startled. He can only take a single Half Action during his next
-                                        turn, but afterward he acts normally.</td>
-                                </tr>
-                                <tr>
-                                    <td>21-40</td>
-                                    <td>Fear grips the character and he begins to shake and tremble. He suffers a -10 penalty
-                                        on all tests for the rest of the encounter unless he can recover his wits (see Shock
-                                        and Snapping Out of It, page 286).</td>
-                                </tr>
-                                <tr>
-                                    <td>41-60</td>
-                                    <td>Reeling with shock, the character backs away from the source of his Fear. He cannot willingly
-                                        approach the object of his Fear, but can otherwise act normally, with a -10 penalty
-                                        on all tests until the end of the encounter.</td>
-                                </tr>
-                                <tr>
-                                    <td>61-80</td>
-                                    <td>The character is frozen by terror. He can take no actions until he recovers himself (see
-                                        Shock and Snapping Out of It, page 286). After snapping out of it, he makes all tests
-                                        with a -10 penalty for the rest of the encounter.</td>
-                                </tr>
-                                <tr>
-                                    <td>81-100</td>
-                                    <td>Panic grips the character. He must flee the source of his fear, if able, as fast as he
-                                        can, and if prevented from doing so, can only take Half Actions and is at a -20 penalty
-                                        to all tests. Once away from the danger, he must successfully Snap Out of It (see
-                                        Shock and Snapping Out of It, page 286) to regain control.</td>
-                                </tr>
-                                <tr>
-                                    <td>101-120</td>
-                                    <td>Fainting dead away, the character keels over and remains Unconscious for 1d5 rounds.
-                                        Once he regains consciousness, he is still shaken and takes all tests with a -10
-                                        penalty until the end of the encounter.</td>
-                                </tr>
-                                <tr>
-                                    <td>121-130</td>
-                                    <td>Totally overcome, the character screams and vomits uncontrollably for 1d5 rounds. During
-                                        this time he can do nothing, and drops anything he is holding. Afterward, until the
-                                        end of the encounter, the character can only take a single Half Action each turn.</td>
-                                </tr>
-                                <tr>
-                                    <td>131-140</td>
-                                    <td>The character laughs hysterically and randomly attacks anything near him in a manic frenzy,
-                                        firing wildly or attacking with whatever he has at hand. This effect lasts until
-                                        the character Snaps Out of It (see Shock and Snapping Out of It, page 286), or until
-                                        he is knocked Unconscious or otherwise incapacitated.</td>
-                                </tr>
-                                <tr>
-                                    <td>141-160</td>
-                                    <td>The character crumples to the ground for 1d5+1 rounds and begins sobbing, babbling, and
-                                        tearing at his own flesh, and can do nothing else. Even after he returns to his senses,
-                                        he is a complete mess, and suffers a -20 penalty on all tests until the end of the
-                                        encounter.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>160-170</td>
-                                    <td>The character's mind snaps. He becomes catatonic for 1d5 hours; for that time, he is
-                                        Unconscious and cannot be roused.</td>
-                                </tr>
-                                <tr>
-                                    <td>171+</td>
-                                    <td>The character is so overcome with terror that his heart stops: he must make a Challenging
-                                        (+0) Toughness test or die. If he succeeds, the character still falls Unconscious
-                                        for 1d5 hours, and cannot be roused for that time.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
                     <div id="homeworlds" class="info">
                         <h3 class="headingLight">Homeworlds</h3>
                         <table class="table table-striped table-hover table-bordered table-sm">
@@ -9037,6 +8708,366 @@
                     </div>
                 </div>
 
+                <div id="effectPane" style="display:none">
+                    <div id="mutations" class="info">
+                        <h3 class="headingLight">Mutations</h3>
+                        <table id="mutantTable" class="table table-striped table-hover table-bordered table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Roll</th>
+                                    <th>Effect</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01-06</td>
+                                    <td>Bestial Hide: The character's skin becomes toughened with layers of thick scales or chitin,
+                                        and he gains the Natural Armour (2) trait.</td>
+                                </tr>
+                                <tr>
+                                    <td>07-11</td>
+                                    <td>Unnatural Arms: Twisted appendages (shrivelled arms, hooked talons, or fleshy tendrils)
+                                        emerge from this character's spine or torso. He gains the Multiple Arms (CB) trait.</td>
+                                </tr>
+                                <tr>
+                                    <td>12-17</td>
+                                    <td>Sightless Orbs: This character's eyes become sightless, cracked windows into a soul afflicted
+                                        with a growing corruption. He gains Blind and Unnatural Senses (CBx10) traits.</td>
+                                </tr>
+                                <tr>
+                                    <td>18-25</td>
+                                    <td>Swollen Brute: This character becomes bloated, his muscles expanding and his form becoming
+                                        excessively corpulent or disturbingl ymuscular (or perhaps both). This character's
+                                        Toughness and Strength characteristics are permanently increased by 10, but his Agility
+                                        bonus is reduced by 1 for purposes of movement.</td>
+                                </tr>
+                                <tr>
+                                    <td>26-30</td>
+                                    <td>Deathsight: This character's mind becomes twisted, his eyes showing him countless possible
+                                        annihilations of anything or anyone hegazes upon for more than a few moments. Once
+                                        per game session, this character may increase the damage of one attack he has madeby
+                                        his Corruption bonus. If he does so, he gains 1 Corruption point.</td>
+                                </tr>
+                                <tr>
+                                    <td>31-36</td>
+                                    <td>Cursed Fleshmetal: This character's armour and cybernetic implants become fused with
+                                        his flesh, and even regenerate. Removing any of these items requires a Challenging
+                                        (+0) Medicae test; if the test fails, he suffers 1d5 Rending damage to a randomly
+                                        selected limb that ignores Armour. He can make an Ordinary (+10) Toughness test to
+                                        repair items merged with him, in the same manner as a Tech-Use test to repair the
+                                        same equipment, but suffers 1 Corruption point.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>37-43</td>
+                                    <td>Razor Fangs: This character's teeth grow long, turning into tearing fangs. This character
+                                        gains an unarmed attack that inflicts 1d5+CB Rending damage, pen 2. He permanently
+                                        reduces his Fellowship characteristic by 1d5.</td>
+                                </tr>
+                                <tr>
+                                    <td>44-49</td>
+                                    <td>Excessive Legs: This character develops extra legs that support his form, suspending
+                                        his upper torso above a centauroid lower body. This character gains the Quadruped
+                                        trait with a number of extra legs equal half to his Corruption bonus (rounded up).</td>
+                                </tr>
+                                <tr>
+                                    <td>50-54</td>
+                                    <td>Wings: Massive feathered or leathery wings erupt from this character's spine, and he
+                                        gains the Flyer (CBx2) trait.</td>
+                                </tr>
+                                <tr>
+                                    <td>55-60</td>
+                                    <td>Serpentine Tail: This character's legs wither while his spine elongates into a serpentine
+                                        tail that supports his body. He gains the Crawler trait and gains an unarmed attack
+                                        that can strike for 1d10 Impact damage, Pen 0.</td>
+                                </tr>
+                                <tr>
+                                    <td>61-69</td>
+                                    <td>Searing Blood: This character's veins are filled with searing acids in place of blood,
+                                        though somehow the corrosive effects do not burn his own flesh. Whenever he suffers
+                                        Blood Loss, the foul liquid erupts and inflicts 1d5+CB Energy damage, Pen 0, to each
+                                        other character within 1d5 metres.</td>
+                                </tr>
+                                <tr>
+                                    <td>70-77</td>
+                                    <td>Witch-Curse: A small stigma in the shape of a maddening rune appears on this character's
+                                        body, marking him as touched by Chaos. He gains the Psyker trait (or adds 1 to an
+                                        existing psy rating) and freely learns any 1 psychic power that costs 100 xp or less.
+                                        Whenever he attempts to use this power, he gains 1d5 Corruption points.</td>
+                                </tr>
+                                <tr>
+                                    <td>78-84</td>
+                                    <td>Bone-Blades: This character's bones grow long, twisted spurs that sprout painfully from
+                                        his flesh on his command. This character gains an unarmed attack that inflicts 1d10+CB
+                                        Rending damage, Pen 0. Whenever he makes an attack with this weapon, this character
+                                        suffers Blood Loss unless he passes a Challenging (+0) Toughness test.</td>
+                                </tr>
+                                <tr>
+                                    <td>85-89</td>
+                                    <td>Cannibalistic Urge: Blood and marrow become as wine and bread to this character, and
+                                        normal food no longer sates the hunger of his soul. Once per game session, he can
+                                        remove 1d5 damage by consuming human flesh. Each time he does so, he gains 1 Corruption
+                                        point.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>90-92</td>
+                                    <td>Corrupted Flesh: Instead of blood, when this character's flesh is torn asunder, horrific
+                                        insects, worms, or flitting creatures spill forth. Whenever he suffers damage, this
+                                        character gains the Fear (1) trait for 1d5 rounds.</td>
+                                </tr>
+                                <tr>
+                                    <td>93-94</td>
+                                    <td>It Will Not Die!: This character is touched by the power of the Warp, and fortune twists
+                                        to keep him alive regardless of the terrible wounds he suffers, as if it is the will
+                                        of some dark being that resides beyond the veil of reality. He can no longer burn
+                                        a Fate point to survive lethal injuries. Whenever this character would die, he instead
+                                        survives by the narrowest margin as if he had burned a Fate point and gains 1d10+5
+                                        Corruption points.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>95-97</td>
+                                    <td>Warp Gaze: Whatever this character looks upon burns with the fire of the Warp, and all
+                                        who see his eyes despair. This character gainsa 20m ranged attack that strikes with
+                                        1d10+CB Energy damage and the Spray quality. Each time he uses this attack, he gains
+                                        1d5Corruption points. Characters struck with this attack must make a Challenging
+                                        (+0) Fear (1) test.</td>
+                                </tr>
+                                <tr>
+                                    <td>98-99</td>
+                                    <td>Warp Regeneration: Corruption seethes through this character's flesh, sewing his body
+                                        back together time and time again whether he wills it or not. Whenever this character
+                                        suffers damage, he makes a Challenging (+0) Toughness test. If he succeeds, he gains
+                                        the Regeneration (CB) trait for 1 round and gains 1d5 Corruption points.</td>
+                                </tr>
+                                <tr>
+                                    <td>100</td>
+                                    <td>The Warp Made Manifest: This character becomes a Daemon-like creature, capable of reshaping
+                                        reality itself at his whim. He gains the Daemonic (CB), Fear (2), From Beyond, and
+                                        Warp Instability traits. He can also use his Willpower characteristic in place of
+                                        anyother characteristic for any test he is called upon to take.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="maligna" class="info">
+                        <h3 class="headingLight">Malignancies</h3>
+                        <table id="malignaTable" class="table table-striped table-hover table-bordered table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Roll</th>
+                                    <th>Effect</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01-10</td>
+                                    <td>Palsy: The character suffers from numerous minor tics, shakes, and tremors with no medical
+                                        cause. Reduce his Agility by 1d10.</td>
+                                </tr>
+                                <tr>
+                                    <td>11-15</td>
+                                    <td>Dark-hearted: The character grows increasingly cruel, callous, and vindictive. Reduce
+                                        his Fellowship by 1d10.</td>
+                                </tr>
+                                <tr>
+                                    <td>16-20</td>
+                                    <td>Ill-fortuned: Chance seems to mock this Acolyte at the most crucial of opportunities.
+                                        Whenever this character uses a Fate point, roll 1d10. On a result of 7-10, the Fate
+                                        point has no effect but is spent anyway.</td>
+                                </tr>
+                                <tr>
+                                    <td>21-25</td>
+                                    <td>Skin Afflictions: The character is plagued by boils, scabs, weeping sores and other disgusting
+                                        features across his body. He suffers a -20 penalty to all Charm tests.</td>
+                                </tr>
+                                <tr>
+                                    <td>26-30</td>
+                                    <td>Night Eyes: Light pains the character, echoing the growing stain on his soul. Unless
+                                        he shields his eyes, he suffers a -10 penalty on all tests made in an area of bright
+                                        light.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>31-33</td>
+                                    <td>Morbid: The character finds it hard to concentrate as his mind turns increasingly macabre
+                                        and he becomes prone to tortured, gloom filled trains of thought. Reduce his Intelligence
+                                        by 1d10.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>34-45</td>
+                                    <td>Witch Mark: The character develops some minor physical deformity or easily concealable
+                                        mutation. It is small, but perhaps enough to consign him to death if found out by
+                                        a fanatical witch hunter.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>46-50</td>
+                                    <td>Fell Obsession: This functions like the Obsession Disorder on page 288, but in this case
+                                        the character is obsessed by something sinister or malign (such as collecting finger-bone
+                                        trophies, etc.).
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>51-55</td>
+                                    <td>Irrational Nausea: The character feels sick at the sight, sound, or smell of something
+                                        otherwise innocuous (such as prayer books and holy items, bare flesh, human laughter,
+                                        fresh food, etc.). When he encounters an object of his revulsion he must make a Toughnesstest
+                                        or suffer a -10 penalty to all tests as long as he remains in its presence.</td>
+                                </tr>
+                                <tr>
+                                    <td>56-60</td>
+                                    <td>Wasted Frame: The character's pallor becomes corpse-like and his muscles waste away.
+                                        Reduce his Strength by 1d10.</td>
+                                </tr>
+                                <tr>
+                                    <td>61-63</td>
+                                    <td>Night Terrors: The character is plagued by daemonic visions in his sleep. This functions
+                                        identically to the Horrific Nightmares Disorder on page 289.</td>
+                                </tr>
+                                <tr>
+                                    <td>64-70</td>
+                                    <td>Poor Health: The character constantly suffers petty illnesses and phantom pains, and
+                                        his wounds never seem to fully heal. Reduce the character's Toughness by 1d10.</td>
+                                </tr>
+                                <tr>
+                                    <td>71-75</td>
+                                    <td>Distrustful: The character cannot conceal the distrust and antipathy he has for others.
+                                        He suffers a -10 penalty to Fellowship tests when dealing with strangers.</td>
+                                </tr>
+                                <tr>
+                                    <td>76-80</td>
+                                    <td>Malign Sight: The world seems to darken, tarnish, and rot if the character looks at anything
+                                        too long. Reduce the character's Perception by 1d10.</td>
+                                </tr>
+                                <tr>
+                                    <td>81-83</td>
+                                    <td>Ashen Taste: Food and drink taste foul and provide little sustenance to the character,
+                                        and he can barely stomach eating. Recovering levels of Fatigue takes twice as long
+                                        for him than normal (see page 233).</td>
+                                </tr>
+                                <tr>
+                                    <td>84-90</td>
+                                    <td>Bloodlust: Murderous rage is never far from the character's mind. After suffering damage
+                                        (after Armour and Toughness bonus) in combat, he must succeed at a Willpower test
+                                        to allow his enemies to flee, be captured, or incapacitated, rather than killing
+                                        them outright, even if his intent is otherwise.</td>
+                                </tr>
+                                <tr>
+                                    <td>91-93</td>
+                                    <td>Blackout: The character suffers from inexplicable blackouts. When they occur and what
+                                        happens during them is up to the GM, who should inform the player the details of
+                                        what (if anything) he remembers on awakening.</td>
+                                </tr>
+                                <tr>
+                                    <td>94-100</td>
+                                    <td>Strange Addiction: The character has a near-uncontrollable craving for some bizarre and
+                                        unnatural substance (such as rose petals, fresh blood, widows' tears, etc.). This
+                                        acts like a Minor Disorder for Compulsion (see page 288), but is freakish enough
+                                        to cause serious suspicion if discovered.</td>
+                                </tr>
+                                <tr>
+                                    <td>100</td>
+                                    <td>The Warp Made Manifest: This character becomes a Daemon-like creature, capable of reshaping
+                                        reality itself at his whim. He gains the Daemonic (CB), Fear (2), From Beyond, and
+                                        Warp Instability traits. He can also use his Willpower characteristic in place of
+                                        anyother characteristic for any test he is called upon to take.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="shock" class="info">
+                        <h3 class="headingLight">Shock</h3>
+                        <h4 class="headingLight">Roll 1d100, add +10 for each degree of failure after the first on a Fear test.</h4>
+                        <h5>
+                            <strong>Fear tests impose a -10 penalty for each level above the first -
+                                <em>eg</em> Fear(3) is at a -20</strong>
+                        </h5>
+                        <table id="shockTable" class="table table-striped table-hover table-bordered table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Roll</th>
+                                    <th>Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01-20</td>
+                                    <td>The character is badly startled. He can only take a single Half Action during his next
+                                        turn, but afterward he acts normally.</td>
+                                </tr>
+                                <tr>
+                                    <td>21-40</td>
+                                    <td>Fear grips the character and he begins to shake and tremble. He suffers a -10 penalty
+                                        on all tests for the rest of the encounter unless he can recover his wits (see Shock
+                                        and Snapping Out of It, page 286).</td>
+                                </tr>
+                                <tr>
+                                    <td>41-60</td>
+                                    <td>Reeling with shock, the character backs away from the source of his Fear. He cannot willingly
+                                        approach the object of his Fear, but can otherwise act normally, with a -10 penalty
+                                        on all tests until the end of the encounter.</td>
+                                </tr>
+                                <tr>
+                                    <td>61-80</td>
+                                    <td>The character is frozen by terror. He can take no actions until he recovers himself (see
+                                        Shock and Snapping Out of It, page 286). After snapping out of it, he makes all tests
+                                        with a -10 penalty for the rest of the encounter.</td>
+                                </tr>
+                                <tr>
+                                    <td>81-100</td>
+                                    <td>Panic grips the character. He must flee the source of his fear, if able, as fast as he
+                                        can, and if prevented from doing so, can only take Half Actions and is at a -20 penalty
+                                        to all tests. Once away from the danger, he must successfully Snap Out of It (see
+                                        Shock and Snapping Out of It, page 286) to regain control.</td>
+                                </tr>
+                                <tr>
+                                    <td>101-120</td>
+                                    <td>Fainting dead away, the character keels over and remains Unconscious for 1d5 rounds.
+                                        Once he regains consciousness, he is still shaken and takes all tests with a -10
+                                        penalty until the end of the encounter.</td>
+                                </tr>
+                                <tr>
+                                    <td>121-130</td>
+                                    <td>Totally overcome, the character screams and vomits uncontrollably for 1d5 rounds. During
+                                        this time he can do nothing, and drops anything he is holding. Afterward, until the
+                                        end of the encounter, the character can only take a single Half Action each turn.</td>
+                                </tr>
+                                <tr>
+                                    <td>131-140</td>
+                                    <td>The character laughs hysterically and randomly attacks anything near him in a manic frenzy,
+                                        firing wildly or attacking with whatever he has at hand. This effect lasts until
+                                        the character Snaps Out of It (see Shock and Snapping Out of It, page 286), or until
+                                        he is knocked Unconscious or otherwise incapacitated.</td>
+                                </tr>
+                                <tr>
+                                    <td>141-160</td>
+                                    <td>The character crumples to the ground for 1d5+1 rounds and begins sobbing, babbling, and
+                                        tearing at his own flesh, and can do nothing else. Even after he returns to his senses,
+                                        he is a complete mess, and suffers a -20 penalty on all tests until the end of the
+                                        encounter.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>160-170</td>
+                                    <td>The character's mind snaps. He becomes catatonic for 1d5 hours; for that time, he is
+                                        Unconscious and cannot be roused.</td>
+                                </tr>
+                                <tr>
+                                    <td>171+</td>
+                                    <td>The character is so overcome with terror that his heart stops: he must make a Challenging
+                                        (+0) Toughness test or die. If he succeeds, the character still falls Unconscious
+                                        for 1d5 hours, and cannot be roused for that time.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
             </div>
             <div class="col-md-1 col-sm-1 col-xs-0"></div>
         </div>
@@ -9058,21 +9089,32 @@
     <script>
         function togglePanel(panel) {
             var panels = ['#exp', '#combat', '#critPane', '#gearPane', '#weaponPane', '#armourPane', '#psyPane',
-                '#charPane'
+                '#charPane', '#effectPane'
             ];
             var tabs = ['#expTab', '#combatTab', '#critTab', '#gearTab', '#weaponTab', '#armourTab', '#psykerTab',
-                '#charTab'
+                '#charTab', '#effectTab'
             ];
 
-            for (i = 0; i < panels.length; i++) {
-                $(panels[i]).hide();
-                $(tabs[i]).removeClass("btn-selected");
+            if (panel == -1) {
+                for (i = 0; i < panels.length; i ++){
+                    $(panels[i]).show();
+                    $(tabs[i]).removeClass("btn-selected");
+                    $('#showAll').hide();
+                }
+            } 
+            else {
+                for (i = 0; i < panels.length; i++) {
+                    $(panels[i]).hide();
+                    $(tabs[i]).removeClass("btn-selected");
+                }
+                $(panels[panel]).show();
+                $(tabs[panel]).addClass("btn-selected");
+                $("#showAll").show();
             }
-            $(panels[panel]).show();
-            $(tabs[panel]).addClass("btn-selected");
         }
 
-        function toDark(){
+
+        function toDark() {
             $("table").addClass("table-dark");
             $("body").addClass("body-dark");
             $("h3").addClass("headingDark");
@@ -9087,8 +9129,8 @@
             $("#lightBtn").show();
             $("#darkBtn").hide();
         }
-        
-        function toLight(){
+
+        function toLight() {
             $("table").removeClass("table-dark");
             $("body").removeClass("body-dark");
             $("h3").removeClass("headingDark");

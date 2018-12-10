@@ -10,7 +10,7 @@ body {
 }
 
 td {
-  text-align: center;
+  text-align: left;
   font-size: 1.5em;
   /*font-family: monospace;*/
 }
@@ -20,7 +20,7 @@ td {
 }
 
 tr {
-  max-width 400px;
+  max-width: 400px;
 }
 
 .hiddenLetter {

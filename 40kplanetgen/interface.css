@@ -1,0 +1,14 @@
+body {
+    font-family: Courier New, Courier, monospace !important;
+    background-color: #092601 !important;
+    color: white !important;
+    font-size: 1.2em !important;
+}
+
+.card {
+    background-color: #152f05 !important;
+}
+
+.centerTable {
+	text-align:center;
+}

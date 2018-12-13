@@ -1,0 +1,295 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An app implementation of the Warhammer 40k/Dark Heresy Planet Generator v2">
+    <meta name="keywords" content="Dark Heresy, 40k, warhammer 40k, 40k rpg, planet generation, Dark heresy 2e, dark heresy second edition, dark heresy 2nd edition">
+    <title>40k Planet Gen</title>
+    <link rel="stylesheet" href="interface.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="gen.js"></script>
+</head>
+
+
+
+<body>
+    <div class="container-fluid" id="main">
+        <div class="row">
+            <div class="col-md col-sm col-xs"></div>
+            <div class="col-md-6 col-sm-1 col-xs-1">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-success" id="genBtn" onclick="buildPlanet()">Generate!</button>
+                    <button class="btn btn-warning" id="exportBtn" onclick="exportPlanet()">Export Planet</button>
+                    <button class="btn btn-warning" id="importBtn" onclick="importPlanet()">Import Planet</button>
+                </div>
+            </div>
+            <div class="col-md col-sm col-xs"></div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-2 col-s-1 col-xs-0"></div>
+            <div class="col-md-8 col-s-10 col-xs-12">
+                <div id="planetCard">
+                    <div class="card" id="general">
+                        <div class="card-header" id="generalHeader">
+                            <h5 class="card-title" data-toggle="collapse" data-target="#generalCard" aria-expanded="true" aria-controls="generalCard">General Overview
+                                <hr style="background-color:white">
+                            </h5>
+                        </div>
+                        <div id="generalCard" class="collapse show" aria-labelledby="generalHeader">
+                            <div class="card-body">
+                                <table id="generalTable">
+                                    <tbody>
+                                        <tr>
+                                            <td>Planet Class: &emsp;</td>
+                                            <td id="planetClass"></td>
+                                        </tr>
+                                        <tr id="prevTd" style="display:none;">
+                                            <td>Previous Class: &emsp;</td>
+                                            <td id="planetPrevClass"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Population: &emsp;</td>
+                                            <td id="population"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Goverment: &emsp;</td>
+                                            <td id="govType"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Religion: &emsp;</td>
+                                            <td id="religion"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tech Level: &emsp;</td>
+                                            <td id="techLevel"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Characteristics: &emsp;</td>
+                                            <td id="chars"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="card" id="attributes">
+                        <div class="card-header" id="attributeHeader">
+                            <h5 class="card-title" data-toggle="collapse" data-target="#attributeCard" aria-expanded="true" aria-controls="attributeCard">Planetary Attributes
+                                <hr style="background-color:white">
+                            </h5>
+                        </div>
+                        <div id="attributeCard" class="collapse show" aria-labelledby="attributeHeader">
+                            <div class="card-body">
+                                <table id="attributeTable">
+                                    <tbody>
+                                        <tr>
+                                            <td>Size: &emsp;</td>
+                                            <td id="size"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Circumference: &emsp;</td>
+                                            <td id="circum"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Day Length: &emsp;</td>
+                                            <td id="dayLengthHours"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Year Length: &emsp;</td>
+                                            <td id="yearLength"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Density: &emsp;</td>
+                                            <td id="density"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Gravity: &emsp;</td>
+                                            <td id="gravity"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Atmosphere: &emsp;</td>
+                                            <td id="atmosphere"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Atmospheric Pressure: &emsp;</td>
+                                            <td id="atmoPres"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Atmosphere Type: &emsp;</td>
+                                            <td id="atmoType"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Atmosphere Description: &emsp;</td>
+                                            <td id="atmoDesc"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Climate: &emsp;</td>
+                                            <td id="tempType"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Temperature Range: &emsp;</td>
+                                            <td id="tempRange"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Axial Tilt: &emsp;</td>
+                                            <td id="tiltString"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="card" id="terrain">
+                        <div class="card-header" id="terrainHeader">
+                            <h5 class="card-title" data-toggle="collapse" data-target="#terrainCard" aria-expanded="true" aria-controls="terrainCard">Terrain Detail
+                                <hr style="background-color:white">
+                            </h5>
+                        </div>
+                        <div id="terrainCard" class="collapse show" aria-labelledby="terrainHeader">
+                            <div class="card-body">
+                                <table id="terrainTable">
+                                    <tbody>
+                                        <tr>
+                                            <td>Surface Water: &emsp;</td>
+                                            <td id="hydroPercent"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Hydrographics: &emsp;</td>
+                                            <td id="hydroDesc"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Land Terrain: &emsp;</td>
+                                            <td id="terrainDetail"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="card" id="adepta">
+                        <div class="card-header" id="adeptaHeader">
+                            <h5 class="card-title" data-toggle="collapse" data-target="#adeptaCard" aria-expanded="true" aria-controls="adeptaCard">Adepta Presence
+                                <hr style="background-color:white">
+                            </h5>
+                        </div>
+                        <div id="adeptaCard" class="collapse show" aria-labelledby="adeptaHeader">
+                            <div class="card-body">
+                                <table>
+                                    <tr>
+                                        <td>Arbites: &emsp;</td>
+                                        <td id="arbites"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Astra Telepathica: &emsp;</td>
+                                        <td id="astraTelepathica"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mechanicus: &emsp;</td>
+                                        <td id="mechanicus"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Administratum: &emsp;</td>
+                                        <td id="administratum"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ministorum: &emsp;</td>
+                                        <td id="ministorum"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Inquisition: &emsp;</td>
+                                        <td id="inquisition"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Munitorium: &emsp;</td>
+                                        <td id="munitorium"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="card" id="defenses">
+                        <div class="card-header" id="defensesHeader">
+                            <h5 class="card-title" data-toggle="collapse" data-target="#defensesCard" aria-expanded="true" aria-controls="defensesCard">Planetary Defenses
+                                <hr style="background-color:white">
+                            </h5>
+                        </div>
+                        <div id="defensesCard" class="collapse show" aria-labelledby="defensesHeader">
+                            <div class="card-body">
+                                <table>
+                                    <tr>
+                                        <td>Enforcers: &emsp;</td>
+                                        <td id="enforcers"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Militia: &emsp;</td>
+                                        <td id="militia"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Standing Army: &emsp;</td>
+                                        <td id="army"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Armoured Forces: &emsp;</td>
+                                        <td id="armouredForces"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Private Armies: &emsp;</td>
+                                        <td id="privateArmies"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Titan Legions: &emsp;</td>
+                                        <td id="titanLegions"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Naval Forces: &emsp;</td>
+                                        <td id="navy"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Orbital Stations: &emsp;</td>
+                                        <td id="stations"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Missile Silos (Planetary): &emsp;</td>
+                                        <td id="planetMissiles"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Missile Silos (Orbital): &emsp;</td>
+                                        <td id="orbitalMissiles"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Defense Lasers: &emsp;</td>
+                                        <td id="lasers"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mercenary Forces: &emsp;</td>
+                                        <td id="mercs"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-s-1 col-xs-0"></div>
+        </div>
+    </div>
+</body>
+
+</html>

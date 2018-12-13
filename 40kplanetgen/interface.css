@@ -12,3 +12,7 @@ body {
 .centerTable {
 	text-align:center;
 }
+
+.btn-warning {
+    border: 1px solid black !important;
+}

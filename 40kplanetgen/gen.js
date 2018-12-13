@@ -122,6 +122,12 @@ var planet = {
 
 function buildPlanetCard() {
 
+    if (planet.prevClassCode != -1){
+        document.getElementById("prevTr").style="";
+    } else {
+        document.getElementById("prevTr").style="display:none";
+    }
+
     for (key in planet) {
         try {
             document.getElementById(key.toString()).innerHTML = planet[key];

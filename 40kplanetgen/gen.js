@@ -122,10 +122,10 @@ var planet = {
 
 function buildPlanetCard() {
 
-    if (planet.prevClassCode != -1){
-        document.getElementById("prevTr").style="";
+    if (planet.prevClassCode != -1) {
+        document.getElementById("prevTr").style = "";
     } else {
-        document.getElementById("prevTr").style="display:none";
+        document.getElementById("prevTr").style = "display:none";
     }
 
     for (key in planet) {
@@ -136,6 +136,26 @@ function buildPlanetCard() {
         }
     }
 
+    document.getElementById("circumference").innerHTML = "<span class=\"toolTip\" data-toggle=\"tooltip\" title=\"The circumference of Terra is 40,075 km\">" + planet.circum + "</span>"
+
+    if (planet.religCode >= 0) {
+        document.getElementById("religionTd").innerHTML = "<span class=\"toolTip\" data-toggle=\"tooltip\" title=\"" + religionDescriptions[planet.religCode] + "\">" + planet.religion + "</span>"
+    } else {
+        document.getElementById("religionTd").innerHTML = planet.religion;
+    }
+
+    document.getElementById("class").innerHTML = "<span class=\"toolTip\" data-toggle=\"tooltip\" title=\"" + classDescriptions[planet.classCode] + "\">" + planet.planetClass + "</span>"
+
+    if (planet.prevClassCode >= 0) {
+        document.getElementById("prevClass").innerHTML = "<span class=\"toolTip\" data-toggle=\"tooltip\" title=\"" + classDescriptions[planet.prevClassCode] + "\">" + planet.planetPrevClass + "</span>"
+    }
+
+    if (planet.govCode >= 0) {
+        document.getElementById("govTd").innerHTML = "<span class=\"toolTip\" data-toggle=\"tooltip\" title=\"" + govtDescriptions[planet.govCode] + "\">" + planet.govType + "</span>"
+    } else {
+        document.getElementById("govTd").innerHTML = planet.govType;
+    }
+
     document.getElementById("arbites").innerHTML = planet.adeptaPresence[0];
     document.getElementById("astraTelepathica").innerHTML = planet.adeptaPresence[1];
     document.getElementById("mechanicus").innerHTML = planet.adeptaPresence[2];
@@ -144,47 +164,86 @@ function buildPlanetCard() {
     document.getElementById("inquisition").innerHTML = planet.adeptaPresence[5];
     document.getElementById("munitorium").innerHTML = planet.adeptaPresence[6];
 
-    document.getElementById("enforcers").innerHTML=planet.defenseDesc[0];
-    document.getElementById("militia").innerHTML=planet.defenseDesc[1];
-    document.getElementById("army").innerHTML=planet.defenseDesc[2];
-    document.getElementById("armouredForces").innerHTML=planet.defenseDesc[3];
-    document.getElementById("titanLegions").innerHTML=planet.defenseDesc[4];
-    document.getElementById("privateArmies").innerHTML=planet.defenseDesc[5];
-    document.getElementById("navy").innerHTML=planet.defenseDesc[6];
-    document.getElementById("stations").innerHTML=planet.defenseDesc[7];
-    document.getElementById("planetMissiles").innerHTML=planet.defenseDesc[8];
-    document.getElementById("orbitalMissiles").innerHTML=planet.defenseDesc[9];
-    document.getElementById("lasers").innerHTML=planet.defenseDesc[10];
-    document.getElementById("mercs").innerHTML=planet.defenseDesc[11];
-    
+    document.getElementById("enforcers").innerHTML = planet.defenseDesc[0];
+    document.getElementById("militia").innerHTML = planet.defenseDesc[1];
+    document.getElementById("army").innerHTML = planet.defenseDesc[2];
+    document.getElementById("armouredForces").innerHTML = planet.defenseDesc[3];
+    document.getElementById("titanLegions").innerHTML = planet.defenseDesc[4];
+    document.getElementById("privateArmies").innerHTML = planet.defenseDesc[5];
+    document.getElementById("navy").innerHTML = planet.defenseDesc[6];
+    document.getElementById("stations").innerHTML = planet.defenseDesc[7];
+    document.getElementById("planetMissiles").innerHTML = planet.defenseDesc[8];
+    document.getElementById("orbitalMissiles").innerHTML = planet.defenseDesc[9];
+    document.getElementById("lasers").innerHTML = planet.defenseDesc[10];
+    document.getElementById("mercs").innerHTML = planet.defenseDesc[11];
+
     document.getElementById("chars").innerHTML = "";
 
-    for (let i = 0; i < planet.terrainMods.length; i ++){
+    for (let i = 0; i < planet.terrainMods.length; i++) {
         document.getElementById("chars").innerHTML += "[" + planet.terrainMods[i] + "] ";
     }
 
     document.getElementById("terrainDetail").innerHTML = ""
 
-    for (let i = 0; i < planet.terrainPercentages.length; i ++){
-        if (planet.terrainPercentages[i] != 0){
+    for (let i = 0; i < planet.terrainPercentages.length; i++) {
+        if (planet.terrainPercentages[i] != 0) {
             document.getElementById("terrainDetail").innerHTML += planet.terrainDesc[i] + " " + terrain[i] + "&emsp;(" + planet.terrainPercentages[i] + "%) <br/>"
-            //document.getElementById("terrainDetailRows").innerHTML += "<tr><td>"+terrain[i]+": &emsp;</td><td>" + planet.terrainDesc[i] + "&emsp;(" + planet.terrainPercentages[i] + "%)</td></tr>";
         }
     }
 
     document.getElementById("yearLength").innerHTML = "";
 
     document.getElementById("yearLength").innerHTML += planet.yearLengthLocalDays + "<br/>" + planet.yearLengthTerranYears;
-    
+
+
+    if (inRangeInclusive(planet.techRoll, "01-10")) {
+        document.getElementById("tech").innerHTML = "<span class=\"toolTip\" data-toggle=\"tooltip\" title=\"" + techLevelDescriptions[0] + "\">" + planet.techLevel + "</span>"
+
+    } else if (inRangeInclusive(planet.techRoll, "11-20")) {
+        document.getElementById("tech").innerHTML = "<span class=\"toolTip\" data-toggle=\"tooltip\" title=\"" + techLevelDescriptions[1] + "\">" + planet.techLevel + "</span>"
+
+    } else if (inRangeInclusive(planet.techRoll, "21-30")) {
+        document.getElementById("tech").innerHTML = "<span class=\"toolTip\" data-toggle=\"tooltip\" title=\"" + techLevelDescriptions[2] + "\">" + planet.techLevel + "</span>"
+
+    } else if (inRangeInclusive(planet.techRoll, "31-40")) {
+        document.getElementById("tech").innerHTML = "<span class=\"toolTip\" data-toggle=\"tooltip\" title=\"" + techLevelDescriptions[3] + "\">" + planet.techLevel + "</span>"
+
+    } else if (inRangeInclusive(planet.techRoll, "41-50")) {
+        document.getElementById("tech").innerHTML = "<span class=\"toolTip\" data-toggle=\"tooltip\" title=\"" + techLevelDescriptions[4] + "\">" + planet.techLevel + "</span>"
+
+    } else if (inRangeInclusive(planet.techRoll, "51-60")) {
+        document.getElementById("tech").innerHTML = "<span class=\"toolTip\" data-toggle=\"tooltip\" title=\"" + techLevelDescriptions[5] + "\">" + planet.techLevel + "</span>"
+
+    } else if (inRangeInclusive(planet.techRoll, "61-70")) {
+        document.getElementById("tech").innerHTML = "<span class=\"toolTip\" data-toggle=\"tooltip\" title=\"" + techLevelDescriptions[6] + "\">" + planet.techLevel + "</span>"
+
+    } else if (inRangeInclusive(planet.techRoll, "71-80")) {
+        document.getElementById("tech").innerHTML = "<span class=\"toolTip\" data-toggle=\"tooltip\" title=\"" + techLevelDescriptions[7] + "\">" + planet.techLevel + "</span>"
+
+    } else if (inRangeInclusive(planet.techRoll, "81-90")) {
+        document.getElementById("tech").innerHTML = "<span class=\"toolTip\" data-toggle=\"tooltip\" title=\"" + techLevelDescriptions[8] + "\">" + planet.techLevel + "</span>"
+
+    } else if (inRangeInclusive(planet.techRoll, "91-100")) {
+        document.getElementById("tech").innerHTML = "<span class=\"toolTip\" data-toggle=\"tooltip\" title=\"" + techLevelDescriptions[9] + "\">" + planet.techLevel + "</span>"
+
+    } else if (planet.techRoll > 100) {
+        document.getElementById("tech").innerHTML = "<span class=\"toolTip\" data-toggle=\"tooltip\" title=\"" + techLevelDescriptions[10] + "\">" + planet.techLevel + "</span>"
+
+    }
+
+
+
+
+    $('[data-toggle="tooltip"]').tooltip();
 }
 
 function exportPlanet() {
-    prompt("Your planet string:",JSON.stringify(planet));
+    prompt("Your planet string:", JSON.stringify(planet));
 }
 
 function importPlanet() {
     var importedPlanet = JSON.parse(prompt("Paste your planet string:"))
-    Object.assign(planet,importedPlanet);
+    Object.assign(planet, importedPlanet);
     buildPlanetCard();
 }
 
@@ -202,7 +261,8 @@ var terrainModifiers = {
     "Thin Atmosphere": [-30, -20, -50, -40, -5, -10, -10, -10, -15, 0, 0, 0, -10, 30, -20, 0, -30, 20, -20, 10],
     "Dense Atmosphere": [30, 20, 10, 20, 5, 5, 0, 20, 20, 0, 0, 0, 0, -10, 10, 0, 5, -10, 0, 0],
     "Corrosive Atmosphere": [-10, -10, -20, -10, -10, -20, -10, 30, 30, 20, 10, 10, -10, 40, -20, 0, 10, 20, 0, -10],
-    "Insidious Atmosphere": [-20, -20, -40, -20, -20, -40, -20, 50, 50, 30, 20, 20, -20, 50, -30, 0, 20, 30, 0, -20]
+    "Insidious Atmosphere": [-20, -20, -40, -20, -20, -40, -20, 50, 50, 30, 20, 20, -20, 50, -30, 0, 20, 30, 0, -20],
+    "No Land": [-999, -999, -999, -999, -999, -999, -999, -999, -999, -999, -999, -999, -999, -999, -999, -999, -999, -999, -999, -999]
 }
 
 var terrain = ["Grassland", "Savannah", "Continual Forest", "Broken Forest", "Hills", "Mountain", "Plateaus", "Dormant Volcanoes", "Active Volcanoes", "Broken Rock", "Flat Rock", "Columns", "Moors", "Barren", "Swamp", "Caves", "Ravines", "Sandy", "Islands", "Cliffs"]
@@ -210,6 +270,26 @@ var terrain = ["Grassland", "Savannah", "Continual Forest", "Broken Forest", "Hi
 var popClassMods = [40, 0, 20, 10, -20, -20, 0, -10, -20, 0, 0, 0, -40, -20, -30, 0, 0];
 
 var popSizeMods = [-30, -20, -10, 0, 0, 0, 10, 20, 30, 40];
+
+var classDescriptions = [
+    "The most populous of Imperial worlds, with many large self-contained megacities each with populations in the billions. These worlds provide industrial labour to the Imperium, though the cities themselves are often riddled with crime",
+    "A planet dedicated solely to the production of agricultural goods and food. Many planets, such as Hive and Forge worlds, are not capable of producing enough food for their population, and thus rely on Agri worlds to sustain them",
+    "Directly controlled by the Adeptus Mechanicus, these worlds have a complete dedication to the manufacture of the various machines and devices of the Imperium",
+    "Rich in natural resources, these worlds are often exploited for strategic materials. The population often consists of slaves or penal workers who spend their miserable lives extracting precious substances from the planet",
+    "Also called a Civilised world, this is a planet without a dedicated purpose in the Imperium, the development of which has been allowed to progress \"naturally\". Often self-sufficient in terms of food supply and technology",
+    "A world which the Imperium has chosen not to expose to their advanced technology. Often populated by many serfs and farmers, culturally and technologically similar to Terran society in the European Late Middle Ages",
+    "A planet whose population consists of nomadic raiders and hunter-gatherers. These often have little oversight from the Imperium, and are more prone to developing local or heretical religions",
+    "Dominated by the religion of the Imperial Cult, these worlds are covered in religious monuments and cathedrals. Often these were the birthplace of an Imperial Saint, or the location of another important religious event",
+    "While the Forge worlds produce Imperial materiel of war, the Armoury worlds store it. These are heavily-defended stockpiles of munitions and equipment, often holding this treasure-trove for hundreds or thousands of years",
+    "The playground of the Imperial elite, also known as a Paradise or Garden world. These are heavily cultured places, often with a large portion of their population dedicated just to the production and consumption of the fine arts",
+    "For reasons possibly lost to time, the Imperium has decreed that none shall visit this planet, on penalty of death. Unlike a Forbidden world, these worlds were previously colonized and have only recently been lost to the Imperium",
+    "A world consumed entirely by the vast war raging through the galaxy. This is a planet-wide battleground, under which the ruins of its previous existence as another planet class may sometimes be seen",
+    "A world which is no longer capable of sustaining an ecosystem. These may have been another class of planet prior to an extinction event, and the Imperium will often re-colonise; either to establish research stations, or to maintain an important strategic location",
+    "These worlds are generally recently-colonised by the Imperium, with a relatively small population of colonists. They may exist at the edge of Imperial space, where the threat of vast Xenos hordes is very close indeed. With little oversight from the Imperium, corruption and heresy often reign",
+    "These worlds are near-impossible to colonise by Mankind due to their environmental conditions or the nature of their biospheres. Nonetheless, many of these worlds have large human settlements, which are notable for the strength and self-reliance of their people",
+    "For reasons possibly lost to time, the Imperium has decreed that none shall visit this planet, on penalty of death",
+    "The designation given to a planet by the Adeptus Administratum that lies outside of the bounds and control of the Imperium, and that is the homeworld or colony world of an intelligent alien species"
+]
 
 var governmentRanges = {
     "govtTypes": ["Democracy", "Meritocracy", "Elected Dictatorship", "Hereditary Dictatorship", "Tyrannical Dictatorship", "Elected Monarchy", "Hereditary Monarchy", "Oligarchy"],
@@ -227,8 +307,20 @@ var governmentRanges = {
     "Frontier World": ["01-60", "61-70", "71-75", "76-80", "81-85", "0-0", "0-0", "86-100"]
 }
 
+var govtDescriptions = [
+    "A government ruled by the people, where the citizens take part in decisions that affect the way the government is run",
+    "A government wherein societal rank is determined by ability and talent. Progress in society is directly tied to the capability of the individual",
+    "One individual has absolute authority, though that person is put in power by the will of the people",
+    "One individual has absolute authority. Absolute rule is passed on to the previous ruler's child",
+    "The ruler has seized absolute power through conquest or oppression of the people",
+    "The monarch must have been put in power by the will of the people. Unlike a dictator, they do not have absolute authority",
+    "The throne is passed from parent to child. Unlike a dictator, a monarch does not have absolute authority",
+    "Authority rests with a small group, generally unelected. This may be the wealthy or those with vast military power"
+
+]
+
 var religionRanges = {
-    "religionTypes": ["Local Religion", "Ecclesiarchy", "Cult Mechanicus", "Heretical"],
+    "religionTypes": ["Local Religion", "Imperial Cult", "Machine God", "Heretical"],
     "Hive World": ["01-05", "06-80", "81-95", "96-100"],
     "Agri World": ["01-20", "21-90", "91-95", "96-100"],
     "Forge World": ["01-05", "06-10", "11-95", "96-100"],
@@ -242,6 +334,12 @@ var religionRanges = {
     "Death World": ["01-20", "21-85", "0-0", "86-100"],
     "Frontier World": ["01-20", "21-75", "76-80", "81-100"]
 }
+
+var religionDescriptions = ["A Local religion is one that follows the Imperial Cult in all but name. It may contain an Emperor-like figure and have saints that fulfill the same function as Imperial Cult saints. Whether through ignorance or tradition, some worlds practice their own brand of the Imperial Creed",
+    "The Imperial Cult venerates the Emperor as the Master of Mankind. It is the predominant religion in the Imperium of Man",
+    "A Machine God religion is a very focused brand of a local religion, in which the Emperor is regarded as the Omnissiah, and the Machine Spirit is worshipped alongside that of the Emperor",
+    "A Heretical religion is one that blasphemes against the Emperor and devotes its worshippers to the dark gods of Chaos, or unsanctions perversions of the Imperial Cult."
+]
 
 var adeptaRolls = {
     "adeptaTypes": ["Arbites", "Astra Telepathica", "Mechanicus", "Administratum", "Ministorum", "Inquisition", "Munitorium"],
@@ -258,6 +356,20 @@ var adeptaRolls = {
     "Death World": ["-", "-", "1d5", "1d10", "1d10", "1d5", "1d10"],
     "Frontier World": ["-", "1d5", "1d10", "1d10", "1d5", "1d5", "2d10"]
 }
+
+var techLevelDescriptions = [
+    "Inhabited by people who live in small family groups, dwell in caves or rough shelters, and use only the most basic tools made of stone",
+    "The inhabitants have started to learn how to shape and work iron, and live in more substantial buildings. Small farms may be found",
+    "Metallurgy and the use of alloys have been developed. Farming and trade are the primary way of life. Ruling classes live in stone castles",
+    "While the poor still toil on farms, a richer upper-class has developed, and makes use of rudimentary technology such as the printing press",
+    "Everything is mechanised and automated. The population mostly lives in large cities, and computers are starting to become common. Solid projectile weapons are the norm for military forces",
+    "The planet has developed basic space flight, and may have established settlements on orbiting moons or nearby planets. Basic las weapons may have been developed",
+    "The local system has been explored, and viable planets colonised. Las weapons are common, and cybernetics are becoming more practical",
+    "The advanced technologies of the Imperium can be found here, but are not always available. Rare, expensive, or high-tech items are unavailable most of the time",
+    "The median technology level in the Imperium. Most of of the Imperium's technology can be found on these worlds, with only the most obscure being unavailable",
+    "The peak of Imperial technology can be found here. Anything and everything that can be found on the open market may be bought here, and the local troops have access to the most advanced weapons, armour, and equipment",
+    "This world has access to otherwise limited or developing technology. Normally only the greatest of Hive or Forge worlds have this level of technology, though the mysterious technology of a Xenos world may qualify"
+]
 
 function inRangeInclusive(num, range) {
     let lowerBound = Number(range.split("-")[0]);
@@ -361,15 +473,15 @@ function hide() {
 
 function comma(x) {
     if (x > 999) {
-      return (Math.floor(parseFloat(x))).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return (Math.floor(parseFloat(x))).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     } else if ((parseFloat(x) - parseFloat(x).toFixed(0)) != 0) {
-      x = parseFloat(x).toFixed(1);
-      return x.toString();
+        x = parseFloat(x).toFixed(1);
+        return x.toString();
     } else {
-      x = parseFloat(x).toFixed(0);
-      return x.toString();
+        x = parseFloat(x).toFixed(0);
+        return x.toString();
     }
-  }
+}
 
 function findSize() {
     let rollNum = roll("1d10");
@@ -432,43 +544,43 @@ function findDen() {
             break;
         case 2:
             planet.density = "Very Low";
-            planet.gravity = randBtwn(1,4,2)*0.01 +" G";
+            planet.gravity = randBtwn(1, 4, 2) * 0.01 + " G";
             break;
         case 3:
             planet.density = "Low";
-            planet.gravity = (randBtwn(5,10)*0.01).toFixed(2) +" G";
+            planet.gravity = (randBtwn(5, 10) * 0.01).toFixed(2) + " G";
             break;
         case 4:
             planet.density = "Light";
-            planet.gravity = (randBtwn(20,40)*0.01).toFixed(2) +" G";
+            planet.gravity = (randBtwn(20, 40) * 0.01).toFixed(2) + " G";
             break;
         case 5:
             planet.density = "Below Average";
-            planet.gravity = (randBtwn(50,70)*0.01).toFixed(2) +" G";
+            planet.gravity = (randBtwn(50, 70) * 0.01).toFixed(2) + " G";
             break;
         case 6:
             planet.density = "Average";
-            planet.gravity = (randBtwn(80,120)*0.01).toFixed(2) +" G";
+            planet.gravity = (randBtwn(80, 120) * 0.01).toFixed(2) + " G";
             break;
         case 7:
             planet.density = "Above Average";
-            planet.gravity = (randBtwn(130,170)*0.01).toFixed(2) +" G";
+            planet.gravity = (randBtwn(130, 170) * 0.01).toFixed(2) + " G";
             break;
         case 8:
             planet.density = "Heavy";
-            planet.gravity = (randBtwn(180,200)*0.01).toFixed(2) +" G";
+            planet.gravity = (randBtwn(180, 200) * 0.01).toFixed(2) + " G";
             break;
         case 9:
             planet.density = "Very Heavy";
-            planet.gravity = (randBtwn(210,250)*0.01).toFixed(2) +" G";
+            planet.gravity = (randBtwn(210, 250) * 0.01).toFixed(2) + " G";
             break;
         case 10:
             planet.density = "Huge";
-            planet.gravity = (randBtwn(260,270)*0.01).toFixed(2) +" G";
+            planet.gravity = (randBtwn(260, 270) * 0.01).toFixed(2) + " G";
             break;
         case 11:
             planet.density = "Enormous";
-            planet.gravity = (randBtwn(280,300)*0.01).toFixed(2) +" G";
+            planet.gravity = (randBtwn(280, 300) * 0.01).toFixed(2) + " G";
             break;
         case 12:
             planet.density = "Massive";
@@ -497,45 +609,45 @@ function findAtmo() {
             break;
         case 1:
             planet.atmosphere = "Trace";
-            planet.atmoPres = (randBtwn(1,9)*0.001).toFixed(2) +" atm"
+            planet.atmoPres = (randBtwn(1, 9) * 0.001).toFixed(2) + " atm"
             break;
         case 2:
             planet.atmosphere = "Very Thin";
-            planet.atmoPres = (randBtwn(10,42)*0.01).toFixed(2) +" atm"
+            planet.atmoPres = (randBtwn(10, 42) * 0.01).toFixed(2) + " atm"
             planet.atmoType = "Tainted"
             planet.atmoDesc = "Harmful to humans, can only be breathed for a short time before causing unconsciousness and, soon thereafter, death."
             break;
         case 3:
             planet.atmosphere = "Very Thin";
-            planet.atmoPres = (randBtwn(10,42)*0.01).toFixed(2) +" atm"
+            planet.atmoPres = (randBtwn(10, 42) * 0.01).toFixed(2) + " atm"
             break;
         case 4:
             planet.atmosphere = "Thin";
-            planet.atmoPres = (randBtwn(43,70)*0.01).toFixed(2) +" atm"
+            planet.atmoPres = (randBtwn(43, 70) * 0.01).toFixed(2) + " atm"
             planet.atmoType = "Tainted"
             planet.atmoDesc = "Harmful to humans, can only be breathed for a short time before causing unconsciousness and, soon thereafter, death."
             break;
         case 5:
             planet.atmosphere = "Thin";
-            planet.atmoPres = (randBtwn(43,70)*0.01).toFixed(2) +" atm"
+            planet.atmoPres = (randBtwn(43, 70) * 0.01).toFixed(2) + " atm"
             break;
         case 6:
             planet.atmosphere = "Standard";
-            planet.atmoPres = (randBtwn(71,149)*0.01).toFixed(2) +" atm"
+            planet.atmoPres = (randBtwn(71, 149) * 0.01).toFixed(2) + " atm"
             break;
         case 7:
             planet.atmosphere = "Standard";
-            planet.atmoPres = (randBtwn(71,149)*0.01).toFixed(2) +" atm"
+            planet.atmoPres = (randBtwn(71, 149) * 0.01).toFixed(2) + " atm"
             planet.atmoType = "Tainted"
             planet.atmoDesc = "Harmful to humans, can only be breathed for a short time before causing unconsciousness and, soon thereafter, death."
             break;
         case 8:
             planet.atmosphere = "Dense";
-            planet.atmoPres = (randBtwn(150,249)*0.01).toFixed(2) +" atm"
+            planet.atmoPres = (randBtwn(150, 249) * 0.01).toFixed(2) + " atm"
             break;
         case 9:
             planet.atmosphere = "Dense";
-            planet.atmoPres = (randBtwn(150,249)*0.01).toFixed(2) +" atm"
+            planet.atmoPres = (randBtwn(150, 249) * 0.01).toFixed(2) + " atm"
             planet.atmoType = "Tainted"
             planet.atmoDesc = "Harmful to humans, can only be breathed for a short time before causing unconsciousness and, soon thereafter, death."
             break;
@@ -794,7 +906,7 @@ function findTilt() {
             planet.tiltDegrees = randBtwn(45, 90);
             break;
     }
-    
+
     planet.tiltString = planet.tiltDesc + ", " + planet.tiltDegrees + "°";
 }
 
@@ -887,11 +999,11 @@ function findHydro() {
             break;
         case 4:
             planet.hydroPercent = Math.floor(randBtwn(36, 45)) + "%";
-            planet.hydroDesc = "A wet world";
+            planet.hydroDesc = "A world with many seas and moderately-sized oceans";
             break;
         case 5:
             planet.hydroPercent = Math.floor(randBtwn(46, 55)) + "%";
-            planet.hydroDesc = "A world with large oceans";
+            planet.hydroDesc = "A world with large oceans between huge continents";
             break;
         case 6:
             planet.hydroPercent = Math.floor(randBtwn(56, 65)) + "%";
@@ -903,7 +1015,7 @@ function findHydro() {
             break;
         case 8:
             planet.hydroPercent = Math.floor(randBtwn(76, 85)) + "%";
-            planet.hydroDesc = "A water world";
+            planet.hydroDesc = "A water world with small continents";
             break;
         case 9:
             planet.hydroPercent = Math.floor(randBtwn(86, 95)) + "%";
@@ -911,7 +1023,11 @@ function findHydro() {
             break;
         case 10:
             planet.hydroPercent = Math.floor(randBtwn(96, 100)) + "%";
-            planet.hydroDesc = "A world that is almost entirely water";
+            if (Number(planet.hydroPercent.substring(0, planet.hydroPercent.length - 1)) < 100){
+                planet.hydroDesc = "A world that is almost entirely water";
+            } else if (Number(planet.hydroPercent.substring(0, planet.hydroPercent.length - 1)) >= 100){
+                planet.hydroDesc = "A world that is entirely covered by water";
+            }            
             break;
     }
 }
@@ -968,6 +1084,9 @@ function findTerrain() {
     if (planet.atmoCode == "C") {
         modifiers.push("Insidious Atmosphere")
     }
+    if (Number(planet.hydroPercent.substring(0, planet.hydroPercent.length - 1)) >= 100) {
+        modifiers.push("No Land")
+    }
 
     planet.terrainMods = modifiers;
 
@@ -1018,23 +1137,23 @@ function findTerrain() {
 
     for (let i = 0; i < planet.terrainPercentages.length; i++) {
 
-            let val = Number(planet.terrainPercentages[i]);
+        let val = Number(planet.terrainPercentages[i]);
 
-            if (val == 0){
-                planet.terrainDesc[i] = ("None");
-            } else if (val > 0 && val < 7) {
-                planet.terrainDesc[i] = ("Insignificant");
-            } else if (val >= 7 && val < 20) {
-                planet.terrainDesc[i] = ("Mild");
-            } else if (val >= 20 && val < 40) {
-                planet.terrainDesc[i] = ("Common");
-            } else if (val >= 40 && val < 60) {
-                planet.terrainDesc[i] = ("Widespread");
-            } else if (val >= 60 && val < 80) {
-                planet.terrainDesc[i] = ("Near Total");
-            } else if (val >= 80) {
-                planet.terrainDesc[i] = ("Dominating");
-            }
+        if (val == 0) {
+            planet.terrainDesc[i] = ("None");
+        } else if (val > 0 && val < 7) {
+            planet.terrainDesc[i] = ("Insignificant");
+        } else if (val >= 7 && val < 20) {
+            planet.terrainDesc[i] = ("Mild");
+        } else if (val >= 20 && val < 40) {
+            planet.terrainDesc[i] = ("Common");
+        } else if (val >= 40 && val < 60) {
+            planet.terrainDesc[i] = ("Widespread");
+        } else if (val >= 60 && val < 80) {
+            planet.terrainDesc[i] = ("Near Total");
+        } else if (val >= 80) {
+            planet.terrainDesc[i] = ("Dominating");
+        }
     }
 }
 
@@ -1326,9 +1445,9 @@ function findAdepta() {
         codeToCheck = planet.prevClassCode;
     }
 
-    if (planet.religion == "Ecclesiarchy") {
+    if (planet.religion == "Imperial Cult") {
         bonusRoll[4] = roll("1d10");
-    } else if (planet.religion == "Cult Mechanicus") {
+    } else if (planet.religion == "Machine God") {
         bonusRoll[2] == roll("1d10");
     } else if (planet.religion == "Heretical") {
         bonusRoll[4] = -roll("2d10");

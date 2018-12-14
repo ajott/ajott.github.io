@@ -16,3 +16,15 @@ body {
 .btn-warning {
     border: 1px solid black !important;
 }
+
+.toolTip {
+    border-bottom: 1px dotted white;
+}
+
+td {
+    padding-top: 2px;
+}
+
+tr {
+    border-top: 1px solid #092601;
+}

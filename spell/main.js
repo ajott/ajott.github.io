@@ -5,8 +5,9 @@ var nextWord = "next";
 var exp = 0;
 var errors = 0;
 var sorted = 0;
+var words = 0;
 
-var version = "0.0.5";
+var version = "0.0.6";
 
 document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("verName").innerHTML = version;
@@ -65,6 +66,7 @@ function keyListen(e) {
   } else if (activeChar == displayWord.length) {
     if (e.code == "Space") {
       exp += displayWord.length;
+      words += 1;
       changeWord();
       activeChar = 0;
     }
@@ -83,4 +85,5 @@ function updateDisplay() {
   document.getElementById("exp").innerHTML = exp;
   document.getElementById("errors").innerHTML = errors;
   document.getElementById("next").innerHTML = nextWord;
+  document.getElementById("words").innerHTML = words;
 }

@@ -1,3 +1,21 @@
 body {
     background: #fff3cf;
 }
+
+.w3-card-2 {
+    background: lightgrey;
+}
+
+.charTable td {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.infocard {
+    background: lightgrey;
+}
+
+.rolled {
+    font-weight: bolder;
+    text-decoration: underline;
+}

@@ -17,5 +17,5 @@ body {
 
 .rolled {
     font-weight: bolder;
-    text-decoration: underline;
+    font-size: 1.1em;
 }

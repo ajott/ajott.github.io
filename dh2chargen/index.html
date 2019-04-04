@@ -24,11 +24,10 @@
                             <img src="images/happyGuard.png" class="w3-image w3-round-large" style="width: 100%">
                         </div>
                         <h4 class="w3-row-padding w3-center">
-                            Guided Creation
+                            Create a Character
                         </h4>
                         <div class="w3-row-padding">
-                            Either this is your first time creating a Dark Heresy 2nd Edition character,
-                            or you prefer a more polished, narrative means of making a character.
+                            This will guide you through all the choices you need to make in order to create a Dark Heresy 2nd Edition character.
                             <p></p>
                         </div>
                     </div>
@@ -37,17 +36,15 @@
                     <p style="color: #fff3cf">space</p>
                 </div>
                 <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
-                        onclick="location.href='./quick.html';">
+                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="document.getElementById('importModal').style.display='block'">
                         <div class="w3-center">
                             <img src="images/shocktroops.png" class="w3-image w3-round-large" style="width: 100%">
                         </div>
                         <h4 class="w3-row-padding w3-center">
-                            Quick Creation
+                            Import a Character
                         </h4>
                         <div class="w3-row-padding">
-                            You're familiar with Dark Heresy 2nd Edition character creation, and would
-                            like to just have all the options presented to you at once.
+                            You've already used this tool, and have saved the exported character string. You can import it here to look at your character again.
                             <p></p>
                         </div>
                     </div>
@@ -1301,8 +1298,8 @@
 
                     </tbody>
                 </table>
-                
-            <hr/>
+
+                <hr />
                 <table style="font-size: 0.9em" class="w3-table">
                     <thead>
                         <th>Equipment</th>
@@ -1325,74 +1322,234 @@
         </div>
     </section>
 
-    <!-- Wounds and Fate Points -->
-    <section id="woundSelect" style="display: none; opacity: 0;">
-            <h3 class="w3-center">
-                Determine your Wounds and Fate Points
-            </h3>
-            <hr />
-            <div class="w3-row-padding w3-section">
-                <div class="w3-col" style="width: 20%">
-                    <p style="color: #fff3cf">space</p>
-                </div>
-                <div class="w3-col w3-card w3-round-large infocard" style="width: 20%">
-                    <div class="w3-panel">
-                        <span style="font-size: 0.9em">
-                            Wounds are your character's hitpoints. Once you reach that number, you begin taking Critical Damage - which is very, very bad.
-                            <br />
-                            <br />
-                            Your homeworld determines your base number of Wounds, which then has a die roll applied to it to give you the character's starting number.
-                            <br/>
-                            <br/>
-                            Fate Points represent your character's favor with the Emperor, their luck, or some other innate characteristic which allows them
-                            to triumph where others would be doomed to failure.
-                            <br />
-                            <br />
-                            Fate Points may be spent on a variety of things; at the beginning of each session of play, the character's Fate Points are refilled
-                            up to their Fate Threshold, which is what will be determined here.
-                        </span>
-                    </div>
-                </div>
-                <div class="w3-col w3-card w3-round-large" style="width: 40%">
-                    <h4>Wounds</h4>
-                    Base Wounds: <span class="rolled" id="baseWounds"></span>
-                    <br/>
-                    (Determined by Homeworld)
-                    <br/>
-                    <br/>
-                    <button id="rollWounds" onclick="rollWounds()" class="w3-left w3-button w3-hover-greyscale w3-round w3-red">Roll 1d5 Addional Wounds</button>
-                    <br/><br/><br/>
-                    Total Wounds: <span class="rolled" id="totalWounds"></span>
-                    <br/>
-                    <hr/>
-                    <h4>Fate Threshold</h4>
-                    Base Fate Threshold: <span class="rolled" id="baseFate"></span>
-                    <br/>
-                    (Determined by Homeworld)
-                    <br/>
-                    <br/>
-                    Emperor's Blessing: <span class="rolled" id="empBlessing"></span>
-                    <br/>
-                    (Gain an additional 1 to Fate Threshold if you roll this number or above)
-                    <br/>
-                    <br/>
-                    <button id="rollFate" onclick="rollFate()" class="w3-left w3-button w3-hover-greyscale w3-round w3-red">Roll 1d10</button>
-                    <br/>
-                    <br/>
-                    <br/>
-                    Total Fate Threshold: <span class="rolled" id="totalFate"></span>
-                    <br/>
-                    <br />
-                    <button id="btnCharNext" onclick="finishWounds()"
-                        class="w3-right w3-button w3-hover-greyscale w3-round w3-yellow">Next</button>
-                    <br />
-                    <p style="color: #fff3cf">space</p>
-                </div>
-                <div class="w3-col" style="width: 20%">
-                    <p style="color: #fff3cf">space</p>
+    <!-- Skills Selection -->
+    <section id="skillSelect" style="display: none; opacity: 0;">
+        <h3 class="w3-center">
+            Choose your Starting Skills
+        </h3>
+        <hr />
+        <div class="w3-row-padding w3-section">
+            <div class="w3-col" style="width: 20%">
+                <p style="color: #fff3cf">space</p>
+            </div>
+            <div class="w3-col w3-card w3-round-large infocard" style="width: 20%">
+                <div class="w3-panel">
+                    <span style="font-size: 0.9em">
+                        Equipment comprises weapons, armour, tools, and other gear you may acquire through your travels
+                        and travails
+                        <br />
+                        <br />
+                        Additonal equipment can be requisitioned using Influence, or may be found on the dead bodies of
+                        your enemies, at the GM's discretion
+                        <br />
+                        <br />
+                        Weight counts against your character's carry capacity, which is dependent upon your Strength and
+                        Toughness
+                    </span>
                 </div>
             </div>
-        </section>
+            <div class="w3-col w3-card w3-round-large" style="width: 40%">
+                <table style="font-size: 0.9em" class="w3-table">
+                    <thead>
+                        <th>Skill</th>
+                        <th>Description</th>
+                    </thead>
+                    <tbody id="skillTable">
+
+                    </tbody>
+                </table>
+                <br />
+                <button id="btnCharNext" onclick="finishSkills()"
+                    class="w3-right w3-button w3-hover-greyscale w3-round w3-yellow">Next</button>
+                <br />
+                <p style="color: #fff3cf">space</p>
+            </div>
+            <div class="w3-col" style="width: 20%">
+                <p style="color: #fff3cf">space</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wounds and Fate Points -->
+    <section id="woundSelect" style="display: none; opacity: 0;">
+        <h3 class="w3-center">
+            Determine your Wounds and Fate Points
+        </h3>
+        <hr />
+        <div class="w3-row-padding w3-section">
+            <div class="w3-col" style="width: 20%">
+                <p style="color: #fff3cf">space</p>
+            </div>
+            <div class="w3-col w3-card w3-round-large infocard" style="width: 20%">
+                <div class="w3-panel">
+                    <span style="font-size: 0.9em">
+                        Wounds are your character's hitpoints. Once you reach that number, you begin taking Critical
+                        Damage - which is very, very bad.
+                        <br />
+                        <br />
+                        Your homeworld determines your base number of Wounds, which then has a die roll applied to it to
+                        give you the character's starting number.
+                        <br />
+                        <br />
+                        Fate Points represent your character's favor with the Emperor, their luck, or some other innate
+                        characteristic which allows them
+                        to triumph where others would be doomed to failure.
+                        <br />
+                        <br />
+                        Fate Points may be spent on a variety of things; at the beginning of each session of play, the
+                        character's Fate Points are refilled
+                        up to their Fate Threshold, which is what will be determined here.
+                    </span>
+                </div>
+            </div>
+            <div class="w3-col w3-card w3-round-large" style="width: 40%">
+                <h4>Wounds</h4>
+                Base Wounds: <span class="rolled" id="baseWounds"></span>
+                <br />
+                (Determined by Homeworld)
+                <br />
+                <br />
+                <button id="rollWounds" onclick="rollWounds()"
+                    class="w3-left w3-button w3-hover-greyscale w3-round w3-red">Roll 1d5 Addional Wounds</button>
+                <br /><br /><br />
+                Total Wounds: <span class="rolled" id="totalWounds"></span>
+                <br />
+                <hr />
+                <h4>Fate Threshold</h4>
+                Base Fate Threshold: <span class="rolled" id="baseFate"></span>
+                <br />
+                (Determined by Homeworld)
+                <br />
+                <br />
+                Emperor's Blessing: <span class="rolled" id="empBlessing"></span>
+                <br />
+                (Gain an additional 1 to Fate Threshold if you roll this number or above)
+                <br />
+                <br />
+                <button id="rollFate" onclick="rollFate()"
+                    class="w3-left w3-button w3-hover-greyscale w3-round w3-red">Roll 1d10</button>
+                <br />
+                <br />
+                <br />
+                Total Fate Threshold: <span class="rolled" id="totalFate"></span>
+                <br />
+                <br />
+                <button id="btnCharNext" onclick="finishWounds()"
+                    class="w3-right w3-button w3-hover-greyscale w3-round w3-yellow">Next</button>
+                <br />
+                <p style="color: #fff3cf">space</p>
+            </div>
+            <div class="w3-col" style="width: 20%">
+                <p style="color: #fff3cf">space</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Character Sheet -->
+    <section id="charSheet" style="display: none; opacity: 0;">
+        <h3 class="w3-center">
+            Admire your Character
+        </h3>
+        <hr />
+        <div class="w3-row-padding w3-section">
+            <div class="w3-col" style="width: 20%">
+                <p style="color: #fff3cf">space</p>
+            </div>
+            <div class="w3-col w3-card w3-round-large" style="width: 60%">
+                <div class="w3-row-padding w3-section">
+                    <div class="w3-half w3-round-large">
+                    Homeworld: <span id="sheetHome"></span>
+                    <br/>
+                    Background: <span id="sheetBack"></span>
+                    <br/>
+                    Role: <span id="sheetRole"></span>
+                </div>
+                    <div class="w3-half w3-round-large">
+                        Wounds: <span id="sheetWounds"></span>
+                        <br/>
+                        Fatigue Threshold: <span id="sheetFatigue"></span>
+                        <br/>
+                        Fate Threshold: <span id="sheetFate"></span>
+                        <br/>
+                        Movement: <span id="sheetMove"></span>
+                        <br/>
+                        Carry Weight: <span id="sheetCarry"></span>
+                    </div>
+                </div>
+                <div class="w3-row-padding w3-section">
+                    <div class="w3-third w3-round-large">
+                        Characteristics
+                        <table class="w3-table">
+                            <tr>
+                                <td>Weapon Skill</td>
+                                <td id="sheetWS"></td>
+                            </tr>
+                            <tr>
+                                <td>Ballistic Skill</td>
+                                <td id="sheetBS"></td>
+                            </tr>
+                            <tr>
+                                <td>Strength</td>
+                                <td id="sheetS"></td>
+                            </tr>
+                            <tr>
+                                <td>Toughness</td>
+                                <td id="sheetT"></td>
+                            </tr>
+                            <tr>
+                                <td>Agility</td>
+                                <td id="sheetAg"></td>
+                            </tr>
+                            <tr>
+                                <td>Intelligence</td>
+                                <td id="sheetInt"></td>
+                            </tr>
+                            <tr>
+                                <td>Perception</td>
+                                <td id="sheetPer"></td>
+                            </tr>
+                            <tr>
+                                <td>Willpower</td>
+                                <td id="sheetWP"></td>
+                            </tr>
+                            <tr>
+                                <td>Fellowship</td>
+                                <td id="sheetFel"></td>
+                            </tr>
+                            <tr>
+                                <td>Influence</td>
+                                <td id="sheetInfl"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="w3-third w3-round-large">
+
+                    </div>
+                    <div class="w3-third w3-round-large">
+                        
+                    </div>
+                </div>
+                <input id="exportText"></input>
+            </div>
+            <div class="w3-col" style="width: 20%">
+                <p style="color: #fff3cf">space</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="importModal" class="w3-modal">
+            <div class="w3-modal-content w3-animate-opacity w3-center" style="width: 400px; background: #fff3cf;">
+              <div class="w3-container">
+                <span onclick="document.getElementById('importModal').style.display='none'" 
+                class="w3-button w3-display-topright w3-red">&times;</span>
+                <h4>Enter your character code below</h4>
+                <h5 id="noString" style="color:red; display:none;">Please enter a code!</h5>
+                <textarea class="w3-top-left" id="importInput" style="width: 250px; height: 75px;"></textarea> <br/><br/>
+                <button class="w3-button w3-round w3-green" onclick="importChar()">Load!</button>
+                <hr/>
+              </div>
+            </div>
+          </div>
 </body>
 
 </html>

@@ -20,9 +20,10 @@ var character = {
     Aptitudes: ["General"],
     Talents: [],
     Equip: [],
-    HomeBonus: [],
-    BackBonus: [],
-    RoleBonus: [],
+    Skills: [],
+    HomeBonus: "",
+    BackBonus: "",
+    RoleBonus: "",
     CharPlus: [],
     CharMinus: "",
     Experience: 1000
@@ -209,6 +210,85 @@ var roles = {
         talent: "Iron Jaw ZZ Rapid Reload",
         bonus: "Expert at Violence: In addition to the normal uses of Fate points (pg 293), after making a successful attack test, but before determining hits, a Warrior character may spend a Fate point to substitute his Weapon Skill (for melee) or Ballistic Skill (for ranged) bonus for the degrees of success scored on the attack test."
     }
+}
+
+var skills = {
+    "Commerce": {
+        "description": "Gain a bonus when attempting a Requsition test, try to track down a rare item, or ascertain the value of an item."
+    },
+    "Medicae": {
+        "description": "Apply first aid to a wounded ally, diagnose an affliction and develop a treatment, or perform a surgical procedure for removal of a organ or implantation of a cybernetic"
+    },
+    "Common Lore": {
+        "description": "Learn about a situation, location, character, or object; subject to specialization."
+    },
+    "Linguistics": {
+        "description": "Decipher an archaic text, compose a moving piece of prose, or convey a message with limited vocabulary."
+    },
+    "Logic": {
+        "description": "Solve a riddle, look for clues in vast amounts of unreleated information, or try to win a game of chance."
+    },
+    "Scholastic Lore": {
+        "description": "Recount legends from the past, understand an obscure law, or identify a rare beast."
+    },
+    "Awareness": {
+        "description": "Spot ambushes, search for clues or hidden items, or evesdrop on conversations"
+    },
+    "Inquirty": {
+        "description": "Try to track down a local crime lord, attempt to learn the attidues of the local populace, or gather information about specific locations."
+    },
+    "Interrogation": {
+        "description": "Attempt to learn battle plans from a commander, force an Imperial Adept to reveal hidden information, or have a cultist reveal a hidden meeting place."
+    },
+    "Intimidate": {
+        "description": "Coerce someone into acting a certain way, or try to make an opponent back down from a fight."
+    },
+    "Scrutiny": {
+        "description": "Tell if someone is lying, collate information and gather conclusions from a report, or interpret augur or auspex readings."
+    },
+    "Deceive": {
+        "description": "Tell a convincing lie, distract someone with rambling nonsense, or try to disguise oneself."
+    },
+    "Forbidden Lore": {
+        "description": "Seek information about potential cult activity, learn about the operations of xenos, or determine the proper procedure to summon a Daemon."
+    },
+    "Psyniscience": {
+        "description": "Hunt for the location of daemons, detect the effects of psychic power, or determine a thin point in the veil between the Materium and the Warp."
+    },
+    "Operate": {
+        "description": "Drive a surface vehicle, pilot an aero, or manoeuvre a voidship; or any affiliated activities with the related"
+    },
+    "Security": {
+        "description": "Open a locked door, break into a cogiator and discover its secrets, or lay traps for a ambush."
+    },
+    "Tech-Use": {
+        "description": "Repair a broken weapon or vehicle, push a piece of technology beyond its normal limits, or determine how to use unknown technology."
+    },
+    "Charm": {
+        "description": "Improve someone's opinion of thet character, distract someone by drawing his focus away from others, or gather information from locals or strangers."
+    },
+    "Command": {
+        "description": "Send an NPC ally into an extremely dangerous situation or into open combat, rally allied fighting forces, or organise them in the face of a surprise attack."
+    },
+    "Athletics": {
+        "description": "Swim across water, push beyond one's limits, or climb difficult terrain"
+    },
+    "Navigate": {
+        "description": "Make a journey over land, through the void or starsystem, or through the Warp itself"
+    },
+    "Acrobatics": {
+        "description": "Keep balance or to avoid falling, jump to or from a height, or move around obstacles without falling."
+    },
+    "Sleight of Hand": {
+        "description": "Attempt to steal something from the target's pocket, seek to palm evidence at a crime scene, or try to plant illegal narcotics into a suspect's robes."
+    },
+    "Dodge": {
+        "description": "Dodge a melee or ranged attack, or to avoid hazards."
+    },
+    "Stealth": {
+        "description": "Scout an enemy force without being detected, sneak up on a foe and kill him quietly, or follow someone without arousing suspicion."
+    }
+
 }
 
 var talents = {
@@ -723,6 +803,8 @@ function reRollChar(str) {
         fatigue = Math.floor(character.T / 10) + Math.floor(character.WP / 10)
     }
 
+    character.Fatigue = fatigue;
+
     try {
         el("fatigue").innerHTML = fatigue;
 
@@ -730,17 +812,17 @@ function reRollChar(str) {
         character.Movement[1] = Math.floor(character.Ag / 10) * 2;
         character.Movement[2] = Math.floor(character.Ag / 10) * 3;
         character.Movement[3] = Math.floor(character.Ag / 10) * 6;
-    
+
         el("halfMove").innerHTML = character.Movement[0] + "m";
         el("fullMove").innerHTML = character.Movement[1] + "m";
         el("chargeMove").innerHTML = character.Movement[2] + "m";
         el("runMove").innerHTML = character.Movement[3] + "m";
-    
+
         character.Carry = carry[(Math.floor(character.S / 10) + Math.floor(character.T / 10))]
         el("carryWeight").innerHTML = character.Carry;
     } catch {
 
-    }    
+    }
 }
 
 
@@ -875,4 +957,33 @@ function getBonuses() {
     htmlStr += "</tr></td>";
 
     el("bonus").innerHTML = htmlStr;
+}
+
+function exportChar() {
+    $('#exportText').val(window.btoa(JSON.stringify(character)));
+    $('#exportText').select();
+}
+
+function importChar() {
+
+    try {
+        var importString = window.atob($('#importInput').val());
+    } catch {
+        $("#noString").text("Invalid character code").show();
+    }
+
+    console.log(importString);
+
+    if (importString == "") {
+        $("#noString").show();
+    } else {
+        document.getElementById('importModal').style.display = 'none'
+
+        character = JSON.parse(importString);
+
+        navFromMenuToSheet();
+
+        buildSheet();
+
+    }
 }

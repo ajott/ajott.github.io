@@ -82,13 +82,49 @@ function navEquip() {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
 
-function navWounds() {
+function navSkills() {
     $("#equipSelect").animate({
         opacity: 0
     }, 500);
     $("#equipSelect").hide();
+    $("#skillSelect").show();
+    $("#skillSelect").animate({
+        opacity: 1
+    }, 500);
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
+
+function navWounds() {
+    $("#skillSelect").animate({
+        opacity: 0
+    }, 500);
+    $("#skillSelect").hide();
     $("#woundSelect").show();
     $("#woundSelect").animate({
+        opacity: 1
+    }, 500);
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
+
+function navSheet() {
+    $("#woundSelect").animate({
+        opacity: 0
+    }, 500);
+    $("#woundSelect").hide();
+    $("#charSheet").show();
+    $("#charSheet").animate({
+        opacity: 1
+    }, 500);
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
+
+function navFromMenuToSheet() {
+    $("#path").animate({
+        opacity: 0
+    }, 500);
+    $("#path").hide();
+    $("#charSheet").show();
+    $("#charSheet").animate({
         opacity: 1
     }, 500);
     document.body.scrollTop = document.documentElement.scrollTop = 0;
@@ -98,6 +134,7 @@ function chooseHome(str) {
     character.homeworld = str;
     navBack();
 
+    character.HomeBonus = homeworlds[character["homeworld"]]["bonus"]
     character.CharPlus = homeworlds[character["homeworld"]]["charPlus"].slice(0);
     character.CharMinus = homeworlds[character["homeworld"]]["charMinus"];
 
@@ -126,11 +163,13 @@ function chooseHome(str) {
 
 function chooseBack(str) {
     character.background = str;
+    character.BackBonus = backgrounds[character["background"]]["bonus"]
     navRole();
 }
 
 function chooseRole(str) {
     character.role = str;
+    character.RoleBonus = roles[character["role"]]["bonus"]
     navChars();
 }
 
@@ -165,9 +204,21 @@ function finishTalents() {
 }
 
 function finishEquip() {
+    buildSkills();
+
+    navSkills();
+}
+
+function finishSkills() {
     buildWounds();
 
     navWounds();
+}
+
+function finishWounds() {
+    buildSheet();
+
+    navSheet();
 }
 
 function cardRollChars() {
@@ -218,6 +269,8 @@ function cardRollChars() {
     } else {
         fatigue = Math.floor(character.T / 10) + Math.floor(character.WP / 10)
     }
+
+    character.Fatigue = fatigue;
 
     // Movement is dependent upon the character's AgB (ten's place of their Agility)
     character.Movement[0] = Math.floor(character.Ag / 10);
@@ -454,4 +507,87 @@ function rollFate() {
     }
     $("#rollFate").text("Rolled " + extra).addClass("w3-disabled")
     $("#totalFate").text(character.Fate)
+}
+
+function buildSkills() {
+    character.Skills = [];
+
+    character.Skills = character.Skills.concat(backgrounds[character["background"]]["skills"]);
+
+
+    // Starting with an empty string for the inner HTML of the talent table
+    let htmlStr = ""
+
+    for (let i = 0; i < character.Skills.length; i++) {
+
+        let str = character.Skills[i];
+
+        // If the talent includes a choice (the aforementioned "ZZ")
+        if (str.search("ZZ") != -1) {
+            htmlStr += "<tr><td>";
+
+            // Build a dropdown box for the user to choose
+            htmlStr += "<select id=\"skill_" + i + "\" onchange=\"skillChange(\'skill_" + i + "\')\"><option>...</option><option>" + str.slice(0, str.search("ZZ") - 1) + "</option><option>" + str.slice(str.search("ZZ") + 3, str.length) + "</option></select>"
+
+            htmlStr += "</td><td id=\"skill_desc_" + i + "\"></td></tr>"
+        } else {
+            // Otherwise, just add it to the table
+            htmlStr += "<tr><td id=\"skill_" + i + "\">";
+
+            htmlStr += str;
+
+            htmlStr += "</td><td id=\"skill_desc_" + i + "\">"
+
+            for (let j = 0; j < Object.keys(skills).length; j++) {
+                if (str.search(Object.keys(skills)[j]) >= 0) {
+                    htmlStr += skills[Object.keys(skills)[j]]["description"];
+                }
+            }
+
+            htmlStr += "</td></tr>"
+        };
+    }
+
+    el("skillTable").innerHTML = htmlStr;
+}
+
+function skillChange(str) {
+    var selectBox = el(str);
+    var index = str.substring(str.search("_") + 1, str.length);
+    var skill = selectBox.options[selectBox.selectedIndex].value;
+    character.Skills[index] = skill;
+
+    for (let j = 0; j < Object.keys(skills).length; j++) {
+        if (skill.search(Object.keys(skills)[j]) >= 0) {
+            let desc = skills[Object.keys(skills)[j]]["description"];
+            el("skill_desc_" + index).innerHTML = desc;
+        }
+    }
+}
+
+
+function buildSheet() {
+    $("#sheetHome").text(character.homeworld);
+    $("#sheetBack").text(character.background);
+    $("#sheetRole").text(character.role);
+
+    // Wounds, fate, fatigue, movement, carry
+
+    $("#sheetWounds").text(character.Wounds);
+    $("#sheetFatigue").text(character.Fatigue);
+    $("#sheetFate").text(character.Fate);
+    $("#sheetMove").text(character.Movement[0]+"/"+character.Movement[1]+"/"+character.Movement[2]+"/"+character.Movement[3]+" metres (Half/Full/Charge/Run)")
+    $("#sheetCarry").text(character.Carry);
+
+    // Characteristics
+    $("#sheetWS").text(character.WS);
+    $("#sheetBS").text(character.BS);
+    $("#sheetS").text(character.S);
+    $("#sheetT").text(character.T);
+    $("#sheetAg").text(character.Ag);
+    $("#sheetInt").text(character.Int);
+    $("#sheetPer").text(character.Per);
+    $("#sheetWP").text(character.WP);
+    $("#sheetFel").text(character.Fel);
+    $("#sheetInfl").text(character.Infl);
 }

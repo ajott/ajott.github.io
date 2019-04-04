@@ -153,7 +153,7 @@ var backgrounds = {
         bonus: "Faith is All: When spending a Fate point to gain a+10 bonus to any one test, an Adeptus Ministorum character gains a +20 bonus instead.",
         skills: ["Charm", "Command", "Common Lore (Adeptus Ministorum)", "Inquiry ZZ Scrutiny", "Linguistics (High Gothic)"],
         talents: ["Weapon Training (Flame) ZZ Weapon Training (Low-Tech, Solid Projectile)"],
-        equipment: ["Hand flamer ZZ Warhammer and Stub Revolver", "Imperial Robes ZZ Flak Vest", "Backpack", "Glow-globe", "Monotask Servo-skull"],
+        equipment: ["Hand Flamer ZZ Warhammer and Stub Revolver", "Imperial Robes ZZ Flak Vest", "Backpack", "Glow-globe", "Monotask Servo-skull"],
         name: "Adeptus Ministorum"
     },
     "guard": {
@@ -346,6 +346,10 @@ var talents = {
         description: "Use Weapon Group without penalty."
     },
     "Weapon Training (Chain)": {
+        tier: 1,
+        description: "Use Weapon Group without penalty."
+    },
+    "Weapon Training (Low-Tech, Solid Projectile)": {
         tier: 1,
         description: "Use Weapon Group without penalty."
     },

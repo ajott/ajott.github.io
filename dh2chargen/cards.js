@@ -293,33 +293,47 @@ function getFullApts() {
 
     let Aptitudes = ["Weapon Skill", "Ballistic Skill", "Strength", "Toughness", "Agility", "Intelligence", "Perception", "Willpower", "Fellowship", "Offense", "Defense", "Fieldcraft", "Social", "Knowledge", "Leadership", "Tech", "Finesse", "Psyker"]
 
+    var aptsUnique = character.Aptitudes.filter(function (item, index) {
+        return character.Aptitudes.indexOf(item) >= index;
+    });
+
+    character.Aptitudes = aptsUnique;
+
+    Aptitudes = Aptitudes.filter(function(val) {
+        return character.Aptitudes.indexOf(val) == -1;
+    });
+
+    Aptitudes = Aptitudes.sort();
+
     // Starting with an empty string for the inner HTML of the aptitude table
     let htmlStr = ""
 
     for (let i = 0; i < character.Aptitudes.length; i++) {
+        htmlStr = ""
 
         let str = character.Aptitudes[i];
 
         // If the aptitude includes a choice (the aforementioned "ZZ")
         if (str.search("ZZ") != -1) {
-            htmlStr += "<tr><td>";
 
             // Build a dropdown box for the user to choose
             htmlStr += "<select id=\"aptBox_" + i + "\" onchange=\"aptChange(\'aptBox_" + i + "\')\"><option value=\"\">...</option><option>" + str.slice(0, str.search("ZZ") - 1) + "</option><option>" + str.slice(str.search("ZZ") + 3, str.length) + "</option></select>"
 
-            htmlStr += "</td></tr>"
         } else {
             // Otherwise, just add it to the table
-            htmlStr += "<tr><td>";
 
             htmlStr += str;
 
-            htmlStr += "</td></tr>"
         };
+
+        el("aptBox_" + i).innerHTML += htmlStr;
     }
-    for (let j = 0; j < 4; j++) {
+
+    for (let i = character.Aptitudes.length; i < 12; i ++) {
+        htmlStr = ""
+
         htmlStr += "<tr><td>"
-        htmlStr += "<select id=\"aptBox_" + (8 + j) + "\" onchange=\"aptChange(\'aptBox_" + (8 + j) + "\')\">"
+        htmlStr += "<select id=\"aptBox_" + (i) + "\" onchange=\"aptChange(\'aptBox_" + (i) + "\')\">"
         htmlStr += "<option value=\"\">...</option>"
 
         for (let i = 0; i < Aptitudes.length; i++) {
@@ -328,28 +342,19 @@ function getFullApts() {
 
         htmlStr += "</select>"
         htmlStr += "</td></tr>"
+
+        el("aptBox_" + i).innerHTML += htmlStr;
     }
-
-    htmlStr += "<tr><td style=\"color: #fff3cf\">space</td></tr>"
-
-    for (let j = 0; j < 2; j++) {
-        htmlStr += "<tr><td>"
-        htmlStr += "<select id=\"aptBox_" + (12 + j) + "\" onchange=\"aptChange(\'aptBox_" + (12 + j) + "\')\">"
-        htmlStr += "<option value=\"\">...</option>"
-
-        for (let i = 0; i < Aptitudes.length; i++) {
-            htmlStr += "<option value=\"" + Aptitudes[i] + "\">" + Aptitudes[i] + "</option>"
-        }
-
-        htmlStr += "</select>" + "&emsp;*"
-        htmlStr += "</td></tr>"
-    }
-
-    el("aptsTable").innerHTML = htmlStr;
 }
 
 
 function aptChange(str) {
+    let Aptitudes = ["Weapon Skill", "Ballistic Skill", "Strength", "Toughness", "Agility", "Intelligence", "Perception", "Willpower", "Fellowship", "Offense", "Defense", "Fieldcraft", "Social", "Knowledge", "Leadership", "Tech", "Finesse", "Psyker"]
+
+    Aptitudes = Aptitudes.filter(function(val) {
+        return character.Aptitudes.indexOf(val) == -1;
+      });
+
     var selectBox = el(str);
 
     var index = str.substring(str.search("_") + 1, str.length);

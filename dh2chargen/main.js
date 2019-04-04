@@ -44,7 +44,8 @@ var homeworlds = {
         blessing: 3,
         wounds: 9,
         bonus: "The Old Ways: A Feral World character's Low-Tech weapons lose any present Primitive Qualities and gain the Proven (3) Quality.",
-        aptitude: "Toughness"
+        aptitude: "Toughness",
+        name: "Feral World"
     },
     "forge": {
         charPlus: ["Int", "T"],
@@ -54,7 +55,8 @@ var homeworlds = {
         wounds: 8,
         bonus: "Omnissiah's Chosen: A Forge World character gains the Technical Knock or Weapon-Tech Talent. ",
         aptitude: "Intelligence",
-        talent: "Technical Knock ZZ Weapon-Tech"
+        talent: "Technical Knock ZZ Weapon-Tech",
+        name: "Forge World"
     },
     "highborn": {
         charPlus: ["Fel", "Infl"],
@@ -63,7 +65,8 @@ var homeworlds = {
         blessing: 10,
         wounds: 9,
         bonus: "Breeding Counts: A Highborn character reduces Influence losses by 1, to a minimum loss of 1. ",
-        aptitude: "Fellowship"
+        aptitude: "Fellowship",
+        name: "Highborn"
     },
     "hive": {
         charPlus: ["Ag", "Per"],
@@ -72,7 +75,8 @@ var homeworlds = {
         blessing: 6,
         wounds: 7,
         bonus: "Teeming Masses in Metal Mountains: A Hive World character moves through crowds as if they were open terrain and gains a +20 bonus to Navigate (Surface) Tests in closed spaces. ",
-        aptitude: "Perception"
+        aptitude: "Perception",
+        name: "Hive World"
     },
     "shrine": {
         charPlus: ["Fel", "WP"],
@@ -81,7 +85,8 @@ var homeworlds = {
         blessing: 6,
         wounds: 8,
         bonus: "Faith in the Creed: When spending a Fate Point, a Shrine World character's number of Fate Points are not reduced on a 1d10 result of 1.",
-        aptitude: "Willpower"
+        aptitude: "Willpower",
+        name: "Shrine World"
     },
     "voidborn": {
         charPlus: ["Int", "WP"],
@@ -91,7 +96,8 @@ var homeworlds = {
         wounds: 7,
         bonus: "Child of the Dark: A voidborn character starts with the Strong Minded talent, and gains a +30 bonus to tests for moving in zero-gravity",
         aptitude: "Intelligence",
-        talent: "Strong Minded"
+        talent: "Strong Minded",
+        name: "Voidborn"
     }
 }
 
@@ -115,49 +121,56 @@ var backgrounds = {
         bonus: "Master of Paperwork: An Adeptus Administratum character counts the Availability of all items as one level more available (Very Rare items count as Rare, Average items count as Common, etc.)",
         skills: ["Commerce ZZ Medicae", "Common Lore (Adeptus Administratum)", "Linguistics (High Gothic)", "Logic", "Scholastic Lore (Pick One)"],
         talents: ["Weapon Training (Las) ZZ Weapon Training (Solid Projectile)"],
-        equipment: ["Laspistol ZZ Stub Automatic", "Imperial Robes", "Autoquill", "Chrono", "Dataslate", "Medi-Kit"]
+        equipment: ["Laspistol ZZ Stub Automatic", "Imperial Robes", "Autoquill", "Chrono", "Dataslate", "Medi-Kit"],
+        name: "Adeptus Administratum"
     },
     "arbite": {
         aptitude: "Offense ZZ Defense",
         bonus: "The Face of the Law: An Arbitrator can intimidation and Interrogation test, and can substitute his Willpower bonus for his degrees of success on these tests.",
         skills: ["Awareness", "Common Lore (Adeptus Arbites)", "Common Lore (Underworld)", "Inquiry ZZ Interrogation", "Intimidate", "Scrutiny"],
         talents: ["Weapon Training (Shock) ZZ Weapon Training (Solid Projectile)"],
-        equipment: ["Shotgun ZZ Shock Maul", "Enforcer Light Carapace Armour ZZ Carapace Chest Plate", "3 doses of Stimm", "Manacles", "12 Lho Sticks"]
+        equipment: ["Shotgun ZZ Shock Maul", "Enforcer Light Carapace Armour ZZ Carapace Chest Plate", "3 doses of Stimm", "Manacles", "12 Lho Sticks"],
+        name: "Adeptus Arbites"
     },
     "astra": {
         aptitude: "Defense ZZ Psyker",
         bonus: "The Constant Threat: When the character or an ally within 10 meters triggers a roll on the Table 6-2: Psychic Phenomenon (pg 196). Adeptus Astra Telepathica character can increase or decrease the result by amount equal to his Willpower bonus. Tested on Terra: If the character takes the Psyker elite advance during character creation, he also gains the Sanctioned trait (pg 138).",
         skills: ["Awareness", "Common Lore (Adeptus Astra Telepathica)", "Deceive ZZ Interrogation", "Forbidden Lore (the Warp)", "Psyniscience ZZ Scrutiny"],
         talents: ["Weapon Training (Las)", "Weapon Training (Low-Tech)"],
-        equipment: ["Laspistol", "Staff ZZ Whip", "Light Flak Cloak ZZ Flak Vest", "Micro-bead ZZ Psy Focus"]
+        equipment: ["Laspistol", "Staff ZZ Whip", "Light Flak Cloak ZZ Flak Vest", "Micro-bead ZZ Psy Focus"],
+        name: "Adeptus Astra Telepathica"
     },
     "admech": {
         aptitude: "Knowledge ZZ Tech",
         bonus: "Replace the Weak Flesh: An Adeptus Mechanicus character counts the Availability of all cybernetics as two levels more available (Rare items count as Average, Very Rare items count as Scarce, etc.).Starting Trait: Mechanicus Implants (pg 137).",
         skills: ["Awareness ZZ Operate (Pick One)", "Common Lore (Adeptus Mechanicus)", "Logic", "Security", "Tech-Use"],
         talents: ["Mechadendrite Use (Utility)", "Weapon Training (Solid Projectile)"],
-        equipment: ["Autogun ZZ Hand Cannon", "Monotask Servo-skull (utility) ZZ Optical Mechadendrite", "Imperial Robes", "2 vials of Sacred Unguents"]
+        equipment: ["Autogun ZZ Hand Cannon", "Monotask Servo-skull (utility) ZZ Optical Mechadendrite", "Imperial Robes", "2 vials of Sacred Unguents"],
+        name: "Adeptus Mechanicus"
     },
     "ministorum": {
         aptitude: "Leadership ZZ Social",
         bonus: "Faith is All: When spending a Fate point to gain a+10 bonus to any one test, an Adeptus Ministorum character gains a +20 bonus instead.",
         skills: ["Charm", "Command", "Common Lore (Adeptus Ministorum)", "Inquiry ZZ Scrutiny", "Linguistics (High Gothic)"],
         talents: ["Weapon Training (Flame) ZZ Weapon Training (Low-Tech, Solid Projectile)"],
-        equipment: ["Hand flamer ZZ Warhammer and Stub Revolver", "Imperial Robes ZZ Flak Vest", "Backpack", "Glow-globe", "Monotask Servo-skull"]
+        equipment: ["Hand flamer ZZ Warhammer and Stub Revolver", "Imperial Robes ZZ Flak Vest", "Backpack", "Glow-globe", "Monotask Servo-skull"],
+        name: "Adeptus Ministorum"
     },
     "guard": {
         aptitude: "Fieldcraft ZZ Leadership",
         bonus: "Hammer of the Emperor: When attacking a target that an ally attacked since the end of the Guardsman's last turn, the Guardsman can re-roll any results of 1 or 2 damage rolls. ",
         skills: ["Athletics", "Command", "Common Lore (Imperial Guard)", "Medicae ZZ Operate (Surface)", "Navigate (Surface)"],
         talents: ["Weapon Training (Las)", "Weapon Training (Low-Tech)"],
-        equipment: ["Lasgun ZZ Laspistol and Sword", "Combat Vest", "Imperial Guard Flak Armour", "Grapnel and Line", "12 Lho Sticks", "Magnoculars"]
+        equipment: ["Lasgun ZZ Laspistol and Sword", "Combat Vest", "Imperial Guard Flak Armour", "Grapnel and Line", "12 Lho Sticks", "Magnoculars"],
+        name: "Imperial Guard"
     },
     "outcast": {
         aptitude: "Fieldcraft ZZ Social",
         bonus: "Never Quit: An Outcast character counts his Toughness bonus as two higher for purposes of determining Fatigue.",
         skills: ["Acrobatics ZZ Sleight of Hand", "Common Lore (Underworld)", "Deceive", "Dodge", "Stealth"],
         talents: ["Weapon Training (Chain)", "Weapon Training (Las) ZZ Weapon Training (Solid Projectile)"],
-        equipment: ["Autopistol ZZ Laspistol", "Chainsword", "Armoured Body Glove ZZ Flak Vest", "Injector", "2 doses of Obscura ZZ 2 doses of Slaught"]
+        equipment: ["Autopistol ZZ Laspistol", "Chainsword", "Armoured Body Glove ZZ Flak Vest", "Injector", "2 doses of Obscura ZZ 2 doses of Slaught"],
+        name: "Outcast"
     }
 }
 
@@ -173,42 +186,50 @@ var roles = {
     "assassin": {
         aptitudes: ["Agility", "Ballistic Skill ZZ Weapon Skill", "Fieldcraft", "Finesse", "Perception"],
         talent: "Jaded ZZ Leap Up",
-        bonus: "Sure Kill: In addition to the normal uses of Fate points(pg 293), when an Assassin successfully hits with an attack, he may spend a Fate point to inflict additional damage equal to his degrees of success on the attack roll on the first hit the attack inflicts."
+        bonus: "Sure Kill: In addition to the normal uses of Fate points(pg 293), when an Assassin successfully hits with an attack, he may spend a Fate point to inflict additional damage equal to his degrees of success on the attack roll on the first hit the attack inflicts.",
+        name: "Assassin"
     },
     "chirurgeon": {
         aptitudes: ["Fieldcraft", "Intelligence", "Knowledge", "Strength", "Toughness"],
         talent: "Resistance (Pick One) ZZ Takedown",
-        bonus: "Dedicated Healer: In addition to the normal uses of Fate points (pg 293), when a Chirurgeon character fails a test to provide First Aid, he can spend a Fate point to automatically succeed instead with the degrees of success equal to his Intelligence bonus."
+        bonus: "Dedicated Healer: In addition to the normal uses of Fate points (pg 293), when a Chirurgeon character fails a test to provide First Aid, he can spend a Fate point to automatically succeed instead with the degrees of success equal to his Intelligence bonus.",
+        name: "Chirurgeon"
     },
     "desperado": {
         aptitudes: ["Agility", "Ballistic Skill", "Defense", "Fellowship", "Finesse"],
         talent: "Catfall ZZ Quick Draw",
-        bonus: "Move and Shoot: Once per round, after performing Move action, a Desperado character may perform a single Standard Attack with a Pistol weapon he is currently wielding as a Free Action."
+        bonus: "Move and Shoot: Once per round, after performing Move action, a Desperado character may perform a single Standard Attack with a Pistol weapon he is currently wielding as a Free Action.",
+        name: "Desperado"
     },
     "hierophant": {
         aptitudes: ["Fellowship", "Offence", "Social", "Toughness", "Willpower"],
         talent: "Double Team ZZ Hatred (Choose Group)",
-        bonus: "Sway the Masses: In addition to the normal uses of Fate points (pg 293), a Hierophant character may spend a Fate point to automatically succeed at a Charm, Command, or Intimidate skill test with a number of degrees of success equal to his Willpower bonus. "
+        bonus: "Sway the Masses: In addition to the normal uses of Fate points (pg 293), a Hierophant character may spend a Fate point to automatically succeed at a Charm, Command, or Intimidate skill test with a number of degrees of success equal to his Willpower bonus. ",
+        name: "Hierophant"
     },
     "mystic": {
         aptitudes: ["Defense", "Intelligence", "Knowledge", "Perception", "Willpower"],
         talent: "Resistance (Psychic Powers) ZZ Warp Sense",
-        bonus: "Stare into the Warp: A Mystic character starts the game with the Psyker elite advance (pg 90). It is recommended that a character who wishes to be a Mystic have a Willpower of at least 35."
+        bonus: "Stare into the Warp: A Mystic character starts the game with the Psyker elite advance (pg 90). It is recommended that a character who wishes to be a Mystic have a Willpower of at least 35.",
+        name: "Mystic"
     },
     "sage": {
         aptitudes: ["Intelligence", "Knowledge", "Perception", "Tech", "Willpower"],
         talent: "Ambidextrous ZZ Clues from the Crowds",
-        bonus: "Quest for Knowledge: In addition to the normal uses of Fate points (pg 293), a Sage character may spend a Fate point to automatically succeed at a Logic or any Lore skill test with a number of degrees of success equal to his Intelligence bonus."
+        bonus: "Quest for Knowledge: In addition to the normal uses of Fate points (pg 293), a Sage character may spend a Fate point to automatically succeed at a Logic or any Lore skill test with a number of degrees of success equal to his Intelligence bonus.",
+        name: "Sage"
     },
     "seeker": {
         aptitudes: ["Fellowship", "Intelligence", "Perception", "Social", "Tech"],
         talent: "Keen Intuition ZZ Disarm",
-        bonus: "Nothing Escapes My Sight: In addition to the normal uses of Fate points (pg 293), a Seeker character may spend a Fate point to automatically succeed at an Awareness or Inquiry skill test with a number of degrees of success equal to his Perception bonus."
+        bonus: "Nothing Escapes My Sight: In addition to the normal uses of Fate points (pg 293), a Seeker character may spend a Fate point to automatically succeed at an Awareness or Inquiry skill test with a number of degrees of success equal to his Perception bonus.",
+        name: "Seeker"
     },
     "warrior": {
         aptitudes: ["Ballistic Skill", "Defense", "Offence", "Strength", "Weapon Skill"],
         talent: "Iron Jaw ZZ Rapid Reload",
-        bonus: "Expert at Violence: In addition to the normal uses of Fate points (pg 293), after making a successful attack test, but before determining hits, a Warrior character may spend a Fate point to substitute his Weapon Skill (for melee) or Ballistic Skill (for ranged) bonus for the degrees of success scored on the attack test."
+        bonus: "Expert at Violence: In addition to the normal uses of Fate points (pg 293), after making a successful attack test, but before determining hits, a Warrior character may spend a Fate point to substitute his Weapon Skill (for melee) or Ballistic Skill (for ranged) bonus for the degrees of success scored on the attack test.",
+        name: "Warrior"
     }
 }
 
@@ -960,8 +981,13 @@ function getBonuses() {
 }
 
 function exportChar() {
+    var today = new Date();
+
     $('#exportText').val(window.btoa(JSON.stringify(character)));
     $('#exportText').select();
+
+    $("#saveCharTime").val(today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate() + ' ' + today.getHours() + ':' + today.getMinutes());
+    $('#saveCharString').val(window.btoa(JSON.stringify(character)));
 }
 
 function importChar() {
@@ -971,8 +997,6 @@ function importChar() {
     } catch {
         $("#noString").text("Invalid character code").show();
     }
-
-    console.log(importString);
 
     if (importString == "") {
         $("#noString").show();

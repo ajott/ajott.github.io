@@ -349,12 +349,6 @@ function getFullApts() {
 
 
 function aptChange(str) {
-    let Aptitudes = ["Weapon Skill", "Ballistic Skill", "Strength", "Toughness", "Agility", "Intelligence", "Perception", "Willpower", "Fellowship", "Offense", "Defense", "Fieldcraft", "Social", "Knowledge", "Leadership", "Tech", "Finesse", "Psyker"]
-
-    Aptitudes = Aptitudes.filter(function(val) {
-        return character.Aptitudes.indexOf(val) == -1;
-      });
-
     var selectBox = el(str);
 
     var index = str.substring(str.search("_") + 1, str.length);
@@ -572,9 +566,13 @@ function skillChange(str) {
 
 
 function buildSheet() {
-    $("#sheetHome").text(character.homeworld);
-    $("#sheetBack").text(character.background);
-    $("#sheetRole").text(character.role);
+    let htmlStr = ""
+
+    $("#exportText").val("")
+
+    $("#sheetHome").text(homeworlds[character["homeworld"]]["name"]);
+    $("#sheetBack").text(backgrounds[character["background"]]["name"]);
+    $("#sheetRole").text(roles[character["role"]]["name"]);
 
     // Wounds, fate, fatigue, movement, carry
 
@@ -582,7 +580,7 @@ function buildSheet() {
     $("#sheetFatigue").text(character.Fatigue);
     $("#sheetFate").text(character.Fate);
     $("#sheetMove").text(character.Movement[0]+"/"+character.Movement[1]+"/"+character.Movement[2]+"/"+character.Movement[3]+" metres (Half/Full/Charge/Run)")
-    $("#sheetCarry").text(character.Carry);
+    $("#sheetCarry").text(character.Carry + "kg");
 
     // Characteristics
     $("#sheetWS").text(character.WS);
@@ -595,4 +593,57 @@ function buildSheet() {
     $("#sheetWP").text(character.WP);
     $("#sheetFel").text(character.Fel);
     $("#sheetInfl").text(character.Infl);
+
+    for (let i = 0; i < character.Skills.length; i ++) {
+        htmlStr = ""
+
+        htmlStr += "<tr><td>"
+
+        htmlStr += character.Skills[i]
+
+        htmlStr += "</td></tr>"
+
+        $("#sheetSkills:last-child").append(htmlStr)
+    }
+
+    for (let i = 0; i < character.Talents.length; i ++) {
+        htmlStr = ""
+
+        htmlStr += "<tr><td>"
+
+        htmlStr += character.Talents[i]
+
+        htmlStr += "</td></tr>"
+
+        $("#sheetTalents:last-child").append(htmlStr)
+    }
+
+    for (let i = 0; i < character.Aptitudes.length; i ++) {
+        htmlStr = ""
+
+        htmlStr += "<tr><td>"
+
+        htmlStr += character.Aptitudes[i]
+
+        htmlStr += "</td></tr>"
+
+        $("#sheetApts:last-child").append(htmlStr)
+    }
+
+    for (let i = 0; i < character.Equip.length; i ++) {
+        htmlStr = ""
+
+        htmlStr += "<tr><td>"
+
+        htmlStr += character.Equip[i]
+
+        htmlStr += "</td><td>"
+
+        htmlStr += equipment[character["Equip"][i]]["weight"]
+
+        htmlStr += "</td></tr>"
+
+        $("#sheetEquip:last-child").append(htmlStr)
+    }
+    
 }

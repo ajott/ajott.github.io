@@ -291,7 +291,7 @@ function getFullApts() {
     character.Aptitudes.push(backgrounds[character.background]["aptitude"]);
     character.Aptitudes = character.Aptitudes.concat(roles[character.role]["aptitudes"]);
 
-    let Aptitudes = ["Weapon Skill", "Ballistic Skill", "Strength", "Toughness", "Agility", "Intelligence", "Perception", "Willpower", "Fellowship", "Offense", "Defense", "Fieldcraft", "Social", "Knowledge", "Leadership", "Tech", "Finesse", "Psyker"]
+    let Aptitudes = ["Weapon Skill", "Ballistic Skill", "Strength", "Toughness", "Agility", "Intelligence", "Perception", "Willpower", "Fellowship", "Offense", "Defense", "Fieldcraft", "Social", "Knowledge", "Leadership", "Tech", "Finesse", "Psyker"].sort()
 
     var aptsUnique = character.Aptitudes.filter(function (item, index) {
         return character.Aptitudes.indexOf(item) >= index;
@@ -299,11 +299,14 @@ function getFullApts() {
 
     character.Aptitudes = aptsUnique;
 
+    character.Aptitudes = character.Aptitudes.sort()
+
     Aptitudes = Aptitudes.filter(function(val) {
         return character.Aptitudes.indexOf(val) == -1;
     });
 
-    Aptitudes = Aptitudes.sort();
+    console.log(Aptitudes)
+    
 
     // Starting with an empty string for the inner HTML of the aptitude table
     let htmlStr = ""
@@ -326,7 +329,7 @@ function getFullApts() {
 
         };
 
-        el("aptBox_" + i).innerHTML += htmlStr;
+        el("aptTd_" + i).innerHTML += htmlStr;
     }
 
     for (let i = character.Aptitudes.length; i < 12; i ++) {
@@ -343,7 +346,7 @@ function getFullApts() {
         htmlStr += "</select>"
         htmlStr += "</td></tr>"
 
-        el("aptBox_" + i).innerHTML += htmlStr;
+        el("aptTd_" + i).innerHTML += htmlStr;
     }
 }
 
@@ -357,6 +360,7 @@ function aptChange(str) {
 
     character.Aptitudes[index] = apt;
 }
+
 
 function buildTalentCard() {
     character.Talents = [];

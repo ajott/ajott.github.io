@@ -153,7 +153,7 @@ var backgrounds = {
         bonus: "Faith is All: When spending a Fate point to gain a+10 bonus to any one test, an Adeptus Ministorum character gains a +20 bonus instead.",
         skills: ["Charm", "Command", "Common Lore (Adeptus Ministorum)", "Inquiry ZZ Scrutiny", "Linguistics (High Gothic)"],
         talents: ["Weapon Training (Flame) ZZ Weapon Training (Low-Tech, Solid Projectile)"],
-        equipment: ["Hand Flamer ZZ Warhammer and Stub Revolver", "Imperial Robes ZZ Flak Vest", "Backpack", "Glow-globe", "Monotask Servo-skull"],
+        equipment: ["Hand Flamer ZZ Warhammer and Stub Revolver", "Imperial Robes ZZ Flak Vest", "Backpack", "Glow-globe", "Monotask Servo-skull (Laud Hailer)"],
         name: "Adeptus Ministorum"
     },
     "guard": {
@@ -202,7 +202,7 @@ var roles = {
         name: "Desperado"
     },
     "hierophant": {
-        aptitudes: ["Fellowship", "Offence", "Social", "Toughness", "Willpower"],
+        aptitudes: ["Fellowship", "Offense", "Social", "Toughness", "Willpower"],
         talent: "Double Team ZZ Hatred (Choose Group)",
         bonus: "Sway the Masses: In addition to the normal uses of Fate points (pg 293), a Hierophant character may spend a Fate point to automatically succeed at a Charm, Command, or Intimidate skill test with a number of degrees of success equal to his Willpower bonus. ",
         name: "Hierophant"
@@ -226,7 +226,7 @@ var roles = {
         name: "Seeker"
     },
     "warrior": {
-        aptitudes: ["Ballistic Skill", "Defense", "Offence", "Strength", "Weapon Skill"],
+        aptitudes: ["Ballistic Skill", "Defense", "Offense", "Strength", "Weapon Skill"],
         talent: "Iron Jaw ZZ Rapid Reload",
         bonus: "Expert at Violence: In addition to the normal uses of Fate points (pg 293), after making a successful attack test, but before determining hits, a Warrior character may spend a Fate point to substitute his Weapon Skill (for melee) or Ballistic Skill (for ranged) bonus for the degrees of success scored on the attack test.",
         name: "Warrior"
@@ -255,7 +255,7 @@ var skills = {
     "Awareness": {
         "description": "Spot ambushes, search for clues or hidden items, or evesdrop on conversations"
     },
-    "Inquirty": {
+    "Inquiry": {
         "description": "Try to track down a local crime lord, attempt to learn the attidues of the local populace, or gather information about specific locations."
     },
     "Interrogation": {

@@ -305,8 +305,6 @@ function getFullApts() {
         return character.Aptitudes.indexOf(val) == -1;
     });
 
-    console.log(Aptitudes)
-    
 
     // Starting with an empty string for the inner HTML of the aptitude table
     let htmlStr = ""

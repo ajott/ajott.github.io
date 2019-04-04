@@ -14,6 +14,15 @@
 </head>
 
 <body>
+    <div class="w3-top">
+        <div class="w3-bar w3-dark-grey w3-card-4">
+            <a class="w3-bar-item w3-button" href="https://ajott.github.io/dh2chargen">Dark Heresy 2e Character
+                Creator</a>
+            <a class="w3-bar-item w3-right w3-button w3-pale-yellow" href="https://ajott.github.io/quickref">DH 2e Quick
+                Reference</a>
+        </div>
+    </div>
+    <section style="padding-top: 50px;">
     <section id="path">
         <div class="w3-row-padding w3-section">
             <div class="w3-col l2 w3-center">
@@ -1600,14 +1609,16 @@
                             </table>
                         </div>
                     </div>
-                    <button class="w3-button w3-round w3-yellow" onclick="document.getElementById('saveModal').style.display='block'">Export/Save</button>
-                    <br />                    
+                    <button class="w3-button w3-round w3-yellow"
+                        onclick="document.getElementById('saveModal').style.display='block'">Export/Save</button>
+                    <br />
                 </div>
             </div>
             <div class="w3-col" style="width: 20%">
                 <p style="color: #fff3cf">space</p>
             </div>
         </div>
+    </section>
     </section>
 
     <div id="importModal" class="w3-modal">
@@ -1616,58 +1627,61 @@
                 <span onclick="document.getElementById('importModal').style.display='none'"
                     class="w3-button w3-display-topright w3-red">&times;</span>
                 <div class="w3-container w3-half">
-                        <h4>Enter your character code below</h4>
-                        <h5 id="noString" style="color:red; display:none;">Please enter a code!</h5>
-                        <textarea class="w3-top-left" id="importInput" style="width: 250px; height: 75px;"></textarea>
-                        <br /><br /><br/>
-                        <button class="w3-button w3-round w3-green" onclick="importChar()">Load!</button>
-                        <hr/>
+                    <h4>Enter your character code below</h4>
+                    <h5 id="noString" style="color:red; display:none;">Please enter a code!</h5>
+                    <textarea class="w3-top-left" id="importInput" style="width: 250px; height: 75px;"></textarea>
+                    <br /><br /><br />
+                    <button class="w3-button w3-round w3-green" onclick="importChar()">Load!</button>
+                    <hr />
                 </div>
                 <div class="w3-container w3-half">
                     <h4>Or enter a username to retrieve saved characters</h4>
-                    <input id="userInput"></input><br/>
+                    <input id="userInput"></input><br />
                     <button class="w3-button w3-round w3-green" id="retrieve-char">Retrieve Characters</button>
-                    <br/><br/>
+                    <br /><br />
                     <select id="charList" style="display:none;">
 
                     </select>
-                    <br/><br/>
-                    <button style="display: none;" class="w3-button w3-round w3-green" id="charLoad" onclick="chooseChar()">Select</button>
+                    <br /><br />
+                    <button style="display: none;" class="w3-button w3-round w3-green" id="charLoad"
+                        onclick="chooseChar()">Select</button>
                 </div>
             </div>
         </div>
     </div>
 
     <div id="saveModal" class="w3-modal">
-            <div class="w3-modal-content w3-animate-opacity w3-center" style="width: 600px; background: #fff3cf;">
-                    <div class="w3-container">
-                        <span onclick="document.getElementById('saveModal').style.display='none'"
-                            class="w3-button w3-display-topright w3-red">&times;</span>
-                        <div class="w3-container w3-half">
-                                <h4>Get an export string for your character</h4>
-                                <textarea class="w3-top-left" id="exportText" style="width: 250px; height: 75px;"></textarea>
-                                <br /><br /><br/>
-                                <button class="w3-button w3-round w3-green" onclick="exportChar()">Generate</button>
-                                <hr/>
-                        </div>
-                        <div class="w3-container w3-half">
-                            <h4>Or save "to the cloud"</h4>
-                            <form id="saveChar">
-                                    Username: <input id="saveUser" name="username"></input>
-                                    <br />
-                                    Character Name: <input id="saveCharName" name="character"></input>
-                                    <br />
-                                    <input style="display:none;" id="saveCharTime" name="dateTime"></input>
-                                    <br />
-                                    <input style="display:none;" id="saveCharString" name="data_string"></input>
-                                </form>
-                                <span style="font-size 0.9em">Your username is cAsE sEnSiTiVe and will be needed to retrieve this character.</span>
-                                <br/><br/>
-                                <button id="submit-form" onclick="document.getElementById('saveModal').style.display='none';">Save</button>
-                                <hr />
-                        </div>
-                    </div>
+        <div class="w3-modal-content w3-animate-opacity w3-center" style="width: 600px; background: #fff3cf;">
+            <div class="w3-container">
+                <span onclick="document.getElementById('saveModal').style.display='none'"
+                    class="w3-button w3-display-topright w3-red">&times;</span>
+                <div class="w3-container w3-half">
+                    <h4>Get an export string for your character</h4>
+                    <textarea class="w3-top-left" id="exportText" style="width: 250px; height: 75px;"></textarea>
+                    <br /><br /><br />
+                    <button class="w3-button w3-round w3-green" onclick="exportChar()">Generate</button>
+                    <hr />
                 </div>
+                <div class="w3-container w3-half">
+                    <h4>Or save "to the cloud"</h4>
+                    <form id="saveChar">
+                        Username: <input id="saveUser" name="username"></input>
+                        <br />
+                        Character Name: <input id="saveCharName" name="character"></input>
+                        <br />
+                        <input style="display:none;" id="saveCharTime" name="dateTime"></input>
+                        <br />
+                        <input style="display:none;" id="saveCharString" name="data_string"></input>
+                    </form>
+                    <span style="font-size 0.9em">Your username is cAsE sEnSiTiVe and will be needed to retrieve this
+                        character.</span>
+                    <br /><br />
+                    <button id="submit-form"
+                        onclick="document.getElementById('saveModal').style.display='none';">Save</button>
+                    <hr />
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 

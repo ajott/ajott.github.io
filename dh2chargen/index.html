@@ -23,1591 +23,1673 @@
         </div>
     </div>
     <section style="padding-top: 50px;">
-    <section id="path">
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col l2 w3-center">
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col l8">
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="navHome()">
-                        <div class="w3-center">
-                            <img src="images/happyGuard.png" class="w3-image w3-round-large" style="width: 100%">
+        <section id="path">
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col l2 w3-center">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col l8">
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="navHome()">
+                            <div class="w3-center">
+                                <img src="images/happyGuard.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Create a Character
+                            </h4>
+                            <div class="w3-row-padding">
+                                This will guide you through all the choices you need to make in order to create a Dark
+                                Heresy 2nd Edition character.
+                                <p></p>
+                            </div>
                         </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Create a Character
-                        </h4>
-                        <div class="w3-row-padding">
-                            This will guide you through all the choices you need to make in order to create a Dark
-                            Heresy 2nd Edition character.
-                            <p></p>
+                    </div>
+                    <div class="w3-col l2 w3-center">
+                        <p style="color: #fff3cf">space</p>
+                    </div>
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
+                            onclick="document.getElementById('importModal').style.display='block'">
+                            <div class="w3-center">
+                                <img src="images/shocktroops.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Import a Character
+                            </h4>
+                            <div class="w3-row-padding">
+                                You've already used this tool, and have saved the exported character string. You can
+                                import
+                                it here to look at your character again.
+                                <p></p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="w3-col l2 w3-center">
                     <p style="color: #fff3cf">space</p>
                 </div>
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
-                        onclick="document.getElementById('importModal').style.display='block'">
-                        <div class="w3-center">
-                            <img src="images/shocktroops.png" class="w3-image w3-round-large" style="width: 100%">
-                        </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Import a Character
-                        </h4>
-                        <div class="w3-row-padding">
-                            You've already used this tool, and have saved the exported character string. You can import
-                            it here to look at your character again.
-                            <p></p>
-                        </div>
-                    </div>
+            </div>
+            <div class="w3-row-padding w3-bottom">
+                <div class="w3-panel w3-yellow w3-display-container">
+                    <span onclick="this.parentElement.style.display='none'"
+                        class="w3-button w3-display-topright">&times;</span>
+                    <h3>Notice</h3>
+                    <p>If you are using an adblocker or tracking-blocker (like Privacy Badger) you will need to disable
+                        it on this site for online saves to work. <br />
+                        This is due to an issue where they block calls to third-party URLs (in this case, Google
+                        Scripts). <br />
+                        If you have concerns about your information or privacy, feel free to check out the <a
+                            style="color: blue;" href="https://github.com/ajott/ajott.github.io/tree/master/dh2chargen"
+                            target="_blank">source code</a> for
+                        this project.</p>
                 </div>
             </div>
-            <div class="w3-col l2 w3-center">
-                <p style="color: #fff3cf">space</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Homeworld Selection -->
-    <section id="homeSelect" style="display: none; opacity: 0;">
-        <h3 class="w3-center">
-            Choose your Homeworld
-        </h3>
-        <hr />
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col l2 w3-center">
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col l8">
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseHome('feral')">
-                        <div class="w3-center">
-                            <img src="images/feral.png" class="w3-image w3-round-large" style="width: 100%">
+        <!-- Homeworld Selection -->
+        <section id="homeSelect" style="display: none; opacity: 0;">
+            <h3 class="w3-center">
+                Choose your Homeworld
+            </h3>
+            <hr />
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col l2 w3-center">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col l8">
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
+                            onclick="chooseHome('feral')">
+                            <div class="w3-center">
+                                <img src="images/feral.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Feral World
+                            </h4>
+                            <div class="w3-row-padding">
+                                Feral worlds are planets where the dominant culture is trapped
+                                in a primitive state, often much lower technologically than
+                                that of other Imperial worlds. This makes feral worlders
+                                hardy, strong, tough, and able to survive in the worst of conditions.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center">
+                                Strength +, Toughness +, Influence - <br />
+                                Base Fate: 2, Base Wounds: 9 <br />
+                                Aptitude: Toughness
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center">
+                                <strong>The Old Ways:</strong> A Feral World character's Low-Tech weapons lose any
+                                present
+                                Primitive Qualities and gain the Proven (3) Quality.
+                                <p></p>
+                            </div>
                         </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Feral World
-                        </h4>
-                        <div class="w3-row-padding">
-                            Feral worlds are planets where the dominant culture is trapped
-                            in a primitive state, often much lower technologically than
-                            that of other Imperial worlds. This makes feral worlders
-                            hardy, strong, tough, and able to survive in the worst of conditions.
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center">
-                            Strength +, Toughness +, Influence - <br />
-                            Base Fate: 2, Base Wounds: 9 <br />
-                            Aptitude: Toughness
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center">
-                            <strong>The Old Ways:</strong> A Feral World character's Low-Tech weapons lose any present
-                            Primitive Qualities and gain the Proven (3) Quality.
-                            <p></p>
+                    </div>
+                    <div class="w3-col l2 w3-center">
+                        <p style="color: #fff3cf">space</p>
+                    </div>
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
+                            onclick="chooseHome('forge')">
+                            <div class="w3-center">
+                                <img src="images/forge.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Forge World
+                            </h4>
+                            <div class="w3-row-padding">
+                                Forge worlds are the main armouries and assembly lines
+                                of the Imperium. The denizens are likely to have been born to do
+                                a specific task, like their parents before them and their children
+                                that will come after, focusing their entire lives on a single job.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center">
+                                Intelligence +, Toughness +, Fellowship - <br />
+                                Base Fate: 3, Base Wounds: 8 <br />
+                                Aptitude: Intelligence
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center">
+                                <strong>Omnissiah's Chosen:</strong> A Forge World character gains the Technical Knock
+                                or
+                                Weapon-Tech Talent.
+                                <p></p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="w3-col l2 w3-center">
                     <p style="color: #fff3cf">space</p>
                 </div>
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseHome('forge')">
-                        <div class="w3-center">
-                            <img src="images/forge.png" class="w3-image w3-round-large" style="width: 100%">
-                        </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Forge World
-                        </h4>
-                        <div class="w3-row-padding">
-                            Forge worlds are the main armouries and assembly lines
-                            of the Imperium. The denizens are likely to have been born to do
-                            a specific task, like their parents before them and their children
-                            that will come after, focusing their entire lives on a single job.
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center">
-                            Intelligence +, Toughness +, Fellowship - <br />
-                            Base Fate: 3, Base Wounds: 8 <br />
-                            Aptitude: Intelligence
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center">
-                            <strong>Omnissiah's Chosen:</strong> A Forge World character gains the Technical Knock or
-                            Weapon-Tech Talent.
-                            <p></p>
+            </div>
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col l2 w3-center">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col l8">
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
+                            onclick="chooseHome('highborn')">
+                            <div class="w3-center">
+                                <img src="images/highborn.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Highborn
+                            </h4>
+                            <div class="w3-row-padding">
+                                Highborn are the elite of Imperial worlds, the nobles, princes,
+                                and lords of cities, systems, and worlds who rule over
+                                boundless populations alongside other equally-privileged
+                                scions. They are content in the
+                                knowledge that they are the instruments
+                                of Imperial dominance on their
+                                world and the voice of the Emperor
+                                to their people.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center">
+                                Fellowship +, Influence +, Toughness - <br />
+                                Base Fate: 4, Base Wounds: 9 <br />
+                                Aptitude: Fellowship
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center">
+                                <strong>Breeding Counts:</strong> A Highborn character reduces Influence losses by 1, to
+                                a
+                                minimum loss of 1.
+                                <p></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="w3-col l2 w3-center">
-                <p style="color: #fff3cf">space</p>
-            </div>
-        </div>
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col l2 w3-center">
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col l8">
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseHome('highborn')">
-                        <div class="w3-center">
-                            <img src="images/highborn.png" class="w3-image w3-round-large" style="width: 100%">
-                        </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Highborn
-                        </h4>
-                        <div class="w3-row-padding">
-                            Highborn are the elite of Imperial worlds, the nobles, princes,
-                            and lords of cities, systems, and worlds who rule over
-                            boundless populations alongside other equally-privileged
-                            scions. They are content in the
-                            knowledge that they are the instruments
-                            of Imperial dominance on their
-                            world and the voice of the Emperor
-                            to their people.
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center">
-                            Fellowship +, Influence +, Toughness - <br />
-                            Base Fate: 4, Base Wounds: 9 <br />
-                            Aptitude: Fellowship
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center">
-                            <strong>Breeding Counts:</strong> A Highborn character reduces Influence losses by 1, to a
-                            minimum loss of 1.
-                            <p></p>
+                    <div class="w3-col l2 w3-center">
+                        <p style="color: #fff3cf">space</p>
+                    </div>
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseHome('hive')">
+                            <div class="w3-center">
+                                <img src="images/hive.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Hive World
+                            </h4>
+                            <div class="w3-row-padding">
+                                Hive worlders exist in cities that reach kilometres into the
+                                sky from the wasted surface of toxic, hostile environments,
+                                ruined through many centuries of industry. For a hive
+                                worlder, his life is but one cog in a gigantic city-machine,
+                                living and dying in the same few cubic kilometres in which he was born.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center">
+                                Agility +, Perception +, Willpower - <br />
+                                Base Fate: 2, Base Wounds: 7 <br />
+                                Aptitude: Perception
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center">
+                                <strong>Teeming Masses in Metal Mountains:</strong> A Hive World character moves through
+                                crowds as if they were open terrain and gains a +20 bonus to Navigate (Surface) Tests in
+                                closed spaces.
+                                <p></p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="w3-col l2 w3-center">
                     <p style="color: #fff3cf">space</p>
                 </div>
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseHome('hive')">
-                        <div class="w3-center">
-                            <img src="images/hive.png" class="w3-image w3-round-large" style="width: 100%">
-                        </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Hive World
-                        </h4>
-                        <div class="w3-row-padding">
-                            Hive worlders exist in cities that reach kilometres into the
-                            sky from the wasted surface of toxic, hostile environments,
-                            ruined through many centuries of industry. For a hive
-                            worlder, his life is but one cog in a gigantic city-machine,
-                            living and dying in the same few cubic kilometres in which he was born.
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center">
-                            Agility +, Perception +, Willpower - <br />
-                            Base Fate: 2, Base Wounds: 7 <br />
-                            Aptitude: Perception
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center">
-                            <strong>Teeming Masses in Metal Mountains:</strong> A Hive World character moves through
-                            crowds as if they were open terrain and gains a +20 bonus to Navigate (Surface) Tests in
-                            closed spaces.
-                            <p></p>
+            </div>
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col l2 w3-center">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col l8">
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
+                            onclick="chooseHome('shrine')">
+                            <div class="w3-center">
+                                <img src="images/shrine.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Shrine World
+                            </h4>
+                            <div class="w3-row-padding">
+                                Shrine worlders grow up on worlds that the Imperium
+                                has deemed holy places, where the Cult of the Emperor’s
+                                power is omnipresent. While all citizens of the Imperium are taught
+                                to venerate the glory of the Emperor, it is
+                                the shrine worlders who perhaps have the greatest understanding
+                                of the teachings of the Imperial Cult.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center">
+                                Fellowship +, Willpower +, Perception - <br />
+                                Base Fate: 3, Base Wounds: 8 <br />
+                                Aptitude: Willpower
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center">
+                                <strong>Faith in the Creed:</strong> When spending a Fate Point, a Shrine World
+                                character's
+                                number of Fate Points are not reduced on a 1d10 result of 1.
+                                <p></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="w3-col l2 w3-center">
-                <p style="color: #fff3cf">space</p>
-            </div>
-        </div>
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col l2 w3-center">
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col l8">
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseHome('shrine')">
-                        <div class="w3-center">
-                            <img src="images/shrine.png" class="w3-image w3-round-large" style="width: 100%">
-                        </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Shrine World
-                        </h4>
-                        <div class="w3-row-padding">
-                            Shrine worlders grow up on worlds that the Imperium
-                            has deemed holy places, where the Cult of the Emperor’s
-                            power is omnipresent. While all citizens of the Imperium are taught
-                            to venerate the glory of the Emperor, it is
-                            the shrine worlders who perhaps have the greatest understanding
-                            of the teachings of the Imperial Cult.
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center">
-                            Fellowship +, Willpower +, Perception - <br />
-                            Base Fate: 3, Base Wounds: 8 <br />
-                            Aptitude: Willpower
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center">
-                            <strong>Faith in the Creed:</strong> When spending a Fate Point, a Shrine World character's
-                            number of Fate Points are not reduced on a 1d10 result of 1.
-                            <p></p>
+                    <div class="w3-col l2 w3-center">
+                        <p style="color: #fff3cf">space</p>
+                    </div>
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
+                            onclick="chooseHome('voidborn')">
+                            <div class="w3-center">
+                                <img src="images/void.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Voidborn
+                            </h4>
+                            <div class="w3-row-padding">
+                                Voidborn spend their lives in the expanses of space, growing
+                                up on ancient orbital stations, generation vessels, merchant
+                                freighters, or remote asteroid outposts. This makes them exceptionally skilled
+                                when it comes to living on voidships and space stations, more so
+                                than any who have spent their lives crawling around in the dirt of a
+                                world.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center">
+                                Intelligence +, Willpower +, Strength - <br />
+                                Base Fate: 3, Base Wounds: 7 <br />
+                                Aptitude: Intelligence
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center">
+                                <strong>Child of the Dark:</strong> A voidborn character starts with the Strong Minded
+                                talent, and gains a +30 bonus to tests for moving in zero-gravity
+                                <p></p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="w3-col l2 w3-center">
                     <p style="color: #fff3cf">space</p>
                 </div>
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseHome('voidborn')">
-                        <div class="w3-center">
-                            <img src="images/void.png" class="w3-image w3-round-large" style="width: 100%">
-                        </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Voidborn
-                        </h4>
-                        <div class="w3-row-padding">
-                            Voidborn spend their lives in the expanses of space, growing
-                            up on ancient orbital stations, generation vessels, merchant
-                            freighters, or remote asteroid outposts. This makes them exceptionally skilled
-                            when it comes to living on voidships and space stations, more so
-                            than any who have spent their lives crawling around in the dirt of a
-                            world.
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center">
-                            Intelligence +, Willpower +, Strength - <br />
-                            Base Fate: 3, Base Wounds: 7 <br />
-                            Aptitude: Intelligence
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center">
-                            <strong>Child of the Dark:</strong> A voidborn character starts with the Strong Minded
-                            talent, and gains a +30 bonus to tests for moving in zero-gravity
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <div class="w3-col l2 w3-center">
-                <p style="color: #fff3cf">space</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Background Selection -->
-    <section id="backSelect" style="display: none; opacity: 0;">
-        <h3 class="w3-center">
-            Choose your Background
-        </h3>
-        <hr />
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col l2 w3-center">
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col l8">
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseBack('admin')">
-                        <div class="w3-center">
-                            <img src="images/admin.png" class="w3-image w3-round-large" style="width: 100%">
+        <!-- Background Selection -->
+        <section id="backSelect" style="display: none; opacity: 0;">
+            <h3 class="w3-center">
+                Choose your Background
+            </h3>
+            <hr />
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col l2 w3-center">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col l8">
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
+                            onclick="chooseBack('admin')">
+                            <div class="w3-center">
+                                <img src="images/admin.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Adeptus Administratum
+                            </h4>
+                            <div class="w3-row-padding">
+                                Such is the size and scope of the Imperium that it takes an
+                                innumerable legion of scribes, officials, and bureaucrats
+                                to maintain it. Connected across the stars on a web of
+                                scribbled notes and secret data caches, the Administratum is a
+                                lumbering behemoth, churning at a speed only slightly higher
+                                than deathly rest.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Starting Skills:</strong><br />
+                                Commerce or Medicine; Common Lore (Adeptus Administratum); Linguistics (High Gothic);
+                                Logic;
+                                Scholastic Lore (Choose Subject)
+                            </div>
+                            <br />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Starting Equipment:</strong><br />
+                                Laspistol or Stub Automatic; Imperial Robes; Autoquill; Chrono; Dataslate; Medi-kit
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Starting Talents:</strong><br /> Weapon Training (Las) or Weapon Training (Solid
+                                Projectile)
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Background Bonus:</strong><br /> Master of Paperwork: An Adeptus Administratum
+                                character counts the Availability of all items as one level more available (Very Rare
+                                items
+                                count as Rare, Average items count as Common, etc.).
+                                <p></p>
+                            </div>
                         </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Adeptus Administratum
-                        </h4>
-                        <div class="w3-row-padding">
-                            Such is the size and scope of the Imperium that it takes an
-                            innumerable legion of scribes, officials, and bureaucrats
-                            to maintain it. Connected across the stars on a web of
-                            scribbled notes and secret data caches, the Administratum is a
-                            lumbering behemoth, churning at a speed only slightly higher
-                            than deathly rest.
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Starting Skills:</strong><br />
-                            Commerce or Medicine; Common Lore (Adeptus Administratum); Linguistics (High Gothic); Logic;
-                            Scholastic Lore (Choose Subject)
-                        </div>
-                        <br />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Starting Equipment:</strong><br />
-                            Laspistol or Stub Automatic; Imperial Robes; Autoquill; Chrono; Dataslate; Medi-kit
-                        </div>
-                        <br>
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Starting Talents:</strong><br /> Weapon Training (Las) or Weapon Training (Solid
-                            Projectile)
-                        </div>
-                        <br>
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Background Bonus:</strong><br /> Master of Paperwork: An Adeptus Administratum
-                            character counts the Availability of all items as one level more available (Very Rare items
-                            count as Rare, Average items count as Common, etc.).
-                            <p></p>
+                    </div>
+                    <div class="w3-col l2 w3-center">
+                        <p style="color: #fff3cf">space</p>
+                    </div>
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
+                            onclick="chooseBack('arbite')">
+                            <div class="w3-center">
+                                <img src="images/arbite.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Adeptus Arbites
+                            </h4>
+                            <div class="w3-row-padding">
+                                Only through constant vigilance and the execution of brutal
+                                law can the Imperium survive, and the Adeptus Arbites
+                                carries out this function. Remorseless and single-minded, they do
+                                not forgive or forget any
+                                crime, and pursue their quarry relentlessly until the Emperor’s
+                                Justice has been served.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Starting Skills:</strong><br />
+                                Awareness; Common Lore (Adeptus Arbites; Underworld); Inquiry or Interrogation;
+                                Intimidate;
+                                Scrutiny
+                            </div>
+                            <br />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Starting Equipment:</strong><br />
+                                Shotgun or Shock Maul; Enforcer Light Carapace Armour or Carapace Chest Plate; 3 doses
+                                of
+                                Stimm; Manacles; 12 Lho Sticks
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Starting Talents:</strong><br /> Weapon Training (Shock) or Weapon Training
+                                (Solid
+                                Projectile)
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Background Bonus:</strong><br /> The Face of the Law: An Arbitrator can
+                                intimidation
+                                and Interrogation test, and can substitute his Willpower bonus for his degrees of
+                                success on
+                                these tests.
+                                <p></p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="w3-col l2 w3-center">
                     <p style="color: #fff3cf">space</p>
                 </div>
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseBack('arbite')">
-                        <div class="w3-center">
-                            <img src="images/arbite.png" class="w3-image w3-round-large" style="width: 100%">
-                        </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Adeptus Arbites
-                        </h4>
-                        <div class="w3-row-padding">
-                            Only through constant vigilance and the execution of brutal
-                            law can the Imperium survive, and the Adeptus Arbites
-                            carries out this function. Remorseless and single-minded, they do
-                            not forgive or forget any
-                            crime, and pursue their quarry relentlessly until the Emperor’s
-                            Justice has been served.
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Starting Skills:</strong><br />
-                            Awareness; Common Lore (Adeptus Arbites; Underworld); Inquiry or Interrogation; Intimidate;
-                            Scrutiny
-                        </div>
-                        <br />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Starting Equipment:</strong><br />
-                            Shotgun or Shock Maul; Enforcer Light Carapace Armour or Carapace Chest Plate; 3 doses of
-                            Stimm; Manacles; 12 Lho Sticks
-                        </div>
-                        <br>
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Starting Talents:</strong><br /> Weapon Training (Shock) or Weapon Training (Solid
-                            Projectile)
-                        </div>
-                        <br>
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Background Bonus:</strong><br /> The Face of the Law: An Arbitrator can intimidation
-                            and Interrogation test, and can substitute his Willpower bonus for his degrees of success on
-                            these tests.
-                            <p></p>
+            </div>
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col l2 w3-center">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col l8">
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
+                            onclick="chooseBack('astra')">
+                            <div class="w3-center">
+                                <img src="images/astra.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Adeptus Astra Telepathica
+                            </h4>
+                            <div class="w3-row-padding">
+                                Psykers are a vital part of the Imperium, linking its worlds
+                                together, aiding its soldiers in battle, and guiding its ships
+                                across the stars. They are also dangerous, for the very gift
+                                that allows them to draw power from the Warp, that otherworldly
+                                realm that exists beneath reality, can also make them conduits for
+                                its unholy power and gateways for Daemons. An untrained psyker
+                                can bring doom upon an entire world if his abilities are not kept in
+                                check.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Starting Skills:</strong><br />
+                                Awareness; Common Lore (Adeptus Astra Telepathica); Deceive or Interrogation; Forbidden
+                                Lore
+                                (the Warp);Psyniscience or Scrutiny
+                            </div>
+                            <br />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Starting Equipment:</strong><br />
+                                Laspistol, Staff or Whip, Light Flak Cloak or Flak Vest, Micro-bead or Psy Focus
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Starting Talents:</strong><br /> Weapon Training (Las, Low-Tech)
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Background Bonuses:</strong><br /> The Constant Threat: When the character or an
+                                ally within 10 meters triggers a roll on the Table 6-2: Psychic Phenomenon (pg 196).
+                                Adeptus
+                                Astra Telepathica character can increase or decrease the result by amount equal to his
+                                Willpower bonus. <br />
+                                Tested on Terra: If the character takes the Psyker elite advance during character
+                                creation,
+                                he also gains the Sanctioned trait (pg 138).
+                                <p></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="w3-col l2 w3-center">
-                <p style="color: #fff3cf">space</p>
-            </div>
-        </div>
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col l2 w3-center">
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col l8">
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseBack('astra')">
-                        <div class="w3-center">
-                            <img src="images/astra.png" class="w3-image w3-round-large" style="width: 100%">
-                        </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Adeptus Astra Telepathica
-                        </h4>
-                        <div class="w3-row-padding">
-                            Psykers are a vital part of the Imperium, linking its worlds
-                            together, aiding its soldiers in battle, and guiding its ships
-                            across the stars. They are also dangerous, for the very gift
-                            that allows them to draw power from the Warp, that otherworldly
-                            realm that exists beneath reality, can also make them conduits for
-                            its unholy power and gateways for Daemons. An untrained psyker
-                            can bring doom upon an entire world if his abilities are not kept in
-                            check.
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Starting Skills:</strong><br />
-                            Awareness; Common Lore (Adeptus Astra Telepathica); Deceive or Interrogation; Forbidden Lore
-                            (the Warp);Psyniscience or Scrutiny
-                        </div>
-                        <br />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Starting Equipment:</strong><br />
-                            Laspistol, Staff or Whip, Light Flak Cloak or Flak Vest, Micro-bead or Psy Focus
-                        </div>
-                        <br>
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Starting Talents:</strong><br /> Weapon Training (Las, Low-Tech)
-                        </div>
-                        <br>
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Background Bonuses:</strong><br /> The Constant Threat: When the character or an
-                            ally within 10 meters triggers a roll on the Table 6-2: Psychic Phenomenon (pg 196). Adeptus
-                            Astra Telepathica character can increase or decrease the result by amount equal to his
-                            Willpower bonus. <br />
-                            Tested on Terra: If the character takes the Psyker elite advance during character creation,
-                            he also gains the Sanctioned trait (pg 138).
-                            <p></p>
+                    <div class="w3-col l2 w3-center">
+                        <p style="color: #fff3cf">space</p>
+                    </div>
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
+                            onclick="chooseBack('admech')">
+                            <div class="w3-center">
+                                <img src="images/admech.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Adeptus Mechanicus
+                            </h4>
+                            <div class="w3-row-padding">
+                                Much of Mankind’s mastery over technology has been
+                                forgotten, and what remains are closely guarded secrets,
+                                held in jealous hands of the Adeptus Mechanicus.
+                                Wrapped up in superstitious beliefs and rites, the knowledge of
+                                how to operate the Imperium’s most advanced devices falls to these
+                                followers of the Machine God. The Adeptus Mechanicus guards
+                                and oversees the ancient knowledge and the mysteries of making
+                                technology function.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Starting Skills:</strong><br />
+                                Awareness or Operate (Choose Vehicle); Common Lore (Adeptus Mechanicus); Logic;
+                                Security;
+                                Tech
+                            </div>
+                            <br />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Starting Equipment:</strong><br />
+                                Autogun or Hand Cannon; Monotask Servo-skull (Utility) or Optical Mechadendrite;
+                                Imperial
+                                Robes; 2 vials of Sacred Unguents
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Starting Talents:</strong><br /> Mechadendrite Use (Utility); Weapon Training
+                                (Solid
+                                Projectile)
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Background Bonus:</strong><br /> Replace the Weak Flesh: An Adeptus Mechanicus
+                                character counts the Availability of all cybernetics as two levels more available (Rare
+                                items count as Average, Very Rare items count as Scarce, etc.). <br />
+                                Starting Trait: Mechanicus Implants (pg 137).
+                                <p></p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="w3-col l2 w3-center">
                     <p style="color: #fff3cf">space</p>
                 </div>
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseBack('admech')">
-                        <div class="w3-center">
-                            <img src="images/admech.png" class="w3-image w3-round-large" style="width: 100%">
-                        </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Adeptus Mechanicus
-                        </h4>
-                        <div class="w3-row-padding">
-                            Much of Mankind’s mastery over technology has been
-                            forgotten, and what remains are closely guarded secrets,
-                            held in jealous hands of the Adeptus Mechanicus.
-                            Wrapped up in superstitious beliefs and rites, the knowledge of
-                            how to operate the Imperium’s most advanced devices falls to these
-                            followers of the Machine God. The Adeptus Mechanicus guards
-                            and oversees the ancient knowledge and the mysteries of making
-                            technology function.
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Starting Skills:</strong><br />
-                            Awareness or Operate (Choose Vehicle); Common Lore (Adeptus Mechanicus); Logic; Security;
-                            Tech
-                        </div>
-                        <br />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Starting Equipment:</strong><br />
-                            Autogun or Hand Cannon; Monotask Servo-skull (Utility) or Optical Mechadendrite; Imperial
-                            Robes; 2 vials of Sacred Unguents
-                        </div>
-                        <br>
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Starting Talents:</strong><br /> Mechadendrite Use (Utility); Weapon Training (Solid
-                            Projectile)
-                        </div>
-                        <br>
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Background Bonus:</strong><br /> Replace the Weak Flesh: An Adeptus Mechanicus
-                            character counts the Availability of all cybernetics as two levels more available (Rare
-                            items count as Average, Very Rare items count as Scarce, etc.). <br />
-                            Starting Trait: Mechanicus Implants (pg 137).
-                            <p></p>
+            </div>
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col l2 w3-center">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col l8">
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
+                            onclick="chooseBack('ministorum')">
+                            <div class="w3-center">
+                                <img src="images/ministorum.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Adeptus Ministorum
+                            </h4>
+                            <div class="w3-row-padding">
+                                The Adeptus Ministorum, also known as the Ecclesiarchy,
+                                is the religion that venerates the Emperor of Mankind.
+                                Its members are devoted servants of the Emperor,
+                                dedicated to bringing His word to the faithful, and rooting out any
+                                which would stand against Him. Even should he fall from grace, the teachings of the
+                                church
+                                remain branded upon his soul, and the fire of the Emperor’s faith
+                                still burns strong in his belly.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Starting Skills:</strong><br />
+                                Charm; Command; Common Lore (Adeptus Ministorum);Inquiry or Scrutiny; Linguistics (High
+                                Gothic)
+                            </div>
+                            <br />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Starting Equipment:</strong><br />
+                                Hand Flamer (or Warhammer and Stub Revolver); Imperial Robes or Flak Vest; Backpack;
+                                Glow-globe; Monotask Servo-skull (Laud hailer)
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Starting Talents:</strong><br /> Weapon Training (Flame) or Weapon Training
+                                (Low-Tech, Solid Projectile)
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Background Bonus:</strong><br /> Faith is All: When spending a Fate point to
+                                gain
+                                a+10 bonus to any one test, an Adeptus Ministorum character gains a +20 bonus instead.
+                                <p></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="w3-col l2 w3-center">
-                <p style="color: #fff3cf">space</p>
-            </div>
-        </div>
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col l2 w3-center">
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col l8">
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
-                        onclick="chooseBack('ministorum')">
-                        <div class="w3-center">
-                            <img src="images/ministorum.png" class="w3-image w3-round-large" style="width: 100%">
-                        </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Adeptus Ministorum
-                        </h4>
-                        <div class="w3-row-padding">
-                            The Adeptus Ministorum, also known as the Ecclesiarchy,
-                            is the religion that venerates the Emperor of Mankind.
-                            Its members are devoted servants of the Emperor,
-                            dedicated to bringing His word to the faithful, and rooting out any
-                            which would stand against Him. Even should he fall from grace, the teachings of the church
-                            remain branded upon his soul, and the fire of the Emperor’s faith
-                            still burns strong in his belly.
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Starting Skills:</strong><br />
-                            Charm; Command; Common Lore (Adeptus Ministorum);Inquiry or Scrutiny; Linguistics (High
-                            Gothic)
-                        </div>
-                        <br />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Starting Equipment:</strong><br />
-                            Hand Flamer (or Warhammer and Stub Revolver); Imperial Robes or Flak Vest; Backpack;
-                            Glow-globe; Monotask Servo-skull (Laud hailer)
-                        </div>
-                        <br>
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Starting Talents:</strong><br /> Weapon Training (Flame) or Weapon Training
-                            (Low-Tech, Solid Projectile)
-                        </div>
-                        <br>
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Background Bonus:</strong><br /> Faith is All: When spending a Fate point to gain
-                            a+10 bonus to any one test, an Adeptus Ministorum character gains a +20 bonus instead.
-                            <p></p>
+                    <div class="w3-col l2 w3-center">
+                        <p style="color: #fff3cf">space</p>
+                    </div>
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
+                            onclick="chooseBack('guard')">
+                            <div class="w3-center">
+                                <img src="images/guard.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Imperial Guard
+                            </h4>
+                            <div class="w3-row-padding">
+                                To protect the Imperium from its many enemies, the
+                                Imperium maintains a massive fighting force known as the
+                                Imperial Guard. Tithed from the worlds across the galaxy,
+                                the Imperial Guard is an immense force of countless billions,
+                                always at constant war, and always recruiting more soldiers to
+                                replace the fallen. Many Guardsmen do not live even
+                                a full day after entering battle, but those who survive become
+                                hardened combat veterans skilled in the bringing of death and
+                                facing the worst foes the galaxy has to offer.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Starting Skills:</strong><br />
+                                Athletics; Command; Common Lore (Imperial Guard); Medicae or Operate (Surface); Navigate
+                                (Surface)
+                            </div>
+                            <br />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Starting Equipment:</strong><br />
+                                Lasgun (or Laspistol and Sword); Combat Vest; Imperial Guard Flak Armour; Grapnel and
+                                line;
+                                12 Lho Sticks; Magnoculars
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Starting Talents:</strong><br /> Weapon Training (Las, Low-Tech)
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Background Bonus:</strong><br /> Hammer of the Emperor: When attacking a target
+                                that
+                                an ally attacked since the end of the Guardsman's last turn, the Guardsman can re-roll
+                                any
+                                results of 1 or 2 damage rolls.
+                                <p></p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="w3-col l2 w3-center">
                     <p style="color: #fff3cf">space</p>
                 </div>
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseBack('guard')">
+            </div>
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col" style="width: 35.5%">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col" style="width: 29%">
+                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseBack('outcast')">
                         <div class="w3-center">
-                            <img src="images/guard.png" class="w3-image w3-round-large" style="width: 100%">
+                            <img src="images/outcast.png" class="w3-image w3-round-large" style="width: 100%">
                         </div>
                         <h4 class="w3-row-padding w3-center">
-                            Imperial Guard
+                            Outcast
                         </h4>
                         <div class="w3-row-padding">
-                            To protect the Imperium from its many enemies, the
-                            Imperium maintains a massive fighting force known as the
-                            Imperial Guard. Tithed from the worlds across the galaxy,
-                            the Imperial Guard is an immense force of countless billions,
-                            always at constant war, and always recruiting more soldiers to
-                            replace the fallen. Many Guardsmen do not live even
-                            a full day after entering battle, but those who survive become
-                            hardened combat veterans skilled in the bringing of death and
-                            facing the worst foes the galaxy has to offer.
+                            Even within the Imperium, where most are born into the
+                            same position for life, there are those that work their way
+                            free to make a life on their own terms. Some may have
+                            deliberately forsaken the role they were given, or slipped between
+                            the cracks of their ossified civilisation. They exist as criminals,
+                            vagabonds, and renegades on the fringes of Imperial life. These
+                            Outcasts live in the shadows of society, living by their wits and
+                            charm. They are able thieves, assassins, and bounty hunters;
+                            suspicion and fear often dogs their steps, as others know that
+                            where they tread, crime follows.
                         </div>
                         <hr />
                         <div class="w3-row-padding w3-center w3-small">
                             <strong>Starting Skills:</strong><br />
-                            Athletics; Command; Common Lore (Imperial Guard); Medicae or Operate (Surface); Navigate
-                            (Surface)
+                            Acrobatics or Sleight of Hand; Common Lore (Underworld); Deceive; Dodge; Stealth
                         </div>
                         <br />
                         <div class="w3-row-padding w3-center w3-small">
                             <strong>Starting Equipment:</strong><br />
-                            Lasgun (or Laspistol and Sword); Combat Vest; Imperial Guard Flak Armour; Grapnel and line;
-                            12 Lho Sticks; Magnoculars
+                            Autopistol or Laspistol; Chainsword; Armoured Body Glove or Flak Vest; Injector; 2 doses of
+                            Obscura or 2 doses of Slaught
                         </div>
                         <br>
                         <div class="w3-row-padding w3-center w3-small">
-                            <strong>Starting Talents:</strong><br /> Weapon Training (Las, Low-Tech)
+                            <strong>Starting Talents:</strong><br /> Weapon Training (Chain); Weapon Training (Las)
+                            Weapon
+                            Training (Solid Projectile)
                         </div>
                         <br>
                         <div class="w3-row-padding w3-center w3-small">
-                            <strong>Background Bonus:</strong><br /> Hammer of the Emperor: When attacking a target that
-                            an ally attacked since the end of the Guardsman's last turn, the Guardsman can re-roll any
-                            results of 1 or 2 damage rolls.
+                            <strong>Background Bonus:</strong><br /> Never Quit: An Outcast character counts his
+                            Toughness
+                            bonus as two higher for purposes of determining Fatigue.
                             <p></p>
                         </div>
                     </div>
                 </div>
+                <div class="w3-col" style="width: 35.5%">
+                    <p style="color: #fff3cf">space</p>
+                </div>
             </div>
-            <div class="w3-col l2 w3-center">
-                <p style="color: #fff3cf">space</p>
+        </section>
+
+        <!-- Role Selection -->
+        <section id="roleSelect" style="display: none; opacity: 0;">
+            <h3 class="w3-center">
+                Choose your Role
+            </h3>
+            <hr />
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col l2 w3-center">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col l8">
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
+                            onclick="chooseRole('assassin')">
+                            <div class="w3-center">
+                                <img src="images/assassin.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Assassin
+                            </h4>
+                            <div class="w3-row-padding">
+                                Even in a universe saturated with blood and death, there
+                                are those which turn murder into a sublime art form. The
+                                Assassin is such a being, spending their lives perfecting
+                                talents in the kill. While many who serve the Emperor are proficient in battle,
+                                Assassins revel only in the act of killing and often care little for
+                                commonplace combat. It is the desire to take life and develop the skills of doing
+                                so which defines the Assassin, a journey which will end only when they themselves
+                                succumb to
+                                death.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Aptitudes:</strong><br />
+                                Agility, Ballistic Skill or Weapon Skill, Fieldcraft, Finesse, Perception
+                            </div>
+                            <br />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Talent:</strong><br /> Jaded or Leap Up
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Bonus:</strong><br /> Sure Kill: In addition to the normal uses of Fate
+                                points(pg 293), when an Assassin successfully hits with an attack, he may spend a Fate
+                                point
+                                to inflict additional damage equal to his degrees of success on the attack roll on the
+                                first
+                                hit the attack inflicts.
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-col l2 w3-center">
+                        <p style="color: #fff3cf">space</p>
+                    </div>
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
+                            onclick="chooseRole('chirurgeon')">
+                            <div class="w3-center">
+                                <img src="images/chirurgeon.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Chirurgeon
+                            </h4>
+                            <div class="w3-row-padding">
+                                The secrets of the flesh are closely-guarded lore within
+                                the Imperium. Just as the Adeptus Mechanicus jealously
+                                protects the rites and rituals governing its technology, so too
+                                do others hoard knowledge about the human form. Chirurgeons
+                                have been ushered into these hidden ways, peeling back the skin
+                                of biological science to gaze upon its wet, raw, beating organs.
+                                It is an obsessive drive that can lead to great discovery
+                                and triumph, but also to the creation of abominations which were
+                                never meant to be.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Aptitudes:</strong><br />
+                                Fieldcraft, Intelligence, Knowledge, Strength, Toughness
+                            </div>
+                            <br />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Talent:</strong><br /> Resistance (Choose Type) or Takedown
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Bonus:</strong><br /> Dedicated Healer: In addition to the normal uses of
+                                Fate
+                                points (pg 293), when a Chirurgeon character fails a test to provide First Aid, he can
+                                spend
+                                a
+                                Fate point to automatically succeed instead with the degrees of success equal to his
+                                Intelligence bonus.
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-col l2 w3-center">
+                        <p style="color: #fff3cf">space</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col" style="width: 35.5%">
-                <p style="color: #fff3cf">space</p>
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col l2 w3-center">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col l8">
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
+                            onclick="chooseRole('desperado')">
+                            <div class="w3-center">
+                                <img src="images/desperado.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Desperado
+                            </h4>
+                            <div class="w3-row-padding">
+                                Every world has men and women that live out on its fringes
+                                or survive by their skills with a gun, selling their talents
+                                to those in need of a bit more muscle with no questions
+                                asked. Desperados are a motley group, comprising scum, bounty
+                                hunters, slavers, pirates, and renegades, all people who exist
+                                on the border or beyond the law. Desperados are defined by their selfish
+                                natures and scorn for authority, choosing the path of the outlaw if
+                                it means living free and getting a quick score to see them though
+                                another day.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Aptitudes:</strong><br />
+                                Agility, Ballistic Skill, Defense, Fellowship, Finesse
+                            </div>
+                            <br />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Talent:</strong><br />
+                                Catfall or Quick Draw
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Bonus:</strong><br /> Move and Shoot: Once per round, after performing Move
+                                action, a Desperado character may perform a single Standard Attack with a Pistol weapon
+                                he
+                                is currently wielding as a Free Action.
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-col l2 w3-center">
+                        <p style="color: #fff3cf">space</p>
+                    </div>
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
+                            onclick="chooseRole('hierophant')">
+                            <div class="w3-center">
+                                <img src="images/hierophant.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Hierophant
+                            </h4>
+                            <div class="w3-row-padding">
+                                The Cult of the Emperor exists throughout the Imperium.
+                                The glory of the master of Mankind is found in the
+                                teachings of the Ministorum, the ancient secrets of the
+                                Machine God, and a million more faiths all linked to the veneration
+                                of the blessed Emperor. Hierophants are those dedicated to the
+                                Imperial Creed, as priests and confessors, clerics and wise men,
+                                or as orators and demagogues spreading His word and enforcing
+                                the tenets of the faith upon the teeming masses of humanity.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Aptitudes:</strong><br />
+                                Fellowship, Offence, Social, Toughness, Willpower
+                            </div>
+                            <br />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Talent:</strong><br />
+                                Double Team or Hatred (Pick Group)
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Bonus:</strong><br />Sway the Masses: In addition to the normal uses of
+                                Fate
+                                points (pg 293), a Hierophant character may spend a Fate point to automatically succeed
+                                at a
+                                Charm, Command, or Intimidate skill test with a number of degrees of success equal to
+                                his
+                                Willpower bonus.
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-col l2 w3-center">
+                        <p style="color: #fff3cf">space</p>
+                    </div>
+                </div>
             </div>
-            <div class="w3-col" style="width: 29%">
-                <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseBack('outcast')">
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col l2 w3-center">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col l8">
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
+                            onclick="chooseRole('mystic')">
+                            <div class="w3-center">
+                                <img src="images/mystic.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Mystic
+                            </h4>
+                            <div class="w3-row-padding">
+                                Millennia of human evolution have given rise to
+                                whole generations of psykers within the Imperium,
+                                gifted souls with a talent for manipulating potent yet
+                                unpredictable power. Mystics are those the Warp has touched in
+                                some way, gaining a measure of control over its unnatural tides
+                                and a glimmer of insight into its use. All Mystics must live with the knowledge
+                                that for all the power their gifts might bring and the position it
+                                might grant them, eventually it will likely destroy them.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Aptitudes:</strong><br />
+                                Defense, Intelligence, Knowledge, Perception, Willpower
+                            </div>
+                            <br />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Talent:</strong><br />
+                                Resistance (Psychic Powers) or Warp Sense
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Bonus:</strong><br />Stare into the Warp: A Mystic character starts the
+                                game
+                                with the Psyker elite advance (pg 90). It is recommended that a character who wishes to
+                                be a
+                                Mystic have a Willpower of at least 35.
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-col l2 w3-center">
+                        <p style="color: #fff3cf">space</p>
+                    </div>
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseRole('sage')">
+                            <div class="w3-center">
+                                <img src="images/sage.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Sage
+                            </h4>
+                            <div class="w3-row-padding">
+                                Such is the unimaginable depth of information the
+                                Imperium deals with that only Acolytes specially trained
+                                or augmented to understand can hope to use it with any
+                                degree of skill. Sages are talented individuals known by many
+                                names, such as Autosavants, Lexmechanics, and Calculus Logi.
+                                They are often members of the Adeptus Administratum or Adeptus
+                                Mechanicus, and trusted with the storing and cataloguing of huge
+                                amounts of data. Sages have the ability to access the thousands
+                                of years of sorted Imperial data to find missing secrets, or making
+                                leaps of logic to identify them when they remain elusive.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Aptitudes:</strong><br />
+                                Intelligence, Knowledge, Perception, Tech, Willpower
+                            </div>
+                            <br />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Talent:</strong><br />
+                                Ambidextrous or Clues from the Crowds
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Bonus:</strong><br /> Quest for Knowledge: In addition to the normal uses
+                                of
+                                Fate points (pg 293), a Sage character may spend a Fate point to automatically succeed
+                                at a
+                                Logic or any Lore skill test with a number of degrees of success equal to his
+                                Intelligence
+                                bonus.
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-col l2 w3-center">
+                        <p style="color: #fff3cf">space</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col l2 w3-center">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col l8">
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
+                            onclick="chooseRole('seeker')">
+                            <div class="w3-center">
+                                <img src="images/seeker.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Seeker
+                            </h4>
+                            <div class="w3-row-padding">
+                                An Acolyte that treads the path of the Seeker is driven by
+                                the hunt, relentless in his investigations. Where others
+                                might choose easy violence or give up the pursuit, the
+                                Seeker sees signs and clues to the passage of the prey, whether it
+                                is an individual fleeing from Imperial justice, or a secret hidden
+                                behind a web of lies. It is this attention and
+                                obsession with detail which defines the Seeker, and whether or not
+                                he uses it to become a hunter or investigator, it continually haunts
+                                him, pushing him on to uncover the next truth, unravel the next
+                                lie, and catch the most elusive of prey.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Aptitudes:</strong><br />
+                                Fellowship, Intelligence, Perception, Social, Tech
+                            </div>
+                            <br />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Talent:</strong><br />
+                                Keen Intuition or Disarm
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Bonus:</strong><br /> Nothing Escapes My Sight: In addition to the normal
+                                uses
+                                of Fate points (pg 293), a Seeker character may spend a Fate point to automatically
+                                succeed
+                                at an Awareness or Inquiry skill test with a number of degrees of success equal to his
+                                Perception bonus.
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-col l2 w3-center">
+                        <p style="color: #fff3cf">space</p>
+                    </div>
+                    <div class="w3-col l5">
+                        <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
+                            onclick="chooseRole('warrior')">
+                            <div class="w3-center">
+                                <img src="images/warrior.png" class="w3-image w3-round-large" style="width: 100%">
+                            </div>
+                            <h4 class="w3-row-padding w3-center">
+                                Warrior
+                            </h4>
+                            <div class="w3-row-padding">
+                                The one constant of life in the 41st Millennium is war.
+                                Ravenous xenos and hostile powers besiege the Imperium
+                                on all sides, and every facet of industry is turned to
+                                supporting armed combat. A Warrior is the result of this constant
+                                conflict, either drawn from the frontlines or worlds racked with
+                                violence. A Warrior has a talent for combat, and finds it his most
+                                effective means of resolving matters. He leaves a battle
+                                ragged but alive, his foes lying in pools of blood. As few targets
+                                of Inquisitorial investigation shy away from violent confrontation,
+                                a Warrior makes for an invaluable Acolyte, even though he can
+                                rarely guarantee anyone’s survival but his own.
+                            </div>
+                            <hr />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Aptitudes:</strong><br />
+                                Ballistic Skill, Defense, Offence, Strength, Weapon Skill
+                            </div>
+                            <br />
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Talent:</strong><br />
+                                Iron Jaw or Rapid Reload
+                            </div>
+                            <br>
+                            <div class="w3-row-padding w3-center w3-small">
+                                <strong>Role Bonus:</strong><br />Expert at Violence: In addition to the normal uses of
+                                Fate
+                                points (pg 293), after making a successful attack test, but before determining hits, a
+                                Warrior character may spend a Fate point to substitute his Weapon Skill (for melee) or
+                                Ballistic Skill (for ranged) bonus for the degrees of success scored on the attack test.
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w3-col l2 w3-center">
+                        <p style="color: #fff3cf">space</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Characteristics -->
+        <section id="charRoll" style="display: none; opacity: 0;">
+            <h3 class="w3-center">
+                Determine your Characteristics
+            </h3>
+            <hr />
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col" style="width: 20%">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col w3-card w3-round-large infocard" style="width: 20%">
+                    <br />
                     <div class="w3-center">
-                        <img src="images/outcast.png" class="w3-image w3-round-large" style="width: 100%">
+                        <button onclick="cardRollChars()" class="w3-button w3-round-large w3-yellow w3-center"
+                            id="btnCardRoll">Roll Characteristics</button>
                     </div>
-                    <h4 class="w3-row-padding w3-center">
-                        Outcast
-                    </h4>
-                    <div class="w3-row-padding">
-                        Even within the Imperium, where most are born into the
-                        same position for life, there are those that work their way
-                        free to make a life on their own terms. Some may have
-                        deliberately forsaken the role they were given, or slipped between
-                        the cracks of their ossified civilisation. They exist as criminals,
-                        vagabonds, and renegades on the fringes of Imperial life. These
-                        Outcasts live in the shadows of society, living by their wits and
-                        charm. They are able thieves, assassins, and bounty hunters;
-                        suspicion and fear often dogs their steps, as others know that
-                        where they tread, crime follows.
+                    <div class="w3-panel">
+                        <span style="font-size: 0.9em">The lowest possible characteristic roll is a 22; the highest is
+                            40.
+                            <br />
+                            <br />
+                            A <span style="color: white; background: green;">green</span> highlight indicates that your
+                            homeworld gives you an advantage on that characteristic.
+                            <br />
+                            A <span style="color: white; background: red;">red</span> highlight indicates that your
+                            homeworld gives you a disadvantage on that characteristic.
+                            <br />
+                            <br />
+                            You may re-roll one characteristic of your choosing.</span>
                     </div>
+                </div>
+                <div class="w3-col w3-card w3-round-large" style="width: 40%">
+                    <table style="font-size: 0.9em" class="charTable">
+                        <tr>
+                            <td class="charLbl" id="WSLbl">Weapon Skill</td>
+                            <td id="WS" class="rolled"></td>
+                            <td><button style="visibility: hidden" id="WSbtn"
+                                    class="reroll w3-button w3-round-large w3-light-grey"
+                                    onclick="reRollChar('WS')">Reroll</button>
+                            </td>
+                            <td>
+                                Used for melee attacks and thrown weapons
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="charLbl" id="BSLbl">Ballistic Skill</td>
+                            <td id="BS" class="rolled"></td>
+                            <td><button style="visibility: hidden" id="BSbtn"
+                                    class="reroll w3-button w3-round-large w3-light-grey"
+                                    onclick="reRollChar('BS')">Reroll</button>
+                            </td>
+                            <td>
+                                Used for ranged attacks and weapons
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="charLbl" id="SLbl">Strength</td>
+                            <td id="S" class="rolled"></td>
+                            <td><button style="visibility: hidden" id="Sbtn"
+                                    class="reroll w3-button w3-round-large w3-light-grey"
+                                    onclick="reRollChar('S')">Reroll</button>
+                            </td>
+                            <td>
+                                used for skills; contributes to carry weight
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="charLbl" id="TLbl">Toughness</td>
+                            <td id="T" class="rolled"></td>
+                            <td><button style="visibility: hidden" id="Tbtn"
+                                    class="reroll w3-button w3-round-large w3-light-grey"
+                                    onclick="reRollChar('T')">Reroll</button>
+                            </td>
+                            <td>
+                                Used for resistance; contributes to fatigue and carry weight
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="charLbl" id="AgLbl">Agility</td>
+                            <td id="Ag" class="rolled"></td>
+                            <td><button style="visibility: hidden" id="Agbtn"
+                                    class="reroll w3-button w3-round-large w3-light-grey"
+                                    onclick="reRollChar('Ag')">Reroll</button>
+                            </td>
+                            <td>
+                                Used for skills and initiative rolls
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="charLbl" id="IntLbl">Intelligence</td>
+                            <td id="Int" class="rolled"></td>
+                            <td><button style="visibility: hidden" id="Intbtn"
+                                    class="reroll w3-button w3-round-large w3-light-grey"
+                                    onclick="reRollChar('Int')">Reroll</button>
+                            </td>
+                            <td>
+                                Used for skills
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="charLbl" id="PerLbl">Perception</td>
+                            <td id="Per" class="rolled"></td>
+                            <td><button style="visibility: hidden" id="Perbtn"
+                                    class="reroll w3-button w3-round-large w3-light-grey"
+                                    onclick="reRollChar('Per')">Reroll</button>
+                            </td>
+                            <td>
+                                Used for skills
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="charLbl" id="WPLbl">Willpower</td>
+                            <td id="WP" class="rolled"></td>
+                            <td><button style="visibility: hidden" id="WPbtn"
+                                    class="reroll w3-button w3-round-large w3-light-grey"
+                                    onclick="reRollChar('WP')">Reroll</button>
+                            </td>
+                            <td>
+                                Essential for psykers. Used for resistances and to determine fatigue
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="charLbl" id="FelLbl">Fellowship</td>
+                            <td id="Fel" class="rolled"></td>
+                            <td><button style="visibility: hidden" id="Felbtn"
+                                    class="reroll w3-button w3-round-large w3-light-grey"
+                                    onclick="reRollChar('Fel')">Reroll</button>
+                            </td>
+                            <td>
+                                Used for checks with other people or NPCs
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="charLbl" id="InflLbl">Influence</td>
+                            <td id="Infl" class="rolled"></td>
+                            <td><button style="visibility: hidden" id="Inflbtn"
+                                    class="reroll w3-button w3-round-large w3-light-grey"
+                                    onclick="reRollChar('Infl')">Reroll</button>
+                            </td>
+                            <td>
+                                Used for requisition; cannot be invested in, but is granted by GM
+                            </td>
+                        </tr>
+                    </table>
+                    <br />
+                    <button id="btnCharNext" onclick="finishChars()"
+                        class="w3-right w3-button w3-hover-greyscale w3-round w3-yellow"
+                        style="display:none;">Next</button>
+                    <br />
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col" style="width: 20%">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aptitude Selection -->
+        <section id="aptSelect" style="display: none; opacity: 0;">
+            <h3 class="w3-center">
+                Determine your Aptitudes
+            </h3>
+            <hr />
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col" style="width: 30%">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col w3-card w3-round-large infocard" style="width: 20%">
+                    <div class="w3-panel">
+                        <span style="font-size: 0.9em">Your aptitudes will determine experience costs for skills,
+                            characteristic increases, and talents.
+                            <br />
+                            <br />
+                            Aptitudes are given based on your homeworld, background, and role.
+                            <br />
+                            <br />
+                            Some aptitudes you will be given a choice of two, please select one.
+                            <br />
+                            <br />
+                            Having the same aptitude multiple times will not give you any additional advantage.
+                            <br />
+                            <br />
+                            Your character will have a total of 8 aptitudes, but more can be gained later.
+                            <br />
+                        </span>
+                    </div>
+                </div>
+                <div class="w3-col w3-card w3-round-large" style="width: 20%">
+                    <table style="font-size: 0.9em" class="w3-table">
+                        <tbody id="aptsTable">
+                            <tr>
+                                <td id="aptTd_0"></td>
+                            </tr>
+                            <tr>
+                                <td id="aptTd_1"></td>
+                            </tr>
+                            <tr>
+                                <td id="aptTd_2"></td>
+                            </tr>
+                            <tr>
+                                <td id="aptTd_3"></td>
+                            </tr>
+                            <tr>
+                                <td id="aptTd_4"></td>
+                            </tr>
+                            <tr>
+                                <td id="aptTd_5"></td>
+                            </tr>
+                            <tr>
+                                <td id="aptTd_6"></td>
+                            </tr>
+                            <tr>
+                                <td id="aptTd_7"></td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <button id="btnCharNext" onclick="finishApts()"
+                        class="w3-right w3-button w3-hover-greyscale w3-round w3-yellow">Next</button>
+                    <br />
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col" style="width: 30%">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Talent Selection -->
+        <section id="talentSelect" style="display: none; opacity: 0;">
+            <h3 class="w3-center">
+                Choose your Starting Talents
+            </h3>
+            <hr />
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col" style="width: 20%">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col w3-card w3-round-large infocard" style="width: 20%">
+                    <div class="w3-panel">
+                        <span style="font-size: 0.9em">Talents are special abilities or factors for your character.
+                            <br />
+                            <br />
+                            They are generally very expensive, particularly if you lack the appropriate aptitudes.
+                            <br />
+                            <br />
+                            You will be able to spend experience on talents as your character progresses
+                        </span>
+                    </div>
+                </div>
+                <div class="w3-col w3-card w3-round-large" style="width: 40%">
+                    <table style="font-size: 0.9em" class="w3-table">
+                        <thead>
+                            <th>Talent</th>
+                            <th>Tier</th>
+                            <th>Description</th>
+                        </thead>
+                        <tbody id="talentTable">
+
+                        </tbody>
+                    </table>
+                    <br />
+                    <button id="btnCharNext" onclick="finishTalents()"
+                        class="w3-right w3-button w3-hover-greyscale w3-round w3-yellow">Next</button>
+                    <br />
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col" style="width: 20%">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Equipment Selection -->
+        <section id="equipSelect" style="display: none; opacity: 0;">
+            <h3 class="w3-center">
+                Choose your Starting Equipment
+            </h3>
+            <hr />
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col" style="width: 20%">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col w3-card w3-round-large infocard" style="width: 20%">
+                    <div class="w3-panel">
+                        <span style="font-size: 0.9em">
+                            Equipment comprises weapons, armour, tools, and other gear you may acquire through your
+                            travels
+                            and travails
+                            <br />
+                            <br />
+                            Additonal equipment can be requisitioned using Influence, or may be found on the dead bodies
+                            of
+                            your enemies, at the GM's discretion
+                            <br />
+                            <br />
+                            Weight counts against your character's carry capacity, which is dependent upon your Strength
+                            and
+                            Toughness
+                        </span>
+                    </div>
+                </div>
+                <div class="w3-col w3-card w3-round-large" style="width: 40%">
+                    <table style="font-size: 0.9em" class="w3-table">
+                        <thead>
+                            <th>Equipment Use Talents</th>
+                        </thead>
+                        <tbody id="equipTalentTable">
+
+                        </tbody>
+                    </table>
+
                     <hr />
-                    <div class="w3-row-padding w3-center w3-small">
-                        <strong>Starting Skills:</strong><br />
-                        Acrobatics or Sleight of Hand; Common Lore (Underworld); Deceive; Dodge; Stealth
-                    </div>
+                    <table style="font-size: 0.9em" class="w3-table">
+                        <thead>
+                            <th>Equipment</th>
+                            <th>Description</th>
+                            <th>Weight</th>
+                        </thead>
+                        <tbody id="equipTable">
+
+                        </tbody>
+                    </table>
                     <br />
-                    <div class="w3-row-padding w3-center w3-small">
-                        <strong>Starting Equipment:</strong><br />
-                        Autopistol or Laspistol; Chainsword; Armoured Body Glove or Flak Vest; Injector; 2 doses of
-                        Obscura or 2 doses of Slaught
-                    </div>
-                    <br>
-                    <div class="w3-row-padding w3-center w3-small">
-                        <strong>Starting Talents:</strong><br /> Weapon Training (Chain); Weapon Training (Las) Weapon
-                        Training (Solid Projectile)
-                    </div>
-                    <br>
-                    <div class="w3-row-padding w3-center w3-small">
-                        <strong>Background Bonus:</strong><br /> Never Quit: An Outcast character counts his Toughness
-                        bonus as two higher for purposes of determining Fatigue.
-                        <p></p>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col" style="width: 35.5%">
-                <p style="color: #fff3cf">space</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Role Selection -->
-    <section id="roleSelect" style="display: none; opacity: 0;">
-        <h3 class="w3-center">
-            Choose your Role
-        </h3>
-        <hr />
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col l2 w3-center">
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col l8">
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseRole('assassin')">
-                        <div class="w3-center">
-                            <img src="images/assassin.png" class="w3-image w3-round-large" style="width: 100%">
-                        </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Assassin
-                        </h4>
-                        <div class="w3-row-padding">
-                            Even in a universe saturated with blood and death, there
-                            are those which turn murder into a sublime art form. The
-                            Assassin is such a being, spending their lives perfecting
-                            talents in the kill. While many who serve the Emperor are proficient in battle,
-                            Assassins revel only in the act of killing and often care little for
-                            commonplace combat. It is the desire to take life and develop the skills of doing
-                            so which defines the Assassin, a journey which will end only when they themselves succumb to
-                            death.
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Aptitudes:</strong><br />
-                            Agility, Ballistic Skill or Weapon Skill, Fieldcraft, Finesse, Perception
-                        </div>
-                        <br />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Talent:</strong><br /> Jaded or Leap Up
-                        </div>
-                        <br>
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Bonus:</strong><br /> Sure Kill: In addition to the normal uses of Fate
-                            points(pg 293), when an Assassin successfully hits with an attack, he may spend a Fate point
-                            to inflict additional damage equal to his degrees of success on the attack roll on the first
-                            hit the attack inflicts.
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w3-col l2 w3-center">
-                    <p style="color: #fff3cf">space</p>
-                </div>
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
-                        onclick="chooseRole('chirurgeon')">
-                        <div class="w3-center">
-                            <img src="images/chirurgeon.png" class="w3-image w3-round-large" style="width: 100%">
-                        </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Chirurgeon
-                        </h4>
-                        <div class="w3-row-padding">
-                            The secrets of the flesh are closely-guarded lore within
-                            the Imperium. Just as the Adeptus Mechanicus jealously
-                            protects the rites and rituals governing its technology, so too
-                            do others hoard knowledge about the human form. Chirurgeons
-                            have been ushered into these hidden ways, peeling back the skin
-                            of biological science to gaze upon its wet, raw, beating organs.
-                            It is an obsessive drive that can lead to great discovery
-                            and triumph, but also to the creation of abominations which were
-                            never meant to be.
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Aptitudes:</strong><br />
-                            Fieldcraft, Intelligence, Knowledge, Strength, Toughness
-                        </div>
-                        <br />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Talent:</strong><br /> Resistance (Choose Type) or Takedown
-                        </div>
-                        <br>
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Bonus:</strong><br /> Dedicated Healer: In addition to the normal uses of Fate
-                            points (pg 293), when a Chirurgeon character fails a test to provide First Aid, he can spend
-                            a
-                            Fate point to automatically succeed instead with the degrees of success equal to his
-                            Intelligence bonus.
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w3-col l2 w3-center">
-                    <p style="color: #fff3cf">space</p>
-                </div>
-            </div>
-        </div>
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col l2 w3-center">
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col l8">
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
-                        onclick="chooseRole('desperado')">
-                        <div class="w3-center">
-                            <img src="images/desperado.png" class="w3-image w3-round-large" style="width: 100%">
-                        </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Desperado
-                        </h4>
-                        <div class="w3-row-padding">
-                            Every world has men and women that live out on its fringes
-                            or survive by their skills with a gun, selling their talents
-                            to those in need of a bit more muscle with no questions
-                            asked. Desperados are a motley group, comprising scum, bounty
-                            hunters, slavers, pirates, and renegades, all people who exist
-                            on the border or beyond the law. Desperados are defined by their selfish
-                            natures and scorn for authority, choosing the path of the outlaw if
-                            it means living free and getting a quick score to see them though
-                            another day.
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Aptitudes:</strong><br />
-                            Agility, Ballistic Skill, Defense, Fellowship, Finesse
-                        </div>
-                        <br />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Talent:</strong><br />
-                            Catfall or Quick Draw
-                        </div>
-                        <br>
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Bonus:</strong><br /> Move and Shoot: Once per round, after performing Move
-                            action, a Desperado character may perform a single Standard Attack with a Pistol weapon he
-                            is currently wielding as a Free Action.
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w3-col l2 w3-center">
-                    <p style="color: #fff3cf">space</p>
-                </div>
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple"
-                        onclick="chooseRole('hierophant')">
-                        <div class="w3-center">
-                            <img src="images/hierophant.png" class="w3-image w3-round-large" style="width: 100%">
-                        </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Hierophant
-                        </h4>
-                        <div class="w3-row-padding">
-                            The Cult of the Emperor exists throughout the Imperium.
-                            The glory of the master of Mankind is found in the
-                            teachings of the Ministorum, the ancient secrets of the
-                            Machine God, and a million more faiths all linked to the veneration
-                            of the blessed Emperor. Hierophants are those dedicated to the
-                            Imperial Creed, as priests and confessors, clerics and wise men,
-                            or as orators and demagogues spreading His word and enforcing
-                            the tenets of the faith upon the teeming masses of humanity.
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Aptitudes:</strong><br />
-                            Fellowship, Offence, Social, Toughness, Willpower
-                        </div>
-                        <br />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Talent:</strong><br />
-                            Double Team or Hatred (Pick Group)
-                        </div>
-                        <br>
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Bonus:</strong><br />Sway the Masses: In addition to the normal uses of Fate
-                            points (pg 293), a Hierophant character may spend a Fate point to automatically succeed at a
-                            Charm, Command, or Intimidate skill test with a number of degrees of success equal to his
-                            Willpower bonus.
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w3-col l2 w3-center">
-                    <p style="color: #fff3cf">space</p>
-                </div>
-            </div>
-        </div>
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col l2 w3-center">
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col l8">
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseRole('mystic')">
-                        <div class="w3-center">
-                            <img src="images/mystic.png" class="w3-image w3-round-large" style="width: 100%">
-                        </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Mystic
-                        </h4>
-                        <div class="w3-row-padding">
-                            Millennia of human evolution have given rise to
-                            whole generations of psykers within the Imperium,
-                            gifted souls with a talent for manipulating potent yet
-                            unpredictable power. Mystics are those the Warp has touched in
-                            some way, gaining a measure of control over its unnatural tides
-                            and a glimmer of insight into its use. All Mystics must live with the knowledge
-                            that for all the power their gifts might bring and the position it
-                            might grant them, eventually it will likely destroy them.
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Aptitudes:</strong><br />
-                            Defense, Intelligence, Knowledge, Perception, Willpower
-                        </div>
-                        <br />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Talent:</strong><br />
-                            Resistance (Psychic Powers) or Warp Sense
-                        </div>
-                        <br>
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Bonus:</strong><br />Stare into the Warp: A Mystic character starts the game
-                            with the Psyker elite advance (pg 90). It is recommended that a character who wishes to be a
-                            Mystic have a Willpower of at least 35.
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w3-col l2 w3-center">
-                    <p style="color: #fff3cf">space</p>
-                </div>
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseRole('sage')">
-                        <div class="w3-center">
-                            <img src="images/sage.png" class="w3-image w3-round-large" style="width: 100%">
-                        </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Sage
-                        </h4>
-                        <div class="w3-row-padding">
-                            Such is the unimaginable depth of information the
-                            Imperium deals with that only Acolytes specially trained
-                            or augmented to understand can hope to use it with any
-                            degree of skill. Sages are talented individuals known by many
-                            names, such as Autosavants, Lexmechanics, and Calculus Logi.
-                            They are often members of the Adeptus Administratum or Adeptus
-                            Mechanicus, and trusted with the storing and cataloguing of huge
-                            amounts of data. Sages have the ability to access the thousands
-                            of years of sorted Imperial data to find missing secrets, or making
-                            leaps of logic to identify them when they remain elusive.
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Aptitudes:</strong><br />
-                            Intelligence, Knowledge, Perception, Tech, Willpower
-                        </div>
-                        <br />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Talent:</strong><br />
-                            Ambidextrous or Clues from the Crowds
-                        </div>
-                        <br>
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Bonus:</strong><br /> Quest for Knowledge: In addition to the normal uses of
-                            Fate points (pg 293), a Sage character may spend a Fate point to automatically succeed at a
-                            Logic or any Lore skill test with a number of degrees of success equal to his Intelligence
-                            bonus.
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w3-col l2 w3-center">
-                    <p style="color: #fff3cf">space</p>
-                </div>
-            </div>
-        </div>
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col l2 w3-center">
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col l8">
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseRole('seeker')">
-                        <div class="w3-center">
-                            <img src="images/seeker.png" class="w3-image w3-round-large" style="width: 100%">
-                        </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Seeker
-                        </h4>
-                        <div class="w3-row-padding">
-                            An Acolyte that treads the path of the Seeker is driven by
-                            the hunt, relentless in his investigations. Where others
-                            might choose easy violence or give up the pursuit, the
-                            Seeker sees signs and clues to the passage of the prey, whether it
-                            is an individual fleeing from Imperial justice, or a secret hidden
-                            behind a web of lies. It is this attention and
-                            obsession with detail which defines the Seeker, and whether or not
-                            he uses it to become a hunter or investigator, it continually haunts
-                            him, pushing him on to uncover the next truth, unravel the next
-                            lie, and catch the most elusive of prey.
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Aptitudes:</strong><br />
-                            Fellowship, Intelligence, Perception, Social, Tech
-                        </div>
-                        <br />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Talent:</strong><br />
-                            Keen Intuition or Disarm
-                        </div>
-                        <br>
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Bonus:</strong><br /> Nothing Escapes My Sight: In addition to the normal uses
-                            of Fate points (pg 293), a Seeker character may spend a Fate point to automatically succeed
-                            at an Awareness or Inquiry skill test with a number of degrees of success equal to his
-                            Perception bonus.
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w3-col l2 w3-center">
-                    <p style="color: #fff3cf">space</p>
-                </div>
-                <div class="w3-col l5">
-                    <div class="w3-card-2 w3-round-large w3-hover-greyscale w3-ripple" onclick="chooseRole('warrior')">
-                        <div class="w3-center">
-                            <img src="images/warrior.png" class="w3-image w3-round-large" style="width: 100%">
-                        </div>
-                        <h4 class="w3-row-padding w3-center">
-                            Warrior
-                        </h4>
-                        <div class="w3-row-padding">
-                            The one constant of life in the 41st Millennium is war.
-                            Ravenous xenos and hostile powers besiege the Imperium
-                            on all sides, and every facet of industry is turned to
-                            supporting armed combat. A Warrior is the result of this constant
-                            conflict, either drawn from the frontlines or worlds racked with
-                            violence. A Warrior has a talent for combat, and finds it his most
-                            effective means of resolving matters. He leaves a battle
-                            ragged but alive, his foes lying in pools of blood. As few targets
-                            of Inquisitorial investigation shy away from violent confrontation,
-                            a Warrior makes for an invaluable Acolyte, even though he can
-                            rarely guarantee anyone’s survival but his own.
-                        </div>
-                        <hr />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Aptitudes:</strong><br />
-                            Ballistic Skill, Defense, Offence, Strength, Weapon Skill
-                        </div>
-                        <br />
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Talent:</strong><br />
-                            Iron Jaw or Rapid Reload
-                        </div>
-                        <br>
-                        <div class="w3-row-padding w3-center w3-small">
-                            <strong>Role Bonus:</strong><br />Expert at Violence: In addition to the normal uses of Fate
-                            points (pg 293), after making a successful attack test, but before determining hits, a
-                            Warrior character may spend a Fate point to substitute his Weapon Skill (for melee) or
-                            Ballistic Skill (for ranged) bonus for the degrees of success scored on the attack test.
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w3-col l2 w3-center">
-                    <p style="color: #fff3cf">space</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Characteristics -->
-    <section id="charRoll" style="display: none; opacity: 0;">
-        <h3 class="w3-center">
-            Determine your Characteristics
-        </h3>
-        <hr />
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col" style="width: 20%">
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col w3-card w3-round-large infocard" style="width: 20%">
-                <br />
-                <div class="w3-center">
-                    <button onclick="cardRollChars()" class="w3-button w3-round-large w3-yellow w3-center"
-                        id="btnCardRoll">Roll Characteristics</button>
-                </div>
-                <div class="w3-panel">
-                    <span style="font-size: 0.9em">The lowest possible characteristic roll is a 22; the highest is 40.
-                        <br />
-                        <br />
-                        A <span style="color: white; background: green;">green</span> highlight indicates that your
-                        homeworld gives you an advantage on that characteristic.
-                        <br />
-                        A <span style="color: white; background: red;">red</span> highlight indicates that your
-                        homeworld gives you a disadvantage on that characteristic.
-                        <br />
-                        <br />
-                        You may re-roll one characteristic of your choosing.</span>
-                </div>
-            </div>
-            <div class="w3-col w3-card w3-round-large" style="width: 40%">
-                <table style="font-size: 0.9em" class="charTable">
-                    <tr>
-                        <td class="charLbl" id="WSLbl">Weapon Skill</td>
-                        <td id="WS" class="rolled"></td>
-                        <td><button style="visibility: hidden" id="WSbtn"
-                                class="reroll w3-button w3-round-large w3-light-grey"
-                                onclick="reRollChar('WS')">Reroll</button>
-                        </td>
-                        <td>
-                            Used for melee attacks and thrown weapons
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="charLbl" id="BSLbl">Ballistic Skill</td>
-                        <td id="BS" class="rolled"></td>
-                        <td><button style="visibility: hidden" id="BSbtn"
-                                class="reroll w3-button w3-round-large w3-light-grey"
-                                onclick="reRollChar('BS')">Reroll</button>
-                        </td>
-                        <td>
-                            Used for ranged attacks and weapons
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="charLbl" id="SLbl">Strength</td>
-                        <td id="S" class="rolled"></td>
-                        <td><button style="visibility: hidden" id="Sbtn"
-                                class="reroll w3-button w3-round-large w3-light-grey"
-                                onclick="reRollChar('S')">Reroll</button>
-                        </td>
-                        <td>
-                            used for skills; contributes to carry weight
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="charLbl" id="TLbl">Toughness</td>
-                        <td id="T" class="rolled"></td>
-                        <td><button style="visibility: hidden" id="Tbtn"
-                                class="reroll w3-button w3-round-large w3-light-grey"
-                                onclick="reRollChar('T')">Reroll</button>
-                        </td>
-                        <td>
-                            Used for resistance; contributes to fatigue and carry weight
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="charLbl" id="AgLbl">Agility</td>
-                        <td id="Ag" class="rolled"></td>
-                        <td><button style="visibility: hidden" id="Agbtn"
-                                class="reroll w3-button w3-round-large w3-light-grey"
-                                onclick="reRollChar('Ag')">Reroll</button>
-                        </td>
-                        <td>
-                            Used for skills and initiative rolls
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="charLbl" id="IntLbl">Intelligence</td>
-                        <td id="Int" class="rolled"></td>
-                        <td><button style="visibility: hidden" id="Intbtn"
-                                class="reroll w3-button w3-round-large w3-light-grey"
-                                onclick="reRollChar('Int')">Reroll</button>
-                        </td>
-                        <td>
-                            Used for skills
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="charLbl" id="PerLbl">Perception</td>
-                        <td id="Per" class="rolled"></td>
-                        <td><button style="visibility: hidden" id="Perbtn"
-                                class="reroll w3-button w3-round-large w3-light-grey"
-                                onclick="reRollChar('Per')">Reroll</button>
-                        </td>
-                        <td>
-                            Used for skills
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="charLbl" id="WPLbl">Willpower</td>
-                        <td id="WP" class="rolled"></td>
-                        <td><button style="visibility: hidden" id="WPbtn"
-                                class="reroll w3-button w3-round-large w3-light-grey"
-                                onclick="reRollChar('WP')">Reroll</button>
-                        </td>
-                        <td>
-                            Essential for psykers. Used for resistances and to determine fatigue
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="charLbl" id="FelLbl">Fellowship</td>
-                        <td id="Fel" class="rolled"></td>
-                        <td><button style="visibility: hidden" id="Felbtn"
-                                class="reroll w3-button w3-round-large w3-light-grey"
-                                onclick="reRollChar('Fel')">Reroll</button>
-                        </td>
-                        <td>
-                            Used for checks with other people or NPCs
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="charLbl" id="InflLbl">Influence</td>
-                        <td id="Infl" class="rolled"></td>
-                        <td><button style="visibility: hidden" id="Inflbtn"
-                                class="reroll w3-button w3-round-large w3-light-grey"
-                                onclick="reRollChar('Infl')">Reroll</button>
-                        </td>
-                        <td>
-                            Used for requisition; cannot be invested in, but is granted by GM
-                        </td>
-                    </tr>
-                </table>
-                <br />
-                <button id="btnCharNext" onclick="finishChars()"
-                    class="w3-right w3-button w3-hover-greyscale w3-round w3-yellow" style="display:none;">Next</button>
-                <br />
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col" style="width: 20%">
-                <p style="color: #fff3cf">space</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Aptitude Selection -->
-    <section id="aptSelect" style="display: none; opacity: 0;">
-        <h3 class="w3-center">
-            Determine your Aptitudes
-        </h3>
-        <hr />
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col" style="width: 30%">
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col w3-card w3-round-large infocard" style="width: 20%">
-                <div class="w3-panel">
-                    <span style="font-size: 0.9em">Your aptitudes will determine experience costs for skills,
-                        characteristic increases, and talents.
-                        <br />
-                        <br />
-                        Aptitudes are given based on your homeworld, background, and role.
-                        <br />
-                        <br />
-                        Some aptitudes you will be given a choice of two, please select one.
-                        <br />
-                        <br />
-                        Having the same aptitude multiple times will not give you any additional advantage.
-                        <br />
-                        <br />
-                        Your character will have a total of 8 aptitudes, but more can be gained later.
-                        <br />
-                    </span>
-                </div>
-            </div>
-            <div class="w3-col w3-card w3-round-large" style="width: 20%">
-                <table style="font-size: 0.9em" class="w3-table">
-                    <tbody id="aptsTable">
-                        <tr>
-                            <td id="aptTd_0"></td>
-                        </tr>
-                        <tr>
-                            <td id="aptTd_1"></td>
-                        </tr>
-                        <tr>
-                            <td id="aptTd_2"></td>
-                        </tr>
-                        <tr>
-                            <td id="aptTd_3"></td>
-                        </tr>
-                        <tr>
-                            <td id="aptTd_4"></td>
-                        </tr>
-                        <tr>
-                            <td id="aptTd_5"></td>
-                        </tr>
-                        <tr>
-                            <td id="aptTd_6"></td>
-                        </tr>
-                        <tr>
-                            <td id="aptTd_7"></td>
-                        </tr>
-                        </tr>
-                    </tbody>
-                </table>
-                <br />
-                <button id="btnCharNext" onclick="finishApts()"
-                    class="w3-right w3-button w3-hover-greyscale w3-round w3-yellow">Next</button>
-                <br />
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col" style="width: 30%">
-                <p style="color: #fff3cf">space</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Talent Selection -->
-    <section id="talentSelect" style="display: none; opacity: 0;">
-        <h3 class="w3-center">
-            Choose your Starting Talents
-        </h3>
-        <hr />
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col" style="width: 20%">
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col w3-card w3-round-large infocard" style="width: 20%">
-                <div class="w3-panel">
-                    <span style="font-size: 0.9em">Talents are special abilities or factors for your character.
-                        <br />
-                        <br />
-                        They are generally very expensive, particularly if you lack the appropriate aptitudes.
-                        <br />
-                        <br />
-                        You will be able to spend experience on talents as your character progresses
-                    </span>
-                </div>
-            </div>
-            <div class="w3-col w3-card w3-round-large" style="width: 40%">
-                <table style="font-size: 0.9em" class="w3-table">
-                    <thead>
-                        <th>Talent</th>
-                        <th>Tier</th>
-                        <th>Description</th>
-                    </thead>
-                    <tbody id="talentTable">
-
-                    </tbody>
-                </table>
-                <br />
-                <button id="btnCharNext" onclick="finishTalents()"
-                    class="w3-right w3-button w3-hover-greyscale w3-round w3-yellow">Next</button>
-                <br />
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col" style="width: 20%">
-                <p style="color: #fff3cf">space</p>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Equipment Selection -->
-    <section id="equipSelect" style="display: none; opacity: 0;">
-        <h3 class="w3-center">
-            Choose your Starting Equipment
-        </h3>
-        <hr />
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col" style="width: 20%">
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col w3-card w3-round-large infocard" style="width: 20%">
-                <div class="w3-panel">
-                    <span style="font-size: 0.9em">
-                        Equipment comprises weapons, armour, tools, and other gear you may acquire through your travels
-                        and travails
-                        <br />
-                        <br />
-                        Additonal equipment can be requisitioned using Influence, or may be found on the dead bodies of
-                        your enemies, at the GM's discretion
-                        <br />
-                        <br />
-                        Weight counts against your character's carry capacity, which is dependent upon your Strength and
-                        Toughness
-                    </span>
-                </div>
-            </div>
-            <div class="w3-col w3-card w3-round-large" style="width: 40%">
-                <table style="font-size: 0.9em" class="w3-table">
-                    <thead>
-                        <th>Equipment Use Talents</th>
-                    </thead>
-                    <tbody id="equipTalentTable">
-
-                    </tbody>
-                </table>
-
-                <hr />
-                <table style="font-size: 0.9em" class="w3-table">
-                    <thead>
-                        <th>Equipment</th>
-                        <th>Description</th>
-                        <th>Weight</th>
-                    </thead>
-                    <tbody id="equipTable">
-
-                    </tbody>
-                </table>
-                <br />
-                <button id="btnCharNext" onclick="finishEquip()"
-                    class="w3-right w3-button w3-hover-greyscale w3-round w3-yellow">Next</button>
-                <br />
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col" style="width: 20%">
-                <p style="color: #fff3cf">space</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Selection -->
-    <section id="skillSelect" style="display: none; opacity: 0;">
-        <h3 class="w3-center">
-            Choose your Starting Skills
-        </h3>
-        <hr />
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col" style="width: 20%">
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col w3-card w3-round-large infocard" style="width: 20%">
-                <div class="w3-panel">
-                    <span style="font-size: 0.9em">
-                        Equipment comprises weapons, armour, tools, and other gear you may acquire through your travels
-                        and travails
-                        <br />
-                        <br />
-                        Additonal equipment can be requisitioned using Influence, or may be found on the dead bodies of
-                        your enemies, at the GM's discretion
-                        <br />
-                        <br />
-                        Weight counts against your character's carry capacity, which is dependent upon your Strength and
-                        Toughness
-                    </span>
-                </div>
-            </div>
-            <div class="w3-col w3-card w3-round-large" style="width: 40%">
-                <table style="font-size: 0.9em" class="w3-table">
-                    <thead>
-                        <th>Skill</th>
-                        <th>Description</th>
-                    </thead>
-                    <tbody id="skillTable">
-
-                    </tbody>
-                </table>
-                <br />
-                <button id="btnCharNext" onclick="finishSkills()"
-                    class="w3-right w3-button w3-hover-greyscale w3-round w3-yellow">Next</button>
-                <br />
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col" style="width: 20%">
-                <p style="color: #fff3cf">space</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Wounds and Fate Points -->
-    <section id="woundSelect" style="display: none; opacity: 0;">
-        <h3 class="w3-center">
-            Determine your Wounds and Fate Points
-        </h3>
-        <hr />
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col" style="width: 20%">
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col w3-card w3-round-large infocard" style="width: 20%">
-                <div class="w3-panel">
-                    <span style="font-size: 0.9em">
-                        Wounds are your character's hitpoints. Once you reach that number, you begin taking Critical
-                        Damage - which is very, very bad.
-                        <br />
-                        <br />
-                        Your homeworld determines your base number of Wounds, which then has a die roll applied to it to
-                        give you the character's starting number.
-                        <br />
-                        <br />
-                        Fate Points represent your character's favor with the Emperor, their luck, or some other innate
-                        characteristic which allows them
-                        to triumph where others would be doomed to failure.
-                        <br />
-                        <br />
-                        Fate Points may be spent on a variety of things; at the beginning of each session of play, the
-                        character's Fate Points are refilled
-                        up to their Fate Threshold, which is what will be determined here.
-                    </span>
-                </div>
-            </div>
-            <div class="w3-col w3-card w3-round-large" style="width: 40%">
-                <h4>Wounds</h4>
-                Base Wounds: <span class="rolled" id="baseWounds"></span>
-                <br />
-                (Determined by Homeworld)
-                <br />
-                <br />
-                <button id="rollWounds" onclick="rollWounds()"
-                    class="w3-left w3-button w3-hover-greyscale w3-round w3-red">Roll 1d5 Addional Wounds</button>
-                <br /><br /><br />
-                Total Wounds: <span class="rolled" id="totalWounds"></span>
-                <br />
-                <hr />
-                <h4>Fate Threshold</h4>
-                Base Fate Threshold: <span class="rolled" id="baseFate"></span>
-                <br />
-                (Determined by Homeworld)
-                <br />
-                <br />
-                Emperor's Blessing: <span class="rolled" id="empBlessing"></span>
-                <br />
-                (Gain an additional 1 to Fate Threshold if you roll this number or above)
-                <br />
-                <br />
-                <button id="rollFate" onclick="rollFate()"
-                    class="w3-left w3-button w3-hover-greyscale w3-round w3-red">Roll 1d10</button>
-                <br />
-                <br />
-                <br />
-                Total Fate Threshold: <span class="rolled" id="totalFate"></span>
-                <br />
-                <br />
-                <button id="btnCharNext" onclick="finishWounds()"
-                    class="w3-right w3-button w3-hover-greyscale w3-round w3-yellow">Next</button>
-                <br />
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col" style="width: 20%">
-                <p style="color: #fff3cf">space</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Character Sheet -->
-    <section id="charSheet" style="display: none; opacity: 0;">
-        <h3 class="w3-center">
-            Admire your Character
-        </h3>
-        <hr />
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col" style="width: 20%">
-                <p style="color: #fff3cf">space</p>
-            </div>
-            <div class="w3-col w3-card w3-round-large" style="width: 60%">
-                <div class="w3-row-padding">
-                    <div class="w3-row-padding w3-section">
-                        <div class="w3-half w3-round-large">
-                            Homeworld: <span id="sheetHome"></span>
-                            <br />
-                            Background: <span id="sheetBack"></span>
-                            <br />
-                            Role: <span id="sheetRole"></span>
-                        </div>
-                        <div class="w3-half w3-round-large">
-                            Wounds: <span id="sheetWounds"></span>
-                            <br />
-                            Fatigue Threshold: <span id="sheetFatigue"></span>
-                            <br />
-                            Fate Threshold: <span id="sheetFate"></span>
-                            <br />
-                            Movement: <span id="sheetMove"></span>
-                            <br />
-                            Carry Weight: <span id="sheetCarry"></span>
-                        </div>
-                    </div>
-                    <div class="w3-row-padding w3-section">
-                        <div class="w3-third w3-round-large">
-                            Characteristics
-                            <table class="w3-table">
-                                <tr>
-                                    <td>Weapon Skill</td>
-                                    <td id="sheetWS"></td>
-                                </tr>
-                                <tr>
-                                    <td>Ballistic Skill</td>
-                                    <td id="sheetBS"></td>
-                                </tr>
-                                <tr>
-                                    <td>Strength</td>
-                                    <td id="sheetS"></td>
-                                </tr>
-                                <tr>
-                                    <td>Toughness</td>
-                                    <td id="sheetT"></td>
-                                </tr>
-                                <tr>
-                                    <td>Agility</td>
-                                    <td id="sheetAg"></td>
-                                </tr>
-                                <tr>
-                                    <td>Intelligence</td>
-                                    <td id="sheetInt"></td>
-                                </tr>
-                                <tr>
-                                    <td>Perception</td>
-                                    <td id="sheetPer"></td>
-                                </tr>
-                                <tr>
-                                    <td>Willpower</td>
-                                    <td id="sheetWP"></td>
-                                </tr>
-                                <tr>
-                                    <td>Fellowship</td>
-                                    <td id="sheetFel"></td>
-                                </tr>
-                                <tr>
-                                    <td>Influence</td>
-                                    <td id="sheetInfl"></td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="w3-third w3-round-large">
-                            Skills
-                            <table class="w3-table">
-                                <tbody id="sheetSkills">
-
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="w3-third w3-round-large">
-                            Talents
-                            <table class="w3-table">
-                                <tbody id="sheetTalents">
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="w3-row-padding w3-section">
-                    <div class="w3-row-padding w3-section">
-                        <div class="w3-third w3-round-large">
-                            Aptitudes
-                            <table class="w3-table">
-                                <tbody id="sheetApts">
-
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="w3-third w3-round-large">
-                            Equipment
-                            <table class="w3-table">
-                                <tbody id="sheetEquip">
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <button class="w3-button w3-round w3-yellow"
-                        onclick="document.getElementById('saveModal').style.display='block'">Export/Save</button>
+                    <button id="btnCharNext" onclick="finishEquip()"
+                        class="w3-right w3-button w3-hover-greyscale w3-round w3-yellow">Next</button>
                     <br />
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col" style="width: 20%">
+                    <p style="color: #fff3cf">space</p>
                 </div>
             </div>
-            <div class="w3-col" style="width: 20%">
-                <p style="color: #fff3cf">space</p>
+        </section>
+
+        <!-- Skills Selection -->
+        <section id="skillSelect" style="display: none; opacity: 0;">
+            <h3 class="w3-center">
+                Choose your Starting Skills
+            </h3>
+            <hr />
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col" style="width: 20%">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col w3-card w3-round-large infocard" style="width: 20%">
+                    <div class="w3-panel">
+                        <span style="font-size: 0.9em">
+                            Equipment comprises weapons, armour, tools, and other gear you may acquire through your
+                            travels
+                            and travails
+                            <br />
+                            <br />
+                            Additonal equipment can be requisitioned using Influence, or may be found on the dead bodies
+                            of
+                            your enemies, at the GM's discretion
+                            <br />
+                            <br />
+                            Weight counts against your character's carry capacity, which is dependent upon your Strength
+                            and
+                            Toughness
+                        </span>
+                    </div>
+                </div>
+                <div class="w3-col w3-card w3-round-large" style="width: 40%">
+                    <table style="font-size: 0.9em" class="w3-table">
+                        <thead>
+                            <th>Skill</th>
+                            <th>Description</th>
+                        </thead>
+                        <tbody id="skillTable">
+
+                        </tbody>
+                    </table>
+                    <br />
+                    <button id="btnCharNext" onclick="finishSkills()"
+                        class="w3-right w3-button w3-hover-greyscale w3-round w3-yellow">Next</button>
+                    <br />
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col" style="width: 20%">
+                    <p style="color: #fff3cf">space</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Wounds and Fate Points -->
+        <section id="woundSelect" style="display: none; opacity: 0;">
+            <h3 class="w3-center">
+                Determine your Wounds and Fate Points
+            </h3>
+            <hr />
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col" style="width: 20%">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col w3-card w3-round-large infocard" style="width: 20%">
+                    <div class="w3-panel">
+                        <span style="font-size: 0.9em">
+                            Wounds are your character's hitpoints. Once you reach that number, you begin taking Critical
+                            Damage - which is very, very bad.
+                            <br />
+                            <br />
+                            Your homeworld determines your base number of Wounds, which then has a die roll applied to
+                            it to
+                            give you the character's starting number.
+                            <br />
+                            <br />
+                            Fate Points represent your character's favor with the Emperor, their luck, or some other
+                            innate
+                            characteristic which allows them
+                            to triumph where others would be doomed to failure.
+                            <br />
+                            <br />
+                            Fate Points may be spent on a variety of things; at the beginning of each session of play,
+                            the
+                            character's Fate Points are refilled
+                            up to their Fate Threshold, which is what will be determined here.
+                        </span>
+                    </div>
+                </div>
+                <div class="w3-col w3-card w3-round-large" style="width: 40%">
+                    <h4>Wounds</h4>
+                    Base Wounds: <span class="rolled" id="baseWounds"></span>
+                    <br />
+                    (Determined by Homeworld)
+                    <br />
+                    <br />
+                    <button id="rollWounds" onclick="rollWounds()"
+                        class="w3-left w3-button w3-hover-greyscale w3-round w3-red">Roll 1d5 Addional Wounds</button>
+                    <br /><br /><br />
+                    Total Wounds: <span class="rolled" id="totalWounds"></span>
+                    <br />
+                    <hr />
+                    <h4>Fate Threshold</h4>
+                    Base Fate Threshold: <span class="rolled" id="baseFate"></span>
+                    <br />
+                    (Determined by Homeworld)
+                    <br />
+                    <br />
+                    Emperor's Blessing: <span class="rolled" id="empBlessing"></span>
+                    <br />
+                    (Gain an additional 1 to Fate Threshold if you roll this number or above)
+                    <br />
+                    <br />
+                    <button id="rollFate" onclick="rollFate()"
+                        class="w3-left w3-button w3-hover-greyscale w3-round w3-red">Roll 1d10</button>
+                    <br />
+                    <br />
+                    <br />
+                    Total Fate Threshold: <span class="rolled" id="totalFate"></span>
+                    <br />
+                    <br />
+                    <button id="btnCharNext" onclick="finishWounds()"
+                        class="w3-right w3-button w3-hover-greyscale w3-round w3-yellow">Next</button>
+                    <br />
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col" style="width: 20%">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Character Sheet -->
+        <section id="charSheet" style="display: none; opacity: 0;">
+            <h3 class="w3-center">
+                Admire your Character
+            </h3>
+            <hr />
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col" style="width: 20%">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+                <div class="w3-col w3-card w3-round-large" style="width: 60%">
+                    <div class="w3-row-padding">
+                        <div class="w3-row-padding w3-section">
+                            <div class="w3-half w3-round-large">
+                                Homeworld: <span id="sheetHome"></span>
+                                <br />
+                                Background: <span id="sheetBack"></span>
+                                <br />
+                                Role: <span id="sheetRole"></span>
+                            </div>
+                            <div class="w3-half w3-round-large">
+                                Wounds: <span id="sheetWounds"></span>
+                                <br />
+                                Fatigue Threshold: <span id="sheetFatigue"></span>
+                                <br />
+                                Fate Threshold: <span id="sheetFate"></span>
+                                <br />
+                                Movement: <span id="sheetMove"></span>
+                                <br />
+                                Carry Weight: <span id="sheetCarry"></span>
+                            </div>
+                        </div>
+                        <div class="w3-row-padding w3-section">
+                            <div class="w3-third w3-round-large">
+                                Characteristics
+                                <table class="w3-table">
+                                    <tr>
+                                        <td>Weapon Skill</td>
+                                        <td id="sheetWS"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ballistic Skill</td>
+                                        <td id="sheetBS"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Strength</td>
+                                        <td id="sheetS"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Toughness</td>
+                                        <td id="sheetT"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Agility</td>
+                                        <td id="sheetAg"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Intelligence</td>
+                                        <td id="sheetInt"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perception</td>
+                                        <td id="sheetPer"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Willpower</td>
+                                        <td id="sheetWP"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fellowship</td>
+                                        <td id="sheetFel"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Influence</td>
+                                        <td id="sheetInfl"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="w3-third w3-round-large">
+                                Skills
+                                <table class="w3-table">
+                                    <tbody id="sheetSkills">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="w3-third w3-round-large">
+                                Talents
+                                <table class="w3-table">
+                                    <tbody id="sheetTalents">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="w3-row-padding w3-section">
+                        <div class="w3-row-padding w3-section">
+                            <div class="w3-third w3-round-large">
+                                Aptitudes
+                                <table class="w3-table">
+                                    <tbody id="sheetApts">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="w3-third w3-round-large">
+                                Equipment
+                                <table class="w3-table">
+                                    <tbody id="sheetEquip">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <button class="w3-button w3-round w3-yellow"
+                            onclick="document.getElementById('saveModal').style.display='block'">Export/Save</button>
+                        <br />
+                    </div>
+                </div>
+                <div class="w3-col" style="width: 20%">
+                    <p style="color: #fff3cf">space</p>
+                </div>
+            </div>
+        </section>
     </section>
 
     <div id="importModal" class="w3-modal">
@@ -1618,14 +1700,15 @@
                 <div class="w3-container w3-half">
                     <h4>Enter your character code below</h4>
                     <h5 id="noString" style="color:red; display:none;">Please enter a code!</h5>
-                    <textarea class="w3-top-left" id="importInput" style="width: 250px; height: 75px;"></textarea>
-                    <br /><br /><br />
+                    <textarea class="w3-top-left w3-input" id="importInput"
+                        style="width: 250px; height: 75px;"></textarea>
+                    <br /><br />
                     <button class="w3-button w3-round w3-green" onclick="importChar()">Load!</button>
                     <hr />
                 </div>
                 <div class="w3-container w3-half">
                     <h4>Or enter a username to retrieve saved characters</h4>
-                    <input id="userInput"></input><br />
+                    <input id="userInput" class="w3-input"></input><br />
                     <button class="w3-button w3-round w3-green" id="retrieve-char">Retrieve Characters</button>
                     <br /><br />
                     <select id="charList" style="display:none;">
@@ -1634,6 +1717,7 @@
                     <br /><br />
                     <button style="display: none;" class="w3-button w3-round w3-green" id="charLoad"
                         onclick="chooseChar()">Select</button>
+                    <hr />
                 </div>
             </div>
         </div>

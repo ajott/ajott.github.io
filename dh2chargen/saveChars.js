@@ -93,3 +93,13 @@ function chooseChar() {
 
     buildSheet();
 }
+
+var input = el("userInput");
+
+input.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+
+        el("retrieve-char").click();
+    }
+})

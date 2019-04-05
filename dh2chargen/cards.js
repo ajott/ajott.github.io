@@ -330,7 +330,7 @@ function getFullApts() {
         el("aptTd_" + i).innerHTML += htmlStr;
     }
 
-    for (let i = character.Aptitudes.length; i < 12; i ++) {
+    for (let i = character.Aptitudes.length; i < 8; i ++) {
         htmlStr = ""
 
         htmlStr += "<tr><td>"

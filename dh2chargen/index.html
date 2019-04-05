@@ -1700,7 +1700,7 @@
                 <div class="w3-container w3-half">
                     <h4>Enter your character code below</h4>
                     <h5 id="noString" style="color:red; display:none;">Please enter a code!</h5>
-                    <textarea class="w3-top-left w3-input" id="importInput"
+                    <textarea class="w3-top-left w3-input w3-round" id="importInput"
                         style="width: 250px; height: 75px;"></textarea>
                     <br /><br />
                     <button class="w3-button w3-round w3-green" onclick="importChar()">Load!</button>
@@ -1708,7 +1708,7 @@
                 </div>
                 <div class="w3-container w3-half">
                     <h4>Or enter a username to retrieve saved characters</h4>
-                    <input id="userInput" class="w3-input"></input><br />
+                    <input id="userInput" class="w3-input w3-round"></input><br />
                     <button class="w3-button w3-round w3-green" id="retrieve-char">Retrieve Characters</button>
                     <br /><br />
                     <select id="charList" style="display:none;">
@@ -1730,7 +1730,7 @@
                     class="w3-button w3-display-topright w3-red">&times;</span>
                 <div class="w3-container w3-half">
                     <h4>Get an export string for your character</h4>
-                    <textarea class="w3-top-left" id="exportText" style="width: 250px; height: 75px;"></textarea>
+                    <textarea class="w3-top-left w3-input w3-round" id="exportText" style="width: 250px; height: 75px;"></textarea>
                     <br /><br /><br />
                     <button class="w3-button w3-round w3-green" onclick="exportChar()">Generate</button>
                     <hr />
@@ -1738,15 +1738,15 @@
                 <div class="w3-container w3-half">
                     <h4>Or save "to the cloud"</h4>
                     <form id="saveChar">
-                        Username: <input id="saveUser" name="username"></input>
+                        Username: <input id="saveUser" name="username" class="w3-input w3-round"></input>
                         <br />
-                        Character Name: <input id="saveCharName" name="character"></input>
+                        Character Name: <input id="saveCharName" name="character" class="w3-input w3-round"></input>
                         <br />
                         <input style="display:none;" id="saveCharTime" name="dateTime"></input>
                         <br />
                         <input style="display:none;" id="saveCharString" name="data_string"></input>
                     </form>
-                    <span style="font-size 0.9em">Your username is cAsE sEnSiTiVe and will be needed to retrieve this
+                    <span style="font-size: 0.9em; color: red">Your username is cAsE sEnSiTiVe and will be needed to retrieve this
                         character.</span>
                     <br /><br />
                     <button id="submit-form"

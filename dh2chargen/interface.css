@@ -7,6 +7,10 @@ body {
     cursor: pointer;
 }
 
+select {
+    cursor: pointer;
+}
+
 .charTable td {
     padding-left: 5px;
     padding-right: 5px;

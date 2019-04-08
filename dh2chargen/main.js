@@ -178,7 +178,7 @@ var backgrounds = {
         bonus: "Replace the Weak Flesh: An Adeptus Mechanicus character counts the Availability of all cybernetics as two levels more available (Rare items count as Average, Very Rare items count as Scarce, etc.).Starting Trait: Mechanicus Implants (pg 137).",
         skills: ["Awareness ZZ Operate (Pick One)", "Common Lore (Adeptus Mechanicus)", "Logic", "Security", "Tech-Use"],
         talents: ["Mechadendrite Use (Utility)", "Weapon Training (Solid Projectile)"],
-        equipment: ["Autogun ZZ Hand Cannon", "Monotask Servo-skull (utility) ZZ Optical Mechadendrite", "Imperial Robes", "2 vials of Sacred Unguents"],
+        equipment: ["Autogun ZZ Hand Cannon", "Monotask Servo-skull (Utility) ZZ Optical Mechadendrite", "Imperial Robes", "2 vials of Sacred Unguents"],
         name: "Adeptus Mechanicus"
     },
     "ministorum": {

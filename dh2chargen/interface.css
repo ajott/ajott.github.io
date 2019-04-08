@@ -4,6 +4,7 @@ body {
 
 .w3-card-2 {
     background: lightgrey;
+    cursor: pointer;
 }
 
 .charTable td {

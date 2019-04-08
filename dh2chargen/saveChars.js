@@ -19,6 +19,8 @@ function retrieveChar() {
 
     $('#retrieve-char').addClass("w3-disabled").addClass("w3-light-grey").attr("onclick", "");
 
+    $('html').css("cursor","progress");
+
     var jqxhr = $.ajax({
         url: getURL,
         method: "GET"
@@ -28,6 +30,8 @@ function retrieveChar() {
         post(response);
 
         $('#retrieve-char').removeClass("w3-disabled").removeClass("w3-light-grey").attr("onclick", "retrieveChar()");
+
+        $('html').css("cursor", "auto");
 
         el("charList").innerHTML = "";
 

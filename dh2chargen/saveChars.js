@@ -15,8 +15,10 @@ $('#submit-form').on('click', function (e) {
     })
 })
 
-$('#retrieve-char').on('click', function (e) {
-    e.preventDefault();
+function retrieveChar() {
+
+    $('#retrieve-char').addClass("w3-disabled").addClass("w3-light-grey").attr("onclick", "");
+
     var jqxhr = $.ajax({
         url: getURL,
         method: "GET"
@@ -24,10 +26,14 @@ $('#retrieve-char').on('click', function (e) {
 
     jqxhr.done(function (response, textStatus, jqXHR) {
         post(response);
+
+        $('#retrieve-char').removeClass("w3-disabled").removeClass("w3-light-grey").attr("onclick", "retrieveChar()");
+
+        el("charList").innerHTML = "";
+
         buildCharList();
     });
-
-})
+}
 
 var importedChars = {};
 var userChars = {};

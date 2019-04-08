@@ -106,11 +106,23 @@ function navWounds() {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
 
-function navSheet() {
+function navDiv() {
     $("#woundSelect").animate({
         opacity: 0
     }, 500);
     $("#woundSelect").hide();
+    $("#divSelect").show();
+    $("#divSelect").animate({
+        opacity: 1
+    }, 500);
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
+
+function navSheet() {
+    $("#divSelect").animate({
+        opacity: 0
+    }, 500);
+    $("#divSelect").hide();
     $("#charSheet").show();
     $("#charSheet").animate({
         opacity: 1
@@ -137,7 +149,7 @@ function chooseHome(str) {
     character.HomeBonus = homeworlds[character["homeworld"]]["bonus"]
     character.CharPlus = homeworlds[character["homeworld"]]["charPlus"].slice(0);
     character.CharMinus = homeworlds[character["homeworld"]]["charMinus"];
-
+    character.Wounds = homeworlds[character["homeworld"]]["wounds"] 
     character.Fate = homeworlds[character["homeworld"]]["fate"]
 
     // HTML ids for the various characteristic labels
@@ -216,6 +228,10 @@ function finishSkills() {
 }
 
 function finishWounds() {
+        navDiv();
+}
+
+function finishDiv() {
     buildSheet();
 
     navSheet();
@@ -357,6 +373,18 @@ function aptChange(str) {
     var apt = selectBox.options[selectBox.selectedIndex].value;
 
     character.Aptitudes[index] = apt;
+
+    let numOrs = 0;
+
+    for (let i = 0; i < character.Aptitudes.length; i ++) {
+        if (character.Aptitudes[i].search("ZZ") >= 0){
+            numOrs += 1;
+        }
+    }
+
+    if (numOrs == 0) {
+        $("#btnAptNext").show();
+    }
 }
 
 
@@ -389,6 +417,7 @@ function buildTalentCard() {
             htmlStr += "</td><td id=\"talent_tier_" + i + "\"></td><td id=\"talent_desc_" + i + "\"></td></tr>"
         } else {
             // Otherwise, just add it to the table
+
             htmlStr += "<tr><td id=\"talent_" + i + "\">";
 
             htmlStr += str;
@@ -417,6 +446,18 @@ function talChange(str) {
     el("talent_tier_" + index).innerHTML = talents[tal]["tier"];
 
     el("talent_desc_" + index).innerHTML = talents[tal]["description"];
+
+    let numOrs = 0;
+
+    for (let i = 0; i < character.Talents.length; i ++) {
+        if (character.Talents[i].search("ZZ") >= 0){
+            numOrs += 1;
+        }
+    }
+
+    if (numOrs == 0) {
+        $("#btnTalNext").show();
+    }
 }
 
 function buildEquipCard() {
@@ -485,6 +526,18 @@ function equipChange(str) {
     el("equip_desc_" + index).innerHTML = equipment[equip]["description"];
 
     el("equip_wt_" + index).innerHTML = equipment[equip]["weight"];
+
+    let numOrs = 0;
+
+    for (let i = 0; i < character.Equip.length; i ++) {
+        if (character.Equip[i].search("ZZ") >= 0){
+            numOrs += 1;
+        }
+    }
+
+    if (numOrs == 0) {
+        $("#btnEquipNext").show();
+    }
 }
 
 function buildWounds() {
@@ -493,12 +546,22 @@ function buildWounds() {
     $("#empBlessing").text(homeworlds[character["homeworld"]]["blessing"])
 }
 
+var rolledWounds = false;
+
 function rollWounds() {
     let extra = roll("1d5");
-    character.Wounds += homeworlds[character["homeworld"]]["wounds"] + extra;
-    $("#rollWounds").text("Rolled " + extra).addClass("w3-disabled").addClass("w3-light-grey").removeClass("w3-red")
+    character.Wounds += extra;
+    $("#rollWounds").text("Rolled " + extra).addClass("w3-disabled").addClass("w3-light-grey").removeClass("w3-red").attr("onclick", "")
     $("#totalWounds").text(character.Wounds)
+
+    rolledWounds = true;
+
+    if (rolledFate && rolledWounds) {
+        $("#btnWoundNext").show();
+    }
 }
+
+var rolledFate = false;
 
 function rollFate() {
     let extra = roll("1d10");
@@ -506,12 +569,24 @@ function rollFate() {
         character.Fate += 1;
         $("#rollFate").addClass("w3-green").removeClass("w3-red");
     }
-    $("#rollFate").text("Rolled " + extra).addClass("w3-disabled")
+    $("#rollFate").text("Rolled " + extra).addClass("w3-disabled").attr("onclick", "")
     $("#totalFate").text(character.Fate)
+
+    rolledFate = true;
+
+    if (rolledFate && rolledWounds) {
+        $("#btnWoundNext").show();
+    }
 }
 
 function buildSkills() {
     character.Skills = [];
+
+    character.Skills.push(homeworlds[character["homeworld"]]["skill"]);
+
+    if (character.Skills[0] == null) {
+        character.Skills.shift();
+    }
 
     character.Skills = character.Skills.concat(backgrounds[character["background"]]["skills"]);
 
@@ -564,6 +639,43 @@ function skillChange(str) {
             el("skill_desc_" + index).innerHTML = desc;
         }
     }
+
+    let numOrs = 0;
+
+    for (let i = 0; i < character.Skills.length; i ++) {
+        if (character.Skills[i].search("ZZ") >= 0){
+            numOrs += 1;
+        }
+    }
+
+    if (numOrs == 0) {
+        $("#btnSkillNext").show();
+    }
+}
+
+
+function rollDivination() {
+    $("#rollDiv").addClass("w3-disabled").attr("onclick", "");
+
+    var divRoll = roll("1d100");
+
+    $("#divRoll").text(divRoll);
+
+    for (let i = 0; i < Object.keys(divinations).length; i ++) {
+
+        if (inRangeInclusive(divRoll, Object.keys(divinations)[i])){
+            let divName = divinations[Object.keys(divinations)[i]]["name"]
+
+            $("#divName").text(divName);
+            
+            let divText = divinations[Object.keys(divinations)[i]]["desc"]
+            $("#divText").text(divText);
+
+            character.Divination = divName + ": " + divText;
+        }
+    }
+
+    $("#btnDivNext").show();
 }
 
 
@@ -646,6 +758,16 @@ function buildSheet() {
         htmlStr += "</td></tr>"
 
         $("#sheetEquip:last-child").append(htmlStr)
+    }
+
+    $("#homeBonus").text(character.HomeBonus);
+    $("#backBonus").text(character.BackBonus);
+    $("#roleBonus").text(character.RoleBonus);
+
+    try {
+        $("#divination").text(character.Divination);
+    } catch {
+        console.log("No divination found")
     }
     
 }

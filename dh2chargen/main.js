@@ -26,6 +26,7 @@ var character = {
     RoleBonus: "",
     CharPlus: [],
     CharMinus: "",
+    Divination: "",
     Experience: 1000
 }
 
@@ -98,6 +99,38 @@ var homeworlds = {
         aptitude: "Intelligence",
         talent: "Strong Minded",
         name: "Voidborn"
+    },
+    "daemon": {
+        charPlus: ["WP", "Per"],
+        charMinus: "Fel",
+        fate: 3,
+        blessing: 4,
+        wounds: 7,
+        bonus: "Touched by the Warp: A Daemon world native begins with one rank in the Psyniscience skill. Should he gain this skill again in a later step of character creation, he instead gains one additional rank of this skill. This character also begins with 1d10+5 Corruption Points ",
+        aptitude: "Willpower",
+        skill: "Psyniscience",
+        name: "Daemon World"
+    },
+    "penal": {
+        charPlus: ["T", "Per"],
+        charMinus: "Fel",
+        fate: 3,
+        blessing: 8,
+        wounds: 10,
+        bonus: "Finger on the Pulse: One survives a penal colony by instinctively knowing who is in charge and who is a threat. A penal colony character begins with one rank in Common Lore (Underworld) and Scrutiny skills, and starts with the Peer (Criminal Cartels) talent.",
+        talent: "Peer (Criminal Cartel)",
+        aptitude: "Toughness",
+        name: "Penal Colony"
+    },
+    "quarantine": {
+        charPlus: ["BS", "Int"],
+        charMinus: "S",
+        fate: 3,
+        blessing: 9,
+        wounds: 8,
+        bonus: "Secretive by Nature: Those who manage to leave a quarantine world learn how to keep secrets. Wheneve the warband's Subtlety would decrease, it decreases by 2 less (to a minimum of 1)",
+        aptitude: "Fieldcraft",
+        name: "Quarantine World"
     }
 }
 
@@ -171,6 +204,14 @@ var backgrounds = {
         talents: ["Weapon Training (Chain)", "Weapon Training (Las) ZZ Weapon Training (Solid Projectile)"],
         equipment: ["Autopistol ZZ Laspistol", "Chainsword", "Armoured Body Glove ZZ Flak Vest", "Injector", "2 doses of Obscura ZZ 2 doses of Slaught"],
         name: "Outcast"
+    },
+    "exorcised": {
+        aptitude: "Defense ZZ Knowledge",
+        bonus: "Touched by a Daemon: An exorcised character counts his Insanity Bonus as 2 higher for purposes of avoiding Fear tests. Additionally, he can never again be possessed by a daemon. In addition, an exorcised character begins with one Malignancy",
+        skills: ["Awareness", "Deceive ZZ Inquiry", "Dodge", "Forbidden Lore (Daemonology)", "Intimidate ZZ Scrutiny"],
+        talents: ["Hatred (Daemons)", "Weapon Training (Solid Projectile)", "Weapon Training (Chain)"],
+        equipment: ["Autopistol ZZ Stub Revolver", "Chainblade", "Imperial Robes", "3 doses of Obscura ZZ 3 doses of Tranq", "Disguise Kit ZZ Excruciator Kit", "Rebreather", "Stablight ZZ Glow-globe"],
+        name: "Exorcised"
     }
 }
 
@@ -230,6 +271,12 @@ var roles = {
         talent: "Iron Jaw ZZ Rapid Reload",
         bonus: "Expert at Violence: In addition to the normal uses of Fate points (pg 293), after making a successful attack test, but before determining hits, a Warrior character may spend a Fate point to substitute his Weapon Skill (for melee) or Ballistic Skill (for ranged) bonus for the degrees of success scored on the attack test.",
         name: "Warrior"
+    },
+    "crusader": {
+        aptitudes: ["Knowledge", "Offense", "Strength", "Toughness", "Willpower"],
+        talent: "Bodyguard ZZ Deny the Witch",
+        bonus: "Smite the Unholy: In addition to the normal uses of Fate Points, a crusader can also spend a Fate Point to automatically pass a Fear test with a DoS equal to his Willpower Bonus. In addition, whenever he inflicts a hit with a melee weapon against a target with the Fear (X) trait, he inflicts X additional damage and counts his weapon's Penetration as being X higher.",
+        name: "Crusader"
     }
 }
 
@@ -321,6 +368,14 @@ var talents = {
         tier: 1,
         description: "May enhance any Melta, Plasma, Power, or Exotic weapon by increases the weapon's damage and penetration by an amount equal to the character's Intelligence bonus until the end of the round once per encounter."
     },
+    "Bodyguard": {
+        tier: 1,
+        description: "After an enemy makes a successful attack against an ally, the character may use a Reaction to move up to his Half Move distance in order to interpose himself between the attacker and target. The attack is then resolved against the character instead of the original target. In the case of a melee attack, the character may also attempt to Parry the attack as part of his Reaction."
+    },
+    "Deny the Witch": {
+        tier: 2,
+        description: "Can use Willpower to Evade against psychic attacks."
+    },
     "Strong Minded": {
         tier: 2,
         description: "May reroll failed WP tests to resist psychic powers."
@@ -386,6 +441,10 @@ var talents = {
         description: "Gain additional +10 for outnumbering opponent."
     },
     "Hatred (Choose Group)": {
+        tier: 1,
+        description: "Gain +10 bonus to attack Weapon Skill tests. Must make a Challenging (+0) Willpower test to retreat or surrender."
+    },
+    "Hatred (Daemons)": {
         tier: 1,
         description: "Gain +10 bonus to attack Weapon Skill tests. Must make a Challenging (+0) Willpower test to retreat or surrender."
     },
@@ -532,12 +591,20 @@ var equipment = {
         "description": "Low-Tech weapon. Melee range, 1d10+3 Impact damage, 1 pen. <br/>Solid Projectile weapon. 30m range, ROF: S/-/-, 1d10+3 Impact damage, 0 pen, 6 round clip",
         "weight": "4.5kg/1.5kg"
     },
+    "Stub Revolver": {
+        "description": "Solid Projectile weapon. 30m range, ROF: S/-/-, 1d10+3 Impact damage, 0 pen, 6 round clip",
+        "weight": "1.5kg"
+    },
     "Backpack": {
         "description": "Allows 30kg of extra carry weight, but items in the Backpack require a full action to retrieve. Can't be worn with a Combat Vest",
         "weight": "2kg"
     },
     "Glow-globe": {
         "description": "Projects light in a 12m radius. Lasts 5 hours",
+        "weight": "0.5kg"
+    },
+    "Stablight": {
+        "description": "Projects light 24m in a narrow beam. Lasts 5 hours",
         "weight": "0.5kg"
     },
     "Monotask Servo-skull (Laud Hailer)": {
@@ -576,6 +643,10 @@ var equipment = {
         "description": "Chain weapon. Melee range, 1d10+2 Rending damage, 2 pen",
         "weight": "6kg"
     },
+    "Chainblade": {
+        "description": "Chain weapon. Melee range, 1d10+1 Rending damage, 1 pen",
+        "weight": "2kg"
+    },
     "Armoured Body Glove": {
         "description": "2 Armour Points, Coverage: Arms, Body, Legs",
         "weight": "5kg"
@@ -588,9 +659,132 @@ var equipment = {
         "description": "User enters a dream like state for 1d5 hours. If in combat, consider them under the effects of a Hallucinogen grenade",
         "weight": "0kg"
     },
+    "3 doses of Obscura": {
+        "description": "User enters a dream like state for 1d5 hours. If in combat, consider them under the effects of a Hallucinogen grenade",
+        "weight": "0kg"
+    },
     "2 doses of Slaught": {
         "description": "User increases Agility and Perception bonus by 3 for 2d10 minutes. When the effect ends, take a toughness test or suffer -20 to Agility and Perception tests for 1d5 hours.",
         "weight": "0kg"
+    },
+    "3 doses of Tranq": {
+        "description": "Numbs the body and mind.",
+        "weight": "0kg"
+    },
+    "Disguise Kit": {
+        "description": "Make you look like someone else. +10 to deceive tests",
+        "weight": "2kg"
+    },
+    "Excruciator Kit": {
+        "description": "Grants +20 to Interrogation tests.",
+        "weight": "2kg"
+    },
+    "Rebreather": {
+        "description": "Immune to toxic atmospheres, even allowing water-breathing. Last for 1 hour, takes Full Action to replace. ",
+        "weight": "1kg"
+    }
+}
+
+var divinations = {
+    "0-1": {
+        "name": "Mutation without, corruption within",
+        "desc": "Roll once on the Malignancies table and apply the result."
+    },
+    "02-05": {
+        "name": "Trust in your fear",
+        "desc": "Increase this character's Perception by 5. He also gains the Phobia Mental Disorder."
+    },
+    "06-09": {
+        "name": "Humans must die so that humanity can endure",
+        "desc": "This character gains the Jaded talent. If he already possesses this talent, increase his Willpower characteristic by 2 instead."
+    },
+    "10-13": {
+        "name": "The pain of the bullet is ecstasy compared to damnation",
+        "desc": "Reduce this character's Agility characteristic by 3. The first time this character suffers Critical damage each session, roll a 1d10. On a result of 10, he does not suffer any Critical Effects, though the damage still counts as Critical Damage."
+    },
+    "14-17": {
+        "name": "Be a boon to your allies and the bane of your enemies",
+        "desc": "The character gains the Hatred (choose any one) talent. If he already possessed this talent, increase his Strength characteristic by 2 instead."
+    },
+    "18-21": {
+        "name": "The wise learn from the deaths of others",
+        "desc": "Increase this character's Agility or Intelligence Characteristic by 3. Reduce his Weapon Skill of Ballistic skill characteristic by 3."
+    },
+    "22-25": {
+        "name": "Kill the alien before it can speak its lies",
+        "desc": "This character gains the Quick Draw talent. If he already possesses this talent, increase his Agility characteristic by 2 instead."
+    },
+    "26-29": {
+        "name": "Truth is subjective",
+        "desc": "Increase this character's Perception by 3. The first time he would gain 1 or more Corruption points each session, he gains that amount plus 1 instead."
+    },
+    "30-33": {
+        "name": "Thought begets Heresy",
+        "desc": "Reduce this character's Intelligence by 3. The first time he would gain 1 or more Corruption points each session, he reduces that amount by 1 (to a minimum of 0) instead."
+    },
+    "34-38": {
+        "name": "Heresy begets Retribution",
+        "desc": "Increase this character's Fellowship or Strength characteristic by 3. Reduce his Toughness or Willpower characteristic by 3."
+    },
+    "39-43": {
+        "name": "A mind without purpose wanders in dark places",
+        "desc": "When gaining Mental Disorders, the character may choose to gain a new Disorder instead of increasing the severity of an existing Disorder."
+    },
+    "44-49": {
+        "name": "If a job is worth doing, it is worth dying for",
+        "desc": "Increase this character's Toughness or Willpower characteristic by 3. Reduce his Fellowship or Strength characteristic by 3."
+    },
+    "50-54": {
+        "name": "Dark dreams lie upon the heart",
+        "desc": "Whenever this character would roll on the Malignancies table, he may instead select any one result and gain that Malignancy."
+    },
+    "55-59": {
+        "name": "Violence solves everything",
+        "desc": "Increase this character's Weapon Skill or Ballistic Skill characteristic by 3. Reduce his Agility or Intelligence characteristic by 3."
+    },
+    "60-63": {
+        "name": "Ignorance is a wisdom of its own",
+        "desc": "Reduce this character's Perception characteristic by 3. The first time he would gain 1 or more Insanity points each session, he reduces that amount by 1 (to a minimum of 0) instead."
+    },
+    "64-67": {
+        "name": "Only the insane have the strength to prosper",
+        "desc": "Increase this character's Willpower characteristic by 3. The first time he would gain 1 or more Insanity points each session, he gains that amount plus 1 instead."
+    },
+    "68-71": {
+        "name": "A suspicious mind is a healthy mind",
+        "desc": "Increase this character's Perception characteristic by 2. Additionally, he may re-roll Awareness tests to avoid being Surprised."
+    },
+    "72-75": {
+        "name": "Suffering is an unrelenting instructor",
+        "desc": "Reduce this character's Toughness characteristic by 3. The first time that this character suffers any damage each session, he gains a +20 bonus to the next test he makes before the end of his next turn."
+    },
+    "76-79": {
+        "name": "The only true fear is dying without your duty done",
+        "desc": "This character gains the Resistance (Cold, Heat, or Fear) talent. If he already possesses this Talent, increase his Toughness characteristic by 2 instead."
+    },
+    "80-83": {
+        "name": "Only in death does duty end",
+        "desc": "The first time this character would suffer Fatigue each session, he suffers that amount of Fatigue minus 1 (to a minimum of 0) instead."
+    },
+    "84-87": {
+        "name": "Innocence is an illusion",
+        "desc": "This character gains the Keen Intuition talent. If he already possesses this talent, increase his Intelligence characteristic by 2 instead."
+    },
+    "88-91": {
+        "name": "To war is human",
+        "desc": "This character gains the Dodge skill as a Known skill (rank 1). If he already posses this skill, increase his Agility characteristic by 2 instead."
+    },
+    "92-95": {
+        "name": "There is no substitute for zeal",
+        "desc": "This character gains the Clues from the Crowds talent. If he already possesses this talent, increase his Fellowship characteristic by 2 instead."
+    },
+    "96-99": {
+        "name": "Even one who has nothing can still offer his life",
+        "desc": "When this character burns Fate threshold to survive a lethal injury, roll 1d10. On a result of 10, he survives whatever grievous wound would have killed him but does not reduce his Fate threshold."
+    },
+    "100-101": {
+        "name": "Do not ask why you serve. Only ask how",
+        "desc": "Increase this character's Fate threshold by 1."
     }
 }
 
@@ -990,7 +1184,7 @@ function exportChar() {
     $('#exportText').val(window.btoa(JSON.stringify(character)));
     $('#exportText').select();
 
-    $("#saveCharTime").val(today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate() + ' ' + today.getHours() + ':' + today.getMinutes());
+    $("#saveCharTime").val(today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + ' ' + today.getHours() + ':' + today.getMinutes());
     $('#saveCharString').val(window.btoa(JSON.stringify(character)));
 }
 

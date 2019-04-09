@@ -1,0 +1,2313 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="A web-based quick reference guide for Fantasy Flight's Dark Heresy 2nd Edition RPG">
+    <meta name="keywords"
+        content="Dark Heresy, 40k, warhammer 40k, 40k rpg, quick ref, quick reference guide, reference guide, Dark heresy 2e, dark heresy second edition, dark heresy 2nd edition">
+    <title>DH 2e QuickRef</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+</head>
+
+
+<body>
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad">
+        <div id="headTitle">
+            <span class="header-large headingDark w3-bar-item">DH 2e Quick Reference</span>
+            <br />
+        </div>
+        <div id="menu" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
+            <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-round-large">Exp
+                Costs</a>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('combatDropdown')" class="w3-button w3-round-large w3-hover-maroon">Combat
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="combatDropdown" class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./combat.html#combatActions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Actions</a>
+                    <a href="./combat.html#hitLocations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Hit
+                        Locations</a>
+                    <a href="./combat.html#conditions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Conditions and Damage</a>
+                    <a href="./combat.html#circumstances"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Circumstances</a>
+                    <a href="./combat.html#difficulties"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Difficulty
+                        Examples</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('critDropdown')" class="w3-button w3-round-large w3-hover-maroon">Critical
+                    Hits <i class="fa fa-caret-down"></i></button>
+                <div id="critDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./crit.html#crits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Critical Rolls</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./crit.html#energyCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Energy</a>
+                    <a href="./crit.html#explosiveCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Explosive</a>
+                    <a href="./crit.html#impactCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Impact</a>
+                    <a href="./crit.html#rendingCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Rending</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('equipDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Equipment <i class="fa fa-caret-down"></i></button>
+                <div id="equipDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./gear.html#gear"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Gear</a>
+                    <a href="./gear.html#tools"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Tools</a>
+                    <a href="./gear.html#cybernetics"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Cybernetics</a>
+                    <a href="./gear.html#consumables"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Drugs and Consumables</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('weaponDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Weapons <i class="fa fa-caret-down"></i></button>
+                <div id="weaponDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./weapons.html#weapons"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapons</a>
+                    <a href="./weapons.html#weaponQual"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Qualities</a>
+                    <a href="./weapons.html#weaponMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Mods</a>
+                    <a href="./weapons.html#ammo"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Special Ammo</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('armourDropdown')" class="w3-button w3-round-large w3-hover-maroon">Armour
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="armourDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./armour.html#armour"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour</a>
+                    <a href="./armour.html#armourMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour Mods</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('psykerDropdown')" class="w3-button w3-round-large w3-hover-purple">Psyker
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="psykerDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./psyker.html#psyPowers"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Powers</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./psyker.html#psyPhenom"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Phenomena</a>
+                    <a href="./psyker.html#psyPerils"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Perils of the Warp</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('charDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Character <i class="fa fa-caret-down"></i></button>
+                <div id="charDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./character.html#skills"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Skills</a>
+                    <a href="./character.html#talents"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Talents</a>
+                    <a href="./character.html#traits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Traits</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./character.html#homeworlds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Homeworlds</a>
+                    <a href="./character.html#backgrounds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Backgrounds</a>
+                    <a href="./character.html#roles"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Roles</a>
+                    <a href="./character.html#divinations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Divinations</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('effectsDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Effects <i class="fa fa-caret-down"></i></button>
+                <div id="effectsDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./effects.html#shock"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Fear and Shock</a>
+                    <a href="./effects.html#snapping"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Snapping Out of It</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#insanity"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Insanity</a>
+                    <a href="./effects.html#trauma"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mental Trauma</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#corruption"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Corruption</a>
+                    <a href="./effects.html#maligna"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Malignancies</a>
+                    <a href="./effects.html#mutations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mutations</a>
+                </div>
+            </div>
+        </div>
+        <div class="w3-bar">
+            <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-hide-small w3-round-large">Exp
+                Costs</a>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Combat <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./combat.html#combatActions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Actions</a>
+                    <a href="./combat.html#hitLocations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Hit
+                        Locations</a>
+                    <a href="./combat.html#conditions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Conditions and Damage</a>
+                    <a href="./combat.html#circumstances"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Circumstances</a>
+                    <a href="./combat.html#difficulties"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Difficulty
+                        Examples</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Critical Hits <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./crit.html#crits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Critical Rolls</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./crit.html#energyCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Energy</a>
+                    <a href="./crit.html#explosiveCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Explosive</a>
+                    <a href="./crit.html#impactCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Impact</a>
+                    <a href="./crit.html#rendingCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Rending</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Equipment <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./gear.html#gear"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Gear</a>
+                    <a href="./gear.html#tools"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Tools</a>
+                    <a href="./gear.html#cybernetics"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Cybernetics</a>
+                    <a href="./gear.html#consumables"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Drugs and Consumables</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Weapons <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./weapons.html#weapons"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapons</a>
+                    <a href="./weapons.html#weaponQual"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Qualities</a>
+                    <a href="./weapons.html#weaponMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Mods</a>
+                    <a href="./weapons.html#ammo"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Special Ammo</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Armour <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./armour.html#armour"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour</a>
+                    <a href="./armour.html#armourMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour Mods</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-purple">Psyker <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./psyker.html#psyPowers"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Powers</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./psyker.html#psyPhenom"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Phenomena</a>
+                    <a href="./psyker.html#psyPerils"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Perils of the Warp</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Character <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./character.html#skills"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Skills</a>
+                    <a href="./character.html#talents"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Talents</a>
+                    <a href="./character.html#traits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Traits</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./character.html#homeworlds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Homeworlds</a>
+                    <a href="./character.html#backgrounds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Backgrounds</a>
+                    <a href="./character.html#roles"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Roles</a>
+                    <a href="./character.html#divinations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Divinations</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Effects <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./effects.html#shock"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Fear and Shock</a>
+                    <a href="./effects.html#snapping"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Snapping Out of It</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#insanity"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Insanity</a>
+                    <a href="./effects.html#trauma"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mental Trauma</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#corruption"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Corruption</a>
+                    <a href="./effects.html#maligna"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Malignancies</a>
+                    <a href="./effects.html#mutations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mutations</a>
+                </div>
+            </div>
+            <a class="w3-bar-item w3-button w3-round-large w3-right w3-hide-small w3-blue" id="charGen" target="_blank"
+                href="https://ajott.github.io/dh2chargen">Character Creator</a>
+            <a href="javascript:void(0)" class="w3-red w3-bar-item w3-button w3-top-left w3-hide-large w3-hide-medium"
+                onclick="showMenu()">&#9776;</a>
+        </div>
+    </div>
+    
+    
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div id="weaponPane">
+                <div id="weapons" class="info">
+                    <h3 class="headingLight">Weapons</h3>
+                    <p>Weapons come in all shapes and sizes across the Imperium. It is important to be trained in
+                        how to
+                        use your weapon of choice;
+                        <br /> for example, an acolyte not trained in the use of a Boltgun - "Weapon Training (Bolt)" - would
+                        suffer a -20
+                        penalty on all attempts to use the weapon.</p>
+
+                    <input class="w3-input w3-border w3-padding w3-grey w3-round" type="text" placeholder="Search for weapons..." id="weaponSearch" onkeyup="weaponFilter()" style="width: 30%;">
+                    <br/>
+                    <table id="weaponTable" class="w3-table w3-striped w3-hoverable w3-bordered w3-responsive">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Family</th>
+                                <th>Class</th>
+                                <th>Range</th>
+                                <th>RoF</th>
+                                <th>Damage</th>
+                                <th>Pen</th>
+                                <th>Clip</th>
+                                <th>Reload</th>
+                                <th>Special Qualities</th>
+                                <th>Weight</th>
+                                <th>Availability</th>
+                                <th>Notes</th>
+                                <th>Page #</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bolt Pistol</td>
+                                <td>Bolt</td>
+                                <td>Pistol</td>
+                                <td>30m</td>
+                                <td>S/2/-</td>
+                                <td>1d10+5 Explosive</td>
+                                <td>4</td>
+                                <td>8</td>
+                                <td>Full</td>
+                                <td>Tearing</td>
+                                <td>3.5 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td></td>
+                                <td>DH2 - 151</td>
+                            </tr>
+                            <tr>
+                                <td>Boltgun</td>
+                                <td>Bolt</td>
+                                <td>Basic</td>
+                                <td>100m</td>
+                                <td>S/3/-</td>
+                                <td>1d10+5 Explosive</td>
+                                <td>4</td>
+                                <td>24</td>
+                                <td>Full</td>
+                                <td>Tearing</td>
+                                <td>7 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td></td>
+                                <td>DH2 - 151</td>
+                            </tr>
+                            <tr>
+                                <td>Heavy Bolter</td>
+                                <td>Bolt</td>
+                                <td>Heavy</td>
+                                <td>150m</td>
+                                <td>-/-/6</td>
+                                <td>1d10+8 Explosive</td>
+                                <td>5</td>
+                                <td>60</td>
+                                <td>Full</td>
+                                <td>Tearing</td>
+                                <td>40 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td></td>
+                                <td>DH2 - 151</td>
+                            </tr>
+                            <tr>
+                                <td>Storm Bolter</td>
+                                <td>Bolt</td>
+                                <td>Basic</td>
+                                <td>90m</td>
+                                <td>S/2/4</td>
+                                <td>1d10+5 Explosive</td>
+                                <td>4</td>
+                                <td>60</td>
+                                <td>Full</td>
+                                <td>Storm, Tearing</td>
+                                <td>9 kg</td>
+                                <td>Extremely Rare (-40)</td>
+                                <td></td>
+                                <td>DH2 - 151</td>
+                            </tr>
+                            <tr>
+                                <td>Chainaxe</td>
+                                <td>Chain</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1d10+4 Rending</td>
+                                <td>2</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Tearing, Two-Handed</td>
+                                <td>13 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Two-handed weapon.</td>
+                                <td>DH2 - 158</td>
+                            </tr>
+                            <tr>
+                                <td>Chainblade</td>
+                                <td>Chain</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1d10+1 Rending</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Tearing</td>
+                                <td>2 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td></td>
+                                <td>DH2 - 158</td>
+                            </tr>
+                            <tr>
+                                <td>Chainsword</td>
+                                <td>Chain</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1d10+2 Rending</td>
+                                <td>2</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Balanced, Tearing</td>
+                                <td>6 kg</td>
+                                <td>Average (+0)</td>
+                                <td></td>
+                                <td>DH2 - 158</td>
+                            </tr>
+                            <tr>
+                                <td>Eviscerator</td>
+                                <td>Chain</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>2d10 Rending</td>
+                                <td>9</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Razor Sharp, Tearing, Two-Handed, Unwieldy</td>
+                                <td>15 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td></td>
+                                <td>DH2 - 159</td>
+                            </tr>
+                            <tr>
+                                <td>Grav Pistol</td>
+                                <td>Exotic</td>
+                                <td>Pistol</td>
+                                <td>15m</td>
+                                <td>S/-/-</td>
+                                <td>1d10+3 Impact</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>Full</td>
+                                <td>Concussive (1), Graviton</td>
+                                <td>3 kg</td>
+                                <td>Near Unique (-50)</td>
+                                <td></td>
+                                <td>DH2 - 156</td>
+                            </tr>
+                            <tr>
+                                <td>Graviton Gun</td>
+                                <td>Exotic</td>
+                                <td>Basic</td>
+                                <td>30m</td>
+                                <td>S/3/-</td>
+                                <td>1d10+6 Impact</td>
+                                <td>8</td>
+                                <td>9</td>
+                                <td>2 Full</td>
+                                <td>Concussive (2), Graviton</td>
+                                <td>6 kg</td>
+                                <td>Extremely Rare (-40)</td>
+                                <td></td>
+                                <td>DH2 - 156</td>
+                            </tr>
+                            <tr>
+                                <td>Needle Pistol</td>
+                                <td>Exotic</td>
+                                <td>Pistol</td>
+                                <td>30m</td>
+                                <td>S/-/-</td>
+                                <td>1d10 Rending</td>
+                                <td>0</td>
+                                <td>6</td>
+                                <td>Full</td>
+                                <td>Accurate, Felling (1), Toxic (5)</td>
+                                <td>1.5 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Built-in silencer</td>
+                                <td>DH2 - 156</td>
+                            </tr>
+                            <tr>
+                                <td>Needle Rifle</td>
+                                <td>Exotic</td>
+                                <td>Basic</td>
+                                <td>180m</td>
+                                <td>S/-/-</td>
+                                <td>1d10 Rending</td>
+                                <td>0</td>
+                                <td>6</td>
+                                <td>2 Full</td>
+                                <td>Accurate, Felling (1), Toxic (5)</td>
+                                <td>2 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Built-in silencer</td>
+                                <td>DH2 - 156</td>
+                            </tr>
+                            <tr>
+                                <td>Web Pistol</td>
+                                <td>Exotic</td>
+                                <td>Pistol</td>
+                                <td>30m</td>
+                                <td>S/-/-</td>
+                                <td>- </td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>Full</td>
+                                <td>Snare (0)</td>
+                                <td>3.5 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Web dissolve away after 1d5 hours.</td>
+                                <td>DH2 - 156</td>
+                            </tr>
+                            <tr>
+                                <td>Webber</td>
+                                <td>Exotic</td>
+                                <td>Basic</td>
+                                <td>50m</td>
+                                <td>-</td>
+                                <td>- </td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>2 Full</td>
+                                <td>Blast (5), Snare (1)</td>
+                                <td>8 kg</td>
+                                <td>Rare (-20)</td>
+                                <td>Web dissolve away after 1d5 hours.</td>
+                                <td>DH2 - 156</td>
+                            </tr>
+                            <tr>
+                                <td>Fire Bomb</td>
+                                <td>Explosives</td>
+                                <td>Thrown</td>
+                                <td>SBx3m</td>
+                                <td>S/-/-</td>
+                                <td>1d10+2 Energy</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>Blast (2), Flame</td>
+                                <td>0.5 kg</td>
+                                <td>Plentiful (+20)</td>
+                                <td>Cannot be used with launcher weapons and cannot be thrown. Require Half Action
+                                    to ready.</td>
+                                <td>DH2 - 157</td>
+                            </tr>
+                            <tr>
+                                <td>Melta Bomb</td>
+                                <td>Explosives</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>S/-/-</td>
+                                <td>6d10 Energy</td>
+                                <td>12</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>Blast (2), Flame, Melta,</td>
+                                <td>12 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Cannot be used with launcher weapons and cannot be thrown. </td>
+                                <td>DH2 - 157</td>
+                            </tr>
+                            <tr>
+                                <td>Flamer</td>
+                                <td>Flame</td>
+                                <td>Basic</td>
+                                <td>20m</td>
+                                <td>S/-/-</td>
+                                <td>1d10+4 Energy</td>
+                                <td>2</td>
+                                <td>6</td>
+                                <td>2 Full</td>
+                                <td>Flame, Spray</td>
+                                <td>6 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td></td>
+                                <td>DH2 - 152</td>
+                            </tr>
+                            <tr>
+                                <td>Hand Flamer</td>
+                                <td>Flame</td>
+                                <td>Pistol</td>
+                                <td>10m</td>
+                                <td>S/-/-</td>
+                                <td>1d10+4 Energy</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2 Full</td>
+                                <td>Flame, Spray</td>
+                                <td>3.5 kg</td>
+                                <td>Rare (-20)</td>
+                                <td></td>
+                                <td>DH2 - 152</td>
+                            </tr>
+                            <tr>
+                                <td>Heavy Flamer</td>
+                                <td>Flame</td>
+                                <td>Heavy</td>
+                                <td>30m</td>
+                                <td>S/-/-</td>
+                                <td>1d10+5 Energy</td>
+                                <td>4</td>
+                                <td>10</td>
+                                <td>2 Full</td>
+                                <td>Flame, Spray</td>
+                                <td>45 kg</td>
+                                <td>Rare (-20)</td>
+                                <td></td>
+                                <td>DH2 - 152</td>
+                            </tr>
+                            <tr>
+                                <td>Force Staff</td>
+                                <td>Force</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1d10 Impact</td>
+                                <td>2</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Force, Two-Handed</td>
+                                <td>2 kg</td>
+                                <td>Extremely Rare (-40)</td>
+                                <td></td>
+                                <td>DH2 - 160</td>
+                            </tr>
+                            <tr>
+                                <td>Force Sword</td>
+                                <td>Force</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1d10+1 Rending</td>
+                                <td>2</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Balanced, Force</td>
+                                <td>5 kg</td>
+                                <td>Near Unique (-50)</td>
+                                <td></td>
+                                <td>DH2 - 160</td>
+                            </tr>
+                            <tr>
+                                <td>Blind Grenade</td>
+                                <td>Grenades/Missiles</td>
+                                <td>Thrown</td>
+                                <td>SBx3m</td>
+                                <td>S/-/-</td>
+                                <td>- </td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>Smoke (2)</td>
+                                <td>0.5 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td></td>
+                                <td>DH2 - 157</td>
+                            </tr>
+                            <tr>
+                                <td>Choke Grenade</td>
+                                <td>Grenades/Missiles</td>
+                                <td>Thrown</td>
+                                <td>SBx3m</td>
+                                <td>S/-/-</td>
+                                <td>Special </td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>Blast (3)</td>
+                                <td>0.5 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Characters in radius make a Toughness test each turn, taking 1 fatigue upon
+                                    failure.
+                                    4+ DoF suffers a 1d10 Toughness damage. Lasts for up 2d5 rounds depending on
+                                    weather.
+                                </td>
+                                <td>DH2 - 157</td>
+                            </tr>
+                            <tr>
+                                <td>Frag Grenade</td>
+                                <td>Grenades/Missiles</td>
+                                <td>Thrown</td>
+                                <td>SBx3m</td>
+                                <td>S/-/-</td>
+                                <td>2d10 Explosive</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>Blast (3)</td>
+                                <td>0.5 kg</td>
+                                <td>Common (+10)</td>
+                                <td></td>
+                                <td>DH2 - 157</td>
+                            </tr>
+                            <tr>
+                                <td>Frag Missile</td>
+                                <td>Grenades/Missiles</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>S/-/-</td>
+                                <td>2d10+2 Explosive</td>
+                                <td>2</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Blast (5)</td>
+                                <td>1 kg</td>
+                                <td>Average (+0)</td>
+                                <td></td>
+                                <td>DH2 - 157</td>
+                            </tr>
+                            <tr>
+                                <td>Hallucinogen Grenade</td>
+                                <td>Grenades/Missiles</td>
+                                <td>Thrown</td>
+                                <td>SBx3m</td>
+                                <td>S/-/-</td>
+                                <td>- </td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>Blast (6), Hallucinogenic</td>
+                                <td>0.5 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td></td>
+                                <td>DH2 - 157</td>
+                            </tr>
+                            <tr>
+                                <td>Haywire Grenade</td>
+                                <td>Grenades/Missiles</td>
+                                <td>Thrown</td>
+                                <td>SBx3m</td>
+                                <td>S/-/-</td>
+                                <td>- </td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>Haywire (2)</td>
+                                <td>0.5 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td></td>
+                                <td>DH2 - 157</td>
+                            </tr>
+                            <tr>
+                                <td>Krak Grenade</td>
+                                <td>Grenades/Missiles</td>
+                                <td>Thrown</td>
+                                <td>SBx3m</td>
+                                <td>S/-/-</td>
+                                <td>2d10+4 Explosive</td>
+                                <td>6</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>Concussive (0)</td>
+                                <td>0.5 kg</td>
+                                <td>Rare (-20)</td>
+                                <td>Gain Vengeful (9) against vehicles.</td>
+                                <td>DH2 - 157</td>
+                            </tr>
+                            <tr>
+                                <td>Krak Missile</td>
+                                <td>Grenades/Missiles</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>S/-/-</td>
+                                <td>3d10+8 Explosive</td>
+                                <td>8</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Concussive (3), Proven (2)</td>
+                                <td>1 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Gain Vengeful (9) against vehicles.</td>
+                                <td>DH2 - 157</td>
+                            </tr>
+                            <tr>
+                                <td>Photon Flash Grenade</td>
+                                <td>Grenades/Missiles</td>
+                                <td>Thrown</td>
+                                <td>SBx3m</td>
+                                <td>S/-/-</td>
+                                <td>- </td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>Blast (6),</td>
+                                <td>0.5 kg</td>
+                                <td>Rare (-20)</td>
+                                <td>Must pass an Ordinary (+10) Agility test or be blinded for a number of rounds
+                                    equal to
+                                    his DoF.
+                                </td>
+                                <td>DH2 - 158</td>
+                            </tr>
+                            <tr>
+                                <td>Smoke Grenade</td>
+                                <td>Grenades/Missiles</td>
+                                <td>Thrown</td>
+                                <td>SBx3m</td>
+                                <td>S/-/-</td>
+                                <td>- </td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>Smoke (4)</td>
+                                <td>0.5 kg</td>
+                                <td>Common (+10)</td>
+                                <td></td>
+                                <td>DH2 - 158</td>
+                            </tr>
+                            <tr>
+                                <td>Stun Grenade</td>
+                                <td>Grenades/Missiles</td>
+                                <td>Thrown</td>
+                                <td>SBx3m</td>
+                                <td>S/-/-</td>
+                                <td>- </td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>Blast (3), Concussive (2)</td>
+                                <td>0.5 kg</td>
+                                <td>Common (+10)</td>
+                                <td></td>
+                                <td>DH2 - 158</td>
+                            </tr>
+                            <tr>
+                                <td>Web Grenade</td>
+                                <td>Grenades/Missiles</td>
+                                <td>Thrown</td>
+                                <td>SBx3m</td>
+                                <td>S/-/-</td>
+                                <td>- </td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>Blast (3), Snare (2)</td>
+                                <td>0.5 kg</td>
+                                <td>Rare (-20)</td>
+                                <td>Web dissolve away after 1d5 hours.</td>
+                                <td>DH2 - 158</td>
+                            </tr>
+                            <tr>
+                                <td>Hot-shot Lasgun</td>
+                                <td>Las</td>
+                                <td>Basic</td>
+                                <td>60m</td>
+                                <td>S/3/-</td>
+                                <td>1d10+4 Energy</td>
+                                <td>7</td>
+                                <td>30</td>
+                                <td>2 Full</td>
+                                <td></td>
+                                <td>6 kg</td>
+                                <td>Rare (-20)</td>
+                                <td>Do not benefit from the Las Weapon Variable Setting rules. </td>
+                                <td>DH2 - 154</td>
+                            </tr>
+                            <tr>
+                                <td>Hot-shot Laspistol</td>
+                                <td>Las</td>
+                                <td>Pistol</td>
+                                <td>20m</td>
+                                <td>S/2/-</td>
+                                <td>1d10+4 Energy</td>
+                                <td>7</td>
+                                <td>40</td>
+                                <td>2 Full</td>
+                                <td></td>
+                                <td>4 kg</td>
+                                <td>Rare (-20)</td>
+                                <td>Do not benefit from the Las Weapon Variable Setting rules. </td>
+                                <td>DH2 - 154</td>
+                            </tr>
+                            <tr>
+                                <td>Lasgun</td>
+                                <td>Las</td>
+                                <td>Basic</td>
+                                <td>100m</td>
+                                <td>S/3/-</td>
+                                <td>1d10+3 Energy</td>
+                                <td>0</td>
+                                <td>60</td>
+                                <td>Full</td>
+                                <td>Reliable</td>
+                                <td>4 kg</td>
+                                <td>Common (+10)</td>
+                                <td>Las Weapon Variable Setting: Overcharge: +1 Dam, 2 ammo. Overload: +2 Dam and
+                                    Pen but
+                                    uses 4 ammo, loses Reliable, and gains Unreliable</td>
+                                <td>DH2 - 153</td>
+                            </tr>
+                            <tr>
+                                <td>Laslock</td>
+                                <td>Las</td>
+                                <td>Basic</td>
+                                <td>70m</td>
+                                <td>S/-/-</td>
+                                <td>1d10+4 Energy</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>Half</td>
+                                <td>Unreliable</td>
+                                <td>4 kg</td>
+                                <td>Plentiful (+20)</td>
+                                <td>Do not benefit from the Las Weapon Variable Setting rules. </td>
+                                <td>DH2 - 153</td>
+                            </tr>
+                            <tr>
+                                <td>Laspistol</td>
+                                <td>Las</td>
+                                <td>Pistol</td>
+                                <td>30m</td>
+                                <td>S/2/-</td>
+                                <td>1d10+2 Energy</td>
+                                <td>0</td>
+                                <td>30</td>
+                                <td>Half</td>
+                                <td>Reliable</td>
+                                <td>1.5 kg</td>
+                                <td>Common (+10)</td>
+                                <td>Las Weapon Variable Setting: Overcharge: +1 Dam, 2 ammo. Overload: +2 Dam and
+                                    Pen but
+                                    uses 4 ammo, loses Reliable, and gains Unreliable</td>
+                                <td>DH2 - 153</td>
+                            </tr>
+                            <tr>
+                                <td>Long-Las</td>
+                                <td>Las</td>
+                                <td>Basic</td>
+                                <td>150m</td>
+                                <td>S/-/-</td>
+                                <td>1d10+3 Energy</td>
+                                <td>1</td>
+                                <td>40</td>
+                                <td>Full</td>
+                                <td>Accurate, Felling (4), Reliable</td>
+                                <td>4.5 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Las Weapon Variable Setting: Overcharge: +1 Dam, 2 ammo. Overload: +2 Dam and
+                                    Pen but
+                                    uses 4 ammo, loses Reliable, and gains Unreliable</td>
+                                <td>DH2 - 154</td>
+                            </tr>
+                            <tr>
+                                <td>Grenade Launcher</td>
+                                <td>Launcher</td>
+                                <td>Basic</td>
+                                <td>60m</td>
+                                <td>S/-/-</td>
+                                <td>- </td>
+                                <td>-</td>
+                                <td>6</td>
+                                <td>2 Full</td>
+                                <td>-</td>
+                                <td>12 kg</td>
+                                <td>Average (+0)</td>
+                                <td>Consumes grenades as ammunition - damage and effects depend on the grenade used
+                                </td>
+                                <td>DH2 - 154</td>
+                            </tr>
+                            <tr>
+                                <td>Missile Launcher</td>
+                                <td>Launcher</td>
+                                <td>Heavy</td>
+                                <td>300m</td>
+                                <td>S/-/-</td>
+                                <td>- </td>
+                                <td>-</td>
+                                <td>1</td>
+                                <td>Full</td>
+                                <td>-</td>
+                                <td>35 kg</td>
+                                <td>Rare (-20)</td>
+                                <td>Consumes missiles as ammunition - damage and effects depend on the missile used
+                                </td>
+                                <td>DH2 - 154</td>
+                            </tr>
+                            <tr>
+                                <td>Bolas</td>
+                                <td>Low-Tech</td>
+                                <td>Thrown</td>
+                                <td>10m</td>
+                                <td>S/-/-</td>
+                                <td>-</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>- </td>
+                                <td>Inaccurate, Snare</td>
+                                <td>1.5 kg</td>
+                                <td>Average (+0)</td>
+                                <td></td>
+                                <td>DH2 - 154</td>
+                            </tr>
+                            <tr>
+                                <td>Bow</td>
+                                <td>Low-Tech</td>
+                                <td>Basic</td>
+                                <td>30m</td>
+                                <td>S/-/-</td>
+                                <td>1d10 Rending</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>Half</td>
+                                <td>Primitive (6), Reliable</td>
+                                <td>2 kg</td>
+                                <td>Common (+10)</td>
+                                <td>Two-handed weapon.</td>
+                                <td>DH2 - 154</td>
+                            </tr>
+                            <tr>
+                                <td>Crossbow</td>
+                                <td>Low-Tech</td>
+                                <td>Basic</td>
+                                <td>30m</td>
+                                <td>S/-/-</td>
+                                <td>1d10 Rending</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>2 Full</td>
+                                <td>Primitive (7)</td>
+                                <td>3 kg</td>
+                                <td>Common (+10)</td>
+                                <td></td>
+                                <td>DH2 - 154</td>
+                            </tr>
+                            <tr>
+                                <td>Great Weapon</td>
+                                <td>Low-Tech</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>2d10 Rending</td>
+                                <td>0</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Unbalanced, Two-Handed</td>
+                                <td>7 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Two-handed weapon.</td>
+                                <td>DH2 - 160</td>
+                            </tr>
+                            <tr>
+                                <td>Hunting Lance</td>
+                                <td>Low-Tech</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>2d10+3 Explosive</td>
+                                <td>7</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Concussive (3)</td>
+                                <td>4 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>After a successful attack is made with this weapon, its tip is destroyed and it
+                                    is treated
+                                    as a staff.</td>
+                                <td>DH2 - 160</td>
+                            </tr>
+                            <tr>
+                                <td>Improvised</td>
+                                <td>Low-Tech</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1d10-2 Impact</td>
+                                <td>0</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Primitive (7), Unbalanced</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                                <td>DH2 - 160</td>
+                            </tr>
+                            <tr>
+                                <td>Knife</td>
+                                <td>Low-Tech</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1d5 Rending</td>
+                                <td>0</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1 kg</td>
+                                <td>Plentiful (+20)</td>
+                                <td></td>
+                                <td>DH2 - 160</td>
+                            </tr>
+                            <tr>
+                                <td>Knife</td>
+                                <td>Low-Tech</td>
+                                <td>Thrown</td>
+                                <td>5m</td>
+                                <td>S/-/-</td>
+                                <td>1d5 Rending</td>
+                                <td>0</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1 kg</td>
+                                <td>Plentiful (+20)</td>
+                                <td></td>
+                                <td>DH2 - 160</td>
+                            </tr>
+                            <tr>
+                                <td>Shield</td>
+                                <td>Low-Tech</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1d5 Impact</td>
+                                <td>0</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Defensive</td>
+                                <td>3 kg</td>
+                                <td>Common (+10)</td>
+                                <td>Attacks suffer a -20 penalty instead of the normal penalty from the Defensive
+                                    quality.
+                                </td>
+                                <td>DH2 - 160</td>
+                            </tr>
+                            <tr>
+                                <td>Spear</td>
+                                <td>Low-Tech</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1d10 Rending</td>
+                                <td>0</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Primitive (8), Two-Handed</td>
+                                <td>3 kg</td>
+                                <td>Common (+10)</td>
+                                <td>Two-handed weapon.</td>
+                                <td>DH2 - 160</td>
+                            </tr>
+                            <tr>
+                                <td>Staff</td>
+                                <td>Low-Tech</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1d10 Impact</td>
+                                <td>0</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Balanced, Primitive (7), Two-Handed</td>
+                                <td>3 kg</td>
+                                <td>Plentiful (+20)</td>
+                                <td>Two-handed weapon.</td>
+                                <td>DH2 - 160</td>
+                            </tr>
+                            <tr>
+                                <td>Sword</td>
+                                <td>Low-Tech</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1d10 Rending</td>
+                                <td>0</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Balanced</td>
+                                <td>3 kg</td>
+                                <td>Common (+10)</td>
+                                <td></td>
+                                <td>DH2 - 160</td>
+                            </tr>
+                            <tr>
+                                <td>Truncheon</td>
+                                <td>Low-Tech</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1d10 Impact</td>
+                                <td>0</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Primitive (7)</td>
+                                <td>2 kg</td>
+                                <td>Plentiful (+20)</td>
+                                <td></td>
+                                <td>DH2 - 160</td>
+                            </tr>
+                            <tr>
+                                <td>Unarmed</td>
+                                <td>Low-Tech</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1d5-3 Impact</td>
+                                <td>0</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                                <td>DH2 - 226</td>
+                            </tr>
+                            <tr>
+                                <td>Warhammer</td>
+                                <td>Low-Tech</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1d10+3 Impact</td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Concussive (1), Primitive (8), Two-Handed</td>
+                                <td>4.5 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Two-handed weapon.</td>
+                                <td>DH2 - 160</td>
+                            </tr>
+                            <tr>
+                                <td>Whip</td>
+                                <td>Low-Tech</td>
+                                <td>Melee</td>
+                                <td>3m</td>
+                                <td>-</td>
+                                <td>1d10 Rending</td>
+                                <td>0</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Flexible, Primitive (6)</td>
+                                <td>2 kg</td>
+                                <td>Average (+0)</td>
+                                <td></td>
+                                <td>DH2 - 160</td>
+                            </tr>
+                            <tr>
+                                <td>Inferno Pistol</td>
+                                <td>Melta</td>
+                                <td>Pistol</td>
+                                <td>10m</td>
+                                <td>S/-/-</td>
+                                <td>2d10+10 Energy</td>
+                                <td>12</td>
+                                <td>3</td>
+                                <td>Full</td>
+                                <td>Melta</td>
+                                <td>3 kg</td>
+                                <td>Near Unique (-50)</td>
+                                <td></td>
+                                <td>DH2 - 155</td>
+                            </tr>
+                            <tr>
+                                <td>Meltagun</td>
+                                <td>Melta</td>
+                                <td>Basic</td>
+                                <td>20m</td>
+                                <td>S/-/-</td>
+                                <td>2d10+10 Energy</td>
+                                <td>12</td>
+                                <td>5</td>
+                                <td>Full</td>
+                                <td>Melta</td>
+                                <td>15 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td></td>
+                                <td>DH2 - 155</td>
+                            </tr>
+                            <tr>
+                                <td>Plasma Gun</td>
+                                <td>Plasma</td>
+                                <td>Basic</td>
+                                <td>90m</td>
+                                <td>S/2/-</td>
+                                <td>1d10+7 Energy</td>
+                                <td>6</td>
+                                <td>40</td>
+                                <td>5 Full</td>
+                                <td>Maximal, Overheats</td>
+                                <td>18 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td></td>
+                                <td>DH2 - 155</td>
+                            </tr>
+                            <tr>
+                                <td>Plasma Pistol</td>
+                                <td>Plasma</td>
+                                <td>Pistol</td>
+                                <td>30m</td>
+                                <td>S/2/-</td>
+                                <td>1d10+6 Energy</td>
+                                <td>6</td>
+                                <td>10</td>
+                                <td>3 Full</td>
+                                <td>Maximal, Overheats</td>
+                                <td>4 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td></td>
+                                <td>DH2 - 155</td>
+                            </tr>
+                            <tr>
+                                <td>Omnissian Axe</td>
+                                <td>Power</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>2d10+4 Energy</td>
+                                <td>6</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Power Field, Two-Handed, Unbalanced</td>
+                                <td>8 kg</td>
+                                <td>Extremely Rare (-40)</td>
+                                <td>Two-handed weapon and functions as a Combi-tool.</td>
+                                <td>DH2 - 161</td>
+                            </tr>
+                            <tr>
+                                <td>Power Axe</td>
+                                <td>Power</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1d10+7 Energy</td>
+                                <td>7</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Power Field, Two-Handed, Unbalanced</td>
+                                <td>6 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Two-handed weapon.</td>
+                                <td>DH2 - 161</td>
+                            </tr>
+                            <tr>
+                                <td>Power Fist</td>
+                                <td>Power</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>2d10 Energy</td>
+                                <td>9</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Power Field, Unwieldy</td>
+                                <td>13 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td></td>
+                                <td>DH2 - 161</td>
+                            </tr>
+                            <tr>
+                                <td>Power Maul (High)</td>
+                                <td>Power</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1d10+5 Energy</td>
+                                <td>4</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Power Field, Shocking</td>
+                                <td>3.5 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>When used with two hands it gains the Concussive (0) quality. </td>
+                                <td>DH2 - 161</td>
+                            </tr>
+                            <tr>
+                                <td>Power Maul (Low)</td>
+                                <td>Power</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1d10+1 Energy</td>
+                                <td>2</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Shocking</td>
+                                <td>3.5 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>When used with two hands it gains the Concussive (0) quality. </td>
+                                <td>DH2 - 161</td>
+                            </tr>
+                            <tr>
+                                <td>Power Sword</td>
+                                <td>Power</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1d10+5 Energy</td>
+                                <td>5</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Balanced, Power Field</td>
+                                <td>3 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td></td>
+                                <td>DH2 - 161</td>
+                            </tr>
+                            <tr>
+                                <td>Shock Maul</td>
+                                <td>Shock</td>
+                                <td>Melee</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1d10+3 Impact</td>
+                                <td>0</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Shocking</td>
+                                <td>2.5 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td></td>
+                                <td>DH2 - 161</td>
+                            </tr>
+                            <tr>
+                                <td>Shock Whip</td>
+                                <td>Shock</td>
+                                <td>Melee</td>
+                                <td>3m</td>
+                                <td>-</td>
+                                <td>1d10+1 Impact</td>
+                                <td>0</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Flexible, Shocking</td>
+                                <td>3 kg</td>
+                                <td>Extremely Rare (-40)</td>
+                                <td></td>
+                                <td>DH2 - 161</td>
+                            </tr>
+                            <tr>
+                                <td>Autocannon</td>
+                                <td>Solid Projectile</td>
+                                <td>Heavy</td>
+                                <td>300m</td>
+                                <td>S/3/-</td>
+                                <td>3d10+8 Impact</td>
+                                <td>6</td>
+                                <td>24</td>
+                                <td>2 Full</td>
+                                <td>Reliable</td>
+                                <td>40 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td></td>
+                                <td>DH2 - 155</td>
+                            </tr>
+                            <tr>
+                                <td>Autogun</td>
+                                <td>Solid Projectile</td>
+                                <td>Basic</td>
+                                <td>100m</td>
+                                <td>S/3/10</td>
+                                <td>1d10+3 Impact</td>
+                                <td>0</td>
+                                <td>30</td>
+                                <td>Full</td>
+                                <td>-</td>
+                                <td>5 kg</td>
+                                <td>Average (+0)</td>
+                                <td></td>
+                                <td>DH2 - 155</td>
+                            </tr>
+                            <tr>
+                                <td>Autopistol</td>
+                                <td>Solid Projectile</td>
+                                <td>Pistol</td>
+                                <td>30m</td>
+                                <td>S/-/6</td>
+                                <td>1d10+2 Impact</td>
+                                <td>0</td>
+                                <td>18</td>
+                                <td>Full</td>
+                                <td>-</td>
+                                <td>1.5 kg</td>
+                                <td>Average (+0)</td>
+                                <td></td>
+                                <td>DH2 - 155</td>
+                            </tr>
+                            <tr>
+                                <td>Hand Cannon</td>
+                                <td>Solid Projectile</td>
+                                <td>Pistol</td>
+                                <td>35m</td>
+                                <td>S/-/-</td>
+                                <td>1d10+4 Impact</td>
+                                <td>2</td>
+                                <td>5</td>
+                                <td>2 Full</td>
+                                <td>-</td>
+                                <td>3 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Two Handed to fire.</td>
+                                <td>DH2 - 155</td>
+                            </tr>
+                            <tr>
+                                <td>Heavy Stubber</td>
+                                <td>Solid Projectile</td>
+                                <td>Heavy</td>
+                                <td>100m</td>
+                                <td>-/-/8</td>
+                                <td>1d10+4 Impact</td>
+                                <td>3</td>
+                                <td>80</td>
+                                <td>2 Full</td>
+                                <td>-</td>
+                                <td>30 kg</td>
+                                <td>Rare (-20)</td>
+                                <td></td>
+                                <td>DH2 - 156</td>
+                            </tr>
+                            <tr>
+                                <td>Shotgun</td>
+                                <td>Solid Projectile</td>
+                                <td>Basic</td>
+                                <td>30m</td>
+                                <td>S/-/-</td>
+                                <td>1d10+4 Impact</td>
+                                <td>0</td>
+                                <td>8</td>
+                                <td>2 Full</td>
+                                <td>Scatter</td>
+                                <td>5 kg</td>
+                                <td>Average (+0)</td>
+                                <td></td>
+                                <td>DH2 - 156</td>
+                            </tr>
+                            <tr>
+                                <td>Shotgun (Combat)</td>
+                                <td>Solid Projectile</td>
+                                <td>Basic</td>
+                                <td>30m</td>
+                                <td>S/3/-</td>
+                                <td>1d10+4 Impact</td>
+                                <td>0</td>
+                                <td>18</td>
+                                <td>Full</td>
+                                <td>Scatter</td>
+                                <td>6.5 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td></td>
+                                <td>DH2 - 156</td>
+                            </tr>
+                            <tr>
+                                <td>Sniper Rifle</td>
+                                <td>Solid Projectile</td>
+                                <td>Basic</td>
+                                <td>200m</td>
+                                <td>S/-/-</td>
+                                <td>1d10+4 Impact</td>
+                                <td>3</td>
+                                <td>20</td>
+                                <td>Full</td>
+                                <td>Accurate, Reliable</td>
+                                <td>5 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td></td>
+                                <td>DH2 - 156</td>
+                            </tr>
+                            <tr>
+                                <td>Stub Automatic</td>
+                                <td>Solid Projectile</td>
+                                <td>Pistol</td>
+                                <td>30m</td>
+                                <td>S/3/-</td>
+                                <td>1d10+3 Impact</td>
+                                <td>0</td>
+                                <td>9</td>
+                                <td>Full</td>
+                                <td>-</td>
+                                <td>1.5 kg</td>
+                                <td>Average (+0)</td>
+                                <td></td>
+                                <td>DH2 - 156</td>
+                            </tr>
+                            <tr>
+                                <td>Stub Revolver</td>
+                                <td>Solid Projectile</td>
+                                <td>Pistol</td>
+                                <td>30m</td>
+                                <td>S/-/-</td>
+                                <td>1d10+3 Impact</td>
+                                <td>0</td>
+                                <td>6</td>
+                                <td>2 Full</td>
+                                <td>Reliable</td>
+                                <td>1.5 kg</td>
+                                <td>Plentiful (+20)</td>
+                                <td></td>
+                                <td>DH2 - 156</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="weaponQual" class="info">
+                    <h3 class="headingLight">Special Weapon Qualities</h3>
+                    <table id="weapQualTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Effect</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Accurate</td>
+                                <td>Grants +10 Bonus to hit if used with Aim, Basic weapons add +1d10 damage per two
+                                    extra
+                                    DoS (max +2d10) when firing a single shot (pg 145).</td>
+                            </tr>
+                            <tr>
+                                <td>Balanced</td>
+                                <td>Grants +10 Bonus to Parry skill when using this weapon. This bonus is only
+                                    gained from
+                                    one Balanced weapon, even if wielding multiple.</td>
+                            </tr>
+                            <tr>
+                                <td>Blast (X)</td>
+                                <td>All within the weapon's blast radius in metres are hit. Roll Hit Location and
+                                    damage
+                                    individually for each character affected.</td>
+                            </tr>
+                            <tr>
+                                <td>Concussive (X)</td>
+                                <td>Target must pass Toughness test with penalty equal to 10 times (X) or be Stunned
+                                    for
+                                    1 round per DoF. If the attack did more damage than the target's Strength Bonus,
+                                    it is knocked Prone.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Corrosive</td>
+                                <td>Permanently reduces Armour points in Hit Location by 1d10. Excess AP damage is
+                                    dealt
+                                    as damage to character. This AP damage is permanent until repaired with a
+                                    Challenging
+                                    (+0) Tech-Use test, or for free by a character with the Armour Monger talent.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Crippling (X)</td>
+                                <td>If the target suffers at least 1 wound from a Crippling weapon, they are
+                                    Crippled for
+                                    the rest of combat. A Crippled character who takes more than a Half Action on
+                                    his
+                                    turn suffers (X) Rending damage to the original hit location. This damage
+                                    bypasses
+                                    Armour and Toughness.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Daemonbane</td>
+                                <td>Weapon gain the Vengeful (8) quality and their damage is not reduced by the
+                                    target's
+                                    Toughness bonus when attacking Daemons.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Defensive</td>
+                                <td>Grants +15 bonus to Parry and -10 penalty to hit when using this weapon.</td>
+                            </tr>
+                            <tr>
+                                <td>Felling (X)</td>
+                                <td>Weapon reduces a target's Unnatural Toughness bonus by (X) when calculating
+                                    damage from
+                                    this weapon.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Flame</td>
+                                <td>Target must make an Agility test or be set on fire, even if they take no damage
+                                    from
+                                    the attack.</td>
+                            </tr>
+                            <tr>
+                                <td>Flexible</td>
+                                <td>This weapon cannot be parried, but can be used to parry attacks.</td>
+                            </tr>
+                            <tr>
+                                <td>Force</td>
+                                <td>Normal weapon unless wielded by a psyker (see CB p. 145).</td>
+                            </tr>
+                            <tr>
+                                <td>Graviton</td>
+                                <td>Weapon inflicts additional damage equal to AP on Hit Location.</td>
+                            </tr>
+                            <tr>
+                                <td>Hallucinogenic (X)</td>
+                                <td>Target must make a Toughness test with penalty of 10x(X). Upon failure, they
+                                    roll 1d10
+                                    on Table 5-3 (CB p. 146). This effect lasts for 1 round, plus 1 additional round
+                                    per DoF.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Haywire (X)</td>
+                                <td>Weapon generates a Haywire field with radius (X). Roll 1d10 on Table 5-4 (CB p.
+                                    147).</td>
+                            </tr>
+                            <tr>
+                                <td>Inaccurate</td>
+                                <td>Weapon gains no bonus from Aiming.</td>
+                            </tr>
+                            <tr>
+                                <td>Indirect (X)</td>
+                                <td>Weapon can fire at targets out of line of sight at a -10 penalty. Shots scatter
+                                    Xd10
+                                    metres (see CB p. 147).</td>
+                            </tr>
+                            <tr>
+                                <td>Lance</td>
+                                <td>Weapon increases its Penetration to (1+DoS)xPen</td>
+                            </tr>
+                            <tr>
+                                <td>Maximal</td>
+                                <td>Weapon may be switched to Maximal fire mode as a free action. This adds 10
+                                    metres to
+                                    range, 1d10 to damage, and +2 to Pen. If it has the Blast (X) quality, it
+                                    becomes
+                                    Blast(X+2). While fired in this mode, the weapon consumes 3x as much ammunition,
+                                    and gains the Recharge quality.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Melta</td>
+                                <td>Weapon doubles its Pen when firing at Short Range (half or less of max range of
+                                    weapon).</td>
+                            </tr>
+                            <tr>
+                                <td>Overheats</td>
+                                <td>Attack roll of 91 or more to hit causes Overheat. The wielder takes Energy
+                                    damage equivalent
+                                    to the weapon's damage with a Pen of 0 to their arm. The weapon may be dropped
+                                    as
+                                    a Free Action to avoid damage. The weapon may not be fired the following round,
+                                    as
+                                    it needs to cool down. Overheat weapons do not Jam, and any effect which would
+                                    cause
+                                    a Jam instead causes an Overheat.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Power Field</td>
+                                <td>When this weapon is successfully used to Parry a weapon without the Power Field
+                                    quality,
+                                    roll 1d100. On a result of 26 or higher, the attacking weapon is destroyed.
+                                    Natural
+                                    Weapons, or weapons with the Warp Weapon or Force qualities are immune.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Primitive (X)</td>
+                                <td>Weapon's damage dice never count as rolling higher than (X). However, a natural
+                                    roll
+                                    of 10 still inflicts Righteous Fury.</td>
+                            </tr>
+                            <tr>
+                                <td>Proven (X)</td>
+                                <td>Weapon's damage dice never count as rolling lower than (X).</td>
+                            </tr>
+                            <tr>
+                                <td>Razor Sharp</td>
+                                <td>If the attack results in three or more DoS, double weapon Pen.</td>
+                            </tr>
+                            <tr>
+                                <td>Recharge</td>
+                                <td>When fired, cannot be fired again in the next round.</td>
+                            </tr>
+                            <tr>
+                                <td>Reliable</td>
+                                <td>Weapon only jams on unmodified roll of 100. Weapons that do not roll to hit do
+                                    not jam.</td>
+                            </tr>
+                            <tr>
+                                <td>Sanctified</td>
+                                <td>This weapon deals Holy damage to Daemonic and Warp creatures.</td>
+                            </tr>
+                            <tr>
+                                <td>Scatter</td>
+                                <td>At Point Blank range (within 2 metres), weapon gains +10 to hit and +3 damage.
+                                    At Short
+                                    Range (within half maximum range of weapon), weapon gains +10 to hit. At ranges
+                                    beyond
+                                    Short, weapon suffers -3 damage.</td>
+                            </tr>
+                            <tr>
+                                <td>Shocking</td>
+                                <td>If weapon causes damage, the target must make a Challenging (+0) Toughness test
+                                    or be
+                                    Stunned for rounds equal to DoF.</td>
+                            </tr>
+                            <tr>
+                                <td>Smoke (X)</td>
+                                <td>Creates smoke cloud with radius of (X) metres lasting 1d10+10 rounds.</td>
+                            </tr>
+                            <tr>
+                                <td>Snare (X)</td>
+                                <td>Target must make an Agility test with penalty equal to 10 times (X) or be
+                                    immobilised.
+                                    An immobilised target can attempt no other actions except to try to escape the
+                                    bonds.
+                                    He can make a Full Action to burst the bonds (a Strength test) or wriggle free
+                                    (an
+                                    Agility test) in his turn. He is considered Helpless until he escapes.</td>
+                            </tr>
+                            <tr>
+                                <td>Spray</td>
+                                <td>Weapon projects a 30-degree arc cone out to the weapon's range. No roll to hit;
+                                    all creatures
+                                    in path must make a Challenging (+0) Agility test or be struck.</td>
+                            </tr>
+                            <tr>
+                                <td>Storm</td>
+                                <td>Double number of hits inflicted on target (and ammo expended).</td>
+                            </tr>
+                            <tr>
+                                <td>Tainted</td>
+                                <td>Weapons inflict additional damage equal to the value of the user's Corruption
+                                    bonus or
+                                    Daemonic (X) trait value (whichever is higher).</td>
+                            </tr>
+                            <tr>
+                                <td>Tearing</td>
+                                <td>Roll one extra die for damage, discard the lowest die.</td>
+                            </tr>
+                            <tr>
+                                <td>Toxic (X)</td>
+                                <td>Targets damaged by weapon must make a Toughness test with penalty of 10 times
+                                    (X) or
+                                    suffer an extra 1d10 damage of same type as the weapon.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Twin-linked</td>
+                                <td>Grants +20 Bonus to hit and uses twice as much ammunition. Two or more DoS
+                                    inflicts 1
+                                    additional hit; reload time is doubled.</td>
+                            </tr>
+                            <tr>
+                                <td>Unbalanced</td>
+                                <td>Grants -10 Penalty to Parry skill when using this weapon, and the weapon cannot
+                                    be used
+                                    to make Lightning attacks.</td>
+                            </tr>
+                            <tr>
+                                <td>Unreliable</td>
+                                <td>Weapon jams on roll of 91 or higher, even when fired Semi- or Full-Auto</td>
+                            </tr>
+                            <tr>
+                                <td>Unwieldy</td>
+                                <td>Cannot be used to Parry or make Lightning Attacks.</td>
+                            </tr>
+                            <tr>
+                                <td>Vengeful (X)</td>
+                                <td>Inflicts Righteous Fury on damage rolls of X or higher.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="weaponMods" class="info">
+                    <h3 class="headingLight">Weapon Mods</h3>
+                    <table id="weapModTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Weight</th>
+                                <th>Availability</th>
+                                <th>Description</th>
+                                <th>Upgrades</th>
+                                <th>Page</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Auxiliary Grenade Launcher </td>
+                                <td>2.5kg </td>
+                                <td>Rare (-20)</td>
+                                <td>Can fire either the launcher or the weapon it's attached to, but not both. Range
+                                    of 45
+                                    meters with Damg and Pen of the loaded grenade, and can be fired Indirectly.
+                                    Cannot
+                                    reload during combat.
+                                </td>
+                                <td>Any Las, Solid Projectile, or Bolt weapons of the Basic class</td>
+                                <td>PG 162 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Backpack Ammo Supply </td>
+                                <td>15kg </td>
+                                <td>Scarce (-10)</td>
+                                <td>Increases the clip size of the weapon to five times its current clip size, but
+                                    it cannot
+                                    be reloaded in combat.</td>
+                                <td>Any Bolt, Flame, Las, Melta, Plasma, and Solid Projectile weapon.</td>
+                                <td>PG 162 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Compact </td>
+                                <td>x1/2 </td>
+                                <td>Average (+0)</td>
+                                <td>Halves the weight, Clip size, and range and reduces damage by 1. -20 to attempt
+                                    to find.</td>
+                                <td>Any Pistol or any Las, Solid Projectile, Flame, Bolt, or Plasma weapon of the
+                                    Basic class.</td>
+                                <td>PG 162 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Custom Grip</td>
+                                <td>-</td>
+                                <td>Rare (-20)</td>
+                                <td>Grants +5 to any BS or WS for owner and -5 of all others.</td>
+                                <td>Any weapon</td>
+                                <td>PG 162 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Deactivated Safety Features</td>
+                                <td>-</td>
+                                <td>Rare (-20)</td>
+                                <td>May Ready another weapon or draw another item as part of the same action.</td>
+                                <td>Any weapon</td>
+                                <td>PG 162 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Expanded Magazine </td>
+                                <td>1kg </td>
+                                <td>Scarce (-10)</td>
+                                <td>Increases clip size by half (rounded up)</td>
+                                <td>Ranged weapons</td>
+                                <td>PG 163 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Exterminator </td>
+                                <td>1kg </td>
+                                <td>Common (+10)</td>
+                                <td>Rather than firing the weapon as normal, can use as a half action. Counts as a
+                                    Standard
+                                    Attack with a flamer</td>
+                                <td>Any weapon except Pistol or Thrown.</td>
+                                <td>PG 163 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Fire Selector </td>
+                                <td>1kg </td>
+                                <td>Rare (-20)</td>
+                                <td>Swap ammo types without reloading. Can hold 3 different ammo's</td>
+                                <td>Any Bolt, Launcher, and Solid Projectile weapon of the Pistol or Basic class.
+                                </td>
+                                <td>PG 163 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Fluid Action </td>
+                                <td>-</td>
+                                <td>Rare (-20)</td>
+                                <td>When using Semi-Auto Burst, counts as scoring one additional DoS. Also reload
+                                    increased
+                                    by Half Action.
+                                </td>
+                                <td>Any ranged weapon capable of Semi-Automatic fore.</td>
+                                <td>PG 163 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Forearm Weapon Mounting </td>
+                                <td>1kg </td>
+                                <td>Scarce (-10)</td>
+                                <td>Upgrade reduces range by 1/3.</td>
+                                <td>Any Las, Low-Tech, Solid Projectile, Bolt, or Melta of the Pistol class.</td>
+                                <td>PG 163 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Melee Attachment </td>
+                                <td>2kg </td>
+                                <td>Plentiful (+20)</td>
+                                <td>The ranged weapon counts as a spear when used in melee combat.</td>
+                                <td>Any Basic ranged weapon.</td>
+                                <td>PG 163 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Modified Stock </td>
+                                <td>-</td>
+                                <td>Scarce (-10)</td>
+                                <td>Gains +2 bonus on a Half Action or +4 bonus for a Full Action for aim.</td>
+                                <td>Any Weapon</td>
+                                <td>PG 163 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Mono</td>
+                                <td>-</td>
+                                <td>Scarce (-10)</td>
+                                <td>Loses the Primitive quality (if it had it) and has its penetration increased by
+                                    2. No
+                                    effect when power field is active.</td>
+                                <td>Any Low-Tech or Power Melee weapon.</td>
+                                <td>PG 163 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Motion Predictor</td>
+                                <td>0.5kg </td>
+                                <td>Very Rare (-30)</td>
+                                <td>Gains +10 BS to Semi-Auto Burst or Full Auto.</td>
+                                <td>Any Ranged weapon (except Low-Tech) Capable of Semi-Auto or Full Auto.</td>
+                                <td>PG 163 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Omni-Scope</td>
+                                <td>2kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Combines the benefits of a preysense sight, red-dot laser sight, and telescopic
+                                    sight.</td>
+                                <td>Any ranged Las, Solid Projectile, Bolt, Low-Tech or Plasma weapon of the Basic
+                                    class.</td>
+                                <td>PG 163 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Photo Sight </td>
+                                <td>0.5kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>No penalties due to darkness.</td>
+                                <td>Any ranged Las, Solid Projectile, Bolt, Low-Tech or Plasma weapon of the Basic
+                                    class.</td>
+                                <td>PG 163 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Pistol Grip </td>
+                                <td>-</td>
+                                <td>Rare (-20)</td>
+                                <td>Can be wielded in one hand without -20 penalty. Range is halved.</td>
+                                <td>Any Basic ranged weapon.</td>
+                                <td>PG 164 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Preysense Sight</td>
+                                <td>0.5kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Suffers no penalties due to darkness and gains a +20 bonus to vision-based
+                                    Perception
+                                    tests in the dark.</td>
+                                <td>Any ranged Las, Solid Projectile, Bolt, Low-Tech or Plasma weapon of the Basic
+                                    class.</td>
+                                <td>PG 164 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Quick-Release</td>
+                                <td>-</td>
+                                <td>Rare (-20)</td>
+                                <td>The weapon reduced by a Half Action, to a minimum of a Half Action.</td>
+                                <td>Any ranged weapon.</td>
+                                <td>PG 164 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Red-Dot Laser Sight</td>
+                                <td>0.5kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Gains +10 to BS when firing a single shot.</td>
+                                <td>Any ranged Las, Solid Projectile, Bolt, Low-Tech or Plasma weapon of the Basic
+                                    class.</td>
+                                <td>PG 164 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Reinforced </td>
+                                <td>0.2</td>
+                                <td>Scarce (-10)</td>
+                                <td>Weapon weight increased by 20%. Ranged weapons receives +1 bonus to damage when
+                                    used
+                                    as an improvised weapon. Only destroyed on a result of 41 or higher when Parried
+                                    by a weapon with the Power Field quality.</td>
+                                <td>Any Weapon</td>
+                                <td>PG 164 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Sacred Inscriptions</td>
+                                <td>-</td>
+                                <td>Scarce (-10)</td>
+                                <td>Gains a +10 bonus to Pinning tests.</td>
+                                <td>Any Weapon</td>
+                                <td>PG 164 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Silencer</td>
+                                <td>0.5kg </td>
+                                <td>Plentiful (+20)</td>
+                                <td>Tests to hear shots made suffer -20 and can only attempt at half the normal
+                                    distance.</td>
+                                <td>Any Solid Projectile weapon of the Basic or Pistol class.</td>
+                                <td>PG 164 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Suspensors </td>
+                                <td>x1/2 </td>
+                                <td>Extremely Rare (-40)</td>
+                                <td>Counts as having the Auto-stabilized trait and so always counts as being braced.
+                                </td>
+                                <td>Any Heavy Weapon</td>
+                                <td>PG 164 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Targeter </td>
+                                <td>1.5kg </td>
+                                <td>Rare (-20)</td>
+                                <td>If there is a final penalty to a BS test when using a weapon with a targeter, it
+                                    is reduced
+                                    by ten.
+                                </td>
+                                <td>Any Las, Solid Projectile, Bolt, or Heavy weapon.</td>
+                                <td>PG 165 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Telescopic Sight </td>
+                                <td>1kg</td>
+                                <td>Average (+0)</td>
+                                <td>Ignores penalties for Long and Extreme range, as long as the shooter is
+                                    benefitting from
+                                    a Full Action to Aim.</td>
+                                <td>Any ranged Las, Solid Projectile, Bolt, Low-Tech or Plasma weapon of the Basic
+                                    class.</td>
+                                <td>PG 165 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Tox Dispenser </td>
+                                <td>0.75kg</td>
+                                <td>Rare (-20)</td>
+                                <td>Gain the Toxic (2) quality for one round. A tox dispenser can be used 10 times
+                                    before
+                                    requiring refilling.
+                                </td>
+                                <td>Any Low-Tech or Chain Melee Weapon</td>
+                                <td>PG 165 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Tripod/Bipod</td>
+                                <td>2kg</td>
+                                <td>Average (+0)</td>
+                                <td>Bipods and tripods allow a weapon to be braced anywhere there is a reasonably
+                                    flat surface.
+                                    A weapon braced on a bipod has a 90-degree fire arc, while one on a tripod has a
+                                    180-degree arc.
+                                </td>
+                                <td>Any Basic or Heavy weapon.</td>
+                                <td>PG 165 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Vox-Operated</td>
+                                <td>0.5kg</td>
+                                <td>Rare (-20)</td>
+                                <td>With spoken commands, the operator can fire his gun, switch firing modes, and
+                                    also change
+                                    ammunition (should it be fitted with a fire selector).</td>
+                                <td>Any Pistol, Basic, Launcher, or Heavy weapon that is not of the Low-Tech type
+                                </td>
+                                <td>PG 165 CB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="ammo" class="info">
+                    <h3 class="headingLight">Special Ammunition Types</h3>
+                    <table id="ammoTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Availability</th>
+                                <th>Effect</th>
+                                <th>Used with</th>
+                                <th>Page</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Amputator Shells </td>
+                                <td>Extremely Rare (-40)</td>
+                                <td>Add 2 to the weapon damage.</td>
+                                <td>Stub revolvers, stub automatics, shotguns (all types), sniper rifles, hand
+                                    cannons, autopistols,
+                                    and autoguns.</td>
+                                <td>PG 165 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Bleeder Rounds </td>
+                                <td>Rare (-20)</td>
+                                <td>Damage from bleeder rounds and suffers Blood Loss for 1d5 rounds or treated.
+                                </td>
+                                <td>Stub revolvers, stub automatics, hand cannons, autopistols, and autoguns.</td>
+                                <td>PG 165 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Dumdum Bullets</td>
+                                <td>Scarce (-10)</td>
+                                <td>Add 2 dmg to the weapon, but Armour points count double against them.</td>
+                                <td>Stub revolvers, stub automatics, sniper rifles, and hand cannons.</td>
+                                <td>PG 165 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Expander Rounds</td>
+                                <td>Scarce (-10)</td>
+                                <td>Add 1 to a weapon's damage and penetration.</td>
+                                <td>Stub revolvers, stub automatics, sniper rifles, autopistols, and autoguns.</td>
+                                <td>PG 165 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Explosive Arrows/Quarrels</td>
+                                <td>Scarce (-10)</td>
+                                <td>Suffer -10 penalty but change damage type to Explosive, remove the Primitive
+                                    quality,
+                                    and gains Blast (1).</td>
+                                <td>Bows and crossbows.</td>
+                                <td>PG 166 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Hot-Shot Charge Packs</td>
+                                <td>Scarce (-10)</td>
+                                <td>Adds 1 to its damage, gains Tearing, and penetration of 4. Also loses Reliable
+                                    quality
+                                    and clip size is reduced to 1.</td>
+                                <td>Laspistols, lascarbines, lasguns, and long las weapons.</td>
+                                <td>PG 166 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Inferno Shells</td>
+                                <td>Rare (-20)</td>
+                                <td>Gains the Flame quality.</td>
+                                <td>Shotgun and all Bolt weapons.</td>
+                                <td>PG 166 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Man-Stopper Bullets</td>
+                                <td>Scarce (-10)</td>
+                                <td>Adds 3 to weapon's penetration.</td>
+                                <td>Stub revolvers, stub automatics, hand cannons, sniper rifles, autopistols, and
+                                    autoguns.</td>
+                                <td>PG 166 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Scrambler Rounds</td>
+                                <td>Rare (-20)</td>
+                                <td>Adds the Hallucinogenic (2) and Recharge qualities.</td>
+                                <td>Bolt and Solid Projectile weapons</td>
+                                <td>PG 166 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Tempest Bolt Shells</td>
+                                <td>Near Unique (-50)</td>
+                                <td>Changes weapon's damage to Energy and grant Shocking quality. They also add 3
+                                    damage
+                                    to targets with the Machine trait.</td>
+                                <td>Bolt pistols, boltguns, and heavy bolters.</td>
+                                <td>PG 166 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Tox Rounds</td>
+                                <td>Scarce (-10)</td>
+                                <td>Adds Toxic (1) quality but reduces damage by 2</td>
+                                <td>Bolt and Solid Projectile weapons</td>
+                                <td>PG 166 CB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+
+    </div>
+</body>
+<footer>
+        <div class="w3-row-padding w3-section">
+                <div class="w3-col s0 m1 l1">
+                    <p></p>
+                </div>
+                <div class="w3-col s12 m10 l10">
+                    All Dark Heresy 2e material is © Fantasy Flight Games
+                </div>
+                <div class="w3-col s0 m1 l1">
+                    <p></p>
+                </div>
+            </div>
+    </footer>
+</html>

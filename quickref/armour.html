@@ -1,0 +1,857 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="A web-based quick reference guide for Fantasy Flight's Dark Heresy 2nd Edition RPG">
+    <meta name="keywords"
+        content="Dark Heresy, 40k, warhammer 40k, 40k rpg, quick ref, quick reference guide, reference guide, Dark heresy 2e, dark heresy second edition, dark heresy 2nd edition">
+    <title>DH 2e QuickRef</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+</head>
+
+
+<body>
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad">
+        <div id="headTitle">
+            <span class="header-large headingDark w3-bar-item">DH 2e Quick Reference</span>
+            <br />
+        </div>
+        <div id="menu" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
+            <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-round-large">Exp
+                Costs</a>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('combatDropdown')" class="w3-button w3-round-large w3-hover-maroon">Combat
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="combatDropdown" class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./combat.html#combatActions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Actions</a>
+                    <a href="./combat.html#hitLocations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Hit
+                        Locations</a>
+                    <a href="./combat.html#conditions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Conditions and Damage</a>
+                    <a href="./combat.html#circumstances"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Circumstances</a>
+                    <a href="./combat.html#difficulties"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Difficulty
+                        Examples</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('critDropdown')" class="w3-button w3-round-large w3-hover-maroon">Critical
+                    Hits <i class="fa fa-caret-down"></i></button>
+                <div id="critDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./crit.html#crits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Critical Rolls</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./crit.html#energyCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Energy</a>
+                    <a href="./crit.html#explosiveCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Explosive</a>
+                    <a href="./crit.html#impactCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Impact</a>
+                    <a href="./crit.html#rendingCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Rending</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('equipDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Equipment <i class="fa fa-caret-down"></i></button>
+                <div id="equipDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./gear.html#gear"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Gear</a>
+                    <a href="./gear.html#tools"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Tools</a>
+                    <a href="./gear.html#cybernetics"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Cybernetics</a>
+                    <a href="./gear.html#consumables"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Drugs and Consumables</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('weaponDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Weapons <i class="fa fa-caret-down"></i></button>
+                <div id="weaponDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./weapons.html#weapons"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapons</a>
+                    <a href="./weapons.html#weaponQual"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Qualities</a>
+                    <a href="./weapons.html#weaponMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Mods</a>
+                    <a href="./weapons.html#ammo"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Special Ammo</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('armourDropdown')" class="w3-button w3-round-large w3-hover-maroon">Armour
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="armourDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./armour.html#armour"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour</a>
+                    <a href="./armour.html#armourMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour Mods</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('psykerDropdown')" class="w3-button w3-round-large w3-hover-purple">Psyker
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="psykerDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./psyker.html#psyPowers"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Powers</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./psyker.html#psyPhenom"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Phenomena</a>
+                    <a href="./psyker.html#psyPerils"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Perils of the Warp</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('charDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Character <i class="fa fa-caret-down"></i></button>
+                <div id="charDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./character.html#skills"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Skills</a>
+                    <a href="./character.html#talents"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Talents</a>
+                    <a href="./character.html#traits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Traits</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./character.html#homeworlds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Homeworlds</a>
+                    <a href="./character.html#backgrounds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Backgrounds</a>
+                    <a href="./character.html#roles"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Roles</a>
+                    <a href="./character.html#divinations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Divinations</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('effectsDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Effects <i class="fa fa-caret-down"></i></button>
+                <div id="effectsDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./effects.html#shock"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Fear and Shock</a>
+                    <a href="./effects.html#snapping"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Snapping Out of It</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#insanity"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Insanity</a>
+                    <a href="./effects.html#trauma"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mental Trauma</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#corruption"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Corruption</a>
+                    <a href="./effects.html#maligna"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Malignancies</a>
+                    <a href="./effects.html#mutations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mutations</a>
+                </div>
+            </div>
+        </div>
+        <div class="w3-bar">
+            <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-hide-small w3-round-large">Exp
+                Costs</a>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Combat <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./combat.html#combatActions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Actions</a>
+                    <a href="./combat.html#hitLocations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Hit
+                        Locations</a>
+                    <a href="./combat.html#conditions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Conditions and Damage</a>
+                    <a href="./combat.html#circumstances"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Circumstances</a>
+                    <a href="./combat.html#difficulties"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Difficulty
+                        Examples</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Critical Hits <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./crit.html#crits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Critical Rolls</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./crit.html#energyCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Energy</a>
+                    <a href="./crit.html#explosiveCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Explosive</a>
+                    <a href="./crit.html#impactCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Impact</a>
+                    <a href="./crit.html#rendingCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Rending</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Equipment <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./gear.html#gear"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Gear</a>
+                    <a href="./gear.html#tools"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Tools</a>
+                    <a href="./gear.html#cybernetics"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Cybernetics</a>
+                    <a href="./gear.html#consumables"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Drugs and Consumables</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Weapons <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./weapons.html#weapons"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapons</a>
+                    <a href="./weapons.html#weaponQual"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Qualities</a>
+                    <a href="./weapons.html#weaponMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Mods</a>
+                    <a href="./weapons.html#ammo"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Special Ammo</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Armour <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./armour.html#armour"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour</a>
+                    <a href="./armour.html#armourMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour Mods</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-purple">Psyker <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./psyker.html#psyPowers"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Powers</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./psyker.html#psyPhenom"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Phenomena</a>
+                    <a href="./psyker.html#psyPerils"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Perils of the Warp</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Character <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./character.html#skills"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Skills</a>
+                    <a href="./character.html#talents"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Talents</a>
+                    <a href="./character.html#traits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Traits</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./character.html#homeworlds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Homeworlds</a>
+                    <a href="./character.html#backgrounds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Backgrounds</a>
+                    <a href="./character.html#roles"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Roles</a>
+                    <a href="./character.html#divinations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Divinations</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Effects <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./effects.html#shock"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Fear and Shock</a>
+                    <a href="./effects.html#snapping"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Snapping Out of It</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#insanity"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Insanity</a>
+                    <a href="./effects.html#trauma"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mental Trauma</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#corruption"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Corruption</a>
+                    <a href="./effects.html#maligna"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Malignancies</a>
+                    <a href="./effects.html#mutations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mutations</a>
+                </div>
+            </div>
+            <a class="w3-bar-item w3-button w3-round-large w3-right w3-hide-small w3-blue" id="charGen" target="_blank"
+                href="https://ajott.github.io/dh2chargen">Character Creator</a>
+            <a href="javascript:void(0)" class="w3-red w3-bar-item w3-button w3-top-left w3-hide-large w3-hide-medium"
+                onclick="showMenu()">&#9776;</a>
+        </div>
+    </div>
+
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div id="armourPane">
+                <div id="armour" class="info">
+                    <h3 class="headingLight">Armour</h3>
+                    <table id="armourTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Location</th>
+                                <th>AP</th>
+                                <th>Max Ag</th>
+                                <th>Protection Rating</th>
+                                <th>Weight</th>
+                                <th>Availability</th>
+                                <th>Note</th>
+                                <th>Page</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Armoured Bodyglove </td>
+                                <td>Basic</td>
+                                <td>Arms, Body, Legs </td>
+                                <td>2</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>5 kg</td>
+                                <td>Rare (-20)</td>
+                                <td></td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Chainmail Suit </td>
+                                <td>Basic</td>
+                                <td>Arms, Body, Legs </td>
+                                <td>3</td>
+                                <td>35</td>
+                                <td>-</td>
+                                <td>15 kg</td>
+                                <td>Common (+10)</td>
+                                <td></td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Feudal World Plate </td>
+                                <td>Basic</td>
+                                <td>All </td>
+                                <td>5</td>
+                                <td>25</td>
+                                <td>-</td>
+                                <td>30 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td></td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Heavy Leathers</td>
+                                <td>Basic</td>
+                                <td>Arms, Body </td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>5 kg</td>
+                                <td>Common (+10)</td>
+                                <td></td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Imperial Robes </td>
+                                <td>Basic</td>
+                                <td>Arms, Body, Legs </td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>4 kg</td>
+                                <td>Average (+0)</td>
+                                <td></td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Mould Suit</td>
+                                <td>Basic</td>
+                                <td>All</td>
+                                <td>-</td>
+                                <td>40</td>
+                                <td>-</td>
+                                <td>10 kg</td>
+                                <td>Rare (-20)</td>
+                                <td>Grants a +40 bonus to any Toughness test made to resist the effects of gasses,
+                                    as well
+                                    as a +10 bonus for resisting extreme temperatures and being set on fire.
+                                    Contains
+                                    rebreather for 5 hours. If takes more than 5 points of damage in a single round,
+                                    the suit becomes damaged and require repair.</td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Carapace Chestplate</td>
+                                <td>Carapace</td>
+                                <td>Body </td>
+                                <td>6</td>
+                                <td>55</td>
+                                <td>-</td>
+                                <td>7 kg</td>
+                                <td>Rare (-20)</td>
+                                <td></td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Carapace Gauntlets </td>
+                                <td>Carapace</td>
+                                <td>Arms </td>
+                                <td>5</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>2 kg</td>
+                                <td>Rare (-20)</td>
+                                <td></td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Carapace Greaves </td>
+                                <td>Carapace</td>
+                                <td>Legs </td>
+                                <td>5</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>3 kg</td>
+                                <td>Rare (-20)</td>
+                                <td></td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Carapace Helm </td>
+                                <td>Carapace</td>
+                                <td>Head </td>
+                                <td>4</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>2 kg</td>
+                                <td>Rare (-20)</td>
+                                <td></td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Enforcer Light Carapace </td>
+                                <td>Carapace</td>
+                                <td>All </td>
+                                <td>5</td>
+                                <td>45</td>
+                                <td>-</td>
+                                <td>15 kg</td>
+                                <td>Rare (-20)</td>
+                                <td></td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Militarum Tempestus Carapace </td>
+                                <td>Carapace</td>
+                                <td>All </td>
+                                <td>6</td>
+                                <td>45</td>
+                                <td>-</td>
+                                <td>15 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td></td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Flak Cloak </td>
+                                <td>Flak</td>
+                                <td>Arms, Body, Legs </td>
+                                <td>3</td>
+                                <td>55</td>
+                                <td>-</td>
+                                <td>8 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Counts 1 AP higher against Blast.</td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Flak Coat </td>
+                                <td>Flak</td>
+                                <td>Arms, Body </td>
+                                <td>3</td>
+                                <td>60</td>
+                                <td>-</td>
+                                <td>5 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Counts 1 AP higher against Blast.</td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Flak Gauntlets </td>
+                                <td>Flak</td>
+                                <td>Arms </td>
+                                <td>2</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1 kg</td>
+                                <td>Average (+0)</td>
+                                <td>Counts 1 AP higher against Blast.</td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Flak Helmet </td>
+                                <td>Flak</td>
+                                <td>Head </td>
+                                <td>2</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>2 kg</td>
+                                <td>Average (+0)</td>
+                                <td>Counts 1 AP higher against Blast.</td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Flak Vest </td>
+                                <td>Flak</td>
+                                <td>Body </td>
+                                <td>3</td>
+                                <td>60</td>
+                                <td>-</td>
+                                <td>5 kg</td>
+                                <td>Average (+0)</td>
+                                <td>Counts 1 AP higher against Blast.</td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Imperial Guard Flak Armour </td>
+                                <td>Flak</td>
+                                <td>All </td>
+                                <td>4</td>
+                                <td>50</td>
+                                <td>-</td>
+                                <td>11 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Counts 1 AP higher against Blast.</td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Light Flak Cloak </td>
+                                <td>Flak</td>
+                                <td>Arms, Body, Legs </td>
+                                <td>2</td>
+                                <td>55</td>
+                                <td>-</td>
+                                <td>4 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Counts 1 AP higher against Blast.</td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Field Wall Generator</td>
+                                <td>Force Field</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>65</td>
+                                <td>18 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>consists of two or more generators. Turning on or off a generator requires a
+                                    Full Action,
+                                    which also activates all other linked generators. A linear force field then
+                                    forms
+                                    between each generator, 1.5 metres high and up to 8 metres in length. The
+                                    barrier
+                                    acts as cover, so only parts of the body protected by the field wall gain force
+                                    field
+                                    protection. If a wall section overloads, then only that portion between the two
+                                    generators
+                                    shuts down</td>
+                                <td>PG 169 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Flare Shield</td>
+                                <td>Force Field</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>25</td>
+                                <td>3 kg</td>
+                                <td>Extremely Rare (-40)</td>
+                                <td>Protection rating doubled against weapons with the Blast or Spray qualities. If
+                                    the shield
+                                    overloads, it inflicts 1d10 Energy damage to the wearer that ignores Toughness
+                                    bonus
+                                    and Armour. </td>
+                                <td>PG 169 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Power Field (Personnel)</td>
+                                <td>Force Field</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>80</td>
+                                <td>50 kg</td>
+                                <td>Near Unique (-50)</td>
+                                <td>Bulky. Imposes -20 to stealth tests and dose not defend against ranged attacks
+                                    made within
+                                    1 metre or melee.</td>
+                                <td>PG 169 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Power Field (Vehicle/Emplacement)</td>
+                                <td>Force Field</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>80</td>
+                                <td>500 kg</td>
+                                <td>Near Unique (-50)</td>
+                                <td>Bulky. Imposes -20 to stealth tests and dose not defend against ranged attacks
+                                    made within
+                                    1 metre or melee.</td>
+                                <td>PG 169 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Refractor Field</td>
+                                <td>Force Field</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>30</td>
+                                <td>2 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Imposes a -20 to Stealth tests when active.</td>
+                                <td>PG 169 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Rosarius</td>
+                                <td>Force Field</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>50</td>
+                                <td>0.6 kg</td>
+                                <td>Extremely Rare (-40)</td>
+                                <td>Allies who can draw a line of sight to a character with a rosarius gain a +10
+                                    bonus to
+                                    Fear and Pinning tests; this is lost if the wearer dies or suffers any Critical
+                                    damage.
+                                </td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Mesh Cloak </td>
+                                <td>Mesh</td>
+                                <td>Arms, Body, Legs </td>
+                                <td>4</td>
+                                <td>60</td>
+                                <td>-</td>
+                                <td>3 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td></td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Mesh Vest </td>
+                                <td>Mesh</td>
+                                <td>Body </td>
+                                <td>4</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>2 kg</td>
+                                <td>Rare (-20)</td>
+                                <td></td>
+                                <td>PG 168 CB</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>&nbsp</td>
+                                <td>&nbsp</td>
+                                <td>&nbsp</td>
+                                <td>&nbsp</td>
+                                <td>&nbsp</td>
+                                <td>&nbsp</td>
+                                <td>&nbsp</td>
+                                <td>&nbsp</td>
+                                <td>&nbsp</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div id="armourMods" class="info">
+                    <h3 class="headingLight">Armour Mods</h3>
+                    <table id="armourModTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Weight</th>
+                                <th>Availability</th>
+                                <th>Used With</th>
+                                <th>Note</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Adamantine Chainguard </td>
+                                <td>4 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Any Armor</td>
+                                <td>If the 1s digit of his attack roll is a 1, the weapon is destroyed unless it has
+                                    the
+                                    Power Field or Warp Weapon quality, or is otherwise immune to being destroyed.
+                                    -5
+                                    to armor's Max Agility.</td>
+                            </tr>
+                            <tr>
+                                <td>Auto-Senses</td>
+                                <td>2 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Power Armor Helmet</td>
+                                <td>Gains a +5 bonus to his Ballistic Skill and a +10 bonus to all Awareness tests
+                                    based
+                                    on Sight and Hearing.</td>
+                            </tr>
+                            <tr>
+                                <td>Brazier of Saint Roberto </td>
+                                <td>10 kg</td>
+                                <td>Common (+10)</td>
+                                <td>Any armour, helmet, or backpack</td>
+                                <td>A brazier must be affixed to a backpack, helmet, or similarly worn item. Setting
+                                    it aflame
+                                    requires a Half Action and it can burn for 2 hours. Whilst alight, it acts as a
+                                    glow-globe
+                                    and grants a +30 bonus to all Charm and Command tests, a +10 bonus to Intimidate
+                                    tests, and a -40 penalty to all Stealth tests. If the wearer is ever knocked
+                                    Prone
+                                    while it is lit, he must pass an Ordinary (+10) Agility test to avoid setting
+                                    himself
+                                    on fire.</td>
+                            </tr>
+                            <tr>
+                                <td>Ceramite Plating </td>
+                                <td>2 kg</td>
+                                <td>Rare (-20)</td>
+                                <td>Carapace and power armor</td>
+                                <td>Provides an additional 3 Armour points of protection against attacks with the
+                                    Flame or
+                                    Melta qualities and other heat-based attacks.</td>
+                            </tr>
+                            <tr>
+                                <td>Devotional Iconography </td>
+                                <td>1 kg</td>
+                                <td>Common (+10)</td>
+                                <td>Any armour.</td>
+                                <td>Gains a +10 bonus to Command tests when dealing with those faithful to the
+                                    Imperium,
+                                    but suffers a -10 penalty to Fellowship tests when dealing with those not loyal
+                                    to
+                                    the Emperor.</td>
+                            </tr>
+                            <tr>
+                                <td>Hexagrammic Wards </td>
+                                <td>- </td>
+                                <td>Extremely Rare (-40)</td>
+                                <td>Carapace and power armor</td>
+                                <td>Gains a +20 bonus to tests made to resist any psychic attack or manipulation
+                                    directed
+                                    at him. The upgraded armour's Armour points are doubled against hits inflicted
+                                    by
+                                    psychic attacks. The Warp Weapon quality does not ignore the AP of this armour.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pentagramatic Wards</td>
+                                <td>- </td>
+                                <td>Extremely Rare (-40)</td>
+                                <td>Any Armour</td>
+                                <td>Whenever a character with the Daemonic or Warp Instability trait becomes engaged
+                                    in melee
+                                    with the warded armour's wearer or begins his turn engaged with the wearer, that
+                                    character must make a Hard (-20) Willpower test. If the character fails, he
+                                    suffers
+                                    1d5 Energy damage per degree of failure (ignoring armour and Toughness bonus).
+                                    If
+                                    the character scores 4 or more degrees of success on the test, however, the
+                                    pentachromatic
+                                    ward shatters and the armour permanently loses this upgrade. </td>
+                            </tr>
+                            <tr>
+                                <td>Sacred Incense Burner </td>
+                                <td>- </td>
+                                <td>Rare (-20)</td>
+                                <td>Any Armour</td>
+                                <td>Must be affixed to a backpack, helmet, or similarly worn item. Setting it aflame
+                                    requires
+                                    a Half Action and it can burn for 1 hour. While the burner is alight, any
+                                    creature
+                                    with the Daemonic trait within 3 metres of the bearer suffers a -10 penalty to
+                                    Weapon
+                                    Skill tests and a -10 penalty to Warp Instability tests. </td>
+                            </tr>
+                            <tr>
+                                <td>Truesilver Filigree</td>
+                                <td>- </td>
+                                <td>Very Rare (-30)</td>
+                                <td>Any Armour</td>
+                                <td>Any character with the Daemonic trait suffers a penalty to Weapon Skill tests
+                                    equal to
+                                    5 times the wearer's Willpower bonus. </td>
+                            </tr>
+                            <tr>
+                                <td>Unguents of Warding</td>
+                                <td></td>
+                                <td>Common (+10)</td>
+                                <td>Any Armour</td>
+                                <td>Working the unguents onto armour takes roughly one hour, and empties one
+                                    container for
+                                    each hit location treated. As part of the process, careful rituals must also be
+                                    performed
+                                    to inscribe runes and litanies into the armour. This requires a Hard (-20)
+                                    Scholastic
+                                    Lore (Occult) or Forbidden Lore (Imperial Creed) test for each location; failure
+                                    means the unguents must be cleaned off that location and the ritual started
+                                    again.
+                                    For each hit location treated with Unguents of Warding, the armour grants its
+                                    wearer
+                                    a +5 bonus to tests to resist Fear caused by characters with the Daemonic trait
+                                    and
+                                    to resist psychic powers. The effects of the unguents last for one month</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+
+    </div>
+</body>
+<footer>
+        <div class="w3-row-padding w3-section">
+                <div class="w3-col s0 m1 l1">
+                    <p></p>
+                </div>
+                <div class="w3-col s12 m10 l10">
+                    All Dark Heresy 2e material is © Fantasy Flight Games
+                </div>
+                <div class="w3-col s0 m1 l1">
+                    <p></p>
+                </div>
+            </div>
+    </footer>
+</html>

@@ -1,0 +1,1158 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="A web-based quick reference guide for Fantasy Flight's Dark Heresy 2nd Edition RPG">
+    <meta name="keywords"
+        content="Dark Heresy, 40k, warhammer 40k, 40k rpg, quick ref, quick reference guide, reference guide, Dark heresy 2e, dark heresy second edition, dark heresy 2nd edition">
+    <title>DH 2e QuickRef</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+</head>
+
+<body>
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad">
+            <div id="headTitle">
+                    <span class="header-large headingDark w3-bar-item">DH 2e Quick Reference</span>
+                <br/>
+            </div>
+        <div id="menu" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
+            <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-round-large">Exp
+                Costs</a>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('combatDropdown')" class="w3-button w3-round-large w3-hover-maroon">Combat
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="combatDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./combat.html#combatActions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Actions</a>
+                    <a href="./combat.html#hitLocations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Hit
+                        Locations</a>
+                    <a href="./combat.html#conditions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Conditions and Damage</a>
+                    <a href="./combat.html#circumstances"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Circumstances</a>
+                    <a href="./combat.html#difficulties"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Difficulty
+                        Examples</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('critDropdown')" class="w3-button w3-round-large w3-hover-maroon">Critical
+                    Hits <i class="fa fa-caret-down"></i></button>
+                <div id="critDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./crit.html#crits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Critical Rolls</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./crit.html#energyCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Energy</a>
+                    <a href="./crit.html#explosiveCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Explosive</a>
+                    <a href="./crit.html#impactCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Impact</a>
+                    <a href="./crit.html#rendingCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Rending</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('equipDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Equipment <i class="fa fa-caret-down"></i></button>
+                <div id="equipDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./gear.html#gear"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Gear</a>
+                    <a href="./gear.html#tools"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Tools</a>
+                    <a href="./gear.html#cybernetics"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Cybernetics</a>
+                    <a href="./gear.html#consumables"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Drugs and Consumables</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('weaponDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Weapons <i class="fa fa-caret-down"></i></button>
+                <div id="weaponDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./weapons.html#weapons"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapons</a>
+                    <a href="./weapons.html#weaponQual"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Qualities</a>
+                    <a href="./weapons.html#weaponMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Mods</a>
+                    <a href="./weapons.html#ammo"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Special Ammo</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('armourDropdown')" class="w3-button w3-round-large w3-hover-maroon">Armour
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="armourDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./armour.html#armour"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour</a>
+                    <a href="./armour.html#armourMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour Mods</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('psykerDropdown')" class="w3-button w3-round-large w3-hover-purple">Psyker
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="psykerDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./psyker.html#psyPowers"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Powers</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./psyker.html#psyPhenom"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Phenomena</a>
+                    <a href="./psyker.html#psyPerils"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Perils of the Warp</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('charDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Character <i class="fa fa-caret-down"></i></button>
+                <div id="charDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./character.html#skills"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Skills</a>
+                    <a href="./character.html#talents"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Talents</a>
+                    <a href="./character.html#traits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Traits</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./character.html#homeworlds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Homeworlds</a>
+                    <a href="./character.html#backgrounds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Backgrounds</a>
+                    <a href="./character.html#roles"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Roles</a>
+                    <a href="./character.html#divinations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Divinations</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('effectsDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Effects <i class="fa fa-caret-down"></i></button>
+                <div id="effectsDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./effects.html#shock"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Fear and Shock</a>
+                    <a href="./effects.html#snapping"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Snapping Out of It</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#insanity"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Insanity</a>
+                    <a href="./effects.html#trauma"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mental Trauma</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#corruption"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Corruption</a>
+                    <a href="./effects.html#maligna"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Malignancies</a>
+                    <a href="./effects.html#mutations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mutations</a>
+                </div>
+            </div>
+        </div>
+        <div class="w3-bar">
+            <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-hide-small w3-round-large">Exp
+                Costs</a>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Combat <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./combat.html#combatActions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Actions</a>
+                    <a href="./combat.html#hitLocations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Hit
+                        Locations</a>
+                    <a href="./combat.html#conditions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Conditions and Damage</a>
+                    <a href="./combat.html#circumstances"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Circumstances</a>
+                    <a href="./combat.html#difficulties"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Difficulty
+                        Examples</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Critical Hits <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./crit.html#crits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Critical Rolls</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./crit.html#energyCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Energy</a>
+                    <a href="./crit.html#explosiveCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Explosive</a>
+                    <a href="./crit.html#impactCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Impact</a>
+                    <a href="./crit.html#rendingCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Rending</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Equipment <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./gear.html#gear"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Gear</a>
+                    <a href="./gear.html#tools"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Tools</a>
+                    <a href="./gear.html#cybernetics"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Cybernetics</a>
+                    <a href="./gear.html#consumables"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Drugs and Consumables</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Weapons <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./weapons.html#weapons"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapons</a>
+                    <a href="./weapons.html#weaponQual"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Qualities</a>
+                    <a href="./weapons.html#weaponMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Mods</a>
+                    <a href="./weapons.html#ammo"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Special Ammo</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Armour <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./armour.html#armour"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour</a>
+                    <a href="./armour.html#armourMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour Mods</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-purple">Psyker <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./psyker.html#psyPowers"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Powers</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./psyker.html#psyPhenom"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Phenomena</a>
+                    <a href="./psyker.html#psyPerils"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Perils of the Warp</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Character <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./character.html#skills"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Skills</a>
+                    <a href="./character.html#talents"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Talents</a>
+                    <a href="./character.html#traits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Traits</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./character.html#homeworlds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Homeworlds</a>
+                    <a href="./character.html#backgrounds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Backgrounds</a>
+                    <a href="./character.html#roles"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Roles</a>
+                    <a href="./character.html#divinations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Divinations</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Effects <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./effects.html#shock"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Fear and Shock</a>
+                    <a href="./effects.html#snapping"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Snapping Out of It</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#insanity"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Insanity</a>
+                    <a href="./effects.html#trauma"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mental Trauma</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#corruption"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Corruption</a>
+                    <a href="./effects.html#maligna"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Malignancies</a>
+                    <a href="./effects.html#mutations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mutations</a>
+                </div>
+            </div>
+            <a class="w3-bar-item w3-button w3-round-large w3-right w3-hide-small w3-blue" id="charGen" target="_blank"
+                href="https://ajott.github.io/dh2chargen">Character Creator</a>
+            <a href="javascript:void(0)" class="w3-red w3-bar-item w3-button w3-top-left w3-hide-large w3-hide-medium"
+                onclick="showMenu()">&#9776;</a>
+        </div>
+    </div>
+
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1"><p></p></div>
+        <div class="w3-col s12 m12 l10">
+                <div id="combat">
+                        <div id="combatActions" class="info">
+                            <h3 class="headingLight">Combat Actions</h3>
+                            <p>Characters may take many actions in Combat. These are listed below.</p>
+                            <p>The Subtype of an attack is important; a character may only take one Attack and one
+                                Concentration
+                                action per round.
+                            </p>
+                            <table id="combatTable" class="w3-table w3-striped w3-hoverable w3-bordered w3-responsive">
+                                <thead>
+                                    <tr >
+                                        <th>Action</th>
+                                        <th>Type</th>
+                                        <th>Subtype</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Aim</td>
+                                        <td>Varies</td>
+                                        <td>Concentration</td>
+                                        <td> Grants +10 (Half) or +20 (Full) bonus to character's next attack. Taking a
+                                            Reaction will
+                                            remove the bonus from Aiming.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>All Out Attack</td>
+                                        <td>Full</td>
+                                        <td>Attack, Melee</td>
+                                        <td>Give up that round's Evasion reaction to gain +30 WS.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brace Heavy Weapon</td>
+                                        <td>Half</td>
+                                        <td> Miscellaneous</td>
+                                        <td>Support a Heavy weapon. Unbraced heavy weapons incur -30 to BS. May pivot
+                                            45-degrees
+                                            without losing bracing.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Called Shot</td>
+                                        <td>Full</td>
+                                        <td>Attack, Concentration, Melee or Ranged</td>
+                                        <td>Attack a specific location on a target with a -20 to WS or BS.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Charge</td>
+                                        <td>Full</td>
+                                        <td>Attack, Melee, Movement</td>
+                                        <td>Move up to 3x AgB (last 4m in straight line at enemy), +20 to WS.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Defensive Stance</td>
+                                        <td>Full</td>
+                                        <td>Concentration, Melee</td>
+                                        <td>Gain an additional Reaction. Opponents suffer -20 WS.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Delay</td>
+                                        <td>Full</td>
+                                        <td>Miscellaneous</td>
+                                        <td>May take any Half Action at any time before character's next turn. Attacks count
+                                            as being
+                                            part of the next turn.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Disengage</td>
+                                        <td>Full</td>
+                                        <td>Movement</td>
+                                        <td>Break from melee without incurring a free attack.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Evasion</td>
+                                        <td>Reaction</td>
+                                        <td>Movement/Melee</td>
+                                        <td>Attempt to avoid an attack by using Dodge (ranged or melee) or Parry (melee)
+                                            skills.
+                                            Evading an area of effect attack requires the character be able to escape the
+                                            radius
+                                            by moving no further than a Half Move.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Feint</td>
+                                        <td>Half</td>
+                                        <td>Melee</td>
+                                        <td>Opposed WS test; if character wins, his next Melee attack cannot be Evaded.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Focus Power</td>
+                                        <td>Varies</td>
+                                        <td>Varies</td>
+                                        <td>Use a Psychic Power. Should the Psyker roll doubles on this test, Psychic
+                                            Phenomena take
+                                            effect.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Full Auto Burst</td>
+                                        <td>Half</td>
+                                        <td>Attack, Ranged</td>
+                                        <td>Grants -10 BS, one hit for every DoS; Jam on 94+ result; 2m spread. Regardless
+                                            of how
+                                            many shots hit, uses ammo appropriately for the weapon RoF (
+                                            <em>eg</em> a S/3/10 Autogun would use 10 rounds on a Full-Auto Burst). If the
+                                            shots
+                                            hit the same target, use the table below to determine hit locations.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Grapple</td>
+                                        <td>Varies</td>
+                                        <td>Attack, Melee</td>
+                                        <td>Affect a Grappled opponent or escape from a Grapple.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Guarded Action</td>
+                                        <td>Half</td>
+                                        <td>Concentration, Melee/Ranged</td>
+                                        <td>Grants -10 to WS or BS, +10 to all Evasion tests until start of next turn.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jump or Leap</td>
+                                        <td>Full</td>
+                                        <td>Movement</td>
+                                        <td>Jump vertically or leap horizontally. Specific mechanics found on p. 247 CB</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Knock Down</td>
+                                        <td>Half</td>
+                                        <td>Attack, Melee</td>
+                                        <td>Make an opposed Strength test (with +10 if using Charge). 2+DoS gives (1d5-3)+SB
+                                            Impact
+                                            and 1 level of fatigue.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lightning Attack</td>
+                                        <td>Half</td>
+                                        <td>Attack, Melee</td>
+                                        <td>Grants -10 WS, one hit for every DoS. Use table below for hit location
+                                            determination.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Manoeuvre</td>
+                                        <td>Half</td>
+                                        <td>Melee, Movement</td>
+                                        <td>Make an opposed WS test against character in melee range; if successful, move
+                                            them up
+                                            to 1 metre in direction of choice (character may advance 1 metre as well).
+                                            Cannot
+                                            push into obstacles or characters, but can push off of cliffs or edges.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Move</td>
+                                        <td>Varies</td>
+                                        <td>Movement</td>
+                                        <td>Move up to Agility bonus (Half Action) or 2x Agility bonus (Full Action).</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Overwatch</td>
+                                        <td>Full</td>
+                                        <td>Attack, Concentration, Ranged</td>
+                                        <td>Shoot targets coming into a set 45-degree kill zone with
+                                            Standard/Semi-Auto/Full-Auto
+                                            attack (specify which) meeting certain criteria, as chosen by the player.
+                                            Targets
+                                            of an Overwatch shot must make a +0 Pinning test or become Pinned, even if the
+                                            attack
+                                            did no damage.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ready</td>
+                                        <td>Half</td>
+                                        <td>Miscellaneous</td>
+                                        <td>Ready a weapon or an item, apply a bandage or coat a blade with poison, stow an
+                                            item
+                                            securely in a bag. Dropping an item is considered a Free Action. Can used twice
+                                            to
+                                            affect 2 different items.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reload</td>
+                                        <td>Varies</td>
+                                        <td>Miscellaneous</td>
+                                        <td>Reload a ranged weapon - the time necessary depends on the specific weapon. If a
+                                            reload
+                                            action extends across multiple turns, it counts as being Extended, and is
+                                            subject
+                                            to additional tests or interruptions.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Run</td>
+                                        <td>Full</td>
+                                        <td>Movement</td>
+                                        <td>Move 6x Agility bonus, enemies get -20 BS and +20 WS to hit character until
+                                            their next
+                                            turn.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Semi-Auto Burst</td>
+                                        <td>Half</td>
+                                        <td>Attack, Ranged</td>
+                                        <td>Grants +0 BS, additional hit for every two additional DoS; jam on 94+; 2m
+                                            spread. Regardless
+                                            of how many shots hit, uses ammo appropriately for the weapon RoF (
+                                            <em>eg</em> a S/3/10 Autogun would use 3 rounds on a Semi-Auto Burst). If the
+                                            shots hit
+                                            the same target, use the table below to determine hit locations.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Stand/Mount/Dismount</td>
+                                        <td>Half</td>
+                                        <td>Movement</td>
+                                        <td>Stand up from being Prone, mount or dismount a riding beast, enter or leave a
+                                            vehicle,
+                                            or move within a vehicle.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Standard Attack</td>
+                                        <td>Half</td>
+                                        <td>Attack, Melee or Ranged</td>
+                                        <td>Grants +10 to WS or BS, make one melee or ranged attack; jam on 96+ result.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Stun</td>
+                                        <td>Full</td>
+                                        <td>Attack, Melee</td>
+                                        <td>Using melee weapon, WS test with -20. Success is 1d10+SB, vs targets TB+(AP on
+                                            head).
+                                            If success, target is stunned for # rounds equal to difference.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Suppressing Fire</td>
+                                        <td>Full</td>
+                                        <td>Attack, Ranged</td>
+                                        <td>Fires a semi-auto (in 30 degree arc) or full-auto (in 45 degree arc) burst at
+                                            -20 to
+                                            BS. Enemies in the arc must make a -10 (if semi-auto) or -20 (if full-auto)
+                                            Pinning
+                                            save or become pinned (CB p. 230). Weapon must be capable of semi- or full-auto
+                                            fire
+                                            and be in the correct fire mode.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Swift Attack</td>
+                                        <td>Half</td>
+                                        <td>Attack, Melee</td>
+                                        <td>Grants +0 WS, additional hit for every two additional DoS.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tactical Advance</td>
+                                        <td>Full</td>
+                                        <td>Concentration, Movement</td>
+                                        <td>Make a Half Move from one cover to another. Continue to take bonus from previous
+                                            cover
+                                            until reaching new one.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Use a Skill</td>
+                                        <td>Varies</td>
+                                        <td>Concentration, Miscellaneous</td>
+                                        <td>Character may use a skill.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                
+                        <div id="hitLocations" class="info">
+                            <h4>Hit Locations</h4>
+                            <p>Generally, hit location is determined by reversing the digits on the relevant Weapon Skill,
+                                Ballistic
+                                Skill, or Focus Power test. Should a random location need to be determined, roll 1d100.</p>
+                                <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>d100 Roll</th>
+                                            <th>Location</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>01-10</td>
+                                            <td>Head</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11-20</td>
+                                            <td>Right Arm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>21-30</td>
+                                            <td>Left Arm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>31-70</td>
+                                            <td>Body</td>
+                                        </tr>
+                                        <tr>
+                                            <td>71-85</td>
+                                            <td>Right Leg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>86-100</td>
+                                            <td>Left Leg</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                
+                            <br />
+                            <h4>
+                                Hit location determination for multiple hits
+                            </h4>
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>First Hit</th>
+                                        <th>Second Hit</th>
+                                        <th>Third Hit</th>
+                                        <th>Fourth Hit</th>
+                                        <th>Fifth Hit</th>
+                                        <th>Additional Hits</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Head</td>
+                                        <td>Head</td>
+                                        <td>Arm</td>
+                                        <td>Body</td>
+                                        <td>Arm</td>
+                                        <td>Head</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Arm</td>
+                                        <td>Arm</td>
+                                        <td>Body</td>
+                                        <td>Head</td>
+                                        <td>Body</td>
+                                        <td>Arm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Body</td>
+                                        <td>Body</td>
+                                        <td>Arm</td>
+                                        <td>Head</td>
+                                        <td>Arm</td>
+                                        <td>Body</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Leg</td>
+                                        <td>Leg</td>
+                                        <td>Body</td>
+                                        <td>Arm</td>
+                                        <td>Head</td>
+                                        <td>Body</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                
+                        <div id="conditions" class="info">
+                            <h4>Damage and Special Conditions</h4>
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Effects</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Aputated Limb</td>
+                                        <td>Losing a limb (other than the head, which is
+                                            <em>generally</em> fatal, causes a character to experience Blood Loss. They must
+                                            be treated
+                                            by someone skilled in Medicae (which does not require a test). If they are not
+                                            treated,
+                                            roll 1d10. On a result of 8 or lower, the character will die a horrible death
+                                            over
+                                            the next 1d10 days. After losing a limb, a character does not remove damage
+                                            through
+                                            natural healing for 1d10+2 days. See "Lost ..." below for specific body parts.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Blinded</td>
+                                        <td>A Blinded character automaticall fails all vision-related tests and checks,
+                                            including
+                                            Ballistic Skill. He also suffers -30 to Weapon Skill, and most other tests that
+                                            would
+                                            ordinarily benefit from being able to see.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Blood Loss</td>
+                                        <td>At the start of his turn, the affected character takes 1 point of Fatigue. Once
+                                            per round,
+                                            as a free action, he or any other character can attempt a Medicae test at a -10
+                                            to
+                                            staunch the bleeding. Multiple Blood Loss conditions do not stack.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Deafened</td>
+                                        <td>The character is unable to verbally communicate, and automatically fails any
+                                            hearing-related
+                                            test. In addition, the GM shoud determine what other effects this has on the
+                                            game
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Falling</td>
+                                        <td>When a character falls a dangerous (as determined by the GM based on gravity,
+                                            landing
+                                            material, etc) distance, he suffers falling damage. This is 1d10+(metres fallen)
+                                            to a random hit location. This ignores armour but not Toughness.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fatigue</td>
+                                        <td>Not all injuries are fatal. A character's Fatigue Threshold is his Toughness
+                                            Bonus +
+                                            Willpower Bonus. If a character's Fatigue ever passes this threshold, they fall
+                                            Unconscious
+                                            for 10-TB minutes. Upon recovering, he awakens with his Fatigue now equal to his
+                                            TB. If his Fatigue ever reached double his threshold, the character will die.
+                                            <br /> Fatigue recovers with time. Each hour of normal (non-Unconscious) rest
+                                            without combat,
+                                            the use of Psychic abilities, or other strenuous activity will remove 1 point of
+                                            Fatigue. 6 uninterrupted hours will remove all Fatigue.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fire</td>
+                                        <td>Weapons with the Flame quality, Energy critical effects, or environmental
+                                            hazards may
+                                            set a character on fire. Once a character is on fire, he suffers 1d10 Energy
+                                            damage
+                                            (ignoring armour but not Toughness) and takes 1 point of Fatigue per round,
+                                            until
+                                            extinguished. If not otherwise specified, fire affects the Body. While burning,
+                                            the
+                                            character must make a +0 Willpower test at the start of his turn in order to
+                                            take
+                                            any action beyond flailing in agony. A character may attempt to extinguish
+                                            himself
+                                            by falling Prone and making a -20 Agility test to roll on the floor.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lost Hand</td>
+                                        <td>The character suffers a –20 penalty on all skill and characteristic tests that
+                                            rely on
+                                            the use of two hands, and he cannot wield two-handed weapons. He can, however,
+                                            strap
+                                            a shield to the stump. Also apply Amputed Limb.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lost Arm</td>
+                                        <td>The character suffers the same penalties as a Lost Hand, but does not even have
+                                            a stump
+                                            to which he can strap a shield. Also apply Amputed Limb.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lost Eye</td>
+                                        <td>Losing one eye permanently reduces a character’s Ballistic Skill by 10. In
+                                            addition,
+                                            he suffers a –20 penalty to all skill and characteristics tests that rely on
+                                            sight.
+                                            Should a character have the misfortune to lose both eyes, he becomes Blinded.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lost Foot</td>
+                                        <td>The character permanently reduces all his Movement by half (rounded up) and
+                                            suffers a
+                                            –20 penalty on all tests for Movement actions, as well as skill and
+                                            characteristic
+                                            tests that could rely on mobility, such as Stealth. Also apply Amputed Limb.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lost Leg</td>
+                                        <td>Treat this as a lost foot, but the character cannot use the Dodge skill. Losing
+                                            both
+                                            legs means the character cannot walk unless he has cybernetic replacements
+                                            installed.
+                                            Also apply Amputed Limb.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Stunned</td>
+                                        <td>Stunned characters may not take any action or reaction (such as Evasion), but
+                                            are not
+                                            considered Helpless or Unaware. However, Weapon Skill and Ballistic Skill tests
+                                            against
+                                            a Stunned character gain a +20 bonus.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Suffocation</td>
+                                        <td>If a character is not in combat, he can hold his breath for a number of minutes
+                                            equal
+                                            to his Toughness Bonus. If he is in combat, it is for a number of rounds equal
+                                            to
+                                            2x his Toughness Bonus. While holding his breath, he must make a +0 Toughness
+                                            test
+                                            each minute/round. If he fails, he takes 1 point of Fatigue. If he has not
+                                            gained
+                                            a fresh source of oxygen by the end of his time holding his breath, he
+                                            immediately
+                                            falls Unconscious regardless of his Fatigue levels. If a character is both
+                                            Unconscious
+                                            and deprived of oxygen, he will die after a number of rounds equal to his
+                                            Toughness
+                                            Bonus.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Unconsciousness</td>
+                                        <td>Unconsciousness typically results from Fatigue or Critical Damage. An
+                                            Unconscious character
+                                            is completely Unaware of his surroundings, and cannot take any actions. He is
+                                            also
+                                            treated as a Helpless target. If no specific duration is given, Unconsciousness
+                                            defaults
+                                            to 10 minutes.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                
+                        <div id="circumstances" class="info">
+                            <h4>Combat Circumstances</h4>
+                            <p>There are many things that may affect combat, with almost infinite variation. These will
+                                generally
+                                impose a modifier to tests, the magnitude of which is up to the GM. Should a particular
+                                circumstance
+                                not be described below, it is up to the GM to decide what, if any, effect it has. Remember
+                                the
+                                <a href="https://1d4chan.org/wiki/Golden_Rule" target=_blank>Golden Rule</a>.
+                            </p>
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <th>Circumstance</th>
+                                    <th>Effect</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Cover</td>
+                                        <td>Taking cover is often advisable in order to prevent an acute case of death. When
+                                            taking
+                                            cover, there is no Ballistic Skill penalty imposed upon those firing at the
+                                            character
+                                            in cover; however, certain body parts (generally Body and Legs) will be
+                                            protected,
+                                            gaining additional AP depending on the material of the cover. Should damage be
+                                            dealt
+                                            in excess of the cover's AP, the AP of the cover is decreased by 1, and the
+                                            overflow
+                                            damage is dealt normally to the character.
+                                            <br /> Cover AP is at the discretion of the GM - typical examples would be 4 AP
+                                            for wooden
+                                            planks, to 16 AP for rockcrete or thick iron.
+                                    </tr>
+                                    <tr>
+                                        <td>Darkness</td>
+                                        <td>Weapon Skill suffers a -20 penalty; Ballistic Skill -30. Characters gain +20 to
+                                            Stealth
+                                            skill tests. Negated by the Dark-Sight
+                                            <a href="#traits" onclick="togglePanel(7)">trait</a>.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Difficult Terrain</td>
+                                        <td>Weapon Skill and Evasion are affected by difficult terrain. Mud may impose a -10
+                                            penalty,
+                                            whereas something like deep snow may inflict -30.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Engaged in Melee</td>
+                                        <td>Ballistic Skill tests against a character engaged in melee suffer a -20 penalty.
+                                            If one
+                                            or more of the characters engaged are Stunned, Helpless, or Unaware, the penalty
+                                            is ignored.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Extreme Range</td>
+                                        <td>Targets at a distance of more than 3x the range of a weapon are considered to be
+                                            at Extreme
+                                            Range. Ballistic Skill tests to hit targets at Extreme Range suffer a -30
+                                            penalty.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fog, Mist, Shadow or Smoke</td>
+                                        <td>Ballistic Skill tests against a character concealed by fog, mist, shadow, or
+                                            smoke suffer
+                                            a -20 penalty. While concealed, characters gain a +10 bonus on Stealth skill
+                                            tests.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ganging Up</td>
+                                        <td>Melee attackers gain a bonus when their allies are also attacking the same
+                                            target in
+                                            melee. With a 2:1 advantage, the attacker gains a +10 bonus to Weapon Skill. For
+                                            3:1 or greater, instead gain a +20 bonus.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Helpless Targets</td>
+                                        <td>Melee attacks against unconscious or otherwise Helpless targets automatically
+                                            succeed.
+                                            The Degrees of Success are the same as the attacker's Weapon Skill bonus. When
+                                            rolling
+                                            for damage, roll twice and add the two results. Prone and Stunned targets are
+                                            <b>not</b> automatically considered helpless.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Higher Ground</td>
+                                        <td>It's over, Anakin. Characters standing on higher ground gain a +10 bonus to
+                                            Weapon Skill.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Long Range</td>
+                                        <td>Targets at a distance of more than 2x the range of a weapon are considered to be
+                                            at Long
+                                            Range. Ballistic Skill tests to hit targets at Long Range suffer a -10 penalty.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Missing and Scattering</td>
+                                        <td>Should a character fail a Ballistic Skill test, it's necessary to know where the
+                                            shot
+                                            or thrown item went astray. The GM rolls 1d10 and consults the
+                                            <b>Scatter Diagram</b> on p. 230 CB. Once the direction is determined, the GM
+                                            rolls
+                                            1d5 to determine how many metres the item goes.
+                                            <br /> In Zero Gravity, roll for each axis in which the item may travel.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pinning</td>
+                                        <td>Being shot at is terrifying<sup>[<a href="https://i.redd.it/2eo25jcypag01.jpg"
+                                                    target=_blank>citation needed</a>]</sup>
+                                            and suppressive fire is an effective tactic. Certain actions and circumstances
+                                            may require a character to make a Pinning test,
+                                            which is a +0 Willpower test. Upon failure, he becomes Pinned.<br />
+                                            Pinned targets are busy avoiding getting shot, and may only take a Half Action
+                                            in combat, and suffers a -20 to Ballistic Skill.
+                                            If not in cover, they must take their next turn to reach cover, or to move away
+                                            from their attacker if none is available. If he
+                                            is in cover, he may not leave it except to retreat - and only then by moving to
+                                            another piece of cover. <br />
+                                            At the end of each turn, he may make a +0 Willpower test to overcome being
+                                            Pinned. If he is in cover or has not been shot at
+                                            since his last turn, he gains a +30 to this test.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Point-Blank Range</td>
+                                        <td>Targets at a distance of 2 metres or closer are considered to be at Point-Blank
+                                            Range. Ballistic
+                                            Skill tests to hit Point-Blank targets gain a +30 modifier. This modifier is
+                                            lost if the attacker is
+                                            engaged in melee combat with the target. For weapons with a Short Range of less
+                                            than 3 metres,
+                                            Point-Blank is considered to be 1 metre instead.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prone</td>
+                                        <td>A character is considered Prone any time he is lying on the ground. Weapon Skill
+                                            tests gain +10 bonus to
+                                            hit Prone characters, but Ballistic Skill tests suffer a -10 penalty. A
+                                            character who is Prone suffers a
+                                            -10 penalty to Weapon Skill tests, and a -20 penalty to Evasion tests.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Short Range</td>
+                                        <td>Targets at a distance of less than half the range of a weapon are considered to
+                                            be at Short
+                                            Range. Ballistic Skill tests to hit targets at Short Range gain a +10 bonus.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Size</td>
+                                        <td>Larger targets are generally easier to hit. Consult Table 4-6: Size on p. 138 CB
+                                            for specifics.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Stunned Targets</td>
+                                        <td>Weapon Skill and Ballistic Skill tests to hit Stunned targets gain a +20 bonus.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Unaware Targets</td>
+                                        <td>Characters who have no idea they're about to be attacked - generally this would
+                                            be at the start of combat
+                                            where a combatant may be Surprised (p. 216 CB) are considered Unaware. Weapon
+                                            Skill and Ballistic Skill
+                                            tests to hit Unaware targets gain a +30 bonus.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Weather and Unnatural Conditions</td>
+                                        <td>Attacks made while in inclement weather or other unnatural conditions suffer a
+                                            -20 penalty, unless otherwise
+                                            specified by the GM.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                
+                        <div id="difficulties" class="info">
+                            <h3 class="headingLight">Combat Difficulty Examples</h3>
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <th>Difficulty</th>
+                                    <th>Skill Modifier</th>
+                                    <th>Example</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Easy</td>
+                                        <td>+30 Bonus</td>
+                                        <td>
+                                            <ul>
+                                                <li>Attacking a Surprised or Unaware target.</li>
+                                                <li>Attacking a Massive (Size [7]) target.</li>
+                                                <li>Shooting a target at Point Blank range.</li>
+                                                <li>Evading an attack that has been anticipated for at least one round.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Routine</td>
+                                        <td>+20 Bonus</td>
+                                        <td>
+                                            <ul>
+                                                <li>Melee attacks against a foe that is outnumbered three to one or more.
+                                                </li>
+                                                <li>Attacking a Stunned opponent.</li>
+                                                <li>Attacking an Enormous (Size [6]) target.</li>
+                                                <li>Evading an attack whilst in full cover from the attacker.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ordinary</td>
+                                        <td>+10 Bonus</td>
+                                        <td>
+                                            <ul>
+                                                <li>Attacking a Prone opponent with a melee weapon.</li>
+                                                <li>Attacking from higher ground.</li>
+                                                <li>Attacking a Hulking (Size [5]) target.</li>
+                                                <li>Shooting a target at Short range.</li>
+                                                <li>Making a Standard Attack action.</li>
+                                                <li>Melee attacks against a foe who is outnumbered two to one.</li>
+                                                <li>Evading an attack whilst in partial cover from the attacker.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Challenging</td>
+                                        <td> +0 Bonus</td>
+                                        <td>
+                                            <ul>
+                                                <li>Attacking an Average (Size [4]) target.</li>
+                                                <li>Making a Swift Attack action.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Difficult</td>
+                                        <td>–10 Penalty</td>
+                                        <td>
+                                            <ul>
+                                                <li>Shooting at a target at Long range.</li>
+                                                <li>Shooting a Prone target.</li>
+                                                <li>Attacking a Scrawny (Size [3]) target.</li>
+                                                <li>Attacking an enemy in melee whist Prone.</li>
+                                                <li>Making a Lightning Attack action.</li>
+                                                <li>Making a Full-Auto ranged action.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hard</td>
+                                        <td>–20 Penalty</td>
+                                        <td>
+                                            <ul>
+                                                <li>Shooting into melee combat.</li>
+                                                <li>Performing a Called Shot action.</li>
+                                                <li>Dodging whilst Prone.</li>
+                                                <li>Making an unarmed attack against an armed opponent.</li>
+                                                <li>Melee attacks in the darkness.</li>
+                                                <li>Shooting at a target in fog, mist, or shadow.</li>
+                                                <li>Attacking a Puny (Size [2]) target.</li>
+                                                <li>Using a weapon without the correct Weapon Training talent.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Very Hard</td>
+                                        <td>–30 Penalty</td>
+                                        <td>
+                                            <ul>
+                                                <li>Attacking or Dodging in deep snow.</li>
+                                                <li>Firing a heavy weapon that has not been Braced.</li>
+                                                <li>Attacking a Miniscule (Size [1]) target.</li>
+                                                <li>Shooting a target at Extreme range.</li>
+                                                <li>Shooting a completely concealed target.</li>
+                                                <li>Evading an attack whilst unable to see its source.</li>
+                                                <li>Shooting at a target in darkness.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+        </div>
+        <div class="w3-col s0 m0 l1"></div>
+    </div>
+
+    
+
+</body>
+<footer>
+        <div class="w3-row-padding w3-section">
+                <div class="w3-col s0 m1 l1">
+                    <p></p>
+                </div>
+                <div class="w3-col s12 m10 l10">
+                    All Dark Heresy 2e material is © Fantasy Flight Games
+                </div>
+                <div class="w3-col s0 m1 l1">
+                    <p></p>
+                </div>
+            </div>
+    </footer>
+</html>

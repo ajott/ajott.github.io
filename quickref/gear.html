@@ -1,0 +1,1144 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="A web-based quick reference guide for Fantasy Flight's Dark Heresy 2nd Edition RPG">
+    <meta name="keywords"
+        content="Dark Heresy, 40k, warhammer 40k, 40k rpg, quick ref, quick reference guide, reference guide, Dark heresy 2e, dark heresy second edition, dark heresy 2nd edition">
+    <title>DH 2e QuickRef</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+</head>
+
+<body>
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad">
+        <div id="headTitle">
+            <span class="header-large headingDark w3-bar-item">DH 2e Quick Reference</span>
+            <br />
+        </div>
+        <div id="menu" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
+            <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-round-large">Exp
+                Costs</a>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('combatDropdown')" class="w3-button w3-round-large w3-hover-maroon">Combat
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="combatDropdown" class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./combat.html#combatActions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Actions</a>
+                    <a href="./combat.html#hitLocations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Hit
+                        Locations</a>
+                    <a href="./combat.html#conditions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Conditions and Damage</a>
+                    <a href="./combat.html#circumstances"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Circumstances</a>
+                    <a href="./combat.html#difficulties"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Difficulty
+                        Examples</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('critDropdown')" class="w3-button w3-round-large w3-hover-maroon">Critical
+                    Hits <i class="fa fa-caret-down"></i></button>
+                <div id="critDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./crit.html#crits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Critical Rolls</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./crit.html#energyCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Energy</a>
+                    <a href="./crit.html#explosiveCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Explosive</a>
+                    <a href="./crit.html#impactCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Impact</a>
+                    <a href="./crit.html#rendingCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Rending</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('equipDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Equipment <i class="fa fa-caret-down"></i></button>
+                <div id="equipDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./gear.html#gear"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Gear</a>
+                    <a href="./gear.html#tools"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Tools</a>
+                    <a href="./gear.html#cybernetics"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Cybernetics</a>
+                    <a href="./gear.html#consumables"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Drugs and Consumables</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('weaponDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Weapons <i class="fa fa-caret-down"></i></button>
+                <div id="weaponDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./weapons.html#weapons"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapons</a>
+                    <a href="./weapons.html#weaponQual"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Qualities</a>
+                    <a href="./weapons.html#weaponMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Mods</a>
+                    <a href="./weapons.html#ammo"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Special Ammo</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('armourDropdown')" class="w3-button w3-round-large w3-hover-maroon">Armour
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="armourDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./armour.html#armour"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour</a>
+                    <a href="./armour.html#armourMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour Mods</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('psykerDropdown')" class="w3-button w3-round-large w3-hover-purple">Psyker
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="psykerDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./psyker.html#psyPowers"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Powers</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./psyker.html#psyPhenom"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Phenomena</a>
+                    <a href="./psyker.html#psyPerils"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Perils of the Warp</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('charDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Character <i class="fa fa-caret-down"></i></button>
+                <div id="charDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./character.html#skills"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Skills</a>
+                    <a href="./character.html#talents"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Talents</a>
+                    <a href="./character.html#traits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Traits</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./character.html#homeworlds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Homeworlds</a>
+                    <a href="./character.html#backgrounds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Backgrounds</a>
+                    <a href="./character.html#roles"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Roles</a>
+                    <a href="./character.html#divinations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Divinations</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('effectsDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Effects <i class="fa fa-caret-down"></i></button>
+                <div id="effectsDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./effects.html#shock"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Fear and Shock</a>
+                    <a href="./effects.html#snapping"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Snapping Out of It</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#insanity"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Insanity</a>
+                    <a href="./effects.html#trauma"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mental Trauma</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#corruption"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Corruption</a>
+                    <a href="./effects.html#maligna"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Malignancies</a>
+                    <a href="./effects.html#mutations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mutations</a>
+                </div>
+            </div>
+        </div>
+        <div class="w3-bar">
+            <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-hide-small w3-round-large">Exp
+                Costs</a>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Combat <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./combat.html#combatActions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Actions</a>
+                    <a href="./combat.html#hitLocations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Hit
+                        Locations</a>
+                    <a href="./combat.html#conditions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Conditions and Damage</a>
+                    <a href="./combat.html#circumstances"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Circumstances</a>
+                    <a href="./combat.html#difficulties"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Difficulty
+                        Examples</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Critical Hits <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./crit.html#crits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Critical Rolls</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./crit.html#energyCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Energy</a>
+                    <a href="./crit.html#explosiveCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Explosive</a>
+                    <a href="./crit.html#impactCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Impact</a>
+                    <a href="./crit.html#rendingCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Rending</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Equipment <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./gear.html#gear"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Gear</a>
+                    <a href="./gear.html#tools"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Tools</a>
+                    <a href="./gear.html#cybernetics"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Cybernetics</a>
+                    <a href="./gear.html#consumables"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Drugs and Consumables</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Weapons <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./weapons.html#weapons"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapons</a>
+                    <a href="./weapons.html#weaponQual"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Qualities</a>
+                    <a href="./weapons.html#weaponMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Mods</a>
+                    <a href="./weapons.html#ammo"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Special Ammo</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Armour <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./armour.html#armour"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour</a>
+                    <a href="./armour.html#armourMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour Mods</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-purple">Psyker <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./psyker.html#psyPowers"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Powers</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./psyker.html#psyPhenom"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Phenomena</a>
+                    <a href="./psyker.html#psyPerils"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Perils of the Warp</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Character <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./character.html#skills"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Skills</a>
+                    <a href="./character.html#talents"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Talents</a>
+                    <a href="./character.html#traits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Traits</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./character.html#homeworlds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Homeworlds</a>
+                    <a href="./character.html#backgrounds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Backgrounds</a>
+                    <a href="./character.html#roles"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Roles</a>
+                    <a href="./character.html#divinations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Divinations</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Effects <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./effects.html#shock"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Fear and Shock</a>
+                    <a href="./effects.html#snapping"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Snapping Out of It</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#insanity"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Insanity</a>
+                    <a href="./effects.html#trauma"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mental Trauma</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#corruption"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Corruption</a>
+                    <a href="./effects.html#maligna"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Malignancies</a>
+                    <a href="./effects.html#mutations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mutations</a>
+                </div>
+            </div>
+            <a class="w3-bar-item w3-button w3-round-large w3-right w3-hide-small w3-blue" id="charGen" target="_blank"
+                href="https://ajott.github.io/dh2chargen">Character Creator</a>
+            <a href="javascript:void(0)" class="w3-red w3-bar-item w3-button w3-top-left w3-hide-large w3-hide-medium"
+                onclick="showMenu()">&#9776;</a>
+        </div>
+    </div>
+
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div id="gearPane">
+                <div id="gear" class="info">
+                    <h3 class="headingLight">Gear</h3>
+                    <table id="gearTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Weight</th>
+                                <th>Availability</th>
+                                <th>Notes</th>
+                                <th>Page</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Backpack</td>
+                                <td>2 kg</td>
+                                <td>Abundant (+30)</td>
+                                <td>Allows 30 kg of extra weight but requires a full action to remove object.
+                                    Incompatible
+                                    with the Combat Vest.
+                                </td>
+                                <td>PG 170 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Chameleoline Cloak</td>
+                                <td>0.5 kg</td>
+                                <td>Rare (-20)</td>
+                                <td>Gains +20 to stealth tests.</td>
+                                <td>PG 170 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Chrono</td>
+                                <td>0 kg</td>
+                                <td>Plentiful (+20)</td>
+                                <td>Keeps time.</td>
+                                <td>PG 170 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Clothing</td>
+                                <td>2 kg</td>
+                                <td>Abundant (+30)</td>
+                                <td>Used to keep warm or diguise yourself. It's clothing.</td>
+                                <td>PG 170 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Combat Vest</td>
+                                <td>2 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Holds 15 kg of items and can draw items in combat as Free Action. Incompatible
+                                    with the
+                                    Backpack.
+                                </td>
+                                <td>PG 170 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Concealed Holster</td>
+                                <td>1 kg</td>
+                                <td>Average (+0)</td>
+                                <td>Attempts to detect a concealed weapon suffers -20 penalty, but readying the
+                                    weapon takes
+                                    and extra Half Action.</td>
+                                <td>PG 170 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Dead Space Earpiece</td>
+                                <td>- </td>
+                                <td>Very Rare (-30)</td>
+                                <td>Grants +20 against Concussive tests</td>
+                                <td>PG 170 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Explosive Collar</td>
+                                <td>3 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Range of 1 km, and if out of range for more than 5 minutes collar detonates and
+                                    kills
+                                    the wearer instantly. Removing requires a -20 Tech-Use. Explodes if the removal
+                                    roll
+                                    fails with 2 or more DoF.
+                                </td>
+                                <td>PG 170 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Filtration Plugs</td>
+                                <td>- </td>
+                                <td>Common (+10)</td>
+                                <td>Nose plugs. Grant +20 against gas.</td>
+                                <td>PG 171 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Photo-Visors/Contacts</td>
+                                <td>0.5 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Grants Dark-Sight trait.</td>
+                                <td>PG 171 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Preysense Goggles</td>
+                                <td>0.5 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Grants +20 to vision in darkness.</td>
+                                <td>PG 171 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Rebreather</td>
+                                <td>1 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Immune to toxic atmospheres, even allowing water-breathing. Last for 1 hour,
+                                    takes Full
+                                    Action to replace.
+                                </td>
+                                <td>PG 171 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Recoil Glove</td>
+                                <td>0.5 kg</td>
+                                <td>Rare (-20)</td>
+                                <td>Can fire weapons one-handed without -20 penalty.</td>
+                                <td>PG 171 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Respirator/Gas Mask</td>
+                                <td>0.5 kg</td>
+                                <td>Average (+0)</td>
+                                <td>Grants +30 to resist effects of gas and can re-roll if failed.</td>
+                                <td>PG 171 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Survival Suit</td>
+                                <td>- </td>
+                                <td>Average (+0)</td>
+                                <td>Grants +20 to resist extreme environments.</td>
+                                <td>PG 172 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Synskin</td>
+                                <td>2 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Grants 2 Armor to all locations not already armoured and +10 to Stealth tests.
+                                    Also immuned
+                                    to presysense goggles and Dark-sight trait.</td>
+                                <td>PG 172 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Void Suit </td>
+                                <td>8 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Enclosed suit for space. 12 hours of air and imposes a -10 to Agility tests</td>
+                                <td>PG 172 CB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="tools" class="info">
+                    <h3 class="headingLight">Tools</h3>
+                    <table id="toolTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Weight</th>
+                                <th>Availability</th>
+                                <th>Notes</th>
+                                <th>Page</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Auspex/Scanner</td>
+                                <td>0.5 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Grants +20 to awareness tests and counts as a Free Action once per turn. With
+                                    Tech-Use
+                                    can see through walls less than 50 cm, has a range of 50 meters.</td>
+                                <td>PG 175 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Auto Quill</td>
+                                <td>0 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Grants +10 to recording data</td>
+                                <td>PG 175 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Clip/Drop Harness</td>
+                                <td>2 kg</td>
+                                <td>Common (+10)</td>
+                                <td>Grants +30 to Climb tests and cannot fall if failed</td>
+                                <td>PG 175 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Combi-tool</td>
+                                <td>1 kg</td>
+                                <td>Rare (-20)</td>
+                                <td>Grants +10 to Tech-Use</td>
+                                <td>PG 175 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Comm Leech</td>
+                                <td>1 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Can hack a transmission with Tech-Use. Usable for minutes equal to Degrees of
+                                    Success</td>
+                                <td>PG 175 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Dataslate</td>
+                                <td>0.5 kg</td>
+                                <td>Common (+10)</td>
+                                <td>Used for data storage and communication - it's a tablet</td>
+                                <td>PG 175 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Demolition Kit</td>
+                                <td>4 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Allows for setup of demo devices. Contains: Five demolition charges (count as
+                                    Krak Grenades),
+                                    100 meter det-cord (burns at 10 sec per meter), and pressure detonator.</td>
+                                <td>PG 175 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Diagnostor</td>
+                                <td>4 kg</td>
+                                <td>Rare (-20)</td>
+                                <td>Grants +20 to Medicae or Perception to determine proper treatment</td>
+                                <td>PG 175 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Disguise Kit</td>
+                                <td>2 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Make you look like someone else. +10 to deceive tests</td>
+                                <td>PG 175 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Excruciator Kit</td>
+                                <td>2 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Grants +20 to Interrogation tests.</td>
+                                <td>PG 176 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Field Suture</td>
+                                <td>0.5 kg</td>
+                                <td>Average (+0)</td>
+                                <td>Provides +30 to Medicae tests to stop Blood Loss</td>
+                                <td>PG 176 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Glow-globe/stab light</td>
+                                <td>0.5kg</td>
+                                <td>Abundant (+30)</td>
+                                <td>Glow-globe projects light in a 12m radius - stab-light projects a narrow beam
+                                    24m. Lasts
+                                    5 hours
+                                </td>
+                                <td>PG 176 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Grapnel and Line</td>
+                                <td>2 kg</td>
+                                <td>Common (+10)</td>
+                                <td>A Clip-harness and Gas powered pistol to shoot a hook and line 100 m away.</td>
+                                <td>PG 176 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Grav Chute</td>
+                                <td>15 kg</td>
+                                <td>Rare (-20)</td>
+                                <td>Pass a Challenging (+0) Agility test or Routine (+20) Operate (Aeronautica)
+                                    test, and
+                                    allows for a safe, guided fall from any height; otherwise counts as having
+                                    fallen
+                                    two metres for each degree of failure</td>
+                                <td>PG 176 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Hand-Held Targeter</td>
+                                <td>0.5 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Grants +20 to next Ballistic Skill check when using weapons with Indirect
+                                    quality.</td>
+                                <td>PG 176 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Inhaler/Injector</td>
+                                <td>0.5 kg</td>
+                                <td>Common (+10)</td>
+                                <td>Holds drugs that can be administered as a Half Action.</td>
+                                <td>PG 176 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Lascutter</td>
+                                <td>4 kg</td>
+                                <td>Average (+0)</td>
+                                <td>Cuts or welds 10 cm of metal and counts as a Heavy weapon on targets within 2
+                                    meters.</td>
+                                <td>PG 176 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Laud Hailer</td>
+                                <td>4 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Aplifies normal speech levels to those audible through crowds</td>
+                                <td>PG 176 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Magboots</td>
+                                <td>2 kg</td>
+                                <td>Rare (-20)</td>
+                                <td>Reduces Agility bonus by 2 but allows to grip to metallic surfaces.</td>
+                                <td>PG 176 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Magnoculars</td>
+                                <td>0.5 kg</td>
+                                <td>Average (+0)</td>
+                                <td>Binoculars</td>
+                                <td>PG 176 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Manacles</td>
+                                <td>1 kg</td>
+                                <td>Plentiful (+20)</td>
+                                <td>Handcuffs</td>
+                                <td>PG 176 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Medi-kit</td>
+                                <td>2 kg</td>
+                                <td>Common (+10)</td>
+                                <td>Grants +10 bonus to Medicae tests.</td>
+                                <td>PG 176 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Micro-bead</td>
+                                <td>0 kg</td>
+                                <td>Average (+0)</td>
+                                <td>Can talk to others up to 1 km away</td>
+                                <td>PG 177 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Monotask Servo-Skull</td>
+                                <td>2 kg</td>
+                                <td>Rare (-20)</td>
+                                <td>Floating skulls that have a single function:
+                                    <br />
+                                    <b>Auger:</b> Grants benefits of an Auspex
+                                    <br />
+                                    <b>Illumination:</b> Lights up a 20 meter area
+                                    <br />
+                                    <b>Land Hailer:</b> Records speech and amplifies voice
+                                    <br />
+                                    <b>Medicae:</b> Counts as a Medi-kit
+                                    <br />
+                                    <b>Utility:</b> Counts as a Combi-tool</td>
+                                <td>PG 177 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Multi Compass</td>
+                                <td>4 kg</td>
+                                <td>Near Unique (-50)</td>
+                                <td>Grants a +20 bonus to all Survival and Navigation (Surface) tests</td>
+                                <td>PG 177 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Multikey</td>
+                                <td>0 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Gains a +30 bonus to Security test when trying to open locks</td>
+                                <td>PG 177 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Null Rod</td>
+                                <td>1 kg</td>
+                                <td>Near Unique (-50)</td>
+                                <td>Dampen the powers of any psykers within 2d10 metres, causing them to take all
+                                    tests to
+                                    use any of their psychic powers with a -30 penalty. Also offer protection from
+                                    psychic
+                                    attacks by a +30 bonus to resist any psychic power that directly affects him.
+                                </td>
+                                <td>PG 177 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Pict Recorder</td>
+                                <td>1 kg</td>
+                                <td>Average (+0)</td>
+                                <td>Camcorder</td>
+                                <td>PG 177 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Psy Focus</td>
+                                <td>0 kg</td>
+                                <td>Average (+0)</td>
+                                <td>Grants +10 to Focus Power Tests</td>
+                                <td>PG 177 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Regicide Set</td>
+                                <td>1 kg</td>
+                                <td>Plentiful (+20)</td>
+                                <td>Chess in the future and takes 1d5 hours. Grants +10 to fellowship with the
+                                    opponent the
+                                    following day
+                                </td>
+                                <td>PG 177 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Screamer</td>
+                                <td>2 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Activate by Tech-use test. It has a perception of 75 for detecting movement and
+                                    when
+                                    triggered sounds an alarm</td>
+                                <td>PG 177 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Signal Jammer</td>
+                                <td>2 kg</td>
+                                <td>Rare (-20)</td>
+                                <td>Jams other transmissions within 1km</td>
+                                <td>PG 178 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Stasis Cage</td>
+                                <td>6 kg</td>
+                                <td>Extremely Rare (-40)</td>
+                                <td>Hold anything with a Size trait of 7 or lower that does not possess the
+                                    Incorporeal trait
+                                    for five hours (if using the battery pack. Inside cannot take any actions, and
+                                    outside
+                                    of cannot attack or interact with anything inside. Compacts into a flat plate 3
+                                    meters
+                                    across.
+                                </td>
+                                <td>PG 43 EO</td>
+                            </tr>
+                            <tr>
+                                <td>Static Generator</td>
+                                <td>3 kg</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Broadcast static to all comm systems within 30 meters</td>
+                                <td>PG 178 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Stummer</td>
+                                <td>2 kg</td>
+                                <td>Average (+0)</td>
+                                <td>Dampens sound and grants +30 to Stealth test. Last for 20 minutes before needing
+                                    to be
+                                    recharged
+                                </td>
+                                <td>PG 178 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Vox-caster</td>
+                                <td>4 kg</td>
+                                <td>Scarce (-10)</td>
+                                <td>Offers communication to up to 100 km</td>
+                                <td>PG 178 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Writing Kit</td>
+                                <td>2 kg</td>
+                                <td>Plentiful (+20)</td>
+                                <td>Pen and paper</td>
+                                <td>PG 178 CB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="cybernetics" class="info">
+                    <h3 class="headingLight">Cybernetics</h3>
+                    <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Availability</th>
+                                <th>Benefit</th>
+                                <th>Page</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Augur Array</td>
+                                <td>Rare (-20)</td>
+                                <td>Identically to a auspex and requires concentration and a Half Action.</td>
+                                <td>PG 181 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Autosanguine</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Repairs minor injuries and speeds recovery. Always considered Lightly Damaged,
+                                    and heals
+                                    at an increased rate, removing 2 points of damage per day instead of 1.</td>
+                                <td>PG 181 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Baleful Eye</td>
+                                <td>Near Unique (-50)</td>
+                                <td>Counts as a hot-shot laspistol with a range of 10m. It has no clip size, however
+                                    a jamb
+                                    result causes to lose sight in the eye for a number of rounds equal to the
+                                    degrees
+                                    of failure.</td>
+                                <td>PG 182 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Bionic Arm</td>
+                                <td>Scarce (-10)</td>
+                                <td>Common mechanical arm. Craftsmanship determines bonuses.</td>
+                                <td>PG 180 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Bionic Legs</td>
+                                <td>Scarce (-10)</td>
+                                <td>Common mechanical leg. Craftsmanship determines bonuses.</td>
+                                <td>PG 181 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Bionic Respiratory System</td>
+                                <td>Rare (-20)</td>
+                                <td>Gain a +20 bonus to Toughness tests made to resist airborne toxins and gas.</td>
+                                <td>PG 181 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Bionic Heart</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Gains +1 Armour point to the Body location and Sprint talent.</td>
+                                <td>PG 181 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Bionic Senses</td>
+                                <td>Rare (-20)</td>
+                                <td>Common mechanical eyes, ears, and noses. Craftsmanship determines bonuses.</td>
+                                <td>PG 181 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Calculus Logi Upgrade</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Grants +10 to Literacy, Logic, and Scholastic Lore tests.</td>
+                                <td>PG 182 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Cerebral Implants</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Restore paralysed and brain-damaged users to a semblance of normality, but with
+                                    a permanent
+                                    loss of 1d10 points from the character's Weapon Skill, Ballistic Skill, Agility,
+                                    Intelligence, and Fellowship characteristics. Craftsmanship determines bonuses.
+                                </td>
+                                <td>PG 182 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Cranial Armour</td>
+                                <td>Scarce (-10)</td>
+                                <td>Adds +1 Armour point to the Head.</td>
+                                <td>PG 182 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Ferric Lure Implants</td>
+                                <td>Very Rare (-30)</td>
+                                <td>After a Willpower test, can call an unsecured metal object into his hand; the
+                                    object
+                                    cannot mass more than 1 kg per point of Willpower bonus, and must be within 20
+                                    metres.
+                                    Must have Mechanicus Implants trait.</td>
+                                <td>PG 182 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Interface Port</td>
+                                <td>Rare (-20)</td>
+                                <td>grants a +10 bonus to Common Lore, Inquiry, or Tech-Use tests whilst connected
+                                    to a relevant
+                                    mechanism or data spool.</td>
+                                <td>PG 182 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Internal Reservoir</td>
+                                <td>Rare (-20)</td>
+                                <td>Acts as a powerful battery. When it is fully charged, no longer gains Fatigue
+                                    from using
+                                    Luminen Capacitors either to recharge or attack something, but each use drains
+                                    the
+                                    reservoir by half. The battery fully recharges after one day of resting.</td>
+                                <td>PG 182 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Locator Matrix</td>
+                                <td>Rare (-20)</td>
+                                <td>Present location to within a few meters but must know planet detail.</td>
+                                <td>PG 183 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Luminen Capacitor</td>
+                                <td>Very Rare (-30)</td>
+                                <td>With a successful Toughness test, recharges or powers machinery. Difficulty
+                                    depending
+                                    on the nature of the powered system.</td>
+                                <td>PG 183 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Maglev Coils</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Using a Half Action, the user may hover 20-30 centimetres off the ground for a
+                                    number
+                                    of minutes equal to 1d10 plus the character's Toughness bonus.</td>
+                                <td>PG 183 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Mechadendrite</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Act as additional arms. Different types offer bonuses to respected operation.
+                                </td>
+                                <td>PG 183 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Memorance Implant</td>
+                                <td>Rare (-20)</td>
+                                <td>Provides a +10 bonus to Trade (Loremancer) tests or other tests in social
+                                    situations
+                                    where the recorded information provides leverage or value.</td>
+                                <td>PG 184 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Mind Impulse Unit</td>
+                                <td>Rare (-20)</td>
+                                <td>Add a +10 bonus to Tech-Use or Operate tests used in conjunction with devices
+                                    capable
+                                    of MIU linking.</td>
+                                <td>PG 184 CB</td>
+                            </tr>
+                            <tr>
+                                <td>MIU Weapon Interface</td>
+                                <td>Rare (-20)</td>
+                                <td>Fires the linked ranged weapon as a Free Action during his turn. Note that he
+                                    can still
+                                    only take a single Action with the Attack subtype during his turn.</td>
+                                <td>PG 184 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Respiratory Filter Implant</td>
+                                <td>Rare (-20)</td>
+                                <td>Grants a +20 bonus to resist inhaled poisons, gas weapons, or atmospheric
+                                    toxins.</td>
+                                <td>PG 185 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Scribe-tines</td>
+                                <td>Rare (-20)</td>
+                                <td>Grants +10 to all Lore skill tests.</td>
+                                <td>PG 185 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Subskin Armour</td>
+                                <td>Very Rare (-30)</td>
+                                <td>Adds +2 armor to Arms, Body, and legs which stacks with armor.</td>
+                                <td>PG 185 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Synth Muscle</td>
+                                <td>Rare (-20)</td>
+                                <td>Grants the Unnatural Strength (1) trait</td>
+                                <td>PG 185 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Vocal Implant</td>
+                                <td>Scarce (-10)</td>
+                                <td>Works to amplify the vocal cords to an inhuman range.</td>
+                                <td>PG 185 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Volitor Implant</td>
+                                <td>Rare (-20)</td>
+                                <td>Compelled not to reveal a certain item of information, remain within a set area,
+                                    or perform
+                                    a specific task. If the subject attempts'or is forced'to counter this
+                                    compulsion,
+                                    his brain shuts down into unconsciousness, or even death for some severe volitor
+                                    patterns.
+                                </td>
+                                <td>PG 185 CB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="consumables" class="info">
+                    <h3 class="headingLight">Drugs & Consumables</h3>
+                    <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Weight</th>
+                                <th>Availability</th>
+                                <th>Notes</th>
+                                <th>Page</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Amasec</td>
+                                <td>1 kg</td>
+                                <td>Average (+0)</td>
+                                <td>Distilled spirits. Think brandy, whiskey, etc.</td>
+                                <td>PG 172 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Desoleum Fungus</td>
+                                <td>- </td>
+                                <td>Scarce (-10)</td>
+                                <td>Lasts 1d10 rounds, and suffers 1 Fatigue. While under the effects can invert any
+                                    1d100
+                                    roll.
+                                </td>
+                                <td>PG 172 CB</td>
+                            </tr>
+                            <tr>
+                                <td>De-Tox</td>
+                                <td>- </td>
+                                <td>Rare (-20)</td>
+                                <td>Clears any chemical effects. User is Stunned for 1d10 minus Toughness bonus
+                                    rounds.</td>
+                                <td>PG 172 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Frenzon</td>
+                                <td>- </td>
+                                <td>Very Rare (-30)</td>
+                                <td>Grants Frenzied for 1d10 minutes.</td>
+                                <td>PG 173 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Lho-Sticks</td>
+                                <td>- </td>
+                                <td>Common (+10)</td>
+                                <td>Cigarettes for the grim darkness of the 41st millennium</td>
+                                <td>PG 173 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Obscura</td>
+                                <td>- </td>
+                                <td>Rare (-20)</td>
+                                <td>Enters a dream like state for 1d5 hours. If in combat consider them under the
+                                    effects
+                                    of a hallucinogen grenade.</td>
+                                <td>PG 173 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Ration Pack</td>
+                                <td>2 kg</td>
+                                <td>Plentiful (+20)</td>
+                                <td>During rest of at least 2 hours or more remove one additional level of Fatigue.
+                                </td>
+                                <td>PG 173 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Recaf</td>
+                                <td>- </td>
+                                <td>Abundant (+30)</td>
+                                <td>Organic plant material roasted/dried and infused with caffeine. Removes 1 level
+                                    of Fatigue.</td>
+                                <td>PG 173 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Sacred Unguents</td>
+                                <td>- </td>
+                                <td>Very Rare (-30)</td>
+                                <td>Oils blessed by the Omnissiah. Applied to weapon as a full action and becomes
+                                    immune
+                                    to jamming for one clip. Can be applied to an already-jammed weapon to
+                                    immediately
+                                    clear the jam.
+                                </td>
+                                <td>PG 173 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Slaught</td>
+                                <td>- </td>
+                                <td>Scarce (-10)</td>
+                                <td>Increase Agility and Perception bonus by 3 for 2d10 minutes. When over take a
+                                    toughness
+                                    test or suffer -20 to Agility and Perception tests for 1d5 hours.</td>
+                                <td>PG 174 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Spook</td>
+                                <td>- </td>
+                                <td>Rare (-20)</td>
+                                <td>Pass a Willpower test or gain 1d5 Insanity . If successful gains 1 psy rating or
+                                    additional
+                                    psy rating. Effects last for 1d5 hours.</td>
+                                <td>PG 174 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Stimm</td>
+                                <td>- </td>
+                                <td>Average (+0)</td>
+                                <td>Lasts 3d10 rounds and ignores any negative effects from damage, Critical damage,
+                                    Fatigue,
+                                    and cannot be stunned. When it wears off, they suffer a -20 to Strength,
+                                    Toughness,
+                                    and Agility tests for one hour and gains one level of Fatigue.</td>
+                                <td>PG 174 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Tranq</td>
+                                <td>1 kg</td>
+                                <td>Abundant (+30)</td>
+                                <td>Numbs the body and mind.</td>
+                                <td>PG 174 CB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+    </div>
+</body>
+<footer>
+        <div class="w3-row-padding w3-section">
+                <div class="w3-col s0 m1 l1">
+                    <p></p>
+                </div>
+                <div class="w3-col s12 m10 l10">
+                    All Dark Heresy 2e material is © Fantasy Flight Games
+                </div>
+                <div class="w3-col s0 m1 l1">
+                    <p></p>
+                </div>
+            </div>
+    </footer>
+</html>

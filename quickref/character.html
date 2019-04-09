@@ -1,0 +1,3237 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="A web-based quick reference guide for Fantasy Flight's Dark Heresy 2nd Edition RPG">
+    <meta name="keywords"
+        content="Dark Heresy, 40k, warhammer 40k, 40k rpg, quick ref, quick reference guide, reference guide, Dark heresy 2e, dark heresy second edition, dark heresy 2nd edition">
+    <title>DH 2e QuickRef</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+</head>
+
+
+<body>
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad">
+        <div id="headTitle">
+            <span class="header-large headingDark w3-bar-item">DH 2e Quick Reference</span>
+            <br />
+        </div>
+        <div id="menu" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
+            <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-round-large">Exp
+                Costs</a>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('combatDropdown')" class="w3-button w3-round-large w3-hover-maroon">Combat
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="combatDropdown" class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./combat.html#combatActions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Actions</a>
+                    <a href="./combat.html#hitLocations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Hit
+                        Locations</a>
+                    <a href="./combat.html#conditions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Conditions and Damage</a>
+                    <a href="./combat.html#circumstances"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Circumstances</a>
+                    <a href="./combat.html#difficulties"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Difficulty
+                        Examples</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('critDropdown')" class="w3-button w3-round-large w3-hover-maroon">Critical
+                    Hits <i class="fa fa-caret-down"></i></button>
+                <div id="critDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./crit.html#crits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Critical Rolls</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./crit.html#energyCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Energy</a>
+                    <a href="./crit.html#explosiveCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Explosive</a>
+                    <a href="./crit.html#impactCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Impact</a>
+                    <a href="./crit.html#rendingCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Rending</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('equipDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Equipment <i class="fa fa-caret-down"></i></button>
+                <div id="equipDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./gear.html#gear"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Gear</a>
+                    <a href="./gear.html#tools"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Tools</a>
+                    <a href="./gear.html#cybernetics"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Cybernetics</a>
+                    <a href="./gear.html#consumables"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Drugs and Consumables</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('weaponDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Weapons <i class="fa fa-caret-down"></i></button>
+                <div id="weaponDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./weapons.html#weapons"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapons</a>
+                    <a href="./weapons.html#weaponQual"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Qualities</a>
+                    <a href="./weapons.html#weaponMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Mods</a>
+                    <a href="./weapons.html#ammo"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Special Ammo</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('armourDropdown')" class="w3-button w3-round-large w3-hover-maroon">Armour
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="armourDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./armour.html#armour"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour</a>
+                    <a href="./armour.html#armourMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour Mods</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('psykerDropdown')" class="w3-button w3-round-large w3-hover-purple">Psyker
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="psykerDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./psyker.html#psyPowers"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Powers</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./psyker.html#psyPhenom"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Phenomena</a>
+                    <a href="./psyker.html#psyPerils"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Perils of the Warp</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('charDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Character <i class="fa fa-caret-down"></i></button>
+                <div id="charDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./character.html#skills"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Skills</a>
+                    <a href="./character.html#talents"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Talents</a>
+                    <a href="./character.html#traits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Traits</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./character.html#homeworlds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Homeworlds</a>
+                    <a href="./character.html#backgrounds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Backgrounds</a>
+                    <a href="./character.html#roles"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Roles</a>
+                    <a href="./character.html#divinations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Divinations</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('effectsDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Effects <i class="fa fa-caret-down"></i></button>
+                <div id="effectsDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./effects.html#shock"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Fear and Shock</a>
+                    <a href="./effects.html#snapping"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Snapping Out of It</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#insanity"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Insanity</a>
+                    <a href="./effects.html#trauma"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mental Trauma</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#corruption"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Corruption</a>
+                    <a href="./effects.html#maligna"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Malignancies</a>
+                    <a href="./effects.html#mutations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mutations</a>
+                </div>
+            </div>
+        </div>
+        <div class="w3-bar">
+            <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-hide-small w3-round-large">Exp
+                Costs</a>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Combat <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./combat.html#combatActions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Actions</a>
+                    <a href="./combat.html#hitLocations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Hit
+                        Locations</a>
+                    <a href="./combat.html#conditions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Conditions and Damage</a>
+                    <a href="./combat.html#circumstances"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Circumstances</a>
+                    <a href="./combat.html#difficulties"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Difficulty
+                        Examples</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Critical Hits <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./crit.html#crits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Critical Rolls</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./crit.html#energyCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Energy</a>
+                    <a href="./crit.html#explosiveCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Explosive</a>
+                    <a href="./crit.html#impactCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Impact</a>
+                    <a href="./crit.html#rendingCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Rending</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Equipment <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./gear.html#gear"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Gear</a>
+                    <a href="./gear.html#tools"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Tools</a>
+                    <a href="./gear.html#cybernetics"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Cybernetics</a>
+                    <a href="./gear.html#consumables"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Drugs and Consumables</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Weapons <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./weapons.html#weapons"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapons</a>
+                    <a href="./weapons.html#weaponQual"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Qualities</a>
+                    <a href="./weapons.html#weaponMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Mods</a>
+                    <a href="./weapons.html#ammo"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Special Ammo</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Armour <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./armour.html#armour"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour</a>
+                    <a href="./armour.html#armourMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour Mods</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-purple">Psyker <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./psyker.html#psyPowers"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Powers</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./psyker.html#psyPhenom"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Phenomena</a>
+                    <a href="./psyker.html#psyPerils"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Perils of the Warp</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Character <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./character.html#skills"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Skills</a>
+                    <a href="./character.html#talents"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Talents</a>
+                    <a href="./character.html#traits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Traits</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./character.html#homeworlds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Homeworlds</a>
+                    <a href="./character.html#backgrounds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Backgrounds</a>
+                    <a href="./character.html#roles"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Roles</a>
+                    <a href="./character.html#divinations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Divinations</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Effects <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./effects.html#shock"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Fear and Shock</a>
+                    <a href="./effects.html#snapping"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Snapping Out of It</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#insanity"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Insanity</a>
+                    <a href="./effects.html#trauma"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mental Trauma</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#corruption"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Corruption</a>
+                    <a href="./effects.html#maligna"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Malignancies</a>
+                    <a href="./effects.html#mutations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mutations</a>
+                </div>
+            </div>
+            <a class="w3-bar-item w3-button w3-round-large w3-right w3-hide-small w3-blue" id="charGen" target="_blank"
+                href="https://ajott.github.io/dh2chargen">Character Creator</a>
+            <a href="javascript:void(0)" class="w3-red w3-bar-item w3-button w3-top-left w3-hide-large w3-hide-medium"
+                onclick="showMenu()">&#9776;</a>
+        </div>
+    </div>
+
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div id="charPane">
+                <div id="skills" class="info">
+                    <h3 class="headingLight">Skill Descriptions</h3>
+                    <p>Generally, a player will make a test with the main characteristic for a skill. However,
+                        sometimes
+                        the GM determines that an alternate characteristic would make more sense in a given
+                        situation
+                        - perhaps an attempt to use Deceive to craft a disguise would rely on a character's
+                        Intelligence,
+                        rather than their Fellowship. Should a test need to be made with an alternate
+                        characteristic,
+                        this must be determined before the roll.
+                    </p>
+                    <hr />
+                    <p>Recommended alternate characteristics for skills can be found in Table 3-3: Skill List on CB
+                        p. 99</p>
+                    <table id="skillTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Main Char</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                                <th>Special Use</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Acrobatics</td>
+                                <td>Agility</td>
+                                <td>Full Action</td>
+                                <td>Keep balance or to avoid falling, jump to or from a height, or move around
+                                    obstacles
+                                    without falling.</td>
+                                <td>
+                                    <ul>
+                                        <li>Contortionist: Can use his Acrobatics skill to escape from bonds as a
+                                            Full Action.
+                                            May also escape from a grapple by using their Acrobatics skill instead
+                                            of
+                                            their Agility or Strength when grappling. </li>
+                                        <li>Manoeuvring: The character may make a Disengage action as a Half Action
+                                            if he
+                                            passes a Challenging (+0) Acrobatics skill test.</li>
+                                        <li>Jumping: When jumping or leaping, may use the Acrobatics skill in the
+                                            place of
+                                            AG and S tests. When determining Falling damage, can make an Acrobatics
+                                            skill
+                                            test to reduce the effective distance fallen by a number of metres equal
+                                            to his AGB.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Athletics</td>
+                                <td>Strength</td>
+                                <td>Full Action</td>
+                                <td>Swim across water, push beyond one's limits, or climb difficult terrain</td>
+                                <td>
+                                    <ul>
+                                        <li> Endurance: As a Free Action, can make a Dificult (-10) Athletics skill
+                                            test whenever
+                                            he suffers a level of Fatigue as a result of running, swimming, or
+                                            climbing
+                                            to ignore its effects. They can continue to take tests and ignore
+                                            Fatigue
+                                            gained indefinitely; however, if a test fails, they must rest for at
+                                            least
+                                            4 hours and cannot use his Athletics skill again during that time.</li>
+                                        <li>Heft: As a Free Action, a character can make a Challenging (+0)
+                                            Athletics skill
+                                            test to increase his carrying capability for a single encounter. For
+                                            every
+                                            degree of success, Strength is increased by 10 for how much weight can
+                                            carry,
+                                            lift, or drag, to a max S of 100. Hefting can only be attempted once per
+                                            encounter.
+                                        </li>
+                                    </ul>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Awareness</td>
+                                <td>Perception</td>
+                                <td>Free Action</td>
+                                <td>Spot ambushes, search for clues or hidden items, or evesdrop on conversations
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>Lip Reading: Dificulty of this test is modified -10 for every 10 metres
+                                            of distance
+                                            between the character and the speaker. A successful Awareness skill test
+                                            reveals the general gist of the conversation.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Charm</td>
+                                <td>Fellowship</td>
+                                <td>1 minute</td>
+                                <td>Improve someone's opinion of thet character, distract someone by drawing his
+                                    focus away
+                                    from others, or gather information from locals or strangers.</td>
+                                <td>Target makes a Willpower save against Charm's characteristic test.</td>
+                            </tr>
+                            <tr>
+                                <td>Command</td>
+                                <td>Fellowship</td>
+                                <td>Half for Simple, Full for complex</td>
+                                <td>Send an NPC ally into an extremely dangerous situation or into open combat,
+                                    rally allied
+                                    fighting forces, or organise them in the face of a surprise attack.
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>Inspire: As a Full Action, the character can make a Challenging (+0)
+                                            Command
+                                            test to inspire one or more of his followers. Inspired followers receive
+                                            a +10 on their next skill or characteristic test.</li>
+                                        <li>Terrify: As a Reaction, try to counter the effects of Fear in his allies
+                                            should
+                                            they fail their WP test. Make a Command skill test opposed by the WP of
+                                            the
+                                            Fear-causing creature. Both the character and the creature add +10 to
+                                            their
+                                            rolls for each level of Fear they possess. If the character is
+                                            successful,
+                                            his allies ignore the effects of Fear</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Commerce</td>
+                                <td>Intelligence</td>
+                                <td>1 minute, or more for complex deals</td>
+                                <td>Gain a bonus when attempting a Requsition test, try to track down a rare item,
+                                    or ascertain
+                                    the value of an item.</td>
+                                <td>
+                                    Target makes a Commerce or Willpower save to oppose.
+                                    <br />
+                                    <br />
+                                    <ul>
+                                        <li>Evaluate: A success tells the character the Availability of the item he
+                                            is evaluating,
+                                            while a failure tells him nothing. If he fails by more than 3 degrees of
+                                            failure, the GM should give a false Availability.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Common Lore</td>
+                                <td>Intelligence</td>
+                                <td>Free Action</td>
+                                <td>Learn about a situation, location, character, or object; subject to
+                                    specialization.</td>
+                                <td>Common Lore has multiple specializations; these are listed on the character
+                                    sheet.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Deceive</td>
+                                <td>Fellowship</td>
+                                <td>1 minute, or more for complex deception</td>
+                                <td>Tell a convincing lie, distract someone with rambling nonsense, or try to
+                                    disguise oneself.
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>Disguise: Can create a disguise, given time and raw materials. The time
+                                            taken
+                                            depends greatly on the complexity of the disguise. Additional deception
+                                            checks
+                                            may be necessary as one comes under scrutiny.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Dodge</td>
+                                <td>Agility</td>
+                                <td>Reaction</td>
+                                <td>Dodge a melee or ranged attack, or to avoid hazards.</td>
+                                <td>
+                                    <ul>
+                                        <li>Dive for Cover: If there is cover with a number of metres equal to the
+                                            character's
+                                            AGB and they are not Prone, they can Dive for Cover as a Reaction
+                                            against
+                                            a ranged attack instead of trying to Evade. This requires an Ordinary
+                                            (+10)
+                                            Dodge test; if successful, the character leaps behind cover and goes
+                                            Prone.
+                                            They are still hit by the attack, but benefit from the AP of the Cover.
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Forbidden Lore</td>
+                                <td>Intelligence</td>
+                                <td>Free Action</td>
+                                <td>Seek information about potential cult activity, learn about the operations of
+                                    xenos,
+                                    or determine the proper procedure to summon a Daemon.</td>
+                                <td>Forbidden lore has multiple specializations; these are listed on the character
+                                    sheet.</td>
+                            </tr>
+                            <tr>
+                                <td>Inquiry</td>
+                                <td>Fellowship</td>
+                                <td>One hour or more</td>
+                                <td colspan="2">Try to track down a local crime lord, attempt to learn the attidues
+                                    of the local populace,
+                                    or gather information about specific locations.</td>
+                            </tr>
+                            <tr>
+                                <td>Interrogation</td>
+                                <td>Willpower</td>
+                                <td>One hour or more</td>
+                                <td colspan="2">Attempt to learn battle plans from a commander, force an Imperial
+                                    Adept to reveal hidden
+                                    information, or have a cultist reveal a hidden meeting place.</td>
+                            </tr>
+                            <tr>
+                                <td>Intimidate</td>
+                                <td>Strength</td>
+                                <td>Full Action</td>
+                                <td colspan="2">Coerce someone into acting a certain way, or try to make an opponent
+                                    back down from a
+                                    fight.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Linguistics</td>
+                                <td>Intelligence</td>
+                                <td>Free Action</td>
+                                <td colspan="2">Decipher an archaic text, compose a moving piece of prose, or convey
+                                    a message with limited
+                                    vocabulary.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Logic</td>
+                                <td>Intelligence</td>
+                                <td>1 minute, or more for complex problem</td>
+                                <td>Solve a riddle, look for clues in vast amounts of unreleated information, or try
+                                    to win
+                                    a game of chance.</td>
+                                <td>
+                                    <ul>
+                                        <li>Gambling: In a typical game, each participant wagers an amount, though
+                                            these
+                                            are typically the same, and makes an Opposed test with the Logic skill.
+                                            The
+                                            character with the most degrees of success or fewest degrees of failure
+                                            wins
+                                            the pot.</li>
+                                        <li>Ciphers and Decoding: A character can use the Logic skill to unravel
+                                            ciphers
+                                            and codes. This usually takes a great deal of time. In general, these
+                                            tests
+                                            should be Difficult (-10) at the easiest, unless the cipher is already
+                                            partially
+                                            decoded or the character has a key available to aid his efforts.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Medicae</td>
+                                <td>Intelligence</td>
+                                <td>Full Action</td>
+                                <td>Apply first aid to a wounded ally, diagnose an affliction and develop a
+                                    treatment, or
+                                    perform a surgical procedure for removal of a organ or implantation of a
+                                    cybernetic</td>
+                                <td>
+                                    <ul>
+                                        <li>First Aid: make a +0 Medicae test, with a -10 penalty if Heavily Damaged
+                                            or a
+                                            -10 penalty for every point of Critical damage. If successful, remove
+                                            damage
+                                            equal to IB, plus one point of damage per DoS on the test (removing
+                                            Critical
+                                            damage before normal damage). A character can only be treated with first
+                                            aid once every 24 hours, and only when not also under extended care.
+                                        </li>
+                                        <li>Extended Care: Can treat paitents equal to IB, plus one per assistant.
+                                            For each
+                                            patient beyond this number, he suffers a -10 penalty on Medicae tests.
+                                            For
+                                            each assistant trained in the Medicae skill, gain +10. At the end of
+                                            each
+                                            24-hour period of extended care, the primary healer performs a (+10)
+                                            Medicae
+                                            test. If successful, patients heal double the wounds as with their
+                                            natural
+                                            rate of healing.</li>
+                                        <li>Diagnose: A successful skill test yields the name of the ailment and
+                                            basic treatments.
+                                            When used on groups, a successful skill test can prevent the spread of
+                                            disease
+                                            or mitigate the effects of malnutrition.</li>
+                                    </ul>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Navigate (Surface)</td>
+                                <td>Intelligence</td>
+                                <td>1 minute for simple location; 1d5 hours for plotting courses or routes.</td>
+                                <td colspan="2">Make a journey across unfamiliar terrain, find one's bearings in a
+                                    strange place, or
+                                    create a map showing the quickest route from one point to another.</td>
+                            </tr>
+                            <tr>
+                                <td>Navigate (Stellar)</td>
+                                <td>Intelligence</td>
+                                <td>1 minute for simple location; 1d5 hours for plotting courses or routes.</td>
+                                <td colspan="2">Make a journey within a star system, find a ship stranded in an
+                                    unknown region of space,
+                                    or find the quickest route from one location within a system (such as a planet)
+                                    to
+                                    another location in the system.</td>
+                            </tr>
+                            <tr>
+                                <td>Navigate (Warp)</td>
+                                <td>Intelligence</td>
+                                <td>1 minute for simple location; 1d5 hours for plotting courses or routes.</td>
+                                <td colspan="2">Guide a starship through the Warp, or convert a journey into a Warp
+                                    route chart</td>
+                            </tr>
+                            <tr>
+                                <td>Operate (Surface)</td>
+                                <td>Agility</td>
+                                <td>Half Action</td>
+                                <td colspan="2">Drive a vehicle in combat, push a vehicle beyond its normal limits,
+                                    or attempt to manoeuvre
+                                    though a crowded highway.</td>
+                            </tr>
+                            <tr>
+                                <td>Operate (Aeronautica)</td>
+                                <td>Agility</td>
+                                <td>Half Action</td>
+                                <td colspan="2">Pilot an aero in a combat situation, fly beyond its limit, or try to
+                                    land on difficult
+                                    terrain.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Operate (Voidship)</td>
+                                <td>Agility</td>
+                                <td>Half Action</td>
+                                <td colspan="2">Manoeuvre a voidship or oversee the use of a macrobattery, orbital
+                                    laser, or ship's weaponry.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Parry</td>
+                                <td>Weapon Skill</td>
+                                <td>Reaction</td>
+                                <td colspan="2">Attempt to deflect blows in melee.</td>
+                            </tr>
+                            <tr>
+                                <td>Psyniscience</td>
+                                <td>Perception</td>
+                                <td>Half Action</td>
+                                <td colspan="2">Hunt for the location of daemons, detect the effects of psychic
+                                    power, or determine a
+                                    thin point in the veil between the Materium and the Warp.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Scholastic Lore</td>
+                                <td>Intelligence</td>
+                                <td>Free Action</td>
+                                <td>Recount legends from the past, understand an obscure law, or identify a rare
+                                    beast.</td>
+                                <td>Scholastic Lore has multiple specializations; these are reflected on the
+                                    character sheet.</td>
+                            </tr>
+                            <tr>
+                                <td>Scrutiny</td>
+                                <td>Intelligence</td>
+                                <td>Half Action</td>
+                                <td colspan="2">Tell if someone is lying, collate information and gather conclusions
+                                    from a report, or
+                                    interpret augur or auspex readings.</td>
+                            </tr>
+                            <tr>
+                                <td>Security</td>
+                                <td>Intelligence</td>
+                                <td>1 minute, reduced by 10 seconds for each degree of success.</td>
+                                <td>Open a locked door, break into a cogiator and discover its secrets, or lay traps
+                                    for
+                                    a ambush.</td>
+                                <td>
+                                    <ul>
+                                        <li>Traps: Can fashion and set traps. The time and resources required, and
+                                            damage
+                                            caused by, these kinds of traps depend on the GM's discretion and the
+                                            intended
+                                            complexity and effects of the traps.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sleight of Hand</td>
+                                <td>Agility</td>
+                                <td>Half Action, or can be performed as a Free Action with an additional -10
+                                    penalty.</td>
+                                <td colspan="2">Attempt to steal something from the target's pocket, seek to palm
+                                    evidence at a crime
+                                    scene, or try to plant illegal narcotics into a suspect's robes.</td>
+                            </tr>
+                            <tr>
+                                <td>Stealth</td>
+                                <td>Agility</td>
+                                <td>Free Action</td>
+                                <td>Scout an enemy force without being detected, sneak up on a foe and kill him
+                                    quietly,
+                                    or follow someone without arousing suspicion.</td>
+                                <td>
+                                    <ul>
+                                        <li>Shadowing: Stealth can be used to shadow others and follow them unseen,
+                                            either
+                                            on foot, in vehicles, or even in shuttles and starships. Stealth skill
+                                            tests
+                                            for shadowing are always Opposed tests against the opponent's Awareness.
+                                            A single Stealth skill test is sufficient to follow the opponent unseen
+                                            for
+                                            5 minutes per degree of success.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Survival</td>
+                                <td>Perception</td>
+                                <td>Full Action</td>
+                                <td>Find food or water in a hostile environment, start a fire with homemade tools,
+                                    or track
+                                    a foe across a hive.</td>
+                                <td>
+                                    <ul>
+                                        <li>Crafting: Survival can be used to make all kinds of primitive devices,
+                                            from cloaks
+                                            and stone buildings to spears and armour.</li>
+                                        <li>Tracking: A character can use the Survival skill to follow the signs
+                                            left by
+                                            his quarry. A cunning or devious quarry might attempt to conceal or
+                                            erase
+                                            any tracks; in cases where an opponent has done this, the tracker should
+                                            make an Opposed test against the prey's Stealth.</li>
+                                        <li>Wrangling: Characters can tame, train, and potentially ride animals
+                                            encountered
+                                            in their travels. Both taming and training beasts are Extended tests,
+                                            the
+                                            duration of which is determined by the nature and temperament of the
+                                            creature
+                                            involved. Wrangling is of no use against cyber or psy-bonded animals,
+                                            nor
+                                            against any creatures with true sentience. </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tech-Use</td>
+                                <td>Intelligence</td>
+                                <td>1 minute, or more for more complex systems.</td>
+                                <td>Repair a broken weapon or vehicle, push a piece of technology beyond its normal
+                                    limits,
+                                    or determine how to use unknown technology.</td>
+                                <td>
+                                    <ul>
+                                        <li>Crafting: can be used to make technical devices, from simple clockwork
+                                            and steam
+                                            engines to advanced weaponry and armour. The time, difficulty, and
+                                            materials
+                                            it takes to create these items are greatly dependent on their
+                                            complexity.</li>
+                                        <li>Demolitions: Success on a Tech-Use skill test indicates a character has
+                                            successfully
+                                            planted an explosive charge, and set a trigger of his choice. Defusing
+                                            charges
+                                            also falls under the Tech-Use skill, with an Opposed test against the
+                                            Tech-Use
+                                            skill test of the individual who set the explosives. Winning the test
+                                            defuses
+                                            the bomb. Simple failure means that while the charge has not been
+                                            disarmed,
+                                            neither has it gone off. Four or more degrees of failure indicate the
+                                            character
+                                            has set off the device, suffering the consequences of the explosion.
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Trade</td>
+                                <td>Intelligence</td>
+                                <td>Variable depending on task and complexity.</td>
+                                <td>Prepare a meal for high ranking officers, carve one's sigil on a chainsword, or
+                                    uncover
+                                    the remains of a lost colony.</td>
+                                <td>Trade has multiple specializations; these are detailed on the character sheet.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="talents" class="info">
+                    <h3 class="headingLight">Talents</h3>
+                    <h4 class="headingLight">Exp Costs:</h4>
+                    <table class="w3-table w3-striped w3-hoverable w3-bordered" style="width: 50%;">
+                        <thead>
+                            <tr>
+                                <th>Aptitudes</th>
+                                <th>Tier 1</th>
+                                <th>Tier 2</th>
+                                <th>Tier 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Two</td>
+                                <td>200</td>
+                                <td>300</td>
+                                <td>400</td>
+                            </tr>
+                            <tr>
+                                <td>One</td>
+                                <td>300</td>
+                                <td>450</td>
+                                <td>600</td>
+                            </tr>
+                            <tr>
+                                <td>Zero</td>
+                                <td>600</td>
+                                <td>900</td>
+                                <td>1,200</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <br/>
+                    <input class="w3-input w3-border w3-padding w3-grey w3-round" type="text"
+                        placeholder="Search for talents..." id="talentSearch" onkeyup="talentFilter()"
+                        style="width: 30%; display: inline;">
+                    &emsp; or choose a tier &emsp;
+                    <select id="talentTierSelect" onchange="talentTierFilter()" class="w3-round w3-large">
+                        <option>...</option>
+                        <option class="tier1" value="T1">Tier 1</option>
+                        <option class="tier2" value="T2">Tier 2</option>
+                        <option class="tier3" value="T3">Tier 3</option>
+                    </select>
+                    <br/>
+                    <br/>
+                    <table id="talentTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Prerequisites</th>
+                                <th>Aptitude 1</th>
+                                <th>Aptitude 2</th>
+                                <th>Tier</th>
+                                <th>Benefit</th>
+                                <th>Page</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ambidextrous</td>
+                                <td>Ag 30</td>
+                                <td>Weapon Skill</td>
+                                <td>Ballistic Skill</td>
+                                <td class="tier1">T1</td>
+                                <td>When combined with Two-Weapon Wielder, the penalty for attacks with both weapons
+                                    in the
+                                    same turn drops to -10.</td>
+                                <td>PG 123 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Blind Fighting</td>
+                                <td>Per 30</td>
+                                <td>Perception</td>
+                                <td>Fieldcraft</td>
+                                <td class="tier1">T1</td>
+                                <td>Ignores all penalties for fighting with a melee weapon while suffering from
+                                    obscured
+                                    vision
+                                </td>
+                                <td>PG 123 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Bodyguard</td>
+                                <td>Ag 35</td>
+                                <td>Agility</td>
+                                <td>Defence</td>
+                                <td class="tier1">T1</td>
+                                <td>After an enemy makes a successful attack against an ally, the character may use
+                                    a Reaction
+                                    to move up to his Half Move distance in order to interpose himself between the
+                                    attacker
+                                    and target. The attack is then resolved against the character instead of the
+                                    original
+                                    target. In the case of a melee attack, the character may also attempt to Parry
+                                    the
+                                    attack as part of his Reaction.</td>
+                                <td>PG 60 EB</td>
+                            </tr>
+                            <tr>
+                                <td>Catfall</td>
+                                <td>Ag 30</td>
+                                <td>Agility</td>
+                                <td>Fieldcraft</td>
+                                <td class="tier1">T1</td>
+                                <td>Reduces the effective distance of all falls by a number of metres equal to his
+                                    Agility
+                                    bonus. Also adds +20 to his Acrobatics skill tests when using Jump</td>
+                                <td>PG 124 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Clues from the Crowds</td>
+                                <td>Fel 30</td>
+                                <td>General</td>
+                                <td>Social </td>
+                                <td class="tier1">T1</td>
+                                <td>Once per day, he can re-roll a test made to gather information from a group of
+                                    people.</td>
+                                <td>PG 124 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Die Hard</td>
+                                <td>WP 40</td>
+                                <td>Willpower</td>
+                                <td>Defence </td>
+                                <td class="tier1">T1</td>
+                                <td>Test Willpower to avoid Fatigue from Blood Loss with a Challenging (+0)
+                                    Willpower test.</td>
+                                <td>PG 125 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Disarm </td>
+                                <td>Ag 30</td>
+                                <td>Weapon Skill</td>
+                                <td>Defence</td>
+                                <td class="tier1">T1</td>
+                                <td>As a Full Action, may make an Opposed Weapon Skill test and force opponent to
+                                    drop weapon.
+                                    If 3 or more DoS, can steal weapon.</td>
+                                <td>PG 125 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Double Team</td>
+                                <td>-</td>
+                                <td>General</td>
+                                <td>Offence </td>
+                                <td class="tier1">T1</td>
+                                <td>Gain additional +10 for outnumbering opponent.</td>
+                                <td>PG 126 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Enemy (choose)</td>
+                                <td>-</td>
+                                <td>General</td>
+                                <td>Social</td>
+                                <td class="tier1">T1</td>
+                                <td>Suffers a -10 times X penalty to Fellowship and Influence tests when dealing
+                                    with group.</td>
+                                <td>PG 126 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Ferric Summons</td>
+                                <td>Ferric Lure Implants, Mechanicus Implants</td>
+                                <td>Willpower</td>
+                                <td>Tech</td>
+                                <td class="tier1">T1</td>
+                                <td>Can summon larger metallic objects up to 2 kilograms per point of his Willpower
+                                    bonus,
+                                    and can summon such objects up to 40 metres.</td>
+                                <td>PG 127 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Frenzy</td>
+                                <td>-</td>
+                                <td>Strength</td>
+                                <td>Offence</td>
+                                <td class="tier1">T1</td>
+                                <td>May spend one full round to enter Frenzy gaining +10 bonus to Weapon Skill,
+                                    Strength,
+                                    Toughness, and Willpower, but suffering a -20 penalty to Ballistic Skill,
+                                    Intelligence,
+                                    and Fellowship and is immune to Fear, Pinning, Stunning effects, and the effects
+                                    of Fatigue; he cannot Parry, retreat, or flee. He remains Frenzied for the
+                                    duration
+                                    of the combat, and cannot use psychic powers while Frenzied. After combat ends
+                                    can
+                                    make a Willpower test to snap out and cannot Frenzy again for at least an hour.
+                                </td>
+                                <td>PG 127 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Grenadier</td>
+                                <td>BS 35</td>
+                                <td>Ballistic Skill</td>
+                                <td>Finesse</td>
+                                <td class="tier1">T1</td>
+                                <td>When the character misses with a thrown weapon or weapon with the Blast quality,
+                                    he may
+                                    reduce the distance it scatters by a number of metres up to half his BS bonus
+                                </td>
+                                <td>PG 62 EO</td>
+                            </tr>
+                            <tr>
+                                <td>Iron Jaw</td>
+                                <td>T 40</td>
+                                <td>Toughness</td>
+                                <td>Defence</td>
+                                <td class="tier1">T1</td>
+                                <td>Test Challenging (+0) Toughness Test to overcome Stunning.</td>
+                                <td>PG 128 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Jaded</td>
+                                <td>WP 40</td>
+                                <td>Willpower</td>
+                                <td>Defence</td>
+                                <td class="tier1">T1</td>
+                                <td>Ignore mundane horrors - dead bodies, xenos abominations, etc. do not cause the
+                                    Acolyte
+                                    to gain Insanity points, nor do they require a fear rolls. Daemons,
+                                    manifestations
+                                    of the Warp, and other unnatural or supernatural horrors still inflict their
+                                    effects.
+                                </td>
+                                <td>PG 128 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Keen Intuition</td>
+                                <td>Int 35</td>
+                                <td>Perception</td>
+                                <td>Social</td>
+                                <td class="tier1">T1</td>
+                                <td>Can retry Awareness test once with -10 modifier.</td>
+                                <td>PG 129 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Leap Up</td>
+                                <td>Ag 30</td>
+                                <td>Agility</td>
+                                <td>General</td>
+                                <td class="tier1">T1</td>
+                                <td>Stand as a Free Action.</td>
+                                <td>PG 129 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Leaping Dodge</td>
+                                <td>Ag 35, Rank 2 in the Dodge skill</td>
+                                <td>Agility</td>
+                                <td>Defence</td>
+                                <td class="tier1">T1</td>
+                                <td>When he would make an Agility test to avoid attacks from weapons with the Spray
+                                    quality,
+                                    he may make the test using his Dodge (Ag) skill instead.</td>
+                                <td>PG 63 EO</td>
+                            </tr>
+                            <tr>
+                                <td>Mounted Warrior</td>
+                                <td>Rank 2 (Trained) in any Operate skill or Rank 2(Trained) in Survival skill, BS
+                                    30 or
+                                    WS 30</td>
+                                <td>Weapon Skill / Ballistic Skill</td>
+                                <td>Offence</td>
+                                <td class="tier1">T1</td>
+                                <td>Reduces any penalty for making attacks (Melee or Ranged) from a moving vehicle
+                                    or mount
+                                    by 10 for each advance.</td>
+                                <td>PG 58 EI</td>
+                            </tr>
+                            <tr>
+                                <td>Nowhere to Hide</td>
+                                <td>Per 30</td>
+                                <td>Perception</td>
+                                <td>Offence</td>
+                                <td class="tier1">T1</td>
+                                <td>Can add DoS from the attack to reduce armour value of cover.</td>
+                                <td>PG 130 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Peer (choose)</td>
+                                <td>Fel 30</td>
+                                <td>Fellowship</td>
+                                <td>Social</td>
+                                <td class="tier1">T1</td>
+                                <td>Character has good reputation amongst chosen group with bonus to Fellowship
+                                    tests increases
+                                    to +10 times X. Additionally, when the character acquires his talent, also
+                                    increases
+                                    his Influence by 1.</td>
+                                <td>PG 130 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Quick Draw</td>
+                                <td>-</td>
+                                <td>Agility</td>
+                                <td>Finesse</td>
+                                <td class="tier1">T1</td>
+                                <td>Draw weapon as Free Action.</td>
+                                <td>PG 131 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Rapid Reload</td>
+                                <td>-</td>
+                                <td>Agility</td>
+                                <td>Fieldcraft </td>
+                                <td class="tier1">T1</td>
+                                <td>Reduce reload time by half time.</td>
+                                <td>PG 131 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Resistance (choose)</td>
+                                <td>-</td>
+                                <td>Toughness</td>
+                                <td>Defence</td>
+                                <td class="tier1">T1</td>
+                                <td>Gain +10 bonus to particular resistance test.</td>
+                                <td>PG 131 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Skilled Rider</td>
+                                <td>Rank 2 in any Operate skill </td>
+                                <td>Agility</td>
+                                <td>Fieldcraft</td>
+                                <td class="tier1">T1</td>
+                                <td>Whenever the character would be thrown from or tossed about within his vehicle,
+                                    he makes
+                                    an Ordinary (+10) Agility test. If he succeeds, the character may choose to
+                                    either
+                                    land safely on his feet or retain in his original position in the vehicle. In
+                                    addition,
+                                    once per round the character can attempt an Ordinary (+10) Agility test to Mount
+                                    or Dismount a vehicle as a Free Action.</td>
+                                <td>PG 63 EO</td>
+                            </tr>
+                            <tr>
+                                <td>Sound Constitution</td>
+                                <td>-</td>
+                                <td>Toughness</td>
+                                <td>General</td>
+                                <td class="tier1">T1</td>
+                                <td>Gain an additional wound.</td>
+                                <td>PG 131 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Takedown</td>
+                                <td>-</td>
+                                <td>Weapon Skill</td>
+                                <td>Offence</td>
+                                <td class="tier1">T1</td>
+                                <td>Make special attack to stun opponent.</td>
+                                <td>PG 132 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Technical Knock</td>
+                                <td>Int 30</td>
+                                <td>Intelligence</td>
+                                <td>Tech</td>
+                                <td class="tier1">T1</td>
+                                <td>Un-jam gun as Half Action.</td>
+                                <td>PG 132 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Warp Sense</td>
+                                <td>Psy Rating, Psyniscience, Per 30 </td>
+                                <td>Perception</td>
+                                <td>Psyker</td>
+                                <td class="tier1">T1</td>
+                                <td>Allows Psyniscience test as Free Action.</td>
+                                <td>PG 133 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Weapon Training (choose)</td>
+                                <td>-</td>
+                                <td>General</td>
+                                <td>Finesse</td>
+                                <td class="tier1">T1</td>
+                                <td>Use Weapon Group without penalty.</td>
+                                <td>PG 133 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Weapon-Tech</td>
+                                <td>Tech Use +10, Int 40</td>
+                                <td>Intelligence</td>
+                                <td>Tech</td>
+                                <td class="tier1">T1</td>
+                                <td>May enhance any Melta, Plasma, Power, or Exotic weapon by increases the weapon's
+                                    damage
+                                    and penetration by an amount equal to the character's Intelligence bonus until
+                                    the
+                                    end of the round once per encounter.</td>
+                                <td>PG 133 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Ambassador Imperialis</td>
+                                <td>Fellowship 35, Intelligence 35</td>
+                                <td>Perception</td>
+                                <td>Social</td>
+                                <td class="tier2">T2</td>
+                                <td>Any penalty to Interaction skill tests for dealing with xenos or non-Imperial
+                                    NPCs by
+                                    20. In addition, once per encounter, he can reroll a failed Interaction skill
+                                    test
+                                    when interacting with such an NPC. </td>
+                                <td>PG 62 EO</td>
+                            </tr>
+                            <tr>
+                                <td>Archivator</td>
+                                <td>Intelligence 40</td>
+                                <td>Knowledge</td>
+                                <td>Social</td>
+                                <td class="tier2">T2</td>
+                                <td>A Scholastic Lore or Forbidden Lore test utilising sources of recorded
+                                    information of
+                                    any sort can re-roll with -10.</td>
+                                <td>PG 62 EO</td>
+                            </tr>
+                            <tr>
+                                <td>Armor-Monger</td>
+                                <td>Int 35, Tech-Use, Trade (Armourer)</td>
+                                <td>Intelligence</td>
+                                <td>Tech</td>
+                                <td class="tier2">T2</td>
+                                <td>Gains an extra amount of Armor points equal to his Intelligence bonus. Takes an
+                                    hour
+                                    each day.
+                                </td>
+                                <td>PG 123 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Battle Rage</td>
+                                <td>Frenzy</td>
+                                <td>Strength</td>
+                                <td>Defence</td>
+                                <td class="tier2">T2</td>
+                                <td>Can Parry while Frenzied, and can re-roll a failed test to snap out of Frenzy or
+                                    resist
+                                    entering Frenzy if they choose.</td>
+                                <td>PG 123 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Bulging Biceps</td>
+                                <td>S 45</td>
+                                <td>Strength</td>
+                                <td>Offence</td>
+                                <td class="tier2">T2</td>
+                                <td>Remove bracing requirement from Heavy weapons, and +20 to his Athletics skill
+                                    test when
+                                    using Heft.
+                                </td>
+                                <td>PG 123 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Bulwark of Faith</td>
+                                <td>WP 45, Iron Faith</td>
+                                <td>Defence</td>
+                                <td>Willpower</td>
+                                <td class="tier2">T2</td>
+                                <td>When passing a Fear test caused by a Daemon, the Daemon suffers 1 Energy damage
+                                    ignoring
+                                    armour and Toughness bonus for each degree of success on the Fear test.</td>
+                                <td>PG 60 EB</td>
+                            </tr>
+                            <tr>
+                                <td>Combat Master</td>
+                                <td>WS 30</td>
+                                <td>Weapon Skill</td>
+                                <td>Defence</td>
+                                <td class="tier2">T2</td>
+                                <td>Opponents get no bonus for outnumbering the character.</td>
+                                <td>PG 124 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Constant Vigilance (choose)</td>
+                                <td>Int 35 or Per 35, Awareness +10</td>
+                                <td>Perception</td>
+                                <td>Defence</td>
+                                <td class="tier2">T2</td>
+                                <td>Can use Per or Int instead of Ag for Initiative rolls, and rolls two dice
+                                    (picking higher)
+                                    for the result.</td>
+                                <td>PG 124 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Contact Network</td>
+                                <td>Cover-Up, Int 35</td>
+                                <td>Fellowship</td>
+                                <td>Leadership</td>
+                                <td class="tier2">T2</td>
+                                <td>Use Fellowship instead of Influence for Requisition tests.</td>
+                                <td>PG 124 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Coordinated Interrogation</td>
+                                <td>S 40 or WP 40, Clues from the Crowds, Rank 1 (Known) Interrogation</td>
+                                <td>Intelligence</td>
+                                <td>Social</td>
+                                <td class="tier2">T2</td>
+                                <td>Has a +10 bonus to all Interrogate tests, additional +5 for others who also have
+                                    Coordinated
+                                    Interrogation
+                                </td>
+                                <td>PG 124 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Counter Attack</td>
+                                <td>WS 40</td>
+                                <td>Weapon Skill</td>
+                                <td>Defence</td>
+                                <td class="tier2">T2</td>
+                                <td>May make a Standard Attack after successful Parry with -20 to Weapon Skill.</td>
+                                <td>PG 125 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Cover-Up</td>
+                                <td>Int 35</td>
+                                <td>Intelligence</td>
+                                <td>Knowledge</td>
+                                <td class="tier2">T2</td>
+                                <td>Can reduce Influence by 1 to gain 1d5 Subtlety.</td>
+                                <td>PG 125 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Daemonhunter</td>
+                                <td>Forbidden Lore (Daemonology), WP 40</td>
+                                <td>Offence</td>
+                                <td>Willpower</td>
+                                <td class="tier2">T2</td>
+                                <td>May re-roll failed Awareness and Psyniscience Tests to detect the presence of
+                                    Daemons.
+                                    In addition, his attacks against Daemons gain the Proven (3) quality.</td>
+                                <td>PG 60 EB</td>
+                            </tr>
+                            <tr>
+                                <td>Daemonologist</td>
+                                <td>Psy rating 3, WP 45, Forbidden Lore (Daemonology)</td>
+                                <td>Psyker</td>
+                                <td>Willpower</td>
+                                <td class="tier2">T2</td>
+                                <td>When the character takes the Focus Power action and the target of the psychic
+                                    power is
+                                    a Daemon, he gains a +10 bonus to the Focus Power test. At the GM's discretion,
+                                    this
+                                    bonus may apply to other tests, such as rituals to summon or bind a Daemon.</td>
+                                <td>PG 60 EB</td>
+                            </tr>
+                            <tr>
+                                <td>Deny the Witch</td>
+                                <td>WP 35</td>
+                                <td>Willpower</td>
+                                <td>Defence</td>
+                                <td class="tier2">T2</td>
+                                <td>Can use Willpower to Evade against psychic attacks.</td>
+                                <td>PG 125 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Devastating Assault</td>
+                                <td>WS 35</td>
+                                <td>Weapon Skill</td>
+                                <td>Offence</td>
+                                <td class="tier2">T2</td>
+                                <td>Successful All Out Attack grants, may make a second All Out Attack once per
+                                    turn.</td>
+                                <td>PG 125 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Double Tap</td>
+                                <td>Two-Weapon Wielder</td>
+                                <td>Finesse</td>
+                                <td>Offence</td>
+                                <td class="tier2">T2</td>
+                                <td>A second ranged attack against the same target, grants a+20 bonus if scored 1 or
+                                    more
+                                    DoS.
+                                </td>
+                                <td>PG 125 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Exotic Weapon Training</td>
+                                <td>-</td>
+                                <td>Intelligence</td>
+                                <td>Finesse</td>
+                                <td class="tier2">T2</td>
+                                <td>Gain proficiency with one exotic weapon type.</td>
+                                <td>PG 127 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Face in a Crowd</td>
+                                <td>Fel 35, Clues from the Crowds</td>
+                                <td>Fellowship</td>
+                                <td>Social</td>
+                                <td class="tier2">T2</td>
+                                <td>Can use Fellowship instead of Agility when Shadowing.</td>
+                                <td>PG 127 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Field Vivisection</td>
+                                <td>BS or WS 40, Forbidden Lore (Xenos-Any), Rank 2 in the Medicae skill</td>
+                                <td>Ballistic Skill/Weapon Skill</td>
+                                <td>Knowledge</td>
+                                <td class="tier2">T2</td>
+                                <td>When using the Called Shot action with a melee or ranged attack (depending on
+                                    the Specialisation)
+                                    against a target for which the character has the appropriate Forbidden Lore
+                                    (Xenos)
+                                    skill, he makes a Medicae (WS) or Medicae (BS) test in place of the normal
+                                    Weapon
+                                    Skill or Ballistic Skill test. </td>
+                                <td>PG 62 EO</td>
+                            </tr>
+                            <tr>
+                                <td>Hard Target</td>
+                                <td>Ag 40</td>
+                                <td>Agility</td>
+                                <td>Defence</td>
+                                <td class="tier2">T2</td>
+                                <td>-20 to hit character when he Charges or Runs.</td>
+                                <td>PG 128 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Harden Soul</td>
+                                <td>WP 35, 10 Corruption points</td>
+                                <td>Defence</td>
+                                <td>Willpower</td>
+                                <td class="tier2">T2</td>
+                                <td>Whenever the character would gain Corruption points, he may reduce the amount
+                                    gained
+                                    by half (rounded up) and gain Insanity points equal to the amount reduced.</td>
+                                <td>PG 61 EB</td>
+                            </tr>
+                            <tr>
+                                <td>Hardy</td>
+                                <td>T 40</td>
+                                <td>Toughness</td>
+                                <td>Defence</td>
+                                <td class="tier2">T2</td>
+                                <td>Character always heals as if Lightly Damaged.</td>
+                                <td>PG 128 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Hatred (choose)</td>
+                                <td>-</td>
+                                <td>Weapon Skill</td>
+                                <td>Social</td>
+                                <td class="tier2">T2</td>
+                                <td>Gain +10 bonus to attack Weapon Skill tests. Must make a Challenging (+0)
+                                    Willpower test
+                                    to retreat or surrender.</td>
+                                <td>PG 128 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Hip Shooting</td>
+                                <td>BS 40, Ag 40</td>
+                                <td>Ballistic Skill</td>
+                                <td>Finesse</td>
+                                <td class="tier2">T2</td>
+                                <td>As a Full Action, can both move up to his Full Move rate and make a single shot
+                                    attack
+                                    with a ranged weapon per weapon.</td>
+                                <td>PG 128 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Hotshot Pilot</td>
+                                <td> Rank 2 in Survival or any Operate skill, Ag 35 </td>
+                                <td>Agility</td>
+                                <td>Tech</td>
+                                <td class="tier2">T2</td>
+                                <td>On an succesful Operate test, he may voluntarily suffer 1 level of Fatigue to
+                                    add a number
+                                    of DoS equal to half of his Agility bonus. When failed an Operate test, he may
+                                    voluntarily
+                                    suffer 1 level of Fatigue in order to reduce the degrees of failure by an amount
+                                    equal to his Agility bonus, to a minimum of 1. </td>
+                                <td>PG 62 EO</td>
+                            </tr>
+                            <tr>
+                                <td>Independent Targeting</td>
+                                <td>BS 40</td>
+                                <td>Ballistic Skill</td>
+                                <td>Finesse</td>
+                                <td class="tier2">T2</td>
+                                <td>Fire at multiple targets more than 10 metres apart when firing two weapons.</td>
+                                <td>PG 128 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Inescapable Attack (choose)</td>
+                                <td>BS 40 or WS 40,Per 35</td>
+                                <td>Weapon Skill / Ballistic Skill</td>
+                                <td>Finesse</td>
+                                <td class="tier2">T2</td>
+                                <td>Attacker imposes penalty on all evasion attempts made against this attack equal
+                                    to 10
+                                    times the total degrees of success scored on the attack test.</td>
+                                <td>PG 128 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Inspiring Aura</td>
+                                <td>Halo of Command</td>
+                                <td>Leadership</td>
+                                <td>Willpower</td>
+                                <td class="tier2">T2</td>
+                                <td>can affect allies of any kind with the Terrify special use for the Command skill
+                                    (pg
+                                    101 CB). This need not represent threats and intimidation, but might represent
+                                    inspiring
+                                    words, encouragement, or sheer steadfastness in the face of terrifying foes.
+                                </td>
+                                <td>PG 61 EB</td>
+                            </tr>
+                            <tr>
+                                <td>Iron Resolve</td>
+                                <td>Resistance (Fear), Jaded</td>
+                                <td>Defence</td>
+                                <td>Willpower</td>
+                                <td class="tier2">T2</td>
+                                <td>After failing a Fear or Pinning test, the character can re-roll the test with a
+                                    -10 modifier.</td>
+                                <td>PG 61 EB</td>
+                            </tr>
+                            <tr>
+                                <td>Killing Strike</td>
+                                <td>WS 50</td>
+                                <td>Weapon Skill</td>
+                                <td>Offence</td>
+                                <td class="tier2">T2</td>
+                                <td>Spend Fate point to make melee attacks unavoidable.</td>
+                                <td>PG 129 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Lexographer</td>
+                                <td>Rank 3 in Linguistics (Any)</td>
+                                <td>Intelligence</td>
+                                <td>Knowledge</td>
+                                <td class="tier2">T2</td>
+                                <td>The character can attempt any Linguistics skill in which he is not trained as an
+                                    untrained
+                                    skill test as if it were not a Specialist skill. </td>
+                                <td>PG 63 EO</td>
+                            </tr>
+                            <tr>
+                                <td>Luminen Shock</td>
+                                <td>Luminen Capacitors, Mechanicus Implants</td>
+                                <td>Weapon Skill</td>
+                                <td>Tech</td>
+                                <td class="tier2">T2</td>
+                                <td>Counts as a melee weapon that inflicts 1d10 plus his WPB in Energy damage, with
+                                    Pen 0
+                                    and the Shocking quality. Must pass a Toughness test or suffer 1 level of
+                                    Fatigue
+                                    after attack.</td>
+                                <td>PG 129 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Maglev Transcendence</td>
+                                <td>Maglev Coils, Mechanicus Implants</td>
+                                <td>Intelligence</td>
+                                <td>Tech</td>
+                                <td class="tier2">T2</td>
+                                <td>Can hover for a number of minutes equal to 1d10 plus twice his Toughness bonus.
+                                    He can
+                                    move his Run speed when making a Half Move action and suffers no damage from
+                                    falling
+                                    if the coils are active. Each use drains half the power stored in the coils (can
+                                    use the coils twice before recharging them).</td>
+                                <td>PG 129 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Marksman</td>
+                                <td>BS 35</td>
+                                <td>Ballistic Skill</td>
+                                <td>Finesse</td>
+                                <td class="tier2">T2</td>
+                                <td>No penalties for firing at long or extreme range.</td>
+                                <td>PG 130 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Mechadendrite Use (choose)</td>
+                                <td>Mechanicus Implants</td>
+                                <td>Intelligence</td>
+                                <td>Tech</td>
+                                <td class="tier2">T2</td>
+                                <td>Gain ability to use certain Mechadendrites. Weapon or Utility.</td>
+                                <td>PG 130 CB</td>
+                            </tr>
+                            <tr>
+                                <td>One-on-One</td>
+                                <td>WS 40</td>
+                                <td>Finesse</td>
+                                <td>Weapon Skill</td>
+                                <td class="tier2">T2</td>
+                                <td>When fighting a single enemy in melee combat, the character scores extra degrees
+                                    of success
+                                    on successful Weapon Skill tests equal to half of his Weapon Skill bonus
+                                    (rounded
+                                    down).
+                                </td>
+                                <td>PG 61 EB</td>
+                            </tr>
+                            <tr>
+                                <td>Penitent Psyker</td>
+                                <td>Psy rating, Strong Minded, WP 40</td>
+                                <td>Psyker</td>
+                                <td>Defence</td>
+                                <td class="tier2">T2</td>
+                                <td>psyker or ally within 10 metres target of a psychic power suffer any number of
+                                    levels
+                                    of Fatigue, each level grants +10 to opposed test to resist or avoid.</td>
+                                <td>PG 58 EI</td>
+                            </tr>
+                            <tr>
+                                <td>Precision Killer (choose)</td>
+                                <td>BS 40 or WS 40</td>
+                                <td>Ballistic Skill/Weapon Skill</td>
+                                <td>Finesse</td>
+                                <td class="tier2">T2</td>
+                                <td>No penalty to making Called Shot in either Ranged or Melee Combat.</td>
+                                <td>PG 130 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Prosanguine</td>
+                                <td>Auto Sanguine Implants, Mechanicus Implants</td>
+                                <td>Toughness</td>
+                                <td>Tech</td>
+                                <td class="tier2">T2</td>
+                                <td>Spend 10 minutes and make a Tech-Use test to heal 1d5 damage. Rolls 96 or
+                                    higher, loses
+                                    the ability for one week.</td>
+                                <td>PG 131 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Purity of Hatred</td>
+                                <td>Hatred (Any)</td>
+                                <td>Offence</td>
+                                <td>Willpower</td>
+                                <td class="tier2">T2</td>
+                                <td>Attacks gain the Vengeful (9) quality against opponents of Hatred group.</td>
+                                <td>PG 58 EI</td>
+                            </tr>
+                            <tr>
+                                <td>Rites of Banishment</td>
+                                <td>Common Lore (Imperial Creed) +10 or Forbidden Lore (Daemonology)</td>
+                                <td>Offence</td>
+                                <td>Willpower</td>
+                                <td class="tier2">T2</td>
+                                <td>Once per round as a Half Action, the character may speak the litanies and
+                                    invocations
+                                    to disrupt Daemons. Until the beginning of his next turn, Daemons within a
+                                    distance
+                                    equal to twice the character's Willpower bonus in meters suffer a -10 penalty to
+                                    Willpower tests.
+                                </td>
+                                <td>PG 61 EB</td>
+                            </tr>
+                            <tr>
+                                <td>Strong Minded</td>
+                                <td>WP 30, Resistance (Psychic Powers)</td>
+                                <td>Willpower</td>
+                                <td>Defence</td>
+                                <td class="tier2">T2</td>
+                                <td>May reroll failed WP tests to resist psychic powers.</td>
+                                <td>PG 131 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Swift Attack</td>
+                                <td>WS 30</td>
+                                <td>Weapon Skill</td>
+                                <td>Finesse</td>
+                                <td class="tier2">T2</td>
+                                <td>May make multiple melee attacks.</td>
+                                <td>PG 131 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Tainted Psyker</td>
+                                <td>Psy rating, Rank 2 (Trained) in Psyniscience Skill, 10 Corruption points</td>
+                                <td>Knowledge</td>
+                                <td>Psyker</td>
+                                <td class="tier2">T2</td>
+                                <td>When making a Focus Power test, the character may gain a number of Corruption
+                                    points
+                                    up to his psy rating. For each point he gains in this way, he gains a +10 bonus
+                                    but
+                                    adds +5 to rolls on Table 6-2 Psychic Phenomena</td>
+                                <td>PG 58 EI</td>
+                            </tr>
+                            <tr>
+                                <td>Two-Weapon Wielder (choose)</td>
+                                <td>-</td>
+                                <td>Weapon Skill/Ballistic Skill</td>
+                                <td>Finesse</td>
+                                <td class="tier2">T2</td>
+                                <td>Attacks with two weapons count as being part of the same Half Action, and both
+                                    tests
+                                    made to attack with the weapons suffer a -20 penalty. </td>
+                                <td>PG 132 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Unarmed Specialist</td>
+                                <td>Ambidextrous, Ag 35, WS 35</td>
+                                <td>Strength</td>
+                                <td>Offence</td>
+                                <td class="tier2">T2</td>
+                                <td>When fighting unarmed, attacks hit as Deadly Natural Weapons and user can
+                                    re-roll damage.</td>
+                                <td>PG 132 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Warp Conduit</td>
+                                <td>Psy Rating, Strong Minded, WP 50</td>
+                                <td>Willpower</td>
+                                <td>Psyker</td>
+                                <td class="tier2">T2</td>
+                                <td>Spend Fate point to add 1d5 to psy rating however he adds +30 to rolls on Table
+                                    6-2:
+                                    Psychic Phenomena
+                                </td>
+                                <td>PG 132 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Whirlwind of Death</td>
+                                <td>WS 40</td>
+                                <td>Weapon Skill</td>
+                                <td>Finesse</td>
+                                <td class="tier2">T2</td>
+                                <td>As a Half Action, may make one Standard Attack action with a melee weapon
+                                    against a foe,
+                                    plus one additional Standard Attack action with the same weapon targeting each
+                                    other
+                                    foe also engaged in melee combat with the character beyond the first (to a
+                                    maximum
+                                    number of attacks up to his Weapon Skill bonus).</td>
+                                <td>PG 133 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Witch Finder</td>
+                                <td>Rank 2 (Trained) in the Forbidden Lore (Psykers)skill, WP 45</td>
+                                <td>Knowledge</td>
+                                <td>Perception</td>
+                                <td class="tier2">T2</td>
+                                <td>Counts as possessing the Psyniscience skill at Rank 1 (Known), even though he is
+                                    not
+                                    a psyker.</td>
+                                <td>PG 58 EI</td>
+                            </tr>
+                            <tr>
+                                <td>Xenosavant</td>
+                                <td>Rank 3 in Forbidden Lore (Xenos-Any) </td>
+                                <td>Intelligence</td>
+                                <td>Knowledge</td>
+                                <td class="tier2">T2</td>
+                                <td>The character can attempt any Forbidden Lore (Xenos) test in which he is not
+                                    trained
+                                    as an untrained skill test as if it were not a Specialist skill.</td>
+                                <td>PG 63 EO</td>
+                            </tr>
+                            <tr>
+                                <td>Adamantium Faith</td>
+                                <td>Jaded, Resistance (Fear), WP 45</td>
+                                <td>Willpower</td>
+                                <td>Defence</td>
+                                <td class="tier3">T3</td>
+                                <td>Subtract Willpower bonus from his degrees of failure on a failed Fear or Pinning
+                                    test.
+                                    If this reduces the result to zero or less, he counts as having passed the Fear
+                                    test
+                                    with 1 degree of success.</td>
+                                <td>PG 123 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Aegis of Contempt</td>
+                                <td>Shared Destiny, Shield of Contempt, Hatred (any)</td>
+                                <td>Defence</td>
+                                <td>Leadership</td>
+                                <td class="tier3">T3</td>
+                                <td>Character or an ally within 10 metres gains Corruption, reduce the amount by 1
+                                    to a min
+                                    of 0.
+                                </td>
+                                <td>PG 57 EI</td>
+                            </tr>
+                            <tr>
+                                <td>Assassin Strike</td>
+                                <td>Ag 40, Acrobatics</td>
+                                <td>Weapon Skill</td>
+                                <td>Fieldcraft</td>
+                                <td class="tier3">T3</td>
+                                <td>After a melee attack, a Challenging (+0) Acrobatics skill test allows to move at
+                                    half
+                                    rate as a Free Action. Only once per round, and opponent does not receive a free
+                                    attack.
+                                </td>
+                                <td>PG 123 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Bastion of Iron Will</td>
+                                <td>Psy Rating, Strong Minded, WP 40</td>
+                                <td>Willpower</td>
+                                <td>Psyker</td>
+                                <td class="tier3">T3</td>
+                                <td>Adds 5 x his psy rating to any Opposed test when defending against psychic
+                                    powers.</td>
+                                <td>PG 123 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Blademaster</td>
+                                <td>WS 30, Weapon Training (any Melee)</td>
+                                <td>Weapon Skill</td>
+                                <td>Finesse</td>
+                                <td class="tier3">T3</td>
+                                <td>When attacking with any bladed weapon, can re-roll one missed attack per round.
+                                </td>
+                                <td>PG 123 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Crushing Blow</td>
+                                <td>WS 40</td>
+                                <td>Weapon Skill</td>
+                                <td>Offence</td>
+                                <td class="tier3">T3</td>
+                                <td>Add half WS bonus (Round up) to damage inflicted in melee.</td>
+                                <td>PG 125 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Daemonic Disruption</td>
+                                <td>Bane of the Daemon, WP 50, Untouchable elite advance</td>
+                                <td>Willpower</td>
+                                <td>General</td>
+                                <td class="tier3">T3</td>
+                                <td>Whenever a creature with the Warp Instability trait makes a successful attack
+                                    test against
+                                    this character, it must immediately test for Warp Instability after resolving
+                                    the
+                                    attack.
+                                </td>
+                                <td>PG 60 EB</td>
+                            </tr>
+                            <tr>
+                                <td>Dark Soul</td>
+                                <td>Hardened Soul, 20 Corruption points</td>
+                                <td>Toughness</td>
+                                <td>Willpower</td>
+                                <td class="tier3">T3</td>
+                                <td>When the character would test to gain a mutation as a result of increasing
+                                    Corruption,
+                                    he may choose to automatically pass the test. If he does, he also gains a
+                                    Malignancy
+                                    and increases his Corruption total by 1d10.</td>
+                                <td>PG 60 EB</td>
+                            </tr>
+                            <tr>
+                                <td>Deathdealer</td>
+                                <td>BS 45 or WS 45</td>
+                                <td>Perception</td>
+                                <td>Finesse</td>
+                                <td class="tier3">T3</td>
+                                <td>Selects the Specialisation that matches the prerequisite used in purchase (Melee
+                                    with
+                                    Weapon Skill, Ranged with Ballistic Skill). Attack in that combat type inflicts
+                                    Critical
+                                    damage, add his Perception bonus to the damage result.</td>
+                                <td>PG 125 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Delicate Interrogation</td>
+                                <td>Fel 50, Coordinated Interrogation</td>
+                                <td>Intelligence</td>
+                                <td>Finesse</td>
+                                <td class="tier3">T3</td>
+                                <td>Reduce Subtlety loss by 1d5 when conducting an Interrogation. If this results in
+                                    a negative
+                                    number increase the warband's Subtlety by 1.</td>
+                                <td>PG 125 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Divine Protection</td>
+                                <td>BS 45, WP 35</td>
+                                <td>General</td>
+                                <td>Finesse</td>
+                                <td class="tier3">T3</td>
+                                <td>Attacks using Spray quality only effects enemies.</td>
+                                <td>PG 57 EI</td>
+                            </tr>
+                            <tr>
+                                <td>Eye of Vengeance</td>
+                                <td>BS 50</td>
+                                <td>Ballistic Skill</td>
+                                <td>Offence</td>
+                                <td class="tier3">T3</td>
+                                <td>Spend 1 Fate point to add the number of DoS scored on the attack test to damage
+                                    and Penetration.</td>
+                                <td>PG 127 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Favored by the Warp</td>
+                                <td>WP 35</td>
+                                <td>Willpower</td>
+                                <td>Psyker</td>
+                                <td class="tier3">T3</td>
+                                <td>Roll twice for Psychic Phenomena and choose result.</td>
+                                <td>PG 127 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Flash of Insight</td>
+                                <td>Int 40, Contact Network, Coordinated Interrogation</td>
+                                <td>Perception</td>
+                                <td>Knowledge</td>
+                                <td class="tier3">T3</td>
+                                <td>Spend 1 Fate point to reveal a clue.</td>
+                                <td>PG 127 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Halo of Command</td>
+                                <td>Fel 40, WP 40</td>
+                                <td>Fellowship</td>
+                                <td>Leadership</td>
+                                <td class="tier3">T3</td>
+                                <td>Affect NPCs within 100xFelB metres with Social skills.</td>
+                                <td>PG 127 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Hammer Blow</td>
+                                <td>Crushing Blow</td>
+                                <td>Strength</td>
+                                <td>Offence</td>
+                                <td class="tier3">T3</td>
+                                <td>When he uses an All Out Attack action to make a single attack, he can add half
+                                    his Strength
+                                    bonus (rounded up) to the weapon's penetration. The attack also counts as having
+                                    the Concussive (2) weapon quality.</td>
+                                <td>PG 128 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Hull Down</td>
+                                <td>Rank 2 in Survival or any Operate skill</td>
+                                <td>Agility</td>
+                                <td>Fieldcraft</td>
+                                <td class="tier3">T3</td>
+                                <td>When the character takes a vehicle combat action with the Movement subtype, his
+                                    vehicle
+                                    or steed counts the value of its Size trait as being one lower for purposes of
+                                    attack
+                                    modifiers and the benefits of cover until the start of his next turn.</td>
+                                <td>PG 62 EO</td>
+                            </tr>
+                            <tr>
+                                <td>Indomitable Conviction</td>
+                                <td>Shared Destiny, Strength through Conviction, Resistance (Fear), Jaded</td>
+                                <td>Leadership</td>
+                                <td>Willpower</td>
+                                <td class="tier3">T3</td>
+                                <td>Character or an ally within 10 metres gains Insanity, reduce the amount by 1 to
+                                    a min
+                                    of 0. </td>
+                                <td>PG 57 EI</td>
+                            </tr>
+                            <tr>
+                                <td>Infused Knowledge</td>
+                                <td>Int 40, Lore (anyone)</td>
+                                <td>Intelligence</td>
+                                <td>Knowledge</td>
+                                <td class="tier3">T3</td>
+                                <td>counts as having all Common Lore and Scholastic Lore skills at rank 1 (Known).
+                                </td>
+                                <td>PG 128 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Instrument of His Will</td>
+                                <td>WP 50</td>
+                                <td>Offence</td>
+                                <td>Willpower</td>
+                                <td class="tier3">T3</td>
+                                <td>After making a successful attack against a Daemon (this can include striking it
+                                    with
+                                    a psychic power), the character may spend a Fate point to increase the damage of
+                                    the first hit he inflicts as part of that attack by an amount equal to twice his
+                                    Willpower bonus. This additional damage ignores armour and Toughness bonus.</td>
+                                <td>PG 61 EB</td>
+                            </tr>
+                            <tr>
+                                <td>Into the Jaws of Hell</td>
+                                <td>Adamantium Faith, Halo of Command, Will of the Inquisitor</td>
+                                <td>Leadership</td>
+                                <td>Willpower</td>
+                                <td class="tier3">T3</td>
+                                <td>Subtract the fellowship bonus from DoF for failed Fear or Pinning test.</td>
+                                <td>PG 57 EI</td>
+                            </tr>
+                            <tr>
+                                <td>Iron Faith</td>
+                                <td>Iron Resolve</td>
+                                <td>Defence</td>
+                                <td>Willpower</td>
+                                <td class="tier3">T3</td>
+                                <td>The character is immune to the effects of the Baneful Presence trait.</td>
+                                <td>PG 61 EB</td>
+                            </tr>
+                            <tr>
+                                <td>Lightning Attack</td>
+                                <td>Swift Attack</td>
+                                <td>Weapon Skill</td>
+                                <td>Finesse</td>
+                                <td class="tier3">T3</td>
+                                <td>Character may make many melee attacks with single roll.</td>
+                                <td>PG 129 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Luminen Blast</td>
+                                <td>Luminen Shock, Luminen Capacitors, Mechanicus Implants</td>
+                                <td>Ballistic Skill</td>
+                                <td>Tech</td>
+                                <td class="tier3">T3</td>
+                                <td>Counts as being equipped with a single shot Pistol weapon with a 10m range and
+                                    deals
+                                    1d10 plus twice his Willpower bonus in Energy damage. Must pass a Toughness test
+                                    or suffer 1 level of Fatigue after attack.</td>
+                                <td>PG 129 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Mastery (choose)</td>
+                                <td>Rank 4 in selected skill</td>
+                                <td>Intelligence</td>
+                                <td>Knowledge</td>
+                                <td class="tier3">T3</td>
+                                <td>May spend Fate point to succeed on test if the final modifier to his skill test
+                                    is Challenging
+                                    (+0) or better, score a number of degrees of success equal to the characteristic
+                                    bonus.
+                                </td>
+                                <td>PG 130 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Mighty Shot</td>
+                                <td>BS 40</td>
+                                <td>Ballistic Skill</td>
+                                <td>Offence</td>
+                                <td class="tier3">T3</td>
+                                <td>Add half BS (rounding up) bonus to ranged damage rolls.</td>
+                                <td>PG 130 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Never Die</td>
+                                <td>WP 50, T 50</td>
+                                <td>Toughness</td>
+                                <td>Defence</td>
+                                <td class="tier3">T3</td>
+                                <td>Ignore penalties from Critical damage by spending Fate point. Once the encounter
+                                    ends,
+                                    the effects trigger as normal.</td>
+                                <td>PG 130 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Preternatural Speed</td>
+                                <td>WS 40, Ag 50</td>
+                                <td>Agility</td>
+                                <td>Offence</td>
+                                <td class="tier3">T3</td>
+                                <td>Double speed when charging.</td>
+                                <td>PG 130 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Push the Limit</td>
+                                <td>Rank 2 in Survival or any Operate skill, Tech-Use</td>
+                                <td>Perception</td>
+                                <td>Tech</td>
+                                <td class="tier3">T3</td>
+                                <td>Once per round, the character may add +20 to an Operate test however, if he
+                                    fails the
+                                    test by 4 or more degrees of failure, immediately roll 1d5 on Table 7-32: Motive
+                                    Systems Critical Hit effects and apply the result. If he is riding a living
+                                    mount,
+                                    roll 1d5 on Table 7-18: Impact Critical effects - Leg</td>
+                                <td>PG 63 EO</td>
+                            </tr>
+                            <tr>
+                                <td>Sanctic Purity</td>
+                                <td>Daemonologist, Favoured by the Warp, WP 50</td>
+                                <td>Psyker</td>
+                                <td>Willpower</td>
+                                <td class="tier3">T3</td>
+                                <td>When the character triggers Psychic Phenomena when manifesting a power from the
+                                    Sanctic
+                                    Daemonology discipline, he may spend a Fate point in order to negate the result
+                                    entirely.</td>
+                                <td>PG 61 EB</td>
+                            </tr>
+                            <tr>
+                                <td>Shield Wall</td>
+                                <td>Ambidextrous, WS 40</td>
+                                <td>Defence</td>
+                                <td>Weapon Skill</td>
+                                <td class="tier3">T3</td>
+                                <td>When armed with a shield, the character can re-roll one failed Evasion test to
+                                    Parry
+                                    an attack per round.</td>
+                                <td>PG 61 EB</td>
+                            </tr>
+                            <tr>
+                                <td>Sprint</td>
+                                <td>-</td>
+                                <td>Agility</td>
+                                <td>Fieldcraft</td>
+                                <td class="tier3">T3</td>
+                                <td>Move more quickly in combat.</td>
+                                <td>PG 131 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Step Aside</td>
+                                <td>Ag 40, Dodge or Parry</td>
+                                <td>Agility</td>
+                                <td>Defence</td>
+                                <td class="tier3">T3</td>
+                                <td>Can make additional Dodge or Parry attempt per round.</td>
+                                <td>PG 131 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Superior Chirurgeon</td>
+                                <td>Rank 2 in Medicae skill</td>
+                                <td>Intelligence</td>
+                                <td>Fieldcraft</td>
+                                <td class="tier3">T3</td>
+                                <td>Gain +20 to Medicae tests, bonuses to first aid tests and only suffers a -10
+                                    penalty
+                                    for those suffering Critical damage.</td>
+                                <td>PG 131 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Target Selection</td>
+                                <td>BS 50</td>
+                                <td>Ballistic Skill</td>
+                                <td>Finesse</td>
+                                <td class="tier3">T3</td>
+                                <td>May shoot into melee without penalty. Also an Aim action beforehand, prevents
+                                    any chance
+                                    of hitting friendly targets as well.</td>
+                                <td>PG 132 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Thunder Charge</td>
+                                <td>S 50</td>
+                                <td>Strength</td>
+                                <td>Offence</td>
+                                <td class="tier3">T3</td>
+                                <td>Break enemies with armoured charge.</td>
+                                <td>PG 132 CB</td>
+                            </tr>
+                            <tr>
+                                <td>True Grit</td>
+                                <td>T 40</td>
+                                <td>Toughness</td>
+                                <td>Defence</td>
+                                <td class="tier3">T3</td>
+                                <td>Reduce Critical damage taken.</td>
+                                <td>PG 132 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Two-Weapon Master</td>
+                                <td>Ag 45, Ambidextrous, BS 40 or WS 40, Two-Weapon Wielder (Melee, Ranged)</td>
+                                <td>Finesse</td>
+                                <td>Offence</td>
+                                <td class="tier3">T3</td>
+                                <td>No penalties when fighting with two single handed weapons.</td>
+                                <td>PG 132 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Warp Lock</td>
+                                <td>Psy Rating, Strong Minded, WP 50</td>
+                                <td>Willpower</td>
+                                <td>Psyker</td>
+                                <td class="tier3">T3</td>
+                                <td>Ignore Psychic Phenomenon once per session. Suffers 1d5 Energy damage to the
+                                    Head location
+                                    (not reduced by Armour or Toughness) as a result, and cannot make any Focus
+                                    Power
+                                    tests or sustain other psychic powers until the beginning of his next turn.
+                                </td>
+                                <td>PG 133 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Weapon Intuition</td>
+                                <td>Exotic Weapon Training (Any)</td>
+                                <td>Intelligence</td>
+                                <td>Finesse</td>
+                                <td class="tier3">T3</td>
+                                <td>The character reduces the penalty for using a weapon without the proper training
+                                    by 10.
+                                </td>
+                                <td>PG 63 EO</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="traits" class="info">
+                    <h3 class="headingLight">Traits</h3>
+                    <table id="traitTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Effect</th>
+                                <th>Page</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Amorphous</td>
+                                <td>May increase or decrease its Size trait value by 1 as a Free Action. Also has
+                                    the Crawler
+                                    trait.
+                                </td>
+                                <td>CB 134</td>
+                            </tr>
+                            <tr>
+                                <td>Amphibious</td>
+                                <td>Creature can breathe underwater. </td>
+                                <td>CB 134</td>
+                            </tr>
+                            <tr>
+                                <td>Auto-stabilized</td>
+                                <td>Always counts as braced.</td>
+                                <td>CB 134</td>
+                            </tr>
+                            <tr>
+                                <td>Baneful Presence</td>
+                                <td> All suffer a -10 penalty to Willpower tests taken while within X metres of the
+                                    creature.
+                                </td>
+                                <td>CB 134</td>
+                            </tr>
+                            <tr>
+                                <td>Bestial</td>
+                                <td>Automatically passes Survival skill tests, test a Challenging (+0) Willpower
+                                    test when
+                                    frightened, startled, or injured. If it fails, the creature flees. </td>
+                                <td>CB 134</td>
+                            </tr>
+                            <tr>
+                                <td>Blind</td>
+                                <td>Cannot see. The Blind Fighting talent reduces the penalty to Weapon Skill tests
+                                    as normal
+                                    for Blind creatures, from -30 to -15. </td>
+                                <td>CB 134</td>
+                            </tr>
+                            <tr>
+                                <td>Brutal Charge</td>
+                                <td>Deals an extra (X) points of damage on each hit it inflicts that turn. </td>
+                                <td>CB 134</td>
+                            </tr>
+                            <tr>
+                                <td>Burrower</td>
+                                <td>The number in parentheses (X) indicates its speed when burrowing. Can burrow
+                                    through
+                                    soil, rock, sand. When burrows, it leaves behind a tunnel. Characters with a
+                                    Size
+                                    trait value lower than the borrower can enter these areas without impediment. At
+                                    the end of each round after the borrower passes, roll 1d10; on a result of 5 or
+                                    lower,
+                                    the tunnel collapses behind. </td>
+                                <td>CB 134</td>
+                            </tr>
+                            <tr>
+                                <td>Crawler</td>
+                                <td>The base move for a creature with this trait is half its normal movement rate
+                                    (roundup)
+                                    as determined by its Agility bonus, but it does not take penalties for moving
+                                    over
+                                    difficult terrain.
+                                </td>
+                                <td>CB 134</td>
+                            </tr>
+                            <tr>
+                                <td>Daemonic</td>
+                                <td>With this trait increase their Toughness bonus against all damage by the number
+                                    indicated
+                                    in the parentheses (X), in the same manner as an Unnatural Characteristic, and
+                                    stack
+                                    if the latter also increases Toughness. This increase is negated by damage
+                                    inflicted
+                                    from force weapons, psychic powers, holy attacks, or other creatures with this
+                                    trait.
+                                    Daemonic creatures also have the Undying trait, and gain benefits when using
+                                    psychic
+                                    powers.
+                                </td>
+                                <td>CB 135</td>
+                            </tr>
+                            <tr>
+                                <td>Dark-sight</td>
+                                <td>Can see in darkness and never takes a penalty for fighting in areas of dim or no
+                                    lighting.</td>
+                                <td>CB 135</td>
+                            </tr>
+                            <tr>
+                                <td>Deadly Natural Weapons</td>
+                                <td>Gains all the benefits of the Natural Weapons trait, except that its attacks no
+                                    longer
+                                    have the Primitive weapon quality.</td>
+                                <td>CB 135</td>
+                            </tr>
+                            <tr>
+                                <td>Fear</td>
+                                <td>Always has an associated rating (1-4). This is indicated by the number in
+                                    parentheses
+                                    (X). When a character encounters a creature with this trait, must make a
+                                    Willpower
+                                    test with a penalty based on the creature's Fear rating. If he succeeds, the
+                                    character
+                                    suffers no ill effects; if he fails, he must roll on Table 8-11: Shock, adding
+                                    +10
+                                    to the roll for every degree of failure on the test. </td>
+                                <td>CB 136</td>
+                            </tr>
+                            <tr>
+                                <td>Flyer</td>
+                                <td>Fly and enter any altitude. (X) indicates its speed when flying. This number
+                                    replaces
+                                    the creature's Agility bonus for movement actions while airborne.</td>
+                                <td>CB 136</td>
+                            </tr>
+                            <tr>
+                                <td>From Beyond</td>
+                                <td>Their minds are beyond the petty frailties and precarious sanity of a mortal
+                                    mind. Such
+                                    a creature is immune to Fear, Pinning, Insanity points, and psychic powers used
+                                    to
+                                    cloud, control, or delude its mind.</td>
+                                <td>CB 136</td>
+                            </tr>
+                            <tr>
+                                <td>Hoverer</td>
+                                <td>Fly and enter the hover altitude flying no higher than two metres. The number in
+                                    parentheses
+                                    (X) indicates its speed when hovering; this number replaces its Agility bonus
+                                    for
+                                    purposes of calculating Movement while airborne.</td>
+                                <td>CB 136</td>
+                            </tr>
+                            <tr>
+                                <td>Incorporeal</td>
+                                <td>Insubstantial and weightless, cannot be affected by mundane weaponry. Gain the
+                                    Hoverer
+                                    (6) trait and a +30 bonus on Stealth tests due to their ability to merge with
+                                    objects
+                                    and nearly silent movement. Also immune to normal weapons, which simply pass
+                                    ineffectually
+                                    through its body. Daemons, psychic powers, Warp creatures, other Incorporeal
+                                    creatures,
+                                    and opponents armed with force weapons can all injure an Incorporeal creature
+                                    normally.
+                                    An Incorporeal creature cannot usually affect the mortal world, and thus cannot
+                                    damage
+                                    normal opponents unless it has a suitable special ability or talent. </td>
+                                <td>CB 136</td>
+                            </tr>
+                            <tr>
+                                <td>Machine</td>
+                                <td>Machines do not breathe, are immune to vacuum, extremes of cold, and
+                                    mind-influencing
+                                    psychic effects. Machines have a certain number of Armour points (indicated by
+                                    the
+                                    number in parentheses). This armour stacks with worn armour, but not with the
+                                    Natural
+                                    Armour trait, and can damage from Fire </td>
+                                <td>CB 136</td>
+                            </tr>
+                            <tr>
+                                <td>Mechanicus Implants</td>
+                                <td>Character has mechanical augmentations. Cranial circuitry, Cyber-mantle,
+                                    Electro-Graft,
+                                    Electoo Inductors, and Potenia Coil.</td>
+                                <td>CB 137</td>
+                            </tr>
+                            <tr>
+                                <td>Mind Lock</td>
+                                <td>If faced with a situation outside of its programming and with no recognised
+                                    master to
+                                    issue orders, the creature must pass a Routine (+20) Intelligence test or be
+                                    Stunned
+                                    for 1 round.
+                                </td>
+                                <td>CB 137</td>
+                            </tr>
+                            <tr>
+                                <td>Multiple Arms</td>
+                                <td>exact number of arms is indicated in parentheses (X), so with Multiple Arms (4)
+                                    has four
+                                    arms total. It gains a +10 bonus on Athletics tests involving climbing and
+                                    swimming.
+                                    In addition, for each full pair of arms it has (the Multiple Arms value divided
+                                    by
+                                    2) it can make an additional attack as if wielding multiple melee weapons. In
+                                    this
+                                    case, the creature must either have natural weapons or actual melee weapons to
+                                    wield
+                                    for this to take effect. Note that a creature still requires the Two-Weapon
+                                    Wielder
+                                    talent to make multiple attacks in the same turn. </td>
+                                <td>CB 137</td>
+                            </tr>
+                            <tr>
+                                <td>Natural Armor </td>
+                                <td>Gain additional Armor points to all locations and stacks with worn armour, but
+                                    not with
+                                    the Machine trait.
+                                </td>
+                                <td>CB 137</td>
+                            </tr>
+                            <tr>
+                                <td>Natural Weapons</td>
+                                <td>Counts as being armed even when not wielding weapons, with attacks deal 1d10
+                                    points of
+                                    damage plus its SB. Can make attacks with its Natural Weapons using its Weapon
+                                    Skill,
+                                    though it cannot Parry with its natural weapons, nor can it be disarmed unless,
+                                    of
+                                    course, its limbs are hacked off. In general, creatures with Natural Weapons are
+                                    immune to the Power Field quality, as it is assumed they have enough teeth,
+                                    claws,
+                                    or spines to ignore a few being removed. Natural weapons have the Primitive (7)
+                                    weapon
+                                    quality unless stated otherwise in the profile. </td>
+                                <td>CB 137</td>
+                            </tr>
+                            <tr>
+                                <td>Phase</td>
+                                <td>Switch between incorporeal and corporeal as a Half Action.</td>
+                                <td>CB 137</td>
+                            </tr>
+                            <tr>
+                                <td>Psyker</td>
+                                <td>Creature has a psy rating of 1 or more.</td>
+                                <td>CB 138</td>
+                            </tr>
+                            <tr>
+                                <td>Quadruped</td>
+                                <td>Movement equals ABx2. With more than four legs may gain this trait as well,
+                                    increasing
+                                    their movement as indicated above but adding an additional 2</td>
+                                <td>CB 138</td>
+                            </tr>
+                            <tr>
+                                <td>Regeneration</td>
+                                <td>Each round, at the start of its turn, the creature can make a Toughness test to
+                                    remove
+                                    an amount of damage indicated in the parentheses after the trait.</td>
+                                <td>CB 138</td>
+                            </tr>
+                            <tr>
+                                <td>Sanctioned</td>
+                                <td>Avoid Corruption from Psyker elite advance; start at psy rating 2.</td>
+                                <td>CB 138</td>
+                            </tr>
+                            <tr>
+                                <td>Size</td>
+                                <td>Determines creature size and benefits.</td>
+                                <td>CB 138</td>
+                            </tr>
+                            <tr>
+                                <td>Sonar Sense</td>
+                                <td>Perceive surroundings flawlessly within 30 meters. Other within this 30 metre
+                                    range that
+                                    succeed on a Difficult (-10) Awareness skill can detect the echoing.</td>
+                                <td>CB 138</td>
+                            </tr>
+                            <tr>
+                                <td>Soul Bound</td>
+                                <td>Bound to a particular group or creatures in exchange for certain benefits. Upon
+                                    becoming
+                                    soul-bound, the psyker must choose one of the following effects: 3d10 Insanity
+                                    points,
+                                    the permanent loss of his sight, permanent loss of 1d10 points from one
+                                    characteristic,
+                                    or a random mutation.</td>
+                                <td>CB 138</td>
+                            </tr>
+                            <tr>
+                                <td>Stampede</td>
+                                <td>Failed Willpower test causes creature to flee, trampling anything in its path.
+                                    Anyone
+                                    in the way suffers a single hit from the creature's Natural Weapons (or 1d5+SB
+                                    Impact
+                                    damage if it does not have that trait). One stampeding creature automatically
+                                    causes
+                                    all other creatures with the same trait within sight to stampede as well. The
+                                    stampede
+                                    lasts until the source of danger is no longer visible or for 1d10 minutes,
+                                    whichever
+                                    occurs last.
+                                </td>
+                                <td>CB 138</td>
+                            </tr>
+                            <tr>
+                                <td>Stuff of Nightmares</td>
+                                <td>Become immune to most conditions that would harm normal creatures. Count as
+                                    having the
+                                    Undying trait, and are completely immune to most environmental hazards, Blood
+                                    Loss,
+                                    and Stunning. They also ignore any Critical Effect other than one that would
+                                    destroy
+                                    them outright, unless it was caused by a psychic power, force weapon, or holy
+                                    attack.</td>
+                                <td>CB 138</td>
+                            </tr>
+                            <tr>
+                                <td>Sturdy</td>
+                                <td>+20 bonus to resist grapple, Knock Down, and Takedown.</td>
+                                <td>CB 139</td>
+                            </tr>
+                            <tr>
+                                <td>Touched by the Fates</td>
+                                <td>NPC has Fate points.</td>
+                                <td>CB 139</td>
+                            </tr>
+                            <tr>
+                                <td>Toxic</td>
+                                <td>Gain poisonous attack. When damaged must make a Toughness test at the end of his
+                                    turn
+                                    with a penalty equal to 10 times the number in parentheses (X), or suffer 1d10
+                                    points
+                                    of Energy damage not reduced by Armour or Toughness. </td>
+                                <td>CB 139</td>
+                            </tr>
+                            <tr>
+                                <td>Undying</td>
+                                <td>It cannot be harmed by diseases, poisons, or toxic effects. It also has no need
+                                    to breathe,
+                                    and thus can survive unaided in a vacuum. </td>
+                                <td>CB 139</td>
+                            </tr>
+                            <tr>
+                                <td>Unnatural Characteristic</td>
+                                <td>Increases one characteristic bonus.</td>
+                                <td>CB 139</td>
+                            </tr>
+                            <tr>
+                                <td>Unnatural Senses</td>
+                                <td>Perceive surroundings by uncanny means. Includes a range in metres indicated by
+                                    the number
+                                    in parentheses (X). </td>
+                                <td>CB 139</td>
+                            </tr>
+                            <tr>
+                                <td>Warp Instability</td>
+                                <td>If a creature with this trait takes damage and does not deal any damage or
+                                    Insanity points
+                                    to another creature by the end of its next turn, it must make a Willpower test.
+                                    The
+                                    creature suffers 1 point of damage for failing, plus 1 additional point of
+                                    damage
+                                    for each degree of failure. If this would deal damage equal to (or in excess of)
+                                    the creature's wounds, it is cast back into the Warp. </td>
+                                <td>CB 139</td>
+                            </tr>
+                            <tr>
+                                <td>Warp Weapons</td>
+                                <td>Creature's attacks ignore armor, unless the armour is created from psychoactive
+                                    materials
+                                    or is somehow warded against the Warp. Force Fields still work against these
+                                    attacks
+                                    normally.
+                                </td>
+                                <td>CB 139</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="homeworlds" class="info">
+                    <h3 class="headingLight">Homeworlds</h3>
+                    <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Homeworlds</th>
+                                <th>Char +</th>
+                                <th>Char +</th>
+                                <th>Char -</th>
+                                <th>Fate Base</th>
+                                <th>Emperor's Blessing</th>
+                                <th>Home World Bonus</th>
+                                <th>Aptitude</th>
+                                <th>Wounds</th>
+                                <th>Page</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Feral World</td>
+                                <td>Strength</td>
+                                <td>Toughness</td>
+                                <td>Influence</td>
+                                <td>2</td>
+                                <td>3+</td>
+                                <td>The Old Ways: A Feral World character's Low-Tech weapons lose any present
+                                    Primitive Qualities
+                                    and gain the Proven (3) Quality.</td>
+                                <td>Toughness</td>
+                                <td>9+1d5</td>
+                                <td>PG 32 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Forge World</td>
+                                <td>Intelligence</td>
+                                <td>Toughness</td>
+                                <td>Fellowship</td>
+                                <td>3</td>
+                                <td>8+</td>
+                                <td>Omnissiah's Chosen: A Forge World character gains the Technical Knock or
+                                    Weapon-Tech
+                                    Talent.
+                                </td>
+                                <td>Intelligence</td>
+                                <td>8+1d5</td>
+                                <td>PG 34 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Highborn</td>
+                                <td>Fellowship</td>
+                                <td>Influence</td>
+                                <td>Toughness</td>
+                                <td>4</td>
+                                <td>10+</td>
+                                <td>Breeding Counts: A Highborn character reduces Influence losses by 1, to a
+                                    minimum loss
+                                    of 1.
+                                </td>
+                                <td>Fellowship</td>
+                                <td>9+1d5</td>
+                                <td>PG 36 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Hive World</td>
+                                <td>Agility</td>
+                                <td>Perception</td>
+                                <td>Willpower</td>
+                                <td>2</td>
+                                <td>6+</td>
+                                <td>Teeming Masses in Metal Mountains: A Hive World character moves through crowds
+                                    as if
+                                    they were open terrain and gains a +20 bonus to Navigate (Surface) Tests in
+                                    closed
+                                    spaces.
+                                </td>
+                                <td>Perception</td>
+                                <td>7+1d5</td>
+                                <td>PG 38 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Shrine World</td>
+                                <td>Fellowship</td>
+                                <td>Willpower</td>
+                                <td>Perception</td>
+                                <td>3</td>
+                                <td>6+</td>
+                                <td>Faith in the Creed: When spending a Fate Point, a Shrine World character's
+                                    number of
+                                    Fate Points are not reduced on a 1d10 result of 1.</td>
+                                <td>Willpower</td>
+                                <td>8+1d5</td>
+                                <td>PG 40 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Voidborn</td>
+                                <td>Intelligence</td>
+                                <td>Willpower</td>
+                                <td>Strength</td>
+                                <td>3</td>
+                                <td>5+</td>
+                                <td>Child of the Dark: A voidborn character starts with the Strong Minded talent,
+                                    and gains
+                                    a +30 bonus to tests for moving in zero-gravity</td>
+                                <td>Intelligence</td>
+                                <td>7+1d5</td>
+                                <td>PG 42 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Daemon World</td>
+                                <td>Willpower</td>
+                                <td>Perception</td>
+                                <td>Fellowship</td>
+                                <td>3</td>
+                                <td>4+</td>
+                                <td>Touched by the Warp: A Daemon world native begins with one rank in the
+                                    Psyniscience skill. Should he gain this skill again in a later
+                                    step of character creation, he instead gains one additional rank of this skill.
+                                    This character also begins with 1d10+5 Corruption Points
+                                </td>
+                                <td>Willpower</td>
+                                <td>7+1d5</td>
+                                <td>PG 26 EB</td>
+                            </tr>
+                            <tr>
+                                <td>Penal Colony</td>
+                                <td>Toughness</td>
+                                <td>Perception</td>
+                                <td>Influence</td>
+                                <td>3</td>
+                                <td>8+</td>
+                                <td>Finger on the Pulse: One survives a penal colony by instinctively knowing who is
+                                    in charge and who is a threat. A penal colony character
+                                    begins with one rank in Common Lore (Underworld) and Scrutiny skills, and starts
+                                    with the Peer (Criminal Cartels) talent.
+                                </td>
+                                <td>Toughness</td>
+                                <td>10+1d5</td>
+                                <td>PG 28 EB</td>
+                            </tr>
+                            <tr>
+                                <td>Quarantine World</td>
+                                <td>Ballistic Skill</td>
+                                <td>Intelligence</td>
+                                <td>Strength</td>
+                                <td>3</td>
+                                <td>9+</td>
+                                <td>Secretive by Nature: Those who manage to leave a quarantine world learn how to
+                                    keep secrets. Wheneve the warband's Subtlety
+                                    would decrease, it decreases by 2 less (to a minimum of 1)
+                                </td>
+                                <td>Fieldcraft</td>
+                                <td>8+1d5</td>
+                                <td>PG 30 EB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="backgrounds" class="info">
+                    <h3 class="headingLight">Backgrounds</h3>
+                    <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Backgrounds</th>
+                                <th>Starting Skills</th>
+                                <th>Starting Talents</th>
+                                <th>Starting Equipment</th>
+                                <th>Background Bonus</th>
+                                <th>Background Aptitude</th>
+                                <th>Page</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Adeptus Administratum</td>
+                                <td>Commerce or Medicae, Common Lore (Adeptus Administratum), Linguistics (High
+                                    Gothic),Logic,
+                                    Scholastic Lore (Pick One)</td>
+                                <td>Weapon Training (Las or Solid Projectile)</td>
+                                <td>Laspistol or stub automatic, Imperial robes, autoquill, Chrono, dataslate,
+                                    medi-kit</td>
+                                <td>Master of Paperwork: An Adeptus Administratum character counts the Availability
+                                    of all
+                                    items as one level more available (Very Rare items count as Rare, Average items
+                                    count
+                                    as Common, etc.).
+                                </td>
+                                <td>Knowledge or Social</td>
+                                <td>PG 46 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Adeptus Arbites</td>
+                                <td>Awareness, Common Lore (Adeptus Arbites, Underworld), Inquiry or Interrogation,
+                                    Intimidate,
+                                    Scrutiny
+                                </td>
+                                <td>Weapon Training (Shock or Solid Projectile)</td>
+                                <td>Shotgun or shock maul, Enforcer light carapace armor or carapace chest plate, 3
+                                    doses
+                                    of stimm, manacles, 12 lho sticks</td>
+                                <td>The Face of the Law: An Arbitrator can intimidation and Interrogation test, and
+                                    can substitute
+                                    his Willpower bonus for his degrees of success on these tests.</td>
+                                <td>Offence or Defense</td>
+                                <td>PG 48 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Adeptus Astra Telepathica</td>
+                                <td>Awareness, Common Lore (Adeptus Astra Telepathica), Deceive or Interrogation,
+                                    Forbidden
+                                    Lore (the Warp),Psyniscience or Scrutiny</td>
+                                <td>Weapon Training (Las, Low-Tech)</td>
+                                <td>Laspistol, staff or whip, light flak cloak or flak vest, micro-bead or psy focus
+                                </td>
+                                <td>The Constant Threat: When the character or an ally within 10 meters triggers a
+                                    roll on
+                                    the Table 6-2: Psychic Phenomenon (pg 196). Adeptus Astra Telepathica character
+                                    can
+                                    increase or decrease the result by amount equal to his Willpower bonus. Tested
+                                    on
+                                    Terra: If the character takes the Psyker elite advance during character
+                                    creation,
+                                    he also gains the Sanctioned trait (pg 138).</td>
+                                <td>Defense or Psyker</td>
+                                <td>PG 50 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Adeptus Mechanicus</td>
+                                <td>Awareness or Operate (Pick One), Common Lore (Adeptus Mechanicus), Logic,
+                                    Security, Tech</td>
+                                <td>Mechadendrite Use (Utility),Weapon Training (Solid Projectile)</td>
+                                <td>Autogun or hand cannon, monotask servo-skull (utility) or optical Mechadendrite,
+                                    Imperial
+                                    robes, 2 vials of sacred unguents</td>
+                                <td>Replace the Weak Flesh: An Adeptus Mechanicus character counts the Availability
+                                    of all
+                                    cybernetics as two levels more available (Rare items count as Average, Very Rare
+                                    items count as Scarce, etc.).Starting Trait: Mechanicus Implants (pg 137).</td>
+                                <td>Knowledge or Tech</td>
+                                <td>PG 52 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Adeptus Ministorum</td>
+                                <td>Charm, Command, Common Lore (Adeptus Ministorum),Inquiry or Scrutiny,
+                                    Linguistics (High
+                                    Gothic)
+                                </td>
+                                <td>Weapon Training (Flame) or Weapon Training (Low-Tech, Solid Projectile)</td>
+                                <td>Hand flamer (or Warhammer and stub revolver), Imperial robes or flak vest,
+                                    backpack,
+                                    glow-globe, monotask servo</td>
+                                <td>Faith is All: When spending a Fate point to gain a+10 bonus to any one test, an
+                                    Adeptus
+                                    Ministorum character gains a +20 bonus instead.</td>
+                                <td>Leadership or Social</td>
+                                <td>PG 54 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Imperial Guard</td>
+                                <td>Athletics, Command, Common Lore (Imperial Guard), Medicae or Operate (Surface),
+                                    Navigate
+                                    (Surface)
+                                </td>
+                                <td>Weapon Training (Las, Low-Tech)</td>
+                                <td>Lasgun (or laspistol and sword), combat vest, Imperial Guard flak armor, grapnel
+                                    and
+                                    line,12 lho sticks, magnoculars</td>
+                                <td>Hammer of the Emperor: When attacking a target that an ally attacked since the
+                                    end of
+                                    the Guardsman's last turn, the Guardsman can re-roll any results of 1 or 2
+                                    damage
+                                    rolls.
+                                </td>
+                                <td>Fieldcraft or Leadership</td>
+                                <td>PG 56 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Outcast</td>
+                                <td>Acrobatics or Sleight of Hand, Common Lore (Underworld), Deceive, Dodge, Stealth
+                                </td>
+                                <td>Weapon Training (Chain, and Las or Solid Projectile)</td>
+                                <td>Autopistol or laspistol, chainsword, armored body glove or flak vest, injector,
+                                    2 doses
+                                    of obscura or slaught</td>
+                                <td>Never Quit: An Outcast character counts his Toughness bonus as two higher for
+                                    purposes
+                                    of determining Fatigue.</td>
+                                <td>Fieldcraft or Social</td>
+                                <td>PG 58 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Exorcised</td>
+                                <td>Awareness, Deceive or Inquiry, Dodge, Forbidden Lore (Daemonology), Intimidate
+                                    or Scrutiny</td>
+                                <td>Hatred (Daemons), Weapon Training (Solid Projectile, Chain)</td>
+                                <td>Autopistol or Stub Revolver, Shotgun, Chainblade, Imperial Robes, 3 doses of
+                                    Obscura or 3 doses of Tranq, Disguise Kit or Excruciator Kit,
+                                    Rebreather, Stablight or Glow-globe
+                                </td>
+                                <td>Touched by a Daemon: An exorcised character counts his Insanity Bonus as 2
+                                    higher for purposes of avoiding Fear tests. Additionally,
+                                    he can never again be possessed by a daemon. In addition, an exorcised character
+                                    begins with one Malignancy
+                                </td>
+                                <td>Defense or Knowledge</td>
+                                <td>PG 32 EB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="roles" class="info">
+                    <h3 class="headingLight">Roles</h3>
+                    <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Role</th>
+                                <th>Role Aptitudes</th>
+                                <th>Role Talent</th>
+                                <th>Role Bonus</th>
+                                <th>Page</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Assassin</td>
+                                <td>Agility, Ballistic Skill or Weapon Skill, Fieldcraft, Finesse, Perception</td>
+                                <td>Jaded or Leap Up</td>
+                                <td>Sure Kill: In addition to the normal uses of Fate points(pg 293), when an
+                                    Assassin successfully
+                                    hits with an attack, he may spend a Fate point to inflict additional damage
+                                    equal
+                                    to his degrees of success on the attack roll on the first hit the attack
+                                    inflicts.</td>
+                                <td>PG 62 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Chirurgeon</td>
+                                <td>Fieldcraft, Intelligence, Knowledge, Strength, Toughness</td>
+                                <td>Resistance (Pick One) or Takedown</td>
+                                <td>Dedicated Healer: In addition to the normal uses of Fate points (pg 293), when a
+                                    Chirurgeon
+                                    character fails a test to provide First Aid, he can spend a Fate point to
+                                    automatically
+                                    succeed instead with the degrees of success equal to his Intelligence bonus.
+                                </td>
+                                <td>PG 64 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Desperado</td>
+                                <td>Agility, Ballistic Skill, Defense, Fellowship, Finesse</td>
+                                <td>Catfall or Quick Draw</td>
+                                <td>Move and Shoot: Once per round, after performing Move action, a Desperado
+                                    character may
+                                    perform a single Standard Attack with a Pistol weapon he is currently wielding
+                                    as
+                                    a Free Action.</td>
+                                <td>PG 66 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Hierophant</td>
+                                <td>Fellowship, Offence, Social, Toughness, Willpower</td>
+                                <td>Double Team or Hatred (Pick One)</td>
+                                <td>Sway the Masses: In addition to the normal uses of Fate points (pg 293), a
+                                    Hierophant
+                                    character may spend a Fate point to automatically succeed at a Charm, Command,
+                                    or
+                                    Intimidate skill test with a number of degrees of success equal to his Willpower
+                                    bonus.
+                                </td>
+                                <td>PG 68 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Mystic</td>
+                                <td>Defense, Intelligence, Knowledge, Perception, Willpower</td>
+                                <td>Resistance (Psychic Powers) or Warp Sense</td>
+                                <td>Stare into the Warp: A Mystic character starts the game with the Psyker elite
+                                    advance
+                                    (pg 90). It is recommended that a character who wishes to be a Mystic have a
+                                    Willpower
+                                    of at least 35.</td>
+                                <td>PG 70 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Sage</td>
+                                <td>Intelligence, Knowledge, Perception, Tech, Willpower</td>
+                                <td>Ambidextrous or Clues from the Crowds</td>
+                                <td>Quest for Knowledge: In addition to the normal uses of Fate points (pg 293), a
+                                    Sage character
+                                    may spend a Fate point to automatically succeed at a Logic or any Lore skill
+                                    test
+                                    with a number of degrees of success equal to his Intelligence bonus.</td>
+                                <td>PG 72 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Seeker</td>
+                                <td>Fellowship, Intelligence, Perception, Social, Tech</td>
+                                <td>Keen Intuition or Disarm</td>
+                                <td>Nothing Escapes My Sight: In addition to the normal uses of Fate points (pg
+                                    293), a Seeker
+                                    character may spend a Fate point to automatically succeed at an Awareness or
+                                    Inquiry
+                                    skill test with a number of degrees of success equal to his Perception bonus.
+                                </td>
+                                <td>PG 74 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Warrior</td>
+                                <td>Ballistic Skill, Defense, Offence, Strength, Weapon Skill</td>
+                                <td>Iron Jaw or Rapid Reload</td>
+                                <td>Expert at Violence: In addition to the normal uses of Fate points (pg 293),
+                                    after making
+                                    a successful attack test, but before determining hits, a Warrior character may
+                                    spend
+                                    a Fate point to substitute his Weapon Skill (for melee) or Ballistic Skill (for
+                                    ranged)
+                                    bonus for the degrees of success scored on the attack test.</td>
+                                <td>PG 76 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Crusader</td>
+                                <td>Knowledge, Offense, Strength, Toughness, Willpower</td>
+                                <td>Bodyguard or Deny the Witch</td>
+                                <td>Smite the Unholy: In addition to the normal uses of Fate Points, a crusader can
+                                    also spend a Fate Point to automatically
+                                    pass a Fear test with a DoS equal to his Willpower Bonus. In addition, whenever
+                                    he inflicts a hit with a melee weapon against
+                                    a target with the Fear (X) trait, he inflicts X additional damage and counts his
+                                    weapon's Penetration as being X higher.
+                                </td>
+                                <td>PG 34 EB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="divinations" class="info">
+                    <h3 class="headingLight">Divinations</h3>
+                    <br/>
+                    <input class="w3-input w3-border w3-padding w3-grey w3-round" type="text"
+                        placeholder="Enter your Roll..." id="divRoll" onkeyup="divFilter()"
+                        style="width: 30%; display: inline;">
+                    <br/>
+                    <br/>
+                    <table id="divTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th> Rolls</th>
+                                <th>Divination Prophecies</th>
+                                <th>Divination Effects</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Mutation without, corruption within.</td>
+                                <td>Roll once on the Malignancies table and apply the result.</td>
+                            </tr>
+                            <tr>
+                                <td>02-05</td>
+                                <td>Trust in your fear.</td>
+                                <td>Increase this character's Perception by 5. He also gains the Phobia Mental
+                                    Disorder.</td>
+                            </tr>
+                            <tr>
+                                <td>06-09</td>
+                                <td>Humans must die so that humanity can endure.</td>
+                                <td>This character gains the Jaded talent. If he already possesses this talent,
+                                    increase
+                                    his Willpower characteristic by 2 instead.</td>
+                            </tr>
+                            <tr>
+                                <td>10-13</td>
+                                <td>The pain of the bullet is ecstasy compared to damnation.</td>
+                                <td>Reduce this character's Agility characteristic by 3. The first time this
+                                    character suffers
+                                    Critical damage each session, roll a 1d10. On a result of 10, he does not suffer
+                                    any Critical Effects, though the damage still counts as Critical Damage.</td>
+                            </tr>
+                            <tr>
+                                <td>14-17</td>
+                                <td>Be a boon to your allies and the bane of your enemies.</td>
+                                <td>The character gains the Hatred (choose any one) talent. If he already possessed
+                                    this
+                                    talent, increase his Strength characteristic by 2 instead.</td>
+                            </tr>
+                            <tr>
+                                <td>18-21</td>
+                                <td>The wise learn from the deaths of others.</td>
+                                <td>Increase this character's Agility or Intelligence Characteristic by 3. Reduce
+                                    his Weapon
+                                    Skill of Ballistic skill characteristic by 3.</td>
+                            </tr>
+                            <tr>
+                                <td>22-25</td>
+                                <td>Kill the alien before it can speak its lies.</td>
+                                <td>This character gains the Quick Draw talent. If he already possesses this talent,
+                                    increase
+                                    his Agility characteristic by 2 instead.</td>
+                            </tr>
+                            <tr>
+                                <td>26-29</td>
+                                <td>Truth is subjective.</td>
+                                <td>Increase this character's Perception by 3. The first time he would gain 1 or
+                                    more Corruption
+                                    points each session, he gains that amount plus 1 instead.</td>
+                            </tr>
+                            <tr>
+                                <td>30-33</td>
+                                <td>Thought begets Heresy.</td>
+                                <td>Reduce this character's Intelligence by 3. The first time he would gain 1 or
+                                    more Corruption
+                                    points each session, he reduces that amount by 1 (to a minimum of 0) instead.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>34-38</td>
+                                <td>Heresy begets Retribution.</td>
+                                <td>Increase this character's Fellowship or Strength characteristic by 3. Reduce his
+                                    Toughness
+                                    or Willpower characteristic by 3.</td>
+                            </tr>
+                            <tr>
+                                <td>39-43</td>
+                                <td>A mind without purpose wanders in dark places.</td>
+                                <td>When gaining Mental Disorders, the character may choose to gain a new Disorder
+                                    instead
+                                    of increasing the severity of an existing Disorder.</td>
+                            </tr>
+                            <tr>
+                                <td>44-49</td>
+                                <td>If a job is worth doing, it is worth dying for.</td>
+                                <td>Increase this character's Toughness or Willpower characteristic by 3. Reduce his
+                                    Fellowship
+                                    or Strength characteristic by 3.</td>
+                            </tr>
+                            <tr>
+                                <td>50-54</td>
+                                <td>Dark dreams lie upon the heart.</td>
+                                <td>Whenever this character would roll on the Malignancies table, he may instead
+                                    select any
+                                    one result and gain that Malignancy.</td>
+                            </tr>
+                            <tr>
+                                <td>55-59</td>
+                                <td>Violence solves everything.</td>
+                                <td>Increase this character's Weapon Skill or Ballistic Skill characteristic by 3.
+                                    Reduce
+                                    his Agility or Intelligence characteristic by 3.</td>
+                            </tr>
+                            <tr>
+                                <td>60-63</td>
+                                <td>Ignorance is a wisdom of its own.</td>
+                                <td>Reduce this character's Perception characteristic by 3. The first time he would
+                                    gain
+                                    1 or more Insanity points each session, he reduces that amount by 1 (to a
+                                    minimum
+                                    of 0) instead.</td>
+                            </tr>
+                            <tr>
+                                <td>64-67</td>
+                                <td>Only the insane have the strength to prosper.</td>
+                                <td>Increase this character's Willpower characteristic by 3. The first time he would
+                                    gain
+                                    1 or more Insanity points each session, he gains that amount plus 1 instead.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>68-71</td>
+                                <td>A suspicious mind is a healthy mind.</td>
+                                <td>Increase this character's Perception characteristic by 2. Additionally, he may
+                                    re-roll
+                                    Awareness tests to avoid being Surprised.</td>
+                            </tr>
+                            <tr>
+                                <td>72-75</td>
+                                <td>Suffering is an unrelenting instructor.</td>
+                                <td>Reduce this character's Toughness characteristic by 3. The first time that this
+                                    character
+                                    suffers any damage each session, he gains a +20 bonus to the next test he makes
+                                    before
+                                    the end of his next turn.</td>
+                            </tr>
+                            <tr>
+                                <td>76-79</td>
+                                <td>The only true fear is dying without your duty done.</td>
+                                <td>This character gains the Resistance (Cold, Heat, or Fear) talent. If he already
+                                    possesses
+                                    this Talent, increase his Toughness characteristic by 2 instead.</td>
+                            </tr>
+                            <tr>
+                                <td>80-83</td>
+                                <td>Only in death does duty end.</td>
+                                <td>The first time this character would suffer Fatigue each session, he suffers that
+                                    amount
+                                    of Fatigue minus 1 (to a minimum of 0) instead.</td>
+                            </tr>
+                            <tr>
+                                <td>84-87</td>
+                                <td>Innocence is an illusion.</td>
+                                <td>This character gains the Keen Intuition talent. If he already possesses this
+                                    talent,
+                                    increase his Intelligence characteristic by 2 instead.</td>
+                            </tr>
+                            <tr>
+                                <td>88-91</td>
+                                <td>To war is human.</td>
+                                <td>This character gains the Dodge skill as a Known skill (rank 1). If he already
+                                    posses
+                                    this skill, increase his Agility characteristic by 2 instead.</td>
+                            </tr>
+                            <tr>
+                                <td>92-95</td>
+                                <td>There is no substitute for zeal.</td>
+                                <td>This character gains the Clues from the Crowds talent. If he already possesses
+                                    this talent,
+                                    increase his Fellowship characteristic by 2 instead.</td>
+                            </tr>
+                            <tr>
+                                <td>96-99</td>
+                                <td>Even one who has nothing can still offer his life.</td>
+                                <td>When this character burns Fate threshold to survive a lethal injury, roll 1d10.
+                                    On a
+                                    result of 10, he survives whatever grievous wound would have killed him but does
+                                    not reduce his Fate threshold.</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td>Do not ask why you serve. Only ask how.</td>
+                                <td>Increase this character's Fate threshold by 1.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+
+    </div>
+</body>
+<footer>
+        <div class="w3-row-padding w3-section">
+                <div class="w3-col s0 m1 l1">
+                    <p></p>
+                </div>
+                <div class="w3-col s12 m10 l10">
+                    All Dark Heresy 2e material is © Fantasy Flight Games
+                </div>
+                <div class="w3-col s0 m1 l1">
+                    <p></p>
+                </div>
+            </div>
+    </footer>
+</html>

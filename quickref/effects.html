@@ -1,0 +1,1136 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="A web-based quick reference guide for Fantasy Flight's Dark Heresy 2nd Edition RPG">
+    <meta name="keywords"
+        content="Dark Heresy, 40k, warhammer 40k, 40k rpg, quick ref, quick reference guide, reference guide, Dark heresy 2e, dark heresy second edition, dark heresy 2nd edition">
+    <title>DH 2e QuickRef</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+</head>
+
+
+<body>
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad">
+        <div id="headTitle">
+            <span class="header-large headingDark w3-bar-item">DH 2e Quick Reference</span>
+            <br />
+        </div>
+        <div id="menu" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
+            <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-round-large">Exp
+                Costs</a>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('combatDropdown')" class="w3-button w3-round-large w3-hover-maroon">Combat
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="combatDropdown" class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./combat.html#combatActions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Actions</a>
+                    <a href="./combat.html#hitLocations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Hit
+                        Locations</a>
+                    <a href="./combat.html#conditions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Conditions and Damage</a>
+                    <a href="./combat.html#circumstances"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Circumstances</a>
+                    <a href="./combat.html#difficulties"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Difficulty
+                        Examples</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('critDropdown')" class="w3-button w3-round-large w3-hover-maroon">Critical
+                    Hits <i class="fa fa-caret-down"></i></button>
+                <div id="critDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./crit.html#crits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Critical Rolls</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./crit.html#energyCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Energy</a>
+                    <a href="./crit.html#explosiveCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Explosive</a>
+                    <a href="./crit.html#impactCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Impact</a>
+                    <a href="./crit.html#rendingCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Rending</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('equipDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Equipment <i class="fa fa-caret-down"></i></button>
+                <div id="equipDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./gear.html#gear"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Gear</a>
+                    <a href="./gear.html#tools"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Tools</a>
+                    <a href="./gear.html#cybernetics"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Cybernetics</a>
+                    <a href="./gear.html#consumables"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Drugs and Consumables</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('weaponDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Weapons <i class="fa fa-caret-down"></i></button>
+                <div id="weaponDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./weapons.html#weapons"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapons</a>
+                    <a href="./weapons.html#weaponQual"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Qualities</a>
+                    <a href="./weapons.html#weaponMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Mods</a>
+                    <a href="./weapons.html#ammo"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Special Ammo</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('armourDropdown')" class="w3-button w3-round-large w3-hover-maroon">Armour
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="armourDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./armour.html#armour"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour</a>
+                    <a href="./armour.html#armourMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour Mods</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('psykerDropdown')" class="w3-button w3-round-large w3-hover-purple">Psyker
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="psykerDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./psyker.html#psyPowers"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Powers</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./psyker.html#psyPhenom"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Phenomena</a>
+                    <a href="./psyker.html#psyPerils"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Perils of the Warp</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('charDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Character <i class="fa fa-caret-down"></i></button>
+                <div id="charDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./character.html#skills"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Skills</a>
+                    <a href="./character.html#talents"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Talents</a>
+                    <a href="./character.html#traits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Traits</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./character.html#homeworlds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Homeworlds</a>
+                    <a href="./character.html#backgrounds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Backgrounds</a>
+                    <a href="./character.html#roles"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Roles</a>
+                    <a href="./character.html#divinations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Divinations</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('effectsDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Effects <i class="fa fa-caret-down"></i></button>
+                <div id="effectsDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./effects.html#shock"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Fear and Shock</a>
+                    <a href="./effects.html#snapping"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Snapping Out of It</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#insanity"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Insanity</a>
+                    <a href="./effects.html#trauma"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mental Trauma</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#corruption"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Corruption</a>
+                    <a href="./effects.html#maligna"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Malignancies</a>
+                    <a href="./effects.html#mutations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mutations</a>
+                </div>
+            </div>
+        </div>
+        <div class="w3-bar">
+            <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-hide-small w3-round-large">Exp
+                Costs</a>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Combat <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./combat.html#combatActions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Actions</a>
+                    <a href="./combat.html#hitLocations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Hit
+                        Locations</a>
+                    <a href="./combat.html#conditions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Conditions and Damage</a>
+                    <a href="./combat.html#circumstances"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Circumstances</a>
+                    <a href="./combat.html#difficulties"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Difficulty
+                        Examples</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Critical Hits <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./crit.html#crits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Critical Rolls</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./crit.html#energyCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Energy</a>
+                    <a href="./crit.html#explosiveCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Explosive</a>
+                    <a href="./crit.html#impactCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Impact</a>
+                    <a href="./crit.html#rendingCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Rending</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Equipment <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./gear.html#gear"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Gear</a>
+                    <a href="./gear.html#tools"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Tools</a>
+                    <a href="./gear.html#cybernetics"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Cybernetics</a>
+                    <a href="./gear.html#consumables"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Drugs and Consumables</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Weapons <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./weapons.html#weapons"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapons</a>
+                    <a href="./weapons.html#weaponQual"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Qualities</a>
+                    <a href="./weapons.html#weaponMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Mods</a>
+                    <a href="./weapons.html#ammo"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Special Ammo</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Armour <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./armour.html#armour"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour</a>
+                    <a href="./armour.html#armourMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour Mods</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-purple">Psyker <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./psyker.html#psyPowers"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Powers</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./psyker.html#psyPhenom"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Phenomena</a>
+                    <a href="./psyker.html#psyPerils"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Perils of the Warp</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Character <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./character.html#skills"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Skills</a>
+                    <a href="./character.html#talents"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Talents</a>
+                    <a href="./character.html#traits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Traits</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./character.html#homeworlds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Homeworlds</a>
+                    <a href="./character.html#backgrounds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Backgrounds</a>
+                    <a href="./character.html#roles"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Roles</a>
+                    <a href="./character.html#divinations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Divinations</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Effects <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./effects.html#shock"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Fear and Shock</a>
+                    <a href="./effects.html#snapping"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Snapping Out of It</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#insanity"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Insanity</a>
+                    <a href="./effects.html#trauma"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mental Trauma</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#corruption"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Corruption</a>
+                    <a href="./effects.html#maligna"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Malignancies</a>
+                    <a href="./effects.html#mutations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mutations</a>
+                </div>
+            </div>
+            <a class="w3-bar-item w3-button w3-round-large w3-right w3-hide-small w3-blue" id="charGen" target="_blank"
+                href="https://ajott.github.io/dh2chargen">Character Creator</a>
+            <a href="javascript:void(0)" class="w3-red w3-bar-item w3-button w3-top-left w3-hide-large w3-hide-medium"
+                onclick="showMenu()">&#9776;</a>
+        </div>
+    </div>
+
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div id="effectPane">
+
+                <div id="shock" class="info">
+                    <h3 class="headingLight">Shock and Fear</h3>
+                    <h4 class="headingLight">Roll 1d100, add +10 for each degree of failure after the first on a
+                        Fear test.</h4>
+
+                    <p>When characters are faced with terrifying events or adversaries, they must make a Fear test.
+                        This
+                        is a Willpower test, modified by just how horrible what the character faces is. Should a
+                        character
+                        pass a Fear test, they may continue as normal. Upon failure, however, they must suffer
+                        Shock.
+                        <br />
+                        <br />
+                        <b>Fear tests impose a -10 penalty for each level above the first -
+                            <em>eg</em> Fear(3) is at a -20</b>
+                    </p>
+                    <table id="shockTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Roll</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01-20</td>
+                                <td>The character is badly startled. He can only take a single Half Action during
+                                    his next
+                                    turn, but afterward he acts normally.</td>
+                            </tr>
+                            <tr>
+                                <td>21-40</td>
+                                <td>Fear grips the character and he begins to shake and tremble. He suffers a -10
+                                    penalty
+                                    on all tests for the rest of the encounter unless he can recover his wits (see
+                                    Shock
+                                    and Snapping Out of It, page 286).</td>
+                            </tr>
+                            <tr>
+                                <td>41-60</td>
+                                <td>Reeling with shock, the character backs away from the source of his Fear. He
+                                    cannot willingly
+                                    approach the object of his Fear, but can otherwise act normally, with a -10
+                                    penalty
+                                    on all tests until the end of the encounter.</td>
+                            </tr>
+                            <tr>
+                                <td>61-80</td>
+                                <td>The character is frozen by terror. He can take no actions until he recovers
+                                    himself (see
+                                    Shock and Snapping Out of It, page 286). After snapping out of it, he makes all
+                                    tests
+                                    with a -10 penalty for the rest of the encounter.</td>
+                            </tr>
+                            <tr>
+                                <td>81-100</td>
+                                <td>Panic grips the character. He must flee the source of his fear, if able, as fast
+                                    as he
+                                    can, and if prevented from doing so, can only take Half Actions and is at a -20
+                                    penalty
+                                    to all tests. Once away from the danger, he must successfully Snap Out of It
+                                    (see
+                                    Shock and Snapping Out of It, page 286) to regain control.</td>
+                            </tr>
+                            <tr>
+                                <td>101-120</td>
+                                <td>Fainting dead away, the character keels over and remains Unconscious for 1d5
+                                    rounds.
+                                    Once he regains consciousness, he is still shaken and takes all tests with a -10
+                                    penalty until the end of the encounter.</td>
+                            </tr>
+                            <tr>
+                                <td>121-130</td>
+                                <td>Totally overcome, the character screams and vomits uncontrollably for 1d5
+                                    rounds. During
+                                    this time he can do nothing, and drops anything he is holding. Afterward, until
+                                    the
+                                    end of the encounter, the character can only take a single Half Action each
+                                    turn.</td>
+                            </tr>
+                            <tr>
+                                <td>131-140</td>
+                                <td>The character laughs hysterically and randomly attacks anything near him in a
+                                    manic frenzy,
+                                    firing wildly or attacking with whatever he has at hand. This effect lasts until
+                                    the character Snaps Out of It (see Shock and Snapping Out of It, page 286), or
+                                    until
+                                    he is knocked Unconscious or otherwise incapacitated.</td>
+                            </tr>
+                            <tr>
+                                <td>141-160</td>
+                                <td>The character crumples to the ground for 1d5+1 rounds and begins sobbing,
+                                    babbling, and
+                                    tearing at his own flesh, and can do nothing else. Even after he returns to his
+                                    senses,
+                                    he is a complete mess, and suffers a -20 penalty on all tests until the end of
+                                    the
+                                    encounter.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>160-170</td>
+                                <td>The character's mind snaps. He becomes catatonic for 1d5 hours; for that time,
+                                    he is
+                                    Unconscious and cannot be roused.</td>
+                            </tr>
+                            <tr>
+                                <td>171+</td>
+                                <td>The character is so overcome with terror that his heart stops: he must make a
+                                    Challenging
+                                    (+0) Toughness test or die. If he succeeds, the character still falls
+                                    Unconscious
+                                    for 1d5 hours, and cannot be roused for that time.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="snapping" class="info">
+                    <h3 class="headingLight">Snapping Out of It</h3>
+                    <p>
+                        Characters can attempt to shrug off some effects of Fear and Shock. Doing so requires a
+                        Willpower test on their next turn.
+                        If they are successful, they regain their senses and act normally. Should they fail, the
+                        effect
+                        continues and the test can be made again the next round. This test can only be made at the
+                        start
+                        of their turn, or immediately if the Fear effect started on their turn.
+                    </p>
+                </div>
+
+                <div id="insanity" class="info">
+                    <h3 class="headingLight">Insanity</h3>
+                    <p>Insanity (IsP) is a representation of the toll the horrors of the 41st Millennium place on
+                        the minds
+                        of the characters.
+                        <a href="#corruption">Corruption</a> is used to represent the damage to characters' very
+                        souls.
+                        <br /> Insanity points start at 0, and may increase as time goes on. As characters become
+                        more Insane,
+                        the effects are categorized into a variety of
+                        <a href="#trauma">Mental Traumas</a>, and they may gain mental disorders.
+                    </p>
+                    <p>Disorders are detailed on pp. 288-289 of the core rulebook. Generally, these are left to the
+                        discretion
+                        of the GM. Note that, as characters become more insane, the severity of their mental
+                        disorder
+                        increases.
+                        <ul>
+                            <li>Minor Disorder - These are weak disorders, and any test to overcome the effects of
+                                the disorder
+                                gains a +10 bonus</li>
+                            <li>Severe Disorder - There is no modifier to the resistance of these disorders</li>
+                            <li>Acute Disorder - These will trigger at the slightest provocation. Any test to resist
+                                the
+                                effects gain a -10 penalty</li>
+                        </ul>
+                    </p>
+                    <p>Insanity points can be removed through the use of Experience. It costs 100 xp to remove a
+                        single
+                        point of Insanity, and the character may never reduce their degree of madness (Stable >
+                        Unsetttled
+                        > Disturbed > Unhinged > Deranged) by this method; nor may they be cured of their disorders.
+                    </p>
+                    <p>The more Insane a character is, the more jaded they are to the horrors surrounding them.
+                        Should the
+                        tens digit of a character's IsP be double (or more) the Fear rating of a test, they simply
+                        ignore
+                        it.
+                    </p>
+                    <br />
+                    <div class="col-md-6 col-sm-8 col-xs-12">
+                        <h4>The Insanity Track</h4>
+                        <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                            <thead>
+                                <th>IsP Total</th>
+                                <th>Degree of Madness</th>
+                                <th>Trauma Modifier</th>
+                                <th>Disorder</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01-09</td>
+                                    <td>Stable</td>
+                                    <td>N/A</td>
+                                    <td>None</td>
+                                </tr>
+                                <tr>
+                                    <td>10-19</td>
+                                    <td>Unsettled</td>
+                                    <td>+10</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>20-29</td>
+                                    <td>Unsettled</td>
+                                    <td>+10</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>30-39</td>
+                                    <td>Unsettled</td>
+                                    <td>+10</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>40-49</td>
+                                    <td>Disturbed</td>
+                                    <td>+0</td>
+                                    <td>1st - Minor</td>
+                                </tr>
+                                <tr>
+                                    <td>50-59</td>
+                                    <td>Disturbed</td>
+                                    <td>+0</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>60-69</td>
+                                    <td>Unhinged</td>
+                                    <td>-10</td>
+                                    <td>2nd - Severe</td>
+                                </tr>
+                                <tr>
+                                    <td>70-79</td>
+                                    <td>Unhinged</td>
+                                    <td>-10</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>80-89</td>
+                                    <td>Deranged</td>
+                                    <td>-20</td>
+                                    <td>3rd - Actue</td>
+                                </tr>
+                                <tr>
+                                    <td>90-99</td>
+                                    <td>Deranged</td>
+                                    <td>-20</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>100+</td>
+                                    <td colspan="3">Terminally Insane - Character retires from play.
+                                        <br />
+                                        <em>Your service will be remembered.</em>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6 col-sm-4 col-xs-0"></div>
+                </div>
+
+                <div id="trauma" class="info">
+                    <h3 class="headingLight">Mental Trauma</h3>
+                    <p>As characters go insane, they may gain mental traumas. These, unlike Mental Disorders, are
+                        generally
+                        the short-term effects of a character's Insanity. Every 10 IsP gained requires a Willpower
+                        test,
+                        with a modifier based on the character's progress along the Insanity Track. Should the
+                        character
+                        pass the test, they do not experience trauma. Upon failure, however, they
+                        <b>roll 1d100 and add 10 for each degree of failure on the Willpower test.</b>
+                    </p>
+                    <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <th>Roll</th>
+                            <th>Effect</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01-40</td>
+                                <td>The character becomes withdrawn and quiet. He suffers a –10 penalty to all
+                                    Fellowship
+                                    based tests for 3d10 hours.</td>
+                            </tr>
+                            <tr>
+                                <td>41-70</td>
+                                <td>The character must compulsively perform an action (such as fevered praying,
+                                    frantically
+                                    cleaning a weapon, etc.) and pays little attention to anything else. He suffers
+                                    a
+                                    –10 penalty toall test based on Intelligence, Fellowship, and Perception. This
+                                    effect
+                                    lasts for 3d10 hours.</td>
+                            </tr>
+                            <tr>
+                                <td>71-100</td>
+                                <td>The character is constantly fearful, seeing danger everywhere, and is extremely
+                                    jumpy.
+                                    The character gains a +10 bonus to all Perception-based tests and is at a –10
+                                    penalty
+                                    to Willpower tests for the next 1d5 days.</td>
+                            </tr>
+                            <tr>
+                                <td>101-120</td>
+                                <td>The character suffers from a temporary Severe phobia (see Gaining Mental
+                                    Disorders, page
+                                    287). This effect lasts for 1d5 days.</td>
+                            </tr>
+                            <tr>
+                                <td>121-130</td>
+                                <td>The character reacts to the slightest stressor pressure by becoming extremely
+                                    agitated.
+                                    When performing any task that involves a test, the character must first pass a
+                                    Willpower
+                                    testor suffer a –10 modifier to the test. During combat encounters, he suffers a
+                                    –10 penalty on all tests. This effect lasts for 1d5 days.</td>
+                            </tr>
+                            <tr>
+                                <td>131-140</td>
+                                <td>The character suffers vivid and extreme nightmares whenever he tries to sleep.
+                                    The next
+                                    day, and for a further 1d10 days, the character is exhausted by a lack of sleep
+                                    and
+                                    gains 1 levelof Fatigue.</td>
+                            </tr>
+                            <tr>
+                                <td>141-150</td>
+                                <td>The character is struck dumb and is unable to speak. This lasts for 1d5 days.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>141-160</td>
+                                <td>Extremely distressed and unfocused, the character refuses to eat or drink, and
+                                    looks
+                                    to be in a terrible state. Reduce all of the character’s characteristics by 10
+                                    (to
+                                    a minimumof 1) for 1d10 days.</td>
+                            </tr>
+                            <tr>
+                                <td>161-170</td>
+                                <td>The character suffers a fit of hysterics, and becomes temporarily blind or deaf
+                                    for 1d10
+                                    days.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>171+</td>
+                                <td>The character becomes completely traumatised and virtually unresponsive. He
+                                    cannot initiate
+                                    actions, but can be gently led. This effect lasts for 1d10 days.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="corruption" class="info">
+                    <h3 class="headingLight">Corruption</h3>
+                    <p>Corruption (CP) reflects the permanent taint of Chaos on the souls of the characters.
+                        <a href="insanity">Insanity</a> governs the toll the horrors of the 41st Millennium take on
+                        the mind.
+                        <br /> Corruption points start at 0, and may increase as time goes on. As characters become
+                        more corrupted
+                        by the forces of Chaos, their bodies may warp and twist to reflect the scarring of their
+                        befouled
+                        souls. These are known as
+                        <a href="maligna">Malignancies</a>
+                        and
+                        <a href="mutations">Mutations</a>, and are detailed below.
+                    </p>
+                    <p>There are many things that may corrupt the souls of Acolytes. Generally this is left to the
+                        discretion
+                        of the GM, but may include such things as:
+                        <ul>
+                            <li>Failing a Fear test caused by a Warp entity</li>
+                            <li>Exposure to the Warp without the protection of a Gellar field</li>
+                            <li>The study of corrupting texts, pict-logs, or runes - even if the character does not
+                                comprehend
+                                the writings</li>
+                            <li>Handling an artefact of the Ruinious Powers</li>
+                        </ul>
+                    </p>
+                    <p>
+                        Each time after gaining 10 CP, a character must make a test against gaining a Malignancy.
+                        This is modified based on their
+                        current degree of Corruption.
+                        <b>Roll 1d100 and consult the
+                            <a href="maligna">Malignancies</a> table.</b> Should the result be a Malignancy the
+                        character already posesses,
+                        they must roll again.
+                        <br />
+                        <br /> As characters advance in degrees of Corruption, they will be required to make a test
+                        against
+                        gaining a Mutation. This test is against two Characteristics of their choosing (the same
+                        Characteristic
+                        may not be used for multiple Mutation tests, so keep track). Failure on either test means
+                        they
+                        gain a Mutation.
+                        <b>Roll 1d100 and consult the
+                            <a href="mutations">Mutations</a> table.</b> Should the result be a Mutation the
+                        character already posesses,
+                        they must roll again.
+                    </p>
+                    <p>Corruption is considered to be permanent. While it is possible to remove the taint of the
+                        Warp from
+                        one's soul, the chances to do so are exceedingly rare. This may be done, for example, by a
+                        Living
+                        Saint visiting and giving her blessing as thanks for cleansing a shrine. This would reduce a
+                        character's corruption by only a small amount, usually 1-2 CP.
+                    </p>
+                    <br />
+                    <div class="col-md-6 col-sm-8 col-xs-12">
+                        <h4>The Corruption Track</h4>
+                        <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                            <thead>
+                                <th>CP Total</th>
+                                <th>Degree of Corruption</th>
+                                <th>Malignancy Modifier</th>
+                                <th>Mutation</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01-30</td>
+                                    <td>Tainted</td>
+                                    <td>+0</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>31-60</td>
+                                    <td>Soiled</td>
+                                    <td>-10</td>
+                                    <td>First Test</td>
+                                </tr>
+                                <tr>
+                                    <td>61-90</td>
+                                    <td>Debased</td>
+                                    <td>-20</td>
+                                    <td>Second Test</td>
+                                </tr>
+                                <tr>
+                                    <td>91-99</td>
+                                    <td>Profane</td>
+                                    <td>-30</td>
+                                    <td>Third Test</td>
+                                </tr>
+                                <tr>
+                                    <td>100+</td>
+                                    <td colspan="3">Damned - Character is removed from play.
+                                        <br />
+                                        <em>Only in death can your soul be redeemed.</em>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6 col-sm-4 col-xs-0"></div>
+                </div>
+
+                <div id="maligna" class="info">
+                    <h3 class="headingLight">Malignancies</h3>
+                    <table id="malignaTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Roll</th>
+                                <th>Effect</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01-10</td>
+                                <td>Palsy: The character suffers from numerous minor tics, shakes, and tremors with
+                                    no medical
+                                    cause. Reduce his Agility by 1d10.</td>
+                            </tr>
+                            <tr>
+                                <td>11-15</td>
+                                <td>Dark-hearted: The character grows increasingly cruel, callous, and vindictive.
+                                    Reduce
+                                    his Fellowship by 1d10.</td>
+                            </tr>
+                            <tr>
+                                <td>16-20</td>
+                                <td>Ill-fortuned: Chance seems to mock this Acolyte at the most crucial of
+                                    opportunities.
+                                    Whenever this character uses a Fate point, roll 1d10. On a result of 7-10, the
+                                    Fate
+                                    point has no effect but is spent anyway.</td>
+                            </tr>
+                            <tr>
+                                <td>21-25</td>
+                                <td>Skin Afflictions: The character is plagued by boils, scabs, weeping sores and
+                                    other disgusting
+                                    features across his body. He suffers a -20 penalty to all Charm tests.</td>
+                            </tr>
+                            <tr>
+                                <td>26-30</td>
+                                <td>Night Eyes: Light pains the character, echoing the growing stain on his soul.
+                                    Unless
+                                    he shields his eyes, he suffers a -10 penalty on all tests made in an area of
+                                    bright
+                                    light.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>31-33</td>
+                                <td>Morbid: The character finds it hard to concentrate as his mind turns
+                                    increasingly macabre
+                                    and he becomes prone to tortured, gloom filled trains of thought. Reduce his
+                                    Intelligence
+                                    by 1d10.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>34-45</td>
+                                <td>Witch Mark: The character develops some minor physical deformity or easily
+                                    concealable
+                                    mutation. It is small, but perhaps enough to consign him to death if found out
+                                    by
+                                    a fanatical witch hunter.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>46-50</td>
+                                <td>Fell Obsession: This functions like the Obsession Disorder on page 288, but in
+                                    this case
+                                    the character is obsessed by something sinister or malign (such as collecting
+                                    finger-bone
+                                    trophies, etc.).
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>51-55</td>
+                                <td>Irrational Nausea: The character feels sick at the sight, sound, or smell of
+                                    something
+                                    otherwise innocuous (such as prayer books and holy items, bare flesh, human
+                                    laughter,
+                                    fresh food, etc.). When he encounters an object of his revulsion he must make a
+                                    Toughness
+                                    test or suffer a -10 penalty to all tests as long as he remains in its presence.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>56-60</td>
+                                <td>Wasted Frame: The character's pallor becomes corpse-like and his muscles waste
+                                    away.
+                                    Reduce his Strength by 1d10.</td>
+                            </tr>
+                            <tr>
+                                <td>61-63</td>
+                                <td>Night Terrors: The character is plagued by daemonic visions in his sleep. This
+                                    functions
+                                    identically to the Horrific Nightmares Disorder on page 289.</td>
+                            </tr>
+                            <tr>
+                                <td>64-70</td>
+                                <td>Poor Health: The character constantly suffers petty illnesses and phantom pains,
+                                    and
+                                    his wounds never seem to fully heal. Reduce the character's Toughness by 1d10.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>71-75</td>
+                                <td>Distrustful: The character cannot conceal the distrust and antipathy he has for
+                                    others.
+                                    He suffers a -10 penalty to Fellowship tests when dealing with strangers.</td>
+                            </tr>
+                            <tr>
+                                <td>76-80</td>
+                                <td>Malign Sight: The world seems to darken, tarnish, and rot if the character looks
+                                    at anything
+                                    too long. Reduce the character's Perception by 1d10.</td>
+                            </tr>
+                            <tr>
+                                <td>81-83</td>
+                                <td>Ashen Taste: Food and drink taste foul and provide little sustenance to the
+                                    character,
+                                    and he can barely stomach eating. Recovering levels of Fatigue takes twice as
+                                    long
+                                    for him than normal (see page 233).</td>
+                            </tr>
+                            <tr>
+                                <td>84-90</td>
+                                <td>Bloodlust: Murderous rage is never far from the character's mind. After
+                                    suffering damage
+                                    (after Armour and Toughness bonus) in combat, he must succeed at a Willpower
+                                    test
+                                    to allow his enemies to flee, be captured, or incapacitated, rather than killing
+                                    them outright, even if his intent is otherwise.</td>
+                            </tr>
+                            <tr>
+                                <td>91-93</td>
+                                <td>Blackout: The character suffers from inexplicable blackouts. When they occur and
+                                    what
+                                    happens during them is up to the GM, who should inform the player the details of
+                                    what (if anything) he remembers on awakening.</td>
+                            </tr>
+                            <tr>
+                                <td>94-100</td>
+                                <td>Strange Addiction: The character has a near-uncontrollable craving for some
+                                    bizarre and
+                                    unnatural substance (such as rose petals, fresh blood, widows' tears, etc.).
+                                    This
+                                    acts like a Minor Disorder for Compulsion (see page 288), but is freakish enough
+                                    to cause serious suspicion if discovered.</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td>The Warp Made Manifest: This character becomes a Daemon-like creature, capable
+                                    of reshaping
+                                    reality itself at his whim. He gains the Daemonic (CB), Fear (2), From Beyond,
+                                    and
+                                    Warp Instability traits. He can also use his Willpower characteristic in place
+                                    of
+                                    anyother characteristic for any test he is called upon to take.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="mutations" class="info">
+                    <h3 class="headingLight">Mutations</h3>
+                    <table id="mutantTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Roll</th>
+                                <th>Effect</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01-06</td>
+                                <td>Bestial Hide: The character's skin becomes toughened with layers of thick scales
+                                    or chitin,
+                                    and he gains the Natural Armour (2) trait.</td>
+                            </tr>
+                            <tr>
+                                <td>07-11</td>
+                                <td>Unnatural Arms: Twisted appendages (shrivelled arms, hooked talons, or fleshy
+                                    tendrils)
+                                    emerge from this character's spine or torso. He gains the Multiple Arms (CB)
+                                    trait.</td>
+                            </tr>
+                            <tr>
+                                <td>12-17</td>
+                                <td>Sightless Orbs: This character's eyes become sightless, cracked windows into a
+                                    soul afflicted
+                                    with a growing corruption. He gains Blind and Unnatural Senses (CBx10) traits.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>18-25</td>
+                                <td>Swollen Brute: This character becomes bloated, his muscles expanding and his
+                                    form becoming
+                                    excessively corpulent or disturbingly muscular (or perhaps both). This
+                                    character's
+                                    Toughness and Strength characteristics are permanently increased by 10, but his
+                                    Agility
+                                    bonus is reduced by 1 for purposes of movement.</td>
+                            </tr>
+                            <tr>
+                                <td>26-30</td>
+                                <td>Deathsight: This character's mind becomes twisted, his eyes showing him
+                                    countless possible
+                                    annihilations of anything or anyone he gazes upon for more than a few moments.
+                                    Once
+                                    per game session, this character may increase the damage of one attack he has
+                                    made
+                                    by his Corruption bonus. If he does so, he gains 1 Corruption point.</td>
+                            </tr>
+                            <tr>
+                                <td>31-36</td>
+                                <td>Cursed Fleshmetal: This character's armour and cybernetic implants become fused
+                                    with
+                                    his flesh, and even regenerate. Removing any of these items requires a
+                                    Challenging
+                                    (+0) Medicae test; if the test fails, he suffers 1d5 Rending damage to a
+                                    randomly
+                                    selected limb that ignores Armour. He can make an Ordinary (+10) Toughness test
+                                    to
+                                    repair items merged with him, in the same manner as a Tech-Use test to repair
+                                    the
+                                    same equipment, but suffers 1 Corruption point.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>37-43</td>
+                                <td>Razor Fangs: This character's teeth grow long, turning into tearing fangs. This
+                                    character
+                                    gains an unarmed attack that inflicts 1d5+CB Rending damage, pen 2. He
+                                    permanently
+                                    reduces his Fellowship characteristic by 1d5.</td>
+                            </tr>
+                            <tr>
+                                <td>44-49</td>
+                                <td>Excessive Legs: This character develops extra legs that support his form,
+                                    suspending
+                                    his upper torso above a centauroid lower body. This character gains the
+                                    Quadruped
+                                    trait with a number of extra legs equal half to his Corruption bonus (rounded
+                                    up).</td>
+                            </tr>
+                            <tr>
+                                <td>50-54</td>
+                                <td>Wings: Massive feathered or leathery wings erupt from this character's spine,
+                                    and he
+                                    gains the Flyer (CBx2) trait.</td>
+                            </tr>
+                            <tr>
+                                <td>55-60</td>
+                                <td>Serpentine Tail: This character's legs wither while his spine elongates into a
+                                    serpentine
+                                    tail that supports his body. He gains the Crawler trait and gains an unarmed
+                                    attack
+                                    that can strike for 1d10 Impact damage, Pen 0.</td>
+                            </tr>
+                            <tr>
+                                <td>61-69</td>
+                                <td>Searing Blood: This character's veins are filled with searing acids in place of
+                                    blood,
+                                    though somehow the corrosive effects do not burn his own flesh. Whenever he
+                                    suffers
+                                    Blood Loss, the foul liquid erupts and inflicts 1d5+CB Energy damage, Pen 0, to
+                                    each
+                                    other character within 1d5 metres.</td>
+                            </tr>
+                            <tr>
+                                <td>70-77</td>
+                                <td>Witch-Curse: A small stigma in the shape of a maddening rune appears on this
+                                    character's
+                                    body, marking him as touched by Chaos. He gains the Psyker trait (or adds 1 to
+                                    an
+                                    existing psy rating) and freely learns any 1 psychic power that costs 100 xp or
+                                    less.
+                                    Whenever he attempts to use this power, he gains 1d5 Corruption points.</td>
+                            </tr>
+                            <tr>
+                                <td>78-84</td>
+                                <td>Bone-Blades: This character's bones grow long, twisted spurs that sprout
+                                    painfully from
+                                    his flesh on his command. This character gains an unarmed attack that inflicts
+                                    1d10+CB
+                                    Rending damage, Pen 0. Whenever he makes an attack with this weapon, this
+                                    character
+                                    suffers Blood Loss unless he passes a Challenging (+0) Toughness test.</td>
+                            </tr>
+                            <tr>
+                                <td>85-89</td>
+                                <td>Cannibalistic Urge: Blood and marrow become as wine and bread to this character,
+                                    and
+                                    normal food no longer sates the hunger of his soul. Once per game session, he
+                                    can
+                                    remove 1d5 damage by consuming human flesh. Each time he does so, he gains 1
+                                    Corruption
+                                    point.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>90-92</td>
+                                <td>Corrupted Flesh: Instead of blood, when this character's flesh is torn asunder,
+                                    horrific
+                                    insects, worms, or flitting creatures spill forth. Whenever he suffers damage,
+                                    this
+                                    character gains the Fear (1) trait for 1d5 rounds.</td>
+                            </tr>
+                            <tr>
+                                <td>93-94</td>
+                                <td>It Will Not Die!: This character is touched by the power of the Warp, and
+                                    fortune twists
+                                    to keep him alive regardless of the terrible wounds he suffers, as if it is the
+                                    will
+                                    of some dark being that resides beyond the veil of reality. He can no longer
+                                    burn
+                                    a Fate point to survive lethal injuries. Whenever this character would die, he
+                                    instead
+                                    survives by the narrowest margin as if he had burned a Fate point and gains
+                                    1d10+5
+                                    Corruption points.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>95-97</td>
+                                <td>Warp Gaze: Whatever this character looks upon burns with the fire of the Warp,
+                                    and all
+                                    who see his eyes despair. This character gainsa 20m ranged attack that strikes
+                                    with
+                                    1d10+CB Energy damage and the Spray quality. Each time he uses this attack, he
+                                    gains
+                                    1d5 Corruption points. Characters struck with this attack must make a
+                                    Challenging
+                                    (+0) Fear(1) test.</td>
+                            </tr>
+                            <tr>
+                                <td>98-99</td>
+                                <td>Warp Regeneration: Corruption seethes through this character's flesh, sewing his
+                                    body
+                                    back together time and time again whether he wills it or not. Whenever this
+                                    character
+                                    suffers damage, he makes a Challenging (+0) Toughness test. If he succeeds, he
+                                    gains
+                                    the Regeneration (CB) trait for 1 round and gains 1d5 Corruption points.</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td>The Warp Made Manifest: This character becomes a Daemon-like creature, capable
+                                    of reshaping
+                                    reality itself at his whim. He gains the Daemonic (CB), Fear (2), From Beyond,
+                                    and
+                                    Warp Instability traits. He can also use his Willpower characteristic in place
+                                    of
+                                    any other characteristic for any test he is called upon to take.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+
+    </div>
+</body>
+<footer>
+        <div class="w3-row-padding w3-section">
+                <div class="w3-col s0 m1 l1">
+                    <p></p>
+                </div>
+                <div class="w3-col s12 m10 l10">
+                    All Dark Heresy 2e material is © Fantasy Flight Games
+                </div>
+                <div class="w3-col s0 m1 l1">
+                    <p></p>
+                </div>
+            </div>
+    </footer>
+</html>

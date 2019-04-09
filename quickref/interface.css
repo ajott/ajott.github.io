@@ -1,5 +1,5 @@
 .info {
-    padding-top: 60px;    
+    padding-top: 60px;
 }
 
 .body-dark {
@@ -7,34 +7,34 @@
     color: white !important;
 }
 
-.dropdown-toggle{
+.dropdown-toggle {
     color: black !important;
 }
 
-.dropdown-dark{
+.dropdown-dark {
     background-color: #343a40 !important;
     color: white !important;
 }
 
-#psykerTab.btn-selected{
+#psykerTab.btn-selected {
     background: purple !important;
     border-color: purple !important;
 }
 
-#showAll.btn-selected{
+#showAll.btn-selected {
     background: darkgreen !important;
     border-color: darkgreen !important;
 }
 
 .psyTooltipLight {
-	color:purple;
-	border-bottom: 1px dotted purple;
+    color: purple;
+    border-bottom: 1px dotted purple;
     text-decoration: none;
 }
 
 .psyTooltipDark {
-	color:magenta;
-	border-bottom: 1px dotted magenta;
+    color: magenta;
+    border-bottom: 1px dotted magenta;
     text-decoration: none;
 }
 
@@ -42,12 +42,16 @@
     color: maroon !important;
 }
 
+.header-large {
+    font-size: 1.5em;
+}
+
 .headingDark {
     color: red !important;
 }
 
 .btn-lightMode {
-    color:black !important;
+    color: black !important;
 }
 
 .btn-darkMode {
@@ -58,13 +62,13 @@
     color: white !important;
 }
 
-.btn-selected{
-    color:white !important;
+.btn-selected {
+    color: white !important;
     background: maroon !important;
     border-color: maroon !important;
 }
 
-footer{
+footer {
     padding-bottom: 10px;
 }
 
@@ -98,16 +102,162 @@ footer{
     color: black !important;
 }
 
-.tier2{
-    background: cyan;;
+.tier2 {
+    background: cyan;
+    ;
     color: black !important;
 }
 
-.tier3{
+.tier3 {
     background: orangered;
     color: white;
 }
 
-td:first-child{
+td:first-child {
     font-weight: bold;
+}
+
+.table-dark {
+    background: #343a40;
+}
+
+.table-dark tr {
+    border: none !important;
+}
+
+.table-dark tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, .05) !important;
+}
+
+.table-dark tbody tr:hover {
+    background: rgb(120,120,120) !important;
+}
+
+.table-dark th {
+    background: rgba(128, 0, 0, 0.65) !important;
+    border-bottom: 1px solid darkgrey;
+}
+
+/* .table-dark th:hover {
+    background-color: rgba(128, 0, 0, 0.35) !important;
+} */
+
+a:hover {
+    text-decoration: none !important;
+}
+
+
+.bar-pad {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid lightgrey;
+}
+
+
+.w3-darker-grey {
+    color: white !important;
+    background: #343a40 !important;
+}
+
+.dropdown-divider {
+    height: 0;
+    margin: .5rem 0;
+    overflow: hidden;
+    border-top: 1px solid #e9ecef
+}
+
+
+/* 
+Generated Maroon theme
+*/
+
+.w3-maroon-l5 {
+    color: #000 !important;
+    background-color: #ffe8e8 !important
+}
+
+.w3-maroon-l4 {
+    color: #000 !important;
+    background-color: #ffb3b3 !important
+}
+
+.w3-maroon-l3 {
+    color: #fff !important;
+    background-color: #ff6666 !important
+}
+
+.w3-maroon-l2 {
+    color: #fff !important;
+    background-color: #ff1a1a !important
+}
+
+.w3-maroon-l1 {
+    color: #fff !important;
+    background-color: #cc0000 !important
+}
+
+.w3-maroon-d1 {
+    color: #fff !important;
+    background-color: #730000 !important
+}
+
+.w3-maroon-d2 {
+    color: #fff !important;
+    background-color: #660000 !important
+}
+
+.w3-maroon-d3 {
+    color: #fff !important;
+    background-color: #590000 !important
+}
+
+.w3-maroon-d4 {
+    color: #fff !important;
+    background-color: #4d0000 !important
+}
+
+.w3-maroon-d5 {
+    color: #fff !important;
+    background-color: #400000 !important
+}
+
+.w3-maroon-light {
+    color: #000 !important;
+    background-color: #ffe8e8 !important
+}
+
+.w3-maroon-dark {
+    color: #fff !important;
+    background-color: #400000 !important
+}
+
+.w3-maroon-action {
+    color: #fff !important;
+    background-color: #400000 !important
+}
+
+.w3-maroon {
+    color: #fff !important;
+    background-color: #800000 !important
+}
+
+.w3-text-maroon {
+    color: #800000 !important
+}
+
+.w3-border-maroon {
+    border-color: #800000 !important
+}
+
+.w3-hover-maroon:hover {
+    color: #fff !important;
+    background-color: #800000 !important
+}
+
+.w3-hover-text-maroon:hover {
+    color: #800000 !important
+}
+
+.w3-hover-border-maroon:hover {
+    border-color: #800000 !important
 }

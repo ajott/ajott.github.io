@@ -1,0 +1,1751 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="A web-based quick reference guide for Fantasy Flight's Dark Heresy 2nd Edition RPG">
+    <meta name="keywords"
+        content="Dark Heresy, 40k, warhammer 40k, 40k rpg, quick ref, quick reference guide, reference guide, Dark heresy 2e, dark heresy second edition, dark heresy 2nd edition">
+    <title>DH 2e QuickRef</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+</head>
+
+
+<body>
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad">
+        <div id="headTitle">
+            <span class="header-large headingDark w3-bar-item">DH 2e Quick Reference</span>
+            <br />
+        </div>
+        <div id="menu" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
+            <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-round-large">Exp
+                Costs</a>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('combatDropdown')" class="w3-button w3-round-large w3-hover-maroon">Combat
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="combatDropdown" class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./combat.html#combatActions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Actions</a>
+                    <a href="./combat.html#hitLocations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Hit
+                        Locations</a>
+                    <a href="./combat.html#conditions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Conditions and Damage</a>
+                    <a href="./combat.html#circumstances"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Circumstances</a>
+                    <a href="./combat.html#difficulties"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Difficulty
+                        Examples</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('critDropdown')" class="w3-button w3-round-large w3-hover-maroon">Critical
+                    Hits <i class="fa fa-caret-down"></i></button>
+                <div id="critDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./crit.html#crits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Critical Rolls</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./crit.html#energyCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Energy</a>
+                    <a href="./crit.html#explosiveCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Explosive</a>
+                    <a href="./crit.html#impactCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Impact</a>
+                    <a href="./crit.html#rendingCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Rending</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('equipDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Equipment <i class="fa fa-caret-down"></i></button>
+                <div id="equipDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./gear.html#gear"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Gear</a>
+                    <a href="./gear.html#tools"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Tools</a>
+                    <a href="./gear.html#cybernetics"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Cybernetics</a>
+                    <a href="./gear.html#consumables"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Drugs and Consumables</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('weaponDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Weapons <i class="fa fa-caret-down"></i></button>
+                <div id="weaponDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./weapons.html#weapons"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapons</a>
+                    <a href="./weapons.html#weaponQual"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Qualities</a>
+                    <a href="./weapons.html#weaponMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Mods</a>
+                    <a href="./weapons.html#ammo"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Special Ammo</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('armourDropdown')" class="w3-button w3-round-large w3-hover-maroon">Armour
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="armourDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./armour.html#armour"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour</a>
+                    <a href="./armour.html#armourMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour Mods</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('psykerDropdown')" class="w3-button w3-round-large w3-hover-purple">Psyker
+                    <i class="fa fa-caret-down"></i></button>
+                <div id="psykerDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./psyker.html#psyPowers"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Powers</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./psyker.html#psyPhenom"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Phenomena</a>
+                    <a href="./psyker.html#psyPerils"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Perils of the Warp</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('charDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Character <i class="fa fa-caret-down"></i></button>
+                <div id="charDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./character.html#skills"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Skills</a>
+                    <a href="./character.html#talents"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Talents</a>
+                    <a href="./character.html#traits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Traits</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./character.html#homeworlds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Homeworlds</a>
+                    <a href="./character.html#backgrounds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Backgrounds</a>
+                    <a href="./character.html#roles"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Roles</a>
+                    <a href="./character.html#divinations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Divinations</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-click w3-mobile">
+                <button onclick="dropdownShow('effectsDropdown')"
+                    class="w3-button w3-round-large w3-hover-maroon">Effects <i class="fa fa-caret-down"></i></button>
+                <div id="effectsDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./effects.html#shock"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Fear and Shock</a>
+                    <a href="./effects.html#snapping"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Snapping Out of It</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#insanity"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Insanity</a>
+                    <a href="./effects.html#trauma"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mental Trauma</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#corruption"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Corruption</a>
+                    <a href="./effects.html#maligna"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Malignancies</a>
+                    <a href="./effects.html#mutations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mutations</a>
+                </div>
+            </div>
+        </div>
+        <div class="w3-bar">
+            <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-hide-small w3-round-large">Exp
+                Costs</a>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Combat <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                    <a href="./combat.html#combatActions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Actions</a>
+                    <a href="./combat.html#hitLocations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Hit
+                        Locations</a>
+                    <a href="./combat.html#conditions"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Conditions and Damage</a>
+                    <a href="./combat.html#circumstances"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Circumstances</a>
+                    <a href="./combat.html#difficulties"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Difficulty
+                        Examples</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Critical Hits <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./crit.html#crits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Critical Rolls</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./crit.html#energyCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Energy</a>
+                    <a href="./crit.html#explosiveCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Explosive</a>
+                    <a href="./crit.html#impactCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Impact</a>
+                    <a href="./crit.html#rendingCrit"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Rending</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Equipment <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./gear.html#gear"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Gear</a>
+                    <a href="./gear.html#tools"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Tools</a>
+                    <a href="./gear.html#cybernetics"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Cybernetics</a>
+                    <a href="./gear.html#consumables"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Drugs and Consumables</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Weapons <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./weapons.html#weapons"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapons</a>
+                    <a href="./weapons.html#weaponQual"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Qualities</a>
+                    <a href="./weapons.html#weaponMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Mods</a>
+                    <a href="./weapons.html#ammo"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Special Ammo</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Armour <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./armour.html#armour"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour</a>
+                    <a href="./armour.html#armourMods"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour Mods</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-purple">Psyker <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./psyker.html#psyPowers"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Powers</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./psyker.html#psyPhenom"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Phenomena</a>
+                    <a href="./psyker.html#psyPerils"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Perils of the Warp</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Character <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./character.html#skills"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Skills</a>
+                    <a href="./character.html#talents"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Talents</a>
+                    <a href="./character.html#traits"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Traits</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./character.html#homeworlds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Homeworlds</a>
+                    <a href="./character.html#backgrounds"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Backgrounds</a>
+                    <a href="./character.html#roles"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Roles</a>
+                    <a href="./character.html#divinations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Divinations</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+                <button class="w3-button w3-round-large w3-hover-maroon">Effects <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                    <a href="./effects.html#shock"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Fear and Shock</a>
+                    <a href="./effects.html#snapping"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Snapping Out of It</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#insanity"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Insanity</a>
+                    <a href="./effects.html#trauma"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mental Trauma</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="./effects.html#corruption"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Corruption</a>
+                    <a href="./effects.html#maligna"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Malignancies</a>
+                    <a href="./effects.html#mutations"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mutations</a>
+                </div>
+            </div>
+            <a class="w3-bar-item w3-button w3-round-large w3-right w3-hide-small w3-blue" id="charGen" target="_blank"
+                href="https://ajott.github.io/dh2chargen">Character Creator</a>
+            <a href="javascript:void(0)" class="w3-red w3-bar-item w3-button w3-top-left w3-hide-large w3-hide-medium"
+                onclick="showMenu()">&#9776;</a>
+        </div>
+    </div>
+
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div id="psyPane">
+                <div id="psyPowers" class="info">
+                    <h3 class="headingLight">Psychic Powers</h3>
+
+                    <b>Psychic Bolt:</b> Determine hit location using Focus Power. Works like a single-fire weapon.
+                    <br />
+                    <b>Psychic Barrage:</b> Works like a semi-auto weapon; total hits cannot exceed Psy Rating used
+                    for
+                    power.
+                    <br />
+                    <b>Psychic Storm:</b> Works like a full-auto weapon; total hits cannot exceed Psy Rating used
+                    for power.
+                    <br />
+                    <b>Psychic Blast:</b> Radius is determined by Psy Rating. Equivalent of the
+                    <a href="./weapons.html#weaponQual">Weapon Quality</a> Blast (X).
+                    <br />
+                    <b>Concentration:</b> Characters may only take one Attack and one Concentration action per turn.
+                    <br />
+                    <b>PR:</b> Psy Rating, where applicable.
+                    <br />
+                    <br />
+
+
+                    <input class="w3-input w3-border w3-padding w3-grey w3-round" type="text"
+                        placeholder="Search for powers..." id="psySearch" onkeyup="psyPowerFilter()"
+                        style="width: 30%; display: inline;">
+                    &emsp; or choose a discipline &emsp;
+                    <select id="psyDiscSelect" onchange="psyFilterDisc()" class="w3-round w3-large">
+                        <option>...</option>
+                        <option class="biomancy">Biomancy</option>
+                        <option class="divination">Divination</option>
+                        <option class="pyromancy">Pyromancy</option>
+                        <option class="telekinesis">Telekinesis</option>
+                        <option class="telepathy">Telepathy</option>
+                    </select>
+                    <br />
+                    <br />
+                    <table id="psyPowerTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Power</th>
+                                <th>Discipline</th>
+                                <th>Cost</th>
+                                <th>Prerequisite</th>
+                                <th>Action</th>
+                                <th>Focus Power</th>
+                                <th>Range</th>
+                                <th>Sustained</th>
+                                <th>Subtype</th>
+                                <th>Effect</th>
+                                <th>Page</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Invigourate</td>
+                                <td class="biomancy">Biomancy</td>
+                                <td>100 xp</td>
+                                <td>T 30</td>
+                                <td>Half Action</td>
+                                <td>Challenging (+0) Willpower test</td>
+                                <td>1 m</td>
+                                <td>No</td>
+                                <td>Concentration</td>
+                                <td>Remove Fatigue from himself and allies within range. Can remove total number of
+                                    fatigue
+                                    levels up to his
+                                    <b>PR</b>, can choose how many levels per target. Requires 12 hours of recovery
+                                    after
+                                    use.
+                                </td>
+                                <td>Page 200 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Smite</td>
+                                <td class="biomancy">Biomancy</td>
+                                <td>200 xp</td>
+                                <td>Invigourate, Wp 40</td>
+                                <td>Half Action</td>
+                                <td>Challenging (+0) Willpower test</td>
+                                <td>20 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>No</td>
+                                <td>Attack, Concentration</td>
+                                <td>
+                                    <b class="w3-tooltip psyTooltipLight">Psychic Barrage
+                                        <span class="w3-text w3-tag w3-purple w3-small"
+                                            style="position:absolute;left:0;bottom:18px">Works like a semi-auto weapon;
+                                            total hits cannot exceed Psy Rating used for power.</span></b>
+                                    Discharge lightning at enemies. Does 1d10+
+                                    <b>PR</b> Energy damage, Pen: 4</td>
+                                <td>PG 202 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Shape Flesh</td>
+                                <td class="biomancy">Biomancy</td>
+                                <td>200 XP</td>
+                                <td>Smite, Per 35, T 30</td>
+                                <td>Full Action</td>
+                                <td>Ordinary (+10) Willpower test</td>
+                                <td>1 metre</td>
+                                <td>Free Action</td>
+                                <td>Concentration</td>
+                                <td>Chooses himself or an organic target within range. The target's physical
+                                    appearance changes
+                                    to a new form of the psyker's choosing. The amount and precision of the
+                                    alterations
+                                    depend on the final
+                                    <b>PR</b>
+                                    used. Consult PG 202 CB for effects. All tests to identify the target's true
+                                    form suffer a penalty equal to 5x
+                                    <b>PR</b> for the duration. The effects remain regardless of distance from
+                                    psyker.</td>
+                                <td>PG 202 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Enfeeble</td>
+                                <td class="biomancy">Biomancy</td>
+                                <td>100 xp</td>
+                                <td>Smite, T 35</td>
+                                <td>Half Action</td>
+                                <td>Challenging (+0) Opposed Willpower test</td>
+                                <td>20 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>Half Action</td>
+                                <td>Attack, Concentration</td>
+                                <td>Target must oppose with a Toughness test. Upon failure, it is Stunned for one
+                                    round.
+                                    In addition, if the target rolls doubles while this power is sustained, it
+                                    suffers
+                                    a number of levels of Fatigue equal to half the psyker's
+                                    <b>PR</b> (rounded down). Only one instance of Enfeeble can affect a target at a
+                                    time.</td>
+                                <td>PG 200 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Iron Arm</td>
+                                <td class="biomancy">Biomancy</td>
+                                <td>400 xp</td>
+                                <td>Shape Flesh, St 35, T 35</td>
+                                <td>Half Action</td>
+                                <td>Hard (-20) Willpower Test</td>
+                                <td>Self</td>
+                                <td>Free Action</td>
+                                <td>Concentration</td>
+                                <td>Gain the Unnatural Toughness and Unnatural Strength traits with ratings equal to
+                                    half
+                                    his
+                                    <b>PR</b>, rounded up. However, the psyker's Iron Arm weighs him down, imposing
+                                    -10
+                                    to Ag while it is in effect.</td>
+                                <td>PG 200 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Endurance</td>
+                                <td class="biomancy">Biomancy</td>
+                                <td>300 xp</td>
+                                <td>Shape Flesh, T 30</td>
+                                <td>Half Action</td>
+                                <td>Difficult (-10) Willpower test</td>
+                                <td>3 metres x
+                                    <b>PR</b> radius</td>
+                                <td>No</td>
+                                <td>Concentration</td>
+                                <td>Allies in range numbering up to
+                                    <b>PR</b>, plus the psyker, recover wounds equal to half the psyker's
+                                    <b>PR</b> rounded up, and recover from Pinning. This power requires 12 hours of
+                                    recovery.
+                                </td>
+                                <td>PG 200 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Life Leech</td>
+                                <td class="biomancy">Biomancy</td>
+                                <td>400 XP</td>
+                                <td>Enfeeble. T 40</td>
+                                <td>Full Action</td>
+                                <td>Opposed Difficult (-10) Willpower test</td>
+                                <td>10 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>Free Action</td>
+                                <td>Attack, Concentration</td>
+                                <td>Target must oppose with a Toughness test. Upon failure, they suffers 1d10+
+                                    <b>PR</b> Toughness damage, and the psyker gains Unnatural Toughness (1) trait,
+                                    with
+                                    its value increased by 1 for every full 5 points of Toughness damage the power
+                                    inflicts.
+                                    This Unnatural Toughness trait remains for as long as the power's effect
+                                    persists.
+                                </td>
+                                <td>PG 201 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Warp Speed</td>
+                                <td class="biomancy">Biomancy</td>
+                                <td>500 xp</td>
+                                <td>Iron Arm, Endurance, PR 5</td>
+                                <td>Half Action</td>
+                                <td>Difficult (-10) Willpower test</td>
+                                <td>Self</td>
+                                <td>Free Action</td>
+                                <td>Concentration</td>
+                                <td>The psyker gains the Unnatural Weapon Skill, Unnatural Ballistic Skill, and
+                                    Unnatural
+                                    Agility traits, all at values equal to his
+                                    <b>PR</b>.</td>
+                                <td>PG 202 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Hemorrhage</td>
+                                <td class="biomancy">Biomancy</td>
+                                <td>400 xp</td>
+                                <td>Life Leech, PR 4</td>
+                                <td>Half Action</td>
+                                <td>Challenging (+0) Willpower test</td>
+                                <td>1 m</td>
+                                <td>No</td>
+                                <td>Attack, Concentration</td>
+                                <td>Target must oppose with a Toughness test. Upon failure, it suffers Energy damage
+                                    equal
+                                    to the psyker's
+                                    <b>PR</b>, plus 1xDoF on its Toughness test; this damage ignores Toughness bonus
+                                    and
+                                    Armour. If this damage successfully kills the target, the psyker may immediately
+                                    recast this psychic power as a Free Action on any legal target within 5 metres
+                                    of
+                                    the original target.</td>
+                                <td>PG 200 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Warp Perception</td>
+                                <td class="divination">Divination</td>
+                                <td>100 xp</td>
+                                <td>Wp 35</td>
+                                <td>Half Action</td>
+                                <td>Challenging (+0) Psyniscience test</td>
+                                <td>Self</td>
+                                <td>Half Action</td>
+                                <td>Concentration</td>
+                                <td>The psyker gains the Unnatural Senses (X) trait, where the X value is equal to
+                                    the
+                                    <b>PR</b>x10.</td>
+                                <td>PG 204 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Prescience</td>
+                                <td class="divination">Divination</td>
+                                <td>200 xp</td>
+                                <td>Warp Perception, Psyniscience Rank 1</td>
+                                <td>Half Action</td>
+                                <td>Challenging (+0) Psyniscience test</td>
+                                <td>3 metres x
+                                    <b>PR</b> radius</td>
+                                <td>Half Action</td>
+                                <td>Concentration</td>
+                                <td>For the duration of this power, the psyker and a number of allies equal to his
+                                    <b>PR</b>
+                                    within range gain a bonus to their WS and BS tests equal to 2x
+                                    <b>PR</b>. This bonus is lost upon moving out of range.</td>
+                                <td>PG 204 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Foreboding</td>
+                                <td class="divination">Divination</td>
+                                <td>200 xp</td>
+                                <td>Warp Perception, Psyniscience rank 1</td>
+                                <td>Reaction</td>
+                                <td>Difficult (-10) Perception test</td>
+                                <td>Self</td>
+                                <td>No</td>
+                                <td>Concentration</td>
+                                <td>The psyker may use this power in place of Evasion. If the power is successful,
+                                    the psyker
+                                    avoids the attack exactly as if he has passed an Evasion test with the number of
+                                    degrees of success he scored on the Focus Power test. </td>
+                                <td>PG 203 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Misfortune</td>
+                                <td class="divination">Divination</td>
+                                <td>300 xp</td>
+                                <td>Willpower 45, Foreboding, Half Action</td>
+                                <td>Half Action</td>
+                                <td>Difficult (-10) Opposed Willpower test</td>
+                                <td>20 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>Free Action</td>
+                                <td>Attack, Concentration</td>
+                                <td>Target makes an opposing Willpower test. Upon failure, misfortune follows it
+                                    wherever
+                                    it goes. While sustained, the target's Armour is reduced in all locations by one
+                                    half the psyker's
+                                    <b>PR</b> rounded up. The target's weapons will jam upon missing their target.
+                                </td>
+                                <td>PG 203 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Scrier's Gaze</td>
+                                <td class="divination">Divination</td>
+                                <td>200 xp</td>
+                                <td>Prescience, Psyniscience rank 2</td>
+                                <td>Special</td>
+                                <td>Challenging (+0) Psyniscience test</td>
+                                <td>Self</td>
+                                <td>No</td>
+                                <td>Concentration</td>
+                                <td>To begin the ritual, the psyker must spend at least 30 minutes using assorted
+                                    psychic
+                                    foci (tarot cards, runes, etc) to concentrate his vision. At the end of this
+                                    time,
+                                    he makes his Focus Power test to project his vision over the area, with the GM
+                                    revealing
+                                    information based on the degrees of success. See pg. 204 for details.</td>
+                                <td>PG 204 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Forewarning</td>
+                                <td class="divination">Divination</td>
+                                <td>400 xp</td>
+                                <td>Foreboding, Per 50</td>
+                                <td>Half Action</td>
+                                <td>Challenging (+0) Psyniscience test</td>
+                                <td>3 metres x
+                                    <b>PR</b> radius</td>
+                                <td>Free Action</td>
+                                <td>Concentration</td>
+                                <td>For the duration of this power, a number of allies within range equal to the
+                                    psyker's
+                                    <b>PR</b>, plus the psyker, gain a bonus to Evasion tests equal to 2x
+                                    <b>PR</b>. This bonus is lost upon moving out of range.</td>
+                                <td>PG 203 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Precognition</td>
+                                <td class="divination">Divination</td>
+                                <td>400 xp</td>
+                                <td>Scrier's Gaze, Per 45, Wp 45</td>
+                                <td>Full Action</td>
+                                <td>Hard (-20) Psyniscience test</td>
+                                <td>5 metres x
+                                    <b>PR</b> radius</td>
+                                <td>No</td>
+                                <td>Concentration</td>
+                                <td>Gain a number of re-rolls equal to
+                                    <b>PR</b> that last until the beginning of next turn. For the duration of that
+                                    round,
+                                    whenever the psyker or an ally in range makes a test or damage roll, the psyker
+                                    may
+                                    spend one of the rerolls to allow that ally to re-roll all dice involved in the
+                                    roll.
+                                    If the psyker is killed or rendered Unconscious before the beginning of his next
+                                    turn, all remaining re-rolls are lost.</td>
+                                <td>PG 203 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Winding Fate</td>
+                                <td class="divination">Divination</td>
+                                <td>500 xp</td>
+                                <td>Scrier's Gaze, Per 50</td>
+                                <td>Full Action</td>
+                                <td>Difficult (-10) Psyniscience test</td>
+                                <td>Self</td>
+                                <td>No</td>
+                                <td>Concentration</td>
+                                <td>The psyker can touch an item or character, and see
+                                    <b>PR</b> days into the subject's past or future. The vision lasts for a number
+                                    of seconds
+                                    equal to 2x
+                                    <b>PR</b>. The higher the
+                                    <b>PR</b>, the more the psyker can control what his flashes focus on (at the
+                                    GM's discretion).
+                                </td>
+                                <td>PG 205 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Perfect Timing</td>
+                                <td class="divination">Divination</td>
+                                <td>300 xp</td>
+                                <td>Forewarning, Per 55</td>
+                                <td>Half Action</td>
+                                <td>Difficult (-10) Psyniscience test</td>
+                                <td>3 metres x
+                                    <b>PR</b> radius</td>
+                                <td>Half Action</td>
+                                <td>Concentration</td>
+                                <td>While sustained, the psyker and a number of allies equal to
+                                    <b>PR</b>
+                                    within range ignore the effects of cover when firing on a target. If their
+                                    attacks would be blocked from a Hit Location by
+                                    cover, they instead strike the Hit Location directly. This bonus is lost upon
+                                    moving
+                                    out of range.</td>
+                                <td>PG 203 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Manipulate Flame</td>
+                                <td class="pyromancy">Pyromancy</td>
+                                <td>100 xp</td>
+                                <td>Wp 35</td>
+                                <td>Half Action</td>
+                                <td>Routine (+20) Willpower test</td>
+                                <td>10 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>Half Action</td>
+                                <td>Attack</td>
+                                <td>Choose a patch of fire with radius no greater than
+                                    <b>PR</b> metres. Each round, he can either extinguish or control the fire. If
+                                    he extinguishes
+                                    the fire, this power ends and the fire goes out. If he controls the fire, he can
+                                    move it up to a number of metres equal to his
+                                    <b>PR</b> per round along a flammable surface.</td>
+                                <td>PG 208 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Fiery Form</td>
+                                <td class="pyromancy">Pyromancy</td>
+                                <td>400 xp</td>
+                                <td>Fire Shield, PR 4</td>
+                                <td>Half Action</td>
+                                <td>Difficult (-10) Willpower test</td>
+                                <td>Self</td>
+                                <td>Half Action</td>
+                                <td>Concentration</td>
+                                <td>While sustained, all of the psyker's melee attacks deal additional Energy damage
+                                    equal
+                                    to
+                                    <b>PR</b> and gain the Flame quality. In addition, at the end of each of the
+                                    psyker's
+                                    turns, a 
+                                    <b class="w3-tooltip psyTooltipLight">Psychic Blast
+                                            <span class="w3-text w3-tag w3-purple w3-small"
+                                                style="position:absolute;left:0;bottom:18px">Radius is determined by Psy Rating. Equivalent of the Blast(X) Weapon</span></b>
+                                     centered on his location occurs. All characters within
+                                    <b>PR</b> metres, with the exception of the psyker himself, are struck for 1d10+
+                                    <b>PR</b> Energy damage. Any target struck has a chance of catching ablaze.</td>
+                                <td>PG 206 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Fire Shield</td>
+                                <td class="pyromancy">Pyromancy</td>
+                                <td>300 xp</td>
+                                <td>Manipulate Flame, Ag 40</td>
+                                <td>Half Action</td>
+                                <td>Challenging (+0) Willpower test</td>
+                                <td>20 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>Free Action</td>
+                                <td>Concentration</td>
+                                <td>While sustained, any attacker in range who successfully strikes the psyker
+                                    suffers retribution.
+                                    A 
+                                    <b class="w3-tooltip psyTooltipLight">Psychic Bolt
+                                            <span class="w3-text w3-tag w3-purple w3-small"
+                                                style="position:absolute;left:0;bottom:18px">Determine hit location using
+                                                Focus Power. Works like a single-fire weapon.</span></b> dealing
+                                    <b>PR</b> Energy damage immediately strikes the attacker. This damage is not
+                                    reduced
+                                    by Armour or Toughness bonus. The target has a chance of catching ablaze.</td>
+                                <td>PG 206 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Spontaneous Combustion</td>
+                                <td class="pyromancy">Pyromancy</td>
+                                <td>200 xp</td>
+                                <td>Manipulate Flame, Wp 40</td>
+                                <td>Half Action</td>
+                                <td>Ordinary (+10) Willpower test</td>
+                                <td>20 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>No</td>
+                                <td>Attack</td>
+                                <td>
+                                        <b class="w3-tooltip psyTooltipLight">Psychic Bolt
+                                                <span class="w3-text w3-tag w3-purple w3-small"
+                                                    style="position:absolute;left:0;bottom:18px">Determine hit location using
+                                                    Focus Power. Works like a single-fire weapon.</span></b> the psyker lashes out with his power, dealing 1d10+2+2x
+                                    <b>PR</b> Energy damage. The psyker uses his Focus Power test to determine if
+                                    the attack
+                                    is successful, as well as to determine hit location. If successful, the target
+                                    has
+                                    a chance of catching ablaze.</td>
+                                <td>PG 208 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Flame Breath</td>
+                                <td class="pyromancy">Pyromancy</td>
+                                <td>300 xp</td>
+                                <td>Spontaneous Compustion, PR 3</td>
+                                <td>Half Action</td>
+                                <td>Challenging (+0) Willpower test</td>
+                                <td>20 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>No</td>
+                                <td>Attack</td>
+                                <td>
+                                    <b class="w3-tooltip psyTooltipLight">Psychic Barrage
+                                        <span class="w3-text w3-tag w3-purple w3-small"
+                                            style="position:absolute;left:0;bottom:18px">Works like a semi-auto weapon;
+                                            total hits cannot exceed Psy Rating used for power.</span></b> The psyker
+                                    attempts to strike for 1d10+2+2x
+                                    <b>PR</b> Energy damage. If successful, any target struck has a chance of
+                                    catching ablaze.
+                                </td>
+                                <td>PG 206 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Cauterise</td>
+                                <td class="pyromancy">Pyromancy</td>
+                                <td>300 xp</td>
+                                <td>Fire Shield, Wp 45</td>
+                                <td>Half Action</td>
+                                <td>Challenging (+0) Willpower test</td>
+                                <td>1 metre</td>
+                                <td>No</td>
+                                <td>Concentration</td>
+                                <td>The psyker chooses himself or another character he can physically touch. If the
+                                    target
+                                    is suffering from Blood Loss, successfully using the power removes that
+                                    condition.</td>
+                                <td>PG 206 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Molten Beam</td>
+                                <td class="pyromancy">Pyromancy</td>
+                                <td>400 xp</td>
+                                <td>Spontaneous Combustion, PR 4</td>
+                                <td>Half Action</td>
+                                <td>Challenging (+0) Willpower test</td>
+                                <td>5 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>No</td>
+                                <td>Attack</td>
+                                <td>
+                                        <b class="w3-tooltip psyTooltipLight">Psychic Bolt
+                                                <span class="w3-text w3-tag w3-purple w3-small"
+                                                    style="position:absolute;left:0;bottom:18px">Determine hit location using
+                                                    Focus Power. Works like a single-fire weapon.</span></b> The psyker fires a blindingly-bring beam of sun-hot energy dealing
+                                    1d10+5+3x
+                                    <b>PR</b> Energy damage. Pen: 2x
+                                    <b>PR</b>. If attacking at Short Range, the Pen is doubled.</td>
+                                <td>PG 208 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Sunburst</td>
+                                <td class="pyromancy">Pyromancy</td>
+                                <td>400 xp</td>
+                                <td>Flame Breath, PR 4</td>
+                                <td>Half Action</td>
+                                <td>Challenging (+0) Willpower test</td>
+                                <td>20 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>No</td>
+                                <td>Attack</td>
+                                <td><b class="w3-tooltip psyTooltipLight">Psychic Storm
+                                        <span class="w3-text w3-tag w3-purple w3-small"
+                                            style="position:absolute;left:0;bottom:18px">Works like a full-auto weapon; total hits cannot exceed Psy Rating used for power.</span></b>
+                                   . The psyker gathers a nova of firey energy around his body, before
+                                    releasing it
+                                    in all directions. Deals 1d10+2+2x
+                                    <b>PR</b> Energy damage. Any target successfully hit has a chance of catching
+                                    ablaze.</td>
+                                <td>PG 208 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Inferno</td>
+                                <td class="pyromancy">Pyromancy</td>
+                                <td>500 xp</td>
+                                <td>Molten Beam, Sunburst, PR 5</td>
+                                <td>Half Action</td>
+                                <td>Difficult (-10) Willpower test</td>
+                                <td>10 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>No</td>
+                                <td>Attack, Concentration</td>
+                                <td>
+                                    <b class="w3-tooltip psyTooltipLight">Psychic Blast
+                                            <span class="w3-text w3-tag w3-purple w3-small"
+                                                style="position:absolute;left:0;bottom:18px">Radius is determined by Psy Rating. Equivalent of the Blast(X) Weapon</span></b>. The psyker creates an explosion of flame centered on his target, with
+                                    no chance
+                                    of escape. All targets within
+                                    <b>PR</b> metres of the target take 2d10+3x
+                                    <b>PR</b> Energy damage. All targets within range have a chance of catching
+                                    ablaze.</td>
+                                <td>PG 207 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Telekinetic Control</td>
+                                <td class="telekinesis">Telekinesis</td>
+                                <td>100 xp</td>
+                                <td>Wp 35</td>
+                                <td>Half Action</td>
+                                <td>Routine (+20) Willpower test</td>
+                                <td>10 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>Half Action</td>
+                                <td>Concentration</td>
+                                <td>The psyker can move an object weighing up to 2x
+                                    <b>PR</b> kilos a number of metres equal to 2x
+                                    <b>PR</b>. If the object ever leaves the range of the power, the power ends.
+                                </td>
+                                <td>PG 211 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Assail</td>
+                                <td class="telekinesis">Telekinesis</td>
+                                <td>200 xp</td>
+                                <td>Telekinetic Control, Wp 40</td>
+                                <td>Half Action</td>
+                                <td>Ordinary (+10) Willpower test</td>
+                                <td>20 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>No</td>
+                                <td>Attack, Concentration</td>
+                                <td>
+                                        <b class="w3-tooltip psyTooltipLight">Psychic Bolt
+                                                <span class="w3-text w3-tag w3-purple w3-small"
+                                                    style="position:absolute;left:0;bottom:18px">Determine hit location using
+                                                    Focus Power. Works like a single-fire weapon.</span></b> The psyker hurls objects or, failing to find any, his mental energy at
+                                    the target
+                                    dealing 1d10+
+                                    <b>PR</b> Impact damage. Pen: 2. If the pysker succeeds in hitting with 3+ DoS,
+                                    the
+                                    target is also thrown 1d5 metres and knocked Prone.</td>
+                                <td>PG 209 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Telekine Shield</td>
+                                <td class="telekinesis">Telekinesis</td>
+                                <td>200 xp</td>
+                                <td>Assail, Int 40</td>
+                                <td>Half Action</td>
+                                <td>Routine (+20) Willpower Test</td>
+                                <td>Self</td>
+                                <td>Free Action</td>
+                                <td>Concentration</td>
+                                <td>While sustained, all of the psyker's hit locations are considered to be in Cover
+                                    with
+                                    an Armour Value equal to half of
+                                    <b>PR</b>. The shield can be damaged in the same manner as Cover (CB p. 229). If
+                                    the
+                                    shield is reduced to 0 Armour Value, it is destroyed and the power is no longer
+                                    sustained.
+                                </td>
+                                <td>PG 211 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Crush</td>
+                                <td class="telekinesis">Telekinesis</td>
+                                <td>300 xp</td>
+                                <td>Assail, Wp 45</td>
+                                <td>Half Action</td>
+                                <td>Challenging (+0) Opposed Willpower test</td>
+                                <td>10 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>No</td>
+                                <td>Attack, Concentration</td>
+                                <td>
+                                        <b class="w3-tooltip psyTooltipLight">Psychic Bolt
+                                                <span class="w3-text w3-tag w3-purple w3-small"
+                                                    style="position:absolute;left:0;bottom:18px">Determine hit location using
+                                                    Focus Power. Works like a single-fire weapon.</span></b> The target makes a Toughness save against the psyker's Focus Power
+                                    test. Upon failure,
+                                    the target suffers 1d10+
+                                    <b>PR</b> Impact damage. Pen 2. This attack carries the Snare (
+                                    <b>PR</b>/2) quality.</td>
+                                <td>PG 209 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Objuration Mechanicum</td>
+                                <td class="telekinesis">Telekinesis</td>
+                                <td>300 xp</td>
+                                <td>Crush, Int 40</td>
+                                <td>Half Action</td>
+                                <td>Challenging (+0) Willpower test</td>
+                                <td>10 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>No</td>
+                                <td>Concentration</td>
+                                <td>The psyker chooses a point anywhere within range and line of sight. This power
+                                    creates
+                                    a Haywire Field (CB p. 147) centred at this point, with a radius in metres equal
+                                    to
+                                    <b>PR</b>.</td>
+                                <td>PG 209 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Telekine Dome</td>
+                                <td class="telekinesis">Telekinesis</td>
+                                <td>300 xp</td>
+                                <td>Telekine Shield, PR 4</td>
+                                <td>Half Action</td>
+                                <td>Challenging (+0) Willpower test</td>
+                                <td>5 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>Free Action</td>
+                                <td>Concentration</td>
+                                <td>The psyker creates a dome of energy with radius of half
+                                    <b>PR</b> metres, rounding up. Each ally inside the dome gains Armour points
+                                    equal to
+                                    <b>PR</b> to all Hit Locations against any attack from outside the dome.
+                                    However, characters
+                                    may still physically pass through the dome at no penalty.
+                                </td>
+                                <td>PG 211 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Shockwave</td>
+                                <td class="telekinesis">Telekinesis</td>
+                                <td>300 xp</td>
+                                <td>Crush, Wp 50</td>
+                                <td>Half Action</td>
+                                <td>Challenging (+0) Willpower test</td>
+                                <td>Self</td>
+                                <td>No</td>
+                                <td>Attack, Concentration</td>
+                                <td>
+                                        <b class="w3-tooltip psyTooltipLight">Psychic Blast
+                                                <span class="w3-text w3-tag w3-purple w3-small"
+                                                    style="position:absolute;left:0;bottom:18px">Radius is determined by Psy Rating. Equivalent of the Blast(X) Weapon</span></b>. Each character in within
+                                    <b>PR</b> metres of the psyker, but not the psyker himeself, suffers 1d10+
+                                    <b>PR</b> Explosive damage. They are also pushed
+                                    <b>PR</b> metres directly away from the psyker.</td>
+                                <td>PG 210 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Gate of Infinity</td>
+                                <td class="telekinesis">Telekinesis</td>
+                                <td>400 xp</td>
+                                <td>Telekine Dome, PR 5</td>
+                                <td>Extended Action (3)</td>
+                                <td>Hard (-20) Willpower test</td>
+                                <td>1 kilometres x
+                                    <b>PR</b>
+                                </td>
+                                <td>No</td>
+                                <td>Concentration</td>
+                                <td>The psyker chooses a point anywhere within 5 metres times his
+                                    <b>PR</b>, and opens a gate to the Immaterium at that point. He then chooses a
+                                    point
+                                    within range of the power, and opens an exit to the gate at that location. The
+                                    psyker
+                                    must be aware of the location in which he is opening the exit to the gate,
+                                    either
+                                    having visited it before, seen it from afar, or simply studied it on a map. The
+                                    gate
+                                    lasts for a number of rounds equal to the psyker
+                                    <b>PR</b>, and has a radius in metres equal to
+                                    <b>PR</b> as well. For the duration of the power, the two sides of the gate are
+                                    linked,
+                                    and any person or objects may pass between them freely provided they can fit
+                                    through
+                                    the gate. This power requires 12 hours of rest before it may be used again.
+                                </td>
+                                <td>PG 209 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Vortex of Doom</td>
+                                <td class="telekinesis">Telekinesis</td>
+                                <td>400 xp</td>
+                                <td>Telekine Dome, Shockwave, PR 5</td>
+                                <td>Half Action</td>
+                                <td>Difficult (-10) Willpower test</td>
+                                <td>5x
+                                    <b>PR</b> metres</td>
+                                <td>Half Action</td>
+                                <td>Attack, Concentration</td>
+                                <td>Psychic Attack. The psyker chooses a point in range and line of sight, and
+                                    creates a
+                                    vortex of energy centred on that point that starts with a radius of 2 metres.
+                                    Each
+                                    character who is touching the vortex at the end of the psyker's turn suffers
+                                    2d10+2x
+                                    <b>PR</b> Explosive damage, with Pen of the current vortex radius. The psyker
+                                    cannot
+                                    voluntarily stop sustaining this power. Instead, at the beginning of each turn
+                                    the
+                                    psyker is sustaining the vortex, he must make a Challenging (+0) Willpower test
+                                    with
+                                    -5 per metre of the vortex's current radius. If passed, he may: Increase or
+                                    decrease
+                                    the radius by a metre or move it metres equal to
+                                    <b>PR</b>. If the psyker fails the Willpower test to sustain the vortex,its
+                                    radius increases
+                                    by one metre and it moves a number of metres equal to the psyker's
+                                    <b>PR</b> in a random direction. If the vortex radius is reduced to 0, the power
+                                    ends
+                                    and the vortex disappears. If the vortex raidus exceeds than the psyker's
+                                    <b>PR</b>, it explodes and the psyker suffers 2d10+4x
+                                    <b>PR</b> explosive damage, with Pen of the vortex radius.
+                                </td>
+                                <td>PG 211 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Telepathic Link</td>
+                                <td class="telepathy">Telepathy</td>
+                                <td>100 xp</td>
+                                <td>Wp 35</td>
+                                <td>Half Action</td>
+                                <td>Difficult (-10) Opposed Willpower test</td>
+                                <td>20 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>No</td>
+                                <td>Concentration</td>
+                                <td>The target makes a Willpower save against the Focus Power test. If the target
+                                    fails,
+                                    the psyker can either read the person's thoughts or send a mental message.</td>
+                                <td>PG 214 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Erasure</td>
+                                <td class="telepathy">Telepathy</td>
+                                <td>100 xp</td>
+                                <td>Telepathic Link, Fel 40</td>
+                                <td>Full Action</td>
+                                <td>Challenging (+0) Opposed Willpower test</td>
+                                <td>5 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>No</td>
+                                <td>Concentration</td>
+                                <td>The target makes a Willpower save against the Focus Power test. If he fails, the
+                                    psyker
+                                    removes a memory of a recent event from the target. The psyker can remove an
+                                    amount
+                                    of time up to 10 x
+                                    <b>PR</b> minutes, and the event must have been within
+                                    <b>PR</b> hours prior. The enemy is left with no recollection of what occurred
+                                    during
+                                    that time.</td>
+                                <td>PG 212 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Hallucination</td>
+                                <td class="telepathy">Telepathy</td>
+                                <td>200 xp</td>
+                                <td>Telepathic Link, Fel 40</td>
+                                <td>Half Action</td>
+                                <td>Challenging (+0) Opposed Willpower test</td>
+                                <td>10 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>No</td>
+                                <td>Concentration</td>
+                                <td>The target makes a Willpower save against the Focus Power test. Upon failure, it
+                                    must
+                                    roll on Table 5-3: Hallucinogenic Effects and immediately apply the effects. The
+                                    effect rolled on the table lasts for half
+                                    <b>PR</b> rounds.</td>
+                                <td>PG 212 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Psychic Shirek</td>
+                                <td class="telepathy">Telepathy</td>
+                                <td>300 xp</td>
+                                <td>Hallucination, PR 3</td>
+                                <td>Half Action</td>
+                                <td>Challenging (+0) Willpower test</td>
+                                <td>10 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>No</td>
+                                <td>Attack</td>
+                                <td>
+                                    <b class="w3-tooltip psyTooltipLight">Psychic Bolt
+                                        <span class="w3-text w3-tag w3-purple w3-small"
+                                            style="position:absolute;left:0;bottom:18px">Determine hit location using
+                                            Focus Power. Works like a single-fire weapon.</span></b>
+                                    Target suffers 1d10+2+2x
+                                    <b>PR</b> Explosive damage. Applies the Concussive(1) Weapon Quality.</td>
+                                <td>PG 213 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Dominate</td>
+                                <td class="telepathy">Telepathy</td>
+                                <td>200 xp</td>
+                                <td>Erasure, Wp 40</td>
+                                <td>Full Action</td>
+                                <td>Challenging (+0) Opposed Willpower test</td>
+                                <td>5 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>No</td>
+                                <td>Concentration</td>
+                                <td>The psyker nominates a number targets up to half his
+                                    <b>PR</b>
+                                    (rounded up) who oppose this power with a Willpower test. Each target that fails
+                                    to resist the power must follow a simple
+                                    command given by the psyker. If command is a potentially suicidal act, each
+                                    target
+                                    receives a +20 to its Willpower test to Oppose the power. In all cases, the
+                                    command
+                                    must be achievable in a single round.</td>
+                                <td>PG 212 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Mental Fortitude</td>
+                                <td class="telepathy">Telepathy</td>
+                                <td>300 xp</td>
+                                <td>Dominate, Terrify, Adamantium Faith</td>
+                                <td>Half Action</td>
+                                <td>Difficult (-10) Willpower test</td>
+                                <td>10 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>Free Action</td>
+                                <td>Concentration</td>
+                                <td>For the duration of this power, a number of allies up to the psyker's
+                                    <b>PR</b> within range count as having the Adamantium Faith talent. This bonus
+                                    is lost
+                                    upon moving out of range.</td>
+                                <td>PG 212 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Terrify</td>
+                                <td class="telepathy">Telepathy</td>
+                                <td>400 xp</td>
+                                <td>Hallucination, Fel 45</td>
+                                <td>Half Action</td>
+                                <td>Difficult (-10) Opposed Willpower test</td>
+                                <td>10 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>No</td>
+                                <td>Concentration</td>
+                                <td>The target must make a Willpower save against the Focus Power test. Upon
+                                    failure, the
+                                    target must roll 1d100 for Shock, adding +10 times the psyker's
+                                    <b>PR</b> to the roll, and immediately apply the effects.</td>
+                                <td>PG 214 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Invisibility</td>
+                                <td class="telepathy">Telepathy</td>
+                                <td>400 xp</td>
+                                <td>Terrify, Ag 30 PR 4</td>
+                                <td>Half Action</td>
+                                <td>Difficult (-10) Willpower test</td>
+                                <td>10 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>Free Action</td>
+                                <td>Concentration</td>
+                                <td>A target within range, or the psyker himself, gains the effect. While sustained,
+                                    the
+                                    target's Stealth skill is modified to +0, and gains a bonus to Stealth tests
+                                    equal
+                                    to 5x
+                                    <b>PR</b>. Additionally, ranged attacks against the target suffer -5x
+                                    <b>PR</b>. The effect is immediately lost upon moving out of range.
+                                </td>
+                                <td>PG 212 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Puppet Master</td>
+                                <td class="telepathy">Telepathy</td>
+                                <td>400 xp</td>
+                                <td>Dominate, Mental Fortitude, Terrify, Fel 55</td>
+                                <td>Full Action</td>
+                                <td>Difficult (-10) Opposed Willpower test</td>
+                                <td>10 metres x
+                                    <b>PR</b>
+                                </td>
+                                <td>Special</td>
+                                <td>Concentration</td>
+                                <td>The psyker nominates a single target in range and line ofsight with total wounds
+                                    no greater
+                                    than 3 times the psyker's
+                                    <b>PR</b>, who opposes this power with a Willpower test. Upon failure, it is
+                                    controlled
+                                    by the psyker like a puppet. For the duration of the power, the psyker can
+                                    divide
+                                    his Actions between himself and the target. The dominated target uses its own
+                                    Characteristics,
+                                    but at -10. If at any point the psyker would make the target perform a
+                                    potentially
+                                    suicidal action, the target can attempt a Challenging (+0) Opposed Willpower
+                                    test
+                                    to try to break free of the power. The effect is immediately lost upon moving
+                                    out
+                                    of range.</td>
+                                <td>PG 214 CB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="psyPhenom" class="info">
+                    <h3 class="headingLight">Psychic Phenomena</h3>
+                    <table id="psyPhenomTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Roll</th>
+                                <th>Effect</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01-03</td>
+                                <td>Dark Foreboding: A faint breeze blows past the psyker and those near him, and
+                                    everyone
+                                    gets the feeling that somewhere in the galaxy something unfortunate just
+                                    happened.</td>
+                            </tr>
+                            <tr>
+                                <td>04-05</td>
+                                <td>Warp Echo: For a few moments, all noises cause echoes, regardless of the
+                                    surroundings.</td>
+                            </tr>
+                            <tr>
+                                <td>06-08</td>
+                                <td>Unholy Stench: The air around the psyker becomes permeated with a bizarre and
+                                    foul smell.</td>
+                            </tr>
+                            <tr>
+                                <td>09-11</td>
+                                <td>Mind Warp: The psyker suffers a -5 penalty to Willpower tests until the start of
+                                    his
+                                    next turn as his own inherent phobias, suspicions, and hatreds surge to the
+                                    surface
+                                    of his mind in a wave of unbound emotion.</td>
+                            </tr>
+                            <tr>
+                                <td>12-14</td>
+                                <td>Hoarfrost: The temperature plummets for an instant, and a thin coating of frost
+                                    forms
+                                    to cover everything within 3d10 metres.</td>
+                            </tr>
+                            <tr>
+                                <td>15-17</td>
+                                <td>Aura of Taint: All animals within 1d100 metres become spooked and agitated;
+                                    characters
+                                    can use the Psyniscience skill to pinpoint the psyker as the cause</td>
+                            </tr>
+                            <tr>
+                                <td>18-20</td>
+                                <td>Memory Worm: All people within line of sight of the psyker forget some trivial
+                                    fact or
+                                    minor personal memory.</td>
+                            </tr>
+                            <tr>
+                                <td>21-23</td>
+                                <td>Spoilage: Food and drink go bad in a 5d10 metre radius.</td>
+                            </tr>
+                            <tr>
+                                <td>24-26</td>
+                                <td>Haunting Breeze: Winds whip up around the psyker for a few moments, blowing
+                                    light objects
+                                    around and guttering fires within 3d10 metres.</td>
+                            </tr>
+                            <tr>
+                                <td>27-29</td>
+                                <td>Veil of Darkness: For a brief moment (effectively, until the end of the round),
+                                    the area
+                                    within 3d10 metres is plunged into immediate and impenetrable darkness.</td>
+                            </tr>
+                            <tr>
+                                <td>30-32</td>
+                                <td>Distorted Reflections: Mirrors and other reflective surfaces within a radius of
+                                    5d10
+                                    metres distort or shatter.</td>
+                            </tr>
+                            <tr>
+                                <td>33-35</td>
+                                <td>Breath Leech: Each character (including the psyker) within a 3d10 metre radius
+                                    becomes
+                                    short of breath for one round and cannot make any Run or Charge actions.</td>
+                            </tr>
+                            <tr>
+                                <td>36-38</td>
+                                <td>Daemonic Mask: For a fleeting moment, the psyker takes on a daemonic appearance
+                                    and gains
+                                    the Fear (1) trait until the start of the next turn. However, he also gains 1
+                                    Corruption
+                                    point.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>39-41</td>
+                                <td>Unnatural Decay: All plant life within 3d10 metres of the psyker withers and
+                                    dies.</td>
+                            </tr>
+                            <tr>
+                                <td>42-44</td>
+                                <td>Spectral Gale: Howling winds erupt around the psyker, requiring each character
+                                    (including
+                                    the psyker) within 4d10 metres to make an Easy (+30) Agility or Strength test to
+                                    avoid being knocked Prone.</td>
+                            </tr>
+                            <tr>
+                                <td>45-47</td>
+                                <td>Bloody Tears: Blood weeps from stone and wood within 3d10 metres of the psyker.
+                                    If there
+                                    are any paintings, pict-displays, statues, or other representations of people
+                                    inside
+                                    this area, they appear to be crying blood.</td>
+                            </tr>
+                            <tr>
+                                <td>48-50</td>
+                                <td>The Earth Protests: The ground suddenly shakes, and each character (including
+                                    the psyker)
+                                    within a 5d10 metre radius must make an Ordinary (+10) Agility test or be
+                                    knocked
+                                    down.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>51-53</td>
+                                <td>Actinic Discharge: Static electricity fills the air within 5d10 metres causing
+                                    hair to
+                                    stand on end and unprotected electronics to short out, while the psyker is
+                                    wreathed
+                                    in eldritch lightning.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>54-56</td>
+                                <td>Warp Ghosts: Ghostly apparitions fill the air within 3d10 metres around the
+                                    psyker, flying
+                                    about and howling in pain for a few brief moments. Everyone in the radius
+                                    (except
+                                    the psyker himself ) must test against a Fear rating of 1.</td>
+                            </tr>
+                            <tr>
+                                <td>57-59</td>
+                                <td>Falling Upwards: Everything within 2d10 metres of the psyker (including the
+                                    psyker himself
+                                    ) rises 1d10 metres into the air as gravity briefly ceases. Almost immediately,
+                                    everything crashes back to earth, suffering falling Damage as appropriate for
+                                    the
+                                    distances fallen.</td>
+                            </tr>
+                            <tr>
+                                <td>60-62</td>
+                                <td>Banshee Howl: A shrill keening rings out across the immediate area, shattering
+                                    glass
+                                    and forcing every mortal creature able to hear it (including the psyker) to pass
+                                    a Challenging (+0) Toughness Test or be deafened for 1d10 rounds.</td>
+                            </tr>
+                            <tr>
+                                <td>63-65</td>
+                                <td>The Furies: The Psyker is assailed by unseen horrors. He is slammed to the
+                                    ground and
+                                    suffers 1d5 Damage (ignoring Armour, but not Toughness Bonus) and he must test
+                                    against
+                                    Fear (2).</td>
+                            </tr>
+                            <tr>
+                                <td>66-68</td>
+                                <td>Shadow of the Warp: For a split second, the world changes in appearance, and
+                                    everyone
+                                    within 1d100 metres has brief but horrific glimpse of the shadow of the Warp.
+                                    Everyone
+                                    in the area (including the psyker) must make a Difficult (-10) Willpower Test or
+                                    gain 1d5 Corruption Points.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>69-71</td>
+                                <td>Tech Scorn: The machine spirits reject your unnatural ways. All un-warded
+                                    technology
+                                    within 5d10 metres malfunctions momentarily, and all ranged weapons Jam (see
+                                    page
+                                    255), whilst characters with cybernetic implants must pass a Routine (+10)
+                                    Toughness
+                                    Test or suffer 1d5 Damage, ignoring Toughness Bonus and Armour.</td>
+                            </tr>
+                            <tr>
+                                <td>72-74</td>
+                                <td>Warp Madness: A violent ripple of tainted discord causes all creatures within
+                                    2d10 metres
+                                    (with the exception of the psyker) to become Frenzied for a Round and suffer 1d5
+                                    Corruption Points unless they can pass a Difficult (-10) Willpower Test.</td>
+                            </tr>
+                            <tr>
+                                <td>75+</td>
+                                <td>Perils of the Warp: The Warp opens in a wild maelstrom of unnatural energy. Roll
+                                    on Table
+                                    6-3: Perils of the Warp</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="psyPerils" class="info">
+                    <h3 class="headingLight">Perils of the Warp</h3>
+                    <table id="psyPerilsTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Roll</th>
+                                <th>Effect</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01-05</td>
+                                <td>The Gibbering: The psyker screams in pain as uncontrolled Warp energies surge
+                                    through
+                                    his unprepared mind. He must make a Challenging (+0) Willpower Test or be
+                                    stunned
+                                    for 1d5 Rounds.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>06-09</td>
+                                <td>Warp Burn: A violent burst of energy from the Warp smashes into the psyker's
+                                    mind, sending
+                                    him reeling. He suffers 2d5 Damage, ignoring Toughness Bonus and Armour, and is
+                                    stunned
+                                    for 1d5 Rounds.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10-13</td>
+                                <td>Psychic Concussion: With a crack of energy, the psyker is knocked unconscious
+                                    for 1d5
+                                    Rounds, and everyone within 3d10 metres must make a Routine (+10) Willpower Test
+                                    or be Stunned for one Round.</td>
+                            </tr>
+                            <tr>
+                                <td>14-18</td>
+                                <td>Psy Blast: There is an explosion of power and the psyker is thrown 3d10 metres
+                                    into the
+                                    air, falling to the ground moments later (see page 267 for Falling Damage).</td>
+                            </tr>
+                            <tr>
+                                <td>19-24</td>
+                                <td>Soul Sear: Warp power courses through the psyker's body, scorching his soul. The
+                                    psyker
+                                    cannot use any powers for the next hour and gains 2d5 Corruption Points.</td>
+                            </tr>
+                            <tr>
+                                <td>25-30</td>
+                                <td>Locked In: The power cages the psyker's mind in an ethereal prison, tormented by
+                                    visions
+                                    of the Warp. The psyker falls to the ground in a catatonic state. Each Round
+                                    thereafter,
+                                    he must spend a Full Action to make a Difficult (-10) Willpower Test. On a
+                                    success,
+                                    his mind is freed and restored to his body, haunted by his experiences but
+                                    otherwise
+                                    unharmed.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>31-38</td>
+                                <td>Chronological Incontinence: Time warps around the psyker. He winks out of
+                                    existence and
+                                    reappears in 1d10 Rounds (or one minute in narrative time) in the exact
+                                    location.
+                                    He suffers one point of permanent Toughness and Intelligence damage as his body
+                                    and
+                                    mind rebel against the experience, and gains 1d5 Corruption Points.</td>
+                            </tr>
+                            <tr>
+                                <td>39-46</td>
+                                <td>Psychic Mirror: The psyker's power is turned back on him. Resolve the power's
+                                    effects,
+                                    but the power targets the psyker instead. If the power is beneficial, it deals
+                                    1d10+5
+                                    Energy Damage (ignoring Armour) to the psyker instead of its normal effect.</td>
+                            </tr>
+                            <tr>
+                                <td>47-55</td>
+                                <td>Warp Whispers: The voices of daemons fill the air within 4d10 metres of the
+                                    psyker, whispering
+                                    terrible secrets and shocking truths. Everyone in the area (including the psyker
+                                    ) must make a Hard (-20) Willpower Test or suffer 1d5 Corruption Points and an
+                                    equal
+                                    amount of Willpower damage. In addition, whether or not the psyker passes the
+                                    Willpower
+                                    Test, he suffers an additional 1d5+5 Willpower damage.</td>
+                            </tr>
+                            <tr>
+                                <td>56-58</td>
+                                <td>Vice Versa: The psyker's mind is thrown out of his body and into another nearby
+                                    creature
+                                    or person. The psyker and a random being (note, this cannot be a daemon,
+                                    mindless
+                                    xenos, or other soulless creature) within 50 metres swap consciousness for 1d10
+                                    rounds.
+                                    This may be an ally or enemy. Each creature retains its Weapon Skill, Ballistic
+                                    Skill,
+                                    Intelligence, Perception, Willpower, and Fellowship during the swap, but all
+                                    other
+                                    Characteristics are of the new host body. If either body is slain, the effect
+                                    ends
+                                    immediately and both parties return to their original bodies. Both suffer 1d5
+                                    Intelligence
+                                    damage from the experience. If there are no creatures within range, the psyker
+                                    becomes
+                                    catatonic for 1d5 rounds while his mind wanders the Warp. This journey causes
+                                    1d10
+                                    Willpower Damage, 1d10 Intelligence Damage and 1d10 Corruption Points.</td>
+                            </tr>
+                            <tr>
+                                <td>59-67</td>
+                                <td>Dark Summoning: The Empyrean buckles and tears at the arrogance of the psyker,
+                                    and a
+                                    Bloodletter rips its way into existence. (see Chapter XI: Adversaries). The
+                                    fiend
+                                    appears within 3d10 metres of the psyker, for a number of Rounds equal to 1d5
+                                    plus
+                                    the psyker's Toughness Bonus. The psyker's turn immediately ends, and the Daemon
+                                    may take its turn immediately. It detests the psyker and focuses all of its
+                                    attacks
+                                    upon the fool that unwittingly summoned it. It will not attack anyone else, even
+                                    if others attack it.</td>
+                            </tr>
+                            <tr>
+                                <td>68-72</td>
+                                <td>Rending the Veil: The air vibrates with images of cackling daemons and the
+                                    kaleidoscopic
+                                    taint of the Warp is rendered visible. All sentient creatures (any creature with
+                                    an Intelligence characteristic) within 1d100 metres must test against Fear (2).
+                                    The
+                                    psyker must Test against Fear (4) instead. This effect lasts for 1d5 Rounds.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>73-78</td>
+                                <td>Blood Rain: A psychic storm erupts, covering an area of 5d10 metres in which
+                                    everyone
+                                    must pass a Challenging (+0) Strength Test or be knocked to the ground. In
+                                    addition
+                                    to howling winds and the skies raining blood, any psychic powers used in the
+                                    area
+                                    for 1d5 Rounds automatically invoke Perils of the Warp, in addition to any
+                                    Psychic
+                                    Phenomena those powers cause. The psyker gains 1d5+1 Corruption Points.</td>
+                            </tr>
+                            <tr>
+                                <td>79-82</td>
+                                <td>Cataclysmic Blast: The psyker's power overloads, arcing out in great bolts of
+                                    Warp energy.
+                                    Anyone within 1d10 metres (including the psyker) takes 1d10 Energy Damage with a
+                                    Pen of 5. The psyker may not Dodge this, or stop the attack with a Field Save
+                                    (see
+                                    page 196). In addition, all of the psyker's clothing and gear is destroyed,
+                                    leaving
+                                    him naked and smoking on the ground. The psyker may use no further powers for
+                                    1d5
+                                    hours after the event.</td>
+                            </tr>
+                            <tr>
+                                <td>83-86</td>
+                                <td>Mass Possession: Daemons ravage the mind of every living thing within 1d100
+                                    metres. Every
+                                    character in the area must resist a possession attack (see the Possession Trait
+                                    in
+                                    Chapter V: Talents and Traits; the attacker is a random Lesser Daemon). This
+                                    possession
+                                    will last for no more than 2d10 Rounds, after which the daemons are cast back
+                                    into
+                                    the Warp.</td>
+                            </tr>
+                            <tr>
+                                <td>87-90</td>
+                                <td>Reality Quake: Reality buckles around the psyker, and an area radiating out 3d10
+                                    metres
+                                    from him is sundered: solid objects alternately rot, burn, and freeze, and
+                                    everyone
+                                    and everything in the area takes 2d10 Rending Damage, ignoring Armour (and
+                                    unable
+                                    to be dodged). Warded objects, daemons, and untouchables halve the Damage
+                                    rolled.</td>
+                            </tr>
+                            <tr>
+                                <td>91-99</td>
+                                <td>Grand Possession: A grand and terrible Warp entity takes interest in the
+                                    psyker's soul,
+                                    descending from the Warp to seize the mortal's body for its own purposes. A
+                                    powerful
+                                    Daemon attempts to possess the psyker (see the Possession Trait in Chapter IV:
+                                    Talents
+                                    and Traits). Use the Bloodletter from page 354, but increase all of its
+                                    Characteristics
+                                    by +20 and give it Fear 4. Even if the daemon fails, the psyker still suffers
+                                    2d10
+                                    Toughness Damage, and will forever add +10 to all rolls on the Psychic Phenomena
+                                    and Perils of the Warp tables as his body now serves as a conduit to the power
+                                    of
+                                    the Warp. If the character dies while possessed, the daemon manifests in the
+                                    real
+                                    world for a number of days equal to its Toughness Bonus or until it is
+                                    destroyed.</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td>Annihilation: The psyker is immediately and irrevocably destroyed, burned to
+                                    nothing
+                                    by the screaming fires of the Immaterium or dragged into the deepest maelstrom
+                                    of
+                                    the Warp. The psyker may not spend Fate to recover from this death, he is
+                                    irrevocably
+                                    destroyed. There is a chance that a daemonic entity of some sort appears in the
+                                    psyker's
+                                    place. The type of daemon that appears is determined by the GM, based on how
+                                    powerful
+                                    the psyker was - more powerful psykers draw more powerful daemons. The
+                                    percentage
+                                    chance that the daemon appears is equal to the psyker's Willpower characteristic
+                                    (roll a d100, if the result is equal to or under the characteristic, the daemon
+                                    appears).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+
+    </div>
+</body>
+<footer>
+        <div class="w3-row-padding w3-section">
+                <div class="w3-col s0 m1 l1">
+                    <p></p>
+                </div>
+                <div class="w3-col s12 m10 l10">
+                    All Dark Heresy 2e material is © Fantasy Flight Games
+                </div>
+                <div class="w3-col s0 m1 l1">
+                    <p></p>
+                </div>
+            </div>
+    </footer>
+</html>

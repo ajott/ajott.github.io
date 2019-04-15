@@ -302,7 +302,7 @@ var backgrounds = {
         bonus: "Inured to the Xenos: A character from a Rogue Trader Fleet gains a +10 bonus to Fear tests caused by aliens and a +20 bonus to Interaction skill tests with alien characters.",
         skills: ["Charm ZZ Scrutiny", "Commerce", "Common Lore (Rogue Traders)", "Linguistics (Pick One Alien Language)", "Operate (Surface) ZZ Operate (Aeronautica)"],
         talents: ["Weapon Training (Las) ZZ Weapon Training (Solid Projectile)", "Weapon Training (Shock)"],
-        equipment: ["Laspistol ZZ Autopistol (Compact)", "Shock Maul", "Mesh Cloak ZZ Carapace Chestplate", "Auspex", "Chrono"],
+        equipment: ["Laspistol ZZ Autopistol (Compact)", "Shock Maul", "Mesh Cloak ZZ Carapace Chest Plate", "Auspex", "Chrono"],
         name: "Rogue Trader Fleet"
     },
     "exorcised": {
@@ -371,6 +371,24 @@ var roles = {
         talent: "Iron Jaw ZZ Rapid Reload",
         bonus: "Expert at Violence: In addition to the normal uses of Fate points (pg 293), after making a successful attack test, but before determining hits, a Warrior character may spend a Fate point to substitute his Weapon Skill (for melee) or Ballistic Skill (for ranged) bonus for the degrees of success scored on the attack test.",
         name: "Warrior"
+    },
+    "fanatic": {
+        aptitudes: ["Leadership","Offense", "Toughness", "Weapon Skill", "Willpower"],
+        talent: "Deny the Witch ZZ Jaded",
+        bonus: "Death to All Who Oppose Me!: In addition to the normal uses of Fate points (see page 293 of the DARK HERESY Core Rulebook), a Fanatic character may spend a Fate point to count as having the Hatred talent against his current foe for the duration of the encounter. Should he choose to leave combat against a Hated foe in that encounter, however, he gains 1 Insanity point.",
+        name: "Fanatic"
+    },
+    "penitent": {
+        aptitudes: ["Agility", "Fieldcraft", "Intelligence", "Offense", "Toughness"],
+        talent: "Die Hard ZZ Flagellant",
+        bonus: "Cleansing Pain: Whenever a Penitent character sufers 1 or more points of damage (after reductions for Toughnessbonus and Armour), he gains a +10 bonus to the first test he makes before the end of his next turn.",
+        name: "Penitent"
+    },
+    "ace": {
+        aptitudes: ["Agility", "Finesse", "Perception", "Tech", "Willpower"],
+        talent: "Hard Target ZZ Hotshot Pilot",
+        bonus: "Right Stuff: In addition to the normal uses of Fate points (see page 293 of the Dark Heresy Core Rulebook), an Ace character may spend a Fate point to automatically succeed at an Operate or Survival skill test involving vehicles or living steeds with a number of degrees of success equal to his Agility bonus",
+        name: "Ace"
     },
     "crusader": {
         aptitudes: ["Knowledge", "Offense", "Strength", "Toughness", "Willpower"],
@@ -458,6 +476,12 @@ var skills = {
     }, 
     "Parry": {
         "description": "Attempt to deflect blows in melee."
+    }, 
+    "Survival": {
+        "description": "Find food or water in a hostile environment, start a fire with homemade tools, or track a foe across a hive."
+    },
+    "Trade": {
+        "description": "Prepare a meal for high ranking officers, carve one's sigil on a chainsword, or uncover the remains of a lost colony."
     }
 
 }
@@ -586,6 +610,22 @@ var talents = {
     "Peer (Criminal Cartels)": {
         tier: 1,
         description: "Gain a +10 bonus to all Fellowship and Influence tests with this group."
+    },
+    "Die Hard": {
+        tier: 1,
+        description: "Test Willpower to avoid Fatigue from Blood Loss with a Challenging (+0) Willpower test."
+    },
+    "Flagellant": {
+        tier: 1,
+        description: "As a full action, gain 1d5-2 Fatigue (minimum 1) to gain +10 to WP tests to resist Fear, Pinning, Psychic powers, or Corruption, for 1 hour."
+    },
+    "Hard Target": {
+        tier: 2,
+        description: "-20 to hit character when he Charges or Runs."
+    },
+    "Hotshot Pilot": {
+        tier: 2,
+        description: "On an succesful Operate test, he may voluntarily suffer 1 level of Fatigue to add a number of DoS equal to half of his Agility bonus. When failed an Operate test, he may voluntarily suffer 1 level of Fatigue in order to reduce the degrees of failure by an amount equal to his Agility bonus, to a minimum of 1. "
     }
 }
 
@@ -593,6 +633,10 @@ var equipment = {
     "Laspistol": {
         "description": "Las Weapon. 30m Range, ROF: S/2/-, 1d10+2 Energy damage, 0 Pen, 30 round clip",
         "weight": "1.5kg"
+    },
+    "Flak Cloak": {
+        "description": "3 Armour Points, Coverage: Arms, Body, Legs. Max Ag: 55",
+        "weight": "8kg"
     },
     "Stub Automatic": {
         "description": "Solid Projectile Weapon. 30m Range, ROF: S/3/-, 1d10+3 Impact damage, 0 pen, 9 round clip",
@@ -681,6 +725,10 @@ var equipment = {
     "Monotask Servo-skull (Utility)": {
         "description": "Counts as a Combi-tool (+10 to Tech-Use tests)",
         "weight": "2kg"
+    },
+    "Combi-Tool": {
+        "description": "+10 to Tech-Use tests",
+        "weight": "1kg"
     },
     "Optical Mechadendrite": {
         "description": "Grants +10 to all vision-based Perception tests. Has an infrared torch and sensors with a range of 40m, as well as a Stablight (flashlight)",
@@ -789,6 +837,62 @@ var equipment = {
     "Rebreather": {
         "description": "Immune to toxic atmospheres, even allowing water-breathing. Last for 1 hour, takes Full Action to replace. ",
         "weight": "1kg"
+    },
+    "Stub Revolver and Great Weapon": {
+        "description": "Solid Projectile weapon. 30m range, ROF: S/-/-, 1d10+3 Impact damage, 0 pen, 6 round clip <br/>Low-Tech weapon. Melee range, 2d10 Rending damage, 0 pen. ",
+        "weight": "8.5kg"
+    },
+    "Heavy Leathers": {
+        "description": "1 Armour Point, Coverage: Arms, Body",
+        "weight": "5kg"
+    },
+    "2 clips of Man-Stopper Rounds": {
+        "description": "Adds 3 to weapon penetration",
+        "weight": "0kg"
+    },
+    "2 clips of Expander Bullets": {
+        "description": "Adds 1 to weapon damage and penetration",
+        "weight": "0kg"
+    },
+    "Web Grenade": {
+        "description": "Thrown weapon. 3xSB range, 0 damage, 0 pen. Blast (3), Snare (2)",
+        "weight": "0.5kg"
+    },
+    "Filtration Plugs": {
+        "description": "Nose plugs. Grant +20 against gas.",
+        "weight": "0kg"
+    },
+    "1 dose of De-Tox": {
+        "description": "Clears any chemical effects. User is Stunned for 1d10-TB rounds.",
+        "weight": "0kg"
+    },
+    "Shock Whip": {
+        "description": "Shock weapon. 3m range, 1d10+1 Impact damage, 0 pen. Flexible, Shocking",
+        "weight": "3kg"
+    },
+    "Autopistol (Compact)": {
+        "description": "Solid Projectile weapon. 15m range, ROF: S/-/6, 1d10+1 Impact damage, 0 pen, 9 round clip",
+        "weight": "0.75kg"
+    },
+    "Mesh Cloak": {
+        "description": "4 Armour Points, Coverage: Arms, Body, Legs. Max Ag: 60",
+        "weight": "3kg"
+    },
+    "Auspex": {
+        "description": "Grants +20 to awareness tests and counts as a Free Action once per turn. With Tech-Use can see through walls less than 50 cm, has a range of 50 meters.",
+        "weight": "0.5kg"
+    },
+    "Flak Coat": {
+        "description": "3 Armour Points, Coverage: Arms, Body. Max Ag: 60",
+        "weight": "5kg"
+    },
+    "Combat Shotgun": {
+        "description": "Solid Projectile weapon. 30m range, ROF: S/3/-, 1d10+4 Impact damage, 0 pen, 18 round clip",
+        "weight": "6.5kg"
+    },
+    "2 doses of Stimm": {
+        "description": "Lasts 3d10 rounds and ignores any negative effects from damage, Critical damage, Fatigue, and cannot be stunned. When it wears off, they suffer a -20 to Strength, Toughness, and Agility tests for one hour and gains one level of Fatigue.",
+        "weight": ""
     }
 }
 
@@ -894,6 +998,7 @@ var divinations = {
         "desc": "Increase this character's Fate threshold by 1."
     }
 }
+
 
 // Carry weights are defined in the CRB. They don't appear to follow any sort of logic or reason
 var carry = [0.9, 2.25, 4.5, 9, 18, 27, 36, 45, 56, 67, 78, 90, 112, 225, 337, 450, 675, 900, 1350, 1800, 2250];

@@ -10,41 +10,19 @@ function inRangeInclusive(num, range) {
         }
     } else {
         return (num >= lowerBound && num <= upperBound);
-    }   
+    }
 }
 
 function toDark() {
     $("table").addClass("table-dark");
-    $("body").addClass("body-dark");
     $("h3").addClass("headingDark");
     $("h4").addClass("headingDark");
     $(".psyTooltipLight").addClass("psyTooltipDark").removeClass("psyTooltipLight");
-    $(".btn-lightMode").addClass("btn-darkMode").removeClass("btn-lightMode");
-    $(".dropdown-toggle").addClass("dropdown-dark");
-    $(".dropdown-item").addClass("dropdown-dark");
-    $(".dropdown-menu").addClass("dropdown-dark");
-    $("#navBar").addClass("navbar-dark bg-dark");
-    $("#headBar").addClass("navbar-dark bg-dark");
-    $("#lightBtn").show();
-    $("#darkBtn").hide();
 }
 
-function toLight() {
-    $("table").removeClass("table-dark");
-    $("body").removeClass("body-dark");
-    $("h3").removeClass("headingDark");
-    $("h4").removeClass("headingDark");
-    $(".psyTooltipDark").addClass("psyTooltipLight").removeClass("psyTooltipDark");
-    $(".btn-darkMode").addClass("btn-lightMode").removeClass("btn-darkMode");
-    $(".dropdown-toggle").removeClass("dropdown-dark");
-    $(".dropdown-item").removeClass("dropdown-dark");
-    $(".dropdown-menu").removeClass("dropdown-dark");
-    $("#navBar").removeClass("navbar-dark bg-dark");
-    $("#headBar").removeClass("navbar-dark bg-dark");
-    $("#lightBtn").hide();
-    $("#darkBtn").show();
-}
+
 $(document).ready(function () {
+    buildNavbar();
     toDark();
 });
 
@@ -103,27 +81,30 @@ function weaponFilter() {
             }
         }
     }
+    document.getElementById("weaponFamilySelect").options.selectedIndex = 0;
+    document.getElementById("weaponClassSelect").options.selectedIndex = 0;
+    document.getElementById("weaponBookSelect").options.selectedIndex = 0;
 }
 
 function talentFilter() {
-        var input, filter, table, tr, td, i;
-        input = document.getElementById("talentSearch");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("talentTable");
-        tr = table.getElementsByTagName("tr");
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
-            if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("talentSearch");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("talentTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
             }
         }
-    
-        document.getElementById("talentTierSelect").options.selectedIndex = 0;
+    }
+
+    document.getElementById("talentTierSelect").options.selectedIndex = 0;
 }
 
 function talentTierFilter() {
@@ -132,7 +113,7 @@ function talentTierFilter() {
     let selection = selectBox.options[selectBox.selectedIndex].value;
 
     var input, filter, table, tr, td, i;
-    input = selection;    
+    input = selection;
 
     filter = input.toUpperCase();
     table = document.getElementById("talentTable");
@@ -179,7 +160,7 @@ function psyFilterDisc() {
     let selection = selectBox.options[selectBox.selectedIndex].value;
 
     var input, filter, table, tr, td, i;
-    input = selection;    
+    input = selection;
 
     filter = input.toUpperCase();
     table = document.getElementById("psyPowerTable");
@@ -218,4 +199,94 @@ function divFilter() {
             }
         }
     }
+}
+
+function weaponFilterFamily() {
+    let selectBox = document.getElementById("weaponFamilySelect")
+
+    let selection = selectBox.options[selectBox.selectedIndex].value;
+
+    var input, filter, table, tr, td, i;
+    input = selection;
+
+    filter = input.toUpperCase();
+    table = document.getElementById("weaponTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1 || filter == "...") {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+
+    $("#weaponSearch").val("")
+    document.getElementById("weaponClassSelect").options.selectedIndex = 0;
+    document.getElementById("weaponBookSelect").options.selectedIndex = 0;
+}
+
+function weaponFilterClass() {
+    let selectBox = document.getElementById("weaponClassSelect")
+
+    let selection = selectBox.options[selectBox.selectedIndex].value;
+
+    var input, filter, table, tr, td, i;
+    input = selection;
+
+    filter = input.toUpperCase();
+    table = document.getElementById("weaponTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[2];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1 || filter == "...") {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+
+    $("#weaponSearch").val("")
+    document.getElementById("weaponFamilySelect").options.selectedIndex = 0;
+    document.getElementById("weaponBookSelect").options.selectedIndex = 0;
+}
+
+function weaponFilterBook() {
+    let selectBox = document.getElementById("weaponBookSelect")
+
+    let selection = selectBox.options[selectBox.selectedIndex].value;
+
+    var input, filter, table, tr, td, i;
+    input = selection;
+
+    filter = input.toUpperCase();
+    table = document.getElementById("weaponTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[13];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1 || filter == "...") {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+
+    $("#weaponSearch").val("")
+    document.getElementById("weaponFamilySelect").options.selectedIndex = 0;
+    document.getElementById("weaponClassSelect").options.selectedIndex = 0;
+}
+
+function buildNavbar() {
+
+    $('#navBarDiv').load("./navbar.html");
+
 }

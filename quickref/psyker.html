@@ -9,8 +9,7 @@
     <meta name="keywords"
         content="Dark Heresy, 40k, warhammer 40k, 40k rpg, quick ref, quick reference guide, reference guide, Dark heresy 2e, dark heresy second edition, dark heresy 2nd edition">
     <title>DH 2e QuickRef</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -22,281 +21,7 @@
 
 
 <body>
-    <div class="w3-top w3-darker-grey w3-row-padding bar-pad">
-        <div id="headTitle">
-            <span class="header-large headingDark w3-bar-item">DH 2e Quick Reference</span>
-            <br />
-        </div>
-        <div id="menu" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
-            <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-round-large">Exp
-                Costs</a>
-            <div class="w3-dropdown-click w3-mobile">
-                <button onclick="dropdownShow('combatDropdown')" class="w3-button w3-round-large w3-hover-maroon">Combat
-                    <i class="fa fa-caret-down"></i></button>
-                <div id="combatDropdown" class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-                    <a href="./combat.html#combatActions"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Actions</a>
-                    <a href="./combat.html#hitLocations"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Hit
-                        Locations</a>
-                    <a href="./combat.html#conditions"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Conditions and Damage</a>
-                    <a href="./combat.html#circumstances"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Circumstances</a>
-                    <a href="./combat.html#difficulties"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Difficulty
-                        Examples</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-click w3-mobile">
-                <button onclick="dropdownShow('critDropdown')" class="w3-button w3-round-large w3-hover-maroon">Critical
-                    Hits <i class="fa fa-caret-down"></i></button>
-                <div id="critDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-                    <a href="./crit.html#crits"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Critical Rolls</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./crit.html#energyCrit"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Energy</a>
-                    <a href="./crit.html#explosiveCrit"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Explosive</a>
-                    <a href="./crit.html#impactCrit"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Impact</a>
-                    <a href="./crit.html#rendingCrit"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Rending</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-click w3-mobile">
-                <button onclick="dropdownShow('equipDropdown')"
-                    class="w3-button w3-round-large w3-hover-maroon">Equipment <i class="fa fa-caret-down"></i></button>
-                <div id="equipDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-                    <a href="./gear.html#gear"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Gear</a>
-                    <a href="./gear.html#tools"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Tools</a>
-                    <a href="./gear.html#cybernetics"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Cybernetics</a>
-                    <a href="./gear.html#consumables"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Drugs and Consumables</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-click w3-mobile">
-                <button onclick="dropdownShow('weaponDropdown')"
-                    class="w3-button w3-round-large w3-hover-maroon">Weapons <i class="fa fa-caret-down"></i></button>
-                <div id="weaponDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-                    <a href="./weapons.html#weapons"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapons</a>
-                    <a href="./weapons.html#weaponQual"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Qualities</a>
-                    <a href="./weapons.html#weaponMods"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Mods</a>
-                    <a href="./weapons.html#ammo"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Special Ammo</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-click w3-mobile">
-                <button onclick="dropdownShow('armourDropdown')" class="w3-button w3-round-large w3-hover-maroon">Armour
-                    <i class="fa fa-caret-down"></i></button>
-                <div id="armourDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-                    <a href="./armour.html#armour"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour</a>
-                    <a href="./armour.html#armourMods"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour Mods</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-click w3-mobile">
-                <button onclick="dropdownShow('psykerDropdown')" class="w3-button w3-round-large w3-hover-purple">Psyker
-                    <i class="fa fa-caret-down"></i></button>
-                <div id="psykerDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-                    <a href="./psyker.html#psyPowers"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Powers</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./psyker.html#psyPhenom"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Phenomena</a>
-                    <a href="./psyker.html#psyPerils"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Perils of the Warp</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-click w3-mobile">
-                <button onclick="dropdownShow('charDropdown')"
-                    class="w3-button w3-round-large w3-hover-maroon">Character <i class="fa fa-caret-down"></i></button>
-                <div id="charDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-                    <a href="./character.html#skills"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Skills</a>
-                    <a href="./character.html#talents"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Talents</a>
-                    <a href="./character.html#traits"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Traits</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./character.html#homeworlds"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Homeworlds</a>
-                    <a href="./character.html#backgrounds"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Backgrounds</a>
-                    <a href="./character.html#roles"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Roles</a>
-                    <a href="./character.html#divinations"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Divinations</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-click w3-mobile">
-                <button onclick="dropdownShow('effectsDropdown')"
-                    class="w3-button w3-round-large w3-hover-maroon">Effects <i class="fa fa-caret-down"></i></button>
-                <div id="effectsDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-                    <a href="./effects.html#shock"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Fear and Shock</a>
-                    <a href="./effects.html#snapping"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Snapping Out of It</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./effects.html#insanity"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Insanity</a>
-                    <a href="./effects.html#trauma"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mental Trauma</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./effects.html#corruption"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Corruption</a>
-                    <a href="./effects.html#maligna"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Malignancies</a>
-                    <a href="./effects.html#mutations"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mutations</a>
-                </div>
-            </div>
-        </div>
-        <div class="w3-bar">
-            <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-hide-small w3-round-large">Exp
-                Costs</a>
-            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-maroon">Combat <i
-                        class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-                    <a href="./combat.html#combatActions"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Actions</a>
-                    <a href="./combat.html#hitLocations"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Hit
-                        Locations</a>
-                    <a href="./combat.html#conditions"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Conditions and Damage</a>
-                    <a href="./combat.html#circumstances"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Circumstances</a>
-                    <a href="./combat.html#difficulties"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Difficulty
-                        Examples</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-maroon">Critical Hits <i
-                        class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-                    <a href="./crit.html#crits"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Critical Rolls</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./crit.html#energyCrit"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Energy</a>
-                    <a href="./crit.html#explosiveCrit"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Explosive</a>
-                    <a href="./crit.html#impactCrit"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Impact</a>
-                    <a href="./crit.html#rendingCrit"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Rending</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-maroon">Equipment <i
-                        class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-                    <a href="./gear.html#gear"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Gear</a>
-                    <a href="./gear.html#tools"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Tools</a>
-                    <a href="./gear.html#cybernetics"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Cybernetics</a>
-                    <a href="./gear.html#consumables"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Drugs and Consumables</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-maroon">Weapons <i
-                        class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-                    <a href="./weapons.html#weapons"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapons</a>
-                    <a href="./weapons.html#weaponQual"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Qualities</a>
-                    <a href="./weapons.html#weaponMods"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Mods</a>
-                    <a href="./weapons.html#ammo"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Special Ammo</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-maroon">Armour <i
-                        class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-                    <a href="./armour.html#armour"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour</a>
-                    <a href="./armour.html#armourMods"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour Mods</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-purple">Psyker <i
-                        class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-                    <a href="./psyker.html#psyPowers"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Powers</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./psyker.html#psyPhenom"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Phenomena</a>
-                    <a href="./psyker.html#psyPerils"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Perils of the Warp</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-maroon">Character <i
-                        class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-                    <a href="./character.html#skills"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Skills</a>
-                    <a href="./character.html#talents"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Talents</a>
-                    <a href="./character.html#traits"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Traits</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./character.html#homeworlds"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Homeworlds</a>
-                    <a href="./character.html#backgrounds"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Backgrounds</a>
-                    <a href="./character.html#roles"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Roles</a>
-                    <a href="./character.html#divinations"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Divinations</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-maroon">Effects <i
-                        class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-                    <a href="./effects.html#shock"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Fear and Shock</a>
-                    <a href="./effects.html#snapping"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Snapping Out of It</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./effects.html#insanity"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Insanity</a>
-                    <a href="./effects.html#trauma"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mental Trauma</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./effects.html#corruption"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Corruption</a>
-                    <a href="./effects.html#maligna"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Malignancies</a>
-                    <a href="./effects.html#mutations"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mutations</a>
-                </div>
-            </div>
-            <a class="w3-bar-item w3-button w3-round-large w3-right w3-hide-small w3-blue" id="charGen" target="_blank"
-                href="https://ajott.github.io/dh2chargen">Character Creator</a>
-            <a href="javascript:void(0)" class="w3-red w3-bar-item w3-button w3-top-left w3-hide-large w3-hide-medium"
-                onclick="showMenu()">&#9776;</a>
-        </div>
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad" id="navBarDiv">
     </div>
 
     <div class="w3-row-padding w3-section">
@@ -1306,8 +1031,151 @@
                         </tbody>
                     </table>
                 </div>
+                <div id="psyMinor" class="info">
+                    <h3 class="headingLight">Minor Psychic Powers</h3>
+                    <br/>
+                <table id="psyMinorTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                    <thead>
+                        <tr>
+                            <th>Power</th>
+                            <th>Cost</th>
+                            <th>Prerequisite</th>
+                            <th>Action</th>
+                            <th>Focus Power</th>
+                            <th>Range</th>
+                            <th>Sustained</th>
+                            <th>Subtype</th>
+                            <th>Effect</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Aura of Fear</td>
+                            <td>200 xp</td>
+                            <td>Fellowship 75, 5+ Insanity</td>
+                            <td>Full Action</td>
+                            <td>Hard (-20) Willpower Test</td>
+                            <td>Self</td>
+                            <td>Half Action</td>
+                            <td>Concentration</td>
+                            <td>The psyker gains the Fear (1) trait as long as he sustains the power. Should this result in a Psychic Phenomena roll, the Psyker must instead make a Fear (4) test, gaining 4 Corruption if he fails</td>
+                        </tr>
+                        <tr>
+                            <td>Deja Vu </td>
+                            <td>200 xp</td>
+                            <td>Willpower 35</td>
+                            <td>Half Action</td>
+                            <td>Opposed (-10) Willpower Test</td>
+                            <td>5m x PR</td>
+                            <td>No</td>
+                            <td>Concentration</td>
+                            <td>The target makes a (+10) Willpower test to oppose the psyker. If the psyker succeeds, the target must repeat the last action he took - such as firing at a target that no longer exists. This counts as the target's action for the round. If the action would be obviously harmful to the target (but not necessarily to an ally), the target automatically wins the Opposed test with 1 DoS</td>
+                        </tr>
+                        <tr>
+                            <td>Foretelling</td>
+                            <td>100 xp</td>
+                            <td>Perception 35</td>
+                            <td>Full Action</td>
+                            <td>Difficult (-10) Psyniscience test</td>
+                            <td>5m x PR</td>
+                            <td>No</td>
+                            <td>Concentration</td>
+                            <td>The psyker chooses a single character or item within range, and gains a brief and unclear image of the future, giving him an idea of effects to be suffered by the target in the next 1xPR minutes</td>
+                        </tr>
+                        <tr>
+                            <td>Ignite</td>
+                            <td>100 xp</td>
+                            <td>Willpower 30</td>
+                            <td>Half Action</td>
+                            <td>Challenging (+0) Willpower Test</td>
+                            <td>5m x PR</td>
+                            <td>Half Action</td>
+                            <td>Attack, Concentration</td>
+                            <td>The psyker creates a small flame, approximately 1 centimetre across, at a point within range and line of sight. This may ignite combustible materials. If the target is a character, at the start of each round after the first, he must make a (+0) Agility test to avoid catching fire. He gains (+30) to this test if he makes a Move action.</td>
+                        </tr>
+                        <tr>
+                            <td>Ill Omen</td>
+                            <td>200 xp</td>
+                            <td>Rank 1 (Known) in Psyniscience</td>
+                            <td>Full Action</td>
+                            <td>Difficult (-10) Willpower test</td>
+                            <td>10m x PR</td>
+                            <td>No</td>
+                            <td>Concentration</td>
+                            <td>The psyker chooses a target within range and line of sight, who opposes with a (+0) Logic test. If the target fails to resist, he suffers (-10) to all tests for PR rounds. If this is done outside of combat, the psyker chooses a time within the next PR hours for the target to experience this omen.</td>
+                        </tr>
+                        <tr>
+                            <td>Impel</td>
+                            <td>100 xp</td>
+                            <td>Willpower 30</td>
+                            <td>Half Action</td>
+                            <td>Ordinary (+10) Willpower test</td>
+                            <td>5m x PR</td>
+                            <td>No</td>
+                            <td>Attack, Concentration</td>
+                            <td>The psyker chooses an object or character and pushes it directly away PR metres. The maximum weight the psyker can push is calculated using the carry weight table (PP 248 CB), substituting WPB and PR for SB and TB. If the target is a character, he opposes with a (+0) Strength test. If the target fails with 2+ DoF, he is knocked Prone. If the psyker succeeds with 3+ DoS, the target suffers 1d5+PR damage and 1 level of Fatigue</td>
+                        </tr>
+                        <tr>
+                            <td>Luck</td>
+                            <td>100 xp</td>
+                            <td>Perception 30</td>
+                            <td>Half Action</td>
+                            <td>Challenging (+0) Awareness test</td>
+                            <td>Self</td>
+                            <td>No</td>
+                            <td>Concentration</td>
+                            <td>If the psyker succeeds, he gains (+5+PR) on his next test. If he fails by 2+ DoF, he suffers a (-2xPR) penalty on his next test</td>
+                        </tr>
+                        <tr>
+                            <td>Suggestion</td>
+                            <td>200 xp</td>
+                            <td>Rank 1 (Known) in Deceive</td>
+                            <td>Full Action</td>
+                            <td>Difficult (-10) Opposed Willpower test</td>
+                            <td>PR</td>
+                            <td>No</td>
+                            <td>Concentration</td>
+                            <td>The target resists with a (+0) Willpower test. If the psyker is attempting to convince the target of something clearly impossible, the target automatically wins with 1 DoS</td>
+                        </tr>
+                        <tr>
+                            <td>Summon Vermin</td>
+                            <td>100 xp</td>
+                            <td>Fellowship 30</td>
+                            <td>Full Action</td>
+                            <td>Challenging (+0) Willpower Test</td>
+                            <td>1km x PR</td>
+                            <td>No</td>
+                            <td>Concentration</td>
+                            <td>A number of vermin up to the PR used come to the psyker's location as quickly as possible. Once they arrive, they act normally and are not compelled to follow the Psyker's will.</td>
+                        </tr>
+                        <tr>
+                            <td>Weapon Jinx</td>
+                            <td>200 xp</td>
+                            <td>Intelligence 35</td>
+                            <td>Half Action</td>
+                            <td>Difficult (-10) Willpower test</td>
+                            <td>5m x PR</td>
+                            <td>No</td>
+                            <td>Concentration</td>
+                            <td>The psyker chooses up to PR ranged weapons (Best quality weapons count as 2) which count as Poor quality until repaired. If the Psyker's DoS exceeds the PR used, the weapons jam immediately. If the Psyker fails with 2+ DoF, his own weapons immediately jam.</td>
+                        </tr>
+                        <tr>
+                            <td>Word of Beasts</td>
+                            <td>100 xp</td>
+                            <td>Fellowship 35</td>
+                            <td>Half Action</td>
+                            <td>Difficult (-10) Opposed Willpower test</td>
+                            <td>10m</td>
+                            <td>No</td>
+                            <td>Concentration</td>
+                            <td>The psyker chooses an animal to dominate, which opposes with a (+0) Willpower test. If the Psyker is successful, he chooses to either: Receive a mental impression of the animal's recent experiences; or Establish an empathetic link with the animal, which will then follow the Psyker and obey his commands to the best of its ability.</td>
+                        </tr>
+                    </tbody>
+                    </table>
 
-                <div id="psyPhenom" class="info">
+                </div>
+                
+                    <div id="psyPhenom" class="info">
                     <h3 class="headingLight">Psychic Phenomena</h3>
                     <table id="psyPhenomTable" class="w3-table w3-striped w3-hoverable w3-bordered">
                         <thead>

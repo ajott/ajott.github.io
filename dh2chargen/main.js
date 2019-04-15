@@ -100,6 +100,66 @@ var homeworlds = {
         talent: "Strong Minded",
         name: "Voidborn"
     },
+    "agri": {
+        charPlus: ["Fel", "S"],
+        charMinus: "Ag",
+        fate: 2,
+        blessing: 7,
+        wounds: 8,
+        bonus: "Strength from the Land: An agri-world character starts with the Brutal Charge (2) Trait",
+        aptitude: "Strength",
+        name: "Agri-World"
+    },
+    "feudal": {
+        charPlus: ["Per", "WS"],
+        charMinus: "Int",
+        fate: 3,
+        blessing: 6,
+        wounds: 9,
+        bonus: "At Home in Armour: A feudal world character ignores the maximum Agility value imposed by any armour he is wearing",
+        aptitude: "Weapon Skill",
+        name: "Feudal World"
+    },
+    "frontier": {
+        charPlus: ["BS", "Per"],
+        charMinus: "Fel",
+        fate: 3,
+        blessing: 7,
+        wounds: 7,
+        bonus: "Rely on None but Yourself: A frontier world character gains a +20 bonus to Tech-Use tests when applying a personal weapon modification, and a +10 bonus when repairing damaged items",
+        aptitude: "Ballistic Skill",
+        name: "Frontier World"
+    },
+    "death": {
+        charPlus: ["Ag", "Per"],
+        charMinus: "Fel",
+        fate: 2,
+        blessing: 5,
+        wounds: 9,
+        bonus: "Survivor's Paranoia: While a death world character is Surprised, non-Surprised attackers do not gain the normal +30 bonus to their Weapon and Ballistic Skill tests when targeting this character",
+        aptitude: "Fieldcraft",
+        name: "Death World"
+    },
+    "garden": {
+        charPlus: ["Fel", "Ag"],
+        charMinus: "T",
+        fate: 2,
+        blessing: 4,
+        wounds: 7,
+        bonus: "Serenity of the Green: A garden world character halves the duration (rounding up) of any result from Shock or Mental Traumas, and can remove Insanity Points for 50xp per point, rather than the normal 100xp",
+        aptitude: "Social",
+        name: "Garden World"
+    },
+    "research": {
+        charPlus: ["Int", "Per"],
+        charMinus: "Fel",
+        fate: 2,
+        blessing: 4,
+        wounds: 8,
+        bonus: "Pursuit of Data: Whenever a research station character reaches Rank 2 (Trained) in a Scholastic Lore skill, he also gains Rank 1 (Known) in one related or identical Forbidden Lore skill specialisation of their choice. The GM is the final arbiter of whether the two specialisations are related.",
+        aptitude: "Knowledge",
+        name: "Research Station"
+    },
     "daemon": {
         charPlus: ["WP", "Per"],
         charMinus: "Fel",
@@ -204,6 +264,46 @@ var backgrounds = {
         talents: ["Weapon Training (Chain)", "Weapon Training (Las) ZZ Weapon Training (Solid Projectile)"],
         equipment: ["Autopistol ZZ Laspistol", "Chainsword", "Armoured Body Glove ZZ Flak Vest", "Injector", "2 doses of Obscura ZZ 2 doses of Slaught"],
         name: "Outcast"
+    },
+    "sororitas": {
+        aptitude: "Offense ZZ Social",
+        bonus: "Incorruptible Devotion: Whenever an Adepta Sororitas character would gain 1 or more Corruption Points, she gains that many Insanity Points minus 1 (to a minimum of 0) instead.",
+        skills: ["Athletics", "Charm ZZ Intimidate", "Common Lore (Adepta Sororitas)", "Linguistics (High Gothic)", "Medicae ZZ Parry"],
+        talents: ["Weapon Training (Chain)", "Weapon Training (Las) ZZ Weapon Training (Flame)"],
+        equipment: ["Hand Flamer ZZ Laspistol", "Chainblade", "Armoured Body Glove", "Chrono", "Dataslate", "Stablight", "Micro-bead"],
+        name: "Adepta Sororitas"
+    },
+    "mutant": {
+        aptitude: "Fieldcraft ZZ Offense",
+        bonus: "Twisted Flesh: A Mutant character can always choose to fail any test associated with resisting malignancy or mutation. Whenever he would gain a malignancy, he may roll to gain a mutation instead. Starts with 10 corruption and rolls 5d10 to determine starting mutation. Has one of the following Traits: Amphibious, Dark-sight, Natural Weapons, Sonar Sense, Sturdy, Toxic (1), Unnatural Agility (1), Unnatural Strength (1), or Unnatural Toughness (1)",
+        skills: ["Acrobatics ZZ Athletics", "Awareness", "Deceive ZZ Intimidate", "Forbidden Lore (Mutants)", "Survival"],
+        talents: ["Weapon Training (Low-Tech)", "Weapon Training (Solid Projectile)"],
+        equipment: ["Shotgun ZZ Stub Revolver and Great Weapon", "Grapnel and Line", "Heavy Leathers", "Combat Vest", "2 doses of Stimm"],
+        name: "Mutant"
+    },
+    "heretek": {
+        aptitude: "Finesse ZZ Tech",
+        bonus: "Master of Hidden Lores: When a Heretek makes a Tech-Use test to comprehend, use, repair, or modify an unfamiliar device, he gains a +20 bonus if he has one or more relevant Forbidden Lore skill specialisations at Rank 1 (Known) or higher. Hereteks also start with Mechanicus Implants.",
+        skills: ["Deceive ZZ Inquiry", "Forbidden Lore (Pick One)", "Medicae ZZ Security", "Tech-Use", "Trade (Pick One)"],
+        talents: ["Weapon Training (Solid Projectile)"],
+        equipment: ["Stub Revolver", "2 clips of Man-Stopper Rounds ZZ 2 clips of Expander Bullets", "Web Grenade", "Combi-Tool", "Flak Cloak", "Filtration Plugs", "1 dose of De-Tox", "Dataslate", "Stablight"],
+        name: "Heretek"
+    },
+    "navy": {
+        aptitude: "Offense ZZ Tech",
+        bonus: "Close Quarters Discipline: An Imperial Navy character scores one additional degree of success on successful Ballistic Skill tests he makes against targets at Point-Blank range, at Short range, and with whom he is engaged in melee.",
+        skills: ["Athletics", "Command ZZ Intimidate", "Common Lore (Imperial Navy)", "Navigate (Stellar)", "Operate (Aeronautica) ZZ Operate (Voidship)"],
+        talents: ["Weapon Training (Chain) ZZ Weapon Training (Shock)", "Weapon Training (Solid Projectile)"],
+        equipment: ["Combat Shotgun ZZ Hand Cannon", "Chainsword ZZ Shock Whip", "Flak Coat", "Rebreather", "Micro-bead"],
+        name: "Imperial Navy"
+    },
+    "rogue": {
+        aptitude: "Finesse ZZ Social",
+        bonus: "Inured to the Xenos: A character from a Rogue Trader Fleet gains a +10 bonus to Fear tests caused by aliens and a +20 bonus to Interaction skill tests with alien characters.",
+        skills: ["Charm ZZ Scrutiny", "Commerce", "Common Lore (Rogue Traders)", "Linguistics (Pick One Alien Language)", "Operate (Surface) ZZ Operate (Aeronautica)"],
+        talents: ["Weapon Training (Las) ZZ Weapon Training (Solid Projectile)", "Weapon Training (Shock)"],
+        equipment: ["Laspistol ZZ Autopistol (Compact)", "Shock Maul", "Mesh Cloak ZZ Carapace Chestplate", "Auspex", "Chrono"],
+        name: "Rogue Trader Fleet"
     },
     "exorcised": {
         aptitude: "Defense ZZ Knowledge",
@@ -355,6 +455,9 @@ var skills = {
     },
     "Stealth": {
         "description": "Scout an enemy force without being detected, sneak up on a foe and kill him quietly, or follow someone without arousing suspicion."
+    }, 
+    "Parry": {
+        "description": "Attempt to deflect blows in melee."
     }
 
 }
@@ -479,6 +582,10 @@ var talents = {
     "Rapid Reload": {
         tier: 1,
         description: "Reload times are halved."
+    },
+    "Peer ": {
+        tier: 1,
+        description: "Gain a +10 bonus to all Fellowship and Influence tests with this group."
     }
 }
 

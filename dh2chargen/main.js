@@ -178,7 +178,7 @@ var homeworlds = {
         blessing: 8,
         wounds: 10,
         bonus: "Finger on the Pulse: One survives a penal colony by instinctively knowing who is in charge and who is a threat. A penal colony character begins with one rank in Common Lore (Underworld) and Scrutiny skills, and starts with the Peer (Criminal Cartels) talent.",
-        talent: "Peer (Criminal Cartel)",
+        talent: "Peer (Criminal Cartels)",
         aptitude: "Toughness",
         name: "Penal Colony"
     },

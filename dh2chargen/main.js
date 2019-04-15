@@ -583,7 +583,7 @@ var talents = {
         tier: 1,
         description: "Reload times are halved."
     },
-    "Peer ": {
+    "Peer (Criminal Cartels)": {
         tier: 1,
         description: "Gain a +10 bonus to all Fellowship and Influence tests with this group."
     }

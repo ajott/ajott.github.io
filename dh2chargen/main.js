@@ -629,6 +629,207 @@ var talents = {
     }
 }
 
+var rangedWeapons = {
+    "Laspistol": {
+        "class": "Pistol",
+        "range": "30m",
+        "damage": "1d10+2",
+        "type": "Energy",
+        "pen": "0",
+        "RoF": "S/2/-",
+        "clip":"30",
+        "reload": "Half",
+        "special": "Reliable"
+    },
+    "Stub Automatic": {
+        "class": "Pistol",
+        "range": "30m",
+        "damage": "1d10+3",
+        "type": "Impact",
+        "pen": "0",
+        "RoF": "S/3/-",
+        "clip":"9",
+        "reload": "Full",
+        "special": ""
+    },
+    "Shotgun": {
+        "class": "Basic",
+        "range": "30m",
+        "damage": "1d10+4",
+        "type": "Impact",
+        "pen": "0",
+        "RoF": "S/-/-",
+        "clip":"8",
+        "reload": "2 Full",
+        "special": "Scatter"
+    },
+    "Autogun": {
+        "class": "Basic",
+        "range": "100m",
+        "damage": "1d10+3",
+        "type": "Impact",
+        "pen": "0",
+        "RoF": "S/3/10",
+        "clip":"30",
+        "reload": "Full",
+        "special": ""
+    },
+    "Hand Cannon": {
+        "class": "Pistol",
+        "range": "35m",
+        "damage": "1d10+4",
+        "type": "Impact",
+        "pen": "2",
+        "RoF": "S/-/-",
+        "clip":"5",
+        "reload": "2 Full",
+        "special": "Two-Handed"
+    },
+    "Hand Flamer": {
+        "class": "Pistol",
+        "range": "10m",
+        "damage": "1d10+4",
+        "type": "Energy",
+        "pen": "2",
+        "RoF": "S/-/-",
+        "clip":"2",
+        "reload": "2 Full",
+        "special": "Flame, Spray"
+    },
+    "Stub Revolver": {
+        "class": "Pistol",
+        "range": "30m",
+        "damage": "1d10+3",
+        "type": "Impact",
+        "pen": "0",
+        "RoF": "S/-/-",
+        "clip":"6",
+        "reload": "2 Full",
+        "special": "Reliable"
+    },
+    "Lasgun": {
+        "class": "Basic",
+        "range": "100m",
+        "damage": "1d10+3",
+        "type": "Energy",
+        "pen": "0",
+        "RoF": "S/3/-",
+        "clip":"60",
+        "reload": "Full",
+        "special": "Reliable"
+    },
+    "Laspistol": {
+        "class": "Pistol",
+        "range": "30m",
+        "damage": "1d10+2",
+        "type": "Energy",
+        "pen": "0",
+        "RoF": "S/2/-",
+        "clip":"30",
+        "reload": "Half",
+        "special": "Reliable"
+    },
+    "Autopistol": {
+        "class": "Pistol",
+        "range": "30m",
+        "damage": "1d10+2",
+        "type": "Impact",
+        "pen": "0",
+        "RoF": "S/-/6",
+        "clip":"18",
+        "reload": "Full",
+        "special": ""
+    },
+    "Autopistol (Compact)": {
+        "class": "Pistol",
+        "range": "15m",
+        "damage": "1d10+1",
+        "type": "Impact",
+        "pen": "0",
+        "RoF": "S/-/6",
+        "clip":"9",
+        "reload": "Full",
+        "special": ""
+    },
+    "Combat Shotgun": {
+        "class": "Basic",
+        "range": "30m",
+        "damage": "1d10+4",
+        "type": "Impact",
+        "pen": "0",
+        "RoF": "S/3/-",
+        "clip":"18",
+        "reload": "Full",
+        "special": "Scatter"
+    }
+}
+
+var meleeWeapons = {
+    "Shock Maul": {
+        "class": "Shock",
+        "damage": "1d10+3",
+        "type": "Impact",
+        "pen": "0",
+        "special": "Shock"
+    }, 
+    "Staff": {
+        "class": "Low-Tech",
+        "damage": "1d10",
+        "type": "Impact",
+        "pen": "0",
+        "special": "Balanced, Primitive (7), Two-Handed"
+    }, 
+    "Whip": {
+        "class": "Low-Tech",
+        "damage": "1d10",
+        "type": "Rending",
+        "pen": "0",
+        "special": "3m Range, Flexible, Primitive (6)"
+    }, 
+    "Warhammer": {
+        "class": "Low-Tech",
+        "damage": "1d10+3",
+        "type": "Impact",
+        "pen": "1",
+        "special": "Concussive (1), Primitive (8), Two-Handed"
+    }, 
+    "Sword": {
+        "class": "Low-Tech",
+        "damage": "1d10",
+        "type": "Rending",
+        "pen": "0",
+        "special": "Balanced"
+    },
+    "Chainsword": {
+        "class": "Chain",
+        "damage": "1d10+2",
+        "type": "Rending",
+        "pen": "2",
+        "special": "Balanced, Tearing"
+    },
+    "Chainblade": {
+        "class": "Chain",
+        "damage": "1d10+1",
+        "type": "Rending",
+        "pen": "1",
+        "special": "Tearing"
+    }, 
+    "Great Weapon": {
+        "class": "Low-Tech",
+        "damage": "2d10",
+        "type": "Rending",
+        "pen": "0",
+        "special": "Unbalanced, Two-Handed"
+    }, 
+    "Whip": {
+        "class": "Shock",
+        "damage": "1d10+1",
+        "type": "Impact",
+        "pen": "0",
+        "special": "3m Range, Flexible, Shocking"
+    }
+}
+
 var equipment = {
     "Laspistol": {
         "description": "Las Weapon. 30m Range, ROF: S/2/-, 1d10+2 Energy damage, 0 Pen, 30 round clip",
@@ -676,11 +877,11 @@ var equipment = {
     },
     "Carapace Chest Plate": {
         "description": "6 Armour Points, Coverage: Body",
-        "weight": ""
+        "weight": "7kg"
     },
     "3 doses of Stimm": {
         "description": "Lasts 3d10 rounds and ignores any negative effects from damage, Critical damage, Fatigue, and cannot be stunned. When it wears off, they suffer a -20 to Strength, Toughness, and Agility tests for one hour and gains one level of Fatigue.",
-        "weight": ""
+        "weight": "0kg"
     },
     "Manacles": {
         "description": "Handcuffs",
@@ -892,7 +1093,7 @@ var equipment = {
     },
     "2 doses of Stimm": {
         "description": "Lasts 3d10 rounds and ignores any negative effects from damage, Critical damage, Fatigue, and cannot be stunned. When it wears off, they suffer a -20 to Strength, Toughness, and Agility tests for one hour and gains one level of Fatigue.",
-        "weight": ""
+        "weight": "0kg"
     }
 }
 

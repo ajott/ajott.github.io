@@ -149,7 +149,7 @@ function chooseHome(str) {
     character.HomeBonus = homeworlds[character["homeworld"]]["bonus"]
     character.CharPlus = homeworlds[character["homeworld"]]["charPlus"].slice(0);
     character.CharMinus = homeworlds[character["homeworld"]]["charMinus"];
-    character.Wounds = homeworlds[character["homeworld"]]["wounds"] 
+    character.Wounds = homeworlds[character["homeworld"]]["wounds"]
     character.Fate = homeworlds[character["homeworld"]]["fate"]
 
     // HTML ids for the various characteristic labels
@@ -228,7 +228,7 @@ function finishSkills() {
 }
 
 function finishWounds() {
-        navDiv();
+    navDiv();
 }
 
 function finishDiv() {
@@ -317,7 +317,7 @@ function getFullApts() {
 
     character.Aptitudes = character.Aptitudes.sort()
 
-    Aptitudes = Aptitudes.filter(function(val) {
+    Aptitudes = Aptitudes.filter(function (val) {
         return character.Aptitudes.indexOf(val) == -1;
     });
 
@@ -346,7 +346,7 @@ function getFullApts() {
         el("aptTd_" + i).innerHTML += htmlStr;
     }
 
-    for (let i = character.Aptitudes.length; i < 8; i ++) {
+    for (let i = character.Aptitudes.length; i < 8; i++) {
         htmlStr = ""
 
         htmlStr += "<tr><td>"
@@ -376,8 +376,8 @@ function aptChange(str) {
 
     let numOrs = 0;
 
-    for (let i = 0; i < character.Aptitudes.length; i ++) {
-        if (character.Aptitudes[i].search("ZZ") >= 0){
+    for (let i = 0; i < character.Aptitudes.length; i++) {
+        if (character.Aptitudes[i].search("ZZ") >= 0) {
             numOrs += 1;
         }
     }
@@ -449,8 +449,8 @@ function talChange(str) {
 
     let numOrs = 0;
 
-    for (let i = 0; i < character.Talents.length; i ++) {
-        if (character.Talents[i].search("ZZ") >= 0){
+    for (let i = 0; i < character.Talents.length; i++) {
+        if (character.Talents[i].search("ZZ") >= 0) {
             numOrs += 1;
         }
     }
@@ -529,8 +529,8 @@ function equipChange(str) {
 
     let numOrs = 0;
 
-    for (let i = 0; i < character.Equip.length; i ++) {
-        if (character.Equip[i].search("ZZ") >= 0){
+    for (let i = 0; i < character.Equip.length; i++) {
+        if (character.Equip[i].search("ZZ") >= 0) {
             numOrs += 1;
         }
     }
@@ -642,8 +642,8 @@ function skillChange(str) {
 
     let numOrs = 0;
 
-    for (let i = 0; i < character.Skills.length; i ++) {
-        if (character.Skills[i].search("ZZ") >= 0){
+    for (let i = 0; i < character.Skills.length; i++) {
+        if (character.Skills[i].search("ZZ") >= 0) {
             numOrs += 1;
         }
     }
@@ -661,13 +661,13 @@ function rollDivination() {
 
     $("#divRoll").text(divRoll);
 
-    for (let i = 0; i < Object.keys(divinations).length; i ++) {
+    for (let i = 0; i < Object.keys(divinations).length; i++) {
 
-        if (inRangeInclusive(divRoll, Object.keys(divinations)[i])){
+        if (inRangeInclusive(divRoll, Object.keys(divinations)[i])) {
             let divName = divinations[Object.keys(divinations)[i]]["name"]
 
             $("#divName").text(divName);
-            
+
             let divText = divinations[Object.keys(divinations)[i]]["desc"]
             $("#divText").text(divText);
 
@@ -678,96 +678,246 @@ function rollDivination() {
     $("#btnDivNext").show();
 }
 
+function addMelee() {
 
-function buildSheet() {
-    let htmlStr = ""
+    for (let i = 0; i < character.Equip.length; i++) {
+        for (let j = 0; j < Object.keys(meleeWeapons).length; j++) {
+            //console.log(character.Equip[i].search(Object.keys(meleeWeapons)[j]))
 
-    $("#exportText").val("")
+            if (character.Equip[i].search(Object.keys(meleeWeapons)[j]) != -1) {
+                var $div = $('#defaultMeleeWeapon');
 
-    $("#sheetHome").text(homeworlds[character["homeworld"]]["name"]);
-    $("#sheetBack").text(backgrounds[character["background"]]["name"]);
-    $("#sheetRole").text(roles[character["role"]]["name"]);
+                var $klon = $div.clone().prop('id', 'melee' + i);
 
-    // Wounds, fate, fatigue, movement, carry
+                if ($("#melee" + (i - 1)).length === 0) {
+                    $div.after($klon.show());
+                } else {
+                    $("#melee" + (i - 1)).after($klon.show());
+                }
 
-    $("#sheetWounds").text(character.Wounds);
-    $("#sheetFatigue").text(character.Fatigue);
-    $("#sheetFate").text(character.Fate);
-    $("#sheetMove").text(character.Movement[0]+"/"+character.Movement[1]+"/"+character.Movement[2]+"/"+character.Movement[3]+" metres (Half/Full/Charge/Run)")
-    $("#sheetCarry").text(character.Carry + "kg");
-
-    // Characteristics
-    $("#sheetWS").text(character.WS);
-    $("#sheetBS").text(character.BS);
-    $("#sheetS").text(character.S);
-    $("#sheetT").text(character.T);
-    $("#sheetAg").text(character.Ag);
-    $("#sheetInt").text(character.Int);
-    $("#sheetPer").text(character.Per);
-    $("#sheetWP").text(character.WP);
-    $("#sheetFel").text(character.Fel);
-    $("#sheetInfl").text(character.Infl);
-
-    for (let i = 0; i < character.Skills.length; i ++) {
-        htmlStr = ""
-
-        htmlStr += "<tr><td>"
-
-        htmlStr += character.Skills[i]
-
-        htmlStr += "</td></tr>"
-
-        $("#sheetSkills:last-child").append(htmlStr)
+                $("#melee" + i).children().children().children(".weaponName").text(Object.keys(meleeWeapons)[j])
+                $("#melee" + i).children().children().children(".weaponClass").text(meleeWeapons[Object.keys(
+                    meleeWeapons)[j]][
+                    "class"
+                ]);
+                $("#melee" + i).children().children().children(".weaponDamage").text(meleeWeapons[Object.keys(
+                        meleeWeapons)[j]]
+                    ["damage"]);
+                $("#melee" + i).children().children().children(".weaponType").text(meleeWeapons[Object.keys(
+                    meleeWeapons)[j]][
+                    "type"
+                ]);
+                $("#melee" + i).children().children().children(".weaponPen").text(meleeWeapons[Object.keys(
+                    meleeWeapons)[j]][
+                    "pen"
+                ]);
+                $("#melee" + i).children().children().children(".weaponSpecial").text(meleeWeapons[Object.keys(
+                    meleeWeapons)[
+                    j]]["special"]);
+            }
+        }
     }
 
-    for (let i = 0; i < character.Talents.length; i ++) {
-        htmlStr = ""
 
-        htmlStr += "<tr><td>"
+}
 
-        htmlStr += character.Talents[i]
+function addRanged() {
 
-        htmlStr += "</td></tr>"
+    for (let i = 0; i < character.Equip.length; i++) {
+        for (let j = 0; j < Object.keys(rangedWeapons).length; j++) {
 
-        $("#sheetTalents:last-child").append(htmlStr)
+            if (character.Equip[i].search(Object.keys(rangedWeapons)[j]) != -1) {
+                var $div = $('#defaultRangedWeapon');
+
+                var $klon = $div.clone().prop('id', 'ranged' + i);
+
+                if ($("#ranged" + (i - 1)).length === 0) {
+                    $div.after($klon.show());
+                } else {
+                    $("#ranged" + (i - 1)).after($klon.show());
+                }
+
+
+                $("#ranged" + i).children().children().children(".weaponName").text(Object.keys(rangedWeapons)[j])
+                $("#ranged" + i).children().children().children(".weaponClass").text(rangedWeapons[Object.keys(
+                    rangedWeapons)[j]]["class"]);
+
+                $("#ranged" + i).children().children().children(".weaponRange").text(rangedWeapons[Object.keys(
+                        rangedWeapons)[
+                        j]]
+                    ["range"]);
+                $("#ranged" + i).children().children().children(".weaponDamage").text(rangedWeapons[Object.keys(
+                        rangedWeapons)[
+                        j]]
+                    ["damage"]);
+                $("#ranged" + i).children().children().children(".weaponType").text(rangedWeapons[Object.keys(
+                    rangedWeapons)[
+                    j]][
+                    "type"
+                ]);
+                $("#ranged" + i).children().children().children(".weaponPen").text(rangedWeapons[Object.keys(
+                        rangedWeapons)[j]]
+                    [
+                        "pen"
+                    ]);
+
+                $("#ranged" + i).children().children().children(".weaponRoF").text(rangedWeapons[Object.keys(
+                    rangedWeapons)[
+                    j]]["RoF"]);
+                $("#ranged" + i).children().children().children(".weaponClip").text(rangedWeapons[Object.keys(
+                    rangedWeapons)[
+                    j]]["clip"]);
+                $("#ranged" + i).children().children().children(".weaponReload").text(rangedWeapons[Object.keys(
+                    rangedWeapons)[
+                    j]]["reload"]);
+
+                $("#ranged" + i).children().children().children(".weaponSpecial").text(rangedWeapons[Object.keys(
+                    rangedWeapons)[
+                    j]]["special"]);
+            }
+        }
     }
+}
 
-    for (let i = 0; i < character.Aptitudes.length; i ++) {
-        htmlStr = ""
+function addCharacteristics() {
+    $("#attr_WS").attr('value', character["WS"]);
+    $("#attr_BS").attr('value', character["BS"]);
+    $("#attr_S").attr('value', character["S"]);
+    $("#attr_T").attr('value', character["T"]);
+    $("#attr_Ag").attr('value', character["Ag"]);
+    $("#attr_Int").attr('value', character["Int"]);
+    $("#attr_Per").attr('value', character["Per"]);
+    $("#attr_WP").attr('value', character["WP"]);
+    $("#attr_Fel").attr('value', character["Fel"]);
+    $("#attr_Infl").attr('value', character["Infl"]);
 
-        htmlStr += "<tr><td>"
+    let ST = (Math.floor(character["S"] / 10) + Math.floor(character["T"] / 10))
 
-        htmlStr += character.Aptitudes[i]
+    let weights = [0.9, 2.25, 4.5, 9, 18, 27, 36, 45, 56, 67, 78, 90, 112, 225, 337, 450, 675, 900, 1350, 1800, 2250]
 
-        htmlStr += "</td></tr>"
+    $("#attr_baseCarry").text(ST);
+    $("#attr_GearCarryMax").text(weights[ST]);
+    $("#attr_GearCarryAvailable").text(weights[ST] - Number($("#attr_GearCarryCurrent").text()));
+}
 
-        $("#sheetApts:last-child").append(htmlStr)
+function addGear() {
+    for (let i = 0; i < character.Equip.length; i++) {
+        if (character.Equip[i].search("Mechadendrite") == -1) {
+
+            var $div = $('#defaultGear');
+
+            var $klon = $div.clone().prop('id', 'gear' + i);
+
+            if ($("#gear" + (i - 1)).length === 0) {
+                $div.after($klon.show());
+            } else {
+                $("#gear" + (i - 1)).after($klon.show());
+            }
+
+            $("#gear" + i).children().children(".gearName").text(character.Equip[i])
+            $("#gear" + i).children().children(".gearWt").text(equipment[character.Equip[i]]["weight"].split("k")[0])
+
+            $("#attr_GearCarryCurrent").text(Number($("#attr_GearCarryCurrent").text()) + Number(equipment[character
+                .Equip[i]]["weight"].split("k")[0]));
+        } else if (character.Equip[i].search("Mechadendrite") >= -1) {
+            $("#attr_Cybernetics").text(character.Equip[i]);
+            $(".repeating_Cybernetics").show();
+        }
     }
+}
 
-    for (let i = 0; i < character.Equip.length; i ++) {
-        htmlStr = ""
+function addHomeBackRoleDiv() {
+    $("#attr_Homeworld").text(homeworlds[character.homeworld]["name"]);
+    $("#attr_Background").text(backgrounds[character.background]["name"]);
+    $("#attr_Role").text(roles[character.role]["name"]);
+    try {
+        $("#attr_Divination").text(character.Divination.split(":")[0]);
 
-        htmlStr += "<tr><td>"
-
-        htmlStr += character.Equip[i]
-
-        htmlStr += "</td><td>"
-
-        htmlStr += equipment[character["Equip"][i]]["weight"]
-
-        htmlStr += "</td></tr>"
-
-        $("#sheetEquip:last-child").append(htmlStr)
+    } catch {
+        console.log("No Divination Found")
     }
+}
+
+function addBonuses() {
+
 
     $("#homeBonus").text(character.HomeBonus);
+
     $("#backBonus").text(character.BackBonus);
+
     $("#roleBonus").text(character.RoleBonus);
 
     try {
-        $("#divination").text(character.Divination);
+        $("#divBonus").text(character.Divination);
+
     } catch {
-        console.log("No divination found")
+        console.log("No Divination Found")
     }
-    
+
+}
+
+function addTalents() {
+    for (let i = 0; i < character.Talents.length; i++) {
+
+        var $div = $('#defaultTalent');
+
+        var $klon = $div.clone().prop('id', 'talent' + i);
+
+        if ($("#talent" + (i - 1)).length === 0) {
+            $div.after($klon.show());
+        } else {
+            $("#talent" + (i - 1)).after($klon.show());
+        }
+
+        $klon.children().children().text(character.Talents[i])
+    }
+}
+
+function addSkills() {
+    for (let i = 0; i < character.Skills.length; i++) {
+
+        var $div = $('#defaultSkill');
+
+        var $klon = $div.clone().prop('id', 'skill' + i);
+
+        if ($("#skill" + (i - 1)).length === 0) {
+            $div.after($klon.show());
+        } else {
+            $("#skill" + (i - 1)).after($klon.show());
+        }
+
+        $klon.children().children().text(character.Skills[i])
+    }
+}
+
+function addWoundsFateMovementFatigue() {
+    $("#halfMove").text(character.Movement[0] + " m")
+    $("#fullMove").text(character.Movement[1] + " m")
+    $("#charge").text(character.Movement[2] + " m")
+    $("#run").text(character.Movement[3] + " m")
+
+    $("#attr_Wounds_max").text(character.Wounds);
+    $("#attr_Fate_max").text(character.Fate);
+    $("#attr_FatigueThreshold").text(character.Fatigue);
+}
+
+function addAptitudes() {
+    for (let i = 0; i < character.Aptitudes.length; i++) {
+
+        $("#aptitude" + i).text(character.Aptitudes[i])
+    }
+}
+
+
+function buildSheet() {
+    addHomeBackRoleDiv();
+    addMelee();
+    addRanged();
+    addGear();
+    addCharacteristics();
+    addBonuses();
+    addSkills();
+    addTalents();
+    addWoundsFateMovementFatigue();
+    addAptitudes();
 }

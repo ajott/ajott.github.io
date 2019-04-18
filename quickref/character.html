@@ -9,8 +9,7 @@
     <meta name="keywords"
         content="Dark Heresy, 40k, warhammer 40k, 40k rpg, quick ref, quick reference guide, reference guide, Dark heresy 2e, dark heresy second edition, dark heresy 2nd edition">
     <title>DH 2e QuickRef</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -22,281 +21,7 @@
 
 
 <body>
-    <div class="w3-top w3-darker-grey w3-row-padding bar-pad">
-        <div id="headTitle">
-            <span class="header-large headingDark w3-bar-item">DH 2e Quick Reference</span>
-            <br />
-        </div>
-        <div id="menu" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
-            <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-round-large">Exp
-                Costs</a>
-            <div class="w3-dropdown-click w3-mobile">
-                <button onclick="dropdownShow('combatDropdown')" class="w3-button w3-round-large w3-hover-maroon">Combat
-                    <i class="fa fa-caret-down"></i></button>
-                <div id="combatDropdown" class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-                    <a href="./combat.html#combatActions"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Actions</a>
-                    <a href="./combat.html#hitLocations"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Hit
-                        Locations</a>
-                    <a href="./combat.html#conditions"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Conditions and Damage</a>
-                    <a href="./combat.html#circumstances"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Circumstances</a>
-                    <a href="./combat.html#difficulties"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Difficulty
-                        Examples</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-click w3-mobile">
-                <button onclick="dropdownShow('critDropdown')" class="w3-button w3-round-large w3-hover-maroon">Critical
-                    Hits <i class="fa fa-caret-down"></i></button>
-                <div id="critDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-                    <a href="./crit.html#crits"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Critical Rolls</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./crit.html#energyCrit"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Energy</a>
-                    <a href="./crit.html#explosiveCrit"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Explosive</a>
-                    <a href="./crit.html#impactCrit"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Impact</a>
-                    <a href="./crit.html#rendingCrit"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Rending</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-click w3-mobile">
-                <button onclick="dropdownShow('equipDropdown')"
-                    class="w3-button w3-round-large w3-hover-maroon">Equipment <i class="fa fa-caret-down"></i></button>
-                <div id="equipDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-                    <a href="./gear.html#gear"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Gear</a>
-                    <a href="./gear.html#tools"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Tools</a>
-                    <a href="./gear.html#cybernetics"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Cybernetics</a>
-                    <a href="./gear.html#consumables"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Drugs and Consumables</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-click w3-mobile">
-                <button onclick="dropdownShow('weaponDropdown')"
-                    class="w3-button w3-round-large w3-hover-maroon">Weapons <i class="fa fa-caret-down"></i></button>
-                <div id="weaponDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-                    <a href="./weapons.html#weapons"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapons</a>
-                    <a href="./weapons.html#weaponQual"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Qualities</a>
-                    <a href="./weapons.html#weaponMods"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Mods</a>
-                    <a href="./weapons.html#ammo"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Special Ammo</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-click w3-mobile">
-                <button onclick="dropdownShow('armourDropdown')" class="w3-button w3-round-large w3-hover-maroon">Armour
-                    <i class="fa fa-caret-down"></i></button>
-                <div id="armourDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-                    <a href="./armour.html#armour"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour</a>
-                    <a href="./armour.html#armourMods"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour Mods</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-click w3-mobile">
-                <button onclick="dropdownShow('psykerDropdown')" class="w3-button w3-round-large w3-hover-purple">Psyker
-                    <i class="fa fa-caret-down"></i></button>
-                <div id="psykerDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-                    <a href="./psyker.html#psyPowers"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Powers</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./psyker.html#psyPhenom"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Phenomena</a>
-                    <a href="./psyker.html#psyPerils"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Perils of the Warp</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-click w3-mobile">
-                <button onclick="dropdownShow('charDropdown')"
-                    class="w3-button w3-round-large w3-hover-maroon">Character <i class="fa fa-caret-down"></i></button>
-                <div id="charDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-                    <a href="./character.html#skills"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Skills</a>
-                    <a href="./character.html#talents"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Talents</a>
-                    <a href="./character.html#traits"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Traits</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./character.html#homeworlds"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Homeworlds</a>
-                    <a href="./character.html#backgrounds"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Backgrounds</a>
-                    <a href="./character.html#roles"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Roles</a>
-                    <a href="./character.html#divinations"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Divinations</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-click w3-mobile">
-                <button onclick="dropdownShow('effectsDropdown')"
-                    class="w3-button w3-round-large w3-hover-maroon">Effects <i class="fa fa-caret-down"></i></button>
-                <div id="effectsDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-                    <a href="./effects.html#shock"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Fear and Shock</a>
-                    <a href="./effects.html#snapping"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Snapping Out of It</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./effects.html#insanity"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Insanity</a>
-                    <a href="./effects.html#trauma"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mental Trauma</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./effects.html#corruption"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Corruption</a>
-                    <a href="./effects.html#maligna"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Malignancies</a>
-                    <a href="./effects.html#mutations"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mutations</a>
-                </div>
-            </div>
-        </div>
-        <div class="w3-bar">
-            <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-hide-small w3-round-large">Exp
-                Costs</a>
-            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-maroon">Combat <i
-                        class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-                    <a href="./combat.html#combatActions"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Actions</a>
-                    <a href="./combat.html#hitLocations"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Hit
-                        Locations</a>
-                    <a href="./combat.html#conditions"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Conditions and Damage</a>
-                    <a href="./combat.html#circumstances"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Circumstances</a>
-                    <a href="./combat.html#difficulties"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Difficulty
-                        Examples</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-maroon">Critical Hits <i
-                        class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-                    <a href="./crit.html#crits"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Critical Rolls</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./crit.html#energyCrit"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Energy</a>
-                    <a href="./crit.html#explosiveCrit"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Explosive</a>
-                    <a href="./crit.html#impactCrit"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Impact</a>
-                    <a href="./crit.html#rendingCrit"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Rending</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-maroon">Equipment <i
-                        class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-                    <a href="./gear.html#gear"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Gear</a>
-                    <a href="./gear.html#tools"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Tools</a>
-                    <a href="./gear.html#cybernetics"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Cybernetics</a>
-                    <a href="./gear.html#consumables"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Drugs and Consumables</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-maroon">Weapons <i
-                        class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-                    <a href="./weapons.html#weapons"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapons</a>
-                    <a href="./weapons.html#weaponQual"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Qualities</a>
-                    <a href="./weapons.html#weaponMods"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Weapon Mods</a>
-                    <a href="./weapons.html#ammo"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Special Ammo</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-maroon">Armour <i
-                        class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-                    <a href="./armour.html#armour"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour</a>
-                    <a href="./armour.html#armourMods"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Armour Mods</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-purple">Psyker <i
-                        class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-                    <a href="./psyker.html#psyPowers"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Powers</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./psyker.html#psyPhenom"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Psychic Phenomena</a>
-                    <a href="./psyker.html#psyPerils"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-purple">Perils of the Warp</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-maroon">Character <i
-                        class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-                    <a href="./character.html#skills"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Skills</a>
-                    <a href="./character.html#talents"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Talents</a>
-                    <a href="./character.html#traits"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Traits</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./character.html#homeworlds"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Homeworlds</a>
-                    <a href="./character.html#backgrounds"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Backgrounds</a>
-                    <a href="./character.html#roles"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Roles</a>
-                    <a href="./character.html#divinations"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Divinations</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-maroon">Effects <i
-                        class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-                    <a href="./effects.html#shock"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Fear and Shock</a>
-                    <a href="./effects.html#snapping"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Snapping Out of It</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./effects.html#insanity"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Insanity</a>
-                    <a href="./effects.html#trauma"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mental Trauma</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./effects.html#corruption"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Corruption</a>
-                    <a href="./effects.html#maligna"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Malignancies</a>
-                    <a href="./effects.html#mutations"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mutations</a>
-                </div>
-            </div>
-            <a class="w3-bar-item w3-button w3-round-large w3-right w3-hide-small w3-blue" id="charGen" target="_blank"
-                href="https://ajott.github.io/dh2chargen">Character Creator</a>
-            <a href="javascript:void(0)" class="w3-red w3-bar-item w3-button w3-top-left w3-hide-large w3-hide-medium"
-                onclick="showMenu()">&#9776;</a>
-        </div>
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad" id="navBarDiv">
     </div>
 
     <div class="w3-row-padding w3-section">
@@ -985,6 +710,21 @@
                                 <td>Can summon larger metallic objects up to 2 kilograms per point of his Willpower
                                     bonus,
                                     and can summon such objects up to 40 metres.</td>
+                                <td>PG 127 CB</td>
+                            </tr>                           
+                            <tr>
+                                <td>Flagellant</td>
+                                <td>Willpower 30</td>
+                                <td>Offense</td>
+                                <td>Toughness</td>
+                                <td class="tier1">T1</td>
+                                <td>As a Full Action, the character
+                                    can take 1d5–2 levels of Fatigue (minimum 1) to gain a +10
+                                    bonus on Willpower tests to resist Fear, Pinning, psychic powers,
+                                    or Corruption, for one hour or until the end of the
+                                    current encounter. If the Acolyte also possesses the Frenzy talent,
+                                    he can enter a Frenzied state as a Free Action while under the
+                                    efects of this talent.</td>
                                 <td>PG 127 CB</td>
                             </tr>
                             <tr>
@@ -2257,7 +1997,7 @@
                             </tr>
                             <tr>
                                 <td>Brutal Charge</td>
-                                <td>Deals an extra (X) points of damage on each hit it inflicts that turn. </td>
+                                <td>Deals an extra (X) points of damage on each hit it inflicts that turn when performing a Charge action. </td>
                                 <td>CB 134</td>
                             </tr>
                             <tr>
@@ -2526,8 +2266,8 @@
                                 <td>CB 139</td>
                             </tr>
                             <tr>
-                                <td>Toxic</td>
-                                <td>Gain poisonous attack. When damaged must make a Toughness test at the end of his
+                                <td>Toxic (X)</td>
+                                <td>Gain poisonous attack. When struck in melee, the attacker must make a Toughness test at the end of his
                                     turn
                                     with a penalty equal to 10 times the number in parentheses (X), or suffer 1d10
                                     points
@@ -2685,6 +2425,78 @@
                                 <td>Intelligence</td>
                                 <td>7+1d5</td>
                                 <td>PG 42 CB</td>
+                            </tr>
+                            <tr>
+                                <td>Agri-World</td>
+                                <td>Fellowship</td>
+                                <td>Strength</td>
+                                <td>Agility</td>
+                                <td>2</td>
+                                <td>7+</td>
+                                <td>Strength from the Land: An agri-world character starts with the Brutal Charge (2) Trait</td>
+                                <td>Strength</td>
+                                <td>8+1d5</td>
+                                <td>PG 25 EI</td>
+                            </tr>
+                            <tr>
+                                <td>Feudal World</td>
+                                <td>Perception</td>
+                                <td>Weapon Skill</td>
+                                <td>Intelligence</td>
+                                <td>3</td>
+                                <td>6+</td>
+                                <td>At Home in Armour: A feudal world character ignores the maximum Agility value imposed by any armour he is wearing</td>
+                                <td>Weapon Skill</td>
+                                <td>9+1d5</td>
+                                <td>PG 27 EI</td>
+                            </tr>
+                            <tr>
+                                <td>Frontier World</td>
+                                <td>Ballistic Skill</td>
+                                <td>Perception</td>
+                                <td>Fellowship</td>
+                                <td>3</td>
+                                <td>7+</td>
+                                <td>Rely on None but Yourself: A frontier world character gains a +20 bonus to Tech-Use tests when applying a personal weapon modification, and a +10 bonus when repairing damaged items</td>
+                                <td>Ballistic Skill</td>
+                                <td>7+1d5</td>
+                                <td>PG 29 EI</td>
+                            </tr>
+                            <tr>
+                                <td>Death World</td>
+                                <td>Agility</td>
+                                <td>Perception</td>
+                                <td>Fellowship</td>
+                                <td>2</td>
+                                <td>5+</td>
+                                <td>Survivor's Paranoia: While a death world character is Surprised, non-Surprised attackers do not gain the normal +30 bonus to their Weapon and Ballistic Skill tests when targeting this character</td>
+                                <td>Fieldcraft</td>
+                                <td>9+1d5</td>
+                                <td>PG 29 EO</td>
+                            </tr>
+                            <tr>
+                                <td>Garden World</td>
+                                <td>Fellowship</td>
+                                <td>Agility</td>
+                                <td>Toughness</td>
+                                <td>2</td>
+                                <td>4+</td>
+                                <td>Serenity of the Green: A garden world character halves the duration (rounding up) of any result from Shock or Mental Traumas, and can remove Insanity Points for 50xp per point, rather than the normal 100xp</td>
+                                <td>Social</td>
+                                <td>7+1d5</td>
+                                <td>PG 31 EO</td>
+                            </tr>
+                            <tr>
+                                <td>Research Station</td>
+                                <td>Intelligence</td>
+                                <td>Perception</td>
+                                <td>Fellowship</td>
+                                <td>3</td>
+                                <td>8+</td>
+                                <td>Pursuit of Data: Whenever a research station character reaches Rank 2 (Trained) in a Scholastic Lore skill, he also gains Rank 1 (Known) in one related or identical Forbidden Lore skill specialisation of their choice. The GM is the final arbiter of whether the two specialisations are related.</td>
+                                <td>Knowledge</td>
+                                <td>8+1d5</td>
+                                <td>PG 33 EO</td>
                             </tr>
                             <tr>
                                 <td>Daemon World</td>
@@ -2870,6 +2682,81 @@
                                 <td>PG 58 CB</td>
                             </tr>
                             <tr>
+                                <td>Adepta Sororitas</td>
+                                <td>Athletics, Charm or Intimidate, Common Lore (Adepta
+                                    Sororitas), Linguistics (High Gothic), Medicae or Parry</td>
+                                <td>Weapon Training (Flame or Las, Chain)</td>
+                                <td>Hand lamer or laspistol, chainblade, armoured bodyglove,
+                                    chrono, dataslate, stablight, micro-bead</td>
+                                <td>Incorruptible Devotion: Whenever an Adepta Sororitas
+                                    character would gain 1 or more Corruption Points,
+                                    she gains that many Insanity Points minus 1
+                                    (to a minimum of 0) instead.</td>
+                                <td>Offence or Social</td>
+                                <td>PG 31 EI</td>
+                            </tr>
+                            <tr>
+                                <td>Mutant</td>
+                                <td>Acrobatics or Athletics, Awareness, Deceive or Intimidate,
+                                    Forbidden Lore (Mutants), Survival</td>
+                                <td>Weapon Training (Low-Tech, Solid Projectile)</td>
+                                <td>Shotgun (or stub revolver and great weapon), grapnel
+                                    and line, heavy leathers, combat vest, 2 doses of stimm</td>
+                                <td>Twisted Flesh: A Mutant character can always choose to fail
+                                    any test associated with resisting malignancy or mutation.
+                                    Whenever he would gain a malignancy, he may roll on
+                                    Table 8–16: Mutations to gain a mutation instead. Starts with 10 corruption and rolls 5d10 to determine starting mutation.
+                                Has one of the following Traits: Amphibious, Dark-sight, Natural Weapons, Sonar Sense, Sturdy, Toxic (1), Unnatural Agility (1), Unnatural Strength (1), or Unnatural Toughness (1)</td>
+                                <td>Fieldcraft or Offense</td>
+                                <td>PG 33 EI</td>
+                            </tr>
+                            <tr>
+                                <td>Heretek</td>
+                                <td>Deceive or Inquiry, Forbidden Lore (pick one),
+                                    Medicae or Security, Tech-Use, Trade (pick one)</td>
+                                <td>Weapon Training (Solid Projectile)</td>
+                                <td>Stub revolver with 2 extra clips of Expander bullets or Man-
+                                    Stopper rounds, 1 web grenade, combi-tool, flak cloak,
+                                    filtration plugs, 1 dose of de-tox, dataslate, stablight</td>
+                                <td>Master of Hidden Lores: When a Heretek makes a Tech-Use
+                                    test to comprehend, use, repair, or modify an unfamiliar
+                                    device, he gains a +20 bonus if he has one or more
+                                    relevant Forbidden Lore skill specialisations at
+                                    Rank 1 (Known) or higher. Hereteks also start with Mechanicus Implants.</td>
+                                    <td>Finesse or Tech</td>
+                                <td>PG 35 EI</td>
+                            </tr>
+                            <tr>
+                                <td>Imperial Navy</td>
+                                <td>Athletics, Command or Intimidate, Common Lore
+                                    (Imperial Navy), Navigate (Stellar),
+                                    Operate (Aeronautica or Voidship)</td>
+                                <td>Weapon Training (Chain or Shock, Solid Projectile)</td>
+                                <td>Combat shotgun or hand cannon, chainsword or shock
+                                    whip, flak coat, rebreather, micro-bead</td>
+                                <td>Close Quarters Discipline: An Imperial Navy character scores
+                                    one additional degree of success on successful Ballistic Skill
+                                    tests he makes against targets at Point-Blank range, at Short
+                                    range, and with whom he is engaged in melee.</td>
+                                    <td>Offense or Tech</td>
+                                <td>PG 37 EI</td>
+                            </tr>
+                            <tr>
+                                <td>Rogue Trader Fleet</td>
+                                <td>Charm or Scrutiny, Commerce, Common Lore
+                                    (Rogue Traders), Linguistics (pick one alien language),
+                                    Operate (Surface or Aeronautica)</td>
+                                <td>Weapon Training (Las or Solid Projectile, Shock)</td>
+                                <td>Laspistol or autopistol (fitted with Compact weapon
+                                    upgrade), shock maul, mesh cloak or carapace
+                                    chestplate, auspex, chrono</td>
+                                <td>Inured to the Xenos: A character from a Rogue Trader Fleet
+                                    gains a +10 bonus to Fear tests caused by aliens and a +20
+                                    bonus to Interaction skill tests with alien characters.</td>
+                                    <td>Finesse or Social</td>
+                                <td>PG 39 EI</td>
+                            </tr>
+                            <tr>
                                 <td>Exorcised</td>
                                 <td>Awareness, Deceive or Inquiry, Dodge, Forbidden Lore (Daemonology), Intimidate
                                     or Scrutiny</td>
@@ -3026,7 +2913,7 @@
                     <table id="divTable" class="w3-table w3-striped w3-hoverable w3-bordered">
                         <thead>
                             <tr>
-                                <th> Rolls</th>
+                                <th>Rolls</th>
                                 <th>Divination Prophecies</th>
                                 <th>Divination Effects</th>
                             </tr>

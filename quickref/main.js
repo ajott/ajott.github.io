@@ -23,7 +23,8 @@ function toDark() {
 
 $(document).ready(function () {
     buildNavbar();
-    toDark();
+    setTimeout(
+        toDark(), 250);
 });
 
 function showMenu() {

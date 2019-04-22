@@ -138,9 +138,60 @@ td:first-child {
     border-bottom: 1px solid darkgrey;
 }
 
-/* .table-dark th:hover {
-    background-color: rgba(128, 0, 0, 0.35) !important;
-} */
+
+.sanctic {
+    background: #343a40;
+}
+
+.sanctic tr {
+    border: none !important;
+}
+
+.sanctic tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, .05) !important;
+}
+
+.sanctic td:first-child {
+    background-color: palegoldenrod !important;
+    color: black !important;
+}
+
+.sanctic tbody tr:hover {
+    background: rgb(120,120,120) !important;
+}
+
+.sanctic th {
+    background: rgba(128, 0, 0, 0.65) !important;
+    border-bottom: 1px solid darkgrey;
+}
+
+
+.malefic {
+    background: #343a40;
+}
+
+.malefic tr {
+    border: none !important;
+}
+
+.malefic td:first-child {
+    background-color: orangered !important;
+    color: black !important;
+}
+
+.malefic tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, .05) !important;
+}
+
+.malefic tbody tr:hover {
+    background: rgb(120,120,120) !important;
+}
+
+.malefic th {
+    background: rgba(128, 0, 0, 0.65) !important;
+    border-bottom: 1px solid darkgrey;
+}
+
 
 a:hover {
     text-decoration: none !important;

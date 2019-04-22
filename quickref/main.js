@@ -18,6 +18,9 @@ function toDark() {
     $("h3").addClass("headingDark");
     $("h4").addClass("headingDark");
     $(".psyTooltipLight").addClass("psyTooltipDark").removeClass("psyTooltipLight");
+
+    $("#sancticDaemonTable").removeClass("table-dark");
+    $("#maleficDaemonTable").removeClass("table-dark");
 }
 
 

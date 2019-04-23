@@ -1,5 +1,151 @@
 <!-- This area is for sheet worker scripts -->
 <script type="text/worker">
+    /**
+ * @license
+ * Sheetworker Autocalc
+ *
+ * Copyright 2017 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * @fileoverview Code snippet for Sheetworker Autocalc. As this code is intended
+ * to run as part of a Roll20 sheet worker script, it assumes the availability
+ * of underscore.js, without including Underscore in the third_party directory
+ * of this repository. This code also make use of the getAttrs function
+ * available to Roll20 sheet worker scripts, documented at
+ * https://wiki.roll20.net/Sheet_Worker_Scripts
+ * @author brianshields@google.com (Brian Shields)
+ */
+(function() {
+  'use strict';
+
+  const mathCache = {};
+  const VERSION = '0.1.1';
+
+  /**
+   * Processes a waterfall of asynchronous tasks. Each task will occur in the
+   * asychronous scope of the previous task, creating a cascading structure.
+   * @param {Array<function(Object, function(*))>} tasks the list of tasks to
+   * run. THIS ARRAY WILL BE MUTATED BY THE WATERFALL.
+   * @param {function(Object)} callback the function to call at the end of the
+   * waterfall
+   */
+  function asyncWaterfall(tasks, callback) {
+    function done(...args) {
+      if (callback) callback(...args);
+    }
+
+    function each(...args) {
+      if (!tasks.length) {
+        done(...args);
+      } else {
+        tasks.shift()(...args, each);
+      }
+    }
+
+    if (tasks.length) {
+      tasks.shift()({}, each);
+    } else {
+      done();
+    }
+  }
+
+  /**
+   * Creates a waterfall task function.
+   * @param {string} name the name of the attribute to try to resolve
+   * @param {Array<function(Object, function(Object))>} tasks the collection of
+   * tasks in the waterfall. This is provided so that it can be closed over and
+   * mutated by the task elements.
+   * @return {function(Object, function(Object))} a waterfall task. The function
+   * will attempt to resolve an attribute to a value. If it can't (because the
+   * attribute contains references to attributes we don't know the value of), it
+   * will generate _new_ waterfall tasks for the unknown attributes, and send
+   * itself to the bottom of the waterfall to try again later.
+   */
+  function waterfallTask(name, tasks) {
+    return function(prev, callback) {
+      // QUESTION(brianshields): how does this tructure handle repeating fields?
+      getAttrs([name], function(val) {
+        const referencedAttrs = val[name].match(/@\{.+?\}/g);
+        if (referencedAttrs && referencedAttrs.length) {
+          _.each(referencedAttrs, (ra) => {
+            const raName = ra.substring(2, ra.length - 1);
+            // if we know the value of @{raName}, replace it
+            // otherwise, create a new task in the waterfall to find it
+            if (prev[raName]) {
+              val[name] = val[name].replace(
+                new RegExp(`@\\{${raName}\\}`, 'g'), prev[raName]);
+            } else {
+              tasks.unshift(waterfallTask(raName, tasks));
+            }
+          });
+        }
+
+        // if we haven't replaced everything, send this task to the back
+        // otherwise, calculate its value
+        if (/@\{.+?\}/.test(val[name])) {
+          tasks.push(waterfallTask(name, tasks));
+        } else {
+          // reject anything that isn't a number or function call
+          // then replace the math functions with `Math.{function}`
+          val[name] = val[name].match(/[-+*/%0-9.()e]|floor|ceil|round|abs/g)
+            .join('').replace(/(floor|ceil|round|abs)/g, 'Math.$1');
+          if (!mathCache[val[name]]) {
+            mathCache[val[name]] = eval(`() => ${val[name]}`);
+          }
+
+          prev = prev || {};
+          prev[name] = matchCache[val[name]]();
+        }
+
+        // go to the next step of the waterfall
+        callback(prev);
+      });
+    };
+  }
+
+  /**
+   * Resolves a set of attributes to their calculated values
+   * @param {Array<string>|string} attrNames the names of the attributes to
+   * resolve. A single name may be passed, or an array of names to resolve all
+   * of them. Passing multiple fields at once is more computationally efficient
+   * than calling resolveAutocalc multiple times.
+   * @param {function(Object)} callback the callback which will be notified when
+   * autocalc resolution finished. It will be passed a single parameter, which
+   * will be an object with the value(s) of the specified autocalc field(s), as
+   * well as all of the fields that were referenced down the chain. For example,
+   * if @{A} references @{B}, then `resolveAutocalc('A', (v) => ...)` will have
+   * an object `v` with both A and B keys, and the appropriate values.
+   */
+  function resolveAutocalc(attrNames, callback) {
+    if (!_.isArray(attrNames)) attrNames = [attrNames];
+
+    const tasks = [];
+    for (let name of attrNames) {
+      tasks.push(waterfallTask(name, tasks));
+    }
+
+    asyncWaterfall(tasks, callback);
+  }
+
+  resolveAutocalc.VERSION = VERSION;
+  window['resolveAutocalc'] = resolveAutocalc;
+})();
+
+
+
     /* ---- BEGIN: TheAaronSheet.js ---- */
     // Github:   https://github.com/shdwjk/TheAaronSheet/blob/master/TheAaronSheet.js
     // By:       The Aaron, Arcane Scriptomancer
@@ -602,8 +748,19 @@
    });
 });
 
-on('change:repeating_Gears',function(){
-    TAS.repeatingSimpleSum('Gears','GeasrWt','Carry');
+on('change:repeating_Gears', function(){
+    TAS.repeating('Gears')
+        .attrs('Carry')
+        .fields('GearsBaseWt', 'GearsQty')
+        .reduce(function(memo, row){
+            console.log(row.GearsBaseWt);
+            console.log(row.GearsQty);
+            memo += ((row.GearsBaseWt * row.GearsQty) + 0.0)
+            return memo;
+        },0,function(memo, row, attrSet){
+            attrSet.Carry = memo;
+        })
+        .execute();
 });
 
 on('change:repeating_advancements', function(){
@@ -4716,16 +4873,16 @@ on('change:repeating_advancements', function(){
                             <div class="sheet-item" style="width: 15%;"><span>Training:</span></div>
                             <div class="sheet-item" style="width: 30%;">
                                 <select class="attr_Rangedweaponfamily" name="attr_RangedweaponfamilyRe">
-                                    <option value="Bolt">Bolt</option>
-                                    <option value="Exotic">Exotic</option>
-                                    <option value="Flame">Flame</option>
-                                    <option value="Force">Force</option>
-                                    <option value="Las">Las</option>
-                                    <option value="Low-Tech">Low-Tech</option>
-                                    <option value="Melta">Melta</option>
-                                    <option value="Plasma">Plasma</option>
-                                    <option value="Shock">Shock</option>
-                                    <option selected value="Solid">Solid Projectile</option>
+                                    <option value="bolt round(s)">Bolt</option>
+                                    <option value="round(s)">Exotic</option>
+                                    <option value="flame cell(s)">Flame</option>
+                                    <option value="round(s)">Force</option>
+                                    <option value="charge(s)">Las</option>
+                                    <option value="round(s)">Low-Tech</option>
+                                    <option value="melta charge(s)">Melta</option>
+                                    <option value="plasma charge(s)">Plasma</option>
+                                    <option value="shock charge(s)">Shock</option>
+                                    <option selected value="bullet(s)">Solid Projectile</option>
                                 </select>
                             </div>
                         </div>
@@ -4773,8 +4930,8 @@ on('change:repeating_advancements', function(){
                             <div class="sheet-item sheet-redbgns" style="width: 15%;"><button name="roll_Rangedhit"
                                     type="roll"
                                     value="***@{character_name} fires @{rangedweaponname}!***
-        !roll40k @{character_name}, @{BallisticSkill}, [[(?{Aim | Half aim (+10),+10| No aim (+0),+0 | Full aim (+20),+20} + ?{Range | Point Blank (+30),+30 | Short Range (+10),+10 | Standard range (+0),+0 | Long Range (-10),-10 | Extreme Range (-30),-30} + ?{Rate of Fire/Attack Type|Standard (+10),+10 | Semi auto (+0),+0 | Full Auto (-10),-10 | Called Shot (-20),-20 | Suppressing Fire (-20),-20} + ?{Modifier|0})]]
-        !ammo @{character_id} repeating_Rangedweapons_@{my_hidden_row_id}_Rangedweaponclip [[?{Ammo?|Single,-1|Semi-Auto,-@{Rangedweaponsemi}|Full Auto,-@{Rangedweaponfull}}*?{Firing Mode?|Normal,1|Overcharge,2|Maximal,3|Overload,4}]]">
+!roll40k @{character_name}, @{BallisticSkill}, [[(?{Aim | Half aim (+10),+10| No aim (+0),+0 | Full aim (+20),+20} + ?{Range | Point Blank (+30),+30 | Short Range (+10),+10 | Standard range (+0),+0 | Long Range (-10),-10 | Extreme Range (-30),-30} + ?{Rate of Fire/Attack Type|Standard (+10),+10 | Semi auto (+0),+0 | Full Auto (-10),-10 | Called Shot (-20),-20 | Suppressing Fire (-20),-20} + ?{Modifier|0})]]
+!ammo @{character_id} repeating_Rangedweapons_@{my_hidden_row_id}_Rangedweaponclip [[?{Ammo Use (@{Rangedweaponclip} remaining)|Single (1 round),-1|Semi-Auto (@{Rangedweaponsemi} rounds),-@{Rangedweaponsemi}|Full Auto (@{Rangedweaponfull} rounds),-@{Rangedweaponfull}}*?{Firing Mode?|Normal,1|Overcharge,2|Maximal,3|Overload,4}]], @{RangedweaponfamilyRe}">
                                     <span data-i18n="hit-u">Hit</span> </button></div>
                         </div>
                         <div class="sheet-row">
@@ -5167,12 +5324,6 @@ on('change:repeating_advancements', function(){
                         <div class="sheet-item" style="width:13%">
                             <input name="attr_GearCarryMod" type="number" value="0">
                         </div>
-                        <div class="sheet-item" style="width:15%; display: none;">
-                            <span style="width:15%" data-i18n="current-u">Current: </span>
-                        </div>
-                        <div class="sheet-item" style="width:15%; display: none;">
-                            <input name="attr_Carry" type="text">
-                        </div>
                     </div>
                     <div class="sheet-row" style="display:none">
                         <div class="sheet-item" style="width:42%">
@@ -5200,16 +5351,36 @@ on('change:repeating_advancements', function(){
                             <span>Current : </span>
                         </div>
                         <div class="sheet-item" style="width:15%">
-                            <input name="attr_Carry" type="text">
+                            <input readonly name="attr_Carry" type="text">
+                        </div>
+                    </div>
+                    <div class="sheet-row">
+                        <div class="sheet-item" style="width: 70%;">
+                            <span>Item Name</span>
+                        </div>
+                        <div class="sheet-item" style="width: 10%;">
+                            <span>Wt</span>
+                        </div>
+                        <div class="sheet-item" style="width: 10%;">
+                            <span>Qty</span>
+                        </div>
+                        <div class="sheet-item" style="width: 10%;">
+                            <span>Pg.</span>
                         </div>
                     </div>
                     <fieldset class="repeating_Gears">
-                        <div class="sheet-item" style="width:80%">
+                        <div class="sheet-item" style="width:70%">
                             <input name="attr_Gears" type="text">
                         </div>
                         <div class="sheet-item" style="width:10%">
-                            <input name="attr_GeasrWt" type="text" data-i18n-placeholder="weight-u" placeholder="wt."
-                                value="0">
+                            <input name="attr_GearsBaseWt" type="text" value="0">
+                        </div>
+                        <div class="sheet-item" style="width:10%">
+                            <input name="attr_GearsQty" type="text" value="1">
+                        </div>
+                        <div class="sheet-item" style="width:10%; display: none;">
+                            <input disabled="true" name="attr_GeasrWt" type="text" data-i18n-placeholder="weight-u" placeholder="wt."
+                                value="@{GearsQty} * @{GearsBaseWt} + 0">
                         </div>
                         <div class="sheet-item" style="width:10%">
                             <input name="attr_GearsPage" type="text" data-i18n-placeholder="page-number-#-u"

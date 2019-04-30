@@ -2005,20 +2005,25 @@
                 </div>
                 <div class="w3-col s12 m12 l3 w3-card w3-round-large infocard">
                     <br />
-                    <div class="w3-center">
+                    <div class="w3-center" id="charBtnChoices">
+                        <p>You may choose to have all of your characteristics rolled at once, roll them individually, or to manually enter them (for example, if you are rolling physical dice).</p>
                         <button onclick="cardRollChars()" class="w3-button w3-round-large w3-yellow w3-center"
-                            id="btnCardRoll">Roll Characteristics</button>
+                            id="btnCardRoll">Roll All Characteristics</button> <hr/>
+                            <button onclick="cardManChars()" class="w3-button w3-round-large w3-light-grey w3-center" id="btnCharMan">
+                            Manually Enter Characteristics</button> <hr/>
+                            <button onclick="cardIndvChars()" class="w3-button w3-round-large w3-teal w3-center" id="btnCharIndv">
+                            Individually Roll Characteristics</button>
                     </div>
                     <div class="w3-panel">
                         <span style="font-size: 0.9em">The lowest possible characteristic roll is a 22; the highest is
-                            40.
+                            40. Most characteristics are determined as 20+2d10.
                             <br />
                             <br />
                             A <span style="color: white; background: green;">green</span> highlight indicates that your
-                            homeworld gives you an advantage on that characteristic.
+                            homeworld gives you an advantage on that characteristic. (Roll 3d10, discard lowest)
                             <br />
                             A <span style="color: white; background: red;">red</span> highlight indicates that your
-                            homeworld gives you a disadvantage on that characteristic.
+                            homeworld gives you a disadvantage on that characteristic. (Roll 3d10, discard highest)
                             <br />
                             <br />
                             You may re-roll one characteristic of your choosing.</span>
@@ -2030,112 +2035,147 @@
                         <tr>
                             <td class="charLbl" id="WSLbl">Weapon Skill</td>
                             <td id="WS" class="rolled"></td>
-                            <td><button style="visibility: hidden" id="WSbtn"
+                            <td style="width: 20%"><input id="WSMan" type="text" class="charMan w3-input w3-round" style="display: none; width: 50%;"/>
+                            <button style="display: none;" id="WSIndvbtn" class="charIndv w3-button w3-round-large w3-teal">Roll <span id="WSRollDice"></span></button>                            
+                            </td>                            
+                            <td class="rerollTD"><button style="visibility: hidden" id="WSbtn"
                                     class="reroll w3-button w3-round-large w3-light-grey"
                                     onclick="reRollChar('WS')">Reroll</button>
                             </td>
-                            <td>
+                            <td style="width: 100%;">
                                 Used for melee attacks and thrown weapons
                             </td>
                         </tr>
                         <tr>
                             <td class="charLbl" id="BSLbl">Ballistic Skill</td>
                             <td id="BS" class="rolled"></td>
-                            <td><button style="visibility: hidden" id="BSbtn"
+                            <td style="width: 20%"><input id="BSMan" type="text" class="charMan w3-input w3-round" style="display: none; width: 50%;"/>
+                            <button style="display: none;" id="BSIndvbtn" class="charIndv w3-button w3-round-large w3-teal">Roll <span id="BSRollDice"></span></button></td>
+                            
+                            <td class="rerollTD"><button style="visibility: hidden" id="BSbtn"
                                     class="reroll w3-button w3-round-large w3-light-grey"
                                     onclick="reRollChar('BS')">Reroll</button>
                             </td>
-                            <td>
+                            <td style="width: 100%;">
                                 Used for ranged attacks and weapons
                             </td>
                         </tr>
                         <tr>
                             <td class="charLbl" id="SLbl">Strength</td>
                             <td id="S" class="rolled"></td>
-                            <td><button style="visibility: hidden" id="Sbtn"
+                            <td style="width: 20%"><input id="SMan" type="text" class="charMan w3-input w3-round" style="display: none; width: 50%;"/>
+                            <button style="display: none;" id="SIndvbtn" class="charIndv w3-button w3-round-large w3-teal">Roll <span id="SRollDice"></span></button></td>
+                            
+                            <td class="rerollTD"><button style="visibility: hidden" id="Sbtn"
                                     class="reroll w3-button w3-round-large w3-light-grey"
                                     onclick="reRollChar('S')">Reroll</button>
                             </td>
-                            <td>
+                            <td style="width: 100%;">
                                 used for skills; contributes to carry weight
                             </td>
                         </tr>
                         <tr>
                             <td class="charLbl" id="TLbl">Toughness</td>
                             <td id="T" class="rolled"></td>
-                            <td><button style="visibility: hidden" id="Tbtn"
+                            <td style="width: 20%"><input id="TMan" type="text" class="charMan w3-input w3-round" style="display: none; width: 50%;"/>
+                            <button style="display: none;" id="TIndvbtn" class="charIndv w3-button w3-round-large w3-teal">Roll <span id="TRollDice"></span></button></td>
+                            
+                            <td class="rerollTD"><button style="visibility: hidden" id="Tbtn"
                                     class="reroll w3-button w3-round-large w3-light-grey"
                                     onclick="reRollChar('T')">Reroll</button>
                             </td>
-                            <td>
+                            <td style="width: 100%;">
                                 Used for resistance; contributes to fatigue and carry weight
                             </td>
                         </tr>
                         <tr>
                             <td class="charLbl" id="AgLbl">Agility</td>
                             <td id="Ag" class="rolled"></td>
-                            <td><button style="visibility: hidden" id="Agbtn"
+                            <td style="width: 20%"><input id="AgMan" type="text" class="charMan w3-input w3-round" style="display: none; width: 50%;"/>
+                            <button style="display: none;" id="AgIndvbtn" class="charIndv w3-button w3-round-large w3-teal">Roll <span id="AgRollDice"></span></button></td>
+                            
+                            <td class="rerollTD"><button style="visibility: hidden" id="Agbtn"
                                     class="reroll w3-button w3-round-large w3-light-grey"
                                     onclick="reRollChar('Ag')">Reroll</button>
                             </td>
-                            <td>
+                            <td style="width: 100%;">
                                 Used for skills and initiative rolls
                             </td>
                         </tr>
                         <tr>
                             <td class="charLbl" id="IntLbl">Intelligence</td>
                             <td id="Int" class="rolled"></td>
-                            <td><button style="visibility: hidden" id="Intbtn"
+                            <td style="width: 20%"><input id="IntMan" type="text" class="charMan w3-input w3-round" style="display: none; width: 50%;"/>
+                            <button style="display: none;" id="IntIndvbtn" class="charIndv w3-button w3-round-large w3-teal">Roll <span id="IntRollDice"></span></button></td>
+                            
+                            <td class="rerollTD"><button style="visibility: hidden" id="Intbtn"
                                     class="reroll w3-button w3-round-large w3-light-grey"
                                     onclick="reRollChar('Int')">Reroll</button>
                             </td>
-                            <td>
+                            <td style="width: 100%;">
                                 Used for skills
                             </td>
                         </tr>
                         <tr>
                             <td class="charLbl" id="PerLbl">Perception</td>
                             <td id="Per" class="rolled"></td>
-                            <td><button style="visibility: hidden" id="Perbtn"
+                            <td style="width: 20%"><input id="PerMan" type="text" class="charMan w3-input w3-round" style="display: none; width: 50%;"/>
+                            <button style="display: none;" id="PerIndvbtn" class="charIndv w3-button w3-round-large w3-teal">Roll <span id="PerRollDice"></span></button></td>
+                            
+                            <td class="rerollTD"><button style="visibility: hidden" id="Perbtn"
                                     class="reroll w3-button w3-round-large w3-light-grey"
                                     onclick="reRollChar('Per')">Reroll</button>
                             </td>
-                            <td>
+                            <td style="width: 100%;">
                                 Used for skills
                             </td>
                         </tr>
                         <tr>
                             <td class="charLbl" id="WPLbl">Willpower</td>
                             <td id="WP" class="rolled"></td>
-                            <td><button style="visibility: hidden" id="WPbtn"
+                            <td style="width: 20%"><input id="WPMan" type="text" class="charMan w3-input w3-round" style="display: none; width: 50%;"/>
+                            <button style="display: none;" id="WPIndvbtn" class="charIndv w3-button w3-round-large w3-teal">Roll <span id="WPRollDice"></span></button></td>
+                            
+                            <td class="rerollTD"><button style="visibility: hidden" id="WPbtn"
                                     class="reroll w3-button w3-round-large w3-light-grey"
                                     onclick="reRollChar('WP')">Reroll</button>
                             </td>
-                            <td>
+                            <td style="width: 100%;">
                                 Essential for psykers. Used for resistances and to determine fatigue
                             </td>
                         </tr>
                         <tr>
                             <td class="charLbl" id="FelLbl">Fellowship</td>
                             <td id="Fel" class="rolled"></td>
-                            <td><button style="visibility: hidden" id="Felbtn"
+                            <td style="width: 20%"><input id="FelMan" type="text" class="charMan w3-input w3-round" style="display: none; width: 50%;"/>
+                            <button style="display: none;" id="FelIndvbtn" class="charIndv w3-button w3-round-large w3-teal">Roll <span id="FelRollDice"></span></button></td>
+                            
+                            <td class="rerollTD"><button style="visibility: hidden" id="Felbtn"
                                     class="reroll w3-button w3-round-large w3-light-grey"
                                     onclick="reRollChar('Fel')">Reroll</button>
                             </td>
-                            <td>
+                            <td style="width: 100%;">
                                 Used for checks with other people or NPCs
                             </td>
                         </tr>
                         <tr>
                             <td class="charLbl" id="InflLbl">Influence</td>
                             <td id="Infl" class="rolled"></td>
-                            <td><button style="visibility: hidden" id="Inflbtn"
+                            <td style="width: 20%"><input id="InflMan" type="text" class="charMan w3-input w3-round" style="display: none; width: 50%;"/>
+                            <button style="display: none;" id="InflIndvbtn" class="charIndv w3-button w3-round-large w3-teal">Roll <span id="InflRollDice"></span></button></td>
+                            
+                            <td class="rerollTD"><button style="visibility: hidden" id="Inflbtn"
                                     class="reroll w3-button w3-round-large w3-light-grey"
                                     onclick="reRollChar('Infl')">Reroll</button>
                             </td>
-                            <td>
+                            <td style="width: 100%;">
                                 Used for requisition; cannot be invested in, but is granted by GM
                             </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="manSetTD" style="display: none;"><button id="WSSet" onclick="setChars()" class="charManBtn w3-button w3-round-large w3-orange">Set</button></td>
                         </tr>
                     </table>
                     <br />
@@ -3068,6 +3108,7 @@
                                             </div>
                                         </div>
                                         <h3>Gear</h3>
+                                        <p class="w3-center">In addition to the list below, you may claim <span id="inflGear" style="font-weight: bolder;"></span> extra items of Scarce (-10) availability or better from the Armoury.</p>
                                         <div class="sheet-quickborder w3-round-large">
                                             <div class="sheet-row">
                                                 <div class="sheet-item" style="width:42%">

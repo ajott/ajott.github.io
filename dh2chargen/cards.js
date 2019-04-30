@@ -186,6 +186,28 @@ function chooseRole(str) {
 }
 
 function finishChars() {
+    let fatigue = 0
+
+    // Outcast characters get two additional levels towards their fatigue threshold
+    if (character.background == "outcast") {
+        fatigue = Math.floor(character.T / 10) + 2 + Math.floor(character.WP / 10)
+    } else {
+        fatigue = Math.floor(character.T / 10) + Math.floor(character.WP / 10)
+    }
+
+    character.Fatigue = fatigue;
+
+    // Movement is dependent upon the character's AgB (ten's place of their Agility)
+    character.Movement[0] = Math.floor(character.Ag / 10);
+    character.Movement[1] = Math.floor(character.Ag / 10) * 2;
+    character.Movement[2] = Math.floor(character.Ag / 10) * 3;
+    character.Movement[3] = Math.floor(character.Ag / 10) * 6;
+
+    // Uses those carry weights from earlier.
+    // This is determined by the character's SB + TB
+    character.Carry = carry[(Math.floor(character.S / 10) + Math.floor(character.T / 10))]
+
+
     getFullApts();
     $("select").addClass("w3-round");
     navApts();
@@ -239,8 +261,7 @@ function finishDiv() {
 
 function cardRollChars() {
 
-    $("#btnCardRoll").hide();
-    $("#btnCharNext").show();
+    $("#charBtnChoices").hide();
 
     // Defines the characteristics
     let chars = ["WS", "BS", "S", "T", "Ag", "Int", "Per", "WP", "Fel", "Infl"]
@@ -275,28 +296,78 @@ function cardRollChars() {
 
     for (let i = 0; i < rerolls.length; i++) {
         rerolls[i].setAttribute("style", "visibility: visible");
+    }    
+
+    checkChars();
+}
+
+function cardManChars() {
+    $("#charBtnChoices").hide();
+    $(".charMan").show();
+    $(".rerollTD").hide();
+    $(".manSetTD").show();
+}
+
+function setChars(char) {
+    let charLabels = ["WS", "BS", "S", "T", "Ag", "Int", "Per", "WP", "Fel", "Infl"];
+
+    for (let i = 0; i < charLabels.length; i ++){
+        let result = $("#"+charLabels[i]+"Man").val();
+        el(charLabels[i]).innerHTML = result;
+        character[charLabels[i]] = Number(result);
+    }
+    
+    checkChars();
+}
+
+function cardIndvChars() {    
+    $("#charBtnChoices").hide();
+
+    $(".charIndv").show();
+
+    let charLabels = ["WS", "BS", "S", "T", "Ag", "Int", "Per", "WP", "Fel", "Infl"];
+
+    for (let i = 0; i < charLabels.length; i ++){
+        if (character.CharPlus.includes(charLabels[i])) {
+            $("#"+charLabels[i]+"RollDice").text("3d10dl1");
+            $("#"+charLabels[i]+"Indvbtn").attr("onclick", "rollChar('"+charLabels[i]+"', '3d10', 1)");
+        } else if (character.CharMinus === charLabels[i]){
+            $("#"+charLabels[i]+"RollDice").text("3d10dh1");
+            $("#"+charLabels[i]+"Indvbtn").attr("onclick", "rollChar('"+charLabels[i]+"', '3d10', -1)");
+        } else {
+            $("#"+charLabels[i]+"RollDice").text("2d10");            
+            $("#"+charLabels[i]+"Indvbtn").attr("onclick", "rollChar('"+charLabels[i]+"', '2d10')");
+        }
+    }
+}
+
+function checkChars() {
+    let charLabels = ["WS", "BS", "S", "T", "Ag", "Int", "Per", "WP", "Fel", "Infl"];
+    
+    let assignedChars = 0;
+    
+    for (let i = 0; i < charLabels.length; i ++){
+        if (character[charLabels[i]] !== 0) {
+            assignedChars += 1;
+        }
     }
 
-    let fatigue = 0
-
-    // Outcast characters get two additional levels towards their fatigue threshold
-    if (character.background == "outcast") {
-        fatigue = Math.floor(character.T / 10) + 2 + Math.floor(character.WP / 10)
-    } else {
-        fatigue = Math.floor(character.T / 10) + Math.floor(character.WP / 10)
+    if (assignedChars === 10) {
+        $("#btnCharNext").show();
+        $(".reroll").attr("style", "visibility: visible;");
     }
+}
 
-    character.Fatigue = fatigue;
+function rollChar(char, dice, mod) {
+    let result = roll(dice, mod) + 20;
 
-    // Movement is dependent upon the character's AgB (ten's place of their Agility)
-    character.Movement[0] = Math.floor(character.Ag / 10);
-    character.Movement[1] = Math.floor(character.Ag / 10) * 2;
-    character.Movement[2] = Math.floor(character.Ag / 10) * 3;
-    character.Movement[3] = Math.floor(character.Ag / 10) * 6;
+    character[char] = result;
 
-    // Uses those carry weights from earlier.
-    // This is determined by the character's SB + TB
-    character.Carry = carry[(Math.floor(character.S / 10) + Math.floor(character.T / 10))]
+    $("#"+char+"Indvbtn").hide();
+
+    el(char).innerHTML = result;
+
+    checkChars();
 }
 
 function getFullApts() {
@@ -321,6 +392,18 @@ function getFullApts() {
         return character.Aptitudes.indexOf(val) == -1;
     });
 
+    let spliceIndex = character.Aptitudes.length;
+
+    for (let i = 0; i < character.Aptitudes.length; i ++) {
+        if (character.Aptitudes[i].search("ZZ") > 0) {
+            let optionApt = character.Aptitudes[i].split(" ZZ ");
+                if (character.Aptitudes.includes(optionApt[0]) && character.Aptitudes.includes(optionApt[1])) {
+                    spliceIndex = i;
+                }
+        }
+    }
+
+    character.Aptitudes.splice(spliceIndex, 1);
 
     // Starting with an empty string for the inner HTML of the aptitude table
     let htmlStr = ""
@@ -920,4 +1003,6 @@ function buildSheet() {
     addTalents();
     addWoundsFateMovementFatigue();
     addAptitudes();
+
+    $("#inflGear").text(Math.floor(character.Infl / 10));
 }

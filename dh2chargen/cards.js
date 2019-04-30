@@ -379,6 +379,12 @@ function getFullApts() {
     character.Aptitudes = character.Aptitudes.concat(roles[character.role]["aptitudes"]);
 
     let Aptitudes = ["Weapon Skill", "Ballistic Skill", "Strength", "Toughness", "Agility", "Intelligence", "Perception", "Willpower", "Fellowship", "Offense", "Defense", "Fieldcraft", "Social", "Knowledge", "Leadership", "Tech", "Finesse", "Psyker"].sort()
+    let charApts = ["Weapon Skill", "Ballistic Skill", "Strength", "Toughness", "Agility", "Intelligence", "Perception", "Willpower", "Fellowship"];
+
+    charApts = charApts.filter(function (e) {
+        return this.indexOf(e) < 0;
+    }, character.Aptitudes)
+
 
     var aptsUnique = character.Aptitudes.filter(function (item, index) {
         return character.Aptitudes.indexOf(item) >= index;
@@ -429,6 +435,8 @@ function getFullApts() {
         el("aptTd_" + i).innerHTML += htmlStr;
     }
 
+    
+
     for (let i = character.Aptitudes.length; i < 8; i++) {
         htmlStr = ""
 
@@ -436,8 +444,8 @@ function getFullApts() {
         htmlStr += "<select id=\"aptBox_" + (i) + "\" onchange=\"aptChange(\'aptBox_" + (i) + "\')\">"
         htmlStr += "<option value=\"\">...</option>"
 
-        for (let i = 0; i < Aptitudes.length; i++) {
-            htmlStr += "<option value=\"" + Aptitudes[i] + "\">" + Aptitudes[i] + "</option>"
+        for (let i = 0; i < charApts.length; i++) {
+            htmlStr += "<option value=\"" + charApts[i] + "\">" + charApts[i] + "</option>"
         }
 
         htmlStr += "</select>"

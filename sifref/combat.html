@@ -1,0 +1,621 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="A web-based quick reference guide for Green Ronin's Song of Ice and Fire RPG (SIFRP)">
+    <title>SIFRP Reference</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="w3-top w3-sifrp-d3 w3-row-padding bar-pad" id="navBarDiv">
+    </div>
+
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div id="combat">
+                <div id="combatActions" class="info">
+                    <h1 class="headingLight">Combat Actions</h1>
+                    <p>Characters may take many actions in Combat. These are listed below.</p>
+                    <p>The type of an action determine how much of your turn it takes. A character may take two Lesser
+                        actions or one Greater action during their turn.
+                    </p>
+                    <p>You may only take one attack action on a turn.</p>
+                    <table id="combatTable" class="w3-table w3-striped w3-hoverable w3-bordered w3-responsive">
+                        <thead>
+                            <tr>
+                                <th>Action</th>
+                                <th>Type</th>
+                                <th>Subtype</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Standard Attack</td>
+                                <td>Lesser</td>
+                                <td>Attack</td>
+                                <td>Use a Lesser Action to attack a target in range. Test vs. Opponent's Combat Defense
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Divided Attack</td>
+                                <td>Greater</td>
+                                <td>Attack</td>
+                                <td>Make an attack against two or more targets. Roll a test as usual, and divide your
+                                    test dice at your discretion to test against each target's Combat Defense.</td>
+                            </tr>
+                            <tr>
+                                <td>Two-Weapon Attack</td>
+                                <td>Greater</td>
+                                <td>Attack</td>
+                                <td>Add your off-hand weapon's modifier to your damage, should you succeed on your
+                                    Fighting test. If your off-hand weapon has the Defensive quality, it loses that
+                                    quality until the start of your next turn.</td>
+                            </tr>
+                            <tr>
+                                <td>Combining Attacks</td>
+                                <td>Greater</td>
+                                <td>Attack</td>
+                                <td>Combine a Divided and Two-Weapon attack. Divide the test dice as with a Divided
+                                    attack, but add your off-hand weapon modifier to all successful damage.</td>
+                            </tr>
+                            <tr>
+                                <td>Cautious Attack</td>
+                                <td>Lesser</td>
+                                <td>Attack</td>
+                                <td>Reserve some effort for defense. Take -1D to your attack test, but gain +3 Combat
+                                    Defense until the start of your next turn.</td>
+                            </tr>
+                            <tr>
+                                <td>Charge</td>
+                                <td>Greater</td>
+                                <td>Attack, Movement</td>
+                                <td>Charge at an opponent up to twice your usual movement distance away. Take -1D on the
+                                    attack, but increase damage by +2 if you hit.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Counterattack</td>
+                                <td>Greater</td>
+                                <td>Attack</td>
+                                <td>Immediately end your turn and set a condition for attacking an opponent. A
+                                    counterattack will interrupt the target's action.<br />
+                                    Set for Charge: If an enemy makes a charge attack against you during a round wherein
+                                    you've taken a counterattack action, and you are armed with a Fighting weapon,
+                                    increase your weapon's base damage by +2 if you land your strike.</td>
+                            </tr>
+                            <tr>
+                                <td>Disarm</td>
+                                <td>Greater</td>
+                                <td>Attack</td>
+                                <td>Attempt to disarm your opponent; test your attack against their passive Fighting
+                                    difficulty. If you succeed with 2+ DoS, they are disarmed. If you roll a critical
+                                    failure, you are disarmed. <br />
+                                    If you have a free hand and Fighting 4+, you are able to grab the weapon out of the
+                                    air. Otherwise a lost weapon lands 1d6 yards away in a random direction.</td>
+                            </tr>
+                            <tr>
+                                <td>Mounted Attack</td>
+                                <td>Varies</td>
+                                <td>Attack</td>
+                                <td>Take an attack action from your steed, with the following benefits: <ul>
+                                        <li>Use your mount's movement in place of your own</li>
+                                        <li>Gain +1B on all Fighting tests against opponents on foot</li>
+                                        <li>Increase your damage by +2 if your mount is trained for war and hasn't moved
+                                            this turn</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pull from Mount</td>
+                                <td>Greater</td>
+                                <td>Attack</td>
+                                <td>If you are armed with a Grab weapon or a Polearm, you may attempt to pull a rider
+                                    from his steed. Test your Fighting against the rider's passive Animal Handling (Ride
+                                    applies). On success, he is pulled from the saddle and
+                                    lands prone on the ground.</td>
+                            </tr>
+                            <tr>
+                                <td>Pin</td>
+                                <td>Greater</td>
+                                <td>Attack</td>
+                                <td>If, at the start of your turn, you are Grabbing your opponent, you may make an
+                                    opposed Athletics test to Pin him to the ground. You may maintain the Pin with a
+                                    Greater Action each round. A pinned opponent can take no action but attempting to
+                                    break free with a Fighting Test.</td>
+                            </tr>
+                            <tr>
+                                <td>Aim</td>
+                                <td>Lesser</td>
+                                <td>Misc</td>
+                                <td>Gain +1B on your next Fighting or Marksmanship test. Aim actions cannot stack.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Assist</td>
+                                <td>Lesser</td>
+                                <td>Misc</td>
+                                <td>You may assist an ally on their test so long as you are adjacent to them (and their
+                                    target, if they are making a Fighting test). Add 1/2 of your score in the relevant
+                                    Ability to theirs. Multiple assistances give cumulative bonuses. If assisting on
+                                    Fighting or Marksmanship, this counts as your attack for your turn.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Catch Your Breath</td>
+                                <td>Greater</td>
+                                <td>Misc</td>
+                                <td>Take a quick rest to catch your breath. Roll an Automatic (0) Endurance test - each
+                                    degree of success removes 1 point of damage.</td>
+                            </tr>
+                            <td>Distract</td>
+                            <td>Lesser</td>
+                            <td>Misc</td>
+                            <td>Roll a Cunning test against your opponent's passive Will. Upon success, he loses his
+                                Awareness from
+                                his Combat Defense until the end of his next turn, or until he is attacked.
+                            </td>
+                            </tr>
+                            <tr>
+                                <td>Dodge</td>
+                                <td>Greater</td>
+                                <td>Evasion, Movement</td>
+                                <td>Roll an Agility test (Bonus Dice from Shield count, if you are armed with one). Take
+                                    that result as your Combat Defense for the next turn, even if worse than your normal
+                                    defense. Add any Defensive bonuses from weapons to your test result. Move up to 1/2
+                                    of your normal movement.</td>
+                            </tr>
+                            <tr>
+                                <td>Interact</td>
+                                <td>Lesser</td>
+                                <td>Misc</td>
+                                <td>Manipulate an object, retrieve a stored item, climb a mount, etc. Items stored in
+                                    bags may take longer than a Lesser action to retrieve. Can be combined with a
+                                    Movement action to draw a weapon, but attacks made the same round take -1D</td>
+                            </tr>
+                            <tr>
+                                <td>Move</td>
+                                <td>Lesser</td>
+                                <td>Movement</td>
+                                <td>Move a number of yards equal to your Movement at a brisk walk. If you take two Move
+                                    actions in the same turn, you may move up to twice your Movement.</td>
+                            </tr>
+                            <tr>
+                                <td>Sprint</td>
+                                <td>Greater</td>
+                                <td>Movement</td>
+                                <td>Move a number of yards equal to your Sprint.</td>
+                            </tr>
+                            <tr>
+                                <td>Stand/Drop</td>
+                                <td>Lesser</td>
+                                <td>Misc</td>
+                                <td>Take a Lesser action to either drop prone or stand up from the ground. If your Armor
+                                    Rating is 6 or higher, Standing requires a Greater Action.</td>
+                            </tr>
+                            <tr>
+                                <td>Ride or Drive</td>
+                                <td>Varies</td>
+                                <td>Misc, Mounted</td>
+                                <td>Your mount's action is spent moving or attacking. If your steed is trained for war,
+                                    you must spend a Lesser Action to control it. If it is untrained, this is a Greater
+                                    Action. An injured steed needs a Greater Action regardless.</td>
+                            </tr>
+                            <tr>
+                                <td>Pass</td>
+                                <td>Greater</td>
+                                <td>Misc</td>
+                                <td>Take no action on your turn, but gain +2B on your next test, subject to the normal
+                                    limit on bonus dice. Multiple passes are not cululative.</td>
+                            </tr>
+                            <tr>
+                                <td>Use Ability</td>
+                                <td>Varies</td>
+                                <td>Misc</td>
+                                <td>Use a non-combat specific ability. This may be an action like looking for an exit,
+                                    swinging on a rope, etc. Some abilities may require more than one round of effort.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Use Destiny Point</td>
+                                <td>Free</td>
+                                <td>Misc</td>
+                                <td>Spending Destiny:
+                                    <ul>
+                                        <li>Gain +1B, ignoring normal limit on bonus dice</li>
+                                        <li>Convert +1B into +1D</li>
+                                        <li>Remove -1D</li>
+                                        <li>Bestow -1D on an opponent</li>
+                                        <li>Take an extra Lesser Action</li>
+                                        <li>Ignore Armor Penalty for one round</li>
+                                        <li>Negate another character's Spent Destiny Point</li>
+                                        <li>Add a minor detail to a scene</li>
+                                        <li>Activate an environmental quality</li>
+                                        <li>Ignore an environmental quality</li>
+                                    </ul>
+                                    Burning Destiny:
+                                    <ul>
+                                        <li>Convert all Bonus dice into Test dice</li>
+                                        <li>Add +5 to test result</li>
+                                        <li>Automatically succeed on a test with 1 DoS</li>
+                                        <li>Remove all damage and Injuries (but not Wounds)</li>
+                                        <li>Decide the consequences of your own defeat</li>
+                                        <li>Transform another character's successful test into a failure</li>
+                                        <li>Negate another character's Burned Destiny Point</li>
+                                        <li>Add a significant detail to a scene</li>
+                                        <li>Avoid certain death</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Yield</td>
+                                <td>Greater</td>
+                                <td>Misc</td>
+                                <td>You may sacrifice your entire turn to yield, placing yourself at the mercy of your
+                                    foes. You may re-enter the combat, but it is considered dishonorable, and you will
+                                    take -1D on Persuasion and Status tests made to interact with <em>anyone</em> who
+                                    witnessed your treachery. This persists until you improve their disposition to
+                                    Friendly or better.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr />
+                <div id="damage" class="info">
+                    <h1 style="text-align: center;">Damage</h1>
+                        <p>Damage is a nearly unavoidable consequence of combat. Damage taken to your health is minor -
+                            scrapes, small cuts, or bruises. Your health is restored at the end of every combat. Damage
+                            can be reduced by taking Injuries and Wounds. This is most commonly done when an incoming
+                            blow would reduce your health to 0.</p>
+                        <h5 class="w3-text-gold" style="text-align: center;">Injuries</h5>
+                        <p>Injuries are more significant than damage to health, and each injury a character sustains
+                            imposes
+                            <strong>a -1 penalty to all rolls.</strong> Taking an injury reduces incoming damage by your
+                            Endurance rank. You may have as many injuries as you have ranks in Endurance. If you're
+                            maxed on injuries, you
+                            must then start accumulating Wounds.</p>
+                        <h5 class="w3-text-gold" style="text-align: center;">Wounds</h5>
+                        <p>Wounds are major damage. Each wound a character sustains imposes <strong>a -1D penalty to all
+                                rolls.</strong> Taking a wound completely negates damage from an incoming attack. If you
+                            ever sustain as many Wounds as you have ranks in Endurance, you will die.</p>
+                        <hr />
+                        <br />
+                        <h1 style="text-align: center;">Recovery</h1>
+                            <div class="w3-row">
+                                <div class="w3-col s12 m12 l5">
+                                    <h5 class="w3-text-gold" style="text-align: center;">Injuries</h5>
+                                    <p>Injuries are more significant than damage, and thus take longer to heal. One day
+                                        after
+                                        gaining an injury, you may roll an Endurance test to remove it. The difficulty
+                                        depends
+                                        on your activity level.</p><br />
+                                    <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Activity</th>
+                                                <th>Example</th>
+                                                <th>Difficulty</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Light or No</td>
+                                                <td>No fighting, riding, or physical activity</td>
+                                                <td>Routine (6)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Moderate</td>
+                                                <td>Travel, some physical activity</td>
+                                                <td>Challenging (9)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Strenuous</td>
+                                                <td>Righting, riding, hard physical activity</td>
+                                                <td>Formidible (12)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p>Each degree of success removes 1 injury. A failed test, however,
+                                        means you don’t recover at all. If you roll a Critical failure, you gain
+                                        another injury. If you cannot accept another injury, you gain a wound
+                                        instead.</p>
+                                </div>
+                                <div class="w3-col s0 m0 l2">
+                                    <p></p>
+                                </div>
+                                <div class="w3-col s12 m12 l5">
+                                    <h5 class="w3-text-gold" style="text-align: center;">Wounds</h5>
+                                    <p>Wounds are the nastiest injuries, the ones that take the longest to
+                                        heal and can cause the most lasting harm. One week after gaining a
+                                        wound, you may roll an Endurance test. The Difficulty depends on
+                                        your activity level.</p>
+                                    <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Activity</th>
+                                                <th>Example</th>
+                                                <th>Difficulty</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Light or No</td>
+                                                <td>No fighting, riding, or physical activity</td>
+                                                <td>Challenging (9)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Moderate</td>
+                                                <td>Travel, some physical activity</td>
+                                                <td>Hard (15)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Strenuous</td>
+                                                <td>Righting, riding, hard physical activity</td>
+                                                <td>Heroic (21)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br />
+                                    <p>A successful test removes 1 wound. You may remove an additional
+                                        wound for every two degrees of success. If, however, you roll a Critical
+                                        failure on the Endurance test, you gain another wound. If you
+                                        cannot accept another wound (your wounds equal your Endurance
+                                        rank), you die.</p>
+                                </div>
+                            </div>
+
+
+
+                            <br />
+                            <h4>
+                                Healing
+                            </h4>
+                            <p>The best way to recover from an injury is to receive Healing. The Healing ability can
+                                help speed
+                                recovery from injuries by allowing the healer
+                                to substitute his or her Healing test result for the Endurance test. Since
+                                injuries impose a penalty on all tests, the presence of a healer can greatly
+                                improve a character’s chances for recovery.
+                                To use Healing, a healer must devote at least 4 hours per day of
+                                treatment to the injured character. When the character would roll an
+                                Endurance test, the healer instead rolls a Healing test. The result of this
+                                test must be taken. A failed Healing test does not result in the worsening
+                                of injuries.</p>
+                </div>
+
+                <hr />
+                <div id="defeat" class="info">
+                    <h1>Defeat</h1>
+                    <p>If at any time your Health drops to 0 or lower, you are defeated and removed
+                        from the combat. The opponent that defeated you decides what
+                        happens to you. Common choices include any of the following. Remember,
+                        defeat by an attack using a Vicious weapon always results in death.</p>
+
+                    <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <th>Consequence</th>
+                            <th>Description</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Death</td>
+                                <td>This outcome is the most common when defeated. You are dead. Depending
+                                    on the era in which you play as well as where you died, your corpse
+                                    might stir into unlife… if you believe in that sort of thing.</td>
+                            </tr>
+                            <tr>
+                                <td>Maimed</td>
+                                <td>Your opponent might leave you alive but gives you something by which
+                                    you will remember him. Examples include a wicked scar across the face
+                                    or the loss of an eye, thumb, or some other body part. Permanently reduce
+                                    one ability of your opponent’s choice by one rank.</td>
+                            </tr>
+                            <tr>
+                                <td>Ransom</td>
+                                <td>Your opponent holds you or some possession for ransom. In tournaments,
+                                    ransom usually means the victor gains the loser’s armor and
+                                    horse. In war, it might mean captivity until the loser’s family can offer
+                                    up sufficient coin or a valuable hostage of their own.</td>
+                            </tr>
+                            <tr>
+                                <td>Take the Black</td>
+                                <td>Those who see honor in service to the Night’s Watch may allow their
+                                    enemies to take the black and join the rangers on the Wall. For many,
+                                    this is a fate worse than death, as it means being stripped of status, family,
+                                    and worldly possession. For those who value life above such minor
+                                    things, taking the black offers a chance to live.</td>
+                            </tr>
+                            <tr>
+                                <td>Unconscious</td>
+                                <td>You are knocked out and left for dead. You awaken 2d6 hours later.
+                                    While unconscious, you are helpless and may be killed or eaten by
+                                    someone or something else. This fate is often the same as death.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4>Yielding</h4>
+                    <p>You may choose to yield in order to choose the outcome of your defeat.
+                        If you fear imminent defeat, you may, on your turn, offer the Narrator
+                        terms by which your character will go down to defeat, including the
+                        outcome. So for example, you can offer to have your character defeated
+                        and left unconscious or taken for ransom. The Narrator has the option
+                        of accepting your terms, making a counter-offer, or rejecting them. If
+                        you reject the Narrator’s counter-offer, you cannot yield.</p>
+                    <h4>Destiny & Defeat</h4>
+                    <p>You may also burn a Destiny Point to choose a fate other than the one
+                        your opponent chooses for you. If your family is particularly poor, you
+                        might choose maiming or death over a ransom. Similarly, if your opponent
+                        would see you dead, you might opt for unconsciousness instead.</p>
+                    <hr />
+                </div>
+
+                <div id="critSuccess" class="info">
+                    <h1 class="headingLight">Critical Successes</h1>
+                    <br />
+                    <p>A critical success occurs when your Fighting or Marksmanship test doubles your opponent's Combat
+                        Defense. For example, if your opponent has a combat defense of 10, you would need to roll 20 to
+                        critically hit.</p>
+                    <p>If a critical is the result, count the number of 6s rolled, and compare to the table below.</p>
+                    <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <th>Sixes</th>
+                            <th>Result</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><strong>Solid Hit:</strong> You land a solid blow. Increase the base damage of
+                                    your weapon for this attack by +2.</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><strong>Powerful Hit:</strong> Your attack leaves your opponent reeling. Increase
+                                    the base damage of your weapon for this attack by +4.</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><strong>Bloody Wound:</strong> Your attack leaves a bleeding wound. In addition
+                                    to the damage dealt, your target gains 1 injury. This injury
+                                    does not reduce damage. If your opponent cannot take another
+                                    injury, he takes a wound. If he cannot take a wound, he dies.</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><strong>Crippling Wound:</strong> You cripple your opponent with a dreadful
+                                    wound. In addition to the damage dealt, your target gains 1
+                                    wound. This injury does not reduce damage. If your opponent
+                                    cannot take another wound, he dies.</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><strong>Killing Blow:</strong> Your attack kills your opponent instantly.</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td><strong>Terrible Blow:</strong> Not only does your attack kill your opponent
+                                    instantly, but you deal your base damage (unmodified by degree)
+                                    to all opponents adjacent to the victim of the terrible blow.</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td><strong>Impressive Death:</strong> Your killing attack is so impressive, all
+                                    your allies gain +1B on all tests for the duration of the combat.</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td><strong>Horrible Death:</strong> You kill your opponent with such force that
+                                    you sicken all who witness the act. All characters (allies and
+                                    enemies) that witnessed the attack must succeed on Challenging
+                                    (9) Will tests or take –1D on tests for one round. For
+                                    the duration of the combat, you gain a +1B on all tests.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <hr />
+            <div id="critFail" class="info">
+                <h1 class="headingLight">Critical Failures (Fumbles)</h1>
+                <br />
+                <p>A critical failure, or fumble, occurs when you roll all 1s on a test.</p>
+                <p>If a fumble is the result, count the number of 1s rolled, including bonus dice not otherwise counted,
+                    and compare to the table below.</p>
+                <p>Whenever you get a fumble result, you may reduce it by one step by spending a Destiny Point.</p>
+                <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                    <thead>
+                        <th>Ones</th>
+                        <th>Result</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><strong>Injure Self:</strong> Poor handling of the weapon results in a nasty
+                                injury. You hit yourself and take weapon damage.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><strong>Strike Ally:</strong> You strike an ally instead of the intended target.
+                                If there’s an adjacent ally, test Fighting, or if there’s an
+                                ally in range, test Marksmanship to hit your ally as normal.</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><strong>Drop:</strong> The weapon slips from your hand and lands 1d6
+                                yards away in a random direction.</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><strong>Minor Break:</strong> The weapon becomes damaged from heavy
+                                use. Reduce its damage by 1. If castle-forged or better, treat
+                                this result as 3.</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><strong>Major Break:</strong> The weapon snaps or becomes badly damaged.
+                                The weapon is worthless and cannot be repaired. If
+                                castle-forged, treat as 4. If Valyrian steel, treat as 3.</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><strong>Slippery Grip:</strong> Blood or sweat makes the weapon’s grip
+                                slippery. Take –1D on all attacks until the end of your next
+                                turn.</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td><strong>Blood in the Eyes:</strong> Blood or sweat falls into your eyes,
+                                affecting your vision. Take –1D on all tests until the end of
+                                your next turn.</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td><strong>Overbalanced:</strong> In your eagerness to hit your foe, you lose
+                                your balance and give your opponent an opening. Take a
+                                –5 penalty to Combat Defense until the start of your next
+                                turn.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr />
+        </div>
+    </div>
+
+    </div>
+    <div class="w3-col s0 m0 l1"></div>
+    </div>
+
+
+
+</body>
+<footer>
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m10 l10">
+            All SIFRP material is © Green Ronin
+        </div>
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+    </div>
+</footer>
+
+</html>

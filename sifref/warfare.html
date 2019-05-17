@@ -1,0 +1,1785 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="A web-based quick reference guide for Green Ronin's Song of Ice and Fire RPG (SIFRP)">
+    <title>SIFRP Reference</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="w3-top w3-sifrp-d3 w3-row-padding bar-pad" id="navBarDiv">
+    </div>
+
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div id="combat">
+                <div id="warfareOrders" class="info">
+                    <h1 class="headingLight">Warfare Orders</h1>
+                    <p>Units in warfare do nothing unless commanded. The Commander of a force may make as many Orders as
+                        his rank in Warfare.</p>
+                    <p>Characters may be specified as Sub-Commanders. An army may have one Sub-Commander per two full
+                        units. Sub-Commanders may make one Order per round.
+                    </p>
+                    <p>Orders are given in alternating fashion; the Commander or Sub-Commander with the best Initiative
+                        roll gives his order first, followed by the others in order of Initiative.<br />
+                        If one army has more Orders than the other, either through a higher Warfare rank or
+                        Sub-Commanders, they continue to issue orders until the total number is reached, with the
+                        opposing army removed from the turn order for that round.</p>
+                    <p>Many Orders have lasting results. These Standing Orders are resolved after normal Orders are
+                        given, and after Player Actions are taken. A new Order given to a unit will supercede its
+                        previous Standing Order.</p>
+                    <p>Orders that may be used if the group is playing by Advanced Warfare rules are highlighted.</p>
+                    <table id="combatTable" class="w3-table w3-striped w3-hoverable w3-bordered w3-responsive">
+                        <thead>
+                            <tr>
+                                <th>Order</th>
+                                <th style="text-align: center;">Discipline Modifier</th>
+                                <th>Allowable Units</th>
+                                <th>Description</th>
+                                <th>Standing Order</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Attack</td>
+                                <td style="text-align: center;">+0</td>
+                                <td>Any</td>
+                                <td>Test Fighting or Marksmanship against target Defense. If successful, multiply base
+                                    damage by DoS, subtract enemy AR, and deal to target Health</td>
+                                <td>The Unit will continue to attack adjacent targets (Fighting Units) or the closest
+                                    target (Marksmanship Units)
+                                </td>
+                            </tr>
+                            <tr class="warfareAdvanced">
+                                <td>Ambush</td>
+                                <td style="text-align: center;">+3</td>
+                                <td>Concealed</td>
+                                <td>The Unit deals +2 damage on its first attack</td>
+                                <td>As Attack
+                                </td>
+                            </tr>
+                            <tr class="warfareAdvanced">
+                                <td>Blitz</td>
+                                <td style="text-align: center;">+6</td>
+                                <td>Fighting</td>
+                                <td>The Unit moves up to its Sprint distance through enemy units, making a Fighting
+                                    attack against each in its path. Each attack after the first has a -1D penalty.</td>
+                                <td>As Attack
+                                </td>
+                            </tr>
+                            <tr class="warfareAdvanced">
+                                <td>Change Formation</td>
+                                <td style="text-align: center;">Varies</td>
+                                <td>Any</td>
+                                <td>Order the unit to change its formation, as described in the <a href="./warfare.html#formations">Facing & Formations</a> section.</td>
+                                <td>As Attack.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Charge</td>
+                                <td style="text-align: center;">+0</td>
+                                <td>Fighting</td>
+                                <td>Make a Fighting test with -1D to a unit within Sprint range. The attack gains +2
+                                    base damage.</td>
+                                <td>The Unit will continue to attack adjacent targets.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Defend</td>
+                                <td style="text-align: center;">+0</td>
+                                <td>Any</td>
+                                <td>Test Agility and replace Defense with the result, even if worse. If the Unit has
+                                    shields, add +1D</td>
+                                <td>The Unit continues to Defend each round.
+                                </td>
+                            </tr>
+                            <tr class="warfareAdvanced">
+                                <td>Envelop</td>
+                                <td style="text-align: center;">+6</td>
+                                <td>Fighting</td>
+                                <td>The Unit makes a Fighting attack as normal. If the enveloped enemy Unit attempts to
+                                    move or retreat, your unit makes a free attack. Marksmanship attacks against
+                                    enveloped units deal damage to both Units.</td>
+                                <td>The Unit continues to envelop its target. If the target moves away, the Unit does
+                                    nothing until it receives a new order.
+                                </td>
+                            </tr>
+                            <tr class="warfareAdvanced">
+                                <td>Facing</td>
+                                <td style="text-align: center;">Varies</td>
+                                <td>Any</td>
+                                <td>Order the unit to change its facing, as described in the <a href="./warfare.html#formations">Facing & Formations</a> section.</td>
+                                <td>As Attack
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fighting Withdrawl</td>
+                                <td style="text-align: center;">+0</td>
+                                <td>Any</td>
+                                <td>Make a Fighting or Marksmanship test with -1D, then move up to half Movement. If a
+                                    critical failure, the unit becomes Disorganized and takes no action.</td>
+                                <td>The Unit continues to move back towards the Commander each round.
+                                </td>
+                            </tr>
+                            <tr class="warfareAdvanced">
+                                <td>Force Back</td>
+                                <td style="text-align: center;">+3</td>
+                                <td>Fighting</td>
+                                <td>The Unit makes a Fighting test against the target's passive Agility. Move the target
+                                    back 10 yards per DoS.</td>
+                                <td>As Attack
+                                </td>
+                            </tr>
+                            <tr class="warfareAdvanced">
+                                <td>Hammer and Anvil</td>
+                                <td style="text-align: center;">+6</td>
+                                <td>Fighting + Ready</td>
+                                <td>The Unit makes an opposed Athletics test. On success, push the target back up to
+                                    half their Movement. If this puts the target in contact with the Readied unit, the
+                                    Readied unit makes a Fighting attack with +1D.</td>
+                                <td>As Attack
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Move</td>
+                                <td style="text-align: center;">+0</td>
+                                <td>Any</td>
+                                <td>Move up to the Unit's Movement. If using Sprint distance, the Unit must move in a
+                                    straight line</td>
+                                <td>The Unit does nothing until it receives a new order.
+                                </td>
+                            </tr>
+                            <tr class="warfareAdvanced">
+                                <td>Pincer</td>
+                                <td style="text-align: center;">+3</td>
+                                <td>Fighting</td>
+                                <td>You may split your Warfare dice to order two Units to attack the same enemy. On
+                                    success, both units make a Fighting attack with +1D</td>
+                                <td>As Attack
+                                </td>
+                            </tr>
+                            <tr class="warfareAdvanced">
+                                <td>Probing Attack</td>
+                                <td style="text-align: center;">+6</td>
+                                <td>Fighting</td>
+                                <td>The Unit makes a Fighting test with -1D, which lasts until the end of the round. The
+                                    Unit's Defense is increased by 2 until the next round.</td>
+                                <td>As Attack
+                                </td>
+                            </tr>
+                            <tr class="warfareAdvanced">
+                                <td>Reform</td>
+                                <td style="text-align: center;">+3</td>
+                                <td>Damaged + Damaged</td>
+                                <td>Combine two adjacent Damaged units. Oon success, remove the most damaged unit from
+                                    the battle. The remaining unit is fully healed.</td>
+                                <td>The Unit does nothing until it receives a new order.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Re-Organize</td>
+                                <td style="text-align: center;">+0</td>
+                                <td>Disorganized</td>
+                                <td>Causes a Disorganized unit to become Damaged instead. Retain the Discipline penalty
+                                    from Disorganization (it is cumulative)</td>
+                                <td>The Unit does nothing until it receives a new order.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ready</td>
+                                <td style="text-align: center;">+0</td>
+                                <td>Any</td>
+                                <td>Give the Unit a condition upon which to take a delayed action</td>
+                                <td>The Unit remains Ready until the condition is met; thereafter, it will take the
+                                    Standing Order from the delayed action.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Rally</td>
+                                <td style="text-align: center;">+0</td>
+                                <td>Routed</td>
+                                <td>Rally a Routed Unit, causing it to become Disorganized instead</td>
+                                <td>The Unit does nothing until it receives a new order.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Regroup</td>
+                                <td style="text-align: center;">+0</td>
+                                <td>Damaged</td>
+                                <td>The Unit regains 1 point of Health per DoS</td>
+                                <td>The Unit does nothing until it receives a new order.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Retreat</td>
+                                <td style="text-align: center;">+0</td>
+                                <td>Any</td>
+                                <td>Call for an orderly retreat. Upon critical failure, the unit Routs and takes no
+                                    action</td>
+                                <td>The Unit moves away from the battle until given another order.
+                                </td>
+                            </tr>
+                            <tr class="warfareAdvanced">
+                                <td>Sap</td>
+                                <td style="text-align: center;">+3</td>
+                                <td>Engineers</td>
+                                <td>The Unit makes a Formidible (12) Warfare test against an adjacent Fortification. On
+                                    success, reduce the Fortification's bonus by 1 per DoS. The Unit takes -5 to its
+                                    Defense until the Order is complete.</td>
+                                <td>The Unit does nothing until it receives a new order.
+                                </td>
+                            </tr>
+                            <tr class="warfareAdvanced">
+                                <td>Scale Walls</td>
+                                <td style="text-align: center;">+3</td>
+                                <td>Any</td>
+                                <td>The Unit tests Athletics against a Difficulty determined by the Narrator. On
+                                    success, the unit scales up to its Movement in yards. If equipped with hooks and
+                                    ropes or ladders, there is no Discipline modifier for this Order.</td>
+                                <td>The Unit continues attempting to scale the wall or until it receives new orders. If
+                                    it successfully scales the wall and encounters an enemy unit, it attacks.
+                                </td>
+                            </tr>
+                            <tr class="warfareAdvanced">
+                                <td>Set for Charge</td>
+                                <td style="text-align: center;">+3</td>
+                                <td>Fighting</td>
+                                <td>The Unit makes ready for a charge. If an enemy Unit charges this Unit, it may make a
+                                    Fighting test, dealing double its base damage.</td>
+                                <td>As Attack
+                                </td>
+                            </tr>
+                            <tr class="warfareAdvanced">
+                                <td>Slash & Burn</td>
+                                <td style="text-align: center;">+3</td>
+                                <td>Any</td>
+                                <td>The Unit slashes and burns crops, rapes the smallfolk, and scours the land. The
+                                    House to which the land belongs reduces their Population and Wealth by 1 each time
+                                    the order is given.</td>
+                                <td>The Unit does nothing until it receives a new order.
+                                </td>
+                            </tr>
+                            <tr class="warfareAdvanced">
+                                <td>Split Attack</td>
+                                <td style="text-align: center;">+6</td>
+                                <td>Any</td>
+                                <td>The Unit may divide its attack dice to hit two or more targets.</td>
+                                <td>As Attack
+                                </td>
+                            </tr>
+                            <tr class="warfareAdvanced">
+                                <td>Suppressing Fire</td>
+                                <td style="text-align: center;">+3</td>
+                                <td>Marksmanship</td>
+                                <td>The Unit fires a volley of missiles to prevent an enemy unit from moving. Orders
+                                    given to the enemy unit are at +3 difficulty. On success, this deals no damage. 2+
+                                    DoS: Normal damage at 2 DoS, with additional damage for further degrees.</td>
+                                <td>As Attack
+                                </td>
+                            </tr>
+                            <tr class="warfareAdvanced">
+                                <td>Trample</td>
+                                <td style="text-align: center;">+3</td>
+                                <td>Cavalry</td>
+                                <td>The Unit moves its Sprint speed in a straight line, and may make Fighting tests to
+                                    any unit in its path. Additional attacks after the first take -1D. These attacks
+                                    deal +5 damage.</td>
+                                <td>As Attack
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Surrender</td>
+                                <td style="text-align: center;">+0</td>
+                                <td>Any</td>
+                                <td>Call for a general surrender of your forces. Test Warfare for each unit; on failure,
+                                    the unit Routs</td>
+                                <td>The Unit is removed from play.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr />
+                <div id="warfareActions" class="info">
+                    <h1 class="headingLight">Warfare Player Actions</h1>
+                    <p>Characters that are not attached to a Unit may take actions over the course of five Combat
+                        rounds. (That is to say, they have 5 Greater or 10 Lesser actions available). This happens
+                        twice, in two phases.</p>
+                    <p>In addition to the <a href="./combat.html#combatActions">normal actions</a> available during
+                        Combat, individual
+                        characters may make the following Actions.
+                    </p>
+                    <p>Commanders and Sub-Commanders may not make First Player actions except Renounce Command.<br />
+                        Commanders and Sub-Commanders who issued Orders may not take Second Player actions.</p>
+                    <div class="w3-row">
+                        <div class="w3-col s12 m12 l6" style="padding-right: 10px">
+                            <h4>First Player Actions</h4>
+                            <p style="text-align: center;">These are resolved before Orders are given.</p>
+                            <br />
+                            <table id="firstPlayer" class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Action</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Renounce Command</td>
+                                        <td>Greater</td>
+                                        <td>A Commander or Sub-Commander may Renounce Command, and take actions as
+                                            normal during this round. If they are not Attached to a Unit, they may take
+                                            action during the Second Player phase. If the Commander Renounces Command,
+                                            and the army has Sub-Commanders, the one with the highest Status assumes
+                                            command.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Attach</td>
+                                        <td>Greater</td>
+                                        <td>A Character Attached to a Unit confers a -3 Discipline bonus, as well as +1D
+                                            on Fighting and Marksmanship tests. They may take no actions apart from the
+                                            Orders given to the Unit. Attached Characters are at risk of damage should
+                                            the Unit become damaged. No bonuses are conferred for Attached Characters
+                                            beyond the first.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Attack Unit</td>
+                                        <td>Greater</td>
+                                        <td>A Character may make a heroic charge at an enemy unit. However, due to being
+                                            outnumbered, the enemy unit gains +20 Defense against these attacks.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Attack Portions of Unit</td>
+                                        <td>Lesser</td>
+                                        <td>Resolve a small combat against 10 men from the enemy unit. For each man
+                                            defeated, the enemy unit loses 1 Health. This combat is limited to 10
+                                            rounds.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rally</td>
+                                        <td>Greater</td>
+                                        <td>A Character may make a Warfare test against a Routed unit to rally it, and
+                                            instead return it to being Disorganized.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Re-Organize</td>
+                                        <td>Greater</td>
+                                        <td>A Character may make a Warfare test against a Disorganized unit to
+                                            reorganize it, and return it to being Organized.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w3-col s12 m12 l6" style="padding-left: 10px">
+                            <h4>Second Player Actions</h4>
+                            <p style="text-align: center;">These are resolved after Orders are given, but before
+                                Standing Orders take effect.</p>
+                            <table id="secondPlayer" class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Action</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Detach</td>
+                                        <td>Greater</td>
+                                        <td>A Character Attached to a Unit may detach himself. He may not take any
+                                            Player actions until the next battle round.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Take Command</td>
+                                        <td>Greater</td>
+                                        <td>If an army loses a Commander or Sub-Commander, another Character of Status 2
+                                            or higher may step up and assume that role. This Character may not make any
+                                            further Second Player actions, and is subject to the same Action limitations
+                                            as regular Commanders or Sub-Commanders.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <hr />
+                <div id="units" class="info">
+                    <h1 style="text-align: center;">Units</h4>
+                        <p>Units are the most common investment for noble houses. They reflect
+                            the standing armies that support the household and can be called up
+                            to defend the family’s lands at a moment’s notice. Each unit consists of
+                            100 men, 20 men and horses, or 5 warships.</p>
+                        <p>Each unit has a broadly defined type, a role it plays in battle. Type describes
+                            how the unit operates and describes the abilities you can improve
+                            with the unit’s Experience. In addition, type also modifies a unit’s
+                            Discipline, increasing or reducing the Difficulty to control the unit in
+                            battle.</p>
+                        <p>Most units have just one type, but it’s possible to build units with
+                            two or more types provided you invest the total Power to meet the
+                            cost for each unit type. So, to build Trained Archer/Infantry, you must invest 10 Power (3
+                            for trained + 3 archer + 4 infantry). When investing
+                            experience for a unit with two or more types, you may invest the
+                            experience into any Key Ability listed for all unit types the unit possesses.
+                            Discipline modifiers are cumulative. So, in the above example,
+                            our archer/infantry would have a Challenge (9) discipline (6 base +
+                            3 archer + 0 infantry). While any combination between types in any
+                            quantity is possible, too much diversification in a single unit eats up so
+                            much Power, you are unlikely to field any other units.</p>
+                        <br />
+                        <p>As part of a House's Manage Resources Action, a unit may be changed into another type. If the
+                            new type's Power Cost is higher, subtract the difference from the House's Power. If it is
+                            lower, you do not gain a refund.</p>
+                        <p>As with Characters, Units have health. A unit's health is its <strong>Endurance Rank ×
+                                3</strong></p>
+                        <br />
+                        <p>Units are recruited at a specific level of training. This training level provides the base
+                            power cost for a unit, the base Discipline check for a unit, and the amount of Experience
+                            they have available to spend.</p>
+                        <p>To raise an ability one rank, it costs 20 experience. A unit's type determines which
+                            abilities can be raised with experience.</p>
+                            <hr/>
+                        <div class="w3-row">
+                            <div class="w3-col s0 m0 l3"><p></p></div>
+                            <div class="w3-col s12 m12 l6">
+                                <h4>Training</h4>
+                                <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                    <thead>
+                                        <th>Training</th>
+                                        <th>Base Power Cost</th>
+                                        <th>Discipline</th>
+                                        <th>Experience</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Green</td>
+                                            <td style="text-align: center;">1</td>
+                                            <td>Challenging (9)</td>
+                                            <td>20 exp</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Trained</td>
+                                            <td style="text-align: center;">3</td>
+                                            <td>Routine (6)</td>
+                                            <td>60 exp</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Veteran</td>
+                                            <td style="text-align: center;">5</td>
+                                            <td>Easy (3)</td>
+                                            <td>100 exp</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Elite</td>
+                                            <td style="text-align: center;">7</td>
+                                            <td>Automatic (0)</td>
+                                            <td>140 exp</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="w3-col s0 m0 l3">
+                                <p></p>
+                            </div>
+                        </div>
+                        <hr/>
+                        <h4>Unit Types</h4>
+                        <table id="unitTypeTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                            <thead>
+                                <th>Type</th>
+                                <th>Power Cost Modifier</th>
+                                <th>Discipline Modifier</th>
+                                <th>Key Abilities</th>
+                                <th>Description</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Archers</td>
+                                    <td>+3</td>
+                                    <td>+3</td>
+                                    <td>Agility; Awareness; Marksmanship</td>
+                                    <td>Archers are troops armed with Marksmanship weapons. Typically
+                                        lightly armored to move about quickly, archers are useful for softening
+                                        up a foe, but they tend to be vulnerable in close combat.</td>
+                                </tr>
+                                <tr>
+                                    <td>Cavalry</td>
+                                    <td>+5</td>
+                                    <td>-3</td>
+                                    <td>Agility; Animal Handling; Fighting</td>
+                                    <td>Any unit that rides animals into battle counts as cavalry; thus, examples
+                                        can include units of knights or bands of clansmen raiders mounted on
+                                        garrons. Cavalry is often combined with other types. A cavalry unit that
+                                        dismounts becomes infantry
+                                        (though the cost does not change).</td>
+                                </tr>
+                                <tr>
+                                    <td>Criminals</td>
+                                    <td>+1</td>
+                                    <td>+6</td>
+                                    <td>Endurance; Fighting; Stealth</td>
+                                    <td>Units made up of criminals are cheap to field but are unreliable at best.
+                                        Usually, such forces are dispatched to the Wall to fight the wildlings,
+                                        but on occasion, desperate lords may empty their dungeons to field additional
+                                        troops.</td>
+                                </tr>
+                                <tr>
+                                    <td>Crusaders</td>
+                                    <td>+4</td>
+                                    <td>+0</td>
+                                    <td>Athletics; Endurance; Fighting</td>
+                                    <td>Any troops formed around a political or religious cause count as crusaders.
+                                        These zealots are fiercely loyal so long as they pursue their objective,
+                                        but they are often undisciplined and difficult to control.</td>
+                                </tr>
+                                <tr>
+                                    <td>Engineers</td>
+                                    <td>+2</td>
+                                    <td>+3</td>
+                                    <td>Endurance; Fighting; Warfare</td>
+                                    <td>These specialty units exist to circumvent enemy defenses, and on the
+                                        battlefield, they work to tunnel through walls, assemble and operate
+                                        siege weaponry, and fashion scaling ladders, pavanes, and a variety of
+                                        other useful equipment. Engineers tend to be lightly armed and armored,
+                                        making them vulnerable if attacked directly.</td>
+                                </tr>
+                                <tr>
+                                    <td>Garrison</td>
+                                    <td>+2</td>
+                                    <td>-3/+3</td>
+                                    <td>Awareness; Endurance; Fighting</td>
+                                    <td>A garrison is a unit of soldiers assembled to protect a community or
+                                        fortification. Many garrisons perform double-duty as watchmen and
+                                        enforce the lord’s peace. While often competent soldiers, garrisons are
+                                        better at protecting their homes than fighting on a battlefield, a fact
+                                        reflected in their poor morale when drawn into a more protracted war.
+                                        When fighting on their lands, their Discipline Difficulty drops by –3.
+                                        When away from their lands, their Discipline Difficulty increases by +3.</td>
+                                </tr>
+                                <tr>
+                                    <td>Guerrillas</td>
+                                    <td>+2</td>
+                                    <td>+3</td>
+                                    <td>Athletics; Marksmanship; Stealth</td>
+                                    <td>Another specialized force, guerillas are trained to fight in specific terrain,
+                                        exploiting the lay of the land to give them a strategic advantage on the
+                                        battlefield. As one would expect, guerillas are less useful when
+                                        fighting outside of their preferred terrain.</td>
+                                </tr>
+                                <tr>
+                                    <td>Infantry</td>
+                                    <td>+4</td>
+                                    <td>+0</td>
+                                    <td>Athletics; Endurance; Fighting</td>
+                                    <td>The most common unit, infantry consists of the common foot soldiers
+                                        that form the spine of any army.</td>
+                                </tr>
+                                <tr>
+                                    <td>Mercenaries</td>
+                                    <td>+1†</td>
+                                    <td>+3</td>
+                                    <td>Athletics; Endurance; Fighting</td>
+                                    <td>Mercenaries are soldiers hired to wage war, protect a fortification or
+                                        community, or escort troops. While mercenary units are better trained,
+                                        they are more expensive to field and can be unreliable in larger engagements.
+                                        Mercenaries tend to fight better when they outnumber
+                                        their foes.
+                                        <ul>
+                                            <li>Green: -1 Wealth</li>
+                                            <li>Trained: -3 Wealth</li>
+                                            <li>Veteran: -6 Wealth</li>
+                                            <li>Elite: -9 Wealth</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Peasant Levies</td>
+                                    <td>+0†</td>
+                                    <td>+3</td>
+                                    <td>Animal Handling; Awareness; Survival</td>
+                                    <td>Peasant levies are the rabble rounded up from your hamlets and towns.
+                                        <strong>Each unit of Peasant Levies you field reduces your Population resource
+                                            by –2.</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Personal Guards</td>
+                                    <td>+6</td>
+                                    <td>-6</td>
+                                    <td>Athletics; Endurance; Fighting</td>
+                                    <td>One of the most expensive units in the game, a personal guard unit
+                                        consists of expert warriors assembled to protect a commander, usually
+                                        the noble that leads the force. A personal guard unit is disciplined and
+                                        loyal and rarely breaks in battle. <strong>Special: A commander or sub-commander
+                                            can attach himself to a
+                                            personal guard unit and retain the ability to issue orders.</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Raiders</td>
+                                    <td>+3</td>
+                                    <td>+3</td>
+                                    <td>Agility; Endurance; Fighting</td>
+                                    <td>Ironmen, wildlings, and clansman raiders are an undisciplined lot, a
+                                        fighting force driven by greed and bloodlust. Designed to hit opponents
+                                        fast and hard to crush their defenses and plunder their holds, they are
+                                        wholly unsuited to sieges and any extended battles.</td>
+                                </tr>
+                                <tr>
+                                    <td>Sailors</td>
+                                    <td>+4</td>
+                                    <td>+0</td>
+                                    <td>Agility; Awareness; Fighting</td>
+                                    <td>Whether pirates or smugglers, or members of the sea guard during the
+                                        reign of the Mad King Aerys II, naval units include any force trained
+                                        to fight at sea.</td>
+                                </tr>
+                                <tr>
+                                    <td>Scouts</td>
+                                    <td>+2</td>
+                                    <td>+3</td>
+                                    <td>Awareness; Endurance; Stealth</td>
+                                    <td>Scouts serve as the forward observers, spreading out to gain intelligence
+                                        about enemy positions and bringing back the information to
+                                        their commanders. Typical scouts are not exceptional warriors, though
+                                        when combined with other types, they can be an effective addition to
+                                        any force.</td>
+                                </tr>
+                                <tr>
+                                    <td>Special</td>
+                                    <td>+4</td>
+                                    <td>+0</td>
+                                    <td>Any Three</td>
+                                    <td>A special unit is a catchall for all other units. Special units tend to have a
+                                        unique set of abilities and are formed to do a specific task, and do it well.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Support</td>
+                                    <td>+2</td>
+                                    <td>+3</td>
+                                    <td>Animal Handling; Endurance; Healing</td>
+                                    <td>A labor force is a unit that specifically works to erect fortifications and
+                                        construct equipment for the larger force, including arms and armor,
+                                        while also providing food, new clothes, and even working as medics.
+                                        Labor units are support troops and are exceptionally vulnerable to attack.
+                                        In addition to their abilities, support units are trained in caring for
+                                        equipment, erecting tents, cooking, cleaning, and more.</td>
+                                </tr>
+                                <tr>
+                                    <td>Warships</td>
+                                    <td>+7</td>
+                                    <td>+0</td>
+                                    <td>Awareness; Fighting; Marksmanship</td>
+                                    <td>A unit of warships is a small fleet of combat vessels that can transport
+                                        another unit into battle. To invest in a warship, you must have at least
+                                        one domain with a coast, island, pond, lake, or river. <strong>Special: A
+                                            commander or sub-commander can attach himself to a
+                                            warship unit and retain the ability to issue orders.</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>
+
+                <hr />
+                <div id="equipUpgrades" class="info">
+                    <h1>Unit Equipment & Upgrades</h1>
+                    <p>Units come with a default set of equipment, detailed below. However, units can be equipped with
+                        better armor and weapons by spending <strong>one point of Wealth</strong> per unit upgraded.</p>
+                    <p>If you upgrade a unit, see the second table for their upgraded stats.</p>
+                    <p>Units are, by default, abstractions. However, if so inclined, you can outfit a unit with weapons
+                        or armor not ordinarily available in the below lists.<br />
+                        If you choose to do so, find the <a href="./weapons.html#weapons">weapon</a> or <a
+                            href="./weapons.html#armor">armor</a> cost, and multiply by 100 (if Footsoldiers) or 20 (if
+                        Cavalry). Due to the large size of the order, the provisioner may impose additonal fees or
+                        confer a discount, at the Narrator's discretion.<br />
+                        For each 200 gd (or portion thereof) spent on equipment, subtract 1 Wealth from the House
+                        Resources.<br />
+                        Apply the benefits and penalties from the new equipment to the unit's stats.</p>
+                    <br />
+                    <h4>Unit Starting Equipment</h4>
+                    <div class="w3-row">
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                        <div class="w3-col s0 m0 l8">
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <th>Unit Type</th>
+                                    <th>Armor Rating</th>
+                                    <th>Armor Penalty</th>
+                                    <th>Bulk</th>
+                                    <th>Fighting Damage</th>
+                                    <th>Marksmanship Damage</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Archers</td>
+                                        <td>2</td>
+                                        <td>-1</td>
+                                        <td>0</td>
+                                        <td>Athletics-1</td>
+                                        <td>Agility+2; Long Range</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cavalry</td>
+                                        <td>5</td>
+                                        <td>-3</td>
+                                        <td>2</td>
+                                        <td>Animal Handling+3</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Criminals</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>Athletics+1</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Engineers</td>
+                                        <td>2</td>
+                                        <td>-1</td>
+                                        <td>0</td>
+                                        <td>Athletics-1</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Garrison</td>
+                                        <td>3</td>
+                                        <td>-2</td>
+                                        <td>0</td>
+                                        <td>Athletics+1</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Guerrillas</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>Athletics</td>
+                                        <td>Agility+1; Close Range</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Infantry/Crusaders</td>
+                                        <td>3</td>
+                                        <td>-2</td>
+                                        <td>0</td>
+                                        <td>Athletics+1</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mercenaries</td>
+                                        <td>4</td>
+                                        <td>-2</td>
+                                        <td>1</td>
+                                        <td>Athletics+1</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Peasant Levies</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>Athletics-1</td>
+                                        <td>Athletics-1; Close Range</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Personal Guards</td>
+                                        <td>6</td>
+                                        <td>-3</td>
+                                        <td>2</td>
+                                        <td>Athletics+1</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Raiders</td>
+                                        <td>2</td>
+                                        <td>-1</td>
+                                        <td>0</td>
+                                        <td>Athletics+1</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sailors</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>Athletics+1</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Scouts</td>
+                                        <td>2</td>
+                                        <td>-1</td>
+                                        <td>0</td>
+                                        <td>Athletics</td>
+                                        <td>Agility; Long Range</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Special</td>
+                                        <td>2</td>
+                                        <td>-1</td>
+                                        <td>0</td>
+                                        <td>Athletics</td>
+                                        <td>Agility; Close or Long Range</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Support</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>Athletics-1</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Warships</td>
+                                        <td>5</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Athletics+1</td>
+                                        <td>Agility+1; Long Range</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <br />
+                    <h4>Upgraded Unit Equipment</h4>
+                    <div class="w3-row">
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                        <div class="w3-col s0 m0 l8">
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <th>Unit Type</th>
+                                    <th>Armor Rating</th>
+                                    <th>Armor Penalty</th>
+                                    <th>Bulk</th>
+                                    <th>Fighting Damage</th>
+                                    <th>Marksmanship Damage</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Archers</td>
+                                        <td>3</td>
+                                        <td>-2</td>
+                                        <td>0</td>
+                                        <td>Athletics</td>
+                                        <td>Agility+3; Long Range</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cavalry</td>
+                                        <td>9</td>
+                                        <td>-5</td>
+                                        <td>3</td>
+                                        <td>Animal Handling+5</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Criminals</td>
+                                        <td>4</td>
+                                        <td>-2</td>
+                                        <td>1</td>
+                                        <td>Athletics+2</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Engineers</td>
+                                        <td>5</td>
+                                        <td>-3</td>
+                                        <td>2</td>
+                                        <td>Athletics</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Garrison</td>
+                                        <td>5</td>
+                                        <td>-3</td>
+                                        <td>2</td>
+                                        <td>Athletics+2</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Guerrillas</td>
+                                        <td>3</td>
+                                        <td>-2</td>
+                                        <td>0</td>
+                                        <td>Athletics+1</td>
+                                        <td>Agility+2; Close Range</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Infantry/Crusaders</td>
+                                        <td>4</td>
+                                        <td>-2</td>
+                                        <td>1</td>
+                                        <td>Athletics+2</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mercenaries</td>
+                                        <td>5</td>
+                                        <td>-3</td>
+                                        <td>2</td>
+                                        <td>Athletics+3</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Peasant Levies</td>
+                                        <td>2</td>
+                                        <td>-1</td>
+                                        <td>0</td>
+                                        <td>Athletics</td>
+                                        <td>Athletics; Close Range</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Personal Guards</td>
+                                        <td>10</td>
+                                        <td>-6</td>
+                                        <td>3</td>
+                                        <td>Athletics+2</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Raiders</td>
+                                        <td>5</td>
+                                        <td>-2</td>
+                                        <td>2</td>
+                                        <td>Athletics+2</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sailors</td>
+                                        <td>2</td>
+                                        <td>-1</td>
+                                        <td>0</td>
+                                        <td>Athletics+2</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Scouts</td>
+                                        <td>3</td>
+                                        <td>-2</td>
+                                        <td>0</td>
+                                        <td>Athletics+1</td>
+                                        <td>Agility+1; Long Range</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Special</td>
+                                        <td>6</td>
+                                        <td>-3</td>
+                                        <td>2</td>
+                                        <td>Athletics+1</td>
+                                        <td>Agility+1; Close or Long Range</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Support</td>
+                                        <td>2</td>
+                                        <td>-1</td>
+                                        <td>0</td>
+                                        <td>Athletics</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Warships</td>
+                                        <td>10</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Athletics+4</td>
+                                        <td>Agility+3; Long Range</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                    </div>
+
+                </div>
+                <hr />
+                <div id="siege" class="info">
+                    <h1>Siege Weapons</h1>
+                    <p>Prior to Player Actions and Orders, an army may fire a number of siege weapons up to the
+                        Commander's Warfare rank.</p>
+                    <p>Siege weapons must be crewed by a unit of Engineers. Each unit of Engineers can control up to
+                        four siege weapons.</p>
+                    <p>The Engineers controlling a given siege weapon test their Warfare against the target unit's
+                        Defense. If successful, resolve damage as normal.</p>
+                    <p>Siege weapons need a full round to reload and re-arm, effectively allowing them to fire only
+                        every other round.</p>
+                    <br />
+                    <div class="w3-row">
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                        <div class="w3-col s0 m0 l8">
+                            <h4>Common Siege Weapons</h4>
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Weapon</th>
+                                        <th>Resource Cost</th>
+                                        <th>Move</th>
+                                        <th>AR</th>
+                                        <th>Health</th>
+                                        <th>Damage</th>
+                                        <th>Range</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Catapult (Small)</td>
+                                        <td>1 Wealth</td>
+                                        <td>Stationary in Combat</td>
+                                        <td>5</td>
+                                        <td>10</td>
+                                        <td>†</td>
+                                        <td>300 yards</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Catapult (Medium)</td>
+                                        <td>2 Wealth</td>
+                                        <td>Stationary in Combat</td>
+                                        <td>5</td>
+                                        <td>20</td>
+                                        <td>†</td>
+                                        <td>400 yards</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Catapult (Large)</td>
+                                        <td>4 Wealth</td>
+                                        <td>Stationary in Combat</td>
+                                        <td>5</td>
+                                        <td>40</td>
+                                        <td>†</td>
+                                        <td>500 yards</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mangonel</td>
+                                        <td>3 Wealth</td>
+                                        <td>10 yards</td>
+                                        <td>3</td>
+                                        <td>20</td>
+                                        <td>6</td>
+                                        <td>200 yards</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Scorpion</td>
+                                        <td>1 Wealth</td>
+                                        <td>10 yards</td>
+                                        <td>1</td>
+                                        <td>10</td>
+                                        <td>3 (Ignore AR)</td>
+                                        <td>500 yards</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Spitfire</td>
+                                        <td>2 Wealth</td>
+                                        <td>10 yards</td>
+                                        <td>2</td>
+                                        <td>20</td>
+                                        <td>‡</td>
+                                        <td>500 yards</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trebuchet</td>
+                                        <td>4 Wealth</td>
+                                        <td>None</td>
+                                        <td>4</td>
+                                        <td>40</td>
+                                        <td>7</td>
+                                        <td>500 yards</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="w3-row">
+                                <div class="w3-col s12 m12 l6" style="padding-right: 10px;">
+                                    <p><strong>†</strong> Catapult damage varies as per the following: </p>
+                                    <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Size</th>
+                                                <th>Stone Shot</th>
+                                                <th>Pitch/Oil<br /><span style="font-size: 0.75em !important;">(ignores
+                                                        armor)</span></th>
+                                                <th>Wildfire</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Small</td>
+                                                <td>3</td>
+                                                <td>3</td>
+                                                <td>7</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Medium</td>
+                                                <td>5</td>
+                                                <td>5</td>
+                                                <td>7</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Large</td>
+                                                <td>7</td>
+                                                <td>7</td>
+                                                <td>7</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p>Equipping a catapult with Oil or Wildfire requires an expenditure as detailed in
+                                        the <a href="./warfare.html#specialEquipment">Special Equipment</a> section.</p>
+                                </div>
+                                <div class="w3-col s12 m12 l6" style="padding-left: 10px;">
+                                    <p><strong>‡</strong> Spitfires come armed with Boiling oil, which deals 3 damage
+                                        (ignoring armor)</p>
+                                    <p>You may equip it with Wildfire, spending the Wealth as you would with any normal
+                                        unit. Wildfire deals 7 damage, and behaves according to the rules in the <a
+                                            href="./warfare.html#specialEquipment">Special Equipment</a> section</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div id="specialEquipment" class="info">
+                    <h1>Special Equipment</h1>
+                    <p>In addition to the normal arms and armor possessed by a unit, you can
+                        also equip units with a variety of specialized equipment.</p>
+                    <p>Doing so requires an expenditure of a resource, permanently reducing the value of
+                        the resource indicated by the specialized equipment.</p>
+                    <br />
+                    <div class="w3-row">
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                        <div class="w3-col s0 m0 l8">
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Equipment</th>
+                                        <th>Resource Cost</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Battering Ram</td>
+                                        <td>1 Land</td>
+                                        <td>A unit equipped with a Battering Ram may not attack, but gains +2D on
+                                            Athletics tests to break down doors and gates. The ram is destroyed if the
+                                            unit carrying it routs or is destroyed.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Covered Ram</td>
+                                        <td>2 Land</td>
+                                        <td>A Covered Ram must be crewed by a unit of Engineers in addition to one other
+                                            unit of footsoldiers. The ram moves at 10 yards, and has Health 20 and AR 8.
+                                            Units under the ram gain +5 Defense. The ram has Athletics 8 for the purpose
+                                            of breaking doors or gates.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Boiling Oil</td>
+                                        <td>2 Wealth/use</td>
+                                        <td>Flung from a catapult or poured from on high. Boiling Oil deals 10 damage,
+                                            ignoring AR. If a unit covered in oil encounters fire on the same round, the
+                                            flames deal 1 point of additional damage each round for 1d6 rounds. If the
+                                            unit passes another unit, roll 1d6. On a 1, the fire spreads dealing 1
+                                            damage to to the other unit.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Boiling Water</td>
+                                        <td>1 Wealth/use</td>
+                                        <td>Flung from a catapult or poured from on high. Boiling Water deals 5 damage,
+                                            ingoring AR.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mantlets</td>
+                                        <td>1 Wealth/unit</td>
+                                        <td>Large shields, Mantlets provide +5 Defense against Marksmanship attacks.
+                                            Units equipped with Mantlets reduce their Movement by -10 yards.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Scaling Ladders, Ropes, and Grapples</td>
+                                        <td>1/2 Wealth/unit</td>
+                                        <td>Used to scale fortifications. Units equipped with scaling equipment may not
+                                            make attacks. With a ladder in place, units make +1D on Athletics tests to
+                                            climb. Defending units can clear ladders, but take -5 Defense to
+                                            Marksmanship while doing so.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Siege Tower</td>
+                                        <td>2 Wealth/unit</td>
+                                        <td>A fortified wooden Tower on wheels. A Tower can move 10 yards per round, and
+                                            holds one unit. Units inside the Tower gain +5 to Defense, and do not need
+                                            to test Athletics to scale fortifications if the Tower reaches them. The
+                                            Tower has Health 20 and AR 8. If it is destroyed, the units inside perish as
+                                            well.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Turtle</td>
+                                        <td>1 Wealth/unit</td>
+                                        <td>A fortified dome on a sturdy wooden frame. Units inside a Turtle have
+                                            Movement of 10 yards, and gain +10 to Defense. However, they cannot make
+                                            attacks. To exit a Turtle, a regular Move order must be issued.</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: greenyellow !important;">Wildfire</td>
+                                        <td>5 Wealth/unit</td>
+                                        <td>Extremely rare, only produced by the Pyromancers of King's Landing. Units
+                                            equipped with Wildfire may make no attacks until it is used, and suffer a +3
+                                            Discipline penalty while carrying it.<br />
+                                            Should a unit carrying Wildfire take damage, roll 1d6. On a 1, it affects
+                                            the carrying unit.<br />
+                                            To use, the unit makes a Marksmanship test. A failure affects an adjacent
+                                            10-yard space, while a Critical Failure causes it to affect the carrying
+                                            unit.<br />
+                                            On success, the Wildfire deals 7 Damage, ignoring AR, with additional damage
+                                            per DoS on the first round, and again every round for 2d6 rounds.<br />
+                                            Units Routed by Wildfire risk spreading it to other units. If they pass or
+                                            move through any unit, roll 1d6. On a 3 or lower, the other unit takes 3
+                                            Damage, ignoring AR, for 1d6 rounds.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+
+                <div id="terrain" class="info">
+                    <h1 class="headingLight">Terrain, Visibility & Weather</h1>
+                    <p>Of all the battlefield components, terrain is perhaps the most important
+                        and the one that’s likely to have the greatest influence on the battle’s outcome</p>
+                    <p>
+                        Terrain can provide strategic advantages, such as when an opponent
+                        holds higher ground, or weaknesses, such as slowing troop movement and
+                        reducing visibility.</p>
+                    <br />
+                    <div class="w3-row">
+                        <div class="w3-col s12 m12 l6" style="padding-right: 10px;">
+                            <h4>Terrain Types</h4>
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Terrain</th>
+                                        <th>Effect</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Coast</td>
+                                        <td>Enables Warships</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Community - Hamlet</td>
+                                        <td>Slow Movement</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Community - Small Town</td>
+                                        <td>Cover (+1 Defense), Slow Movement</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Community - Large Town</td>
+                                        <td>Cover (+2 Defense), Slow Movement</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Community - Small City</td>
+                                        <td>Cover (+2 Defense), Slow Movement, No Cavalry</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Community - Large City</td>
+                                        <td>Cover (+5 Defense), Slow Movement, No Cavalry</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Desert</td>
+                                        <td>Slow Movement</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Grassland</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hill</td>
+                                        <td>Slow Movement, Bonus Dice (+1B)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Island</td>
+                                        <td>Enables Warships</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mountain</td>
+                                        <td>Bonus Dice (+2B), Very Slow Movement, No Cavalry, No Siege Weapons</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Plain</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Road</td>
+                                        <td>Removes Slow Movement, Very Slow Movement becomes Slow Movement, Enables Cavalry (in Mountains)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ruin</td>
+                                        <td>Cover (+2 Defense)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wall</td>
+                                        <td>Cover (+5 Defense), Blocks Movement</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Water - Stream</td>
+                                        <td>Slow Movement</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Water - River</td>
+                                        <td>Blocks Movement, Slow Movement with Bridge, Enables Warships</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Water - Pond</td>
+                                        <td>Slow Movement, Enables Warships</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Water - Lake</td>
+                                        <td>Blocks Movement, Enables Warships</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wetland</td>
+                                        <td>Slow Movement</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Woods - Light</td>
+                                        <td>Cover (+2 Defense)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Woods - Heavy</td>
+                                        <td>Cover (+5 Defense)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="w3-col s12 m12 l6" style="padding-left: 10px;">
+                                <h4>Terrain Effects</h4>
+                                <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Effect</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Blocks Movement</td>
+                                            <td>Units cannot move through this terrain, unless they're a Warship (in the case of Water) or have Scaling Equipment and succeed on their test.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bonus Dice</td>
+                                            <td>Units making Attack tests from the higher ground receive the specified number of bonus dice. These cannot exceed the usual limit on bonus dice.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cover</td>
+                                            <td>Units following a Defend order gain the listed bonus to their Defense, in addition to the regular bonus from Defending</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Enables Warships</td>
+                                            <td>Allows the deployment of Warships units.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>No Cavalry</td>
+                                            <td>This terrain feature prevents the deployment of Cavalry.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>No Siege Weapons</td>
+                                            <td>This terrain feature prevents the deployment of Siege Weapons. If the defender has a Fortification, they may use Siege Weapons normally.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Slow Movement</td>
+                                            <td>This terrain reduces Unit movement by -10 yards and Character movement by -1 yard. If a Unit or Character already has Slow Movement, it is treated as Very Slow Movement.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Very Slow Movement</td>
+                                            <td>This terrain reduces Unit movement by -20 yards and Character movement by -2 yards. If a Unit or Character already has Very Slow Movement, reduce their movement by an additional -10 yards (Unit) or -1 yard (Character)</td>
+                                        </tr>
+                                    </tbody>
+                                    </table>
+                        </div>
+                    </div>
+                    <p><strong>Visibility (Dim Light):</strong> Dim light confers -1D on all Agility, Athletics, Awareness, Fighting, and Thievery Tests; as well as -2D on Marksmanship tests.</p>
+                    <p><strong>Visibility (Darkness):</strong> Darkness confers -2D on all Agility, Athletics, Awareness, Fighting, and Thievery Tests; as well as -4D on Marksmanship tests.<br/>
+                    In addition, all Terrain counts as Slow Movement (or Very Slow Movement, if already Slow)</p>
+                    <p><strong>Weather (Rain, Light):</strong> Light Rain imposes no penalties.</p>
+                    <p><strong>Weather (Rain, Heavy):</strong> Heavy Rain confers a -2 penalty on all Fighting and Marksmanship tests.</p>
+                    <p><strong>Weather (Rain, Extensive):</strong> Extensive Rain can change all terrain to Slow Movement and increase Streams to Rivers, in addition to the penalties for Heavy Rain.</p>
+                    <p><strong>Weather (Snow, Light):</strong> Light Snow confers a -2 penalty on all Fighting and Marksmanship tests.</p>
+                    <p><strong>Weather (Snow, Heavy):</strong> Heavy Snow confers a -2 penalty on all Fighting and Marksmanship tests, and applies <strong>Visibility (Darkness)</strong></p>
+                </div>
+                <hr />
+                <div id="fortifications" class="info">
+                    <h1 class="headingLight">Fortifications</h1>
+                    <p>Fortifications are any constructed terrain that interferes with Movement
+                            and provides cover. Below is information regarding those Fortifications which can be constructed by a House as a Defense Holding.</p>
+                    <div class="w3-row">
+                            <div class="w3-col s0 m0 l4">
+                                <p></p>
+                            </div>
+                            <div class="w3-col s0 m0 l4">
+                                <h4>Defense Holding Fortifications</h4>
+                                <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                                    <thead>
+                                        <tr>
+                                            <th>Fortification</th>
+                                            <th>Defense</th>
+                                            <th>Capacity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Superior Castle</td>
+                                            <td>+12</td>
+                                            <td>10 Units</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Castle</td>
+                                            <td>+8</td>
+                                            <td>5 Units</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Small Castle</td>
+                                            <td>+6</td>
+                                            <td>3 Units</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Hall</td>
+                                            <td>+4</td>
+                                            <td>2 Units</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tower</td>
+                                            <td>+3</td>
+                                            <td>1 Unit</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br/>
+                            </div>
+                            <div class="w3-col s0 m0 l4">
+                                <p></p>
+                            </div>
+                        </div>
+                        <p>In addition to the the Defense Holding Fortifications, an army can construct temporary fortifications if they have at least 6 hours of preparation prior to a battle.</p>
+                                <p>Temporary fortifications would include things like ditches, rows of stakes, earthen ramparts, etc.</p>
+                                <p>Any unit can construct temporary fortifications, and they provide protection for only one unit.</p>
+                                <p>Ordinary temporary fortifications provide <strong>+1 Defense</strong>. If the fortification was constructed by an Engineer unit, it provides <strong>+2 Defense</strong>.</p>
+                </div>
+                <hr />
+                <div id="formations" class="info">
+                    <h1 class="headingLight">Facing & Formations</h1>
+                    <p>Facing and Formations are an optional part of Warfare, only included if a group is using the Advanced Warfare rules.</p>
+                    <p>If you are playing without formations, it is assumed that every unit will adapt itself as necessary to the task at hand.</p>
+                    <p>However, if you desire a greater level of tactical control, implement the following.</p>
+                    <hr/>
+                    <h4>Facing</h4>
+                    <p>Facing describes what a unit can see, and whom it's most likely to attack. Penalties and bonuses may be conferred depending on a unit's position relative to an enemy.</p>
+                    <p><strong>Flanks:</strong> When a unit attacks another unit's flank, the attacker gains +1B on its Fighting test.</p>
+                    <p><strong>Rear:</strong> When a unit attacks another unit's rear, the attacker gains +1D on its Fighting test.</p>
+                    <p><strong>Surrounded:</strong> When several units surround an enemy, those attacking the front gain +1B; the flanks, +1D; the rear, +2D.</p>
+                    <p><strong>Attacking the Attackers:</strong> A unit may attack a flanking enemy without changing its facing. Doing so imposes -1D on its Fighting test. A unit cannot attack a unit that is behind it.</p>
+                    <h4>Facing Orders</h4>
+                    <p><strong>Reverse (Difficulty +0): </strong>The unit will reverse so it faces the opposite way. On a failed Warfare test, the unit still turns, but attackers will retain any bonus until the end of the round.</p>
+                    <p><strong>Wheel (Difficulty +3): </strong>The unit will change its facing to the left or right. On a failed Warfare test, the unit still turns, but attackers will retain any bonus until the end of the round.</p>
+                    <hr/>
+                    <h4>Formations</h4>
+                    <p>A unit’s formation reflects how the individual members rank up, remain
+                            organized, and how they can respond to attacks. Some formations
+                            are particularly suited to resisting volleys of arrows (checkered,
+                            for example), while other formations mean big trouble to enemies
+                            charging the unit.</p> 
+                            <p>As an order, a commander can change a unit’s formation
+                            to better respond to other threats.</p>
+                    <div class="w3-row">
+                        <div class="w3-col s0 m0 l2"><p></p></div>
+                        <div class="w3-col s12 m12 l8">
+                            <h4>Formation Orders</h4>
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <th>Formation</th>
+                                    <th style="text-align: center;">Difficulty</th>
+                                    <th>Benefit</th>
+                                    <th>Drawback</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Battle</td>
+                                        <td style="text-align: center;">+0</td>
+                                        <td>None</td>
+                                        <td>Slow Movement</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Checkered</td>
+                                        <td style="text-align: center;">+0</td>
+                                        <td>+5 Defense against Marksmanship; +1D on Fighting against Mobs</td>
+                                        <td>+3 to Discipline; Slow Movement</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Column</td>
+                                        <td style="text-align: center;">+0</td>
+                                        <td>None</td>
+                                        <td>-1D on Fighting tests</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mob (Automatic on Rout)</td>
+                                        <td style="text-align: center;">-3</td>
+                                        <td>None</td>
+                                        <td>-5 Defense; +6 Discipline</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phalanx</td>
+                                        <td style="text-align: center;">+6</td>
+                                        <td>+5 Defense against Fighting</td>
+                                        <td>-5 Defense against Marksmanship; Very Slow Movement</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shield Wall</td>
+                                        <td style="text-align: center;">+6</td>
+                                        <td>+5 Defense against Fighting; Negates Charge; +5 Defense to Units Behind</td>
+                                        <td>No Movement</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Square</td>
+                                        <td style="text-align: center;">+6</td>
+                                        <td>Negates Flanking Bonuses</td>
+                                        <td>No Movement</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tortoise Shell</td>
+                                        <td style="text-align: center;">+9</td>
+                                        <td>+5 Defense against All Attacks</td>
+                                        <td>No Attacks; Very Slow Movement</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wedge</td>
+                                        <td style="text-align: center;">+3</td>
+                                        <td>+1D on Fighting (Charge) Attacks</td>
+                                        <td>-5 Defense against Marksmanship</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w3-col s0 m0 l2"><p></p></div>
+                    </div>
+
+                </div>
+                <hr />
+
+                <div id="damage" class="info">
+                    <h1 class="headingLight">Damage & Morale</h1>
+                    <br />
+                    <p>When incoming damage exceeds a unit's Armor Rating, they will take damage. This damage is
+                        subtracted from the Unit's health. So long as the unit has at least 1 point of health, it is not
+                        impaired in any way.</p>
+                    <p>If a unit's health is reduced to 0, it becomes <strong>Disorganized</strong>. The unit takes -1D
+                        (cumulative) on all tests, and its Discipline modifier increases by +3<br />
+                        If the unit is Re-organized via an Order, its health is restored to full but it keeps the -1D.
+                        Each time a unit is disorganized, it gains an additional -1D penalty. Should these penalties
+                        ever equal the unit's Endurance rank, it is destroyed.</p>
+                    <p>If a unit takes any damage while Disorganized, it becomes <strong>Routed</strong>. If the damage
+                        would exceed twice the Unit's health, it is destroyed instead. A routing unit immediately
+                        changes to the Mob formation, and at the end of the attacker's turn it sprints away from the
+                        attacker.<br />
+                        If the unit is Rallied via an Order, it becomes Disorganized instead.</p>
+                    <p>If a Routed unit takes any damage, if a unit takes damages in excess of twice its health, or if
+                        the combined penalties from Disorganization total the unit's Endurance, it is
+                        <strong>Destroyed</strong> and removed from play.</p>
+
+                    <hr />
+                    <h4>Damage to Attached Characters</h4>
+                    <p style="text-align: center;">Characters Attached to a unit suffer damage when the Unit does. All
+                        damage dealt this way ignores a Character's Armor Rating.</p>
+                    <div class="w3-row">
+                        <div class="w3-col s0 m0 l4">
+                            <p></p>
+                        </div>
+                        <div class="w3-col s0 m0 l4">
+
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Unit is ...</th>
+                                        <th>Attached Character ...</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Damaged</td>
+                                        <td>Takes 1 point of Damage</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Disorganized</td>
+                                        <td>Takes 2 points of Damage</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Routed</td>
+                                        <td>Takes 5 points of Damage</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Destroyed</td>
+                                        <td>Takes 10 points of Damage</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w3-col s0 m0 l4">
+                            <p></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <h4>Survivors</h4>
+                    <p>Every participating unit is likely to have lost men in an engagement. For each unit, <strong>roll
+                            1d6</strong>. Subtract 1 for each time the unit was Disorganized after the first.</p>
+                    <p>Only use the "Routed" column if the Routed unit fled the battlefield, or if the circumstances of
+                        the army's defeat caused it to rout.</p>
+                    <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                        <thead>
+                            <tr>
+                                <th>1d6</th>
+                                <th>Undamaged</th>
+                                <th>Damaged</th>
+                                <th>Disorganized</th>
+                                <th>Routed</th>
+                                <th>Destroyed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0 or less</td>
+                                <td>-2 Training</td>
+                                <td>-3 Training</td>
+                                <td>Destroyed</td>
+                                <td>Destroyed</td>
+                                <td>Destroyed</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>-1 Training</td>
+                                <td>-2 Training</td>
+                                <td>-3 Training</td>
+                                <td>Destroyed</td>
+                                <td>Destroyed</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Intact</td>
+                                <td>-1 Training</td>
+                                <td>-2 Training</td>
+                                <td>-3 Training</td>
+                                <td>Destroyed</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Intact</td>
+                                <td>Intact</td>
+                                <td>-1 Training</td>
+                                <td>-2 Training</td>
+                                <td>-3 Training</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Intact</td>
+                                <td>Intact</td>
+                                <td>Intact</td>
+                                <td>-1 Training</td>
+                                <td>-2 Training</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>+1 Training</td>
+                                <td>Intact</td>
+                                <td>Intact</td>
+                                <td>Intact</td>
+                                <td>-1 Training</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>+2 Training</td>
+                                <td>+1 Training</td>
+                                <td>Intact</td>
+                                <td>Intact</td>
+                                <td>Intact</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p><strong>Intact:</strong> Remove all damage and Penalty dice from the unit.</p>
+                    <p><strong>Destroyed:</strong> Permanently remove the Power your House invested into the unit. There
+                        is no refund.</p>
+                    <p><strong>Training:</strong> You do not pay for the increased rank using Power.<br />
+                        Adjustments to training may require you to reduce a unit's Abilities in order to cover a
+                        deficit, or allow you to improve abilities with new experience.<br />
+                        Should the adjustment reduce a unit's Training to below Green, they are Destroyed as above - the
+                        influx of replacements were too green and undisciplined, and the unit is no longer of any use in
+                        combat.</p>
+
+                </div>
+            </div>
+
+            <hr />
+        </div>
+    </div>
+
+    </div>
+    <div class="w3-col s0 m0 l1"></div>
+    </div>
+
+
+
+</body>
+<footer>
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m10 l10">
+            All SIFRP material is © Green Ronin
+        </div>
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+    </div>
+</footer>
+
+</html>

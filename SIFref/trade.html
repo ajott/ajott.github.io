@@ -1,0 +1,1100 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="A web-based quick reference guide for Green Ronin's Song of Ice and Fire RPG (SIFRP)">
+    <title>SIFRP Reference</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="w3-top w3-sifrp-d3 w3-row-padding bar-pad" id="navBarDiv">
+    </div>
+
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div id="gearPane">
+                <div id="equip" class="info">
+                    <h1 class="headingLight">Equipment</h1>
+                    <table id="equipTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th style="text-align: right;">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Backpack</td>
+                                <td>A sack slung over the shoulders across the back, used to carry other items and gear.
+                                </td>
+                                <td style="text-align: right;">1 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Candle (Tallow), 2</td>
+                                <td>A small candle made of tallow. Burns for 1 hour, illuminates a small radius
+                                </td>
+                                <td style="text-align: right;">2 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Candle (Wax), 2</td>
+                                <td>A small candle made of beeswax. Burns for 1-2 hours, illuminates a small radius
+                                </td>
+                                <td style="text-align: right;">4 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Craftsman's Tools (Ordinary)</td>
+                                <td>A set of tools for a particular trade - a carpenter may have an axe, saw, auger,
+                                    adze, and wood chisel.</td>
+                                <td style="text-align: right;">10-200 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Craftsman's Tools (Expert)</td>
+                                <td>As with ordinary Craftsman's Tools, but the quality is superb. May be less likely to
+                                    break, or convey greater benefit.</td>
+                                <td style="text-align: right;">100-1,000 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Far-eyes</td>
+                                <td>Lenses fitted at either end of a tube of wood or leather. Allows the user to see
+                                    farther than the naked eye.</td>
+                                <td style="text-align: right;">300 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Fishing Net (1 person)</td>
+                                <td>A woven hemp net that can be thrown into water to catch small, swarming fish.</td>
+                                <td style="text-align: right;">2 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Fishing Rod & Tackle</td>
+                                <td>A length of wood outfitted with a length of line and a hook.</td>
+                                <td style="text-align: right;">1 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Flask</td>
+                                <td>A ceramic, glass, or metal container used to hold liquids. Comes with a tight
+                                    stopper.</td>
+                                <td style="text-align: right;">2 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Flint and Steel</td>
+                                <td>Used to start a fire by striking together.</td>
+                                <td style="text-align: right;">2 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Ink (Black, one vial)</td>
+                                <td>Used for writing or marking. Black is most common, other colors may command a higher
+                                    price.</td>
+                                <td style="text-align: right;">20 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Iron Stakes</td>
+                                <td>A sharp spike, often with an eye at the end. May be driven into the ground or into
+                                    walls, to aid in standing a tent or scaling a surface.</td>
+                                <td style="text-align: right;">4 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Lamp</td>
+                                <td>Will burn for roughly 6 hours on a pint of oil. Illuminates a 5-yard radius. More
+                                    steady light than a torch, but the oil can spill.</td>
+                                <td style="text-align: right;">10 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Lantern</td>
+                                <td>As a lamp, but enclosed and shuttered. Illuminates a 10-yard radius, and can be
+                                    dimmed as needed.</td>
+                                <td style="text-align: right;">2 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Maester's Kit</td>
+                                <td>Bandages, herbs, salves, needle and thread, and other sundry goods. Often kept in
+                                    pockets sewn into a Maester's robe.</td>
+                                <td style="text-align: right;">50-200 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Myrish Lens</td>
+                                <td>A magnifying glass. Can be used to start fires in lieu of a flint and steel, given
+                                    enough sunlight can be focused through it.</td>
+                                <td style="text-align: right;">20 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Oil, Pint</td>
+                                <td>Burned in lamps and lanterns. Lasts for about 6 hours.</td>
+                                <td style="text-align: right;">8 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Pouch (Belt)</td>
+                                <td>A small pouch with strings or straps allowing it to be hung from a belt.</td>
+                                <td style="text-align: right;">8 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Rope</td>
+                                <td>A length of twisted fibers. Comes in many lengths, price is per 3 yards.</td>
+                                <td style="text-align: right;">10 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Sachet</td>
+                                <td>A small bag or pouch that can be filled with fragrances. Often carried by ladies
+                                    during their travels.</td>
+                                <td style="text-align: right;">1 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Saddlebags</td>
+                                <td>A set of bags that can be attached to a saddle. Reliably carries more than a
+                                    backpack.</td>
+                                <td style="text-align: right;">1 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Scents</td>
+                                <td>Lotions and powders that scent the body.</td>
+                                <td style="text-align: right;">1 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Tent, Solider's</td>
+                                <td>A basic tent of cloth or hide. Comfortably sleeps one man in his armor - two would
+                                    be a crowd.</td>
+                                <td style="text-align: right;">5 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Tent, Pavillion</td>
+                                <td>A large tent with vertical walls, sized for a knight and his attendants. Brightly
+                                    colored or large pavillions may command a higher price.</td>
+                                <td style="text-align: right;">30 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Torch</td>
+                                <td>A short length of wood or similar, with the end soaked in tallow. Illuminates
+                                    roughly a 6-yard radius, and burns for about 1 hour.</td>
+                                <td style="text-align: right;">1 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Waterskin</td>
+                                <td>A pouch of treated leather, used to carry water or wine. Generally holds more than a
+                                    flask, but is not stoppered as well.</td>
+                                <td style="text-align: right;">8 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Whetstone</td>
+                                <td>A dense stone with fine grit, used to sharpen or hone steel or iron blades.</td>
+                                <td style="text-align: right;">3 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Drum</td>
+                                <td>A percussion instrument generally made by stretching hide over a wood or bone frame.
+                                    Commonly used in armies to keep pace.</td>
+                                <td style="text-align: right;">20 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Fiddle</td>
+                                <td>A wooden instrument with strings stretched along a neck. Played by drawing a bow
+                                    across the strings.</td>
+                                <td style="text-align: right;">10 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Flute</td>
+                                <td>A hollow tube of wood, bone, or metal. Notes are played by blowing across a hole in
+                                    the side.</td>
+                                <td style="text-align: right;">10 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Harp</td>
+                                <td>A stringed instrument with a wooden or metal frame. Can range from rather small to
+                                    extremely large.</td>
+                                <td style="text-align: right;">18 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Horn</td>
+                                <td>Can be quite literally a hollowed-out animal horn, or made from metal.</td>
+                                <td style="text-align: right;">3 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Pipes</td>
+                                <td>Commonly small, parallel sets of wooden, bone, or metal pipes of varying length
+                                    bound together.</td>
+                                <td style="text-align: right;">3 ss</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr />
+                <div id="food" class="info">
+                    <h1 class="headingLight">Food and Drink</h1>
+                    <table id="foodTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th style="text-align: right;">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ale, 1 gal</td>
+                                <td>Fermented from grain and water. Mildly alcoholic, and thus safer to drink than much
+                                    water found in Westeros</td>
+                                <td style="text-align: right;">3 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Bacon, 1 lb</td>
+                                <td>Cured pork belly.</td>
+                                <td style="text-align: right;">4 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Barley, 1 lb</td>
+                                <td>A common grain, used to make beer, bread, or eaten in a porridge.</td>
+                                <td style="text-align: right;">1 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Bread, Large Loaf</td>
+                                <td>Baked food made from ground flour and water.</td>
+                                <td style="text-align: right;">1 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Beans, 2 lbs</td>
+                                <td>A common legume. Must be soaked and cooked before eating.</td>
+                                <td style="text-align: right;">1 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Beef, 1 lb</td>
+                                <td>Meat from cattle.</td>
+                                <td style="text-align: right;">3 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Beer (Strong), 1 gal</td>
+                                <td>A more alcoholic variety of beverage. Enjoyed by many.</td>
+                                <td style="text-align: right;">8 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Butter, 1 lb</td>
+                                <td>Churned milk. Used in cooking.</td>
+                                <td style="text-align: right;">3 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Cheese, 1 lb</td>
+                                <td>Aged milk. Comes in many varieties. Fancier or exotic cheeses may command a much
+                                    higher price.</td>
+                                <td style="text-align: right;">2 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Cider, 1 gal</td>
+                                <td>Fermented apple juice. A staple on the farm.</td>
+                                <td style="text-align: right;">2 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Cream, 1 gal</td>
+                                <td>A thick liquid skimmed from the top of fresh milk.</td>
+                                <td style="text-align: right;">12 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Eggs, 1 dozen</td>
+                                <td>Produced by hens. A staple food.</td>
+                                <td style="text-align: right;">1 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Flour, 1 lb</td>
+                                <td>Ground grains. Can be mixed with water and baked to make bread.</td>
+                                <td style="text-align: right;">1 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Honey, 1 lb</td>
+                                <td>The sweet product of bees. Used in many home remedies, or to sweeten dishes and
+                                    desserts.</td>
+                                <td style="text-align: right;">37 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Hops, 1 lb</td>
+                                <td>Bud of a vine. Used to flavor beer.</td>
+                                <td style="text-align: right;">6 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Milk, 1 gal</td>
+                                <td>Product of cows. Can be drunk, churned into butter, or made into cheese.</td>
+                                <td style="text-align: right;">3 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Mustard, 1 lb</td>
+                                <td>A ground spice used to flavor foods.</td>
+                                <td style="text-align: right;">50 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Mutton, 1 lb</td>
+                                <td>Meat from sheep. Very tough unless stewed.</td>
+                                <td style="text-align: right;">3 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Oats, 1 lb</td>
+                                <td>An agricultural product commonly used to make porridge.</td>
+                                <td style="text-align: right;">1 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Pease, 1 lb</td>
+                                <td>A dried legume.</td>
+                                <td style="text-align: right;">1 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Pork, 1 lb</td>
+                                <td>Food product of pigs.</td>
+                                <td style="text-align: right;">3 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Raisins/Currants, 1 lb</td>
+                                <td>Small, sweet berries that are commonly dried and added to porridge or desserts.</td>
+                                <td style="text-align: right;">10 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Rye, 1 lb</td>
+                                <td>A common grain, used to make beer or bread.</td>
+                                <td style="text-align: right;">1 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Salted Fish, 1 cask</td>
+                                <td>Preserved fish, has likely traveled quite a distance.</td>
+                                <td style="text-align: right;">13 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Sugar, 1 lb</td>
+                                <td>Used to sweeten meals and desserts.</td>
+                                <td style="text-align: right;">45 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Vinegar, 1 gal</td>
+                                <td>The result of wine gone bad. Used in cooking and medicine.</td>
+                                <td style="text-align: right;">32 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Wheat, 1 lb</td>
+                                <td>A common grain, used to make beer or bread.</td>
+                                <td style="text-align: right;">1 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Wine, 1 gal</td>
+                                <td>Fermented juice. Aged or specialty wines can command a much higher price.</td>
+                                <td style="text-align: right;">10 cp</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr />
+                <div id="general" class="info">
+                    <h1 class="headingLight">General Goods</h1>
+                    <table id="goodsTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th style="text-align: right;">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Barrel</td>
+                                <td>Made of wooden staves bound with iron. Can hold a variety of things.</td>
+                                <td style="text-align: right;">9 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Bottle</td>
+                                <td>A glass or ceramic bottle, used to hold liquids.</td>
+                                <td style="text-align: right;">12 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Brass Pot</td>
+                                <td>Useful for cooking.</td>
+                                <td style="text-align: right;">1 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Bricks, 100</td>
+                                <td>Dried clay formed into stackable bricks. Kiln-fired bricks may be more expensive.</td>
+                                <td style="text-align: right;">25 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Bucket</td>
+                                <td>A smaller version of a barrel, either wooden or metal. Also makes a very fashionable helmet!</td>
+                                <td style="text-align: right;">18 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Ceramic Pot</td>
+                                <td>Holds heat very well.</td>
+                                <td style="text-align: right;">2 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Charcoal, sack (28 lbs)</td>
+                                <td>Essentially cooked wood. Used in kitchens as a heat source.</td>
+                                <td style="text-align: right;">3 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Chest</td>
+                                <td>A bound wooden box. More detailed engravings or decoration may raise the price. Hopefully nothing nasty lurks within.</td>
+                                <td style="text-align: right;">18 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Coal, sack (28 lbs)</td>
+                                <td>A dense black rock, hewn from the earth itself. Burns very well. Can be used to create coal coke.</td>
+                                <td style="text-align: right;">7 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Firewood, bushel</td>
+                                <td>Evenly sized, possibly split, logs. Perfect for burning.</td>
+                                <td style="text-align: right;">2 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Hay, sack</td>
+                                <td>Fodder for animals, or budget sleeping gear.</td>
+                                <td style="text-align: right;">4 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Mattress</td>
+                                <td>Cloth stuffed with hay, scraps of cloth, or down. Better than sleeping on the ground.</td>
+                                <td style="text-align: right;">6 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Nails, 1 lb</td>
+                                <td>Thin, sharpened pieces of iron used to fasten wood together.</td>
+                                <td style="text-align: right;">12 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Pillow</td>
+                                <td>A small mattress, sized for the average person's head.</td>
+                                <td style="text-align: right;">1 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Sheet</td>
+                                <td>Large, woven piece of fabric.</td>
+                                <td style="text-align: right;">12 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Spade/Shovel</td>
+                                <td>Essential if one wants to dig without risking their fingernails.</td>
+                                <td style="text-align: right;">15 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Vat</td>
+                                <td>Useful for dyeing, soaking, making wine, or sundry other tasks.</td>
+                                <td style="text-align: right;">12 cp</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr />
+                <div id="trade" class="info">
+                    <h1 class="headingLight">Trade Goods</h1>
+                    <table id="tradeTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th style="text-align: right;">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                    <td>Cinnamon or Cloves, 1 lb</td>
+                                    <td>Relatively common spices used to season food or mulled wine.</td>
+                                    <td style="text-align: right;">2 ss</td>
+                                </tr>
+                            <tr>
+                                <td>Cloth - Cotton, 1 lb (1 sq yd)</td>
+                                <td>A light, breathable fabric spun from the cotton plant. Used to make clothing,
+                                    banners, and other assorted goods.</td>
+                                <td style="text-align: right;">2 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Cloth - Linen, 1 lb (1 sq yd)</td>
+                                <td>A rough, woven fabric commonly used to make clothing, banners, and other assorted
+                                    goods.</td>
+                                <td style="text-align: right;">1 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Cloth -Silk, 1 lb (2 sq yd)</td>
+                                <td>A fine, soft cloth. Favored by nobility.</td>
+                                <td style="text-align: right;">20 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Cloth - Wool, 1 lb (1 sq yd)</td>
+                                <td>A rough, warm fabric spun from sheep shearings.</td>
+                                <td style="text-align: right;">2 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Coal Coke, 7 lbs</td>
+                                <td>Refined coal. Can be used by a skilled metallurgist to turn iron into steel.</td>
+                                <td style="text-align: right;">28 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Cotton (Raw), 1 lb</td>
+                                <td>Unspun cotton fibers ready to be made into fabric.</td>
+                                <td style="text-align: right;">28 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Ginger or Pepper, 1 lb</td>
+                                <td>Less common spices. Used by nobility to season food.</td>
+                                <td style="text-align: right;">10 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Iron Ingots, 1 lb</td>
+                                <td>A common metal, ready to be formed into various tools. Can be refined into steel
+                                    by a skilled metallurgist.</td>
+                                <td style="text-align: right;">6 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Pewter, 1 lb</td>
+                                <td>An alloy of tin and lead. Used to make kitchen tools and dishes, as well as toy
+                                    soldiers and other figurines.</td>
+                                <td style="text-align: right;">20 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Saffron, 1 lb</td>
+                                <td>A rare, exotic spice that colors food in addition to seasoning it.</td>
+                                <td style="text-align: right;">1 gd</td>
+                            </tr>
+                            <tr>
+                                <td>Salt, 1 lb</td>
+                                <td>Can be used as a seasoning, but most often used to preserve meat and fish.</td>
+                                <td style="text-align: right;">3 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Silk Thread, 1 lb</td>
+                                <td>Fine thread that can be used for needlework or mending noble clothing.</td>
+                                <td style="text-align: right;">23 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Steel Ingots, 1 lb</td>
+                                <td>A strong metal, ready to be formed into various tools. Refined from iron.</td>
+                                <td style="text-align: right;">40 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Tea Leaves, 1 lb</td>
+                                <td>Brewed and drunk in the morning, afternoon, or any time the fancy strikes.</td>
+                                <td style="text-align: right;">4 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Wool (Raw), 1 lb</td>
+                                <td>Sheared from sheep, but not yet spun into fabric.</td>
+                                <td style="text-align: right;">10 cp</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr />
+                <div id="livestock" class="info">
+                    <h1 class="headingLight">Livestock</h1>
+                    <table id="livestockTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th style="text-align: right;">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Aurochs, 1</td>
+                                <td>Large cattle of an ancient heritage, commonly used as beasts of burden in the North and Beyond the Wall.</td>
+                                <td style="text-align: right;">13 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Chicken, 1</td>
+                                <td>Tasty, domesticated fowl. Hens lay eggs which can be eaten or hatched.</td>
+                                <td style="text-align: right;">4 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Cow or Bull, 1</td>
+                                <td>A common bovine. Provides milk, meat, and leather.</td>
+                                <td style="text-align: right;">9 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Dog (Untrained Pup), 1</td>
+                                <td>A young dog, in need of training to be of any use other than companionship.</td>
+                                <td style="text-align: right;">3 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Dog (Trained Adult), 1</td>
+                                <td>An adult dog. May be trained to herd, keep guard, or protect its owner.</td>
+                                <td style="text-align: right;">11 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Goat, 1</td>
+                                <td>A smallish ruminant. Rumored to eat nearly anything. Provides milk and meat.
+                                    Well-tempered (<em>ie</em> rare) goats may be used as beasts of burden.</td>
+                                <td style="text-align: right;">1 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Goose, 1</td>
+                                <td>An ill-tempered fowl, kept for food.</td>
+                                <td style="text-align: right;">13 cp</td>
+                            </tr>
+                            <tr>
+                                <td>Ox, 1</td>
+                                <td>A large beast of burden. May be harnessed to turn millstones or similar.</td>
+                                <td style="text-align: right;">13 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Pig (Best-in-Market), 1</td>
+                                <td>A moderately-sized beast, provides meat (particularly bacon)</td>
+                                <td style="text-align: right;">2 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Sheep, 1</td>
+                                <td>A wooly beast. Provides milk, meat, and fibers which can be spun.</td>
+                                <td style="text-align: right;">1 ss</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr />
+                <div id="clothing" class="info">
+                    <h1 class="headingLight">Clothing</h1>
+                    <table id="clothingTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th style="text-align: right;">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Artisan/Craftsman's Garb</td>
+                                <td>As emblematic of a trade as a soldier's uniform is of his service. Generally includes a shirt with buttons, pants with a drawstring or belt, leather shoes, an apron with pockets, and perhaps a cap.</td>
+                                <td style="text-align: right;">1-5 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Courtier's Garb</td>
+                                <td>Fancy clothing favored by those who spend much time in a noble's court - or want to look as though they do. Tends to favor silks and satins, or decorative armor.</td>
+                                <td style="text-align: right;">10-100 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Entertainer's Garb</td>
+                                <td>Often brightly colored or ridiculous, there are as many varieties of this as there are mummers, singers, and other entertainers.</td>
+                                <td style="text-align: right;">4 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Godsworn's Vestments</td>
+                                <td>Tending towards the plain, men and women pledged to service of the Seven eschew bright colors and modern styles - often favoring robes.</td>
+                                <td style="text-align: right;">2 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Maester's Garb</td>
+                                <td>Robes with many pockets sewn into the sleeves. Maesters are also known to wear their chains of many metals, symbolizing their learning and areas of study.</td>
+                                <td style="text-align: right;">4 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Noble's Garb</td>
+                                <td>The finest clothing, tailored from the best material. Often these will be dyed in the noble's House colors, or embroidered with their sigil.</td>
+                                <td style="text-align: right;">100-1,000 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Northern Garb</td>
+                                <td>Heavy wools and other textiles, often with an outer coat, a warm hat, and fur-lined boots.</td>
+                                <td style="text-align: right;">4 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Peasant's Garb</td>
+                                <td>Simple, loose clothing, generally made of wool or linen. Shoes are commonly made of thick cloth or, rarely, leather.</td>
+                                <td style="text-align: right;">1 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Traveler's Garb</td>
+                                <td>First and foremost, a traveler knows the value of a pair of good boots. Often travelers will wear a wide-brimmed hat or a hooded cloak.</td>
+                                <td style="text-align: right;">3 ss</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr />
+                <div id="mounts" class="info">
+                    <h1 class="headingLight">Mounts & Vehicles</h1>
+                    <table id="mountTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th style="text-align: right;">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Courser</td>
+                                <td>Lighter than a Destrier, and less costly. More commonly ridden into battle, but still a strong and fast steed.</td>
+                                <td style="text-align: right;">600 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Destrier</td>
+                                <td>Tall, strong, splendid animals ridden by knights across the realm. Well-bred and highly trained.</td>
+                                <td style="text-align: right;">1,000 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Garron</td>
+                                <td>Small, shaggy horses found in mountainous regions and cold climes.</td>
+                                <td style="text-align: right;">40 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Mule</td>
+                                <td>The best pack animal in Westeros. Less likely to spook than a horse, and more willing to enter strange places.</td>
+                                <td style="text-align: right;">12 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Palfrey</td>
+                                <td>Well-bred horses that may be as valuable as a Destrier, but are quiet with a gentle disposition. Coveted riding horses, especially of noble ladies.</td>
+                                <td style="text-align: right;">150 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Pony</td>
+                                <td>A small horse with short legs. Often ridden by the children of nobles, but may be used as pack animals or general riding steeds.</td>
+                                <td style="text-align: right;">50 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Rounsey</td>
+                                <td>A strong and capable steed of no particular breeding. Often relegated to hedge knights, squires, and non-knightly men-at-arms.</td>
+                                <td style="text-align: right;">50 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Sand Steed</td>
+                                <td>Slim, beautiful animals of Dorne. Cannot bear the weight of armor, but are fast and can run for great distances.</td>
+                                <td style="text-align: right;">1,200 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Stot</td>
+                                <td>Heavy draft horses used for farm work.</td>
+                                <td style="text-align: right;">50 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Sled</td>
+                                <td>Little more than wooden planks nailed or bound together, a sled can be pulled by animals more easily over snow than a wheeled cart.</td>
+                                <td style="text-align: right;">5 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Wagon</td>
+                                <td>A large, high-walled (and possibly covered) vehicle capable of carrying large amounts of goods or people.</td>
+                                <td style="text-align: right;">20 ss</td>
+                            </tr>
+                            <tr>
+                                <td>Wayn (Cart)</td>
+                                <td>A simple farm cart, commonly seen on the byways of Westeros as many a farmer brings his goods to market.</td>
+                                <td style="text-align: right;">8 ss</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr />
+                <div id="services" class="info">
+                    <h1 class="headingLight">Services</h1>
+                    <table id="serviceTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th style="text-align: right;">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                    <td>Apprenticeship Fees, 1 person</td>
+                                    <td>A would-be apprentice must pay a skilled craftsman in order to be taken on. This covers, among other things, the cost of trade goods an apprentice will likely ruin.</td>
+                                    <td style="text-align: right;">2-15 ss</td>
+                                </tr>
+                                <tr>
+                                    <td>Bed at an Inn, 1 night</td>
+                                    <td>A relatively safe place to lay your head down and rest.</td>
+                                    <td style="text-align: right;">6 cp</td>
+                                </tr>
+                                <tr>
+                                    <td>Feed (per day)</td>
+                                    <td>Hay, oats, or other sustenance for an animal.</td>
+                                    <td style="text-align: right;">2 cp</td>
+                                </tr>
+                                <tr>
+                                    <td>Food at an Inn, 1 person</td>
+                                    <td>An inn will generally have bread and beer for guests, and sometimes meat. Prices can vary wildly depending on circumstance, location, and the innkeeper's disposition.</td>
+                                    <td style="text-align: right;">3 cp</td>
+                                </tr>
+                                <tr>
+                                    <td>Guild Membership</td>
+                                    <td>Tradesmen who belong to a guild will need to pay a membership fee. Depending on the guild, this may need to be paid every year, or only once.</td>
+                                    <td style="text-align: right;">12 ss</td>
+                                </tr>
+                                <tr>
+                                    <td>Rent - Cottage, 1 year</td>
+                                    <td>A landlord or noble may be willing to lease a small cottage to a well-reputed individual.</td>
+                                    <td style="text-align: right;">3+ ss</td>
+                                </tr>
+                                <tr>
+                                    <td>Rent - Craftsman's Shop with Flat, 1 year</td>
+                                    <td>Many craftsmen live above their shops, with their apprentice sleeping under a workbench.</td>
+                                    <td style="text-align: right;">12+ ss</td>
+                                </tr>
+                                <tr>
+                                    <td>Rent - Merchant's House, 1 year</td>
+                                    <td>Merchants often reside in more stately homes than regular smallfolk. Many of these homes even have multiple rooms!</td>
+                                    <td style="text-align: right;">26+ ss</td>
+                                </tr>
+                                <tr>
+                                    <td>Stabling (per day)</td>
+                                    <td>As important as providing food, a clean and comfortable (or at least covered) place to rest is valued for its restorative effects on animals.</td>
+                                    <td style="text-align: right;">2 cp</td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr />
+                <div id="poisons" class="info">
+                    <h1 class="headingLight">Poisons</h1>
+                    <p>Poisons and their effects can be found starting on pg. 135 of the rulebook.</p>
+                    <p><ul>
+                        <li>Delivery: How the poison is administered</li>
+                        <li>Virulence: The number of dice rolled against the victim's resistance (usually Endurance)</li>
+                        <li>Toxicity: The number of times a poison's effect happens before it runs its course</li>
+                        <li>Diagnosis: The test difficulty to determine what is affecting the victim.</li>
+                        <li>Recovery: How long it takes for the effects to wear off</li>
+                    </ul></p>
+                    <table id="poisonTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Delivery</th>
+                                <th>Virulence</th>
+                                <th>Toxicity</th>
+                                <th>Frequency</th>
+                                <th>Diagnosis</th>
+                                <th>Recovery</th>
+                                <th style="text-align: right;">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                    <td>Basilisk Blood</td>
+                                    <td>Ingested</td>
+                                    <td>6</td>
+                                    <td>3</td>
+                                    <td>Once/5 minutes</td>
+                                    <td>Formidible (12)</td>
+                                    <td>Permanent, unless a Destiny Point is burned.</td>
+                                    <td style="text-align: right;">5-10 gd</td>
+                                </tr>
+                                <tr>
+                                    <td>Basilisk Venom</td>
+                                    <td>Contact</td>
+                                    <td>5</td>
+                                    <td>2</td>
+                                    <td>1/round</td>
+                                    <td>Challenging (9)</td>
+                                    <td>Permanent, unless a Destiny Point is burned. If so, 2d6 days.</td>
+                                    <td style="text-align: right;">5-10 gd</td>
+                                </tr>
+                                <tr>
+                                    <td>Firemilk</td>
+                                    <td>Contact</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                    <td>1/round</td>
+                                    <td>Easy (3)</td>
+                                    <td>Athletics penalty fades after 24 hours. Test/bonus dice last until the next Endurance test for Recovery.</td>
+                                    <td style="text-align: right;">25 ss</td>
+                                </tr>
+                                <tr>
+                                    <td>Greycap</td>
+                                    <td>Ingested or Inhaled</td>
+                                    <td>5</td>
+                                    <td>2</td>
+                                    <td>1/6 hours | 1/day</td>
+                                    <td>Challenging (9)</td>
+                                    <td>Penalties to Cunning fade at -1D per day. Athletics/Endurance is permanent, unless a Destiny Point is burned. If so, 1d6 days.</td>
+                                    <td style="text-align: right;">25 ss</td>
+                                </tr>
+                                <tr>
+                                    <td>Milk of the Poppy</td>
+                                    <td>Ingested</td>
+                                    <td>4</td>
+                                    <td>1</td>
+                                    <td>1/minute</td>
+                                    <td>Easy (3)</td>
+                                    <td>8 hours</td>
+                                    <td style="text-align: right;">200 ss</td>
+                                </tr>
+                                <tr>
+                                    <td>Milk of the Poppy, Large Dose</td>
+                                    <td>Ingested</td>
+                                    <td>6</td>
+                                    <td>1</td>
+                                    <td>1/minute</td>
+                                    <td>Easy (3)</td>
+                                    <td>8 hours</td>
+                                    <td style="text-align: right;">500 ss</td>
+                                </tr>
+                                <tr>
+                                    <td>Myrish Fire</td>
+                                    <td>Contact</td>
+                                    <td>4</td>
+                                    <td>2</td>
+                                    <td>1/round</td>
+                                    <td>Routine (6)</td>
+                                    <td>Agility penalty fades after 24 hours. Test/bonus dice last until the next Endurance test for Recovery.</td>
+                                    <td style="text-align: right;">100 ss</td>
+                                </tr>
+                                <tr>
+                                    <td>Nightshade</td>
+                                    <td>Ingested</td>
+                                    <td>4</td>
+                                    <td>2</td>
+                                    <td>1/minute | 1/hour</td>
+                                    <td>Routine (6)</td>
+                                    <td>Each week, -1D can be removed per DoS on a Challening (9) Endurance test.</td>
+                                    <td style="text-align: right;">100 ss</td>
+                                </tr>
+                                <tr>
+                                    <td>Pennyroyal, Mild</td>
+                                    <td>Ingested</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                    <td>1/hour | 1/2 hours</td>
+                                    <td>Routine (6)</td>
+                                    <td>24 hours.</td>
+                                    <td style="text-align: right;">5 ss</td>
+                                </tr>
+                                <tr>
+                                    <td>Pennyroyal, Strong</td>
+                                    <td>Ingested</td>
+                                    <td>5</td>
+                                    <td>2</td>
+                                    <td>1/hour | Once/2 hours</td>
+                                    <td>Routine (6)</td>
+                                    <td>24 hours.</td>
+                                    <td style="text-align: right;">10 ss</td>
+                                </tr>
+                                <tr>
+                                    <td>Strangler</td>
+                                    <td>Ingested</td>
+                                    <td>7</td>
+                                    <td>4</td>
+                                    <td>1/round</td>
+                                    <td>Hard (15)</td>
+                                    <td>In the unlikely event one survives, -1D removed per week of bed rest.</td>
+                                    <td style="text-align: right;">150 gd</td>
+                                </tr>
+                                <tr>
+                                    <td>Sweetsleep, Grains</td>
+                                    <td>Ingested</td>
+                                    <td>4</td>
+                                    <td>1</td>
+                                    <td>Once/5 minutes</td>
+                                    <td>Easy (3)</td>
+                                    <td>The penalty dice fade after the victim wakes up.</td>
+                                    <td style="text-align: right;">10 ss</td>
+                                </tr>
+                                <tr>
+                                    <td>Sweetsleep, Pinch</td>
+                                    <td>Ingested</td>
+                                    <td>5</td>
+                                    <td>2</td>
+                                    <td>1/round | Once/5 minutes</td>
+                                    <td>Easy (3)</td>
+                                    <td>The penalty dice fade after the victim wakes up.</td>
+                                    <td style="text-align: right;">120 ss</td>
+                                </tr>
+                                <tr>
+                                    <td>Sweetsleep, Three Pinches</td>
+                                    <td>Ingested</td>
+                                    <td>6</td>
+                                    <td>3</td>
+                                    <td>1/round</td>
+                                    <td>Easy (3)</td>
+                                    <td>The penalty dice fade after the victim wakes up.</td>
+                                    <td style="text-align: right;">360 ss</td>
+                                </tr>
+                                <tr>
+                                    <td>Tansy, Mild</td>
+                                    <td>Ingested</td>
+                                    <td>3</td>
+                                    <td>1</td>
+                                    <td>Once/30 minutes</td>
+                                    <td>Easy (3)</td>
+                                    <td>Penalties fade after 1 hour.</td>
+                                    <td style="text-align: right;">5 ss</td>
+                                </tr>
+                                <tr>
+                                    <td>Tansy, Strong</td>
+                                    <td>Ingested</td>
+                                    <td>5</td>
+                                    <td>1</td>
+                                    <td>Once/30 minutes</td>
+                                    <td>Easy (3)</td>
+                                    <td>Penalties fade after 1 hour.</td>
+                                    <td style="text-align: right;">15 ss</td>
+                                </tr>
+                                <tr>
+                                    <td>Tears of Lys</td>
+                                    <td>Ingested</td>
+                                    <td>6</td>
+                                    <td>6</td>
+                                    <td>1/hour | 1/day</td>
+                                    <td>Very Hard (18)</td>
+                                    <td>Permanent and fatal, unless a Destiny Point is burned. If so, 3d6 days.</td>
+                                    <td style="text-align: right;">100 gd</td>
+                                </tr>
+                                <tr>
+                                    <td>Wasting Potion</td>
+                                    <td>Ingested</td>
+                                    <td>4</td>
+                                    <td>2</td>
+                                    <td>1/round</td>
+                                    <td>Routine (6)</td>
+                                    <td>Effects fade after 1 day.</td>
+                                    <td style="text-align: right;">50 ss</td>
+                                </tr>
+                                <tr>
+                                    <td>Widow's Blood</td>
+                                    <td>Ingested</td>
+                                    <td>5</td>
+                                    <td>1</td>
+                                    <td>1/hour</td>
+                                    <td>Challenging (9)</td>
+                                    <td>Can be curred with a Challenging (9) Healing test. Success pauses the effect for 1 day. 3 DoS removes the disease. Once healed, -1D removed per day.</td>
+                                    <td style="text-align: right;">5 gd</td>
+                                </tr>
+                                <tr>
+                                    <td>Wolfsbane</td>
+                                    <td>Contact or Ingested</td>
+                                    <td>3 or 5</td>
+                                    <td>4</td>
+                                    <td>1/round or 1/round | 1/hour</td>
+                                    <td>Routine (6)</td>
+                                    <td>-1D is removed per day (Contact) or per week (Ingested)</td>
+                                    <td style="text-align: right;">100 ss</td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+    </div>
+</body>
+<footer>
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m10 l10">
+            All Dark Heresy 2e material is © Fantasy Flight Games
+        </div>
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+    </div>
+</footer>
+
+</html>

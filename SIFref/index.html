@@ -1,0 +1,536 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="A web-based quick reference guide for Green Ronin's Song of Ice and Fire RPG (SIFRP)">
+    <title>SIFRP Reference</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+
+<body>
+    <div class="w3-top w3-sifrp-d3 w3-row-padding bar-pad" id="navBarDiv">
+    </div>
+
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div id="ref" class="info">
+                <h1>Reference Tables</h1>
+                <div class="w3-row">
+                    <div class="w3-col s12 m12 l5">
+                        <h3>Difficulties</h3>
+                        <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Rating</th>
+                                    <th>Minimum Rank for Success</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Automatic</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Easy</td>
+                                    <td>3</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Routine</td>
+                                    <td>6</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Challenging</td>
+                                    <td>9</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>Formidible</td>
+                                    <td>12</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>Hard</td>
+                                    <td>15</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>Very Hard</td>
+                                    <td>18</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Heroic</td>
+                                    <td>21+</td>
+                                    <td>4</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                            <thead>
+                                <tr>
+                                    <th>Result exeeds difficulty by...</th>
+                                    <th>Degrees of Success (DoS)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>0-4</td>
+                                    <td>One (Marginal Success)</td>
+                                </tr>
+                                <tr>
+                                    <td>5-9</td>
+                                    <td>Two (Great Success)</td>
+                                </tr>
+                                <tr>
+                                    <td>10-14</td>
+                                    <td>Three (Incredible Success)</td>
+                                </tr>
+                                <tr>
+                                    <td>15+</td>
+                                    <td>Four (Astonishing Success)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="w3-col s0 m0 l2">
+                        <p></p>
+                    </div>
+                    <div class="w3-col s12 m12 l5">
+                        <h3>Routine Successes</h3>
+                        <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                            <thead>
+                                <tr>
+                                    <th rowspan=2 style="vertical-align: middle;">Rank</th>
+                                    <th style="border: none !important;">-No Pressure-</th>
+                                    <th style="border: none !important;">-Pressure-</th>
+                                </tr>
+                                <tr>
+                                    <th>Automatic Success</th>
+                                    <th>Automatic Success</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Automatic (0)</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Easy (3)</td>
+                                    <td>Automatic (0)</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Routine (6)</td>
+                                    <td>Easy (3)</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Routine (6)</td>
+                                    <td>Easy (3)</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Challenging (9)</td>
+                                    <td>Easy (3)</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Formidible (12)</td>
+                                    <td>Routine (6)</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Formidible (12)</td>
+                                    <td>Routine (6)</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Hard (15)</td>
+                                    <td>Routine (6)</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Very Hard (18)</td>
+                                    <td>Challenging (9)</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Very Hard (18)</td>
+                                    <td>Challenging (9)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col s0 m0 l1">
+                        <p></p>
+                    </div>
+                    <div class="w3-col s12 m12 l10">
+                        <h3>Chance of Success</h3>
+                        <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2" style="vertical-align: middle;">Rank</th>
+                                    <th colspan="7" style="border: none !important;">-Difficulty-</th>
+                                </tr>
+                                <tr>
+                                    <th>Easy (3)</th>
+                                    <th>Routine (6)</th>
+                                    <th>Challenging (9)</th>
+                                    <th>Formidible (12)</th>
+                                    <th>Hard (15)</th>
+                                    <th>Very Hard (18)</th>
+                                    <th>Heroic (21+)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>66%</td>
+                                    <td>16%</td>
+                                    <td>0%</td>
+                                    <td>0%</td>
+                                    <td>0%</td>
+                                    <td>0%</td>
+                                    <td>0%</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>97%</td>
+                                    <td>72%</td>
+                                    <td>27%</td>
+                                    <td>2%</td>
+                                    <td>0%</td>
+                                    <td>0%</td>
+                                    <td>0%</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>100%</td>
+                                    <td>95%</td>
+                                    <td>74%</td>
+                                    <td>37%</td>
+                                    <td>9%</td>
+                                    <td>0.5%</td>
+                                    <td>0%</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>100%</td>
+                                    <td>99%</td>
+                                    <td>94%</td>
+                                    <td>76%</td>
+                                    <td>44%</td>
+                                    <td>15%</td>
+                                    <td>2%</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>100%</td>
+                                    <td>99%</td>
+                                    <td>99%</td>
+                                    <td>94%</td>
+                                    <td>77%</td>
+                                    <td>50%</td>
+                                    <td>22%</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>99%</td>
+                                    <td>99%</td>
+                                    <td>93%</td>
+                                    <td>79%</td>
+                                    <td>54%</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>99%</td>
+                                    <td>99%</td>
+                                    <td>98%</td>
+                                    <td>93%</td>
+                                    <td>80%</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>99%</td>
+                                    <td>99%</td>
+                                    <td>99%</td>
+                                    <td>99%</td>
+                                    <td>93%</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>99%</td>
+                                    <td>99%</td>
+                                    <td>99%</td>
+                                    <td>98%</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>99%</td>
+                                    <td>99%</td>
+                                    <td>99%</td>
+                                    <td>99%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="w3-col s0 m0 l1">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <h2>Travel</h2>
+            <div class="w3-row">
+                <div class="w3-col s12 m12 l5">
+                    <h3>Rates of Travel</h3>
+                    <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                        <thead>
+                            <tr>
+                                <th>Mode</th>
+                                <th>Distance per Hour</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Walking</td>
+                                <td>1 League</td>
+                            </tr>
+                            <tr>
+                                <td>Hustling</td>
+                                <td>1.5 Leagues</td>
+                            </tr>
+                            <tr>
+                                <td>Running</td>
+                                <td>2 Leagues<strong>*</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Horseback, Trot</td>
+                                <td>3 Leagues</td>
+                            </tr>
+                            <tr>
+                                <td>Horseback, Canter</td>
+                                <td>6 Leagues</td>
+                            </tr>
+                            <tr>
+                                <td>Horseback, Gallop</td>
+                                <td>10 Leagues<strong>*</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Boat (River, Lake)</td>
+                                <td>1.5 Leagues</td>
+                            </tr>
+                            <tr>
+                                <td>Ship (Ocean)</td>
+                                <td>4 Leagues<strong>**</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Burden, Moderate</td>
+                                <td>×3/4</td>
+                            </tr>
+                            <tr>
+                                <td>Burden, Heavy</td>
+                                <td>×1/2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <strong>*</strong> Requires a Challenging (9) Endurance test after each hour. Failure inflicts
+                    Injuries/Wounds.<br />
+                    <strong>**</strong> Dependant upon wind speeds. 4 Leagues (10.5 knots) is typical
+                </div>
+                <div class="w3-col s0 m0 l2">
+                    <p></p>
+                </div>
+                <div class="w3-col s12 m12 l5">
+                    <h3>Travel Terrain Modifiers</h3>
+                    <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                        <thead>
+                            <tr>
+                                <th>Terrain</th>
+                                <th>Trackless</th>
+                                <th>Trail</th>
+                                <th>Road</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Desert</td>
+                                <td>×1/2</td>
+                                <td>×3/4</td>
+                                <td>×1</td>
+                            </tr>
+                            <tr>
+                                <td>Hills</td>
+                                <td>×1/2</td>
+                                <td>×3/4</td>
+                                <td>×1</td>
+                            </tr>
+                            <tr>
+                                <td>Mountains</td>
+                                <td>×1/4</td>
+                                <td>×1/2</td>
+                                <td>×3/4</td>
+                            </tr>
+                            <tr>
+                                <td>Wetlands</td>
+                                <td>×1/4</td>
+                                <td>×1/2</td>
+                                <td>×3/4</td>
+                            </tr>
+                            <tr>
+                                <td>Woods, Light</td>
+                                <td>×1/2</td>
+                                <td>×3/4</td>
+                                <td>×1</td>
+                            </tr>
+                            <tr>
+                                <td>Woods, Dense</td>
+                                <td>×1/4</td>
+                                <td>×1/2</td>
+                                <td>×3/4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <h3>Hazards of Travel</h3>
+            <div class="w3-row">
+                <div class="w3-col s12 m12 l4" style="padding-right: 10px;">
+                    <h4>Sunburn</h4>
+                        <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                            <thead>
+                                <tr>
+                                    <th>Sunburn</th>
+                                    <th>Effects</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>One Level</td>
+                                    <td>-1D on all Awareness tests</td>
+                                </tr>
+                                <tr>
+                                    <td>Two Levels</td>
+                                    <td>As above, and -1D on Fighting and Marksmanship tests and any test involving concentration for 1d6 days. Permanent -1D on Persuasion tests.</td>
+                                </tr>
+                                <tr>
+                                    <td>Three Levels</td>
+                                    <td>As above, and permanent -1D on Endurance tests</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>
+                <div class="w3-col s12 m12 l4" style="padding-left: 10px; padding-right: 10px;">
+                    <h4>Frostbite</h4>
+                    <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                            <thead>
+                                    <tr>
+                                        <th>Frostbite</th>
+                                        <th>Effects</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>One Level</td>
+                                        <td>-1D on all Awareness tests</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Two Levels</td>
+                                        <td>As above, and -1D on Fighting and Marksmanship tests and any test involving manual dexterity</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Three Levels</td>
+                                        <td>As above, and -1D on Deception and Persuasion tests</td>
+                                    </tr>
+                                </tbody>
+                    </table>
+                </div>
+                <div class="w3-col s12 m12 l4" style="padding-left: 10px;">
+                    <h4>Falling Damage</h4>
+                    <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                            <thead>
+                                    <tr>
+                                        <th>Distance Fallen</th>
+                                        <th>Effect</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2-10 yards</td>
+                                        <td>1 damage/yard</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11-20 yards</td>
+                                        <td>1 Injury/2 yards</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21-30 yards</td>
+                                        <td>1 Wound/2 yards</td>
+                                    </tr>
+                                    <tr>
+                                        <td>31+ yards</td>
+                                        <td>10+3d6 Wounds</td>
+                                    </tr>
+                                </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <hr/>
+        </div>
+            <div class="w3-col s0 m0 l1">
+                <p></p>
+            </div>
+            <hr />
+    </div>
+</body>
+<footer>
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m10 l10">
+            All SIFRP material is © Green Ronin
+        </div>
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+    </div>
+</footer>
+
+</html>

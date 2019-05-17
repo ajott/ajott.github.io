@@ -1,0 +1,1378 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="A web-based quick reference guide for Green Ronin's Song of Ice and Fire RPG (SIFRP)">
+    <title>SIFRP Reference</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+
+<body>
+    <div class="w3-top w3-sifrp-d3 w3-row-padding bar-pad" id="navBarDiv">
+    </div>
+
+
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div id="charPane">
+                <div id="resources" class="info">
+                    <h1>House Resources</h1>
+                    <p>As much as a house is defined by its place in the Seven Kingdoms, its
+                        history, deeds, and alliances, a house is essentially a collection of seven Resources.
+                        These
+                        values will fluctuate during house creation and more during game play,
+                        rising and falling depending on how well you play the game of thrones.</p>
+                    <p>Below are descriptions of each of the seven Resources</p>
+                    <hr />
+                    <h4>Defense</h4>
+                    <p>Defense describes fortifications, castles, keeps, towers, and other structures
+                        that serve to protect your holdings. Defense also describes the
+                        presence and quality of roads, representing the ability to move troops
+                        and supplies to threatened areas.</p>
+                    <div class="w3-row">
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                        <div class="w3-col s0 m0 l8">
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Score</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>Desolate, ruined land, ravaged by disaster, war, or simply abandoned. No
+                                            defensible structures of any kind, and no infrastructure for
+                                            moving troops. You have no fortifications whatsoever.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1-10</td>
+                                        <td>Scarce cultivation, mostly wilderness with a few unprotected pockets of
+                                            civilization, having one or two roads or a minor stronghold.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11-20</td>
+                                        <td>Some cultivation, presence of a keep or smaller stronghold with a few roads,
+                                            rivers, or ports.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21-30</td>
+                                        <td>Defensible, with at least one fortified town or castle. Roads and trails are
+                                            present, and rivers or ports are likely.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>31-40</td>
+                                        <td>Good defenses with, almost certainly, a castle, along with a few other
+                                            strong points. Roads and rivers provide easy transportation. Alternatively,
+                                            natural terrain features, such as mountains or swamps, provide additional
+                                            fortification.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>41-50</td>
+                                        <td>Excellent defenses, with man-made fortifications likely combined with
+                                            defensible terrain features.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>51-60</td>
+                                        <td>Extraordinary defenses with structures, walls, and terrain features that,
+                                            when combined, make attacking this land very costly.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>61-70</td>
+                                        <td>Among the greatest defenses in the world. A good example would be the Eyrie
+                                            and the Vale of Arryn.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <h4>Influence</h4>
+                    <p>Influence describes your presence in the Seven Kingdoms, how other
+                        houses see you, and the notoriety attached to your name. A high Influence
+                        resource typically describes one of the great houses or the royal
+                        family, while a low Influence resource would describe a house of little
+                        consequence, small and largely unknown beyond the lands of their liege.
+                        Influence is also important in determining your characters’ maximum
+                        Status.</p>
+                    <div class="w3-row">
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                        <div class="w3-col s0 m0 l8">
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Score</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>The house’s name and history has been erased from all
+                                            records, and no one speaks of them anymore.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1-10</td>
+                                        <td>Maximum Lord's Status 2. A minor landed knight or the
+                                            equivalent. An example would be Craster.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11-20</td>
+                                        <td>Maximum Lord's Status 3. A greater landed knight or the
+                                            equivalent. A sample house would include the Knotts and
+                                            Liddles of the North.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21-30</td>
+                                        <td>Maximum Lord's Status 4. A small minor house. Examples
+                                            include House Mormont and House Westerling.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>31-40</td>
+                                        <td>Maximum Lord's Status 4. A minor house. Examples
+                                            include House Clegane, House Payne, and House Karstark.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>41-50</td>
+                                        <td>Maximum Lord's Status 5. A powerful minor house with
+                                            colorful history. Examples include House Florrent and
+                                            House Frey.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>51-60</td>
+                                        <td>Maximum Lord's Status 6. A major house. Examples
+                                            include House Tully and House Martell.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>61-70</td>
+                                        <td>Maximum Lord's Status 7. A great house. Examples
+                                            include House Arryn, House Stark, House Baratheon and
+                                            House Lannister.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <h4>Lands</h4>
+                    <p>Land resources describe the size of your House’s holdings and the extent
+                        of their influence over their region. A high score describes a house that
+                        controls an enormous stretch of terrain, such as Eddard Stark and the
+                        North, while a small score might represent control over a small town.</p>
+                    <div class="w3-row">
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                        <div class="w3-col s0 m0 l8">
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Score</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>Landless, the house has been
+                                            completely stripped of its holdings.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1-10</td>
+                                        <td>A speck of land, no larger than a single town.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11-20</td>
+                                        <td>A small stretch of land, about the size of a single small
+                                            island or small portion of a larger island, or a large city and
+                                            its immediate environs, such as House Mormont.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21-30</td>
+                                        <td>A modest stretch of land or
+                                            medium-size island, such as House Frey.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>31-40</td>
+                                        <td>An area of land that includes several terrain features, islands,
+                                            or large groups of islands, House Greyjoy for example.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>41-50</td>
+                                        <td>A large area of land, that spreads across a great
+                                            distance. This area likely includes a variety of
+                                            terrain features. House Martell’s control of Dorne
+                                            is representative of this level of resource</td>
+                                    </tr>
+                                    <tr>
+                                        <td>51-60</td>
+                                        <td>A huge area of land representing a considerable
+                                            portion of Westeros’ geography. House Stark’s
+                                            command of the North is a good example.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>61-70</td>
+                                        <td>Most, if not all, of the Seven Kingdoms,
+                                            such as the holdings of King Robert and
+                                            the royal branch of House Baratheon.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <h4>Law</h4>
+                    <p>Law encompasses two things: the extent to which the smallfolk respect
+                        and fear you and the threat of bandits, brigands, raiders, and other external
+                        and internal threats. Law is something your family must maintain,
+                        and if you don’t invest in keeping your realm safe, it could fall into chaos.</p>
+                    <div class="w3-row">
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                        <div class="w3-col s0 m0 l8">
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Score</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>Lawless, uncivilized land. You have no
+                                            authority here—the lands beyond the Wall.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1-10</td>
+                                        <td>Bandits, raiders, and other criminal bands are afoot in your
+                                            lands, causing mischief and trouble.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11-20</td>
+                                        <td>Lawlessness and banditry are a problem
+                                            along the fringes of your lands.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21-30</td>
+                                        <td>The typical level of Law throughout much of Westeros.
+                                            Crime is common but not out of control.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>31-40</td>
+                                        <td>You exert a great deal of control over your lands,
+                                            and crime is uncommon.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>41-50</td>
+                                        <td>Such is your influence and devotion to maintaining the
+                                            peace that crime is rare.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>51-60</td>
+                                        <td>You have almost no crime at all in your lands.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>61-70</td>
+                                        <td>There is no crime in your lands.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <h4>Population</h4>
+                    <p>Population addresses the sheer number of people living in the lands
+                        you control. The more people there are, the more mouths you have to
+                        feed. However, the more people there are, the more your lands produce.
+                        This abstract value describes the quantity of folks that live under
+                        your rule.</p>
+                    <div class="w3-row">
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                        <div class="w3-col s0 m0 l8">
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Score</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>Barren. No people live under your rule.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1-10</td>
+                                        <td>Thinly populated. Tiny settlements are
+                                            scattered throughout your lands.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11-20</td>
+                                        <td>Small population but no single community
+                                            larger than a small town.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21-30</td>
+                                        <td>Typical population. Most smallfolk live on farmsteads or in
+                                            hamlets, but you might have a couple of small towns and a
+                                            community around your primary fortification.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>31-40</td>
+                                        <td>Modest population. At least one town and several small
+                                            hamlets.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>41-50</td>
+                                        <td>Large population. You have a large number of people
+                                            in your lands; many live in a large town or spread
+                                            throughout a number of smaller towns.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>51-60</td>
+                                        <td>Immense population. An enormous number
+                                            of people live under your protection.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>61-70</td>
+                                        <td>All or nearly all of Westeros.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <h4>Power</h4>
+                    <p>Power describes your house’s military strength, the ability to muster
+                        troops and rouse banners sworn to you. Houses with low scores have few soldiers and no banners,
+                        while those with high scores may have a
+                        dozen or more banners and can rouse an entire region.</p>
+                    <div class="w3-row">
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                        <div class="w3-col s0 m0 l8">
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Score</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>Powerless, you have no troops, no soldiers,
+                                            and none loyal to your family.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1-10</td>
+                                        <td>Personal guard only, with one or two sworn swords
+                                            and a cadre of smallfolk warriors at most.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11-20</td>
+                                        <td>Small force of soldiers largely made up of smallfolk.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21-30</td>
+                                        <td>A modest force of soldiers, including some trained troops.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>31-40</td>
+                                        <td>A trained force of soldiers, including cavalry and possibly
+                                            ships. You may have the service of a banner house.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>41-50</td>
+                                        <td>A large force of diverse, trained, and competent soldiers.
+                                            You probably also have the services of a small navy as well.
+                                            Several banner houses are sworn to you.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>51-60</td>
+                                        <td>You can muster a huge force of soldiers, drawn from your
+                                            lands and those from your numerous banner houses.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>61-70</td>
+                                        <td>You have the strength of most
+                                            of the Seven Kingdoms behind you.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <h4>Wealth</h4>
+                    <p>Wealth covers everything from coin to cattle and everything in between.
+                        It represents your involvement and success in trade, your ability
+                        to fund improvements in your domain, hire mercenaries, and more.</p>
+                    <div class="w3-row">
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                        <div class="w3-col s0 m0 l8">
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Score</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>Destitute. Your family is penniless.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1-10</td>
+                                        <td>Impoverished. Your family lacks essential resources and
+                                            struggles to make ends meet.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11-20</td>
+                                        <td>Poor. Your family has little excess. While they
+                                            are able to sustain themselves and their holdings,
+                                            they do not live in luxury.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21-30</td>
+                                        <td>Common. Your family has enough to get by.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>31-40</td>
+                                        <td>Prosperous. Your family has the funds to
+                                            live in accordance with their station.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>41-50</td>
+                                        <td>Affluent. Your family has more funds
+                                            than it needs and lives in comfort.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>51-60</td>
+                                        <td>Rich. Your family wants for nothing.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>61-70</td>
+                                        <td>Decadent. Your family is so wealthy, they can
+                                            afford to have seventy-seven course feasts.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                    </div>
+
+                </div>
+                <hr />
+
+                <div id="holdings" class="info">
+                    <h1>Holdings</h1>
+                    <p>In a way, holdings are like investments in that you use your resources to
+                        select specific elements in the form of castles, towers, cities, towns,
+                        soldiers, mines, and more. When you define your holdings, you do not
+                        reduce the resource; instead, allocate those points to a specific expression
+                        of that resource.</p>
+                    <p>If your resources are later reduced, such as by a blight sweeping through
+                        your crops or losing a battle, you may lose your investment. Similarly, if
+                        an investment is destroyed, such as having an enemy burn your castle to
+                        the ground, you lose the resources you invested in that particular holding.</p>
+                    <hr />
+                    <h2>Defense Holdings</h2>
+                    <p>Quick information about Defense Holdings can also be found under <a
+                            href="./warfare.html#fortifications">Fortifications</a>.</p>
+                    <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Holding</th>
+                                <th>Investment</th>
+                                <th>Build Time</th>
+                                <th>Description</th>
+                                <th>Benefit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Superior Castle</td>
+                                <td>50 Defense</td>
+                                <td>144+10d6 Months</td>
+                                <td>A superior castle is a massive stronghold in the vein of Harrenhal, the Eyrie,
+                                    Storm’s End, Dragonstone, and Winterfell. A superior castle has several towers,
+                                    structures, and smaller buildings, all surrounded by a steep curtain wall and likely
+                                    a moat as well. </td>
+                                <td>Units defending a superior castle gain a +12 bonus to their Defense</td>
+                            </tr>
+                            <tr>
+                                <td>Castle</td>
+                                <td>40 Defense</td>
+                                <td>96+10d6 Months</td>
+                                <td>Castles are impressive fortified strongholds but are not as large or as
+                                    imposing as a superior castle. Most castles incorporate at least one
+                                    central keep and several towers connected by walls and surrounded
+                                    by a moat. Example castles include Deepwood Motte, the Twins, and
+                                    Riverrun.</td>
+                                <td>Units defending a castle gain a +8 bonus to their Defense</td>
+                            </tr>
+                            <tr>
+                                <td>Small Castle</td>
+                                <td>30 Defense</td>
+                                <td>72+10d6 Months</td>
+                                <td>A small castle is simply a smaller version of a standard castle. It usually
+                                    has no more than a single keep, perhaps two towers and a wall. Examples
+                                    of small castles include Bronzegate, Honeyholt, and Yronwood.</td>
+                                <td>Units defending a small castle gain a +6 bonus to their Defense</td>
+                            </tr>
+                            <tr>
+                                <td>Hall</td>
+                                <td>20 Defense</td>
+                                <td>60+10d6 Months</td>
+                                <td>A hall (or keep) is usually a small, fortified building. It may or may not
+                                    be surrounded by a wall, and it could have a tower, though it’s unlikely.
+                                    Examples of halls include Acorn Hall, Cider Hall, and Longbow Hall.</td>
+                                <td>Units defending a hall gain a +4 bonus to their Defense</td>
+                            </tr>
+                            <tr>
+                                <td>Tower</td>
+                                <td>10 Defense</td>
+                                <td>36+10d6 Months</td>
+                                <td>Towers are single free-standing stone or timber structures that thrust
+                                    up from the ground. If they have any outbuildings, they are small and
+                                    unprotected. Petyr Baelish’s holdings in the Fingers included a single
+                                    tower.</td>
+                                <td>Units defending a tower gain a +3 bonus to their Defense</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr />
+                    <h2>Influence Holdings</h2>
+                    <p>The primary investment one can make of Influence is an heir. An heir's Status is always 1 rank
+                        below that of the Head of House, with a minimum Status of 1.</p>
+                    <p>
+                        <ul>
+                            <li>20 Influence: First-born son (or daughter, in Dorne)</li>
+                            <li>10 Influence: Second-born son (or daughter, in Dorne), or first-born daughter</li>
+                            <li>5 Influence: Other children, not including bastards</li>
+                        </ul>
+                    </p>
+                    <p>In addition, Influence may be spent as below:
+                        <ul>
+                            <li>5 Influence: Improve a House Fortune roll by 1d6</li>
+                            <li>2 Influence: Gain +1B on any tests related to Intrigues</li>
+                        </ul>
+                    </p>
+                    <hr />
+                    <h2>Land Holdings</h2>
+                    <p>Lands describe the terrain and extent of your actual holdings. Lands
+                        may be forests, lakes, hills, mountains, coastlines, and more, all based
+                        on where your house is situated and the terrain of your realm. Each
+                        Land investment is called a domain. Each domain is roughly a league (3
+                        miles).</p>
+                    <p>Domains each have two components, features and terrain. A feature is
+                        something found on that land such as a town, river, woods, or coastline. A
+                        domain can have as many features as you’d like to invest. A domain without
+                        a feature is barren, being a desert, scrubland, or waste depending on
+                        the realm.</p>
+                    <p>If you cannot afford to
+                        invest in a domain, your holdings are smaller than a league and extend
+                        out around your primary stronghold.</p>
+                    <div class="w3-row">
+                        <div class="w3-col s0 m0 l1">
+                            <p></p>
+                        </div>
+                        <div class="w3-col s12 m12 l10">
+                            <h3>Available Terrain and Features by Realm</h3>
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Realm</th>
+                                        <th>Terrain</th>
+                                        <th>Features</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Dorne</td>
+                                        <td>Hills, Mountains, Plains</td>
+                                        <td>Coast, Community, Island, Road, Ruin, Water</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dragonstone</td>
+                                        <td>Hills, Plains, Wetlands</td>
+                                        <td>Coast, Community, Grassland, Island, Road, Ruin</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Iron Islands</td>
+                                        <td>Hills, Plains</td>
+                                        <td>Coast, Community, Grassland, Island, Road, Ruin</td>
+                                    </tr>
+                                    <tr>
+                                        <td>King's Landing</td>
+                                        <td>Plains</td>
+                                        <td>Coast, Community, Grassland, Road, Ruin, Water, Woods</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mountains of the Moon</td>
+                                        <td>Hills, Mountains</td>
+                                        <td>Coast, Community, Grassland, Island, Road, Ruin, Water</td>
+                                    </tr>
+                                    <tr>
+                                        <td>The North</td>
+                                        <td>Hills, Mountains, Plains, Wetlands</td>
+                                        <td>Coast, Community, Grassland, Island, Road, Ruin, Water, Woods</td>
+                                    </tr>
+                                    <tr>
+                                        <td>The Reach</td>
+                                        <td>Plains</td>
+                                        <td>Coast, Community, Grassland, Island, Road, Ruin, Water</td>
+                                    </tr>
+                                    <tr>
+                                        <td>The Riverlands</td>
+                                        <td>Hills, Plains, Wetlands</td>
+                                        <td>Community, Grassland, Road, Ruin, Water</td>
+                                    </tr>
+                                    <tr>
+                                        <td>The Stormlands</td>
+                                        <td>Hills, Mountains, Plains, Wetlands</td>
+                                        <td>Coast, Community, Grassland, Island, Road, Ruin, Water, Woods</td>
+                                    </tr>
+                                    <tr>
+                                        <td>The Westerlands</td>
+                                        <td>Hills, Mountains, Plains</td>
+                                        <td>Coast, Community, Grassland, Island, Road, Ruin, Water</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w3-col s0 m0 l1">
+                            <p></p>
+                        </div>
+                    </div>
+                    <h3>Terrain and Feature Costs</h3>
+                    <p style="text-align: center;">Each Terrain has a cost associated with it. Any Features on that
+                        terrain impose additional cost.</p>
+                    <p style="text-align: center">Filter: <select id="realmSelect" onchange="filterLand()"
+                            class="w3-round w3-large">
+                            <option value="All" class="w3-gold">All Realms</option>
+                            <option>Dorne</option>
+                            <option>Dragonstone</option>
+                            <option>Iron Islands</option>
+                            <option>King's Landing</option>
+                            <option>Mountains of the Moon</option>
+                            <option>The North</option>
+                            <option>The Reach</option>
+                            <option>The Riverlands</option>
+                            <option>The Stormlands</option>
+                            <option>The Westerlands</option>
+                        </select></p>
+                    <div class="w3-row">
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                        <div class="w3-col s12 m12 l3">
+                            <table id="terrainTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <tr id="terrainHeader">
+                                        <th>Terrain</th>
+                                        <th>Cost</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Hills</td>
+                                        <td>7</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mountains</td>
+                                        <td>9</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Plains</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wetlands</td>
+                                        <td>3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                        <div class="w3-col s12 m12 l3">
+                            <table id="featuresTable" class="w3-table w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <tr id="featuresHeader">
+                                        <th>Feature</th>
+                                        <th>Cost</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Coast</td>
+                                        <td>+3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Community - Hamlet</td>
+                                        <td>+10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Community - Small Town</td>
+                                        <td>+20</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Community - Large Town</td>
+                                        <td>+30</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Community - Small City</td>
+                                        <td>+40</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Community - Large City</td>
+                                        <td>+50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Grassland</td>
+                                        <td>+1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Island</td>
+                                        <td>+10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Road</td>
+                                        <td>+5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ruin</td>
+                                        <td>+3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Water - Stream</td>
+                                        <td>+1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Water - River</td>
+                                        <td>+3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Water - Pond</td>
+                                        <td>+5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Water - Lake</td>
+                                        <td>+7</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Woods - Light</td>
+                                        <td>+3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Woods - Dense</td>
+                                        <td>+5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w3-col s0 m0 l2">
+                            <p></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <h2>Law Holdings</h2>
+                    <p>Unlike other resources, Law does not have holdings for investment. Instead,
+                        your Law resource describes the extent of your authority over
+                        your lands, specifically as it applies to drawing resources from your lands
+                        with minimal loss due to crime, banditry, and villainy.</p>
+                    <p>Maintaining a
+                        high Law resource helps reduce waste and loss, generating the full potential
+                        of Wealth and allowing your Population to grow. But if you let
+                        Law lapse, you derive less and less of your resources, and your Population
+                        growth shrinks until it can actually diminish.</p>
+                    <h3>Effects of Law</h3>
+                    <div class="w3-row">
+                        <div class="w3-col s0 m0 l4">
+                            <p></p>
+                        </div>
+                        <div class="w3-col s0 m0 l4">
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                                <thead>
+                                    <tr>
+                                        <th>Score</th>
+                                        <th>House Fortunes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>-20</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1-10</td>
+                                        <td>-10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11-20</td>
+                                        <td>-5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21-30</td>
+                                        <td>-2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>31-40</td>
+                                        <td>-1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>41-50</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>51-60</td>
+                                        <td>+1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>61-70</td>
+                                        <td>+2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>71+</td>
+                                        <td>+5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w3-col s0 m0 l4">
+                            <p></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <h2>Population Holdings</h2>
+                    <p>Like Law, you do not invest Population Holdings. Instead, your Population
+                        describes the density of people that live on your lands. The
+                        greater your Population, the more people occupy your lands. Population,
+                        again like Law, modifies the outcome of your House Fortunes;
+                        however, more people bring more opportunities for mishaps.</p>
+                    <p>Similarly,
+                        fewer people mean greater chances for trouble to brew in remote
+                        corners of your lands. From the following, find your modifier to your
+                        House Fortunes roll.</p>
+                    <h3>Effects of Population</h3>
+                    <div class="w3-row">
+                        <div class="w3-col s0 m0 l4">
+                            <p></p>
+                        </div>
+                        <div class="w3-col s0 m0 l4">
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                                <thead>
+                                    <tr>
+                                        <th>Score</th>
+                                        <th>House Fortunes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>-10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1-10</td>
+                                        <td>-5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11-20</td>
+                                        <td>+0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21-30</td>
+                                        <td>+1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>31-40</td>
+                                        <td>+3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>41-50</td>
+                                        <td>+1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>51-60</td>
+                                        <td>+0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>61-70</td>
+                                        <td>-5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>71+</td>
+                                        <td>-10</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="w3-col s0 m0 l4">
+                            <p></p>
+                        </div>
+                    </div>
+                    <hr />
+                    <h2>Power Holdings</h2>
+                    <p>From your Power resource, you derive your family’s military might, its
+                        sworn swords, knights, guardsmen, and banners that fight on your behalf.
+                        You can invest Power into banners, ships, or units.</p>
+                    <h3>Banner Houses</h3>
+                    <h5>Cost: 20 for the first house, 10 for the second, and 5 for each additional</h5>
+                    <p>Banner houses are noble families and landed knights that have sworn
+                        vows of service and loyalty to your house in exchange for your house’s
+                        protection, support, and aid in times of trouble. While promises bind
+                        the banner house to your own, such vows can be tested when personal
+                        ambitions get in the way of honor and duty. Moreover, smaller houses
+                        often come to envy the power and influence of the larger houses to whom they are sworn, and
+                        betrayals, while uncommon since the consequences
+                        can be so severe, can and do occur.</p>
+                    <p>The relationship between you and your vassal is much the same as
+                        your relationship between you and your liege, meaning that as you are
+                        sworn to provide military and financial support to your lord, so, too, is
+                        your banner house. The benefit of the banner house is that it can be
+                        called to lend military assistance when in need, grant you 1 Test Die on
+                        your Status Tests for House Fortunes (for each banner house) and can
+                        even receive House Fortune results if desired (see facing page). However,
+                        they are not blindly obedient, and though they are sworn to you, their
+                        interests usually come first. Furthermore, if you want to keep the loyalty
+                        of a banner house, you must also support them and their conflicts, even
+                        if doing so would interfere with your own plans.</p>
+                    <p>Your banner house (or houses) begins loyal to your family, and their
+                        dispositions start at Friendly. As with all Narrator characters, developments
+                        in the campaign, you and your family’s choices, and reputation
+                        can improve or worsen a banner house’s disposition toward you. Should
+                        a banner’s disposition ever fall to Malicious, you lose them and the
+                        points you invested into this house.</p>
+                    <hr />
+                    <h2>Units</h2>
+                    <p style="text-align: center;">Details about Units, their recruitment, equipment, and training can
+                        be found in the <a href="./warfare.html#units">Warfare</a> section.</p>
+                    <hr />
+                    <h2>Wealth Holdings</h2>
+                    <p>Wealth describes your family’s soluble resources, explaining how they
+                        generate their income. You can invest Wealth into specific holdings,
+                        which grant specific benefits, or keep it free to spend in other areas as
+                        needed. It’s often best to keep some of your Wealth free for problems
+                        that might crop up during game play.</p>
+                    <p>
+                        The following holdings represent the most common types. Others
+                        might be available with your Narrator’s permission (in which case you
+                        should all work together to come up with a workable benefit and relevant
+                        requirements). Many holdings include requirements, which you must meet
+                        before investing in the holding.
+                    </p>
+                    <p>
+                        You need land in order to invest in Wealth Holdings. Each Land Holding ("domain") may have up to
+                        two Wealth Holdings.
+                    </p>
+                    <h4>Wealth Holding Costs & Benefits</h4>
+                    <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Holding</th>
+                                <th>Requirement</th>
+                                <th>Investment</th>
+                                <th>Build Time</th>
+                                <th>Benefit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Artisan</td>
+                                <td>Hall or larger Defense Holding</td>
+                                <td>10 Wealth</td>
+                                <td>2d6 Months</td>
+                                <td>Choose one of the following each time you invest in an Artisan:
+                                    <ul>
+                                        <li>All weapons forged in your House count as castle-forged</li>
+                                        <li>Cover benefits from Fortifications are increased by +1</li>
+                                        <li>Add +1 to the results of your House Fortunes rolls</li>
+                                        <li>Other benefits at Narrator's discretion</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Godswood</td>
+                                <td>Realm (The North)</td>
+                                <td>5 Wealth</td>
+                                <td>24+2d6 Months</td>
+                                <td>Add 2d6-6 to House Fortunes rolls.</td>
+                            </tr>
+                            <tr>
+                                <td>Guilds</td>
+                                <td>Small Town or larger Community</td>
+                                <td>15 Wealth</td>
+                                <td>2d6 Months</td>
+                                <td>All members of the household get a 10% discount when purchasing goods in their own
+                                    lands.</td>
+                            </tr>
+                            <tr>
+                                <td>Maester</td>
+                                <td>Influence 20+</td>
+                                <td>10 Wealth</td>
+                                <td>1d6 Months</td>
+                                <td>Gain +3 on House Fortunes rolls. In addition, your family acquires the services of a
+                                    Maester.</td>
+                            </tr>
+                            <tr>
+                                <td>Marketplace</td>
+                                <td>Small Town or larger Community</td>
+                                <td>10 Wealth</td>
+                                <td>1d6 Months</td>
+                                <td>Each month, if your House Fortune would increase your Wealth, increase it by a
+                                    further +1.</td>
+                            </tr>
+                            <tr>
+                                <td>Mine</td>
+                                <td>Mountains or Hills</td>
+                                <td>10 Wealth</td>
+                                <td>24+2d6 Months</td>
+                                <td>Gain +5 on House Fortunes rolls.</td>
+                            </tr>
+                            <tr>
+                                <td>Port</td>
+                                <td>Coast</td>
+                                <td>10 Wealth</td>
+                                <td>3d6 Months</td>
+                                <td>Gain +5 on House Fortunes rolls. In addition, if you also have a Marketplace, if
+                                    your House Fortune would increase your Wealth, increase it by +1d6 rather than just
+                                    +1.</td>
+                            </tr>
+                            <tr>
+                                <td>Sept</td>
+                                <td>Hall or larger Defense Holding, or Small Town or larger Community</td>
+                                <td>15 Wealth</td>
+                                <td>12+2d6 Months</td>
+                                <td>Gain +3 on House Fortunes rolls. In addition, your family acquires the services of a
+                                    Septon or Septa.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <p style="text-align: center;">Below find some additional Wealth Holdings not included in the
+                        original rulebook.</p>
+                    <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                        <thead>
+                            <tr>
+                                <th>Holding</th>
+                                <th>Requirement</th>
+                                <th>Investment</th>
+                                <th>Build Time</th>
+                                <th>Benefit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                    <td>Bazaar</td>
+                                    <td>Large Town or larger Community, Marketplace</td>
+                                    <td>15 Wealth</td>
+                                    <td>3d6 Months</td>
+                                    <td>Traders from exotic lands may occasionally visit, and offer rare goods or cheap wares.</td>
+                                </tr>
+                            <tr>
+                                <td>Granary</td>
+                                <td>Small Town or larger Community</td>
+                                <td>10 Wealth</td>
+                                <td>2d6 Months</td>
+                                <td>Each month, if your House Fortune would decrease your Population, decrease it by 1
+                                    less.</td>
+                            </tr>
+                            <tr>
+                                <td>Sharecropper Farms</td>
+                                <td>Plains, Population 20+</td>
+                                <td>5 Wealth, 2 Influence</td>
+                                <td>2d6 Months</td>
+                                <td>Whenever you roll for a House Fortune, roll 1d6 and resolve the below:
+                                    <ul>
+                                        <li><strong>1</strong>: Bandits and raiders see the sharecropper farms as an
+                                            easy target. Lose -1 Law.</li>
+                                        <li><strong>2</strong>: Unsatisfied with their share of the profits, some of
+                                            your sharecroppers leave. Lose -1 Population.</li>
+                                        <li><strong>3-4</strong>: Nothing notable happens.</li>
+                                        <li><strong>5</strong>: Encouraged by the opportunity to get a share of the
+                                            profits, some smallfolk from other regions immigrate. Gain +1 Population.
+                                        </li>
+                                        <li><strong>6</strong>: A bountiful harvest. Gain +1 Wealth.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tournament Field</td>
+                                <td>Large Town or larger Community</td>
+                                <td>20 Wealth</td>
+                                <td>12+2d6 Months</td>
+                                <td>You may have one additional event at a Tournament for free. When you hold a Tournament, gain +1 Influence in addition to the normal amount for the size.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr />
+
+                <div id="fortunes" class="info">
+                    <h1>House Fortunes</h1>
+                    <p>House Fortunes affect your lands, either improving or diminishing one or more Resources. A House must roll for a House Fortune at least one month in every three, but no more than once per month.</p>
+                    <p>If you do not roll for a House Fortune in a given month, instead increase a single resource by +1.</p>
+                    <p>If a House Fortune occurs in a month, The House's Steward (or acting Steward) makes a Status (Stewardship) test, applies any modifiers from Holdings, and consults the table below. The Narrator determines the specifics of the House Fortune.</p>
+                    <div class="w3-row">
+                        <div class="w3-col s0 m0 l3"><p></p></div>
+                        <div class="w3-col s12 m12 l6">
+                            <h4>House Fortune Results</h4>
+                            <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                                    <thead>
+                                        <tr>
+                                            <th>Roll</th>
+                                            <th>Fortune</th>
+                                            <th>Roll</th>
+                                            <th>Fortune</th>
+                                            <th>Roll</th>
+                                            <th>Fortune</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>2 or Less</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Disaster</td>
+                                            <td><strong>13</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Decline</td>
+                                            <td><strong>26-27</strong></td>
+                                            <td>Blessing</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>3</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Curse</td>
+                                            <td><strong>14</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Blessing</td>
+                                            <td><strong>28</strong></td>
+                                            <td>Boon</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>4</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Decline</td>
+                                            <td><strong>15</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Growth</td>
+                                            <td><strong>29</strong></td>
+                                            <td>Curse</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>5</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Disaster</td>
+                                            <td><strong>16</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Curse</td>
+                                            <td><strong>30</strong></td>
+                                            <td>Blessing</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>6</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Growth</td>
+                                            <td><strong>17</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Decline</td>
+                                            <td><strong>31-34</strong></td>
+                                            <td>Growth</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>7</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Decline</td>
+                                            <td><strong>18</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Blessing</td>
+                                            <td><strong>35</strong></td>
+                                            <td>Blessing</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>8</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Growth</td>
+                                            <td><strong>19</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Curse</td>
+                                            <td><strong>36</strong></td>
+                                            <td>Boon</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>9</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Curse</td>
+                                            <td><strong>20</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Blessing</td>
+                                            <td><strong>37-38</strong></td>
+                                            <td>Growth</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>10</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Decline</td>
+                                            <td><strong>21-22</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Growth</td>
+                                            <td><strong>39-40</strong></td>
+                                            <td>Growth</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>11</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Growth</td>
+                                            <td><strong>23</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Curse</td>
+                                            <td><strong>41</strong></td>
+                                            <td>Growth</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>12</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Boon</td>
+                                            <td><strong>24-25</strong></td>
+                                            <td style="border-right: 1px solid lightgrey;">Growth</td>
+                                            <td><strong>42 or More</strong></td>
+                                            <td>Boon</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                        <div class="w3-col s0 m0 l3"><p></p></div>
+                    </div>
+                    
+                </div>
+                <hr />
+
+                <div id="actions" class="info">
+                    <h1>House Actions</h1>
+                    <p>In addition to the opportunity to make a House Fortunes roll, a House may also make one Action per month.</p>
+                    <p>If your House would like to make an action that does not fall into the categories below, work with the Narrator.</p>
+                    <h3>Manage Resources</h3>
+                    <p>Among the easiest and most common actions a lord can take, managing Resources allows you to convert one Resource to another. Not all Resources may be exchanged, so consult the table below.</p>
+                    <p>As with other Actions, you may only convert resources once per month, though you can do so in any amount. Generally, you may only convert one Resource at a time.<br/>
+                        You may <strong>Rush</strong> the conversion to convert two Resources. This carries the penalty of a worse exchange rate, however.</p>
+                        <div class="w3-row">
+                            <div class="w3-col s0 m0 l3"><p></p></div>
+                            <div class="w3-col s12 m12 l6">
+                                <h4>Resource Exchanges</h4>
+                                <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                                    <thead>
+                                        <tr>
+                                            <th>Convert ...</th>
+                                            <th>Into ...</th>
+                                            <th>Standard Rate</th>
+                                            <th>Rushed Rate</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Defense</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Influence</td>
+                                            <td>Law</td>
+                                            <td>1:1</td>
+                                            <td>2:1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lands</td>
+                                            <td>Defense</td>
+                                            <td>1:1</td>
+                                            <td>2:1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Law</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Population</td>
+                                            <td>Power</td>
+                                            <td>1:1</td>
+                                            <td>2:1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Power</td>
+                                            <td>Influence, Law, Population</td>
+                                            <td>1:1</td>
+                                            <td>2:1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wealth</td>
+                                            <td>Any</td>
+                                            <td>2:1</td>
+                                            <td>3:1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="w3-col s0 m0 l3"><p></p></div>
+                        </div>
+                </div>
+                <hr />
+
+                <div id="creation" class="info">
+                    <h1>House Creation</h1>
+                    <p style="text-align: center;">House Creation is described extensively on pp. 96-121.</p>
+                </div>
+                <hr />
+            </div>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+
+    </div>
+</body>
+<footer>
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m10 l10">
+            All SIFRP material is © Green Ronin
+        </div>
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+    </div>
+</footer>
+
+</html>

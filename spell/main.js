@@ -6,8 +6,10 @@ var exp = 0;
 var errors = 0;
 var sorted = 0;
 var words = 0;
+var streak = 0;
+var multi = 1;
 
-var version = "0.0.6";
+var version = "0.0.7";
 
 document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("verName").innerHTML = version;
@@ -57,6 +59,8 @@ function keyListen(e) {
       displayWord = cacheWord;
       activeChar = 0;
       errors += 1;
+      streak = 0;
+      multi = 1;
       if (exp > 0) {
         exp -= 1;
       }
@@ -65,8 +69,10 @@ function keyListen(e) {
     updateDisplay();
   } else if (activeChar == displayWord.length) {
     if (e.code == "Space") {
-      exp += displayWord.length;
+      exp += (displayWord.length * multi);
       words += 1;
+      streak += 1;
+      multi = Math.max(1, Math.floor(streak/3));
       changeWord();
       activeChar = 0;
     }
@@ -86,4 +92,6 @@ function updateDisplay() {
   document.getElementById("errors").innerHTML = errors;
   document.getElementById("next").innerHTML = nextWord;
   document.getElementById("words").innerHTML = words;
+  document.getElementById("streak").innerHTML = streak;
+  document.getElementById("multi").innerHTML = "x" + multi;
 }

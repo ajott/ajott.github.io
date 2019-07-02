@@ -1,10 +1,9 @@
-var ballColors = ["#00bfff", "#ff0080", "#00ffbf", "#80ff00", "#ff8000", "#4000ff", "#bf00ff", "#00ff80", "#8000ff", "#bfff00", "#ff00bf", "#ff4000", "#00ffff", "#00ff00", "#00ff40", "#0040ff", "#0000ff", "#ffff00", "#ff00ff", "#40ff00", "#ff0040", "#ffbf00", "#0080ff", "#ff0000"
-];
+var bulletColors = ["#00bfff", "#ff0080", "#00ffbf", "#80ff00", "#ff8000", "#4000ff", "#bf00ff", "#00ff80", "#8000ff", "#bfff00", "#ff00bf", "#ff4000", "#00ffff", "#00ff00", "#00ff40", "#0040ff", "#0000ff", "#ffff00", "#ff00ff", "#40ff00", "#ff0040", "#ffbf00", "#0080ff", "#ff0000"];
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
-var ballColor = ballColors[Math.floor((Math.random() * ballColors.length))];
-var lastBallColor = 0;
+var bulletColor = bulletColors[Math.floor((Math.random() * bulletColors.length))];
+var lastBulletColor = 0;
 
 var dx = 0;
 var dy = 0;
@@ -13,35 +12,45 @@ var paddleWidth = 30;
 var paddleX = (canvas.width - paddleWidth) / 2;
 var rightPressed = false;
 var leftPressed = false;
-var brickRowCount = 3;
-var brickColumnCount = 5;
-var brickHeight = 20;
-var brickPadding = 10;
-var brickOffsetTop = 30;
-var brickOffsetLeft = 30;
-var brickWidth = ((canvas.width - (brickOffsetLeft * 2)) - (brickPadding * (brickColumnCount - 1))) / brickColumnCount;
+var targetRowCount = 3;
+var targetColumnCount = 5;
+var targetHeight = 20;
+var targetPadding = 10;
+var targetOffsetTop = 30;
+var targetOffsetLeft = 30;
+var bulletSize = 4;
+var targetWidth = ((canvas.width - (targetOffsetLeft * 2)) - (targetPadding * (targetColumnCount - 1))) / targetColumnCount;
 
-var brickDX = 0.25;
+var targetDX = 0.25;
+
+var ticks = 0;
 
 var score = 0;
 var gameScore = 0;
-var shots = 5;
+var shots = 3;
 var level = 1;
 var gameOver = false;
+var useAmmo = true;
+var multishot = false;
+
+var powerupX = Math.floor((Math.random() * (canvas.width - 40)) + 10);
+var powerupY = Math.floor((Math.random() * (canvas.height - 150)) + 50);
+var powerupAppear = true;
+var powerupActive = false;
+var powerupTypes = ["infinite", "ammo", "multishot", "big"];
+var powerupType = powerupTypes[Math.floor((Math.random() * 4))];
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
-var balls = [];
+var bullets = [];
 
-function Ball(I) {
+function Bullet(I) {
   I.active = true;
-
-  I.xVelocity = 0;
   I.yVelocity = -7;
-  I.width = 4;
-  I.height = 4;
-  I.color = ballColor;
+  I.width = bulletSize;
+  I.height = bulletSize;
+  I.color = bulletColor;
 
   I.inBounds = function () {
     return I.x >= 0 && I.x <= canvas.width &&
@@ -52,7 +61,7 @@ function Ball(I) {
 
     ctx.beginPath();
     ctx.rect(this.x, this.y, this.width, this.height);
-    ctx.fillstyle = ballColor;
+    ctx.fillStyle = "#000000";
     ctx.fill();
     ctx.closePath();
 
@@ -70,11 +79,11 @@ function Ball(I) {
 
 
 
-var bricks = [];
-for (c = 0; c < brickColumnCount; c++) {
-  bricks[c] = [];
-  for (r = 0; r < brickRowCount; r++) {
-    bricks[c][r] = {
+var targets = [];
+for (c = 0; c < targetColumnCount; c++) {
+  targets[c] = [];
+  for (r = 0; r < targetRowCount; r++) {
+    targets[c][r] = {
       x: 0,
       y: 0,
       status: 1
@@ -94,8 +103,10 @@ function keyDownHandler(e) {
     reset();
   } else if (e.keyCode == 32) {
     if (shots > 0) {
-      spawnBall();
-      shots--;
+      spawnBullet();
+      if (useAmmo) {
+        shots--;
+      }
     }
   }
 
@@ -114,17 +125,49 @@ function keyUpHandler(e) {
 }
 
 
-function drawPaddle() {
-  ctx.fillstyle = "#0095DD";
+function drawShip() {
+  ctx.fillStyle = "#000000";
   ctx.beginPath();
-  ctx.moveTo(paddleX,canvas.height);
-  ctx.lineTo(paddleX,canvas.height-(paddleHeight-5));
-  ctx.lineTo(paddleX+(paddleWidth/2),canvas.height-paddleHeight);
-  ctx.lineTo(paddleX+paddleWidth,canvas.height-(paddleHeight-5));
-  ctx.lineTo(paddleX+paddleWidth,canvas.height)
+  ctx.moveTo(paddleX, canvas.height);
+  ctx.lineTo(paddleX, canvas.height - (paddleHeight - 5));
+  ctx.lineTo(paddleX + (paddleWidth / 2), canvas.height - paddleHeight);
+  ctx.lineTo(paddleX + paddleWidth, canvas.height - (paddleHeight - 5));
+  ctx.lineTo(paddleX + paddleWidth, canvas.height)
   ctx.closePath();
   ctx.fill();
   ctx.closePath();
+}
+
+function drawPowerup() {
+  ctx.beginPath();
+  ctx.rect(powerupX, powerupY, 30, 30);
+  ctx.fillStyle = "#000000";
+  ctx.stroke();
+  ctx.fillStyle = "#FFFFFF";
+  ctx.fill();
+  ctx.closePath();
+}
+
+function drawPowerupText() {
+  ctx.font = "20px Monospace";
+  ctx.fillStyle = "#000000";
+  ctx.fillText(powerupType[0].toUpperCase(),powerupX+9, powerupY+20);
+}
+
+function drawPowerupEffect() {
+  if (multishot) {
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#FF0000";
+    ctx.fillText("*multishot*",180,20)
+  } else if (!useAmmo){
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#FF0000";
+    ctx.fillText("*infinite ammo*",130,20)
+  } else if (bulletSize > 4) {
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#FF0000";
+    ctx.fillText("*big bullets*",130,20)
+  }
 }
 
 function drawScore() {
@@ -133,17 +176,17 @@ function drawScore() {
   ctx.fillText("Score: " + score, 50, 20);
 }
 
-function drawBricks() {
-  for (c = 0; c < brickColumnCount; c++) {
-    for (r = 0; r < brickRowCount; r++) {
-      var brickX = (c * (brickWidth + brickPadding)) + brickOffsetLeft;
-      var brickY = (r * (brickHeight + brickPadding)) + brickOffsetTop;
-      bricks[c][r].x = brickX;
-      bricks[c][r].y = brickY;
-      if (bricks[c][r].status == 1) {
+function drawTargets() {
+  for (c = 0; c < targetColumnCount; c++) {
+    for (r = 0; r < targetRowCount; r++) {
+      var targetX = (c * (targetWidth + targetPadding)) + targetOffsetLeft;
+      var targetY = (r * (targetHeight + targetPadding)) + targetOffsetTop;
+      targets[c][r].x = targetX;
+      targets[c][r].y = targetY;
+      if (targets[c][r].status == 1) {
         ctx.beginPath();
-        ctx.rect(brickX, brickY, brickWidth, brickHeight);
-        ctx.fillStyle = ballColor;
+        ctx.rect(targetX, targetY, targetWidth, targetHeight);
+        ctx.fillStyle = bulletColor;
         ctx.fill();
         ctx.closePath();
       }
@@ -151,30 +194,30 @@ function drawBricks() {
   }
 }
 
-function findLeftmostActiveBrick() {
-  for (c = 0; c < brickColumnCount; c++) {
-    for (r = 0; r < brickRowCount; r++) {
-      if (bricks[c][r].status == 1) {
+function findLeftmostActiveTarget() {
+  for (c = 0; c < targetColumnCount; c++) {
+    for (r = 0; r < targetRowCount; r++) {
+      if (targets[c][r].status == 1) {
         return c;
       }
     }
   }
 }
 
-function findRightmostActiveBrick() {
-  for (c = brickColumnCount - 1; c >= 0; c--) {
-    for (r = 0; r < brickRowCount; r++) {
-      if (bricks[c][r].status == 1) {
+function findRightmostActiveTarget() {
+  for (c = targetColumnCount - 1; c >= 0; c--) {
+    for (r = 0; r < targetRowCount; r++) {
+      if (targets[c][r].status == 1) {
         return c;
       }
     }
   }
 }
 
-function findBottommostActiveBrick() {
-  for (c = 0; c < brickColumnCount; c++) {
-    for (r = brickRowCount - 1; r >= 0; r--) {
-      if (bricks[c][r].status == 1) {
+function findBottommostActiveTarget() {
+  for (c = 0; c < targetColumnCount; c++) {
+    for (r = targetRowCount - 1; r >= 0; r--) {
+      if (targets[c][r].status == 1) {
         return [c, r];
       }
     }
@@ -182,52 +225,79 @@ function findBottommostActiveBrick() {
 }
 
 function collisionDetection() {
-  balls.forEach(function (ball) {
+  bullets.forEach(function (bullet) {
 
-    for (c = 0; c < brickColumnCount; c++) {
-      for (r = 0; r < brickRowCount; r++) {
-        var b = bricks[c][r];
+    if (bullet.x > powerupX && bullet.x < powerupX + 30 && bullet.y > powerupY && bullet.y < powerupY + 30 && powerupAppear) {
+      bullet.active = false;
+      shots++;
+      powerupAppear = false;
+      if (powerupType == "ammo") {
+        shots += 3;
+      } else if (powerupType == "infinite") {
+        useAmmo = false;
+      } else if (powerupType == "multishot") {
+        multishot = true;
+      } else if (powerupType == "big"){
+        bulletSize = 10;
+      }
+      powerupType = powerupTypes[Math.floor((Math.random() * 4))];
+      powerupX = Math.floor((Math.random() * (canvas.width - 40)) + 10);
+      powerupY = Math.floor((Math.random() * (canvas.height - 150)) + 50);
+      ticks = 0;
+    }
+
+    for (c = 0; c < targetColumnCount; c++) {
+      for (r = 0; r < targetRowCount; r++) {
+        var b = targets[c][r];
         if (b.status == 1) {
-          if (ball.x > b.x && ball.x < b.x + brickWidth && ball.y > b.y && ball.y < b.y + brickHeight) {
-            ball.active = false;
+          if (bullet.x > b.x && bullet.x < b.x + targetWidth && bullet.y > b.y && bullet.y < b.y + targetHeight) {
+            bullet.active = false;
             b.status = 0;
             score++;
             gameScore++;
-            shots++;
+            if (useAmmo){
+              shots++;
+            }            
 
-            if (gameScore == brickColumnCount * brickRowCount) { // Win condition
+            if (gameScore == targetColumnCount * targetRowCount) { // Win condition
               gameScore = 0;
-              
-              balls = balls.filter(function (ball) {
-                return ball.active;
+
+              bullets.forEach(function(bullet) {
+                bullet.active = false;
+              })
+
+              bullets = bullets.filter(function (bullet) {
+                return bullet.active;
               });
 
-              balls.forEach(function(ball){
-                shots ++;
-                ball.active = false;
-              })
+
               flashColor("black");
-              drawBricks();
-              drawPaddle();
+              drawTargets();
+              drawShip();
               collisionDetection();
               drawshots();
               drawLevel();
               if (level % 3 == 0) {
-                brickColumnCount += 1;
-                shots += 1;
-                brickWidth = ((canvas.width - (30 * 2)) - (brickPadding * (brickColumnCount - 1))) / brickColumnCount;
+                targetColumnCount += 1;
+                targetWidth = ((canvas.width - (30 * 2)) - (targetPadding * (targetColumnCount - 1))) / targetColumnCount;
               }
 
-              if (level % 5 == 0){
-                brickRowCount += 1;
+              if (level % 5 == 0) {
+                targetRowCount += 1;
               }
+
+              shots = Math.min(shots, 3 + (Math.floor(level / 3)));
+
+              useAmmo = true;
+              multishot = false;
+              bulletSize = 4;
 
               level += 1;
-              bricks = [];
-              for (c = 0; c < brickColumnCount; c++) {
-                bricks[c] = [];
-                for (r = 0; r < brickRowCount; r++) {
-                  bricks[c][r] = {
+              targets = [];
+              for (c = 0; c < targetColumnCount; c++) {
+                targets[c] = [];
+                for (r = 0; r < targetRowCount; r++) {
+                  targets[c][r] = {
                     x: 0,
                     y: 0,
                     status: 1
@@ -235,13 +305,13 @@ function collisionDetection() {
                 }
               }
 
-              brickDX = 0.25 + (0.10 * (level - 1));
-              brickOffsetTop = 30;
-              brickOffsetLeft = 30;
+              targetDX = 0.25 + (0.10 * (level - 1));
+              targetOffsetTop = 30;
+              targetOffsetLeft = 30;
 
-              let newColor = Math.floor((Math.random() * ballColors.length))
+              let newColor = Math.floor((Math.random() * bulletColors.length))
 
-              ballColor = ballColors[newColor];
+              bulletColor = bulletColors[newColor];
 
 
               paddleX = (canvas.width - paddleWidth) / 2;
@@ -254,14 +324,14 @@ function collisionDetection() {
   })
 
   try {
-    if (bricks[findBottommostActiveBrick()[0]][findBottommostActiveBrick()[1]].y + brickHeight + paddleHeight >= canvas.height) {
+    if (targets[findBottommostActiveTarget()[0]][findBottommostActiveTarget()[1]].y + targetHeight + paddleHeight >= canvas.height) {
       gameOver = true;
     }
   } catch {
 
   }
 
-  if (balls.length == 0 && shots == 0 && gameScore != (brickColumnCount * brickRowCount)) {
+  if (bullets.length == 0 && shots == 0 && gameScore != (targetColumnCount * targetRowCount)) {
     gameOver = true;
   }
 
@@ -300,15 +370,15 @@ function flashColor(color) {
   ctx.fill();
 }
 
-function checkBrickCollision() {
-  let leftBrick = bricks[findLeftmostActiveBrick()][0]
-  let rightBrick = bricks[findRightmostActiveBrick()][0]
+function checkTargetCollision() {
+  let leftTarget = targets[findLeftmostActiveTarget()][0]
+  let rightTarget = targets[findRightmostActiveTarget()][0]
 
 
 
-  if (rightBrick.x + brickWidth >= canvas.width) {
+  if (rightTarget.x + targetWidth >= canvas.width) {
     return 1;
-  } else if (leftBrick.x <= 0) {
+  } else if (leftTarget.x <= 0) {
     return -1;
   } else {
     return 0;
@@ -317,34 +387,51 @@ function checkBrickCollision() {
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  drawBricks();
-  drawPaddle();
+  drawTargets();
+  drawShip();
   collisionDetection();
   drawshots();
   drawLevel();
   drawScore();
+  drawPowerupEffect();
 
-  if (checkBrickCollision() == 1) {
-    brickOffsetTop += brickHeight / 2;
-    brickDX *= -1;
-  } else if (checkBrickCollision() == -1) {
-    brickOffsetTop += brickHeight / 2;
-    brickDX = Math.abs(brickDX);
+  if (checkTargetCollision() == 1) {
+    targetOffsetTop += targetHeight / 2;
+    targetDX *= -1;
+  } else if (checkTargetCollision() == -1) {
+    targetOffsetTop += targetHeight / 2;
+    targetDX = Math.abs(targetDX);
   };
 
-  brickOffsetLeft += brickDX;
+  targetOffsetLeft += targetDX;
 
+  ticks++;
+  
 
-  balls.forEach(function (ball) {
-    ball.update();
+  if (ticks >= 100 && powerupAppear) {
+    drawPowerup();
+    drawPowerupText();
+  }
+  if (ticks >= 200 && !powerupAppear){
+    useAmmo = true;
+    multishot = false;
+    bulletSize = 4;
+  } 
+  if (ticks >= 1000 && !powerupAppear) {
+    powerupAppear = true;
+    ticks = 0;
+  }
+
+  bullets.forEach(function (bullet) {
+    bullet.update();
   });
 
-  balls = balls.filter(function (ball) {
-    return ball.active;
+  bullets = bullets.filter(function (bullet) {
+    return bullet.active;
   });
 
-  balls.forEach(function (ball) {
-    ball.draw();
+  bullets.forEach(function (bullet) {
+    bullet.draw();
   })
 
 
@@ -362,11 +449,30 @@ function draw() {
 
 }
 
-function spawnBall() {
-  balls.push(Ball({
-    x: paddleX + (paddleWidth / 2) - 2,
-    y: canvas.height - paddleHeight
-  }));
+function spawnBullet() {
+  if (multishot) {
+    bullets.push(Bullet({
+      xVelocity: -2,
+      x: paddleX + (paddleWidth / 2) - 2,
+      y: canvas.height - paddleHeight
+    }));
+    bullets.push(Bullet({
+      xVelocity: 0,
+      x: paddleX + (paddleWidth / 2) - 2,
+      y: canvas.height - paddleHeight
+    }));
+    bullets.push(Bullet({
+      xVelocity: 2,
+      x: paddleX + (paddleWidth / 2) - 2,
+      y: canvas.height - paddleHeight
+    }));
+  } else {
+    bullets.push(Bullet({
+      xVelocity: 0,
+      x: paddleX + (paddleWidth / 2) - 2,
+      y: canvas.height - paddleHeight
+    }));
+  }
 }
 
 
@@ -384,41 +490,47 @@ document.addEventListener("click", mouseClickHandler, false);
 
 function mouseClickHandler(e) {
   if (shots > 0) {
-    spawnBall();
-    shots--;
+    spawnBullet();
+    if (useAmmo) {
+      shots--;
+    }
   }
 }
 
 
 function reset() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ballColor = ballColors[0];
-  lastBallColor = 0;
+  bulletColor = bulletColors[0];
+  lastBulletColor = 0;
 
-  brickDX = 0.25;
+  targetDX = 0.25;
 
   paddleX = (canvas.width - paddleWidth) / 2;
   rightPressed = false;
   leftPressed = false;
-  brickRowCount = 3;
-  brickColumnCount = 5;
-  brickHeight = 20;
-  brickPadding = 10;
-  brickOffsetTop = 30;
-  brickOffsetLeft = 30;
-  brickWidth = ((canvas.width - (brickOffsetLeft * 2)) - (brickPadding * (brickColumnCount - 1))) / brickColumnCount;
+  targetRowCount = 3;
+  targetColumnCount = 5;
+  targetHeight = 20;
+  targetPadding = 10;
+  targetOffsetTop = 30;
+  targetOffsetLeft = 30;
+  targetWidth = ((canvas.width - (targetOffsetLeft * 2)) - (targetPadding * (targetColumnCount - 1))) / targetColumnCount;
+
+  useAmmo = true;
+  multishot = false;
+  bulletSize = 4;
 
   score = 0;
   gameScore = 0;
-  shots = 5;
+  shots = 3;
   level = 1;
   drawshots();
   drawLevel();
 
-  for (c = 0; c < brickColumnCount; c++) {
-    bricks[c] = [];
-    for (r = 0; r < brickRowCount; r++) {
-      bricks[c][r] = {
+  for (c = 0; c < targetColumnCount; c++) {
+    targets[c] = [];
+    for (r = 0; r < targetRowCount; r++) {
+      targets[c][r] = {
         x: 0,
         y: 0,
         status: 1

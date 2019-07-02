@@ -1,8 +1,9 @@
-var ballColors = ["#0033FF", "#800000", "#808000", "#800080", "#808080"]; // Blue, Maroon, Olive, Purple, Grey
+var ballColors = ["#00bfff", "#ff0080", "#00ffbf", "#80ff00", "#ff8000", "#4000ff", "#bf00ff", "#00ff80", "#8000ff", "#bfff00", "#ff00bf", "#ff4000", "#00ffff", "#00ff00", "#00ff40", "#0040ff", "#0000ff", "#ffff00", "#ff00ff", "#40ff00", "#ff0040", "#ffbf00", "#0080ff", "#ff0000"
+];
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
-var ballColor = ballColors[0];
+var ballColor = ballColors[Math.floor((Math.random() * ballColors.length))];
 var lastBallColor = 0;
 
 var dx = 0;
@@ -128,7 +129,7 @@ function drawPaddle() {
 
 function drawScore() {
   ctx.font = "16px Arial";
-  ctx.fillStyle = ballColor;
+  ctx.fillStyle = "#000000";
   ctx.fillText("Score: " + score, 50, 20);
 }
 
@@ -196,6 +197,15 @@ function collisionDetection() {
 
             if (gameScore == brickColumnCount * brickRowCount) { // Win condition
               gameScore = 0;
+              
+              balls = balls.filter(function (ball) {
+                return ball.active;
+              });
+
+              balls.forEach(function(ball){
+                shots ++;
+                ball.active = false;
+              })
               flashColor("black");
               drawBricks();
               drawPaddle();
@@ -206,6 +216,10 @@ function collisionDetection() {
                 brickColumnCount += 1;
                 shots += 1;
                 brickWidth = ((canvas.width - (30 * 2)) - (brickPadding * (brickColumnCount - 1))) / brickColumnCount;
+              }
+
+              if (level % 5 == 0){
+                brickRowCount += 1;
               }
 
               level += 1;
@@ -225,13 +239,9 @@ function collisionDetection() {
               brickOffsetTop = 30;
               brickOffsetLeft = 30;
 
+              let newColor = Math.floor((Math.random() * ballColors.length))
 
-              if (lastBallColor == 4) {
-                lastBallColor = 0;
-              } else {
-                lastBallColor += 1;
-              }
-              ballColor = ballColors[lastBallColor];
+              ballColor = ballColors[newColor];
 
 
               paddleX = (canvas.width - paddleWidth) / 2;
@@ -263,19 +273,19 @@ function collisionDetection() {
 
 function drawshots() {
   ctx.font = "16px Arial";
-  ctx.fillStyle = ballColor;
+  ctx.fillStyle = "#000000";
   ctx.fillText("Ammo: " + shots, canvas.width - 110, 20);
 }
 
 function drawLevel() {
   ctx.font = "16px Arial";
-  ctx.fillStyle = ballColor;
+  ctx.fillStyle = "#000000";
   ctx.fillText("Level: " + level, (canvas.width / 2) - 20, 20);
 }
 
 function drawGameOver() {
   ctx.font = "24px Arial";
-  ctx.fillStyle = ballColor;
+  ctx.fillStyle = "#FF0000";
   ctx.textAlign = "center";
   ctx.fillText("Game Over", (canvas.width / 2), canvas.height / 2 - 20);
   ctx.font = "16px Arial";
@@ -387,8 +397,6 @@ function reset() {
 
   brickDX = 0.25;
 
-  paddleHeight = 10;
-  paddleWidth = 75;
   paddleX = (canvas.width - paddleWidth) / 2;
   rightPressed = false;
   leftPressed = false;

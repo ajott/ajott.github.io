@@ -32,13 +32,14 @@ var level = 1;
 var gameOver = false;
 var useAmmo = true;
 var multishot = false;
+var homing = false;
 
 var powerupX = Math.floor((Math.random() * (canvas.width - 40)) + 10);
 var powerupY = Math.floor((Math.random() * (canvas.height - 150)) + 50);
 var powerupAppear = true;
 var powerupActive = false;
-var powerupTypes = ["infinite", "ammo", "multishot", "big"];
-var powerupType = powerupTypes[Math.floor((Math.random() * 4))];
+var powerupTypes = ["infinite", "ammo", "multishot", "big", "homing"];
+var powerupType = powerupTypes[Math.floor((Math.random() * 5))];
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
@@ -62,6 +63,44 @@ function Bullet(I) {
     ctx.beginPath();
     ctx.rect(this.x, this.y, this.width, this.height);
     ctx.fillStyle = "#000000";
+    ctx.fill();
+    ctx.closePath();
+
+  };
+
+  I.update = function () {
+    I.x += I.xVelocity;
+    I.y += I.yVelocity;
+
+    I.active = I.active && I.inBounds();
+  };
+
+  return I;
+}
+
+var missiles = [];
+
+function Missile(I) {
+  I.active = true;
+  I.width = bulletSize;
+  I.height = bulletSize * 1.5;
+  I.color = "#FF0000";  
+  I.targetX = targets[findBottommostActiveTarget()[0]][findBottommostActiveTarget()[1]].x + (targetWidth / 2);
+  I.targetY = targets[findBottommostActiveTarget()[0]][findBottommostActiveTarget()[1]].y + (targetHeight / 2);
+
+  I.xVelocity = (I.targetX - I.x) / 20;
+  I.yVelocity = (I.targetY - I.y) / 20;
+
+  I.inBounds = function () {
+    return I.x >= 0 && I.x <= canvas.width &&
+      I.y >= 0 && I.y <= canvas.height;
+  };
+
+  I.draw = function () {
+
+    ctx.beginPath();
+    ctx.rect(this.x, this.y, this.width, this.height);
+    ctx.fillStyle = "#FF0000";
     ctx.fill();
     ctx.closePath();
 
@@ -167,6 +206,10 @@ function drawPowerupEffect() {
     ctx.font = "16px Arial";
     ctx.fillStyle = "#FF0000";
     ctx.fillText("*big bullets*",130,20)
+  } else if (homing) {
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#FF0000";
+    ctx.fillText("*missiles*",130,20)
   }
 }
 
@@ -215,8 +258,8 @@ function findRightmostActiveTarget() {
 }
 
 function findBottommostActiveTarget() {
-  for (c = 0; c < targetColumnCount; c++) {
-    for (r = targetRowCount - 1; r >= 0; r--) {
+  for (r = targetRowCount - 1; r >= 0; r--) {
+  for (c = 0; c < targetColumnCount; c++) {    
       if (targets[c][r].status == 1) {
         return [c, r];
       }
@@ -225,6 +268,106 @@ function findBottommostActiveTarget() {
 }
 
 function collisionDetection() {
+  missiles.forEach(function (missile) {
+
+    if (missile.x > powerupX && missile.x < powerupX + 30 && missile.y > powerupY && missile.y < powerupY + 30 && powerupAppear) {
+      missile.active = false;
+      shots++;
+      powerupAppear = false;
+      if (powerupType == "ammo") {
+        shots += 3;
+      } else if (powerupType == "infinite") {
+        useAmmo = false;
+      } else if (powerupType == "multishot") {
+        multishot = true;
+      } else if (powerupType == "big"){
+        missileSize = 10;
+      }
+      powerupType = powerupTypes[Math.floor((Math.random() * 5))];
+      powerupX = Math.floor((Math.random() * (canvas.width - 40)) + 10);
+      powerupY = Math.floor((Math.random() * (canvas.height - 150)) + 50);
+      ticks = 0;
+    }
+
+    for (c = 0; c < targetColumnCount; c++) {
+      for (r = 0; r < targetRowCount; r++) {
+        var b = targets[c][r];
+        if (b.status == 1) {
+          if (missile.x > b.x && missile.x < b.x + targetWidth && missile.y > b.y && missile.y < b.y + targetHeight) {
+            missile.active = false;
+            b.status = 0;
+            score++;
+            gameScore++;
+            if (useAmmo){
+              shots++;
+            }            
+
+            if (gameScore == targetColumnCount * targetRowCount) { // Win condition
+              gameScore = 0;
+
+              missiles.forEach(function(missile) {
+                missile.active = false;
+              })
+
+              missiles = missiles.filter(function (missile) {
+                return missile.active;
+              });
+
+
+              flashColor("black");
+              drawTargets();
+              drawShip();
+              collisionDetection();
+              drawshots();
+              drawLevel();
+              if (level % 3 == 0) {
+                targetColumnCount += 1;
+                targetWidth = ((canvas.width - (30 * 2)) - (targetPadding * (targetColumnCount - 1))) / targetColumnCount;
+              }
+
+              if (level % 5 == 0) {
+                targetRowCount += 1;
+              }
+
+              shots = Math.min(shots, 3 + (Math.floor(level / 3)));
+              shots += 1;
+
+              useAmmo = true;
+              multishot = false;
+              homing = false;
+              missileSize = 4;
+
+              level += 1;
+              targets = [];
+              for (c = 0; c < targetColumnCount; c++) {
+                targets[c] = [];
+                for (r = 0; r < targetRowCount; r++) {
+                  targets[c][r] = {
+                    x: 0,
+                    y: 0,
+                    status: 1
+                  };
+                }
+              }
+
+              targetDX = 0.25 + (0.10 * (level - 1));
+              targetOffsetTop = 30;
+              targetOffsetLeft = 30;
+
+              let newColor = Math.floor((Math.random() * bulletColors.length))
+
+              missileColor = bulletColors[newColor];
+
+
+              paddleX = (canvas.width - paddleWidth) / 2;
+            }
+
+          }
+        }
+      }
+    }
+  })
+  
   bullets.forEach(function (bullet) {
 
     if (bullet.x > powerupX && bullet.x < powerupX + 30 && bullet.y > powerupY && bullet.y < powerupY + 30 && powerupAppear) {
@@ -239,8 +382,10 @@ function collisionDetection() {
         multishot = true;
       } else if (powerupType == "big"){
         bulletSize = 10;
+      } else if (powerupType == "homing"){
+        homing = true;
       }
-      powerupType = powerupTypes[Math.floor((Math.random() * 4))];
+      powerupType = powerupTypes[Math.floor((Math.random() * 5))];
       powerupX = Math.floor((Math.random() * (canvas.width - 40)) + 10);
       powerupY = Math.floor((Math.random() * (canvas.height - 150)) + 50);
       ticks = 0;
@@ -287,9 +432,11 @@ function collisionDetection() {
               }
 
               shots = Math.min(shots, 3 + (Math.floor(level / 3)));
+              shots += 1;
 
               useAmmo = true;
               multishot = false;
+              homing = false;
               bulletSize = 4;
 
               level += 1;
@@ -415,6 +562,7 @@ function draw() {
   if (ticks >= 200 && !powerupAppear){
     useAmmo = true;
     multishot = false;
+    homing = false;
     bulletSize = 4;
   } 
   if (ticks >= 1000 && !powerupAppear) {
@@ -434,6 +582,18 @@ function draw() {
     bullet.draw();
   })
 
+
+  missiles.forEach(function(missile) {
+    missile.update();
+  })
+
+  missiles = missiles.filter(function(missile) {
+    return missile.active;
+  })
+
+  missiles.forEach(function(missile) {
+    missile.draw();
+  })
 
   if (rightPressed && paddleX < canvas.width - paddleWidth) {
     paddleX += 7;
@@ -475,6 +635,12 @@ function spawnBullet() {
   }
 }
 
+function spawnMissile() {
+  missiles.push(Missile({
+    x: paddleX + (paddleWidth / 2) - 2,
+    y: canvas.height - paddleHeight
+  }))
+}
 
 
 document.addEventListener("mousemove", mouseMoveHandler, false);
@@ -490,7 +656,12 @@ document.addEventListener("click", mouseClickHandler, false);
 
 function mouseClickHandler(e) {
   if (shots > 0) {
-    spawnBullet();
+    if (!homing){
+      spawnBullet();
+    } else {
+      spawnMissile();
+    }
+    
     if (useAmmo) {
       shots--;
     }
@@ -518,6 +689,7 @@ function reset() {
 
   useAmmo = true;
   multishot = false;
+  homing = false;
   bulletSize = 4;
 
   score = 0;

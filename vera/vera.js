@@ -478,10 +478,6 @@ function collisionDetection() {
 
   }
 
-  if (bullets.length == 0 && shots == 0 && gameScore != (targetColumnCount * targetRowCount)) {
-    gameOver = true;
-  }
-
   if (gameOver) {
     drawGameOver();
   }

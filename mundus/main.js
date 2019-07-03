@@ -196,8 +196,8 @@ function draw() {
     if (enemies.length == 0 && level.enemiesRemaining == 0) { // If there are no active enemies, and no reserves, the level is complete
       player.inLevel = false;
       player.resetPos();
-      player.level++;
-      player.score += 5;
+      player.score += 5 + player.level;
+      player.level++;      
       level.enemyMaxHealth = (1+ Math.floor(player.level/3));
       level.enemiesRemaining = 5 * player.level; // 5 enemies * the level number, per level
     }
@@ -739,6 +739,7 @@ function reset() {
   player.shieldKnockback = 25;
   player.shieldDefense = 0;
   player.bulletDamage = 1;
+  player.inLevel = false;
 
   level.spawnTick = 150;
   level.enemiesRemaining = 5 * player.level;

@@ -88,8 +88,7 @@ function Missile(I) {
   I.targetX = targets[findBottommostActiveTarget()[0]][findBottommostActiveTarget()[1]].x + (targetWidth / 2);
   I.targetY = targets[findBottommostActiveTarget()[0]][findBottommostActiveTarget()[1]].y + (targetHeight / 2);
 
-  I.xVelocity = (I.targetX - I.x) / 20;
-  I.yVelocity = (I.targetY - I.y) / 20;
+  I.speed = 10;
 
   I.inBounds = function () {
     return I.x >= 0 && I.x <= canvas.width &&
@@ -107,6 +106,23 @@ function Missile(I) {
   };
 
   I.update = function () {
+    let targetX = targets[findBottommostActiveTarget()[0]][findBottommostActiveTarget()[1]].x + (targetWidth / 2);
+    let targetY = targets[findBottommostActiveTarget()[0]][findBottommostActiveTarget()[1]].y + (targetHeight / 2);
+
+    let xDiff = targetX - I.x;
+    let yDiff = targetY - I.y;
+
+    if (xDiff == 0 && yDiff != 0) {
+      I.xVelocity = 0;
+      I.yVelocity = I.speed * (yDiff / Math.abs(yDiff));
+    } else if (xDiff != 0 && yDiff == 0) {
+      I.xVelocity = I.speed * (xDiff / Math.abs(xDiff));
+      I.yVelocity = 0;
+    } else if (xDiff != 0 && yDiff != 0) {
+      I.xVelocity = (I.speed / 1.3) * (xDiff / Math.abs(xDiff));
+      I.yVelocity = (I.speed / 1.3) * (yDiff / Math.abs(yDiff));
+    }
+
     I.x += I.xVelocity;
     I.y += I.yVelocity;
 

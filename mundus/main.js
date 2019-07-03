@@ -197,6 +197,7 @@ function draw() {
       player.inLevel = false;
       player.resetPos();
       player.level++;
+      player.score += 5;
       level.enemyMaxHealth = (1+ Math.floor(player.level/3));
       level.enemiesRemaining = 5 * player.level; // 5 enemies * the level number, per level
     }

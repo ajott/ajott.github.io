@@ -62,7 +62,7 @@ var player = {
     }));
   },
 
-  update: function() {
+  update: function () {
     if (player.ammo == 0 && player.mags != 0 && player.reloadTicks < player.reloadThresh) {
       player.reloadTicks++;
     } else if (player.ammo == 0 && player.mags != 0 && player.reloadTicks >= player.reloadThresh) {
@@ -87,7 +87,7 @@ var player = {
     ctx.rect(player.x, player.y, player.width, player.height);
     ctx.fillStyle = "#000000";
     ctx.fill();
-    ctx.closePath();    
+    ctx.closePath();
   }
 }
 
@@ -103,7 +103,15 @@ var level = {
     let spawnSide = edges[getRndInteger(0, 3)]; // Randomly chooses a map edge to spawn the enemy from
     let spawnX = 0;
     let spawnY = 25; // The white HUD bar is 25px tall
+
     let tempShoot = false; // Placeholder for the enemy's ability to fire at the player
+    let shootColor = "#FF0000";
+    let shootRoll = getRndInteger(1,20);
+
+    let tempShield = 0;
+    let shieldRoll = getRndInteger(1,20);
+
+    let enemyColor = bulletColor;
 
     if (spawnSide == "left") {
       spawnY = getRndInteger(25, canvas.height);
@@ -121,7 +129,15 @@ var level = {
     }
 
     if (player.level > 4) { // If the player is on level 5 or higher
+      if (shootRoll >= 16){
       tempShoot = true; // Let the enemies fire at the player
+      enemyColor = shootColor;
+    }}
+
+    if (player.level > 9) {
+      if (shieldRoll >= 16) {
+        tempShield = Math.floor(player.level / 5);
+      }
     }
 
     if (player.level % 5 != 0) { // If the player is not on a level that is a multiple of 5, spawn regular enemies
@@ -131,6 +147,8 @@ var level = {
         y: spawnY,
         maxHealth: level.enemyMaxHealth,
         canShoot: tempShoot,
+        shield: tempShield,
+        color: enemyColor,
         ID: currEnemyID // The enemy ID is used to check for collisions between enemies
       }));
 
@@ -159,7 +177,7 @@ function draw() {
   if (player.inLevel) {
 
     ctx.drawImage(levelImg, 0, 0);
-    
+
     player.draw();
     drawTopRect(); // Draws the white HUD bar
     drawAmmo(); // Draws the ammo count
@@ -339,11 +357,14 @@ function keyDownHandler(e) {
 
   if (e.keyCode == 39 || e.keyCode == 68) { // Right arrow key or D
     rightPressed = true;
-  } if (e.keyCode == 37 || e.keyCode == 65) { // Left arrow key or A
+  }
+  if (e.keyCode == 37 || e.keyCode == 65) { // Left arrow key or A
     leftPressed = true;
-  } if (e.keyCode == 38 || e.keyCode == 87) { // Up arrow key or W
+  }
+  if (e.keyCode == 38 || e.keyCode == 87) { // Up arrow key or W
     upPressed = true;
-  } if (e.keyCode == 40 || e.keyCode == 83) { // Down arrow key or S
+  }
+  if (e.keyCode == 40 || e.keyCode == 83) { // Down arrow key or S
     downPressed = true;
   }
 
@@ -466,8 +487,8 @@ function mouseClickHandler(e) {
 }
 
 
-// 24 web-safe colors
-var bulletColors = ["#00bfff", "#ff0080", "#00ffbf", "#80ff00", "#ff8000", "#4000ff", "#bf00ff", "#00ff80", "#8000ff", "#bfff00", "#ff00bf", "#ff4000", "#00ffff", "#00ff00", "#00ff40", "#0040ff", "#0000ff", "#ffff00", "#ff00ff", "#40ff00", "#ff0040", "#ffbf00", "#0080ff", "#ff0000"];
+// Web-safe colors
+var bulletColors = ["#00bfff", "#00ffbf", "#80ff00", "#ff8000", "#4000ff", "#bf00ff", "#00ff80", "#8000ff", "#bfff00", "#ff00bf", "#00ffff", "#00ff00", "#00ff40", "#0040ff", "#0000ff", "#ffff00", "#ff00ff", "#40ff00", "#ffbf00", "#0080ff"];
 
 // Choose a random color to begin with
 var bulletColor = bulletColors[Math.floor((Math.random() * bulletColors.length))];
@@ -543,7 +564,6 @@ function Enemy(I) {
   I.width = 10;
   I.height = 10;
   I.health = I.maxHealth;
-  I.color = bulletColor;
   I.speed = 2;
   I.lastXVel = 0;
   I.lastYVel = 0;
@@ -562,6 +582,21 @@ function Enemy(I) {
     ctx.stroke();
     ctx.closePath();
 
+    if (I.shield > 0) {
+
+      // Double electric blue circle for shield
+      ctx.beginPath();
+      ctx.arc(this.x + (this.width / 2), this.y + (this.height / 2), this.width - 2, 0, 2 * Math.PI);
+      ctx.strokeStyle = "#7DF9FF"
+      ctx.stroke();
+      ctx.closePath();
+
+      ctx.beginPath();
+      ctx.arc(this.x + (this.width / 2), this.y + (this.height / 2), this.width - 1, 0, 2 * Math.PI);
+      ctx.strokeStyle = "#7DF9FF"
+      ctx.stroke();
+      ctx.closePath();
+    }
 
     ctx.beginPath();
     ctx.rect(this.x - 5, this.y - 5, (I.health / I.maxHealth) * (this.width + 10), 2)
@@ -572,26 +607,26 @@ function Enemy(I) {
 
   I.shoot = function () { // Handles an enemy firing at the player
 
-    // The enemy will target the centerpoint of the player
-    let xDiff = (player.x + (player.width / 2)) - I.x;
-    let yDiff = (player.y + (player.height / 2)) - I.y;
+      // The enemy will target the centerpoint of the player
+      let xDiff = (player.x + (player.width / 2)) - I.x;
+      let yDiff = (player.y + (player.height / 2)) - I.y;
 
-    let xvel = 0;
-    let yvel = 0;
+      let xvel = 0;
+      let yvel = 0;
 
-    // Uses the same math as the player's shoot function
-    xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
-    yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
+      // Uses the same math as the player's shoot function
+      xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
+      yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
 
-    enemyBullets.push(Bullet({
-      xVelocity: xvel,
-      yVelocity: yvel,
-      x: I.x,
-      y: I.y,
-      width: bulletSize,
-      height: bulletSize
-    }));
-  },
+      enemyBullets.push(Bullet({
+        xVelocity: xvel,
+        yVelocity: yvel,
+        x: I.x,
+        y: I.y,
+        width: bulletSize,
+        height: bulletSize
+      }));
+    },
 
     I.update = function () {
       // Targeting logic, which allows the enemies to track the player.
@@ -630,7 +665,7 @@ function Enemy(I) {
       enemies.forEach(function (enemy) {
         if (enemy.active && enemy.ID != I.ID) {
           if (((I.x + I.xVelocity > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width) &&
-            (I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height)) ||
+              (I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height)) ||
             ((I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity + I.width < enemy.x + enemy.width) &&
               (I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height))
           ) {
@@ -638,7 +673,7 @@ function Enemy(I) {
           }
 
           if (((I.y + I.yVelocity > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height) &&
-            (I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width)) ||
+              (I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width)) ||
             ((I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity + I.height < enemy.y + enemy.height) &&
               (I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width))
           ) {
@@ -708,6 +743,22 @@ function Boss(I) {
     ctx.stroke();
     ctx.closePath();
 
+
+    // Double electric blue circle for shield
+    ctx.beginPath();
+    ctx.arc(this.x + (this.width / 2), this.y + (this.height / 2), this.width - 7, 0, 2 * Math.PI);
+    ctx.strokeStyle = "#7DF9FF"
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.arc(this.x + (this.width / 2), this.y + (this.height / 2), this.width - 8, 0, 2 * Math.PI);
+    ctx.strokeStyle = "#7DF9FF"
+    ctx.stroke();
+    ctx.closePath();
+
+
+
     ctx.beginPath();
     ctx.rect(this.x - 5, this.y - 8, (I.health / I.maxHealth) * (this.width + 10), 4)
     ctx.fillStyle = healthBarColor;
@@ -719,28 +770,29 @@ function Boss(I) {
     ctx.strokeStyle = "#000000";
     ctx.stroke();
     ctx.closePath();
+
   }
 
   I.shoot = function () {
 
-    let xDiff = (player.x + (player.width / 2)) - I.x;
-    let yDiff = (player.y + (player.height / 2)) - I.y;
-    let xvel = 0;
-    let yvel = 0;
+      let xDiff = (player.x + (player.width / 2)) - I.x;
+      let yDiff = (player.y + (player.height / 2)) - I.y;
+      let xvel = 0;
+      let yvel = 0;
 
 
-    xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
-    yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
+      xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
+      yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
 
-    enemyBullets.push(Bullet({
-      xVelocity: xvel,
-      yVelocity: yvel,
-      x: (I.x + (I.width / 2)),
-      y: (I.y + (I.height / 2)),
-      width: 8,
-      height: 8
-    }));
-  },
+      enemyBullets.push(Bullet({
+        xVelocity: xvel,
+        yVelocity: yvel,
+        x: (I.x + (I.width / 2)),
+        y: (I.y + (I.height / 2)),
+        width: 8,
+        height: 8
+      }));
+    },
 
     I.update = function () {
       // Targeting logic, which allows the enemies to track the player.
@@ -938,8 +990,8 @@ function drawMenu() {
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
   ctx.fillText("SDef +1: $" + SDefPrice, menuCol2 + 75, menuRow3 + 23);
-  
-  
+
+
   ctx.textAlign = "left";
 
 
@@ -952,8 +1004,10 @@ function drawMenu() {
   ctx.stroke();
   ctx.closePath();
 
-  if (player.level > 4) {
+  if (player.level > 4 && player.level <= 9) {
     shootString = "Gun Enemies"
+  } else if (player.level > 9){
+    shootString = "Gun + Shield Enemies"
   } else {
     shootString = "Melee Enemies"
   }
@@ -1008,13 +1062,13 @@ function collisionDetection() {
 
       // If the bullet intersects an enemy (falls within any of the four corners of the enemy square)
       if (bullet.x > enemy.x - 5 && bullet.y > enemy.y - 5 && bullet.x < (enemy.x + enemy.width + 5) && bullet.y < (enemy.y + enemy.height + 5)) {
-        
-        if (player.level % 5 != 0){
-          enemy.health -= player.bulletDamage; // Decrease enemy health normall if it's not a boss
+
+        if (player.level % 5 != 0) {
+          enemy.health -= Math.max(0,player.bulletDamage - enemy.shield); // Decrease enemy health normall if it's not a boss
         } else {
-          enemy.health -= (player.bulletDamage - (player.level / 5));
-        }        
-        
+          enemy.health -= Math.max(0,player.bulletDamage - (player.level / 5));
+        }
+
         bullet.active = false; // and despawn the bullet
         // If the enemy is dead
         if (enemy.health <= 0) {
@@ -1030,11 +1084,11 @@ function collisionDetection() {
 
     // If any of the four corners of the enemy intersect the player's square
     if (enemy.active && (
-      (enemy.x > player.x && enemy.y > player.y && enemy.x < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
-      (enemy.x + enemy.width > player.x && enemy.y > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
-      (enemy.x > player.x && enemy.y + enemy.height > player.y && enemy.x < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height)) ||
-      (enemy.x + enemy.width > player.x && enemy.y + enemy.height > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height))
-    )) {
+        (enemy.x > player.x && enemy.y > player.y && enemy.x < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
+        (enemy.x + enemy.width > player.x && enemy.y > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
+        (enemy.x > player.x && enemy.y + enemy.height > player.y && enemy.x < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height)) ||
+        (enemy.x + enemy.width > player.x && enemy.y + enemy.height > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height))
+      )) {
       let dmg = (level.enemyMaxHealth - player.shieldDefense) // Calculate the damage dealt by the enemy
       if (dmg > 0) {
         flashColor("red");

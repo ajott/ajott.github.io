@@ -1078,7 +1078,7 @@ function menuAction(x, y) {
     // If the start button is clicked, pick a random background, reset the player position, and start the level
     levelImg.src = levels[getRndInteger(0, levels.length - 1)];
     player.resetPos();
-
+    ctx.drawImage(levelImg, 0, 0);
     setTimeout(function () { // 15ms timeout to prevent a bullet from being spawned due to clicking "start"
       player.inLevel = true;
     }, 15);

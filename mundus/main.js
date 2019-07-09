@@ -14,7 +14,11 @@ var keys = [];
 // Player variable
 var player = {
   health: 10,
-  ammo: 25,
+  ammo: 5,
+  mags: 4,
+  magSize: 5,
+  reloadTicks: 0,
+  reloadThresh: 100,
   x: 395, // Starting x coordinate
   y: 295, // Starting y coordinate
   vel: 5, // Player movespeed
@@ -72,7 +76,9 @@ var player = {
       xVelocity: xvel,
       yVelocity: yvel,
       x: xpos,
-      y: ypos
+      y: ypos,
+      width: bulletSize,
+      height: bulletSize
     }));
   },
 
@@ -92,24 +98,42 @@ var player = {
       xVelocity: xvel,
       yVelocity: yvel,
       x: player.x,
-      y: player.y
+      y: player.y,
+      width: bulletSize,
+      height: bulletSize
     }));
   },
 
   draw: function () {
-    // Draw function for the player object
+    // Draw/update function for the player object
     ctx.beginPath();
     ctx.rect(player.x, player.y, player.width, player.height);
     ctx.fillStyle = "#000000";
     ctx.fill();
     ctx.closePath();
 
+    if (player.ammo == 0 && player.mags != 0 && player.reloadTicks < player.reloadThresh) {
+      player.reloadTicks ++;
+    } else if (player.ammo == 0 && player.mags != 0 && player.reloadTicks >= player.reloadThresh) {
+      player.ammo = player.magSize;
+      player.mags -= 1;
+      player.reloadTicks = 0;
+    }
+
+
+    if (player.reloadTicks != 0) {
+      ctx.beginPath();
+      ctx.rect(player.x - 4, player.y + player.height + 2, (player.reloadTicks / player.reloadThresh) * (player.width + 8), 3);
+      ctx.fillStyle = "lime";
+      ctx.fill();
+      ctx.closePath();
+    }
   }
 }
 
 // Level object
 var level = {
-  enemiesRemaining: 5 * player.level, // Determines how many enemies will spawn per level
+  enemiesRemaining: 5 + 5 * player.level, // Determines how many enemies will spawn per level
   spawnTick: 150, // On which gameplay tick will the first enemy spawn?
   enemyMaxHealth: 1,
 
@@ -136,11 +160,11 @@ var level = {
       spawnY = canvas.height;
     }
 
-    if (player.level % 5 != 0) { // If the player is not on a level that is a multiple of 5, spawn regular enemies
+    if (player.level > 4) { // If the player is on level 5 or higher
+      tempShoot = true; // Let the enemies fire at the player
+    }
 
-      if (player.level > 4) { // If the player is on level 5 or higher
-        tempShoot = true; // Let the enemies fire at the player
-      }
+    if (player.level % 5 != 0) { // If the player is not on a level that is a multiple of 5, spawn regular enemies
 
       enemies.push(Enemy({
         x: spawnX,
@@ -156,7 +180,8 @@ var level = {
       enemies.push(Boss({
         x: spawnX,
         y: spawnY,
-        maxHealth: level.enemyMaxHealth
+        maxHealth: level.enemyMaxHealth,
+        canShoot: true
       }))
     }
 
@@ -253,19 +278,17 @@ function draw() {
     }
 
     if (enemies.length == 0 && level.enemiesRemaining == 0) { // If there are no active enemies, and no reserves, the level is complete
-      bullets.forEach(function (bullet) { // Remove any active bullets
-        bullet.active = false;
-      })
-      enemyBullets.forEach(function (bullet) { // Remove any active enemy bullets
-        bullet.active = false;
-      })
+      bullets = [] // Remove any active bullets
+
+      enemyBullets = [] // Remove any active enemy bullets
 
       player.inLevel = false;
       player.resetPos(); // Move the player back to the center
       player.score += 5 + player.level; // Give the player $5 + level number
       player.level++; // Increment level
+
       if (player.level % 5 != 0) { // If this is not a boss level
-        level.enemiesRemaining = 5 * player.level; // 5 enemies * the level number, per level
+        level.enemiesRemaining = getRndInteger(5 + 5 * player.level, 10 + 5 * player.level); // 5-10 enemies + 5 * the level number, per level
         level.enemyMaxHealth = (1 + Math.floor(player.level / 3)); // Enemy max health
       } else { // If it is a boss level
         level.enemiesRemaining = 1;
@@ -305,7 +328,7 @@ function drawBackground() {
 function drawAmmo() {
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Ammo: " + player.ammo, canvas.width - 130, 20);
+  ctx.fillText("Ammo: " + player.ammo + " (" + player.mags + ")", canvas.width - 130, 20);
 }
 
 // Draws in the player health
@@ -371,8 +394,20 @@ function mouseMoveHandler(e) {
     // This logic governs the hover-over colors for the menu buttons
     if (mouseX > startX && mouseX < startX + 150 && mouseY > startY && mouseY < startY + 35) {
       startColor = "limegreen";
+    } else if (mouseX > startX && mouseX < startX + 150 && mouseY > menuRow1 && mouseY < menuRow1 + 35) {
+      if (player.score >= MagSizePrice) {
+        magColor = "#BBBBBB";
+      } else {
+        magColor = "#FFFFFF";
+      }
+    } else if (mouseX > startX && mouseX < startX + 150 && mouseY > menuRow2 && mouseY < menuRow2 + 35) {
+      if (player.score >= ReloadTimePrice && player.reloadThresh >= 25) {
+        reloadColor = "#BBBBBB";
+      } else {
+        reloadColor = "#FFFFFF";
+      }
     } else if (mouseX > menuCol1 && mouseX < menuCol1 + 150 && mouseY > menuRow1 && mouseY < menuRow1 + 35) {
-      if (player.score >= 3) {
+      if (player.score >= AmmoPrice) {
         ammoColor = "#BBBBBB";
       } else {
         ammoColor = "#FFFFFF";
@@ -384,25 +419,25 @@ function mouseMoveHandler(e) {
         healthColor = "#FFFFFF";
       }
     } else if (mouseX > menuCol1 && mouseX < menuCol1 + 150 && mouseY > menuRow3 && mouseY < menuRow3 + 35) {
-      if (player.score >= 50) {
+      if (player.score >= GDmgPrice) {
         GDmgColor = "#BBBBBB";
       } else {
         GDmgColor = "#FFFFFF";
       }
     } else if (mouseX > menuCol2 && mouseX < menuCol2 + 150 && mouseY > menuRow1 && mouseY < menuRow1 + 35) {
-      if (player.score >= 70) {
+      if (player.score >= ShieldDmgPrice) {
         SDmgColor = "#BBBBBB";
       } else {
         SDmgColor = "#FFFFFF";
       }
     } else if (mouseX > menuCol2 && mouseX < menuCol2 + 150 && mouseY > menuRow2 && mouseY < menuRow2 + 35) {
-      if (player.score >= 50) {
+      if (player.score >= KnockbackPrice) {
         KnockbackColor = "#BBBBBB";
       } else {
         KnockbackColor = "#FFFFFF";
       }
     } else if (mouseX > menuCol2 && mouseX < menuCol2 + 150 && mouseY > menuRow3 && mouseY < menuRow3 + 35) {
-      if (player.score >= 70) {
+      if (player.score >= SDefPrice) {
         SDefColor = "#BBBBBB";
       } else {
         SDefColor = "#FFFFFF";
@@ -410,6 +445,8 @@ function mouseMoveHandler(e) {
     } else { // Resets the hover colors to the default color
       startColor = "lime";
       mouseStyle = "auto";
+      magColor = "#FFFFFF";
+      reloadColor = "#FFFFFF";
       ammoColor = "#FFFFFF";
       healthColor = "#FFFFFF";
       GDmgColor = "#FFFFFF";
@@ -453,6 +490,14 @@ var mouseStyle = "auto";
 var levels = ["./levels/concrete.jpg", "./levels/grass.jpg", "./levels/gravel.jpg", "./levels/parking.jpg", "./levels/snow.jpg"]
 var levelImg = new Image;
 
+var AmmoPrice = 3;
+var GDmgPrice = 50;
+var MagSizePrice = 25;
+var ReloadTimePrice = 30;
+var ShieldDmgPrice = 70;
+var KnockbackPrice = 50;
+var SDefPrice = 70;
+
 
 var ticks = 0; // Used to delay spawning enemies
 var currEnemyID = 0; // Used for tracking unique enemies for purposes of enemy/enemy collision
@@ -467,8 +512,6 @@ var enemyBullets = [];
 // Bullet constructor
 function Bullet(I) {
   I.active = true;
-  I.width = bulletSize;
-  I.height = bulletSize;
   I.color = bulletColor;
 
   // Used to delete bullets that strike the border of the map
@@ -551,7 +594,9 @@ function Enemy(I) {
         xVelocity: xvel,
         yVelocity: yvel,
         x: I.x,
-        y: I.y
+        y: I.y,
+        width: bulletSize,
+        height: bulletSize
       }));
     },
 
@@ -624,8 +669,9 @@ function Enemy(I) {
       if (I.canShoot) {
         I.shootTicks++;
 
-        if (I.shootTicks == 100) {
+        if (I.shootTicks == 200) {
           I.shoot();
+          I.shootTicks = 0;
         }
       }
 
@@ -647,7 +693,8 @@ function Boss(I) {
   I.speed = 1;
   I.lastXVel = 0;
   I.lastYVel = 0;
-  I.bulletVel = 9;
+  I.bulletVel = 7;
+  I.shootTicks = 0;
 
   // Draw function
   I.draw = function () {
@@ -695,8 +742,10 @@ function Boss(I) {
       enemyBullets.push(Bullet({
         xVelocity: xvel,
         yVelocity: yvel,
-        x: I.x,
-        y: I.y
+        x: (I.x + (I.width / 2)),
+        y: (I.y + (I.height / 2)),
+        width: 8,
+        height: 8
       }));
     },
 
@@ -735,11 +784,13 @@ function Boss(I) {
       I.x += I.xVelocity;
       I.y += I.yVelocity;
 
+      // If the enemy can shoot, increment its shoot ticks
       if (I.canShoot) {
-        let shootRoll = getRndInteger(1, 200);
+        I.shootTicks++;
 
-        if (shootRoll == 100) {
+        if (I.shootTicks == 300) {
           I.shoot();
+          I.shootTicks = 0;
         }
       }
 
@@ -765,6 +816,8 @@ var menuRow3 = 350;
 // Menu colors
 var startColor = "lime";
 var ammoColor = "#FFFFFF";
+var magColor = "#FFFFFF";
+var reloadColor = "#FFFFFF";
 var healthColor = "#FFFFFF";
 var GDmgColor = "#FFFFFF";
 var SDmgColor = "#FFFFFF";
@@ -786,6 +839,32 @@ function drawMenu() {
   ctx.fillStyle = "#000000";
   ctx.fillText("Start", startX + 50, startY + 25);
 
+  // Draw buy mag size button
+  ctx.beginPath();
+  ctx.rect(startX, menuRow1, 150, 35);
+  ctx.fillStyle = magColor;
+  ctx.fill();
+  ctx.strokeStyle = "#000000";
+  ctx.stroke();
+  ctx.closePath();
+
+  ctx.font = "16px Arial";
+  ctx.fillStyle = "#000000";
+  ctx.fillText("Mag Size + 3: $"+MagSizePrice, startX + 10, menuRow1 + 23);
+
+  // Draw buy reload time button
+  ctx.beginPath();
+  ctx.rect(startX, menuRow2, 150, 35);
+  ctx.fillStyle = reloadColor;
+  ctx.fill();
+  ctx.strokeStyle = "#000000";
+  ctx.stroke();
+  ctx.closePath();
+
+  ctx.font = "16px Arial";
+  ctx.fillStyle = "#000000";
+  ctx.fillText("R. Time - 15: $" + ReloadTimePrice, startX + 12, menuRow2 + 23);
+
 
   // Draw buy ammo button
   ctx.beginPath();
@@ -798,7 +877,7 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Ammo: 5/$3", menuCol1 + 30, menuRow1 + 23);
+  ctx.fillText("Magazine: $"+AmmoPrice, menuCol1 + 27, menuRow1 + 23);
 
   // Draw buy health button
   ctx.beginPath();
@@ -824,7 +903,7 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("GDmg +1: $50", menuCol1 + 20, menuRow3 + 23);
+  ctx.fillText("GDmg +1: $"+GDmgPrice, menuCol1 + 20, menuRow3 + 23);
 
   // Draw buy shield damage button
   ctx.beginPath();
@@ -837,7 +916,7 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("SDmg +1: $70", menuCol2 + 25, menuRow1 + 23);
+  ctx.fillText("SDmg +1: $"+ShieldDmgPrice, menuCol2 + 25, menuRow1 + 23);
 
   // Draw buy shield knockback button
   ctx.beginPath();
@@ -850,7 +929,7 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Knockback +5: $50", menuCol2 + 6, menuRow2 + 23);
+  ctx.fillText("Knockback +5: $"+KnockbackPrice, menuCol2 + 6, menuRow2 + 23);
 
   // Draw buy shield defense button
   ctx.beginPath();
@@ -863,34 +942,43 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("SDef +1: $70", menuCol2 + 25, menuRow3 + 23);
+  ctx.fillText("SDef +1: $"+SDefPrice, menuCol2 + 25, menuRow3 + 23);
 
   // Draw left info panel
   ctx.beginPath();
-  ctx.rect(0, canvas.height - 100, 200, 100);
+  ctx.rect(0, canvas.height - 125, 200, 125);
   ctx.fillStyle = "#EEEEEE";
   ctx.fill();
   ctx.strokeStyle = "#000000";
   ctx.stroke();
   ctx.closePath();
 
+  if (player.level > 4){
+    shootString = "Gun Enemies"
+  } else {
+    shootString = "Melee Enemies"
+  }
+
+  if (player.level % 5 == 0) {
+    bossString = "BOSS LEVEL"
+  } else {
+    bossString = "";
+  }
+
   ctx.font = "14px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Level: " + player.level, 15, canvas.height - 75);
-  ctx.font = "14px Arial";
-  ctx.fillStyle = "#000000";
-  ctx.fillText("Enemies: " + level.enemiesRemaining, 15, canvas.height - 55);
-  ctx.font = "14px Arial";
-  ctx.fillStyle = "#000000";
-  ctx.fillText("Enemy Health: " + level.enemyMaxHealth, 15, canvas.height - 35);
-  ctx.font = "14px Arial";
-  ctx.fillStyle = "#000000";
-  ctx.fillText("Enemy Damage: " + level.enemyMaxHealth, 15, canvas.height - 15);
+  ctx.fillText("Level: " + player.level, 15, canvas.height - 105);
+  ctx.fillText("Enemies: " + level.enemiesRemaining, 15, canvas.height - 85);
+  ctx.fillText("Enemy Health: " + level.enemyMaxHealth, 15, canvas.height - 65);
+  ctx.fillText("Enemy Damage: " + level.enemyMaxHealth, 15, canvas.height - 45);
+  ctx.fillText(shootString, 15, canvas.height - 25);
+  ctx.fillStyle = "#FF0000";
+  ctx.fillText(bossString, 15, canvas.height - 5);
 
 
   // Draw right info panel
   ctx.beginPath();
-  ctx.rect(canvas.width - 200, canvas.height - 100, 200, 100);
+  ctx.rect(canvas.width - 200, canvas.height - 125, 200, 125);
   ctx.fillStyle = "#EEEEEE";
   ctx.fill();
   ctx.strokeStyle = "#000000";
@@ -899,16 +987,12 @@ function drawMenu() {
 
   ctx.font = "14px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Gun Damage: " + player.bulletDamage, canvas.width - 185, canvas.height - 75);
-  ctx.font = "14px Arial";
-  ctx.fillStyle = "#000000";
-  ctx.fillText("Shield Damage: " + player.shieldDamage, canvas.width - 185, canvas.height - 55);
-  ctx.font = "14px Arial";
-  ctx.fillStyle = "#000000";
-  ctx.fillText("Shield Defense: " + player.shieldDefense, canvas.width - 185, canvas.height - 35);
-  ctx.font = "14px Arial";
-  ctx.fillStyle = "#000000";
-  ctx.fillText("Shield Knockback: " + player.shieldKnockback, canvas.width - 185, canvas.height - 15);
+  ctx.fillText("Gun Damage: " + player.bulletDamage, canvas.width - 185, canvas.height - 105);
+  ctx.fillText("Shield Damage: " + player.shieldDamage, canvas.width - 185, canvas.height - 85);
+  ctx.fillText("Shield Defense: " + player.shieldDefense, canvas.width - 185, canvas.height - 65);
+  ctx.fillText("Shield Knockback: " + player.shieldKnockback, canvas.width - 185, canvas.height - 45);
+  ctx.fillText("Magazine Size: " + player.magSize, canvas.width - 185, canvas.height - 25)
+  ctx.fillText("Reload Time: " + player.reloadThresh, canvas.width - 185, canvas.height - 5)
 }
 
 
@@ -992,11 +1076,27 @@ function menuAction(x, y) {
     setTimeout(function () { // 15ms timeout to prevent a bullet from being spawned due to clicking "start"
       player.inLevel = true;
     }, 15);
+  } else if (x > startX && x < startX + 150 && y > menuRow1 && y < menuRow1 + 35) {
+    // Mag size purchase
+    if (player.score >= MagSizePrice) {
+      player.score -= MagSizePrice;
+      player.magSize += 3;
+      player.ammo = player.magSize;
+      MagSizePrice += 20
+      AmmoPrice += 1;
+    }
+  } else if (x > startX && x < startX + 150 && y > menuRow2 && y < menuRow2 + 35) {
+    // Reload time purchase
+    if (player.score >= ReloadTimePrice && player.reloadThresh >= 25) {
+      player.score -= ReloadTimePrice;
+      player.reloadThresh -= 15;
+      ReloadTimePrice += 15
+    }
   } else if (x > menuCol1 && x < menuCol1 + 150 && y > menuRow1 && y < menuRow1 + 35) {
-    // Ammo purchase
-    if (player.score >= 3) {
-      player.score -= 3;
-      player.ammo += 5;
+    // Mag purchase
+    if (player.score >= AmmoPrice) {
+      player.score -= AmmoPrice;
+      player.mags += 1;
     }
   } else if (x > menuCol1 && x < menuCol1 + 150 && y > menuRow2 && y < menuRow2 + 35) {
     // Health purchase
@@ -1006,27 +1106,31 @@ function menuAction(x, y) {
     }
   } else if (x > menuCol1 && x < menuCol1 + 150 && y > menuRow3 && y < menuRow3 + 35) {
     // Gun Damage purchase
-    if (player.score >= 50) {
-      player.score -= 50;
+    if (player.score >= GDmgPrice) {
+      player.score -= GDmgPrice;
       player.bulletDamage += 1;
+      GDmgPrice += 25
     }
   } else if (x > menuCol2 && x < menuCol2 + 150 && y > menuRow1 && y < menuRow1 + 35) {
     // Shield Damage purchase
-    if (player.score >= 70) {
-      player.score -= 70;
+    if (player.score >= ShieldDmgPrice) {
+      player.score -= ShieldDmgPrice;
       player.shieldDamage += 1;
+      ShieldDmgPrice += 20
     }
   } else if (x > menuCol2 && x < menuCol2 + 150 && y > menuRow2 && y < menuRow2 + 35) {
     // Knockback purchase
-    if (player.score >= 50) {
-      player.score -= 50;
+    if (player.score >= KnockbackPrice) {
+      player.score -= KnockbackPrice;
       player.shieldKnockback += 5;
+      KnockbackPrice += 10
     }
   } else if (x > menuCol2 && x < menuCol2 + 150 && y > menuRow3 && y < menuRow3 + 35) {
     // Shield Defense purchase
-    if (player.score >= 70) {
-      player.score -= 70;
+    if (player.score >= SDefPrice) {
+      player.score -= SDefPrice;
       player.shieldDefense += 1;
+      SDefPrice += 20
     }
   }
 }
@@ -1086,7 +1190,11 @@ function reset() {
   downPressed = false;
 
   player.health = 10;
-  player.ammo = 25;
+  player.ammo = 5;
+  player.mags = 4;
+  player.magSize = 5;
+  player.reloadThresh = 100;
+  player.reloadTicks = 0;
   player.level = 1;
   player.score = 15;
   player.shieldDamage = 1;
@@ -1095,8 +1203,16 @@ function reset() {
   player.bulletDamage = 1;
   player.inLevel = false;
 
+  AmmoPrice = 3;
+  GDmgPrice = 50;
+  MagSizePrice = 25;
+  ReloadTimePrice = 30;
+  ShieldDmgPrice = 70;
+  KnockbackPrice = 50;
+  SDefPrice = 70;
+
   level.spawnTick = 150;
-  level.enemiesRemaining = 5 * player.level;
+  level.enemiesRemaining = 5 + 5 * player.level;
   level.enemyMaxHealth = 1;
 
   ticks = 0;

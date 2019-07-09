@@ -39,48 +39,6 @@ var player = {
     player.y = 295;
   },
 
-  // Player function to spawn a projectile
-  spawnBulletKey: function () {
-    let xvel = 0;
-    let yvel = 0;
-    let xpos = 0;
-    let ypos = 0;
-
-    if (player.facing == "up") {
-      // If the player is facing up, the bullet is created in the upper-center of the player object and fired up
-      yvel = -player.bulletVel;
-      xvel = 0;
-      xpos = player.x + (2);
-      ypos = player.y;
-    } else if (player.facing == "down") {
-      // If the player is facing down, the bullet is created in the bottom-center of the player object and fired down
-      yvel = player.bulletVel;
-      xvel = 0;
-      xpos = player.x + (2);
-      ypos = player.y + player.height;
-    } else if (player.facing == "right") {
-      // If the player is facing right, the bullet is created in the middle-right of the player object and fired right
-      xvel = player.bulletVel;
-      yvel = 0;
-      xpos = player.x + player.width;
-      ypos = player.y + (2);
-    } else if (player.facing == "left") {
-      // If the player is facing left, the bullet is created in the middle-left of the player object and fired left
-      xvel = -player.bulletVel;
-      yvel = 0;
-      xpos = player.x;
-      ypos = player.y + (2);
-    }
-
-    bullets.push(Bullet({
-      xVelocity: xvel,
-      yVelocity: yvel,
-      x: xpos,
-      y: ypos,
-      width: bulletSize,
-      height: bulletSize
-    }));
-  },
 
   spawnBulletMouse: function (xpos, ypos) { // Spawns a bullet when the mouse is clicked
 
@@ -213,22 +171,25 @@ function draw() {
     if (rightPressed && player.x < canvas.width - player.width - 5) {
       // If the player is attempting to move right, and is not exceeding the 5px buffer on the right side, move them.
       player.x += player.vel;
-      player.facing = "right";
+      
 
-    } else if (leftPressed && player.x > 5) {
+    } 
+    if (leftPressed && player.x > 5) {
       // If the player is moving left and is not exceeding the 5px buffer, move them.
       player.x -= player.vel;
-      player.facing = "left";
+      
 
-    } else if (upPressed && player.y > 30) {
+    } 
+    if (upPressed && player.y > 30) {
       // If the player is moving up, and is not exceeding the 5px buffer + 25px HUD bar, move them.
       player.y -= player.vel;
-      player.facing = "up";
+      
 
-    } else if (downPressed && player.y < canvas.height - player.height - 5) {
+    } 
+    if (downPressed && player.y < canvas.height - player.height - 5) {
       // If the player is moving down, and is not exceeding the 5px buffer, move them.
       player.y += player.vel;
-      player.facing = "down";
+      
     }
 
     bullets.forEach(function (bullet) { // Update each bullet
@@ -354,18 +315,15 @@ function keyDownHandler(e) {
 
   if (e.keyCode == 39 || e.keyCode == 68) { // Right arrow key or D
     rightPressed = true;
-  } else if (e.keyCode == 37 || e.keyCode == 65) { // Left arrow key or A
+  }  if (e.keyCode == 37 || e.keyCode == 65) { // Left arrow key or A
     leftPressed = true;
-  } else if (e.keyCode == 38 || e.keyCode == 87) { // Up arrow key or W
+  }  if (e.keyCode == 38 || e.keyCode == 87) { // Up arrow key or W
     upPressed = true;
-  } else if (e.keyCode == 40 || e.keyCode == 83) { // Down arrow key or S
+  }  if (e.keyCode == 40 || e.keyCode == 83) { // Down arrow key or S
     downPressed = true;
-  } else if (e.keyCode == 32) { // Spacebar
-    if (player.ammo > 0 && player.inLevel) {
-      player.spawnBulletKey();
-      player.ammo--;
-    }
-  } else if (e.keyCode == 82) { // "R" key
+  } 
+  
+  if (e.keyCode == 82) { // "R" key
     reset();
   }
 }
@@ -376,11 +334,14 @@ function keyUpHandler(e) {
 
   if (e.keyCode == 39 || e.keyCode == 68) { // Right arrow key or D
     rightPressed = false;
-  } else if (e.keyCode == 37 || e.keyCode == 65) { // Left arrow key or A
+  } 
+  if (e.keyCode == 37 || e.keyCode == 65) { // Left arrow key or A
     leftPressed = false;
-  } else if (e.keyCode == 38 || e.keyCode == 87) { // Up arrow key or W
+  } 
+  if (e.keyCode == 38 || e.keyCode == 87) { // Up arrow key or W
     upPressed = false;
-  } else if (e.keyCode == 40 || e.keyCode == 83) { // Down arrow key or S
+  } 
+  if (e.keyCode == 40 || e.keyCode == 83) { // Down arrow key or S
     downPressed = false;
   }
 }

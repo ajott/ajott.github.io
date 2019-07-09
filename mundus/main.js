@@ -62,16 +62,9 @@ var player = {
     }));
   },
 
-  draw: function () {
-    // Draw/update function for the player object
-    ctx.beginPath();
-    ctx.rect(player.x, player.y, player.width, player.height);
-    ctx.fillStyle = "#000000";
-    ctx.fill();
-    ctx.closePath();
-
+  update: function() {
     if (player.ammo == 0 && player.mags != 0 && player.reloadTicks < player.reloadThresh) {
-      player.reloadTicks ++;
+      player.reloadTicks++;
     } else if (player.ammo == 0 && player.mags != 0 && player.reloadTicks >= player.reloadThresh) {
       player.ammo = player.magSize;
       player.mags -= 1;
@@ -86,6 +79,15 @@ var player = {
       ctx.fill();
       ctx.closePath();
     }
+  },
+
+  draw: function () {
+    // Draw/update function for the player object
+    ctx.beginPath();
+    ctx.rect(player.x, player.y, player.width, player.height);
+    ctx.fillStyle = "#000000";
+    ctx.fill();
+    ctx.closePath();    
   }
 }
 
@@ -157,7 +159,7 @@ function draw() {
   if (player.inLevel) {
 
     ctx.drawImage(levelImg, 0, 0);
-
+    
     player.draw();
     drawTopRect(); // Draws the white HUD bar
     drawAmmo(); // Draws the ammo count
@@ -165,95 +167,117 @@ function draw() {
     drawScore(); // Draws the player score/money
     drawEnemiesRemaining(); // Draws the enemy reserve
     drawLevel();
-    collisionDetection(); // Runs collision detection logic
 
+    if (paused) {
+      enemies.forEach(function (enemy) { // Draws all enemies
+        enemy.draw();
+      })
 
-    if (rightPressed && player.x < canvas.width - player.width - 5) {
-      // If the player is attempting to move right, and is not exceeding the 5px buffer on the right side, move them.
-      player.x += player.vel;
-      
+      bullets.forEach(function (bullet) { // Draw all bullets (which will only be the active bullets after the filter)
+        bullet.draw();
+      })
 
-    } 
-    if (leftPressed && player.x > 5) {
-      // If the player is moving left and is not exceeding the 5px buffer, move them.
-      player.x -= player.vel;
-      
+      enemyBullets.forEach(function (bullet) { // Draw all enemy bullets (which will only be the active bullets after the filter)
+        bullet.draw();
+      })
 
-    } 
-    if (upPressed && player.y > 30) {
-      // If the player is moving up, and is not exceeding the 5px buffer + 25px HUD bar, move them.
-      player.y -= player.vel;
-      
-
-    } 
-    if (downPressed && player.y < canvas.height - player.height - 5) {
-      // If the player is moving down, and is not exceeding the 5px buffer, move them.
-      player.y += player.vel;
-      
+      drawPaused();
     }
 
-    bullets.forEach(function (bullet) { // Update each bullet
-      bullet.update();
-    });
+    if (!paused) {
 
-    bullets = bullets.filter(function (bullet) { // Delete inactive bullets
-      return bullet.active;
-    });
+      player.update();
 
-    bullets.forEach(function (bullet) { // Draw all bullets (which will only be the active bullets after the filter)
-      bullet.draw();
-    })
+      collisionDetection(); // Runs collision detection logic
 
-    enemies.forEach(function (enemy) { // Updates each enemy
-      enemy.update();
-    });
 
-    enemies = enemies.filter(function (enemy) { // Delete inactive enemies
-      return enemy.active;
-    });
+      if (rightPressed && player.x < canvas.width - player.width - 5) {
+        // If the player is attempting to move right, and is not exceeding the 5px buffer on the right side, move them.
+        player.x += player.vel;
 
-    enemies.forEach(function (enemy) { // Draws all enemies
-      enemy.draw();
-    })
 
-    enemyBullets.forEach(function (bullet) { // Update each enemy bullet
-      bullet.update();
-    });
+      }
+      if (leftPressed && player.x > 5) {
+        // If the player is moving left and is not exceeding the 5px buffer, move them.
+        player.x -= player.vel;
 
-    enemyBullets = enemyBullets.filter(function (bullet) { // Delete inactive enemy bullets
-      return bullet.active;
-    });
 
-    enemyBullets.forEach(function (bullet) { // Draw all enemy bullets (which will only be the active bullets after the filter)
-      bullet.draw();
-    })
+      }
+      if (upPressed && player.y > 30) {
+        // If the player is moving up, and is not exceeding the 5px buffer + 25px HUD bar, move them.
+        player.y -= player.vel;
 
-    if (level.enemiesRemaining > 0) { // Only bother tracking gameplay ticks if there are still enemies in reserve
-      ticks++;
-    }
 
-    if (ticks >= level.spawnTick && level.enemiesRemaining > 0) { // If the gameplay tick exceeds the threshold,
-      level.spawnEnemy() // Spawn an enemy
-      level.spawnTick = Math.max((150 - 10 * player.level), 0) + getRndInteger(20, 50); // and determine the new threshold
-      ticks = 0; // and reset the ticks
-    }
+      }
+      if (downPressed && player.y < canvas.height - player.height - 5) {
+        // If the player is moving down, and is not exceeding the 5px buffer, move them.
+        player.y += player.vel;
 
-    if (enemies.length == 0 && level.enemiesRemaining == 0) { // If there are no active enemies, and no reserves, the level is complete
-      bullets = [] // Remove any active bullets
+      }
 
-      enemyBullets = [] // Remove any active enemy bullets
+      bullets.forEach(function (bullet) { // Update each bullet
+        bullet.update();
+      });
 
-      player.inLevel = false;
-      player.resetPos(); // Move the player back to the center
-      player.score += 5 + player.level; // Give the player $5 + level number
-      player.level++; // Increment level
+      bullets = bullets.filter(function (bullet) { // Delete inactive bullets
+        return bullet.active;
+      });
 
-      if (player.level % 5 != 0) { // If this is not a boss level
-        level.enemiesRemaining = getRndInteger(5 + 5 * player.level, 10 + 5 * player.level); // 5-10 enemies + 5 * the level number, per level
-        level.enemyMaxHealth = (1 + Math.floor(player.level / 3)); // Enemy max health
-      } else { // If it is a boss level
-        level.enemiesRemaining = 1;
-        level.enemyMaxHealth = player.level * 5;
+      bullets.forEach(function (bullet) { // Draw all bullets (which will only be the active bullets after the filter)
+        bullet.draw();
+      })
+
+      enemies.forEach(function (enemy) { // Updates each enemy
+        enemy.update();
+      });
+
+      enemies = enemies.filter(function (enemy) { // Delete inactive enemies
+        return enemy.active;
+      });
+
+      enemies.forEach(function (enemy) { // Draws all enemies
+        enemy.draw();
+      })
+
+      enemyBullets.forEach(function (bullet) { // Update each enemy bullet
+        bullet.update();
+      });
+
+      enemyBullets = enemyBullets.filter(function (bullet) { // Delete inactive enemy bullets
+        return bullet.active;
+      });
+
+      enemyBullets.forEach(function (bullet) { // Draw all enemy bullets (which will only be the active bullets after the filter)
+        bullet.draw();
+      })
+
+      if (level.enemiesRemaining > 0) { // Only bother tracking gameplay ticks if there are still enemies in reserve
+        ticks++;
+      }
+
+      if (ticks >= level.spawnTick && level.enemiesRemaining > 0) { // If the gameplay tick exceeds the threshold,
+        level.spawnEnemy() // Spawn an enemy
+        level.spawnTick = Math.max((150 - 10 * player.level), 0) + getRndInteger(20, 50); // and determine the new threshold
+        ticks = 0; // and reset the ticks
+      }
+
+      if (enemies.length == 0 && level.enemiesRemaining == 0) { // If there are no active enemies, and no reserves, the level is complete
+        bullets = [] // Remove any active bullets
+
+        enemyBullets = [] // Remove any active enemy bullets
+
+        player.inLevel = false;
+        player.resetPos(); // Move the player back to the center
+        player.score += 5 + player.level; // Give the player $5 + level number
+        player.level++; // Increment level
+
+        if (player.level % 5 != 0) { // If this is not a boss level
+          level.enemiesRemaining = getRndInteger(5 + 5 * player.level, 10 + 5 * player.level); // 5-10 enemies + 5 * the level number, per level
+          level.enemyMaxHealth = (1 + Math.floor(player.level / 3)); // Enemy max health
+        } else { // If it is a boss level
+          level.enemiesRemaining = 1;
+          level.enemyMaxHealth = player.level * 5;
+        }
       }
     }
 
@@ -315,14 +339,22 @@ function keyDownHandler(e) {
 
   if (e.keyCode == 39 || e.keyCode == 68) { // Right arrow key or D
     rightPressed = true;
-  }  if (e.keyCode == 37 || e.keyCode == 65) { // Left arrow key or A
+  } if (e.keyCode == 37 || e.keyCode == 65) { // Left arrow key or A
     leftPressed = true;
-  }  if (e.keyCode == 38 || e.keyCode == 87) { // Up arrow key or W
+  } if (e.keyCode == 38 || e.keyCode == 87) { // Up arrow key or W
     upPressed = true;
-  }  if (e.keyCode == 40 || e.keyCode == 83) { // Down arrow key or S
+  } if (e.keyCode == 40 || e.keyCode == 83) { // Down arrow key or S
     downPressed = true;
-  } 
-  
+  }
+
+  if (e.keyCode == 80) {
+    if (!paused) {
+      paused = true;
+    } else {
+      paused = false;
+    }
+  }
+
   if (e.keyCode == 82) { // "R" key
     reset();
   }
@@ -334,13 +366,13 @@ function keyUpHandler(e) {
 
   if (e.keyCode == 39 || e.keyCode == 68) { // Right arrow key or D
     rightPressed = false;
-  } 
+  }
   if (e.keyCode == 37 || e.keyCode == 65) { // Left arrow key or A
     leftPressed = false;
-  } 
+  }
   if (e.keyCode == 38 || e.keyCode == 87) { // Up arrow key or W
     upPressed = false;
-  } 
+  }
   if (e.keyCode == 40 || e.keyCode == 83) { // Down arrow key or S
     downPressed = false;
   }
@@ -427,7 +459,7 @@ function mouseClickHandler(e) {
     menuAction(clickX, clickY); // If the player isn't in a level, handle the menu options
   }
 
-  if (player.ammo > 0 && player.inLevel) {
+  if (player.ammo > 0 && player.inLevel && !paused) {
     player.spawnBulletMouse(clickX, clickY); // Otherwise, spawn a bullet and decrement ammo
     player.ammo--;
   }
@@ -458,7 +490,7 @@ var ReloadTimePrice = 30;
 var ShieldDmgPrice = 70;
 var KnockbackPrice = 50;
 var SDefPrice = 70;
-
+var paused = false;
 
 var ticks = 0; // Used to delay spawning enemies
 var currEnemyID = 0; // Used for tracking unique enemies for purposes of enemy/enemy collision
@@ -540,26 +572,26 @@ function Enemy(I) {
 
   I.shoot = function () { // Handles an enemy firing at the player
 
-      // The enemy will target the centerpoint of the player
-      let xDiff = (player.x + (player.width / 2)) - I.x;
-      let yDiff = (player.y + (player.height / 2)) - I.y;
+    // The enemy will target the centerpoint of the player
+    let xDiff = (player.x + (player.width / 2)) - I.x;
+    let yDiff = (player.y + (player.height / 2)) - I.y;
 
-      let xvel = 0;
-      let yvel = 0;
+    let xvel = 0;
+    let yvel = 0;
 
-      // Uses the same math as the player's shoot function
-      xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
-      yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
+    // Uses the same math as the player's shoot function
+    xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
+    yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
 
-      enemyBullets.push(Bullet({
-        xVelocity: xvel,
-        yVelocity: yvel,
-        x: I.x,
-        y: I.y,
-        width: bulletSize,
-        height: bulletSize
-      }));
-    },
+    enemyBullets.push(Bullet({
+      xVelocity: xvel,
+      yVelocity: yvel,
+      x: I.x,
+      y: I.y,
+      width: bulletSize,
+      height: bulletSize
+    }));
+  },
 
     I.update = function () {
       // Targeting logic, which allows the enemies to track the player.
@@ -598,7 +630,7 @@ function Enemy(I) {
       enemies.forEach(function (enemy) {
         if (enemy.active && enemy.ID != I.ID) {
           if (((I.x + I.xVelocity > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width) &&
-              (I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height)) ||
+            (I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height)) ||
             ((I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity + I.width < enemy.x + enemy.width) &&
               (I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height))
           ) {
@@ -606,7 +638,7 @@ function Enemy(I) {
           }
 
           if (((I.y + I.yVelocity > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height) &&
-              (I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width)) ||
+            (I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width)) ||
             ((I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity + I.height < enemy.y + enemy.height) &&
               (I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width))
           ) {
@@ -691,24 +723,24 @@ function Boss(I) {
 
   I.shoot = function () {
 
-      let xDiff = (player.x + (player.width / 2)) - I.x;
-      let yDiff = (player.y + (player.height / 2)) - I.y;
-      let xvel = 0;
-      let yvel = 0;
+    let xDiff = (player.x + (player.width / 2)) - I.x;
+    let yDiff = (player.y + (player.height / 2)) - I.y;
+    let xvel = 0;
+    let yvel = 0;
 
 
-      xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
-      yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
+    xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
+    yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
 
-      enemyBullets.push(Bullet({
-        xVelocity: xvel,
-        yVelocity: yvel,
-        x: (I.x + (I.width / 2)),
-        y: (I.y + (I.height / 2)),
-        width: 8,
-        height: 8
-      }));
-    },
+    enemyBullets.push(Bullet({
+      xVelocity: xvel,
+      yVelocity: yvel,
+      x: (I.x + (I.width / 2)),
+      y: (I.y + (I.height / 2)),
+      width: 8,
+      height: 8
+    }));
+  },
 
     I.update = function () {
       // Targeting logic, which allows the enemies to track the player.
@@ -787,6 +819,8 @@ var SDefColor = "#FFFFFF";
 
 
 function drawMenu() {
+  ctx.textAlign = "center";
+
   // Draw start button
   ctx.beginPath();
   ctx.rect(startX, startY, 150, 35);
@@ -798,7 +832,7 @@ function drawMenu() {
 
   ctx.font = "20px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Start", startX + 50, startY + 25);
+  ctx.fillText("Start", startX + 75, startY + 25);
 
   // Draw buy mag size button
   ctx.beginPath();
@@ -811,7 +845,7 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Mag Size + 3: $"+MagSizePrice, startX + 10, menuRow1 + 23);
+  ctx.fillText("Mag Size + 3: $" + MagSizePrice, startX + 75, menuRow1 + 23);
 
   // Draw buy reload time button
   ctx.beginPath();
@@ -824,7 +858,7 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("R. Time - 15: $" + ReloadTimePrice, startX + 12, menuRow2 + 23);
+  ctx.fillText("R. Time - 15: $" + ReloadTimePrice, startX + 75, menuRow2 + 23);
 
 
   // Draw buy ammo button
@@ -838,7 +872,7 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Magazine: $"+AmmoPrice, menuCol1 + 27, menuRow1 + 23);
+  ctx.fillText("Magazine: $" + AmmoPrice, menuCol1 + 75, menuRow1 + 23);
 
   // Draw buy health button
   ctx.beginPath();
@@ -851,7 +885,7 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Health: 5/$20", menuCol1 + 25, menuRow2 + 23);
+  ctx.fillText("Health: 5/$20", menuCol1 + 75, menuRow2 + 23);
 
   // Draw buy gun damage button
   ctx.beginPath();
@@ -864,7 +898,7 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("GDmg +1: $"+GDmgPrice, menuCol1 + 20, menuRow3 + 23);
+  ctx.fillText("GDmg +1: $" + GDmgPrice, menuCol1 + 75, menuRow3 + 23);
 
   // Draw buy shield damage button
   ctx.beginPath();
@@ -877,7 +911,7 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("SDmg +1: $"+ShieldDmgPrice, menuCol2 + 25, menuRow1 + 23);
+  ctx.fillText("SDmg +1: $" + ShieldDmgPrice, menuCol2 + 75, menuRow1 + 23);
 
   // Draw buy shield knockback button
   ctx.beginPath();
@@ -890,7 +924,7 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Knockback +5: $"+KnockbackPrice, menuCol2 + 6, menuRow2 + 23);
+  ctx.fillText("Knockback +5: $" + KnockbackPrice, menuCol2 + 75, menuRow2 + 23);
 
   // Draw buy shield defense button
   ctx.beginPath();
@@ -903,7 +937,11 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("SDef +1: $"+SDefPrice, menuCol2 + 25, menuRow3 + 23);
+  ctx.fillText("SDef +1: $" + SDefPrice, menuCol2 + 75, menuRow3 + 23);
+  
+  
+  ctx.textAlign = "left";
+
 
   // Draw left info panel
   ctx.beginPath();
@@ -914,7 +952,7 @@ function drawMenu() {
   ctx.stroke();
   ctx.closePath();
 
-  if (player.level > 4){
+  if (player.level > 4) {
     shootString = "Gun Enemies"
   } else {
     shootString = "Melee Enemies"
@@ -935,6 +973,13 @@ function drawMenu() {
   ctx.fillText(shootString, 15, canvas.height - 25);
   ctx.fillStyle = "#FF0000";
   ctx.fillText(bossString, 15, canvas.height - 5);
+
+
+  ctx.font = "16px Arial";
+  ctx.fillStyle = "#000000";
+  ctx.textAlign = "center";
+  ctx.fillText("Press \"P\" at any time to pause", (canvas.width / 2), canvas.height - 50);
+  ctx.textAlign = "left"
 
 
   // Draw right info panel
@@ -979,11 +1024,11 @@ function collisionDetection() {
 
     // If any of the four corners of the enemy intersect the player's square
     if (enemy.active && (
-        (enemy.x > player.x && enemy.y > player.y && enemy.x < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
-        (enemy.x + enemy.width > player.x && enemy.y > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
-        (enemy.x > player.x && enemy.y + enemy.height > player.y && enemy.x < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height)) ||
-        (enemy.x + enemy.width > player.x && enemy.y + enemy.height > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height))
-      )) {
+      (enemy.x > player.x && enemy.y > player.y && enemy.x < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
+      (enemy.x + enemy.width > player.x && enemy.y > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
+      (enemy.x > player.x && enemy.y + enemy.height > player.y && enemy.x < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height)) ||
+      (enemy.x + enemy.width > player.x && enemy.y + enemy.height > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height))
+    )) {
       let dmg = (level.enemyMaxHealth - player.shieldDefense) // Calculate the damage dealt by the enemy
       if (dmg > 0) {
         flashColor("red");
@@ -1131,6 +1176,16 @@ function drawGameOver() {
   ctx.fillText("Press R to Restart", canvas.width / 2, (canvas.height / 2));
 }
 
+function drawPaused() {
+  ctx.font = "24px Arial";
+  ctx.fillStyle = "#FFFFFF";
+  ctx.textAlign = "center";
+  ctx.fillText("Paused", (canvas.width / 2), canvas.height / 2 - 20);
+  ctx.font = "16px Arial";
+  ctx.textAlign = "center";
+  ctx.fillText("Press P to Unpause", canvas.width / 2, (canvas.height / 2));
+}
+
 // When given a basic color as a string, flashes that color across the entire screen
 function flashColor(color) {
   ctx.beginPath();
@@ -1142,6 +1197,7 @@ function flashColor(color) {
 // Resets the game
 function reset() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.textAlign = "left"
 
   flashColor("black");
 
@@ -1149,6 +1205,8 @@ function reset() {
   leftPressed = false;
   upPressed = false;
   downPressed = false;
+
+  paused = false;
 
   player.health = 10;
   player.ammo = 5;

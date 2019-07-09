@@ -276,7 +276,7 @@ function draw() {
           level.enemyMaxHealth = (1 + Math.floor(player.level / 3)); // Enemy max health
         } else { // If it is a boss level
           level.enemiesRemaining = 1;
-          level.enemyMaxHealth = player.level * 5;
+          level.enemyMaxHealth = player.level * 10;
         }
       }
     }
@@ -1008,7 +1008,13 @@ function collisionDetection() {
 
       // If the bullet intersects an enemy (falls within any of the four corners of the enemy square)
       if (bullet.x > enemy.x - 5 && bullet.y > enemy.y - 5 && bullet.x < (enemy.x + enemy.width + 5) && bullet.y < (enemy.y + enemy.height + 5)) {
-        enemy.health -= player.bulletDamage; // Decrease enemy health
+        
+        if (player.level % 5 != 0){
+          enemy.health -= player.bulletDamage; // Decrease enemy health normall if it's not a boss
+        } else {
+          enemy.health -= (player.bulletDamage - (player.level / 5));
+        }        
+        
         bullet.active = false; // and despawn the bullet
         // If the enemy is dead
         if (enemy.health <= 0) {

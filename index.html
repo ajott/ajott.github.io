@@ -18,13 +18,55 @@
 </head>
 
 <body>
-    <div class="w3-top">
-        <div class="w3-bar w3-dark-grey w3-card-4 w3-center">
-            <a class="w3-bar-item w3-button" href="./index.html#games">Games</a>
-                <a class="w3-bar-item w3-button" href="./index.html#40k">40k</a>    
-                  <a class="w3-bar-item w3-button" href="./index.html#misc">Misc</a>              
+  <div class="w3-top">
+    <div class="w3-bar w3-dark-grey w3-card-4 w3-center">
+      <a class="w3-bar-item w3-button" href="./index.html#games"></a>
+      <div class="w3-dropdown-hover w3-mobile  w3-hide-small w3-hide-medium">
+        <button class="w3-button w3-round-large" onclick="location.href='./index.html#games';">Games
+          <i class="fa fa-caret-down"></i></button>
+        <div id="gameDropdown" class="w3-dropdown-content w3-bar-block w3-round-large">
+          <a href="https://apps.ajott.io/clicker"
+            class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-green w3-light-grey">CAMCAD Clicker</a>
+          <a href="https://apps.ajott.io/breakout"
+            class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-green w3-light-grey">Breakout</a>
+          <a href="https://apps.ajott.io/hangman"
+            class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-green w3-light-grey">Hangman</a>
+          <a href="https://apps.ajott.io/spell"
+            class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-green w3-light-grey">Spell!</a>
+          <a href="https://apps.ajott.io/lightsout"
+            class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-green w3-light-grey">Lights Out</a>
+          <a href="https://apps.ajott.io/tictactoe"
+            class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-green w3-light-grey">Tic-Tac-Toe</a>
+          <a href="https://apps.ajott.io/vera"
+            class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-green w3-light-grey">Vera</a>
+          <a href="https://apps.ajott.io/mundus"
+            class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-green w3-light-grey">Mundus</a>
         </div>
+      </div>
+      <div class="w3-dropdown-hover w3-mobile  w3-hide-small w3-hide-medium">
+        <button class="w3-button w3-round-large" onclick="location.href='./index.html#40k';">40k
+          <i class="fa fa-caret-down"></i></button>
+        <div id="40kDropdown" class="w3-dropdown-content w3-bar-block w3-round-large">
+          <a href="https://apps.ajott.io/quickref"
+            class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-green w3-light-grey">DH2 Quick Reference</a>
+          <a href="https://apps.ajott.io/dh2chargen"
+            class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-green w3-light-grey">DH2 Character Creator</a>
+          <a href="https://apps.ajott.io/40kplanetgen"
+            class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-green w3-light-grey">40k Planet Generator</a>
+        </div>
+      </div>
+      <div class="w3-dropdown-hover w3-mobile  w3-hide-small w3-hide-medium">
+        <button class="w3-button w3-round-large" onclick="location.href='./index.html#misc';">Misc
+          <i class="fa fa-caret-down"></i></button>
+        <div id="miscDropdown" class="w3-dropdown-content w3-bar-block w3-round-large">
+          <a href="https://apps.ajott.io/grlunch"
+            class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-green w3-light-grey">GR Lunch Picker</a>
+          <a href="https://apps.ajott.io/sifref"
+            class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-green w3-light-grey">SIFRP Reference</a>
+        </div>
+      </div>
     </div>
+  </div>
 
   <section class="w3-row-padding w3-section w3-center" id="games" style="padding-top: 50px">
     <h3>Games</h3>
@@ -39,8 +81,8 @@
             <p>&emsp;</p>
           </div>
           <div class="w3-col s12 m5 l4">
-            <div class="w3-card-2 w3-round-large w3-hover-sepia" onclick="location.href='https://apps.ajott.io/clicker';"
-              style="cursor: pointer;">
+            <div class="w3-card-2 w3-round-large w3-hover-sepia"
+              onclick="location.href='https://apps.ajott.io/clicker';" style="cursor: pointer;">
               <div class="w3-center w3-border w3-round-large">
                 <img src="./images/camcad.png" class="w3-image w3-round-large" style="width: 100%">
               </div>
@@ -49,8 +91,8 @@
             </div>
           </div>
           <div class="w3-col s12 m5 l4">
-            <div class="w3-card-2 w3-round-large w3-hover-sepia" onclick="location.href='https://apps.ajott.io/breakout';"
-              style="cursor: pointer;">
+            <div class="w3-card-2 w3-round-large w3-hover-sepia"
+              onclick="location.href='https://apps.ajott.io/breakout';" style="cursor: pointer;">
               <div class="w3-center w3-border w3-round-large">
                 <img src="./images/breakout.png" class="w3-image w3-round-large" style="width: 100%">
               </div>
@@ -70,8 +112,8 @@
             <p>&emsp;</p>
           </div>
           <div class="w3-col s12 m5 l4">
-            <div class="w3-card-2 w3-round-large w3-hover-sepia" onclick="location.href='https://apps.ajott.io/hangman';"
-              style="cursor: pointer;">
+            <div class="w3-card-2 w3-round-large w3-hover-sepia"
+              onclick="location.href='https://apps.ajott.io/hangman';" style="cursor: pointer;">
               <div class="w3-center w3-border w3-round-large">
                 <img src="./images/hangman.png" class="w3-image w3-round-large" style="width: 100%">
               </div>
@@ -101,8 +143,8 @@
             <p>&emsp;</p>
           </div>
           <div class="w3-col s12 m5 l4">
-            <div class="w3-card-2 w3-round-large w3-hover-sepia" onclick="location.href='https://apps.ajott.io/lightsout';"
-              style="cursor: pointer;">
+            <div class="w3-card-2 w3-round-large w3-hover-sepia"
+              onclick="location.href='https://apps.ajott.io/lightsout';" style="cursor: pointer;">
               <div class="w3-center w3-border w3-round-large">
                 <img src="./images/lightsout.png" class="w3-image w3-round-large" style="width: 100%">
               </div>
@@ -111,8 +153,8 @@
             </div>
           </div>
           <div class="w3-col s12 m5 l4">
-            <div class="w3-card-2 w3-round-large w3-hover-sepia" onclick="location.href='https://apps.ajott.io/tictactoe';"
-              style="cursor: pointer;">
+            <div class="w3-card-2 w3-round-large w3-hover-sepia"
+              onclick="location.href='https://apps.ajott.io/tictactoe';" style="cursor: pointer;">
               <div class="w3-center w3-border w3-round-large">
                 <img src="./images/tictactoe.png" class="w3-image w3-round-large" style="width: 100%">
               </div>
@@ -181,8 +223,8 @@
             <p>&emsp;</p>
           </div>
           <div class="w3-col s12 m5 l4">
-            <div class="w3-card-2 w3-round-large w3-hover-sepia" onclick="location.href='https://apps.ajott.io/quickref';"
-              style="cursor: pointer;">
+            <div class="w3-card-2 w3-round-large w3-hover-sepia"
+              onclick="location.href='https://apps.ajott.io/quickref';" style="cursor: pointer;">
               <div class="w3-center w3-border w3-round-large">
                 <img src="./images/quickref.png" class="w3-image w3-round-large" style="width: 100%">
               </div>
@@ -191,8 +233,8 @@
             </div>
           </div>
           <div class="w3-col s12 m5 l4">
-            <div class="w3-card-2 w3-round-large w3-hover-sepia" onclick="location.href='https://apps.ajott.io/dh2chargen';"
-              style="cursor: pointer;">
+            <div class="w3-card-2 w3-round-large w3-hover-sepia"
+              onclick="location.href='https://apps.ajott.io/dh2chargen';" style="cursor: pointer;">
               <div class="w3-center w3-border w3-round-large">
                 <img src="./images/chargen.png" class="w3-image w3-round-large" style="width: 100%">
               </div>
@@ -212,8 +254,8 @@
             <p>&emsp;</p>
           </div>
           <div class="w3-col s12 m5 l4">
-            <div class="w3-card-2 w3-round-large w3-hover-sepia" onclick="location.href='https://apps.ajott.io/40kplanetgen';"
-              style="cursor: pointer;">
+            <div class="w3-card-2 w3-round-large w3-hover-sepia"
+              onclick="location.href='https://apps.ajott.io/40kplanetgen';" style="cursor: pointer;">
               <div class="w3-center w3-border w3-round-large">
                 <img src="./images/planetgen.png" class="w3-image w3-round-large" style="width: 100%">
               </div>
@@ -236,30 +278,42 @@
     <h3>Miscellaneous</h3>
     <hr />
     <div class="w3-row-padding">
-      <div class="w3-col s0 m1 l2">
-        <p>&emsp;</p>
-      </div>
-      <div class="w3-col s12 m10 l8">
-
-        <div class="w3-row-padding">
-          <div class="w3-col s0 m4 l4">
-            <p>&emsp;</p>
-          </div>
-          <div class="w3-col s12 m5 l4">
-            <div class="w3-card-2 w3-round-large w3-hover-sepia" onclick="location.href='https://apps.ajott.io/grlunch';"
-              style="cursor: pointer;">
-              <div class="w3-center w3-border w3-round-large">
-                <img src="./images/grlunch.png" class="w3-image w3-round-large" style="width: 100%">
-              </div>
-              <h4>GR Lunch Picker</h4>
-              <p>Randomly picks from a small selection of lunch spots in Grand Rapids, MI.</p>
+        <div class="w3-col s0 m1 l2">
+          <p>&emsp;</p>
+        </div>
+        <div class="w3-col s12 m10 l8">
+    <div class="w3-row-padding">
+        <div class="w3-col s0 m1 l2">
+          <p>&emsp;</p>
+        </div>
+        <div class="w3-col s12 m5 l4">
+            <div class="w3-card-2 w3-round-large w3-hover-sepia"
+            onclick="location.href='https://apps.ajott.io/grlunch';" style="cursor: pointer;">
+            <div class="w3-center w3-border w3-round-large">
+              <img src="./images/grlunch.png" class="w3-image w3-round-large" style="width: 100%">
             </div>
-          </div>
-          <div class="w3-col s0 m4 l4">
-            <p>&emsp;</p>
+            <h4>GR Lunch Picker</h4>
+            <p>Randomly picks from a small selection of lunch spots in Grand Rapids, MI.</p>
           </div>
         </div>
+        <div class="w3-col s12 m5 l4">
+          <div class="w3-card-2 w3-round-large w3-hover-sepia" onclick="location.href='https://apps.ajott.io/sifref';"
+            style="cursor: pointer;">
+            <div class="w3-center w3-border w3-round-large">
+              <img src="./images/sifref.png" class="w3-image w3-round-large" style="width: 100%">
+            </div>
+            <h4>SIFRP Reference</h4>
+            <p>A web-based reference guide for GRG's SIFRPG.</p>
+          </div>
+        </div>
+        <div class="w3-col s12 m5 l4">
+
+        </div>
+        <div class="w3-col s0 m1 l2">
+          <p>&emsp;</p>
+        </div>
       </div>
+    </div>
       <div class="w3-col s0 m1 l2">
         <p>&emsp;</p>
       </div>

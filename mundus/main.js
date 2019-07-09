@@ -30,7 +30,7 @@ var player = {
   inLevel: false, // If true, level is drawn. If false, menu is drawn
   bulletVel: 12, // Bullet velocity
 
-  resetPos: function () {
+  resetPos: function () { // Moves the player back to the center of the screen
     player.x = 395;
     player.y = 295;
   },
@@ -76,14 +76,15 @@ var player = {
     }));
   },
 
-  spawnBulletMouse: function (xpos, ypos) {
+  spawnBulletMouse: function (xpos, ypos) { // Spawns a bullet when the mouse is clicked
 
-    let xDiff = xpos - player.x;
-    let yDiff = ypos - player.y;
+    let xDiff = xpos - player.x; // Finds the difference between the mouse X and the player X
+    let yDiff = ypos - player.y; // Finds the difference between the mouse Y and the player Y
     let xvel = 0;
     let yvel = 0;
 
-
+    // The bullet's X and Y velocities are scaled based on the difference between the two and multiplied by the bullet velocity
+    // The last clause determines if the velocity should be positive or negative, as all the math here is done with the absolute value.
     xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (player.bulletVel) * (xDiff / Math.abs(xDiff));
     yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (player.bulletVel) * (yDiff / Math.abs(yDiff));
 
@@ -118,7 +119,7 @@ var level = {
     let spawnSide = edges[getRndInteger(0, 3)]; // Randomly chooses a map edge to spawn the enemy from
     let spawnX = 0;
     let spawnY = 25; // The white HUD bar is 25px tall
-    let tempShoot = false;
+    let tempShoot = false; // Placeholder for the enemy's ability to fire at the player
 
     if (spawnSide == "left") {
       spawnY = getRndInteger(25, canvas.height);
@@ -135,16 +136,29 @@ var level = {
       spawnY = canvas.height;
     }
 
-    if (player.level > 4){
-      tempShoot = true;
-    }
+    if (player.level % 5 != 0) { // If the player is not on a level that is a multiple of 5, spawn regular enemies
 
-    enemies.push(Enemy({
-      x: spawnX,
-      y: spawnY,
-      maxHealth: level.enemyMaxHealth,
-      canShoot: tempShoot
-    }));
+      if (player.level > 4) { // If the player is on level 5 or higher
+        tempShoot = true; // Let the enemies fire at the player
+      }
+
+      enemies.push(Enemy({
+        x: spawnX,
+        y: spawnY,
+        maxHealth: level.enemyMaxHealth,
+        canShoot: tempShoot,
+        ID: currEnemyID // The enemy ID is used to check for collisions between enemies
+      }));
+
+      currEnemyID++;
+
+    } else { // If the player is on a level that is a multiple of 5, spawn a boss instead
+      enemies.push(Boss({
+        x: spawnX,
+        y: spawnY,
+        maxHealth: level.enemyMaxHealth
+      }))
+    }
 
     level.enemiesRemaining -= 1; // Decrements the enemy reserve
 
@@ -155,11 +169,12 @@ var level = {
 // Main draw function
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // Clears the map
-  document.getElementById("gameCanvas").style.cursor = "crosshair"; 
 
   // If the player is in a level, draw that level.
   if (player.inLevel) {
-    drawBackground();
+
+    ctx.drawImage(levelImg, 0, 0);
+
     player.draw();
     drawTopRect(); // Draws the white HUD bar
     drawAmmo(); // Draws the ammo count
@@ -169,7 +184,7 @@ function draw() {
     drawLevel();
     collisionDetection(); // Runs collision detection logic
 
-   
+
     if (rightPressed && player.x < canvas.width - player.width - 5) {
       // If the player is attempting to move right, and is not exceeding the 5px buffer on the right side, move them.
       player.x += player.vel;
@@ -214,8 +229,8 @@ function draw() {
     enemies.forEach(function (enemy) { // Draws all enemies
       enemy.draw();
     })
-    
-    enemyBullets.forEach(function (bullet) { // Update each bullet
+
+    enemyBullets.forEach(function (bullet) { // Update each enemy bullet
       bullet.update();
     });
 
@@ -238,18 +253,31 @@ function draw() {
     }
 
     if (enemies.length == 0 && level.enemiesRemaining == 0) { // If there are no active enemies, and no reserves, the level is complete
+      bullets.forEach(function (bullet) { // Remove any active bullets
+        bullet.active = false;
+      })
+      enemyBullets.forEach(function (bullet) { // Remove any active enemy bullets
+        bullet.active = false;
+      })
+
       player.inLevel = false;
-      player.resetPos();
-      player.score += 5 + player.level;
-      player.level++;
-      level.enemyMaxHealth = (1 + Math.floor(player.level / 3));
-      level.enemiesRemaining = 5 * player.level; // 5 enemies * the level number, per level
+      player.resetPos(); // Move the player back to the center
+      player.score += 5 + player.level; // Give the player $5 + level number
+      player.level++; // Increment level
+      if (player.level % 5 != 0) { // If this is not a boss level
+        level.enemiesRemaining = 5 * player.level; // 5 enemies * the level number, per level
+        level.enemyMaxHealth = (1 + Math.floor(player.level / 3)); // Enemy max health
+      } else { // If it is a boss level
+        level.enemiesRemaining = 1;
+        level.enemyMaxHealth = player.level * 5;
+      }
     }
 
     if (!gameOver) { // Obviously don't draw the next frame if the player lost
       requestAnimationFrame(draw); // Begins the loop anew
     }
-  } else {
+
+  } else { // If the player is at the menu, draw the menu
     drawBackground();
     drawTopRect();
     drawAmmo();
@@ -257,29 +285,6 @@ function draw() {
     drawScore();
     drawHealth();
     drawMenu();
-    player.draw();
-    menuCollision();
-
-    if (rightPressed && player.x < canvas.width - player.width - 5) {
-      // If the player is attempting to move right, and is not exceeding the 5px buffer on the right side, move them.
-      player.x += player.vel;
-      player.facing = "right";
-
-    } else if (leftPressed && player.x > 5) {
-      // If the player is moving left and is not exceeding the 5px buffer, move them.
-      player.x -= player.vel;
-      player.facing = "left";
-
-    } else if (upPressed && player.y > 30) {
-      // If the player is moving up, and is not exceeding the 5px buffer + 25px HUD bar, move them.
-      player.y -= player.vel;
-      player.facing = "up";
-
-    } else if (downPressed && player.y < canvas.height - player.height - 5) {
-      // If the player is moving down, and is not exceeding the 5px buffer, move them.
-      player.y += player.vel;
-      player.facing = "down";
-    }
 
     requestAnimationFrame(draw);
   }
@@ -358,17 +363,75 @@ function keyUpHandler(e) {
 }
 
 function mouseMoveHandler(e) {
+  let rect = canvas.getBoundingClientRect();
+  var mouseX = e.clientX - rect.left; // Determine the relative X position of the mouse within the canvas
+  var mouseY = e.clientY - rect.top; // Determine the relative Y position of the mouse within the canvas
+  if (!player.inLevel) { // If the player isn't in a level
 
+    // This logic governs the hover-over colors for the menu buttons
+    if (mouseX > startX && mouseX < startX + 150 && mouseY > startY && mouseY < startY + 35) {
+      startColor = "limegreen";
+    } else if (mouseX > menuCol1 && mouseX < menuCol1 + 150 && mouseY > menuRow1 && mouseY < menuRow1 + 35) {
+      if (player.score >= 3) {
+        ammoColor = "#BBBBBB";
+      } else {
+        ammoColor = "#FFFFFF";
+      }
+    } else if (mouseX > menuCol1 && mouseX < menuCol1 + 150 && mouseY > menuRow2 && mouseY < menuRow2 + 35) {
+      if (player.score >= 20) {
+        healthColor = "#BBBBBB";
+      } else {
+        healthColor = "#FFFFFF";
+      }
+    } else if (mouseX > menuCol1 && mouseX < menuCol1 + 150 && mouseY > menuRow3 && mouseY < menuRow3 + 35) {
+      if (player.score >= 50) {
+        GDmgColor = "#BBBBBB";
+      } else {
+        GDmgColor = "#FFFFFF";
+      }
+    } else if (mouseX > menuCol2 && mouseX < menuCol2 + 150 && mouseY > menuRow1 && mouseY < menuRow1 + 35) {
+      if (player.score >= 70) {
+        SDmgColor = "#BBBBBB";
+      } else {
+        SDmgColor = "#FFFFFF";
+      }
+    } else if (mouseX > menuCol2 && mouseX < menuCol2 + 150 && mouseY > menuRow2 && mouseY < menuRow2 + 35) {
+      if (player.score >= 50) {
+        KnockbackColor = "#BBBBBB";
+      } else {
+        KnockbackColor = "#FFFFFF";
+      }
+    } else if (mouseX > menuCol2 && mouseX < menuCol2 + 150 && mouseY > menuRow3 && mouseY < menuRow3 + 35) {
+      if (player.score >= 70) {
+        SDefColor = "#BBBBBB";
+      } else {
+        SDefColor = "#FFFFFF";
+      }
+    } else { // Resets the hover colors to the default color
+      startColor = "lime";
+      mouseStyle = "auto";
+      ammoColor = "#FFFFFF";
+      healthColor = "#FFFFFF";
+      GDmgColor = "#FFFFFF";
+      SDmgColor = "#FFFFFF";
+      KnockbackColor = "#FFFFFF";
+      SDefColor = "#FFFFFF";
+    }
+  }
 }
 
 function mouseClickHandler(e) {
   let rect = canvas.getBoundingClientRect();
-  var clickX = e.clientX - rect.left;
-  var clickY = e.clientY - rect.top;
+  var clickX = e.clientX - rect.left; // Determine the relative X position of the mouse within the canvas
+  var clickY = e.clientY - rect.top; // Determine the relative Y position of the mouse within the canvas
+
+  if (!player.inLevel) {
+    menuAction(clickX, clickY); // If the player isn't in a level, handle the menu options
+  }
 
   if (player.ammo > 0 && player.inLevel) {
-    player.spawnBulletMouse(clickX, clickY);
-    player.ammo --;
+    player.spawnBulletMouse(clickX, clickY); // Otherwise, spawn a bullet and decrement ammo
+    player.ammo--;
   }
 }
 
@@ -385,8 +448,14 @@ var leftPressed = false;
 var upPressed = false;
 var downPressed = false;
 var bulletSize = 4;
+var mouseStyle = "auto";
 
-var ticks = 0;
+var levels = ["./levels/concrete.jpg", "./levels/grass.jpg", "./levels/gravel.jpg", "./levels/parking.jpg", "./levels/snow.jpg"]
+var levelImg = new Image;
+
+
+var ticks = 0; // Used to delay spawning enemies
+var currEnemyID = 0; // Used for tracking unique enemies for purposes of enemy/enemy collision
 
 var gameOver = false;
 
@@ -443,9 +512,154 @@ function Enemy(I) {
   I.lastXVel = 0;
   I.lastYVel = 0;
   I.bulletVel = 9;
+  I.shootTicks = 0; // Tracks the time since the enemy fired its weapon
 
   // Draw function
   I.draw = function () {
+
+
+    ctx.beginPath();
+    ctx.rect(this.x, this.y, this.width, this.height);
+    ctx.fillStyle = this.color;
+    ctx.fill();
+    ctx.strokeStyle = "#000000";
+    ctx.stroke();
+    ctx.closePath();
+
+
+    ctx.beginPath();
+    ctx.rect(this.x - 5, this.y - 5, (I.health / I.maxHealth) * (this.width + 10), 2)
+    ctx.fillStyle = "#FF0000";
+    ctx.fill();
+    ctx.closePath();
+  }
+
+  I.shoot = function () { // Handles an enemy firing at the player
+
+      // The enemy will target the centerpoint of the player
+      let xDiff = (player.x + (player.width / 2)) - I.x;
+      let yDiff = (player.y + (player.height / 2)) - I.y;
+
+      let xvel = 0;
+      let yvel = 0;
+
+      // Uses the same math as the player's shoot function
+      xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
+      yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
+
+      enemyBullets.push(Bullet({
+        xVelocity: xvel,
+        yVelocity: yvel,
+        x: I.x,
+        y: I.y
+      }));
+    },
+
+    I.update = function () {
+      // Targeting logic, which allows the enemies to track the player.
+      // First, get the player position
+      let targetX = player.x;
+      let targetY = player.y;
+
+      // Set the last X and Y velocity variables (this is used for enemy collision and for knockback)
+      I.lastXVel = I.xVelocity;
+      I.lastYVel = I.yVelocity;
+
+      // Find the difference between where the enemy currently is, and where the player currently is
+      let xDiff = targetX - I.x;
+      let yDiff = targetY - I.y;
+
+      // The distance (diff) between the player and the enemy is determined to be either positive or negative
+      // by dividing itself by its absolute value. This determines whether the velocity needed to reach the player is
+      // positive (towards the right or bottom) or negative (towards the left or top)
+
+      if (xDiff == 0 && yDiff != 0) { // The enemy doesn't need to move in the x plane if it is already even with the player
+        I.xVelocity = 0;
+        I.yVelocity = I.speed * (yDiff / Math.abs(yDiff));
+
+      } else if (xDiff != 0 && yDiff == 0) { // The enemy doesn't need to move in the y plane if it is already even with the player
+        I.xVelocity = I.speed * (xDiff / Math.abs(xDiff));
+        I.yVelocity = 0;
+
+      } else if (xDiff != 0 && yDiff != 0) { // If the enemy is not even with the player in either plane, it moves diagonally
+
+        I.xVelocity = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.speed / 1) * (xDiff / Math.abs(xDiff));
+        I.yVelocity = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.speed / 1) * (yDiff / Math.abs(yDiff));
+
+      }
+
+      // Enemy collision handling. If the current enemy intersects with an enemy that is not itself (ID != ID), its velocity in that direction stops
+      enemies.forEach(function (enemy) {
+        if (enemy.active && enemy.ID != I.ID) {
+          if (((I.x + I.xVelocity > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width) &&
+              (I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height)) ||
+            ((I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity + I.width < enemy.x + enemy.width) &&
+              (I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height))
+          ) {
+            I.xVelocity = 0;
+          }
+
+          if (((I.y + I.yVelocity > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height) &&
+              (I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width)) ||
+            ((I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity + I.height < enemy.y + enemy.height) &&
+              (I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width))
+          ) {
+            I.yVelocity = 0;
+          }
+        }
+      })
+
+      // If both velocities have been zeroed by the collision detection, reverse its previous move
+      // This will keep enemies from getting permanently stuck on each other
+      if (I.xVelocity == 0 && I.yVelocity == 0) {
+        I.xVelocity = -1 * I.lastXVel;
+        I.yVelocity = -1 * I.lastYVel;
+      }
+
+      // Move the enemy
+      I.x += I.xVelocity;
+      I.y += I.yVelocity;
+
+      // If the enemy can shoot, increment its shoot ticks
+      if (I.canShoot) {
+        I.shootTicks++;
+
+        if (I.shootTicks == 100) {
+          I.shoot();
+        }
+      }
+
+      // Enemies only remain active so long as they have health remaining.
+      I.active = (I.active && I.health > 0);
+    }
+
+  return I;
+}
+
+
+// Boss constructor. These are essentially identical to regular enemies but with a larger sprite and more health
+function Boss(I) {
+  I.active = true;
+  I.width = 35;
+  I.height = 35;
+  I.health = I.maxHealth;
+  I.color = bulletColor;
+  I.speed = 1;
+  I.lastXVel = 0;
+  I.lastYVel = 0;
+  I.bulletVel = 9;
+
+  // Draw function
+  I.draw = function () {
+    let healthPercent = (I.health / I.maxHealth) * 100;
+    let healthBarColor = "#00AA00";
+    if (healthPercent <= 66 && healthPercent >= 34) {
+      healthBarColor = "#FFA500";
+    } else if (healthPercent <= 33) {
+      healthBarColor = "#FF0000";
+    }
+
+
     ctx.beginPath();
     ctx.rect(this.x, this.y, this.width, this.height);
     ctx.fillStyle = this.color;
@@ -455,96 +669,114 @@ function Enemy(I) {
     ctx.closePath();
 
     ctx.beginPath();
-    ctx.rect(this.x - 5, this.y - 5, (I.health / I.maxHealth) * (this.width + 10), 2)
-    ctx.fillStyle = "#FF0000";
+    ctx.rect(this.x - 5, this.y - 8, (I.health / I.maxHealth) * (this.width + 10), 4)
+    ctx.fillStyle = healthBarColor;
     ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.rect(this.x - 5, this.y - 9, this.width + 10, 6)
+    ctx.strokeStyle = "#000000";
+    ctx.stroke();
     ctx.closePath();
   }
 
   I.shoot = function () {
 
-    let xDiff = (player.x + (player.width / 2)) - I.x;
-    let yDiff = (player.y + (player.height /2)) - I.y;
-    let xvel = 0;
-    let yvel = 0;
+      let xDiff = (player.x + (player.width / 2)) - I.x;
+      let yDiff = (player.y + (player.height / 2)) - I.y;
+      let xvel = 0;
+      let yvel = 0;
 
 
-    xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
-    yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
+      xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
+      yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
 
-    enemyBullets.push(Bullet({
-      xVelocity: xvel,
-      yVelocity: yvel,
-      x: I.x,
-      y: I.y
-    }));
-  },
+      enemyBullets.push(Bullet({
+        xVelocity: xvel,
+        yVelocity: yvel,
+        x: I.x,
+        y: I.y
+      }));
+    },
 
-  I.update = function () {
-    // Targeting logic, which allows the enemies to track the player.
-    // First, get the player position
-    let targetX = player.x;
-    let targetY = player.y;
+    I.update = function () {
+      // Targeting logic, which allows the enemies to track the player.
+      // First, get the player position
+      let targetX = player.x;
+      let targetY = player.y;
 
-    I.lastXVel = I.xVelocity;
-    I.lastYVel = I.yVelocity;
+      I.lastXVel = I.xVelocity;
+      I.lastYVel = I.yVelocity;
 
-    // Find the difference between where the enemy currently is, and where the player currently is
-    let xDiff = targetX - I.x;
-    let yDiff = targetY - I.y;
+      // Find the difference between where the enemy currently is, and where the player currently is
+      let xDiff = targetX - I.x;
+      let yDiff = targetY - I.y;
 
-    // The distance (diff) between the player and the enemy is determined to be either positive or negative
-    // by dividing itself by its absolute value. This determines whether the velocity needed to reach the player is
-    // positive (towards the right or bottom) or negative (towards the left or top)
+      // The distance (diff) between the player and the enemy is determined to be either positive or negative
+      // by dividing itself by its absolute value. This determines whether the velocity needed to reach the player is
+      // positive (towards the right or bottom) or negative (towards the left or top)
 
-    if (xDiff == 0 && yDiff != 0) { // The enemy doesn't need to move in the x plane if it is already even with the player
-      I.xVelocity = 0;
-      I.yVelocity = I.speed * (yDiff / Math.abs(yDiff));
+      if (xDiff == 0 && yDiff != 0) { // The enemy doesn't need to move in the x plane if it is already even with the player
+        I.xVelocity = 0;
+        I.yVelocity = I.speed * (yDiff / Math.abs(yDiff));
 
-    } else if (xDiff != 0 && yDiff == 0) { // The enemy doesn't need to move in the y plane if it is already even with the player
-      I.xVelocity = I.speed * (xDiff / Math.abs(xDiff));
-      I.yVelocity = 0;
+      } else if (xDiff != 0 && yDiff == 0) { // The enemy doesn't need to move in the y plane if it is already even with the player
+        I.xVelocity = I.speed * (xDiff / Math.abs(xDiff));
+        I.yVelocity = 0;
 
-    } else if (xDiff != 0 && yDiff != 0) { // If the enemy is not even with the player in either plane, it moves diagonally
+      } else if (xDiff != 0 && yDiff != 0) { // If the enemy is not even with the player in either plane, it moves diagonally
 
-      I.xVelocity = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.speed / 1.2) * (xDiff / Math.abs(xDiff));
-      I.yVelocity = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.speed / 1.2) * (yDiff / Math.abs(yDiff));
+        I.xVelocity = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.speed / 1.2) * (xDiff / Math.abs(xDiff));
+        I.yVelocity = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.speed / 1.2) * (yDiff / Math.abs(yDiff));
 
-    }
-
-    I.x += I.xVelocity;
-    I.y += I.yVelocity;
-
-    if (I.canShoot) {
-      let shootRoll = getRndInteger(1,200);
-
-      if (shootRoll == 100) {
-        I.shoot();
       }
+
+      I.x += I.xVelocity;
+      I.y += I.yVelocity;
+
+      if (I.canShoot) {
+        let shootRoll = getRndInteger(1, 200);
+
+        if (shootRoll == 100) {
+          I.shoot();
+        }
+      }
+
+
+      // Enemies only remain active so long as they have health remaining.
+      I.active = (I.active && I.health > 0);
     }
-
-
-    // Enemies only remain active so long as they have health remaining.
-    I.active = (I.active && I.health > 0);
-  }
 
   return I;
 }
 
+// Coordinates for the start button
 var startX = (canvas.width / 2) - 75;
 var startY = 50;
+
+//Coordinates for the different columns/rows of the menu
 var menuCol1 = (canvas.width / 4) - 75;
 var menuCol2 = (canvas.width / 4) * 3 - 75;
 var menuRow1 = 150;
 var menuRow2 = 250;
 var menuRow3 = 350;
 
-function drawMenu() {
+// Menu colors
+var startColor = "lime";
+var ammoColor = "#FFFFFF";
+var healthColor = "#FFFFFF";
+var GDmgColor = "#FFFFFF";
+var SDmgColor = "#FFFFFF";
+var KnockbackColor = "#FFFFFF";
+var SDefColor = "#FFFFFF";
 
+
+function drawMenu() {
   // Draw start button
   ctx.beginPath();
   ctx.rect(startX, startY, 150, 35);
-  ctx.fillStyle = "lime";
+  ctx.fillStyle = startColor;
   ctx.fill();
   ctx.strokeStyle = "#000000";
   ctx.stroke();
@@ -558,7 +790,7 @@ function drawMenu() {
   // Draw buy ammo button
   ctx.beginPath();
   ctx.rect(menuCol1, menuRow1, 150, 35);
-  ctx.fillStyle = "white";
+  ctx.fillStyle = ammoColor;
   ctx.fill();
   ctx.strokeStyle = "#000000";
   ctx.stroke();
@@ -571,7 +803,7 @@ function drawMenu() {
   // Draw buy health button
   ctx.beginPath();
   ctx.rect(menuCol1, menuRow2, 150, 35);
-  ctx.fillStyle = "white";
+  ctx.fillStyle = healthColor;
   ctx.fill();
   ctx.strokeStyle = "#000000";
   ctx.stroke();
@@ -584,7 +816,7 @@ function drawMenu() {
   // Draw buy gun damage button
   ctx.beginPath();
   ctx.rect(menuCol1, menuRow3, 150, 35);
-  ctx.fillStyle = "white";
+  ctx.fillStyle = GDmgColor;
   ctx.fill();
   ctx.strokeStyle = "#000000";
   ctx.stroke();
@@ -597,7 +829,7 @@ function drawMenu() {
   // Draw buy shield damage button
   ctx.beginPath();
   ctx.rect(menuCol2, menuRow1, 150, 35);
-  ctx.fillStyle = "white";
+  ctx.fillStyle = SDmgColor;
   ctx.fill();
   ctx.strokeStyle = "#000000";
   ctx.stroke();
@@ -610,7 +842,7 @@ function drawMenu() {
   // Draw buy shield knockback button
   ctx.beginPath();
   ctx.rect(menuCol2, menuRow2, 150, 35);
-  ctx.fillStyle = "white";
+  ctx.fillStyle = KnockbackColor;
   ctx.fill();
   ctx.strokeStyle = "#000000";
   ctx.stroke();
@@ -623,7 +855,7 @@ function drawMenu() {
   // Draw buy shield defense button
   ctx.beginPath();
   ctx.rect(menuCol2, menuRow3, 150, 35);
-  ctx.fillStyle = "white";
+  ctx.fillStyle = SDefColor;
   ctx.fill();
   ctx.strokeStyle = "#000000";
   ctx.stroke();
@@ -653,7 +885,7 @@ function drawMenu() {
   ctx.fillText("Enemy Health: " + level.enemyMaxHealth, 15, canvas.height - 35);
   ctx.font = "14px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Enemy Damage: " + (1 + Math.floor(player.level / 3)), 15, canvas.height - 15);
+  ctx.fillText("Enemy Damage: " + level.enemyMaxHealth, 15, canvas.height - 15);
 
 
   // Draw right info panel
@@ -707,7 +939,7 @@ function collisionDetection() {
         (enemy.x > player.x && enemy.y + enemy.height > player.y && enemy.x < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height)) ||
         (enemy.x + enemy.width > player.x && enemy.y + enemy.height > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height))
       )) {
-      let dmg = (1 + Math.floor(player.level / 3) - player.shieldDefense) // Calculate the damage dealt by the enemy
+      let dmg = (level.enemyMaxHealth - player.shieldDefense) // Calculate the damage dealt by the enemy
       if (dmg > 0) {
         flashColor("red");
         player.health -= dmg; // Decrement the player health
@@ -730,8 +962,9 @@ function collisionDetection() {
   })
 
   enemyBullets.forEach(function (bullet) {
+    // If an enemy bullet intersects the player's square
     if (bullet.x > player.x && bullet.y > player.y && bullet.x < (player.x + player.width) && bullet.y < (player.y + player.height)) {
-      let dmg = (1 + Math.floor(player.level / 3) - player.shieldDefense)
+      let dmg = (level.enemyMaxHealth - player.shieldDefense)
       if (dmg > 0) {
         flashColor("red");
         player.health -= dmg; // Decrement the player health
@@ -749,49 +982,56 @@ function collisionDetection() {
   }
 }
 
-function menuCollision() {
-  if (player.x > startX && player.x < startX + 150 && player.y > startY && player.y < startY + 35) {
-    player.inLevel = true;
+// Takes clicks on the menu screen and handles them
+function menuAction(x, y) {
+  if (x > startX && x < startX + 150 && y > startY && y < startY + 35) {
+    // If the start button is clicked, pick a random background, reset the player position, and start the level
+    levelImg.src = levels[getRndInteger(0, levels.length - 1)];
     player.resetPos();
-  } else if (player.x > menuCol1 && player.x < menuCol1 + 150 && player.y > menuRow1 && player.y < menuRow1 + 35) {
+
+    setTimeout(function () { // 15ms timeout to prevent a bullet from being spawned due to clicking "start"
+      player.inLevel = true;
+    }, 15);
+  } else if (x > menuCol1 && x < menuCol1 + 150 && y > menuRow1 && y < menuRow1 + 35) {
+    // Ammo purchase
     if (player.score >= 3) {
       player.score -= 3;
       player.ammo += 5;
-      player.resetPos();
     }
-  } else if (player.x > menuCol1 && player.x < menuCol1 + 150 && player.y > menuRow2 && player.y < menuRow2 + 35) {
+  } else if (x > menuCol1 && x < menuCol1 + 150 && y > menuRow2 && y < menuRow2 + 35) {
+    // Health purchase
     if (player.score >= 20) {
       player.score -= 20;
       player.health += 5;
-      player.resetPos();
     }
-  } else if (player.x > menuCol1 && player.x < menuCol1 + 150 && player.y > menuRow3 && player.y < menuRow3 + 35) {
+  } else if (x > menuCol1 && x < menuCol1 + 150 && y > menuRow3 && y < menuRow3 + 35) {
+    // Gun Damage purchase
     if (player.score >= 50) {
       player.score -= 50;
       player.bulletDamage += 1;
-      player.resetPos();
     }
-  } else if (player.x > menuCol2 && player.x < menuCol2 + 150 && player.y > menuRow1 && player.y < menuRow1 + 35) {
+  } else if (x > menuCol2 && x < menuCol2 + 150 && y > menuRow1 && y < menuRow1 + 35) {
+    // Shield Damage purchase
     if (player.score >= 70) {
       player.score -= 70;
       player.shieldDamage += 1;
-      player.resetPos();
     }
-  } else if (player.x > menuCol2 && player.x < menuCol2 + 150 && player.y > menuRow2 && player.y < menuRow2 + 35) {
+  } else if (x > menuCol2 && x < menuCol2 + 150 && y > menuRow2 && y < menuRow2 + 35) {
+    // Knockback purchase
     if (player.score >= 50) {
       player.score -= 50;
       player.shieldKnockback += 5;
-      player.resetPos();
     }
-  } else if (player.x > menuCol2 && player.x < menuCol2 + 150 && player.y > menuRow3 && player.y < menuRow3 + 35) {
+  } else if (x > menuCol2 && x < menuCol2 + 150 && y > menuRow3 && y < menuRow3 + 35) {
+    // Shield Defense purchase
     if (player.score >= 70) {
       player.score -= 70;
       player.shieldDefense += 1;
-      player.resetPos();
     }
   }
 }
-player.x
+
+
 // Draws the level number text
 function drawLevel() {
   ctx.font = "16px Arial";
@@ -799,6 +1039,7 @@ function drawLevel() {
   ctx.fillText("Level: " + player.level, (canvas.width / 2) - 135, 20);
 }
 
+// Draws the score/$
 function drawScore() {
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
@@ -862,6 +1103,7 @@ function reset() {
 
   enemies = [];
   bullets = [];
+  enemyBullets = [];
 
   if (gameOver) {
     gameOver = false;

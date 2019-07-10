@@ -1384,6 +1384,8 @@ function reset() {
   player.magSize = 5;
   player.reloadThresh = 100;
   player.reloadTicks = 0;
+  player.shootTicks = 0;
+  player.shootThresh = 25;
   player.level = 1;
   player.score = 15;
   player.shieldDamage = 1;

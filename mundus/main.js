@@ -358,6 +358,8 @@ function draw() {
           player.health += (1 + Math.floor(player.level / 3))
         }
 
+        player.score += 5 + player.level
+
         player.inLevel = false;
         player.resetPos(); // Move the player back to the center
         player.level++; // Increment level
@@ -410,7 +412,7 @@ function drawBackground() {
 function drawAmmo() {
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Ammo: " + player.ammo + "/" + player.magSize + " (" + player.mags + ")", canvas.width - 140, 20);
+  ctx.fillText("Ammo: " + player.ammo + "/" + player.magSize + " (" + player.mags + ")" + "  [" + ((player.ammo) + (player.mags * player.magSize)) + "]", canvas.width - 160, 20);
 }
 
 // Draws in the player health
@@ -661,8 +663,6 @@ function Bullet(I) {
     // Move the bullet by its velocities
     I.x += I.xVelocity;
     I.y += I.yVelocity;
-
-    console.log(bullets.length);
 
     // The bullet only remains active if it is in bounds
     I.active = I.active && I.inBounds();
@@ -1242,9 +1242,9 @@ function drawMenu() {
   ctx.closePath();
 
   if (player.level > 4 && player.level <= 9) {
-    shootString = "Gun Enemies"
+    shootString = "Melee & Gun Enemies"
   } else if (player.level > 9) {
-    shootString = "Gun + Shield Enemies"
+    shootString = "Melee, Gun & Shield Enemies"
   } else {
     shootString = "Melee Enemies Only"
   }
@@ -1257,13 +1257,13 @@ function drawMenu() {
 
   ctx.font = "14px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Level: " + player.level, 15, canvas.height - 105);
-  ctx.fillText("Enemies: " + level.enemiesRemaining, 15, canvas.height - 85);
-  ctx.fillText("Enemy Health: " + level.enemyMaxHealth, 15, canvas.height - 65);
-  ctx.fillText("Enemy Damage: " + level.enemyMaxHealth, 15, canvas.height - 45);
-  ctx.fillText(shootString, 15, canvas.height - 25);
+  ctx.fillText("Level: " + player.level, 10, canvas.height - 105);
+  ctx.fillText("Enemies: " + level.enemiesRemaining, 10, canvas.height - 85);
+  ctx.fillText("Enemy Health: " + level.enemyMaxHealth, 10, canvas.height - 65);
+  ctx.fillText("Enemy Damage: " + level.enemyMaxHealth, 10, canvas.height - 45);
+  ctx.fillText(shootString, 10, canvas.height - 25);
   ctx.fillStyle = "#FF0000";
-  ctx.fillText(bossString, 15, canvas.height - 5);
+  ctx.fillText(bossString, 10, canvas.height - 5);
 
 
   ctx.font = "16px Arial";
@@ -1284,12 +1284,12 @@ function drawMenu() {
 
   ctx.font = "14px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Gun Damage: " + player.bulletDamage, canvas.width - 185, canvas.height - 105);
-  ctx.fillText("Shield Damage: " + player.shieldDamage, canvas.width - 185, canvas.height - 85);
-  ctx.fillText("Shield Defense: " + player.shieldDefense, canvas.width - 185, canvas.height - 65);
-  ctx.fillText("Shield Knockback: " + player.shieldKnockback, canvas.width - 185, canvas.height - 45);
-  ctx.fillText("Fire Rate: 1 per " + player.shootThresh + " ticks", canvas.width - 185, canvas.height - 25)
-  ctx.fillText("Reload Time: " + player.reloadThresh + " ticks", canvas.width - 185, canvas.height - 5)
+  ctx.fillText("Gun Damage: " + player.bulletDamage, canvas.width - 190, canvas.height - 105);
+  ctx.fillText("Shield Damage: " + player.shieldDamage, canvas.width - 190, canvas.height - 85);
+  ctx.fillText("Shield Defense: " + player.shieldDefense, canvas.width - 190, canvas.height - 65);
+  ctx.fillText("Shield Knockback: " + player.shieldKnockback, canvas.width - 190, canvas.height - 45);
+  ctx.fillText("Fire Rate: 1 per " + player.shootThresh + " ticks", canvas.width - 190, canvas.height - 25)
+  ctx.fillText("Reload Time: " + player.reloadThresh + " ticks", canvas.width - 190, canvas.height - 5)
 }
 
 
@@ -1298,7 +1298,8 @@ function collisionDetection() {
     enemies.forEach(function (enemy) { // And each active enemy
 
       // If the bullet intersects an enemy (falls within any of the four corners of the enemy square)
-      if (bullet.x > enemy.x - 5 && bullet.y > enemy.y - 5 && bullet.x < (enemy.x + enemy.width + 5) && bullet.y < (enemy.y + enemy.height + 5)) {
+      if ((bullet.x > enemy.x - 5 && bullet.y > enemy.y - 5 && bullet.x < (enemy.x + enemy.width + 5) && bullet.y < (enemy.y + enemy.height + 5)) ||
+          (bullet.x + bullet.width > enemy.x - 5 && bullet.y + bullet.width > enemy.y - 5 && bullet.x + bullet.height < (enemy.x + enemy.width + 5) && bullet.y + bullet.height < (enemy.y + enemy.height + 5))) {
 
         if (player.level % 5 != 0) {
           enemy.health -= Math.max(0, player.bulletDamage - enemy.shield); // Decrease enemy health normall if it's not a boss
@@ -1353,7 +1354,8 @@ function collisionDetection() {
 
   enemyBullets.forEach(function (bullet) {
     // If an enemy bullet intersects the player's square
-    if (bullet.x > player.x && bullet.y > player.y && bullet.x < (player.x + player.width) && bullet.y < (player.y + player.height)) {
+    if ((bullet.x > player.x && bullet.y > player.y && bullet.x < (player.x + player.width) && bullet.y < (player.y + player.height)) ||
+    (bullet.x + bullet.width > player.x && bullet.y + bullet.height > player.y && bullet.x + bullet.width < (player.x + player.width) && bullet.y + bullet.height < (player.y + player.height))) {
       let dmg = (level.enemyMaxHealth - player.shieldDefense)
       if (dmg > 0) {
         flashColor("red");
@@ -1561,7 +1563,7 @@ function reset() {
   regen = false;
 
 
-  AmmoPrice = 3;
+  AmmoPrice = 5;
   GDmgPrice = 50;
   MagSizePrice = 25;
   ReloadTimePrice = 30;
@@ -1569,6 +1571,9 @@ function reset() {
   KnockbackPrice = 50;
   SDefPrice = 70;
   FireRatePrice = 100;
+  ShotgunPrice = 1500;
+  PiercingPrice = 2000;
+  RegenPrice = 750;
 
   level.spawnTick = 150;
   level.enemiesRemaining = 5 + 5 * player.level;

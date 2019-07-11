@@ -364,6 +364,8 @@ function draw() {
         player.resetPos(); // Move the player back to the center
         player.level++; // Increment level
 
+        levelImg.src = levels[getRndInteger(0, levels.length - 1)];
+
         if (player.level % 5 != 0) { // If this is not a boss level
           level.enemiesRemaining = getRndInteger(5 + 5 * player.level, 10 + 5 * player.level); // 5-10 enemies + 5 * the level number, per level
           level.enemyMaxHealth = (1 + Math.floor(player.level / 3)); // Enemy max health
@@ -611,6 +613,7 @@ var mouseStyle = "auto";
 
 var levels = ["./levels/concrete.jpg", "./levels/grass.jpg", "./levels/gravel.jpg", "./levels/parking.jpg", "./levels/snow.jpg"]
 var levelImg = new Image;
+levelImg.src = levels[getRndInteger(0,levels.length-1)]
 
 var AmmoPrice = 5;
 var GDmgPrice = 50;
@@ -1378,8 +1381,7 @@ function collisionDetection() {
 function menuAction(x, y) {
   if (x > startX && x < startX + 150 && y > startY && y < startY + 35) {
     // If the start button is clicked, pick a random background, reset the player position, and start the level
-    levelImg.onload = function(){ctx.drawImage(levelImg, 0, 0)};
-    levelImg.src = levels[getRndInteger(0, levels.length - 1)];
+    //levelImg.onload = function(){ctx.drawImage(levelImg, 0, 0)};
     player.resetPos();
     
     setTimeout(function () { // 15ms timeout to prevent a bullet from being spawned due to clicking "start"

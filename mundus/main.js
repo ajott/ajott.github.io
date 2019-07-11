@@ -49,23 +49,75 @@ var player = {
     let xvel = 0;
     let yvel = 0;
 
-    // The bullet's X and Y velocities are scaled based on the difference between the two and multiplied by the bullet velocity
-    // The last clause determines if the velocity should be positive or negative, as all the math here is done with the absolute value.
-    xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (player.bulletVel) * (xDiff / Math.abs(xDiff));
-    yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (player.bulletVel) * (yDiff / Math.abs(yDiff));
+    if (shotgun) {
+      shotgun = false; // Temporarily set shotgun to false to avoid infinite recursion
 
-    bullets.push(Bullet({
-      xVelocity: xvel,
-      yVelocity: yvel,
-      x: player.x,
-      y: player.y,
-      width: bulletSize,
-      height: bulletSize
-    }));
+      // Get the angle of the shot with the player's position as the origin
+      let theta = Math.atan2(yDiff, xDiff) 
+
+      // Create an imaginary circle centered on the player, with the initial angle being the angle of the shot
+      let circle = {
+        centerX: player.x,
+        centerY: player.y,
+        radius: 25,
+        angle: theta
+      };
+
+      // Initialize the imaginary target we're moving
+      let target = {
+        x: 0,
+        y: 0
+      };
+
+      // This will fire 5 shots, at -8, -4, 0, 4, 8 degree offsets from the initial angle
+      for (let i = -8; i <= 8; i += 4) {
+
+        // Change the angle to whatever iteration of the loop we're on
+        circle.angle += ((Math.PI * 2) / 360) * i;
+        // And reset it to an absolute angle if it overflows 2 pi
+        circle.angle = circle.angle % (Math.PI * 2);
+
+        // Move the target x by the cosine of the angle
+        target.x = circle.centerX + Math.cos(circle.angle) * circle.radius;
+        // Move the target y by the cosine of the angle
+        target.y = circle.centerY + Math.sin(circle.angle) * circle.radius;
+
+        // Reset the target angle to the initial calculated theta
+        circle.angle = theta;
+
+        // So long as the player has ammo,
+        if (player.ammo > 0) {
+          // Spawn a bullet aimed at the coordinates calculated for the given angle
+          player.spawnBulletMouse(target.x, target.y);
+        }
+      }
+
+      // Return shotgun to its "true" state
+      shotgun = true;
+
+    } else {
+      // The bullet's X and Y velocities are scaled based on the difference between the two and multiplied by the bullet velocity
+      // The last clause determines if the velocity should be positive or negative, as all the math here is done with the absolute value.
+      xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (player.bulletVel) * (xDiff / Math.abs(xDiff));
+      yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (player.bulletVel) * (yDiff / Math.abs(yDiff));
+
+      bullets.push(Bullet({
+        xVelocity: xvel,
+        yVelocity: yvel,
+        x: player.x,
+        y: player.y,
+        width: bulletSize,
+        height: bulletSize
+      }));
+      player.ammo--;
+    }
+
+    player.shootTicks = 0;
+
   },
 
   update: function () {
-    player.shootTicks ++;
+    player.shootTicks++;
 
     if (player.ammo == 0 && player.mags != 0 && player.reloadTicks < player.reloadThresh) {
       player.reloadTicks++;
@@ -300,7 +352,11 @@ function draw() {
       if (enemies.length == 0 && level.enemiesRemaining == 0) { // If there are no active enemies, and no reserves, the level is complete
         bullets = [] // Remove any active bullets
 
-        enemyBullets = [] // Remove any active enemy bullets
+        enemyBullets = [] // Remove any active enemy bullets        
+
+        if (regen) {
+          player.health += (1 + Math.floor(player.level / 3))
+        }
 
         player.inLevel = false;
         player.resetPos(); // Move the player back to the center
@@ -310,11 +366,10 @@ function draw() {
           level.enemiesRemaining = getRndInteger(5 + 5 * player.level, 10 + 5 * player.level); // 5-10 enemies + 5 * the level number, per level
           level.enemyMaxHealth = (1 + Math.floor(player.level / 3)); // Enemy max health
         } else { // If it is a boss level
-
-          if (getRndInteger(0,1) == 1) {
-            let numBosses = getRndInteger(2,4);
+          if (getRndInteger(0, 1) == 1) {
+            let numBosses = getRndInteger(2, 4);
             level.enemiesRemaining = numBosses;
-            level.enemyMaxHealth = Math.ceil((player.level * 10) * (1/numBosses) * 1.1);
+            level.enemyMaxHealth = Math.ceil((player.level * 10) * (1 / numBosses) * 1.1);
           } else {
             level.enemiesRemaining = 1;
             level.enemyMaxHealth = player.level * 10;
@@ -450,7 +505,7 @@ function mouseMoveHandler(e) {
       } else {
         fireRateColor = "#FFFFFF";
       }
-    }  else if (mouseX > menuCol1 && mouseX < menuCol1 + 150 && mouseY > menuRow1 && mouseY < menuRow1 + 35) {
+    } else if (mouseX > menuCol1 && mouseX < menuCol1 + 150 && mouseY > menuRow1 && mouseY < menuRow1 + 35) {
       if (player.score >= AmmoPrice) {
         ammoColor = "#DDDDDD";
       } else {
@@ -486,6 +541,24 @@ function mouseMoveHandler(e) {
       } else {
         SDefColor = "#FFFFFF";
       }
+    } else if (mouseX > menuCol1 && mouseX < menuCol1 + 150 && mouseY > menuRow4 && mouseY < menuRow4 + 35) {
+      if (player.score >= ShotgunPrice) {
+        shotgunColor = "#DDDDDD";
+      } else {
+        shotgunColor = "#FFFFFF";
+      }
+    } else if (mouseX > startX && mouseX < startX + 150 && mouseY > menuRow4 && mouseY < menuRow4 + 35) {
+      if (player.score >= PiercingPrice) {
+        piercingColor = "#DDDDDD";
+      } else {
+        piercingColor = "#FFFFFF";
+      }
+    } else if (mouseX > menuCol2 && mouseX < menuCol2 + 150 && mouseY > menuRow4 && mouseY < menuRow4 + 35) {
+      if (player.score >= RegenPrice) {
+        regenColor = "#DDDDDD";
+      } else {
+        regenColor = "#FFFFFF";
+      }
     } else { // Resets the hover colors to the default color
       startColor = "lime";
       mouseStyle = "auto";
@@ -498,6 +571,9 @@ function mouseMoveHandler(e) {
       SDmgColor = "#FFFFFF";
       KnockbackColor = "#FFFFFF";
       SDefColor = "#FFFFFF";
+      shotgunColor = "#FFFFFF";
+      piercingColor = "#FFFFFF";
+      regenColor = "#FFFFFF";
     }
   }
 }
@@ -513,8 +589,6 @@ function mouseClickHandler(e) {
 
   if (player.ammo > 0 && player.inLevel && !paused && player.shootTicks > player.shootThresh) {
     player.spawnBulletMouse(clickX, clickY); // Otherwise, spawn a bullet and decrement ammo
-    player.ammo--;
-    player.shootTicks = 0;
   }
 }
 
@@ -544,8 +618,13 @@ var ShieldDmgPrice = 70;
 var KnockbackPrice = 50;
 var SDefPrice = 70;
 var FireRatePrice = 100;
-var paused = false;
+var ShotgunPrice = 1500;
+var PiercingPrice = 2000;
+var RegenPrice = 750;
 
+var paused = false;
+var shotgun = false;
+var regen = false;
 var ticks = 0; // Used to delay spawning enemies
 var currEnemyID = 0; // Used for tracking unique enemies for purposes of enemy/enemy collision
 var piercing = false;
@@ -582,6 +661,8 @@ function Bullet(I) {
     // Move the bullet by its velocities
     I.x += I.xVelocity;
     I.y += I.yVelocity;
+
+    console.log(bullets.length);
 
     // The bullet only remains active if it is in bounds
     I.active = I.active && I.inBounds();
@@ -643,8 +724,8 @@ function Enemy(I) {
   I.shoot = function () { // Handles an enemy firing at the player
 
       // The enemy will target the centerpoint of the player
-      let xDiff = (player.x + (player.width / 2)) + getRndInteger(-30,30) - I.x;
-      let yDiff = (player.y + (player.height / 2)) + getRndInteger(-30,30) - I.y;
+      let xDiff = (player.x + (player.width / 2)) + getRndInteger(-30, 30) - I.x;
+      let yDiff = (player.y + (player.height / 2)) + getRndInteger(-30, 30) - I.y;
 
       let xvel = 0;
       let yvel = 0;
@@ -737,7 +818,7 @@ function Enemy(I) {
           I.shootTicks = 0;
         }
       }
-      
+
       if (isNaN(I.x) || isNaN(I.y)) {
         I.active = false;
       }
@@ -897,8 +978,9 @@ var startY = 50;
 var menuCol1 = (canvas.width / 4) - 75;
 var menuCol2 = (canvas.width / 4) * 3 - 75;
 var menuRow1 = 150;
-var menuRow2 = 250;
-var menuRow3 = 350;
+var menuRow2 = 225;
+var menuRow3 = 300;
+var menuRow4 = 375;
 
 // Menu colors
 var startColor = "lime";
@@ -911,6 +993,9 @@ var SDmgColor = "#FFFFFF";
 var KnockbackColor = "#FFFFFF";
 var fireRateColor = "#FFFFFF";
 var SDefColor = "#FFFFFF";
+var shotgunColor = "#FFFFFF";
+var piercingColor = "#FFFFFF";
+var regenColor = "#FFFFFF";
 
 
 function drawMenu() {
@@ -927,7 +1012,7 @@ function drawMenu() {
 
   ctx.font = "20px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Start Level "+player.level, startX + 75, startY + 25);
+  ctx.fillText("Start Level " + player.level, startX + 75, startY + 25);
 
   // Draw buy mag size button
   ctx.beginPath();
@@ -991,7 +1076,7 @@ function drawMenu() {
     ctx.fillStyle = ammoColor;
   } else {
     ctx.fillStyle = "#999999"
-  }  
+  }
   ctx.fill();
   ctx.strokeStyle = "#000000";
   ctx.stroke();
@@ -1059,7 +1144,7 @@ function drawMenu() {
     ctx.fillStyle = KnockbackColor;
   } else {
     ctx.fillStyle = "#999999"
-  }  
+  }
   ctx.fill();
   ctx.strokeStyle = "#000000";
   ctx.stroke();
@@ -1085,6 +1170,63 @@ function drawMenu() {
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
   ctx.fillText("SDef +1: $" + SDefPrice, menuCol2 + 75, menuRow3 + 23);
+
+  // Draw buy shotgun button
+  ctx.beginPath();
+  ctx.rect(menuCol1, menuRow4, 150, 35);
+  if (player.score >= ShotgunPrice && !shotgun) {
+    ctx.fillStyle = shotgunColor;
+  } else if (shotgun) {
+    ctx.fillStyle = "#00BB00"
+  } else {
+    ctx.fillStyle = "#999999"
+  }
+  ctx.fill();
+  ctx.strokeStyle = "#000000";
+  ctx.stroke();
+  ctx.closePath();
+
+  ctx.font = "16px Arial";
+  ctx.fillStyle = "#000000";
+  ctx.fillText("Shotgun: $" + ShotgunPrice, menuCol1 + 75, menuRow4 + 23);
+
+  // Draw buy piercing button
+  ctx.beginPath();
+  ctx.rect(startX, menuRow4, 150, 35);
+  if (player.score >= PiercingPrice && !piercing) {
+    ctx.fillStyle = piercingColor;
+  } else if (piercing) {
+    ctx.fillStyle = "#00BB00"
+  } else {
+    ctx.fillStyle = "#999999"
+  }
+  ctx.fill();
+  ctx.strokeStyle = "#000000";
+  ctx.stroke();
+  ctx.closePath();
+
+  ctx.font = "16px Arial";
+  ctx.fillStyle = "#000000";
+  ctx.fillText("Piercing: $" + PiercingPrice, startX + 75, menuRow4 + 23);
+
+  // Draw buy regen button
+  ctx.beginPath();
+  ctx.rect(menuCol2, menuRow4, 150, 35);
+  if (player.score >= RegenPrice && !regen) {
+    ctx.fillStyle = regenColor;
+  } else if (regen) {
+    ctx.fillStyle = "#00BB00"
+  } else {
+    ctx.fillStyle = "#999999"
+  }
+  ctx.fill();
+  ctx.strokeStyle = "#000000";
+  ctx.stroke();
+  ctx.closePath();
+
+  ctx.font = "16px Arial";
+  ctx.fillStyle = "#000000";
+  ctx.fillText("Health Regen: $" + RegenPrice, menuCol2 + 75, menuRow4 + 23);
 
 
   ctx.textAlign = "left";
@@ -1146,7 +1288,7 @@ function drawMenu() {
   ctx.fillText("Shield Damage: " + player.shieldDamage, canvas.width - 185, canvas.height - 85);
   ctx.fillText("Shield Defense: " + player.shieldDefense, canvas.width - 185, canvas.height - 65);
   ctx.fillText("Shield Knockback: " + player.shieldKnockback, canvas.width - 185, canvas.height - 45);
-  ctx.fillText("Fire Rate: 1 per " + player.shootThresh+" ticks", canvas.width - 185, canvas.height - 25)
+  ctx.fillText("Fire Rate: 1 per " + player.shootThresh + " ticks", canvas.width - 185, canvas.height - 25)
   ctx.fillText("Reload Time: " + player.reloadThresh + " ticks", canvas.width - 185, canvas.height - 5)
 }
 
@@ -1165,7 +1307,7 @@ function collisionDetection() {
         }
 
         if (!piercing) {
-        bullet.active = false; // and despawn the bullet
+          bullet.active = false; // and despawn the bullet
         }
 
         // If the enemy is dead
@@ -1245,7 +1387,7 @@ function menuAction(x, y) {
     if (player.score >= MagSizePrice) {
       player.score -= MagSizePrice;
 
-      let newMags = Math.floor((player.magSize * player.mags) / (player.magSize+3));
+      let newMags = Math.floor((player.magSize * player.mags) / (player.magSize + 3));
       let spareAmmo = (player.magSize * player.mags) % (player.magSize + 3)
 
       player.mags = newMags
@@ -1307,6 +1449,27 @@ function menuAction(x, y) {
       player.score -= SDefPrice;
       player.shieldDefense += 1;
       SDefPrice += Math.ceil(SDefPrice * 0.5)
+    }
+  } else if (x > menuCol1 && x < menuCol1 + 150 && y > menuRow4 && y < menuRow4 + 35) {
+    // Shotgun purchase
+    if (player.score >= ShotgunPrice && !shotgun) {
+      player.score -= ShotgunPrice;
+      shotgun = true;
+      ShotgunPrice = 0;
+    }
+  } else if (x > startX && x < startX + 150 && y > menuRow4 && y < menuRow4 + 35) {
+    // Piercing purchase
+    if (player.score >= PiercingPrice && !piercing) {
+      player.score -= PiercingPrice;
+      piercing = true;
+      PiercingPrice = 0;
+    }
+  } else if (x > menuCol2 && x < menuCol2 + 150 && y > menuRow4 && y < menuRow4 + 35) {
+    // Regen purchase
+    if (player.score >= RegenPrice && !regen) {
+      player.score -= RegenPrice;
+      regen = true;
+      RegenPrice = 0;
     }
   }
 }
@@ -1393,6 +1556,10 @@ function reset() {
   player.shieldDefense = 0;
   player.bulletDamage = 1;
   player.inLevel = false;
+  shotgun = false;
+  piercing = false;
+  regen = false;
+
 
   AmmoPrice = 3;
   GDmgPrice = 50;

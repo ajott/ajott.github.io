@@ -10,6 +10,8 @@ function getRndInteger(min, max) {
 }
 
 var keys = [];
+var powerupTypes = ["Ammo", "Health", "$"];
+var powerup = powerupTypes[getRndInteger(0,2)][0];
 
 // Player variable
 var player = {
@@ -53,7 +55,7 @@ var player = {
       shotgun = false; // Temporarily set shotgun to false to avoid infinite recursion
 
       // Get the angle of the shot with the player's position as the origin
-      let theta = Math.atan2(yDiff, xDiff) 
+      let theta = Math.atan2(yDiff, xDiff)
 
       // Create an imaginary circle centered on the player, with the initial angle being the angle of the shot
       let circle = {
@@ -269,6 +271,10 @@ function draw() {
         bullet.draw();
       })
 
+      if (powerupSpawned) {
+        drawPowerup();
+      }
+
       drawPaused();
     }
 
@@ -349,6 +355,27 @@ function draw() {
         ticks = 0; // and reset the ticks
       }
 
+      if (player.level > 5) {
+        powerupTicks++;
+  
+        if (powerupTicks >= powerupThresh && powerupTicks < powerupDespawn) {
+          powerupSpawned = true;
+        } else if (powerupTicks == powerupDespawn) {
+          powerupSpawned = false;
+          powerupTicks = 0;
+          powerupX = getRndInteger(30, canvas.width - 30);
+          powerupY = getRndInteger(55, canvas.height - 30);
+          powerup = powerupTypes[getRndInteger(0,2)][0];
+        } else {
+          powerupSpawned = false;
+        }
+  
+        if (powerupSpawned) {
+          drawPowerup();
+        }
+  
+      }
+
       if (enemies.length == 0 && level.enemiesRemaining == 0) { // If there are no active enemies, and no reserves, the level is complete
         bullets = [] // Remove any active bullets
 
@@ -382,6 +409,8 @@ function draw() {
       }
     }
 
+    
+
     if (!gameOver) { // Obviously don't draw the next frame if the player lost
       requestAnimationFrame(draw); // Begins the loop anew
     }
@@ -412,6 +441,7 @@ function drawBackground() {
 
 // Draws in the player ammo count
 function drawAmmo() {
+  ctx.textAlign = "left"
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
   ctx.fillText("Ammo: " + player.ammo + "/" + player.magSize + " (" + player.mags + ")" + "  [" + ((player.ammo) + (player.mags * player.magSize)) + "]", canvas.width - 160, 20);
@@ -419,6 +449,7 @@ function drawAmmo() {
 
 // Draws in the player health
 function drawHealth() {
+  ctx.textAlign = "left";
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
   ctx.fillText("Health: " + player.health, 50, 20);
@@ -613,7 +644,7 @@ var mouseStyle = "auto";
 
 var levels = ["./levels/concrete.jpg", "./levels/grass.jpg", "./levels/gravel.jpg", "./levels/parking.jpg", "./levels/snow.jpg"]
 var levelImg = new Image;
-levelImg.src = levels[getRndInteger(0,levels.length-1)]
+levelImg.src = levels[getRndInteger(0, levels.length - 1)]
 
 var AmmoPrice = 5;
 var GDmgPrice = 50;
@@ -631,9 +662,15 @@ var paused = false;
 var shotgun = false;
 var regen = false;
 var ticks = 0; // Used to delay spawning enemies
+var powerupTicks = 0;
+var powerupThresh = 500;
+var powerupDespawn = powerupThresh + 250
+var powerupSpawned = false;
 var currEnemyID = 0; // Used for tracking unique enemies for purposes of enemy/enemy collision
 var piercing = false;
 var gameOver = false;
+var powerupX = getRndInteger(30, canvas.width - 30);
+var powerupY = getRndInteger(55, canvas.height - 30);
 
 var bullets = [];
 var enemies = [];
@@ -1273,6 +1310,7 @@ function drawMenu() {
   ctx.fillStyle = "#000000";
   ctx.textAlign = "center";
   ctx.fillText("Press \"P\" at any time to pause", (canvas.width / 2), canvas.height - 50);
+
   ctx.textAlign = "left"
 
 
@@ -1295,6 +1333,24 @@ function drawMenu() {
   ctx.fillText("Reload Time: " + player.reloadThresh + " ticks", canvas.width - 190, canvas.height - 5)
 }
 
+function drawPowerup() {
+  ctx.textBaseline = "middle";
+  ctx.textAlign = "center";
+  ctx.beginPath();
+  ctx.rect(powerupX, powerupY, 30, 30);
+  ctx.fillStyle = "rgba(139,69,19," + (powerupDespawn - powerupTicks) / (powerupDespawn - powerupThresh);
+  ctx.fill();
+  ctx.closePath();
+  ctx.beginPath();
+  ctx.rect(powerupX + 5, powerupY + 5, 20, 20);
+  ctx.fillStyle = "rgba(244,164,96," + (powerupDespawn - powerupTicks) / (powerupDespawn - powerupThresh);
+  ctx.fill();
+  ctx.closePath();
+  ctx.font = "15px Arial"
+  ctx.fillStyle = "rgba(0,0,0," + (powerupDespawn - powerupTicks) / (powerupDespawn - powerupThresh);
+  ctx.fillText(powerup, powerupX + 15, powerupY + 15)
+  ctx.textBaseline = "alphabetic";
+}
 
 function collisionDetection() {
   bullets.forEach(function (bullet) { // Loop through each active bullet
@@ -1302,7 +1358,7 @@ function collisionDetection() {
 
       // If the bullet intersects an enemy (falls within any of the four corners of the enemy square)
       if ((bullet.x > enemy.x - 5 && bullet.y > enemy.y - 5 && bullet.x < (enemy.x + enemy.width + 5) && bullet.y < (enemy.y + enemy.height + 5)) ||
-          (bullet.x + bullet.width > enemy.x - 5 && bullet.y + bullet.width > enemy.y - 5 && bullet.x + bullet.height < (enemy.x + enemy.width + 5) && bullet.y + bullet.height < (enemy.y + enemy.height + 5))) {
+        (bullet.x + bullet.width > enemy.x - 5 && bullet.y + bullet.width > enemy.y - 5 && bullet.x + bullet.height < (enemy.x + enemy.width + 5) && bullet.y + bullet.height < (enemy.y + enemy.height + 5))) {
 
         if (player.level % 5 != 0) {
           enemy.health -= Math.max(0, player.bulletDamage - enemy.shield); // Decrease enemy health normall if it's not a boss
@@ -1358,7 +1414,7 @@ function collisionDetection() {
   enemyBullets.forEach(function (bullet) {
     // If an enemy bullet intersects the player's square
     if ((bullet.x > player.x && bullet.y > player.y && bullet.x < (player.x + player.width) && bullet.y < (player.y + player.height)) ||
-    (bullet.x + bullet.width > player.x && bullet.y + bullet.height > player.y && bullet.x + bullet.width < (player.x + player.width) && bullet.y + bullet.height < (player.y + player.height))) {
+      (bullet.x + bullet.width > player.x && bullet.y + bullet.height > player.y && bullet.x + bullet.width < (player.x + player.width) && bullet.y + bullet.height < (player.y + player.height))) {
       let dmg = (level.enemyMaxHealth - player.shieldDefense)
       if (dmg > 0) {
         flashColor("red");
@@ -1372,6 +1428,21 @@ function collisionDetection() {
     }
   })
 
+  if (powerupSpawned) {
+    if (player.x < powerupX + 30 && player.y < powerupY + 30 && player.x > powerupX && player.y > powerupY) {
+      powerupSpawned = false;
+      powerupTicks = powerupDespawn + 50;
+
+      if (powerup == "A") {
+        player.mags += 1;
+      } else if (powerup == "H") {
+        player.health += 5;
+      } else if (powerup == "$") {
+        player.score += (5 + player.level);
+      }
+    }
+  }
+
   if (gameOver) {
     drawGameOver();
   }
@@ -1383,9 +1454,11 @@ function menuAction(x, y) {
     // If the start button is clicked, pick a random background, reset the player position, and start the level
     //levelImg.onload = function(){ctx.drawImage(levelImg, 0, 0)};
     player.resetPos();
-    
+
     setTimeout(function () { // 15ms timeout to prevent a bullet from being spawned due to clicking "start"
       player.inLevel = true;
+      powerupTicks = 0;
+      powerup = powerupTypes[getRndInteger(0,2)][0];
     }, 15);
   } else if (x > startX && x < startX + 150 && y > menuRow1 && y < menuRow1 + 35) {
     // Mag size purchase
@@ -1482,6 +1555,7 @@ function menuAction(x, y) {
 
 // Draws the level number text
 function drawLevel() {
+  ctx.textAlign = "left";
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
   ctx.fillText("Level: " + player.level, (canvas.width / 2) - 135, 20);
@@ -1489,6 +1563,7 @@ function drawLevel() {
 
 // Draws the score/$
 function drawScore() {
+  ctx.textAlign = "left";
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
   ctx.fillText("$" + player.score, 175, 20);

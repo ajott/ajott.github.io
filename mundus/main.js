@@ -245,6 +245,8 @@ var level = {
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // Clears the map
 
+  
+
   // If the player is in a level, draw that level.
   if (player.inLevel) {
 
@@ -368,6 +370,10 @@ function draw() {
           powerup = powerupTypes[getRndInteger(0,2)][0];
         } else {
           powerupSpawned = false;
+        }
+
+        if (powerupTicks < powerupThresh && !powerupSpawned) {          
+          drawPowerupShadow();
         }
   
         if (powerupSpawned) {
@@ -642,7 +648,7 @@ var downPressed = false;
 var bulletSize = 4;
 var mouseStyle = "auto";
 
-var levels = ["./levels/concrete.jpg", "./levels/grass.jpg", "./levels/gravel.jpg", "./levels/parking.jpg", "./levels/snow.jpg"]
+var levels = ["concrete.jpg", "grass.jpg", "gravel.jpg", "parking.jpg", "snow.jpg"]
 var levelImg = new Image;
 levelImg.src = levels[getRndInteger(0, levels.length - 1)]
 
@@ -1350,6 +1356,14 @@ function drawPowerup() {
   ctx.fillStyle = "rgba(0,0,0," + (powerupDespawn - powerupTicks) / (powerupDespawn - powerupThresh);
   ctx.fillText(powerup, powerupX + 15, powerupY + 15)
   ctx.textBaseline = "alphabetic";
+}
+
+function drawPowerupShadow() {
+  ctx.beginPath();
+  ctx.arc(powerupX + 15, powerupY + 15, (powerupTicks/powerupThresh)*15, 0, 2*Math.PI);
+  ctx.fillStyle = "rgba(0,0,0," + ((powerupTicks/powerupThresh)-.65);
+  ctx.closePath();
+  ctx.fill();
 }
 
 function collisionDetection() {

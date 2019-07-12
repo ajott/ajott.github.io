@@ -10,8 +10,8 @@ function getRndInteger(min, max) {
 }
 
 var keys = [];
-var powerupTypes = ["Ammo", "Health", "$"];
-var powerup = powerupTypes[getRndInteger(0,2)][0];
+var powerupTypes = ["Ammo", "Health", "$","TimeFreeze"];
+var powerup = powerupTypes[getRndInteger(0,3)][0];
 
 // Player variable
 var player = {
@@ -323,9 +323,16 @@ function draw() {
         bullet.draw();
       })
 
-      enemies.forEach(function (enemy) { // Updates each enemy
-        enemy.update();
-      });
+      if (!timeFreeze) {
+        enemies.forEach(function (enemy) { // Updates each enemy
+          enemy.update();
+        });
+      } else {
+        if (powerupTicks == freezeTick + 250) {
+          timeFreeze = false;
+          freezeTick = 0;
+        }
+      }
 
       enemies = enemies.filter(function (enemy) { // Delete inactive enemies
         return enemy.active;
@@ -367,7 +374,7 @@ function draw() {
           powerupTicks = 0;
           powerupX = getRndInteger(30, canvas.width - 30);
           powerupY = getRndInteger(55, canvas.height - 30);
-          powerup = powerupTypes[getRndInteger(0,2)][0];
+          powerup = powerupTypes[getRndInteger(0,3)][0];
         } else {
           powerupSpawned = false;
         }
@@ -677,6 +684,8 @@ var piercing = false;
 var gameOver = false;
 var powerupX = getRndInteger(30, canvas.width - 30);
 var powerupY = getRndInteger(55, canvas.height - 30);
+var timeFreeze = false;
+var freezeTick = 0;
 
 var bullets = [];
 var enemies = [];
@@ -1453,6 +1462,9 @@ function collisionDetection() {
         player.health += 5;
       } else if (powerup == "$") {
         player.score += (5 + player.level);
+      } else if (powerup == "T") {
+        freezeTick = powerupTicks;
+        timeFreeze = true;
       }
     }
   }

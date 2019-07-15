@@ -10,8 +10,8 @@ function getRndInteger(min, max) {
 }
 
 var keys = [];
-var powerupTypes = ["Ammo", "Health", "$", "TimeFreeze"];
-var powerup = powerupTypes[getRndInteger(0, 3)][0];
+var powerupTypes = ["Ammo", "Health", "$", "TimeFreeze", "InfiniteAmmo", "Bomb"];
+var powerup = powerupTypes[getRndInteger(0, 5)][0];
 
 // Player variable
 var player = {
@@ -126,7 +126,9 @@ var player = {
         width: bulletSize,
         height: bulletSize
       }));
-      player.ammo--;
+      if (useAmmo) {
+        player.ammo--;
+      }
     }
 
     player.shootTicks = 0;
@@ -349,6 +351,13 @@ function draw() {
         }
       }
 
+      if (!useAmmo) {
+        if (powerupTicks == ammoTick + 250) {
+          useAmmo = true;
+          ammoTick = 0;
+        }
+      }
+
       enemies = enemies.filter(function (enemy) { // Delete inactive enemies
         return enemy.active;
       });
@@ -389,7 +398,7 @@ function draw() {
           powerupTicks = 0;
           powerupX = getRndInteger(30, canvas.width - 30);
           powerupY = getRndInteger(55, canvas.height - 30);
-          powerup = powerupTypes[getRndInteger(0, 3)][0];
+          powerup = powerupTypes[getRndInteger(0, 5)][0];
         } else {
           powerupSpawned = false;
         }
@@ -414,6 +423,9 @@ function draw() {
         }
 
         player.score += 5 + player.level
+
+        timeFreeze = false;
+        useAmmo = true;
 
         player.inLevel = false;
         player.resetPos(); // Move the player back to the center
@@ -713,6 +725,8 @@ var powerupX = getRndInteger(30, canvas.width - 30);
 var powerupY = getRndInteger(55, canvas.height - 30);
 var timeFreeze = false;
 var freezeTick = 0;
+var useAmmo = true;
+var ammoTick = 0;
 
 var bullets = [];
 var enemies = [];
@@ -1571,6 +1585,13 @@ function collisionDetection() {
       } else if (powerup == "T") {
         freezeTick = powerupTicks;
         timeFreeze = true;
+      } else if (powerup == "I") {
+        ammoTick = powerupTicks;
+        useAmmo = false;
+      } else if (powerup == "B") {
+        enemies.forEach(function(enemy){
+          enemy.health -= ((1 + Math.floor(player.level / 3)) - enemy.shield);
+        })
       }
     }
   }
@@ -1589,7 +1610,7 @@ function menuAction(x, y) {
     setTimeout(function () { // 15ms timeout to prevent a bullet from being spawned due to clicking "start"
       player.inLevel = true;
       powerupTicks = 0;
-      powerup = powerupTypes[getRndInteger(0, 2)][0];
+      powerup = powerupTypes[getRndInteger(0, 5)][0];
     }, 15);
   } else if (x > startX - 40 && x < startX - 25 && y > startY && y < startY + 35) {
     if (player.level >= 2) {

@@ -10,8 +10,8 @@ function getRndInteger(min, max) {
 }
 
 var keys = [];
-var powerupTypes = ["Ammo", "Health", "$","TimeFreeze"];
-var powerup = powerupTypes[getRndInteger(0,3)][0];
+var powerupTypes = ["Ammo", "Health", "$", "TimeFreeze"];
+var powerup = powerupTypes[getRndInteger(0, 3)][0];
 
 // Player variable
 var player = {
@@ -29,6 +29,7 @@ var player = {
   height: 11,
   score: 15,
   level: 1,
+  maxLevel: 1,
   bulletDamage: 1, // Damage dealt to an enemy by player bullets
   shieldDefense: 0, // Damage reduction when an enemy strikes the player
   shieldDamage: 1, // Damage dealt to an enemy that strikes the player
@@ -245,7 +246,7 @@ var level = {
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // Clears the map
 
-  
+
 
   // If the player is in a level, draw that level.
   if (player.inLevel) {
@@ -366,7 +367,7 @@ function draw() {
 
       if (player.level > 5) {
         powerupTicks++;
-  
+
         if (powerupTicks >= powerupThresh && powerupTicks < powerupDespawn) {
           powerupSpawned = true;
         } else if (powerupTicks == powerupDespawn) {
@@ -374,19 +375,19 @@ function draw() {
           powerupTicks = 0;
           powerupX = getRndInteger(30, canvas.width - 30);
           powerupY = getRndInteger(55, canvas.height - 30);
-          powerup = powerupTypes[getRndInteger(0,3)][0];
+          powerup = powerupTypes[getRndInteger(0, 3)][0];
         } else {
           powerupSpawned = false;
         }
 
-        if (powerupTicks < powerupThresh && !powerupSpawned) {          
+        if (powerupTicks < powerupThresh && !powerupSpawned) {
           drawPowerupShadow();
         }
-  
+
         if (powerupSpawned) {
           drawPowerup();
         }
-  
+
       }
 
       if (enemies.length == 0 && level.enemiesRemaining == 0) { // If there are no active enemies, and no reserves, the level is complete
@@ -402,8 +403,10 @@ function draw() {
 
         player.inLevel = false;
         player.resetPos(); // Move the player back to the center
+        if (player.level == player.maxLevel){
+          player.maxLevel++;
+        }
         player.level++; // Increment level
-
         levelImg.src = levels[getRndInteger(0, levels.length - 1)];
 
         if (player.level % 5 != 0) { // If this is not a boss level
@@ -422,7 +425,7 @@ function draw() {
       }
     }
 
-    
+
 
     if (!gameOver) { // Obviously don't draw the next frame if the player lost
       requestAnimationFrame(draw); // Begins the loop anew
@@ -535,6 +538,18 @@ function mouseMoveHandler(e) {
     // This logic governs the hover-over colors for the menu buttons
     if (mouseX > startX && mouseX < startX + 150 && mouseY > startY && mouseY < startY + 35) {
       startColor = "limegreen";
+    } else if (mouseX > startX - 40 && mouseX < startX - 25 && mouseY > startY && mouseY < startY + 35) {
+      if (player.level >= 2) {
+        lowerLevelColor = "limegreen";
+      } else {
+        lowerLevelColor = "green";
+      }
+    } else if (mouseX > startX + 175 && mouseX < startX + 190 && mouseY > startY && mouseY < startY + 35) {
+      if (player.level < player.maxLevel) {
+        raiseLevelColor = "limegreen";
+      } else {
+        raiseLevelColor = "green";
+      }
     } else if (mouseX > startX && mouseX < startX + 150 && mouseY > menuRow1 && mouseY < menuRow1 + 35) {
       if (player.score >= MagSizePrice) {
         magColor = "#DDDDDD";
@@ -622,6 +637,8 @@ function mouseMoveHandler(e) {
       shotgunColor = "#FFFFFF";
       piercingColor = "#FFFFFF";
       regenColor = "#FFFFFF";
+      lowerLevelColor = "green";
+      raiseLevelColor = "green"
     }
   }
 }
@@ -778,26 +795,26 @@ function Enemy(I) {
 
   I.shoot = function () { // Handles an enemy firing at the player
 
-      // The enemy will target the centerpoint of the player
-      let xDiff = (player.x + (player.width / 2)) + getRndInteger(-30, 30) - I.x;
-      let yDiff = (player.y + (player.height / 2)) + getRndInteger(-30, 30) - I.y;
+    // The enemy will target the centerpoint of the player
+    let xDiff = (player.x + (player.width / 2)) + getRndInteger(-30, 30) - I.x;
+    let yDiff = (player.y + (player.height / 2)) + getRndInteger(-30, 30) - I.y;
 
-      let xvel = 0;
-      let yvel = 0;
+    let xvel = 0;
+    let yvel = 0;
 
-      // Uses the same math as the player's shoot function
-      xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
-      yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
+    // Uses the same math as the player's shoot function
+    xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
+    yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
 
-      enemyBullets.push(Bullet({
-        xVelocity: xvel,
-        yVelocity: yvel,
-        x: I.x,
-        y: I.y,
-        width: bulletSize,
-        height: bulletSize
-      }));
-    },
+    enemyBullets.push(Bullet({
+      xVelocity: xvel,
+      yVelocity: yvel,
+      x: I.x,
+      y: I.y,
+      width: bulletSize,
+      height: bulletSize
+    }));
+  },
 
     I.update = function () {
       // Targeting logic, which allows the enemies to track the player.
@@ -836,7 +853,7 @@ function Enemy(I) {
       enemies.forEach(function (enemy) {
         if (enemy.active && enemy.ID != I.ID) {
           if (((I.x + I.xVelocity > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width) &&
-              (I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height)) ||
+            (I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height)) ||
             ((I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity + I.width < enemy.x + enemy.width) &&
               (I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height))
           ) {
@@ -844,7 +861,7 @@ function Enemy(I) {
           }
 
           if (((I.y + I.yVelocity > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height) &&
-              (I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width)) ||
+            (I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width)) ||
             ((I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity + I.height < enemy.y + enemy.height) &&
               (I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width))
           ) {
@@ -950,24 +967,24 @@ function Boss(I) {
 
   I.shoot = function () {
 
-      let xDiff = (player.x + (player.width / 2)) - I.x;
-      let yDiff = (player.y + (player.height / 2)) - I.y;
-      let xvel = 0;
-      let yvel = 0;
+    let xDiff = (player.x + (player.width / 2)) - I.x;
+    let yDiff = (player.y + (player.height / 2)) - I.y;
+    let xvel = 0;
+    let yvel = 0;
 
 
-      xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
-      yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
+    xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
+    yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
 
-      enemyBullets.push(Bullet({
-        xVelocity: xvel,
-        yVelocity: yvel,
-        x: (I.x + (I.width / 2)),
-        y: (I.y + (I.height / 2)),
-        width: 8,
-        height: 8
-      }));
-    },
+    enemyBullets.push(Bullet({
+      xVelocity: xvel,
+      yVelocity: yvel,
+      x: (I.x + (I.width / 2)),
+      y: (I.y + (I.height / 2)),
+      width: 8,
+      height: 8
+    }));
+  },
 
     I.update = function () {
       // Targeting logic, which allows the enemies to track the player.
@@ -1051,6 +1068,8 @@ var SDefColor = "#FFFFFF";
 var shotgunColor = "#FFFFFF";
 var piercingColor = "#FFFFFF";
 var regenColor = "#FFFFFF";
+var lowerLevelColor = "green";
+var raiseLevelColor = "#999999";
 
 
 function drawMenu() {
@@ -1068,6 +1087,32 @@ function drawMenu() {
   ctx.font = "20px Arial";
   ctx.fillStyle = "#000000";
   ctx.fillText("Start Level " + player.level, startX + 75, startY + 25);
+
+  // Draw lower level arrow
+  ctx.beginPath();
+  ctx.moveTo(startX - 25, startY);
+  ctx.lineTo(startX - 25, startY + 35);
+  ctx.lineTo(startX - 40, startY + 17.5);
+  if (player.level >= 2) {
+    ctx.fillStyle = lowerLevelColor;
+  } else {
+    ctx.fillStyle = "#999999";
+  }
+  ctx.fill();
+  ctx.closePath();
+
+  // Draw raise level arrow
+  ctx.beginPath();
+  ctx.moveTo(startX + 175, startY);
+  ctx.lineTo(startX + 175, startY + 35);
+  ctx.lineTo(startX + 190, startY + 17.5);
+  if (player.level < player.maxLevel) {
+    ctx.fillStyle = raiseLevelColor;
+  } else {
+    ctx.fillStyle = "#999999";
+  }
+  ctx.fill();
+  ctx.closePath();
 
   // Draw buy mag size button
   ctx.beginPath();
@@ -1369,8 +1414,8 @@ function drawPowerup() {
 
 function drawPowerupShadow() {
   ctx.beginPath();
-  ctx.arc(powerupX + 15, powerupY + 15, (powerupTicks/powerupThresh)*15, 0, 2*Math.PI);
-  ctx.fillStyle = "rgba(0,0,0," + ((powerupTicks/powerupThresh)-.65);
+  ctx.arc(powerupX + 15, powerupY + 15, (powerupTicks / powerupThresh) * 15, 0, 2 * Math.PI);
+  ctx.fillStyle = "rgba(0,0,0," + ((powerupTicks / powerupThresh) - .65);
   ctx.closePath();
   ctx.fill();
 }
@@ -1407,11 +1452,11 @@ function collisionDetection() {
 
     // If any of the four corners of the enemy intersect the player's square
     if (enemy.active && (
-        (enemy.x > player.x && enemy.y > player.y && enemy.x < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
-        (enemy.x + enemy.width > player.x && enemy.y > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
-        (enemy.x > player.x && enemy.y + enemy.height > player.y && enemy.x < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height)) ||
-        (enemy.x + enemy.width > player.x && enemy.y + enemy.height > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height))
-      )) {
+      (enemy.x > player.x && enemy.y > player.y && enemy.x < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
+      (enemy.x + enemy.width > player.x && enemy.y > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
+      (enemy.x > player.x && enemy.y + enemy.height > player.y && enemy.x < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height)) ||
+      (enemy.x + enemy.width > player.x && enemy.y + enemy.height > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height))
+    )) {
       let dmg = (level.enemyMaxHealth - player.shieldDefense) // Calculate the damage dealt by the enemy
       if (dmg > 0) {
         flashColor("red");
@@ -1484,8 +1529,46 @@ function menuAction(x, y) {
     setTimeout(function () { // 15ms timeout to prevent a bullet from being spawned due to clicking "start"
       player.inLevel = true;
       powerupTicks = 0;
-      powerup = powerupTypes[getRndInteger(0,2)][0];
+      powerup = powerupTypes[getRndInteger(0, 2)][0];
     }, 15);
+  } else if (x > startX - 40 && x < startX - 25 && y > startY && y < startY + 35) {
+    if (player.level >= 2) {
+      player.level -= 1;
+      if (player.level % 5 != 0) { // If this is not a boss level
+        if (player.level == 1 ){
+          level.enemiesRemaining = 10;
+        } else {
+          level.enemiesRemaining = getRndInteger(5 + 5 * player.level, 10 + 5 * player.level); // 5-10 enemies + 5 * the level number, per level
+        }
+        level.enemyMaxHealth = (1 + Math.floor(player.level / 3)); // Enemy max health
+      } else { // If it is a boss level
+        if (getRndInteger(0, 1) == 1) {
+          let numBosses = getRndInteger(2, 4);
+          level.enemiesRemaining = numBosses;
+          level.enemyMaxHealth = Math.ceil((player.level * 10) * (1 / numBosses) * 1.1);
+        } else {
+          level.enemiesRemaining = 1;
+          level.enemyMaxHealth = player.level * 10;
+        }
+      }
+    }    
+  } else if (x > startX + 175 && x < startX + 190 && y > startY && y < startY + 35) {
+    if (player.level < player.maxLevel) {
+      player.level += 1;
+      if (player.level % 5 != 0) { // If this is not a boss level
+        level.enemiesRemaining = getRndInteger(5 + 5 * player.level, 10 + 5 * player.level); // 5-10 enemies + 5 * the level number, per level
+        level.enemyMaxHealth = (1 + Math.floor(player.level / 3)); // Enemy max health
+      } else { // If it is a boss level
+        if (getRndInteger(0, 1) == 1) {
+          let numBosses = getRndInteger(2, 4);
+          level.enemiesRemaining = numBosses;
+          level.enemyMaxHealth = Math.ceil((player.level * 10) * (1 / numBosses) * 1.1);
+        } else {
+          level.enemiesRemaining = 1;
+          level.enemyMaxHealth = player.level * 10;
+        }
+      }
+    }    
   } else if (x > startX && x < startX + 150 && y > menuRow1 && y < menuRow1 + 35) {
     // Mag size purchase
     if (player.score >= MagSizePrice) {
@@ -1656,6 +1739,7 @@ function reset() {
   player.shootTicks = 0;
   player.shootThresh = 25;
   player.level = 1;
+  player.maxLevel = 1;
   player.score = 15;
   player.shieldDamage = 1;
   player.shieldKnockback = 25;

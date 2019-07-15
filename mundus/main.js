@@ -709,7 +709,7 @@ var downPressed = false;
 var bulletSize = 4;
 var mouseStyle = "auto";
 
-var levels = ["concrete.jpg", "grass.jpg", "gravel.jpg", "parking.jpg", "snow.jpg"]
+var levels = ["concrete.jpg", "grass.jpg", "gravel.jpg", "parking.jpg", "snow.jpg", "ice.jpg", "tiles.jpg", "road.jpg", "diamond.jpg"]
 var levelImg = new Image;
 levelImg.src = levels[getRndInteger(0, levels.length - 1)]
 

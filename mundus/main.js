@@ -38,6 +38,20 @@ var player = {
   bulletVel: 12, // Bullet velocity
   shootTicks: 0,
   shootThresh: 25,
+  AmmoPrice: 5,
+  GDmgPrice: 50,
+  MagSizePrice: 25,
+  ReloadTimePrice: 30,
+  ShieldDmgPrice: 70,
+  KnockbackPrice: 50,
+  SDefPrice: 70,
+  FireRatePrice: 100,
+  ShotgunPrice: 1500,
+  PiercingPrice: 2000,
+  RegenPrice: 750,
+  shotgun: false,
+  piercing: false,
+  regen: false,
 
   resetPos: function () { // Moves the player back to the center of the screen
     player.x = 395;
@@ -52,8 +66,8 @@ var player = {
     let xvel = 0;
     let yvel = 0;
 
-    if (shotgun) {
-      shotgun = false; // Temporarily set shotgun to false to avoid infinite recursion
+    if (player.shotgun) {
+      player.shotgun = false; // Temporarily set player.shotgun to false to avoid infinite recursion
 
       // Get the angle of the shot with the player's position as the origin
       let theta = Math.atan2(yDiff, xDiff)
@@ -95,8 +109,8 @@ var player = {
         }
       }
 
-      // Return shotgun to its "true" state
-      shotgun = true;
+      // Return player.shotgun to its "true" state
+      player.shotgun = true;
 
     } else {
       // The bullet's X and Y velocities are scaled based on the difference between the two and multiplied by the bullet velocity
@@ -395,7 +409,7 @@ function draw() {
 
         enemyBullets = [] // Remove any active enemy bullets        
 
-        if (regen) {
+        if (player.regen) {
           player.health += (1 + Math.floor(player.level / 3))
         }
 
@@ -403,7 +417,7 @@ function draw() {
 
         player.inLevel = false;
         player.resetPos(); // Move the player back to the center
-        if (player.level == player.maxLevel){
+        if (player.level == player.maxLevel) {
           player.maxLevel++;
         }
         player.level++; // Increment level
@@ -422,6 +436,8 @@ function draw() {
             level.enemyMaxHealth = player.level * 10;
           }
         }
+
+        saveToLocal();
       }
     }
 
@@ -551,25 +567,25 @@ function mouseMoveHandler(e) {
         raiseLevelColor = "green";
       }
     } else if (mouseX > startX && mouseX < startX + 150 && mouseY > menuRow1 && mouseY < menuRow1 + 35) {
-      if (player.score >= MagSizePrice) {
+      if (player.score >= player.MagSizePrice) {
         magColor = "#DDDDDD";
       } else {
         magColor = "#FFFFFF";
       }
     } else if (mouseX > startX && mouseX < startX + 150 && mouseY > menuRow2 && mouseY < menuRow2 + 35) {
-      if (player.score >= ReloadTimePrice && player.reloadThresh >= 25) {
+      if (player.score >= player.ReloadTimePrice && player.reloadThresh >= 25) {
         reloadColor = "#DDDDDD";
       } else {
         reloadColor = "#FFFFFF";
       }
     } else if (mouseX > startX && mouseX < startX + 150 && mouseY > menuRow3 && mouseY < menuRow3 + 35) {
-      if (player.score >= FireRatePrice && player.shootThresh >= 10) {
+      if (player.score >= player.FireRatePrice && player.shootThresh >= 10) {
         fireRateColor = "#DDDDDD";
       } else {
         fireRateColor = "#FFFFFF";
       }
     } else if (mouseX > menuCol1 && mouseX < menuCol1 + 150 && mouseY > menuRow1 && mouseY < menuRow1 + 35) {
-      if (player.score >= AmmoPrice) {
+      if (player.score >= player.AmmoPrice) {
         ammoColor = "#DDDDDD";
       } else {
         ammoColor = "#FFFFFF";
@@ -581,43 +597,43 @@ function mouseMoveHandler(e) {
         healthColor = "#FFFFFF";
       }
     } else if (mouseX > menuCol1 && mouseX < menuCol1 + 150 && mouseY > menuRow3 && mouseY < menuRow3 + 35) {
-      if (player.score >= GDmgPrice) {
+      if (player.score >= player.GDmgPrice) {
         GDmgColor = "#DDDDDD";
       } else {
         GDmgColor = "#FFFFFF";
       }
     } else if (mouseX > menuCol2 && mouseX < menuCol2 + 150 && mouseY > menuRow1 && mouseY < menuRow1 + 35) {
-      if (player.score >= ShieldDmgPrice) {
+      if (player.score >= player.ShieldDmgPrice) {
         SDmgColor = "#DDDDDD";
       } else {
         SDmgColor = "#FFFFFF";
       }
     } else if (mouseX > menuCol2 && mouseX < menuCol2 + 150 && mouseY > menuRow2 && mouseY < menuRow2 + 35) {
-      if (player.score >= KnockbackPrice) {
+      if (player.score >= player.KnockbackPrice) {
         KnockbackColor = "#DDDDDD";
       } else {
         KnockbackColor = "#FFFFFF";
       }
     } else if (mouseX > menuCol2 && mouseX < menuCol2 + 150 && mouseY > menuRow3 && mouseY < menuRow3 + 35) {
-      if (player.score >= SDefPrice) {
+      if (player.score >= player.SDefPrice) {
         SDefColor = "#DDDDDD";
       } else {
         SDefColor = "#FFFFFF";
       }
     } else if (mouseX > menuCol1 && mouseX < menuCol1 + 150 && mouseY > menuRow4 && mouseY < menuRow4 + 35) {
-      if (player.score >= ShotgunPrice) {
+      if (player.score >= player.ShotgunPrice) {
         shotgunColor = "#DDDDDD";
       } else {
         shotgunColor = "#FFFFFF";
       }
     } else if (mouseX > startX && mouseX < startX + 150 && mouseY > menuRow4 && mouseY < menuRow4 + 35) {
-      if (player.score >= PiercingPrice) {
+      if (player.score >= player.PiercingPrice) {
         piercingColor = "#DDDDDD";
       } else {
         piercingColor = "#FFFFFF";
       }
     } else if (mouseX > menuCol2 && mouseX < menuCol2 + 150 && mouseY > menuRow4 && mouseY < menuRow4 + 35) {
-      if (player.score >= RegenPrice) {
+      if (player.score >= player.RegenPrice) {
         regenColor = "#DDDDDD";
       } else {
         regenColor = "#FFFFFF";
@@ -676,28 +692,13 @@ var levels = ["concrete.jpg", "grass.jpg", "gravel.jpg", "parking.jpg", "snow.jp
 var levelImg = new Image;
 levelImg.src = levels[getRndInteger(0, levels.length - 1)]
 
-var AmmoPrice = 5;
-var GDmgPrice = 50;
-var MagSizePrice = 25;
-var ReloadTimePrice = 30;
-var ShieldDmgPrice = 70;
-var KnockbackPrice = 50;
-var SDefPrice = 70;
-var FireRatePrice = 100;
-var ShotgunPrice = 1500;
-var PiercingPrice = 2000;
-var RegenPrice = 750;
-
 var paused = false;
-var shotgun = false;
-var regen = false;
 var ticks = 0; // Used to delay spawning enemies
 var powerupTicks = 0;
 var powerupThresh = 500;
 var powerupDespawn = powerupThresh + 250
 var powerupSpawned = false;
 var currEnemyID = 0; // Used for tracking unique enemies for purposes of enemy/enemy collision
-var piercing = false;
 var gameOver = false;
 var powerupX = getRndInteger(30, canvas.width - 30);
 var powerupY = getRndInteger(55, canvas.height - 30);
@@ -795,26 +796,26 @@ function Enemy(I) {
 
   I.shoot = function () { // Handles an enemy firing at the player
 
-    // The enemy will target the centerpoint of the player
-    let xDiff = (player.x + (player.width / 2)) + getRndInteger(-30, 30) - I.x;
-    let yDiff = (player.y + (player.height / 2)) + getRndInteger(-30, 30) - I.y;
+      // The enemy will target the centerpoint of the player
+      let xDiff = (player.x + (player.width / 2)) + getRndInteger(-30, 30) - I.x;
+      let yDiff = (player.y + (player.height / 2)) + getRndInteger(-30, 30) - I.y;
 
-    let xvel = 0;
-    let yvel = 0;
+      let xvel = 0;
+      let yvel = 0;
 
-    // Uses the same math as the player's shoot function
-    xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
-    yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
+      // Uses the same math as the player's shoot function
+      xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
+      yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
 
-    enemyBullets.push(Bullet({
-      xVelocity: xvel,
-      yVelocity: yvel,
-      x: I.x,
-      y: I.y,
-      width: bulletSize,
-      height: bulletSize
-    }));
-  },
+      enemyBullets.push(Bullet({
+        xVelocity: xvel,
+        yVelocity: yvel,
+        x: I.x,
+        y: I.y,
+        width: bulletSize,
+        height: bulletSize
+      }));
+    },
 
     I.update = function () {
       // Targeting logic, which allows the enemies to track the player.
@@ -853,7 +854,7 @@ function Enemy(I) {
       enemies.forEach(function (enemy) {
         if (enemy.active && enemy.ID != I.ID) {
           if (((I.x + I.xVelocity > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width) &&
-            (I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height)) ||
+              (I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height)) ||
             ((I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity + I.width < enemy.x + enemy.width) &&
               (I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height))
           ) {
@@ -861,7 +862,7 @@ function Enemy(I) {
           }
 
           if (((I.y + I.yVelocity > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height) &&
-            (I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width)) ||
+              (I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width)) ||
             ((I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity + I.height < enemy.y + enemy.height) &&
               (I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width))
           ) {
@@ -967,24 +968,24 @@ function Boss(I) {
 
   I.shoot = function () {
 
-    let xDiff = (player.x + (player.width / 2)) - I.x;
-    let yDiff = (player.y + (player.height / 2)) - I.y;
-    let xvel = 0;
-    let yvel = 0;
+      let xDiff = (player.x + (player.width / 2)) - I.x;
+      let yDiff = (player.y + (player.height / 2)) - I.y;
+      let xvel = 0;
+      let yvel = 0;
 
 
-    xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
-    yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
+      xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
+      yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
 
-    enemyBullets.push(Bullet({
-      xVelocity: xvel,
-      yVelocity: yvel,
-      x: (I.x + (I.width / 2)),
-      y: (I.y + (I.height / 2)),
-      width: 8,
-      height: 8
-    }));
-  },
+      enemyBullets.push(Bullet({
+        xVelocity: xvel,
+        yVelocity: yvel,
+        x: (I.x + (I.width / 2)),
+        y: (I.y + (I.height / 2)),
+        width: 8,
+        height: 8
+      }));
+    },
 
     I.update = function () {
       // Targeting logic, which allows the enemies to track the player.
@@ -1117,7 +1118,7 @@ function drawMenu() {
   // Draw buy mag size button
   ctx.beginPath();
   ctx.rect(startX, menuRow1, 150, 35);
-  if (player.score >= MagSizePrice) {
+  if (player.score >= player.MagSizePrice) {
     ctx.fillStyle = magColor
   } else {
     ctx.fillStyle = "#999999"
@@ -1129,12 +1130,12 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Mag Size + 3: $" + MagSizePrice, startX + 75, menuRow1 + 23);
+  ctx.fillText("Mag Size + 3: $" + player.MagSizePrice, startX + 75, menuRow1 + 23);
 
   // Draw buy reload time button
   ctx.beginPath();
   ctx.rect(startX, menuRow2, 150, 35);
-  if (player.reloadThresh >= 25 && player.score >= ReloadTimePrice) {
+  if (player.reloadThresh >= 25 && player.score >= player.ReloadTimePrice) {
     ctx.fillStyle = reloadColor;
   } else if (player.reloadThresh < 25) {
     ctx.fillStyle = "#00BB00";
@@ -1148,12 +1149,12 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("R. Time - 15: $" + ReloadTimePrice, startX + 75, menuRow2 + 23);
+  ctx.fillText("R. Time - 15: $" + player.ReloadTimePrice, startX + 75, menuRow2 + 23);
 
   // Draw buy fire rate button
   ctx.beginPath();
   ctx.rect(startX, menuRow3, 150, 35);
-  if (player.shootThresh >= 10 && player.score > FireRatePrice) {
+  if (player.shootThresh >= 10 && player.score > player.FireRatePrice) {
     ctx.fillStyle = fireRateColor;
   } else if (player.shootThresh < 10) {
     ctx.fillStyle = "#00BB00";
@@ -1167,12 +1168,12 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Fire Rate + 5: $" + FireRatePrice, startX + 75, menuRow3 + 23);
+  ctx.fillText("Fire Rate + 5: $" + player.FireRatePrice, startX + 75, menuRow3 + 23);
 
   // Draw buy ammo button
   ctx.beginPath();
   ctx.rect(menuCol1, menuRow1, 150, 35);
-  if (player.score >= AmmoPrice) {
+  if (player.score >= player.AmmoPrice) {
     ctx.fillStyle = ammoColor;
   } else {
     ctx.fillStyle = "#999999"
@@ -1184,7 +1185,7 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Magazine: $" + AmmoPrice, menuCol1 + 75, menuRow1 + 23);
+  ctx.fillText("Magazine: $" + player.AmmoPrice, menuCol1 + 75, menuRow1 + 23);
 
   // Draw buy health button
   ctx.beginPath();
@@ -1206,7 +1207,7 @@ function drawMenu() {
   // Draw buy gun damage button
   ctx.beginPath();
   ctx.rect(menuCol1, menuRow3, 150, 35);
-  if (player.score >= GDmgPrice) {
+  if (player.score >= player.GDmgPrice) {
     ctx.fillStyle = GDmgColor;
   } else {
     ctx.fillStyle = "#999999"
@@ -1218,12 +1219,12 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("GDmg +1: $" + GDmgPrice, menuCol1 + 75, menuRow3 + 23);
+  ctx.fillText("GDmg +1: $" + player.GDmgPrice, menuCol1 + 75, menuRow3 + 23);
 
   // Draw buy shield damage button
   ctx.beginPath();
   ctx.rect(menuCol2, menuRow1, 150, 35);
-  if (player.score >= ShieldDmgPrice) {
+  if (player.score >= player.ShieldDmgPrice) {
     ctx.fillStyle = SDmgColor;
   } else {
     ctx.fillStyle = "#999999"
@@ -1235,12 +1236,12 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("SDmg +1: $" + ShieldDmgPrice, menuCol2 + 75, menuRow1 + 23);
+  ctx.fillText("SDmg +1: $" + player.ShieldDmgPrice, menuCol2 + 75, menuRow1 + 23);
 
   // Draw buy shield knockback button
   ctx.beginPath();
   ctx.rect(menuCol2, menuRow2, 150, 35);
-  if (player.score >= KnockbackPrice) {
+  if (player.score >= player.KnockbackPrice) {
     ctx.fillStyle = KnockbackColor;
   } else {
     ctx.fillStyle = "#999999"
@@ -1252,12 +1253,12 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Knockback +5: $" + KnockbackPrice, menuCol2 + 75, menuRow2 + 23);
+  ctx.fillText("Knockback +5: $" + player.KnockbackPrice, menuCol2 + 75, menuRow2 + 23);
 
   // Draw buy shield defense button
   ctx.beginPath();
   ctx.rect(menuCol2, menuRow3, 150, 35);
-  if (player.score >= SDefPrice) {
+  if (player.score >= player.SDefPrice) {
     ctx.fillStyle = SDefColor;
   } else {
     ctx.fillStyle = "#999999"
@@ -1269,14 +1270,14 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("SDef +1: $" + SDefPrice, menuCol2 + 75, menuRow3 + 23);
+  ctx.fillText("SDef +1: $" + player.SDefPrice, menuCol2 + 75, menuRow3 + 23);
 
-  // Draw buy shotgun button
+  // Draw buy player.shotgun button
   ctx.beginPath();
   ctx.rect(menuCol1, menuRow4, 150, 35);
-  if (player.score >= ShotgunPrice && !shotgun) {
+  if (player.score >= player.ShotgunPrice && !player.shotgun) {
     ctx.fillStyle = shotgunColor;
-  } else if (shotgun) {
+  } else if (player.shotgun) {
     ctx.fillStyle = "#00BB00"
   } else {
     ctx.fillStyle = "#999999"
@@ -1288,14 +1289,14 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Shotgun: $" + ShotgunPrice, menuCol1 + 75, menuRow4 + 23);
+  ctx.fillText("Shotgun: $" + player.ShotgunPrice, menuCol1 + 75, menuRow4 + 23);
 
-  // Draw buy piercing button
+  // Draw buy player.piercing button
   ctx.beginPath();
   ctx.rect(startX, menuRow4, 150, 35);
-  if (player.score >= PiercingPrice && !piercing) {
+  if (player.score >= player.PiercingPrice && !player.piercing) {
     ctx.fillStyle = piercingColor;
-  } else if (piercing) {
+  } else if (player.piercing) {
     ctx.fillStyle = "#00BB00"
   } else {
     ctx.fillStyle = "#999999"
@@ -1307,14 +1308,14 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Piercing: $" + PiercingPrice, startX + 75, menuRow4 + 23);
+  ctx.fillText("Piercing: $" + player.PiercingPrice, startX + 75, menuRow4 + 23);
 
-  // Draw buy regen button
+  // Draw buy player.regen button
   ctx.beginPath();
   ctx.rect(menuCol2, menuRow4, 150, 35);
-  if (player.score >= RegenPrice && !regen) {
+  if (player.score >= player.RegenPrice && !player.regen) {
     ctx.fillStyle = regenColor;
-  } else if (regen) {
+  } else if (player.regen) {
     ctx.fillStyle = "#00BB00"
   } else {
     ctx.fillStyle = "#999999"
@@ -1326,7 +1327,7 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Health Regen: $" + RegenPrice, menuCol2 + 75, menuRow4 + 23);
+  ctx.fillText("Health Regen: $" + player.RegenPrice, menuCol2 + 75, menuRow4 + 23);
 
 
   ctx.textAlign = "left";
@@ -1434,7 +1435,7 @@ function collisionDetection() {
           enemy.health -= Math.max(0, player.bulletDamage - (player.level / 5));
         }
 
-        if (!piercing) {
+        if (!player.piercing) {
           bullet.active = false; // and despawn the bullet
         }
 
@@ -1452,11 +1453,11 @@ function collisionDetection() {
 
     // If any of the four corners of the enemy intersect the player's square
     if (enemy.active && (
-      (enemy.x > player.x && enemy.y > player.y && enemy.x < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
-      (enemy.x + enemy.width > player.x && enemy.y > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
-      (enemy.x > player.x && enemy.y + enemy.height > player.y && enemy.x < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height)) ||
-      (enemy.x + enemy.width > player.x && enemy.y + enemy.height > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height))
-    )) {
+        (enemy.x > player.x && enemy.y > player.y && enemy.x < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
+        (enemy.x + enemy.width > player.x && enemy.y > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
+        (enemy.x > player.x && enemy.y + enemy.height > player.y && enemy.x < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height)) ||
+        (enemy.x + enemy.width > player.x && enemy.y + enemy.height > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height))
+      )) {
       let dmg = (level.enemyMaxHealth - player.shieldDefense) // Calculate the damage dealt by the enemy
       if (dmg > 0) {
         flashColor("red");
@@ -1523,7 +1524,6 @@ function collisionDetection() {
 function menuAction(x, y) {
   if (x > startX && x < startX + 150 && y > startY && y < startY + 35) {
     // If the start button is clicked, pick a random background, reset the player position, and start the level
-    //levelImg.onload = function(){ctx.drawImage(levelImg, 0, 0)};
     player.resetPos();
 
     setTimeout(function () { // 15ms timeout to prevent a bullet from being spawned due to clicking "start"
@@ -1535,7 +1535,7 @@ function menuAction(x, y) {
     if (player.level >= 2) {
       player.level -= 1;
       if (player.level % 5 != 0) { // If this is not a boss level
-        if (player.level == 1 ){
+        if (player.level == 1) {
           level.enemiesRemaining = 10;
         } else {
           level.enemiesRemaining = getRndInteger(5 + 5 * player.level, 10 + 5 * player.level); // 5-10 enemies + 5 * the level number, per level
@@ -1551,7 +1551,7 @@ function menuAction(x, y) {
           level.enemyMaxHealth = player.level * 10;
         }
       }
-    }    
+    }
   } else if (x > startX + 175 && x < startX + 190 && y > startY && y < startY + 35) {
     if (player.level < player.maxLevel) {
       player.level += 1;
@@ -1568,11 +1568,11 @@ function menuAction(x, y) {
           level.enemyMaxHealth = player.level * 10;
         }
       }
-    }    
+    }
   } else if (x > startX && x < startX + 150 && y > menuRow1 && y < menuRow1 + 35) {
     // Mag size purchase
-    if (player.score >= MagSizePrice) {
-      player.score -= MagSizePrice;
+    if (player.score >= player.MagSizePrice) {
+      player.score -= player.MagSizePrice;
 
       let newMags = Math.floor((player.magSize * player.mags) / (player.magSize + 3));
       let spareAmmo = (player.magSize * player.mags) % (player.magSize + 3)
@@ -1580,27 +1580,27 @@ function menuAction(x, y) {
       player.mags = newMags
       player.magSize += 3;
       player.ammo = Math.min(player.ammo + spareAmmo, player.magSize);
-      MagSizePrice += Math.ceil(MagSizePrice * 0.50)
-      AmmoPrice += 2;
+      player.MagSizePrice += Math.ceil(player.MagSizePrice * 0.50)
+      player.AmmoPrice += 2;
     }
   } else if (x > startX && x < startX + 150 && y > menuRow2 && y < menuRow2 + 35) {
     // Reload time purchase
-    if (player.score >= ReloadTimePrice && player.reloadThresh >= 25) {
-      player.score -= ReloadTimePrice;
+    if (player.score >= player.ReloadTimePrice && player.reloadThresh >= 25) {
+      player.score -= player.ReloadTimePrice;
       player.reloadThresh -= 15;
-      ReloadTimePrice += 15
+      player.ReloadTimePrice += 15
     }
   } else if (x > startX && x < startX + 150 && y > menuRow3 && y < menuRow3 + 35) {
     // Fire rate purchase
-    if (player.score >= FireRatePrice && player.shootThresh >= 10) {
-      player.score -= FireRatePrice;
+    if (player.score >= player.FireRatePrice && player.shootThresh >= 10) {
+      player.score -= player.FireRatePrice;
       player.shootThresh -= 5;
-      FireRatePrice += Math.ceil(FireRatePrice * 0.75);
+      player.FireRatePrice += Math.ceil(player.FireRatePrice * 0.75);
     }
   } else if (x > menuCol1 && x < menuCol1 + 150 && y > menuRow1 && y < menuRow1 + 35) {
     // Mag purchase
-    if (player.score >= AmmoPrice) {
-      player.score -= AmmoPrice;
+    if (player.score >= player.AmmoPrice) {
+      player.score -= player.AmmoPrice;
       player.mags += 1;
     }
   } else if (x > menuCol1 && x < menuCol1 + 150 && y > menuRow2 && y < menuRow2 + 35) {
@@ -1611,52 +1611,52 @@ function menuAction(x, y) {
     }
   } else if (x > menuCol1 && x < menuCol1 + 150 && y > menuRow3 && y < menuRow3 + 35) {
     // Gun Damage purchase
-    if (player.score >= GDmgPrice) {
-      player.score -= GDmgPrice;
+    if (player.score >= player.GDmgPrice) {
+      player.score -= player.GDmgPrice;
       player.bulletDamage += 1;
-      GDmgPrice += Math.ceil(GDmgPrice * 0.5);
+      player.GDmgPrice += Math.ceil(player.GDmgPrice * 0.5);
     }
   } else if (x > menuCol2 && x < menuCol2 + 150 && y > menuRow1 && y < menuRow1 + 35) {
     // Shield Damage purchase
-    if (player.score >= ShieldDmgPrice) {
-      player.score -= ShieldDmgPrice;
+    if (player.score >= player.ShieldDmgPrice) {
+      player.score -= player.ShieldDmgPrice;
       player.shieldDamage += 1;
-      ShieldDmgPrice += 20
+      player.ShieldDmgPrice += 20
     }
   } else if (x > menuCol2 && x < menuCol2 + 150 && y > menuRow2 && y < menuRow2 + 35) {
     // Knockback purchase
-    if (player.score >= KnockbackPrice) {
-      player.score -= KnockbackPrice;
+    if (player.score >= player.KnockbackPrice) {
+      player.score -= player.KnockbackPrice;
       player.shieldKnockback += 5;
-      KnockbackPrice += 10
+      player.KnockbackPrice += 10
     }
   } else if (x > menuCol2 && x < menuCol2 + 150 && y > menuRow3 && y < menuRow3 + 35) {
     // Shield Defense purchase
-    if (player.score >= SDefPrice) {
-      player.score -= SDefPrice;
+    if (player.score >= player.SDefPrice) {
+      player.score -= player.SDefPrice;
       player.shieldDefense += 1;
-      SDefPrice += Math.ceil(SDefPrice * 0.5)
+      player.SDefPrice += Math.ceil(player.SDefPrice * 0.5)
     }
   } else if (x > menuCol1 && x < menuCol1 + 150 && y > menuRow4 && y < menuRow4 + 35) {
     // Shotgun purchase
-    if (player.score >= ShotgunPrice && !shotgun) {
-      player.score -= ShotgunPrice;
-      shotgun = true;
-      ShotgunPrice = 0;
+    if (player.score >= player.ShotgunPrice && !player.shotgun) {
+      player.score -= player.ShotgunPrice;
+      player.shotgun = true;
+      player.ShotgunPrice = 0;
     }
   } else if (x > startX && x < startX + 150 && y > menuRow4 && y < menuRow4 + 35) {
     // Piercing purchase
-    if (player.score >= PiercingPrice && !piercing) {
-      player.score -= PiercingPrice;
-      piercing = true;
-      PiercingPrice = 0;
+    if (player.score >= player.PiercingPrice && !player.piercing) {
+      player.score -= player.PiercingPrice;
+      player.piercing = true;
+      player.PiercingPrice = 0;
     }
   } else if (x > menuCol2 && x < menuCol2 + 150 && y > menuRow4 && y < menuRow4 + 35) {
     // Regen purchase
-    if (player.score >= RegenPrice && !regen) {
-      player.score -= RegenPrice;
-      regen = true;
-      RegenPrice = 0;
+    if (player.score >= player.RegenPrice && !player.regen) {
+      player.score -= player.RegenPrice;
+      player.regen = true;
+      player.RegenPrice = 0;
     }
   }
 }
@@ -1746,22 +1746,22 @@ function reset() {
   player.shieldDefense = 0;
   player.bulletDamage = 1;
   player.inLevel = false;
-  shotgun = false;
-  piercing = false;
-  regen = false;
+  player.shotgun = false;
+  player.piercing = false;
+  player.regen = false;
 
 
-  AmmoPrice = 5;
-  GDmgPrice = 50;
-  MagSizePrice = 25;
-  ReloadTimePrice = 30;
-  ShieldDmgPrice = 70;
-  KnockbackPrice = 50;
-  SDefPrice = 70;
-  FireRatePrice = 100;
-  ShotgunPrice = 1500;
-  PiercingPrice = 2000;
-  RegenPrice = 750;
+  player.AmmoPrice = 5;
+  player.GDmgPrice = 50;
+  player.MagSizePrice = 25;
+  player.ReloadTimePrice = 30;
+  player.ShieldDmgPrice = 70;
+  player.KnockbackPrice = 50;
+  player.SDefPrice = 70;
+  player.FireRatePrice = 100;
+  player.ShotgunPrice = 1500;
+  player.PiercingPrice = 2000;
+  player.RegenPrice = 750;
 
   level.spawnTick = 150;
   level.enemiesRemaining = 5 + 5 * player.level;
@@ -1778,5 +1778,15 @@ function reset() {
     draw();
   }
 }
+
+
+function saveToLocal() {
+  localStorage.setItem("mundusSave", JSON.stringify(player));
+}
+
+function loadFromLocal() {
+  player = JSON.parse(localStorage.getItem("mundusSave"));
+}
+
 
 draw();

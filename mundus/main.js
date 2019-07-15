@@ -638,6 +638,12 @@ function mouseMoveHandler(e) {
       } else {
         regenColor = "#FFFFFF";
       }
+    } else if (mouseX > (canvas.width/2) - 100 - 37.5 && mouseX < (canvas.width/2) - 100 - 37.5 + 75 && mouseY > canvas.height-35 && mouseY < canvas.height - 10) {
+      saveColor = "#FFFFFF"
+    } else if (mouseX > (canvas.width/2) - 37.5 && mouseX < (canvas.width/2) + 37.5 && mouseY > canvas.height-35 && mouseY < canvas.height - 10) {
+      loadColor = "#FFFFFF"
+    } else if (mouseX > (canvas.width/2) + 100 - 37.5 && mouseX < (canvas.width/2) + 100 + 37.5 && mouseY > canvas.height-35 && mouseY < canvas.height - 10) {
+      clearColor = "#FFFFFF"
     } else { // Resets the hover colors to the default color
       startColor = "lime";
       mouseStyle = "auto";
@@ -654,7 +660,10 @@ function mouseMoveHandler(e) {
       piercingColor = "#FFFFFF";
       regenColor = "#FFFFFF";
       lowerLevelColor = "green";
-      raiseLevelColor = "green"
+      raiseLevelColor = "green";
+      saveColor = "#DDDDDD";
+      loadColor = "#DDDDDD";
+      clearColor = "#DDDDDD";
     }
   }
 }
@@ -1071,6 +1080,9 @@ var piercingColor = "#FFFFFF";
 var regenColor = "#FFFFFF";
 var lowerLevelColor = "green";
 var raiseLevelColor = "#999999";
+var saveColor = "#DDDDDD";
+var loadColor = "#DDDDDD";
+var clearColor = "#DDDDDD";
 
 
 function drawMenu() {
@@ -1370,9 +1382,57 @@ function drawMenu() {
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
   ctx.textAlign = "center";
-  ctx.fillText("Press \"P\" at any time to pause", (canvas.width / 2), canvas.height - 50);
+  ctx.fillText("Press \"P\" at any time to pause", (canvas.width / 2), canvas.height - 75);
 
   ctx.textAlign = "left"
+
+
+  // Draw save button
+  ctx.beginPath();
+  ctx.rect((canvas.width/2) - 100-35.5, canvas.height-35, 75, 25);
+  ctx.fillStyle = saveColor;
+  ctx.strokeStyle = "#000000"
+  ctx.fill();
+  ctx.stroke();
+  ctx.closePath();
+  ctx.textAlign = "center"
+  
+  ctx.font = "16px Arial";
+  ctx.fillStyle = "#000000";
+  ctx.fillText("Save", (canvas.width/2) - 100, canvas.height-17);
+
+  
+  // Draw clear button
+  ctx.beginPath();
+  ctx.rect((canvas.width/2) + 100-35.5, canvas.height-35, 75, 25);
+  ctx.fillStyle = clearColor;
+  ctx.strokeStyle = "#000000"
+  ctx.fill();
+  ctx.stroke();
+  ctx.closePath();
+
+  
+  ctx.font = "16px Arial";
+  ctx.fillStyle = "#000000";
+  ctx.fillText("Clear", (canvas.width/2) + 100, canvas.height-17);
+
+  
+  // Draw load button
+  ctx.beginPath();
+  ctx.rect((canvas.width/2) - 35.5, canvas.height-35, 75, 25);
+  ctx.fillStyle = loadColor;
+  ctx.strokeStyle = "#000000"
+  ctx.fill();
+  ctx.stroke();
+  ctx.closePath();
+
+  ctx.font = "16px Arial";
+  ctx.fillStyle = "#000000";
+  ctx.fillText("Load", (canvas.width/2), canvas.height-17);
+
+
+  ctx.textAlign = "left"
+
 
 
   // Draw right info panel
@@ -1658,7 +1718,13 @@ function menuAction(x, y) {
       player.regen = true;
       player.RegenPrice = 0;
     }
-  }
+  } else if (x > (canvas.width/2) - 100 - 37.5 && x < (canvas.width/2) - 100 - 37.5 + 75 && y > canvas.height-35 && y < canvas.height - 10) {
+    saveToLocal();
+  } else if (x > (canvas.width/2) - 37.5 && x < (canvas.width/2) + 37.5 && y > canvas.height-35 && y < canvas.height - 10) {
+    checkAndLoad();
+  } else if (x > (canvas.width/2) + 100 - 37.5 && x < (canvas.width/2) + 100 + 37.5 && y > canvas.height-35 && y < canvas.height - 10) {
+    clearSave();
+  } 
 }
 
 
@@ -1787,6 +1853,11 @@ function saveToLocal() {
 function loadFromLocal() {
   player = JSON.parse(localStorage.getItem("mundusSave"));
 }
+
+function clearSave() {
+	localStorage.removeItem("mundusSave");
+}
+
 
 
 draw();

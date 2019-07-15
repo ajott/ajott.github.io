@@ -1441,7 +1441,7 @@ function collisionDetection() {
         // If the enemy is dead
         if (enemy.health <= 0) {
           enemy.active = false; // Despawn the enemy
-          player.score += enemy.maxHealth + 1; // and increment the player score
+          player.score += Math.floor((player.level == player.maxLevel ? 1 : 0.75) * (enemy.maxHealth + 1)); // and increment the player score
         }
       }
     })

@@ -1427,7 +1427,11 @@ function drawMenu() {
   // Draw clear button
   ctx.beginPath();
   ctx.rect((canvas.width / 2) + 100 - 35.5, canvas.height - 35, 75, 25);
-  ctx.fillStyle = clearColor;
+  if (localStorage.getItem("mundusSave") != null) {
+    ctx.fillStyle = clearColor;
+  } else {
+    ctx.fillStyle = "#999999"
+  }
   ctx.strokeStyle = "#000000"
   ctx.fill();
   ctx.stroke();
@@ -1442,7 +1446,11 @@ function drawMenu() {
   // Draw load button
   ctx.beginPath();
   ctx.rect((canvas.width / 2) - 35.5, canvas.height - 35, 75, 25);
-  ctx.fillStyle = loadColor;
+  if (localStorage.getItem("mundusSave") != null) {
+    ctx.fillStyle = loadColor;
+  } else {
+    ctx.fillStyle = "#999999"
+  }
   ctx.strokeStyle = "#000000"
   ctx.fill();
   ctx.stroke();

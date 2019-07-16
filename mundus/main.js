@@ -267,7 +267,11 @@ function draw() {
   // If the player is in a level, draw that level.
   if (player.inLevel) {
 
-    ctx.drawImage(levelImg, 0, 0);
+    if (drawMaps) {
+      ctx.drawImage(levelImg, 0, 0);
+    } else {
+      drawBackground();
+    }
 
     player.draw();
     drawTopRect(); // Draws the white HUD bar
@@ -723,6 +727,7 @@ levelImg.src = levels[getRndInteger(0, levels.length - 1)]
 
 var paused = false;
 var ticks = 0; // Used to delay spawning enemies
+var drawMaps = true;
 var powerupTicks = 0;
 var powerupThresh = 500;
 var powerupDespawn = powerupThresh + 250

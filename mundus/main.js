@@ -526,7 +526,7 @@ function keyDownHandler(e) {
     downPressed = true;
   }
 
-  if (e.keyCode == 80) {
+  if (e.keyCode == 80) { // "P"
     if (!paused) {
       paused = true;
     } else {
@@ -536,6 +536,14 @@ function keyDownHandler(e) {
 
   if (e.keyCode == 82) { // "R" key
     reset();
+  }
+
+  if (e.keyCode == 67) {
+    if (localStorage.getItem("mundusSave") != null) {
+      gameOver = false;
+      loadFromLocal();
+      draw();
+    }
   }
 }
 
@@ -650,11 +658,11 @@ function mouseMoveHandler(e) {
       } else {
         regenColor = "#FFFFFF";
       }
-    } else if (mouseX > (canvas.width/2) - 100 - 37.5 && mouseX < (canvas.width/2) - 100 - 37.5 + 75 && mouseY > canvas.height-35 && mouseY < canvas.height - 10) {
+    } else if (mouseX > (canvas.width / 2) - 100 - 37.5 && mouseX < (canvas.width / 2) - 100 - 37.5 + 75 && mouseY > canvas.height - 35 && mouseY < canvas.height - 10) {
       saveColor = "#FFFFFF"
-    } else if (mouseX > (canvas.width/2) - 37.5 && mouseX < (canvas.width/2) + 37.5 && mouseY > canvas.height-35 && mouseY < canvas.height - 10) {
+    } else if (mouseX > (canvas.width / 2) - 37.5 && mouseX < (canvas.width / 2) + 37.5 && mouseY > canvas.height - 35 && mouseY < canvas.height - 10) {
       loadColor = "#FFFFFF"
-    } else if (mouseX > (canvas.width/2) + 100 - 37.5 && mouseX < (canvas.width/2) + 100 + 37.5 && mouseY > canvas.height-35 && mouseY < canvas.height - 10) {
+    } else if (mouseX > (canvas.width / 2) + 100 - 37.5 && mouseX < (canvas.width / 2) + 100 + 37.5 && mouseY > canvas.height - 35 && mouseY < canvas.height - 10) {
       clearColor = "#FFFFFF"
     } else { // Resets the hover colors to the default color
       startColor = "lime";
@@ -819,26 +827,26 @@ function Enemy(I) {
 
   I.shoot = function () { // Handles an enemy firing at the player
 
-      // The enemy will target the centerpoint of the player
-      let xDiff = (player.x + (player.width / 2)) + getRndInteger(-30, 30) - I.x;
-      let yDiff = (player.y + (player.height / 2)) + getRndInteger(-30, 30) - I.y;
+    // The enemy will target the centerpoint of the player
+    let xDiff = (player.x + (player.width / 2)) + getRndInteger(-30, 30) - I.x;
+    let yDiff = (player.y + (player.height / 2)) + getRndInteger(-30, 30) - I.y;
 
-      let xvel = 0;
-      let yvel = 0;
+    let xvel = 0;
+    let yvel = 0;
 
-      // Uses the same math as the player's shoot function
-      xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
-      yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
+    // Uses the same math as the player's shoot function
+    xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
+    yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
 
-      enemyBullets.push(Bullet({
-        xVelocity: xvel,
-        yVelocity: yvel,
-        x: I.x,
-        y: I.y,
-        width: bulletSize,
-        height: bulletSize
-      }));
-    },
+    enemyBullets.push(Bullet({
+      xVelocity: xvel,
+      yVelocity: yvel,
+      x: I.x,
+      y: I.y,
+      width: bulletSize,
+      height: bulletSize
+    }));
+  },
 
     I.update = function () {
       // Targeting logic, which allows the enemies to track the player.
@@ -877,7 +885,7 @@ function Enemy(I) {
       enemies.forEach(function (enemy) {
         if (enemy.active && enemy.ID != I.ID) {
           if (((I.x + I.xVelocity > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width) &&
-              (I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height)) ||
+            (I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height)) ||
             ((I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity + I.width < enemy.x + enemy.width) &&
               (I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height))
           ) {
@@ -885,7 +893,7 @@ function Enemy(I) {
           }
 
           if (((I.y + I.yVelocity > enemy.y && I.y + I.yVelocity < enemy.y + enemy.height) &&
-              (I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width)) ||
+            (I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width)) ||
             ((I.y + I.yVelocity + I.height > enemy.y && I.y + I.yVelocity + I.height < enemy.y + enemy.height) &&
               (I.x + I.xVelocity + I.width > enemy.x && I.x + I.xVelocity < enemy.x + enemy.width))
           ) {
@@ -991,24 +999,24 @@ function Boss(I) {
 
   I.shoot = function () {
 
-      let xDiff = (player.x + (player.width / 2)) - I.x;
-      let yDiff = (player.y + (player.height / 2)) - I.y;
-      let xvel = 0;
-      let yvel = 0;
+    let xDiff = (player.x + (player.width / 2)) - I.x;
+    let yDiff = (player.y + (player.height / 2)) - I.y;
+    let xvel = 0;
+    let yvel = 0;
 
 
-      xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
-      yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
+    xvel = (Math.abs(xDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (xDiff / Math.abs(xDiff));
+    yvel = (Math.abs(yDiff) / (Math.abs(xDiff) + Math.abs(yDiff))) * (I.bulletVel) * (yDiff / Math.abs(yDiff));
 
-      enemyBullets.push(Bullet({
-        xVelocity: xvel,
-        yVelocity: yvel,
-        x: (I.x + (I.width / 2)),
-        y: (I.y + (I.height / 2)),
-        width: 8,
-        height: 8
-      }));
-    },
+    enemyBullets.push(Bullet({
+      xVelocity: xvel,
+      yVelocity: yvel,
+      x: (I.x + (I.width / 2)),
+      y: (I.y + (I.height / 2)),
+      width: 8,
+      height: 8
+    }));
+  },
 
     I.update = function () {
       // Targeting logic, which allows the enemies to track the player.
@@ -1403,37 +1411,37 @@ function drawMenu() {
 
   // Draw save button
   ctx.beginPath();
-  ctx.rect((canvas.width/2) - 100-35.5, canvas.height-35, 75, 25);
+  ctx.rect((canvas.width / 2) - 100 - 35.5, canvas.height - 35, 75, 25);
   ctx.fillStyle = saveColor;
   ctx.strokeStyle = "#000000"
   ctx.fill();
   ctx.stroke();
   ctx.closePath();
   ctx.textAlign = "center"
-  
+
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Save", (canvas.width/2) - 100, canvas.height-17);
+  ctx.fillText("Save", (canvas.width / 2) - 100, canvas.height - 17);
 
-  
+
   // Draw clear button
   ctx.beginPath();
-  ctx.rect((canvas.width/2) + 100-35.5, canvas.height-35, 75, 25);
+  ctx.rect((canvas.width / 2) + 100 - 35.5, canvas.height - 35, 75, 25);
   ctx.fillStyle = clearColor;
   ctx.strokeStyle = "#000000"
   ctx.fill();
   ctx.stroke();
   ctx.closePath();
 
-  
+
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Clear", (canvas.width/2) + 100, canvas.height-17);
+  ctx.fillText("Clear", (canvas.width / 2) + 100, canvas.height - 17);
 
-  
+
   // Draw load button
   ctx.beginPath();
-  ctx.rect((canvas.width/2) - 35.5, canvas.height-35, 75, 25);
+  ctx.rect((canvas.width / 2) - 35.5, canvas.height - 35, 75, 25);
   ctx.fillStyle = loadColor;
   ctx.strokeStyle = "#000000"
   ctx.fill();
@@ -1442,7 +1450,7 @@ function drawMenu() {
 
   ctx.font = "16px Arial";
   ctx.fillStyle = "#000000";
-  ctx.fillText("Load", (canvas.width/2), canvas.height-17);
+  ctx.fillText("Load", (canvas.width / 2), canvas.height - 17);
 
 
   ctx.textAlign = "left"
@@ -1527,11 +1535,11 @@ function collisionDetection() {
 
     // If any of the four corners of the enemy intersect the player's square
     if (enemy.active && (
-        (enemy.x > player.x && enemy.y > player.y && enemy.x < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
-        (enemy.x + enemy.width > player.x && enemy.y > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
-        (enemy.x > player.x && enemy.y + enemy.height > player.y && enemy.x < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height)) ||
-        (enemy.x + enemy.width > player.x && enemy.y + enemy.height > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height))
-      )) {
+      (enemy.x > player.x && enemy.y > player.y && enemy.x < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
+      (enemy.x + enemy.width > player.x && enemy.y > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y < (player.y + player.height)) ||
+      (enemy.x > player.x && enemy.y + enemy.height > player.y && enemy.x < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height)) ||
+      (enemy.x + enemy.width > player.x && enemy.y + enemy.height > player.y && enemy.x + enemy.width < (player.x + player.width) && enemy.y + enemy.height < (player.y + player.height))
+    )) {
       let dmg = (level.enemyMaxHealth - player.shieldDefense) // Calculate the damage dealt by the enemy
       if (dmg > 0) {
         flashColor("red");
@@ -1574,22 +1582,22 @@ function collisionDetection() {
   if (powerupSpawned) {
     if (player.x < powerupX + 30 && player.y < powerupY + 30 && player.x > powerupX && player.y > powerupY) {
       powerupSpawned = false;
-      powerupTicks = powerupDespawn + 50;
+      powerupTicks = powerupDespawn + 50; // Sets the powerup ticks forward. This prevents another powerup from spawning in the level
 
-      if (powerup == "A") {
+      if (powerup == "A") { // Ammo pickup
         player.mags += 1;
-      } else if (powerup == "H") {
+      } else if (powerup == "H") { // Health pickup
         player.health += 5;
-      } else if (powerup == "$") {
+      } else if (powerup == "$") { // Money pickup
         player.score += (5 + player.level);
-      } else if (powerup == "T") {
+      } else if (powerup == "T") { // Timefreeze pickup
         freezeTick = powerupTicks;
         timeFreeze = true;
-      } else if (powerup == "I") {
+      } else if (powerup == "I") { // Infinite ammo pickup
         ammoTick = powerupTicks;
         useAmmo = false;
-      } else if (powerup == "B") {
-        enemies.forEach(function(enemy){
+      } else if (powerup == "B") { // Bomb pickup
+        enemies.forEach(function (enemy) {
           enemy.health -= ((1 + Math.floor(player.level / 3)) - enemy.shield);
         })
       }
@@ -1739,13 +1747,13 @@ function menuAction(x, y) {
       player.regen = true;
       player.RegenPrice = 0;
     }
-  } else if (x > (canvas.width/2) - 100 - 37.5 && x < (canvas.width/2) - 100 - 37.5 + 75 && y > canvas.height-35 && y < canvas.height - 10) {
+  } else if (x > (canvas.width / 2) - 100 - 37.5 && x < (canvas.width / 2) - 100 - 37.5 + 75 && y > canvas.height - 35 && y < canvas.height - 10) {
     saveToLocal();
-  } else if (x > (canvas.width/2) - 37.5 && x < (canvas.width/2) + 37.5 && y > canvas.height-35 && y < canvas.height - 10) {
+  } else if (x > (canvas.width / 2) - 37.5 && x < (canvas.width / 2) + 37.5 && y > canvas.height - 35 && y < canvas.height - 10) {
     checkAndLoad();
-  } else if (x > (canvas.width/2) + 100 - 37.5 && x < (canvas.width/2) + 100 + 37.5 && y > canvas.height-35 && y < canvas.height - 10) {
+  } else if (x > (canvas.width / 2) + 100 - 37.5 && x < (canvas.width / 2) + 100 + 37.5 && y > canvas.height - 35 && y < canvas.height - 10) {
     clearSave();
-  } 
+  }
 }
 
 
@@ -1783,6 +1791,10 @@ function drawGameOver() {
   ctx.font = "16px Arial";
   ctx.textAlign = "center";
   ctx.fillText("Press R to Restart", canvas.width / 2, (canvas.height / 2));
+
+  if (localStorage.getItem("mundusSave") != null) {    
+    ctx.fillText("Press C to continue from the end of last level", canvas.width / 2, (canvas.height / 2 + 60));
+  }
 }
 
 function drawPaused() {
@@ -1868,15 +1880,26 @@ function reset() {
 
 
 function saveToLocal() {
+  // This presented a problem: JSON does not retain object methods, of which the player object has 4
   localStorage.setItem("mundusSave", JSON.stringify(player));
 }
 
 function loadFromLocal() {
-  player = JSON.parse(localStorage.getItem("mundusSave"));
+  // Solution: Create a temp object with the information (read: variables) that JSON is able to save
+  let loadedPlayer = JSON.parse(localStorage.getItem("mundusSave"));
+  // Get a list of all the keys in this temp object, which will include all of the player variables that would
+  // change with game state
+  let loadedData = Object.keys(loadedPlayer);
+
+  // Iterate through each of those keys and replace the player[key] value with those from the local storage
+  loadedData.forEach(function (key) {
+      player[key] = loadedPlayer[key];
+  })
 }
 
 function clearSave() {
-	localStorage.removeItem("mundusSave");
+  // Deletes the local cache item for the save
+  localStorage.removeItem("mundusSave");
 }
 
 

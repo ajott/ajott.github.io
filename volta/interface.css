@@ -1,0 +1,10 @@
+object {    
+    height: 45px;
+}
+
+#hold td {
+    border: 1px solid black;
+    width: 45px;
+    height: 45px;
+    vertical-align: middle;
+}

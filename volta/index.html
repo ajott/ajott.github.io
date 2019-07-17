@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Volta</title>
+    <title>Volta do Mar</title>
     <link rel="stylesheet" href="./interface.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="./main.js"></script>
@@ -12,7 +12,91 @@
 </head>
 
 <body>
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m1 l2">
+            <p>&emsp;</p>
+        </div>
+        <div class="w3-col s12 m10 l8">
+            <div class="w3-center">
+                <h3 id="location"></h3>
+                <p>Year: <span id="year"></span>
+                    Month: <span id="month"></span>
+                    Day: <span id="day"></span></p>
+                    Cash: <span style="text-decoration: line-through">R</span> <span id="playerMoney"></span><br />
+                    Debt: <span style="text-decoration: line-through">R</span> <span id="playerDebt"></span>
+                </p>
 
+                <div class="w3-bar">
+                    <button id="travelBtn" class="w3-bar-item w3-button w3-blue w3-hover-blue"
+                        onclick="togglePanel(0)">Sail</button>
+                    <button id="marketBtn" class="w3-bar-item w3-button w3-light-grey"
+                        onclick="togglePanel(1)">Market</button>
+                    <button id="bankBtn" class="w3-bar-item w3-button w3-light-grey"
+                        onclick="togglePanel(2)">Bank</button>
+                    <button id="shipyardBtn" class="w3-bar-item w3-button w3-light-grey"
+                        onclick="togglePanel(3)">Shipyard</button>
+                </div>
+            </div>
+            <div id="travel" class="w3-center">
+                <br /><br />
+                <div id="destinations"></div>
+            </div>
+            <div id="market" style="display: none;">
+                <table>
+                        <th>
+                            <tr>
+                                <td colspan="2" style="text-align: center">Item</td>
+                                <td>Buy</td>
+                                <td>Sell</td>
+                            </tr>
+                        </th>
+                        <tbody id="goods">
+    
+                        </tbody>
+                    </table>
+                <br />
+                <h4>Ship Cargo</h4>
+                <table id="hold">
+                    <tbody id="playerShipHold">
+                    </tbody>
+                </table>
+            </div>
+            <div id="bank" style="display: none;" class="w3-center">
+                <p>Your debt will accrue 5% interest every third month. <br/><br/>Taking a loan for <span
+                    style="text-decoration: line-through">R</span> 250 will increase your debt by <span
+                    style="text-decoration: line-through">R</span> 263 (5% interest is immediately added)</p>
+                <button onclick="takeLoan(250)">Take Loan (<span
+                        style="text-decoration: line-through">R</span> 250)</button> &emsp;
+                <button onclick="payDebt(250)">Pay Debt (<span
+                        style="text-decoration: line-through">R</span> 250)</button>
+            </div>
+            <div id="shipyard" style="display: none;" class="w3-center">
+
+                <p>Ship Range: <span id="shipRange"></span> miles</p>
+                <p>Ship Speed: <span id="shipSpeed"></span> knots</p>
+                <p>Ship Supply: <span id="shipSupply"></span> days</p>
+                <p>Ship Hold Capacity: <span id="shipCapacity"></span> bays</p>
+
+                <button onclick="upgradeShipSupply()">Ship Supply +5 Days (<span
+                    style="text-decoration: line-through">R</span> 500)</button>
+                    <button onclick="upgradeShipSpeed()">Ship Speed +1 Knot (<span
+                        style="text-decoration: line-through">R</span> 1000)</button>
+                        <button onclick="upgradeShipHold()">Ship Hold +5 Capacity (<span
+                            style="text-decoration: line-through">R</span> 500)</button>
+
+            </div>
+        </div>
+
+        <div class="w3-col s0 m1 l2">
+            <p>&emsp;</p>
+        </div>
+    </div>
 </body>
+
+<script type="text/javascript">
+    window.onload = updateDOM();
+    window.onload = buildPortGoods();
+    window.onload = findPorts();
+</script>
 
 </html>

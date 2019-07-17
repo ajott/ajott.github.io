@@ -368,7 +368,7 @@ function updateDOM() {
         if (i % 10 == 0) {
             htmlString += "<tr>"
         }
-        htmlString += "<td><object type=\"image/svg+xml\" data=\"./assets/" + player.ship.hold[i] + ".svg\"></object</td>"
+        htmlString += "<td style=\"width: 45px; height: 45px;\"><object type=\"image/svg+xml\" data=\"./assets/" + player.ship.hold[i] + ".svg\"></object</td>"
         if (i + 1 % 10 == 0) {
             htmlString += "</tr>"
         }

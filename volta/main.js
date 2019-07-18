@@ -439,7 +439,7 @@ function updateDOM() {
     
     for (let i = 0; i < player.ship.capacity; i ++) {
         if (player.ship.hold[i] != null) {
-            $('#shipHold'+i).html("<object type=\"image/svg+xml\" data=\"./assets/" + player.ship.hold[i] + ".svg\"></object>")
+            $('#shipHold'+i).html("<img src=\"./assets/" + player.ship.hold[i] + ".svg\" style=\"width: 40px; height 40px;\">")
         } else {
             $('#shipHold'+i).html("");
         }

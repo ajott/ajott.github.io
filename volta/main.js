@@ -228,6 +228,20 @@ var ports = {
     }
 }
 
+function transaction(I) {
+    I.active = true;
+
+    I.update = function() {
+        if (player.year >= this.year + 1 && player.month >= this.month) {
+            I.active = false;
+        }
+    }
+
+    return I;
+}
+
+var recentTransactions = []
+
 var goods = {
     "Cloth": {
         basePrice: 100
@@ -260,6 +274,15 @@ function doTravel(destination) {
                 player.month -= 12;
                 player.year += 1;
             }
+
+            recentTransactions.forEach(function (trans) {
+                trans.update();
+            });
+
+            recentTransactions = recentTransactions.filter(function (trans) {
+                return trans.active;
+              });
+
 
             if (player.month % 3 == 0) {
                 accumulateInterest();
@@ -308,39 +331,90 @@ function buildPortGoods() {
     let port = player.currentPort;
     let goodsNames = Object.keys(goods);
 
+    let portPurchases = recentTransactions.filter(function (trans) {
+        return (trans.port == port && trans.type == "Purchase");
+    });
+
+    let portSales = recentTransactions.filter(function (trans) {
+        return (trans.port == port && trans.type == "Sale");
+    });
+
+    let goodPurchase = {
+        "Cloth": 0,
+        "Food": 0,
+        "Arms": 0,
+        "Water": 0,
+        "Spices": 0
+    }
+
+    let goodSale = {
+        "Cloth": 0,
+        "Food": 0,
+        "Arms": 0,
+        "Water": 0,
+        "Spices": 0
+    }
+
+    portPurchases.forEach(function (purch) {
+        goodPurchase[purch.item] += 1;
+    });
+
+    portSales.forEach(function (purch) {
+        goodSale[purch.item] += 1;
+    });
+
     goodsNames.forEach(function (item) {
-        ports[port].goodsPrices[item] = Math.ceil(goods[item].basePrice * ports[port]["priceMulti"][item]);
+        ports[port].goodsPrices[item] = Math.ceil(goods[item].basePrice * ports[port]["priceMulti"][item]);        
+    })
+    
+
+    goodsNames.forEach(function (item) {
+        $('#buy'+item+'Price').text(Math.ceil(ports[port].goodsPrices[item] * player.buyMulti * (1 + (0.01 * goodPurchase[item])) * (1 - (0.01 * goodSale[item]))))
+        $('#sell'+item+'Price').text(Math.ceil(ports[port].goodsPrices[item] * player.sellMulti * (1 - (0.01 * goodSale[item])) * (1 + (0.01 * goodPurchase[item]))))
     })
 
-    let htmlString = "";
-
-    goodsNames.forEach(function (item) {
-        htmlString += "<tr><td><object type=\"image/svg+xml\" data=\"./assets/" + item + ".svg\"></object</td><td>" + item + "</td><td><button id=\"" + item + "BuyBtn\" class=\"w3-button w3-light-grey\" onclick=buy(\"" + item + "\")>" + Math.ceil(ports[port].goodsPrices[item] * player.buyMulti) + "</button></td><td><button id=\"" + item + "SellBtn\" class=\"w3-button w3-light-grey\" onclick=sell(\"" + item + "\")>" + Math.ceil(ports[port].goodsPrices[item] * player.sellMulti) + "</td></tr>"
-    })
-
-    $('#goods').html(htmlString);
     updateDOM();
 }
 
 function buy(good) {
-    let buyPrice = Math.ceil(ports[player.currentPort].goodsPrices[good] * player.buyMulti);
-    
+    let buyPrice = Number($('#buy'+good+'Price').text());
+
     if (player.money >= buyPrice && player.ship.hold.length < player.ship.capacity) {
         player.money -= buyPrice
         player.ship.hold.push(good)
+
+        recentTransactions.push(transaction({
+            year: player.year,
+            month: player.month,
+            price: buyPrice,
+            port: player.currentPort,
+            item: good,
+            type: "Purchase"
+          }))
     }   
 
+    buildPortGoods();
     updateDOM();
 }
 
 function sell(good) {
 
     if (player.ship.hold.indexOf(good) >= 0) {
-        player.money += Math.ceil(ports[player.currentPort].goodsPrices[good] * player.sellMulti);
+        let salePrice = Number($('#sell'+good+'Price').text());
+        player.money += salePrice;
 
         player.ship.hold.splice(player.ship.hold.indexOf(good),1);
-    }    
 
+        recentTransactions.push(transaction({
+            year: player.year,
+            month: player.month,
+            price: salePrice,
+            port: player.currentPort,
+            item: good,
+            type: "Sale"
+          }))
+    }    
+    buildPortGoods();
     updateDOM();
 }
 
@@ -363,14 +437,11 @@ function updateDOM() {
     $('#playerMoney').text((player.money))
     $('#playerDebt').text((player.debt))
     
-    let htmlString = "";
     for (let i = 0; i < player.ship.capacity; i ++) {
-        if (i % 10 == 0) {
-            htmlString += "<tr>"
-        }
-        htmlString += "<td style=\"width: 45px; height: 45px;\"><object type=\"image/svg+xml\" data=\"./assets/" + player.ship.hold[i] + ".svg\"></object</td>"
-        if (i + 1 % 10 == 0) {
-            htmlString += "</tr>"
+        if (player.ship.hold[i] != null) {
+            $('#shipHold'+i).html("<object type=\"image/svg+xml\" data=\"./assets/" + player.ship.hold[i] + ".svg\"></object>")
+        } else {
+            $('#shipHold'+i).html("");
         }
     }
 
@@ -378,7 +449,7 @@ function updateDOM() {
         $("#"+Object.keys(goods)[i]+"BuyBtn").removeClass("w3-disabled");
         $("#"+Object.keys(goods)[i]+"SellBtn").removeClass("w3-disabled");
 
-        if (Math.ceil(ports[player.currentPort].goodsPrices[Object.keys(goods)[i]] * player.buyMulti) > player.money || player.ship.hold.length == player.ship.capacity){
+        if (Math.ceil($('#buy'+Object.keys(goods)[i]+"Price").text() > player.money || player.ship.hold.length == player.ship.capacity)){
             $("#"+Object.keys(goods)[i]+"BuyBtn").addClass("w3-disabled");
         }
         
@@ -387,7 +458,7 @@ function updateDOM() {
         }
     }
 
-    $('#playerShipHold').html(htmlString)
+    
     $('#year').text(player.year)
     $('#month').text(player.month)
     $('#day').text(player.day)
@@ -434,6 +505,19 @@ function upgradeShipSpeed() {
 function upgradeShipHold() {
     player.money -= 500
     player.ship.capacity += 5
+
+    let htmlString = "";
+    for (let i = 0; i < player.ship.capacity; i ++) {
+        if (i % 10 == 0) {
+            htmlString += "<tr>"
+        }
+        htmlString += "<td id=\"shipHold"+i+"\"></td>"
+        if (i + 1 % 10 == 0) {
+            htmlString += "</tr>"
+        }
+    }
+    $('#playerShipHold').html(htmlString)
+
     updateDOM();
 }
 

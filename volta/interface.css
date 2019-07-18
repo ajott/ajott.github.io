@@ -5,4 +5,6 @@ object {
 #hold td {
     border: 1px solid black;    
     vertical-align: middle;
+    width: 45px;
+    height: 45px;
 }

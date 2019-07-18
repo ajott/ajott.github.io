@@ -22,8 +22,8 @@
                 <p>Year: <span id="year"></span>
                     Month: <span id="month"></span>
                     Day: <span id="day"></span></p>
-                    Cash: <span style="text-decoration: line-through">R</span> <span id="playerMoney"></span><br />
-                    Debt: <span style="text-decoration: line-through">R</span> <span id="playerDebt"></span>
+                Cash: <span style="text-decoration: line-through">R</span> <span id="playerMoney"></span><br />
+                Debt: <span style="text-decoration: line-through">R</span> <span id="playerDebt"></span>
                 </p>
 
                 <div class="w3-bar">
@@ -40,35 +40,87 @@
             <div id="travel" class="w3-center">
                 <br /><br />
                 <div id="destinations"></div>
+
             </div>
             <div id="market" style="display: none;">
                 <table>
-                        <th>
-                            <tr>
-                                <td colspan="2" style="text-align: center">Item</td>
-                                <td>Buy</td>
-                                <td>Sell</td>
-                            </tr>
-                        </th>
-                        <tbody id="goods">
-    
-                        </tbody>
-                    </table>
+                    <th>
+                        <tr>
+                            <td colspan="2" style="text-align: center">Item</td>
+                            <td>Buy</td>
+                            <td>Sell</td>
+                        </tr>
+                    </th>
+                    <tbody id="goods">
+                        <tr>
+                            <td><object type="image/svg+xml" data="./assets/Cloth.svg"></object></td>
+                            <td>Cloth</td>
+                            <td><button id="ClothBuyBtn" class="w3-button w3-light-grey" onclick="buy('Cloth')"><span
+                                        id="buyClothPrice"></span></button></td>
+                            <td><button id="ClothSellBtn" class="w3-button w3-light-grey w3-disabled"
+                                    onclick="sell('Cloth')"><span id="sellClothPrice"></span></button></td>
+                        </tr>
+                        <tr>
+                            <td><object type="image/svg+xml" data="./assets/Food.svg"></object></td>
+                            <td>Food</td>
+                            <td><button id="FoodBuyBtn" class="w3-button w3-light-grey" onclick="buy('Food')"><span
+                                        id="buyFoodPrice"></span></button></td>
+                            <td><button id="FoodSellBtn" class="w3-button w3-light-grey w3-disabled"
+                                    onclick="sell('Food')"><span id="sellFoodPrice"></span></button></td>
+                        </tr>
+                        <tr>
+                            <td><object type="image/svg+xml" data="./assets/Arms.svg"></object></td>
+                            <td>Arms</td>
+                            <td><button id="ArmsBuyBtn" class="w3-button w3-light-grey w3-disabled"
+                                    onclick="buy('Arms')"><span id="buyArmsPrice"></span></button></td>
+                            <td><button id="ArmsSellBtn" class="w3-button w3-light-grey w3-disabled"
+                                    onclick="sell('Arms')"><span id="sellArmsPrice"></span></button></td>
+                        </tr>
+                        <tr>
+                            <td><object type="image/svg+xml" data="./assets/Water.svg"></object></td>
+                            <td>Water</td>
+                            <td><button id="WaterBuyBtn" class="w3-button w3-light-grey" onclick="buy('Water')"><span
+                                        id="buyWaterPrice"></span></button></td>
+                            <td><button id="WaterSellBtn" class="w3-button w3-light-grey w3-disabled"
+                                    onclick="sell('Water')"><span id="sellWaterPrice"></span></button></td>
+                        </tr>
+                        <tr>
+                            <td><object type="image/svg+xml" data="./assets/Spices.svg"></object></td>
+                            <td>Spices</td>
+                            <td><button id="SpicesBuyBtn" class="w3-button w3-light-grey w3-disabled"
+                                    onclick="buy('Spices')"><span id="buySpicesPrice"></span></button></td>
+                            <td><button id="SpicesSellBtn" class="w3-button w3-light-grey w3-disabled"
+                                    onclick="sell('Spices')"><span id="sellSpicesPrice"></span></button></td>
+                        </tr>
+                    </tbody>
+                </table>
                 <br />
                 <h4>Ship Cargo</h4>
                 <table id="hold">
                     <tbody id="playerShipHold">
+                        <tr>
+                            <td id="shipHold0"></td>
+                            <td id="shipHold1"></td>
+                            <td id="shipHold2"></td>
+                            <td id="shipHold3"></td>
+                            <td id="shipHold4"></td>
+                            <td id="shipHold5"></td>
+                            <td id="shipHold6"></td>
+                            <td id="shipHold7"></td>
+                            <td id="shipHold8"></td>
+                            <td id="shipHold9"></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
             <div id="bank" style="display: none;" class="w3-center">
-                <p>Your debt will accrue 5% interest every third month. <br/><br/>Taking a loan for <span
-                    style="text-decoration: line-through">R</span> 250 will increase your debt by <span
-                    style="text-decoration: line-through">R</span> 263 (5% interest is immediately added)</p>
-                <button onclick="takeLoan(250)">Take Loan (<span
-                        style="text-decoration: line-through">R</span> 250)</button> &emsp;
-                <button onclick="payDebt(250)">Pay Debt (<span
-                        style="text-decoration: line-through">R</span> 250)</button>
+                <p>Your debt will accrue 5% interest every third month. <br /><br />Taking a loan for <span
+                        style="text-decoration: line-through">R</span> 250 will increase your debt by <span
+                        style="text-decoration: line-through">R</span> 263 (5% interest is immediately added)</p>
+                <button onclick="takeLoan(250)">Take Loan (<span style="text-decoration: line-through">R</span>
+                    250)</button> &emsp;
+                <button onclick="payDebt(250)">Pay Debt (<span style="text-decoration: line-through">R</span>
+                    250)</button>
             </div>
             <div id="shipyard" style="display: none;" class="w3-center">
 
@@ -78,11 +130,11 @@
                 <p>Ship Hold Capacity: <span id="shipCapacity"></span> bays</p>
 
                 <button onclick="upgradeShipSupply()">Ship Supply +5 Days (<span
-                    style="text-decoration: line-through">R</span> 500)</button>
-                    <button onclick="upgradeShipSpeed()">Ship Speed +1 Knot (<span
+                        style="text-decoration: line-through">R</span> 500)</button>
+                <button onclick="upgradeShipSpeed()">Ship Speed +1 Knot (<span
                         style="text-decoration: line-through">R</span> 1000)</button>
-                        <button onclick="upgradeShipHold()">Ship Hold +5 Capacity (<span
-                            style="text-decoration: line-through">R</span> 500)</button>
+                <button onclick="upgradeShipHold()">Ship Hold +5 Capacity (<span
+                        style="text-decoration: line-through">R</span> 500)</button>
 
             </div>
         </div>

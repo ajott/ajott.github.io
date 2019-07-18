@@ -798,7 +798,6 @@ function Enemy(I) {
   // Draw function
   I.draw = function () {
 
-
     ctx.beginPath();
     ctx.rect(this.x, this.y, this.width, this.height);
     ctx.fillStyle = this.color;

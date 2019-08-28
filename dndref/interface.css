@@ -1,0 +1,399 @@
+.info {
+    padding-top: 60px;
+}
+
+.info h1, h2, h3, h4, h5 {
+    text-align: center;
+    color: goldenrod;
+}
+
+body {
+    background-color: #353535 !important;
+    color: white !important;
+}
+
+.dropdown-toggle {
+    color: black !important;
+}
+
+.dropdown-dark {
+    background-color: #343a40 !important;
+    color: white !important;
+}
+
+#psykerTab.btn-selected {
+    background: purple !important;
+    border-color: purple !important;
+}
+
+#showAll.btn-selected {
+    background: darkgreen !important;
+    border-color: darkgreen !important;
+}
+
+.psyTooltipLight {
+    color: purple;
+    border-bottom: 1px dotted purple;
+    text-decoration: none;
+}
+
+.psyTooltipDark {
+    color: magenta;
+    border-bottom: 1px dotted magenta;
+    text-decoration: none;
+}
+
+.w3-card-2 {
+    background-color: rgba(255, 255, 255, .10) !important;
+}
+
+.header-large {
+    font-size: 1.5em;
+}
+
+emph {
+    color: goldenrod !important;
+}
+
+
+.btn-lightMode {
+    color: black !important;
+}
+
+.btn-darkMode {
+    color: white !important;
+}
+
+.btn-dark {
+    color: white !important;
+}
+
+.btn-selected {
+    color: white !important;
+    background: maroon !important;
+    border-color: maroon !important;
+}
+
+footer {
+    padding-bottom: 10px;
+}
+
+.biomancy {
+    background: skyblue;
+    color: black !important;
+}
+
+.divination {
+    background: plum;
+    color: black !important;
+}
+
+.pyromancy {
+    background: orange;
+    color: black !important;
+}
+
+.telekinesis {
+    background: lightblue;
+    color: black !important;
+}
+
+.telepathy {
+    background: turquoise;
+    color: black !important;
+}
+
+.tier1 {
+    background: lightgreen;
+    color: black !important;
+}
+
+.tier2 {
+    background: cyan;
+    ;
+    color: black !important;
+}
+
+.tier3 {
+    background: orangered;
+    color: white;
+}
+
+td:first-child {
+    font-weight: bold;
+}
+
+.table-dark {
+    background: #505050;
+    color: white !important;
+}
+
+.table-dark tr {
+    border: none !important;
+}
+
+.table-dark tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, .10) !important;
+}
+
+.table-dark tbody tr:hover {
+    background: rgba(255,255,0, .35) !important;
+}
+
+.table-dark th {
+    background: goldenrod !important;
+    border-bottom: 1px solid darkgrey;
+}
+
+
+.sanctic {
+    background: #343a40;
+}
+
+.sanctic tr {
+    border: none !important;
+}
+
+.sanctic tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, .05) !important;
+}
+
+.sanctic td:first-child {
+    background-color: palegoldenrod !important;
+    color: black !important;
+}
+
+.sanctic tbody tr:hover {
+    background: rgb(120,120,120) !important;
+}
+
+.sanctic th {
+    background: rgba(128, 0, 0, 0.65) !important;
+    border-bottom: 1px solid darkgrey;
+}
+
+
+.malefic {
+    background: #343a40;
+}
+
+.malefic tr {
+    border: none !important;
+}
+
+.malefic td:first-child {
+    background-color: orangered !important;
+    color: black !important;
+}
+
+.malefic tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, .05) !important;
+}
+
+.malefic tbody tr:hover {
+    background: rgb(120,120,120) !important;
+}
+
+.malefic th {
+    background: rgba(128, 0, 0, 0.65) !important;
+    border-bottom: 1px solid darkgrey;
+}
+
+
+a:hover {
+    text-decoration: none !important;
+}
+
+
+.bar-pad {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid lightgrey;
+}
+
+
+.w3-darker-grey {
+    color: white !important;
+    background: #343a40 !important;
+}
+
+.dropdown-divider {
+    height: 0;
+    margin: .5rem 0;
+    overflow: hidden;
+    border-top: 1px solid #e9ecef
+}
+
+hr {
+    font-family: Arial, sans-serif; /* choose the font you like */
+    text-align: center; /* horizontal centering */
+    line-height: 1px; /* vertical centering */
+    height: 1px; /* gap between the lines */
+    font-size: 1em; /* choose font size you like */
+    border-width: 1px 0; /* top and bottom borders */
+    border-style: solid;
+    border-color: goldenrod;
+    margin: 20px 10px; /* 20px space above/below, 10px left/right */
+    overflow: visible;
+  
+    /* ensure 1px gap between borders */
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -ms-box-sizing: content-box;
+    -o-box-sizing: content-box;
+    box-sizing: content-box;
+  }
+  
+  hr:after {
+    content: "⚔"; /* Crossed swords */
+    color: goldenrod;
+    font-size: 2em;
+    display: inline; /* for vertical centering and background knockout */
+    position: relative;
+    bottom: -2px;
+  }
+
+
+/* 
+Generated Maroon theme
+*/
+
+.w3-maroon-l5 {
+    color: #000 !important;
+    background-color: #ffe8e8 !important
+}
+
+.w3-maroon-l4 {
+    color: #000 !important;
+    background-color: #ffb3b3 !important
+}
+
+.w3-maroon-l3 {
+    color: #fff !important;
+    background-color: #ff6666 !important
+}
+
+.w3-maroon-l2 {
+    color: #fff !important;
+    background-color: #ff1a1a !important
+}
+
+.w3-maroon-l1 {
+    color: #fff !important;
+    background-color: #cc0000 !important
+}
+
+.w3-maroon-d1 {
+    color: #fff !important;
+    background-color: #730000 !important
+}
+
+.w3-maroon-d2 {
+    color: #fff !important;
+    background-color: #660000 !important
+}
+
+.w3-maroon-d3 {
+    color: #fff !important;
+    background-color: #590000 !important
+}
+
+.w3-maroon-d4 {
+    color: #fff !important;
+    background-color: #4d0000 !important
+}
+
+.w3-maroon-d5 {
+    color: #fff !important;
+    background-color: #400000 !important
+}
+
+.w3-maroon-light {
+    color: #000 !important;
+    background-color: #ffe8e8 !important
+}
+
+.w3-maroon-dark {
+    color: #fff !important;
+    background-color: #400000 !important
+}
+
+.w3-maroon-action {
+    color: #fff !important;
+    background-color: #400000 !important
+}
+
+.w3-maroon {
+    color: #fff !important;
+    background-color: #800000 !important
+}
+
+.w3-text-maroon {
+    color: #800000 !important
+}
+
+.w3-border-maroon {
+    border-color: #800000 !important
+}
+
+.w3-hover-maroon:hover {
+    color: #fff !important;
+    background-color: #800000 !important
+}
+
+.w3-hover-text-maroon:hover {
+    color: #800000 !important
+}
+
+.w3-hover-border-maroon:hover {
+    border-color: #800000 !important
+}
+
+.w3-gold-l5 {color:#000 !important; background-color:#fffdf0 !important}
+.w3-gold-l4 {color:#000 !important; background-color:#fff7cc !important}
+.w3-gold-l3 {color:#000 !important; background-color:#fff099 !important}
+.w3-gold-l2 {color:#000 !important; background-color:#ffe866 !important}
+.w3-gold-l1 {color:#000 !important; background-color:#ffe033 !important}
+.w3-gold-d1 {color:#000 !important; background-color:#e6c300 !important}
+.w3-gold-d2 {color:#fff !important; background-color:#ccad00 !important}
+.w3-gold-d3 {color:#fff !important; background-color:#b39800 !important}
+.w3-gold-d4 {color:#fff !important; background-color:#998200 !important}
+.w3-gold-d5 {color:#fff !important; background-color:#806c00 !important}
+
+.w3-gold-light {color:#000 !important; background-color:#fffdf0 !important}
+.w3-gold-dark {color:#fff !important; background-color:#806c00 !important}
+.w3-gold-action {color:#fff !important; background-color:#806c00 !important}
+
+.w3-gold {color:#000 !important; background-color:#ffd700 !important}
+.w3-text-gold {color:#ffd700 !important}
+.w3-border-gold {border-color:#ffd700 !important}
+
+.w3-hover-gold:hover {color:#000 !important; background-color:#daa520 !important}
+.w3-hover-text-gold:hover {color:#ffd700 !important}
+.w3-hover-border-gold:hover {border-color:#ffd700 !important}
+
+
+.goldenrodClass {color: goldenrod !important};
+
+.w3-quiet-l5 {color:#000 !important; background-color:#fbfbfb !important}
+.w3-quiet-l4 {color:#000 !important; background-color:#f1f1f2 !important}
+.w3-quiet-l3 {color:#000 !important; background-color:#e4e4e5 !important}
+.w3-quiet-l2 {color:#000 !important; background-color:#d6d6d8 !important}
+.w3-quiet-l1 {color:#000 !important; background-color:#c9c9cb !important}
+.w3-quiet-d1 {color:#000 !important; background-color:#a8a8ac !important}
+.w3-quiet-d2 {color:#fff !important; background-color:#959599 !important}
+.w3-quiet-d3 {color:#fff !important; background-color:#828287 !important}
+.w3-quiet-d4 {color:#fff !important; background-color:#6f6f73 !important}
+.w3-quiet-d5 {color:#fff !important; background-color:#5c5c60 !important}
+
+.w3-quiet-light {color:#000 !important; background-color:#fbfbfb !important}
+.w3-quiet-dark {color:#fff !important; background-color:#5c5c60 !important}
+.w3-quiet-action {color:#fff !important; background-color:#5c5c60 !important}
+
+.w3-quiet {color:#000 !important; background-color:#bcbcbe !important}
+.w3-text-quiet {color:#bcbcbe !important}
+.w3-border-quiet {border-color:#bcbcbe !important}
+
+.w3-hover-quiet:hover {color:#000 !important; background-color:#bcbcbe !important}
+.w3-hover-text-quiet:hover {color:#bcbcbe !important}
+.w3-hover-border-quiet:hover {border-color:#bcbcbe !important}

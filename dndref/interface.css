@@ -397,3 +397,32 @@ Generated Maroon theme
 .w3-hover-quiet:hover {color:#000 !important; background-color:#bcbcbe !important}
 .w3-hover-text-quiet:hover {color:#bcbcbe !important}
 .w3-hover-border-quiet:hover {border-color:#bcbcbe !important}
+
+
+
+.grid {
+    max-width: 1200px;
+  }
+  
+  /* clear fix */
+  .grid:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  
+  /* ---- .grid-item ---- */
+  
+  .grid-item {
+    float: left;
+    width: 300px;
+    height: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  .grid-item--width2 { width: 200px; }
+  .grid-item--height2 { height: 200px; }
+  

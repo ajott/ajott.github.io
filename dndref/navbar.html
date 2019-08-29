@@ -7,44 +7,45 @@
     <br />
 </div>
 <div id="menu" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
-    <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-round-large">Exp
-        Costs</a>
+    <a href="./index.html" class="w3-bar-item w3-hover-maroon w3-button w3-round-large">Ref Tables</a>
     <div class="w3-dropdown-click w3-mobile">
-        <button onclick="dropdownShow('combatDropdown')" class="w3-button w3-round-large w3-hover-maroon">Combat
-            <i class="fa fa-caret-down"></i></button>
-        <div id="combatDropdown" class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-            <a href="./combat.html#combatActions"
-                class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Actions</a>
-            <a href="./combat.html#hitLocations"
-                class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Hit
-                Locations</a>
-            <a href="./combat.html#conditions"
-                class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Conditions and Damage</a>
-            <a href="./combat.html#circumstances"
-                class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Circumstances</a>
-            <a href="./combat.html#difficulties"
-                class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Combat Difficulty
-                Examples</a>
+        <button onclick="dropdownShow('classesDropdown')" class="w3-button w3-round-large w3-hover-maroon">Classes <i class="fa fa-caret-down"></i></button>
+        <div id="classesDropdown" class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                <a href="./classes.html#barbarian"
+                class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Barbarian</a>
+            <a href="./classes.html#bard"
+                class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Bard</a>
+            <a href="./classes.html#cleric"
+                class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Cleric</a>
+            <a href="./classes.html#druid"
+                class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Druid</a>
+            <a href="./classes.html#fighter"
+                class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Fighter</a>
+            <a href="./classes.html#monk"
+                class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Monk</a>
+            <a href="./classes.html#paladin"
+                class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Paladin</a>
+                <a href="./classes.html#ranger"
+                    class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Ranger</a>
+                    <a href="./classes.html#rogue"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Rogue</a>
+                        <a href="./classes.html#sorcerer"
+                            class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Sorcerer</a>
+                            <a href="./classes.html#warlock"
+                                class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Warlock</a>
+                                <a href="./classes.html#wizard"
+                                    class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Wizard</a>
         </div>
     </div>
     <div class="w3-dropdown-click w3-mobile">
-        <button onclick="dropdownShow('critDropdown')" class="w3-button w3-round-large w3-hover-maroon">Critical
-            Hits <i class="fa fa-caret-down"></i></button>
-        <div id="critDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-            <a href="./crit.html#crits" class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Critical
-                Rolls</a>
-            <div class="dropdown-divider"></div>
-            <a href="./crit.html#energyCrit"
-                class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Energy</a>
-            <a href="./crit.html#explosiveCrit"
-                class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Explosive</a>
-            <a href="./crit.html#impactCrit"
-                class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Impact</a>
-            <a href="./crit.html#rendingCrit"
-                class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Rending</a>
+        <button onclick="dropdownShow('spellDropdown')" class="w3-button w3-round-large w3-hover-maroon">Spells <i class="fa fa-caret-down"></i></button>
+        <div id="spellDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                <a href="./spells.html#spellLists" class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Class Spell Lists</a>
+                <a href="./spells.html#spellCards"
+                    class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Spell Descriptions</a>
         </div>
     </div>
-    <div class="w3-dropdown-click w3-mobile">
+    <!-- <div class="w3-dropdown-click w3-mobile">
         <button onclick="dropdownShow('equipDropdown')" class="w3-button w3-round-large w3-hover-maroon">Equipment <i
                 class="fa fa-caret-down"></i></button>
         <div id="equipDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
@@ -137,7 +138,7 @@
             <a href="./effects.html#mutations"
                 class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-maroon">Mutations</a>
         </div>
-    </div>
+    </div> -->
 </div>
 <div class="w3-bar">
     <a href="./" class="w3-bar-item w3-hover-gold w3-button w3-hide-small w3-round-large">Ref Tables</a>

@@ -29,8 +29,10 @@
         <div class="w3-col s12 m12 l10">
             <div id="spellLists" class="w3-section w3-row-padding info">
                 <h1>Spell Lists</h1>
+                <h5><em>Clicking a spell name will bring up the description card</em></h5>
                 <div class="w3-row">
                     <div class="w3-col s12 m12 l3" style="padding-right: 10px !important;">
+                        <!-- Bard Spells -->
                         <div class="w3-card-2">
                             <h3>Bard Spells</h3>
                             <div class="w3-row-padding">
@@ -38,186 +40,207 @@
                                     onclick="accordion('bard0')">Cantrips</button>
                             </div>
                             <div id="bard0" class="w3-hide w3-container">
-                                Blade Ward <br />
-                                Dancing Lights <br />
-                                Friends <br />
-                                Light <br />
-                                Mage Hand <br />
-                                Mending <br />
-                                Message <br />
-                                Minor Illusion <br />
-                                Prestidigitation <br />
-                                True Strike <br />
-                                Vicious Mockery <br />
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Blade Ward</li>
+                                    <li onclick="spellSearchClick(this)">Dancing Lights</li>
+                                    <li onclick="spellSearchClick(this)">Friends</li>
+                                    <li onclick="spellSearchClick(this)">Light</li>
+                                    <li onclick="spellSearchClick(this)">Mage Hand</li>
+                                    <li onclick="spellSearchClick(this)">Mending</li>
+                                    <li onclick="spellSearchClick(this)">Message</li>
+                                    <li onclick="spellSearchClick(this)">Minor Illusion</li>
+                                    <li onclick="spellSearchClick(this)">Prestidigitation</li>
+                                    <li onclick="spellSearchClick(this)">True Strike</li>
+                                    <li onclick="spellSearchClick(this)">Vicious Mockery</li>
+                                </ul>
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('bard1')">1st Level</button>
                             </div>
                             <div id="bard1" class="w3-hide w3-container">
-                                Animal Friendship<br />
-                                Bane<br />
-                                Charm Person<br />
-                                Comprehend Languages<br />
-                                Cure Wounds<br />
-                                Detect Magic<br />
-                                Disguise Self<br />
-                                Dissonant Whispers<br />
-                                Faerie Fire<br />
-                                Feather Fall<br />
-                                Healing Word<br />
-                                Heroism<br />
-                                Identify<br />
-                                Illusory Script<br />
-                                Longstrider<br />
-                                Silent Image<br />
-                                Sleep<br />
-                                Speak with Animals<br />
-                                Tasha's Hideous Laughter<br />
-                                Thunderwave<br />
-                                Unseen Servant <br />
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Animal Friendship</li>
+                                    <li onclick="spellSearchClick(this)">Bane</li>
+                                    <li onclick="spellSearchClick(this)">Charm Person</li>
+                                    <li onclick="spellSearchClick(this)">Comprehend Languages</li>
+                                    <li onclick="spellSearchClick(this)">Cure Wounds</li>
+                                    <li onclick="spellSearchClick(this)">Detect Magic</li>
+                                    <li onclick="spellSearchClick(this)">Disguise Self</li>
+                                    <li onclick="spellSearchClick(this)">Dissonant Whispers</li>
+                                    <li onclick="spellSearchClick(this)">Faerie Fire</li>
+                                    <li onclick="spellSearchClick(this)">Feather Fall</li>
+                                    <li onclick="spellSearchClick(this)">Healing Word</li>
+                                    <li onclick="spellSearchClick(this)">Heroism</li>
+                                    <li onclick="spellSearchClick(this)">Identify</li>
+                                    <li onclick="spellSearchClick(this)">Illusory Script</li>
+                                    <li onclick="spellSearchClick(this)">Longstrider</li>
+                                    <li onclick="spellSearchClick(this)">Silent Image</li>
+                                    <li onclick="spellSearchClick(this)">Sleep</li>
+                                    <li onclick="spellSearchClick(this)">Speak with Animals</li>
+                                    <li onclick="spellSearchClick(this)">Tasha's Hideous Laughter</li>
+                                    <li onclick="spellSearchClick(this)">Thunderwave</li>
+                                    <li onclick="spellSearchClick(this)">Unseen Servant</li>
+                                </ul>
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('bard2')">2nd Level</button>
                             </div>
                             <div id="bard2" class="w3-hide w3-container">
-                                Animal Messenger<br />
-                                Blindness/Deafness<br />
-                                Calm Emotions<br />
-                                Cloud of Daggers<br />
-                                Crown of Madness<br />
-                                Detect Thoughts<br />
-                                Enhance Ability<br />
-                                Enthrall<br />
-                                Heat Metal<br />
-                                Hold Person<br />
-                                Invisibility<br />
-                                Knock<br />
-                                Lesser Restoration<br />
-                                Locate Animals or Plants<br />
-                                Locate Object<br />
-                                Magic Mouth<br />
-                                Phantasmal Force<br />
-                                See Invisibility<br />
-                                Shatter<br />
-                                Silence<br />
-                                Suggestion<br />
-                                Zone of Truth<br />
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Animal Messenger</li>
+                                    <li onclick="spellSearchClick(this)">Blindness/Deafness</li>
+                                    <li onclick="spellSearchClick(this)">Calm Emotions</li>
+                                    <li onclick="spellSearchClick(this)">Cloud of Daggers</li>
+                                    <li onclick="spellSearchClick(this)">Crown of Madness</li>
+                                    <li onclick="spellSearchClick(this)">Detect Thoughts</li>
+                                    <li onclick="spellSearchClick(this)">Enhance Ability</li>
+                                    <li onclick="spellSearchClick(this)">Enthrall</li>
+                                    <li onclick="spellSearchClick(this)">Heat Metal</li>
+                                    <li onclick="spellSearchClick(this)">Hold Person</li>
+                                    <li onclick="spellSearchClick(this)">Invisibility</li>
+                                    <li onclick="spellSearchClick(this)">Knock</li>
+                                    <li onclick="spellSearchClick(this)">Lesser Restoration</li>
+                                    <li onclick="spellSearchClick(this)">Locate Animals or Plants</li>
+                                    <li onclick="spellSearchClick(this)">Locate Object</li>
+                                    <li onclick="spellSearchClick(this)">Magic Mouth</li>
+                                    <li onclick="spellSearchClick(this)">Phantasmal Force</li>
+                                    <li onclick="spellSearchClick(this)">See Invisibility</li>
+                                    <li onclick="spellSearchClick(this)">Shatter</li>
+                                    <li onclick="spellSearchClick(this)">Silence</li>
+                                    <li onclick="spellSearchClick(this)">Suggestion</li>
+                                    <li onclick="spellSearchClick(this)">Zone of Truth</li>
+                                </ul>
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('bard3')">3rd Level</button>
                             </div>
                             <div id="bard3" class="w3-hide w3-container">
-                                Bestow Curse<br />
-                                Clairvoyance<br />
-                                Dispel Magic<br />
-                                Fear<br />
-                                Feign Death<br />
-                                Glyph of Warding<br />
-                                Hypnotic Pattern<br />
-                                Leomund’s Tiny Hut<br />
-                                Major Image<br />
-                                Nondetection<br />
-                                Plant Growth<br />
-                                Sending<br />
-                                Speak with Dead<br />
-                                Speak with Plants<br />
-                                Stinking Cloud<br />
-                                Tongues<br />
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Bestow Curse</li>
+                                    <li onclick="spellSearchClick(this)">Clairvoyance</li>
+                                    <li onclick="spellSearchClick(this)">Dispel Magic</li>
+                                    <li onclick="spellSearchClick(this)">Fear</li>
+                                    <li onclick="spellSearchClick(this)">Feign Death</li>
+                                    <li onclick="spellSearchClick(this)">Glyph of Warding</li>
+                                    <li onclick="spellSearchClick(this)">Hypnotic Pattern</li>
+                                    <li onclick="spellSearchClick(this)">Leomund’s Tiny Hut</li>
+                                    <li onclick="spellSearchClick(this)">Major Image</li>
+                                    <li onclick="spellSearchClick(this)">Nondetection</li>
+                                    <li onclick="spellSearchClick(this)">Plant Growth</li>
+                                    <li onclick="spellSearchClick(this)">Sending</li>
+                                    <li onclick="spellSearchClick(this)">Speak with Dead</li>
+                                    <li onclick="spellSearchClick(this)">Speak with Plants</li>
+                                    <li onclick="spellSearchClick(this)">Stinking Cloud</li>
+                                    <li onclick="spellSearchClick(this)">Tongues</li>
+                                </ul>
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('bard4')">4th Level</button>
                             </div>
                             <div id="bard4" class="w3-hide w3-container">
-                                Compulsion<br />
-                                Confusion<br />
-                                Dimension Door<br />
-                                Freedom of Movement<br />
-                                Greater Invisibility<br />
-                                Hallucinatory Terrain<br />
-                                Locate Creature<br />
-                                Polymorph<br />
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Compulsion</li>
+                                    <li onclick="spellSearchClick(this)">Confusion</li>
+                                    <li onclick="spellSearchClick(this)">Dimension Door</li>
+                                    <li onclick="spellSearchClick(this)">Freedom of Movement</li>
+                                    <li onclick="spellSearchClick(this)">Greater Invisibility</li>
+                                    <li onclick="spellSearchClick(this)">Hallucinatory Terrain</li>
+                                    <li onclick="spellSearchClick(this)">Locate Creature</li>
+                                    <li onclick="spellSearchClick(this)">Polymorph</li>
+                                </ul>
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('bard5')">5th Level</button>
                             </div>
                             <div id="bard5" class="w3-hide w3-container">
-                                Animate Objects<br />
-                                Awaken<br />
-                                Dominate Person<br />
-                                Dream<br />
-                                Geas<br />
-                                Greater Restoration<br />
-                                Hold Monster<br />
-                                Legend Lore<br />
-                                Mass Cure Wounds<br />
-                                Mislead<br />
-                                Modify Memory<br />
-                                Planar Binding<br />
-                                Raise Dead<br />
-                                Scrying<br />
-                                Seeming<br />
-                                Teleportation Circle<br />
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Animate Objects</li>
+                                    <li onclick="spellSearchClick(this)">Awaken</li>
+                                    <li onclick="spellSearchClick(this)">Dominate Person</li>
+                                    <li onclick="spellSearchClick(this)">Dream</li>
+                                    <li onclick="spellSearchClick(this)">Geas</li>
+                                    <li onclick="spellSearchClick(this)">Greater Restoration</li>
+                                    <li onclick="spellSearchClick(this)">Hold Monster</li>
+                                    <li onclick="spellSearchClick(this)">Legend Lore</li>
+                                    <li onclick="spellSearchClick(this)">Mass Cure Wounds</li>
+                                    <li onclick="spellSearchClick(this)">Mislead</li>
+                                    <li onclick="spellSearchClick(this)">Modify Memory</li>
+                                    <li onclick="spellSearchClick(this)">Planar Binding</li>
+                                    <li onclick="spellSearchClick(this)">Raise Dead</li>
+                                    <li onclick="spellSearchClick(this)">Scrying</li>
+                                    <li onclick="spellSearchClick(this)">Seeming</li>
+                                    <li onclick="spellSearchClick(this)">Teleportation Circle</li>
+                                </ul>
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('bard6')">6th Level</button>
                             </div>
                             <div id="bard6" class="w3-hide w3-container">
-                                Eyebite<br />
-                                Find the Path<br />
-                                Guards and Wards<br />
-                                Mass Suggestion<br />
-                                Otto’s Irresistible Dance<br />
-                                Programmed Illusion<br />
-                                True Seeing<br />
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Eyebite</li>
+                                    <li onclick="spellSearchClick(this)">Find the Path</li>
+                                    <li onclick="spellSearchClick(this)">Guards and Wards</li>
+                                    <li onclick="spellSearchClick(this)">Mass Suggestion</li>
+                                    <li onclick="spellSearchClick(this)">Otto’s Irresistible Dance</li>
+                                    <li onclick="spellSearchClick(this)">Programmed Illusion</li>
+                                    <li onclick="spellSearchClick(this)">True Seeing</li>
+                                </ul>
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('bard7')">7th Level</button>
                             </div>
                             <div id="bard7" class="w3-hide w3-container">
-                                Etherealness<br />
-                                Forcecage<br />
-                                Mirage Arcane<br />
-                                Mordenkainen’s Magnificent Mansion<br />
-                                Mordenkainen’s Sword<br />
-                                Project Image<br />
-                                Regenerate<br />
-                                Resurrection<br />
-                                Symbol<br />
-                                Teleport<br />
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Etherealness</li>
+                                    <li onclick="spellSearchClick(this)">Forcecage</li>
+                                    <li onclick="spellSearchClick(this)">Mirage Arcane</li>
+                                    <li onclick="spellSearchClick(this)">Mordenkainen’s Magnificent Mansion</li>
+                                    <li onclick="spellSearchClick(this)">Mordenkainen’s Sword</li>
+                                    <li onclick="spellSearchClick(this)">Project Image</li>
+                                    <li onclick="spellSearchClick(this)">Regenerate</li>
+                                    <li onclick="spellSearchClick(this)">Resurrection</li>
+                                    <li onclick="spellSearchClick(this)">Symbol</li>
+                                    <li onclick="spellSearchClick(this)">Teleport</li>
+                                </ul>
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('bard8')">8th Level</button>
                             </div>
                             <div id="bard8" class="w3-hide w3-container">
-                                Dominate Monster<br />
-                                Feeblemind<br />
-                                Glibness<br />
-                                Mind Blank<br />
-                                Power Word Stun<br />
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Dominate Monster</li>
+                                    <li onclick="spellSearchClick(this)">Feeblemind</li>
+                                    <li onclick="spellSearchClick(this)">Glibness</li>
+                                    <li onclick="spellSearchClick(this)">Mind Blank</li>
+                                    <li onclick="spellSearchClick(this)">Power Word Stun</li>
+                                </ul>
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('bard9')">9th Level</button>
                             </div>
                             <div id="bard9" class="w3-hide w3-container">
-                                Power Word Heal<br />
-                                Power Word Kill<br />
-                                True Polymorph<br />
-                                Foresight<br />
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Power Word Heal</li>
+                                    <li onclick="spellSearchClick(this)">Power Word Kill</li>
+                                    <li onclick="spellSearchClick(this)">True Polymorph</li>
+                                    <li onclick="spellSearchClick(this)">Foresight</li>
+                                </ul>
                             </div>
                             <br />
                         </div>
                     </div>
                     <div class="w3-col s12 m12 l3"
                         style="padding-left: 10px !important; padding-right: 10px !important;">
+                        <!-- Cleric Spells -->
                         <div class="w3-card-2">
                             <h3>Cleric Spells</h3>
                             <div class="w3-row-padding">
@@ -225,156 +248,174 @@
                                     onclick="accordion('cleric0')">Cantrips</button>
                             </div>
                             <div id="cleric0" class="w3-hide w3-container">
-                                Guidance<br />
-                                Light<br />
-                                Mending<br />
-                                Resistance<br />
-                                Sacred Flame<br />
-                                Spare the Dying<br />
-                                Thaumaturgy<br />
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Guidance</li>
+                                    <li onclick="spellSearchClick(this)">Light</li>
+                                    <li onclick="spellSearchClick(this)">Mending</li>
+                                    <li onclick="spellSearchClick(this)">Resistance</li>
+                                    <li onclick="spellSearchClick(this)">Sacred Flame</li>
+                                    <li onclick="spellSearchClick(this)">Spare the Dying</li>
+                                    <li onclick="spellSearchClick(this)">Thaumaturgy</li>
+                                </ul>
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('cleric1')">1st Level</button>
                             </div>
                             <div id="cleric1" class="w3-hide w3-container">
-                                Bane<br />
-                                Bless<br />
-                                Command<br />
-                                Create or Destroy Water<br />
-                                Cure Wounds<br />
-                                Detect Evil and Good<br />
-                                Detect Magic<br />
-                                Detect Poison and Disease<br />
-                                Guiding Bolt<br />
-                                Healing Word<br />
-                                Inflict Wounds<br />
-                                Protection from Evil and Good<br />
-                                Purify Food and Drink<br />
-                                Sanctuary<br />
-                                Shield of Faith<br />
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Bane</li>
+                                    <li onclick="spellSearchClick(this)">Bless</li>
+                                    <li onclick="spellSearchClick(this)">Command</li>
+                                    <li onclick="spellSearchClick(this)">Create or Destroy Water</li>
+                                    <li onclick="spellSearchClick(this)">Cure Wounds</li>
+                                    <li onclick="spellSearchClick(this)">Detect Evil and Good</li>
+                                    <li onclick="spellSearchClick(this)">Detect Magic</li>
+                                    <li onclick="spellSearchClick(this)">Detect Poison and Disease</li>
+                                    <li onclick="spellSearchClick(this)">Guiding Bolt</li>
+                                    <li onclick="spellSearchClick(this)">Healing Word</li>
+                                    <li onclick="spellSearchClick(this)">Inflict Wounds</li>
+                                    <li onclick="spellSearchClick(this)">Protection from Evil and Good</li>
+                                    <li onclick="spellSearchClick(this)">Purify Food and Drink</li>
+                                    <li onclick="spellSearchClick(this)">Sanctuary</li>
+                                    <li onclick="spellSearchClick(this)">Shield of Faith</li>
+                                </ul>
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('cleric2')">2nd Level</button>
                             </div>
                             <div id="cleric2" class="w3-hide w3-container">
-                                Aid<br />
-                                Augury<br />
-                                Blindness/Deafness<br />
-                                Calm Emotions<br />
-                                Continual Flame<br />
-                                Enhance Ability<br />
-                                Find Traps<br />
-                                Gentle Repose<br />
-                                Hold Person<br />
-                                Lesser Restoration<br />
-                                Locate Object<br />
-                                Prayer of Healing<br />
-                                Protection from Poison<br />
-                                Silence<br />
-                                Spiritual Weapon<br />
-                                Warding Bond<br />
-                                Zone of Truth<br />
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Aid</li>
+                                    <li onclick="spellSearchClick(this)">Augury</li>
+                                    <li onclick="spellSearchClick(this)">Blindness/Deafness</li>
+                                    <li onclick="spellSearchClick(this)">Calm Emotions</li>
+                                    <li onclick="spellSearchClick(this)">Continual Flame</li>
+                                    <li onclick="spellSearchClick(this)">Enhance Ability</li>
+                                    <li onclick="spellSearchClick(this)">Find Traps</li>
+                                    <li onclick="spellSearchClick(this)">Gentle Repose</li>
+                                    <li onclick="spellSearchClick(this)">Hold Person</li>
+                                    <li onclick="spellSearchClick(this)">Lesser Restoration</li>
+                                    <li onclick="spellSearchClick(this)">Locate Object</li>
+                                    <li onclick="spellSearchClick(this)">Prayer of Healing</li>
+                                    <li onclick="spellSearchClick(this)">Protection from Poison</li>
+                                    <li onclick="spellSearchClick(this)">Silence</li>
+                                    <li onclick="spellSearchClick(this)">Spiritual Weapon</li>
+                                    <li onclick="spellSearchClick(this)">Warding Bond</li>
+                                    <li onclick="spellSearchClick(this)">Zone of Truth</li>
+                                </ul>
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('cleric3')">3rd Level</button>
                             </div>
                             <div id="cleric3" class="w3-hide w3-container">
-                                Animate Dead<br />
-                                Beacon of Hope<br />
-                                Bestow Curse<br />
-                                Clairvoyance<br />
-                                Create Food and Water<br />
-                                Daylight<br />
-                                Dispel Magic<br />
-                                Feign Death<br />
-                                Glyph of Warding<br />
-                                Magic Circle<br />
-                                Mass Healing Word<br />
-                                Meld Into Stone<br />
-                                Protection from Energy<br />
-                                Remove Curse<br />
-                                Revivify<br />
-                                Sending<br />
-                                Speak with Dead<br />
-                                Spirit Guardians<br />
-                                Tongues<br />
-                                Water Walk<br />
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Animate Dead</li>
+                                    <li onclick="spellSearchClick(this)">Beacon of Hope</li>
+                                    <li onclick="spellSearchClick(this)">Bestow Curse</li>
+                                    <li onclick="spellSearchClick(this)">Clairvoyance</li>
+                                    <li onclick="spellSearchClick(this)">Create Food and Water</li>
+                                    <li onclick="spellSearchClick(this)">Daylight</li>
+                                    <li onclick="spellSearchClick(this)">Dispel Magic</li>
+                                    <li onclick="spellSearchClick(this)">Feign Death</li>
+                                    <li onclick="spellSearchClick(this)">Glyph of Warding</li>
+                                    <li onclick="spellSearchClick(this)">Magic Circle</li>
+                                    <li onclick="spellSearchClick(this)">Mass Healing Word</li>
+                                    <li onclick="spellSearchClick(this)">Meld Into Stone</li>
+                                    <li onclick="spellSearchClick(this)">Protection from Energy</li>
+                                    <li onclick="spellSearchClick(this)">Remove Curse</li>
+                                    <li onclick="spellSearchClick(this)">Revivify</li>
+                                    <li onclick="spellSearchClick(this)">Sending</li>
+                                    <li onclick="spellSearchClick(this)">Speak with Dead</li>
+                                    <li onclick="spellSearchClick(this)">Spirit Guardians</li>
+                                    <li onclick="spellSearchClick(this)">Tongues</li>
+                                    <li onclick="spellSearchClick(this)">Water Walk</li>
+                                </ul>
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('cleric4')">4th Level</button>
                             </div>
                             <div id="cleric4" class="w3-hide w3-container">
-                                Banishment<br />
-                                Control Water<br />
-                                Death Ward<br />
-                                Divination<br />
-                                Freedom of Movement<br />
-                                Guardian of Faith<br />
-                                Locate Creature<br />
-                                Stone Shape<br />
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Banishment</li>
+                                    <li onclick="spellSearchClick(this)">Control Water</li>
+                                    <li onclick="spellSearchClick(this)">Death Ward</li>
+                                    <li onclick="spellSearchClick(this)">Divination</li>
+                                    <li onclick="spellSearchClick(this)">Freedom of Movement</li>
+                                    <li onclick="spellSearchClick(this)">Guardian of Faith</li>
+                                    <li onclick="spellSearchClick(this)">Locate Creature</li>
+                                    <li onclick="spellSearchClick(this)">Stone Shape</li>
+                                </ul>
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('cleric5')">5th Level</button>
                             </div>
                             <div id="cleric5" class="w3-hide w3-container">
-                                Commune<br />
-                                Contagion<br />
-                                Dispel Evil and Good<br />
-                                Flame Strike<br />
-                                Geas<br />
-                                Greater Restoration<br />
-                                Hallow<br />
-                                Insect Plague<br />
-                                Legend Lore<br />
-                                Mass Cure Wounds<br />
-                                Planar Binding<br />
-                                Raise Dead<br />
-                                Scrying<br />
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Commune</li>
+                                    <li onclick="spellSearchClick(this)">Contagion</li>
+                                    <li onclick="spellSearchClick(this)">Dispel Evil and Good</li>
+                                    <li onclick="spellSearchClick(this)">Flame Strike</li>
+                                    <li onclick="spellSearchClick(this)">Geas</li>
+                                    <li onclick="spellSearchClick(this)">Greater Restoration</li>
+                                    <li onclick="spellSearchClick(this)">Hallow</li>
+                                    <li onclick="spellSearchClick(this)">Insect Plague</li>
+                                    <li onclick="spellSearchClick(this)">Legend Lore</li>
+                                    <li onclick="spellSearchClick(this)">Mass Cure Wounds</li>
+                                    <li onclick="spellSearchClick(this)">Planar Binding</li>
+                                    <li onclick="spellSearchClick(this)">Raise Dead</li>
+                                    <li onclick="spellSearchClick(this)">Scrying</li>
+                                </ul>
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('cleric6')">6th Level</button>
                             </div>
                             <div id="cleric6" class="w3-hide w3-container">
-                                Blade Barrier<br />
-                                Create Undead<br />
-                                Find the Path<br />
-                                Forbiddance<br />
-                                Harm<br />
-                                Heal<br />
-                                Heroes’ Feast<br />
-                                Planar Ally<br />
-                                True Seeing<br />
-                                Word of Recall<br />
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Blade Barrier</li>
+                                    <li onclick="spellSearchClick(this)">Create Undead</li>
+                                    <li onclick="spellSearchClick(this)">Find the Path</li>
+                                    <li onclick="spellSearchClick(this)">Forbiddance</li>
+                                    <li onclick="spellSearchClick(this)">Harm</li>
+                                    <li onclick="spellSearchClick(this)">Heal</li>
+                                    <li onclick="spellSearchClick(this)">Heroes’ Feast</li>
+                                    <li onclick="spellSearchClick(this)">Planar Ally</li>
+                                    <li onclick="spellSearchClick(this)">True Seeing</li>
+                                    <li onclick="spellSearchClick(this)">Word of Recall</li>
+                                </ul>
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('cleric7')">7th Level</button>
                             </div>
-                            <div id="cleric7" class="w3-hide w3-container w3-border">
-                                Conjure Celestial<br />
-                                Divine Word<br />
-                                Etherealness<br />
-                                Fire Storm<br />
-                                Plane Shift<br />
-                                Regenerate<br />
-                                Resurrection<br />
-                                Symbol<br />
+                            <div id="cleric7" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Conjure Celestial</li>
+                                    <li onclick="spellSearchClick(this)">Divine Word</li>
+                                    <li onclick="spellSearchClick(this)">Etherealness</li>
+                                    <li onclick="spellSearchClick(this)">Fire Storm</li>
+                                    <li onclick="spellSearchClick(this)">Plane Shift</li>
+                                    <li onclick="spellSearchClick(this)">Regenerate</li>
+                                    <li onclick="spellSearchClick(this)">Resurrection</li>
+                                    <li onclick="spellSearchClick(this)">Symbol</li>
+                                </ul>
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('cleric8')">8th Level</button>
                             </div>
                             <div id="cleric8" class="w3-hide w3-container">
-                                Antimagic Field<br />
-                                Control Weather<br />
-                                Earthquake<br />
-                                Holy Aura<br />
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Antimagic Field</li>
+                                    <li onclick="spellSearchClick(this)">Control Weather</li>
+                                    <li onclick="spellSearchClick(this)">Earthquake</li>
+                                    <li onclick="spellSearchClick(this)">Holy Aura</li>
+                                </ul>
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
@@ -391,21 +432,324 @@
                     </div>
                     <div class="w3-col s12 m12 l3"
                         style="padding-left: 10px !important; padding-right: 10px !important;">
+                        <!-- Druid Spells -->
                         <div class="w3-card-2">
                             <h3>Druid Spells</h3>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('druid0')">Cantrips</button>
                             </div>
+                            <div id="druid0" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Druidcraft</li>
+                                    <li onclick="spellSearchClick(this)">Guidance</li>
+                                    <li onclick="spellSearchClick(this)">Mending</li>
+                                    <li onclick="spellSearchClick(this)">Poison Spray</li>
+                                    <li onclick="spellSearchClick(this)">Produce Flame</li>
+                                    <li onclick="spellSearchClick(this)">Resistance</li>
+                                    <li onclick="spellSearchClick(this)">Shillelagh</li>
+                                    <li onclick="spellSearchClick(this)">Thorn Whip</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('druid1')">1st Level</button>
+                            </div>
+                            <div id="druid1" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Animal Friendship</li>
+                                    <li onclick="spellSearchClick(this)">Charm Person</li>
+                                    <li onclick="spellSearchClick(this)">Create or Destroy Water</li>
+                                    <li onclick="spellSearchClick(this)">Cure Wounds</li>
+                                    <li onclick="spellSearchClick(this)">Detect Magic</li>
+                                    <li onclick="spellSearchClick(this)">Detect Poison and Disease</li>
+                                    <li onclick="spellSearchClick(this)">Entangle</li>
+                                    <li onclick="spellSearchClick(this)">Faerie Fire</li>
+                                    <li onclick="spellSearchClick(this)">Fog Cloud</li>
+                                    <li onclick="spellSearchClick(this)">Goodberry</li>
+                                    <li onclick="spellSearchClick(this)">Healing Word</li>
+                                    <li onclick="spellSearchClick(this)">Jump</li>
+                                    <li onclick="spellSearchClick(this)">Longstrider</li>
+                                    <li onclick="spellSearchClick(this)">Purify Food and Drink</li>
+                                    <li onclick="spellSearchClick(this)">Speak with Animals</li>
+                                    <li onclick="spellSearchClick(this)">Thunderwave</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('druid2')">2nd Level</button>
+                            </div>
+                            <div id="druid2" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Animal Messenger</li>
+                                    <li onclick="spellSearchClick(this)">Barkskin</li>
+                                    <li onclick="spellSearchClick(this)">Beast Sense</li>
+                                    <li onclick="spellSearchClick(this)">Darkvision</li>
+                                    <li onclick="spellSearchClick(this)">Enhance Ability</li>
+                                    <li onclick="spellSearchClick(this)">Find Traps</li>
+                                    <li onclick="spellSearchClick(this)">Flame Blade</li>
+                                    <li onclick="spellSearchClick(this)">Flaming Sphere</li>
+                                    <li onclick="spellSearchClick(this)">Gust of Wind</li>
+                                    <li onclick="spellSearchClick(this)">Heat Metal</li>
+                                    <li onclick="spellSearchClick(this)">Hold Person</li>
+                                    <li onclick="spellSearchClick(this)">Lesser Restoration</li>
+                                    <li onclick="spellSearchClick(this)">Locate Animals or Plants</li>
+                                    <li onclick="spellSearchClick(this)">Locate Object</li>
+                                    <li onclick="spellSearchClick(this)">Moonbeam</li>
+                                    <li onclick="spellSearchClick(this)">Pass Without Trace</li>
+                                    <li onclick="spellSearchClick(this)">Protection from Poison</li>
+                                    <li onclick="spellSearchClick(this)">Spike Growth</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('druid3')">3rd Level</button>
+                            </div>
+                            <div id="druid3" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Call Lightning</li>
+                                    <li onclick="spellSearchClick(this)">Conjure Animals</li>
+                                    <li onclick="spellSearchClick(this)">Daylight</li>
+                                    <li onclick="spellSearchClick(this)">Dispel Magic</li>
+                                    <li onclick="spellSearchClick(this)">Feign Death</li>
+                                    <li onclick="spellSearchClick(this)">Meld Into Stone</li>
+                                    <li onclick="spellSearchClick(this)">Plant Growth</li>
+                                    <li onclick="spellSearchClick(this)">Protection from Energy</li>
+                                    <li onclick="spellSearchClick(this)">Sleet Storm</li>
+                                    <li onclick="spellSearchClick(this)">Speak with Plants</li>
+                                    <li onclick="spellSearchClick(this)">Water Breathing</li>
+                                    <li onclick="spellSearchClick(this)">Water Walk</li>
+                                    <li onclick="spellSearchClick(this)">Wind Wall</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('druid4')">4th Level</button>
+                            </div>
+                            <div id="druid4" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Blight</li>
+                                    <li onclick="spellSearchClick(this)">Confusion</li>
+                                    <li onclick="spellSearchClick(this)">Conjure Minor Elementals</li>
+                                    <li onclick="spellSearchClick(this)">Conjure Woodland Beings</li>
+                                    <li onclick="spellSearchClick(this)">Control Water</li>
+                                    <li onclick="spellSearchClick(this)">Dominate Beast</li>
+                                    <li onclick="spellSearchClick(this)">Freedom of Movement</li>
+                                    <li onclick="spellSearchClick(this)">Giant Insect</li>
+                                    <li onclick="spellSearchClick(this)">Grasping Vine</li>
+                                    <li onclick="spellSearchClick(this)">Hallucinatory Terrain</li>
+                                    <li onclick="spellSearchClick(this)">Ice Storm</li>
+                                    <li onclick="spellSearchClick(this)">Locate Creature</li>
+                                    <li onclick="spellSearchClick(this)">Polymorph</li>
+                                    <li onclick="spellSearchClick(this)">Stone Shape</li>
+                                    <li onclick="spellSearchClick(this)">Stoneskin</li>
+                                    <li onclick="spellSearchClick(this)">Wall of Fire</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('druid5')">5th Level</button>
+                            </div>
+                            <div id="druid5" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Antilife Shell</li>
+                                    <li onclick="spellSearchClick(this)">Awaken</li>
+                                    <li onclick="spellSearchClick(this)">Commune with Nature</li>
+                                    <li onclick="spellSearchClick(this)">Conjure Elemental</li>
+                                    <li onclick="spellSearchClick(this)">Contagion</li>
+                                    <li onclick="spellSearchClick(this)">Geas</li>
+                                    <li onclick="spellSearchClick(this)">Greater Restoration</li>
+                                    <li onclick="spellSearchClick(this)">Insect Plague</li>
+                                    <li onclick="spellSearchClick(this)">Mass Cure Wounds</li>
+                                    <li onclick="spellSearchClick(this)">Planar Binding</li>
+                                    <li onclick="spellSearchClick(this)">Reincarnate</li>
+                                    <li onclick="spellSearchClick(this)">Scrying</li>
+                                    <li onclick="spellSearchClick(this)">Tree Stride</li>
+                                    <li onclick="spellSearchClick(this)">Wall of Stone</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('druid6')">6th Level</button>
+                            </div>
+                            <div id="druid6" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Conjure Fey</li>
+                                    <li onclick="spellSearchClick(this)">Find the Path</li>
+                                    <li onclick="spellSearchClick(this)">Heal</li>
+                                    <li onclick="spellSearchClick(this)">Heroes’ Feast</li>
+                                    <li onclick="spellSearchClick(this)">Move Earth</li>
+                                    <li onclick="spellSearchClick(this)">Sunbeam</li>
+                                    <li onclick="spellSearchClick(this)">Transport via Plants</li>
+                                    <li onclick="spellSearchClick(this)">Wall of Thorns</li>
+                                    <li onclick="spellSearchClick(this)">Wind Walk</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('druid7')">7th Level</button>
+                            </div>
+                            <div id="druid7" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Fire Storm</li>
+                                    <li onclick="spellSearchClick(this)">Mirage Arcane</li>
+                                    <li onclick="spellSearchClick(this)">Plane Shift</li>
+                                    <li onclick="spellSearchClick(this)">Regenerate</li>
+                                    <li onclick="spellSearchClick(this)">Resurrection</li>
+                                    <li onclick="spellSearchClick(this)">Reverse Gravity</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('druid8')">8th Level</button>
+                            </div>
+                            <div id="druid8" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Animal Shapes</li>
+                                    <li onclick="spellSearchClick(this)">Antipathy/Sympathy</li>
+                                    <li onclick="spellSearchClick(this)">Control Weather</li>
+                                    <li onclick="spellSearchClick(this)">Earthquake</li>
+                                    <li onclick="spellSearchClick(this)">Feeblemind</li>
+                                    <li onclick="spellSearchClick(this)">Sunburst</li>
+                                    <li onclick="spellSearchClick(this)">Tsunami</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('druid9')">9th Level</button>
+                            </div>
+                            <div id="druid9" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Foresight</li>
+                                    <li onclick="spellSearchClick(this)">Shapechange</li>
+                                    <li onclick="spellSearchClick(this)">Storm of Vengeance</li>
+                                    <li onclick="spellSearchClick(this)">True Resurrection</li>
+
+                                </ul>
+                            </div>
                             <br />
                         </div>
                     </div>
                     <div class="w3-col s12 m12 l3" style="padding-left: 10px !important;">
+                        <!-- Paladin Spells -->
                         <div class="w3-card-2">
                             <h3>Paladin Spells</h3>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('paladin0')">Cantrips</button>
+                                    onclick="accordion('paladin1')">1st Level</button>
+                            </div>
+                            <div id="paladin1" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Bless</li>
+                                    <li onclick="spellSearchClick(this)">Command</li>
+                                    <li onclick="spellSearchClick(this)">Compelled Duel</li>
+                                    <li onclick="spellSearchClick(this)">Cure Wounds</li>
+                                    <li onclick="spellSearchClick(this)">Detect Evil and Good</li>
+                                    <li onclick="spellSearchClick(this)">Detect Magic</li>
+                                    <li onclick="spellSearchClick(this)">Detect Poison and Disease</li>
+                                    <li onclick="spellSearchClick(this)">Divine Favor</li>
+                                    <li onclick="spellSearchClick(this)">Heroism</li>
+                                    <li onclick="spellSearchClick(this)">Protection from Evil and Good</li>
+                                    <li onclick="spellSearchClick(this)">Purify Food and Drink</li>
+                                    <li onclick="spellSearchClick(this)">Searing Smite</li>
+                                    <li onclick="spellSearchClick(this)">Shield of Faith</li>
+                                    <li onclick="spellSearchClick(this)">Thunderous Smite</li>
+                                    <li onclick="spellSearchClick(this)">Wrathful Smite</li>
+
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('paladin2')">2nd Level</button>
+                            </div>
+                            <div id="paladin2" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+
+                                    <li onclick="spellSearchClick(this)">Aid</li>
+                                    <li onclick="spellSearchClick(this)">Branding Smite</li>
+                                    <li onclick="spellSearchClick(this)">Find Steed</li>
+                                    <li onclick="spellSearchClick(this)">Lesser Restoration</li>
+                                    <li onclick="spellSearchClick(this)">Locate Object</li>
+                                    <li onclick="spellSearchClick(this)">Magic Weapon</li>
+                                    <li onclick="spellSearchClick(this)">Protection from Poison</li>
+                                    <li onclick="spellSearchClick(this)">Zone of Truth</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('paladin3')">3rd Level</button>
+                            </div>
+                            <div id="paladin3" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Aura Of Vitality</li>
+                                    <li onclick="spellSearchClick(this)">Blinding Smite</li>
+                                    <li onclick="spellSearchClick(this)">Create Food and Water</li>
+                                    <li onclick="spellSearchClick(this)">Crusader’s Mantle</li>
+                                    <li onclick="spellSearchClick(this)">Daylight</li>
+                                    <li onclick="spellSearchClick(this)">Dispel Magic</li>
+                                    <li onclick="spellSearchClick(this)">Elemental Weapon</li>
+                                    <li onclick="spellSearchClick(this)">Magic Circle</li>
+                                    <li onclick="spellSearchClick(this)">Remove Curse</li>
+                                    <li onclick="spellSearchClick(this)">Revivify</li>
+
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('paladin4')">4th Level</button>
+                            </div>
+                            <div id="paladin4" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Aura of Life</li>
+                                    <li onclick="spellSearchClick(this)">Aura of Purity</li>
+                                    <li onclick="spellSearchClick(this)">Banishment</li>
+                                    <li onclick="spellSearchClick(this)">Death Ward</li>
+                                    <li onclick="spellSearchClick(this)">Locate Creature</li>
+                                    <li onclick="spellSearchClick(this)">Staggering Smite</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('paladin5')">5th Level</button>
+                            </div>
+                            <div id="paladin5" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Banishing Smite</li>
+                                    <li onclick="spellSearchClick(this)">Circle of Power</li>
+                                    <li onclick="spellSearchClick(this)">Destructive Wave</li>
+                                    <li onclick="spellSearchClick(this)">Dispel Evil and Good</li>
+                                    <li onclick="spellSearchClick(this)">Geas</li>
+                                    <li onclick="spellSearchClick(this)">Raise Dead</li>
+
+
+                                </ul>
                             </div>
                             <br />
                         </div>
@@ -413,43 +757,846 @@
                 </div>
                 <div class="w3-row">
                     <div class="w3-col s12 m12 l3" style="padding-right: 10px !important;">
+                        <!-- Ranger Spells -->
                         <div class="w3-card-2">
                             <h3>Ranger Spells</h3>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('ranger0')">Cantrips</button>
+                                    onclick="accordion('ranger1')">1st Level</button>
+                            </div>
+                            <div id="ranger1" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+                                    <li onclick="spellSearchClick(this)">Alarm</li>
+                                    <li onclick="spellSearchClick(this)">Animal Friendship</li>
+                                    <li onclick="spellSearchClick(this)">Cure Wounds</li>
+                                    <li onclick="spellSearchClick(this)">Detect Magic</li>
+                                    <li onclick="spellSearchClick(this)">Detect Poison and Disease</li>
+                                    <li onclick="spellSearchClick(this)">Ensnaring Strike</li>
+                                    <li onclick="spellSearchClick(this)">Fog Cloud</li>
+                                    <li onclick="spellSearchClick(this)">Goodberry</li>
+                                    <li onclick="spellSearchClick(this)">Hail of Thorns</li>
+                                    <li onclick="spellSearchClick(this)">Hunter’s Mark</li>
+                                    <li onclick="spellSearchClick(this)">Jump</li>
+                                    <li onclick="spellSearchClick(this)">Longstrider</li>
+                                    <li onclick="spellSearchClick(this)">Speak with Animals</li>
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('ranger2')">2nd Level</button>
+                            </div>
+                            <div id="ranger2" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Animal Messenger</li>
+                                    <li onclick="spellSearchClick(this)">Barkskin</li>
+                                    <li onclick="spellSearchClick(this)">Beast Sense</li>
+                                    <li onclick="spellSearchClick(this)">Cordon Of Arrows</li>
+                                    <li onclick="spellSearchClick(this)">Darkvision</li>
+                                    <li onclick="spellSearchClick(this)">Find Traps</li>
+                                    <li onclick="spellSearchClick(this)">Lesser Restoration</li>
+                                    <li onclick="spellSearchClick(this)">Locate Animals or Plants</li>
+                                    <li onclick="spellSearchClick(this)">Locate Object</li>
+                                    <li onclick="spellSearchClick(this)">Pass Without Trace</li>
+                                    <li onclick="spellSearchClick(this)">Protection from Poison</li>
+                                    <li onclick="spellSearchClick(this)">Silence</li>
+                                    <li onclick="spellSearchClick(this)">Spike Growth</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('ranger3')">3rd Level</button>
+                            </div>
+                            <div id="ranger3" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Conjure Animals</li>
+                                    <li onclick="spellSearchClick(this)">Conjure Barrage</li>
+                                    <li onclick="spellSearchClick(this)">Daylight</li>
+                                    <li onclick="spellSearchClick(this)">Lightning Arrow</li>
+                                    <li onclick="spellSearchClick(this)">Nondetection</li>
+                                    <li onclick="spellSearchClick(this)">Plant Growth</li>
+                                    <li onclick="spellSearchClick(this)">Protection from Energy</li>
+                                    <li onclick="spellSearchClick(this)">Speak with Plants</li>
+                                    <li onclick="spellSearchClick(this)">Water Breathing</li>
+                                    <li onclick="spellSearchClick(this)">Water Walk</li>
+                                    <li onclick="spellSearchClick(this)">Wind Wall</li>
+
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('ranger4')">4th Level</button>
+                            </div>
+                            <div id="ranger4" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+
+                                    <li onclick="spellSearchClick(this)">Conjure Woodland Beings</li>
+                                    <li onclick="spellSearchClick(this)">Freedom of Movement</li>
+                                    <li onclick="spellSearchClick(this)">Grasping Vine</li>
+                                    <li onclick="spellSearchClick(this)">Locate Creature</li>
+                                    <li onclick="spellSearchClick(this)">Stoneskin</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('ranger5')">5th Level</button>
+                            </div>
+                            <div id="ranger5" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Commune with Nature</li>
+                                    <li onclick="spellSearchClick(this)">Conjure Volley</li>
+                                    <li onclick="spellSearchClick(this)">Swift Quiver</li>
+                                    <li onclick="spellSearchClick(this)">Tree Stride</li>
+
+
+                                </ul>
                             </div>
                             <br />
                         </div>
                     </div>
                     <div class="w3-col s12 m12 l3"
                         style="padding-left: 10px !important; padding-right: 10px !important;">
+                        <!-- Sorcerer Spells -->
                         <div class="w3-card-2">
                             <h3>Sorcerer Spells</h3>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('sorcerer0')">Cantrips</button>
                             </div>
+                            <div id="sorcerer0" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Acid Splash</li>
+                                    <li onclick="spellSearchClick(this)">Blade Ward</li>
+                                    <li onclick="spellSearchClick(this)">Chill Touch</li>
+                                    <li onclick="spellSearchClick(this)">Dancing Lights</li>
+                                    <li onclick="spellSearchClick(this)">Fire Bolt</li>
+                                    <li onclick="spellSearchClick(this)">Friends</li>
+                                    <li onclick="spellSearchClick(this)">Light</li>
+                                    <li onclick="spellSearchClick(this)">Mage Hand</li>
+                                    <li onclick="spellSearchClick(this)">Mending</li>
+                                    <li onclick="spellSearchClick(this)">Message</li>
+                                    <li onclick="spellSearchClick(this)">Minor Illusion</li>
+                                    <li onclick="spellSearchClick(this)">Poison Spray</li>
+                                    <li onclick="spellSearchClick(this)">Prestidigitation</li>
+                                    <li onclick="spellSearchClick(this)">Ray of Frost</li>
+                                    <li onclick="spellSearchClick(this)">Shocking Grasp</li>
+                                    <li onclick="spellSearchClick(this)">True Strike</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('sorcerer1')">1st Level</button>
+                            </div>
+                            <div id="sorcerer1" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Burning Hands</li>
+                                    <li onclick="spellSearchClick(this)">Charm Person</li>
+                                    <li onclick="spellSearchClick(this)">Chromatic Orb</li>
+                                    <li onclick="spellSearchClick(this)">Color Spray</li>
+                                    <li onclick="spellSearchClick(this)">Comprehend Languages</li>
+                                    <li onclick="spellSearchClick(this)">Detect Magic</li>
+                                    <li onclick="spellSearchClick(this)">Disguise Self</li>
+                                    <li onclick="spellSearchClick(this)">Expeditious Retreat</li>
+                                    <li onclick="spellSearchClick(this)">False Life</li>
+                                    <li onclick="spellSearchClick(this)">Feather Fall</li>
+                                    <li onclick="spellSearchClick(this)">Fog Cloud</li>
+                                    <li onclick="spellSearchClick(this)">Jump</li>
+                                    <li onclick="spellSearchClick(this)">Mage Armor</li>
+                                    <li onclick="spellSearchClick(this)">Magic Missile</li>
+                                    <li onclick="spellSearchClick(this)">Ray of Sickness</li>
+                                    <li onclick="spellSearchClick(this)">Shield</li>
+                                    <li onclick="spellSearchClick(this)">Silent Image</li>
+                                    <li onclick="spellSearchClick(this)">Sleep</li>
+                                    <li onclick="spellSearchClick(this)">Thunderwave</li>
+                                    <li onclick="spellSearchClick(this)">Witch Bolt</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('sorcerer2')">2nd Level</button>
+                            </div>
+                            <div id="sorcerer2" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Alter Self</li>
+                                    <li onclick="spellSearchClick(this)">Blindness/Deafness</li>
+                                    <li onclick="spellSearchClick(this)">Blur</li>
+                                    <li onclick="spellSearchClick(this)">Cloud of Daggers</li>
+                                    <li onclick="spellSearchClick(this)">Crown of Madness</li>
+                                    <li onclick="spellSearchClick(this)">Darkness</li>
+                                    <li onclick="spellSearchClick(this)">Darkvision</li>
+                                    <li onclick="spellSearchClick(this)">Detect Thoughts</li>
+                                    <li onclick="spellSearchClick(this)">Enhance Ability</li>
+                                    <li onclick="spellSearchClick(this)">Enlarge/Reduce</li>
+                                    <li onclick="spellSearchClick(this)">Gust of Wind</li>
+                                    <li onclick="spellSearchClick(this)">Hold Person</li>
+                                    <li onclick="spellSearchClick(this)">Invisibility</li>
+                                    <li onclick="spellSearchClick(this)">Knock</li>
+                                    <li onclick="spellSearchClick(this)">Levitate</li>
+                                    <li onclick="spellSearchClick(this)">Mirror Image</li>
+                                    <li onclick="spellSearchClick(this)">Misty Step</li>
+                                    <li onclick="spellSearchClick(this)">Phantasmal Force</li>
+                                    <li onclick="spellSearchClick(this)">Scorching Ray</li>
+                                    <li onclick="spellSearchClick(this)">See Invisibility</li>
+                                    <li onclick="spellSearchClick(this)">Shatter</li>
+                                    <li onclick="spellSearchClick(this)">Spider Climb</li>
+                                    <li onclick="spellSearchClick(this)">Suggestion</li>
+                                    <li onclick="spellSearchClick(this)">Web</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('sorcerer3')">3rd Level</button>
+                            </div>
+                            <div id="sorcerer3" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Blink</li>
+                                    <li onclick="spellSearchClick(this)">Clairvoyance</li>
+                                    <li onclick="spellSearchClick(this)">Counterspell</li>
+                                    <li onclick="spellSearchClick(this)">Daylight</li>
+                                    <li onclick="spellSearchClick(this)">Dispel Magic</li>
+                                    <li onclick="spellSearchClick(this)">Fear</li>
+                                    <li onclick="spellSearchClick(this)">Fireball</li>
+                                    <li onclick="spellSearchClick(this)">Fly</li>
+                                    <li onclick="spellSearchClick(this)">Gaseous Form</li>
+                                    <li onclick="spellSearchClick(this)">Haste</li>
+                                    <li onclick="spellSearchClick(this)">Hypnotic Pattern</li>
+                                    <li onclick="spellSearchClick(this)">Lightning Bolt</li>
+                                    <li onclick="spellSearchClick(this)">Major Image</li>
+                                    <li onclick="spellSearchClick(this)">Protection from Energy</li>
+                                    <li onclick="spellSearchClick(this)">Sleet Storm</li>
+                                    <li onclick="spellSearchClick(this)">Slow</li>
+                                    <li onclick="spellSearchClick(this)">Stinking Cloud</li>
+                                    <li onclick="spellSearchClick(this)">Tongues</li>
+                                    <li onclick="spellSearchClick(this)">Water Breathing</li>
+                                    <li onclick="spellSearchClick(this)">Water Walk</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('sorcerer4')">4th Level</button>
+                            </div>
+                            <div id="sorcerer4" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Banishment</li>
+                                    <li onclick="spellSearchClick(this)">Blight</li>
+                                    <li onclick="spellSearchClick(this)">Confusion</li>
+                                    <li onclick="spellSearchClick(this)">Dimension Door</li>
+                                    <li onclick="spellSearchClick(this)">Dominate Beast</li>
+                                    <li onclick="spellSearchClick(this)">Greater Invisibility</li>
+                                    <li onclick="spellSearchClick(this)">Ice Storm</li>
+                                    <li onclick="spellSearchClick(this)">Polymorph</li>
+                                    <li onclick="spellSearchClick(this)">Stoneskin</li>
+                                    <li onclick="spellSearchClick(this)">Wall of Fire</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('sorcerer5')">5th Level</button>
+                            </div>
+                            <div id="sorcerer5" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Animate Objects</li>
+                                    <li onclick="spellSearchClick(this)">Cloudkill</li>
+                                    <li onclick="spellSearchClick(this)">Cone of Cold</li>
+                                    <li onclick="spellSearchClick(this)">Creation</li>
+                                    <li onclick="spellSearchClick(this)">Dominate Person</li>
+                                    <li onclick="spellSearchClick(this)">Hold Monster</li>
+                                    <li onclick="spellSearchClick(this)">Insect Plague</li>
+                                    <li onclick="spellSearchClick(this)">Seeming</li>
+                                    <li onclick="spellSearchClick(this)">Telekinesis</li>
+                                    <li onclick="spellSearchClick(this)">Teleportation Circle</li>
+                                    <li onclick="spellSearchClick(this)">Wall of Stone</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('sorcerer6')">6th Level</button>
+                            </div>
+                            <div id="sorcerer6" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Arcane Gate</li>
+                                    <li onclick="spellSearchClick(this)">Chain Lightning</li>
+                                    <li onclick="spellSearchClick(this)">Circle of Death</li>
+                                    <li onclick="spellSearchClick(this)">Disintegrate</li>
+                                    <li onclick="spellSearchClick(this)">Eyebite</li>
+                                    <li onclick="spellSearchClick(this)">Globe of Invulnerability</li>
+                                    <li onclick="spellSearchClick(this)">Mass Suggestion</li>
+                                    <li onclick="spellSearchClick(this)">Move Earth</li>
+                                    <li onclick="spellSearchClick(this)">Sunbeam</li>
+                                    <li onclick="spellSearchClick(this)">True Seeing</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('sorcerer7')">7th Level</button>
+                            </div>
+                            <div id="sorcerer7" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Delayed Blast Fireball</li>
+                                    <li onclick="spellSearchClick(this)">Etherealness</li>
+                                    <li onclick="spellSearchClick(this)">Finger of Death</li>
+                                    <li onclick="spellSearchClick(this)">Fire Storm</li>
+                                    <li onclick="spellSearchClick(this)">Plane Shift</li>
+                                    <li onclick="spellSearchClick(this)">Prismatic Spray</li>
+                                    <li onclick="spellSearchClick(this)">Reverse Gravity</li>
+                                    <li onclick="spellSearchClick(this)">Teleport</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('sorcerer8')">8th Level</button>
+                            </div>
+                            <div id="sorcerer8" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Dominate Monster</li>
+                                    <li onclick="spellSearchClick(this)">Earthquake</li>
+                                    <li onclick="spellSearchClick(this)">Incendiary Cloud</li>
+                                    <li onclick="spellSearchClick(this)">Power Word Stun</li>
+                                    <li onclick="spellSearchClick(this)">Sunburst</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('sorcerer9')">9th Level</button>
+                            </div>
+                            <div id="sorcerer9" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Gate</li>
+                                    <li onclick="spellSearchClick(this)">Meteor Swarm</li>
+                                    <li onclick="spellSearchClick(this)">Power Word Kill</li>
+                                    <li onclick="spellSearchClick(this)">Time Stop</li>
+                                    <li onclick="spellSearchClick(this)">Wish</li>
+
+                                </ul>
+                            </div>
                             <br />
                         </div>
                     </div>
                     <div class="w3-col s12 m12 l3"
                         style="padding-left: 10px !important; padding-right: 10px !important;">
+                        <!-- Warlock Spells -->
                         <div class="w3-card-2">
                             <h3>Warlock Spells</h3>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('warlock0')">Cantrips</button>
                             </div>
+                            <div id="warlock0" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Blade Ward</li>
+                                    <li onclick="spellSearchClick(this)">Chill Touch</li>
+                                    <li onclick="spellSearchClick(this)">Eldritch Blast</li>
+                                    <li onclick="spellSearchClick(this)">Friends</li>
+                                    <li onclick="spellSearchClick(this)">Mage Hand</li>
+                                    <li onclick="spellSearchClick(this)">Minor Illusion</li>
+                                    <li onclick="spellSearchClick(this)">Poison Spray</li>
+                                    <li onclick="spellSearchClick(this)">Prestidigitation</li>
+                                    <li onclick="spellSearchClick(this)">True Strike</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('warlock1')">1st Level</button>
+                            </div>
+                            <div id="warlock1" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Armor of Agathys</li>
+                                    <li onclick="spellSearchClick(this)">Arms of Hadar</li>
+                                    <li onclick="spellSearchClick(this)">Charm Person</li>
+                                    <li onclick="spellSearchClick(this)">Comprehend Languages</li>
+                                    <li onclick="spellSearchClick(this)">Expeditious Retreat</li>
+                                    <li onclick="spellSearchClick(this)">Hellish Rebuke</li>
+                                    <li onclick="spellSearchClick(this)">Hex</li>
+                                    <li onclick="spellSearchClick(this)">Illusory Script</li>
+                                    <li onclick="spellSearchClick(this)">Protection from Evil and Good</li>
+                                    <li onclick="spellSearchClick(this)">Unseen Servant</li>
+                                    <li onclick="spellSearchClick(this)">Witch Bolt</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('warlock2')">2nd Level</button>
+                            </div>
+                            <div id="warlock2" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Cloud of Daggers</li>
+                                    <li onclick="spellSearchClick(this)">Crown of Madness</li>
+                                    <li onclick="spellSearchClick(this)">Darkness</li>
+                                    <li onclick="spellSearchClick(this)">Enthrall</li>
+                                    <li onclick="spellSearchClick(this)">Hold Person</li>
+                                    <li onclick="spellSearchClick(this)">Invisibility</li>
+                                    <li onclick="spellSearchClick(this)">Mirror Image</li>
+                                    <li onclick="spellSearchClick(this)">Misty Step</li>
+                                    <li onclick="spellSearchClick(this)">Ray of Enfeeblement</li>
+                                    <li onclick="spellSearchClick(this)">Shatter</li>
+                                    <li onclick="spellSearchClick(this)">Spider Climb</li>
+                                    <li onclick="spellSearchClick(this)">Suggestion</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('warlock3')">3rd Level</button>
+                            </div>
+                            <div id="warlock3" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Counterspell</li>
+                                    <li onclick="spellSearchClick(this)">Dispel Magic</li>
+                                    <li onclick="spellSearchClick(this)">Fear</li>
+                                    <li onclick="spellSearchClick(this)">Fly</li>
+                                    <li onclick="spellSearchClick(this)">Gaseous Form</li>
+                                    <li onclick="spellSearchClick(this)">Hunger of Hadar</li>
+                                    <li onclick="spellSearchClick(this)">Hypnotic Pattern</li>
+                                    <li onclick="spellSearchClick(this)">Magic Circle</li>
+                                    <li onclick="spellSearchClick(this)">Major Image</li>
+                                    <li onclick="spellSearchClick(this)">Remove Curse</li>
+                                    <li onclick="spellSearchClick(this)">Tongues</li>
+                                    <li onclick="spellSearchClick(this)">Vampiric Touch</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('warlock4')">4th Level</button>
+                            </div>
+                            <div id="warlock4" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Banishment</li>
+                                    <li onclick="spellSearchClick(this)">Blight</li>
+                                    <li onclick="spellSearchClick(this)">Dimension Door</li>
+                                    <li onclick="spellSearchClick(this)">Hallucinatory Terrain</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('warlock5')">5th Level</button>
+                            </div>
+                            <div id="warlock5" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Contact Other Plane</li>
+                                    <li onclick="spellSearchClick(this)">Dream</li>
+                                    <li onclick="spellSearchClick(this)">Hold Monster</li>
+                                    <li onclick="spellSearchClick(this)">Scrying</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('warlock6')">6th Level</button>
+                            </div>
+                            <div id="warlock6" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Arcane Gate</li>
+                                    <li onclick="spellSearchClick(this)">Circle of Death</li>
+                                    <li onclick="spellSearchClick(this)">Conjure Fey</li>
+                                    <li onclick="spellSearchClick(this)">Create Undead</li>
+                                    <li onclick="spellSearchClick(this)">Eyebite</li>
+                                    <li onclick="spellSearchClick(this)">Flesh to Stone</li>
+                                    <li onclick="spellSearchClick(this)">Mass Suggestion</li>
+                                    <li onclick="spellSearchClick(this)">True Seeing</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('warlock7')">7th Level</button>
+                            </div>
+                            <div id="warlock7" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Etherealness</li>
+                                    <li onclick="spellSearchClick(this)">Finger of Death</li>
+                                    <li onclick="spellSearchClick(this)">Forcecage</li>
+                                    <li onclick="spellSearchClick(this)">Plane Shift</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('warlock8')">8th Level</button>
+                            </div>
+                            <div id="warlock8" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Demiplane</li>
+                                    <li onclick="spellSearchClick(this)">Dominate Monster</li>
+                                    <li onclick="spellSearchClick(this)">Feeblemind</li>
+                                    <li onclick="spellSearchClick(this)">Glibness</li>
+                                    <li onclick="spellSearchClick(this)">Power Word Stun</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('warlock9')">9th Level</button>
+                            </div>
+                            <div id="warlock9" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Astral Projection</li>
+                                    <li onclick="spellSearchClick(this)">Foresight</li>
+                                    <li onclick="spellSearchClick(this)">Imprisonment</li>
+                                    <li onclick="spellSearchClick(this)">Power Word Kill</li>
+                                    <li onclick="spellSearchClick(this)">True Polymorph</li>
+
+                                </ul>
+                            </div>
                             <br />
                         </div>
                     </div>
                     <div class="w3-col s12 m12 l3" style="padding-left: 10px !important;">
+                        <!-- Wizard Spells -->
                         <div class="w3-card-2">
                             <h3>Wizard Spells</h3>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('wizard0')">Cantrips</button>
+                            </div>
+                            <div id="wizard0" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Acid Splash</li>
+                                    <li onclick="spellSearchClick(this)">Blade Ward</li>
+                                    <li onclick="spellSearchClick(this)">Chill Touch</li>
+                                    <li onclick="spellSearchClick(this)">Dancing Lights</li>
+                                    <li onclick="spellSearchClick(this)">Fire Bolt</li>
+                                    <li onclick="spellSearchClick(this)">Friends</li>
+                                    <li onclick="spellSearchClick(this)">Light</li>
+                                    <li onclick="spellSearchClick(this)">Mage Hand</li>
+                                    <li onclick="spellSearchClick(this)">Mending</li>
+                                    <li onclick="spellSearchClick(this)">Message</li>
+                                    <li onclick="spellSearchClick(this)">Minor Illusion</li>
+                                    <li onclick="spellSearchClick(this)">Poison Spray</li>
+                                    <li onclick="spellSearchClick(this)">Prestidigitation</li>
+                                    <li onclick="spellSearchClick(this)">Ray of Frost</li>
+                                    <li onclick="spellSearchClick(this)">Shocking Grasp</li>
+                                    <li onclick="spellSearchClick(this)">True Strike</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('wizard1')">1st Level</button>
+                            </div>
+                            <div id="wizard1" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Alarm</li>
+                                    <li onclick="spellSearchClick(this)">Burning Hands</li>
+                                    <li onclick="spellSearchClick(this)">Charm Person</li>
+                                    <li onclick="spellSearchClick(this)">Chromatic Orb</li>
+                                    <li onclick="spellSearchClick(this)">Color Spray</li>
+                                    <li onclick="spellSearchClick(this)">Comprehend Languages</li>
+                                    <li onclick="spellSearchClick(this)">Detect Magic</li>
+                                    <li onclick="spellSearchClick(this)">Disguise Self</li>
+                                    <li onclick="spellSearchClick(this)">Expeditious Retreat</li>
+                                    <li onclick="spellSearchClick(this)">False Life</li>
+                                    <li onclick="spellSearchClick(this)">Feather Fall</li>
+                                    <li onclick="spellSearchClick(this)">Find Familiar</li>
+                                    <li onclick="spellSearchClick(this)">Fog Cloud</li>
+                                    <li onclick="spellSearchClick(this)">Grease</li>
+                                    <li onclick="spellSearchClick(this)">Identify</li>
+                                    <li onclick="spellSearchClick(this)">Illusory Script</li>
+                                    <li onclick="spellSearchClick(this)">Jump</li>
+                                    <li onclick="spellSearchClick(this)">Longstrider</li>
+                                    <li onclick="spellSearchClick(this)">Mage Armor</li>
+                                    <li onclick="spellSearchClick(this)">Magic Missile</li>
+                                    <li onclick="spellSearchClick(this)">Protection from Evil and Good</li>
+                                    <li onclick="spellSearchClick(this)">Ray of Sickness</li>
+                                    <li onclick="spellSearchClick(this)">Shield</li>
+                                    <li onclick="spellSearchClick(this)">Silent Image</li>
+                                    <li onclick="spellSearchClick(this)">Sleep</li>
+                                    <li onclick="spellSearchClick(this)">Tasha’s Hideous Laughter</li>
+                                    <li onclick="spellSearchClick(this)">Tenser’s Floating Disk</li>
+                                    <li onclick="spellSearchClick(this)">Thunderwave</li>
+                                    <li onclick="spellSearchClick(this)">Unseen Servant</li>
+                                    <li onclick="spellSearchClick(this)">Witch Bolt</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('wizard2')">2nd Level</button>
+                            </div>
+                            <div id="wizard2" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Alter Self</li>
+                                    <li onclick="spellSearchClick(this)">Arcane Lock</li>
+                                    <li onclick="spellSearchClick(this)">Blindness/Deafness</li>
+                                    <li onclick="spellSearchClick(this)">Blur</li>
+                                    <li onclick="spellSearchClick(this)">Cloud of Daggers</li>
+                                    <li onclick="spellSearchClick(this)">Continual Flame</li>
+                                    <li onclick="spellSearchClick(this)">Crown of Madness</li>
+                                    <li onclick="spellSearchClick(this)">Darkness</li>
+                                    <li onclick="spellSearchClick(this)">Darkvision</li>
+                                    <li onclick="spellSearchClick(this)">Detect Thoughts</li>
+                                    <li onclick="spellSearchClick(this)">Enlarge/Reduce</li>
+                                    <li onclick="spellSearchClick(this)">Flaming Sphere</li>
+                                    <li onclick="spellSearchClick(this)">Gentle Repose</li>
+                                    <li onclick="spellSearchClick(this)">Gust of Wind</li>
+                                    <li onclick="spellSearchClick(this)">Hold Person</li>
+                                    <li onclick="spellSearchClick(this)">Invisibility</li>
+                                    <li onclick="spellSearchClick(this)">Knock</li>
+                                    <li onclick="spellSearchClick(this)">Levitate</li>
+                                    <li onclick="spellSearchClick(this)">Locate Object</li>
+                                    <li onclick="spellSearchClick(this)">Magic Mouth</li>
+                                    <li onclick="spellSearchClick(this)">Magic Weapon</li>
+                                    <li onclick="spellSearchClick(this)">Melf’s Acid Arrow</li>
+                                    <li onclick="spellSearchClick(this)">Mirror Image</li>
+                                    <li onclick="spellSearchClick(this)">Misty Step</li>
+                                    <li onclick="spellSearchClick(this)">Nystul’s Magic Aura</li>
+                                    <li onclick="spellSearchClick(this)">Phantasmal Force</li>
+                                    <li onclick="spellSearchClick(this)">Ray of Enfeeblement</li>
+                                    <li onclick="spellSearchClick(this)">Rope Trick</li>
+                                    <li onclick="spellSearchClick(this)">Scorching Ray</li>
+                                    <li onclick="spellSearchClick(this)">See Invisibility</li>
+                                    <li onclick="spellSearchClick(this)">Shatter</li>
+                                    <li onclick="spellSearchClick(this)">Spider Climb</li>
+                                    <li onclick="spellSearchClick(this)">Suggestion</li>
+                                    <li onclick="spellSearchClick(this)">Web</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('wizard3')">3rd Level</button>
+                            </div>
+                            <div id="wizard3" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Animate Dead</li>
+                                    <li onclick="spellSearchClick(this)">Bestow Curse</li>
+                                    <li onclick="spellSearchClick(this)">Blink</li>
+                                    <li onclick="spellSearchClick(this)">Clairvoyance</li>
+                                    <li onclick="spellSearchClick(this)">Counterspell</li>
+                                    <li onclick="spellSearchClick(this)">Dispel Magic</li>
+                                    <li onclick="spellSearchClick(this)">Fear</li>
+                                    <li onclick="spellSearchClick(this)">Feign Death</li>
+                                    <li onclick="spellSearchClick(this)">Fireball</li>
+                                    <li onclick="spellSearchClick(this)">Fly</li>
+                                    <li onclick="spellSearchClick(this)">Gaseous Form</li>
+                                    <li onclick="spellSearchClick(this)">Glyph of Warding</li>
+                                    <li onclick="spellSearchClick(this)">Haste</li>
+                                    <li onclick="spellSearchClick(this)">Hypnotic Pattern</li>
+                                    <li onclick="spellSearchClick(this)">Leomund’s Tiny Hut</li>
+                                    <li onclick="spellSearchClick(this)">Lightning Bolt</li>
+                                    <li onclick="spellSearchClick(this)">Magic Circle</li>
+                                    <li onclick="spellSearchClick(this)">Major Image</li>
+                                    <li onclick="spellSearchClick(this)">Nondetection</li>
+                                    <li onclick="spellSearchClick(this)">Phantom Steed</li>
+                                    <li onclick="spellSearchClick(this)">Protection from Energy</li>
+                                    <li onclick="spellSearchClick(this)">Remove Curse</li>
+                                    <li onclick="spellSearchClick(this)">Sending</li>
+                                    <li onclick="spellSearchClick(this)">Sleet Storm</li>
+                                    <li onclick="spellSearchClick(this)">Slow</li>
+                                    <li onclick="spellSearchClick(this)">Stinking Cloud</li>
+                                    <li onclick="spellSearchClick(this)">Tongues</li>
+                                    <li onclick="spellSearchClick(this)">Vampiric Touch</li>
+                                    <li onclick="spellSearchClick(this)">Water Breathing</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('wizard4')">4th Level</button>
+                            </div>
+                            <div id="wizard4" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Arcane Eye</li>
+                                    <li onclick="spellSearchClick(this)">Banishment</li>
+                                    <li onclick="spellSearchClick(this)">Blight</li>
+                                    <li onclick="spellSearchClick(this)">Confusion</li>
+                                    <li onclick="spellSearchClick(this)">Conjure Minor Elementals</li>
+                                    <li onclick="spellSearchClick(this)">Control Water</li>
+                                    <li onclick="spellSearchClick(this)">Dimension Door</li>
+                                    <li onclick="spellSearchClick(this)">Evard’s Black Tentacles</li>
+                                    <li onclick="spellSearchClick(this)">Fabricate</li>
+                                    <li onclick="spellSearchClick(this)">Fire Shield</li>
+                                    <li onclick="spellSearchClick(this)">Greater Invisibility</li>
+                                    <li onclick="spellSearchClick(this)">Hallucinatory Terrain</li>
+                                    <li onclick="spellSearchClick(this)">Ice Storm</li>
+                                    <li onclick="spellSearchClick(this)">Leomund’s Secret Chest</li>
+                                    <li onclick="spellSearchClick(this)">Locate Creature</li>
+                                    <li onclick="spellSearchClick(this)">Mordenkainen’s Faithful Hound</li>
+                                    <li onclick="spellSearchClick(this)">Mordenkainen’s Private Sanctum</li>
+                                    <li onclick="spellSearchClick(this)">Otiluke’s Resilient Sphere</li>
+                                    <li onclick="spellSearchClick(this)">Phantasmal Killer</li>
+                                    <li onclick="spellSearchClick(this)">Polymorph</li>
+                                    <li onclick="spellSearchClick(this)">Stone Shape</li>
+                                    <li onclick="spellSearchClick(this)">Stoneskin</li>
+                                    <li onclick="spellSearchClick(this)">Wall of Fire</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('wizard5')">5th Level</button>
+                            </div>
+                            <div id="wizard5" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Animate Objects</li>
+                                    <li onclick="spellSearchClick(this)">Bigby’s Hand</li>
+                                    <li onclick="spellSearchClick(this)">Cloudkill</li>
+                                    <li onclick="spellSearchClick(this)">Cone of Cold</li>
+                                    <li onclick="spellSearchClick(this)">Conjure Elemental</li>
+                                    <li onclick="spellSearchClick(this)">Contact Other Plane</li>
+                                    <li onclick="spellSearchClick(this)">Creation</li>
+                                    <li onclick="spellSearchClick(this)">Dominate Person</li>
+                                    <li onclick="spellSearchClick(this)">Dream</li>
+                                    <li onclick="spellSearchClick(this)">Geas</li>
+                                    <li onclick="spellSearchClick(this)">Hold Monster</li>
+                                    <li onclick="spellSearchClick(this)">Legend Lore</li>
+                                    <li onclick="spellSearchClick(this)">Mislead</li>
+                                    <li onclick="spellSearchClick(this)">Modify Memory</li>
+                                    <li onclick="spellSearchClick(this)">Passwall</li>
+                                    <li onclick="spellSearchClick(this)">Planar Binding</li>
+                                    <li onclick="spellSearchClick(this)">Rary’s Telepathic Bond</li>
+                                    <li onclick="spellSearchClick(this)">Scrying</li>
+                                    <li onclick="spellSearchClick(this)">Seeming</li>
+                                    <li onclick="spellSearchClick(this)">Telekinesis</li>
+                                    <li onclick="spellSearchClick(this)">Teleportation Circle</li>
+                                    <li onclick="spellSearchClick(this)">Wall of Force</li>
+                                    <li onclick="spellSearchClick(this)">Wall of Stone</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('wizard6')">6th Level</button>
+                            </div>
+                            <div id="wizard6" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Arcane Gate</li>
+                                    <li onclick="spellSearchClick(this)">Chain Lightning</li>
+                                    <li onclick="spellSearchClick(this)">Circle of Death</li>
+                                    <li onclick="spellSearchClick(this)">Contingency</li>
+                                    <li onclick="spellSearchClick(this)">Create Undead</li>
+                                    <li onclick="spellSearchClick(this)">Disintegrate</li>
+                                    <li onclick="spellSearchClick(this)">Drawmij’s Instant Summons</li>
+                                    <li onclick="spellSearchClick(this)">Eyebite</li>
+                                    <li onclick="spellSearchClick(this)">Flesh to Stone</li>
+                                    <li onclick="spellSearchClick(this)">Globe of Invulnerability</li>
+                                    <li onclick="spellSearchClick(this)">Guards and Wards</li>
+                                    <li onclick="spellSearchClick(this)">Magic Jar</li>
+                                    <li onclick="spellSearchClick(this)">Mass Suggestion</li>
+                                    <li onclick="spellSearchClick(this)">Move Earth</li>
+                                    <li onclick="spellSearchClick(this)">Otiluke’s Freezing Sphere</li>
+                                    <li onclick="spellSearchClick(this)">Otto’s Irresistible Dance</li>
+                                    <li onclick="spellSearchClick(this)">Programmed Illusion</li>
+                                    <li onclick="spellSearchClick(this)">Sunbeam</li>
+                                    <li onclick="spellSearchClick(this)">True Seeing</li>
+                                    <li onclick="spellSearchClick(this)">Wall of Ice</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('wizard7')">7th Level</button>
+                            </div>
+                            <div id="wizard7" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Delayed Blast Fireball</li>
+                                    <li onclick="spellSearchClick(this)">Etherealness</li>
+                                    <li onclick="spellSearchClick(this)">Finger of Death</li>
+                                    <li onclick="spellSearchClick(this)">Forcecage</li>
+                                    <li onclick="spellSearchClick(this)">Mirage Arcane</li>
+                                    <li onclick="spellSearchClick(this)">Mordenkainen’s Magnificent Mansion</li>
+                                    <li onclick="spellSearchClick(this)">Mordenkainen’s Sword</li>
+                                    <li onclick="spellSearchClick(this)">Plane Shift</li>
+                                    <li onclick="spellSearchClick(this)">Prismatic Spray</li>
+                                    <li onclick="spellSearchClick(this)">Project Image</li>
+                                    <li onclick="spellSearchClick(this)">Reverse Gravity</li>
+                                    <li onclick="spellSearchClick(this)">Sequester</li>
+                                    <li onclick="spellSearchClick(this)">Simulacrum</li>
+                                    <li onclick="spellSearchClick(this)">Symbol</li>
+                                    <li onclick="spellSearchClick(this)">Teleport</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('wizard8')">8th Level</button>
+                            </div>
+                            <div id="wizard8" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Antimagic Field</li>
+                                    <li onclick="spellSearchClick(this)">Antipathy/Sympathy</li>
+                                    <li onclick="spellSearchClick(this)">Clone</li>
+                                    <li onclick="spellSearchClick(this)">Control Weather</li>
+                                    <li onclick="spellSearchClick(this)">Demiplane</li>
+                                    <li onclick="spellSearchClick(this)">Dominate Monster</li>
+                                    <li onclick="spellSearchClick(this)">Feeblemind</li>
+                                    <li onclick="spellSearchClick(this)">Incendiary Cloud</li>
+                                    <li onclick="spellSearchClick(this)">Maze</li>
+                                    <li onclick="spellSearchClick(this)">Mind Blank</li>
+                                    <li onclick="spellSearchClick(this)">Power Word Stun</li>
+                                    <li onclick="spellSearchClick(this)">Sunburst</li>
+                                    <li onclick="spellSearchClick(this)">Telepathy</li>
+
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                <button class="w3-button w3-block goldenrodClass w3-dark-grey"
+                                    onclick="accordion('wizard9')">9th Level</button>
+                            </div>
+                            <div id="wizard9" class="w3-hide w3-container">
+                                <ul class="w3-ul">
+
+                                    <li onclick="spellSearchClick(this)">Astral Projection</li>
+                                    <li onclick="spellSearchClick(this)">Foresight</li>
+                                    <li onclick="spellSearchClick(this)">Gate</li>
+                                    <li onclick="spellSearchClick(this)">Imprisonment</li>
+                                    <li onclick="spellSearchClick(this)">Meteor Swarm</li>
+                                    <li onclick="spellSearchClick(this)">Power Word Kill</li>
+                                    <li onclick="spellSearchClick(this)">Prismatic Wall</li>
+                                    <li onclick="spellSearchClick(this)">Shapechange</li>
+                                    <li onclick="spellSearchClick(this)">Time Stop</li>
+                                    <li onclick="spellSearchClick(this)">True Polymorph</li>
+                                    <li onclick="spellSearchClick(this)">Weird</li>
+                                    <li onclick="spellSearchClick(this)">Wish</li>
+
+                                </ul>
                             </div>
                             <br />
                         </div>
@@ -458,47 +1605,64 @@
             </div>
             <div id="spellCards" class="w3-section w3-row-padding info">
                 <h1>Spell Description Cards</h1>
-                <input class="w3-input w3-border w3-padding w3-grey w3-round" type="text"
-                    placeholder="Search by name..." id="spellNameSearch" onkeyup="spellNameFilter()"
-                    style="width: 30%;">
-                    <select id="spellClassSelect" onchange="spellClassFilter()" class="w3-round w3-large">
-                            <option value="..." class="w3-gold">Class</option>
-                            <option>Artificer</option>
-                            <option>Bard</option>
-                            <option>Cleric</option>
-                            <option>Druid</option>
-                            <option>Fighter</option>
-                            <option>Monk</option>
-                            <option>Paladin</option>
-                            <option>Ranger</option>
-                            <option>Rogue</option>
-                            <option>Sorcerer</option>
-                            <option>Warlock</option>
-                            <option>Wizard</option>
-
-                        </select>
-                <div class="grid">
+                <div class="w3-row">
+                    <div class="w3-col s12 m6 l4">
+                        <input class="w3-input w3-border w3-padding w3-grey w3-round" type="text"
+                            placeholder="Search by name..." id="spellNameSearch" onkeyup="spellNameFilter()">
+                    </div>
+                </div>
+                <br />
+                <div class="w3-bar">
+                    <button id="classBtnAll" class="w3-round w3-button w3-blue"
+                        onclick="spellClassFilter('All')">All</button>
+                    <button id="classBtnArtificer" class="w3-round w3-button w3-grey"
+                        onclick="spellClassFilter('Artificer')">Artificer</button>
+                    <button id="classBtnBard" class="w3-round w3-button w3-grey"
+                        onclick="spellClassFilter('Bard')">Bard</button>
+                    <button id="classBtnCleric" class="w3-round w3-button w3-grey"
+                        onclick="spellClassFilter('Cleric')">Cleric</button>
+                    <button id="classBtnDruid" class="w3-round w3-button w3-grey"
+                        onclick="spellClassFilter('Druid')">Druid</button>
+                    <button id="classBtnFighter" class="w3-round w3-button w3-grey"
+                        onclick="spellClassFilter('Fighter')">Fighter</button>
+                    <button id="classBtnMonk" class="w3-round w3-button w3-grey"
+                        onclick="spellClassFilter('Monk')">Monk</button>
+                    <button id="classBtnPaladin" class="w3-round w3-button w3-grey"
+                        onclick="spellClassFilter('Paladin')">Paladin</button>
+                    <button id="classBtnRanger" class="w3-round w3-button w3-grey"
+                        onclick="spellClassFilter('Ranger')">Ranger</button>
+                    <button id="classBtnRogue" class="w3-round w3-button w3-grey"
+                        onclick="spellClassFilter('Rogue')">Rogue</button>
+                    <button id="classBtnSorcerer" class="w3-round w3-button w3-grey"
+                        onclick="spellClassFilter('Sorcerer')">Sorcerer</button>
+                    <button id="classBtnWarlock" class="w3-round w3-button w3-grey"
+                        onclick="spellClassFilter('Warlock')">Warlock</button>
+                    <button id="classBtnWizard" class="w3-round w3-button w3-grey"
+                        onclick="spellClassFilter('Wizard')">Wizard</button>
+                </div>
+                <br />
+                <div class="spellGrid">
                     <div class="" id="defaultSpellCard" style="display:none;">
-                            <div class="w3-card-2 w3-round-large">
-                                    <div class="w3-row-padding">
-                                        <h3 class="spellName"></h3>
-                                        <h5><em><span class="spellSchool"></span>, <span class="spellLevel"></span></em></h5>
-                                    </div>
-                                    <div class="w3-row-padding">
-                                            <emph>Casting Time: </emph><span class="spellTime"></span>
-                                            <br />
-                                            <emph>Range: </emph><span class="spellRange"></span>
-                                            <br />
-                                            <emph>Components: </emph><span class="spellComponents"></span>
-                                            <br />
-                                            <emph>Duration: </emph><span class="spellDuration"></span>
-                                            <br />
-                                            <emph>Classes: </emph><span class="spellClasses"></span>
-                                        </div>
-                                        <div class="w3-row-padding">
-                                            <div class="spellDescription"></div>
-                                        </div>
-                                        <br/>
+                        <div class="w3-card-2 w3-round-large">
+                            <div class="w3-row-padding">
+                                <h3 class="spellName"></h3>
+                                <h5><em><span class="spellSchool"></span>, <span class="spellLevel"></span></em></h5>
+                            </div>
+                            <div class="w3-row-padding">
+                                <emph>Casting Time: </emph><span class="spellTime"></span>
+                                <br />
+                                <emph>Range: </emph><span class="spellRange"></span>
+                                <br />
+                                <emph>Components: </emph><span class="spellComponents"></span>
+                                <br />
+                                <emph>Duration: </emph><span class="spellDuration"></span>
+                                <br />
+                                <emph>Classes: </emph><span class="spellClasses"></span>
+                            </div>
+                            <div class="w3-row-padding">
+                                <div class="spellDescription"></div>
+                            </div>
+                            <br />
                         </div>
                     </div>
                 </div>

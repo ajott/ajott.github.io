@@ -21,28 +21,6 @@ body {
     color: white !important;
 }
 
-#psykerTab.btn-selected {
-    background: purple !important;
-    border-color: purple !important;
-}
-
-#showAll.btn-selected {
-    background: darkgreen !important;
-    border-color: darkgreen !important;
-}
-
-.psyTooltipLight {
-    color: purple;
-    border-bottom: 1px dotted purple;
-    text-decoration: none;
-}
-
-.psyTooltipDark {
-    color: magenta;
-    border-bottom: 1px dotted magenta;
-    text-decoration: none;
-}
-
 .w3-card-2 {
     background-color: rgba(255, 255, 255, .10) !important;
 }
@@ -78,46 +56,6 @@ footer {
     padding-bottom: 10px;
 }
 
-.biomancy {
-    background: skyblue;
-    color: black !important;
-}
-
-.divination {
-    background: plum;
-    color: black !important;
-}
-
-.pyromancy {
-    background: orange;
-    color: black !important;
-}
-
-.telekinesis {
-    background: lightblue;
-    color: black !important;
-}
-
-.telepathy {
-    background: turquoise;
-    color: black !important;
-}
-
-.tier1 {
-    background: lightgreen;
-    color: black !important;
-}
-
-.tier2 {
-    background: cyan;
-    ;
-    color: black !important;
-}
-
-.tier3 {
-    background: orangered;
-    color: white;
-}
 
 td:first-child {
     font-weight: bold;
@@ -145,58 +83,13 @@ td:first-child {
     border-bottom: 1px solid darkgrey;
 }
 
-
-.sanctic {
-    background: #343a40;
+.w3-ul li {
+    padding: 3px !important;
 }
 
-.sanctic tr {
-    border: none !important;
-}
-
-.sanctic tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, .05) !important;
-}
-
-.sanctic td:first-child {
-    background-color: palegoldenrod !important;
-    color: black !important;
-}
-
-.sanctic tbody tr:hover {
-    background: rgb(120,120,120) !important;
-}
-
-.sanctic th {
-    background: rgba(128, 0, 0, 0.65) !important;
-    border-bottom: 1px solid darkgrey;
-}
-
-
-.malefic {
-    background: #343a40;
-}
-
-.malefic tr {
-    border: none !important;
-}
-
-.malefic td:first-child {
-    background-color: orangered !important;
-    color: black !important;
-}
-
-.malefic tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, .05) !important;
-}
-
-.malefic tbody tr:hover {
-    background: rgb(120,120,120) !important;
-}
-
-.malefic th {
-    background: rgba(128, 0, 0, 0.65) !important;
-    border-bottom: 1px solid darkgrey;
+.w3-ul li:hover {
+    background: rgba(255,255,0, .35) !important;
+    text-decoration: underline;
 }
 
 
@@ -415,7 +308,7 @@ Generated Maroon theme
   
   .grid-item {
     float: left;
-    width: 300px;
+    width: 400px;
     height: auto;
     padding-left: 5px;
     padding-right: 5px;
@@ -423,6 +316,12 @@ Generated Maroon theme
     padding-bottom: 5px;
   }
   
-  .grid-item--width2 { width: 200px; }
-  .grid-item--height2 { height: 200px; }
-  
+  .features {
+      max-width: 1200px;
+  }
+
+  .features:after {
+      content: '';
+      display: block;
+      clear: both;
+  }

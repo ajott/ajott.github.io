@@ -1,6 +1,6 @@
 var spell = [{
         "name": "Breath of Winter (17th level required)",
-        "level": "4th",
+        "level": "4th level",
         "school": "Evocation",
         "time": "1 Action",
         "range": "Self (60-foot cone)",
@@ -12,12 +12,12 @@ var spell = [{
             "",
             "A creature killed by this spell becomes a frozen statue until it thaws.",
             "",
-            "At Higher Levels. When you cast this spell using a spell slot of a higher level, the damage increases by 1d8 for each slot level."
+            "<emph><emph>At Higher Levels:</emph></emph> When you cast this spell using a spell slot of a higher level, the damage increases by 1d8 for each slot level."
         ]
     },
     {
         "name": "Clench of the North Wind (6th level required)",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Evocation",
         "time": "1 Action",
         "range": "60 feet",
@@ -27,19 +27,19 @@ var spell = [{
         "text": [
             "Choose a humanoid that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed for the duration. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the spell ends on the target.",
             "",
-            "At Higher Levels. When you cast this spell using a higher spell slot, you can target an additional humanoid for each slot of a higher level. The humanoids must be within 30 feet of each other when you target them."
+            "<emph><emph>At Higher Levels:</emph></emph> When you cast this spell using a higher spell slot, you can target an additional humanoid for each slot of a higher level. The humanoids must be within 30 feet of each other when you target them."
         ]
     },
     {
         "name": "Commander's Strike",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "classes": "Fighter (Battle Master)",
         "text": "When you take the Attack action on your turn, you can forgo one of your attacks and use a bonus action to direct one of your companions to strike. When you do so, choose a friendly creature who can see or hear you and expend one superiority die. That creature can immediately use its reaction to make one weapon attack, adding the superiority die to the attack's damage roll."
     },
     {
         "name": "Darkness (Monk)",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 action",
         "range": "60 feet",
@@ -56,7 +56,7 @@ var spell = [{
     },
     {
         "name": "Darkvision (Monk)",
-        "level": "1st",
+        "level": "1st level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Touch",
@@ -67,21 +67,21 @@ var spell = [{
     },
     {
         "name": "Disarming Attack",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "classes": "Fighter (Battle Master)",
         "text": "When you hit a creature with a weapon attack, you can expend one superiority die to attempt to disarm the target, forcing it to drop one item of your choice that it's holding. You add the superiority die to the attack's damage roll, and the target must make a Strength saving throw. On a failed save, it drops the object you choose. The object lands at its feet."
     },
     {
         "name": "Distracting Strike",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "classes": "Fighter (Battle Master)",
         "text": "When you hit a creature with a weapon attack, you can expend one superiority die to distract the creature, giving your allies an opening. You add the superiority die to the attack's damage roll. The next attack roll against the target by an attacker other than you has advantage if the attack is made before the start of your next turn."
     },
     {
         "name": "Elemental Attunement",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 Action",
         "range": "Self (60-foot cone)",
@@ -101,7 +101,7 @@ var spell = [{
     },
     {
         "name": "Eternal Mountain Defense (17th level required)",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Abjuration",
         "time": "1 Action",
         "range": "Only on Self",
@@ -112,14 +112,14 @@ var spell = [{
     },
     {
         "name": "Evasive Footwork",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "classes": "Fighter (Battle Master)",
         "text": "When you move, you can expend one superiority die, rolling the die and adding the number rolled to your AC until you stop moving."
     },
     {
         "name": "Fangs of the Fire Snake",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 Attack Action",
         "range": "Only on Self",
@@ -130,14 +130,14 @@ var spell = [{
     },
     {
         "name": "Feinting Attack",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "classes": "Fighter (Battle Master)",
         "text": "You can expend one superiority die and use a bonus action on your turn to feint, choosing one creature within 5 feet of you as your target. You have advantage on your next attack roll against that creature. If that attack hits, add the superiority die to the attack's damage roll."
     },
     {
         "name": "Fist of Four Thunders",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 Action",
         "range": "Self (15-foot cube)",
@@ -148,7 +148,7 @@ var spell = [{
     },
     {
         "name": "Fist of Unbroken Air",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 Action",
         "range": "30-feet",
@@ -159,7 +159,7 @@ var spell = [{
     },
     {
         "name": "Flames of the Phoenix (11th level required)",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Evocation",
         "time": "1 Action",
         "range": "150 feet",
@@ -170,14 +170,14 @@ var spell = [{
     },
     {
         "name": "Goading Attack",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "classes": "Fighter (Battle Master)",
         "text": "When you hit a creature with a weapon attack, you can expend one superiority die to attempt to goad the target into attacking you. You add the superiority die to the attack's damage roll, and the target must make a Wisdom saving throw. On a failed save, the target has disadvantage on all attack rolls against targets other than you until the end of your next turn."
     },
     {
         "name": "Gong of the Summit (6th level required)",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Evocation",
         "time": "1 Action",
         "range": "60 feet",
@@ -187,26 +187,26 @@ var spell = [{
         "text": [
             "A sudden loud ringing noise, painfully intense, erupts from a point of your choice within range. Each creature in a 10-foot-radius sphere centered on that point must make a Constitution saving throw. A creature takes 3d8 thunder damage on a failed save, or half as much damage on a successful one. A creature made of inorganic material such as stone, crystal, or metal has disadvantage on this saving throw.",
             "",
-            "A nonmagical object that isn't being worn or carried also takes the damage if it's in the spell's area. At Higher Levels. When you cast this spell using a spell slot of or higher, the damage increases by 1d8 for each slot level."
+            "A nonmagical object that isn't being worn or carried also takes the damage if it's in the spell's area. <emph><emph>At Higher Levels:</emph></emph> When you cast this spell using a spell slot of or higher, the damage increases by 1d8 for each slot level."
         ]
     },
     {
         "name": "Lunging Attack",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "classes": "Fighter (Battle Master)",
         "text": "When you make a melee weapon attack on your turn, you can expend one superiority die to increase your reach for that attack by 5 feet. If you hit, you add the superiority die to the attack's damage roll."
     },
     {
         "name": "Maneuvering Attack",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "classes": "Fighter (Battle Master)",
         "text": "When you hit a creature with a weapon attack, you can expend one superiority die to maneuver one of your comrades into a more advantageous position. You add the superiority die to the attack's damage roll, and you choose a friendly creature who can see or hear you. That creature can use its reaction to move up to half its speed without provoking opportunity attacks from the target of your attack."
     },
     {
         "name": "Menacing Attack",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "classes": "Fighter (Battle Master)",
         "text": "When you hit a creature with a weapon attack, you can expend one superiority die to attempt to frighten the target. You add the superiority die to the attack's damage roll, and the target must make a Wisdom saving throw. On a failed save, it is frightened of you until the end of your next turn."
@@ -232,7 +232,7 @@ var spell = [{
     },
     {
         "name": "Mist Stance (11th level required)",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Transmutation",
         "time": "1 Action",
         "range": "self only",
@@ -249,14 +249,14 @@ var spell = [{
     },
     {
         "name": "Parry",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "classes": "Fighter (Battle Master)",
         "text": "When another creature damages you with a melee attack, you can use your reaction and expend one superiority die to reduce the damage by the number you roll on your superiority die + your Dexterity modifier"
     },
     {
         "name": "Pass without Trace (Monk)",
-        "level": "1st",
+        "level": "1st level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Self",
@@ -267,28 +267,28 @@ var spell = [{
     },
     {
         "name": "Precision Attack",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "classes": "Fighter (Battle Master)",
         "text": "When you make a weapon attack roll against a creature, you can expend one superiority die to add it to the roll. You can use this maneuver before or after making the attack roll, but before any effects of the attack are applied."
     },
     {
         "name": "Pushing Attack",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "classes": "Fighter (Battle Master)",
         "text": "When you hit a creature with a weapon attack, you can expend one superiority die to attempt to drive the target back. You add the superiority die to the attack's damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you push the target up to 15 feet away from you."
     },
     {
         "name": "Rally",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "classes": "Fighter (Battle Master)",
         "text": "On your turn, you can use a bonus action and expend one superiority die to bolster the resolve of one of your companions. When you do so, choose a friendly creature who can see or hear you. That creature gains temporary hit points equal to the superiority die roll + your Charisma modifier."
     },
     {
         "name": "Ride the Wind (11th level required)",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Transmutation",
         "time": "1 Action",
         "range": "self only",
@@ -299,14 +299,14 @@ var spell = [{
     },
     {
         "name": "Riposte",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "classes": "Fighter (Battle Master)",
         "text": "When a creature misses you with a melee attack, you can use your reaction and expend one superiority die to make a melee weapon attack against the creature. If you hit, you add the superiority die to the attack's damage roll."
     },
     {
         "name": "River of Hungry Flame (17th level required)",
-        "level": "4th",
+        "level": "4th level",
         "school": "Evocation",
         "time": "1 Action",
         "range": "120 feet",
@@ -320,12 +320,12 @@ var spell = [{
             "",
             "One side of the wall, selected by you when you cast this spell, deals 5d8 fire damage to each creature that ends its turn within 10 feet of that side or inside the wall. A creature takes the same damage when it enters the wall for the first time on a turn or ends its turn there. The other side of the wall deals no damage.",
             "",
-            "At Higher Levels, when you cast this spell, the damage increases by 1d8 for each slot increased."
+            "<emph>At Higher Levels:</emph> when you cast this spell, the damage increases by 1d8 for each slot increased."
         ]
     },
     {
         "name": "Rush of the Gale Spirits",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 Action",
         "range": "Self (60-foot line)",
@@ -344,7 +344,7 @@ var spell = [{
     },
     {
         "name": "Shape the Flowing River",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 Action",
         "range": "30 foot side within 120 feet of you",
@@ -355,7 +355,7 @@ var spell = [{
     },
     {
         "name": "Silence (Monk)",
-        "level": "1st",
+        "level": "1st level",
         "school": "Illusion",
         "time": "1 action",
         "range": "120 feet",
@@ -366,14 +366,14 @@ var spell = [{
     },
     {
         "name": "Sweeping Attack",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "classes": "Fighter (Battle Master)",
         "text": "When you hit a creature with a melee weapon attack, you can expend one superiority die to attempt to damage another creature with the same attack. Choose another creature within 5 feet of the original target and within your reach. If the original attack roll would hit the second creature, it takes damage equal to the number you roll on your superiority die. The damage is of the same type dealt by the original attack."
     },
     {
         "name": "Sweeping Cinder Strike",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 Action",
         "range": "Self (15-foot cone)",
@@ -390,14 +390,14 @@ var spell = [{
     },
     {
         "name": "Trip Attack",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "classes": "Fighter (Battle Master)",
         "text": "When you hit a creature with a weapon attack, you can expend one superiority die to attempt to knock the target down. You add the superiority die to the attack's damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you knock the target prone."
     },
     {
         "name": "Water Whip",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 Bonus Action",
         "range": "30 feet",
@@ -408,7 +408,7 @@ var spell = [{
     },
     {
         "name": "Wave of Rolling Earth (17th level required)",
-        "level": "4th",
+        "level": "4th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "120 feet",
@@ -431,7 +431,7 @@ var spell = [{
     },
     {
         "name": "Abi-Dalzim's Horrid Wilting (EE)",
-        "level": "8th",
+        "level": "8th level",
         "school": "Necromancy",
         "time": "1 action",
         "range": "150 feet",
@@ -447,7 +447,7 @@ var spell = [{
     },
     {
         "name": "Absorb Elements (EE)",
-        "level": "1st",
+        "level": "1st level",
         "school": "Abjuration",
         "time": "1 reaction, which you take when you take acid, cold, fire, lightning, or thunder damage",
         "range": "Self",
@@ -457,7 +457,7 @@ var spell = [{
         "text": [
             "The spell captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack. You have resistance to the triggering damage type until the start of your next turn. Also, the first time you hit with a melee attack on your next turn, the target takes an extra 1d6 damage of the triggering type, and the spell ends.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st.",
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st.",
             "",
             "This spell can be found in the Elemental Evil Player's Companion"
         ],
@@ -486,7 +486,7 @@ var spell = [{
     },
     {
         "name": "Aganazzar's Scorcher (EE)",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "30 feet",
@@ -496,7 +496,7 @@ var spell = [{
         "text": [
             "A line of roaring flame 30 feet long and 5 feet wide emanates from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 3d8 fire damage on a failed save, or half as much damage on a successful one.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.",
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.",
             "",
             "This spell can be found in the Elemental Evil Player's Companion"
         ],
@@ -504,7 +504,7 @@ var spell = [{
     },
     {
         "name": "Aid",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "30 feet",
@@ -514,12 +514,12 @@ var spell = [{
         "text": [
             "Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd."
         ]
     },
     {
         "name": "Alarm",
-        "level": "1st",
+        "level": "1st level",
         "school": "Abjuration",
         "ritual": "YES",
         "time": "1 minute",
@@ -537,7 +537,7 @@ var spell = [{
     },
     {
         "name": "Alter Self",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Self",
@@ -557,7 +557,7 @@ var spell = [{
     },
     {
         "name": "Animal Friendship",
-        "level": "1st",
+        "level": "1st level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "30 feet",
@@ -567,12 +567,12 @@ var spell = [{
         "text": [
             "This spell lets you convince a beast that you mean it no harm. Choose a beast that you can see within range. It must see and hear you. If the beast's Intelligence is 4 or higher, the spell fails. Otherwise, the beast must succeed on a Wisdom saving throw or be charmed by you for the spell's duration. If you or one of your companions harms the target, the spell ends.",
             "",
-            "At Higher Levels: When you cast this spell using a 2nd level spell slot or higher, you can affect one additional beast for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a 2nd level spell slot or higher, you can affect one additional beast for each slot level above 1st."
         ]
     },
     {
         "name": "Animal Messenger",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Enchantment",
         "ritual": "YES",
         "time": "1 action",
@@ -585,12 +585,12 @@ var spell = [{
             "",
             "When the messenger arrives, it delivers your message to the creature that you described, replicating the sound of your voice. The messenger speaks only to a creature matching the description you gave. If the messenger doesn't reach its destination before the spell ends, the message is lost, and the beast makes its way back to where you cast this spell.",
             "",
-            "At Higher Levels: If you cast this spell using a spell slot of 3rd level or higher, the duration of the spell increases by 48 hours for each slot level above 2nd."
+            "<emph>At Higher Levels:</emph> If you cast this spell using a spell slot of 3rd level or higher, the duration of the spell increases by 48 hours for each slot level above 2nd."
         ]
     },
     {
         "name": "Animal Shapes",
-        "level": "8th",
+        "level": "8th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "30 feet",
@@ -607,7 +607,7 @@ var spell = [{
     },
     {
         "name": "Animate Dead",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Necromancy",
         "time": "1 minute",
         "range": "10 feet",
@@ -621,12 +621,12 @@ var spell = [{
             "",
             "The creature is under your control for 24 hours, after which it stops obeying any command you've given it. To maintain the control of the creature for another 24 hours, you must cast this spell on the creature again before the current 24-hour period ends. This use of the spell reasserts your control over up to four creatures you have animated with this spell, rather than animating a new one.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, you animate or reassert control over two additional undead creatures for each slot above 3rd. Each of the creatures must come from a different corpse or pile of bones."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 4th level or higher, you animate or reassert control over two additional undead creatures for each slot above 3rd. Each of the creatures must come from a different corpse or pile of bones."
         ]
     },
     {
         "name": "Animate Objects",
-        "level": "5th",
+        "level": "5th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "120 feet",
@@ -654,12 +654,12 @@ var spell = [{
             "",
             "If you command an object to attack, it can make a single melee attack against a creature within 5 feet of it. It makes a slam attack with an attack bonus and bludgeoning damage determine by its size. The DM might rule that a specific object inflicts slashing or piercing damage based on its form.",
             "",
-            "At Higher Levels: If you cast this spell using a spell slot of 6th level or higher, you can animate two additional objects for each slot level above 5th."
+            "<emph>At Higher Levels:</emph> If you cast this spell using a spell slot of 6th level or higher, you can animate two additional objects for each slot level above 5th."
         ]
     },
     {
         "name": "Antilife Shell",
-        "level": "5th",
+        "level": "5th level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Self (10-foot radius)",
@@ -676,7 +676,7 @@ var spell = [{
     },
     {
         "name": "Antimagic Field",
-        "level": "8th",
+        "level": "8th level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Self (10-foot-radius sphere)",
@@ -705,7 +705,7 @@ var spell = [{
     },
     {
         "name": "Antipathy/Sympathy",
-        "level": "8th",
+        "level": "8th level",
         "school": "Enchantment",
         "time": "1 hour",
         "range": "60 feet",
@@ -726,7 +726,7 @@ var spell = [{
     },
     {
         "name": "Arcane Eye",
-        "level": "4th",
+        "level": "4th level",
         "school": "Divination",
         "time": "1 action",
         "range": "30 feet",
@@ -743,7 +743,7 @@ var spell = [{
     },
     {
         "name": "Arcane Gate",
-        "level": "6th",
+        "level": "6th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "500 feet",
@@ -760,7 +760,7 @@ var spell = [{
     },
     {
         "name": "Arcane Lock",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Touch",
@@ -775,7 +775,7 @@ var spell = [{
     },
     {
         "name": "Armor of Agathys",
-        "level": "1st",
+        "level": "1st level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Self",
@@ -785,12 +785,12 @@ var spell = [{
         "text": [
             "A protective magical force surrounds you, manifesting as a spectral frost that covers you and your gear. You gain 5 temporary hit points for the duration. If a creature hits you with a melee attack while you have these hit points, the creature takes 5 cold damage.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, both the temporary hit points and the cold damage increase by 5 for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, both the temporary hit points and the cold damage increase by 5 for each slot level above 1st."
         ]
     },
     {
         "name": "Arms of Hadar",
-        "level": "1st",
+        "level": "1st level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "Self (10-foot radius)",
@@ -800,13 +800,13 @@ var spell = [{
         "text": [
             "You invoke the power of Hadar, the Dark Hunger. Tendrils of dark energy erupt from you and batter all creatures within 10 feet of you. Each creature in that area must make a Strength saving throw. On a failed save, a target takes 2d6 necrotic damage and can't take reactions until its next turn. On a successful save, the creature takes half damage, but suffers no other effect.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
         ],
         "roll": "2d6"
     },
     {
         "name": "Astral Projection",
-        "level": "9th",
+        "level": "9th level",
         "school": "Necromancy",
         "time": "1 hour",
         "range": "10 feet",
@@ -829,7 +829,7 @@ var spell = [{
     },
     {
         "name": "Augury",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Divination",
         "ritual": "YES",
         "time": "1 minute",
@@ -855,7 +855,7 @@ var spell = [{
     },
     {
         "name": "Aura of Life",
-        "level": "4th",
+        "level": "4th level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Self (30-foot radius)",
@@ -866,7 +866,7 @@ var spell = [{
     },
     {
         "name": "Aura of Purity",
-        "level": "4th",
+        "level": "4th level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Self (30-foot radius)",
@@ -877,7 +877,7 @@ var spell = [{
     },
     {
         "name": "Aura of Vitality",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "Self (30-foot radius)",
@@ -889,7 +889,7 @@ var spell = [{
     },
     {
         "name": "Awaken",
-        "level": "5th",
+        "level": "5th level",
         "school": "Transmutation",
         "time": "8 hours",
         "range": "Touch",
@@ -904,7 +904,7 @@ var spell = [{
     },
     {
         "name": "Bane",
-        "level": "1st",
+        "level": "1st level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "30 feet",
@@ -914,12 +914,12 @@ var spell = [{
         "text": [
             "Up to three creatures of your choice that you can see within range must make Charisma saving throws. Whenever a target that fails this saving throw makes an attack roll or a saving throw before the spell ends, the target must roll a d4 and subtract the number rolled from the attack roll or saving throw.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st."
         ]
     },
     {
         "name": "Banishing Smite",
-        "level": "5th",
+        "level": "5th level",
         "school": "Abjuration",
         "time": "1 bonus action",
         "range": "Self",
@@ -931,7 +931,7 @@ var spell = [{
     },
     {
         "name": "Banishment",
-        "level": "4th",
+        "level": "4th level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "60 feet",
@@ -945,12 +945,12 @@ var spell = [{
             "",
             "If the target is native to a different plane of existence that the one you're on, the target is banished with a faint popping noise, returning to its home plane. If the spell ends before 1 minute has passed, the target reappears in the space it left or in the nearest unoccupied space if that space is occupied. Otherwise, the target doesn't return.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 5th level or higher, you can target one additional creature for each slot level above 4th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 5th level or higher, you can target one additional creature for each slot level above 4th."
         ]
     },
     {
         "name": "Barkskin",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Touch",
@@ -961,7 +961,7 @@ var spell = [{
     },
     {
         "name": "Beacon of Hope",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "30 feet",
@@ -972,7 +972,7 @@ var spell = [{
     },
     {
         "name": "Beast Bond (EE)",
-        "level": "1st",
+        "level": "1st level",
         "school": "Divination",
         "time": "1 action",
         "range": "Touch",
@@ -987,7 +987,7 @@ var spell = [{
     },
     {
         "name": "Beast Sense",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Divination",
         "ritual": "YES",
         "time": "1 action",
@@ -999,7 +999,7 @@ var spell = [{
     },
     {
         "name": "Bestow Curse",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Necromancy",
         "time": "1 action",
         "range": "Touch",
@@ -1019,12 +1019,12 @@ var spell = [{
             "",
             "A remove curse spell ends this effect. At the DM's option, you may choose an alternative curse effect, but it should be no more powerful than those described above. The DM has final say on such a curse's effect.",
             "",
-            "At Higher Levels: If you cast this spell using a spell slot of 4th level or higher, the duration is concentration, up to 10 minutes. If you use a spell slot of 5th level or higher, the duration is 8 hours. If you use a spell slot of 7th level or higher, the duration is 24 hours. If you use a 9th level spell slot, the spell lasts until it is dispelled. Using a spell slot of 5th level or higher grants a duration that doesn't require concentration."
+            "<emph>At Higher Levels:</emph> If you cast this spell using a spell slot of 4th level or higher, the duration is concentration, up to 10 minutes. If you use a spell slot of 5th level or higher, the duration is 8 hours. If you use a spell slot of 7th level or higher, the duration is 24 hours. If you use a 9th level spell slot, the spell lasts until it is dispelled. Using a spell slot of 5th level or higher grants a duration that doesn't require concentration."
         ]
     },
     {
         "name": "Bigby's Hand",
-        "level": "5th",
+        "level": "5th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "120 feet",
@@ -1046,7 +1046,7 @@ var spell = [{
             "",
             "Interposing Hand. The hand interposes itself between you and a creature you choose until you give the hand a different command. The hand moves to stay between you and the target, providing you with half cover against the target. The target can't move through the hand's space if its Strength score is less than or equal to the hand's Strength score. If its Strength score is higher than the hand's Strength score, the target can move toward you through the hand's space, but that space is difficult terrain for the target.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 6th level or higher, the damage from the clenched fist option increases by 2d8 and the damage from the grasping hand increases by 2d6 for each slot level above 5th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 6th level or higher, the damage from the clenched fist option increases by 2d8 and the damage from the grasping hand increases by 2d6 for each slot level above 5th."
         ],
         "roll": [
             "1d20+SPELL+PROF",
@@ -1057,7 +1057,7 @@ var spell = [{
     },
     {
         "name": "Blade Barrier",
-        "level": "6th",
+        "level": "6th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "90 feet",
@@ -1084,7 +1084,7 @@ var spell = [{
     },
     {
         "name": "Bless",
-        "level": "1st",
+        "level": "1st level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "30 feet",
@@ -1094,12 +1094,12 @@ var spell = [{
         "text": [
             "You bless up to three creatures of your choice within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target can roll a d4 and add the number rolled to the attack roll or saving throw.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st."
         ]
     },
     {
         "name": "Blight",
-        "level": "4th",
+        "level": "4th level",
         "school": "Necromancy",
         "time": "1 action",
         "range": "30 feet",
@@ -1113,13 +1113,13 @@ var spell = [{
             "",
             "If you target a nonmagical plant that isn't a creature, such as a tree or shrub, it doesn't make a saving throw, it simply withers and dies.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d8 for each slot level above 4th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d8 for each slot level above 4th."
         ],
         "roll": "8d8"
     },
     {
         "name": "Blinding Smite",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Evocation",
         "time": "1 bonus action",
         "range": "Self",
@@ -1135,7 +1135,7 @@ var spell = [{
     },
     {
         "name": "Blindness/Deafness",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Necromancy",
         "time": "1 action",
         "range": "30 feet",
@@ -1145,12 +1145,12 @@ var spell = [{
         "text": [
             "You can blind or deafen a foe. Choose one creature that you can see within range to make a Constitution saving throw. If it fails, the target is either blinded or deafened (your choice) for the duration. At the end of each of its turns, the target can make a Constitution saving throw. On a success, the spell ends.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd."
         ]
     },
     {
         "name": "Blink",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Self",
@@ -1166,7 +1166,7 @@ var spell = [{
     },
     {
         "name": "Blur",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Illusion",
         "time": "1 action",
         "range": "Self",
@@ -1177,7 +1177,7 @@ var spell = [{
     },
     {
         "name": "Bones of the Earth (EE)",
-        "level": "6th",
+        "level": "6th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "120 feet",
@@ -1189,7 +1189,7 @@ var spell = [{
             "",
             "If a pillar is created under a creature, that creature must succeed on a Dexterity saving throw or be lifted by the pillar. A creature can choose to fail the save.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 7th level or higher, you can create two additional pillars for each slot level above 6th.",
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 7th level or higher, you can create two additional pillars for each slot level above 6th.",
             "",
             "This spell can be found in the Elemental Evil Player's Companion"
         ]
@@ -1216,7 +1216,7 @@ var spell = [{
     },
     {
         "name": "Branding Smite",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Evocation",
         "time": "1 bonus action",
         "range": "Self",
@@ -1226,13 +1226,13 @@ var spell = [{
         "text": [
             "The next time you hit a creature with a weapon attack before this spell ends, the weapon gleams with astral radiance as you strike. The attack deals an extra 2d6 radiant damage to the target, which becomes visible if it is invisible, and the target sheds dim light in a 5-foot radius and can't become invisible until the spell ends.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, the extra damage increases by 1d6 for each slot level above 2nd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, the extra damage increases by 1d6 for each slot level above 2nd."
         ],
         "roll": "2d6"
     },
     {
         "name": "Burning Hands",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 action",
         "range": "Self (15-foot cone)",
@@ -1244,13 +1244,13 @@ var spell = [{
             "",
             "The fire ignites any flammable objects in the area that aren't being worn or carried.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
         ],
         "roll": "3d6"
     },
     {
         "name": "Call Lightning",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "120 feet",
@@ -1264,13 +1264,13 @@ var spell = [{
             "",
             "If you are outdoors in stormy conditions when you cast this spell, the spell gives you control over the existing storm instead of creating a new one. Under such conditions, the spell's damage increases by 1d10.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher level, the damage increases by 1d10 for each slot level above 3rd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 4th level or higher level, the damage increases by 1d10 for each slot level above 3rd."
         ],
         "roll": "3d10"
     },
     {
         "name": "Calm Emotions",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "60 feet",
@@ -1287,7 +1287,7 @@ var spell = [{
     },
     {
         "name": "Catapult (EE)",
-        "level": "1st",
+        "level": "1st level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "150 feet",
@@ -1297,7 +1297,7 @@ var spell = [{
         "text": [
             "Choose one object weighing 1 to 5 pounds within range that isn't being worn or carried. The object flies in a straight line up to 90 feet in a direction you choose before falling to the ground, stopping early if it impacts against a solid surface. If the object would strike a creature, that creature must make a Dexterity saving throw. On a failed save, the object strikes the target and stops moving. In either case, both the object and the creature or solid surface take 3d8 bludgeoning damage.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the maximum weight of objects that you can target with this spell increases by 5 pounds, and the damage",
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the maximum weight of objects that you can target with this spell increases by 5 pounds, and the damage",
             "",
             "This spell can be found in the Elemental Evil Player's Companion"
         ],
@@ -1305,7 +1305,7 @@ var spell = [{
     },
     {
         "name": "Chain Lightning",
-        "level": "6th",
+        "level": "6th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "150 feet",
@@ -1317,13 +1317,13 @@ var spell = [{
             "",
             "A target must make a Dexterity saving throw. The target takes 10d8 lightning damage on a failed save, or half as much on a successful one.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 7th level or higher, one additional bolt leaps from the first target to another target for each slot level above 6th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 7th level or higher, one additional bolt leaps from the first target to another target for each slot level above 6th."
         ],
         "roll": "10d8"
     },
     {
         "name": "Charm Person",
-        "level": "1st",
+        "level": "1st level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "30 feet",
@@ -1333,7 +1333,7 @@ var spell = [{
         "text": [
             "You attempt to charm a humanoid you can see within range. It must make a Wisdom saving throw, and does so with advantage if you or your companions are fighting it. If it fails the saving throw, it is charmed by you until the spell ends or until you or your companions do anything harmful to it. The charmed creature regards you as a friendly acquaintance. When the spell ends, the creature knows it was charmed by you.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them."
         ]
     },
     {
@@ -1362,7 +1362,7 @@ var spell = [{
     },
     {
         "name": "Chromatic Orb",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 action",
         "range": "90 feet",
@@ -1370,9 +1370,9 @@ var spell = [{
         "duration": "Instantaneous",
         "classes": "Sorcerer, Wizard, Fighter (Eldritch Knight)",
         "text": [
-            "You hurl a 4-inch-diameter sphere of energy at a creature that you can see within range. You choose acid, cold, fire, lightning, poison, or thunder for the type of orb you create, and then make a ranged spell attack against the target. If the attack hits, the creature takes 3d8 damage of the type you chose. At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+            "You hurl a 4-inch-diameter sphere of energy at a creature that you can see within range. You choose acid, cold, fire, lightning, poison, or thunder for the type of orb you create, and then make a ranged spell attack against the target. If the attack hits, the creature takes 3d8 damage of the type you chose. <emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st."
         ],
         "roll": [
             "1d20+SPELL+PROF",
@@ -1381,7 +1381,7 @@ var spell = [{
     },
     {
         "name": "Circle of Death",
-        "level": "6th",
+        "level": "6th level",
         "school": "Necromancy",
         "time": "1 action",
         "range": "150 feet",
@@ -1391,13 +1391,13 @@ var spell = [{
         "text": [
             "A sphere of negative energy ripples out in a 60-foot-radius sphere from a point within range. Each creature in that area must make a Constitution saving throw. A target takes 8d6 necrotic damage on a failed save, or half as much damage on a successful one.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 7th level or higher, the damage increases by 2d6 for each slot level above 6th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 7th level or higher, the damage increases by 2d6 for each slot level above 6th."
         ],
         "roll": "8d6"
     },
     {
         "name": "Circle of Power",
-        "level": "5th",
+        "level": "5th level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Self (30-foot radius)",
@@ -1408,7 +1408,7 @@ var spell = [{
     },
     {
         "name": "Clairvoyance",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Divination",
         "time": "10 minutes",
         "range": "1 mile",
@@ -1425,7 +1425,7 @@ var spell = [{
     },
     {
         "name": "Clone",
-        "level": "8th",
+        "level": "8th level",
         "school": "Necromancy",
         "time": "1 hour",
         "range": "Touch",
@@ -1440,7 +1440,7 @@ var spell = [{
     },
     {
         "name": "Cloud of Daggers",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "60 feet",
@@ -1450,13 +1450,13 @@ var spell = [{
         "text": [
             "You fill the air with spinning daggers in a cube 5 feet on each side, centered on a point you choose within range. A creature takes 4d4 slashing damage when it enters the spell's area for the first time on a turn or starts its turn there.",
             "",
-            "At Higher Levels: when you cast this spell using a spell slot of 3rd level or higher, the damage increases by 2d4 for each slot level above 2nd."
+            "<emph>At Higher Levels:</emph> when you cast this spell using a spell slot of 3rd level or higher, the damage increases by 2d4 for each slot level above 2nd."
         ],
         "roll": "4d4"
     },
     {
         "name": "Cloudkill",
-        "level": "5th",
+        "level": "5th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "120 feet",
@@ -1468,15 +1468,15 @@ var spell = [{
             "",
             "When a creature enters the spell's area for the first time on a turn or starts its turn there, that creature must make a Constitution saving throw. The creature takes 5d8 poison damage on a failed save, or half as much damage on a successful one. Creatures are affected even if they hold their breath or don't need to breathe.",
             "",
-            "The fog moves 10 feet away from you at the start of each of your turns, rolling along the surface of the ground. The vapors, being heavier than air, sink to the lowest level of the land, even pouring down openings. At Higher Levels: When you cast this spell using a spell slot of 6th level or higher, the damage increases by 1d8 for each slot level above 5th.",
+            "The fog moves 10 feet away from you at the start of each of your turns, rolling along the surface of the ground. The vapors, being heavier than air, sink to the lowest level of the land, even pouring down openings. <emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 6th level or higher, the damage increases by 1d8 for each slot level above 5th.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 5th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 5th."
         ],
         "roll": "5d8"
     },
     {
         "name": "Color Spray",
-        "level": "1st",
+        "level": "1st level",
         "school": "Illusion",
         "time": "1 action",
         "range": "Self (15-foot cone)",
@@ -1488,13 +1488,13 @@ var spell = [{
             "",
             "Starting with the creature that has the lowest current hit points, each creature affected by this spell is blinded until the spell ends. Subtract each creature's hit points from the total before moving on to the creature with the next lowest hit points. A creature's hit points must be equal to or less than the remaining total for the creature to be affected.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, roll an additional 2d10 for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, roll an additional 2d10 for each slot level above 1st."
         ],
         "roll": "6d10"
     },
     {
         "name": "Command",
-        "level": "1st",
+        "level": "1st level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "60 feet",
@@ -1516,12 +1516,12 @@ var spell = [{
             "",
             "Halt: The target doesn't move and takes no actions. A flying creature stays aloft, provided that it is able to do so. If it must move to stay aloft, it flies the minimum distance needed to remain in the air.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them."
         ]
     },
     {
         "name": "Commune",
-        "level": "5th",
+        "level": "5th level",
         "school": "Divination",
         "ritual": "YES",
         "time": "1 minute",
@@ -1539,7 +1539,7 @@ var spell = [{
     },
     {
         "name": "Commune with Nature",
-        "level": "5th",
+        "level": "5th level",
         "school": "Divination",
         "ritual": "YES",
         "time": "1 minute",
@@ -1557,7 +1557,7 @@ var spell = [{
     },
     {
         "name": "Compelled Duel",
-        "level": "1st",
+        "level": "1st level",
         "school": "Enchantment",
         "time": "1 bonus action",
         "range": "30 feet",
@@ -1572,7 +1572,7 @@ var spell = [{
     },
     {
         "name": "Comprehend Languages",
-        "level": "1st",
+        "level": "1st level",
         "school": "Divination",
         "ritual": "YES",
         "time": "1 action",
@@ -1588,7 +1588,7 @@ var spell = [{
     },
     {
         "name": "Compulsion",
-        "level": "4th",
+        "level": "4th level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "30 feet",
@@ -1603,7 +1603,7 @@ var spell = [{
     },
     {
         "name": "Cone of Cold",
-        "level": "5th",
+        "level": "5th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "Self (60-foot cone)",
@@ -1615,13 +1615,13 @@ var spell = [{
             "",
             "A creature killed by this spell becomes a frozen statue until it thaws.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 6th level or higher, the damage increases by 1d8 for each slot level above 5th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 6th level or higher, the damage increases by 1d8 for each slot level above 5th."
         ],
         "roll": "8d8"
     },
     {
         "name": "Confusion",
-        "level": "4th",
+        "level": "4th level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "90 feet",
@@ -1643,13 +1643,13 @@ var spell = [{
             "",
             "At the end of its turns, an affected target can make a Wisdom saving throw. If it succeeds, this effect ends for that target.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 5th level or higher, the radius of the sphere increases by 5 feet for each slot above 4th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 5th level or higher, the radius of the sphere increases by 5 feet for each slot above 4th."
         ],
         "roll": "1d8"
     },
     {
         "name": "Conjure Animals",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "60 feet",
@@ -1671,12 +1671,12 @@ var spell = [{
             "",
             "The summoned creatures are friendly to you and your companions. Roll initiative for the summoned creatures as a group, which has its own turns. They obey any verbal commands that you issue to them (no action required by you). If you don't issue any commands to them, they defend themselves from hostile creatures, but otherwise take no actions. The DM has the creatures' statistics.",
             "",
-            "At Higher Levels: When you cast this spell using certain higher-level spell slots, you choose one of the summoning options above, and more creatures appear - twice as many with a 5th-level slot, three times as many with a 7th-level slot, and four times as many with a 9th-level slot."
+            "<emph>At Higher Levels:</emph> When you cast this spell using certain higher-level spell slots, you choose one of the summoning options above, and more creatures appear - twice as many with a 5th-level slot, three times as many with a 7th-level slot, and four times as many with a 9th-level slot."
         ]
     },
     {
         "name": "Conjure Barrage",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "Self (60-foot cone)",
@@ -1688,7 +1688,7 @@ var spell = [{
     },
     {
         "name": "Conjure Celestial",
-        "level": "7th",
+        "level": "7th level",
         "school": "Conjuration",
         "time": "1 minute",
         "range": "90 feet",
@@ -1698,14 +1698,14 @@ var spell = [{
         "text": [
             "You summon a celestial of challenge rating 4 or lower, which appears in an unoccupied space that you can see within range. The celestial disappears when it drops to 0 hit points or when the spell ends.",
             "",
-            "The celestial is friendly to you and your companions for the duration. Roll initiative for the celestial, which has its own turns. It obeys any verbal commands that you issue to it (no action required by you), as long as they don't violate its alignment. If you don't issue any commands to the celestial, it defends itself from hostile creatures but otherwise takes no actions The DM has the celestial's statistics. At Higher Levels:",
+            "The celestial is friendly to you and your companions for the duration. Roll initiative for the celestial, which has its own turns. It obeys any verbal commands that you issue to it (no action required by you), as long as they don't violate its alignment. If you don't issue any commands to the celestial, it defends itself from hostile creatures but otherwise takes no actions The DM has the celestial's statistics. <emph>At Higher Levels:</emph>",
             "",
             "When you cast this spell using a 9th-level spell slot, you summon a celestial of challenge rating 5 or lower."
         ]
     },
     {
         "name": "Conjure Elemental",
-        "level": "5th",
+        "level": "5th level",
         "school": "Conjuration",
         "time": "1 minute",
         "range": "90 feet",
@@ -1719,12 +1719,12 @@ var spell = [{
             "",
             "If your concentration is broken, the elemental doesn't disappear. Instead, you lose control of the elemental, it becomes hostile toward you and your companions, and it might attack. An uncontrolled elemental can't be dismissed by you, and it disappears 1 hour after you summoned it. The DM has the elemental's statistics.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 6th level or higher, the challenge rating increases by 1 for each slot level above 5th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 6th level or higher, the challenge rating increases by 1 for each slot level above 5th."
         ]
     },
     {
         "name": "Conjure Fey",
-        "level": "6th",
+        "level": "6th level",
         "school": "Conjuration",
         "time": "1 minute",
         "range": "90 feet",
@@ -1738,12 +1738,12 @@ var spell = [{
             "",
             "If your concentration is broken, the fey creature doesn't disappear. Instead, you lose control of the fey creature, it becomes hostile toward you and your companions, and it might attack. An uncontrolled fey creature can't be dismissed by you, and it disappears 1 hour after you summoned it. The DM has the fey creature's statistics.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 7th level or higher, the challenge rating increases by 1 for each slot level above 6th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 7th level or higher, the challenge rating increases by 1 for each slot level above 6th."
         ]
     },
     {
         "name": "Conjure Minor Elementals",
-        "level": "4th",
+        "level": "4th level",
         "school": "Conjuration",
         "time": "1 minute",
         "range": "90 feet",
@@ -1765,12 +1765,12 @@ var spell = [{
             "",
             "The summoned creatures are friendly to you and your companions. Roll initiative for the summoned creatures as a group, which has its own turns. They obey any verbal commands that you issue to them (no action required by you). If you don't issue any commands to them, they defend themselves from hostile creatures, but otherwise take no actions. The DM has the creatures' statistics.",
             "",
-            "At Higher Levels: When you cast this spell using certain higher-level spell slots, you choose one of the summoning options above, and more creatures appear - twice as many with a 6th-level slot and three times as many with an 8th-level slot"
+            "<emph>At Higher Levels:</emph> When you cast this spell using certain higher-level spell slots, you choose one of the summoning options above, and more creatures appear - twice as many with a 6th-level slot and three times as many with an 8th-level slot"
         ]
     },
     {
         "name": "Conjure Volley",
-        "level": "5th",
+        "level": "5th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "150 feet",
@@ -1782,7 +1782,7 @@ var spell = [{
     },
     {
         "name": "Conjure Woodland Beings",
-        "level": "4th",
+        "level": "4th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "60 feet",
@@ -1802,12 +1802,12 @@ var spell = [{
             "",
             "A summoned creature disappears when it drops to 0 hit points or when the spell ends. The summoned creatures are friendly to you and your companions. Roll initiative for the summoned creatures as a group, which have their own turns. They obey any verbal commands that you issue to them (no action required by you). If you don't issue any commands to them, they defend themselves from hostile creatures, but otherwise take no actions. The DM has the creatures' statistics.",
             "",
-            "At Higher Levels: When you cast this spell using certain higher-level spell slots, you choose one of the summoning options above, and more creatures appear - twice as many with a 6th-level slot and three times as many with an 8th-level slot."
+            "<emph>At Higher Levels:</emph> When you cast this spell using certain higher-level spell slots, you choose one of the summoning options above, and more creatures appear - twice as many with a 6th-level slot and three times as many with an 8th-level slot."
         ]
     },
     {
         "name": "Contact Other Plane",
-        "level": "5th",
+        "level": "5th level",
         "school": "Divination",
         "ritual": "YES",
         "time": "1 minute",
@@ -1824,7 +1824,7 @@ var spell = [{
     },
     {
         "name": "Contagion",
-        "level": "5th",
+        "level": "5th level",
         "school": "Necromancy",
         "time": "1 action",
         "range": "Touch",
@@ -1854,7 +1854,7 @@ var spell = [{
     },
     {
         "name": "Contingency",
-        "level": "6th",
+        "level": "6th level",
         "school": "Evocation",
         "time": "10 minutes",
         "range": "Self",
@@ -1871,7 +1871,7 @@ var spell = [{
     },
     {
         "name": "Continual Flame",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "Touch",
@@ -1907,7 +1907,7 @@ var spell = [{
     },
     {
         "name": "Control Water",
-        "level": "4th",
+        "level": "4th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "300 feet",
@@ -1929,7 +1929,7 @@ var spell = [{
     },
     {
         "name": "Control Weather",
-        "level": "8th",
+        "level": "8th level",
         "school": "Transmutation",
         "time": "10 minutes",
         "range": "Self (5-mile radius)",
@@ -1969,7 +1969,7 @@ var spell = [{
     },
     {
         "name": "Control Winds (EE)",
-        "level": "5th",
+        "level": "5th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "300 feet",
@@ -1990,7 +1990,7 @@ var spell = [{
     },
     {
         "name": "Cordon of Arrows",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "5 feet",
@@ -2002,13 +2002,13 @@ var spell = [{
             "",
             "When you cast this spell, you can designate any creatures you choose, and the spell ignores them.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, the amount of ammunition that can be affected increases by two for each slot level above 2nd"
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, the amount of ammunition that can be affected increases by two for each slot level above 2nd"
         ],
         "roll": "1d6"
     },
     {
         "name": "Counterspell",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Abjuration",
         "time": "1 reaction",
         "range": "60 feet",
@@ -2046,7 +2046,7 @@ var spell = [{
     },
     {
         "name": "Create Food and Water",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "30 feet",
@@ -2057,7 +2057,7 @@ var spell = [{
     },
     {
         "name": "Create Undead",
-        "level": "6th",
+        "level": "6th level",
         "school": "Necromancy",
         "time": "1 minute",
         "range": "10 feet",
@@ -2071,12 +2071,12 @@ var spell = [{
             "",
             "The creature is under your control for 24 hours, after which it stops obeying any command you have given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature before the current 24-hour period ends. This use of the spell reasserts your control over up to three creatures you have animated with this spell, rather than animating new ones.",
             "",
-            "At Higher Levels: When you cast this spell using a 7th-level spell slot, you can animate or reassert control over four ghouls. When you cast this spell using an 8th-level spell slot, you can animate or reassert control over five ghouls or two ghasts or wights. When you cast this spell using a 9th-level spell slot, you can animate or reassert control over six ghouls, three ghasts or wights, or two mummies"
+            "<emph>At Higher Levels:</emph> When you cast this spell using a 7th-level spell slot, you can animate or reassert control over four ghouls. When you cast this spell using an 8th-level spell slot, you can animate or reassert control over five ghouls or two ghasts or wights. When you cast this spell using a 9th-level spell slot, you can animate or reassert control over six ghouls, three ghasts or wights, or two mummies"
         ]
     },
     {
         "name": "Create or Destroy Water",
-        "level": "1st",
+        "level": "1st level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "30 feet",
@@ -2090,12 +2090,12 @@ var spell = [{
             "",
             "Destroy Water: You destroy up to 10 gallons of water in an open container within range. Alternatively, you destroy fog in a 30-foot cube within range.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, you create or destroy 10 additional gallons of water, or the size of the cube increases by 5 feet, for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, you create or destroy 10 additional gallons of water, or the size of the cube increases by 5 feet, for each slot level above 1st."
         ]
     },
     {
         "name": "Creation",
-        "level": "5th",
+        "level": "5th level",
         "school": "Illusion",
         "time": "1 minute",
         "range": "30 feet",
@@ -2116,12 +2116,12 @@ var spell = [{
             "",
             "Using any material created by this spell as another spell's material component causes that spell to fail.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 6th level or higher, the cube increases by 5 feet for each slot level above 5th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 6th level or higher, the cube increases by 5 feet for each slot level above 5th."
         ]
     },
     {
         "name": "Crown of Madness",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "120 feet",
@@ -2138,7 +2138,7 @@ var spell = [{
     },
     {
         "name": "Crusader's Mantle",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "Self",
@@ -2150,7 +2150,7 @@ var spell = [{
     },
     {
         "name": "Cure Wounds",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 action",
         "range": "Touch",
@@ -2160,7 +2160,7 @@ var spell = [{
         "text": [
             "A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st."
         ],
         "roll": "1d8+SPELL"
     },
@@ -2181,7 +2181,7 @@ var spell = [{
     },
     {
         "name": "Darkness",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "60 feet",
@@ -2198,7 +2198,7 @@ var spell = [{
     },
     {
         "name": "Darkvision",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Touch",
@@ -2209,7 +2209,7 @@ var spell = [{
     },
     {
         "name": "Daylight",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "60 feet",
@@ -2226,7 +2226,7 @@ var spell = [{
     },
     {
         "name": "Death Ward",
-        "level": "4th",
+        "level": "4th level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Touch",
@@ -2237,7 +2237,7 @@ var spell = [{
     },
     {
         "name": "Delayed Blast Fireball",
-        "level": "7th",
+        "level": "7th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "150 feet",
@@ -2253,13 +2253,13 @@ var spell = [{
             "",
             "The fire damages objects in the area and ignites flammable objects that aren't being worn or carried.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 8th level or higher, the base damage increases by 1d6 for each slot level above 7th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 8th level or higher, the base damage increases by 1d6 for each slot level above 7th."
         ],
         "roll": "12d6"
     },
     {
         "name": "Demiplane",
-        "level": "8th",
+        "level": "8th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "60 feet",
@@ -2274,7 +2274,7 @@ var spell = [{
     },
     {
         "name": "Destructive Wave",
-        "level": "5th",
+        "level": "5th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "Self (30-foot radius)",
@@ -2286,7 +2286,7 @@ var spell = [{
     },
     {
         "name": "Detect Evil and Good",
-        "level": "1st",
+        "level": "1st level",
         "school": "Divination",
         "time": "1 action",
         "range": "Self",
@@ -2297,7 +2297,7 @@ var spell = [{
     },
     {
         "name": "Detect Magic",
-        "level": "1st",
+        "level": "1st level",
         "school": "Divination",
         "ritual": "YES",
         "time": "1 action",
@@ -2313,7 +2313,7 @@ var spell = [{
     },
     {
         "name": "Detect Poison and Disease",
-        "level": "1st",
+        "level": "1st level",
         "school": "Divination",
         "time": "1 action",
         "range": "Self",
@@ -2328,7 +2328,7 @@ var spell = [{
     },
     {
         "name": "Detect Thoughts",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Divination",
         "time": "1 action",
         "range": "Self",
@@ -2349,7 +2349,7 @@ var spell = [{
     },
     {
         "name": "Dimension Door",
-        "level": "4th",
+        "level": "4th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "500 feet",
@@ -2367,7 +2367,7 @@ var spell = [{
     },
     {
         "name": "Disguise Self",
-        "level": "1st",
+        "level": "1st level",
         "school": "Illusion",
         "time": "1 action",
         "range": "Self",
@@ -2384,7 +2384,7 @@ var spell = [{
     },
     {
         "name": "Disintegrate",
-        "level": "6th",
+        "level": "6th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "60 feet",
@@ -2400,13 +2400,13 @@ var spell = [{
             "",
             "This spell automatically disintegrates a Large or smaller nonmagical object or a creation of magical force. If the target is a Huge or larger object or creation of force, this spell disintegrates a 10-foot-cube portion of it. A magic item is unaffected by this spell.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 7th level or higher, the damage increases by 3d6 for each slot level above 6th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 7th level or higher, the damage increases by 3d6 for each slot level above 6th."
         ],
         "roll": "10d6+40"
     },
     {
         "name": "Dispel Evil and Good",
-        "level": "5th",
+        "level": "5th level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Self",
@@ -2424,7 +2424,7 @@ var spell = [{
     },
     {
         "name": "Dispel Magic",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "120 feet",
@@ -2434,12 +2434,12 @@ var spell = [{
         "text": [
             "Choose any creature, object, or magical effect within range. Any spell of 3rd level or lower on the target ends. For each spell of 4th level or higher on the target, make an ability check using your spellcasting ability. The DC equals 10 + the spell's level. On a successful check, the spell ends.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, you automatically end the effects of a spell on the target if the spell's level is equal to or less than the level of the spell slot you used."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 4th level or higher, you automatically end the effects of a spell on the target if the spell's level is equal to or less than the level of the spell slot you used."
         ]
     },
     {
         "name": "Dissonant Whispers",
-        "level": "1st",
+        "level": "1st level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "60 feet",
@@ -2449,13 +2449,13 @@ var spell = [{
         "text": [
             "You whisper a discordant melody that only one creature of your choice within range can hear, wracking it with terrible pain. The target must make a Wisdom saving throw. On a failed save, it takes 3d6 psychic damage and must immediately use its reaction, if available, to move as far as its speed allows away from you. The creature doesn't move into obviously dangerous ground, such as a fire or a pit. On a successful save, the target takes half as much damage and doesn't have to move away. A deafened creature automatically succeeds on the save.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
         ],
         "roll": "3d6"
     },
     {
         "name": "Divination",
-        "level": "4th",
+        "level": "4th level",
         "school": "Divination",
         "ritual": "YES",
         "time": "1 action",
@@ -2473,7 +2473,7 @@ var spell = [{
     },
     {
         "name": "Divine Favor",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 bonus action",
         "range": "Self",
@@ -2484,7 +2484,7 @@ var spell = [{
     },
     {
         "name": "Divine Word",
-        "level": "7th",
+        "level": "7th level",
         "school": "Evocation",
         "time": "1 bonus action",
         "range": "30 feet",
@@ -2507,7 +2507,7 @@ var spell = [{
     },
     {
         "name": "Dominate Beast",
-        "level": "4th",
+        "level": "4th level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "60 feet",
@@ -2523,12 +2523,12 @@ var spell = [{
             "",
             "Each time the target takes damage, it makes a new Wisdom saving throw against the spell. If the saving throw succeeds, the spell ends.",
             "",
-            "At Higher Levels: When you cast this spell with a 5th-level spell slot, the duration is concentration, up to 10 minutes. When you use a 6th-level spell slot, the duration is concentration, up to 1 hour. When you use a spell slot of 7th level or higher, the duration is concentration, up to 8 hours."
+            "<emph>At Higher Levels:</emph> When you cast this spell with a 5th-level spell slot, the duration is concentration, up to 10 minutes. When you use a 6th-level spell slot, the duration is concentration, up to 1 hour. When you use a spell slot of 7th level or higher, the duration is concentration, up to 8 hours."
         ]
     },
     {
         "name": "Dominate Monster",
-        "level": "8th",
+        "level": "8th level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "60 feet",
@@ -2544,12 +2544,12 @@ var spell = [{
             "",
             "Each time the target takes damage, it makes a new Wisdom saving throw against the spell. If the saving throw succeeds, the spell ends.",
             "",
-            "At Higher Levels: When you cast this spell with a 9th-level spell slot, the duration is concentration, up to 8 hours."
+            "<emph>At Higher Levels:</emph> When you cast this spell with a 9th-level spell slot, the duration is concentration, up to 8 hours."
         ]
     },
     {
         "name": "Dominate Person",
-        "level": "5th",
+        "level": "5th level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "60 feet",
@@ -2565,12 +2565,12 @@ var spell = [{
             "",
             "Each time the target takes damage, it makes a new Wisdom saving throw against the spell. If the saving throw succeeds, the spell ends.",
             "",
-            "At Higher Levels: When you cast this spell using a 6th-level spell slot, the duration is concentration, up to 10 minutes. When you use a 7th-level spell slot, the duration is concentration, up to 1 hour. When you use a spell slot of 8th level or higher, the duration is concentration, up to 8 hours."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a 6th-level spell slot, the duration is concentration, up to 10 minutes. When you use a 7th-level spell slot, the duration is concentration, up to 1 hour. When you use a spell slot of 8th level or higher, the duration is concentration, up to 8 hours."
         ]
     },
     {
         "name": "Drawmij's Instant Summon",
-        "level": "6th",
+        "level": "6th level",
         "school": "Conjuration",
         "ritual": "YES",
         "time": "1 minute",
@@ -2590,7 +2590,7 @@ var spell = [{
     },
     {
         "name": "Dream",
-        "level": "5th",
+        "level": "5th level",
         "school": "Illusion",
         "time": "1 minute",
         "range": "Special",
@@ -2631,7 +2631,7 @@ var spell = [{
     },
     {
         "name": "Dust Devil (EE)",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "60 feet",
@@ -2645,7 +2645,7 @@ var spell = [{
             "",
             "As a bonus action, you can move the dust devil up to 30 feet in any direction. If the dust devil moves over sand, dust, loose dirt, or small gravel, it sucks up the material and forms a 10-foot-radius cloud of debris around itself that lasts until the start of your next turn. The cloud heavily obscures its area.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.",
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.",
             "",
             "This spell can be found in the Elemental Evil Player's Companion"
         ],
@@ -2653,7 +2653,7 @@ var spell = [{
     },
     {
         "name": "Earth Tremor (EE)",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 action",
         "range": "Self (10-foot radius)",
@@ -2663,7 +2663,7 @@ var spell = [{
         "text": [
             "You cause a tremor in the ground in a 10-foot radius. Each creature other than you in that area must make a Dexterity saving throw. On a failed save, a creature takes 1d6 bludgeoning damage and is knocked prone. If the ground in that area is loose earth or stone, it becomes difficult terrain until cleared.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
             "",
             "This spell can be found in the Elemental Evil Player's Companion"
         ],
@@ -2671,7 +2671,7 @@ var spell = [{
     },
     {
         "name": "Earthbind (EE)",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "300 feet",
@@ -2686,7 +2686,7 @@ var spell = [{
     },
     {
         "name": "Earthquake",
-        "level": "8th",
+        "level": "8th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "500 feet",
@@ -2734,7 +2734,7 @@ var spell = [{
     },
     {
         "name": "Elemental Bane (EE)",
-        "level": "4th",
+        "level": "4th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "90 feet",
@@ -2744,7 +2744,7 @@ var spell = [{
         "text": [
             "Choose one creature you can see within range, and choose one of the following damage types - acid, cold, fire, lightning, or thunder. The target must succeed on a Constitution saving throw or be affected by the spell for its duration. The first time each turn the affected target takes damage of the chosen type, the target takes an extra 2d6 damage of that type. Moreover, the target loses any resistance to that damage type until the spell ends.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 5th level or higher, you can target one additional creature for each slot level above 4th. The creatures must be within 30 feet of each other when you target them.",
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 5th level or higher, you can target one additional creature for each slot level above 4th. The creatures must be within 30 feet of each other when you target them.",
             "",
             "This spell can be found in the Elemental Evil Player's Companion"
         ],
@@ -2752,7 +2752,7 @@ var spell = [{
     },
     {
         "name": "Elemental Weapon",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Touch",
@@ -2762,13 +2762,13 @@ var spell = [{
         "text": [
             "A nonmagical weapon you touch becomes a magic weapon. Choose one of the following damage types - acid, cold, fire, lightning, or thunder. For the duration, the weapon has a +1 bonus to attack rolls and deals an extra 1d4 damage of the chosen type when it hits.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 5th or 6th level, the bonus to attack rolls increases to +2 and the extra damage increases to 2d4. When you use a spell slot of 7th level or higher, the bonus increases to +3 and the extra damage increases to 3d4."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 5th or 6th level, the bonus to attack rolls increases to +2 and the extra damage increases to 2d4. When you use a spell slot of 7th level or higher, the bonus increases to +3 and the extra damage increases to 3d4."
         ],
         "roll": "1d4"
     },
     {
         "name": "Enhance Ability",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Touch",
@@ -2790,12 +2790,12 @@ var spell = [{
             "",
             "Owl's Wisdom: The target has advantage on Wisdom checks.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd."
         ]
     },
     {
         "name": "Enlarge/Reduce",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "30 feet",
@@ -2814,7 +2814,7 @@ var spell = [{
     },
     {
         "name": "Ensnaring Strike",
-        "level": "1st",
+        "level": "1st level",
         "school": "Conjuration",
         "time": "1 bonus action",
         "range": "Self",
@@ -2826,13 +2826,13 @@ var spell = [{
             "",
             "While restrained by this spell, the target takes 1d6 piercing damage at the start of each of its turns. A creature restrained by the vines or one that can touch the creature can use its action to make a Strength check against your spell save DC. On a success, the target is freed.",
             "",
-            "At Higher Levels: If you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> If you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
         ],
         "roll": "1d6"
     },
     {
         "name": "Entangle",
-        "level": "1st",
+        "level": "1st level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "90 feet",
@@ -2849,7 +2849,7 @@ var spell = [{
     },
     {
         "name": "Enthrall",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "60 feet",
@@ -2860,7 +2860,7 @@ var spell = [{
     },
     {
         "name": "Erupting Earth (EE)",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "120 feet",
@@ -2870,7 +2870,7 @@ var spell = [{
         "text": [
             "Choose a point you can see on the ground within range. A fountain of churned earth and stone erupts in a 20-foot cube centered on that point. Each creature in that area must make a Dexterity saving throw. A creature takes 3d12 bludgeoning damage on a failed save, or half as much damage on a successful one. Additionally, the ground in that area becomes difficult terrain until cleared away. Each 5-foot-square portion of the area requires at least 1 minute to clear by hand.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d12 for each slot level above 2nd.",
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d12 for each slot level above 2nd.",
             "",
             "This spell can be found in the Elemental Evil Player's Companion"
         ],
@@ -2878,7 +2878,7 @@ var spell = [{
     },
     {
         "name": "Etherealness",
-        "level": "7th",
+        "level": "7th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Self",
@@ -2896,12 +2896,12 @@ var spell = [{
             "",
             "This spell has no effect if you cast it while you are on the Ethereal Plane or a plane that doesn't border it, such as one of the Outer Planes.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 8th level or higher, you can target up to three willing creatures (including you) for each slot level above 7th. The creatures must be within 10 feet of you when you cast the spell."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 8th level or higher, you can target up to three willing creatures (including you) for each slot level above 7th. The creatures must be within 10 feet of you when you cast the spell."
         ]
     },
     {
         "name": "Evard's Black Tentacles",
-        "level": "4th",
+        "level": "4th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "90 feet",
@@ -2919,7 +2919,7 @@ var spell = [{
     },
     {
         "name": "Expeditious Retreat",
-        "level": "1st",
+        "level": "1st level",
         "school": "Transmutation",
         "time": "1 bonus action",
         "range": "Self",
@@ -2930,7 +2930,7 @@ var spell = [{
     },
     {
         "name": "Eyebite",
-        "level": "6th",
+        "level": "6th level",
         "school": "Necromancy",
         "time": "1 action",
         "range": "Self",
@@ -2949,7 +2949,7 @@ var spell = [{
     },
     {
         "name": "Fabricate",
-        "level": "4th",
+        "level": "4th level",
         "school": "Transmutation",
         "time": "10 minutes",
         "range": "120 feet",
@@ -2966,7 +2966,7 @@ var spell = [{
     },
     {
         "name": "Faerie Fire",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 action",
         "range": "60 feet",
@@ -2981,7 +2981,7 @@ var spell = [{
     },
     {
         "name": "False Life",
-        "level": "1st",
+        "level": "1st level",
         "school": "Necromancy",
         "time": "1 action",
         "range": "Self",
@@ -2991,13 +2991,13 @@ var spell = [{
         "text": [
             "Bolstering yourself with a necromantic facsimile of life, you gain 1d4+4 temporary hit points for the duration.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, you gain 5 additional temporary hit points for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, you gain 5 additional temporary hit points for each slot level above 1st."
         ],
         "roll": "1d4+4"
     },
     {
         "name": "Fear",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Illusion",
         "time": "1 action",
         "range": "Self (30-foot cone)",
@@ -3012,7 +3012,7 @@ var spell = [{
     },
     {
         "name": "Feather Fall",
-        "level": "1st",
+        "level": "1st level",
         "school": "Transmutation",
         "time": "1 reaction",
         "range": "60 feet",
@@ -3023,7 +3023,7 @@ var spell = [{
     },
     {
         "name": "Feeblemind",
-        "level": "8th",
+        "level": "8th level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "150 feet",
@@ -3043,7 +3043,7 @@ var spell = [{
     },
     {
         "name": "Feign Death",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Necromancy",
         "ritual": "YES",
         "time": "1 action",
@@ -3059,7 +3059,7 @@ var spell = [{
     },
     {
         "name": "Find Familiar",
-        "level": "1st",
+        "level": "1st level",
         "school": "Conjuration",
         "ritual": "YES",
         "time": "1 hour",
@@ -3083,7 +3083,7 @@ var spell = [{
     },
     {
         "name": "Find Steed",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Conjuration",
         "time": "10 minutes",
         "range": "30 feet",
@@ -3104,7 +3104,7 @@ var spell = [{
     },
     {
         "name": "Find Traps",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Divination",
         "time": "1 action",
         "range": "120 feet",
@@ -3119,7 +3119,7 @@ var spell = [{
     },
     {
         "name": "Find the Path",
-        "level": "6th",
+        "level": "6th level",
         "school": "Divination",
         "time": "1 minute",
         "range": "Self",
@@ -3134,7 +3134,7 @@ var spell = [{
     },
     {
         "name": "Finger of Death",
-        "level": "7th",
+        "level": "7th level",
         "school": "Necromancy",
         "time": "1 action",
         "range": "60 feet",
@@ -3172,7 +3172,7 @@ var spell = [{
     },
     {
         "name": "Fire Shield",
-        "level": "4th",
+        "level": "4th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "Self",
@@ -3190,7 +3190,7 @@ var spell = [{
     },
     {
         "name": "Fire Storm",
-        "level": "7th",
+        "level": "7th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "150 feet",
@@ -3206,7 +3206,7 @@ var spell = [{
     },
     {
         "name": "Fireball",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "150 feet",
@@ -3218,13 +3218,13 @@ var spell = [{
             "",
             "The fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd."
         ],
         "roll": "8d6"
     },
     {
         "name": "Flame Arrows (EE)",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Touch",
@@ -3234,7 +3234,7 @@ var spell = [{
         "text": [
             "You touch a quiver containing arrows or bolts. When a target is hit by a ranged weapon attack using a piece of ammunition drawn from the quiver, the target takes an extra 1d6 fire damage. The spell's magic ends on the piece of ammunition when it hits or misses, and the spell ends when twelve pieces of ammunition have been drawn from the quiver.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, the number of pieces of ammunition you can affect with this spell increases by two for each slot level above 3rd.",
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 4th level or higher, the number of pieces of ammunition you can affect with this spell increases by two for each slot level above 3rd.",
             "",
             "This spell can be found in the Elemental Evil Player's Companion"
         ],
@@ -3242,7 +3242,7 @@ var spell = [{
     },
     {
         "name": "Flame Blade",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Evocation",
         "time": "1 bonus action",
         "range": "Self",
@@ -3256,7 +3256,7 @@ var spell = [{
             "",
             "The flaming blade sheds bright light in a 10-foot radius and dim light for an additional 10 feet.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for every two slot levels above 2nd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for every two slot levels above 2nd."
         ],
         "roll": [
             "1d20+SPELL+PROF",
@@ -3265,7 +3265,7 @@ var spell = [{
     },
     {
         "name": "Flame Strike",
-        "level": "5th",
+        "level": "5th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "60 feet",
@@ -3275,13 +3275,13 @@ var spell = [{
         "text": [
             "A vertical column of divine fire roars down from the heavens in a location you specify. Each creature in a 10-foot radius, 40-foot-high cylinder centered on a point within range must make a Dexterity saving throw. A creature takes 4d6 fire damage and 4d6 radiant damage on a failed save, or half as much damage on a successful one.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 6th level or higher, the fire damage or the radiant damage (your choice) increases by 1d6 for each slot level above 5th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 6th level or higher, the fire damage or the radiant damage (your choice) increases by 1d6 for each slot level above 5th."
         ],
         "roll": "4d6+4d6"
     },
     {
         "name": "Flaming Sphere",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "60 feet",
@@ -3295,13 +3295,13 @@ var spell = [{
             "",
             "When you move the sphere, you can direct it over barriers up to 5 feet tall and jump it across pits up to 10 feet wide. The sphere ignites flammable objects not being worn or carried, and it sheds bright light in a 20-foot radius and dim light for an additional 20 feet.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd."
         ],
         "roll": "2d6"
     },
     {
         "name": "Flesh to Stone",
-        "level": "6th",
+        "level": "6th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "60 feet",
@@ -3320,7 +3320,7 @@ var spell = [{
     },
     {
         "name": "Fly",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Touch",
@@ -3330,12 +3330,12 @@ var spell = [{
         "text": [
             "You touch a willing creature. The target gains a flying speed of 60 feet for the duration. When the spell ends, the target falls if it is still aloft, unless it can stop the fall.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, you can target one additional creature for each slot level above 3rd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 4th level or higher, you can target one additional creature for each slot level above 3rd."
         ]
     },
     {
         "name": "Fog Cloud",
-        "level": "1st",
+        "level": "1st level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "120 feet",
@@ -3345,12 +3345,12 @@ var spell = [{
         "text": [
             "You create a 20-foot-radius sphere of fog centered on a point within range. The sphere spreads around corners, and its area is heavily obscured. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the radius of the fog increases by 20 feet for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the radius of the fog increases by 20 feet for each slot level above 1st."
         ]
     },
     {
         "name": "Forbiddance",
-        "level": "6th",
+        "level": "6th level",
         "school": "Abjuration",
         "ritual": "YES",
         "time": "10 minutes",
@@ -3371,7 +3371,7 @@ var spell = [{
     },
     {
         "name": "Forcecage",
-        "level": "7th",
+        "level": "7th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "100 feet",
@@ -3394,7 +3394,7 @@ var spell = [{
     },
     {
         "name": "Foresight",
-        "level": "9th",
+        "level": "9th level",
         "school": "Divination",
         "time": "1 minute",
         "range": "Touch",
@@ -3409,7 +3409,7 @@ var spell = [{
     },
     {
         "name": "Freedom of Movement",
-        "level": "4th",
+        "level": "4th level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Touch",
@@ -3458,7 +3458,7 @@ var spell = [{
     },
     {
         "name": "Gaseous Form",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Touch",
@@ -3475,7 +3475,7 @@ var spell = [{
     },
     {
         "name": "Gate",
-        "level": "9th",
+        "level": "9th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "60 feet",
@@ -3494,7 +3494,7 @@ var spell = [{
     },
     {
         "name": "Geas",
-        "level": "5th",
+        "level": "5th level",
         "school": "Enchantment",
         "time": "1 minute",
         "range": "60 feet",
@@ -3508,13 +3508,13 @@ var spell = [{
             "",
             "You can end the spell early by using an action to dismiss it. A remove curse, greater restoration, or wish spell also ends it.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 7th or 8th level, the duration is 1 year. When you cast this spell using a spell slot of the spell lasts until it is ended by one of the spells mentioned above."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 7th or 8th level, the duration is 1 year. When you cast this spell using a spell slot of the spell lasts until it is ended by one of the spells mentioned above."
         ],
         "roll": "5d10"
     },
     {
         "name": "Gentle Repose",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Necromancy",
         "ritual": "YES",
         "time": "1 action",
@@ -3530,7 +3530,7 @@ var spell = [{
     },
     {
         "name": "Giant Insect",
-        "level": "4th",
+        "level": "4th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "30 feet",
@@ -3549,7 +3549,7 @@ var spell = [{
     },
     {
         "name": "Glibness",
-        "level": "8th",
+        "level": "8th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Self",
@@ -3560,7 +3560,7 @@ var spell = [{
     },
     {
         "name": "Globe of Invulnerability",
-        "level": "6th",
+        "level": "6th level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Self (10-foot radius)",
@@ -3572,12 +3572,12 @@ var spell = [{
             "",
             "Any spell of 5th level or lower cast from outside the barrier can't affect creatures or objects within it, even if the spell is cast using a higher level spell slot. Such a spell can target creatures and objects within the barrier, but the spell has no effect on them. Similarly, the area within the barrier is excluded from the areas affected by such spells.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 7th level or higher, the barrier blocks spells of one level higher for each slot level above 6th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 7th level or higher, the barrier blocks spells of one level higher for each slot level above 6th."
         ]
     },
     {
         "name": "Glyph of Warding",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Abjuration",
         "time": "1 hour",
         "range": "Touch",
@@ -3599,13 +3599,13 @@ var spell = [{
             "",
             "Spell Glyph: You can store a prepared spell of 3rd level or lower in the glyph by casting it as part of creating the glyph. The spell must target a single creature or an area. The spell being stored has no immediate effect when cast in this way. When the glyph is triggered, the stored spell is cast. If the spell has a target, it targets the creature that triggered the glyph. If the spell affects an area, the area is centered on that creature. If the spell summons hostile creatures or creates harmful objects or traps, they appear as close as possible to the intruder and attack it. If the spell requires concentration, it lasts until the end of its full duration.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, the damage of an explosive runes glyph increases by 1d8 for each slot level above 3rd. If you create a spell glyph, you can store any spell of up to the same level as the slot you use for the glyph of warding."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 4th level or higher, the damage of an explosive runes glyph increases by 1d8 for each slot level above 3rd. If you create a spell glyph, you can store any spell of up to the same level as the slot you use for the glyph of warding."
         ],
         "roll": "5d8"
     },
     {
         "name": "Goodberry",
-        "level": "1st",
+        "level": "1st level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Touch",
@@ -3620,7 +3620,7 @@ var spell = [{
     },
     {
         "name": "Grasping Vine",
-        "level": "4th",
+        "level": "4th level",
         "school": "Conjuration",
         "time": "1 bonus action",
         "range": "30 feet",
@@ -3635,7 +3635,7 @@ var spell = [{
     },
     {
         "name": "Grease",
-        "level": "1st",
+        "level": "1st level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "60 feet",
@@ -3650,7 +3650,7 @@ var spell = [{
     },
     {
         "name": "Greater Invisibility",
-        "level": "4th",
+        "level": "4th level",
         "school": "Illusion",
         "time": "1 action",
         "range": "Touch",
@@ -3661,7 +3661,7 @@ var spell = [{
     },
     {
         "name": "Greater Restoration",
-        "level": "5th",
+        "level": "5th level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Touch",
@@ -3701,7 +3701,7 @@ var spell = [{
     },
     {
         "name": "Guardian of Faith",
-        "level": "4th",
+        "level": "4th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "30 feet",
@@ -3716,7 +3716,7 @@ var spell = [{
     },
     {
         "name": "Guards and Wards",
-        "level": "6th",
+        "level": "6th level",
         "school": "Abjuration",
         "time": "10 minutes",
         "range": "Touch",
@@ -3765,7 +3765,7 @@ var spell = [{
     },
     {
         "name": "Guiding Bolt",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 action",
         "range": "120 feet",
@@ -3775,7 +3775,7 @@ var spell = [{
         "text": [
             "A flash of light streaks toward a creature of your choice within range. Make a ranged spell attack against the target. On a hit, the target takes 4d6 radiant damage, and the next attack roll made against this target before the end of your next turn has advantage, thanks to the mystical dim light glittering on the target until then.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
         ],
         "roll": [
             "1d20+SPELL+PROF",
@@ -3805,7 +3805,7 @@ var spell = [{
     },
     {
         "name": "Gust of Wind",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "Self (60-foot line)",
@@ -3824,7 +3824,7 @@ var spell = [{
     },
     {
         "name": "Hail of Thorns",
-        "level": "1st",
+        "level": "1st level",
         "school": "Conjuration",
         "time": "1 bonus action",
         "range": "Self",
@@ -3834,13 +3834,13 @@ var spell = [{
         "text": [
             "The next time you hit a creature with a ranged weapon attack before the spell ends, this spell creates a rain of thorns that sprouts from your ranged weapon or ammunition. In addition to the normal effect of the attack, the target of the attack and each creature within 5 feet of it must make a Dexterity saving throw. A creature takes 1d10 piercing damage on a failed save, or half as much damage on a successful one.",
             "",
-            "At Higher Levels: If you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st (to a maximum of 6d10)."
+            "<emph>At Higher Levels:</emph> If you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st (to a maximum of 6d10)."
         ],
         "roll": "1d10"
     },
     {
         "name": "Hallow",
-        "level": "5th",
+        "level": "5th level",
         "school": "Evocation",
         "time": "24 hours",
         "range": "Touch",
@@ -3877,7 +3877,7 @@ var spell = [{
     },
     {
         "name": "Hallucinatory Terrain",
-        "level": "4th",
+        "level": "4th level",
         "school": "Illusion",
         "time": "10 minutes",
         "range": "300 feet",
@@ -3892,7 +3892,7 @@ var spell = [{
     },
     {
         "name": "Harm",
-        "level": "6th",
+        "level": "6th level",
         "school": "Necromancy",
         "time": "1 action",
         "range": "60 feet",
@@ -3904,7 +3904,7 @@ var spell = [{
     },
     {
         "name": "Haste",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "30 feet",
@@ -3919,7 +3919,7 @@ var spell = [{
     },
     {
         "name": "Heal",
-        "level": "6th",
+        "level": "6th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "60 feet",
@@ -3929,12 +3929,12 @@ var spell = [{
         "text": [
             "Choose a creature that you can see within range. A surge of positive energy washes through the creature, causing it to regain 70 hit points. The spell also ends blindness, deafness, and any diseases affecting the target. This spell has no effect on constructs or undead.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 7th level or higher, the amount of healing increases by 10 for each slot level above 6th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 7th level or higher, the amount of healing increases by 10 for each slot level above 6th."
         ]
     },
     {
         "name": "Healing Word",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 bonus action",
         "range": "60 feet",
@@ -3944,13 +3944,13 @@ var spell = [{
         "text": [
             "A creature of your choice that you can see within range regains hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d4 for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d4 for each slot level above 1st."
         ],
         "roll": "1d4+SPELL"
     },
     {
         "name": "Heat Metal",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "60 feet",
@@ -3962,13 +3962,13 @@ var spell = [{
             "",
             "If a creature is holding or wearing the object and takes the damage from it, the creature must succeed on a Constitution saving throw or drop the object if it can. If it doesn't drop the object, it has disadvantage on attack rolls and ability checks until the start of your next turn.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot above 2nd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot above 2nd."
         ],
         "roll": "2d8"
     },
     {
         "name": "Hellish Rebuke",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 reaction",
         "range": "60 feet",
@@ -3978,13 +3978,13 @@ var spell = [{
         "text": [
             "You point your finger, and the creature that damaged you is momentarily surrounded by hellish flames. The creature must make a Dexterity saving throw. It takes 2d10 fire damage on a failed save, or half as much damage on a successful one.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st."
         ],
         "roll": "2d10"
     },
     {
         "name": "Heroes' Feast",
-        "level": "6th",
+        "level": "6th level",
         "school": "Conjuration",
         "time": "10 minutes",
         "range": "30 feet",
@@ -4000,7 +4000,7 @@ var spell = [{
     },
     {
         "name": "Heroism",
-        "level": "1st",
+        "level": "1st level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "Touch",
@@ -4010,12 +4010,12 @@ var spell = [{
         "text": [
             "A willing creature you touch is imbued with bravery. Until the spell ends, the creature is immune to being frightened and gains temporary hit points equal to your spellcasting ability modifier at the start of each of its turns. When the spell ends, the target loses any remaining temporary hit points from this spell.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st."
         ]
     },
     {
         "name": "Hex",
-        "level": "1st",
+        "level": "1st level",
         "school": "Enchantment",
         "time": "1 bonus action",
         "range": "90 feet",
@@ -4029,12 +4029,12 @@ var spell = [{
             "",
             "A remove curse cast on the target ends this spell early.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd or 4th level, you can maintain your concentration on the spell for up to 8 hours. When you use a spell slot of 5th level or higher, you can maintain your concentration on the spell for up to 24 hours."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd or 4th level, you can maintain your concentration on the spell for up to 8 hours. When you use a spell slot of 5th level or higher, you can maintain your concentration on the spell for up to 24 hours."
         ]
     },
     {
         "name": "Hold Monster",
-        "level": "5th",
+        "level": "5th level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "90 feet",
@@ -4044,12 +4044,12 @@ var spell = [{
         "text": [
             "Choose a creature that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed for the duration. This spell has no effect on undead. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the spell ends on the target.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 6th level or higher, you can target on additional creature for each slot level above 5th. The creatures must be within 30 feet of each other when you target them."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 6th level or higher, you can target on additional creature for each slot level above 5th. The creatures must be within 30 feet of each other when you target them."
         ]
     },
     {
         "name": "Hold Person",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "60 feet",
@@ -4059,12 +4059,12 @@ var spell = [{
         "text": [
             "Choose a humanoid that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed for the duration. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the spell ends on the target.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, you can target on additional humanoid for each slot level above 2nd. The humanoids must be within 30 feet of each other when you target them."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, you can target on additional humanoid for each slot level above 2nd. The humanoids must be within 30 feet of each other when you target them."
         ]
     },
     {
         "name": "Holy Aura",
-        "level": "8th",
+        "level": "8th level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Self",
@@ -4075,7 +4075,7 @@ var spell = [{
     },
     {
         "name": "Hunger of Hadar",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "150 feet",
@@ -4094,7 +4094,7 @@ var spell = [{
     },
     {
         "name": "Hunter's Mark",
-        "level": "1st",
+        "level": "1st level",
         "school": "Divination",
         "time": "1 bonus action",
         "range": "90 feet",
@@ -4104,12 +4104,12 @@ var spell = [{
         "text": [
             "You choose a creature you can see within range and mystically mark it as your quarry. Until the spell ends, you deal an extra 1d6 damage to the target whenever you hit it with a weapon attack, and you have advantage on any Wisdom (Perception) or Wisdom (Survival) check you make to find it. If the target drops to 0 hit points before this spell ends, you can use a bonus action on a subsequent turn of yours to mark a new creature.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd or 4th level, you can maintain your concentration on the spell for up to 8 hours. When you use a spell slot of 5th level or higher, you can maintain your concentration on the spell for up to 24 hours."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd or 4th level, you can maintain your concentration on the spell for up to 8 hours. When you use a spell slot of 5th level or higher, you can maintain your concentration on the spell for up to 24 hours."
         ]
     },
     {
         "name": "Hypnotic Pattern",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Illusion",
         "time": "1 action",
         "range": "120 feet",
@@ -4124,7 +4124,7 @@ var spell = [{
     },
     {
         "name": "Ice Knife (EE)",
-        "level": "1st",
+        "level": "1st level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "60 feet",
@@ -4134,7 +4134,7 @@ var spell = [{
         "text": [
             "You create a shard of ice and fling it at one creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 piercing damage. Hit or miss, the shard then explodes. The target and each creature within 5 feet of the point where the ice exploded must succeed on a Dexterity saving throw or take 2d6 cold damage.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the cold damage increases by 1d6 for each slot level above 1st.",
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the cold damage increases by 1d6 for each slot level above 1st.",
             "",
             "This spell can be found in the Elemental Evil Player's Companion"
         ],
@@ -4145,7 +4145,7 @@ var spell = [{
     },
     {
         "name": "Ice Storm",
-        "level": "4th",
+        "level": "4th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "300 feet",
@@ -4157,13 +4157,13 @@ var spell = [{
             "",
             "Hailstones turn the storm's area of effect into difficult terrain until the end of your next turn.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 5th level or higher, the bludgeoning damage increases by 1d8 for each slot level above 4th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 5th level or higher, the bludgeoning damage increases by 1d8 for each slot level above 4th."
         ],
         "roll": "2d8+4d6"
     },
     {
         "name": "Identify",
-        "level": "1st",
+        "level": "1st level",
         "school": "Divination",
         "ritual": "YES",
         "time": "1 minute",
@@ -4179,7 +4179,7 @@ var spell = [{
     },
     {
         "name": "Illusory Script",
-        "level": "1st",
+        "level": "1st level",
         "school": "Illusion",
         "ritual": "YES",
         "time": "1 minute",
@@ -4199,7 +4199,7 @@ var spell = [{
     },
     {
         "name": "Immolation (EE)",
-        "level": "5th",
+        "level": "5th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "90 feet",
@@ -4220,7 +4220,7 @@ var spell = [{
     },
     {
         "name": "Imprisonment",
-        "level": "9th",
+        "level": "9th level",
         "school": "Abjuration",
         "time": "1 minute",
         "range": "30 feet",
@@ -4261,7 +4261,7 @@ var spell = [{
     },
     {
         "name": "Incendiary Cloud",
-        "level": "8th",
+        "level": "8th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "150 feet",
@@ -4279,7 +4279,7 @@ var spell = [{
     },
     {
         "name": "Inflict Wounds",
-        "level": "1st",
+        "level": "1st level",
         "school": "Necromancy",
         "time": "1 action",
         "range": "Touch",
@@ -4289,7 +4289,7 @@ var spell = [{
         "text": [
             "Make a melee spell attack against a creature you can reach. On a hit, the target takes 3d10 necrotic damage.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st."
         ],
         "roll": [
             "1d20+SPELL+PROF",
@@ -4298,7 +4298,7 @@ var spell = [{
     },
     {
         "name": "Insect Plague",
-        "level": "5th",
+        "level": "5th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "300 feet",
@@ -4310,13 +4310,13 @@ var spell = [{
             "",
             "When the area appears, each creature in it must make a Constitution saving throw. A creature takes 4d10 piercing damage on a failed save, or half as much damage on a successful one. A creature must also make this saving throw when it enters the spell's area for the first time on a turn or ends its turn there.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 6th level or higher, the damage increases by 1d10 for each slot level above 5th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 6th level or higher, the damage increases by 1d10 for each slot level above 5th."
         ],
         "roll": "4d10"
     },
     {
         "name": "Investiture of Flame (EE)",
-        "level": "6th",
+        "level": "6th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Self",
@@ -4338,7 +4338,7 @@ var spell = [{
     },
     {
         "name": "Investiture of Ice (EE)",
-        "level": "6th",
+        "level": "6th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Self",
@@ -4361,7 +4361,7 @@ var spell = [{
     },
     {
         "name": "Investiture of Stone (EE)",
-        "level": "6th",
+        "level": "6th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Self",
@@ -4382,7 +4382,7 @@ var spell = [{
     },
     {
         "name": "Investiture of Wind (EE)",
-        "level": "6th",
+        "level": "6th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Self",
@@ -4404,7 +4404,7 @@ var spell = [{
     },
     {
         "name": "Invisibility",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Illusion",
         "time": "1 action",
         "range": "Touch",
@@ -4414,12 +4414,12 @@ var spell = [{
         "text": [
             "A creature you touch becomes invisible until the spell ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person. The spell ends for a target that attacks or casts a spell.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd."
         ]
     },
     {
         "name": "Jump",
-        "level": "1st",
+        "level": "1st level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Touch",
@@ -4430,7 +4430,7 @@ var spell = [{
     },
     {
         "name": "Knock",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "60 feet",
@@ -4449,7 +4449,7 @@ var spell = [{
     },
     {
         "name": "Legend Lore",
-        "level": "5th",
+        "level": "5th level",
         "school": "Divination",
         "time": "10 minutes",
         "range": "Self",
@@ -4464,7 +4464,7 @@ var spell = [{
     },
     {
         "name": "Leomund's Secret Chest",
-        "level": "4th",
+        "level": "4th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "Touch",
@@ -4482,7 +4482,7 @@ var spell = [{
     },
     {
         "name": "Leomund's Tiny Hut",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Evocation",
         "ritual": "YES",
         "time": "1 minute",
@@ -4500,7 +4500,7 @@ var spell = [{
     },
     {
         "name": "Lesser Restoration",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Touch",
@@ -4511,7 +4511,7 @@ var spell = [{
     },
     {
         "name": "Levitate",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "60 feet",
@@ -4543,7 +4543,7 @@ var spell = [{
     },
     {
         "name": "Lightning Arrow",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Transmutation",
         "time": "1 bonus action",
         "range": "Self",
@@ -4557,13 +4557,13 @@ var spell = [{
             "",
             "The piece of ammunition or weapon then returns to its normal form.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, the damage for both effects of the spell increases by 1d8 for each slot level above 3rd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 4th level or higher, the damage for both effects of the spell increases by 1d8 for each slot level above 3rd."
         ],
         "roll": "4d8"
     },
     {
         "name": "Lightning Bolt",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "Self (100-foot line)",
@@ -4575,7 +4575,7 @@ var spell = [{
             "",
             "The lightning ignites flammable objects in the area that aren't being worn or carried.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot above 3rd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot above 3rd."
         ],
         "roll": "8d6"
     },
@@ -4601,7 +4601,7 @@ var spell = [{
     },
     {
         "name": "Locate Animals or Plants",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Divination",
         "ritual": "YES",
         "time": "1 action",
@@ -4613,7 +4613,7 @@ var spell = [{
     },
     {
         "name": "Locate Creature",
-        "level": "4th",
+        "level": "4th level",
         "school": "Divination",
         "time": "1 action",
         "range": "Self",
@@ -4630,7 +4630,7 @@ var spell = [{
     },
     {
         "name": "Locate Object",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Divination",
         "time": "1 action",
         "range": "Self",
@@ -4647,7 +4647,7 @@ var spell = [{
     },
     {
         "name": "Longstrider",
-        "level": "1st",
+        "level": "1st level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Touch",
@@ -4657,12 +4657,12 @@ var spell = [{
         "text": [
             "You touch a creature. The target's speed increases by 10 feet until the spell ends.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st."
         ]
     },
     {
         "name": "Maelstrom (EE)",
-        "level": "5th",
+        "level": "5th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "120 feet",
@@ -4678,7 +4678,7 @@ var spell = [{
     },
     {
         "name": "Mage Armor",
-        "level": "1st",
+        "level": "1st level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Touch",
@@ -4707,7 +4707,7 @@ var spell = [{
     },
     {
         "name": "Magic Circle",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Abjuration",
         "time": "1 minute",
         "range": "10 feet",
@@ -4727,12 +4727,12 @@ var spell = [{
             "",
             "When you cast this spell, you can elect to cause its magic to operate in the reverse direction, preventing a creature of the specified type from leaving the cylinder and protecting targets outside it.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, the duration increases by 1 hour for each slot level above 3rd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 4th level or higher, the duration increases by 1 hour for each slot level above 3rd."
         ]
     },
     {
         "name": "Magic Jar",
-        "level": "6th",
+        "level": "6th level",
         "school": "Necromancy",
         "time": "1 minute",
         "range": "Self",
@@ -4757,7 +4757,7 @@ var spell = [{
     },
     {
         "name": "Magic Missile",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 action",
         "range": "120 feet",
@@ -4767,13 +4767,13 @@ var spell = [{
         "text": [
             "You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4+1 force damage to its target. The darts all strike simultaneously and you can direct them to hit one creature or several.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot above 1st."
         ],
         "roll": "1d4+1"
     },
     {
         "name": "Magic Mouth",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Illusion",
         "ritual": "YES",
         "time": "1 minute",
@@ -4812,7 +4812,7 @@ var spell = [{
     },
     {
         "name": "Magic Weapon",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Transmutation",
         "time": "1 bonus action",
         "range": "Touch",
@@ -4822,12 +4822,12 @@ var spell = [{
         "text": [
             "You touch a nonmagical weapon. Until the spell ends, that weapon becomes a magic weapon with a +1 bonus to attack rolls and damage rolls.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, the bonus increases to +2. When you use a spell slot of 6th level or higher, the bonus increases to +3."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 4th level or higher, the bonus increases to +2. When you use a spell slot of 6th level or higher, the bonus increases to +3."
         ]
     },
     {
         "name": "Major Image",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Illusion",
         "time": "1 action",
         "range": "120 feet",
@@ -4841,12 +4841,12 @@ var spell = [{
             "",
             "Physical interaction with the image reveals it to be an illusion, because things can pass through it. A creature that uses its action to examine the image can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the creature can see through the image, and its other sensory qualities become faint to the creature.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 6th level or higher, the spell lasts until dispelled, without requiring your concentration."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 6th level or higher, the spell lasts until dispelled, without requiring your concentration."
         ]
     },
     {
         "name": "Mass Cure Wounds",
-        "level": "5th",
+        "level": "5th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "60 feet",
@@ -4856,13 +4856,13 @@ var spell = [{
         "text": [
             "A wave of healing energy washes out from a point of your choice within range. Choose up to six creatures in a 30-foot-radius sphere centered on that point. Each target regains hit points equal to 3d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 6th level or higher, the healing increases by 1d8 for each slot level above 5th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 6th level or higher, the healing increases by 1d8 for each slot level above 5th."
         ],
         "roll": "3d8+SPELL"
     },
     {
         "name": "Mass Heal",
-        "level": "9th",
+        "level": "9th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "60 feet",
@@ -4873,7 +4873,7 @@ var spell = [{
     },
     {
         "name": "Mass Healing Word",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Evocation",
         "time": "1 bonus action",
         "range": "60 feet",
@@ -4883,13 +4883,13 @@ var spell = [{
         "text": [
             "As you call out words of restoration, up to six creatures of your choice that you can see within range regain hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, the healing increases by 1d4 for each slot level above 3rd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 4th level or higher, the healing increases by 1d4 for each slot level above 3rd."
         ],
         "roll": "1d4+SPELL"
     },
     {
         "name": "Mass Suggestion",
-        "level": "6th",
+        "level": "6th level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "60 feet",
@@ -4905,12 +4905,12 @@ var spell = [{
             "",
             "If you or any of your companions damage a creature affected by this spell, the spell ends for that creature.",
             "",
-            "At Higher Levels: When you cast this spell using a 7th-level spell slot, the duration is 10 days. When you use an 8th-level spell slot, the duration is 30 days. When you use a 9th-level spell slot, the duration is a year and a day."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a 7th-level spell slot, the duration is 10 days. When you use an 8th-level spell slot, the duration is 30 days. When you use a 9th-level spell slot, the duration is a year and a day."
         ]
     },
     {
         "name": "Maximilian's Earthen Grasp (EE)",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "30 feet",
@@ -4932,7 +4932,7 @@ var spell = [{
     },
     {
         "name": "Maze",
-        "level": "8th",
+        "level": "8th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "60 feet",
@@ -4949,7 +4949,7 @@ var spell = [{
     },
     {
         "name": "Meld into Stone",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Transmutation",
         "ritual": "YES",
         "time": "1 action",
@@ -4968,7 +4968,7 @@ var spell = [{
     },
     {
         "name": "Melf's Acid Arrow",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "90 feet",
@@ -4978,7 +4978,7 @@ var spell = [{
         "text": [
             "A shimmering green arrow streaks toward a target within range and bursts in a spray of acid. Make a ranged spell attack against the target. On a hit, the target takes 4d4 acid damage immediately and 2d4 acid damage at the end of its next turn. On a miss, the arrow splashes the target with acid for half as much of the initial damage and no damage at the end of its next turn.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, the damage (both initial and later) increases by 1d4 for each slot level above 2nd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, the damage (both initial and later) increases by 1d4 for each slot level above 2nd."
         ],
         "roll": [
             "1d20+SPELL+PROF",
@@ -4988,7 +4988,7 @@ var spell = [{
     },
     {
         "name": "Melf's Minute Meteors (EE)",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "Self",
@@ -4998,7 +4998,7 @@ var spell = [{
         "text": [
             "You create six tiny meteors in your space. They float in the air and orbit you for the spell's duration. When you cast the spell-and as a bonus action on each of your turns thereafter-you can expend one or two of the meteors, sending them streaking toward a point or points you choose within 120 feet of you. Once a meteor reaches its destination or impacts against a solid surface, the meteor explodes. Each creature within 5 feet of the point where the meteor explodes must make a Dexterity saving throw. A creature takes 2d6 fire damage on a failed save, or half as much damage on a successful one.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, the number of meteors created increases by two for each slot level above 3rd.",
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 4th level or higher, the number of meteors created increases by two for each slot level above 3rd.",
             "",
             "This spell can be found in the Elemental Evil Player's Companion"
         ],
@@ -5036,7 +5036,7 @@ var spell = [{
     },
     {
         "name": "Meteor Swarm",
-        "level": "9th",
+        "level": "9th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "1 mile",
@@ -5052,7 +5052,7 @@ var spell = [{
     },
     {
         "name": "Mind Blank",
-        "level": "8th",
+        "level": "8th level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Touch",
@@ -5082,7 +5082,7 @@ var spell = [{
     },
     {
         "name": "Mirage Arcane",
-        "level": "7th",
+        "level": "7th level",
         "school": "Illusion",
         "time": "10 minutes",
         "range": "Sight",
@@ -5101,7 +5101,7 @@ var spell = [{
     },
     {
         "name": "Mirror Image",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Illusion",
         "time": "1 action",
         "range": "Self",
@@ -5126,7 +5126,7 @@ var spell = [{
     },
     {
         "name": "Mislead",
-        "level": "5th",
+        "level": "5th level",
         "school": "Illusion",
         "time": "1 action",
         "range": "Self",
@@ -5141,7 +5141,7 @@ var spell = [{
     },
     {
         "name": "Misty Step",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Conjuration",
         "time": "1 bonus action",
         "range": "Self",
@@ -5152,7 +5152,7 @@ var spell = [{
     },
     {
         "name": "Modify Memory",
-        "level": "5th",
+        "level": "5th level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "30 feet",
@@ -5170,7 +5170,7 @@ var spell = [{
             "",
             "A remove curse or greater restoration spell cast on the target restores the creature's true memory.",
             "",
-            "At Higher Levels: If you cast this spell using a spell slot of 6th level or higher, you can alter the target's memories of an event that took place up to 7 days ago (6th level), 30 days ago (7th level), 1 year ago (8th level), or any time in the creature's past (9th level)."
+            "<emph>At Higher Levels:</emph> If you cast this spell using a spell slot of 6th level or higher, you can alter the target's memories of an event that took place up to 7 days ago (6th level), 30 days ago (7th level), 1 year ago (8th level), or any time in the creature's past (9th level)."
         ]
     },
     {
@@ -5198,7 +5198,7 @@ var spell = [{
     },
     {
         "name": "Moonbeam",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "120 feet",
@@ -5214,13 +5214,13 @@ var spell = [{
             "",
             "On each of your turns after you cast this spell, you can use an action to move the beam 60 feet in any direction.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d10 for each slot level above 2nd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d10 for each slot level above 2nd."
         ],
         "roll": "2d10"
     },
     {
         "name": "Mordenkainen's Faithful Hound",
-        "level": "4th",
+        "level": "4th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "30 feet",
@@ -5241,7 +5241,7 @@ var spell = [{
     },
     {
         "name": "Mordenkainen's Magnificent Mansion",
-        "level": "7th",
+        "level": "7th level",
         "school": "Conjuration",
         "time": "1 minute",
         "range": "300 feet",
@@ -5258,7 +5258,7 @@ var spell = [{
     },
     {
         "name": "Mordenkainen's Private Sanctum",
-        "level": "4th",
+        "level": "4th level",
         "school": "Abjuration",
         "time": "10 minutes",
         "range": "120 feet",
@@ -5284,12 +5284,12 @@ var spell = [{
             "",
             "Casting this spell on the same spot every day for a year makes this effect permanent.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 5th level or higher, you can increase the size of the cube by 100 feet for each slot level beyond 4th. Thus you could protect a cube that can be up to 200 feet on one side by using a spell slot of 5th level."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 5th level or higher, you can increase the size of the cube by 100 feet for each slot level beyond 4th. Thus you could protect a cube that can be up to 200 feet on one side by using a spell slot of 5th level."
         ]
     },
     {
         "name": "Mordenkainen's Sword",
-        "level": "7th",
+        "level": "7th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "60 feet",
@@ -5308,7 +5308,7 @@ var spell = [{
     },
     {
         "name": "Move Earth",
-        "level": "6th",
+        "level": "6th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "120 feet",
@@ -5329,7 +5329,7 @@ var spell = [{
     },
     {
         "name": "Nondetection",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Touch",
@@ -5340,7 +5340,7 @@ var spell = [{
     },
     {
         "name": "Nystul's Magic Aura",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Illusion",
         "time": "1 action",
         "range": "Touch",
@@ -5359,7 +5359,7 @@ var spell = [{
     },
     {
         "name": "Otiluke's Freezing Sphere",
-        "level": "6th",
+        "level": "6th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "300 feet",
@@ -5373,13 +5373,13 @@ var spell = [{
             "",
             "You can refrain from firing the globe after completing the spell, if you wish. A small globe about the size of a sling stone, cool to the touch, appears in your hand. At any time, you or a creature you give the globe to can throw the globe (to a range of 40 feet) or hurl it with a sling (to the sling's normal range). It shatters on impact, with the same effect as the normal casting of the spell. You can also set the globe down without shattering it. After 1 minute, if the globe hasn't already shattered, it explodes.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 7th level or higher, the damage increases by 1d6 for each slot level above 6th"
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 7th level or higher, the damage increases by 1d6 for each slot level above 6th"
         ],
         "roll": "10d6"
     },
     {
         "name": "Otiluke's Resilient Sphere",
-        "level": "4th",
+        "level": "4th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "30 feet",
@@ -5398,7 +5398,7 @@ var spell = [{
     },
     {
         "name": "Otto's Irresistible Dance",
-        "level": "6th",
+        "level": "6th level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "30 feet",
@@ -5413,7 +5413,7 @@ var spell = [{
     },
     {
         "name": "Pass Without Trace",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Self",
@@ -5424,7 +5424,7 @@ var spell = [{
     },
     {
         "name": "Passwall",
-        "level": "5th",
+        "level": "5th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "30 feet",
@@ -5439,7 +5439,7 @@ var spell = [{
     },
     {
         "name": "Phantasmal Force",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Illusion",
         "time": "1 action",
         "range": "60 feet",
@@ -5461,7 +5461,7 @@ var spell = [{
     },
     {
         "name": "Phantasmal Killer",
-        "level": "4th",
+        "level": "4th level",
         "school": "Illusion",
         "time": "1 action",
         "range": "120 feet",
@@ -5471,13 +5471,13 @@ var spell = [{
         "text": [
             "You tap into the nightmares of a creature you can see within range and create an illusory manifestation of its deepest fears, visible only to that creature. The target must make a Wisdom saving throw. On a failed save, the target becomes frightened for the duration. At the end of each of the target's turns before the spell ends, the target must succeed on a Wisdom saving throw or take 4d10 psychic damage. On a successful save, the spell ends.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d10 for each slot level above 4th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d10 for each slot level above 4th."
         ],
         "roll": "4d10"
     },
     {
         "name": "Phantom Steed",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Illusion",
         "ritual": "YES",
         "time": "1 minute",
@@ -5493,7 +5493,7 @@ var spell = [{
     },
     {
         "name": "Planar Ally",
-        "level": "6th",
+        "level": "6th level",
         "school": "Conjuration",
         "time": "10 minutes",
         "range": "60 feet",
@@ -5516,7 +5516,7 @@ var spell = [{
     },
     {
         "name": "Planar Binding",
-        "level": "5th",
+        "level": "5th level",
         "school": "Abjuration",
         "time": "1 hour",
         "range": "60 feet",
@@ -5528,12 +5528,12 @@ var spell = [{
             "",
             "A bound creature must follow your instructions to the best of its ability. You might command the creature to accompany you on an adventure, to guard a location, or to deliver a message. The creature obeys the letter of your instructions, but if the creature is hostile to you, it strives to twist your words to achieve its own objectives. If the creature carries out your instructions completely before the spell ends, it travels to you to report this fact if you are on the same plane of existence. If you are on a different plane of existence, it returns to the place where you bound it and remains there until the spell ends.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of a higher level, the duration increases to 10 days with a 6th-level slot, to 30 days with a 7th-level slot, to 180 days with an 8th-level slot, and to a year and a day with a 9th-level spell slot."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of a higher level, the duration increases to 10 days with a 6th-level slot, to 30 days with a 7th-level slot, to 180 days with an 8th-level slot, and to a year and a day with a 9th-level spell slot."
         ]
     },
     {
         "name": "Plane Shift",
-        "level": "7th",
+        "level": "7th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "Touch",
@@ -5551,7 +5551,7 @@ var spell = [{
     },
     {
         "name": "Plant Growth",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Transmutation",
         "time": "1 action or 8 hours",
         "range": "150 feet",
@@ -5591,7 +5591,7 @@ var spell = [{
     },
     {
         "name": "Polymorph",
-        "level": "4th",
+        "level": "4th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "60 feet",
@@ -5612,7 +5612,7 @@ var spell = [{
     },
     {
         "name": "Power Word Heal",
-        "level": "9th",
+        "level": "9th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "Touch",
@@ -5623,7 +5623,7 @@ var spell = [{
     },
     {
         "name": "Power Word Kill",
-        "level": "9th",
+        "level": "9th level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "60 feet",
@@ -5634,7 +5634,7 @@ var spell = [{
     },
     {
         "name": "Power Word Stun",
-        "level": "8th",
+        "level": "8th level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "60 feet",
@@ -5649,7 +5649,7 @@ var spell = [{
     },
     {
         "name": "Prayer of Healing",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Evocation",
         "time": "10 minutes",
         "range": "30 feet",
@@ -5659,7 +5659,7 @@ var spell = [{
         "text": [
             "Up to six creatures of your choice that you can see within range each regain hit points equal to 2d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, the healing increases by 1d8 for each slot level above 2nd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, the healing increases by 1d8 for each slot level above 2nd."
         ],
         "roll": "2d8+SPELL"
     },
@@ -5692,7 +5692,7 @@ var spell = [{
     },
     {
         "name": "Primordial Ward (EE)",
-        "level": "6th",
+        "level": "6th level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Self",
@@ -5709,7 +5709,7 @@ var spell = [{
     },
     {
         "name": "Prismatic Spray",
-        "level": "7th",
+        "level": "7th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "Self (60 foot cone)",
@@ -5742,7 +5742,7 @@ var spell = [{
     },
     {
         "name": "Prismatic Wall",
-        "level": "9th",
+        "level": "9th level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "60 feet",
@@ -5800,7 +5800,7 @@ var spell = [{
     },
     {
         "name": "Programmed Illusion",
-        "level": "6th",
+        "level": "6th level",
         "school": "Illusion",
         "time": "1 action",
         "range": "120 feet",
@@ -5819,7 +5819,7 @@ var spell = [{
     },
     {
         "name": "Project Image",
-        "level": "7th",
+        "level": "7th level",
         "school": "Illusion",
         "time": "1 action",
         "range": "500 miles",
@@ -5838,7 +5838,7 @@ var spell = [{
     },
     {
         "name": "Protection from Energy",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Touch",
@@ -5849,7 +5849,7 @@ var spell = [{
     },
     {
         "name": "Protection from Evil and Good",
-        "level": "1st",
+        "level": "1st level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Touch",
@@ -5864,7 +5864,7 @@ var spell = [{
     },
     {
         "name": "Protection from Poison",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Touch",
@@ -5879,7 +5879,7 @@ var spell = [{
     },
     {
         "name": "Purify Food and Drink",
-        "level": "1st",
+        "level": "1st level",
         "school": "Transmutation",
         "ritual": "YES",
         "time": "1 action",
@@ -5891,7 +5891,7 @@ var spell = [{
     },
     {
         "name": "Pyrotechnics (EE)",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "60 feet",
@@ -5910,7 +5910,7 @@ var spell = [{
     },
     {
         "name": "Raise Dead",
-        "level": "5th",
+        "level": "5th level",
         "school": "Necromancy",
         "time": "1 hour",
         "range": "Touch",
@@ -5929,7 +5929,7 @@ var spell = [{
     },
     {
         "name": "Rary's Telepathic Bond",
-        "level": "5th",
+        "level": "5th level",
         "school": "Divination",
         "ritual": "YES",
         "time": "1 action",
@@ -5945,7 +5945,7 @@ var spell = [{
     },
     {
         "name": "Ray of Enfeeblement",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Necromancy",
         "time": "1 action",
         "range": "60 feet",
@@ -5983,7 +5983,7 @@ var spell = [{
     },
     {
         "name": "Ray of Sickness",
-        "level": "1st",
+        "level": "1st level",
         "school": "Necromancy",
         "time": "1 action",
         "range": "60 feet",
@@ -5993,7 +5993,7 @@ var spell = [{
         "text": [
             "A ray of sickening greenish energy lashes out toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 2d8 poison damage and must make a Constitution saving throw. On a failed save, it is also poisoned until the end of your next turn.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st."
         ],
         "roll": [
             "1d20+SPELL+PROF",
@@ -6002,7 +6002,7 @@ var spell = [{
     },
     {
         "name": "Regenerate",
-        "level": "7th",
+        "level": "7th level",
         "school": "Transmutation",
         "time": "1 minute",
         "range": "Touch",
@@ -6018,7 +6018,7 @@ var spell = [{
     },
     {
         "name": "Reincarnate",
-        "level": "5th",
+        "level": "5th level",
         "school": "Transmutation",
         "time": "1 hour",
         "range": "Touch",
@@ -6051,7 +6051,7 @@ var spell = [{
     },
     {
         "name": "Remove Curse",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Touch",
@@ -6074,7 +6074,7 @@ var spell = [{
     },
     {
         "name": "Resurrection",
-        "level": "7th",
+        "level": "7th level",
         "school": "Necromancy",
         "time": "1 hour",
         "range": "Touch",
@@ -6095,7 +6095,7 @@ var spell = [{
     },
     {
         "name": "Reverse Gravity",
-        "level": "7th",
+        "level": "7th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "100 feet",
@@ -6112,7 +6112,7 @@ var spell = [{
     },
     {
         "name": "Revivify",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Necromancy",
         "time": "1 action",
         "range": "Touch",
@@ -6123,7 +6123,7 @@ var spell = [{
     },
     {
         "name": "Rope Trick",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Touch",
@@ -6163,7 +6163,7 @@ var spell = [{
     },
     {
         "name": "Sanctuary",
-        "level": "1st",
+        "level": "1st level",
         "school": "Abjuration",
         "time": "1 bonus action",
         "range": "30 feet",
@@ -6178,7 +6178,7 @@ var spell = [{
     },
     {
         "name": "Scorching Ray",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "120 feet",
@@ -6190,7 +6190,7 @@ var spell = [{
             "",
             "Make a ranged spell attack for each ray. On a hit, the target takes 2d6 fire damage.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, you create one additional ray for each slot level above 2nd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, you create one additional ray for each slot level above 2nd."
         ],
         "roll": [
             "1d20+SPELL+PROF",
@@ -6199,7 +6199,7 @@ var spell = [{
     },
     {
         "name": "Scrying",
-        "level": "5th",
+        "level": "5th level",
         "school": "Divination",
         "time": "10 minutes",
         "range": "Self",
@@ -6233,7 +6233,7 @@ var spell = [{
     },
     {
         "name": "Searing Smite",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 bonus action",
         "range": "Self",
@@ -6243,13 +6243,13 @@ var spell = [{
         "text": [
             "The next time you hit a creature with a melee weapon attack during the spell's duration, your weapon flares with white-hot intensity, and the attack deals an extra 1d6 fire damage to the target and causes the target to ignite in flames. At the start of each of its turns until the spell ends, the target must make a Constitution saving throw. On a failed save, it takes 1d6 fire damage. On a successful save, the spell ends. If the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames (such as the target being submerged in water), the spell ends.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the initial extra damage dealt by the attack increases by 1d6 for each slot above the 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the initial extra damage dealt by the attack increases by 1d6 for each slot above the 1st."
         ],
         "roll": "1d6"
     },
     {
         "name": "See Invisibility",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Divination",
         "time": "1 action",
         "range": "Self",
@@ -6260,7 +6260,7 @@ var spell = [{
     },
     {
         "name": "Seeming",
-        "level": "5th",
+        "level": "5th level",
         "school": "Illusion",
         "time": "1 action",
         "range": "30 feet",
@@ -6279,7 +6279,7 @@ var spell = [{
     },
     {
         "name": "Sending",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "Unlimited",
@@ -6295,7 +6295,7 @@ var spell = [{
     },
     {
         "name": "Sequester",
-        "level": "7th",
+        "level": "7th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Touch",
@@ -6337,7 +6337,7 @@ var spell = [{
     },
     {
         "name": "Shapechange",
-        "level": "9th",
+        "level": "9th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Self",
@@ -6360,7 +6360,7 @@ var spell = [{
     },
     {
         "name": "Shatter",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "60 feet",
@@ -6372,12 +6372,12 @@ var spell = [{
             "",
             "A nonmagical object that isn't being worn or carried also takes the damage if it's in the spell's area.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd."
         ]
     },
     {
         "name": "Shield",
-        "level": "1st",
+        "level": "1st level",
         "school": "Abjuration",
         "time": "1 reaction",
         "range": "Self",
@@ -6388,7 +6388,7 @@ var spell = [{
     },
     {
         "name": "Shield of Faith",
-        "level": "1st",
+        "level": "1st level",
         "school": "Abjuration",
         "time": "1 bonus action",
         "range": "60 feet",
@@ -6432,7 +6432,7 @@ var spell = [{
     },
     {
         "name": "Silence",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Illusion",
         "ritual": "YES",
         "time": "1 action",
@@ -6444,7 +6444,7 @@ var spell = [{
     },
     {
         "name": "Silent Image",
-        "level": "1st",
+        "level": "1st level",
         "school": "Illusion",
         "time": "1 action",
         "range": "60 feet",
@@ -6461,7 +6461,7 @@ var spell = [{
     },
     {
         "name": "Simulacrum",
-        "level": "7th",
+        "level": "7th level",
         "school": "Illusion",
         "time": "12 hours",
         "range": "Touch",
@@ -6480,7 +6480,7 @@ var spell = [{
     },
     {
         "name": "Skywrite (EE)",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Transmutation",
         "ritual": "YES",
         "time": "1 action",
@@ -6496,7 +6496,7 @@ var spell = [{
     },
     {
         "name": "Sleep",
-        "level": "1st",
+        "level": "1st level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "90 feet",
@@ -6510,13 +6510,13 @@ var spell = [{
             "",
             "Undead and creatures immune to being charmed aren't affected by this spell.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, roll an additional 2d8 for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, roll an additional 2d8 for each slot level above 1st."
         ],
         "roll": "5d8"
     },
     {
         "name": "Sleet Storm",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "150 feet",
@@ -6533,7 +6533,7 @@ var spell = [{
     },
     {
         "name": "Slow",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "120 feet",
@@ -6552,7 +6552,7 @@ var spell = [{
     },
     {
         "name": "Snilloc's Snowball Swarm (EE)",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "90 feet",
@@ -6562,7 +6562,7 @@ var spell = [{
         "text": [
             "A flurry of magic snowballs erupts from a point you choose within range. Each creature in a 5-foot-radius sphere centered on that point must make a Dexterity saving throw. A creature takes 3d6 cold damage on a failed save, or half as much damage on a successful one.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.",
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.",
             "",
             "This spell can be found in the Elemental Evil Player's Companion"
         ],
@@ -6581,7 +6581,7 @@ var spell = [{
     },
     {
         "name": "Speak with Animals",
-        "level": "1st",
+        "level": "1st level",
         "school": "Divination",
         "ritual": "YES",
         "time": "1 action",
@@ -6593,7 +6593,7 @@ var spell = [{
     },
     {
         "name": "Speak with Dead",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Necromancy",
         "time": "1 action",
         "range": "10 feet",
@@ -6608,7 +6608,7 @@ var spell = [{
     },
     {
         "name": "Speak with Plants",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Self (30-foot radius)",
@@ -6629,7 +6629,7 @@ var spell = [{
     },
     {
         "name": "Spider Climb",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Touch",
@@ -6640,7 +6640,7 @@ var spell = [{
     },
     {
         "name": "Spike Growth",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "150 feet",
@@ -6656,7 +6656,7 @@ var spell = [{
     },
     {
         "name": "Spirit Guardians",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "Self (15-foot-radius)",
@@ -6668,13 +6668,13 @@ var spell = [{
             "",
             "When you cast this spell, you can designate any number of creatures you can see to be unaffected by it. An affected creature's speed is halved in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Wisdom saving throw. On a failed save, the creature takes 3d8 radiant damage (if you are good or neutral) or 3d8 necrotic damage (if you are evil). On a successful save, the creature takes half as much damage.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd."
         ],
         "roll": "3d8"
     },
     {
         "name": "Spiritual Weapon",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Evocation",
         "time": "1 bonus action",
         "range": "60 feet",
@@ -6688,7 +6688,7 @@ var spell = [{
             "",
             "The weapon can take whatever form you choose. Clerics of deities who are associated with a particular weapon (as St. Cuthbert is known for his mace and Thor for his hammer) make this spell's effect resemble that weapon.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for every two slot levels above the 2nd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for every two slot levels above the 2nd."
         ],
         "roll": [
             "1d20+SPELL+PROF",
@@ -6697,7 +6697,7 @@ var spell = [{
     },
     {
         "name": "Staggering Smite",
-        "level": "4th",
+        "level": "4th level",
         "school": "Evocation",
         "time": "1 bonus action",
         "range": "Self",
@@ -6709,7 +6709,7 @@ var spell = [{
     },
     {
         "name": "Stinking Cloud",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "90 feet",
@@ -6726,7 +6726,7 @@ var spell = [{
     },
     {
         "name": "Stone Shape",
-        "level": "4th",
+        "level": "4th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Touch",
@@ -6737,7 +6737,7 @@ var spell = [{
     },
     {
         "name": "Stoneskin",
-        "level": "4th",
+        "level": "4th level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Touch",
@@ -6748,7 +6748,7 @@ var spell = [{
     },
     {
         "name": "Storm Sphere (EE)",
-        "level": "4th",
+        "level": "4th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "150 feet",
@@ -6762,7 +6762,7 @@ var spell = [{
             "",
             "Creatures within 30 feet of the sphere have disadvantage on Wisdom (Perception) checks made to listen.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 5th level or higher, the damage increases for each of its effects by 1d6 for each slot level above 4th",
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 5th level or higher, the damage increases for each of its effects by 1d6 for each slot level above 4th",
             "",
             "This spell can be found in the Elemental Evil Player's Companion"
         ],
@@ -6774,7 +6774,7 @@ var spell = [{
     },
     {
         "name": "Storm of Vengeance",
-        "level": "9th",
+        "level": "9th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "Sight",
@@ -6802,7 +6802,7 @@ var spell = [{
     },
     {
         "name": "Suggestion",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "30 feet",
@@ -6821,7 +6821,7 @@ var spell = [{
     },
     {
         "name": "Sunbeam",
-        "level": "6th",
+        "level": "6th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "Self (60-foot line)",
@@ -6839,7 +6839,7 @@ var spell = [{
     },
     {
         "name": "Sunburst",
-        "level": "8th",
+        "level": "8th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "150 feet",
@@ -6857,7 +6857,7 @@ var spell = [{
     },
     {
         "name": "Swift Quiver",
-        "level": "5th",
+        "level": "5th level",
         "school": "Transmutation",
         "time": "1 bonus action",
         "range": "Touch",
@@ -6892,7 +6892,7 @@ var spell = [{
     },
     {
         "name": "Symbol",
-        "level": "7th",
+        "level": "7th level",
         "school": "Abjuration",
         "time": "1 minute",
         "range": "Touch",
@@ -6930,7 +6930,7 @@ var spell = [{
     },
     {
         "name": "Tasha's Hideous Laughter",
-        "level": "1st",
+        "level": "1st level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "30 feet",
@@ -6945,7 +6945,7 @@ var spell = [{
     },
     {
         "name": "Telekinesis",
-        "level": "5th",
+        "level": "5th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "60 feet",
@@ -6969,7 +6969,7 @@ var spell = [{
     },
     {
         "name": "Telepathy",
-        "level": "8th",
+        "level": "8th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "Unlimited",
@@ -6984,7 +6984,7 @@ var spell = [{
     },
     {
         "name": "Teleport",
-        "level": "7th",
+        "level": "7th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "10 feet",
@@ -7020,7 +7020,7 @@ var spell = [{
     },
     {
         "name": "Teleportation Circle",
-        "level": "5th",
+        "level": "5th level",
         "school": "Conjuration",
         "time": "1 minute",
         "range": "10 feet",
@@ -7037,7 +7037,7 @@ var spell = [{
     },
     {
         "name": "Tenser's Floating Disk",
-        "level": "1st",
+        "level": "1st level",
         "school": "Conjuration",
         "ritual": "YES",
         "time": "1 action",
@@ -7127,7 +7127,7 @@ var spell = [{
     },
     {
         "name": "Thunderous Smite",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 bonus action",
         "range": "Self",
@@ -7139,7 +7139,7 @@ var spell = [{
     },
     {
         "name": "Thunderwave",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 action",
         "range": "Self (15-foot cube)",
@@ -7151,13 +7151,13 @@ var spell = [{
             "",
             "In addition, unsecured objects that are completely within the area of effect are automatically pushed 10 feet away from you by the spell's effect, and the spell emits a thunderous boom audible out to 300 feet.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st."
         ],
         "roll": "2d8"
     },
     {
         "name": "Tidal Wave (EE)",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "120 feet",
@@ -7173,7 +7173,7 @@ var spell = [{
     },
     {
         "name": "Time Stop",
-        "level": "9th",
+        "level": "9th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "Self",
@@ -7189,7 +7189,7 @@ var spell = [{
     },
     {
         "name": "Tongues",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Divination",
         "time": "1 action",
         "range": "Touch",
@@ -7200,7 +7200,7 @@ var spell = [{
     },
     {
         "name": "Transmute Rock (EE)",
-        "level": "5th",
+        "level": "5th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "120 feet",
@@ -7224,7 +7224,7 @@ var spell = [{
     },
     {
         "name": "Transport via Plants",
-        "level": "6th",
+        "level": "6th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "10 feet",
@@ -7235,7 +7235,7 @@ var spell = [{
     },
     {
         "name": "Tree Stride",
-        "level": "5th",
+        "level": "5th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "Self",
@@ -7250,7 +7250,7 @@ var spell = [{
     },
     {
         "name": "True Polymorph",
-        "level": "9th",
+        "level": "9th level",
         "school": "Transmutation",
         "time": "1 action",
         "range": "30 feet",
@@ -7279,7 +7279,7 @@ var spell = [{
     },
     {
         "name": "True Resurrection",
-        "level": "9th",
+        "level": "9th level",
         "school": "Necromancy",
         "time": "1 hour",
         "range": "Touch",
@@ -7296,7 +7296,7 @@ var spell = [{
     },
     {
         "name": "True Seeing",
-        "level": "6th",
+        "level": "6th level",
         "school": "Divination",
         "time": "1 action",
         "range": "Touch",
@@ -7318,7 +7318,7 @@ var spell = [{
     },
     {
         "name": "Tsunami",
-        "level": "8th",
+        "level": "8th level",
         "school": "Conjuration",
         "time": "1 minute",
         "range": "Sight",
@@ -7345,7 +7345,7 @@ var spell = [{
     },
     {
         "name": "Unseen Servant",
-        "level": "1st",
+        "level": "1st level",
         "school": "Conjuration",
         "ritual": "YES",
         "time": "1 action",
@@ -7363,7 +7363,7 @@ var spell = [{
     },
     {
         "name": "Vampiric Touch",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Necromancy",
         "time": "1 action",
         "range": "Self",
@@ -7373,7 +7373,7 @@ var spell = [{
         "text": [
             "The touch of your shadow-wreathed hand can siphon force from others to heal your wounds. Make a melee spell attack against a creature within your reach. On a hit, the target takes 3d6 necrotic damage, and you regain hit points equal to half the amount of necrotic damage dealt. Until the spell ends, you can make the attack again on each of your turns as an action.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd."
         ],
         "roll": [
             "1d20+SPELL+PROF",
@@ -7403,7 +7403,7 @@ var spell = [{
     },
     {
         "name": "Vitriolic Sphere (EE)",
-        "level": "4th",
+        "level": "4th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "150 feet",
@@ -7413,7 +7413,7 @@ var spell = [{
         "text": [
             "You point at a place within range, and a glowing 1-foot ball of emerald acid streaks there and explodes in a 20-foot radius. Each creature in that area must make a Dexterity saving throw. On a failed save, a creature takes 10d4 acid damage and 5d4 acid damage at the end of its next turn. On a successful save, a creature takes half the initial damage and no damage at the end of its next turn.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 5th level or higher, the initial damage increases by 2d4 for each slot level above 4th.",
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 5th level or higher, the initial damage increases by 2d4 for each slot level above 4th.",
             "",
             "This spell can be found in the Elemental Evil Player's Companion"
         ],
@@ -7424,7 +7424,7 @@ var spell = [{
     },
     {
         "name": "Wall of Fire",
-        "level": "4th",
+        "level": "4th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "120 feet",
@@ -7438,13 +7438,13 @@ var spell = [{
             "",
             "One side of the wall, selected by you when you cast this spell, deals 5d8 fire damage to each creature that ends its turn within 10 feet of that side or inside the wall. A creature takes the same damage when it enters the wall for the first time on a turn or ends its turn there. The other side of the wall deals no damage.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d8 for each slot level above 4th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d8 for each slot level above 4th."
         ],
         "roll": "5d8"
     },
     {
         "name": "Wall of Force",
-        "level": "5th",
+        "level": "5th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "120 feet",
@@ -7459,7 +7459,7 @@ var spell = [{
     },
     {
         "name": "Wall of Ice",
-        "level": "6th",
+        "level": "6th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "120 feet",
@@ -7473,7 +7473,7 @@ var spell = [{
             "",
             "The wall is an object that can be damaged and thus breached. It has AC 12 and 30 hit points per 10-foot section, and it is vulnerable to fire damage. Reducing a 10-foot section of wall to 0 hit points destroys it and leaves behind a sheet of frigid air in the space the wall occupied. A creature moving through the sheet of frigid air for the first time on a turn must make a Constitution saving throw. The creature takes 5d6 cold damage on a failed save, or half as much damage on a successful one.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 7th level or higher, the damage the wall deals when it appears increases by 2d6, and the damage from passing through the sheet of frigid air increases by 1d6 for each slot level above 6th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 7th level or higher, the damage the wall deals when it appears increases by 2d6, and the damage from passing through the sheet of frigid air increases by 1d6 for each slot level above 6th."
         ],
         "roll": [
             "10d6",
@@ -7482,7 +7482,7 @@ var spell = [{
     },
     {
         "name": "Wall of Sand (EE)",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "90 feet",
@@ -7497,7 +7497,7 @@ var spell = [{
     },
     {
         "name": "Wall of Stone",
-        "level": "5th",
+        "level": "5th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "120 feet",
@@ -7520,7 +7520,7 @@ var spell = [{
     },
     {
         "name": "Wall of Thorns",
-        "level": "6th",
+        "level": "6th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "120 feet",
@@ -7534,13 +7534,13 @@ var spell = [{
             "",
             "A creature can move through the wall, albeit slowly and painfully. For every 1 foot a creature moves through the wall, it must spend 4 feet of movement. Furthermore, the first time a creature enters the wall on a turn or ends its turn there, the creature must make a Dexterity saving throw. It takes 7d8 slashing damage on a failed save, or half as much on a successful save.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 7th level or higher, both types of damage increase by 1d8 for each slot level above 6th."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 7th level or higher, both types of damage increase by 1d8 for each slot level above 6th."
         ],
         "roll": "7d8"
     },
     {
         "name": "Wall of Water (EE)",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "60 feet",
@@ -7557,7 +7557,7 @@ var spell = [{
     },
     {
         "name": "Warding Bond",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Abjuration",
         "time": "1 action",
         "range": "Touch",
@@ -7572,7 +7572,7 @@ var spell = [{
     },
     {
         "name": "Warding Wind (EE)",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "Self",
@@ -7599,7 +7599,7 @@ var spell = [{
     },
     {
         "name": "Water Breathing",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Transmutation",
         "ritual": "YES",
         "time": "1 action",
@@ -7611,7 +7611,7 @@ var spell = [{
     },
     {
         "name": "Water Walk",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Transmutation",
         "ritual": "YES",
         "time": "1 action",
@@ -7627,7 +7627,7 @@ var spell = [{
     },
     {
         "name": "Watery Sphere (EE)",
-        "level": "4th",
+        "level": "4th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "90 feet",
@@ -7650,7 +7650,7 @@ var spell = [{
     },
     {
         "name": "Web",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "60 feet",
@@ -7672,7 +7672,7 @@ var spell = [{
     },
     {
         "name": "Weird",
-        "level": "9th",
+        "level": "9th level",
         "school": "Illusion",
         "time": "1 action",
         "range": "120 feet",
@@ -7684,7 +7684,7 @@ var spell = [{
     },
     {
         "name": "Whirlwind (EE)",
-        "level": "7th",
+        "level": "7th level",
         "school": "Evocation",
         "time": "1 action",
         "range": "300 feet",
@@ -7708,7 +7708,7 @@ var spell = [{
     },
     {
         "name": "Wind Walk",
-        "level": "6th",
+        "level": "6th level",
         "school": "Transmutation",
         "time": "1 minute",
         "range": "30 feet",
@@ -7723,7 +7723,7 @@ var spell = [{
     },
     {
         "name": "Wind Wall",
-        "level": "3rd",
+        "level": "3rd level",
         "school": "Evocation",
         "time": "1 action",
         "range": "120 feet",
@@ -7741,7 +7741,7 @@ var spell = [{
     },
     {
         "name": "Wish",
-        "level": "9th",
+        "level": "9th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "Self",
@@ -7775,7 +7775,7 @@ var spell = [{
     },
     {
         "name": "Witch Bolt",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 action",
         "range": "30 feet",
@@ -7785,13 +7785,13 @@ var spell = [{
         "text": [
             "A beam of crackling, blue energy lances out toward a creature within range, forming a sustained arc of lightning between you and the target. Make a ranged spell attack against that creature. On a hit, the target takes 1d12 lightning damage, and on each of your turns for the duration, you can use your action to deal 1d12 lightning damage to the target automatically. The spell ends if you use your action to do anything else. The spell also ends if the target is ever outside the spell's range or if it has total cover from you.",
             "",
-            "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the initial damage increases by 1d12 for each slot level above 1st."
+            "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the initial damage increases by 1d12 for each slot level above 1st."
         ],
         "roll": "1d12"
     },
     {
         "name": "Word of Recall",
-        "level": "6th",
+        "level": "6th level",
         "school": "Conjuration",
         "time": "1 action",
         "range": "5 feet",
@@ -7806,7 +7806,7 @@ var spell = [{
     },
     {
         "name": "Wrathful Smite",
-        "level": "1st",
+        "level": "1st level",
         "school": "Evocation",
         "time": "1 bonus action",
         "range": "Self",
@@ -7817,7 +7817,7 @@ var spell = [{
     },
     {
         "name": "Zone of Truth",
-        "level": "2nd",
+        "level": "2nd level",
         "school": "Enchantment",
         "time": "1 action",
         "range": "60 feet",
@@ -7861,7 +7861,7 @@ $(document).ready(function () {
     setTimeout(
         toDark(), 250);
     buildSpells();
-    $('.grid').isotope({
+    $('.spellGrid').isotope({
         itemSelector: '.grid-item',
         masonry: {
             columnWidth: 100
@@ -7870,7 +7870,13 @@ $(document).ready(function () {
             name: '.spellName'
         }
     });
-    $('.grid').isotope({ sortBy: 'name' })
+    $('.features').isotope({
+        itemSelector: '.grid-item',
+        masonry: {
+            columnWidth: 100
+        }
+    });
+    $('.spellGrid').isotope({ sortBy: 'name' })
 });
 
 
@@ -7963,6 +7969,15 @@ function accordion(id) {
 }
 
 function spellNameFilter() {
+    let classNames = ["All","Artificer","Bard","Cleric","Druid","Fighter","Monk","Paladin","Ranger","Rogue","Sorcerer","Warlock","Wizard"]
+
+    classNames.forEach(function(className){
+        $("#classBtn"+className).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
+    });
+
+    $("#classBtnAll").removeClass('w3-grey').addClass('w3-blue');
+
+
     var input = document.getElementById('spellNameSearch').value.toUpperCase();
 
     if (input != "") {
@@ -7983,17 +7998,30 @@ function spellNameFilter() {
     }
 }
 
-function spellClassFilter() {
-    var input = document.getElementById('spellClassSelect').value.toUpperCase();
+function spellClassFilter(input) {
+    $("#spellNameSearch").val("");
 
-    if (input != "...") {
+    let classNames = ["All","Artificer","Bard","Cleric","Druid","Fighter","Monk","Paladin","Ranger","Rogue","Sorcerer","Warlock","Wizard"]
+
+    let filter = input.toUpperCase();
+
+    classNames.forEach(function(className){
+        if (className != input){
+        $("#classBtn"+className).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
+        }
+    });
+
+    $("#classBtn"+input).removeClass('w3-grey').addClass('w3-blue');
+
+
+    if (input != "All") {
         // Filter for spell names that match the input
         $('.grid').isotope({
             filter: function () {
                 // _this_ is the item element. Get text of element's .name
                 var spClass = $(this).find('.spellClasses').text().toUpperCase();
                 // return true to show, false to hide
-                return spClass.indexOf(input) > -1;
+                return spClass.indexOf(filter) > -1;
             }
         })
     } else {
@@ -8005,227 +8033,15 @@ function spellClassFilter() {
 }
 
 
-function weaponFilter() {
-    var input, filter, table, tr, td, i;
-    input = document.getElementById("weaponSearch");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("weaponTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-        }
-    }
-    document.getElementById("weaponFamilySelect").options.selectedIndex = 0;
-    document.getElementById("weaponClassSelect").options.selectedIndex = 0;
-    document.getElementById("weaponBookSelect").options.selectedIndex = 0;
-}
-
-function talentFilter() {
-    var input, filter, table, tr, td, i;
-    input = document.getElementById("talentSearch");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("talentTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-        }
-    }
-
-    document.getElementById("talentTierSelect").options.selectedIndex = 0;
-}
-
-function talentTierFilter() {
-    let selectBox = document.getElementById("talentTierSelect")
-
-    let selection = selectBox.options[selectBox.selectedIndex].value;
-
-    var input, filter, table, tr, td, i;
-    input = selection;
-
-    filter = input.toUpperCase();
-    table = document.getElementById("talentTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[4];
-        if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1 || filter == "...") {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-        }
-    }
-
-    $("#talentSearch").val("")
-}
-
-function psyPowerFilter() {
-    var input, filter, table, tr, td, i;
-    input = document.getElementById("psySearch");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("psyPowerTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-        }
-    }
-
-    document.getElementById("psyDiscSelect").options.selectedIndex = 0;
-}
-
-function psyFilterDisc() {
-    let selectBox = document.getElementById("psyDiscSelect")
-
-    let selection = selectBox.options[selectBox.selectedIndex].value;
-
-    var input, filter, table, tr, td, i;
-    input = selection;
-
-    filter = input.toUpperCase();
-    table = document.getElementById("psyPowerTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[1];
-        if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1 || filter == "...") {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-        }
-    }
-
-    $("#psySearch").val("")
-}
-
-function divFilter() {
-    var input, table, tr, td, i;
-    input = document.getElementById("divRoll").value;
-
-    table = document.getElementById("divTable");
-
-    tr = table.getElementsByTagName("tr");
-
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (inRangeInclusive(input, txtValue) || input == "") {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-        }
-    }
-}
-
-function weaponFilterFamily() {
-    let selectBox = document.getElementById("weaponFamilySelect")
-
-    let selection = selectBox.options[selectBox.selectedIndex].value;
-
-    var input, filter, table, tr, td, i;
-    input = selection;
-
-    filter = input.toUpperCase();
-    table = document.getElementById("weaponTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[1];
-        if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1 || filter == "...") {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-        }
-    }
-
-    $("#weaponSearch").val("")
-    document.getElementById("weaponClassSelect").options.selectedIndex = 0;
-    document.getElementById("weaponBookSelect").options.selectedIndex = 0;
-}
-
-function weaponFilterClass() {
-    let selectBox = document.getElementById("weaponClassSelect")
-
-    let selection = selectBox.options[selectBox.selectedIndex].value;
-
-    var input, filter, table, tr, td, i;
-    input = selection;
-
-    filter = input.toUpperCase();
-    table = document.getElementById("weaponTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[2];
-        if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1 || filter == "...") {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-        }
-    }
-
-    $("#weaponSearch").val("")
-    document.getElementById("weaponFamilySelect").options.selectedIndex = 0;
-    document.getElementById("weaponBookSelect").options.selectedIndex = 0;
-}
-
-function weaponFilterBook() {
-    let selectBox = document.getElementById("weaponBookSelect")
-
-    let selection = selectBox.options[selectBox.selectedIndex].value;
-
-    var input, filter, table, tr, td, i;
-    input = selection;
-
-    filter = input.toUpperCase();
-    table = document.getElementById("weaponTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[13];
-        if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1 || filter == "...") {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-        }
-    }
-
-    $("#weaponSearch").val("")
-    document.getElementById("weaponFamilySelect").options.selectedIndex = 0;
-    document.getElementById("weaponClassSelect").options.selectedIndex = 0;
-}
-
 function buildNavbar() {
     $('#navBarDiv').load("./navbar.html");
+}
+
+
+function spellSearchClick(el) {
+    $("#spellNameSearch").val(el.firstChild.textContent);
+    spellNameFilter();
+    $('html, body').animate({
+        scrollTop: ($('#spellNameSearch').offset().top)
+    },150);
 }

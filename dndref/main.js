@@ -7982,7 +7982,7 @@ function spellNameFilter() {
 
     if (input != "") {
         // Filter for spell names that match the input
-        $('.grid').isotope({
+        $('.spellGrid').isotope({
             filter: function () {
                 // _this_ is the item element. Get text of element's .name
                 var name = $(this).find('.spellName').text().toUpperCase();
@@ -7991,7 +7991,7 @@ function spellNameFilter() {
             }
         })
     } else {
-        $('.grid').isotope({
+        $('.spellGrid').isotope({
             // Clear filter
             filter: '*'
         })
@@ -8016,7 +8016,7 @@ function spellClassFilter(input) {
 
     if (input != "All") {
         // Filter for spell names that match the input
-        $('.grid').isotope({
+        $('.spellGrid').isotope({
             filter: function () {
                 // _this_ is the item element. Get text of element's .name
                 var spClass = $(this).find('.spellClasses').text().toUpperCase();
@@ -8025,7 +8025,7 @@ function spellClassFilter(input) {
             }
         })
     } else {
-        $('.grid').isotope({
+        $('.spellGrid').isotope({
             // Clear filter
             filter: '*'
         })

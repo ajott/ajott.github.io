@@ -7864,7 +7864,7 @@ $(document).ready(function () {
     $('.spellGrid').isotope({
         itemSelector: '.grid-item',
         masonry: {
-            columnWidth: 100
+            columnWidth: 25
         }, 
         getSortData: {
             name: '.spellName'
@@ -7873,7 +7873,7 @@ $(document).ready(function () {
     $('.features').isotope({
         itemSelector: '.grid-item',
         masonry: {
-            columnWidth: 100
+            columnWidth: 25
         }
     });
     $('.spellGrid').isotope({ sortBy: 'name' })

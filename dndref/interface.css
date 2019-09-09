@@ -307,7 +307,7 @@ Generated Maroon theme
 
 
 .grid {
-    max-width: 1200px;
+    max-width: 1600px;
   }
   
   /* clear fix */
@@ -319,9 +319,10 @@ Generated Maroon theme
   
   /* ---- .grid-item ---- */
   
+
   .grid-item {
     float: left;
-    width: 400px;
+    width: 375px;
     height: auto;
     padding-left: 5px;
     padding-right: 5px;
@@ -330,7 +331,7 @@ Generated Maroon theme
   }
   
   .features {
-      max-width: 1200px;
+      max-width: 1600px;
   }
 
   .features:after {

@@ -56,6 +56,11 @@ footer {
     padding-bottom: 10px;
 }
 
+table:first-of-type thead {
+    top: 40px;
+    position: -webkit-sticky;
+    position: sticky;
+}
 
 td:first-child {
     font-weight: bold;
@@ -78,9 +83,13 @@ td:first-child {
     background: rgba(255,255,0, .35) !important;
 }
 
-.table-dark th {
+.table-dark thead:first-child th {
     background: goldenrod !important;
     border-bottom: 1px solid darkgrey;
+}
+
+.midHead {
+    background-color: rgba(218, 165, 32, 0.45) !important;
 }
 
 .w3-ul li {
@@ -97,6 +106,10 @@ a:hover {
     text-decoration: none !important;
 }
 
+.smallish {
+    padding: 1px !important;
+    font-size: 0.9em !important;
+}
 
 .bar-pad {
     padding-top: 2px;

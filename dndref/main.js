@@ -8045,3 +8045,35 @@ function spellSearchClick(el) {
         scrollTop: ($('#spellNameSearch').offset().top)
     },150);
 }
+
+
+
+function gearNameFilter() {
+    var input, filter, table, tr, td;
+    input = document.getElementById("gearSearch");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("gearTable");
+    tr = table.getElementsByTagName("tr");
+    theads = table.getElementsByClassName("gearMidHead");
+    if (filter != "") {
+        for (let i = 0; i < theads.length; i++) {
+            theads[i].style.display = "none";
+        }
+    } else {
+        for (let i = 0; i < theads.length; i++) {
+            theads[i].style.display = "";
+        }
+    }
+
+    for (let i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1 && txtValue != null) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}

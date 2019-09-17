@@ -1,0 +1,95 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>D&D 5e QuickRef</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="./isotope.pkgd.js"></script>
+</head>
+
+
+<body>
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad" id="navBarDiv">
+    </div>
+
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div id="feats" class="w3-section w3-row-padding info">
+                <h1>Feats</h1>
+                <div class="w3-row">
+                    <div class="w3-col s12 m6 l4">
+                        <input class="w3-input w3-border w3-padding w3-grey w3-round" type="text"
+                            placeholder="Search by name..." id="featNameSearch" onkeyup="featNameFilter()">
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="featGrid">
+                    <div class="" id="defaultFeatCard" style="display:none;">
+                        <div class="w3-card-2 w3-round-large">
+                            <div class="w3-row-padding">
+                                <h3 class="featName"></h3>
+                            </div>
+                            <div class="w3-row-padding">
+                                <span class="featDesc"></span>
+                                <br />
+                                <span class="modSpan"></span>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+
+    </div>
+</body>
+<footer>
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m10 l10">
+            All D&D material is © Wizards of the Coast
+        </div>
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            buildFeats();
+            $('.featGrid').isotope({
+                itemSelector: '.grid-item',
+                masonry: {
+                    columnWidth: 25
+                },
+                getSortData: {
+                    name: '.featName'
+                }
+            });
+            $('.featGrid').isotope({
+                sortBy: 'name'
+            })
+        });
+    </script>
+</footer>
+
+</html>

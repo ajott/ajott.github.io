@@ -305,7 +305,6 @@ Generated Maroon theme
 .w3-hover-border-quiet:hover {border-color:#bcbcbe !important}
 
 
-
 .grid {
     max-width: 1600px;
   }
@@ -330,6 +329,17 @@ Generated Maroon theme
     padding-bottom: 5px;
   }
   
+  .advancementCard {
+      padding-top: 5px;
+      padding-bottom: 5px;
+  }
+
+  .advancements {
+      padding-bottom: 20px !important;
+      /* background-color: rgba(255, 255, 255, .05) */
+      border: 1px solid #616161;
+  }
+
   .features {
       max-width: 1600px;
   }
@@ -338,4 +348,11 @@ Generated Maroon theme
       content: '';
       display: block;
       clear: both;
+  }
+
+  .advancementButton {
+        top: 40px;
+        position: -webkit-sticky;
+        position: sticky;
+        z-index: 50;
   }

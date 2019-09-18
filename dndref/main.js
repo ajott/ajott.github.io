@@ -19,6 +19,52 @@ function toDark() {
     $("h4").addClass("headingDark");
 }
 
+function sumArr(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+
+    return sum;
+}
+
+
+function roll(str, mod = 0) {
+
+    if (str == "-") {
+        return 1;
+    }
+
+    let numRolls = Number(str.split("d")[0]);
+    let diceValue = Number(str.split("d")[1]);
+
+    let result = [];
+
+    for (let i = 0; i < numRolls; i++) {
+        result.push(Math.floor((Math.random() * diceValue) + 1))
+    }
+
+    // Sorts the array of rolls for ease of removing high/low values
+    result.sort(function (a, b) {
+        return a - b
+    })
+
+    if (mod == 1) {
+        // Remove lowest value
+        result.shift()
+    } else if (mod == -1) {
+        // Remove highest value
+        result.pop()
+    }
+
+    let totals = {
+        "rolls": result,
+        "total": sumArr(result)
+    };
+
+    return totals;
+}
+
 
 $(document).ready(function () {
     buildNavbar();

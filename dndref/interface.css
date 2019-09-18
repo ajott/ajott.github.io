@@ -2,7 +2,11 @@
     padding-top: 60px;
 }
 
-.info h1, h2, h3, h4, h5 {
+.info h1,
+h2,
+h3,
+h4,
+h5 {
     text-align: center;
     color: goldenrod;
 }
@@ -80,7 +84,7 @@ td:first-child {
 }
 
 .table-dark tbody tr:hover {
-    background: rgba(255,255,0, .35) !important;
+    background: rgba(255, 255, 0, .35) !important;
 }
 
 .table-dark thead:first-child th {
@@ -97,7 +101,7 @@ td:first-child {
 }
 
 .w3-ul li:hover {
-    background: rgba(255,255,0, .35) !important;
+    background: rgba(255, 255, 0, .35) !important;
     text-decoration: underline;
 }
 
@@ -108,6 +112,11 @@ a:hover {
 
 .smallish {
     padding: 1px !important;
+    font-size: 0.9em !important;
+}
+
+.smallish-padded {
+    padding: 3px !important;
     font-size: 0.9em !important;
 }
 
@@ -131,33 +140,42 @@ a:hover {
 }
 
 hr {
-    font-family: Arial, sans-serif; /* choose the font you like */
-    text-align: center; /* horizontal centering */
-    line-height: 1px; /* vertical centering */
-    height: 1px; /* gap between the lines */
-    font-size: 1em; /* choose font size you like */
-    border-width: 1px 0; /* top and bottom borders */
+    font-family: Arial, sans-serif;
+    /* choose the font you like */
+    text-align: center;
+    /* horizontal centering */
+    line-height: 1px;
+    /* vertical centering */
+    height: 1px;
+    /* gap between the lines */
+    font-size: 1em;
+    /* choose font size you like */
+    border-width: 1px 0;
+    /* top and bottom borders */
     border-style: solid;
     border-color: goldenrod;
-    margin: 20px 10px; /* 20px space above/below, 10px left/right */
+    margin: 20px 10px;
+    /* 20px space above/below, 10px left/right */
     overflow: visible;
-  
+
     /* ensure 1px gap between borders */
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     -ms-box-sizing: content-box;
     -o-box-sizing: content-box;
     box-sizing: content-box;
-  }
-  
-  hr:after {
-    content: "⚔"; /* Crossed swords */
+}
+
+hr:after {
+    content: "⚔";
+    /* Crossed swords */
     color: goldenrod;
     font-size: 2em;
-    display: inline; /* for vertical centering and background knockout */
+    display: inline;
+    /* for vertical centering and background knockout */
     position: relative;
     bottom: -2px;
-  }
+}
 
 
 /* 
@@ -168,158 +186,242 @@ Generated Maroon theme
     color: #000 !important;
     background-color: #ffe8e8 !important
 }
-
 .w3-maroon-l4 {
     color: #000 !important;
     background-color: #ffb3b3 !important
 }
-
 .w3-maroon-l3 {
     color: #fff !important;
     background-color: #ff6666 !important
 }
-
 .w3-maroon-l2 {
     color: #fff !important;
     background-color: #ff1a1a !important
 }
-
 .w3-maroon-l1 {
     color: #fff !important;
     background-color: #cc0000 !important
 }
-
 .w3-maroon-d1 {
     color: #fff !important;
     background-color: #730000 !important
 }
-
 .w3-maroon-d2 {
     color: #fff !important;
     background-color: #660000 !important
 }
-
 .w3-maroon-d3 {
     color: #fff !important;
     background-color: #590000 !important
 }
-
 .w3-maroon-d4 {
     color: #fff !important;
     background-color: #4d0000 !important
 }
-
 .w3-maroon-d5 {
     color: #fff !important;
     background-color: #400000 !important
 }
-
 .w3-maroon-light {
     color: #000 !important;
     background-color: #ffe8e8 !important
 }
-
 .w3-maroon-dark {
     color: #fff !important;
     background-color: #400000 !important
 }
-
 .w3-maroon-action {
     color: #fff !important;
     background-color: #400000 !important
 }
-
 .w3-maroon {
     color: #fff !important;
     background-color: #800000 !important
 }
-
 .w3-text-maroon {
     color: #800000 !important
 }
-
 .w3-border-maroon {
     border-color: #800000 !important
 }
-
 .w3-hover-maroon:hover {
     color: #fff !important;
     background-color: #800000 !important
 }
-
 .w3-hover-text-maroon:hover {
     color: #800000 !important
 }
-
 .w3-hover-border-maroon:hover {
     border-color: #800000 !important
 }
-
-.w3-gold-l5 {color:#000 !important; background-color:#fffdf0 !important}
-.w3-gold-l4 {color:#000 !important; background-color:#fff7cc !important}
-.w3-gold-l3 {color:#000 !important; background-color:#fff099 !important}
-.w3-gold-l2 {color:#000 !important; background-color:#ffe866 !important}
-.w3-gold-l1 {color:#000 !important; background-color:#ffe033 !important}
-.w3-gold-d1 {color:#000 !important; background-color:#e6c300 !important}
-.w3-gold-d2 {color:#fff !important; background-color:#ccad00 !important}
-.w3-gold-d3 {color:#fff !important; background-color:#b39800 !important}
-.w3-gold-d4 {color:#fff !important; background-color:#998200 !important}
-.w3-gold-d5 {color:#fff !important; background-color:#806c00 !important}
-
-.w3-gold-light {color:#000 !important; background-color:#fffdf0 !important}
-.w3-gold-dark {color:#fff !important; background-color:#806c00 !important}
-.w3-gold-action {color:#fff !important; background-color:#806c00 !important}
-
-.w3-gold {color:#000 !important; background-color:#ffd700 !important}
-.w3-text-gold {color:#ffd700 !important}
-.w3-border-gold {border-color:#ffd700 !important}
-
-.w3-hover-gold:hover {color:#000 !important; background-color:#daa520 !important}
-.w3-hover-text-gold:hover {color:#ffd700 !important}
-.w3-hover-border-gold:hover {border-color:#ffd700 !important}
-
-
-.goldenrodClass {color: goldenrod !important};
-
-.w3-quiet-l5 {color:#000 !important; background-color:#fbfbfb !important}
-.w3-quiet-l4 {color:#000 !important; background-color:#f1f1f2 !important}
-.w3-quiet-l3 {color:#000 !important; background-color:#e4e4e5 !important}
-.w3-quiet-l2 {color:#000 !important; background-color:#d6d6d8 !important}
-.w3-quiet-l1 {color:#000 !important; background-color:#c9c9cb !important}
-.w3-quiet-d1 {color:#000 !important; background-color:#a8a8ac !important}
-.w3-quiet-d2 {color:#fff !important; background-color:#959599 !important}
-.w3-quiet-d3 {color:#fff !important; background-color:#828287 !important}
-.w3-quiet-d4 {color:#fff !important; background-color:#6f6f73 !important}
-.w3-quiet-d5 {color:#fff !important; background-color:#5c5c60 !important}
-
-.w3-quiet-light {color:#000 !important; background-color:#fbfbfb !important}
-.w3-quiet-dark {color:#fff !important; background-color:#5c5c60 !important}
-.w3-quiet-action {color:#fff !important; background-color:#5c5c60 !important}
-
-.w3-quiet {color:#000 !important; background-color:#bcbcbe !important}
-.w3-text-quiet {color:#bcbcbe !important}
-.w3-border-quiet {border-color:#bcbcbe !important}
-
-.w3-hover-quiet:hover {color:#000 !important; background-color:#bcbcbe !important}
-.w3-hover-text-quiet:hover {color:#bcbcbe !important}
-.w3-hover-border-quiet:hover {border-color:#bcbcbe !important}
+.w3-gold-l5 {
+    color: #000 !important;
+    background-color: #fffdf0 !important
+}
+.w3-gold-l4 {
+    color: #000 !important;
+    background-color: #fff7cc !important
+}
+.w3-gold-l3 {
+    color: #000 !important;
+    background-color: #fff099 !important
+}
+.w3-gold-l2 {
+    color: #000 !important;
+    background-color: #ffe866 !important
+}
+.w3-gold-l1 {
+    color: #000 !important;
+    background-color: #ffe033 !important
+}
+.w3-gold-d1 {
+    color: #000 !important;
+    background-color: #e6c300 !important
+}
+.w3-gold-d2 {
+    color: #fff !important;
+    background-color: #ccad00 !important
+}
+.w3-gold-d3 {
+    color: #fff !important;
+    background-color: #b39800 !important
+}
+.w3-gold-d4 {
+    color: #fff !important;
+    background-color: #998200 !important
+}
+.w3-gold-d5 {
+    color: #fff !important;
+    background-color: #806c00 !important
+}
+.w3-gold-light {
+    color: #000 !important;
+    background-color: #fffdf0 !important
+}
+.w3-gold-dark {
+    color: #fff !important;
+    background-color: #806c00 !important
+}
+.w3-gold-action {
+    color: #fff !important;
+    background-color: #806c00 !important
+}
+.w3-gold {
+    color: #000 !important;
+    background-color: #ffd700 !important
+}
+.w3-goldenrod {
+    color: #000 !important;
+    background-color: #daa520 !important
+}
+.w3-text-gold {
+    color: #ffd700 !important
+}
+.w3-border-gold {
+    border-color: #ffd700 !important
+}
+.w3-hover-gold:hover {
+    color: #000 !important;
+    background-color: #daa520 !important
+}
+.w3-hover-text-gold:hover {
+    color: #ffd700 !important
+}
+.w3-hover-border-gold:hover {
+    border-color: #ffd700 !important
+}
+.goldenrodClass {
+    color: goldenrod !important
+}
+.w3-quiet-l5 {
+    color: #000 !important;
+    background-color: #fbfbfb !important
+}
+.w3-quiet-l4 {
+    color: #000 !important;
+    background-color: #f1f1f2 !important
+}
+.w3-quiet-l3 {
+    color: #000 !important;
+    background-color: #e4e4e5 !important
+}
+.w3-quiet-l2 {
+    color: #000 !important;
+    background-color: #d6d6d8 !important
+}
+.w3-quiet-l1 {
+    color: #000 !important;
+    background-color: #c9c9cb !important
+}
+.w3-quiet-d1 {
+    color: #000 !important;
+    background-color: #a8a8ac !important
+}
+.w3-quiet-d2 {
+    color: #fff !important;
+    background-color: #959599 !important
+}
+.w3-quiet-d3 {
+    color: #fff !important;
+    background-color: #828287 !important
+}
+.w3-quiet-d4 {
+    color: #fff !important;
+    background-color: #6f6f73 !important
+}
+.w3-quiet-d5 {
+    color: #fff !important;
+    background-color: #5c5c60 !important
+}
+.w3-quiet-light {
+    color: #000 !important;
+    background-color: #fbfbfb !important
+}
+.w3-quiet-dark {
+    color: #fff !important;
+    background-color: #5c5c60 !important
+}
+.w3-quiet-action {
+    color: #fff !important;
+    background-color: #5c5c60 !important
+}
+.w3-quiet {
+    color: #000 !important;
+    background-color: #bcbcbe !important
+}
+.w3-text-quiet {
+    color: #bcbcbe !important
+}
+.w3-border-quiet {
+    border-color: #bcbcbe !important
+}
+.w3-hover-quiet:hover {
+    color: #000 !important;
+    background-color: #bcbcbe !important
+}
+.w3-hover-text-quiet:hover {
+    color: #bcbcbe !important
+}
+.w3-hover-border-quiet:hover {
+    border-color: #bcbcbe !important
+}
 
 
 .grid {
     max-width: 1600px;
-  }
-  
-  /* clear fix */
-  .grid:after {
+}
+
+/* clear fix */
+.grid:after {
     content: '';
     display: block;
     clear: both;
-  }
-  
-  /* ---- .grid-item ---- */
-  
+}
 
-  .grid-item {
+/* ---- .grid-item ---- */
+
+
+.grid-item {
     float: left;
     width: 375px;
     height: auto;
@@ -327,32 +429,39 @@ Generated Maroon theme
     padding-right: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
-  }
-  
-  .advancementCard {
-      padding-top: 5px;
-      padding-bottom: 5px;
-  }
+}
 
-  .advancements {
-      padding-bottom: 20px !important;
-      /* background-color: rgba(255, 255, 255, .05) */
-      border: 1px solid #616161;
-  }
+.advancementCard {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 
-  .features {
-      max-width: 1600px;
-  }
+.advancements {
+    padding-bottom: 20px !important;
+    /* background-color: rgba(255, 255, 255, .05) */
+    border: 1px solid #616161;
+}
 
-  .features:after {
-      content: '';
-      display: block;
-      clear: both;
-  }
+.features {
+    max-width: 1600px;
+}
 
-  .advancementButton {
-        top: 40px;
-        position: -webkit-sticky;
-        position: sticky;
-        z-index: 50;
-  }
+.features:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.advancementButton {
+    top: 40px;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 50;
+    border: 1px solid goldenrod;
+}
+
+.advancementCard table {
+    border: 1px solid grey;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px;
+}

@@ -38,7 +38,6 @@ $(document).ready(function () {
     // })
 });
 
-
 function buildSpells() {
     let htmlString = "";
 
@@ -69,6 +68,9 @@ function buildSpells() {
             } else {
                 htmlString = "<p>" + spell[i]["text"] + "</p>"
             }
+        }
+        if (spell[i]["ritual"] == "YES"){
+            $("#spell" + i).children().children().children().children(".ritual").text("Ritual")
         }
         $("#spell" + i).children().children().children(".spellDescription").html(htmlString)
         $("#spell" + i).addClass("grid-item")
@@ -161,6 +163,26 @@ function accordion(id) {
         x.className += " w3-show";
     } else {
         x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+function accordionSidebar(id) {
+    var x = document.getElementById(id);
+    let sidebarDivs = ["barbsidebar","bardsidebar","clericsidebar","druidsidebar","fightersidebar","monksidebar","paladinsidebar","rangersidebar","roguesidebar","sorcerersidebar","warlocksidebar","wizardsidebar"]
+
+    for (let i = 0; i < sidebarDivs.length; i ++) {
+        if (sidebarDivs[i] != id)   {
+            $("#"+sidebarDivs[i]).removeClass("w3-show")
+            document.getElementById(sidebarDivs[i]).previousElementSibling.className = document.getElementById(sidebarDivs[i]).previousElementSibling.className.replace("w3-goldenrod", "");
+        }
+    }
+
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-goldenrod";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className = x.previousElementSibling.className.replace("w3-goldenrod", "");
     }
 }
 

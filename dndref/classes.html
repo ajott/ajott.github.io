@@ -22,156 +22,145 @@
     <div class="w3-top w3-darker-grey w3-row-padding bar-pad" id="navBarDiv" style="z-index: 100">
     </div>
 
-    <!-- <div class="w3-sidebar w3-bar-block w3-hide-small w3-hide-medium w3-card w3-darker-grey"
-        style="width: 120px; position: absolute; top: 43px; overflow: hidden; border-right: 1px solid lightgrey;">
+    <div class="w3-sidebar w3-bar-block w3-hide-small w3-hide-medium w3-card w3-darker-grey"
+        style="width: 120px; position: absolute; top: 43px; border-right: 1px solid lightgrey;">
         <div id="headTitleBuffer" style="height: 33.75px !important; background-color: red;">You shouldn't see me!</div>
         <div>
-            <div class="w3-dropdown-hover w3-darker-grey w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-gold">Barbarian <i
+            <div class="w3-darker-grey w3-hide-small">
+                <button onclick="accordionSidebar('barbsidebar')" class="w3-button w3-round-large w3-hover-gold">Barbarian <i
                         class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-dark-grey w3-round-large">
+                <div class="w3-hide w3-container w3-block w3-dark-grey" id="barbsidebar">
                     <a href="./classes.html#barbarian"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Info</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Info</a>
                     <a href="./classes.html#barbarianFeatures"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Features</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Features</a>
                     <a href="./classes.html#primalPaths"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Primal Paths</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Primal Paths</a>
                 </div>
             </div>
-            <div class="w3-dropdown-hover w3-darker-grey w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-gold">Bard <i class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-dark-grey w3-round-large"
-                    style="width: 110px !important;">
+            <div class="w3-darker-grey w3-hide-small">
+                <button onclick="accordionSidebar('bardsidebar')" class="w3-button w3-round-large w3-hover-gold">Bard <i class="fa fa-caret-down"></i></button>
+                <div class="w3-hide w3-container w3-block w3-dark-grey" id="bardsidebar">
                     <a href="./classes.html#bard"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Info</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Info</a>
                     <a href="./classes.html#bardFeatures"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Features</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Features</a>
                     <a href="./classes.html#bardColleges"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Bard Colleges</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Bard Colleges</a>
                 </div>
             </div>
-            <div class="w3-dropdown-hover w3-darker-grey w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-gold">Cleric <i class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-dark-grey w3-round-large"
-                    style="width: 110px !important;">
+            <div class="w3-darker-grey w3-hide-small">
+                <button onclick="accordionSidebar('clericsidebar')" class="w3-button w3-round-large w3-hover-gold">Cleric <i class="fa fa-caret-down"></i></button>
+                <div class="w3-hide w3-container w3-block w3-dark-grey" id="clericsidebar">
                     <a href="./classes.html#cleric"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Info</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Info</a>
                     <a href="./classes.html#clericFeatures"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Features</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Features</a>
                     <a href="./classes.html#clericDomains"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Cleric Domains</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Cleric Domains</a>
                 </div>
             </div>
-            <div class="w3-dropdown-hover w3-darker-grey w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-gold">Druid <i class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-dark-grey w3-round-large"
-                    style="width: 110px !important;">
+            <div class="w3-darker-grey w3-hide-small">
+                <button onclick="accordionSidebar('druidsidebar')" class="w3-button w3-round-large w3-hover-gold">Druid <i class="fa fa-caret-down"></i></button>
+                <div class="w3-hide w3-container w3-block w3-dark-grey" id="druidsidebar">
                     <a href="./classes.html#druid"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Info</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Info</a>
                     <a href="./classes.html#druidFeatures"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Features</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Features</a>
                     <a href="./classes.html#druidCircles"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Druid Circles</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Druid Circles</a>
                 </div>
             </div>
-            <div class="w3-dropdown-hover w3-darker-grey w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-gold">Fighter <i class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-dark-grey w3-round-large"
-                    style="width: 110px !important;">
+            <div class="w3-darker-grey w3-hide-small">
+                <button onclick="accordionSidebar('fightersidebar')" class="w3-button w3-round-large w3-hover-gold">Fighter <i class="fa fa-caret-down"></i></button>
+                <div class="w3-hide w3-container w3-block w3-dark-grey" id="fightersidebar">
                     <a href="./classes.html#fighter"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Info</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Info</a>
                     <a href="./classes.html#fighterFeatures"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Features</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Features</a>
                     <a href="./classes.html#fighterArchetypes"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Martial Archetypes</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Martial Archetypes</a>
                 </div>
             </div>
-            <div class="w3-dropdown-hover w3-darker-grey w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-gold">Monk <i class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-dark-grey w3-round-large"
-                    style="width: 110px !important;">
+            <div class="w3-darker-grey w3-hide-small">
+                <button onclick="accordionSidebar('monksidebar')" class="w3-button w3-round-large w3-hover-gold">Monk <i class="fa fa-caret-down"></i></button>
+                <div class="w3-hide w3-container w3-block w3-dark-grey" id="monksidebar">
                     <a href="./classes.html#monk"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Info</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Info</a>
                     <a href="./classes.html#monkFeatures"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Features</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Features</a>
                     <a href="./classes.html#monkTraditions"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Monastic Traditions</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Monastic Traditions</a>
                 </div>
             </div>
-            <div class="w3-dropdown-hover w3-darker-grey w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-gold">Paladin <i class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-dark-grey w3-round-large"
-                    style="width: 110px !important;">
+            <div class="w3-darker-grey w3-hide-small">
+                <button onclick="accordionSidebar('paladinsidebar')" class="w3-button w3-round-large w3-hover-gold">Paladin <i class="fa fa-caret-down"></i></button>
+                <div class="w3-hide w3-container w3-block w3-dark-grey" id="paladinsidebar">
                     <a href="./classes.html#paladin"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Info</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Info</a>
                     <a href="./classes.html#paladinFeatures"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Features</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Features</a>
                     <a href="./classes.html#paladinOaths"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Sacred Oaths</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Sacred Oaths</a>
                 </div>
             </div>
-            <div class="w3-dropdown-hover w3-darker-grey w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-gold">Ranger <i class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-dark-grey w3-round-large"
-                    style="width: 110px !important;">
+            <div class="w3-darker-grey w3-hide-small">
+                <button onclick="accordionSidebar('rangersidebar')" class="w3-button w3-round-large w3-hover-gold">Ranger <i class="fa fa-caret-down"></i></button>
+                <div class="w3-hide w3-container w3-block w3-dark-grey" id="rangersidebar">
                     <a href="./classes.html#ranger"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Info</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Info</a>
                     <a href="./classes.html#rangerFeatures"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Features</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Features</a>
                     <a href="./classes.html#rangerArchetypes"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Ranger Archetypes</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Ranger Archetypes</a>
                 </div>
             </div>
-            <div class="w3-dropdown-hover w3-darker-grey w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-gold">Rogue <i class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-dark-grey w3-round-large"
-                    style="width: 110px !important;">
+            <div class="w3-darker-grey w3-hide-small">
+                <button onclick="accordionSidebar('roguesidebar')" class="w3-button w3-round-large w3-hover-gold">Rogue <i class="fa fa-caret-down"></i></button>
+                <div class="w3-hide w3-container w3-block w3-dark-grey" id="roguesidebar">
                     <a href="./classes.html#rogue"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Info</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Info</a>
                     <a href="./classes.html#rogueFeatures"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Features</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Features</a>
                     <a href="./classes.html#rogueArchetypes"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Roguish Archetypes</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Roguish Archetypes</a>
                 </div>
             </div>
-            <div class="w3-dropdown-hover w3-darker-grey w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-gold">Sorcerer <i class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-dark-grey w3-round-large"
-                    style="width: 110px !important;">
+            <div class="w3-darker-grey w3-hide-small">
+                <button onclick="accordionSidebar('sorcerersidebar')" class="w3-button w3-round-large w3-hover-gold">Sorcerer <i class="fa fa-caret-down"></i></button>
+                <div class="w3-hide w3-container w3-block w3-dark-grey" id="sorcerersidebar">
                     <a href="./classes.html#sorcerer"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Info</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Info</a>
                     <a href="./classes.html#sorcererFeatures"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Features</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Features</a>
                     <a href="./classes.html#sorcererOrigins"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Sorcerous Origins</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Sorcerous Origins</a>
                 </div>
             </div>
-            <div class="w3-dropdown-hover w3-darker-grey w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-gold">Warlock <i class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-dark-grey w3-round-large"
-                    style="width: 110px !important;">
+            <div class="w3-darker-grey w3-hide-small">
+                <button onclick="accordionSidebar('warlocksidebar')" class="w3-button w3-round-large w3-hover-gold">Warlock <i class="fa fa-caret-down"></i></button>
+                <div class="w3-hide w3-container w3-block w3-dark-grey" id="warlocksidebar">
                     <a href="./classes.html#warlock"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Info</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Info</a>
                     <a href="./classes.html#warlockFeatures"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Features</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Features</a>
                     <a href="./classes.html#warlockPatrons"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Otherworldly Patrons</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Otherworldly Patrons</a>
                 </div>
             </div>
-            <div class="w3-dropdown-hover w3-darker-grey w3-hide-small">
-                <button class="w3-button w3-round-large w3-hover-gold">Wizard <i class="fa fa-caret-down"></i></button>
-                <div class="w3-dropdown-content w3-bar-block w3-dark-grey w3-round-large"
-                    style="width: 110px !important;">
+            <div class="w3-darker-grey w3-hide-small">
+                <button onclick="accordionSidebar('wizardsidebar')" class="w3-button w3-round-large w3-hover-gold">Wizard <i class="fa fa-caret-down"></i></button>
+                <div class="w3-hide w3-container w3-block w3-dark-grey" id="wizardsidebar">
                     <a href="./classes.html#wizard"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Info</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Info</a>
                     <a href="./classes.html#wizardFeatures"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Features</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Features</a>
                     <a href="./classes.html#wizardTraditions"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large w3-hover-gold">Arcane Traditions</a>
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Arcane Traditions</a>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <div class="w3-row-padding w3-section">
         <div class="w3-col s0 m0 l1">
@@ -3858,6 +3847,493 @@
                             </div>
                         </div>
                     </div>
+
+                    <button class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold "
+                        onclick="accordion('domainofwar')"><span style="font-size: 1.2em;">Domain of War</span></button>
+                    <div class="advancements w3-hide w3-container" id="domainofwar">
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Domain Spells</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>1st
+                                    </em><br />
+                                    <em>
+                                        <emph>Levels Improved: </emph>3rd, 5th, 7th, 9th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain the spells shown below at the given levels. They are always prepared, and
+                                    they don't count against the total number of spells prepared for the day.
+                                    <br />
+                                    If a spell from your domain isn't naturally a Cleric spell, it counts as a Cleric
+                                    spell for you.
+                                    <br />
+                                    <br />
+                                    <div class="w3-col s0 m2 l3">
+                                        &emsp;
+                                    </div>
+                                    <div class="w3-col s12 m8 l6">
+                                    <table class="w3-table w3-small w3-centered">
+                                        <thead>
+                                            <th>Cleric Level</th>
+                                            <th>Spells</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1st</td>
+                                                <td>Divine Favor, Shield of Faith</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3rd</td>
+                                                <td>Magic Weapon, Spiritual Weapon</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5th</td>
+                                                <td>Crusader's Mantle, Spirit Guardians</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7th</td>
+                                                <td>Freedom of Movement, Stoneskin</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9th</td>
+                                                <td>Flame Strike, Hold Monster</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="w3-col s0 m2 l3">
+                                        &emsp;
+                                    </div>
+                                    <br />
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Bonus Proficiencies</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>1st
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain proficiency with martial weapons and heavy armor.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>War Priest</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>1st
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    When you use the Attack action, you can make one weapon attack as a bonus action.
+                                    <br/>
+                                    <br/>
+                                    You can use this feature a number of times equal to your Wisdom modifier (minimum of once). Expended uses are regained when you finish a long rest.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Channel Divinity: Guided Strike</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>2nd
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You make this choice after you see the roll, but before the DM says whether the attack hits or misses.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Channel Divinity: War God's Blessing</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>6th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                   When a creature within 30 feet of you makes an attack roll, you can use your reaction to grant that creature a +10 to the roll, using your Channel Divinity. 
+                                   <br/>
+                                   You make this choice after you see the roll, but before the DM says whether the attack hits or misses.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                                <div class="w3-card-2 w3-round-large">
+                                    <div class="w3-row-padding">
+                                        <h5>Divine Strike</h5>
+                                        <em>
+                                            <emph>Level Gained: </emph>8th
+                                        </em><br />
+                                        <em>
+                                            <emph>Levels Improved: </emph>14th
+                                        </em><br /><br />
+                                    </div>
+                                    <div class="w3-row-padding">
+                                        Once on each of your turns when you hit a creature with a weapon attack, you can
+                                        cause the attack to deal 1d8 extra damage of the same type as the weapon.
+                                        <br />
+                                        <br />
+                                        The damage increases to 2d8 at 14th level.
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Avatar of Battle</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>17th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                   You gain resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold "
+                        onclick="accordion('domainofforge')"><span style="font-size: 1.2em;">Domain of the Forge (XGE)</span></button>
+                    <div class="advancements w3-hide w3-container" id="domainofforge">
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Domain Spells</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>1st
+                                    </em><br />
+                                    <em>
+                                        <emph>Levels Improved: </emph>3rd, 5th, 7th, 9th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain the spells shown below at the given levels. They are always prepared, and
+                                    they don't count against the total number of spells prepared for the day.
+                                    <br />
+                                    If a spell from your domain isn't naturally a Cleric spell, it counts as a Cleric
+                                    spell for you.
+                                    <br />
+                                    <br />
+                                    <div class="w3-col s0 m2 l3">
+                                        &emsp;
+                                    </div>
+                                    <div class="w3-col s12 m8 l6">
+                                    <table class="w3-table w3-small w3-centered">
+                                        <thead>
+                                            <th>Cleric Level</th>
+                                            <th>Spells</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1st</td>
+                                                <td>Identify, Searing Smite</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3rd</td>
+                                                <td>Heat Metal, Magic Weapon</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5th</td>
+                                                <td>Elemental Weapon, Protection from Energy</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7th</td>
+                                                <td>Fabricate, Wall of Fire</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9th</td>
+                                                <td>Animate Objects, Creation</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="w3-col s0 m2 l3">
+                                        &emsp;
+                                    </div>
+                                    <br />
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Bonus Proficiencies</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>1st
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain proficiency with heavy armor and smith's tools.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Blessing of the Forge</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>1st
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    At the end of a long rest, you can touch one nonmagical object that is a suit of armor or a simple or martial weapon. Until the end of your next long rest, or until you die, the object becomes a magic item, granting +1 AC (if it's armor) or +1 to attack and damage rolls if it's a weapon.
+                                    <br/>
+                                    <br/>
+                                    Once you use this feature, you can't use it again until you finish a short or long rest.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Channel Divinity: Artisan's Blessing</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>2nd
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You conduct an hour-long ritual that crafts a nonmagical item that must include some metal: a simple or martial weapon, a suit of armor, ten pieces of ammunition, a set of tools, or another metal object.
+                                    <br/>
+                                    The creation is completed at the end of the hour, coalescing in an unoccupied space of your choice on a surface within 5 feet of you.
+                                    <br/>
+                                    The thing you create can't have a value in excess of 100gp. As part of this ritual, you must lay out metal, which can include coins, with a value equal to the creation. The metal irretrievably coelesces and transforms into the creation at the ritual's end, magically forming even nonmetal parts of the creation.
+                                    <br/>
+                                    The ritual can create a duplicate of a nonmagical item that contains metal, such as a key, if you possess the original during the ritual.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Soul of the Forge</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>6th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                   Your mastery of the forge grants you resistance to fire damage, as well as +1 to AC if you are wearing heavy armor. 
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                                <div class="w3-card-2 w3-round-large">
+                                    <div class="w3-row-padding">
+                                        <h5>Divine Strike</h5>
+                                        <em>
+                                            <emph>Level Gained: </emph>8th
+                                        </em><br />
+                                        <em>
+                                            <emph>Levels Improved: </emph>14th
+                                        </em><br /><br />
+                                    </div>
+                                    <div class="w3-row-padding">
+                                        Once on each of your turns when you hit a creature with a weapon attack, you can
+                                        cause the attack to deal 1d8 extra Fire damage.
+                                        <br />
+                                        <br />
+                                        The damage increases to 2d8 at 14th level.
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Saint of Forge and Fire</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>17th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                   You gain immunity to fire damage; in addition, while wearing heavy armor, you have resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold "
+                        onclick="accordion('domainofgrave')"><span style="font-size: 1.2em;">Domain of the Grave (XGE)</span></button>
+                    <div class="advancements w3-hide w3-container" id="domainofgrave">
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Domain Spells</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>1st
+                                    </em><br />
+                                    <em>
+                                        <emph>Levels Improved: </emph>3rd, 5th, 7th, 9th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain the spells shown below at the given levels. They are always prepared, and
+                                    they don't count against the total number of spells prepared for the day.
+                                    <br />
+                                    If a spell from your domain isn't naturally a Cleric spell, it counts as a Cleric
+                                    spell for you.
+                                    <br />
+                                    <br />
+                                    <div class="w3-col s0 m2 l3">
+                                        &emsp;
+                                    </div>
+                                    <div class="w3-col s12 m8 l6">
+                                    <table class="w3-table w3-small w3-centered">
+                                        <thead>
+                                            <th>Cleric Level</th>
+                                            <th>Spells</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1st</td>
+                                                <td>Bane, False Life</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3rd</td>
+                                                <td>Gentle Repose, Ray of Enfeeblement</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5th</td>
+                                                <td>Revivify, Vampiric Touch</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7th</td>
+                                                <td>Blight, Death Ward</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9th</td>
+                                                <td>Antilife Shell, Raise Dead</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="w3-col s0 m2 l3">
+                                        &emsp;
+                                    </div>
+                                    <br />
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Circle of Mortality</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>1st
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    When you would normally roll one or more dice for a spell to restore hit points to a creature with 0 hit points, you instead use the highest number possible for each die.
+                                    <br/>
+                                    In addition, you learn the <emph>Spare the Dying</emph> cantrip, which doesn't count against the number of Cleric cantrips you know. For you, it has a range of 30 feet, and you can cast it as a bonus action.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Eyes of the Grave</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>1st
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                   You gain the ability to occasionally sense the undead, whose existence is an insult to the natural cycle of life.
+                                   <br/>
+                                   As an action, you can open your awareness to magically detect undead. Until the end of your next turn, you know the location of any undead within 60 feet of you that isn't behind total cover, and isn't protected from divination magic. This sense doesn't tell you anything about a creature's capabilities or identity.
+                                   <br/>
+                                   <br/>
+                                   You can use this feature a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a long rest.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Channel Divinity: Path to the Grave</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>2nd
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    As an action, you can use your Channel Divinity to curse one creature within 30 feet of you until the end of your next turn. The next time you or an ally hits the cursed creature with an attack, the creature has vulnerability to all of that attack's damage, and the curse ends.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Sentinel at Death's Door</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>6th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                   As a reaction when you or a creature you can see within 30 feet of you suffers a critical hit, you can turn that hit into a normal hit. Any effects triggered by a critical hit are canceled.
+                                   <br/>
+                                   <br/>
+                                   You can use this feature a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a long rest.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Potent Spellcasting</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>8th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You can add your Wisdom modifier to the damage you deal with any Cleric cantrip.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Keeper of Souls</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>17th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                   When an enemy you can see dies within 60 feet of you, you or one creature that you can see within 60 feet of you regains hit points equal to the enemy's number of hit dice.
+                                   <br/>
+                                   You can use this feature only if you aren't incapacitated. Once you use this feature, you cannot do so again until the start of your next turn.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <br />
             </div>
@@ -6023,6 +6499,517 @@
                     </div>
                 </div>
                 <br />
+                <!-- Oaths -->
+                <div class="w3-row info" id="paladinOaths">
+                    <h3>Paladin Sacred Oaths</h3>
+                    <br />
+                    <br />
+                    <button class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold "
+                        onclick="accordion('oathofdevotion')"><span style="font-size: 1.2em;">Oath of Devotion</span></button>
+                    <div class="advancements w3-hide w3-container" id="oathofdevotion">
+                            <div class="advancementCard">
+                                <div class="w3-card-2 w3-round-large">
+                                    <div class="w3-row-padding">
+                                        <h5>Tenets of Devotion</h5>
+                                    </div>
+                                    <div class="w3-row-padding">
+                                        While each Paladin's Oath is unique, they share certain tenets. Breaking the tenets of one's Oath is anathema to a Paladin, and may impose dire consequences if the Paladin willfully goes against their Oath or the will of their god.
+                                        <br/>
+                                        <br/>
+                                        The Tenets of Devotion are:
+                                        <br/>
+                                        <br/>
+                                        <emph>Honesty. </emph>Don't lie or cheat. Let your word be your promise.
+                                        <br/>
+                                        <emph>Courage. </emph>Never fear to act, though caution is wise.
+                                        <br/>
+                                        <emph>Compassion. </emph>Aid others, protect the weak, and punish those who threaten them. Show mercy to your foes, but temper it with wisdom.
+                                        <br/>
+                                        <emph>Honor. </emph>Treat others with fairness, and let your honorable deeds be an example to them. Do as much good as possible while causing the least amount of harm.
+                                        <br/>
+                                        <emph>Duty. </emph>Be responsible for your actions and their consequences, protect those entrusted to your care, and obey those who have just authority over you.
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Oath Spells</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>3rd
+                                    </em><br />
+                                    <em>
+                                        <emph>Levels Improved: </emph>5th, 9th, 13th, 17th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain the spells shown below at the given levels. They are always prepared, and
+                                    they don't count against the total number of spells prepared for the day.
+                                    <br />
+                                    If a spell from your domain isn't naturally a Paladin spell, it counts as a Paladin
+                                    spell for you.
+                                    <br />
+                                    <br /><div class="w3-col s0 m2 l3">
+                                            &emsp;
+                                        </div>
+                                        <div class="w3-col s12 m8 l6">
+                                    <table class="w3-table w3-small w3-centered">
+                                        <thead>
+                                            <th>Paladin Level</th>
+                                            <th>Spells</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>3rd</td>
+                                                <td>Protection from Evil and Good, Sanctuary</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5th</td>
+                                                <td>Lesser Restoration, Zone of Truth</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9th</td>
+                                                <td>Beacon of Hope, Dispel Magic</td>
+                                            </tr>
+                                            <tr>
+                                                <td>13th</td>
+                                                <td>Freedom of Movement, Guardian of Faith</td>
+                                            </tr>
+                                            <tr>
+                                                <td>17th</td>
+                                                <td>Commune, Flame Strike</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                    <div class="w3-col s0 m2 l3">
+                                            &emsp;
+                                        </div>
+                                    <br />
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Channel Divinity</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>3rd
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain the following two Channel Divinity options: 
+                                    <br/>
+                                    <br/>
+                                    <emph>Sacred Weapon. </emph>As an action, you can use your Channel Divinity to imbue one weapon that you are holding with positive energy. This effect lasts for 1 minute. For the duration, you add your Charisma modifier (minimum +1) to attack rolls made with that weapon. The weapon also emits bright light in a 20-foot radius, and dim light for 20 feet beyond that. If the weapon is not already magical, it becomes magical for the duration.
+                                    <br/>
+                                    You can end this effect on your turn as part of any other action. If you are no longer holding or carrying the weapon, or if you fall unconscious, the effect ends.
+                                    <br/>
+                                    <br/>
+                                    <emph>Turn the Unholy. </emph>As an action, you present your holy symbol and use Channel Divinity to censure fiends and undead. Each fiend or undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes damage.
+                                    <br/>
+                                    A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can only use the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                    <div class="w3-row-padding">
+                                        <h5>Aura of Devotion</h5>
+                                        <em>
+                                            <emph>Level Gained: </emph>7th
+                                        </em><br />
+                                        <em>
+                                            <emph>Levels Improved: </emph>18th
+                                        </em><br /><br />
+                                    </div>
+                                <div class="w3-row-padding">
+                                   You, and friendly creatures within 10 feet of you, can't be charmed while you are conscious. 
+                                   <br/>
+                                   At 18th level, the range of this aura increases to 30 feet.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Purity of Spirit</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>15th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You are now always under the effect of a <emph>Protection from Evil and Good</emph> spell
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Holy Nimbus</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>20th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    As an action, you can emanate an aura of sunlight. For 1 minute, bright light shines from you in a 30-foot radius, and dim light shines for 30 feet beyond that.
+                                    <br/>
+                                    Whenever an enemy creature starts its turn in the bright light, it takes 10 Radiant damage.
+                                    <br/>
+                                    In addition, for the duration, you have advantage on saving throws against spells cast by fiends and undead.
+                                    <br/>
+                                    Once you use this feature, you can't use it again until you finish a long rest.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold "
+                        onclick="accordion('oathofancients')"><span style="font-size: 1.2em;">Oath of the Ancients</span></button>
+                    <div class="advancements w3-hide w3-container" id="oathofancients">
+                            <div class="advancementCard">
+                                <div class="w3-card-2 w3-round-large">
+                                    <div class="w3-row-padding">
+                                        <h5>Tenets of Devotion</h5>
+                                    </div>
+                                    <div class="w3-row-padding">
+                                        While each Paladin's Oath is unique, they share certain tenets. Breaking the tenets of one's Oath is anathema to a Paladin, and may impose dire consequences if the Paladin willfully goes against their Oath or the will of their god.
+                                        <br/>
+                                        <br/>
+                                        The Tenets of the Ancients are:
+                                        <br/>
+                                        <br/>
+                                        <emph>Kindle the Light. </emph>Through your acts of mercy, kindness, and forgiveness, kindle the light of hope in the world, beating back despair.
+                                        <br/>
+                                        <emph>Shelter the Light. </emph>Where there is good, beauty, love, and laughter in the world, stand against the wickedness that would swallow it. Where life flourishes, stand against the forces that would render it barren.
+                                        <br/>
+                                        <emph>Preserve Your Own Light. </emph>Delight in song and laughter, in beauty and art. If you allow the light to die in your own heart, you can preserve it in the world.
+                                        <br/>
+                                        <emph>Be the Light. </emph>Be a glorious beacon for all who live in despair. Let the light of your joy and courage shine forth in all your deeds.
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Oath Spells</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>3rd
+                                    </em><br />
+                                    <em>
+                                        <emph>Levels Improved: </emph>5th, 9th, 13th, 17th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain the spells shown below at the given levels. They are always prepared, and
+                                    they don't count against the total number of spells prepared for the day.
+                                    <br />
+                                    If a spell from your domain isn't naturally a Paladin spell, it counts as a Paladin
+                                    spell for you.
+                                    <br />
+                                    <br /><div class="w3-col s0 m2 l3">
+                                            &emsp;
+                                        </div>
+                                        <div class="w3-col s12 m8 l6">
+                                    <table class="w3-table w3-small w3-centered">
+                                        <thead>
+                                            <th>Paladin Level</th>
+                                            <th>Spells</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>3rd</td>
+                                                <td>Ensnaring Strike, Speak with Animals</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5th</td>
+                                                <td>Moonbeam, Misty Step</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9th</td>
+                                                <td>Plant Growth, Protection from Energy</td>
+                                            </tr>
+                                            <tr>
+                                                <td>13th</td>
+                                                <td>Ice Storm, Stoneskin</td>
+                                            </tr>
+                                            <tr>
+                                                <td>17th</td>
+                                                <td>Commune with Nature, Tree Stride</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                    <div class="w3-col s0 m2 l3">
+                                            &emsp;
+                                        </div>
+                                    <br />
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Channel Divinity</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>3rd
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain the following two Channel Divinity options: 
+                                    <br/>
+                                    <br/>
+                                    <emph>Nature's Wrath. </emph>As an action, you can use Channel Divinity to cause spectral vines to spring up and reach for a creature within 10 feet of you that you can see. The creature must succeed on a Strength or Dexterity saving throw or be restrained.
+                                    <br/>
+                                    While restrained by the vines, the creature repeats the saving throw at the end of each of its turns. On a success, it frees itself and the vines vanish.
+                                    <br/>
+                                    <br/>
+                                    <emph>Turn the Faithless. </emph>As an action, you present your holy symbol and use Channel Divinity to cause pain to fiends and fey. Each fiend or fey that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes damage.
+                                    <br/>
+                                    A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can only use the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.
+                                    <br/>
+                                    If the creature's true form is concealed by an illusion, shapeshifting, or other effect, its true form is revealed while it is turned.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                    <div class="w3-row-padding">
+                                        <h5>Aura of Warding</h5>
+                                        <em>
+                                            <emph>Level Gained: </emph>7th
+                                        </em><br />
+                                        <em>
+                                            <emph>Levels Improved: </emph>18th
+                                        </em><br /><br />
+                                    </div>
+                                <div class="w3-row-padding">
+                                   You, and friendly creatures within 10 feet of you, have resistance to damage from spells.
+                                   <br/>
+                                   At 18th level, the range of this aura increases to 30 feet.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Undying Sentinel</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>15th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    When you are reduced to 0 hit points and not killed outright, you may choose to drop to 1 hit point instead.
+                                    <br/>
+                                    Once you use this feature, you can't use it again until you finish a long rest.
+                                    <br/>
+                                    Additonally, you suffer none of the drawbacks of old age, and you can't be aged magically.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Elder Champion</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>20th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    As an action, you can assume the form of an ancient force of nature, in a manner of your choosing. For example, your skin might turn green or take on a bark-like texture, your hair may become leafy or moss-like, or you might sprout antlers or a lion-like mane.
+                                    <br/>
+                                    For 1 minute, you gain the following benefits:
+                                    <ul>
+                                        <li>You regain 10 hit points at the start of each of your turns</li>
+                                        <li>You can cast Paladin spells with a casting time of 1 action as a bonus action instead</li>
+                                        <li>Enemy creatures within 10 feet of you have disadvantage on saving throws against your Paladin spells and Channel Divinity options</li>
+                                    </ul>
+                                    <br/>
+                                    Once you use this feature, you can't use it again until you finish a long rest.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold "
+                        onclick="accordion('oathofvengeance')"><span style="font-size: 1.2em;">Oath of Vengeance</span></button>
+                    <div class="advancements w3-hide w3-container" id="oathofvengeance">
+                            <div class="advancementCard">
+                                <div class="w3-card-2 w3-round-large">
+                                    <div class="w3-row-padding">
+                                        <h5>Tenets of Vengeance</h5>
+                                    </div>
+                                    <div class="w3-row-padding">
+                                        While each Paladin's Oath is unique, they share certain tenets. Breaking the tenets of one's Oath is anathema to a Paladin, and may impose dire consequences if the Paladin willfully goes against their Oath or the will of their god.
+                                        <br/>
+                                        <br/>
+                                        The Tenets of the Ancients are:
+                                        <br/>
+                                        <br/>
+                                        <emph>Fight the Greater Evil. </emph>Faced with a choice of fighting my sworn foes or combating a lesser evil, I choose the greater evil.
+                                        <br/>
+                                        <emph>No Mercy for the Wicked. </emph>Ordinary foes might win my mercy, but my sworn enemies do not.
+                                        <br/>
+                                        <emph>By Any Means Necessary. </emph>My qualms can't get in the way of exterminating my foes.
+                                        <br/>
+                                        <emph>Restitution. </emph>If my foes wreak ruin on the world, it is because I failed to stop them. I must help those harmed by their misdeeds.
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Oath Spells</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>3rd
+                                    </em><br />
+                                    <em>
+                                        <emph>Levels Improved: </emph>5th, 9th, 13th, 17th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain the spells shown below at the given levels. They are always prepared, and
+                                    they don't count against the total number of spells prepared for the day.
+                                    <br />
+                                    If a spell from your domain isn't naturally a Paladin spell, it counts as a Paladin
+                                    spell for you.
+                                    <br />
+                                    <br /><div class="w3-col s0 m2 l3">
+                                            &emsp;
+                                        </div>
+                                        <div class="w3-col s12 m8 l6">
+                                    <table class="w3-table w3-small w3-centered">
+                                        <thead>
+                                            <th>Paladin Level</th>
+                                            <th>Spells</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>3rd</td>
+                                                <td>Bane, Hunter's Mark</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5th</td>
+                                                <td>Hold Person, Misty Step</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9th</td>
+                                                <td>Haste, Protection from Energy</td>
+                                            </tr>
+                                            <tr>
+                                                <td>13th</td>
+                                                <td>Banishment, Dimension Door</td>
+                                            </tr>
+                                            <tr>
+                                                <td>17th</td>
+                                                <td>Hold Monster, Scrying</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                    <div class="w3-col s0 m2 l3">
+                                            &emsp;
+                                        </div>
+                                    <br />
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Channel Divinity</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>3rd
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain the following two Channel Divinity options: 
+                                    <br/>
+                                    <br/>
+                                    <emph>Abjure Enemy. </emph>As an action, you can use Channel Divinity to present your holy symbol and speak a prayer of denunciation. Choose one creature within 60 feet of you that you can see. That creature must make a Wisdom saving throw, unless it is immune to being frightened. Fiends and undead have disadvantage on this saving throw.
+                                    <br/>
+                                    On a failed save, the creature is frightened for 1 minute or until it takes any damage. While frightened, the creature's speed is 0, and it can't benefit from any bonus to its speed.
+                                    <br/>
+                                    On a successful save, the creature's speed is halved for 1 minute or until it takes damage.
+                                    <br/>
+                                    <br/>
+                                    <emph>Vow of Emnity. </emph>As a bonus action, you can utter a vow of emnity against a creature you can see within 10 feet of you, using your Channel Divinity.
+                                    <br/>
+                                    You gain advantage on attack rolls made against the creature for 1 minute, or until it drops to 0 hitpoints or falls unconscious.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                    <div class="w3-row-padding">
+                                        <h5>Relentless Avenger</h5>
+                                        <em>
+                                            <emph>Level Gained: </emph>7th
+                                        </em><br /><br />
+                                    </div>
+                                <div class="w3-row-padding">
+                                   When you hit a creature with an opportunity attack, you can move up to &frac12; your speed immediately after the attack and as part of the same reaction. This movement doesn't provoke opportunity attacks.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Soul of Vengeance</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>15th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                   When a creature under your Vow of Emnity makes an attack, you can use your reaction to make a melee weapon attack against that creature if it is within range.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Avenging Angel</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>20th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    As an action, you can assume the form of an angelic avenger.
+                                    <br/>
+                                    <br/>
+                                    For 1 hour, you gain the following benefits:
+                                    <br/>
+                                    <ul>
+                                    <li>Wings sprout from your back and give you a flying speed of 60 feet</li>
+                                    <li>You emanate an aura of meanace in a 30-foot radius. The first time an enemy creature enters the aura or starts its turn there during a battle, the creature must make a Wisdom saving throw or become frightened of you for 1 minute or until it takes damage.
+                                    Attack rolls against the frightened creature have advantage.</li>
+                                    </ul>
+                                    <br/>
+                                    Once you use this feature, you can't use it again until you finish a long rest.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
             </div>
             <br />
             <hr />
@@ -7145,7 +8132,7 @@
                                 <br />
                                 <emph>Saving Throws: </emph>Constitution, Charisma
                                 <br />
-                                <emph>Skills: </emph>Choose twp from: Arcana, Deception, Insight, Intimidation,
+                                <emph>Skills: </emph>Choose two from: Arcana, Deception, Insight, Intimidation,
                                 Persuasion, Religion
                             </div>
                             <br />

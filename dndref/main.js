@@ -101,6 +101,7 @@ function buildSpells() {
         $("#spell" + i).children().children().children(".spellName").text(spell[i]["name"])
         $("#spell" + i).children().children().children().children().children(".spellSchool").text(spell[i]["school"])
         $("#spell" + i).children().children().children().children().children(".spellLevel").text(spell[i]["level"])
+        $("#spell" + i).children().children().children(".spellFilters").text(spell[i]["school"] + ", " + spell[i]["classes"])
         $("#spell" + i).children().children().children(".spellTime").text(spell[i]["time"])
         $("#spell" + i).children().children().children(".spellRange").text(spell[i]["range"])
         $("#spell" + i).children().children().children(".spellComponents").text(spell[i]["components"])
@@ -232,15 +233,79 @@ function accordionSidebar(id) {
     }
 }
 
+var spellFilters = []
+
+function filterMatches(val) {
+    return val;
+}
+
+var spellSchools = [
+    "ABJURATION",
+    "CONJURATION",
+    "DIVINATION",
+    "ENCHANTMENT",
+    "EVOCATION",
+    "ILLUSION",
+    "NECROMANCY",
+    "TRANSMUTATION"
+  ]
+
+function spellFilter(input, mod = 0) {
+    $this = $(input)
+
+    filterText = input.firstChild.textContent.toUpperCase()
+
+    let duplicate = (spellFilters.indexOf(filterText) > -1);
+
+    if (mod == 1) {
+        spellFilters.forEach(function(filter) {
+            if (spellSchools.indexOf(filter) > -1) {
+                spellFilters.splice(spellFilters.indexOf(filter),1)
+            }
+        })
+
+        $this.parent().children().removeClass("w3-blue").addClass("w3-grey")
+
+    }
+
+    console.log(spellFilters)
+
+    if (!duplicate) {
+        $this.addClass("w3-blue").removeClass("w3-grey")
+        spellFilters.push(filterText);
+    } else {
+        if (mod != 1) {
+        spellFilters.splice(spellFilters.indexOf(filterText),1);
+    }
+        $this.removeClass("w3-blue").addClass("w3-grey");
+    }
+
+    console.log(spellFilters);
+
+    $('.spellGrid').isotope({
+        filter: function () {
+            // _this_ is the item element. Get text of element's .name
+            var spFilter = $(this).find('.spellFilters').text().toUpperCase();
+
+            let matches = [];
+
+            spellFilters.forEach(function(filterVal) {
+                matches.push(spFilter.indexOf(filterVal) > -1);
+            })
+
+
+            // return true to show, false to hide
+            return matches.every(filterMatches);
+        }
+    })
+}
+
 function spellNameFilter() {
     let classNames = ["All", "Artificer", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
 
     classNames.forEach(function (className) {
         $("#classBtn" + className).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
     });
-
-    $("#classBtnAll").removeClass('w3-grey').addClass('w3-blue');
-
 
     let schoolNames = [
         "All",
@@ -257,8 +322,6 @@ function spellNameFilter() {
     schoolNames.forEach(function (schoolName) {
         $("#schoolBtn" + schoolName).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
     });
-
-    $("#schoolBtnAll").removeClass('w3-grey').addClass('w3-blue');
 
     var input = document.getElementById('spellNameSearch').value.toUpperCase();
 
@@ -280,111 +343,12 @@ function spellNameFilter() {
     }
 }
 
-function spellClassFilter(input) {
-    let schoolNames = [
-        "All",
-        "Abjuration",
-        "Conjuration",
-        "Divination",
-        "Enchantment",
-        "Evocation",
-        "Illusion",
-        "Necromancy",
-        "Transmutation"
-      ]
-
-    schoolNames.forEach(function (schoolName) {
-        $("#schoolBtn" + schoolName).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
-    });
-
-    $("#schoolBtnAll").removeClass('w3-grey').addClass('w3-blue');
-
-    $("#spellNameSearch").val("");
-
-    let classNames = ["All", "Artificer", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
-
-    let filter = input.toUpperCase();
-
-    classNames.forEach(function (className) {
-        if (className != input) {
-            $("#classBtn" + className).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
-        }
-    });
-
-    $("#classBtn" + input).removeClass('w3-grey').addClass('w3-blue');
-
-
-    if (input != "All") {
-        // Filter for spell names that match the input
-        $('.spellGrid').isotope({
-            filter: function () {
-                // _this_ is the item element. Get text of element's .name
-                var spClass = $(this).find('.spellClasses').text().toUpperCase();
-                // return true to show, false to hide
-                return spClass.indexOf(filter) > -1;
-            }
-        })
-    } else {
-        $('.spellGrid').isotope({
-            // Clear filter
-            filter: '*'
-        })
-    }
-}
-
-function spellSchoolFilter(input) {
-    let classNames = ["All", "Artificer", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
-
-    classNames.forEach(function (className) {
-        $("#classBtn" + className).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
-    });
-
-    $("#classBtnAll").removeClass('w3-grey').addClass('w3-blue');
-
-    $("#spellNameSearch").val("");
-
-    let schoolNames = [
-        "All",
-        "Abjuration",
-        "Conjuration",
-        "Divination",
-        "Enchantment",
-        "Evocation",
-        "Illusion",
-        "Necromancy",
-        "Transmutation"
-      ]
-
-    let filter = input.toUpperCase();
-
-    schoolNames.forEach(function (schoolName) {
-        if (schoolName != input) {
-            $("#schoolBtn" + schoolName).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
-        }
-    });
-
-    $("#schoolBtn" + input).removeClass('w3-grey').addClass('w3-blue');
-
-
-    if (input != "All") {
-        // Filter for spell names that match the input
-        $('.spellGrid').isotope({
-            filter: function () {
-                // _this_ is the item element. Get text of element's .name
-                var spSchool = $(this).find('.spellSchool').text().toUpperCase();
-                // return true to show, false to hide
-                return spSchool.indexOf(filter) > -1;
-            }
-        })
-    } else {
-        $('.spellGrid').isotope({
-            // Clear filter
-            filter: '*'
-        })
-    }
-}
 
 function clearSpellFilter() {
+    spellFilters = [];
+
+    $("#spellNameSearch").val("")
+
     $('.spellGrid').isotope({
         // Clear filter
         filter: '*'
@@ -396,8 +360,6 @@ function clearSpellFilter() {
         $("#classBtn" + className).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
     });
 
-    $("#classBtnAll").removeClass('w3-grey').addClass('w3-blue');
-
 
     let schoolNames = [
         "All",
@@ -414,8 +376,6 @@ function clearSpellFilter() {
     schoolNames.forEach(function (schoolName) {
         $("#schoolBtn" + schoolName).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
     });
-
-    $("#schoolBtnAll").removeClass('w3-grey').addClass('w3-blue');
 }
 
 function featNameFilter() {

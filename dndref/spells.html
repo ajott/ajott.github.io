@@ -1769,53 +1769,49 @@
                 </div>
                 <br />
                 <div class="w3-bar">
-                    <button id="classBtnAll" class="w3-round w3-button w3-blue"
-                        onclick="spellClassFilter('All')">All</button>
                     <button id="classBtnArtificer" class="w3-round w3-button w3-grey"
-                        onclick="spellClassFilter('Artificer')">Artificer</button>
+                        onclick="spellFilter(this)">Artificer</button>
                     <button id="classBtnBard" class="w3-round w3-button w3-grey"
-                        onclick="spellClassFilter('Bard')">Bard</button>
+                        onclick="spellFilter(this)">Bard</button>
                     <button id="classBtnCleric" class="w3-round w3-button w3-grey"
-                        onclick="spellClassFilter('Cleric')">Cleric</button>
+                        onclick="spellFilter(this)">Cleric</button>
                     <button id="classBtnDruid" class="w3-round w3-button w3-grey"
-                        onclick="spellClassFilter('Druid')">Druid</button>
+                        onclick="spellFilter(this)">Druid</button>
                     <button id="classBtnFighter" class="w3-round w3-button w3-grey"
-                        onclick="spellClassFilter('Fighter')">Fighter</button>
+                        onclick="spellFilter(this)">Fighter</button>
                     <button id="classBtnMonk" class="w3-round w3-button w3-grey"
-                        onclick="spellClassFilter('Monk')">Monk</button>
+                        onclick="spellFilter(this)">Monk</button>
                     <button id="classBtnPaladin" class="w3-round w3-button w3-grey"
-                        onclick="spellClassFilter('Paladin')">Paladin</button>
+                        onclick="spellFilter(this)">Paladin</button>
                     <button id="classBtnRanger" class="w3-round w3-button w3-grey"
-                        onclick="spellClassFilter('Ranger')">Ranger</button>
+                        onclick="spellFilter(this)">Ranger</button>
                     <button id="classBtnRogue" class="w3-round w3-button w3-grey"
-                        onclick="spellClassFilter('Rogue')">Rogue</button>
+                        onclick="spellFilter(this)">Rogue</button>
                     <button id="classBtnSorcerer" class="w3-round w3-button w3-grey"
-                        onclick="spellClassFilter('Sorcerer')">Sorcerer</button>
+                        onclick="spellFilter(this)">Sorcerer</button>
                     <button id="classBtnWarlock" class="w3-round w3-button w3-grey"
-                        onclick="spellClassFilter('Warlock')">Warlock</button>
+                        onclick="spellFilter(this)">Warlock</button>
                     <button id="classBtnWizard" class="w3-round w3-button w3-grey"
-                        onclick="spellClassFilter('Wizard')">Wizard</button>
+                        onclick="spellFilter(this)">Wizard</button>
                 </div>
                 <br />
                 <div class="w3-bar">
-                        <button id="schoolBtnAll" class="w3-round w3-button w3-blue"
-                            onclick="spellSchoolFilter('All')">All</button>
                     <button id="schoolBtnAbjuration" class="w3-round w3-button w3-grey"
-                        onclick="spellSchoolFilter('Abjuration')">Abjuration</button>
+                        onclick="spellFilter(this,1)">Abjuration</button>
                     <button id="schoolBtnConjuration" class="w3-round w3-button w3-grey"
-                        onclick="spellSchoolFilter('Conjuration')">Conjuration</button>
+                        onclick="spellFilter(this,1)">Conjuration</button>
                     <button id="schoolBtnDivination" class="w3-round w3-button w3-grey"
-                        onclick="spellSchoolFilter('Divination')">Divination</button>
+                        onclick="spellFilter(this,1)">Divination</button>
                     <button id="schoolBtnEnchantment" class="w3-round w3-button w3-grey"
-                        onclick="spellSchoolFilter('Enchantment')">Enchantment</button>
+                        onclick="spellFilter(this,1)">Enchantment</button>
                     <button id="schoolBtnEvocation" class="w3-round w3-button w3-grey"
-                        onclick="spellSchoolFilter('Evocation')">Evocation</button>
+                        onclick="spellFilter(this,1)">Evocation</button>
                     <button id="schoolBtnIllusion" class="w3-round w3-button w3-grey"
-                        onclick="spellSchoolFilter('Illusion')">Illusion</button>
+                        onclick="spellFilter(this,1)">Illusion</button>
                     <button id="schoolBtnNecromancy" class="w3-round w3-button w3-grey"
-                        onclick="spellSchoolFilter('Necromancy')">Necromancy</button>
+                        onclick="spellFilter(this,1)">Necromancy</button>
                     <button id="schoolBtnTransmutation" class="w3-round w3-button w3-grey"
-                        onclick="spellSchoolFilter('Transmutation')">Transmutation</button>
+                        onclick="spellFilter(this,1)">Transmutation</button>
                 </div>
                 <br/>
                 <button id="spellFilterClear" class="w3-round w3-button w3-orange" onclick="clearSpellFilter()">Clear Filters</button>
@@ -1827,6 +1823,7 @@
                                 <h3 class="spellName"></h3>
                                 <h5><em><span class="spellSchool"></span>, <span class="spellLevel"></span></em></h5>
                                 <h5><span class="ritual"></span></h5>
+                                <div class="w3-hide spellFilters"></div>
                             </div>
                             <div class="w3-row-padding">
                                 <emph>Casting Time: </emph><span class="spellTime"></span>
@@ -1869,6 +1866,7 @@
     <script>
         $(document).ready(function () {
             buildSpells();
+            clearSpellFilter()
             $('.spellGrid').isotope({
                 itemSelector: '.grid-item',
                 masonry: {

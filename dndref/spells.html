@@ -1817,7 +1817,7 @@
                 <button id="spellFilterClear" class="w3-round w3-button w3-orange" onclick="clearSpellFilter()">Clear Filters</button>
                 <br />
                 <div class="spellGrid">
-                    <div class="" id="defaultSpellCard" style="display:none;">
+                    <div class="w3-hide" id="defaultSpellCard" style="display:none;">
                         <div class="w3-card-2 w3-round-large">
                             <div class="w3-row-padding">
                                 <h3 class="spellName"></h3>
@@ -1866,7 +1866,7 @@
     <script>
         $(document).ready(function () {
             buildSpells();
-            clearSpellFilter()
+            clearSpellFilter();
             $('.spellGrid').isotope({
                 itemSelector: '.grid-item',
                 masonry: {

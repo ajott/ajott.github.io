@@ -93,9 +93,9 @@ function buildSpells() {
         var $klon = $div.clone().prop('id', 'spell' + i);
 
         if ($("#spell" + (i - 1)).length === 0) {
-            $div.after($klon.show());
+            $div.after($klon.show().removeClass("w3-hide"));
         } else {
-            $("#spell" + (i - 1)).after($klon.show());
+            $("#spell" + (i - 1)).after($klon.show().removeClass("w3-hide"));
         }
 
         $("#spell" + i).children().children().children(".spellName").text(spell[i]["name"])
@@ -268,8 +268,6 @@ function spellFilter(input, mod = 0) {
 
     }
 
-    console.log(spellFilters)
-
     if (!duplicate) {
         $this.addClass("w3-blue").removeClass("w3-grey")
         spellFilters.push(filterText);
@@ -280,7 +278,6 @@ function spellFilter(input, mod = 0) {
         $this.removeClass("w3-blue").addClass("w3-grey");
     }
 
-    console.log(spellFilters);
 
     $('.spellGrid').isotope({
         filter: function () {
@@ -359,7 +356,6 @@ function clearSpellFilter() {
     classNames.forEach(function (className) {
         $("#classBtn" + className).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
     });
-
 
     let schoolNames = [
         "All",

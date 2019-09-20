@@ -242,6 +242,24 @@ function spellNameFilter() {
     $("#classBtnAll").removeClass('w3-grey').addClass('w3-blue');
 
 
+    let schoolNames = [
+        "All",
+        "Abjuration",
+        "Conjuration",
+        "Divination",
+        "Enchantment",
+        "Evocation",
+        "Illusion",
+        "Necromancy",
+        "Transmutation"
+      ]
+
+    schoolNames.forEach(function (schoolName) {
+        $("#schoolBtn" + schoolName).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
+    });
+
+    $("#schoolBtnAll").removeClass('w3-grey').addClass('w3-blue');
+
     var input = document.getElementById('spellNameSearch').value.toUpperCase();
 
     if (input != "") {
@@ -263,6 +281,24 @@ function spellNameFilter() {
 }
 
 function spellClassFilter(input) {
+    let schoolNames = [
+        "All",
+        "Abjuration",
+        "Conjuration",
+        "Divination",
+        "Enchantment",
+        "Evocation",
+        "Illusion",
+        "Necromancy",
+        "Transmutation"
+      ]
+
+    schoolNames.forEach(function (schoolName) {
+        $("#schoolBtn" + schoolName).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
+    });
+
+    $("#schoolBtnAll").removeClass('w3-grey').addClass('w3-blue');
+
     $("#spellNameSearch").val("");
 
     let classNames = ["All", "Artificer", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
@@ -294,6 +330,92 @@ function spellClassFilter(input) {
             filter: '*'
         })
     }
+}
+
+function spellSchoolFilter(input) {
+    let classNames = ["All", "Artificer", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
+
+    classNames.forEach(function (className) {
+        $("#classBtn" + className).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
+    });
+
+    $("#classBtnAll").removeClass('w3-grey').addClass('w3-blue');
+
+    $("#spellNameSearch").val("");
+
+    let schoolNames = [
+        "All",
+        "Abjuration",
+        "Conjuration",
+        "Divination",
+        "Enchantment",
+        "Evocation",
+        "Illusion",
+        "Necromancy",
+        "Transmutation"
+      ]
+
+    let filter = input.toUpperCase();
+
+    schoolNames.forEach(function (schoolName) {
+        if (schoolName != input) {
+            $("#schoolBtn" + schoolName).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
+        }
+    });
+
+    $("#schoolBtn" + input).removeClass('w3-grey').addClass('w3-blue');
+
+
+    if (input != "All") {
+        // Filter for spell names that match the input
+        $('.spellGrid').isotope({
+            filter: function () {
+                // _this_ is the item element. Get text of element's .name
+                var spSchool = $(this).find('.spellSchool').text().toUpperCase();
+                // return true to show, false to hide
+                return spSchool.indexOf(filter) > -1;
+            }
+        })
+    } else {
+        $('.spellGrid').isotope({
+            // Clear filter
+            filter: '*'
+        })
+    }
+}
+
+function clearSpellFilter() {
+    $('.spellGrid').isotope({
+        // Clear filter
+        filter: '*'
+    })
+
+    let classNames = ["All", "Artificer", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
+
+    classNames.forEach(function (className) {
+        $("#classBtn" + className).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
+    });
+
+    $("#classBtnAll").removeClass('w3-grey').addClass('w3-blue');
+
+
+    let schoolNames = [
+        "All",
+        "Abjuration",
+        "Conjuration",
+        "Divination",
+        "Enchantment",
+        "Evocation",
+        "Illusion",
+        "Necromancy",
+        "Transmutation"
+      ]
+
+    schoolNames.forEach(function (schoolName) {
+        $("#schoolBtn" + schoolName).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
+    });
+
+    $("#schoolBtnAll").removeClass('w3-grey').addClass('w3-blue');
 }
 
 function featNameFilter() {

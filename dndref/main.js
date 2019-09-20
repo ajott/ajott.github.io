@@ -251,6 +251,9 @@ var spellSchools = [
   ]
 
 function spellFilter(input, mod = 0) {
+    $("#spellNameSearch").val("")
+
+    
     $this = $(input)
 
     filterText = input.firstChild.textContent.toUpperCase()
@@ -297,8 +300,10 @@ function spellFilter(input, mod = 0) {
     })
 }
 
-function spellNameFilter() {
+function spellNameFilter(exact = 0) {
     let classNames = ["All", "Artificer", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
+
+    console.log(exact)
 
     classNames.forEach(function (className) {
         $("#classBtn" + className).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
@@ -329,7 +334,11 @@ function spellNameFilter() {
                 // _this_ is the item element. Get text of element's .name
                 var name = $(this).find('.spellName').text().toUpperCase();
                 // return true to show, false to hide
-                return name.indexOf(input) > -1;
+                if (exact == 1) {
+                   return (name == input)
+                } else {
+                    return name.indexOf(input) > -1;
+                }
             }
         })
     } else {
@@ -404,7 +413,7 @@ function buildNavbar() {
 
 function spellSearchClick(el) {
     $("#spellNameSearch").val(el.firstChild.textContent);
-    spellNameFilter();
+    spellNameFilter(1);
     $('html, body').animate({
         scrollTop: ($('#spellNameSearch').offset().top)
     }, 150);

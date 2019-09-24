@@ -462,7 +462,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Abi-Dalzim's Horrid Wilting (EE)",
+        "name": "Abi-Dalzim's Horrid Wilting",
         "level": "8th level",
         "school": "Necromancy",
         "time": "1 action",
@@ -478,7 +478,7 @@ var spell = [{
         "roll": "10d8"
     },
     {
-        "name": "Absorb Elements (EE)",
+        "name": "Absorb Elements",
         "level": "1st level",
         "school": "Abjuration",
         "time": "1 reaction, which you take when you take acid, cold, fire, lightning, or thunder damage",
@@ -517,7 +517,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Aganazzar's Scorcher (EE)",
+        "name": "Aganazzar's Scorcher",
         "level": "2nd level",
         "school": "Evocation",
         "time": "1 action",
@@ -1003,7 +1003,7 @@ var spell = [{
         "text": "This spell bestows hope and vitality. Choose any number of creatures within range. For the duration, each target has advantage on Wisdom saving throws and death saving throws, and regains the maximum number of hit points possible from any healing."
     },
     {
-        "name": "Beast Bond (EE)",
+        "name": "Beast Bond",
         "level": "1st level",
         "school": "Divination",
         "time": "1 action",
@@ -1208,7 +1208,7 @@ var spell = [{
         "text": "Your body becomes blurred, shifting and wavering to all who can see you. For the duration, any creature has disadvantage on attack rolls against you. An attacker is immune to this effect if it doesn't rely on sight, as with blindsight, or can see through illusions, as with truesight."
     },
     {
-        "name": "Bones of the Earth (EE)",
+        "name": "Bones of the Earth",
         "level": "6th level",
         "school": "Transmutation",
         "time": "1 action",
@@ -1227,7 +1227,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Booming Blade (SCAG)",
+        "name": "Booming Blade",
         "level": "Cantrip",
         "school": "Evocation",
         "time": "1 action",
@@ -1318,7 +1318,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Catapult (EE)",
+        "name": "Catapult",
         "level": "1st level",
         "school": "Transmutation",
         "time": "1 action",
@@ -1913,7 +1913,7 @@ var spell = [{
         "text": "A flame, equivalent in brightness to a torch, springs forth from an object that you touch. The effect looks like a regular flame, but it creates no heat and doesn't use oxygen. A continual flame can be covered or hidden but not smothered or quenched."
     },
     {
-        "name": "Control Flames (EE)",
+        "name": "Control Flames",
         "level": "Cantrip",
         "school": "Transmutation",
         "time": "1 action",
@@ -2000,7 +2000,7 @@ var spell = [{
         "roll": "1d4*10"
     },
     {
-        "name": "Control Winds (EE)",
+        "name": "Control Winds",
         "level": "5th level",
         "school": "Transmutation",
         "time": "1 action",
@@ -2054,7 +2054,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Create Bonfire (EE)",
+        "name": "Create Bonfire",
         "level": "Cantrip",
         "school": "Conjuration",
         "time": "1 action",
@@ -2662,7 +2662,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Dust Devil (EE)",
+        "name": "Dust Devil",
         "level": "2nd level",
         "school": "Conjuration",
         "time": "1 action",
@@ -2684,7 +2684,7 @@ var spell = [{
         "roll": "1d8"
     },
     {
-        "name": "Earth Tremor (EE)",
+        "name": "Earth Tremor",
         "level": "1st level",
         "school": "Evocation",
         "time": "1 action",
@@ -2702,7 +2702,7 @@ var spell = [{
         "roll": "1d6"
     },
     {
-        "name": "Earthbind (EE)",
+        "name": "Earthbind",
         "level": "2nd level",
         "school": "Transmutation",
         "time": "1 action",
@@ -2765,7 +2765,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Elemental Bane (EE)",
+        "name": "Elemental Bane",
         "level": "4th level",
         "school": "Transmutation",
         "time": "1 action",
@@ -2891,7 +2891,7 @@ var spell = [{
         "text": "You weave a distracting string of words, causing creatures of your choice that you can see within range and that can hear you to make a Wisdom saving throw. Any creature that can't be charmed succeeds on this saving throw automatically, and if you or your companions are fighting a creature, it has advantage on the save. On a failed save, the target has disadvantage on Wisdom (Perception) checks made to perceive any creature other than you until the spell ends or until the target can no longer hear you. The spell ends if you are incapacitated or can no longer speak."
     },
     {
-        "name": "Erupting Earth (EE)",
+        "name": "Erupting Earth",
         "level": "3rd level",
         "school": "Transmutation",
         "time": "1 action",
@@ -3255,7 +3255,7 @@ var spell = [{
         "roll": "8d6"
     },
     {
-        "name": "Flame Arrows (EE)",
+        "name": "Flame Arrows",
         "level": "3rd level",
         "school": "Transmutation",
         "time": "1 action",
@@ -3466,7 +3466,7 @@ var spell = [{
         "text": "For the duration, you have advantage on all Charisma checks directed at one creature of your choice that isn't hostile toward you. When the spell ends, the creature realizes that you used magic to influence its mood and becomes hostile toward you. A creature prone to violence might attack you. Another creature might seek retribution in other ways (at the DM's discretion), depending on the nature of your interaction with it."
     },
     {
-        "name": "Frostbite (EE)",
+        "name": "Frostbite",
         "level": "Cantrip",
         "school": "Evocation",
         "time": "1 action",
@@ -3713,7 +3713,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Green-Flame Blade (SCAG)",
+        "name": "Green-Flame Blade",
         "level": "Cantrip",
         "school": "Evocation",
         "time": "1 action",
@@ -3815,7 +3815,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Gust (EE)",
+        "name": "Gust",
         "level": "Cantrip",
         "school": "Transmutation",
         "time": "1 action",
@@ -4155,7 +4155,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Ice Knife (EE)",
+        "name": "Ice Knife",
         "level": "1st level",
         "school": "Conjuration",
         "time": "1 action",
@@ -4230,7 +4230,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Immolation (EE)",
+        "name": "Immolation",
         "level": "5th level",
         "school": "Evocation",
         "time": "1 action",
@@ -4347,7 +4347,7 @@ var spell = [{
         "roll": "4d10"
     },
     {
-        "name": "Investiture of Flame (EE)",
+        "name": "Investiture of Flame",
         "level": "6th level",
         "school": "Transmutation",
         "time": "1 action",
@@ -4369,7 +4369,7 @@ var spell = [{
         "roll": "1d10"
     },
     {
-        "name": "Investiture of Ice (EE)",
+        "name": "Investiture of Ice",
         "level": "6th level",
         "school": "Transmutation",
         "time": "1 action",
@@ -4392,7 +4392,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Investiture of Stone (EE)",
+        "name": "Investiture of Stone",
         "level": "6th level",
         "school": "Transmutation",
         "time": "1 action",
@@ -4413,7 +4413,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Investiture of Wind (EE)",
+        "name": "Investiture of Wind",
         "level": "6th level",
         "school": "Transmutation",
         "time": "1 action",
@@ -4612,7 +4612,7 @@ var spell = [{
         "roll": "8d6"
     },
     {
-        "name": "Lightning Lure (SCAG)",
+        "name": "Lightning Lure",
         "level": "Cantrip",
         "school": "Evocation",
         "time": "1 action",
@@ -4693,7 +4693,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Maelstrom (EE)",
+        "name": "Maelstrom",
         "level": "5th level",
         "school": "Evocation",
         "time": "1 action",
@@ -4822,7 +4822,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Magic Stone (EE)",
+        "name": "Magic Stone",
         "level": "Cantrip",
         "school": "Transmutation",
         "time": "1 bonus action",
@@ -4941,7 +4941,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Maximilian's Earthen Grasp (EE)",
+        "name": "Maximilian's Earthen Grasp",
         "level": "2nd level",
         "school": "Transmutation",
         "time": "1 action",
@@ -5019,7 +5019,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Melf's Minute Meteors (EE)",
+        "name": "Melf's Minute Meteors",
         "level": "3rd level",
         "school": "Evocation",
         "time": "1 action",
@@ -5206,7 +5206,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Mold Earth (EE)",
+        "name": "Mold Earth",
         "level": "Cantrip",
         "school": "Transmutation",
         "time": "1 action",
@@ -5723,7 +5723,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Primordial Ward (EE)",
+        "name": "Primordial Ward",
         "level": "6th level",
         "school": "Abjuration",
         "time": "1 action",
@@ -5922,7 +5922,7 @@ var spell = [{
         "text": "All nonmagical food and drink within a 5-foot-radius sphere centered on a point of your choice within range is purified and rendered free of poison and disease."
     },
     {
-        "name": "Pyrotechnics (EE)",
+        "name": "Pyrotechnics",
         "level": "2nd level",
         "school": "Transmutation",
         "time": "1 action",
@@ -6343,7 +6343,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Shape Water (EE)",
+        "name": "Shape Water",
         "level": "Cantrip",
         "school": "Transmutation",
         "time": "1 action",
@@ -6511,7 +6511,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Skywrite (EE)",
+        "name": "Skywrite",
         "level": "2nd level",
         "school": "Transmutation",
         "ritual": "YES",
@@ -6583,7 +6583,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Snilloc's Snowball Swarm (EE)",
+        "name": "Snilloc's Snowball Swarm",
         "level": "2nd level",
         "school": "Evocation",
         "time": "1 action",
@@ -6779,7 +6779,7 @@ var spell = [{
         "text": "This spell turns the flesh of a willing creature you touch as hard as stone. Until the spell ends, the target has resistance to nonmagical bludgeoning, piercing, and slashing damage."
     },
     {
-        "name": "Storm Sphere (EE)",
+        "name": "Storm Sphere",
         "level": "4th level",
         "school": "Evocation",
         "time": "1 action",
@@ -6903,7 +6903,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Sword Burst (SCAG)",
+        "name": "Sword Burst",
         "level": "Cantrip",
         "school": "Conjuration",
         "time": "1 action",
@@ -7135,7 +7135,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Thunderclap (EE)",
+        "name": "Thunderclap",
         "level": "Cantrip",
         "school": "Evocation",
         "time": "1 action",
@@ -7188,7 +7188,7 @@ var spell = [{
         "roll": "2d8"
     },
     {
-        "name": "Tidal Wave (EE)",
+        "name": "Tidal Wave",
         "level": "3rd level",
         "school": "Conjuration",
         "time": "1 action",
@@ -7231,7 +7231,7 @@ var spell = [{
         "text": "This spell grants the creature you touch the ability to understand any spoken language it hears. Moreover, when the target speaks, any creature that knows at least one language and can hear the target understands what it says."
     },
     {
-        "name": "Transmute Rock (EE)",
+        "name": "Transmute Rock",
         "level": "5th level",
         "school": "Transmutation",
         "time": "1 action",
@@ -7434,7 +7434,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Vitriolic Sphere (EE)",
+        "name": "Vitriolic Sphere",
         "level": "4th level",
         "school": "Evocation",
         "time": "1 action",
@@ -7513,7 +7513,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Wall of Sand (EE)",
+        "name": "Wall of Sand",
         "level": "3rd level",
         "school": "Evocation",
         "time": "1 action",
@@ -7571,7 +7571,7 @@ var spell = [{
         "roll": "7d8"
     },
     {
-        "name": "Wall of Water (EE)",
+        "name": "Wall of Water",
         "level": "3rd level",
         "school": "Evocation",
         "time": "1 action",
@@ -7603,7 +7603,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Warding Wind (EE)",
+        "name": "Warding Wind",
         "level": "2nd level",
         "school": "Evocation",
         "time": "1 action",
@@ -7658,7 +7658,7 @@ var spell = [{
         ]
     },
     {
-        "name": "Watery Sphere (EE)",
+        "name": "Watery Sphere",
         "level": "4th level",
         "school": "Conjuration",
         "time": "1 action",
@@ -7715,7 +7715,7 @@ var spell = [{
         "roll": "4d10"
     },
     {
-        "name": "Whirlwind (EE)",
+        "name": "Whirlwind",
         "level": "7th level",
         "school": "Evocation",
         "time": "1 action",

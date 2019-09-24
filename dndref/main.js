@@ -101,7 +101,7 @@ function buildSpells() {
         $("#spell" + i).children().children().children(".spellName").text(spell[i]["name"])
         $("#spell" + i).children().children().children().children().children(".spellSchool").text(spell[i]["school"])
         $("#spell" + i).children().children().children().children().children(".spellLevel").text(spell[i]["level"])
-        $("#spell" + i).children().children().children(".spellFilters").text(spell[i]["school"] + ", " + spell[i]["classes"])
+        $("#spell" + i).children().children().children(".spellFilters").text(spell[i]["school"] + ", " + spell[i]["classes"] + ", " + spell[i]["level"])
         $("#spell" + i).children().children().children(".spellTime").text(spell[i]["time"])
         $("#spell" + i).children().children().children(".spellRange").text(spell[i]["range"])
         $("#spell" + i).children().children().children(".spellComponents").text(spell[i]["components"])
@@ -124,6 +124,21 @@ function buildSpells() {
 
         htmlString = "";
     }
+
+    $('.spellGrid').isotope({
+        itemSelector: '.grid-item',
+        masonry: {
+            columnWidth: 25
+        },
+        getSortData: {
+            name: '.spellName',
+            school: '.spellSchool'
+        }
+    });
+    $('.spellGrid').isotope({
+        sortBy: 'name'
+    })
+    $('spellGrid').isotope('updateSortData').isotope();
 }
 
 function buildFeats() {
@@ -248,7 +263,9 @@ var spellSchools = [
     "ILLUSION",
     "NECROMANCY",
     "TRANSMUTATION"
-  ]
+]
+
+var spellLevels = ["CANTRIP", "1ST", "2ND", "3RD", "4TH", "5TH", "6TH", "7TH", "8TH", "9TH"]
 
 function spellFilter(input, mod = 0) {
     $("#spellNameSearch").val("")
@@ -259,6 +276,7 @@ function spellFilter(input, mod = 0) {
     filterText = input.firstChild.textContent.toUpperCase()
 
     let duplicate = (spellFilters.indexOf(filterText) > -1);
+
 
     if (mod == 1) {
         spellFilters.forEach(function(filter) {
@@ -271,11 +289,20 @@ function spellFilter(input, mod = 0) {
 
     }
 
+    if (mod == 2) {
+        spellFilters.forEach(function(filter) {
+            if (spellLevels.indexOf(filter) > -1) {
+                spellFilters.splice(spellFilters.indexOf(filter),1)
+            }
+        })
+        $this.parent().children().removeClass("w3-blue").addClass("w3-grey")
+    }
+
     if (!duplicate) {
         $this.addClass("w3-blue").removeClass("w3-grey")
         spellFilters.push(filterText);
     } else {
-        if (mod != 1) {
+        if (mod != 1 && mod != 2) {
         spellFilters.splice(spellFilters.indexOf(filterText),1);
     }
         $this.removeClass("w3-blue").addClass("w3-grey");
@@ -303,7 +330,6 @@ function spellFilter(input, mod = 0) {
 function spellNameFilter(exact = 0) {
     let classNames = ["All", "Artificer", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
 
-    console.log(exact)
 
     classNames.forEach(function (className) {
         $("#classBtn" + className).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
@@ -325,7 +351,20 @@ function spellNameFilter(exact = 0) {
         $("#schoolBtn" + schoolName).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
     });
 
+    for (let i = 0; i < 10; i ++) {
+        $("#levelBtn" + i).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
+    }
+
     var input = document.getElementById('spellNameSearch').value.toUpperCase();
+
+    if (input[0] == "\"") {
+        exact = 1;
+        if (input[input.length-1] == "\"") {
+            input = input.substring(1,input.length - 1)
+        } else {
+            input = input.substring(1,input.length)
+        }
+    }
 
     if (input != "") {
         // Filter for spell names that match the input
@@ -381,6 +420,10 @@ function clearSpellFilter() {
     schoolNames.forEach(function (schoolName) {
         $("#schoolBtn" + schoolName).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
     });
+
+    for (let i = 0; i < 10; i ++) {
+        $("#levelBtn" + i).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
+    }
 }
 
 function featNameFilter() {
@@ -412,8 +455,8 @@ function buildNavbar() {
 
 
 function spellSearchClick(el) {
-    $("#spellNameSearch").val(el.firstChild.textContent);
-    spellNameFilter(1);
+    $("#spellNameSearch").val("\""+el.firstChild.textContent+"\"");
+    spellNameFilter();
     $('html, body').animate({
         scrollTop: ($('#spellNameSearch').offset().top)
     }, 150);

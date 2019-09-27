@@ -448,6 +448,28 @@ function featNameFilter() {
     }
 }
 
+function magicItemNameFilter() {
+
+    var input = document.getElementById('magicItemNameSearch').value.toUpperCase();
+
+    if (input != "") {
+        // Filter for spell names that match the input
+        $('.magicItemGrid').isotope({
+            filter: function () {
+                // _this_ is the item element. Get text of element's .name
+                var name = $(this).find('.itemName').text().toUpperCase();
+                // return true to show, false to hide
+                return name.indexOf(input) > -1;
+            }
+        })
+    } else {
+        $('.magicItemGrid').isotope({
+            // Clear filter
+            filter: '*'
+        })
+    }
+}
+
 
 function buildNavbar() {
     $('#navBarDiv').load("./navbar.html");
@@ -462,7 +484,80 @@ function spellSearchClick(el) {
     }, 150);
 }
 
+function buildMagicItems() {
+    let htmlString = "";
 
+    for (let i = 0; i < magicItems.length; i++) {
+        var $div = $('#defaultItemCard');
+
+        var $klon = $div.clone().prop('id', 'item' + i);
+
+        if ($("#item" + (i - 1)).length === 0) {
+            $div.after($klon.show());
+        } else {
+            $("#item" + (i - 1)).after($klon.show());
+        }
+
+        $("#item" + i).children().children().children(".itemName").text(magicItems[i]["name"])
+        $("#item" + i).children().children().children().children().children(".itemType").text(magicItems[i]["type"])
+        
+        if (magicItems[i]["weight"]) {
+            htmlString = $("#item" + i).children().children().children(".itemAttributes").html()
+            htmlString += "<emph>Weight: </emph><span class=\"itemWeight\"></span><br/>"
+            $("#item" + i).children().children().children(".itemAttributes").html(htmlString)
+            $("#item" + i).children().children().children(".itemAttributes").children(".itemWeight").text(magicItems[i]["weight"] + " lbs")
+            htmlString = ""
+        }
+
+        if (magicItems[i]["ac"]) {
+            htmlString = $("#item" + i).children().children().children(".itemAttributes").html()
+            htmlString += "<emph>AC: </emph><span class=\"itemAC\"></span><br/>"
+            $("#item" + i).children().children().children(".itemAttributes").html(htmlString)
+            $("#item" + i).children().children().children(".itemAttributes").children(".itemAC").text(magicItems[i]["ac"])
+            htmlString = ""
+        }
+
+        if (magicItems[i]["strength"]) {
+            htmlString = $("#item" + i).children().children().children(".itemAttributes").html()
+            htmlString += "<emph>Min Str: </emph><span class=\"itemStrReq\"></span><br/>"
+            $("#item" + i).children().children().children(".itemAttributes").html(htmlString)
+            $("#item" + i).children().children().children(".itemAttributes").children(".itemStrReq").text(magicItems[i]["strength"])
+            htmlString = ""
+        }
+
+        if (magicItems[i]["stealth"]) {
+            htmlString = $("#item" + i).children().children().children(".itemAttributes").html()
+            htmlString += "<emph>Disadvantage on Stealth Rolls</emph><br/>"
+            $("#item" + i).children().children().children(".itemAttributes").html(htmlString)
+            htmlString = ""
+        }
+
+        if (magicItems[i]["rarity"]) {
+            htmlString = $("#item" + i).children().children().children(".itemAttributes").html()
+            htmlString += "<br/><emph>Rarity: </emph><span class=\"itemRarity\"></span><br/>"
+            $("#item" + i).children().children().children(".itemAttributes").html(htmlString)
+            $("#item" + i).children().children().children(".itemAttributes").children(".itemRarity").text(magicItems[i]["rarity"])
+            htmlString = ""
+        }
+
+        
+
+
+        if (magicItems[i]["text"] != undefined) {
+            if (typeof (magicItems[i]["text"]) == "object") {
+                for (let j = 0; j < magicItems[i]["text"].length; j++) {
+                    htmlString += "<p>" + magicItems[i]["text"][j] + "</p>";
+                }
+            } else {
+                htmlString = "<p>" + magicItems[i]["text"] + "</p>"
+            }
+        }
+        $("#item" + i).children().children().children(".itemDesc").html(htmlString)
+        $("#item" + i).addClass("grid-item")
+
+        htmlString = "";
+    }
+}
 
 function gearNameFilter() {
     var input, filter, table, tr, td;

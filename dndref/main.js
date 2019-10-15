@@ -76,12 +76,6 @@ $(document).ready(function () {
             columnWidth: 25
         }
     });
-    // $('.advancements').isotope({
-    //     itemSelector: '.grid-item',
-    //     masonry: {
-    //         columnWidth: 600
-    //     }
-    // })
 });
 
 function buildSpells() {
@@ -139,6 +133,12 @@ function buildSpells() {
         sortBy: 'name'
     })
     $('spellGrid').isotope('updateSortData').isotope();
+}
+
+
+
+function addSpellSlotBadges() {
+
 }
 
 function buildFeats() {

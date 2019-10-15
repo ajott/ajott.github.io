@@ -470,3 +470,7 @@ Generated Maroon theme
     margin-bottom: -13px !important;
     padding-bottom: -13px !important;
 }
+
+#combatActionTable th, td {
+    text-align: left !important;
+}

@@ -1,0 +1,2355 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>D&D 5e QuickRef</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="./isotope.pkgd.js"></script>
+</head>
+
+
+<body id="#body">
+    <!-- Empty DIV for the top navbar, which is loaded from navbar.html -->
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad" id="navBarDiv" style="z-index: 100">
+    </div>
+
+    <!-- Main DIV for race information -->
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div class="w3-section w3-row-padding info">
+                <h1>Races</h1>
+                <p>Characters in D&D, in addition to a background and a class, have a race. This is an inherent part of
+                    their being, though it is subject to change via magic. Your race is an integral part of character
+                    creation, and each race has different advantages and disadvantages.</p>
+                <p>Some races, such as Dwarves and Halflings, have sub-races. You must choose one of these sub-races during
+                    character creation. While all sub-races have the same basic characteristics of the overall race to
+                    which they belong, they're often specialized in certain ways.</p>
+                <p>As always, consult your DM to determine if a given race is a valid option for you to play in your
+                    game. All races from supplemental materials are included here, some of which may not fit into your
+                    campaign's setting.</p>
+            </div>
+
+            <div class="w3-section w3-row-padding info">
+
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Aarakocra</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>25 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Dex +2, Wis +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Flight: </emph>You have a flying speed of 50 feet. To use this speed, you
+                                can't be wearing medium or heavy armor.
+                            </p>
+                            <p>
+                                <emph>Talons: </emph>You are proficient with your unarmed strikes, which deal 1d4
+                                slashing damage on a hit.
+                            </p>
+                            <p>
+                                <emph>Language: </emph>You can speak, read, and write Common, Aarakocra, and Auran.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Aasimar</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Darkvision: </emph>Blessed with a radiant soul, your vision can easily cut
+                                through darkness. You can see in dim light within 60 feet of you as if it were
+                                bright light, and in darkness as if it were dim light. You can't discern color in
+                                darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Celestial Resistance: </emph>You have resistance to necrotic damage and
+                                radiant damage.
+                            </p>
+                            <p>
+                                <emph>Healing Hands: </emph>As an action, you can touch a creature and cause it to
+                                regain a number of hit points equal to your level. Once you use this trait, you
+                                can't use it again until you finish a long rest.
+                            </p>
+                            <p>
+                                <emph>Light Bearer: </emph>You know the light cantrip. Charisma is your spellcasting
+                                ability for it.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Celestial.
+                            </p>
+                            <h4>Subraces</h4>
+                            <button class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold "
+                                onclick="accordion('aasimarfallen')"><span
+                                    style="font-size: 1.2em;">Fallen</span></button>
+                            <div class="advancements w3-hide w3-container" id="aasimarfallen">
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Cha +2, Str +1
+                                <p>
+                                    <emph>Necrotic Shroud: </emph>Starting at 3rd level, you can use your action to
+                                    unleash the divine energy within yourself, causing your eyes to turn into pools of
+                                    darkness and two skeletal, ghostly, flightless wings to sprout from your back. The
+                                    instant you transform, other creatures within 10 feet of you that can see you must
+                                    succeed on a Charisma saving throw (DC 8 + your proficiency bonus + your Charisma
+                                    modifier) or become frightened of you until the end of your next turn. Your
+                                    transformation lasts for 1 minute or until you end it as a bonus action. During it,
+                                    once on each of your turns, you can deal extra necrotic damage to one target when
+                                    you deal damage to it with an attack or a spell. The extra necrotic damage equals
+                                    your level. Once you use this trait, you can't use it again until you finish a long
+                                    rest.
+                                </p>
+                            </div>
+                            <button class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold "
+                                onclick="accordion('aasimarprotector')"><span
+                                    style="font-size: 1.2em;">Protector</span></button>
+                            <div class="advancements w3-hide w3-container" id="aasimarprotector">
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Cha +2, Wis +1
+
+                                <p>
+                                    <emph>Radiant Soul: </emph>Starting at 3rd level, you can use your action to unleash
+                                    the divine energy within yourself, causing your eyes to glimmer and two luminous,
+                                    incorporeal wings to sprout from your back. Your transformation lasts for 1 minute
+                                    or until you end it as a bonus action. During it, you have a flysing speed of 30
+                                    feet, and once on each of your turns, you can deal extra radiant damageto one target
+                                    when you deal damage to it with an attack or a spell. The extra radiant damage
+                                    equals your level. Once you use this trait, you can't use it again until you finish
+                                    a long rest.
+                                </p>
+                            </div>
+                            <button class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold "
+                                onclick="accordion('aasimarscourge')"><span
+                                    style="font-size: 1.2em;">Scourge</span></button>
+                            <div class="advancements w3-hide w3-container" id="aasimarscourge">
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Cha +2, Con +1
+
+                                <p>
+                                    <emph>Radiant Consumption: </emph>Starting at 3rd level, you can use your action to
+                                    unleash the divine energy within yourself, causing a searing light to radiate from
+                                    you, pour out of your eyes and mouth, and threaten to char you. Your transformation
+                                    lasts for 1 minute or until you end it as a bonus action. During it, you shed
+                                    bright light in a 10-foot radius and dim light for an additional 10 feet, and at the
+                                    end of each of your turns, you and each creature within 10 feet of you take radiant
+                                    damage equal to half your level (rounded up). In addition, once on each of your
+                                    turns, you can deal extra radiant damage to one target when you deal damage to it
+                                    with an attack or a spell. The extra radiant damage equals your level. Once you use
+                                    this trait, you can't use it again until you finish a long rest.
+                                </p>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Bugbear</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Str +2, Dex +1
+                                <br />
+                                <emph>Proficiency: </emph>Stealth
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Darkvision: </emph>You can see in dim light within 60 feet of you as if it
+                                were bright light, and in darkness as if it were dim light. You can't discern color
+                                in darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Long-Limbed: </emph>When you make a melee attack on your turn, your reach for
+                                it is 5 feet greater than normal.
+                            </p>
+                            <p>
+                                <emph>Powerful Build: </emph>You count as one size larger when determining your
+                                carrying capacity and the weight you can push, drag, or lift.
+                            </p>
+                            <p>
+                                <emph>Sneaky: </emph>You are proficient in the Stealth skill.
+                            </p>
+                            <p>
+                                <emph>Surprise Attack: </emph>If you surprise a creature and hit it with an attack
+                                on your first turn in combat, the attack deals an extra 2d6 damage to it. You can
+                                use this trait only once per combat.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Goblin.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Dragonborn</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Str +2, Cha +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Draconic Ancestry: </emph>You have draconic ancestry. Choose one type of
+                                dragon from the Draconic Ancestry table. Your breath weapon and damage resistance
+                                are determined by the dragon type, as shown in the Draconic Ancestry table below.
+                            </p>
+                            <p>
+                                <emph>Breath Weapon: </emph>You can use your action to exhale destructive energy.
+                                Your Draconic Ancestry determines the size, shape, and damage type of the
+                                exhalation. When you use your breath weapon, each creature in the area of the
+                                exhalation must make a saving throw, the type of which is determined by your
+                                Draconic Ancestry.
+                                <br />
+                                The DC for this saving throw equals <emph>8 + your Constitution modifier + your
+                                    proficiency bonus</emph>.
+                                <br />
+                                A creature takes 2d6 damage on a failed save, and
+                                half as much damage on a successful one.
+                                <br />
+                                The damage increases to 3d6 at 6th level,
+                                4d6 at 11th level, and 5d6 at 16th level. After you use your breath weapon, you
+                                can't use it again until you complete a short or long rest.
+                            </p>
+                            <p>
+                                <emph>Damage Resistance: </emph>You have resistance to the damage type associated
+                                with your Draconic Ancestry.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Draconic. Draconic
+                                is thought to be one of the oldest languages and is often used in the study of
+                                magic. The language sounds harsh to most other creatures and includes numerous hard
+                                consonants and sibilants.
+                            </p>
+                            <h4>Draconic Ancestry</h4>
+                            <p>Dragons have an association with a damage type or element as denoted by their color. In
+                                addition, dragons can either be chromatic or metallic. Generally, metallic dragons are
+                                Good while chromatic dragons are Evil. This isn't necessarily a factor during character
+                                creation, but may be useful information for you.</p>
+                            <div class="w3-row-padding">
+                                <div class="w3-col s0 m2 l3">
+                                    &emsp;
+                                </div>
+                                <div class="w3-col s12 m8 l6">
+                                    <table class="w3-table w3-small w3-centered">
+                                        <thead style="border-bottom: 2px solid grey !important;">
+                                            <th>Dragon</th>
+                                            <th>Damage Type</th>
+                                            <th>Breath Weapon</th>
+                                            <th>Typical Alignment</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr style="background-color: black !important;">
+                                                <td>Black</td>
+                                                <td>Acid</td>
+                                                <td>5 by 30ft line (Dex save)</td>
+                                                <td>Evil</td>
+                                            </tr>
+                                            <tr style="background-color: darkblue !important;">
+                                                <td>Blue</td>
+                                                <td>Lightning</td>
+                                                <td>5 by 30ft line (Dex save)</td>
+                                                <td>Evil</td>
+                                            </tr>
+                                            <tr style="background-color: #b5a642 !important;">
+                                                <td>Brass</td>
+                                                <td>Fire</td>
+                                                <td>5 by 30ft line (Dex save)</td>
+                                                <td>Good</td>
+                                            </tr>
+                                            <tr style="background-color: #cd7f32 !important;">
+                                                <td>Bronze</td>
+                                                <td>Lightning</td>
+                                                <td>5 by 30ft line (Dex save)</td>
+                                                <td>Good</td>
+                                            </tr>
+                                            <tr style="background-color: #b87333 !important;">
+                                                <td>Copper</td>
+                                                <td>Acid</td>
+                                                <td>5 by 30ft line (Dex save)</td>
+                                                <td>Good</td>
+                                            </tr>
+                                            <tr
+                                                style="background-color: goldenrod !important; color: black !important;">
+                                                <td>Gold</td>
+                                                <td>Fire</td>
+                                                <td>15 ft. cone (Dex save)</td>
+                                                <td>Good</td>
+                                            </tr>
+                                            <tr style="background-color: darkgreen !important;">
+                                                <td>Green</td>
+                                                <td>Poison</td>
+                                                <td>15 ft. cone (Dex save)</td>
+                                                <td>Evil</td>
+                                            </tr>
+                                            <tr style="background-color: darkred !important;">
+                                                <td>Red</td>
+                                                <td>Fire</td>
+                                                <td>15 ft. cone (Dex save)</td>
+                                                <td>Evil</td>
+                                            </tr>
+                                            <tr style="background-color: silver !important; color: black !important;">
+                                                <td>Silver</td>
+                                                <td>Cold</td>
+                                                <td>15 ft. cone (Dex save)</td>
+                                                <td>Good</td>
+                                            </tr>
+                                            <tr style="background-color: white !important; color: black !important;">
+                                                <td>White</td>
+                                                <td>Cold</td>
+                                                <td>15 ft. cone (Dex save)</td>
+                                                <td>Evil</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="w3-col s0 m2 l3">
+                                    &emsp;
+                                </div>
+                                <br />
+                            </div>
+                            <br />
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                        <div class="w3-card-2 w3-round-large">
+                            <div class="w3-row-padding">
+                                <h3 class="raceName headingDark">Dwarf</h3>
+                            </div>
+                            <div class="w3-row-padding">
+                                <div class="w3-row" style="text-align: center !important;">
+                                    <emph>Size: </emph>Medium
+                                    <br />
+                                    <emph>Speed: </emph>25 feet
+                                    <br />
+                                    <br />
+                                </div>
+                                <h4>Features: </h4>
+                                <br />
+                                <p>
+                                    <emph>Dwarven Combat Training: </emph>You have proficiency with the battleaxe,
+                                    handaxe, light hammer, and warhammer.
+                                </p>
+                                <p>
+                                    <emph>Tool Proficiency: </emph>You gain proficiency with the artisan's tools of your
+                                    choice: smith's tools, brewer's supplies, or mason's tools.
+                                </p>
+                                <p>
+                                    <emph>Stonecunning: </emph>Whenever you make an Intelligence (History) check related
+                                    to the origin of stonework, you are considered proficient in the History skill and
+                                    add double your proficiency bonus to the check, instead of your normal proficiency
+                                    bonus.
+                                </p>
+                                <h4>Subraces</h4>
+                                <button class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold "
+                                onclick="accordion('dwarfduergar')"><span
+                                    style="font-size: 1.2em;">Duergar</span></button>
+                                <div class="advancements w3-hide w3-container" id="dwarfduergar">
+                                    <br/>
+                                        <emph>Ability Score Modifiers: </emph>Con +2, Str +1
+                                        <br />
+                                        <p>
+                                            <emph>Superior Darkvision: </emph>Accustomed to life underground, you have superior
+                                            vision in dark and dim conditions. You can see in dim light within 120 feet of you
+                                            as if it were bright light, and in darkness as if it were dim light. You can't
+                                            discern color in darkness, only shades of gray.
+                                        </p>
+                                        <p>
+                                            <emph>Duergar Resilience: </emph>You have advantage on saving throws against poison,
+                                            and you have resistance against poison damage. You also have advantage on saving
+                                            throws against illusions and against being charmed or paralyzed.
+                                        </p>
+                                        <p>
+                                            <emph>Languages: </emph>You can speak, read, and write Common, Dwarvish, and
+                                            Undercommon.
+                                        </p>
+                                        <p>
+                                            <emph>Duergar Magic: </emph>When you reach 3rd level, you can cast the
+                                            Enlarge/Reduce spell on yourself once with this trait, using only the spell's
+                                            enlarge option. When reach 5th level, you can cast the Invisibility spell on
+                                            yourself once with this trait. You don't need material components for either spell,
+                                            and you can't cast them while you're in direct sunlight, although sunlight has no
+                                            effect on them once cast. You regain the ability to cast these spells with this
+                                            trait when you finish a long rest. Intelligence is your spellcasting ability for
+                                            these spells.
+                                        </p>
+                                        <p>
+                                            <emph>Sunlight Sensitivity: </emph>You have disadvantage on attack rolls and Wisdom
+                                            (Perception) checks that rely on sight when you, the target of your attack, or
+                                            whatever you are trying to perceive is in direct sunlight.
+                                        </p>
+                                </div>
+                                <button class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold "
+                                onclick="accordion('dwarfhill')"><span
+                                    style="font-size: 1.2em;">Hill</span></button>
+                                <div class="advancements w3-hide w3-container" id="dwarfhill">
+                                    <br/>
+                                        <emph>Ability Score Modifiers: </emph>Con +2, Wis +1
+                                        <br />
+                                        
+                            <p>
+                                    <emph>Darkvision: </emph>Accustomed to life underground, you have superior vision in
+                                    dark and dim conditions. You can see in dim light within 60 feet of you as if it
+                                    were bright light, and in darkness as if it were dim light. You can't discern color
+                                    in darkness, only shades of gray.
+                                </p>
+                                <p>
+                                    <emph>Dwarven Resilience: </emph>You have advantage on saving throws against poison,
+                                    and you have resistance against poison damage.
+                                </p>
+                                <p>
+                                    <emph>Languages: </emph>You can speak, read, and write Common and Dwarvish. Dwarvish
+                                    is full of hard consonants and guttural sounds, and those characteristics spill over
+                                    into whatever other language a dwarf might speak.
+                                </p>
+                                <p>
+                                    <emph>Dwarven Toughness: </emph>Your hit point +maximum increases by 1, and it
+                                    increases by 1 every time you gain a level.
+                                </p>
+                                </div>
+                                <button class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold "
+                                onclick="accordion('dwarfmountain')"><span
+                                    style="font-size: 1.2em;">Mountain</span></button>
+                                <div class="advancements w3-hide w3-container" id="dwarfmountain">
+                                    <br/>
+                                    <emph>Ability Score Modifiers: </emph>Con +2, Str +2
+                                        <br />
+                                        <p>
+                                            <emph>Darkvision: </emph>Accustomed to life underground, you have superior vision in
+                                            dark and dim conditions. You can see in dim light within 60 feet of you as if it
+                                            were bright light, and in darkness as if it were dim light. You can't discern color
+                                            in darkness, only shades of gray.
+                                        </p>
+                                        <p>
+                                            <emph>Dwarven Resilience: </emph>You have advantage on saving throws against poison,
+                                            and you have resistance against poison damage.
+                                        </p>
+                                        <p>
+                                            <emph>Languages: </emph>You can speak, read, and write Common and Dwarvish. Dwarvish
+                                            is full of hard consonants and guttural sounds, and those characteristics spill over
+                                            into whatever other language a dwarf might speak.
+                                        </p>
+                                        <p>
+                                            <emph>Dwarven Armor Training: </emph>You have proficiency with light and medium
+                                            armor.
+                                        </p>
+                                        
+                                </div>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                    <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Elf (Drow)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Dex +2, Cha +1
+                                <br />
+                                <emph>Proficiency: </emph>Perception
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Superior Darkvision: </emph>Accustomed to the depths of the Underdark, you
+                                have superior vision in dark and dim conditions. You can see in dim light within 120
+                                feet of you as if it were bright light, and in darkness as if it were dim light. You
+                                can't discern color in darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Keen Senses: </emph>You have proficiency in the Perception skill.
+                            </p>
+                            <p>
+                                <emph>Fey Ancestry: </emph>You have advantage on saving throws against being
+                                charmed, and magic can't put you to sleep.
+                            </p>
+                            <p>
+                                <emph>Trance: </emph>Elves don't need to sleep. Instead, they meditate deeply,
+                                remaining semiconscious, for 4 hours a day. (The Common word for such meditation is
+                                "trance.") While meditating, you can dream after a fashion; such dreams are actually
+                                mental exercises that have become reflexive through years of practice. After resting
+                                in this way, you gain the same benefit that a human does from 8 hours of sleep.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Elvish. Elvish is
+                                fluid, with subtle intonations and intricate grammar. Elven literature is rich and
+                                varied, and their songs and poems are famous among other races. Many bards learn
+                                their language so they can add Elvish ballads to their repertoires.
+                            </p>
+                            <p>
+                                <emph>Sunlight Sensitivity: </emph>You have disadvantage on attack rolls and on
+                                Wisdom (Perception) checks that rely on sight when you, the target of your attack,
+                                or whatever you are trying to perceive is in direct sunlight.
+                            </p>
+                            <p>
+                                <emph>Drow Magic: </emph>You know the dancing lights cantrip. When you reach 3rd
+                                level, you can cast the faerie fire spell once per day; you must finish a long rest
+                                in order to cast the spell again using this trait. When you reach 5th level, you can
+                                also cast the darkness spell once per day; you must finish a long rest in order to
+                                cast the spell again using this trait. Charisma is your spellcasting ability for
+                                these spells.
+                            </p>
+                            <p>
+                                <emph>Drow Weapon Training: </emph>You have proficiency with rapiers, shortswords,
+                                and hand crossbows.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Elf (Eladrin)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Dex +2, Int +1
+                                <br />
+                                <emph>Proficiency: </emph>Perception
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Darkvision: </emph>Accustomed to twilit forests and the night sky, you have
+                                superior vision in dark and dim conditions. You can see in dim light within 60 feet
+                                of you as if it were bright light, and in darkness as if it were dim light. You
+                                can't discern color in darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Keen Senses: </emph>You have proficiency in the Perception skill.
+                            </p>
+                            <p>
+                                <emph>Fey Ancestry: </emph>You have advantage on saving throws against being
+                                charmed, and magic can't put you to sleep.
+                            </p>
+                            <p>
+                                <emph>Trance: </emph>Elves don't need to sleep. Instead, they meditate deeply,
+                                remaining semiconscious, for 4 hours a day. (The Common word for such meditation is
+                                "trance.") While meditating, you can dream after a fashion; such dreams are actually
+                                mental exercises that have become reflexive through years of practice. After resting
+                                in this way, you gain the same benefit that a human does from 8 hours of sleep.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Elvish. Elvish is
+                                fluid, with subtle intonations and intricate grammar. Elven literature is rich and
+                                varied, and their songs and poems are famous among other races. Many bards learn
+                                their language so they can add Elvish ballads to their repertoires.
+                            </p>
+                            <p>
+                                <emph>Elf Weapon Training: </emph>You have proficiency with the longsword,
+                                shortsword, shortbow, and longbow.
+                            </p>
+                            <p>
+                                <emph>Fey Step: </emph>You can cast the misty step spell once using this trait. You
+                                regain the ability to do so when you finish a short or long rest.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Elf (High)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Dex +2, Int +1
+                                <br />
+                                <emph>Proficiency: </emph>Perception
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Darkvision: </emph>Accustomed to twilit forests and the night sky, you have
+                                superior vision in dark and dim conditions. You can see in dim light within 60 feet
+                                of you as if it were bright light, and in darkness as if it were dim light. You
+                                can't discern color in darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Keen Senses: </emph>You have proficiency in the Perception skill.
+                            </p>
+                            <p>
+                                <emph>Fey Ancestry: </emph>You have advantage on saving throws against being
+                                charmed, and magic can't put you to sleep.
+                            </p>
+                            <p>
+                                <emph>Trance: </emph>Elves don't need to sleep. Instead, they meditate deeply,
+                                remaining semiconscious, for 4 hours a day. (The Common word for such meditation is
+                                "trance.") While meditating, you can dream after a fashion; such dreams are actually
+                                mental exercises that have become reflexive through years of practice. After resting
+                                in this way, you gain the same benefit that a human does from 8 hours of sleep.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common, Elvish, and one extra
+                                language of your choice. Elvish is fluid, with subtle intonations and intricate
+                                grammar. Elven literature is rich and varied, and their songs and poems are famous
+                                among other races. Many bards learn their language so they can add Elvish ballads to
+                                their repertoires.
+                            </p>
+                            <p>
+                                <emph>Elf Weapon Training: </emph>You have proficiency with the longsword,
+                                shortsword, shortbow, and longbow.
+                            </p>
+                            <p>
+                                <emph>Cantrip: </emph>You know one cantrip of your choice from the wizard spell
+                                list. Intelligence is your spellcasting ability for it.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Elf (Wood)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>35 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Dex +2, Wis +1
+                                <br />
+                                <emph>Proficiency: </emph>Perception
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Darkvision: </emph>Accustomed to twilit forests and the night sky, you have
+                                superior vision in dark and dim conditions. You can see in dim light within 60 feet
+                                of you as if it were bright light, and in darkness as if it were dim light. You
+                                can't discern color in darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Keen Senses: </emph>You have proficiency in the Perception skill.
+                            </p>
+                            <p>
+                                <emph>Fey Ancestry: </emph>You have advantage on saving throws against being
+                                charmed, and magic can't put you to sleep.
+                            </p>
+                            <p>
+                                <emph>Trance: </emph>Elves don't need to sleep. Instead, they meditate deeply,
+                                remaining semiconscious, for 4 hours a day. (The Common word for such meditation is
+                                "trance.") While meditating, you can dream after a fashion; such dreams are actually
+                                mental exercises that have become reflexive through years of practice. After resting
+                                in this way, you gain the same benefit that a human does from 8 hours of sleep.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Elvish. Elvish is
+                                fluid, with subtle intonations and intricate grammar. Elven literature is rich and
+                                varied, and their songs and poems are famous among other races. Many bards learn
+                                their language so they can add Elvish ballads to their repertoires.
+                            </p>
+                            <p>
+                                <emph>Elf Weapon Training: </emph>You have proficiency with the longsword,
+                                shortsword, shortbow, and longbow.
+                            </p>
+                            <p>
+                                <emph>Fleet of Foot: </emph>Your base walking speed increases to 35 feet.
+                            </p>
+                            <p>
+                                <emph>Mask of the Wild: </emph>You can attempt to hide even when you are only
+                                lightly obscured by foliage, heavy rain, falling snow, mist, and other natural
+                                phenomena.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Firbolg</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Wis +2, Str +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Firbolg Magic: </emph>You can cast detect magic and disguise self with this
+                                trait, using Wisdom as your spellcasting ability for them. Once you cast either
+                                spell, you can't cast it again with this trait until you finish a short or long
+                                rest. When you use this version of disguise self, you can seem up to 3 feet shorter
+                                than normal, allowing you to more easily blend in with humans and elves.
+                            </p>
+                            <p>
+                                <emph>Hidden Step: </emph>As a bonus action, you can magically turn invisible until
+                                the start of your next turn ot until you attack, make a damage roll, or force
+                                someone to make a saving throw. Once you use this trait, you can't use it again
+                                until you finish a short or long rest.
+                            </p>
+                            <p>
+                                <emph>Powerful Build: </emph>You count as one size larger when determining your
+                                carrying capacity and the weight you can push, drag, or lift.
+                            </p>
+                            <p>
+                                <emph>Speech of Beast and Leaf: </emph>You have the ability to communicate in a
+                                limited manner with beasts and plants. They can understand the meaning of your
+                                words, though you have no special ability to understand them in return. You have
+                                advantage on all Charisma checks you make to influence them.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common, Elvish, and Giant.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Genasi (Air)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Con +2, Dex +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Unending Breath: </emph>You can hold your breath indefinitely while you're not
+                                incapacitated.
+                            </p>
+                            <p>
+                                <emph>Mingle with the Wind: </emph>You can cast the levitate spell once with this
+                                trait, requiring no material components, and you regain the ability to cast it this
+                                way when you finish a long rest. Constitution is your spellcasting ability for this
+                                spell.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Primordial.
+                                Primordial is a guttural language, filled with harsh syllables and hard consonants.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Genasi (Earth)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Con +2, Str +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Earth Walk: </emph>You can move across difficult terrain made of earth or
+                                stone without expending extra movement.
+                            </p>
+                            <p>
+                                <emph>Merge with Stone: </emph>You can cast the pass without trace spell once with
+                                this trait, requiring no material components, and you regain the ability to cast it
+                                this way when you finish a long rest. Constitution is your spellcasting ability for
+                                this spell.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Primordial.
+                                Primordial is a guttural language, filled with harsh syllables and hard consonants.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Genasi (Fire)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Con +2, Int +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Darkvision: </emph>You can see in dim light within 60 feet of you as if it
+                                were bright light, and in darkness as if it were dim light. Your ties to the
+                                Elemental Plane of Fire make your darkvision unusual: everything you see in darkness
+                                is in a shade of red.
+                            </p>
+                            <p>
+                                <emph>Fire Resistance: </emph>You have resistance to fire damage.
+                            </p>
+                            <p>
+                                <emph>Reach to the Blaze: </emph>You know the produce flame cantrip. Once you reach
+                                3rd level, you can cast the burning hands spell once with this trait as a 1st-level
+                                spell, and you regain the ability to cast it this way when you finish a long rest.
+                                Constitution is your spellcasting ability for these spells.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Primordial.
+                                Primordial is a guttural language, filled with harsh syllables and hard consonants.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Genasi (Water)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Con +2, Wis +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Acid Resistance: </emph>You have resistance to acid damage.
+                            </p>
+                            <p>
+                                <emph>Amphibious: </emph>You can breathe air and water.
+                            </p>
+                            <p>
+                                <emph>Swim: </emph>You have a swimming speed of 30 feet.
+                            </p>
+                            <p>
+                                <emph>Call to the Wave: </emph>You know the shape water cantrip. When you reach 3rd
+                                level, you can cast the create or destroy water spell as a 2nd-level spell once with
+                                this trait, and you regain the ability to cast it this way when you finish a long
+                                rest. Constitution is your spellcasting ability for these spells.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Primordial.
+                                Primordial is a guttural language, filled with harsh syllables and hard consonants.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Gnome (Deep)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Small
+                                <br />
+                                <emph>Speed: </emph>25 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Int +2, Dex +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Superior Darkvision: </emph>Accustomed to life underground, you have superior
+                                vision in dark and dim conditions. You can see in dim light within 120 feet of you
+                                as if it were bright light, and in darkness as if it were dim light. You can't
+                                discern color in darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Gnome Cunning: </emph>You have advantage on all Intelligence, Wisdom, and
+                                Charisma saving throws against magic.
+                            </p>
+                            <p>
+                                <emph>Stone Camouflage: </emph>You have advantage on Dexterity (stealth) checks to
+                                hide in rocky terrain.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common, Gnomish, and
+                                Undercommon. The svirfneblin dialect is more guttural than surface Gnomish, and most
+                                svirfneblin know only a little bit of Common, but those who deal with outsiders (and
+                                that includes you as an adventurer) pick up enough Common to get by in other lands.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Gnome (Forest)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Small
+                                <br />
+                                <emph>Speed: </emph>25 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Int +2, Dex +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Darkvision: </emph>Accustomed to life underground, you have superior vision in
+                                dark and dim conditions. You can see in dim light within 60 feet of you as if it
+                                were bright light, and in darkness as if it were dim light. You can't discern color
+                                in darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Gnome Cunning: </emph>You have advantage on all Intelligence, Wisdom, and
+                                Charisma saving throws against magic.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Gnomish. The
+                                Gnomish language, which uses the Dwarvish script, is renowned for its technical
+                                treatises and its catalogs of knowledge about the natural world.
+                            </p>
+                            <p>
+                                <emph>Natural Illusionist: </emph>You know the minor illusion cantrip. Intelligence
+                                is your spellcasting ability for it.
+                            </p>
+                            <p>
+                                <emph>Speak with Small Beasts: </emph>Through sounds and gestures, you can
+                                communicate simple ideas with Small or smaller beasts. Forest gnomes love animals
+                                and often keep squirrels, badgers, rabbits, moles, woodpeckers, and other creatures
+                                as beloved pets.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Gnome (Rock)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Small
+                                <br />
+                                <emph>Speed: </emph>25 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Int +2, Con +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Darkvision: </emph>Accustomed to life underground, you have superior vision in
+                                dark and dim conditions. You can see in dim light within 60 feet of you as if it
+                                were bright light, and in darkness as if it were dim light. You can't discern color
+                                in darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Gnome Cunning: </emph>You have advantage on all Intelligence, Wisdom, and
+                                Charisma saving throws against magic.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Gnomish. The
+                                Gnomish language, which uses the Dwarvish script, is renowned for its technical
+                                treatises and its catalogs of knowledge about the natural world.
+                            </p>
+                            <p>
+                                <emph>Artificer's Lore: </emph>Whenever you make an Intelligence (History) check
+                                related to magic items, alchemical objects, or technological devices, you can add
+                                twice your proficiency bonus, instead of any proficiency bonus you normally apply.
+                            </p>
+                            <p>
+                                <emph>Tinker: </emph>You have proficiency with artisan's tools (tinker's tools).
+                                Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a
+                                Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours
+                                (unless you spend 1 hour repairing it to keep the device functioning), or when you
+                                use your action to dismantle it; at that time, you can reclaim the materials used to
+                                create it. You can have up to three such devices active at a time. When you create
+                                a device, choose one of the following options. Clockwork Toy. This toy is a
+                                clockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or
+                                soldier. When placed on the ground, the toy moves 5 feet across the ground on each
+                                of your turns in a random direction. It makes noises as appropriate to the creature
+                                it represents. Fire Starter. The device produces a miniature flame, which you can
+                                use to light a candle, torch, or campfire. Using the device requires your
+                                action. Music Box. When opened, this music box plays a single song at a moderate
+                                volume. The box stops playing when it reaches the song's end or when it is closed.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Goblin</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Small
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Dex +2, Con +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Darkvision: </emph>You can see in dim light within 60 feet of you as if it
+                                were bright light, and in darkness as if it were dim light. You can't discern color
+                                in darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Fury of the Small: </emph>When you damage a creature with an attack or a spell
+                                and the creature's size is larger than yours, you can cause the attack or spell to
+                                deal extra damage to the creature. The extra damage equals your level. Once you use
+                                this trait, you can't use it again until you finish a short or long rest.
+                            </p>
+                            <p>
+                                <emph>Nimble Escape: </emph>You can take the Disengage or Hide action as a bonus
+                                action on each of your turns.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Goblin.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Goliath</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Str +2, Con +1
+                                <br />
+                                <emph>Proficiency: </emph>Athletics
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Natural Athlete: </emph>You have proficiency in the Athletics skill.
+                            </p>
+                            <p>
+                                <emph>Stone's Endurance: </emph>You can focus yourself to occasionally shrug off
+                                injury. When you take damage, you can use your reaction to roll a d12. Add your
+                                Constitution modifier to the number rolled, and reduce the damage by that total.
+                                After you use this trait, you can't use it again until you finish a short or long
+                                rest.
+                            </p>
+                            <p>
+                                <emph>Powerful Build: </emph>You count as one size larger when determining your
+                                carrying capacity and the weight you can push, drag, or lift.
+                            </p>
+                            <p>
+                                <emph>Mountain Born: </emph>You're acclimated to high altitude, including elevations
+                                above 20,000 feet. You're also naturally adapted to cold climates, as described in
+                                chapter 5 of the Dungeon Master's Guide.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Giant.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Half-Elf</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Cha +2
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Ability Score Increase: </emph>Two different ability scores of your choice
+                                increase by 1.
+                            </p>
+                            <p>
+                                <emph>Darkvision: </emph>Thanks to your elf blood, you have superior vision in dark
+                                and dim conditions. You can see in dim light within 60 feet of you as if it were
+                                bright light, and in darkness as if it were dim light. You can't discern color in
+                                darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Fey Ancestry: </emph>You have advantage on saving throws against being
+                                charmed, and magic can't put you to sleep.
+                            </p>
+                            <p>
+                                <emph>Skill Versatility: </emph>You gain proficiency in two skills of your choice.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common, Elvish, and one extra
+                                language of your choice.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Half-Elf (Aquatic Elf Descent)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Cha +2
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Ability Score Increase: </emph>Two different ability scores of your choice
+                                increase by 1.
+                            </p>
+                            <p>
+                                <emph>Darkvision: </emph>Thanks to your elf blood, you have superior vision in dark
+                                and dim conditions. You can see in dim light within 60 feet of you as if it were
+                                bright light, and in darkness as if it were dim light. You can't discern color in
+                                darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Fey Ancestry: </emph>You have advantage on saving throws against being
+                                charmed, and magic can't put you to sleep.
+                            </p>
+                            <p>
+                                <emph>Variant Feature (Choose 1): </emph>Keen Senses,You have proficiency in the
+                                Perception skil. Swim,You gain a swimming speed of 30. 
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common, Elvish, and one extra
+                                language of your choice.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Half-Elf (Drow Descent)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Cha +2
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Ability Score Increase: </emph>Two different ability scores of your choice
+                                increase by 1.
+                            </p>
+                            <p>
+                                <emph>Darkvision: </emph>Thanks to your elf blood, you have superior vision in dark
+                                and dim conditions. You can see in dim light within 60 feet of you as if it were
+                                bright light, and in darkness as if it were dim light. You can't discern color in
+                                darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Fey Ancestry: </emph>You have advantage on saving throws against being
+                                charmed, and magic can't put you to sleep.
+                            </p>
+                            <p>
+                                <emph>Variant Feature (Choose 1): </emph>Keen Senses,You have proficiency in the
+                                Perception skil. Drow Magic,You know the dancing lights cantrip. When you reach 3rd
+                                level, you can cast the faerie fire spell once per day; you must finish a long rest
+                                in order to cast the spell again using this trait. When you reach 5th level, you can
+                                also cast the darkness spell once per day; you must finish a long rest in order to
+                                cast the spell again using this trait. Charisma is your spellcasting ability for
+                                these spells.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common, Elvish, and one extra
+                                language of your choice.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Half-Elf (Moon Elf or Sun Elf Descent)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Cha +2
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Ability Score Increase: </emph>Two different ability scores of your choice
+                                increase by 1.
+                            </p>
+                            <p>
+                                <emph>Darkvision: </emph>Thanks to your elf blood, you have superior vision in dark
+                                and dim conditions. You can see in dim light within 60 feet of you as if it were
+                                bright light, and in darkness as if it were dim light. You can't discern color in
+                                darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Fey Ancestry: </emph>You have advantage on saving throws against being
+                                charmed, and magic can't put you to sleep.
+                            </p>
+                            <p>
+                                <emph>Variant Feature (Choose 1): </emph>Keen Senses,You have proficiency in the
+                                Perception skil. Elf Weapon Training,You have proficiency with the longsword,
+                                shortsword, shortbow, and longbow. Cantrip,You know one cantrip of your choice from
+                                the wizard spell list. Intelligence is your spellcasting ability for it.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common, Elvish, and one extra
+                                language of your choice.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Half-Elf (Wood Elf Descent)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Cha +2
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Ability Score Increase: </emph>Two different ability scores of your choice
+                                increase by 1.
+                            </p>
+                            <p>
+                                <emph>Darkvision: </emph>Thanks to your elf blood, you have superior vision in dark
+                                and dim conditions. You can see in dim light within 60 feet of you as if it were
+                                bright light, and in darkness as if it were dim light. You can't discern color in
+                                darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Fey Ancestry: </emph>You have advantage on saving throws against being
+                                charmed, and magic can't put you to sleep.
+                            </p>
+                            <p>
+                                <emph>Variant Feature (Choose 1): </emph>Keen Senses,You have proficiency in the
+                                Perception skil. Elf Weapon Training,You have proficiency with the longsword,
+                                shortsword, shortbow, and longbow. Fleet of Foot,Your base walking speed increases
+                                to 35 feet. Mask of the Wild,You can attempt to hide even when you are only lightly
+                                obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common, Elvish, and one extra
+                                language of your choice.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Half-Orc</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Str +2, Con +1
+                                <br />
+                                <emph>Proficiency: </emph>Intimidation
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Darkvision: </emph>Thanks to your orc blood, you have superior vision in dark
+                                and dim conditions. You can see in dim light within 60 feet of you as if it were
+                                bright light, and in darkness as if it were dim light. You can't discern color in
+                                darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Menacing: </emph>You gain proficiency in the Intimidation skill.
+                            </p>
+                            <p>
+                                <emph>Relentless Endurance: </emph>When you are reduced to 0 hit points but not
+                                killed outright, you can drop to 1 hit point +instead. You can't use this feature
+                                again until you finish a long rest.
+                            </p>
+                            <p>
+                                <emph>Savage Attacks: </emph>When you score a critical hit with a melee weapon
+                                attack, you can roll one of the weapon's damage dice one additional time and add it
+                                to the extra damage of the critical hit.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Orc. Orc is a
+                                harsh, grating language with hard consonants. It has no script of its own but is
+                                written in the Dwarvish script.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Halfling (Ghostwise)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Small
+                                <br />
+                                <emph>Speed: </emph>25 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Dex +2, Wis +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Lucky: </emph>When you roll a 1 on an attack roll, ability check, or saving
+                                throw, you can reroll the die and must use the new roll.
+                            </p>
+                            <p>
+                                <emph>Brave: </emph>You have advantage on saving throws against being frightened.
+                            </p>
+                            <p>
+                                <emph>Halfling Nimbleness: </emph>You can move through the space of any creature
+                                that is of a size larger than yours.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Halfling. The
+                                Halfling language isn't secret, but halflings are loath to share it with others.
+                                They write very little, so they don't have a rich body of literature. Their oral
+                                tradition, however, is very strong. Almost all halflings speak Common to converse
+                                with the people in whose lands they dwell or through which they are traveling.
+                            </p>
+                            <p>
+                                <emph>Silent Speech: </emph>You can speak telepathically to any creature within 30
+                                feet of you. The creature understands you only if the two of you share a language.
+                                You can speak telepathically in this way to one creature at a time.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Halfling (Lightfoot)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Small
+                                <br />
+                                <emph>Speed: </emph>25 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Dex +2, Cha +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Lucky: </emph>When you roll a 1 on an attack roll, ability check, or saving
+                                throw, you can reroll the die and must use the new roll.
+                            </p>
+                            <p>
+                                <emph>Brave: </emph>You have advantage on saving throws against being frightened.
+                            </p>
+                            <p>
+                                <emph>Halfling Nimbleness: </emph>You can move through the space of any creature
+                                that is of a size larger than yours.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Halfling. The
+                                Halfling language isn't secret, but halflings are loath to share it with others.
+                                They write very little, so they don't have a rich body of literature. Their oral
+                                tradition, however, is very strong. Almost all halflings speak Common to converse
+                                with the people in whose lands they dwell or through which they are traveling.
+                            </p>
+                            <p>
+                                <emph>Naturally Stealthy: </emph>You can attempt to hide even when you are obscured
+                                only by a creature that is at least one size larger than you.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Halfling (Stout)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Small
+                                <br />
+                                <emph>Speed: </emph>25 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Dex +2, Con +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Lucky: </emph>When you roll a 1 on an attack roll, ability check, or saving
+                                throw, you can reroll the die and must use the new roll.
+                            </p>
+                            <p>
+                                <emph>Brave: </emph>You have advantage on saving throws against being frightened.
+                            </p>
+                            <p>
+                                <emph>Halfling Nimbleness: </emph>You can move through the space of any creature
+                                that is of a size larger than yours.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Halfling. The
+                                Halfling language isn't secret, but halflings are loath to share it with others.
+                                They write very little, so they don't have a rich body of literature. Their oral
+                                tradition, however, is very strong. Almost all halflings speak Common to converse
+                                with the people in whose lands they dwell or through which they are traveling.
+                            </p>
+                            <p>
+                                <emph>Stout Resilience: </emph>You have advantage on saving throws against poison,
+                                and you have resistance against poison damage.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Hobgoblin</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Con +2, Int +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Darkvision: </emph>You can see in dim light within 60 feet of you as if it
+                                were bright light, and in darkness as if it were dim light. You can't discern color
+                                in darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Martial Training: </emph>You are proficient with two martial weapons of your
+                                choice and with light armor.
+                            </p>
+                            <p>
+                                <emph>Saving Face: </emph>Hobgoblins are careful not to show weakness in front of
+                                their allies, for fear of losing status. If you miss with an attack roll or fail an
+                                ability check or a saving throw, you can gain a bonus to the roll equal to the
+                                number of allies you can see within 30 feet of you (maximum bonus of +5). Once you
+                                use this trait, you can't use it again until you finish a short or long rest.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Goblin.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Human</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Str +1, Dex +1, Con +1, Int +1, Wis +1, Cha +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Human (Variant)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Ability Score Increase: </emph>Two different ability scores of your choice
+                                increase by 1.
+                            </p>
+                            <p>
+                                <emph>Skills: </emph>You gain proficiency in one skill of your choice.
+                            </p>
+                            <p>
+                                <emph>Feat: </emph>You gain one feat of your choice.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and one extra language
+                                of your choice. Humans typically learn the languages of other peoples they deal
+                                with, including obscure dialects. They are fond of sprinkling their speech with
+                                words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish
+                                military phrases, and so on.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Kenku</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Dex +2, Wis +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Expert Forgery: </emph>You can duplicate other creatures' handwriting and
+                                craftwork. You have advantage on all checks made to produce forgeries or duplicates
+                                of existing objects.
+                            </p>
+                            <p>
+                                <emph>Kenku Training: </emph>You are proficient in your choice of two of the
+                                following skills: Acrobatics, Deception, Stealth, and Sleight of Hand.
+                            </p>
+                            <p>
+                                <emph>Mimicry: </emph>You can mimic sounds you have heard, including voices. A
+                                creature that hears the sounds can tell they are imitations with a successful Wisdom
+                                (Insight) check opposed by your Charisma (Deception) check.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can read and write Common and Auran, but you can speak
+                                only using your Mimicry trait
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Kobold</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Small
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Dex +2, Str +-2
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Darkvision: </emph>You can see in dim light within 60 feet of you as if it
+                                were bright light, and in darkness as if it were dim light. You can't discern color
+                                in darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Grovel, Cower, and Beg: </emph>As an action on your turn, you can cower
+                                pathetically to distract nearby foes. Until the end of your next turn, your allies
+                                gain advantage on attack rolls against enemies within 10 feet of you that you can
+                                see. Once you uses this trait, you can't use it again until you finish a short or
+                                long rest.
+                            </p>
+                            <p>
+                                <emph>Pack Tactics: </emph>You have advantage on an attack roll against a creature
+                                if at least one of your allies is within 5 feet of the creature and the ally isn't
+                                incapacitated.
+                            </p>
+                            <p>
+                                <emph>Sunlight Sensitivity: </emph>You have disadvantage on attack rolls and on
+                                Wisdom (Perception) checks that rely on sight when you, the target of your attack,
+                                or whatever you are trying to perceive is in direct sunlight.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Draconic.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Lizardfolk</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Con +2, Wis +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Swim Speed: </emph>You have a swimming speed of 30 feet.
+                            </p>
+                            <p>
+                                <emph>Bite: </emph>Your fanged maw is a natural weapon, which you can use to make
+                                unarmed strikes. If you hit with it, you deal piercing damage equal to 1d6 + your
+                                Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.
+                            </p>
+                            <p>
+                                <emph>Cunning Artisan: </emph>As part of a short rest, you can harvest bone and hide
+                                from a slain beast, construct, dragon, monstrosity, or plant creature of size small
+                                or larger to create one of the following items: a shield, a club, a javelin, or 1d4
+                                darts or blowgun needles. To use this trait, you need a blade, such as a dagger, or
+                                appropriate artisan's tools, such as leatherworker's tools.
+                            </p>
+                            <p>
+                                <emph>Hold Breath: </emph>You can hold your breath for up to 15 minutes at a time.
+                            </p>
+                            <p>
+                                <emph>Hunter's Lore: </emph>You gain proficiency with two of the following skills of
+                                your choice: Animal Handling, Nature, Perception, Stealth, and Survival.
+                            </p>
+                            <p>
+                                <emph>Natural Armor: </emph>You have tough, scaly skin. When you aren't wearing
+                                armor, your AC is 13 + your Dexterity modifier. You can use your natural armor to
+                                determine your AC if the armor you wear would leave you with a lower AC. A shield's
+                                benefits apply as normal while you use your natural armor.
+                            </p>
+                            <p>
+                                <emph>Hungry Jaws: </emph>In battle, you can throw yourself into a vicious feeding
+                                frenzy. As a bonus action, you can make a special attack with your bite. If the
+                                attack hits, it deals its normal damage, and you gain temporary hit points equal to
+                                your Constitution modifier (minimum of 1), and you can't use this trait again until
+                                you finish a short or long rest.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Draconic.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Orc</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Str +2, Con +1, Int +-2
+                                <br />
+                                <emph>Proficiency: </emph>Intimidation
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Darkvision: </emph>You can see in dim light within 60 feet of you as if it
+                                were bright light, and in darkness as if it were dim light. You can't discern color
+                                in darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Aggressive: </emph>As a bonus action, you can move up to your movement speed
+                                toward a hostile creature you can see or hear. You must end this move closer to the
+                                enemy than you started.
+                            </p>
+                            <p>
+                                <emph>Menacing: </emph>You are trained in the Intimidation skill.
+                            </p>
+                            <p>
+                                <emph>Powerful Build: </emph>You count as one size larger when determining your
+                                carrying capacity and the weight you can push, drag, or lift.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Orc.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Shifter (Razorclaw)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Dex +2
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Darkvision: </emph>Your lycanthropic heritage grants you the ability to see in
+                                dark conditions. You can see in dim light within 60 feet of you as if it were bright
+                                light, and in darkness as if it were dim light. You can't discern color in darkness,
+                                only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Shifting: </emph>On your turn, you can shift as a bonus action. Shifting lasts
+                                for 1 minute or until you end it on your turn as a bonus action. While shifting,
+                                you gain temporary hit points equal to your level + your Constitution bonus (minimum
+                                of 1). You also gain a feature that depends on your shifter subrace, described
+                                below. You must finish a short or long rest before you can shift again.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Sylvan.
+                            </p>
+                            <p>
+                                <emph>Shifting Feature: </emph>While shifting, you can make an unarmed strike as a
+                                bonus action. You can use your Dexterity for its attack roll and damage bonus, and
+                                this attack deals slashing damage.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Shifter (Wildhunt)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Dex +1, Wis +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Darkvision: </emph>Your lycanthropic heritage grants you the ability to see in
+                                dark conditions. You can see in dim light within 60 feet of you as if it were bright
+                                light, and in darkness as if it were dim light. You can't discern color in darkness,
+                                only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Shifting: </emph>On your turn, you can shift as a bonus action. Shifting lasts
+                                for 1 minute or until you end it on your turn as a bonus action. While shifting,
+                                you gain temporary hit points equal to your level + your Constitution bonus (minimum
+                                of 1). You also gain a feature that depends on your shifter subrace, described
+                                below. You must finish a short or long rest before you can shift again.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Sylvan.
+                            </p>
+                            <p>
+                                <emph>Shifting Feature: </emph>While shifting, you gain advantage on all
+                                Wisdom-based checks and saving throws.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Tabaxi</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Dex +2, Cha +1
+                                <br />
+                                <emph>Proficiency: </emph>Perception, Stealth
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Darkvision: </emph>You have a cat's keen senses, especially in the dark. You
+                                can see in dim light within 60 feet of you as if it were bright light, and in
+                                darkness as if it were dim light. You can't discern color in darkness, only shades
+                                of gray.
+                            </p>
+                            <p>
+                                <emph>Feline Agility: </emph>Your reflexes and agility allow you to move with a
+                                burst of speed. When you move on your turn in combat, you can double your speed
+                                until the end of the turn. Once you use this trait, you can't use it again until you
+                                move 0 feet on one of your turns.
+                            </p>
+                            <p>
+                                <emph>Cat's Claws: </emph>Because of your claws, you have a climbing speed of 20
+                                feet. In addition, your claws are natural weapons, which you can use to make unarmed
+                                strikes. If you hit with them, you deal slashing damage equal to 1d4 + your Strength
+                                modifier, instead of the bludgeoning damage normal for an unarmed strike.
+                            </p>
+                            <p>
+                                <emph>Cat's Talents: </emph>You have proficiency in the Perception and Stealth
+                                skills.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and one other language
+                                of your choice.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Tiefling (Infernal)</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Cha +2, Int +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Darkvision: </emph>Thanks to your infernal heritage, you have superior vision
+                                in dark and dim conditions. You can see in dim light within 60 feet of you as if it
+                                were bright light, and in darkness as if it were dim light. You can't discern color
+                                in darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Hellish Resistance: </emph>You have resistance to fire damage.
+                            </p>
+                            <p>
+                                <emph>Infernal Legacy: </emph>You know the thaumaturgy cantrip. Once you reach 3rd
+                                level, you can cast the hellish rebuke spell as a 2nd-level spell; you must finish a
+                                long rest in order to cast the spell again using this trait. Once you reach 5th
+                                level, you can also cast the darkness spell; you must finish a long rest in order to
+                                cast the spell again using this trait. Charisma is your spellcasting ability for
+                                these spells.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Infernal.
+                            </p>
+                            <p>
+                                <emph>Feral (Variant): </emph>Your Intelligence score increases by 1, and your
+                                Dexterity score increases by 2. This replaces the Ability Score Increase trait.
+                            </p>
+                            <p>
+                                <emph>Variant Features (Choose 1): </emph>Devil's Tongue. You know the vicious
+                                mockery cantrip. When your reach 3rd level, you can cast the charm person spell as a
+                                2nd-level spell once with this trait. When you reach 5th level, you can cast the
+                                enthrall spell once with this trait. You must finish a long rest to cast these
+                                spells once again with this trait. Charisma is your spellcasting ability for them.
+                                This trait replaces the Infernal Legacy trait. Hellfire. Once you reach 3rd level,
+                                you can cast the burning hands spell once per day as a 2nd-level spell. This trait
+                                replaces the hellish rebuke spell of the Infernal Legacy trait. Winged. You have
+                                bat-like wings sprouting form your shoulder blades. You have a flying speed of 30
+                                feet. This trait replaces the Infernal Legacy trait.
+                            </p>
+                            <p>
+                                <emph>Appearance (Variant): </emph>Your tiefling might not look like other
+                                tieflings. Rather than having the physical characteristics described in the Player's
+                                Handbook, choose 1d4 + 1 of the following features: small horns; fangs or sharp
+                                teeth; a forked tongue; catlike eyes; six fingers on each hand; goatlike legs;
+                                cloven hoofs; a forked tail; leathery or scaly skin; red or dark blue skin; cast no
+                                shadow or reflection; exude a smell of brimstone
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Triton</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Str +1, Cha +1, Con +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Swim Speed: </emph>You have a swimming speed of 30 feet.
+                            </p>
+                            <p>
+                                <emph>Amphibious: </emph>You can breathe air and water.
+                            </p>
+                            <p>
+                                <emph>Control Air and Water: </emph>A child of the sea, you can call on the magic of
+                                elemental air and water. You can cast fog cloud with this trait. Starting at 3rd
+                                level, you can cast gust of wind with it, and starting at 5th level, you can also
+                                cast wall of water with it. Once you cast a spell with this trait, you can't do so
+                                again until you finish a long rest. Charisma is your spellcasting ability for these
+                                spells.
+                            </p>
+                            <p>
+                                <emph>Emissary of the Sea: </emph>Aquatic beasts have an extraordinary affinity with
+                                your people. You can communicate simple ideas with beasts that can breathe water.
+                                They can understand the meaning of your words, though you have no special ability to
+                                understand them in return.
+                            </p>
+                            <p>
+                                <emph>Guardians of the Depths: </emph>Adapted to even the most extreme ocean depths,
+                                you have resistance to cold damage, and you ignore any of the drawbacks caused by a
+                                deep, underwater environment.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common and Primordial.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h3 class="raceName headingDark">Yuan-ti Pureblood</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class="w3-row" style="text-align: center !important;">
+                                <emph>Size: </emph>Medium
+                                <br />
+                                <emph>Speed: </emph>30 feet
+                                <br />
+                                <emph>Ability Score Modifiers: </emph>Cha +2, Int +1
+                                <br />
+                                <br />
+                            </div>
+                            <h4>Features: </h4>
+                            <br />
+                            <p>
+                                <emph>Darkvision: </emph>You can see in dim light within 60 feet of you as if it
+                                were bright light, and in darkness as if it were dim light. You can't discern color
+                                in darkness, only shades of gray.
+                            </p>
+                            <p>
+                                <emph>Innate Spellcasting: </emph>You know the poison spray cantrip. You can cast
+                                animal friendship an unlimited number of times with this trait, but you can target
+                                only snakes with it. Starting at 3rd level, you can also cast suggestion with this
+                                trait. Once you cast it, you can't do so again until you finish a long rest.
+                                Charisma is your spellcasting ability for these spells.
+                            </p>
+                            <p>
+                                <emph>Magic Resistance: </emph>You have advantage on saving throws against spells
+                                and other magical effects.
+                            </p>
+                            <p>
+                                <emph>Poison Immunity: </emph>You are immune to poison damage and the poisoned
+                                condition.
+                            </p>
+                            <p>
+                                <emph>Languages: </emph>You can speak, read, and write Common, Abyssal, and
+                                Draconic.
+                            </p>
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br/>                
+                <div class="">
+                        <div class="w3-card-2 w3-round-large">
+                            <div class="w3-row-padding">
+                                <h3 class="raceName headingDark">Warforged</h3>
+                            </div>
+                            <div class="w3-row-padding">
+                                <div class="w3-row" style="text-align: center !important;">
+                                    <emph>Size: </emph>Medium
+                                    <br />
+                                    <emph>Speed: </emph>30 feet
+                                    <br />
+                                    <emph>Ability Score Modifiers: </emph>Con +1
+                                    <br />
+                                    <br />
+                                </div>
+                                <h4>Features: </h4>
+                                <br />
+                                <p>
+                                    <emph>Warforged Resilience: </emph>You were created to have remarkable fortitude, represented by the following benefits: 
+                                    <ul>
+                                        <li>You have Advantage on saving throws against being poisoned, and you have resistance to poison damage</li>
+                                        <li>You are immune to disease</li>
+                                        <li>You don't need to eat, drink, or breathe</li>
+                                        <li>You don't need to sleep and don't suffer the effects of exhaustion due to lack of rest; magic can't put you to sleep</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    <emph>Sentry's Rest: </emph>When you take a long rest, you must spend at least six hours in an inactive, motionless state, rather than sleeping. In this state, you appear inert, but it doesn't render you unconscious, and you can see and hear as normal.
+                                </p>
+                                <p>
+                                    <emph>Integrated Protection: </emph>Your body has built-in defensive layers, which determine your armor class. You gain no benefit from wearing armor, but if you are using a shield, you apply its bonus as normal.
+                                    <br/>
+                                    You can alter your body to enter different defensive modes; each time you finish a long rest, choose one mode to adopt:
+                                    <div class="w3-row-padding">
+                                            <div class="w3-col s0 m0 l1">
+                                                &emsp;
+                                            </div>
+                                            <div class="w3-col s12 m12 l10">
+                                                <table class="w3-table w3-small w3-centered">
+                                                    <thead>
+                                                        <th>Mode</th>
+                                                        <th>Prerequisite</th>
+                                                        <th>Armor Class</th>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Darkwood Core (Unarmored)</td>
+                                                            <td>None</td>
+                                                            <td>11 + your Dexterity modifier (+ your Proficiency bonus, if you are proficient with Light Armor)</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Composite Plating (Armor)</td>
+                                                            <td>Medium Armor Proficiency</td>
+                                                            <td>13 + your Dexterity modifier (max +2) + your Proficiency bonus</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Heavy Plating (Armor)</td>
+                                                            <td>Heavy Armor Proficiency</td>
+                                                            <td>16 + your Proficiency bonus; you have Disadvantage on Dexterity (Stealth) checks</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="w3-col s0 m0 l1">
+                                                &emsp;
+                                            </div>
+                                            <br />
+                                        </div>
+                                </p>
+                                <p>
+                                    <emph>Languages: </emph>You can speak, read, and write Common.
+                                </p>
+                                <h4>Subraces</h4>
+                                <button class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold "
+                                onclick="accordion('warforgedenvoy')"><span
+                                    style="font-size: 1.2em;">Envoy</span></button>
+                                <div class="advancements w3-hide w3-container" id="warforgedenvoy">
+                                    <br/>
+                                        <emph>Ability Score Increase: </emph>Two different ability scores of your choice increase by 1.
+                                        <br />
+                                        <p>
+                                            <emph>Specialized Design: </emph>You gain one skill proficiency of your choice, one tool proficiency of your choice, and fluency in one language of your choice.
+                                        </p>
+                                        <p>
+                                            <emph>Integrated Tool: </emph>Choose one tool you're proficient with. This tool is integrated into your body, and you double your proficiency bonus for any ability checks you make with it. You must have your hands free to use this integrated tool.
+                                        </p>
+
+                                </div>
+                                <button class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold "
+                                onclick="accordion('warforgedjuggernaut')"><span
+                                    style="font-size: 1.2em;">Juggernaut</span></button>
+                                <div class="advancements w3-hide w3-container" id="warforgedjuggernaut">
+                                    <br/>
+                                        <emph>Ability Score Increase: </emph>Str +2
+                                        <br />
+                                        <p>
+                                            <emph>Iron Fists: </emph>When you make an unarmed strike, you deal <emph>1d4 + your Strength modifier</emph> Bludgeoning damage instead of the regular damage.
+                                        </p>
+                                        <p>
+                                                <emph>Powerful Build: </emph>You count as one size larger when determining your
+                                                carrying capacity and the weight you can push, drag, or lift.
+                                            </p>
+
+                                </div>
+                                <button class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold "
+                                onclick="accordion('warforgedskirmisher')"><span
+                                    style="font-size: 1.2em;">Skirmisher</span></button>
+                                <div class="advancements w3-hide w3-container" id="warforgedskirmisher">
+                                    <br/>
+                                        <emph>Ability Score Increase: </emph>Dex +2
+                                        <br />
+                                        <p>
+                                            <emph>Swift: </emph>Your walking speed in increased by 5 feet.
+                                        </p>
+                                        <p>
+                                            <emph>Light Step: </emph>When you are traveling alone for an extended period of time (one hour or more), you can move stealthily at a normal pace.
+                                        </p>
+
+                                </div>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+    </div>
+</body>
+<footer>
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m10 l10">
+            All D&D material is © Wizards of the Coast
+        </div>
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+    </div>
+</footer>
+
+</html>

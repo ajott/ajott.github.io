@@ -434,11 +434,11 @@ Generated Maroon theme
 .advancementCard {
     padding-top: 5px;
     padding-bottom: 5px;
+    background-color: rgba(65,65,65) !important;
 }
 
 .advancements {
     padding-bottom: 20px !important;
-    /* background-color: rgba(255, 255, 255, .05) */
     border: 1px solid #616161;
 }
 
@@ -458,6 +458,32 @@ Generated Maroon theme
     position: sticky;
     z-index: 50;
     border: 1px solid goldenrod;
+}
+
+.advancementButtonXGE {
+    top: 40px;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 50;
+    border: 1px solid goldenrod;
+    background-color: rgb(77, 107, 122) !important;
+}
+
+.advancementButtonXGE + .advancements {
+    background-color: rgba(77, 107, 122,.5);
+}
+
+.advancementButtonDMG {
+    top: 40px;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 50;
+    border: 1px solid goldenrod;
+    background-color: rgb(122, 77, 77) !important;
+}
+
+.advancementButtonDMG + .advancements {
+    background-color: rgb(122, 77, 77,.5);
 }
 
 .advancementCard table {

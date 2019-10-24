@@ -57,7 +57,7 @@ var spell = [{
         "duration": "Instantaneous",
         "classes": "Bard, Sorcerer, Warlock, Wizard",
         "text": [
-            "You point at one creature you can see within range, and the sound of a dolorous bell fills the air around it for a moment. The target must succeed on a Wisdom saving throw or take 1d8 necrotic damage. If the target is missing any of its hit points, it instead takes 1d12 necrotic damage.",
+            "You point +at one creature you can see within range, and the sound of a dolorous bell fills the air around it for a moment. The target must succeed on a Wisdom saving throw or take 1d8 necrotic damage. If the target is missing any of its hit points, it instead takes 1d12 necrotic damage.",
             "",
             "<emph><emph>At Higher Levels:</emph></emph> The spell’s damage increases by one die when you reach 5th level (2d8 or 2d12), 11th level (3d8 or 3d12), and 17th level (4d8 or 4d12)."
         ]
@@ -79,9 +79,9 @@ var spell = [{
         "duration": "Concentration, up to 10 minutes",
         "classes": "Monk (Way of Shadow)",
         "text": [
-            "Magical darkness spreads from a point you choose within range to fill a 15-foot radius sphere for the duration. The darkness spreads around corners. A creature with darkvision can't see through this darkness, and nonmagical light can't illuminate it.",
+            "Magical darkness spreads from a point +you choose within range to fill a 15-foot radius sphere for the duration. The darkness spreads around corners. A creature with darkvision can't see through this darkness, and nonmagical light can't illuminate it.",
             "",
-            "If the point you choose is on an object you are holding or one that isn't being worn or carried, the darkness emanates from the object and moves with it. Completely covering the source of the darkness with an opaque object, such as a bowl or a helm, blocks the darkness.",
+            "If the point +you choose is on an object you are holding or one that isn't being worn or carried, the darkness emanates from the object and moves with it. Completely covering the source of the darkness with an opaque object, such as a bowl or a helm, blocks the darkness.",
             "",
             "If any of this spell's area overlaps with an area of light created by a spell of or lower, the spell that created the light is dispelled."
         ]
@@ -155,10 +155,10 @@ var spell = [{
         "school": "Evocation",
         "time": "1 Attack Action",
         "range": "Only on Self",
-        "components": "1 Ki Point + 1 ki on hit (optional)",
+        "components": "1 Ki Point ++ 1 ki on hit (optional)",
         "duration": "Rest of turn",
         "classes": "Monk (Way of the Four Elements)",
-        "text": "When you use the Attack action on your turn, you can spend 1 ki point to cause tendrils of flame to stretch out from your fists and feet. Your reach with your unarmed strikes increases by 10 feet for that action, as well as the rest of the turn. A hit with such an attack deals fire damage instead of bludgeoning damage, and if you spend 1 ki point when the attack hits, it also deals an extra 1d1O fire damage."
+        "text": "When you use the Attack action on your turn, you can spend 1 ki point +to cause tendrils of flame to stretch out from your fists and feet. Your reach with your unarmed strikes increases by 10 feet for that action, as well as the rest of the turn. A hit with such an attack deals fire damage instead of bludgeoning damage, and if you spend 1 ki point +when the attack hits, it also deals an extra 1d1O fire damage."
     },
     {
         "name": "Feinting Attack",
@@ -187,7 +187,7 @@ var spell = [{
         "components": "2 Ki Points + 1 ki per boost",
         "duration": "Instantaneous",
         "classes": "Monk (Way of the Four Elements)",
-        "text": "You can create a blast of compressed air that strikes like a mighty fist. As an action, you can spend 2 ki points and choose a creature within 30 feet of you. That creature must make a Strength saving throw. On a failed save, the creature takes 3d10 bludgeoning damage, plus an extra 1d1O bludgeoning damage for each additional ki point you spend, and you can push the creature up to 20 feet away from you and knock it prone. On a successful save, the creature takes half as much damage, and you don't push it or knock it prone."
+        "text": "You can create a blast of compressed air that strikes like a mighty fist. As an action, you can spend 2 ki points and choose a creature within 30 feet of you. That creature must make a Strength saving throw. On a failed save, the creature takes 3d10 bludgeoning damage, plus an extra 1d1O bludgeoning damage for each additional ki point +you spend, and you can push the creature up to 20 feet away from you and knock it prone. On a successful save, the creature takes half as much damage, and you don't push it or knock it prone."
     },
     {
         "name": "Flames of the Phoenix (11th level required)",
@@ -198,7 +198,7 @@ var spell = [{
         "components": "4 Ki Points - cast fireball",
         "duration": "Instantaneous",
         "classes": "Monk (Way of the Four Elements)",
-        "text": "A bright streak flashes from your pointing finger to a point you choose within range then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot radius must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one."
+        "text": "A bright streak flashes from your pointing finger to a point +you choose within range then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot radius must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one."
     },
     {
         "name": "Goading Attack",
@@ -217,7 +217,7 @@ var spell = [{
         "duration": "Instantaneous",
         "classes": "Monk (Way of the Four Elements)",
         "text": [
-            "A sudden loud ringing noise, painfully intense, erupts from a point of your choice within range. Each creature in a 10-foot-radius sphere centered on that point must make a Constitution saving throw. A creature takes 3d8 thunder damage on a failed save, or half as much damage on a successful one. A creature made of inorganic material such as stone, crystal, or metal has disadvantage on this saving throw.",
+            "A sudden loud ringing noise, painfully intense, erupts from a point +of your choice within range. Each creature in a 10-foot-radius sphere centered on that point +must make a Constitution saving throw. A creature takes 3d8 thunder damage on a failed save, or half as much damage on a successful one. A creature made of inorganic material such as stone, crystal, or metal has disadvantage on this saving throw.",
             "",
             "A nonmagical object that isn't being worn or carried also takes the damage if it's in the spell's area. <emph><emph>At Higher Levels:</emph></emph> When you cast this spell using a spell slot of or higher, the damage increases by 1d8 for each slot level."
         ]
@@ -259,7 +259,7 @@ var spell = [{
             "",
             "If you create an image of an object, such as a chair, muddy footprints, or a small chest. It must be no larger than a 5-foot cube. The image can't create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, because things can pass through it.",
             "",
-            "If a creature uses its action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature."
+            "If a creature uses its action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint +to the creature."
         ]
     },
     {
@@ -383,7 +383,7 @@ var spell = [{
         "components": "1 Ki Point",
         "duration": "special",
         "classes": "Monk (Way of the Four Elements)",
-        "text": "As an action, you can spend 1 ki point to choose an area of ice or water no larger than 30 feet on a side within 120 feet of you. You can change water to ice within the area and vice versa, and you can reshape ice in the area in any manner you choose. You can raise or lower the ice's elevation, create or fill in a trench, erect or flatten a wall, or form a pillar. The extent of any such changes can't exceed half the area's largest dimension. For example, if you affect a 30-foot square, you can create a pillar up to 15 feet high, raise or lower the square's elevation by up to 15 feet, dig a trench up to 15 feet deep, and so on. You can't shape the ice to trap or injure a creature in the area."
+        "text": "As an action, you can spend 1 ki point +to choose an area of ice or water no larger than 30 feet on a side within 120 feet of you. You can change water to ice within the area and vice versa, and you can reshape ice in the area in any manner you choose. You can raise or lower the ice's elevation, create or fill in a trench, erect or flatten a wall, or form a pillar. The extent of any such changes can't exceed half the area's largest dimension. For example, if you affect a 30-foot square, you can create a pillar up to 15 feet high, raise or lower the square's elevation by up to 15 feet, dig a trench up to 15 feet deep, and so on. You can't shape the ice to trap or injure a creature in the area."
     },
     {
         "name": "Silence (Monk)",
@@ -394,7 +394,7 @@ var spell = [{
         "components": "2 Ki Points",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Monk (Way of Shadow)",
-        "text": "For the duration, no sound can be created within or pass through a 20-foot-radius sphere centered on a point you choose within range. Any creature or object entirely inside the sphere is immune to thunder damage, and creatures are deafened while entirely inside it. Casting a spell that includes a verbal component is impossible there."
+        "text": "For the duration, no sound can be created within or pass through a 20-foot-radius sphere centered on a point +you choose within range. Any creature or object entirely inside the sphere is immune to thunder damage, and creatures are deafened while entirely inside it. Casting a spell that includes a verbal component is impossible there."
     },
     {
         "name": "Sweeping Attack",
@@ -436,7 +436,7 @@ var spell = [{
         "components": "2 Ki Points + 1 per extra damage (optional)",
         "duration": "1 turn",
         "classes": "Monk (Way of the Four Elements)",
-        "text": "You can spend 2 ki points as an action to create a whip of water that shoves and pulls a creature to unbalance it. A creature that you can see that is within 30 feet of you must make a Dexterity saving throw. On a failed save, the creature takes 3d10 bludgeoning damage, plus an extra 1d1O bludgeoning damage for each additional ki point you spend, and you can either knock it prone or pull it up to 25 feet closer to you. On a successful save, the creature takes half as much damage, and you don't pull it or knock it prone."
+        "text": "You can spend 2 ki points as an action to create a whip of water that shoves and pulls a creature to unbalance it. A creature that you can see that is within 30 feet of you must make a Dexterity saving throw. On a failed save, the creature takes 3d10 bludgeoning damage, plus an extra 1d1O bludgeoning damage for each additional ki point +you spend, and you can either knock it prone or pull it up to 25 feet closer to you. On a successful save, the creature takes half as much damage, and you don't pull it or knock it prone."
     },
     {
         "name": "Wave of Rolling Earth (17th level required)",
@@ -448,7 +448,7 @@ var spell = [{
         "duration": "Concentration, up to 10 minutes",
         "classes": "Monk (Way of the Four Elements)",
         "text": [
-            "A nonmagical wall of solid stone springs into existence at a point you choose within range. The wall is 6 inches thick and is composed of ten 10-foot-by-10-foot panels. Each panel must be contiguous with at least one other panel. Alternatively, you can create 10-foot-by-20-foot panels that are only 3 inches thick.",
+            "A nonmagical wall of solid stone springs into existence at a point +you choose within range. The wall is 6 inches thick and is composed of ten 10-foot-by-10-foot panels. Each panel must be contiguous with at least one other panel. Alternatively, you can create 10-foot-by-20-foot panels that are only 3 inches thick.",
             "",
             "If the wall cuts through a creature's space when it appears, the creature is pushed to one side of the wall (your choice). If a creature would be surrounded on all sides by the wall (or the wall and another solid surface), that creature can make a Dexterity saving throw. On a success, it can use its reaction to move up to its speed so that it is no longer enclosed by the wall.",
             "",
@@ -471,7 +471,7 @@ var spell = [{
         "duration": "Instantaneous",
         "classes": "Sorcerer, Wizard",
         "text": [
-            "You draw the moisture from every creature in a 30-foot cube centered on a point you choose within range. Each creature in that area must make a Constitution saving throw. Constructs and undead aren't affected, and plants and water elementals make this saving throw with disadvantage. A creature takes 10d8 necrotic damage on a failed save, or half as much damage on a successful one.",
+            "You draw the moisture from every creature in a 30-foot cube centered on a point +you choose within range. Each creature in that area must make a Constitution saving throw. Constructs and undead aren't affected, and plants and water elementals make this saving throw with disadvantage. A creature takes 10d8 necrotic damage on a failed save, or half as much damage on a successful one.",
             "",
             "This spell can be found in the Elemental Evil Player's Companion"
         ],
@@ -544,7 +544,7 @@ var spell = [{
         "duration": "8 hours",
         "classes": "Artificer, Cleric, Paladin",
         "text": [
-            "Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.",
+            "Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point +maximum and current hit points increase by 5 for the duration.",
             "",
             "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd."
         ]
@@ -632,7 +632,7 @@ var spell = [{
         "text": [
             "Your magic turns others into beasts. Choose any number of willing creatures that you can see within range. You transform each target into the form of a large or smaller beast with a challenge rating of 4 or lower. On subsequent turns, you can use your actions to transform affected creatures into new forms.",
             "",
-            "The transformation lasts for the duration for each target, or until the target drops to 0 hit points or dies. You can choose a different form for each target. A target's game statistics are replaced by the statistics of the chosen beast, though the target retains its alignment and Intelligence, Wisdom, and Charisma scores. The target assumes the hit points of its new form, and when it reverts to its normal form, it returns to the number of hit point it had before it transformed. If it reverts as a result of dropping to 0 hit points, any excess damage carries over to its normal form. As long as the excess damage doesn't reduce the creature's normal form to 0 hit points, it isn't knocked unconscious. The creature is limited in the actions it can perform by the nature of its new form, and it can't speak or cast spells.",
+            "The transformation lasts for the duration for each target, or until the target drops to 0 hit points or dies. You can choose a different form for each target. A target's game statistics are replaced by the statistics of the chosen beast, though the target retains its alignment and Intelligence, Wisdom, and Charisma scores. The target assumes the hit points of its new form, and when it reverts to its normal form, it returns to the number of hit point +it had before it transformed. If it reverts as a result of dropping to 0 hit points, any excess damage carries over to its normal form. As long as the excess damage doesn't reduce the creature's normal form to 0 hit points, it isn't knocked unconscious. The creature is limited in the actions it can perform by the nature of its new form, and it can't speak or cast spells.",
             "",
             "The target's gear melds into the new form. The target can't activate, wield, or otherwise benefit from any of its equipment."
         ]
@@ -728,7 +728,7 @@ var spell = [{
             "",
             "Magic Items: The properties and powers of magic items are suppressed in the sphere. For example, a +1 long sword in the sphere functions as a nonmagical long sword. A magic weapon's properties and powers are suppressed if it is used against a target in the sphere or wielded by an attacker in the sphere. If a magic weapon or piece of magic ammunition fully leaves the sphere (For example, if you fire a magic arrow or throw a magic spear at a target outside the sphere), the magic of the item ceases to be suppressed as soon as it exits.",
             "",
-            "Magical Travel: Teleportation and planar travel fail to work in the sphere, whether the sphere is the destination or the departure point for such magical travel. A portal to another location, world, or plane of existence, as well as an opening to an extradimensional space such as that created by the rope trick spells, temporarily closes while in the sphere.",
+            "Magical Travel: Teleportation and planar travel fail to work in the sphere, whether the sphere is the destination or the departure point +for such magical travel. A portal to another location, world, or plane of existence, as well as an opening to an extradimensional space such as that created by the rope trick spells, temporarily closes while in the sphere.",
             "",
             "Creatures and Objects: A creature or object summoned or created by magic temporarily winks out of existence in the sphere. Such a creature instantly reappears once the space the creature occupied is no longer within the sphere.",
             "",
@@ -783,7 +783,7 @@ var spell = [{
         "duration": "Concentration, up to 10 minutes",
         "classes": "Sorcerer, Warlock, Wizard",
         "text": [
-            "You create linked teleportation portals that remain open for the duration. Choose two points on the ground that you can see, one point within 10 feet of you and one point within 500 feet of you. A circular portal, 10 feet in diameter, opens over each point. If the portal would open in the space occupied by a creature, the spell fails, and the casting is lost.",
+            "You create linked teleportation portals that remain open for the duration. Choose two points on the ground that you can see, one point +within 10 feet of you and one point +within 500 feet of you. A circular portal, 10 feet in diameter, opens over each point. If the portal would open in the space occupied by a creature, the spell fails, and the casting is lost.",
             "",
             "The portals are two-dimensional glowing rings filled with mist, hovering inches from the ground and perpendicular to it at the points you choose. A ring is visible only from one side (your choice), which is the side that functions as a portal.",
             "",
@@ -894,7 +894,7 @@ var spell = [{
         "components": "V",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Paladin, Warlock (Undying)",
-        "text": "Life-preserving energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. Each non-hostile creature in the aura (including you) has resistance to necrotic damage, and its hit point maximum can't be reduced. In addition, a non-hostile, living creature regains 1 hit point when it starts its turn in the aura with 0 hit points."
+        "text": "Life-preserving energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. Each non-hostile creature in the aura (including you) has resistance to necrotic damage, and its hit point +maximum can't be reduced. In addition, a non-hostile, living creature regains 1 hit point +when it starts its turn in the aura with 0 hit points."
     },
     {
         "name": "Aura of Purity",
@@ -958,7 +958,7 @@ var spell = [{
         "components": "V",
         "duration": "Concentration, up to 1 minute",
         "classes": "Paladin",
-        "text": "The next time you hit a creature with a weapon attack before this spell ends, your weapon crackles with force, and the attack deals an extra 5d10 force damage to the target. Additionally, if this attack reduces the target to 50 hit points of fewer, you banish it. If the target is native to a different plane of existence than the one you're on, the target disappears, returning to its home plane. If the target is native to the plane you're on, the creature vanishes into a harmless demiplane. While there, the target is incapacitated. It remains there until the spell ends, at which point the tart reappears in the space it left or in the nearest unoccupied space if that space is occupied.",
+        "text": "The next time you hit a creature with a weapon attack before this spell ends, your weapon crackles with force, and the attack deals an extra 5d10 force damage to the target. Additionally, if this attack reduces the target to 50 hit points of fewer, you banish it. If the target is native to a different plane of existence than the one you're on, the target disappears, returning to its home plane. If the target is native to the plane you're on, the creature vanishes into a harmless demiplane. While there, the target is incapacitated. It remains there until the spell ends, at which point +the tart reappears in the space it left or in the nearest unoccupied space if that space is occupied.",
         "roll": "5d10"
     },
     {
@@ -973,9 +973,9 @@ var spell = [{
         "text": [
             "You attempt to send one creature that you can see within range to another place of existence. The target must succeed on a Charisma saving throw or be banished.",
             "",
-            "If the target is native to the plane of existence you're on, you banish the target to a harmless demiplane. While there, the target is incapacitated. The target remains there until the spell ends, at which point the target reappears in the space it left or in the nearest unoccupied space if that space is occupied.",
+            "If the target is native to the plane of existence you're on, you banish the target to a harmless demiplane. While there, the target is incapacitated. The target remains there until the spell ends, at which point +the target reappears in the space it left or in the nearest unoccupied space if that space is occupied.",
             "",
-            "If the target is native to a different plane of existence that the one you're on, the target is banished with a faint popping noise, returning to its home plane. If the spell ends before 1 minute has passed, the target reappears in the space it left or in the nearest unoccupied space if that space is occupied. Otherwise, the target doesn't return.",
+            "If the target is native to a different plane of existence that the one you're on, the target is banished with a faint +popping noise, returning to its home plane. If the spell ends before 1 minute has passed, the target reappears in the space it left or in the nearest unoccupied space if that space is occupied. Otherwise, the target doesn't return.",
             "",
             "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 5th level or higher, you can target one additional creature for each slot level above 4th."
         ]
@@ -992,7 +992,7 @@ var spell = [{
         "text": "You touch a willing creature. Until the spell ends, the target's skin has a rough, bark-like appearance, and the target's AC can't be less than 16, regardless of what kind of armor it is wearing."
     },
     {
-        "name": "Beacon of Hope",
+        "name": "Beacon +of Hope",
         "level": "3rd level",
         "school": "Abjuration",
         "time": "1 action",
@@ -1066,7 +1066,7 @@ var spell = [{
         "text": [
             "You create a Large hand of shimmering, translucent force in an unoccupied space that you can see within range. The hand lasts for the spell's duration, and it moves at your command, mimicking the movements of your own hand.",
             "",
-            "The hand is an object that has AC 20 and hit points equal to your hit point maximum. If it drops to 0 hit points, the spell ends. It has a Strength of 26 (+8) and a Dexterity of 10 (+0). The hand doesn't fill its space.",
+            "The hand is an object that has AC 20 and hit points equal to your hit point +maximum. If it drops to 0 hit points, the spell ends. It has a Strength of 26 (+8) and a Dexterity of 10 (+0). The hand doesn't fill its space.",
             "",
             "When you cast the spell and as a bonus action on your subsequent turns, you can move the hand up to 60 feet and then cause one of the following effects with it.",
             "",
@@ -1290,9 +1290,9 @@ var spell = [{
         "duration": "Concentration, up to 10 minutes",
         "classes": "Cleric (Tempest), Druid, Druid (Forest)",
         "text": [
-            "A storm cloud appears in the shape of a cylinder that is 10 feet tall with a 60-foot radius, centered on a point you can see 100 feet directly above you. The spell fails if you can't see a point in the air where the storm cloud could appear (for example, if you are in a room that can't accommodate the cloud).",
+            "A storm cloud appears in the shape of a cylinder that is 10 feet tall with a 60-foot radius, centered on a point +you can see 100 feet directly above you. The spell fails if you can't see a point +in the air where the storm cloud could appear (for example, if you are in a room that can't accommodate the cloud).",
             "",
-            "When you cast the spell, choose a point you can see within range. A bolt of lightning flashes down from the cloud to that point. Each creature within 5 feet of that point must make a Dexterity saving throw. A creature takes 3d10 lightning damage on a failed save, or half as much damage on a successful one. On each of your turns until the spell ends, you can use your action to call down lightning in this way again, targeting the same point or a different one.",
+            "When you cast the spell, choose a point +you can see within range. A bolt of lightning flashes down from the cloud to that point. Each creature within 5 feet of that point +must make a Dexterity saving throw. A creature takes 3d10 lightning damage on a failed save, or half as much damage on a successful one. On each of your turns until the spell ends, you can use your action to call down lightning in this way again, targeting the same point +or a different one.",
             "",
             "If you are outdoors in stormy conditions when you cast this spell, the spell gives you control over the existing storm instead of creating a new one. Under such conditions, the spell's damage increases by 1d10.",
             "",
@@ -1310,7 +1310,7 @@ var spell = [{
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Cleric, Warlock (Archfey)",
         "text": [
-            "You attempt to suppress strong emotions in a group of people. Each humanoid in a 20-foot-radius sphere centered on a point you choose within range must make a Charisma saving throw a creature can choose to fail this saving throw if it wishes. If a creature fails its saving throw, choose one of the following two effects.",
+            "You attempt to suppress strong emotions in a group of people. Each humanoid in a 20-foot-radius sphere centered on a point +you choose within range must make a Charisma saving throw a creature can choose to fail this saving throw if it wishes. If a creature fails its saving throw, choose one of the following two effects.",
             "",
             "You can suppress any effect causing a target to be charmed or frightened. When this spell ends, any suppressed effect resumes, provided that its duration has not expired in the meantime.",
             "",
@@ -1421,7 +1421,7 @@ var spell = [{
         "duration": "Instantaneous",
         "classes": "Sorcerer, Warlock, Wizard",
         "text": [
-            "A sphere of negative energy ripples out in a 60-foot-radius sphere from a point within range. Each creature in that area must make a Constitution saving throw. A target takes 8d6 necrotic damage on a failed save, or half as much damage on a successful one.",
+            "A sphere of negative energy ripples out in a 60-foot-radius sphere from a point +within range. Each creature in that area must make a Constitution saving throw. A target takes 8d6 necrotic damage on a failed save, or half as much damage on a successful one.",
             "",
             "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 7th level or higher, the damage increases by 2d6 for each slot level above 6th."
         ],
@@ -1480,7 +1480,7 @@ var spell = [{
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Sorcerer, Warlock, Wizard",
         "text": [
-            "You fill the air with spinning daggers in a cube 5 feet on each side, centered on a point you choose within range. A creature takes 4d4 slashing damage when it enters the spell's area for the first time on a turn or starts its turn there.",
+            "You fill the air with spinning daggers in a cube 5 feet on each side, centered on a point +you choose within range. A creature takes 4d4 slashing damage when it enters the spell's area for the first time on a turn or starts its turn there.",
             "",
             "<emph>At Higher Levels:</emph> when you cast this spell using a spell slot of 3rd level or higher, the damage increases by 2d4 for each slot level above 2nd."
         ],
@@ -1496,7 +1496,7 @@ var spell = [{
         "duration": "Concentration, up to 10 minutes",
         "classes": "Cleric (Death), Druid (Underdark), Sorcerer, Wizard",
         "text": [
-            "You create a 20-foot-radius sphere of poisonous, yellow-green fog centered on a point you choose within range. The fog spreads around corners. It lasts for the duration or until strong wind disperses the fog, ending the spell. Its area is heavily obscured.",
+            "You create a 20-foot-radius sphere of poisonous, yellow-green fog centered on a point +you choose within range. The fog spreads around corners. It lasts for the duration or until strong wind disperses the fog, ending the spell. Its area is heavily obscured.",
             "",
             "When a creature enters the spell's area for the first time on a turn or starts its turn there, that creature must make a Constitution saving throw. The creature takes 5d8 poison damage on a failed save, or half as much damage on a successful one. Creatures are affected even if they hold their breath or don't need to breathe.",
             "",
@@ -1661,7 +1661,7 @@ var spell = [{
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Cleric (Knowledge), Druid, Paladin (Oathbreaker), Sorcerer, Wizard, Rogue (Arcane Trickster)",
         "text": [
-            "This spell assaults and twists creatures' minds, spawning delusions and provoking uncontrolled actions. Each creature in a 10-foot-radius sphere centered on a point you choose within range must succeed on a Wisdom saving throw when you cast this spell or be affected by it.",
+            "This spell assaults and twists creatures' minds, spawning delusions and provoking uncontrolled actions. Each creature in a 10-foot-radius sphere centered on a point +you choose within range must succeed on a Wisdom saving throw when you cast this spell or be affected by it.",
             "",
             "An affected target can't take reactions and must roll a d10 at the start of each of its turns to determine its behavior for that turn.",
             "",
@@ -1809,7 +1809,7 @@ var spell = [{
         "components": "V, S, M (one piece of ammunition or one thrown weapon)",
         "duration": "Instantaneous",
         "classes": "Ranger",
-        "text": "You fire a piece of nonmagical ammunition from a ranged weapon or throw a nonmagical weapon into the air and choose a point within range. Hundreds of duplicates of the ammunition or weapon fall in a volley from above and then disappear. Each creature in a 40-foot-radius. 20-foot-high cylinder centered on that point must make a Dexterity saving throw. A creature takes 8d8 damage on a failed save, or half as much damage on a successful one. The damage type is the same as that of the ammunition or weapon.",
+        "text": "You fire a piece of nonmagical ammunition from a ranged weapon or throw a nonmagical weapon into the air and choose a point +within range. Hundreds of duplicates of the ammunition or weapon fall in a volley from above and then disappear. Each creature in a 40-foot-radius. 20-foot-high cylinder centered on that point +must make a Dexterity saving throw. A creature takes 8d8 damage on a failed save, or half as much damage on a successful one. The damage type is the same as that of the ammunition or weapon.",
         "roll": "8d8"
     },
     {
@@ -2221,9 +2221,9 @@ var spell = [{
         "duration": "Concentration, up to 10 minutes",
         "classes": "Druid (Swamp), Paladin (Oathbreaker), Sorcerer, Warlock, Wizard, Fighter (Eldritch Knight)",
         "text": [
-            "Magical darkness spreads from a point you choose within range to fill a 15-foot radius sphere for the duration. The darkness spreads around corners. A creature with darkvision can't see through this darkness, and nonmagical light can't illuminate it.",
+            "Magical darkness spreads from a point +you choose within range to fill a 15-foot radius sphere for the duration. The darkness spreads around corners. A creature with darkvision can't see through this darkness, and nonmagical light can't illuminate it.",
             "",
-            "If the point you choose is on an object you are holding or one that isn't being worn or carried, the darkness emanates from the object and moves with it. Completely covering the source of the darkness with an opaque object, such as a bowl or a helm, blocks the darkness.",
+            "If the point +you choose is on an object you are holding or one that isn't being worn or carried, the darkness emanates from the object and moves with it. Completely covering the source of the darkness with an opaque object, such as a bowl or a helm, blocks the darkness.",
             "",
             "If any of this spell's area overlaps with an area of light created by a spell of 2nd level or lower, the spell that created the light is dispelled."
         ]
@@ -2249,9 +2249,9 @@ var spell = [{
         "duration": "1 hour",
         "classes": "Cleric, Cleric (Light), Druid, Druid (Grassland), Paladin, Ranger, Sorcerer",
         "text": [
-            "A 60-foot-radius sphere of light spreads out from a point you choose within range. The sphere is bright light and sheds dim light for an additional 60 feet.",
+            "A 60-foot-radius sphere of light spreads out from a point +you choose within range. The sphere is bright light and sheds dim light for an additional 60 feet.",
             "",
-            "If you chose a point on an object you are holding or one that isn't being worn or carried, the light shines from the object with and moves with it. Completely covering the affected object with an opaque object, such as a bowl or a helm, blocks the light.",
+            "If you chose a point +on an object you are holding or one that isn't being worn or carried, the light shines from the object with and moves with it. Completely covering the affected object with an opaque object, such as a bowl or a helm, blocks the light.",
             "",
             "If any of this spell's area overlaps with an area of darkness created by a spell of 3rd level or lower, the spell that created the darkness is dispelled."
         ]
@@ -2277,7 +2277,7 @@ var spell = [{
         "duration": "Concentration, up to 1 minute",
         "classes": "Sorcerer, Wizard",
         "text": [
-            "A beam of yellow light flashes from your pointing finger, then condenses to linger at a chosen point within range as a glowing bead for the duration. When the spell ends, either because your concentration is broken or because you decide to end it, the bead blossoms with a low roar into an explosion of flame that spreads around corners. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A creature takes fire damage equal to the total accumulated damage on a failed save, or half as much damage on a successful one.",
+            "A beam of yellow light flashes from your pointing finger, then condenses to linger at a chosen point +within range as a glowing bead for the duration. When the spell ends, either because your concentration is broken or because you decide to end it, the bead blossoms with a low roar into an explosion of flame that spreads around corners. Each creature in a 20-foot-radius sphere centered on that point +must make a Dexterity saving throw. A creature takes fire damage equal to the total accumulated damage on a failed save, or half as much damage on a successful one.",
             "",
             "The spell's base damage is 12d6. If at the end of your turn the bead has not yet detonated, the damage increases by 1d6.",
             "",
@@ -2338,7 +2338,7 @@ var spell = [{
         "duration": "Concentration, up to 10 minutes",
         "classes": "Bard, Cleric, Cleric (Arcana), Druid, Paladin, Ranger, Sorcerer, Wizard",
         "text": [
-            "For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic, and you learn its school of magic, if any.",
+            "For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint +aura around any visible creature or object in the area that bears magic, and you learn its school of magic, if any.",
             "",
             "The spell can penetrate most barriers, but is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt."
         ]
@@ -2632,7 +2632,7 @@ var spell = [{
         "text": [
             "This spell shapes a creature's dreams. Choose a creature known to you as the target of this spell. The target must be on the same plane of existence as you. Creatures that don't sleep, such as elves, can't be contacted by this spell. You, or a willing creature you touch, enters a trance state, acting as a messenger. While in the trance, the messenger is aware of his or her surroundings, but can't take actions or move.",
             "",
-            "If the target is asleep, the messenger appears in the target's dreams and can converse with the target as long as it remains asleep, through the duration of the spell. The messenger can also shape the environment of the dream, creating landscapes, objects, and other images. The messenger can emerge from the trance at any time, ending the effect of the spell early. The target recalls the dream perfectly upon waking. If the target is awake when you cast the spell, the messenger knows it, and can either end the trance (and the spell) or wait for the target to fall asleep, at which point the messenger appears in the target's dreams.",
+            "If the target is asleep, the messenger appears in the target's dreams and can converse with the target as long as it remains asleep, through the duration of the spell. The messenger can also shape the environment of the dream, creating landscapes, objects, and other images. The messenger can emerge from the trance at any time, ending the effect of the spell early. The target recalls the dream perfectly upon waking. If the target is awake when you cast the spell, the messenger knows it, and can either end the trance (and the spell) or wait for the target to fall asleep, at which point +the messenger appears in the target's dreams.",
             "",
             "You can make the messenger appear monstrous and terrifying to the target. If you do, the messenger can deliver a message of no more than ten words and then the target must make a Wisdom saving throw. On a failed save, echoes of the phantasmal monstrosity spawn a nightmare that lasts the duration of the target's sleep and prevents the target from gaining any benefit from that rest. In addition, when the target wakes up, it takes 3d6 psychic damage.",
             "",
@@ -2656,7 +2656,7 @@ var spell = [{
             "",
             "• You instantly make a flower blossom, a seed pod open, or a leaf bud bloom.",
             "",
-            "• You create an instantaneous, harmless sensory effect, such as falling leaves, a puff of wind, the sound of a small animal, or the faint odor of skunk. The effect must fit in a 5-foot cube.",
+            "• You create an instantaneous, harmless sensory effect, such as falling leaves, a puff of wind, the sound of a small animal, or the faint +odor of skunk. The effect must fit in a 5-foot cube.",
             "",
             "• You instantly light or snuff out a candle, a torch, or a small campfire."
         ]
@@ -2726,7 +2726,7 @@ var spell = [{
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric, Druid, Sorcerer",
         "text": [
-            "You create a seismic disturbance at a point on the ground that you can see within range. For the duration, an intense tremor rips through the ground in a 100-foot- radius circle centered on that point and shakes creatures and structures in contact with the ground in that area.",
+            "You create a seismic disturbance at a point +on the ground that you can see within range. For the duration, an intense tremor rips through the ground in a 100-foot- radius circle centered on that point +and shakes creatures and structures in contact with the ground in that area.",
             "",
             "The ground in the area becomes difficult terrain. Each creature on the ground that is concentrating must make a Constitution saving throw. On a failed save, the creature's concentration is broken.",
             "",
@@ -2854,7 +2854,7 @@ var spell = [{
         "duration": "Concentration, up to 1 minute",
         "classes": "Paladin (Ancients), Ranger",
         "text": [
-            "The next time you hit a creature with a weapon attack before this spell ends, a writhing mass of thorny vines appears at the point of impact, and the target must succeed on a Strength saving throw or be restrained by the magical vines until the spell ends. A Large or larger creature has advantage on this saving throw. If the target succeeds on the save, the vines shrivel away.",
+            "The next time you hit a creature with a weapon attack before this spell ends, a writhing mass of thorny vines appears at the point +of impact, and the target must succeed on a Strength saving throw or be restrained by the magical vines until the spell ends. A Large or larger creature has advantage on this saving throw. If the target succeeds on the save, the vines shrivel away.",
             "",
             "While restrained by this spell, the target takes 1d6 piercing damage at the start of each of its turns. A creature restrained by the vines or one that can touch the creature can use its action to make a Strength check against your spell save DC. On a success, the target is freed.",
             "",
@@ -2872,7 +2872,7 @@ var spell = [{
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid",
         "text": [
-            "Grasping weeds and vines sprout from the ground in a 20-foot square starting from a point within range. For the duration, these plants turn the ground in the area into difficult terrain.",
+            "Grasping weeds and vines sprout from the ground in a 20-foot square starting from a point +within range. For the duration, these plants turn the ground in the area into difficult terrain.",
             "",
             "A creature in the area when you cast the spell must succeed on a Strength saving throw or be restrained by the entangling plants until the spell ends. A creature restrained by the plants can use its action to make a Strength check against your spell save DC. On a success, it frees itself.",
             "",
@@ -2900,7 +2900,7 @@ var spell = [{
         "duration": "Instantaneous",
         "classes": "Druid, Sorcerer, Wizard",
         "text": [
-            "Choose a point you can see on the ground within range. A fountain of churned earth and stone erupts in a 20-foot cube centered on that point. Each creature in that area must make a Dexterity saving throw. A creature takes 3d12 bludgeoning damage on a failed save, or half as much damage on a successful one. Additionally, the ground in that area becomes difficult terrain until cleared away. Each 5-foot-square portion of the area requires at least 1 minute to clear by hand.",
+            "Choose a point +you can see on the ground within range. A fountain of churned earth and stone erupts in a 20-foot cube centered on that point. Each creature in that area must make a Dexterity saving throw. A creature takes 3d12 bludgeoning damage on a failed save, or half as much damage on a successful one. Additionally, the ground in that area becomes difficult terrain until cleared away. Each 5-foot-square portion of the area requires at least 1 minute to clear by hand.",
             "",
             "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d12 for each slot level above 2nd.",
             "",
@@ -3127,7 +3127,7 @@ var spell = [{
             "",
             "Your steed serves you as a mount, both in combat and out, and you have an instinctive bond with it that allows you to fight as a seamless unit. While mounted on your steed, you can make any spell you cast that targets only you also target your steed.",
             "",
-            "When the steed drops to 0 hit points, it disappears, leaving behind no physical form. You can also dismiss your steed at any time as an action, causing it to disappear. In either case, casting this spell again summons the same steed, restored to its hit point maximum.",
+            "When the steed drops to 0 hit points, it disappears, leaving behind no physical form. You can also dismiss your steed at any time as an action, causing it to disappear. In either case, casting this spell again summons the same steed, restored to its hit point +maximum.",
             "",
             "While your steed is within 1 mile of you, you can communicate with it telepathically.",
             "",
@@ -3246,7 +3246,7 @@ var spell = [{
         "duration": "Instantaneous",
         "classes": "Cleric (Light), Sorcerer, Warlock (Fiend), Wizard, Fighter (Eldritch Knight)",
         "text": [
-            "A bright streak flashes from your pointing finger to a point you choose within range then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot radius must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one.",
+            "A bright streak flashes from your pointing finger to a point +you choose within range then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot radius must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one.",
             "",
             "The fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried.",
             "",
@@ -3305,7 +3305,7 @@ var spell = [{
         "duration": "Instantaneous",
         "classes": "Cleric, Cleric (Light), Cleric (War), Paladin (Devotion), Warlock (Fiend)",
         "text": [
-            "A vertical column of divine fire roars down from the heavens in a location you specify. Each creature in a 10-foot radius, 40-foot-high cylinder centered on a point within range must make a Dexterity saving throw. A creature takes 4d6 fire damage and 4d6 radiant damage on a failed save, or half as much damage on a successful one.",
+            "A vertical column of divine fire roars down from the heavens in a location you specify. Each creature in a 10-foot radius, 40-foot-high cylinder centered on a point +within range must make a Dexterity saving throw. A creature takes 4d6 fire damage and 4d6 radiant damage on a failed save, or half as much damage on a successful one.",
             "",
             "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 6th level or higher, the fire damage or the radiant damage (your choice) increases by 1d6 for each slot level above 5th."
         ],
@@ -3375,7 +3375,7 @@ var spell = [{
         "duration": "Concentration, up to 1 hour",
         "classes": "Cleric (Tempest), Druid, Ranger, Sorcerer, Wizard",
         "text": [
-            "You create a 20-foot-radius sphere of fog centered on a point within range. The sphere spreads around corners, and its area is heavily obscured. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.",
+            "You create a 20-foot-radius sphere of fog centered on a point +within range. The sphere spreads around corners, and its area is heavily obscured. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.",
             "",
             "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the radius of the fog increases by 20 feet for each slot level above 1st."
         ]
@@ -3675,7 +3675,7 @@ var spell = [{
         "duration": "1 minute",
         "classes": "Wizard",
         "text": [
-            "Slick grease covers the ground in a 10-foot square centered on a point within range and turns it into difficult terrain for the duration.",
+            "Slick grease covers the ground in a 10-foot square centered on a point +within range and turns it into difficult terrain for the duration.",
             "",
             "When the grease appears, each creature standing in its area must succeed on a Dexterity saving throw or fall prone. A creature that enters the area or ends its turn there must also succeed on a Dexterity saving throw or fall prone."
         ]
@@ -3709,7 +3709,7 @@ var spell = [{
             "",
             "• Any reduction to one of the target's ability scores",
             "",
-            "• One effect reducing the target's hit point maximum"
+            "• One effect reducing the target's hit point +maximum"
         ]
     },
     {
@@ -3824,7 +3824,7 @@ var spell = [{
         "duration": "Instantaneous",
         "classes": "Druid, Sorcerer, Wizard, Rogue (Arcane Trickster), Fighter (Eldritch Knight)",
         "text": [
-            "You seize the air and compel it to create one of the following effects at a point you can see within range.",
+            "You seize the air and compel it to create one of the following effects at a point +you can see within range.",
             "",
             "• One Medium or smaller creature that you choose must succeed on a Strength saving throw or be pushed up to 5 feet away from you.",
             "",
@@ -3880,7 +3880,7 @@ var spell = [{
         "duration": "Until dispelled",
         "classes": "Cleric, Warlock (Fiend)",
         "text": [
-            "You touch a point and infuse an area around it with holy (or unholy) power. The area can have a radius up to 60 feet, and the spell fails if the radius includes an area already under the effect a hallow spell. The affected area is subject to the following effects.",
+            "You touch a point +and infuse an area around it with holy (or unholy) power. The area can have a radius up to 60 feet, and the spell fails if the radius includes an area already under the effect a hallow spell. The affected area is subject to the following effects.",
             "",
             "First, celestials, elementals, fey, fiends, and undead can't enter the area, nor can such creatures charm, frighten, or possess creatures within it. Any creature charmed, frightened, or possessed by such a creature is no longer charmed, frightened, or possessed upon entering the area. You can exclude one or more of those types of creatures from this effect.",
             "",
@@ -3931,7 +3931,7 @@ var spell = [{
         "components": "V, S",
         "duration": "Instantaneous",
         "classes": "Cleric",
-        "text": "You unleash a virulent disease on a creature that you can see within range. The target must make a Constitution saving throw. On a failed save, it takes 14d6 necrotic damage, or half as much damage on a successful save. The damage can't reduce the target's hit points below 1. If the target fails the saving throw, its hit point maximum is reduced for 1 hour by an amount equal to the necrotic damage it took. Any effect that removes a disease allows a creature's hit point maximum to return to normal before that time passes.",
+        "text": "You unleash a virulent disease on a creature that you can see within range. The target must make a Constitution saving throw. On a failed save, it takes 14d6 necrotic damage, or half as much damage on a successful save. The damage can't reduce the target's hit points below 1. If the target fails the saving throw, its hit point +maximum is reduced for 1 hour by an amount equal to the necrotic damage it took. Any effect that removes a disease allows a creature's hit point +maximum to return to normal before that time passes.",
         "roll": "14d6"
     },
     {
@@ -4008,7 +4008,7 @@ var spell = [{
         "duration": "Instantaneous",
         "classes": "Paladin (Oathbreaker), Warlock",
         "text": [
-            "You point your finger, and the creature that damaged you is momentarily surrounded by hellish flames. The creature must make a Dexterity saving throw. It takes 2d10 fire damage on a failed save, or half as much damage on a successful one.",
+            "You point +your finger, and the creature that damaged you is momentarily surrounded by hellish flames. The creature must make a Dexterity saving throw. It takes 2d10 fire damage on a failed save, or half as much damage on a successful one.",
             "",
             "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st."
         ],
@@ -4026,7 +4026,7 @@ var spell = [{
         "text": [
             "You bring forth a great feast, including magnificent food and drink. The feast takes 1 hour to consume and disappears at the end of that time, and the beneficial effects don't set in until this hour is over. Up to twelve other creatures can partake of the feast.",
             "",
-            "A creature that partakes of the feast gains several benefits. The creature is cured of all diseases and poison, becomes immune to poison and being frightened, and makes all Wisdom saving throws with advantage. Its hit point maximum also increases by 2d10, and it gains the same number of hit points. These benefits last for 24 hours."
+            "A creature that partakes of the feast gains several benefits. The creature is cured of all diseases and poison, becomes immune to poison and being frightened, and makes all Wisdom saving throws with advantage. Its hit point +maximum also increases by 2d10, and it gains the same number of hit points. These benefits last for 24 hours."
         ],
         "roll": "2d10"
     },
@@ -4115,7 +4115,7 @@ var spell = [{
         "duration": "Concentration, up to 1 minute",
         "classes": "Warlock",
         "text": [
-            "You open a gateway to the dark between the stars, a region infested with unknown horrors. A 20-foot-radius sphere of blackness and bitter cold appears, centered on a point with range and lasting for the duration. This void is filled with a cacophony of soft whispers and slurping noises that can be heard up to 30 feet away. No light, magical or otherwise, can illuminate the area, and creatures fully within the area are blinded.",
+            "You open a gateway to the dark between the stars, a region infested with unknown horrors. A 20-foot-radius sphere of blackness and bitter cold appears, centered on a point +with range and lasting for the duration. This void is filled with a cacophony of soft whispers and slurping noises that can be heard up to 30 feet away. No light, magical or otherwise, can illuminate the area, and creatures fully within the area are blinded.",
             "",
             "The void creates a warp in the fabric of space, and the area is difficult terrain. Any creature that starts its turn in the area takes 2d6 cold damage. Any creature that ends its turn in the area must succeed on a Dexterity saving throw or take 2d6 acid damage as milky, otherworldly tentacles rub against it."
         ],
@@ -4164,7 +4164,7 @@ var spell = [{
         "duration": "Instantaneous",
         "classes": "Druid, Sorcerer, Wizard",
         "text": [
-            "You create a shard of ice and fling it at one creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 piercing damage. Hit or miss, the shard then explodes. The target and each creature within 5 feet of the point where the ice exploded must succeed on a Dexterity saving throw or take 2d6 cold damage.",
+            "You create a shard of ice and fling it at one creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 piercing damage. Hit or miss, the shard then explodes. The target and each creature within 5 feet of the point +where the ice exploded must succeed on a Dexterity saving throw or take 2d6 cold damage.",
             "",
             "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 2nd level or higher, the cold damage increases by 1d6 for each slot level above 1st.",
             "",
@@ -4185,7 +4185,7 @@ var spell = [{
         "duration": "Instantaneous",
         "classes": "Cleric (Tempest), Druid, Druid (Arctic), Paladin (Ancients), Sorcerer, Wizard, Fighter (Eldritch Knight)",
         "text": [
-            "A hail of rock-hard ice pounds to the ground in a 20-foot-radius, 40-foot-high cylinder centered on a point within range. Each creature in the cylinder must make a Dexterity saving throw. A creature takes 2d8 bludgeoning damage and 4d6 cold damage on a failed save, or half as much damage on a successful one.",
+            "A hail of rock-hard ice pounds to the ground in a 20-foot-radius, 40-foot-high cylinder centered on a point +within range. Each creature in the cylinder must make a Dexterity saving throw. A creature takes 2d8 bludgeoning damage and 4d6 cold damage on a failed save, or half as much damage on a successful one.",
             "",
             "Hailstones turn the storm's area of effect into difficult terrain until the end of your next turn.",
             "",
@@ -4260,7 +4260,7 @@ var spell = [{
         "duration": "Until dispelled",
         "classes": "Warlock, Wizard",
         "text": [
-            "You create a magical restraint to hold a creature that you can see within range. The target must succeed on a Wisdom saving throw or be bound by the spell, if it succeeds, it is immune to this spell if you cast it again. While affected by this spell, the creature doesn't need to breathe, eat, or drink, and it doesn't age. Divination spells can't locate or perceive the target.",
+            "You create a magical restraint +to hold a creature that you can see within range. The target must succeed on a Wisdom saving throw or be bound by the spell, if it succeeds, it is immune to this spell if you cast it again. While affected by this spell, the creature doesn't need to breathe, eat, or drink, and it doesn't age. Divination spells can't locate or perceive the target.",
             "",
             "When you cast the spell, you choose one of the following forms of imprisonment.",
             "",
@@ -4301,7 +4301,7 @@ var spell = [{
         "duration": "Concentration, up to 1 minute",
         "classes": "Sorcerer, Wizard",
         "text": [
-            "A swirling cloud of smoke shot through with white-hot embers appears in a 20-foot-radius sphere centered on a point within range. The cloud spreads around corners and is heavily obscured. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.",
+            "A swirling cloud of smoke shot through with white-hot embers appears in a 20-foot-radius sphere centered on a point +within range. The cloud spreads around corners and is heavily obscured. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.",
             "",
             "When the cloud appears, each creature in it must make a Dexterity saving throw. A creature takes 10d8 fire damage on a failed save, or half as much damage on a successful one. A creature must also make this saving throw when it enters the spell's area for the first time on a turn or ends its turn there.",
             "",
@@ -4338,7 +4338,7 @@ var spell = [{
         "duration": "Concentration, up to 10 minutes",
         "classes": "Cleric, Cleric (Nature), Cleric (Tempest), Druid, Druid (Desert), Druid (Grassland), Druid (Swamp), Druid (Underdark), Sorcerer",
         "text": [
-            "Swarming, biting locusts fill a 20-foot-radius sphere centered on a point you choose within range. The sphere spreads around corners. The sphere remains for the duration, and its area is lightly obscured. The sphere's area is difficult terrain.",
+            "Swarming, biting locusts fill a 20-foot-radius sphere centered on a point +you choose within range. The sphere spreads around corners. The sphere remains for the duration, and its area is lightly obscured. The sphere's area is difficult terrain.",
             "",
             "When the area appears, each creature in it must make a Constitution saving throw. A creature takes 4d10 piercing damage on a failed save, or half as much damage on a successful one. A creature must also make this saving throw when it enters the spell's area for the first time on a turn or ends its turn there.",
             "",
@@ -4428,7 +4428,7 @@ var spell = [{
             "",
             "• You gain a flying speed of 60 feet. If you are still flying when the spell ends, you fall, unless you can somehow prevent it.",
             "",
-            "• You can use your action to create a 15-foot cube of swirling wind centered on a point you can see within 60 feet of you. Each creature in that area must make a Constitution saving throw. A creature takes 2d10 bludgeoning damage on a failed save, or half as much damage on a successful one. If a Large or smaller creature fails the save, that creature is also pushed up to 10 feet away from the center of the cube.",
+            "• You can use your action to create a 15-foot cube of swirling wind centered on a point +you can see within 60 feet of you. Each creature in that area must make a Constitution saving throw. A creature takes 2d10 bludgeoning damage on a failed save, or half as much damage on a successful one. If a Large or smaller creature fails the save, that creature is also pushed up to 10 feet away from the center of the cube.",
             "",
             "This spell can be found in the Elemental Evil Player's Companion"
         ],
@@ -4702,7 +4702,7 @@ var spell = [{
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid",
         "text": [
-            "A mass of 5-foot-deep water appears and swirls in a 30-foot radius centered on a point you can see within range. The point must be on ground or in a body of water. Until the spell ends, that area is difficult terrain, and any creature that starts its turn there must succeed on a Strength saving throw or take 6d6 bludgeoning damage and be pulled 10 feet toward the center.",
+            "A mass of 5-foot-deep water appears and swirls in a 30-foot radius centered on a point +you can see within range. The point +must be on ground or in a body of water. Until the spell ends, that area is difficult terrain, and any creature that starts its turn there must succeed on a Strength saving throw or take 6d6 bludgeoning damage and be pulled 10 feet toward the center.",
             "",
             "This spell can be found in the Elemental Evil Player's Companion"
         ],
@@ -4730,7 +4730,7 @@ var spell = [{
         "duration": "1 minute",
         "classes": "Bard, Sorcerer, Warlock, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
         "text": [
-            "A spectral, floating hand appears at a point you choose within range. The hand lasts for the duration or until you dismiss it as an action. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again.",
+            "A spectral, floating hand appears at a point +you choose within range. The hand lasts for the duration or until you dismiss it as an action. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again.",
             "",
             "You can use your action to control the hand. You can use the hand to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour the contents out of a vial. You can move the hand up to 30 feet each time you use it.",
             "",
@@ -4747,7 +4747,7 @@ var spell = [{
         "duration": "1 hour",
         "classes": "Cleric, Cleric (Arcana), Paladin, Warlock, Wizard, Fighter (Eldritch Knight)",
         "text": [
-            "You create a 10-foot-radius, 20-foot-tall cylinder of magical energy centered on a point on the ground that you can see within range. Glowing runes appear wherever the cylinder intersects with the floor or other surface.",
+            "You create a 10-foot-radius, 20-foot-tall cylinder of magical energy centered on a point +on the ground that you can see within range. Glowing runes appear wherever the cylinder intersects with the floor or other surface.",
             "",
             "Choose one or more of the following types of creatures - celestials, elementals, fey, fiends, or undead. The circle affects a creature of the chosen type in the following ways.",
             "",
@@ -4871,7 +4871,7 @@ var spell = [{
             "",
             "As long as you are within range of the illusion, you can use your action to cause the image to move to any other spot within range. As the image changes location, you can alter its appearance so that its movements appear natural for the image. For example, if you create an image of a creature and move it, you can alter the image so that it appears to be walking. Similarly, you can cause the illusion to make different sounds at different times, even making it carry on a conversation, for example.",
             "",
-            "Physical interaction with the image reveals it to be an illusion, because things can pass through it. A creature that uses its action to examine the image can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the creature can see through the image, and its other sensory qualities become faint to the creature.",
+            "Physical interaction with the image reveals it to be an illusion, because things can pass through it. A creature that uses its action to examine the image can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the creature can see through the image, and its other sensory qualities become faint +to the creature.",
             "",
             "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 6th level or higher, the spell lasts until dispelled, without requiring your concentration."
         ]
@@ -4886,7 +4886,7 @@ var spell = [{
         "duration": "Instantaneous",
         "classes": "Bard, Cleric, Cleric (Life), Druid",
         "text": [
-            "A wave of healing energy washes out from a point of your choice within range. Choose up to six creatures in a 30-foot-radius sphere centered on that point. Each target regains hit points equal to 3d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
+            "A wave of healing energy washes out from a point +of your choice within range. Choose up to six creatures in a 30-foot-radius sphere centered on that point. Each target regains hit points equal to 3d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
             "",
             "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 6th level or higher, the healing increases by 1d8 for each slot level above 5th."
         ],
@@ -4990,7 +4990,7 @@ var spell = [{
         "duration": "8 hours",
         "classes": "Cleric, Druid, Druid (Mountain)",
         "text": [
-            "You step into a stone object or surface large enough to fully contain your body, melding yourself and all the equipment you carry with the stone for the duration. Using your movement, you step into the stone at a point you can touch. Nothing of your presence remains visible or otherwise detectable by nonmagical senses.",
+            "You step into a stone object or surface large enough to fully contain your body, melding yourself and all the equipment you carry with the stone for the duration. Using your movement, you step into the stone at a point +you can touch. Nothing of your presence remains visible or otherwise detectable by nonmagical senses.",
             "",
             "While merged with the stone, you can't see what occurs outside it, and any Wisdom (Perception) checks you make to hear sounds outside it are made with disadvantage. You remain aware of the passage of time and can cast spells on yourself while merged in the stone. You can use your movement to leave the stone where you entered it, which ends the spell. You otherwise can't move.",
             "",
@@ -5028,7 +5028,7 @@ var spell = [{
         "duration": "Concentration, up to 10 minutes",
         "classes": "Sorcerer, Wizard, Fighter (Eldritch Knight)",
         "text": [
-            "You create six tiny meteors in your space. They float in the air and orbit you for the spell's duration. When you cast the spell-and as a bonus action on each of your turns thereafter-you can expend one or two of the meteors, sending them streaking toward a point or points you choose within 120 feet of you. Once a meteor reaches its destination or impacts against a solid surface, the meteor explodes. Each creature within 5 feet of the point where the meteor explodes must make a Dexterity saving throw. A creature takes 2d6 fire damage on a failed save, or half as much damage on a successful one.",
+            "You create six tiny meteors in your space. They float in the air and orbit you for the spell's duration. When you cast the spell-and as a bonus action on each of your turns thereafter-you can expend one or two of the meteors, sending them streaking toward a point +or points you choose within 120 feet of you. Once a meteor reaches its destination or impacts against a solid surface, the meteor explodes. Each creature within 5 feet of the point +where the meteor explodes must make a Dexterity saving throw. A creature takes 2d6 fire damage on a failed save, or half as much damage on a successful one.",
             "",
             "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 4th level or higher, the number of meteors created increases by two for each slot level above 3rd.",
             "",
@@ -5061,7 +5061,7 @@ var spell = [{
         "duration": "1 round",
         "classes": "Bard, Sorcerer, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
         "text": [
-            "You point your finger toward a creature within range and whisper a message. The target (and only the target) hears the message and can reply in a whisper that only you can hear.",
+            "You point +your finger toward a creature within range and whisper a message. The target (and only the target) hears the message and can reply in a whisper that only you can hear.",
             "",
             "You can cast this spell through solid objects if you are familiar with the target and know it is beyond the barrier. Magical silence, 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood blocks the spell. The spell doesn't have to follow a straight line and can travel freely around corners or through openings."
         ]
@@ -5076,7 +5076,7 @@ var spell = [{
         "duration": "Instantaneous",
         "classes": "Sorcerer, Wizard",
         "text": [
-            "Blazing orbs of fire plummet to the ground at four different points you can see within range. Each creature in a 40-foot-radius sphere centered on each point you choose must make a Dexterity saving throw. The sphere spreads around corners. A creature takes 20d6 fire damage and 20d6 bludgeoning damage on a failed save, or half as much damage on a successful one. A creature in the area of more than one fiery burst is affected only once.",
+            "Blazing orbs of fire plummet to the ground at four different points you can see within range. Each creature in a 40-foot-radius sphere centered on each point +you choose must make a Dexterity saving throw. The sphere spreads around corners. A creature takes 20d6 fire damage and 20d6 bludgeoning damage on a failed save, or half as much damage on a successful one. A creature in the area of more than one fiery burst is affected only once.",
             "",
             "The spell damages objects in the area and ignites flammable objects that aren't being worn or carried."
         ],
@@ -5109,7 +5109,7 @@ var spell = [{
             "",
             "If you create an image of an object - such as a chair, muddy footprints, or a small chest - it must be no larger than a 5-foot cube. The image can't create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, because things can pass through it.",
             "",
-            "If a creature uses its action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature."
+            "If a creature uses its action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint +to the creature."
         ]
     },
     {
@@ -5238,7 +5238,7 @@ var spell = [{
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid, Paladin (Ancients)",
         "text": [
-            "A silvery beam of pale light shines down in a 5-foot radius, 40-foot-high cylinder centered on a point within range. Until the spell ends, dim light fills the cylinder.",
+            "A silvery beam of pale light shines down in a 5-foot radius, 40-foot-high cylinder centered on a point +within range. Until the spell ends, dim light fills the cylinder.",
             "",
             "When a creature enters the spell's area for the first time on a turn or starts its turn there, it is engulfed in ghostly flames that cause searing pain, and it must make a Constitution saving throw. It takes 2d10 radiant damage on a failed save, or half as much damage on a successful one.",
             "",
@@ -5399,7 +5399,7 @@ var spell = [{
         "duration": "Instantaneous",
         "classes": "Wizard",
         "text": [
-            "A frigid globe of cold energy streaks from your fingertips to a point of your choice within range, where it explodes in a 60-foot-radius sphere. Each creature within the area must make a Constitution saving throw. On a failed save, a creature takes 10d6 cold damage. On successful save, it takes half as much damage.",
+            "A frigid globe of cold energy streaks from your fingertips to a point +of your choice within range, where it explodes in a 60-foot-radius sphere. Each creature within the area must make a Constitution saving throw. On a failed save, a creature takes 10d6 cold damage. On successful save, it takes half as much damage.",
             "",
             "If the globe strikes a body of water or a liquid that is principally water (not including water-based creatures), it freezes the liquid to a depth of 6 inches over an area 30 feet square. This ice lasts for 1 minute. Creatures that were swimming on the surface of frozen water are trapped in the ice. A trapped creature can use an action to make a Strength check against your spell save DC to break free.",
             "",
@@ -5464,7 +5464,7 @@ var spell = [{
         "duration": "1 hour",
         "classes": "Druid (Mountain), Wizard",
         "text": [
-            "A passage appears at a point of your choice that you can see on a wooden, plaster, or stone surface (such as a wall, a ceiling, or a floor) within range, and lasts for the duration. You choose the opening's dimensions - up to 5 feet wide, 8 feet tall, and 20 feet deep. The passage creates no instability in a structure surrounding it.",
+            "A passage appears at a point +of your choice that you can see on a wooden, plaster, or stone surface (such as a wall, a ceiling, or a floor) within range, and lasts for the duration. You choose the opening's dimensions - up to 5 feet wide, 8 feet tall, and 20 feet deep. The passage creates no instability in a structure surrounding it.",
             "",
             "When the opening disappears, any creatures or objects still in the passage created by the spell are safely ejected to an unoccupied space nearest to the surface on which you cast the spell."
         ]
@@ -5593,11 +5593,11 @@ var spell = [{
         "text": [
             "This spell channels vitality into plants within a specific area. There are two possible uses for the spell, granting either immediate or long-term benefits.",
             "",
-            "If you cast this spell using 1 action, choose a point within range. All normal plants in a 100-foot radius centered on that point become thick and overgrown. A creature moving through the area must spend 4 feet of movement for every 1 foot it moves.",
+            "If you cast this spell using 1 action, choose a point +within range. All normal plants in a 100-foot radius centered on that point +become thick and overgrown. A creature moving through the area must spend 4 feet of movement for every 1 foot it moves.",
             "",
             "You can exclude one or more areas of any size within the spell's area from being affected.",
             "",
-            "If you cast this spell over 8 hours, you enrich the land. All plants in a half-mile radius centered on a point within range become enriched for 1 year. The plants yield twice the normal amount of food when harvested."
+            "If you cast this spell over 8 hours, you enrich the land. All plants in a half-mile radius centered on a point +within range become enriched for 1 year. The plants yield twice the normal amount of food when harvested."
         ]
     },
     {
@@ -5631,7 +5631,7 @@ var spell = [{
         "duration": "Concentration, up to 1 hour",
         "classes": "Bard, Cleric (Trickery), Druid, Sorcerer, Wizard",
         "text": [
-            "This spell transforms a creature with at least 1 hit point that you can see within range into a new form. An unwilling creature must make a Wisdom saving throw to avoid the effect. A shapechanger automatically succeeds on this saving throw.",
+            "This spell transforms a creature with at least 1 hit point +that you can see within range into a new form. An unwilling creature must make a Wisdom saving throw to avoid the effect. A shapechanger automatically succeeds on this saving throw.",
             "",
             "The transformation lasts for the duration, or until the target drops to 0 hit points or dies. The new form can be any beast whose challenge rating is equal to or less than the target's (or the target's level, if it doesn't have a challenge rating). The target's game statistics, including mental ability scores, are replaced by the statistics of the chosen beast. It retains its alignment and personality.",
             "",
@@ -5707,7 +5707,7 @@ var spell = [{
         "text": [
             "This spell is a minor magical trick that novice spellcasters use for practice. You create one of the following magical effects within range.",
             "",
-            "• You create an instantaneous, harmless sensory effect, such as a shower of sparks, a puff of wind, faint musical notes, or an odd odor.",
+            "• You create an instantaneous, harmless sensory effect, such as a shower of sparks, a puff of wind, faint +musical notes, or an odd odor.",
             "",
             "• You instantaneously light or snuff out a candle, a torch, or a small campfire.",
             "",
@@ -5782,7 +5782,7 @@ var spell = [{
         "duration": "10 minutes",
         "classes": "Wizard",
         "text": [
-            "A shimmering, multicolored plane of light forms a vertical opaque wall - up to 90 feet long, 30 feet high, and 1 inch thick - entered on a point you can see within range. Alternatively, you can shape the wall into a sphere up to 30 feet in diameter centered on a point you choose within range.",
+            "A shimmering, multicolored plane of light forms a vertical opaque wall - up to 90 feet long, 30 feet high, and 1 inch thick - entered on a point +you can see within range. Alternatively, you can shape the wall into a sphere up to 30 feet in diameter centered on a point +you choose within range.",
             "",
             "The wall remains in place for the duration. If you position the wall so that it passes through a space occupied by a creature, the spell fails, and your action and the spell slot are wasted. The wall sheds bright light out to a range of 100 feet and dim light for an additional 100 feet. You and creatures you designate at the time you cast the spell can pass through and remain near the wall without harm. If another creature that can see the wall moves to within 20 feet of it or starts its turn there, the creature must succeed on a Constitution saving throw or become blinded for 1 minute.",
             "",
@@ -5919,7 +5919,7 @@ var spell = [{
         "components": "V, S",
         "duration": "Instantaneous",
         "classes": "Cleric, Druid, Paladin",
-        "text": "All nonmagical food and drink within a 5-foot-radius sphere centered on a point of your choice within range is purified and rendered free of poison and disease."
+        "text": "All nonmagical food and drink within a 5-foot-radius sphere centered on a point +of your choice within range is purified and rendered free of poison and disease."
     },
     {
         "name": "Pyrotechnics",
@@ -6042,7 +6042,7 @@ var spell = [{
         "duration": "1 hour",
         "classes": "Bard, Cleric, Druid",
         "text": [
-            "You touch a creature and stimulate its natural healing ability. The target regains 4d8 + 15 hit points. For the duration of the spell, the target regains 1 hit point at the start of each of its turns (10 hit points each minute).",
+            "You touch a creature and stimulate its natural healing ability. The target regains 4d8 + 15 hit points. For the duration of the spell, the target regains 1 hit point +at the start of each of its turns (10 hit points each minute).",
             "",
             "The target's severed body members (fingers, legs, tails, and so on), if any, are restored after 2 minutes. If you have the severed part and hold it to the stump, the spell instantaneously causes the limb to knit to the stump."
         ],
@@ -6135,7 +6135,7 @@ var spell = [{
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid, Sorcerer, Wizard",
         "text": [
-            "This spell reverses gravity in a 50-foot-radius, 100-foot high cylinder centered on a point within range. All creatures and objects that aren't somehow anchored to the ground in the area fall upward and reach the top of the area when you cast this spell. A creature can make a Dexterity saving throw to grab onto a fixed object it can reach, thus avoiding the fall.",
+            "This spell reverses gravity in a 50-foot-radius, 100-foot high cylinder centered on a point +within range. All creatures and objects that aren't somehow anchored to the ground in the area fall upward and reach the top of the area when you cast this spell. A creature can make a Dexterity saving throw to grab onto a fixed object it can reach, thus avoiding the fall.",
             "",
             "If some solid object (such as a ceiling) is encountered in this fall, falling objects and creatures strike it just as they would during a normal downward fall. If an object or creature reaches the top of the area without striking anything, it remains there, oscillating slightly, for the duration.",
             "",
@@ -6400,7 +6400,7 @@ var spell = [{
         "duration": "Instantaneous",
         "classes": "Bard, Cleric (Tempest), Sorcerer, Warlock, Wizard, Fighter (Eldritch Knight)",
         "text": [
-            "A sudden loud ringing noise, painfully intense, erupts from a point of your choice within range. Each creature in a 10-foot-radius sphere centered on that point must make a Constitution saving throw. A creature takes 3d8 thunder damage on a failed save, or half as much damage on a successful one. A creature made of inorganic material such as stone, crystal, or metal has disadvantage on this saving throw.",
+            "A sudden loud ringing noise, painfully intense, erupts from a point +of your choice within range. Each creature in a 10-foot-radius sphere centered on that point +must make a Constitution saving throw. A creature takes 3d8 thunder damage on a failed save, or half as much damage on a successful one. A creature made of inorganic material such as stone, crystal, or metal has disadvantage on this saving throw.",
             "",
             "A nonmagical object that isn't being worn or carried also takes the damage if it's in the spell's area.",
             "",
@@ -6472,7 +6472,7 @@ var spell = [{
         "components": "V, S",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Bard, Cleric, Druid (Desert), Ranger, Warlock (Undying)",
-        "text": "For the duration, no sound can be created within or pass through a 20-foot-radius sphere centered on a point you choose within range. Any creature or object entirely inside the sphere is immune to thunder damage, and creatures are deafened while entirely inside it. Casting a spell that includes a verbal component is impossible there."
+        "text": "For the duration, no sound can be created within or pass through a 20-foot-radius sphere centered on a point +you choose within range. Any creature or object entirely inside the sphere is immune to thunder damage, and creatures are deafened while entirely inside it. Casting a spell that includes a verbal component is impossible there."
     },
     {
         "name": "Silent Image",
@@ -6501,11 +6501,11 @@ var spell = [{
         "duration": "Until dispelled",
         "classes": "Wizard, Rogue (Arcane Trickster)",
         "text": [
-            "You shape an illusory duplicate of one beast or humanoid that is within range for the entire casting time of the spell. The duplicate is a creature, partially real and formed from ice or snow, and it can take actions and otherwise be affected as a normal creature. It appears to be the same as the original, but it has half the creature's hit point maximum and is formed without any equipment. Otherwise, the illusion uses all the statistics of the creature it duplicates.",
+            "You shape an illusory duplicate of one beast or humanoid that is within range for the entire casting time of the spell. The duplicate is a creature, partially real and formed from ice or snow, and it can take actions and otherwise be affected as a normal creature. It appears to be the same as the original, but it has half the creature's hit point +maximum and is formed without any equipment. Otherwise, the illusion uses all the statistics of the creature it duplicates.",
             "",
             "The simulacrum is friendly to you and creatures you designate. It obeys your spoken commands, moving and acting in accordance with your wishes and acting on your turn in combat. The simulacrum lacks the ability to learn or become more powerful, so it never increases its level or other abilities, nor can it regain expended spell slots.",
             "",
-            "If the simulacrum is damaged, you can repair it in an alchemical laboratory, using rare herbs and minerals worth 100 gp per hit point it regains. The simulacrum lasts until it drops to 0 hit points, at which point it reverts to snow and melts instantly.",
+            "If the simulacrum is damaged, you can repair it in an alchemical laboratory, using rare herbs and minerals worth 100 gp per hit point +it regains. The simulacrum lasts until it drops to 0 hit points, at which point +it reverts to snow and melts instantly.",
             "",
             "If you cast this spell again, any currently active duplicates you created with this spell are instantly destroyed."
         ]
@@ -6536,7 +6536,7 @@ var spell = [{
         "duration": "1 minute",
         "classes": "Bard, Sorcerer, Warlock (Archfey), Wizard, Rogue (Arcane Trickster)",
         "text": [
-            "This spell sends creatures into a magical slumber. Roll 5d8, the total is how many hit points of creatures this spell can affect. Creatures within 20 feet of a point you choose within range are affected in ascending order of their current hit points (ignoring unconscious creatures).",
+            "This spell sends creatures into a magical slumber. Roll 5d8, the total is how many hit points of creatures this spell can affect. Creatures within 20 feet of a point +you choose within range are affected in ascending order of their current hit points (ignoring unconscious creatures).",
             "",
             "Starting with the creature that has the lowest current hit points, each creature affected by this spell falls unconscious until the spell ends, the sleeper takes damage, or someone uses an action to shake or slap the sleeper awake. Subtract each creature's hit points from the total before moving on to the creature with the next lowest hit points. A creature's hit points must be equal to or less than the remaining total for that creature to be affected.",
             "",
@@ -6556,7 +6556,7 @@ var spell = [{
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric (Tempest), Druid, Druid (Arctic), Sorcerer, Wizard",
         "text": [
-            "Until the spell ends, freezing rain and sleet fall in a 20-foot-tall cylinder with a 40-foot radius centered on a point you choose within range. The area is heavily obscured, and exposed flames in the area are doused.",
+            "Until the spell ends, freezing rain and sleet fall in a 20-foot-tall cylinder with a 40-foot radius centered on a point +you choose within range. The area is heavily obscured, and exposed flames in the area are doused.",
             "",
             "The ground in the area is covered with slick ice, making it difficult terrain. When a creature enters the spell's area for the first time on a turn or starts its turn there, it must make a Dexterity saving throw. On a failed save, it falls prone.",
             "",
@@ -6592,7 +6592,7 @@ var spell = [{
         "duration": "Instantaneous",
         "classes": "Sorcerer, Wizard, Fighter (Eldritch Knight)",
         "text": [
-            "A flurry of magic snowballs erupts from a point you choose within range. Each creature in a 5-foot-radius sphere centered on that point must make a Dexterity saving throw. A creature takes 3d6 cold damage on a failed save, or half as much damage on a successful one.",
+            "A flurry of magic snowballs erupts from a point +you choose within range. Each creature in a 5-foot-radius sphere centered on that point +must make a Dexterity saving throw. A creature takes 3d6 cold damage on a failed save, or half as much damage on a successful one.",
             "",
             "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.",
             "",
@@ -6680,7 +6680,7 @@ var spell = [{
         "duration": "Concentration, up to 10 minutes",
         "classes": "Cleric (Nature), Druid, Druid (Arctic), Druid (Mountain), Ranger",
         "text": [
-            "The ground in a 20-foot radius centered on a point within range twists and sprouts hard spikes and thorns. The area becomes difficult terrain for the duration. When a creature moves into or within the area, it takes 2d4 piercing damage for every 5 feet it travels.",
+            "The ground in a 20-foot radius centered on a point +within range twists and sprouts hard spikes and thorns. The area becomes difficult terrain for the duration. When a creature moves into or within the area, it takes 2d4 piercing damage for every 5 feet it travels.",
             "",
             "The transformation of the ground is camouflaged to look natural. Any creature that can't see the area at the time the spell is case must make a Wisdom (Perception) check against your spell save DC to recognize the terrain as hazardous before entering it."
         ],
@@ -6749,7 +6749,7 @@ var spell = [{
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Druid (Swamp), Druid (Underdark), Sorcerer, Warlock (Fiend), Wizard",
         "text": [
-            "You create a 20-foot-radius sphere of yellow, nauseating gas centered on a point within range. The cloud spreads around corners, and its area is heavily obscured. The cloud lingers in the air for the duration.",
+            "You create a 20-foot-radius sphere of yellow, nauseating gas centered on a point +within range. The cloud spreads around corners, and its area is heavily obscured. The cloud lingers in the air for the duration.",
             "",
             "Each creature that is completely within the cloud at the start of its turn must make a Constitution saving throw against poison. On a failed save, the creature spends its action that turn retching and reeling. Creatures that don't need to breathe or are immune to poison automatically succeed on this saving throw.",
             "",
@@ -6788,7 +6788,7 @@ var spell = [{
         "duration": "Concentration, up to 1 minute",
         "classes": "Sorcerer, Wizard, Fighter (Eldritch Knight)",
         "text": [
-            "A 20-foot-radius sphere of whirling air springs into existence centered on a point you choose within range. The sphere remains for the spell's duration. Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take 2d6 bludgeoning damage. The sphere's space is difficult terrain.",
+            "A 20-foot-radius sphere of whirling air springs into existence centered on a point +you choose within range. The sphere remains for the spell's duration. Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take 2d6 bludgeoning damage. The sphere's space is difficult terrain.",
             "",
             "Until the spell ends, you can use a bonus action on each of your turns to cause a bolt of lightning to leap from the center of the sphere toward one creature you choose within 60 feet of the center. Make a ranged spell attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4d6 lightning damage.",
             "",
@@ -6814,7 +6814,7 @@ var spell = [{
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid",
         "text": [
-            "A churning storm cloud forms, centered on a point you can see and spreading to a radius of 360 feet. Lightning flashes in the area, thunder booms, and strong winds roar. Each creature under the cloud (no more than 5,000 feet beneath the cloud) when it appears must make a Constitution saving throw. On a failed save, a creature takes 2d6 thunder damage and becomes deafened for 5 minutes.",
+            "A churning storm cloud forms, centered on a point +you can see and spreading to a radius of 360 feet. Lightning flashes in the area, thunder booms, and strong winds roar. Each creature under the cloud (no more than 5,000 feet beneath the cloud) when it appears must make a Constitution saving throw. On a failed save, a creature takes 2d6 thunder damage and becomes deafened for 5 minutes.",
             "",
             "Each round you maintain concentration on this spell, the storm produces additional effects on your turn.",
             "",
@@ -6879,7 +6879,7 @@ var spell = [{
         "duration": "Instantaneous",
         "classes": "Druid, Sorcerer, Wizard",
         "text": [
-            "Brilliant sunlight flashes in a 60-foot radius centered on a point you choose within range. Each creature in that light must make a Constitution saving throw. On a failed save, a creature takes 12d6 radiant damage and is blinded for 1 minute. On a successful save, it takes half as much damage and isn't blinded by this spell. Undead and oozes have disadvantage on this saving throw.",
+            "Brilliant sunlight flashes in a 60-foot radius centered on a point +you choose within range. Each creature in that light must make a Constitution saving throw. On a failed save, a creature takes 12d6 radiant damage and is blinded for 1 minute. On a successful save, it takes half as much damage and isn't blinded by this spell. Undead and oozes have disadvantage on this saving throw.",
             "",
             "A creature blinded by this spell makes another Constitution saving throw at the end of each of its turns. On a successful save, it is no longer blinded.",
             "",
@@ -7103,7 +7103,7 @@ var spell = [{
             "",
             "• You cause harmless tremors in the ground for 1 minute.",
             "",
-            "• You create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers.",
+            "• You create an instantaneous sound that originates from a point +of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers.",
             "",
             "• You instantaneously cause an unlocked door or window to fly open or slam shut.",
             "",
@@ -7290,7 +7290,7 @@ var spell = [{
         "duration": "Concentration, up to 1 hour",
         "classes": "Bard, Warlock, Wizard",
         "text": [
-            "Choose one creature with at least 1 hit point or nonmagical object that you can see within range. You transform the creature into a different creature, the creature into an object, or the object into a creature (the object must be neither worn nor carried by another creature). The transformation lasts for the duration, or until the target drops to 0 hit points or dies. If you concentrate on this spell for the full duration, the transformation becomes permanent.",
+            "Choose one creature with at least 1 hit point +or nonmagical object that you can see within range. You transform the creature into a different creature, the creature into an object, or the object into a creature (the object must be neither worn nor carried by another creature). The transformation lasts for the duration, or until the target drops to 0 hit points or dies. If you concentrate on this spell for the full duration, the transformation becomes permanent.",
             "",
             "Shapechangers aren't affected by this spell. An unwilling creature can make a Wisdom saving throw, and if it succeeds, it isn't affected by this spell.",
             "",
@@ -7346,7 +7346,7 @@ var spell = [{
         "components": "S",
         "duration": "Concentration, up to 1 round",
         "classes": "Bard, Sorcerer, Warlock, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
-        "text": "You extend your hand and point a finger at a target in range. Your magic grants you a brief insight into the target's defenses. On your next turn, you gain advantage on your first attack roll against the target, provided that this spell hasn't ended."
+        "text": "You extend your hand and point +a finger at a target in range. Your magic grants you a brief insight into the target's defenses. On your next turn, you gain advantage on your first attack roll against the target, provided that this spell hasn't ended."
     },
     {
         "name": "Tsunami",
@@ -7358,7 +7358,7 @@ var spell = [{
         "duration": "Concentration, up to 6 rounds",
         "classes": "Druid",
         "text": [
-            "A wall of water springs into existence at a point you choose within range. You can make the wall up to 300 feet long, 300 feet high, and 50 feet thick. The wall lasts for the duration.",
+            "A wall of water springs into existence at a point +you choose within range. You can make the wall up to 300 feet long, 300 feet high, and 50 feet thick. The wall lasts for the duration.",
             "",
             "When the wall appears, each creature within its area must make a Strength saving throw. On a failed save, a creature takes 6d10 bludgeoning damage, or half as much damage on a successful save.",
             "",
@@ -7443,7 +7443,7 @@ var spell = [{
         "duration": "Instantaneous",
         "classes": "Sorcerer, Wizard, Fighter (Eldritch Knight)",
         "text": [
-            "You point at a place within range, and a glowing 1-foot ball of emerald acid streaks there and explodes in a 20-foot radius. Each creature in that area must make a Dexterity saving throw. On a failed save, a creature takes 10d4 acid damage and 5d4 acid damage at the end of its next turn. On a successful save, a creature takes half the initial damage and no damage at the end of its next turn.",
+            "You point +at a place within range, and a glowing 1-foot ball of emerald acid streaks there and explodes in a 20-foot radius. Each creature in that area must make a Dexterity saving throw. On a failed save, a creature takes 10d4 acid damage and 5d4 acid damage at the end of its next turn. On a successful save, a creature takes half the initial damage and no damage at the end of its next turn.",
             "",
             "<emph>At Higher Levels:</emph> When you cast this spell using a spell slot of 5th level or higher, the initial damage increases by 2d4 for each slot level above 4th.",
             "",
@@ -7484,7 +7484,7 @@ var spell = [{
         "duration": "Concentration, up to 10 minutes",
         "classes": "Wizard",
         "text": [
-            "An invisible wall of force springs into existence at a point you choose within range. The wall appears in any orientation you choose, as a horizontal or vertical barrier or at an angle. It can be free floating or resting on a solid surface. You can form it into a hemispherical dome or a sphere with a radius of up to 10 feet, or you can shape a flat surface made up of ten 10-foot-by-10-foot panels. Each panel must be contiguous with another panel. In any form, the wall is 1/4 inch thick. It lasts for the duration. If the wall cuts through a creature's space when it appears, the creature is pushed to one side of the wall (your choice which side).",
+            "An invisible wall of force springs into existence at a point +you choose within range. The wall appears in any orientation you choose, as a horizontal or vertical barrier or at an angle. It can be free floating or resting on a solid surface. You can form it into a hemispherical dome or a sphere with a radius of up to 10 feet, or you can shape a flat surface made up of ten 10-foot-by-10-foot panels. Each panel must be contiguous with another panel. In any form, the wall is 1/4 inch thick. It lasts for the duration. If the wall cuts through a creature's space when it appears, the creature is pushed to one side of the wall (your choice which side).",
             "",
             "Nothing can physically pass through the wall. It is immune to all damage and can't be dispelled by dispel magic. A disintegrate spell destroys the wall instantly, however. The wall also extends into the Ethereal Plane, blocking ethereal travel through the wall."
         ]
@@ -7522,7 +7522,7 @@ var spell = [{
         "duration": "Concentration, up to 10 minutes",
         "classes": "Wizard, Fighter (Eldritch Knight)",
         "text": [
-            "You conjure up a wall of swirling sand on the ground at a point you can see within range. You can make the wall up to 30 feet long, 10 feet high, and 10 feet thick, and it vanishes when the spell ends. It blocks line of sight but not movement. A creature is blinded while in the wall's space and must spend 3 feet of movement for every 1 foot it moves there.",
+            "You conjure up a wall of swirling sand on the ground at a point +you can see within range. You can make the wall up to 30 feet long, 10 feet high, and 10 feet thick, and it vanishes when the spell ends. It blocks line of sight but not movement. A creature is blinded while in the wall's space and must spend 3 feet of movement for every 1 foot it moves there.",
             "",
             "This spell can be found in the Elemental Evil Player's Companion"
         ]
@@ -7537,7 +7537,7 @@ var spell = [{
         "duration": "Concentration, up to 10 minutes",
         "classes": "Druid, Druid (Desert), Druid (Mountain), Sorcerer, Wizard",
         "text": [
-            "A nonmagical wall of solid stone springs into existence at a point you choose within range. The wall is 6 inches thick and is composed of ten 10-foot-by-10-foot panels. Each panel must be contiguous with at least on other panel. Alternatively, you can create 10-foot-by-20-foot panels that are only 3 inches thick.",
+            "A nonmagical wall of solid stone springs into existence at a point +you choose within range. The wall is 6 inches thick and is composed of ten 10-foot-by-10-foot panels. Each panel must be contiguous with at least on other panel. Alternatively, you can create 10-foot-by-20-foot panels that are only 3 inches thick.",
             "",
             "If the wall cuts through a creature's space when it appears, the creature is pushed to one side of the wall (your choice). If a creature would be surrounded on all sides by the wall (or the wall and another solid surface), that creature can make a Dexterity saving throw. On a success, it can use its reaction to move up to its speed so that it is no longer enclosed by the wall.",
             "",
@@ -7580,7 +7580,7 @@ var spell = [{
         "duration": "Concentration, up to 10 minutes",
         "classes": "Druid, Sorcerer, Wizard, Fighter (Eldritch Knight)",
         "text": [
-            "You conjure up a wall of water on the ground at a point you can see within range. You can make the wall up to 30 feet long, 10 feet high, and 1 foot thick, or you can make a ringed wall up to 20 feet in diameter, 20 feet high, and 1 foot thick. The wall vanishes when the spell ends. The wall's space is difficult terrain.",
+            "You conjure up a wall of water on the ground at a point +you can see within range. You can make the wall up to 30 feet long, 10 feet high, and 1 foot thick, or you can make a ringed wall up to 20 feet in diameter, 20 feet high, and 1 foot thick. The wall vanishes when the spell ends. The wall's space is difficult terrain.",
             "",
             "Any ranged weapon attack that enters the wall's space has disadvantage on the attack roll, and fire damage is halved if the fire effect passes through the wall to reach its target. Spells that deal cold damage that pass through the wall cause the area of the wall they pass through to freeze solid (at least a 5-foot square section is frozen). Each 5-foot-square frozen section has AC 5 and 15 hit points. Reducing a frozen section to 0 hit points destroys it. When a section is destroyed, the wall's water doesn't fill it.",
             "",
@@ -7667,7 +7667,7 @@ var spell = [{
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid, Sorcerer, Wizard",
         "text": [
-            "You conjure up a sphere of water with a 10-foot radius on a point you can see within range. The sphere can hover in the air, but no more than 10 feet off the ground. The sphere remains for the spell's duration.",
+            "You conjure up a sphere of water with a 10-foot radius on a point +you can see within range. The sphere can hover in the air, but no more than 10 feet off the ground. The sphere remains for the spell's duration.",
             "",
             "Any creature in the sphere's space must make a Strength saving throw. On a successful save, a creature is ejected from that space to the nearest unoccupied space outside it. A Huge or larger creature succeeds on the saving throw automatically. On a failed save, a creature is restrained by the sphere and is engulfed by the water. At the end of each of its turns, a restrained target can repeat the saving throw.",
             "",
@@ -7690,7 +7690,7 @@ var spell = [{
         "duration": "Concentration, up to 1 hour",
         "classes": "Druid (Underdark), Sorcerer, Wizard",
         "text": [
-            "You conjure a mass of thick, sticky webbing at a point of your choice within range. The webs fill a 20-foot cube from that point for the duration. The webs are difficult terrain and lightly obscure their area.",
+            "You conjure a mass of thick, sticky webbing at a point +of your choice within range. The webs fill a 20-foot cube from that point +for the duration. The webs are difficult terrain and lightly obscure their area.",
             "",
             "If the webs aren't anchored between two solid masses (such as walls or trees) or layered across a floor, wall, or ceiling, the conjured web collapses on itself, and the spell ends at the start of your next turn. Webs layered over a flat surface have a depth of 5 feet.",
             "",
@@ -7711,7 +7711,7 @@ var spell = [{
         "components": "V, S",
         "duration": "Concentration, up to 1 minute",
         "classes": "Wizard, Rogue (Arcane Trickster)",
-        "text": "Drawing on the deepest fears of a group of creatures, you create illusory creatures in their minds, visible only to them. Each creature in a 30-foot-radius sphere centered on a point of your choice within range must make a Wisdom saving throw. On a failed save, a creature becomes frightened for the duration. The illusion calls on the creature's deepest fears, manifesting its worst nightmares as an implacable threat. At the end of each of the frightened creature's turns, it must succeed on a Wisdom saving throw or take 4d10 psychic damage. On a successful save, the spell ends for that creature.",
+        "text": "Drawing on the deepest fears of a group of creatures, you create illusory creatures in their minds, visible only to them. Each creature in a 30-foot-radius sphere centered on a point +of your choice within range must make a Wisdom saving throw. On a failed save, a creature becomes frightened for the duration. The illusion calls on the creature's deepest fears, manifesting its worst nightmares as an implacable threat. At the end of each of the frightened creature's turns, it must succeed on a Wisdom saving throw or take 4d10 psychic damage. On a successful save, the spell ends for that creature.",
         "roll": "4d10"
     },
     {
@@ -7724,7 +7724,7 @@ var spell = [{
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid, Wizard",
         "text": [
-            "A whirlwind howls down to a point on the ground you specify. The whirlwind is a 10-foot-radius, 30-foot-high cylinder centered on that point. Until the spell ends, you can use your action to move the whirlwind up to 30 feet in any direction along the ground. The whirlwind sucks up any Medium or smaller objects that aren't secured to anything and that aren't worn or carried by anyone.",
+            "A whirlwind howls down to a point +on the ground you specify. The whirlwind is a 10-foot-radius, 30-foot-high cylinder centered on that point. Until the spell ends, you can use your action to move the whirlwind up to 30 feet in any direction along the ground. The whirlwind sucks up any Medium or smaller objects that aren't secured to anything and that aren't worn or carried by anyone.",
             "",
             "A creature must make a Dexterity saving throw the first time on a turn that it enters the whirlwind or that the whirlwind enters its space, including when the whirlwind first appears. A creature takes 10d6 bludgeoning damage on a failed save, or half as much damage on a successful one. In addition, a Large or smaller creature that fails the save must succeed on a Strength saving throw or become restrained in the whirlwind until the spell ends. When a creature starts its turn restrained by the whirlwind, the creature is pulled 5 feet higher inside it, unless the creature is at the top. A restrained creature moves with the whirlwind and falls when the spell ends, unless the creature has some means to stay aloft.",
             "",
@@ -7763,7 +7763,7 @@ var spell = [{
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric (Nature), Druid, Ranger",
         "text": [
-            "A wall of strong wind rises from the ground at a point you choose within range. You can make the wall up to 50 feet long, 15 feet high, and 1 foot thick. You can shape the wall in any way you choose so long as it makes one continuous path along the ground. The wall lasts for the duration.",
+            "A wall of strong wind rises from the ground at a point +you choose within range. You can make the wall up to 50 feet long, 15 feet high, and 1 foot thick. You can shape the wall in any way you choose so long as it makes one continuous path along the ground. The wall lasts for the duration.",
             "",
             "When the wall appears, each creature within its area must make a Strength saving throw. A creature takes 3d8 bludgeoning damage on a failed save, or half as much damage on a successful one.",
             "",
@@ -7857,7 +7857,7 @@ var spell = [{
         "duration": "10 minutes",
         "classes": "Bard, Cleric, Paladin, Paladin (Devotion), Paladin (Crown)",
         "text": [
-            "You create a magical zone that guards against deception in a 15-foot-radius sphere centered on a point of your choice within range. Until the spell ends, a creature that enters the spell's area for the first time on a turn or starts its turn there must make a Charisma saving throw. On a failed save, a creature can't speak a deliberate lie while in the radius. You know whether each creature succeeds or fails on its saving throw.",
+            "You create a magical zone that guards against deception in a 15-foot-radius sphere centered on a point +of your choice within range. Until the spell ends, a creature that enters the spell's area for the first time on a turn or starts its turn there must make a Charisma saving throw. On a failed save, a creature can't speak a deliberate lie while in the radius. You know whether each creature succeeds or fails on its saving throw.",
             "",
             "An affected creature is aware of the spell and can thus avoid answering questions to which it would normally respond with a lie. Such creatures can be evasive in its answers as long as it remains within the boundaries of the truth."
         ]
@@ -7948,18 +7948,18 @@ var feat = [{
     },
     {
         "name": "Dragonmark of Detection",
-        "prerequisite": "half-elf",
+        "prerequisite": "Half-Elf",
         "text": [
             "Your have the magical mark of Detection, the dragonmark of House Medani, and are a member of that house.",
             "You gain the ability to innately cast spells and cantrips, using Wisdom as your spellcasting ability. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:",
             "",
-            "Least Dragonmark.",
+            "<emph>Least Dragonmark.</emph>",
             "When you first take this feat, you gain the least dragonmark. You learn the following spells: detect magic, mage hand",
             "",
-            "Lesser Dragonmark.",
+            "<emph>Lesser Dragonmark.</emph>",
             "At 5th level and higher, your mark becomes more potent, improving to lesser dragonmark. You learn the following spell: detect thoughts",
             "",
-            "Greater Dragonmark.",
+            "<emph>Greater Dragonmark.</emph>",
             "At 9th level and higher, your mark's power increases again, becoming a greater dragonmark. You learn the following spell: clairvoyance",
             "",
             "Source: Unearthed Arcana - Eberron, page 5"
@@ -7967,18 +7967,18 @@ var feat = [{
     },
     {
         "name": "Dragonmark of Finding",
-        "prerequisite": "half-orc or human",
+        "prerequisite": "Half-Orc or Human",
         "text": [
             "Your have the magical mark of Finding, the dragonmark of House Tharashk, and are a member of that house.",
             "You gain the ability to innately cast spells and cantrips, using Wisdom as your spellcasting ability. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:",
             "",
-            "Least Dragonmark.",
+            "<emph>Least Dragonmark.</emph>",
             "When you first take this feat, you gain the least dragonmark. You learn the following spells: identify, mage hand",
             "",
-            "Lesser Dragonmark.",
+            "<emph>Lesser Dragonmark.</emph>",
             "At 5th level and higher, your mark becomes more potent, improving to lesser dragonmark. You learn the following spell: locate object",
             "",
-            "Greater Dragonmark.",
+            "<emph>Greater Dragonmark.</emph>",
             "At 9th level and higher, your mark's power increases again, becoming a greater dragonmark. You learn the following spell: clairvoyance",
             "",
             "Source: Unearthed Arcana - Eberron, page 5"
@@ -7986,18 +7986,18 @@ var feat = [{
     },
     {
         "name": "Dragonmark of Handling",
-        "prerequisite": "human",
+        "prerequisite": "Human",
         "text": [
             "Your have the magical mark of Handling, the dragonmark of House Vadalis, and are a member of that house.",
             "You gain the ability to innately cast spells and cantrips, using Wisdom as your spellcasting ability. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:",
             "",
-            "Least Dragonmark.",
+            "<emph>Least Dragonmark.</emph>",
             "When you first take this feat, you gain the least dragonmark. You learn the following spells: druidcraft, speak with animals",
             "",
-            "Lesser Dragonmark.",
+            "<emph>Lesser Dragonmark.</emph>",
             "At 5th level and higher, your mark becomes more potent, improving to lesser dragonmark. You learn the following spell: beast sense",
             "",
-            "Greater Dragonmark.",
+            "<emph>Greater Dragonmark.</emph>",
             "At 9th level and higher, your mark's power increases again, becoming a greater dragonmark. You learn the following spell: conjure animals",
             "",
             "Source: Unearthed Arcana - Eberron, page 5"
@@ -8005,18 +8005,18 @@ var feat = [{
     },
     {
         "name": "Dragonmark of Healing",
-        "prerequisite": "halfling",
+        "prerequisite": "Halfling",
         "text": [
             "Your have the magical mark of Healing, the dragonmark of House Jorasco, and are a member of that house.",
             "You gain the ability to innately cast spells and cantrips, using Wisdom as your spellcasting ability. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:",
             "",
-            "Least Dragonmark.",
+            "<emph>Least Dragonmark.</emph>",
             "When you first take this feat, you gain the least dragonmark. You learn the following spells: cure wounds, spare the dying",
             "",
-            "Lesser Dragonmark.",
+            "<emph>Lesser Dragonmark.</emph>",
             "At 5th level and higher, your mark becomes more potent, improving to lesser dragonmark. You learn the following spell: lesser restoration",
             "",
-            "Greater Dragonmark.",
+            "<emph>Greater Dragonmark.</emph>",
             "At 9th level and higher, your mark's power increases again, becoming a greater dragonmark. You learn the following spell: revivify",
             "",
             "Source: Unearthed Arcana - Eberron, page 5"
@@ -8024,18 +8024,18 @@ var feat = [{
     },
     {
         "name": "Dragonmark of Hospitality",
-        "prerequisite": "halfling",
+        "prerequisite": "Halfling",
         "text": [
             "Your have the magical mark of Hospitality, the dragonmark of House Ghallanda, and are a member of that house.",
             "You gain the ability to innately cast spells and cantrips, using Charisma as your spellcasting ability. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:",
             "",
-            "Least Dragonmark.",
+            "<emph>Least Dragonmark.</emph>",
             "When you first take this feat, you gain the least dragonmark. You learn the following spells: friends, unseen servant",
             "",
-            "Lesser Dragonmark.",
+            "<emph>Lesser Dragonmark.</emph>",
             "At 5th level and higher, your mark becomes more potent, improving to lesser dragonmark. You learn the following spell: rope trick",
             "",
-            "Greater Dragonmark.",
+            "<emph>Greater Dragonmark.</emph>",
             "At 9th level and higher, your mark's power increases again, becoming a greater dragonmark. You learn the following spell: Leomund's tiny hut",
             "",
             "Source: Unearthed Arcana - Eberron, page 5"
@@ -8043,18 +8043,18 @@ var feat = [{
     },
     {
         "name": "Dragonmark of Making",
-        "prerequisite": "human",
+        "prerequisite": "Human",
         "text": [
             "Your have the magical mark of Making, the dragonmark of House Cannith, and are a member of that house.",
             "You gain the ability to innately cast spells and cantrips, using Intelligence as your spellcasting ability. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:",
             "",
-            "Least Dragonmark.",
+            "<emph>Least Dragonmark.</emph>",
             "When you first take this feat, you gain the least dragonmark. You learn the following spells: identify, mending",
             "",
-            "Lesser Dragonmark.",
+            "<emph>Lesser Dragonmark.</emph>",
             "At 5th level and higher, your mark becomes more potent, improving to lesser dragonmark. You learn the following spell: magic weapon",
             "",
-            "Greater Dragonmark.",
+            "<emph>Greater Dragonmark.</emph>",
             "At 9th level and higher, your mark's power increases again, becoming a greater dragonmark. You learn the following spell: fabricate",
             "",
             "Source: Unearthed Arcana - Eberron, page 5"
@@ -8062,18 +8062,18 @@ var feat = [{
     },
     {
         "name": "Dragonmark of Passage",
-        "prerequisite": "human",
+        "prerequisite": "Human",
         "text": [
             "Your have the magical mark of Passage, the dragonmark of House Orien, and are a member of that house.",
             "You gain the ability to innately cast spells and cantrips, using Intelligence as your spellcasting ability. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:",
             "",
-            "Least Dragonmark.",
+            "<emph>Least Dragonmark.</emph>",
             "When you first take this feat, you gain the least dragonmark. You learn the following spells: expeditious retreat, light",
             "",
-            "Lesser Dragonmark.",
+            "<emph>Lesser Dragonmark.</emph>",
             "At 5th level and higher, your mark becomes more potent, improving to lesser dragonmark. You learn the following spell: misty step",
             "",
-            "Greater Dragonmark.",
+            "<emph>Greater Dragonmark.</emph>",
             "At 9th level and higher, your mark's power increases again, becoming a greater dragonmark. You learn the following spell: teleportation circle",
             "",
             "Source: Unearthed Arcana - Eberron, page 5"
@@ -8081,18 +8081,18 @@ var feat = [{
     },
     {
         "name": "Dragonmark of Scribing",
-        "prerequisite": "gnome",
+        "prerequisite": "Gnome",
         "text": [
             "Your have the magical mark of Scribing, the dragonmark of House Sivis, and are a member of that house.",
             "You gain the ability to innately cast spells and cantrips, using Intelligence as your spellcasting ability. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:",
             "",
-            "Least Dragonmark.",
+            "<emph>Least Dragonmark.</emph>",
             "When you first take this feat, you gain the least dragonmark. You learn the following spells: comprehend languages, message",
             "",
-            "Lesser Dragonmark.",
+            "<emph>Lesser Dragonmark.</emph>",
             "At 5th level and higher, your mark becomes more potent, improving to lesser dragonmark. You learn the following spell: sending",
             "",
-            "Greater Dragonmark.",
+            "<emph>Greater Dragonmark.</emph>",
             "At 9th level and higher, your mark's power increases again, becoming a greater dragonmark. You learn the following spell: tongues",
             "",
             "Source: Unearthed Arcana - Eberron, page 5"
@@ -8100,18 +8100,18 @@ var feat = [{
     },
     {
         "name": "Dragonmark of Sentinel",
-        "prerequisite": "human",
+        "prerequisite": "Human",
         "text": [
             "Your have the magical mark of Sentinel, the dragonmark of House Deneith, and are a member of that house.",
             "You gain the ability to innately cast spells and cantrips, using Wisdom as your spellcasting ability. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:",
             "",
-            "Least Dragonmark.",
+            "<emph>Least Dragonmark.</emph>",
             "When you first take this feat, you gain the least dragonmark. You learn the following spells: blade ward, compelled duel",
             "",
-            "Lesser Dragonmark.",
+            "<emph>Lesser Dragonmark.</emph>",
             "At 5th level and higher, your mark becomes more potent, improving to lesser dragonmark. You learn the following spell: blur",
             "",
-            "Greater Dragonmark.",
+            "<emph>Greater Dragonmark.</emph>",
             "At 9th level and higher, your mark's power increases again, becoming a greater dragonmark. You learn the following spell: protection from energy",
             "",
             "Source: Unearthed Arcana - Eberron, page 5"
@@ -8119,18 +8119,18 @@ var feat = [{
     },
     {
         "name": "Dragonmark of Shadow",
-        "prerequisite": "elf",
+        "prerequisite": "Elf",
         "text": [
             "Your have the magical mark of Shadow, the dragonmark of House Phiarlan and House Thuranni, and are a member of one of those houses.",
             "You gain the ability to innately cast spells and cantrips, using Charisma as your spellcasting ability. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:",
             "",
-            "Least Dragonmark.",
+            "<emph>Least Dragonmark.</emph>",
             "When you first take this feat, you gain the least dragonmark. You learn the following spells: dancing lights, disguise self",
             "",
-            "Lesser Dragonmark.",
+            "<emph>Lesser Dragonmark.</emph>",
             "At 5th level and higher, your mark becomes more potent, improving to lesser dragonmark. You learn the following spell: darkness",
             "",
-            "Greater Dragonmark.",
+            "<emph>Greater Dragonmark.</emph>",
             "At 9th level and higher, your mark's power increases again, becoming a greater dragonmark. You learn the following spell: nondetection",
             "",
             "Source: Unearthed Arcana - Eberron, page 5"
@@ -8138,18 +8138,18 @@ var feat = [{
     },
     {
         "name": "Dragonmark of Storm",
-        "prerequisite": "half-elf",
+        "prerequisite": "Half-Elf",
         "text": [
             "Your have the magical mark of Storm, the dragonmark of House Lyrander, and are a member of that house.",
             "You gain the ability to innately cast spells and cantrips, using Intelligence as your spellcasting ability. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:",
             "",
-            "Least Dragonmark.",
+            "<emph>Least Dragonmark.</emph>",
             "When you first take this feat, you gain the least dragonmark. You learn the following spells: fog cloud, shocking grasp",
             "",
-            "Lesser Dragonmark.",
+            "<emph>Lesser Dragonmark.</emph>",
             "At 5th level and higher, your mark becomes more potent, improving to lesser dragonmark. You learn the following spell: gust of wind",
             "",
-            "Greater Dragonmark.",
+            "<emph>Greater Dragonmark.</emph>",
             "At 9th level and higher, your mark's power increases again, becoming a greater dragonmark. You learn the following spell: sleet storm",
             "",
             "Source: Unearthed Arcana - Eberron, page 5"
@@ -8157,18 +8157,18 @@ var feat = [{
     },
     {
         "name": "Dragonmark of Warding",
-        "prerequisite": "dwarf",
+        "prerequisite": "Dwarf",
         "text": [
             "Your have the magical mark of Warding, the dragonmark of House Kundarak, and are a member of that house.",
             "You gain the ability to innately cast spells and cantrips, using Intelligence as your spellcasting ability. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:",
             "",
-            "Least Dragonmark.",
+            "<emph>Least Dragonmark.</emph>",
             "When you first take this feat, you gain the least dragonmark. You learn the following spells: alarm, resistance",
             "",
-            "Lesser Dragonmark.",
+            "<emph>Lesser Dragonmark.</emph>",
             "At 5th level and higher, your mark becomes more potent, improving to lesser dragonmark. You learn the following spell: arcane lock",
             "",
-            "Greater Dragonmark.",
+            "<emph>Greater Dragonmark.</emph>",
             "At 9th level and higher, your mark's power increases again, becoming a greater dragonmark. You learn the following spell: magic circle",
             "",
             "Source: Unearthed Arcana - Eberron, page 5"
@@ -8306,7 +8306,7 @@ var feat = [{
     },
     {
         "name": "Inspiring Leader",
-        "prerequisite": "CHA 13",
+        "prerequisite": "CHA +13",
         "text": [
             "You can spend 10 minutes inspiring your companions, shoring up their resolve to fight. When you do so, choose up to six friendly creatures (which can include yourself) within 30 feet of you who can see or hear you and who can understand you. Each creature can gain temporary hit points equal to your level + your Charisma modifier. A creature can't gain temporary hit points from this feat again until it has finished a short or long rest.",
             "",
@@ -8368,9 +8368,9 @@ var feat = [{
         "text": [
             "You have inexplicable luck that seems to kick in at just the right moment.",
             "",
-            "You have 3 luck points. Whenever you make an attack roll, an ability check, or a saving throw, you can spend one luck point to roll an additional d20. You can choose to spend one of your luck points after you roll the die, but before the outcome is determined. You choose which of the d20s is used for the attack roll, ability check, or saving throw.",
+            "You have 3 luck points. Whenever you make an attack roll, an ability check, or a saving throw, you can spend one luck point +to roll an additional d20. You can choose to spend one of your luck points after you roll the die, but before the outcome is determined. You choose which of the d20s is used for the attack roll, ability check, or saving throw.",
             "",
-            "You can also spend one luck point when an attack roll is made against you. Roll a d20, and then choose whether the attack uses the attacker's roll or yours. If more than one creature spends a luck point to influence the outcome of a roll, the points cancel each other out; no additional dice are rolled.",
+            "You can also spend one luck point +when an attack roll is made against you. Roll a d20, and then choose whether the attack uses the attacker's roll or yours. If more than one creature spends a luck point +to influence the outcome of a roll, the points cancel each other out; no additional dice are rolled.",
             "",
             "You regain your expended luck points when you finish a long rest.",
             "",
@@ -8642,7 +8642,7 @@ var feat = [{
     {
         "name": "Tough",
         "text": [
-            "Your hit point maximum increases by an amount equal to twice your level when you gain this feat. Whenever you gain a level thereafter, your hit point maximum increases by an additional 2 hit points.",
+            "Your hit point +maximum increases by an amount equal to twice your level when you gain this feat. Whenever you gain a level thereafter, your hit point +maximum increases by an additional 2 hit points.",
             "",
             "Source: Player's Handbook, page 170"
         ]
@@ -8675,8 +8675,6 @@ var feat = [{
         ]
     }
 ];
-
-
 
 var magicItems = [{
         "name": "Adamantine Breastplate",
@@ -8781,7 +8779,7 @@ var magicItems = [{
         ]
     },
     {
-        "name": "Adamantine Splint Armor",
+        "name": "Adamantine Splint +Armor",
         "type": "Heavy Armor",
         "magic": "1",
         "weight": "60",
@@ -8881,7 +8879,7 @@ var magicItems = [{
         "text": [
 
             "Requires Attunement",
-            "While holding this shield, you can speak its command word as a bonus action to cause it to animate. The shield leaps into the air and hovers in your space to protect you as if you were wielding it, leaving your hands free. The shield remains animated for 1 minute, until you use a bonus action to end this effect, or until you are incapacitated or die, at which point the shield falls to the ground or into your hand if you have one free."
+            "While holding this shield, you can speak its command word as a bonus action to cause it to animate. The shield leaps into the air and hovers in your space to protect you as if you were wielding it, leaving your hands free. The shield remains animated for 1 minute, until you use a bonus action to end this effect, or until you are incapacitated or die, at which point +the shield falls to the ground or into your hand if you have one free."
         ]
     },
     {
@@ -9274,8 +9272,8 @@ var magicItems = [{
         "name": "Balance of Harmony",
         "type": "Wondrous Item",
         "magic": "1",
-        "rarity": "uncommon",
-        "detail": "uncommon",
+        "rarity": "Uncommon",
+        "detail": "Uncommon",
         "text": [
             "This scale bears celestial symbols on one pan and fiendish symbols on the other. You can use the scale to cast detect evil and good as a ritual. Doing so requires you to place the scale on a solid surface, then sprinkle the pans with holy water or place a transparent gem worth 100 gp in each pan. The scale remains motionless if it detects nothing, tips to one side or the other for good (consecrated) or evil (desecrated), and fluctuates slightly if it detects a creature appropriate to the spell but neither good nor evil. By touching the scales after casting the ritual, you instantly learn any information the spell can normally convey, and then the effect ends."
         ]
@@ -9302,7 +9300,7 @@ var magicItems = [{
             "Mark of Courage: As a bonus action, you can touch the unfurled banner and cause it to emanate courage. You and your allies are immune to the frightened condition while within 20 feet of it. This beneﬁt lasts for 10 minutes or until the banner is furled. Once you use this property, you can’t use it again until you ﬁnish a short or long rest.",
             "Sentinel Standard: You can see invisible creatures while they are within 20 feet of the unfurled banner and within your line of sight.",
             "Standard's Shield: As a bonus action, you can touch the unfurled banner and invoke this power. Any ranged attack roll that targets you or an ally of yours has disadvantage if the target is within 20 feet of the unfurled banner. This beneﬁt lasts for 1 minute or until the banner is furled. Once you use this property, you can’t use it again until you ﬁnish a short or long rest.",
-            "Gift of Battle: You can transfer the banner’s magic to a place by tracing the krig rune on the ground with your ﬁnger The point where you trace it becomes the center of a spherical area of magic that has a 500-foot radius and that is ﬁxed to the place. The transfer takes 8 hours of work that requires the banner to be within 5 feet of you and during which you choose creatures, creature types, or both that will beneﬁt from the magic. At the end, the banner is destroyed, and the area gains the following property:",
+            "Gift of Battle: You can transfer the banner’s magic to a place by tracing the krig rune on the ground with your ﬁnger The point +where you trace it becomes the center of a spherical area of magic that has a 500-foot radius and that is ﬁxed to the place. The transfer takes 8 hours of work that requires the banner to be within 5 feet of you and during which you choose creatures, creature types, or both that will beneﬁt from the magic. At the end, the banner is destroyed, and the area gains the following property:",
             "While in the 500-foot-radius sphere, the creatures you chose during the transfer process are immune to the frightened condition and gain a +1 bonus toattack rolls and AC."
         ],
         "rarity": "Rare"
@@ -9525,7 +9523,7 @@ var magicItems = [{
         "text": [
 
             "Requires Attunement",
-            "You gain a +1 bonus to attack and damage rolls made with this magic weapon. In addition, while you are attuned to this weapon, your hit point maximum increases by 1 for each level you have attained.",
+            "You gain a +1 bonus to attack and damage rolls made with this magic weapon. In addition, while you are attuned to this weapon, your hit point +maximum increases by 1 for each level you have attained.",
             "",
             "Curse: This axe is cursed, and becoming attuned to it extends the curse to you. As long as you remain cursed, you are unwilling to part with the axe, keeping it within reach at all times. You also have disadvantage on attack rolls with weapons other than this one, unless no foe is within 60 feet of you that you can see or hear.",
             "Whenever a hostile creature damages you while the axe is in your possession, you must succeed on a DC 15 Wisdom saving throw or go berserk. While berserk, you must use your action each round to attack the creature nearest to you with the axe. If you can make extra attacks as part of the Attack action, you use those extra attacks, moving to attack the next nearest creature after you fell your current target. If you have multiple possible targets, you attack one at random. You are berserk until you start your turn with no creatures within 60 feet of you that you can see or hear.",
@@ -9554,7 +9552,7 @@ var magicItems = [{
         "text": [
 
             "Requires Attunement",
-            "You gain a +1 bonus to attack and damage rolls made with this magic weapon. In addition, while you are attuned to this weapon, your hit point maximum increases by 1 for each level you have attained.",
+            "You gain a +1 bonus to attack and damage rolls made with this magic weapon. In addition, while you are attuned to this weapon, your hit point +maximum increases by 1 for each level you have attained.",
             "",
             "Curse: This axe is cursed, and becoming attuned to it extends the curse to you. As long as you remain cursed, you are unwilling to part with the axe, keeping it within reach at all times. You also have disadvantage on attack rolls with weapons other than this one, unless no foe is within 60 feet of you that you can see or hear.",
             "Whenever a hostile creature damages you while the axe is in your possession, you must succeed on a DC 15 Wisdom saving throw or go berserk. While berserk, you must use your action each round to attack the creature nearest to you with the axe. If you can make extra attacks as part of the Attack action, you use those extra attacks, moving to attack the next nearest creature after you fell your current target. If you have multiple possible targets, you attack one at random. You are berserk until you start your turn with no creatures within 60 feet of you that you can see or hear.",
@@ -9586,7 +9584,7 @@ var magicItems = [{
         "text": [
 
             "Requires Attunement",
-            "You gain a +1 bonus to attack and damage rolls made with this magic weapon. In addition, while you are attuned to this weapon, your hit point maximum increases by 1 for each level you have attained.",
+            "You gain a +1 bonus to attack and damage rolls made with this magic weapon. In addition, while you are attuned to this weapon, your hit point +maximum increases by 1 for each level you have attained.",
             "",
             "Curse: This axe is cursed, and becoming attuned to it extends the curse to you. As long as you remain cursed, you are unwilling to part with the axe, keeping it within reach at all times. You also have disadvantage on attack rolls with weapons other than this one, unless no foe is within 60 feet of you that you can see or hear.",
             "Whenever a hostile creature damages you while the axe is in your possession, you must succeed on a DC 15 Wisdom saving throw or go berserk. While berserk, you must use your action each round to attack the creature nearest to you with the axe. If you can make extra attacks as part of the Attack action, you use those extra attacks, moving to attack the next nearest creature after you fell your current target. If you have multiple possible targets, you attack one at random. You are berserk until you start your turn with no creatures within 60 feet of you that you can see or hear.",
@@ -9666,8 +9664,8 @@ var magicItems = [{
             "Hidden in the dungeon of White Plume Mountain, Blackrazor shines like a piece of night sky filled with stars. Its black scabbard is decorated with pieces of cut obsidian.",
             "You gain a +3 bonus to attack and damage rolls made with this magic weapon. It has the following additional properties.",
             "Devour Soul: Whenever you use it to reduce a creature to 0 hit points, the sword slays the creature devours its soul, unless it is a construct or an undead creature whose soul has been devoured by Blackrazor can be restored to life only by a wish spell.",
-            "When it devours a soul, Blackrazor grants you temporary hit points equal to the slain creature's hit point maximum. These hit points fade after 24 hours. As long as these temporary hit points last and you keep Blackrazor in hand, you have advantage on attack roll. saving throws, and ability checks.",
-            "If you hit an undead with this weapon, you take 1d10 necrotic damage and the target regains 1d10 hit point If this necrotic damage reduces you to 0 hit points, Blackrazor devours your soul.",
+            "When it devours a soul, Blackrazor grants you temporary hit points equal to the slain creature's hit point +maximum. These hit points fade after 24 hours. As long as these temporary hit points last and you keep Blackrazor in hand, you have advantage on attack roll. saving throws, and ability checks.",
+            "If you hit an undead with this weapon, you take 1d10 necrotic damage and the target regains 1d10 hit point +If this necrotic damage reduces you to 0 hit points, Blackrazor devours your soul.",
             "",
             "Soul Hunter: While you hold the weapon. you are aware of the presence of Tiny or larger creatures within 60 feet of you that aren't constructs or undead. You also can't be charmed or frightened.",
             "Blackrazor can cast the haste spell on you once per day. It decides when to cast the spell and maintains concentration on it so that you don't have to.",
@@ -10903,9 +10901,9 @@ var magicItems = [{
 
             "",
             "This dragon's claw has been covered with a coat of molten silver, upon which has been inscribed the wyrm (dragon) rune. The claw has the following properties.",
-            "Wyrmslayer: As an action, you can point the claw at a dragon within 30 feet of you. The dragon must then succeed on a DC 15 Constitution saving throw or gain vulnerability to all damage types until the end of your next turn. This property can be used three times. The claw regains all expended uses at the next dawn.",
+            "Wyrmslayer: As an action, you can point +the claw at a dragon within 30 feet of you. The dragon must then succeed on a DC 15 Constitution saving throw or gain vulnerability to all damage types until the end of your next turn. This property can be used three times. The claw regains all expended uses at the next dawn.",
             "Wyrm Shield: While the claw is displayed on your person, you have resistance to the damage caused by any dragon’s breath weapon.",
-            "Wyrm Ward: You can transfer the c1aw’s magic to a place by tracing the wyrm rune on the ground with your finger. The point where you trace it becomes the center of a spherical area of magic that has a 100-foot radius and that is ﬁxed to the place. The transfer takes 8 hours of work that requires the claw to be within 5 feet of you. At the end, the claw is destroyed, and the area gains the following property:",
+            "Wyrm Ward: You can transfer the c1aw’s magic to a place by tracing the wyrm rune on the ground with your finger. The point +where you trace it becomes the center of a spherical area of magic that has a 100-foot radius and that is ﬁxed to the place. The transfer takes 8 hours of work that requires the claw to be within 5 feet of you. At the end, the claw is destroyed, and the area gains the following property:",
             "While in the 100-foot-radius sphere, any dragon has disadvantage on saving throws and can have a ﬂying speed no higher than 10 feet."
         ],
         "rarity": "Rare"
@@ -10929,7 +10927,7 @@ var magicItems = [{
 
             "Requires Attunement",
             "",
-            "This fine garment is made of black silk interwoven with faint silvery threads. While wearing it, you gain the following benefits:",
+            "This fine garment is made of black silk interwoven with faint +silvery threads. While wearing it, you gain the following benefits:",
             "• You have resistance to poison damage.",
             "• You have a climbing speed equal to your walking speed.",
             "• You can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free.",
@@ -11759,7 +11757,7 @@ var magicItems = [{
         "text": [
 
             "This box contains a set of parchment cards. A full deck has 34 cards. A deck found as treasure is usually missing 1d20 - 1 cards.",
-            "The magic of the deck functions only if cards are drawn at random (you can use an altered deck of playing cards to simulate the deck). You can use an action to draw a card at random from the deck and throw it to the ground at a point within 30 feet of you.",
+            "The magic of the deck functions only if cards are drawn at random (you can use an altered deck of playing cards to simulate the deck). You can use an action to draw a card at random from the deck and throw it to the ground at a point +within 30 feet of you.",
             "An illusion of one or more creatures forms over the thrown card and remains until dispelled. An illusory creature appears real, of the appropriate size, and behaves as if it were a real creature (as presented in the Monster Manual), except that it can do no harm. While you are within 120 feet of the illusory creature and can see it, you can use an action to move it magically anywhere within 30 feet of its card. Any physical interaction with the illusory creature reveals it to be an illusion, because objects pass through it. Someone who uses an action to visually inspect the creature identifies it as illusory with a successful DC 15 Intelligence (Investigation) check. The creature then appears translucent.",
             "The illusion lasts until its card is moved or the illusion is dispelled. When the illusion ends, the image on its card disappears, and that card can't be used again.",
             "",
@@ -12032,7 +12030,7 @@ var magicItems = [{
             "A devastation orb is an elemental bomb that can be created at the site of an elemental node by performing a ritual with an elemental weapon. The type of orb created depends on the node used. For example, an air node creates a devastation orb of air. The ritual takes 1 hour to complete and requires 2,000 gp worth of special components, which are consumed.",
             "A devastation orb measures 12 inches in diameter, weighs 10 pounds, and has a solid outer shell. The orb detonates 1d100 hours after its creation, releasing the elemental energy it contains. The orb gives no outward sign of how much time remains before it will detonate. Spells such as identify and divination can be used to ascertain when the orb will explode. An orb has AC 10, 15 hit points, and immunity to poison and psychic damage. Reducing it to 0 hit points causes it to explode instantly.",
             "A special container can be crafted to contain a devastation orb and prevent it from detonating. The container must be inscribed with symbols of the orb's opposing element. For example, a case inscribed with earth symbols can be used to contain a devastation orb of air and keep it from detonating. While in the container, the orb thrums. If it is removed from the container after the time when it was supposed to detonate, it explodes 1d6 rounds later, unless it is returned to the container.",
-            "Regardless of the type of orb, its effect is contained within a sphere with a 1 mile radius. The orb is the sphere's point of origin. The orb is destroyed after one use.",
+            "Regardless of the type of orb, its effect is contained within a sphere with a 1 mile radius. The orb is the sphere's point +of origin. The orb is destroyed after one use.",
             "Air Orb: When this orb detonates, it creates a powerful windstorm that lasts for 1 hour. Whenever a creature ends its turn exposed to the wind, the creature must succeed on a DC 18 Constitution saving throw or take 1d4 bludgeoning damage, as the wind and debris batter it. The wind is strong enough to uproot weak trees and destroy light structures after at least 10 minutes of exposure. Otherwise, the rules for strong wind apply, as detailed in chapter 5 of the Dungeon Master's Guide."
         ],
         "roll": "1d4"
@@ -12045,7 +12043,7 @@ var magicItems = [{
             "A devastation orb is an elemental bomb that can be created at the site of an elemental node by performing a ritual with an elemental weapon. The type of orb created depends on the node used. For example, an air node creates a devastation orb of air. The ritual takes 1 hour to complete and requires 2,000 gp worth of special components, which are consumed.",
             "A devastation orb measures 12 inches in diameter, weighs 10 pounds, and has a solid outer shell. The orb detonates 1d100 hours after its creation, releasing the elemental energy it contains. The orb gives no outward sign of how much time remains before it will detonate. Spells such as identify and divination can be used to ascertain when the orb will explode. An orb has AC 10, 15 hit points, and immunity to poison and psychic damage. Reducing it to 0 hit points causes it to explode instantly.",
             "A special container can be crafted to contain a devastation orb and prevent it from detonating. The container must be inscribed with symbols of the orb's opposing element. For example, a case inscribed with earth symbols can be used to contain a devastation orb of air and keep it from detonating. While in the container, the orb thrums. If it is removed from the container after the time when it was supposed to detonate, it explodes 1d6 rounds later, unless it is returned to the container.",
-            "Regardless of the type of orb, its effect is contained within a sphere with a 1 mile radius. The orb is the sphere's point of origin. The orb is destroyed after one use.",
+            "Regardless of the type of orb, its effect is contained within a sphere with a 1 mile radius. The orb is the sphere's point +of origin. The orb is destroyed after one use.",
             "Earth Orb: When this orb detonates, it subjects the area to the effects of the earthquake spell for 1 minute (spell save DC 18). For the purpose of the spell's effects, the spell is cast on the turn that the orb explodes."
         ]
     },
@@ -12057,7 +12055,7 @@ var magicItems = [{
             "A devastation orb is an elemental bomb that can be created at the site of an elemental node by performing a ritual with an elemental weapon. The type of orb created depends on the node used. For example, an air node creates a devastation orb of air. The ritual takes 1 hour to complete and requires 2,000 gp worth of special components, which are consumed.",
             "A devastation orb measures 12 inches in diameter, weighs 10 pounds, and has a solid outer shell. The orb detonates 1d100 hours after its creation, releasing the elemental energy it contains. The orb gives no outward sign of how much time remains before it will detonate. Spells such as identify and divination can be used to ascertain when the orb will explode. An orb has AC 10, 15 hit points, and immunity to poison and psychic damage. Reducing it to 0 hit points causes it to explode instantly.",
             "A special container can be crafted to contain a devastation orb and prevent it from detonating. The container must be inscribed with symbols of the orb's opposing element. For example, a case inscribed with earth symbols can be used to contain a devastation orb of air and keep it from detonating. While in the container, the orb thrums. If it is removed from the container after the time when it was supposed to detonate, it explodes 1d6 rounds later, unless it is returned to the container.",
-            "Regardless of the type of orb, its effect is contained within a sphere with a 1 mile radius. The orb is the sphere's point of origin. The orb is destroyed after one use.",
+            "Regardless of the type of orb, its effect is contained within a sphere with a 1 mile radius. The orb is the sphere's point +of origin. The orb is destroyed after one use.",
             "Fire Orb: When this orb detonates, it creates a dry heat wave that lasts for 24 hours. Within the area of effect, the rules for extreme heat apply, as detailed in chapter 5 of the Dungeon Master's Guide. At the end of each hour, there is a ten percent chance that the heat wave starts a wildfire in a random location within the area of effect. The wildfire covers a 10-foot-square area initially but expands to fill another 10-foot square each round until the fire is extinguished or burns itself out. A creature that comes within 10 feet of a wildfire for the first time on a turn or starts its turn there takes 3d6 fire damage."
         ],
         "roll": "3d6"
@@ -12070,7 +12068,7 @@ var magicItems = [{
             "A devastation orb is an elemental bomb that can be created at the site of an elemental node by performing a ritual with an elemental weapon. The type of orb created depends on the node used. For example, an air node creates a devastation orb of air. The ritual takes 1 hour to complete and requires 2,000 gp worth of special components, which are consumed.",
             "A devastation orb measures 12 inches in diameter, weighs 10 pounds, and has a solid outer shell. The orb detonates 1d100 hours after its creation, releasing the elemental energy it contains. The orb gives no outward sign of how much time remains before it will detonate. Spells such as identify and divination can be used to ascertain when the orb will explode. An orb has AC 10, 15 hit points, and immunity to poison and psychic damage. Reducing it to 0 hit points causes it to explode instantly.",
             "A special container can be crafted to contain a devastation orb and prevent it from detonating. The container must be inscribed with symbols of the orb's opposing element. For example, a case inscribed with earth symbols can be used to contain a devastation orb of air and keep it from detonating. While in the container, the orb thrums. If it is removed from the container after the time when it was supposed to detonate, it explodes 1d6 rounds later, unless it is returned to the container.",
-            "Regardless of the type of orb, its effect is contained within a sphere with a 1 mile radius. The orb is the sphere's point of origin. The orb is destroyed after one use.",
+            "Regardless of the type of orb, its effect is contained within a sphere with a 1 mile radius. The orb is the sphere's point +of origin. The orb is destroyed after one use.",
             "Water Orb: When this orb detonates, it creates a torrential rainstorm that lasts for 24 hours. Within the area of effect, the rules for heavy precipitation apply, as detailed in chapter 5 of the Dungeon Master's Guide. If there is a substantial body of water in the area, it floods after 2d10 hours of heavy rain, rising 10 feet above its banks and inundating the surrounding area. The flood advances at a rate of 100 feet per round, moving away from the body of water where it began until it reaches the edge of the area of effect: at that point, the water flows downhill (and possibly recedes back to its origin). Light structures collapse and wash away. Any Large or smaller creature caught in the flood's path is swept away. The flooding destroys crops and might trigger mudslides, depending on the terrain."
         ]
     },
@@ -12613,7 +12611,7 @@ var magicItems = [{
         "rarity": "Rare",
         "text": [
 
-            "A figurine of wondrous power is a statuette of a beast small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point on the ground within 60 feet of you, the figurine becomes a living creature. If the space where the creature would appear is occupied by other creatures or objects, or if there isn't enough space for the creature, the figurine doesn't become a creature.",
+            "A figurine of wondrous power is a statuette of a beast small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point +on the ground within 60 feet of you, the figurine becomes a living creature. If the space where the creature would appear is occupied by other creatures or objects, or if there isn't enough space for the creature, the figurine doesn't become a creature.",
             "The creature is friendly to you and your companions. It understands your languages and obeys your spoken commands. If you issue no commands, the creature defends itself but takes no other actions. See the Monster Manual for the creature's statistics.",
             "The creature exists for a duration specific to each figurine. At the end of the duration, the creature reverts to its figurine form. It reverts to a figurine early if it drops to 0 hit points or if you use an action to speak the command word again while touching it. When the creature becomes a figurine again, its property can't be used again until a certain amount of time has passed, as specified in the figurine's description.",
             "",
@@ -12628,7 +12626,7 @@ var magicItems = [{
         "rarity": "Rare",
         "text": [
 
-            "A figurine of wondrous power is a statuette of a beast small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point on the ground within 60 feet of you, the figurine becomes a living creature. If the space where the creature would appear is occupied by other creatures or objects, or if there isn't enough space for the creature, the figurine doesn't become a creature.",
+            "A figurine of wondrous power is a statuette of a beast small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point +on the ground within 60 feet of you, the figurine becomes a living creature. If the space where the creature would appear is occupied by other creatures or objects, or if there isn't enough space for the creature, the figurine doesn't become a creature.",
             "The creature is friendly to you and your companions. It understands your languages and obeys your spoken commands. If you issue no commands, the creature defends itself but takes no other actions. See the Monster Manual for the creature's statistics, except for the giant fly.",
             "The creature exists for a duration specific to each figurine. At the end of the duration, the creature reverts to its figurine form. It reverts to a figurine early if it drops to 0 hit points or if you use an action to speak the command word again while touching it. When the creature becomes a figurine again, its property can't be used again until a certain amount of time has passed, as specified in the figurine's description.",
             "",
@@ -12643,7 +12641,7 @@ var magicItems = [{
         "rarity": "Rare",
         "text": [
 
-            "A figurine of wondrous power is a statuette of a beast small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point on the ground within 60 feet of you, the figurine becomes a living creature. If the space where the creature would appear is occupied by other creatures or objects, or if there isn't enough space for the creature, the figurine doesn't become a creature.",
+            "A figurine of wondrous power is a statuette of a beast small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point +on the ground within 60 feet of you, the figurine becomes a living creature. If the space where the creature would appear is occupied by other creatures or objects, or if there isn't enough space for the creature, the figurine doesn't become a creature.",
             "The creature is friendly to you and your companions. It understands your languages and obeys your spoken commands. If you issue no commands, the creature defends itself but takes no other actions. See the Monster Manual for the creature's statistics.",
             "The creature exists for a duration specific to each figurine. At the end of the duration, the creature reverts to its figurine form. It reverts to a figurine early if it drops to 0 hit points or if you use an action to speak the command word again while touching it. When the creature becomes a figurine again, its property can't be used again until a certain amount of time has passed, as specified in the figurine's description.",
             "",
@@ -12658,7 +12656,7 @@ var magicItems = [{
         "rarity": "Rare",
         "text": [
 
-            "A figurine of wondrous power is a statuette of a beast small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point on the ground within 60 feet of you, the figurine becomes a living creature. If the space where the creature would appear is occupied by other creatures or objects, or if there isn't enough space for the creature, the figurine doesn't become a creature.",
+            "A figurine of wondrous power is a statuette of a beast small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point +on the ground within 60 feet of you, the figurine becomes a living creature. If the space where the creature would appear is occupied by other creatures or objects, or if there isn't enough space for the creature, the figurine doesn't become a creature.",
             "The creature is friendly to you and your companions. It understands your languages and obeys your spoken commands. If you issue no commands, the creature defends itself but takes no other actions. See the Monster Manual for the creature's statistics, except for the giant fly.",
             "The creature exists for a duration specific to each figurine. At the end of the duration, the creature reverts to its figurine form. It reverts to a figurine early if it drops to 0 hit points or if you use an action to speak the command word again while touching it. When the creature becomes a figurine again, its property can't be used again until a certain amount of time has passed, as specified in the figurine's description.",
             "",
@@ -12676,7 +12674,7 @@ var magicItems = [{
         "rarity": "Rare",
         "text": [
 
-            "A figurine of wondrous power is a statuette of a beast small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point on the ground within 60 feet of you, the figurine becomes a living creature. If the space where the creature would appear is occupied by other creatures or objects, or if there isn't enough space for the creature, the figurine doesn't become a creature.",
+            "A figurine of wondrous power is a statuette of a beast small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point +on the ground within 60 feet of you, the figurine becomes a living creature. If the space where the creature would appear is occupied by other creatures or objects, or if there isn't enough space for the creature, the figurine doesn't become a creature.",
             "The creature is friendly to you and your companions. It understands your languages and obeys your spoken commands. If you issue no commands, the creature defends itself but takes no other actions. See the Monster Manual for the creature's statistics, except for the giant fly.",
             "The creature exists for a duration specific to each figurine. At the end of the duration, the creature reverts to its figurine form. It reverts to a figurine early if it drops to 0 hit points or if you use an action to speak the command word again while touching it. When the creature becomes a figurine again, its property can't be used again until a certain amount of time has passed, as specified in the figurine's description.",
             "",
@@ -12691,7 +12689,7 @@ var magicItems = [{
         "rarity": "Very Rare",
         "text": [
 
-            "A figurine of wondrous power is a statuette of a beast small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point on the ground within 60 feet of you, the figurine becomes a living creature. If the space where the creature would appear is occupied by other creatures or objects, or if there isn't enough space for the creature, the figurine doesn't become a creature.",
+            "A figurine of wondrous power is a statuette of a beast small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point +on the ground within 60 feet of you, the figurine becomes a living creature. If the space where the creature would appear is occupied by other creatures or objects, or if there isn't enough space for the creature, the figurine doesn't become a creature.",
             "The creature is friendly to you and your companions. It understands your languages and obeys your spoken commands. If you issue no commands, the creature defends itself but takes no other actions. See the Monster Manual for the creature's statistics, except for the giant fly.",
             "The creature exists for a duration specific to each figurine. At the end of the duration, the creature reverts to its figurine form. It reverts to a figurine early if it drops to 0 hit points or if you use an action to speak the command word again while touching it. When the creature becomes a figurine again, its property can't be used again until a certain amount of time has passed, as specified in the figurine's description.",
             "",
@@ -12707,7 +12705,7 @@ var magicItems = [{
         "rarity": "Rare",
         "text": [
 
-            "A figurine of wondrous power is a statuette of a beast small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point on the ground within 60 feet of you, the figurine becomes a living creature. If the space where the creature would appear is occupied by other creatures or objects, or if there isn't enough space for the creature, the figurine doesn't become a creature.",
+            "A figurine of wondrous power is a statuette of a beast small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point +on the ground within 60 feet of you, the figurine becomes a living creature. If the space where the creature would appear is occupied by other creatures or objects, or if there isn't enough space for the creature, the figurine doesn't become a creature.",
             "The creature is friendly to you and your companions. It understands your languages and obeys your spoken commands. If you issue no commands, the creature defends itself but takes no other actions. See the Monster Manual for the creature's statistics, except for the giant fly.",
             "The creature exists for a duration specific to each figurine. At the end of the duration, the creature reverts to its figurine form. It reverts to a figurine early if it drops to 0 hit points or if you use an action to speak the command word again while touching it. When the creature becomes a figurine again, its property can't be used again until a certain amount of time has passed, as specified in the figurine's description.",
             "",
@@ -12722,7 +12720,7 @@ var magicItems = [{
         "rarity": "Rare",
         "text": [
 
-            "A figurine of wondrous power is a statuette of a beast small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point on the ground within 60 feet of you, the figurine becomes a living creature. If the space where the creature would appear is occupied by other creatures or objects, or if there isn't enough space for the creature, the figurine doesn't become a creature.",
+            "A figurine of wondrous power is a statuette of a beast small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point +on the ground within 60 feet of you, the figurine becomes a living creature. If the space where the creature would appear is occupied by other creatures or objects, or if there isn't enough space for the creature, the figurine doesn't become a creature.",
             "The creature is friendly to you and your companions. It understands your languages and obeys your spoken commands. If you issue no commands, the creature defends itself but takes no other actions. See the Monster Manual for the creature's statistics, except for the giant fly.",
             "The creature exists for a duration specific to each figurine. At the end of the duration, the creature reverts to its figurine form. It reverts to a figurine early if it drops to 0 hit points or if you use an action to speak the command word again while touching it. When the creature becomes a figurine again, its property can't be used again until a certain amount of time has passed, as specified in the figurine's description.",
             "",
@@ -12737,7 +12735,7 @@ var magicItems = [{
         "rarity": "Uncommon",
         "text": [
 
-            "A figurine of wondrous power is a statuette of a beast small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point on the ground within 60 feet of you, the figurine becomes a living creature. If the space where the creature would appear is occupied by other creatures or objects, or if there isn't enough space for the creature, the figurine doesn't become a creature.",
+            "A figurine of wondrous power is a statuette of a beast small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point +on the ground within 60 feet of you, the figurine becomes a living creature. If the space where the creature would appear is occupied by other creatures or objects, or if there isn't enough space for the creature, the figurine doesn't become a creature.",
             "The creature is friendly to you and your companions. It understands your languages and obeys your spoken commands. If you issue no commands, the creature defends itself but takes no other actions. See the Monster Manual for the creature's statistics, except for the giant fly.",
             "The creature exists for a duration specific to each figurine. At the end of the duration, the creature reverts to its figurine form. It reverts to a figurine early if it drops to 0 hit points or if you use an action to speak the command word again while touching it. When the creature becomes a figurine again, its property can't be used again until a certain amount of time has passed, as specified in the figurine's description.",
             "",
@@ -13066,8 +13064,8 @@ var magicItems = [{
             "",
             "This wooden gavel is small by giant reckoning but nearly the size of a warhammcr in human hands. The venn (friend) rune is inscribed in mithral in the base of the haft. Among giants, this item is used as part of rituals to resolve disputes. The gavel has the following properties.",
             "Arbiters Shield: At the start of every combat, attack rolls against you have disadvantage before the start of your ﬁrst turn, provided that the gavel is on your person.",
-            "Bond of Amity: As an action, you can use the gavel to strike a point on a hard surface. The ﬁrst time in the next minute that a creature within 60 feet of that point deals damage to another creature with an attack that hits, the attacker takes psychic damage equal to half the damage it dealt to the target. Once you use this property, you can't use it again until you ﬁnish a long rest.",
-            "Gift of Truth: You can transfer the gavel’s magic to a place by tracing the venn rune on the ground with your ﬁnger. The point where you trace it becomes the center of a spherical area of magic that has a 30-foot radius and that is ﬁxed to the place. The transfer takes 8 hours of work that requires the gavel to be within 5 feet of you. At the end, the gavel is destroyed, and the area gains the following property:",
+            "Bond of Amity: As an action, you can use the gavel to strike a point +on a hard surface. The ﬁrst time in the next minute that a creature within 60 feet of that point +deals damage to another creature with an attack that hits, the attacker takes psychic damage equal to half the damage it dealt to the target. Once you use this property, you can't use it again until you ﬁnish a long rest.",
+            "Gift of Truth: You can transfer the gavel’s magic to a place by tracing the venn rune on the ground with your ﬁnger. The point +where you trace it becomes the center of a spherical area of magic that has a 30-foot radius and that is ﬁxed to the place. The transfer takes 8 hours of work that requires the gavel to be within 5 feet of you. At the end, the gavel is destroyed, and the area gains the following property:",
             "Whenever a creature utters a lie while within the 30-foot-radius sphere, that creature takes 5 psychic damage and flinches visibly."
         ],
         "rarity": "Rare"
@@ -15298,20 +15296,20 @@ var magicItems = [{
         ]
     },
     {
-        "name": "Icon of Ravenloft",
+        "name": "Icon +of Ravenloft",
         "type": "Wondrous Item",
         "magic": "1",
         "weight": "10",
         "text": [
             "This item requires attunement by a creature of good alignment",
             "",
-            "The Icon of Ravenloft is a 12-inch tall statuette made of the purest silver, weighing 10 pounds. It depicts a cleric kneeling in supplication.",
-            "The icon was given to Strahd by the archpriest Ciril Romulich, an old family friend, to consecrate the castle and its chapel.",
-            "While within 30 feet of the icon, a creature is under the effect of a protection from evil and good spell against fiends and undead. Only a creature attuned to the icon can use its other properties.",
+            "The Icon +of Ravenloft is a 12-inch tall statuette made of the purest silver, weighing 10 pounds. It depicts a cleric kneeling in supplication.",
+            "The icon +was given to Strahd by the archpriest Ciril Romulich, an old family friend, to consecrate the castle and its chapel.",
+            "While within 30 feet of the icon, a creature is under the effect of a protection from evil and good spell against fiends and undead. Only a creature attuned to the icon +can use its other properties.",
             "",
             "Augury: You can use an action to cast an augury spell from the icon, with no material components required. Once used, this property can't be used again until the next dawn.",
             "",
-            "Bane of the Undead: You can use the icon as a holy symbol while using the Turn Undead or Turn the Unholy feature. If you do so, increase the save DC by 2.",
+            "Bane of the Undead: You can use the icon +as a holy symbol while using the Turn Undead or Turn the Unholy feature. If you do so, increase the save DC by 2.",
             "",
             "Cure Wounds: While holding the icon, you can take an action to heal one creature that you can see within 30 feet of you. The target regains 3d8+3 hit points, unless it is an undead, a construct, or a fiend. Once used, this property can't be used again until the next dawn."
         ],
@@ -16123,7 +16121,7 @@ var magicItems = [{
         "rarity": "Uncommon",
         "text": [
 
-            "While lit, this hooded lantern burns for 6 hours on 1 pint of oil, shedding bright light in a 30-foot radius and dim light for an additional 30 feet. Invisible creatures and objects are visible as long as they are in the lantern's bright light. You can use an action to lower the hood, reducing the light to dim light in a 5-foot radius."
+            "While lit, this hooded lantern burns for 6 hours on 1 pint +of oil, shedding bright light in a 30-foot radius and dim light for an additional 30 feet. Invisible creatures and objects are visible as long as they are in the lantern's bright light. You can use an action to lower the hood, reducing the light to dim light in a 5-foot radius."
         ]
     },
     {
@@ -17423,7 +17421,7 @@ var magicItems = [{
         ]
     },
     {
-        "name": "Mariner's Splint Armor",
+        "name": "Mariner's Splint +Armor",
         "type": "Heavy Armor",
         "magic": "1",
         "weight": "60",
@@ -17708,7 +17706,7 @@ var magicItems = [{
         "stealth": "1"
     },
     {
-        "name": "Mind Carapace Splint Armor",
+        "name": "Mind Carapace Splint +Armor",
         "type": "Heavy Armor",
         "magic": "1",
         "weight": "60",
@@ -17748,7 +17746,7 @@ var magicItems = [{
         "rarity": "Very Rare",
         "text": [
 
-            "When this 4-foot-tall mirror is viewed indirectly, its surface shows faint images of creatures. The mirror weighs 50 pounds, and it has AC 11, 10 hit points, and vulnerability to bludgeoning damage. It shatters and is destroyed when reduced to 0 hit points.",
+            "When this 4-foot-tall mirror is viewed indirectly, its surface shows faint +images of creatures. The mirror weighs 50 pounds, and it has AC 11, 10 hit points, and vulnerability to bludgeoning damage. It shatters and is destroyed when reduced to 0 hit points.",
             "If the mirror is hanging on a vertical surface and you are within 5 feet of it, you can use an action to speak its command word and activate it. It remains activated until you use an action to speak the command word again.",
             "Any creature other than you that sees its reflection in the activated mirror while within 30 feet of it must succeed on a DC 15 Charisma saving throw or be trapped, along with anything it is wearing or carrying, in one of the mirror's twelve extradimensional cells. This saving throw is made with advantage if the creature knows the mirror's nature, and constructs succeed on the saving throw automatically.",
             "An extradimensional cell is an infinite expanse filled with thick fog that reduces visibility to 10 feet. Creatures trapped in the mirror's cells don't age, and they don't need to eat, drink, or sleep. A creature trapped within a cell can escape using magic that permits planar travel. Otherwise, the creature is confined to the cell until freed.",
@@ -17863,7 +17861,7 @@ var magicItems = [{
         ]
     },
     {
-        "name": "Mithral Splint Armor",
+        "name": "Mithral Splint +Armor",
         "type": "Heavy Armor",
         "magic": "1",
         "weight": "60",
@@ -18180,8 +18178,8 @@ var magicItems = [{
         "name": "Night Caller",
         "type": "Wondrous Item",
         "magic": "1",
-        "rarity": "uncommon",
-        "detail": "uncommon",
+        "rarity": "Uncommon",
+        "detail": "Uncommon",
         "text": [
             "This whistle is carved from transparent crystal, and it resembles a tiny dragon curled up like a snail. The name Night Caller is etched on the whistle in Dwarvish runes. If a character succeeds on a DC 20 Intelligence (Arcana or History) check, the character recalls lore that says the duergar made several such whistles for various groups in an age past.",
             "If you blow the whistle in darkness or under the night sky, it allows you to cast the animate dead spell. The target can be affected through up to 10 feet of soft earth or similar material, and if it is, it takes 1 minute to claw its way to the surface to serve you. Once the whistle has animated an undead creature, it can't do so again until 7 days have passed.",
@@ -18338,11 +18336,11 @@ var magicItems = [{
         "rarity": "Very Rare",
         "text": [
 
-            "Typically found in 1d4 pots inside a fine wooden box with a brush (weighing 1 pound in total), these pigments allow you to create three-dimensional objects by painting them in two dimensions. The paint flows from the brush to form the desired object as you concentrate on its image.",
-            "Each pot of paint is sufficient to cover 1,000 square feet of a surface, which lets you create inanimate objects or terrain features-such as a door, a pit, flowers, trees, cells, rooms, or weapons- that are up to 10,000 cubic feet. It takes 10 minutes to cover 100 square feet.",
+            "Typically found in 1d4 pots inside a fine wooden box with a brush (weighing 1 pound in total), these pigments allow you to create three-dimensional objects by painting them in two dimensions. The paint +flows from the brush to form the desired object as you concentrate on its image.",
+            "Each pot of paint +is sufficient to cover 1,000 square feet of a surface, which lets you create inanimate objects or terrain features-such as a door, a pit, flowers, trees, cells, rooms, or weapons- that are up to 10,000 cubic feet. It takes 10 minutes to cover 100 square feet.",
             "When you complete the painting, the object or terrain feature depicted becomes a real, nonmagical object. Thus, painting a door on a wall creates an actual door that can be opened to whatever is beyond. Painting a pit on a floor creates a real pit, and its depth counts against the total area of objects you create.",
-            "Nothing created by the pigments can have a value greater than 25 gp. If you paint an object of greater value (such as a diamond or a pile of gold), the object looks authentic, but close inspection reveals it is made from paste, bone, or some other worthless material.",
-            "If you paint a form of energy such as fire or lightning, the energy appears but dissipates as soon as you complete the painting, doing no harm to anything."
+            "Nothing created by the pigments can have a value greater than 25 gp. If you paint +an object of greater value (such as a diamond or a pile of gold), the object looks authentic, but close inspection reveals it is made from paste, bone, or some other worthless material.",
+            "If you paint +a form of energy such as fire or lightning, the energy appears but dissipates as soon as you complete the painting, doing no harm to anything."
         ]
     },
     {
@@ -19339,9 +19337,9 @@ var magicItems = [{
         "text": [
 
             "",
-            "When you drink this potion, you become Huge for 24 hours if you are Medium or smaller, otherwise the potion does nothing. For that duration, your Strength becomes 25, if it isn't already higher, and your hit point maximum is doubled (your current hit points are doubled when you drink the potion). In addition, the reach of your melee attacks increases by 5 feet.",
+            "When you drink this potion, you become Huge for 24 hours if you are Medium or smaller, otherwise the potion does nothing. For that duration, your Strength becomes 25, if it isn't already higher, and your hit point +maximum is doubled (your current hit points are doubled when you drink the potion). In addition, the reach of your melee attacks increases by 5 feet.",
             "Everything you are carrying and wearing also increases in size for the duration. When rolling damage for weapons enlarged in this manner, roll three times the normal number of dice; for example, an enlarged longsword would deal 3d8 slashing damage (instead of1d8), or 3d10 slashing damage (instead of 1d10) when used with two hands.",
-            "When the effect ends, any hit points you have above your hit point maximum become temporary hit points. This potion is a pale white liquid made from the tongue of a giant clam, with a pungent aroma akin to that of rotting algae. It tastes sweet, however, when consumed."
+            "When the effect ends, any hit points you have above your hit point +maximum become temporary hit points. This potion is a pale white liquid made from the tongue of a giant clam, with a pungent aroma akin to that of rotting algae. It tastes sweet, however, when consumed."
         ]
     },
     {
@@ -19682,7 +19680,7 @@ var magicItems = [{
 
             "This tiny object looks like a feather.",
             "",
-            "Whip: You can use an action to throw the token to a point within 10 feet of you. The token disappears, and a floating whip takes its place. You can then use a bonus action to make a melee spell attack against a creature within 10 feet of the whip, with an attack bonus of +9. On a hit, the target takes 1d6 + 5 force damage.",
+            "Whip: You can use an action to throw the token to a point +within 10 feet of you. The token disappears, and a floating whip takes its place. You can then use a bonus action to make a melee spell attack against a creature within 10 feet of the whip, with an attack bonus of +9. On a hit, the target takes 1d6 + 5 force damage.",
             "As a bonus action on your turn, you can direct the whip to fly up to 20 feet and repeat the attack against a creature within 10 feet of it. The whip disappears after 1 hour, when you use an action to dismiss it, or when you are incapacitated or die."
         ],
         "roll": [
@@ -20487,7 +20485,7 @@ var magicItems = [{
 
             "Requires Attunement",
             "",
-            "While wearing this ring, you regain 1d6 hit points every 10 minutes, provided that you have at least 1 hit point. If you lose a body part, the ring causes the missing part to regrow and return to full functionality after 1d6 + 1 days if you have at least 1 hit point the whole time."
+            "While wearing this ring, you regain 1d6 hit points every 10 minutes, provided that you have at least 1 hit point. If you lose a body part, the ring causes the missing part to regrow and return to full functionality after 1d6 + 1 days if you have at least 1 hit point +the whole time."
         ],
         "roll": "1d6"
     },
@@ -20510,7 +20508,7 @@ var magicItems = [{
             "As a bonus action, you can move each sphere up to 30 feet, but no farther than 120 feet away from you. When a creature other than you comes within 5 feet of a sphere, the sphere discharges lightning at that creature and disappears. That creature must make a DC 15 Dexterity saving throw. On a failed save, the creature takes lightning damage based on the number of spheres you created. (4 spheres = 2d4, 3 spheres = 2d6, 2 spheres = 5d4, 1 sphere = 4d12)",
             "",
             "Shooting Stars.",
-            "You can expend 1 to 3 charges as an action. For every charge you expend, you launch a glowing mote of light from the ring at a point you can see within 60 feet of you. Each creature within a 15-foot cube originating from that point is showered in sparks and must make a DC 15 Dexterity saving throw. taking 5d4 fire damage on a failed save, or half as much damage on a successful one."
+            "You can expend 1 to 3 charges as an action. For every charge you expend, you launch a glowing mote of light from the ring at a point +you can see within 60 feet of you. Each creature within a 15-foot cube originating from that point +is showered in sparks and must make a DC 15 Dexterity saving throw. taking 5d4 fire damage on a failed save, or half as much damage on a successful one."
         ],
         "roll": [
             "1d6",
@@ -20850,7 +20848,7 @@ var magicItems = [{
             "Six Buttons: You can press one of the rod's six buttons as a bonus action. A button's effect lasts until you push a different button or until you push the same button again, which causes the rod to revert to its normal form.",
             "If you press button 1, the rod becomes a flame tongue as a fiery blade sprouts from the end opposite the rod's flanged head.",
             "If you press button 2, the rod's flanged head folds down and two crescent-shaped blades spring out, transforming the rod into a magic battleaxe that grants a +3 bonus to attack and damage rolls made with it.",
-            "If you press button 3, the rod's flanged head folds down, a spear point springs from the rod's tip, and the rod's handle lengthens into a 6-foot haft, transforming the rod into a magic spear that grants a+3 bonus to attack and damage rolls made with it.",
+            "If you press button 3, the rod's flanged head folds down, a spear point +springs from the rod's tip, and the rod's handle lengthens into a 6-foot haft, transforming the rod into a magic spear that grants a+3 bonus to attack and damage rolls made with it.",
             "If you press button 4, the rod transforms into a climbing pole up to 50 feet long, as you specify. In surfaces as hard as granite, a spike at the bottom and three hooks at the top anchor the pole. Horizontal bars 3 inches long fold out from the sides, 1 foot apart, forming a ladder. The pole can bear up to 4,000 pounds. More weight or lack of solid anchoring causes the rod to revert to its normal form.",
             "If you press button 5, the rod transforms into a handheld battering ram and gram its user a +10 bonus to Strength checks made to break through doors, barricades, and other barriers.",
             "If you press button 6, the rod assumes or remains in its normal form and indicates magnetic north. (Nothing happens if this function of the rod is used in a location that has no magnetic north.) The rod also gives you knowledge of your approximate depth beneath the ground or your height above it.",
@@ -20996,7 +20994,7 @@ var magicItems = [{
 
             "This 60-foot length of silk rope weighs 3 pounds and can hold up to 3,000 pounds. If you hold one end of the rope and use an action to speak the command word, the rope animates. As a bonus action, you can command the other end to move toward a destination you choose. That end moves 10 feet on your turn when you first command it and 10 feet on each of your turns until reaching its destination, up to its maximum length away, or until you tell it to stop. You can also tell the rope to fasten itself securely to an object or to unfasten itself, to knot or unknot itself, or to coil itself for carrying.",
             "If you tell the rope to knot, large knots appear at 1-foot intervals along the rope. While knotted, the rope shortens to a 50-foot length and grants advantage on checks made to climb it.",
-            "The rope has AC 20 and 20 hit points. It regains 1 hit point every 5 minutes as long as it has at least 1 hit point. If the rope drops to 0 hit points, it is destroyed."
+            "The rope has AC 20 and 20 hit points. It regains 1 hit point +every 5 minutes as long as it has at least 1 hit point. If the rope drops to 0 hit points, it is destroyed."
         ]
     },
     {
@@ -21009,7 +21007,7 @@ var magicItems = [{
 
             "This rope is 30 feet long and weighs 3 pounds. If you hold one end of the rope and use an action to speak its command word, the other end darts forward to entangle a creature you can see within 20 feet of you. The target must succeed on a DC 15 Dexterity saving throw or become restrained.",
             "You can release the creature by using a bonus action to speak a second command word. A target restrained by the rope can use an action to make a DC 15 Strength or Dexterity check (target's choice). On a success, the creature is no longer restrained by the rope.",
-            "The rope has AC 20 and 20 hit points. It regains 1 hit point every 5 minutes as long as it has at least 1 hit point. If the rope drops to 0 hit points, it is destroyed. You can release the creature by using a bonus action to speak a second command word. A target restrained"
+            "The rope has AC 20 and 20 hit points. It regains 1 hit point +every 5 minutes as long as it has at least 1 hit point. If the rope drops to 0 hit points, it is destroyed. You can release the creature by using a bonus action to speak a second command word. A target restrained"
         ]
     },
     {
@@ -21023,7 +21021,7 @@ var magicItems = [{
         ]
     },
     {
-        "name": "Saint Markovia's Thighbone",
+        "name": "Saint +Markovia's Thighbone",
         "type": "Melee Weapon",
         "magic": "1",
         "dmg1": "1d6",
@@ -21032,7 +21030,7 @@ var magicItems = [{
         "text": [
             "This item requires attunement.",
             "",
-            "Saint Markovia's thighbone has the properties of a mace of disruption. If it scores one or more hits against a vampire or a vampire spawn in the course of a single battle, the thighbone crumbles into dust once the battle concludes.",
+            "Saint +Markovia's thighbone has the properties of a mace of disruption. If it scores one or more hits against a vampire or a vampire spawn in the course of a single battle, the thighbone crumbles into dust once the battle concludes.",
             "As a youth, Markovia followed her heart and became a priest of the Morninglord soon after her eighteenth birthday. She proved to be a charismatic proselytizer and, before the age of thirty, had gained a reputation for allowing no evil to stand before her.",
             "Markovia had long considered Strahd a mad tyrant, but only after his transformation into a vampire did she dare to challenge him. As she rallied her followers and prepared to march on Castle Ravenloft, Strahd sent a group of vampire spawn to her abbey. They confronted Markovia and were destroyed to a one.",
             "Suffused with confidence born of a righteous victory, Markovia advanced on Castle Ravenloft. A great battle raged from the catacombs to the parapets. In the end, Markovia never returned to Barovia, and Strahd long afterward walked with a limp and a grimace of pain. It is said that he trapped Markovia in a crypt beneath his castle, and her remains linger there yet.",
@@ -21629,7 +21627,7 @@ var magicItems = [{
         "name": "Shatterspike",
         "type": "Melee Weapon",
         "magic": "1",
-        "rarity": "uncommon",
+        "rarity": "Uncommon",
         "detail": "uncommon (requires attunement)",
         "weight": "3",
         "text": [
@@ -22986,7 +22984,7 @@ var magicItems = [{
         ]
     },
     {
-        "name": "Splint Armor +1",
+        "name": "Splint +Armor +1",
         "type": "Heavy Armor",
         "magic": "1",
         "weight": "60",
@@ -23004,7 +23002,7 @@ var magicItems = [{
         }
     },
     {
-        "name": "Splint Armor +2",
+        "name": "Splint +Armor +2",
         "type": "Heavy Armor",
         "magic": "1",
         "weight": "60",
@@ -23022,7 +23020,7 @@ var magicItems = [{
         }
     },
     {
-        "name": "Splint Armor +3",
+        "name": "Splint +Armor +3",
         "type": "Heavy Armor",
         "magic": "1",
         "weight": "60",
@@ -23040,7 +23038,7 @@ var magicItems = [{
         }
     },
     {
-        "name": "Splint Armor of Acid Resistance",
+        "name": "Splint +Armor of Acid Resistance",
         "type": "Heavy Armor",
         "magic": "1",
         "weight": "60",
@@ -23055,7 +23053,7 @@ var magicItems = [{
         ]
     },
     {
-        "name": "Splint Armor of Cold Resistance",
+        "name": "Splint +Armor of Cold Resistance",
         "type": "Heavy Armor",
         "magic": "1",
         "weight": "60",
@@ -23070,7 +23068,7 @@ var magicItems = [{
         ]
     },
     {
-        "name": "Splint Armor of Fire Resistance",
+        "name": "Splint +Armor of Fire Resistance",
         "type": "Heavy Armor",
         "magic": "1",
         "weight": "60",
@@ -23085,7 +23083,7 @@ var magicItems = [{
         ]
     },
     {
-        "name": "Splint Armor of Force Resistance",
+        "name": "Splint +Armor of Force Resistance",
         "type": "Heavy Armor",
         "magic": "1",
         "weight": "60",
@@ -23100,7 +23098,7 @@ var magicItems = [{
         ]
     },
     {
-        "name": "Splint Armor of Lightning Resistance",
+        "name": "Splint +Armor of Lightning Resistance",
         "type": "Heavy Armor",
         "magic": "1",
         "weight": "60",
@@ -23115,7 +23113,7 @@ var magicItems = [{
         ]
     },
     {
-        "name": "Splint Armor of Necrotic Resistance",
+        "name": "Splint +Armor of Necrotic Resistance",
         "type": "Heavy Armor",
         "magic": "1",
         "weight": "60",
@@ -23130,7 +23128,7 @@ var magicItems = [{
         ]
     },
     {
-        "name": "Splint Armor of Poison Resistance",
+        "name": "Splint +Armor of Poison Resistance",
         "type": "Heavy Armor",
         "magic": "1",
         "weight": "60",
@@ -23145,7 +23143,7 @@ var magicItems = [{
         ]
     },
     {
-        "name": "Splint Armor of Psychic Resistance",
+        "name": "Splint +Armor of Psychic Resistance",
         "type": "Heavy Armor",
         "magic": "1",
         "weight": "60",
@@ -23160,7 +23158,7 @@ var magicItems = [{
         ]
     },
     {
-        "name": "Splint Armor of Radiant Resistance",
+        "name": "Splint +Armor of Radiant Resistance",
         "type": "Heavy Armor",
         "magic": "1",
         "weight": "60",
@@ -23175,7 +23173,7 @@ var magicItems = [{
         ]
     },
     {
-        "name": "Splint Armor of Thunder Resistance",
+        "name": "Splint +Armor of Thunder Resistance",
         "type": "Heavy Armor",
         "magic": "1",
         "weight": "60",
@@ -23289,7 +23287,7 @@ var magicItems = [{
             "Spells: While holding this staff, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC and spell attack bonus: cone of cold (5 charges), fireball (5th-level version, 5 charges), globe of invulnerability (6 charges), hold monster (5 charges), levitate (2 charges). lightning bolt (5th-level version, 5 charges), magic missile (1 charge), ray of enfeeblement (1 charge), or wall of force (5 charges).",
             "",
             "Retributive Strike: You can use an action to break the staff over your knee or against a solid surface, performing a retributive strike. The staff is destroyed and releases its remaining magic in an explosion that expands to fill a 30-foot-radius sphere centered on it.",
-            "You have a 50 percent chance to instantly travel to a random plane of existence, avoiding the explosion. If you fail to avoid the effect, you take force damage equal to 16 x the number of charges in the staff. Every other creature in the area must make a DC 17 Dexterity saving throw. On a failed save, a creature takes an amount of damage based on how far away it is from the point of origin, as shown in the following table. On a successful save, a creature takes half as much damage.",
+            "You have a 50 percent chance to instantly travel to a random plane of existence, avoiding the explosion. If you fail to avoid the effect, you take force damage equal to 16 x the number of charges in the staff. Every other creature in the area must make a DC 17 Dexterity saving throw. On a failed save, a creature takes an amount of damage based on how far away it is from the point +of origin, as shown in the following table. On a successful save, a creature takes half as much damage.",
             "",
             "Distance from Origin — Damage:",
             "10 ft. away or closer — 8 x the number of charges in the staff",
@@ -23436,7 +23434,7 @@ var magicItems = [{
             "You can also use an action to cast one of the following spells from the staff without using any charges: arcane lock, detect magic, enlarge/reduce, light, mage hand, or protection from evil and good.",
             "",
             "Retributive Strike: You can use an action to break the staff over your knee or against a solid surface, performing a retributive strike. The staff is destroyed and releases its remaining magic in an explosion that expands to fill a 30-foot-radius sphere centered on it.",
-            "You have a 50 percent chance to instantly travel to a random plane of existence, avoiding the explosion. If you fail to avoid the effect, you take force damage equal to 16 x the number of charges in the staff. Every other creature in the area must make a DC 17 Dexterity saving throw. On a failed save, a creature takes an amount of damage based on how far away it is from the point of origin, as shown in the following table. On a successful save, a creature takes half as much damage.",
+            "You have a 50 percent chance to instantly travel to a random plane of existence, avoiding the explosion. If you fail to avoid the effect, you take force damage equal to 16 x the number of charges in the staff. Every other creature in the area must make a DC 17 Dexterity saving throw. On a failed save, a creature takes an amount of damage based on how far away it is from the point +of origin, as shown in the following table. On a successful save, a creature takes half as much damage.",
             "",
             "Distance from Origin — Damage:",
             "10 ft. away or closer — 8 x the number of charges in the staff",
@@ -23480,7 +23478,7 @@ var magicItems = [{
             "Spells: You can use an action to expend 1 or more of the staff's charges to cast one of the following spells from it, using your spell save DC: animal friendship (1 charge), awaken (5 charges), barkskin (2 charges), locate animals or plants (2 charges), speak with animals (1 charge), speak with plants (3 charges), or wall of thorns (6 charges).",
             "You can also use an action to cast the pass without trace spell from the staff without using any charges.",
             "",
-            "Tree Form: You can use an action to plant one end of the staff in fertile earth and expend 1 charge to transform the staff into a healthy tree. The tree is 60 feet tall and has a 5-foot-diameter trunk, and its branches at the top spread out in a 20-foot radius. The tree appears ordinary but radiates a faint aura of transmutation magic if targeted by detect magic. While touching the tree and using another action to speak its command, word, you return the staff to its normal form. Any creature in the tree falls when it reverts to a staff."
+            "Tree Form: You can use an action to plant one end of the staff in fertile earth and expend 1 charge to transform the staff into a healthy tree. The tree is 60 feet tall and has a 5-foot-diameter trunk, and its branches at the top spread out in a 20-foot radius. The tree appears ordinary but radiates a faint +aura of transmutation magic if targeted by detect magic. While touching the tree and using another action to speak its command, word, you return the staff to its normal form. Any creature in the tree falls when it reverts to a staff."
         ],
         "modifier": {
             "category": "bonus",
@@ -24170,7 +24168,7 @@ var magicItems = [{
         "text": [
             "Requires Attunement",
             "",
-            "A flint dagger, Tinderstrike is uncommonly sharp, and sparks cascade off its edge whenever it strikes something solid. Its handle is always warm to the touch, and the blade smolders for 1d4 minutes after it is used to deal damage. It contains a spark of Imix, Prince of Evil Fire.",
+            "A flint +dagger, Tinderstrike is uncommonly sharp, and sparks cascade off its edge whenever it strikes something solid. Its handle is always warm to the touch, and the blade smolders for 1d4 minutes after it is used to deal damage. It contains a spark of Imix, Prince of Evil Fire.",
             "You gain a +2 bonus to attack and damage rolls you make with this magic weapon. When you hit with it, the target takes an extra 2d6 fire damage.",
             "Fire Mastery: You gain the following benefits while you hold Tinderstrike:",
             "• You can speak Ignan fluently.",
@@ -25210,7 +25208,7 @@ var magicItems = [{
         "name": "Wand of Entangle",
         "type": "Wand",
         "magic": "1",
-        "rarity": "uncommon",
+        "rarity": "Uncommon",
         "detail": "uncommon (requires attunement by a spellcaster)",
         "weight": "1",
         "text": [
@@ -25417,7 +25415,7 @@ var magicItems = [{
             "Requires attunement",
             "",
             "Crafted by the drow, this slim black wand has 7 charges. While holding it, you can use an action to expend 1 of its charges to cause a small glob of viscous material to launch from the tip at one creature within 60 feet of you. Make a ranged attack roll against the target, with a bonus equal to your spellcasting modifier (or your Intelligence modifier, if you don't have a spellcasting modifier) plus your proficiency bonus. On a hit, the glob expands and dries on the target, which is restrained for 1 hour. After that time, the viscous material cracks and falls away.",
-            "Applying a pint or more of alcohol to the restrained creature dissolves the glob instantly, as does the application of oil of etherealness or universal solvent. The glob also dissolves instantly if exposed to sunlight. No other nonmagical process can remove the viscous material until it deteriorates on its own.",
+            "Applying a pint +or more of alcohol to the restrained creature dissolves the glob instantly, as does the application of oil of etherealness or universal solvent. The glob also dissolves instantly if exposed to sunlight. No other nonmagical process can remove the viscous material until it deteriorates on its own.",
             "The wand regains 1d6 + 1 expended charges daily at midnight. If you expend the wands last charge, roll a d20. On a 1, the wand melts into harmless slime and is destroyed.",
             "A wand of viscous globs is destroyed if exposed to sunlight for 1 hour without interruption."
         ],
@@ -25459,7 +25457,7 @@ var magicItems = [{
 
             "Requires Attunement by a Spellcaster",
             "",
-            "This wand has 7 charges. While holding it, you can use an action to expend 1 of its charges and choose a target within 120 feet of you. The target can be a creature, an object, or a point in space. Roll d100 and consult the following table to discover what happens.",
+            "This wand has 7 charges. While holding it, you can use an action to expend 1 of its charges and choose a target within 120 feet of you. The target can be a creature, an object, or a point +in space. Roll d100 and consult the following table to discover what happens.",
             "If the effect causes you to cast a spell from the wand, the spell's save DC is 15. If the spell normally has a range expressed in feet, its range becomes 120 feet if it isn't already.",
             "If an effect covers an area, you must center the spell on and include the target. If an effect has multiple possible subjects, the DM randomly determines which ones are affected.",
             "The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand crumbles into dust and is destroyed.",
@@ -25482,10 +25480,10 @@ var magicItems = [{
             "66-69 — You shrink yourself as if you had cast enlarge/ reduce on yourself.",
             "70-79 — You cast fireball.",
             "80-84 — You cast invisibility on yourself.",
-            "85-87 — Leaves grow from the target. If you chose a point in space as the target, leaves sprout from the creature nearest to that point. Unless they are picked off, the leaves turn brown and fall off after 24 hours.",
+            "85-87 — Leaves grow from the target. If you chose a point +in space as the target, leaves sprout from the creature nearest to that point. Unless they are picked off, the leaves turn brown and fall off after 24 hours.",
             "88-90 — A stream of 1 d4 x 10 gems, each worth 1 gp, shoots from the wand 's tip in a line 30 feet long and 5 feet wide. Each gem deals 1 bludgeoning damage, and the total damage of the gems is divided equally among all creatures in the line.",
             "91-95 — A burst of colorful shimmering light extends from you in a 30-foot radius. You and each creature in the area that can see must succeed on a DC 15 Constitution saving throw or become blinded for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-            "96-97 — The target's skin turns bright blue for 1d10 days. If you chose a point in space, the creature nearest to that point is affected.",
+            "96-97 — The target's skin turns bright blue for 1d10 days. If you chose a point +in space, the creature nearest to that point +is affected.",
             "98-00 — If you targeted a creature, it must make a DC 15 Constitution saving throw. If you didn't target a creature, you become the target and must make the saving throw. If the saving throw fails by 5 or more, the target is instantly petrified. On any other failed save, the target is restrained and begins to turn to stone. While restrained in this way, the target must repeat the saving throw at the end of its next turn, becoming petrified on a failure or ending the effect on a success. The petrification lasts until the target is freed by the greater restoration spell or similar magic."
         ],
         "roll": "1d6+1"
@@ -25733,7 +25731,7 @@ var magicItems = [{
             "Requires attunement by a creature that worships a god of the sea",
             "",
             "Held in the dungeon of White Plume Mountain, this trident is an exquisite weapon engraved with images of waves, shells, and sea creatures. Although you must worship a god of the sea to attune to this weapon, Wave happily accepts new converts.",
-            "You gain a +3 bonus to attack and damage rolls made with this magic weapon. If you score a critical hit with it, the target takes extra necrotic damage equal to half its hit point maximum.",
+            "You gain a +3 bonus to attack and damage rolls made with this magic weapon. If you score a critical hit with it, the target takes extra necrotic damage equal to half its hit point +maximum.",
             "The weapon also functions as a trident of fish command and a weapon of warning. It can confer the benefit of a cap of water breathing while you hold it, and you can use it as a cube of force by choosing the effect, instead of pressing cube sides to select it.",
             "Sentience: Wave is a sentient weapon of neutral alignment, with an Intelligence of 14, a Wisdom of 10, and a Charisma of 18. It has hearing and darkvision out to a range of 120 feet.",
             "The weapon communicates telepathically with its wielder and can speak, read, and understand Aquan. It can also speak with aquatic animals as if using a speak with animals spell, using telepathy to involve its wielder in the conversation.",
@@ -25765,7 +25763,7 @@ var magicItems = [{
             "The sword also functions as a wand of enemy detection. It regains all of its expended charges at dawn and isn't at risk of crumbling if its last charge is used.",
             "Sentience: Waythe is a sentient weapon of neutral good alignment, with an Intelligence of 12, a Wisdom of 2, and a Charisma of 14. It has hearing and darkvision out to a range of 120 feet.",
             "The weapon can speak and understand Giant and Common, and it can communicate telepathically with its wielder.",
-            "Personality: This sword believes in freedom and allowing others to live as they see fit. It is protective of its friends, and wants to be friends with a like-minded wielder. (It takes only 1 minute for a good-aligned character to gain attunement with the sword.) Waythe is courageous to the point of foolhardiness, however, and vocally urges bold action. It is likely to come into conflict with an evil or a timid wielder."
+            "Personality: This sword believes in freedom and allowing others to live as they see fit. It is protective of its friends, and wants to be friends with a like-minded wielder. (It takes only 1 minute for a good-aligned character to gain attunement with the sword.) Waythe is courageous to the point +of foolhardiness, however, and vocally urges bold action. It is likely to come into conflict with an evil or a timid wielder."
         ],
         "modifier": [{
                 "category": "bonus",
@@ -25824,7 +25822,7 @@ var magicItems = [{
             "Whelm is a powerful warhammer forged by dwarves and lost in the dungeon of White Plume Mountain.",
             "You gain a +3 bonus to attack and damage rolls made with this magic weapon. At dawn the day after you first make an attack roll with Whelm, you develop a fear of being outdoors that persists as long as you remain attuned to the weapon. This causes you to have disadvantage on attack rolls, saving throws, and ability checks while you can see the daytime sky.",
             "Thrown Weapon: Whelm has the thrown property, with a normal range of 20 feet and a long range of 60 feet. When you hit with a ranged weapon attack using it, the target takes an extra 1d8 bludgeoning damage, or an extra 2d8 bludgeoning damage if the target is a giant. Each time you throw the weapon, it flies back to your hand after the attack. If you don't have a hand free, the weapon lands at your feet.",
-            "Shock Wave: You can use an action to strike the ground with Whelm and send a shock wave out from the point of impact. Each creature of your choice on the ground within 60 feet of that point must succeed on a DC 15 Constitution saving throw or become stunned for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Once used, this property can't be used again until the next dawn.",
+            "Shock Wave: You can use an action to strike the ground with Whelm and send a shock wave out from the point +of impact. Each creature of your choice on the ground within 60 feet of that point +must succeed on a DC 15 Constitution saving throw or become stunned for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Once used, this property can't be used again until the next dawn.",
             "Supernatural Awareness: While you are holding the weapon, it alerts you to the location of any secret or concealed doors within 30 feet of you. In addition, you can use an action to cast detect evil and good or locate object from the weapon. Once you cast either spell, you can't cast it from the weapon again until the next dawn.",
             "Sentience: Whelm is a sentient lawful neutral weapon with an Intelligence of 15, a Wisdom of 12, and a Charisma of 15. It has hearing and darkvision out to a range of 120 feet.",
             "The weapon communicates telepathically with its wielder and can speak, read, and understand Dwarvish. Giant, and Goblin. It shouts battle cries in Dwarvish when used in combat.",
@@ -25961,7 +25959,7 @@ var magicItems = [{
             "",
             "Legendary Resistance: (1/Day) If you fail a saving throw, you can choose to succeed instead.",
             "",
-            "Winter's Fury: While your current hit points are equal to or less than half your hit point maximum, you deal an extra 1d8 cold damage with your melee attacks."
+            "Winter's Fury: While your current hit points are equal to or less than half your hit point +maximum, you deal an extra 1d8 cold damage with your melee attacks."
         ]
     },
     {
@@ -26080,7 +26078,7 @@ var magicItems = [{
             "Built by dwarven gods and entrusted to the rulers of Shanatar, an ancient dwarven empire. the Wyrmskull Throne was a symbol of dwarven power and pride for ages untold. The throne hovers a foot off the ground and is a massive thing made of polished obsidian with oversized feet—the impaled skulls of four ancient blue dragons. Runes glisten in the carved obsidian winking to life with blue energy when the throne's powers are activated.",
             "After the fall of Shanatar, the Wyrmskull Throne fell into the clutches of less honorable creatures. A band of adventurers wrested the throne from the aquatic elf tyrant Gantar Kraok and sold it to the storm giant Neri for a considerable fortune. Neri had the throne magically enlarged and gave it to her husband, King Hekaton, as a gift, along with one of the Ruling Scepters of Shanatar, which she had found in a wreck at the bottom of the Trackless Sea. Only a creature attuned to a Ruling Scepter and in possession of it can harness the powers of the Wyrmskull Throne, which has become the centerpiece of King Ilekaton’s throne room in the undersea citadel of Maelstrom. Fear of the throne's power has helped prevent evil giants from challenging or threatening Hekaton's leadership.",
             "Any creature not attuned to a Ruling Scepter who sits on the throne is paralyzed and encased in a magical force ﬁeld. While encased, the creature can't be touched or moved from the throne. Touching a Ruling Scepter to the force ﬁeld dispels the ﬁeld, though the creature remains paralyzed until it is separated from the throne.",
-            "Any creature seated on the throne can hear faint Whispers in Draconic- the whisperings of four blue dragons whose skulls adorn the throne. Although powerless, these spirits try to influence the decisions of the throne's master",
+            "Any creature seated on the throne can hear faint +Whispers in Draconic- the whisperings of four blue dragons whose skulls adorn the throne. Although powerless, these spirits try to influence the decisions of the throne's master",
             "Properties of the Throne: The throne has 9 charges and regains all expended charges daily at dawn. A creature that sits on the throne while attuned to a Ruling Sceptor in its possession can harness the throne’s properties, which are as follows:",
             "The throne gains a ﬂying speed of 30 feet and can hover and ﬂies where the creature wills. This property doesn’t expend any charges.",
             "Both the throne and the creature sitting on it can move through earth and stone without disturbing the material they move through. This property doesn't expend any charges.",
@@ -26091,4 +26089,1388 @@ var magicItems = [{
             "Destroying the Throne. The Wyrmskull Throne can be destroyed by breaking at least ﬁve Ruling Scepters of Shanatar simultaneously on it. This fact has never been recorded or sung of among the dwarves or any bards or storytellers, and it can’t be discovered with an ability check. Characters who want to destroy the throne must go on a quest to learn the method for doing so. The throne’s destruction triggers an explosion, as shards of obsidian ﬂy out in all directions. Each creature and object within a 30-foot-radius sphere centered on the throne must succeed on a DC 21 Dexterity saving throw, taking 70 (2Od6) slashing damage on a failed save, or half as much damage on a successful one."
         ]
     }
-]
+];
+
+var race = [
+    {
+      "name": "Aarakocra",
+      "size": "Medium",
+      "speed": "25 feet",
+      "ability": "Dex +2, Wis +1",
+      "trait": [
+        {
+          "name": "Flight",
+          "text": "You have a flying speed of 50 feet. To use this speed, you can't be wearing medium or heavy armor."
+        },
+        {
+          "name": "Talons",
+          "text": "You are proficient with your unarmed strikes, which deal 1d4 slashing damage on a hit."
+        },
+        {
+          "name": "Language",
+          "text": "You can speak, read, and write Common, Aarakocra, and Auran."
+        }
+      ]
+    },
+    {
+      "name": "Aasimar (Fallen)",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Cha +2, Str +1",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "Blessed with a radiant soul, your vision can easily cut through darkness. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Celestial Resistance",
+          "text": "You have resistance to necrotic damage and radiant damage."
+        },
+        {
+          "name": "Healing Hands",
+          "text": "As an action, you can touch a creature and cause it to regain a number of hit points equal to your level. Once you use this trait, you can't use it again until you finish a long rest."
+        },
+        {
+          "name": "Light Bearer",
+          "text": "You know the light cantrip. Charisma is your spellcasting ability for it."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Celestial."
+        },
+        {
+          "name": "Necrotic Shroud",
+          "text": [
+            "Starting at 3rd level, you can use your action to unleash the divine energy within yourself, causing your eyes to turn into pools of darkness and two skeletal, ghostly, flightless wings to sprout from your back. The instant you transform, other creatures within 10 feet of you that can see you must succed on a Charisma saving throw (DC 8 + your proficiency bonus + your Charisma modifier) or become frightened of you until the end of your next turn.",
+            "Your transformation lasts for 1 minute or until you end it as a bonus action.. During it,  once on each of your turns, you can deal extra necrotic damage to one target when you deal damage to it with an attack or a spell. The extra necrotic damage equals your level.",
+            "Once you use this trait, you can't use it again until you finish a long rest."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Aasimar (Protector)",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Cha +2, Wis +1",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "Blessed with a radiant soul, your vision can easily cut through darkness. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Celestial Resistance",
+          "text": "You have resistance to necrotic damage and radiant damage."
+        },
+        {
+          "name": "Healing Hands",
+          "text": "As an action, you can touch a creature and cause it to regain a number of hit points equal to your level. Once you use this trait, you can't use it again until you finish a long rest."
+        },
+        {
+          "name": "Light Bearer",
+          "text": "You know the light cantrip. Charisma is your spellcasting ability for it."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Celestial."
+        },
+        {
+          "name": "Radiant Soul",
+          "text": [
+            "Starting at 3rd level, you can use your action to unleash the divine energy within yourself, causing your eyes to glimmer and two luminous, incorporeal wings to sprout from your back.",
+            "Your transformation lasts for 1 minute or until you end it as a bonus action.. During it, you have a flysing speed of 30 feet, and once on each of your turns, you can deal extra radiant damageto one target when you deal damage to it with an attack or a spell. The extra radiant damage equals your level.",
+            "Once you use this trait, you can't use it again until you finish a long rest."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Aasimar (Scourge)",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Cha +2, Con +1",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "Blessed with a radiant soul, your vision can easily cut through darkness. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Celestial Resistance",
+          "text": "You have resistance to necrotic damage and radiant damage."
+        },
+        {
+          "name": "Healing Hands",
+          "text": "As an action, you can touch a creature and cause it to regain a number of hit points equal to your level. Once you use this trait, you can't use it again until you finish a long rest."
+        },
+        {
+          "name": "Light Bearer",
+          "text": "You know the light cantrip. Charisma is your spellcasting ability for it."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Celestial."
+        },
+        {
+          "name": "Radiant Consumption",
+          "text": [
+            "Starting at 3rd level, you can use your action to unleash the divine energy within yourself, causing a searing light to radiate from you, pour out of your eyes and mouth, and threaten to char you.",
+            "Your transformation lasts for 1 minute or until you end it as a bonus action.. During it, you shed bright light in a 10-foot radius and dim light for an additional 10 feet, and at the end of each of your turns, you and each creature within 10 feet of you take radiant damage equal to half your level (rounded up). In addition, once on each of your turns, you can deal extra radiant damage to one target when you deal damage to it with an attack or a spell. The extra radiant damage equals your level.",
+            "Once you use this trait, you can't use it again until you finish a long rest."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bugbear",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Str +2, Dex +1",
+      "proficiency": "Stealth",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Long-Limbed",
+          "text": "When you make a melee attack on your turn, your reach for it is 5 feet greater than normal."
+        },
+        {
+          "name": "Powerful Build",
+          "text": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+        },
+        {
+          "name": "Sneaky",
+          "text": "You are proficient in the Stealth skill."
+        },
+        {
+          "name": "Surprise Attack",
+          "text": "If you surprise a creature and hit it with an attack on your first turn in combat, the attack deals an extra 2d6 damage to it. You can use this trait only once per combat."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Goblin."
+        }
+      ]
+    },
+    {
+      "name": "Dragonborn",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Str +2, Cha +1",
+      "trait": [
+        {
+          "name": "Draconic Ancestry",
+          "text": "You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type, as shown in the table. (Player's Handbook p. 34)"
+        },
+        {
+          "name": "Breath Weapon",
+          "text": [
+            "You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation.",
+            "",
+            "When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.",
+            "",
+            "After you use your breath weapon, you can't use it again until you complete a short or long rest."
+          ]
+        },
+        {
+          "name": "Damage Resistance",
+          "text": "You have resistance to the damage type associated with your draconic ancestry."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Draconic. Draconic is thought to be one of the oldest languages and is often used in the study of magic. The language sounds harsh to most other creatures and includes numerous hard consonants and sibilants."
+        }
+      ]
+    },
+    {
+      "name": "Dwarf (Duergar)",
+      "size": "Medium",
+      "speed": "25 feet",
+      "ability": "Con +2, Str +1",
+      "trait": [
+        {
+          "name": "Superior Darkvision",
+          "text": "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 120 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Duergar Resilience",
+          "text": "You have advantage on saving throws against poison, and you have resistance against poison damage. You also have advantage on saving throws against illusions and against being charmed or paralyzed."
+        },
+        {
+          "name": "Dwarven Combat Training",
+          "text": "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
+        },
+        {
+          "name": "Tool Proficiency",
+          "text": "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools."
+        },
+        {
+          "name": "Stonecunning",
+          "text": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common, Dwarvish, and Undercommon."
+        },
+        {
+          "name": "Duergar Magic",
+          "text": "When you reach 3rd level, you can cast the Enlarge/Reduce spell on yourself once with this trait, using only the spell's enlarge option. When reach 5th level, you can cast the Invisibility spell on yourself once with this trait. You don't need material components for either spell, and you can't cast them while you're in direct sunlight, although sunlight has no effect on them once cast. You regain the ability to cast these spells with this trait when you finish a long rest. Intelligence is your spellcasting ability for these spells."
+        },
+        {
+          "name": "Sunlight Sensitivity",
+          "text": "You have disadvantage on attack rolls and Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight."
+        }
+      ]
+    },
+    {
+      "name": "Dwarf (Hill)",
+      "size": "Medium",
+      "speed": "25 feet",
+      "ability": "Con +2, Wis +1",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Dwarven Resilience",
+          "text": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+        },
+        {
+          "name": "Dwarven Combat Training",
+          "text": "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
+        },
+        {
+          "name": "Tool Proficiency",
+          "text": "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools."
+        },
+        {
+          "name": "Stonecunning",
+          "text": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Dwarvish. Dwarvish is full of hard consonants and guttural sounds, and those characteristics spill over into whatever other language a dwarf might speak."
+        },
+        {
+          "name": "Dwarven Toughness",
+          "text": "Your hit point +maximum increases by 1, and it increases by 1 every time you gain a level."
+        }
+      ]
+    },
+    {
+      "name": "Dwarf (Mountain)",
+      "size": "Medium",
+      "speed": "25 feet",
+      "ability": "Con +2, Str +2",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Dwarven Resilience",
+          "text": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+        },
+        {
+          "name": "Dwarven Combat Training",
+          "text": "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
+        },
+        {
+          "name": "Tool Proficiency",
+          "text": "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools."
+        },
+        {
+          "name": "Stonecunning",
+          "text": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Dwarvish. Dwarvish is full of hard consonants and guttural sounds, and those characteristics spill over into whatever other language a dwarf might speak."
+        },
+        {
+          "name": "Dwarven Armor Training",
+          "text": "You have proficiency with light and medium armor."
+        }
+      ]
+    },
+    {
+      "name": "Elf (Drow)",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Dex +2, Cha +1",
+      "proficiency": "Perception",
+      "trait": [
+        {
+          "name": "Superior Darkvision",
+          "text": "Accustomed to the depths of the Underdark, you have superior vision in dark and dim conditions. You can see in dim light within 120 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Keen Senses",
+          "text": "You have proficiency in the Perception skill."
+        },
+        {
+          "name": "Fey Ancestry",
+          "text": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+        },
+        {
+          "name": "Trance",
+          "text": "Elves don't need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is \"trance.\") While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Elvish. Elvish is fluid, with subtle intonations and intricate grammar. Elven literature is rich and varied, and their songs and poems are famous among other races. Many bards learn their language so they can add Elvish ballads to their repertoires."
+        },
+        {
+          "name": "Sunlight Sensitivity",
+          "text": "You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight."
+        },
+        {
+          "name": "Drow Magic",
+          "text": "You know the dancing lights cantrip. When you reach 3rd level, you can cast the faerie fire spell once per day; you must finish a long rest in order to cast the spell again using this trait. When you reach 5th level, you can also cast the darkness spell once per day; you must finish a long rest in order to cast the spell again using this trait. Charisma is your spellcasting ability for these spells."
+        },
+        {
+          "name": "Drow Weapon Training",
+          "text": "You have proficiency with rapiers, shortswords, and hand crossbows."
+        }
+      ]
+    },
+    {
+      "name": "Elf (Eladrin)",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Dex +2, Int +1",
+      "proficiency": "Perception",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Keen Senses",
+          "text": "You have proficiency in the Perception skill."
+        },
+        {
+          "name": "Fey Ancestry",
+          "text": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+        },
+        {
+          "name": "Trance",
+          "text": "Elves don't need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is \"trance.\") While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Elvish. Elvish is fluid, with subtle intonations and intricate grammar. Elven literature is rich and varied, and their songs and poems are famous among other races. Many bards learn their language so they can add Elvish ballads to their repertoires."
+        },
+        {
+          "name": "Elf Weapon Training",
+          "text": "You have proficiency with the longsword, shortsword, shortbow, and longbow."
+        },
+        {
+          "name": "Fey Step",
+          "text": "You can cast the misty step spell once using this trait. You regain the ability to do so when you finish a short or long rest."
+        }
+      ]
+    },
+    {
+      "name": "Elf (High)",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Dex +2, Int +1",
+      "proficiency": "Perception",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Keen Senses",
+          "text": "You have proficiency in the Perception skill."
+        },
+        {
+          "name": "Fey Ancestry",
+          "text": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+        },
+        {
+          "name": "Trance",
+          "text": "Elves don't need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is \"trance.\") While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common, Elvish, and one extra language of your choice. Elvish is fluid, with subtle intonations and intricate grammar. Elven literature is rich and varied, and their songs and poems are famous among other races. Many bards learn their language so they can add Elvish ballads to their repertoires."
+        },
+        {
+          "name": "Elf Weapon Training",
+          "text": "You have proficiency with the longsword, shortsword, shortbow, and longbow."
+        },
+        {
+          "name": "Cantrip",
+          "text": "You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it."
+        }
+      ]
+    },
+    {
+      "name": "Elf (Wood)",
+      "size": "Medium",
+      "speed": "35 feet",
+      "ability": "Dex +2, Wis +1",
+      "proficiency": "Perception",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Keen Senses",
+          "text": "You have proficiency in the Perception skill."
+        },
+        {
+          "name": "Fey Ancestry",
+          "text": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+        },
+        {
+          "name": "Trance",
+          "text": "Elves don't need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is \"trance.\") While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Elvish. Elvish is fluid, with subtle intonations and intricate grammar. Elven literature is rich and varied, and their songs and poems are famous among other races. Many bards learn their language so they can add Elvish ballads to their repertoires."
+        },
+        {
+          "name": "Elf Weapon Training",
+          "text": "You have proficiency with the longsword, shortsword, shortbow, and longbow."
+        },
+        {
+          "name": "Fleet of Foot",
+          "text": "Your base walking speed increases to 35 feet."
+        },
+        {
+          "name": "Mask of the Wild",
+          "text": "You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
+        }
+      ]
+    },
+    {
+      "name": "Firbolg",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Wis +2, Str +1",
+      "trait": [
+        {
+          "name": "Firbolg Magic",
+          "text": "You can cast detect magic and disguise self with this trait, using Wisdom as your spellcasting ability for them. Once you cast either spell, you can't cast it again with this trait until you finish a short or long rest. When you use this version of disguise self, you can seem up to 3 feet shorter than normal, allowing you to more easily blend in with humans and elves."
+        },
+        {
+          "name": "Hidden Step",
+          "text": "As a bonus action, you can magically turn invisible until the start of your next turn ot until you attack, make a damage roll, or force someone to make a saving throw. Once you use this trait, you can't use it again until you finish a short or long rest."
+        },
+        {
+          "name": "Powerful Build",
+          "text": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+        },
+        {
+          "name": "Speech of Beast and Leaf",
+          "text": "You have the ability to communicate in a limited manner with beasts and plants. They can understand the meaning of your words, though you have no special ability to understand them in return. You have advantage on all Charisma checks you make to influence them."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common, Elvish, and Giant."
+        }
+      ]
+    },
+    {
+      "name": "Genasi (Air)",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Con +2, Dex +1",
+      "trait": [
+        {
+          "name": "Unending Breath",
+          "text": "You can hold your breath indefinitely while you're not incapacitated."
+        },
+        {
+          "name": "Mingle with the Wind",
+          "text": "You can cast the levitate spell once with this trait, requiring no material components, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for this spell."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Primordial. Primordial is a guttural language, filled with harsh syllables and hard consonants."
+        }
+      ]
+    },
+    {
+      "name": "Genasi (Earth)",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Con +2, Str +1",
+      "trait": [
+        {
+          "name": "Earth Walk",
+          "text": "You can move across difficult terrain made of earth or stone without expending extra movement."
+        },
+        {
+          "name": "Merge with Stone",
+          "text": "You can cast the pass without trace spell once with this trait, requiring no material components, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for this spell."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Primordial. Primordial is a guttural language, filled with harsh syllables and hard consonants."
+        }
+      ]
+    },
+    {
+      "name": "Genasi (Fire)",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Con +2, Int +1",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. Your ties to the Elemental Plane of Fire make your darkvision unusual: everything you see in darkness is in a shade of red."
+        },
+        {
+          "name": "Fire Resistance",
+          "text": "You have resistance to fire damage."
+        },
+        {
+          "name": "Reach to the Blaze",
+          "text": "You know the produce flame cantrip. Once you reach 3rd level, you can cast the burning hands spell once with this trait as a 1st-level spell, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for these spells."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Primordial. Primordial is a guttural language, filled with harsh syllables and hard consonants."
+        }
+      ]
+    },
+    {
+      "name": "Genasi (Water)",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Con +2, Wis +1",
+      "trait": [
+        {
+          "name": "Acid Resistance",
+          "text": "You have resistance to acid damage."
+        },
+        {
+          "name": "Amphibious",
+          "text": "You can breathe air and water."
+        },
+        {
+          "name": "Swim",
+          "text": "You have a swimming speed of 30 feet."
+        },
+        {
+          "name": "Call to the Wave",
+          "text": "You know the shape water cantrip. When you reach 3rd level, you can cast the create or destroy water spell as a 2nd-level spell once with this trait, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for these spells."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Primordial. Primordial is a guttural language, filled with harsh syllables and hard consonants."
+        }
+      ]
+    },
+    {
+      "name": "Gnome (Deep)",
+      "size": "Small",
+      "speed": "25 feet",
+      "ability": "Int +2, Dex +1",
+      "trait": [
+        {
+          "name": "Superior Darkvision",
+          "text": "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 120 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Gnome Cunning",
+          "text": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic."
+        },
+        {
+          "name": "Stone Camouflage",
+          "text": "You have advantage on Dexterity (stealth) checks to hide in rocky terrain."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common, Gnomish, and Undercommon. The svirfneblin dialect is more guttural than surface Gnomish, and most svirfneblin know only a little bit of Common, but those who deal with outsiders (and that includes you as an adventurer) pick up enough Common to get by in other lands."
+        }
+      ]
+    },
+    {
+      "name": "Gnome (Forest)",
+      "size": "Small",
+      "speed": "25 feet",
+      "ability": "Int +2, Dex +1",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Gnome Cunning",
+          "text": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Gnomish. The Gnomish language, which uses the Dwarvish script, is renowned for its technical treatises and its catalogs of knowledge about the natural world."
+        },
+        {
+          "name": "Natural Illusionist",
+          "text": "You know the minor illusion cantrip. Intelligence is your spellcasting ability for it."
+        },
+        {
+          "name": "Speak with Small Beasts",
+          "text": "Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts. Forest gnomes love animals and often keep squirrels, badgers, rabbits, moles, woodpeckers, and other creatures as beloved pets."
+        }
+      ]
+    },
+    {
+      "name": "Gnome (Rock)",
+      "size": "Small",
+      "speed": "25 feet",
+      "ability": "Int +2, Con +1",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Gnome Cunning",
+          "text": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Gnomish. The Gnomish language, which uses the Dwarvish script, is renowned for its technical treatises and its catalogs of knowledge about the natural world."
+        },
+        {
+          "name": "Artificer's Lore",
+          "text": "Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply."
+        },
+        {
+          "name": "Tinker",
+          "text": [
+            "You have proficiency with artisan's tools (tinker's tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time.",
+            "",
+            "When you create a device, choose one of the following options:",
+            "",
+            "Clockwork Toy. This toy is a clockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or soldier. When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random direction. It makes noises as appropriate to the creature it represents.",
+            "",
+            "Fire Starter. The device produces a miniature flame, which you can use to light a candle, torch, or campfire. Using the device requires your action.",
+            "",
+            "Music Box. When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches the song's end or when it is closed."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Goblin",
+      "size": "Small",
+      "speed": "30 feet",
+      "ability": "Dex +2, Con +1",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Fury of the Small",
+          "text": "When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can't use it again until you finish a short or long rest."
+        },
+        {
+          "name": "Nimble Escape",
+          "text": "You can take the Disengage or Hide action as a bonus action on each of your turns."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Goblin."
+        }
+      ]
+    },
+    {
+      "name": "Goliath",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Str +2, Con +1",
+      "proficiency": "Athletics",
+      "trait": [
+        {
+          "name": "Natural Athlete",
+          "text": "You have proficiency in the Athletics skill."
+        },
+        {
+          "name": "Stone's Endurance",
+          "text": "You can focus yourself to occasionally shrug off injury. When you take damage, you can use your reaction to roll a d12. Add your Constitution modifier to the number rolled, and reduce the damage by that total. After you use this trait, you can't use it again until you finish a short or long rest."
+        },
+        {
+          "name": "Powerful Build",
+          "text": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+        },
+        {
+          "name": "Mountain Born",
+          "text": "You're acclimated to high altitude, including elevations above 20,000 feet. You're also naturally adapted to cold climates, as described in chapter 5 of the Dungeon Master's Guide."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Giant."
+        }
+      ]
+    },
+    {
+      "name": "Half-Elf",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Cha +2",
+      "trait": [
+        {
+          "name": "Ability Score Increase",
+          "text": "Two different ability scores of your choice increase by 1."
+        },
+        {
+          "name": "Darkvision",
+          "text": "Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Fey Ancestry",
+          "text": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+        },
+        {
+          "name": "Skill Versatility",
+          "text": "You gain proficiency in two skills of your choice."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common, Elvish, and one extra language of your choice."
+        }
+      ]
+    },
+    {
+      "name": "Half-Elf (Aquatic Elf Descent)",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Cha +2",
+      "trait": [
+        {
+          "name": "Ability Score Increase",
+          "text": "Two different ability scores of your choice increase by 1."
+        },
+        {
+          "name": "Darkvision",
+          "text": "Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Fey Ancestry",
+          "text": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+        },
+        {
+          "name": "Variant Feature (Choose 1)",
+          "text": [
+            "Keen Senses",
+            "You have proficiency in the Perception skill",
+            "",
+            "Swim",
+            "You gain a swimming speed of 30.",
+            ""
+          ]
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common, Elvish, and one extra language of your choice."
+        }
+      ]
+    },
+    {
+      "name": "Half-Elf (Drow Descent)",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Cha +2",
+      "trait": [
+        {
+          "name": "Ability Score Increase",
+          "text": "Two different ability scores of your choice increase by 1."
+        },
+        {
+          "name": "Darkvision",
+          "text": "Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Fey Ancestry",
+          "text": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+        },
+        {
+          "name": "Variant Feature (Choose 1)",
+          "text": [
+            "Keen Senses",
+            "You have proficiency in the Perception skill",
+            "",
+            "Drow Magic",
+            "You know the dancing lights cantrip. When you reach 3rd level, you can cast the faerie fire spell once per day; you must finish a long rest in order to cast the spell again using this trait. When you reach 5th level, you can also cast the darkness spell once per day; you must finish a long rest in order to cast the spell again using this trait. Charisma is your spellcasting ability for these spells."
+          ]
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common, Elvish, and one extra language of your choice."
+        }
+      ]
+    },
+    {
+      "name": "Half-Elf (Moon Elf or Sun Elf Descent)",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Cha +2",
+      "trait": [
+        {
+          "name": "Ability Score Increase",
+          "text": "Two different ability scores of your choice increase by 1."
+        },
+        {
+          "name": "Darkvision",
+          "text": "Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Fey Ancestry",
+          "text": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+        },
+        {
+          "name": "Variant Feature (Choose 1)",
+          "text": [
+            "Keen Senses",
+            "You have proficiency in the Perception skill",
+            "",
+            "Elf Weapon Training",
+            "You have proficiency with the longsword, shortsword, shortbow, and longbow.",
+            "",
+            "Cantrip",
+            "You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it."
+          ]
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common, Elvish, and one extra language of your choice."
+        }
+      ]
+    },
+    {
+      "name": "Half-Elf (Wood Elf Descent)",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Cha +2",
+      "trait": [
+        {
+          "name": "Ability Score Increase",
+          "text": "Two different ability scores of your choice increase by 1."
+        },
+        {
+          "name": "Darkvision",
+          "text": "Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Fey Ancestry",
+          "text": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+        },
+        {
+          "name": "Variant Feature (Choose 1)",
+          "text": [
+            "Keen Senses",
+            "You have proficiency in the Perception skill",
+            "",
+            "Elf Weapon Training",
+            "You have proficiency with the longsword, shortsword, shortbow, and longbow.",
+            "",
+            "Fleet of Foot",
+            "Your base walking speed increases to 35 feet.",
+            "",
+            "Mask of the Wild",
+            "You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
+          ]
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common, Elvish, and one extra language of your choice."
+        }
+      ]
+    },
+    {
+      "name": "Half-Orc",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Str +2, Con +1",
+      "proficiency": "Intimidation",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "Thanks to your orc blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Menacing",
+          "text": "You gain proficiency in the Intimidation skill."
+        },
+        {
+          "name": "Relentless Endurance",
+          "text": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point +instead. You can't use this feature again until you finish a long rest."
+        },
+        {
+          "name": "Savage Attacks",
+          "text": "When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Orc. Orc is a harsh, grating language with hard consonants. It has no script of its own but is written in the Dwarvish script."
+        }
+      ]
+    },
+    {
+      "name": "Halfling (Ghostwise)",
+      "size": "Small",
+      "speed": "25 feet",
+      "ability": "Dex +2, Wis +1",
+      "trait": [
+        {
+          "name": "Lucky",
+          "text": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
+        },
+        {
+          "name": "Brave",
+          "text": "You have advantage on saving throws against being frightened."
+        },
+        {
+          "name": "Halfling Nimbleness",
+          "text": "You can move through the space of any creature that is of a size larger than yours."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings are loath to share it with others. They write very little, so they don't have a rich body of literature. Their oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in whose lands they dwell or through which they are traveling."
+        },
+        {
+          "name": "Silent Speech",
+          "text": "You can speak telepathically to any creature within 30 feet of you. The creature understands you only if the two of you share a language. You can speak telepathically in this way to one creature at a time."
+        }
+      ]
+    },
+    {
+      "name": "Halfling (Lightfoot)",
+      "size": "Small",
+      "speed": "25 feet",
+      "ability": "Dex +2, Cha +1",
+      "trait": [
+        {
+          "name": "Lucky",
+          "text": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
+        },
+        {
+          "name": "Brave",
+          "text": "You have advantage on saving throws against being frightened."
+        },
+        {
+          "name": "Halfling Nimbleness",
+          "text": "You can move through the space of any creature that is of a size larger than yours."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings are loath to share it with others. They write very little, so they don't have a rich body of literature. Their oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in whose lands they dwell or through which they are traveling."
+        },
+        {
+          "name": "Naturally Stealthy",
+          "text": "You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you."
+        }
+      ]
+    },
+    {
+      "name": "Halfling (Stout)",
+      "size": "Small",
+      "speed": "25 feet",
+      "ability": "Dex +2, Con +1",
+      "trait": [
+        {
+          "name": "Lucky",
+          "text": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
+        },
+        {
+          "name": "Brave",
+          "text": "You have advantage on saving throws against being frightened."
+        },
+        {
+          "name": "Halfling Nimbleness",
+          "text": "You can move through the space of any creature that is of a size larger than yours."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings are loath to share it with others. They write very little, so they don't have a rich body of literature. Their oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in whose lands they dwell or through which they are traveling."
+        },
+        {
+          "name": "Stout Resilience",
+          "text": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+        }
+      ]
+    },
+    {
+      "name": "Hobgoblin",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Con +2, Int +1",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Martial Training",
+          "text": "You are proficient with two martial weapons of your choice and with light armor."
+        },
+        {
+          "name": "Saving Face",
+          "text": "Hobgoblins are careful not to show weakness in front of their allies, for fear of losing status. If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you can't use it again until you finish a short or long rest."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Goblin."
+        }
+      ]
+    },
+    {
+      "name": "Human",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Str +1, Dex +1, Con +1, Int +1, Wis +1, Cha +1",
+      "trait": {
+        "name": "Languages",
+        "text": "You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on."
+      }
+    },
+    {
+      "name": "Human (Variant)",
+      "size": "Medium",
+      "speed": "30 feet",
+      "trait": [
+        {
+          "name": "Ability Score Increase",
+          "text": "Two different ability scores of your choice increase by 1."
+        },
+        {
+          "name": "Skills",
+          "text": "You gain proficiency in one skill of your choice."
+        },
+        {
+          "name": "Feat",
+          "text": "You gain one feat of your choice."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on."
+        }
+      ]
+    },
+    {
+      "name": "Kenku",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Dex +2, Wis +1",
+      "trait": [
+        {
+          "name": "Expert Forgery",
+          "text": "You can duplicate other creatures' handwriting and craftwork. You have advantage on all checks made to produce forgeries or duplicates of existing objects."
+        },
+        {
+          "name": "Kenku Training",
+          "text": "You are proficient in your choice of two of the following skills: Acrobatics, Deception, Stealth, and Sleight of Hand."
+        },
+        {
+          "name": "Mimicry",
+          "text": "You can mimic sounds you have heard, including voices. A creature that hears the sounds can tell they are imitations with a successful Wisdom (Insight) check opposed by your Charisma (Deception) check."
+        },
+        {
+          "name": "Languages",
+          "text": "You can read and write Common and Auran, but you can speak only using your Mimicry trait"
+        }
+      ]
+    },
+    {
+      "name": "Kobold",
+      "size": "Small",
+      "speed": "30 feet",
+      "ability": "Dex +2, Str +-2",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Grovel, Cower, and Beg",
+          "text": "As an action on your turn, you can cower pathetically to distract nearby foes. Until the end of your next turn, your allies gain advantage on attack rolls against enemies within 10 feet of you that you can see. Once you uses this trait, you can't use it again until you finish a short or long rest."
+        },
+        {
+          "name": "Pack Tactics",
+          "text": "You have advantage on an attack roll against a creature if at least one of your allies is within 5 feet of the creature and the ally isn't incapacitated."
+        },
+        {
+          "name": "Sunlight Sensitivity",
+          "text": "You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Draconic."
+        }
+      ]
+    },
+    {
+      "name": "Lizardfolk",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Con +2, Wis +1",
+      "trait": [
+        {
+          "name": "Swim Speed",
+          "text": "You have a swimming speed of 30 feet."
+        },
+        {
+          "name": "Bite",
+          "text": "Your fanged maw is a natural weapon, which you can use to make unarmed strikes. If you hit with it, you deal piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage  normal for an unarmed strike."
+        },
+        {
+          "name": "Cunning Artisan",
+          "text": "As part of a short rest, you can harvest bone and hide from a slain beast, construct, dragon, monstrosity, or plant creature of size small or larger to create one of the following items: a shield, a club, a javelin, or 1d4 darts or blowgun needles. To use this trait, you need a blade, such as a dagger, or appropriate artisan's tools, such as leatherworker's tools."
+        },
+        {
+          "name": "Hold Breath",
+          "text": "You can hold your breath for up to 15 minutes at a time."
+        },
+        {
+          "name": "Hunter's Lore",
+          "text": "You gain proficiency with two of the following skills of your choice: Animal Handling, Nature, Perception, Stealth, and Survival."
+        },
+        {
+          "name": "Natural Armor",
+          "text": "You have tough, scaly skin. When you aren't wearing armor, your AC is 13 + your Dexterity modifier. You can use your natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield's benefits apply as normal while you use your natural armor."
+        },
+        {
+          "name": "Hungry Jaws",
+          "text": "In battle, you can throw yourself into a vicious feeding frenzy. As a bonus action, you can make a special attack with your bite. If the attack hits, it deals its normal damage, and you gain temporary hit points equal to your Constitution modifier (minimum of 1), and you can't use this trait again until you finish a short or long rest."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Draconic."
+        }
+      ]
+    },
+    {
+      "name": "Orc",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Str +2, Con +1, Int +-2",
+      "proficiency": "Intimidation",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Aggressive",
+          "text": "As a bonus action, you can move up to your movement speed toward a hostile creature you can see or hear. You must end this move closer to the enemy than you started."
+        },
+        {
+          "name": "Menacing",
+          "text": "You are trained in the Intimidation skill."
+        },
+        {
+          "name": "Powerful Build",
+          "text": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Orc."
+        }
+      ]
+    },
+    {
+      "name": "Shifter (Razorclaw)",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Dex +2",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "Your lycanthropic heritage grants you the ability to see in dark conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Shifting",
+          "text": [
+            "On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as a bonus action.",
+            "",
+            "While shifting, you gain temporary hit points equal to your level + your Constitution bonus (minimum of 1). You also gain a feature that depends on your shifter subrace, described below.",
+            "",
+            "You must finish a short or long rest before you can shift again."
+          ]
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Sylvan."
+        },
+        {
+          "name": "Shifting Feature",
+          "text": "While shifting, you can make an unarmed strike as a bonus action. You can use your Dexterity for its attack roll and damage bonus, and this attack deals slashing damage."
+        }
+      ]
+    },
+    {
+      "name": "Shifter (Wildhunt)",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Dex +1, Wis +1",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "Your lycanthropic heritage grants you the ability to see in dark conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Shifting",
+          "text": [
+            "On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as a bonus action.",
+            "",
+            "While shifting, you gain temporary hit points equal to your level + your Constitution bonus (minimum of 1). You also gain a feature that depends on your shifter subrace, described below.",
+            "",
+            "You must finish a short or long rest before you can shift again."
+          ]
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Sylvan."
+        },
+        {
+          "name": "Shifting Feature",
+          "text": "While shifting, you gain advantage on all Wisdom-based checks and saving throws."
+        }
+      ]
+    },
+    {
+      "name": "Tabaxi",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Dex +2, Cha +1",
+      "proficiency": "Perception, Stealth",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "You have a cat's keen senses, especially in the dark. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Feline Agility",
+          "text": "Your reflexes and agility allow you to move with a burst of speed. When you move on your turn in combat, you can double your speed until the end of the turn. Once you use this trait, you can't use it again until you move 0 feet on one of your turns."
+        },
+        {
+          "name": "Cat's Claws",
+          "text": "Because of your claws, you have a climbing speed of 20 feet. In addition, your claws are natural weapons, which you can use to make unarmed strikes. If you hit with them, you deal slashing damage equal to 1d4 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."
+        },
+        {
+          "name": "Cat's Talents",
+          "text": "You have proficiency in the Perception and Stealth skills."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and one other language of your choice."
+        }
+      ]
+    },
+    {
+      "name": "Tiefling (Infernal)",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Cha +2, Int +1",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Hellish Resistance",
+          "text": "You have resistance to fire damage."
+        },
+        {
+          "name": "Infernal Legacy",
+          "text": "You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell as a 2nd-level spell; you must finish a long rest in order to cast the spell again using this trait. Once you reach 5th level, you can also cast the darkness spell; you must finish a long rest in order to cast the spell again using this trait. Charisma is your spellcasting ability for these spells."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Infernal."
+        },
+        {
+          "name": "Feral (Variant)",
+          "text": "Your Intelligence score increases by 1, and your Dexterity score increases by 2. This replaces the Ability Score Increase trait."
+        },
+        {
+          "name": "Variant Features (Choose 1)",
+          "text": [
+            "Devil's Tongue.",
+            "You know the vicious mockery cantrip. When your reach 3rd level, you can cast the charm person spell as a 2nd-level spell once with this trait. When you reach 5th level, you can cast the enthrall spell once with this trait. You must finish a long rest to cast these spells once again with this trait. Charisma is your spellcasting ability for them. This trait replaces the Infernal Legacy trait.",
+            "",
+            "Hellfire.",
+            "Once you reach 3rd level, you can cast the burning hands spell once per day as a 2nd-level spell. This trait replaces the hellish rebuke spell of the Infernal Legacy trait.",
+            "",
+            "Winged.",
+            "You have bat-like wings sprouting form your shoulder blades. You have a flying speed of 30 feet. This trait replaces the Infernal Legacy trait."
+          ]
+        },
+        {
+          "name": "Appearance (Variant)",
+          "text": "Your tiefling might not look like other tieflings. Rather than having the physical characteristics described in the Player's Handbook, choose 1d4 + 1 of the following features: small horns; fangs or sharp teeth; a forked tongue; catlike eyes; six fingers on each hand; goatlike legs; cloven hoofs; a forked tail; leathery or scaly skin; red or dark blue skin; cast no shadow or reflection; exude a smell of brimstone"
+        }
+      ]
+    },
+    {
+      "name": "Triton",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Str +1, Cha +1, Con +1",
+      "trait": [
+        {
+          "name": "Swim Speed",
+          "text": "You have a swimming speed of 30 feet."
+        },
+        {
+          "name": "Amphibious",
+          "text": "You can breathe air and water."
+        },
+        {
+          "name": "Control Air and Water",
+          "text": "A child of the sea, you can call on the magic of elemental air and water. You can cast fog cloud with this trait. Starting at 3rd level, you can cast gust of wind with it, and starting at 5th level, you can also cast wall of water with it. Once you cast a spell with this trait, you can't do so again until you finish a long rest. Charisma is your spellcasting ability for these spells."
+        },
+        {
+          "name": "Emissary of the Sea",
+          "text": "Aquatic beasts have an extraordinary affinity with your people. You can communicate simple ideas with beasts that can breathe water. They can understand the meaning of your words, though you have no special ability to understand them in return."
+        },
+        {
+          "name": "Guardians of the Depths",
+          "text": "Adapted to even the most extreme ocean depths, you have resistance to cold damage, and you ignore any of the drawbacks caused by a deep, underwater environment."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common and Primordial."
+        }
+      ]
+    },
+    {
+      "name": "Yuan-ti Pureblood",
+      "size": "Medium",
+      "speed": "30 feet",
+      "ability": "Cha +2, Int +1",
+      "trait": [
+        {
+          "name": "Darkvision",
+          "text": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        },
+        {
+          "name": "Innate Spellcasting",
+          "text": "You know the poison spray cantrip. You can cast animal friendship an unlimited number of times with this trait, but you can target only snakes with it. Starting at 3rd level, you can also cast suggestion with this trait. Once you cast it, you can't do so again until you finish a long rest. Charisma is your spellcasting ability for these spells."
+        },
+        {
+          "name": "Magic Resistance",
+          "text": "You have advantage on saving throws against spells and other magical effects."
+        },
+        {
+          "name": "Poison Immunity",
+          "text": "You are immune to poison damage and the poisoned condition."
+        },
+        {
+          "name": "Languages",
+          "text": "You can speak, read, and write Common, Abyssal, and Draconic."
+        }
+      ]
+    }
+  ]

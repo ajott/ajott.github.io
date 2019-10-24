@@ -141,6 +141,86 @@ function addSpellSlotBadges() {
 
 }
 
+
+function buildRaces() {
+    let htmlString = "";
+
+    for (let i = 0; i < race.length; i++) {
+        var $div = $('#defaultRaceCard');
+
+        var $klon = $div.clone().prop('id', 'race' + i);
+
+        if ($("#race" + (i - 1)).length === 0) {
+            $div.after($klon.show());
+        } else {
+            $("#race" + (i - 1)).after($klon.show());
+        }
+
+        $("#race" + i).children().children().children(".raceName").text(race[i]["name"])
+        
+        if (race[i]["size"] != undefined) {
+            $("#race" + i).children().children().children(".raceSize").html("<emph>Size: </emph>"+race[i]["size"])
+        }
+
+        if (race[i]["speed"] != undefined) {
+            $("#race" + i).children().children().children(".raceSpeed").html("<emph>Speed: </emph>"+race[i]["speed"])
+        }
+
+        if (race[i]["ability"] != undefined) {
+            $("#race" + i).children().children().children(".raceAbility").html("<emph>Ability Score Modifiers: </emph>"+race[i]["ability"])
+        }
+
+        if (race[i]["proficiency"] != undefined) {
+            $("#race" + i).children().children().children(".raceProficiency").html("<emph>Proficiency: </emph>"+race[i]["proficiency"])
+        }
+
+
+
+        if (race[i]["trait"] != undefined) {
+            if (typeof (race[i]["trait"]) == "object") {
+                for (let j = 0; j < race[i]["trait"].length; j++) {
+                    htmlString += "<p><emph>" + race[i]["trait"][j]["name"] + ": </emph>" + race[i]["trait"][j]["text"] + "</p>";
+                }
+            } else {
+                htmlString = "<p>" + race[i]["text"] + "</p>"
+            }
+        }
+        
+        $("#race" + i).children().children().children(".raceTrait").html(htmlString)
+
+        htmlString = "";
+    }
+}
+
+function itemTypeFilter(input) {
+    
+
+    $("#magicItemNameSearch").val("")
+
+    $('.magicItemGrid').isotope({
+        // Clear filter
+        filter: '*'
+    })
+
+    $this = $(input)
+
+    $this.parent().children().removeClass("w3-blue").addClass("w3-grey")
+
+    $this.addClass("w3-blue").removeClass("w3-grey");
+
+    let type = input.firstChild.textContent.toUpperCase()
+
+    $('.magicItemGrid').isotope({
+        filter: function () {
+            // _this_ is the item element. Get text of element's .name
+            var name = $(this).find('.itemType').text().toUpperCase();
+            // return true to show, false to hide
+            return name.indexOf(type) > -1;
+        }
+    })
+
+}
+
 function buildFeats() {
     let htmlString = "";
 
@@ -159,6 +239,9 @@ function buildFeats() {
         if (feat[i]["modifier"]) {
             $("#feat" + i).children().children().children(".modSpan").html("<emph>Modifier: </emph><span class=\"featMod\"></span>")
             $("#feat" + i).children().children().children(".modSpan").children(".featMod").text(feat[i]["modifier"]["text"])
+        }
+        if (feat[i]["prerequisite"] != undefined) {
+            $("#feat" + i).children().children().children(".featPrereq").html("<emph>Prerequisite: </emph>" + feat[i]["prerequisite"])
         }
         if (feat[i]["text"] != undefined) {
             if (typeof (feat[i]["text"]) == "object") {
@@ -188,7 +271,7 @@ function showMenu() {
 
 
 function dropdownShow(str) {
-    let elements = ["classesDropdown", "spellDropdown", "equipDropdown"]
+    let elements = ["classesDropdown", "spellDropdown", "equipDropdown","raceDropdown"]
 
     for (let i = 0; i < elements.length; i++) {
         if (str == elements[i]) {
@@ -450,6 +533,12 @@ function featNameFilter() {
 
 function magicItemNameFilter() {
 
+    // types = ["Medium Armor", "Heavy Armor", "Wondrous Item", "Shield", "Ammo", "Melee Weapon", "Ranged Weapon", "Potion", "Light Armor", "Staff", "Rod", "Ring", "Scroll", "General", "Wand"];
+
+    for (let i = 0; i < 14; i ++) {
+        $("#typeBtn" + i).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
+    }
+
     var input = document.getElementById('magicItemNameSearch').value.toUpperCase();
 
     if (input != "") {
@@ -469,6 +558,8 @@ function magicItemNameFilter() {
         })
     }
 }
+
+
 
 
 function buildNavbar() {

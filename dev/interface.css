@@ -1,65 +1,11 @@
-.die{
-	width: 2.5em;
-}
+#container {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 30px !important;
+    margin-left: auto;
+    margin-right: auto;
+    display: block !important;
+    width: 800px;
 
-.dieTD{
-	width: 5em;
-	padding-bottom: 3px;
-}
-
-button{
-	height: 2.5em;
-	width: 6em;
-}
-
-table{
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-}
-
-
-
-.primary{
-	background-color: #0099ff;
-	color: white;
-	padding-top: 5px;
-	width: 6em;
-	height: 8em !important;
-}
-.secondary{
-	background-color: #00cc66;
-	color: white;
-	padding-top: 5px;
-	width: 6em;
-	height: 8em !important;
-}
-.rest{
-	background-color: #ff704d;
-	color: white;
-	padding-top: 5px;
-	width: 6em;
-	height: 8em !important;
-}
-.major{
-	background-color: #d966ff;
-	color: white;
-	padding-top: 5px;
-	width: 6em;
-	height: 8em !important;
-}
-
-.landmark{
-	background-color: #e6e6e6;
-	border-style: solid;
-	border-width: 3px;
-	border-color: #ffff00;
-	color: black;
-	padding-top: 5px;
-	width: 6em;
-	height: 8em !important;
-}
-
-.greyed{
-	background-color: grey !important;
+    /* border: 1px solid #eee; */
 }

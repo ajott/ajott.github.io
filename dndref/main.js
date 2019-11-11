@@ -139,6 +139,40 @@ function buildSpells() {
 
 function addSpellSlotBadges() {
 
+    let classes=["bard","cleric","druid","paladin","ranger","sorcerer","warlock","wizard"];
+
+    classes.forEach(function(goClass) {
+        for (let i = 0; i < 10; i ++) {
+            $("#"+goClass+i+"Badge").text("")
+        }
+    })
+
+    let classSelect = document.getElementById("slotClassSelect")
+    let levelSelect = document.getElementById("slotLevelSelect")
+
+    let classSelection = classSelect.options[classSelect.selectedIndex].value;
+    let levelSelection = levelSelect.options[levelSelect.selectedIndex].value;
+
+    if (classSelection == "warlock") {
+        $("#warlockNotice").show()
+    } else {
+        $("#warlockNotice").hide();
+    }
+
+    for (let i = 0; i < classSlots[classSelection][levelSelection].length; i++){
+        $("#"+classSelection+i+"Badge").text(classSlots[classSelection][levelSelection][i]);
+    }
+}
+
+function levelSliderMove() {
+    $( "#levelSlider" ).slider({
+        create: function() {
+          handle.text( $( this ).slider( "value" ) );
+        },
+        slide: function( event, ui ) {
+          handle.text( ui.value );
+        }
+      });
 }
 
 

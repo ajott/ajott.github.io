@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>D&D 5e QuickRef</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -31,6 +31,51 @@
             <div id="spellLists" class="w3-section w3-row-padding info">
                 <h1>Spell Lists</h1>
                 <h5><em>Clicking a spell name will bring up the description card</em></h5>
+                <br />
+                <div class="w3-center">
+                I want to see spell slots for a  
+                <select id="slotClassSelect" onchange="addSpellSlotBadges()" class="w3-round">
+                    <option value="..." class="w3-goldenrod">...</option>
+                    <option value="bard">Bard</option>
+                    <option value="cleric">Cleric</option>
+                    <option value="druid">Druid</option>
+                    <option value="paladin">Paladin</option>
+                    <option value="ranger">Ranger</option>
+                    <option value="sorcerer">Sorcerer</option>
+                    <option value="warlock">Warlock</option>
+                    <option value="wizard">Wizard</option>
+                </select>
+                at 
+                <select id="slotLevelSelect" onchange="addSpellSlotBadges()" class="w3-round">
+                    <option value="0" class="w3-goldenrod">...</option>
+                    <option value="1">1st</option>
+                    <option value="2">2nd</option>
+                    <option value="3">3rd</option>
+                    <option value="4">4th</option>
+                    <option value="5">5th</option>
+                    <option value="6">6th</option>
+                    <option value="7">7th</option>
+                    <option value="8">8th</option>
+                    <option value="9">9th</option>
+                    <option value="10">10th</option>
+                    <option value="11">11th</option>
+                    <option value="12">12th</option>
+                    <option value="13">13th</option>
+                    <option value="14">14th</option>
+                    <option value="15">15th</option>
+                    <option value="16">16th</option>
+                    <option value="17">17th</option>
+                    <option value="18">18th</option>
+                    <option value="19">19th</option>
+                    <option value="20">20th</option>
+                </select>
+                level.
+                <br/>
+                <br />
+                <span id="warlockNotice" style="color: red; display: none;">All Warlock spell slots are of the highest
+                    possible level. The total number shown is correct, but you can choose spells from any level up to
+                    the one shown for your slots.</span>
+                </div>
                 <div class="w3-row">
                     <div class="w3-col s12 m12 l3" style="padding-right: 10px !important;">
                         <!-- Bard Spells -->
@@ -38,7 +83,8 @@
                             <h3>Bard Spells</h3>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('bard0')">Cantrips <span class="w3-badge w3-goldenrod" id="bard0Badge"></span></button>
+                                    onclick="accordion('bard0')">Cantrips <span class="w3-badge w3-goldenrod"
+                                        id="bard0Badge"></span></button>
                             </div>
                             <div id="bard0" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -58,7 +104,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('bard1')">1st Level <span class="w3-badge w3-goldenrod" id="bard1Badge"></span></button>
+                                    onclick="accordion('bard1')">1st Level <span class="w3-badge w3-goldenrod"
+                                        id="bard1Badge"></span></button>
                             </div>
                             <div id="bard1" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -88,7 +135,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('bard2')">2nd Level <span class="w3-badge w3-goldenrod" id="bard2Badge"></span></button>
+                                    onclick="accordion('bard2')">2nd Level <span class="w3-badge w3-goldenrod"
+                                        id="bard2Badge"></span></button>
                             </div>
                             <div id="bard2" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -121,7 +169,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('bard3')">3rd Level <span class="w3-badge w3-goldenrod" id="bard3Badge"></span></button>
+                                    onclick="accordion('bard3')">3rd Level <span class="w3-badge w3-goldenrod"
+                                        id="bard3Badge"></span></button>
                             </div>
                             <div id="bard3" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -147,7 +196,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('bard4')">4th Level <span class="w3-badge w3-goldenrod" id="bard4Badge"></span></button>
+                                    onclick="accordion('bard4')">4th Level <span class="w3-badge w3-goldenrod"
+                                        id="bard4Badge"></span></button>
                             </div>
                             <div id="bard4" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -164,7 +214,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('bard5')">5th Level <span class="w3-badge w3-goldenrod" id="bard5Badge"></span></button>
+                                    onclick="accordion('bard5')">5th Level <span class="w3-badge w3-goldenrod"
+                                        id="bard5Badge"></span></button>
                             </div>
                             <div id="bard5" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -190,7 +241,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('bard6')">6th Level <span class="w3-badge w3-goldenrod" id="bard6Badge"></span></button>
+                                    onclick="accordion('bard6')">6th Level <span class="w3-badge w3-goldenrod"
+                                        id="bard6Badge"></span></button>
                             </div>
                             <div id="bard6" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -205,7 +257,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('bard7')">7th Level <span class="w3-badge w3-goldenrod" id="bard7Badge"></span></button>
+                                    onclick="accordion('bard7')">7th Level <span class="w3-badge w3-goldenrod"
+                                        id="bard7Badge"></span></button>
                             </div>
                             <div id="bard7" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -223,7 +276,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('bard8')">8th Level <span class="w3-badge w3-goldenrod" id="bard8Badge"></span></button>
+                                    onclick="accordion('bard8')">8th Level <span class="w3-badge w3-goldenrod"
+                                        id="bard8Badge"></span></button>
                             </div>
                             <div id="bard8" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -236,7 +290,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('bard9')">9th Level <span class="w3-badge w3-goldenrod" id="bard9Badge"></span></button>
+                                    onclick="accordion('bard9')">9th Level <span class="w3-badge w3-goldenrod"
+                                        id="bard9Badge"></span></button>
                             </div>
                             <div id="bard9" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -258,7 +313,8 @@
                             <h3>Cleric Spells</h3>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('cleric0')">Cantrips<span class="w3-badge w3-goldenrod" id="cleric0Badge"></span></button>
+                                    onclick="accordion('cleric0')">Cantrips <span class="w3-badge w3-goldenrod"
+                                        id="cleric0Badge"></span></button>
                             </div>
                             <div id="cleric0" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -275,7 +331,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('cleric1')">1st Level</button>
+                                    onclick="accordion('cleric1')">1st Level <span class="w3-badge w3-goldenrod"
+                                        id="cleric1Badge"></span></button>
                             </div>
                             <div id="cleric1" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -299,7 +356,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('cleric2')">2nd Level</button>
+                                    onclick="accordion('cleric2')">2nd Level <span class="w3-badge w3-goldenrod"
+                                        id="cleric2Badge"></span></button>
                             </div>
                             <div id="cleric2" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -324,7 +382,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('cleric3')">3rd Level</button>
+                                    onclick="accordion('cleric3')">3rd Level <span class="w3-badge w3-goldenrod"
+                                        id="cleric3Badge"></span></button>
                             </div>
                             <div id="cleric3" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -353,7 +412,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('cleric4')">4th Level</button>
+                                    onclick="accordion('cleric4')">4th Level <span class="w3-badge w3-goldenrod"
+                                        id="cleric4Badge"></span></button>
                             </div>
                             <div id="cleric4" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -369,7 +429,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('cleric5')">5th Level</button>
+                                    onclick="accordion('cleric5')">5th Level <span class="w3-badge w3-goldenrod"
+                                        id="cleric5Badge"></span></button>
                             </div>
                             <div id="cleric5" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -392,7 +453,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('cleric6')">6th Level</button>
+                                    onclick="accordion('cleric6')">6th Level <span class="w3-badge w3-goldenrod"
+                                        id="cleric6Badge"></span></button>
                             </div>
                             <div id="cleric6" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -410,7 +472,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('cleric7')">7th Level</button>
+                                    onclick="accordion('cleric7')">7th Level <span class="w3-badge w3-goldenrod"
+                                        id="cleric7Badge"></span></button>
                             </div>
                             <div id="cleric7" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -427,7 +490,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('cleric8')">8th Level</button>
+                                    onclick="accordion('cleric8')">8th Level <span class="w3-badge w3-goldenrod"
+                                        id="cleric8Badge"></span></button>
                             </div>
                             <div id="cleric8" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -439,7 +503,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('cleric9')">9th Level</button>
+                                    onclick="accordion('cleric9')">9th Level <span class="w3-badge w3-goldenrod"
+                                        id="cleric9Badge"></span></button>
                             </div>
                             <div id="cleric9" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -459,7 +524,8 @@
                             <h3>Druid Spells</h3>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('druid0')">Cantrips</button>
+                                    onclick="accordion('druid0')">Cantrips <span class="w3-badge w3-goldenrod"
+                                        id="druid0Badge"></span></button>
                             </div>
                             <div id="druid0" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -485,7 +551,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('druid1')">1st Level</button>
+                                    onclick="accordion('druid1')">1st Level <span class="w3-badge w3-goldenrod"
+                                        id="druid1Badge"></span></button>
                             </div>
                             <div id="druid1" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -514,7 +581,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('druid2')">2nd Level</button>
+                                    onclick="accordion('druid2')">2nd Level <span class="w3-badge w3-goldenrod"
+                                        id="druid2Badge"></span></button>
                             </div>
                             <div id="druid2" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -545,7 +613,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('druid3')">3rd Level</button>
+                                    onclick="accordion('druid3')">3rd Level <span class="w3-badge w3-goldenrod"
+                                        id="druid3Badge"></span></button>
                             </div>
                             <div id="druid3" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -570,7 +639,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('druid4')">4th Level</button>
+                                    onclick="accordion('druid4')">4th Level <span class="w3-badge w3-goldenrod"
+                                        id="druid4Badge"></span></button>
                             </div>
                             <div id="druid4" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -598,7 +668,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('druid5')">5th Level</button>
+                                    onclick="accordion('druid5')">5th Level <span class="w3-badge w3-goldenrod"
+                                        id="druid5Badge"></span></button>
                             </div>
                             <div id="druid5" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -624,7 +695,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('druid6')">6th Level</button>
+                                    onclick="accordion('druid6')">6th Level <span class="w3-badge w3-goldenrod"
+                                        id="druid6Badge"></span></button>
                             </div>
                             <div id="druid6" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -648,7 +720,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('druid7')">7th Level</button>
+                                    onclick="accordion('druid7')">7th Level <span class="w3-badge w3-goldenrod"
+                                        id="druid7Badge"></span></button>
                             </div>
                             <div id="druid7" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -663,7 +736,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('druid8')">8th Level</button>
+                                    onclick="accordion('druid8')">8th Level <span class="w3-badge w3-goldenrod"
+                                        id="druid8Badge"></span></button>
                             </div>
                             <div id="druid8" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -678,7 +752,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('druid9')">9th Level</button>
+                                    onclick="accordion('druid9')">9th Level <span class="w3-badge w3-goldenrod"
+                                        id="druid9Badge"></span></button>
                             </div>
                             <div id="druid9" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -697,7 +772,8 @@
                             <h3>Paladin Spells</h3>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('paladin1')">1st Level</button>
+                                    onclick="accordion('paladin1')">1st Level <span class="w3-badge w3-goldenrod"
+                                        id="paladin1Badge"></span></button>
                             </div>
                             <div id="paladin1" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -722,7 +798,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('paladin2')">2nd Level</button>
+                                    onclick="accordion('paladin2')">2nd Level <span class="w3-badge w3-goldenrod"
+                                        id="paladin2Badge"></span></button>
                             </div>
                             <div id="paladin2" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -739,7 +816,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('paladin3')">3rd Level</button>
+                                    onclick="accordion('paladin3')">3rd Level <span class="w3-badge w3-goldenrod"
+                                        id="paladin3Badge"></span></button>
                             </div>
                             <div id="paladin3" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -757,7 +835,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('paladin4')">4th Level</button>
+                                    onclick="accordion('paladin4')">4th Level <span class="w3-badge w3-goldenrod"
+                                        id="paladin4Badge"></span></button>
                             </div>
                             <div id="paladin4" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -772,7 +851,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('paladin5')">5th Level</button>
+                                    onclick="accordion('paladin5')">5th Level <span class="w3-badge w3-goldenrod"
+                                        id="paladin5Badge"></span></button>
                             </div>
                             <div id="paladin5" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -797,7 +877,8 @@
                             <h3>Ranger Spells</h3>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('ranger1')">1st Level</button>
+                                    onclick="accordion('ranger1')">1st Level <span class="w3-badge w3-goldenrod"
+                                        id="ranger1Badge"></span></button>
                             </div>
                             <div id="ranger1" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -822,7 +903,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('ranger2')">2nd Level</button>
+                                    onclick="accordion('ranger2')">2nd Level <span class="w3-badge w3-goldenrod"
+                                        id="ranger2Badge"></span></button>
                             </div>
                             <div id="ranger2" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -844,7 +926,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('ranger3')">3rd Level</button>
+                                    onclick="accordion('ranger3')">3rd Level <span class="w3-badge w3-goldenrod"
+                                        id="ranger3Badge"></span></button>
                             </div>
                             <div id="ranger3" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -865,7 +948,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('ranger4')">4th Level</button>
+                                    onclick="accordion('ranger4')">4th Level <span class="w3-badge w3-goldenrod"
+                                        id="ranger4Badge"></span></button>
                             </div>
                             <div id="ranger4" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -880,7 +964,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('ranger5')">5th Level</button>
+                                    onclick="accordion('ranger5')">5th Level <span class="w3-badge w3-goldenrod"
+                                        id="ranger5Badge"></span></button>
                             </div>
                             <div id="ranger5" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -903,7 +988,8 @@
                             <h3>Sorcerer Spells</h3>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('sorcerer0')">Cantrips</button>
+                                    onclick="accordion('sorcerer0')">Cantrips <span class="w3-badge w3-goldenrod"
+                                        id="sorcerer0Badge"></span></button>
                             </div>
                             <div id="sorcerer0" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -939,7 +1025,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('sorcerer1')">1st Level</button>
+                                    onclick="accordion('sorcerer1')">1st Level <span class="w3-badge w3-goldenrod"
+                                        id="sorcerer1Badge"></span></button>
                             </div>
                             <div id="sorcerer1" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -972,7 +1059,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('sorcerer2')">2nd Level</button>
+                                    onclick="accordion('sorcerer2')">2nd Level <span class="w3-badge w3-goldenrod"
+                                        id="sorcerer2Badge"></span></button>
                             </div>
                             <div id="sorcerer2" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1014,7 +1102,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('sorcerer3')">3rd Level</button>
+                                    onclick="accordion('sorcerer3')">3rd Level <span class="w3-badge w3-goldenrod"
+                                        id="sorcerer3Badge"></span></button>
                             </div>
                             <div id="sorcerer3" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1050,7 +1139,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('sorcerer4')">4th Level</button>
+                                    onclick="accordion('sorcerer4')">4th Level <span class="w3-badge w3-goldenrod"
+                                        id="sorcerer4Badge"></span></button>
                             </div>
                             <div id="sorcerer4" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1073,7 +1163,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('sorcerer5')">5th Level</button>
+                                    onclick="accordion('sorcerer5')">5th Level <span class="w3-badge w3-goldenrod"
+                                        id="sorcerer5Badge"></span></button>
                             </div>
                             <div id="sorcerer5" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1099,7 +1190,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('sorcerer6')">6th Level</button>
+                                    onclick="accordion('sorcerer6')">6th Level <span class="w3-badge w3-goldenrod"
+                                        id="sorcerer6Badge"></span></button>
                             </div>
                             <div id="sorcerer6" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1123,7 +1215,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('sorcerer7')">7th Level</button>
+                                    onclick="accordion('sorcerer7')">7th Level <span class="w3-badge w3-goldenrod"
+                                        id="sorcerer7Badge"></span></button>
                             </div>
                             <div id="sorcerer7" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1142,7 +1235,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('sorcerer8')">8th Level</button>
+                                    onclick="accordion('sorcerer8')">8th Level <span class="w3-badge w3-goldenrod"
+                                        id="sorcerer8Badge"></span></button>
                             </div>
                             <div id="sorcerer8" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1156,7 +1250,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('sorcerer9')">9th Level</button>
+                                    onclick="accordion('sorcerer9')">9th Level <span class="w3-badge w3-goldenrod"
+                                        id="sorcerer9Badge"></span></button>
                             </div>
                             <div id="sorcerer9" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1179,7 +1274,8 @@
                             <h3>Warlock Spells</h3>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('warlock0')">Cantrips</button>
+                                    onclick="accordion('warlock0')">Cantrips <span class="w3-badge w3-goldenrod"
+                                        id="warlock0Badge"></span></button>
                             </div>
                             <div id="warlock0" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1206,7 +1302,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('warlock1')">1st Level</button>
+                                    onclick="accordion('warlock1')">1st Level <span class="w3-badge w3-goldenrod"
+                                        id="warlock1Badge"></span></button>
                             </div>
                             <div id="warlock1" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1226,7 +1323,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('warlock2')">2nd Level</button>
+                                    onclick="accordion('warlock2')">2nd Level <span class="w3-badge w3-goldenrod"
+                                        id="warlock2Badge"></span></button>
                             </div>
                             <div id="warlock2" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1249,7 +1347,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('warlock3')">3rd Level</button>
+                                    onclick="accordion('warlock3')">3rd Level <span class="w3-badge w3-goldenrod"
+                                        id="warlock3Badge"></span></button>
                             </div>
                             <div id="warlock3" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1272,7 +1371,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('warlock4')">4th Level</button>
+                                    onclick="accordion('warlock4')">4th Level <span class="w3-badge w3-goldenrod"
+                                        id="warlock4Badge"></span></button>
                             </div>
                             <div id="warlock4" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1289,7 +1389,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('warlock5')">5th Level</button>
+                                    onclick="accordion('warlock5')">5th Level <span class="w3-badge w3-goldenrod"
+                                        id="warlock5Badge"></span></button>
                             </div>
                             <div id="warlock5" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1308,7 +1409,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('warlock6')">6th Level</button>
+                                    onclick="accordion('warlock6')">6th Level <span class="w3-badge w3-goldenrod"
+                                        id="warlock6Badge"></span></button>
                             </div>
                             <div id="warlock6" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1331,7 +1433,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('warlock7')">7th Level</button>
+                                    onclick="accordion('warlock7')">7th Level <span class="w3-badge w3-goldenrod"
+                                        id="warlock7Badge"></span></button>
                             </div>
                             <div id="warlock7" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1345,7 +1448,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('warlock8')">8th Level</button>
+                                    onclick="accordion('warlock8')">8th Level <span class="w3-badge w3-goldenrod"
+                                        id="warlock8Badge"></span></button>
                             </div>
                             <div id="warlock8" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1359,7 +1463,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('warlock9')">9th Level</button>
+                                    onclick="accordion('warlock9')">9th Level <span class="w3-badge w3-goldenrod"
+                                        id="warlock9Badge"></span></button>
                             </div>
                             <div id="warlock9" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1380,7 +1485,8 @@
                             <h3>Wizard Spells</h3>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('wizard0')">Cantrips</button>
+                                    onclick="accordion('wizard0')">Cantrips <span class="w3-badge w3-goldenrod"
+                                        id="wizard0Badge"></span></button>
                             </div>
                             <div id="wizard0" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1417,7 +1523,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('wizard1')">1st Level</button>
+                                    onclick="accordion('wizard1')">1st Level <span class="w3-badge w3-goldenrod"
+                                        id="wizard1Badge"></span></button>
                             </div>
                             <div id="wizard1" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1461,7 +1568,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('wizard2')">2nd Level</button>
+                                    onclick="accordion('wizard2')">2nd Level <span class="w3-badge w3-goldenrod"
+                                        id="wizard2Badge"></span></button>
                             </div>
                             <div id="wizard2" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1514,7 +1622,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('wizard3')">3rd Level</button>
+                                    onclick="accordion('wizard3')">3rd Level <span class="w3-badge w3-goldenrod"
+                                        id="wizard3Badge"></span></button>
                             </div>
                             <div id="wizard3" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1563,7 +1672,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('wizard4')">4th Level</button>
+                                    onclick="accordion('wizard4')">4th Level <span class="w3-badge w3-goldenrod"
+                                        id="wizard4Badge"></span></button>
                             </div>
                             <div id="wizard4" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1601,7 +1711,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('wizard5')">5th Level</button>
+                                    onclick="accordion('wizard5')">5th Level <span class="w3-badge w3-goldenrod"
+                                        id="wizard5Badge"></span></button>
                             </div>
                             <div id="wizard5" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1645,7 +1756,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('wizard6')">6th Level</button>
+                                    onclick="accordion('wizard6')">6th Level <span class="w3-badge w3-goldenrod"
+                                        id="wizard6Badge"></span></button>
                             </div>
                             <div id="wizard6" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1682,7 +1794,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('wizard7')">7th Level</button>
+                                    onclick="accordion('wizard7')">7th Level <span class="w3-badge w3-goldenrod"
+                                        id="wizard7Badge"></span></button>
                             </div>
                             <div id="wizard7" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1708,7 +1821,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('wizard8')">8th Level</button>
+                                    onclick="accordion('wizard8')">8th Level <span class="w3-badge w3-goldenrod"
+                                        id="wizard8Badge"></span></button>
                             </div>
                             <div id="wizard8" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1733,7 +1847,8 @@
                             </div>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
-                                    onclick="accordion('wizard9')">9th Level</button>
+                                    onclick="accordion('wizard9')">9th Level <span class="w3-badge w3-goldenrod"
+                                        id="wizard9Badge"></span></button>
                             </div>
                             <div id="wizard9" class="w3-hide w3-container">
                                 <ul class="w3-ul">
@@ -1759,14 +1874,14 @@
                     </div>
                 </div>
             </div>
-            <hr/>
+            <hr />
             <div id="spellCards" class="w3-section w3-row-padding info">
                 <h1>Spell Description Cards</h1>
                 <div class="w3-row">
                     <div class="w3-col s12 m6 l4">
                         <input class="w3-input w3-border w3-padding w3-grey w3-round" type="text"
                             placeholder="Search by name..." id="spellNameSearch" onkeyup="spellNameFilter()">
-                    <em style="color: lightgrey;">Use quotation marks to search for exact spell names</em></div>
+                        <em style="color: lightgrey;">Use quotation marks to search for exact spell names</em></div>
                 </div>
                 <br />
                 <div class="w3-bar" style="padding-top: 4px; padding-bottom: 4px">
@@ -1832,13 +1947,14 @@
                         onclick="spellFilter(this,2)">7th</button>
                     <button id="levelBtn8" class="w3-button w3-grey w3-bar-item"
                         onclick="spellFilter(this,2)">8th</button>
-                        <button id="levelBtn9" class="w3-button w3-grey w3-bar-item"
-                            onclick="spellFilter(this,2)">9th</button>
+                    <button id="levelBtn9" class="w3-button w3-grey w3-bar-item"
+                        onclick="spellFilter(this,2)">9th</button>
                 </div>
-                <br/>
-                <button id="spellFilterClear" class="w3-round w3-button w3-orange" onclick="clearSpellFilter()">Clear Filters</button>
                 <br />
-                <br/>
+                <button id="spellFilterClear" class="w3-round w3-button w3-orange" onclick="clearSpellFilter()">Clear
+                    Filters</button>
+                <br />
+                <br />
                 <div class="spellGrid" style="min-height: 500px;">
                     <div class="w3-hide" id="defaultSpellCard" style="display:none;">
                         <div class="w3-card-2 w3-round-large">
@@ -1890,8 +2006,22 @@
         $(document).ready(function () {
             buildSpells();
             clearSpellFilter();
-            addSpellSlotBadges();
-        });
+        });  
+        $( function() {
+            var handle = $( "#level-handle" );
+            $( "#slider" ).slider({
+                value:1,
+                min: 1,
+                max: 20,
+                step: 1,
+                create: function() {
+                    handle.text( $( this ).slider( "value" ) );
+                },
+                slide: function( event, ui ) {
+                    handle.text( ui.value );
+                }
+            });
+        } );     
     </script>
 </footer>
 

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>D&D 5e QuickRef</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -31,58 +31,84 @@
             <div id="spellLists" class="w3-section w3-row-padding info">
                 <h1>Spell Lists</h1>
                 <h5><em>Clicking a spell name will bring up the description card</em></h5>
-                <p class="w3-center">You can also check the total number of spells known (if applicable) and spell slots for any class at a given level.</p>
+                <p class="w3-center">You can also check the total number of spells known (if applicable) and spell slots
+                    for any class at a given level.</p>
                 <br />
                 <div class="w3-center">
-                I want to see spell slots for a  
-                <select id="slotClassSelect" onchange="addSpellSlotBadges()" class="w3-round">
-                    <option value="..." class="w3-goldenrod">...</option>
-                    <option value="bard">Bard</option>
-                    <option value="cleric">Cleric</option>
-                    <option value="druid">Druid</option>
-                    <option value="paladin">Paladin</option>
-                    <option value="ranger">Ranger</option>
-                    <option value="sorcerer">Sorcerer</option>
-                    <option value="warlock">Warlock</option>
-                    <option value="wizard">Wizard</option>
-                </select>
-                at 
-                <select id="slotLevelSelect" onchange="addSpellSlotBadges()" class="w3-round">
-                    <option value="0" class="w3-goldenrod">...</option>
-                    <option value="1">1st</option>
-                    <option value="2">2nd</option>
-                    <option value="3">3rd</option>
-                    <option value="4">4th</option>
-                    <option value="5">5th</option>
-                    <option value="6">6th</option>
-                    <option value="7">7th</option>
-                    <option value="8">8th</option>
-                    <option value="9">9th</option>
-                    <option value="10">10th</option>
-                    <option value="11">11th</option>
-                    <option value="12">12th</option>
-                    <option value="13">13th</option>
-                    <option value="14">14th</option>
-                    <option value="15">15th</option>
-                    <option value="16">16th</option>
-                    <option value="17">17th</option>
-                    <option value="18">18th</option>
-                    <option value="19">19th</option>
-                    <option value="20">20th</option>
-                </select>
-                level.
-                <br/>
-                <br />
-                <span id="warlockNotice" style="color: red; display: none;">All Warlock spell slots are of the highest
-                    possible level. The total number shown is correct, but you can choose spells from any level up to
-                    the one shown for your slots.</span>
+                    I want to see spell slots for a
+                    <select id="slotClassSelect" onchange="addSpellSlotBadges()" class="w3-round">
+                        <option value="..." class="w3-goldenrod">...</option>
+                        <option value="bard">Bard</option>
+                        <option value="cleric">Cleric</option>
+                        <option value="druid">Druid</option>
+                        <option value="paladin">Paladin</option>
+                        <option value="ranger">Ranger</option>
+                        <option value="sorcerer">Sorcerer</option>
+                        <option value="warlock">Warlock</option>
+                        <option value="wizard">Wizard</option>
+                    </select>
+                    at
+                    <select id="slotLevelSelect" onchange="addSpellSlotBadges()" class="w3-round">
+                        <option value="0" class="w3-goldenrod">...</option>
+                        <option value="1">1st</option>
+                        <option value="2">2nd</option>
+                        <option value="3">3rd</option>
+                        <option value="4">4th</option>
+                        <option value="5">5th</option>
+                        <option value="6">6th</option>
+                        <option value="7">7th</option>
+                        <option value="8">8th</option>
+                        <option value="9">9th</option>
+                        <option value="10">10th</option>
+                        <option value="11">11th</option>
+                        <option value="12">12th</option>
+                        <option value="13">13th</option>
+                        <option value="14">14th</option>
+                        <option value="15">15th</option>
+                        <option value="16">16th</option>
+                        <option value="17">17th</option>
+                        <option value="18">18th</option>
+                        <option value="19">19th</option>
+                        <option value="20">20th</option>
+                    </select>
+                    level.
+                    <br />
+                    <br />
+                    <span id="clericNotice" style="color: goldenrod; display: none;">Clerics have access to all the
+                        spells from the Cleric spell list, as well as specific spells granted by their domain. Clerics
+                        need to prepare spells in order to use them in a day, and can have spells equal to their <span
+                            style="color: white;">Wisdom Modifier + Cleric Level (minimum of 1)</span> prepared each
+                        day.</span>
+                        <span id="druidNotice" style="color: goldenrod; display: none;">Druids have access to all the
+                            spells from the Druid spell list, as well as specific spells that may be granted by their Circle. Druids
+                            need to prepare spells in order to use them in a day, and can have spells equal to their <span
+                                style="color: white;">Wisdom Modifier + Druid Level (minimum of 1)</span> prepared each
+                            day.</span>
+                            <span id="paladinNotice" style="color: goldenrod; display: none;">Paladins have access to all the
+                                spells from the Paladin spell list, as well as specific spells granted by their Oath. Paladins
+                                need to prepare spells in order to use them in a day, and can have spells equal to their <span
+                                    style="color: white;">Charisma Modifier + &frac12; Paladin Level (minimum of 1)</span> prepared each
+                                day.</span>
+                    <span id="warlockNotice" style="color: goldenrod; display: none;">All Warlock spell slots are of the
+                        highest
+                        possible level. The total number shown is correct, but you can choose spells from any level up
+                        to the one shown for your slots.</span>
+                    <span id="wizardNotice" style="color: goldenrod; display: none;">*A Wizard can add additional spells
+                        of
+                        1st-level or higher to their spellbook if they find such spells. The number of <em>spells
+                            known</em> that is shown is limited to the number of spells a Wizard would have in their
+                        spellbook without copying any. Wizards
+                        need to prepare spells in order to use them in a day, and can have spells equal to their <span
+                            style="color: white;">Intelligence Modifier + Wizard Level (minimum of 1)</span> prepared each
+                        day.</span>
                 </div>
                 <div class="w3-row">
                     <div class="w3-col s12 m12 l3" style="padding-right: 10px !important;">
                         <!-- Bard Spells -->
                         <div class="w3-card-2">
                             <h3>Bard Spells</h3>
-                            <h5 class="w3-centered" id="bardSpellSpan" style="display:none;">Spells Known: <span id="bardSpellsKnown"></span></h5>
+                            <h5 class="w3-centered" id="bardSpellSpan" style="display:none;">Spells Known: <span
+                                    id="bardSpellsKnown"></span></h5>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('bard0')">Cantrips <span class="w3-badge w3-goldenrod"
@@ -877,7 +903,8 @@
                         <!-- Ranger Spells -->
                         <div class="w3-card-2">
                             <h3>Ranger Spells</h3>
-                            <h5 class="w3-centered" id="rangerSpellSpan" style="display:none;">Spells Known: <span id="rangerSpellsKnown"></span></h5>
+                            <h5 class="w3-centered" id="rangerSpellSpan" style="display:none;">Spells Known: <span
+                                    id="rangerSpellsKnown"></span></h5>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('ranger1')">1st Level <span class="w3-badge w3-goldenrod"
@@ -989,7 +1016,8 @@
                         <!-- Sorcerer Spells -->
                         <div class="w3-card-2">
                             <h3>Sorcerer Spells</h3>
-                            <h5 class="w3-centered" id="sorcererSpellSpan" style="display:none;">Spells Known: <span id="sorcererSpellsKnown"></span></h5>
+                            <h5 class="w3-centered" id="sorcererSpellSpan" style="display:none;">Spells Known: <span
+                                    id="sorcererSpellsKnown"></span></h5>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('sorcerer0')">Cantrips <span class="w3-badge w3-goldenrod"
@@ -1276,7 +1304,8 @@
                         <!-- Warlock Spells -->
                         <div class="w3-card-2">
                             <h3>Warlock Spells</h3>
-                            <h5 class="w3-centered" id="warlockSpellSpan" style="display:none;">Spells Known: <span id="warlockSpellsKnown"></span></h5>
+                            <h5 class="w3-centered" id="warlockSpellSpan" style="display:none;">Spells Known: <span
+                                    id="warlockSpellsKnown"></span></h5>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('warlock0')">Cantrips <span class="w3-badge w3-goldenrod"
@@ -1488,6 +1517,8 @@
                         <!-- Wizard Spells -->
                         <div class="w3-card-2">
                             <h3>Wizard Spells</h3>
+                            <h5 class="w3-centered" id="wizardSpellSpan" style="display:none;">Spells Known: <span
+                                    id="wizardSpellsKnown"></span></h5>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('wizard0')">Cantrips <span class="w3-badge w3-goldenrod"
@@ -2011,22 +2042,22 @@
         $(document).ready(function () {
             buildSpells();
             clearSpellFilter();
-        });  
-        $( function() {
-            var handle = $( "#level-handle" );
-            $( "#slider" ).slider({
-                value:1,
+        });
+        $(function () {
+            var handle = $("#level-handle");
+            $("#slider").slider({
+                value: 1,
                 min: 1,
                 max: 20,
                 step: 1,
-                create: function() {
-                    handle.text( $( this ).slider( "value" ) );
+                create: function () {
+                    handle.text($(this).slider("value"));
                 },
-                slide: function( event, ui ) {
-                    handle.text( ui.value );
+                slide: function (event, ui) {
+                    handle.text(ui.value);
                 }
             });
-        } );     
+        });     
     </script>
 </footer>
 

@@ -31,6 +31,7 @@
             <div id="spellLists" class="w3-section w3-row-padding info">
                 <h1>Spell Lists</h1>
                 <h5><em>Clicking a spell name will bring up the description card</em></h5>
+                <p class="w3-center">You can also check the total number of spells known (if applicable) and spell slots for any class at a given level.</p>
                 <br />
                 <div class="w3-center">
                 I want to see spell slots for a  
@@ -81,6 +82,7 @@
                         <!-- Bard Spells -->
                         <div class="w3-card-2">
                             <h3>Bard Spells</h3>
+                            <h5 class="w3-centered" id="bardSpellSpan" style="display:none;">Spells Known: <span id="bardSpellsKnown"></span></h5>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('bard0')">Cantrips <span class="w3-badge w3-goldenrod"
@@ -875,6 +877,7 @@
                         <!-- Ranger Spells -->
                         <div class="w3-card-2">
                             <h3>Ranger Spells</h3>
+                            <h5 class="w3-centered" id="rangerSpellSpan" style="display:none;">Spells Known: <span id="rangerSpellsKnown"></span></h5>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('ranger1')">1st Level <span class="w3-badge w3-goldenrod"
@@ -986,6 +989,7 @@
                         <!-- Sorcerer Spells -->
                         <div class="w3-card-2">
                             <h3>Sorcerer Spells</h3>
+                            <h5 class="w3-centered" id="sorcererSpellSpan" style="display:none;">Spells Known: <span id="sorcererSpellsKnown"></span></h5>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('sorcerer0')">Cantrips <span class="w3-badge w3-goldenrod"
@@ -1272,6 +1276,7 @@
                         <!-- Warlock Spells -->
                         <div class="w3-card-2">
                             <h3>Warlock Spells</h3>
+                            <h5 class="w3-centered" id="warlockSpellSpan" style="display:none;">Spells Known: <span id="warlockSpellsKnown"></span></h5>
                             <div class="w3-row-padding">
                                 <button class="w3-button w3-block goldenrodClass w3-dark-grey"
                                     onclick="accordion('warlock0')">Cantrips <span class="w3-badge w3-goldenrod"

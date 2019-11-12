@@ -145,6 +145,7 @@ function addSpellSlotBadges() {
         for (let i = 0; i < 10; i ++) {
             $("#"+goClass+i+"Badge").text("")
         }
+        $("#"+goClass+"SpellSpan").hide();
     })
 
     let classSelect = document.getElementById("slotClassSelect")
@@ -161,6 +162,11 @@ function addSpellSlotBadges() {
 
     for (let i = 0; i < classSlots[classSelection][levelSelection].length; i++){
         $("#"+classSelection+i+"Badge").text(classSlots[classSelection][levelSelection][i]);
+    }
+
+    if (classSelection == "bard" || classSelection == "ranger" || classSelection == "sorcerer" || classSelection == "warlock") {
+        $("#"+classSelection+"SpellSpan").show();
+        $("#"+classSelection+"SpellsKnown").text(classSpellsKnown[classSelection][levelSelection]);
     }
 }
 

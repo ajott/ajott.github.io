@@ -7777,7 +7777,7 @@ var spell = [{
         "school": "Conjuration",
         "time": "1 action",
         "range": "Self",
-        "components": "V, S, M",
+        "components": "V",
         "duration": "Instantaneous",
         "classes": "Sorcerer, Wizard",
         "text": [

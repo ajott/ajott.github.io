@@ -29,7 +29,7 @@ function sumArr(arr) {
 }
 
 
-function roll(str, mod = 0) {
+function roll(str, mod = 0, sum = true) {
 
     if (str == "-") {
         return 1;
@@ -62,7 +62,88 @@ function roll(str, mod = 0) {
         "total": sumArr(result)
     };
 
-    return totals;
+    if (sum) {
+        return totals["total"];
+    }else {
+        return totals;
+    }
+    
+}
+
+function rollCrypto(str, mod=0, sum=true) {
+    
+    if (str == "-") {
+        return 1;
+    }
+
+    let numRolls = Number(str.split("d")[0]);
+    let diceValue = Number(str.split("d")[1]);
+
+    console.log(str.split(String(diceValue)));
+
+    let result =  [];
+
+    for (let i = 0; i < numRolls; i ++) {
+        result.push(window.crypto.getRandomValues(new Uint32Array(1))[0] / 4294967295)
+    }
+
+    for (let i = 0; i < result.length; i ++){
+        result[i] = Math.floor(result[i] * diceValue) + 1;
+    }
+
+
+    // Sorts the array of rolls for ease of removing high/low values
+    result.sort(function (a, b) {
+        return a - b
+    })
+
+    if (mod == 1) {
+        // Remove lowest value
+        result.shift()
+    } else if (mod == -1) {
+        // Remove highest value
+        result.pop()
+    }
+
+    let totals = {
+        "rolls": result,
+        "total": sumArr(result)
+    };
+
+    if (sum) {
+        return totals["total"];
+    }else {
+        return totals;
+    }
+}
+
+function rollDice() {
+    const rollType = $("input[name=rollType]:checked").val();
+    const dropType = $("input[name=rollDrop]:checked").val();
+    const rollString = $("#diceString").val();
+
+    if (rollType == "roll") {
+        result = roll(rollString, dropType, false);
+    } else {
+        result = rollCrypto(rollString, dropType, false);
+    }
+
+    $("#diceRollTotal").text(result["total"]);
+
+    let htmlString = "";
+
+    result["rolls"].forEach(function(die) {
+        htmlString += ("&emsp;<span>"+die+"</span>&emsp;");
+    })
+
+
+    // let rollResultString = "";  
+
+    // result["rolls"].forEach(function(die) {
+    //     rollResultString += (die + "   ");
+    // })
+
+    $("#diceRollResults").html(htmlString);
 }
 
 
@@ -70,12 +151,6 @@ $(document).ready(function () {
     buildNavbar();
     setTimeout(
         toDark(), 250);   
-    $('.features').isotope({
-        itemSelector: '.grid-item',
-        masonry: {
-            columnWidth: 25
-        }
-    });
 });
 
 function buildSpells() {

@@ -1,0 +1,106 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>D&D 5e QuickRef</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+
+<body>
+
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad" id="navBarDiv">
+    </div>
+
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div class="w3-row info" id="dice">
+                <div class="w3-col s12 m12 l12 w3-center">
+                    <h1>Dice Roller</h1>
+                    <p>You can use this feature to roll dice, if you'd like. You can choose to use either <a
+                            style="color: skyblue !important;"
+                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random">Javascript's
+                            random number generator</a>, which is notoriously not very random; or the cryptographically
+                        secure, more random <a style="color: skyblue !important;"
+                            href="https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues">Crypto.getRandomValues()</a>
+                        function, which can take more time. Up to you.</p>
+                    <p>Enter the dice you would like rolled in the text field below. This accepts standard dice notation
+                        ("1d20", "2d10"). You can also choose whether any rolls are getting dropped.</p>
+                    <br />
+                    <input class="w3-radio" id="rollUseJavascript" type="radio" name="rollType" value="roll"
+                        checked><label for="rollUseJavascript">Javascript Random</label>
+                    <input class="w3-radio" id="rollUseCrypto" type="radio" name="rollType" value="rollCrypto"><label
+                        for="rollUseCrypto">Crypto Random</label>
+                    <br />
+                    <br />
+                    <div class="w3-row">
+                        <div class="w3-col s0 m0 l4">&emsp;</div>
+                        <div class="w3-col s12 m12 l4">
+                            <input class="w3-input w3-center w3-border w3-round-large" value="1d20"
+                                id="diceString" />
+                        </div>
+                        <div class="w3-col s0 m0 l4">&emsp;</div>
+                    </div>
+                    <br />
+                    <input class="w3-radio" id="rollDropNone" type="radio" name="rollDrop" value="0" checked><label
+                        for="rollDropNone">Drop None</label>
+                    <input class="w3-radio" id="rollDropHigh" type="radio" name="rollDrop" value="-1"><label
+                        for="rollDropHigh">Drop Highest</label>
+                    <input class="w3-radio" id="rollDropLow" type="radio" name="rollDrop" value="1"><label
+                        for="rollDropLow">Drop Lowest</label>
+                    <br />
+                    <br />
+                    <button class="w3-button w3-goldenrod w3-round-large" onclick="rollDice()">Roll!</button>
+                    <h5>Total:</h5>
+                    <h1 id="diceRollTotal">TBD</h1>
+                    <br />
+                    <h5>Dice Results:</h5>
+                    <h3 id="diceRollResults">N/A</h3>
+                </div>
+            </div>
+
+            <div class="w3-row">
+                <div class="w3-col s12 m12 l5"></div>
+                <div class="w3-col s0 m0 l2">
+                    <p></p>
+                </div>
+                <div class="w3-col s12 m12 l5"></div>
+            </div>
+
+            <hr />
+        </div>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+    </div>
+
+
+</body>
+<footer>
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m10 l10">
+            All D&D material is © Wizards of the Coast
+        </div>
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+    </div>
+</footer>
+
+</html>

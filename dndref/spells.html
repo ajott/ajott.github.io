@@ -2042,22 +2042,7 @@
         $(document).ready(function () {
             buildSpells();
             clearSpellFilter();
-        });
-        $(function () {
-            var handle = $("#level-handle");
-            $("#slider").slider({
-                value: 1,
-                min: 1,
-                max: 20,
-                step: 1,
-                create: function () {
-                    handle.text($(this).slider("value"));
-                },
-                slide: function (event, ui) {
-                    handle.text(ui.value);
-                }
-            });
-        });     
+        });   
     </script>
 </footer>
 

@@ -63,11 +63,58 @@ var spell = [{
         ]
     },
     {
+        "name": "Holy Weapon",
+        "level": "5th level",
+        "school": "Evocation",
+        "time": "1 bonus action",
+        "range": "Touch",
+        "components": "V, S",
+        "duration": "Concentration, up to 1 hour",
+        "classes": "Cleric, Paladin",
+        "text": [
+            "You imbue a weapon you touch with holy power. Until the spell ends, the weapon emits bright light in a 30-foot radius and dim light for an additional 30 feet. In addition, weapon attacks made with it deal an extra 2d8 radiant damage on a hit. If the weapon isn’t already a magic weapon, it becomes one for the duration.",
+            "",
+            "As a bonus action on your turn, you can dismiss this spell and cause the weapon to emit a burst of radiance. Each creature of your choice that you can see within 30 feet of you must make a Constitution saving throw. On a failed save, a creature takes 4d8 radiant damage, and it is blinded for 1 minute. On a successful save, a creature takes half as much damage and isn’t blinded. At the end of each of its turns, a blinded creature can make a Constitution saving throw, ending the effect on itself on a success."
+        ]
+    },
+    {
         "name": "Commander's Strike",
         "level": "1st level",
         "school": "Evocation",
         "classes": "Fighter (Battle Master)",
         "text": "When you take the Attack action on your turn, you can forgo one of your attacks and use a bonus action to direct one of your companions to strike. When you do so, choose a friendly creature who can see or hear you and expend one superiority die. That creature can immediately use its reaction to make one weapon attack, adding the superiority die to the attack's damage roll."
+    },
+    {
+        "name": "Steel Wind Strike",
+        "level": "5th level",
+        "school": "Conjuration",
+        "time": "1 action",
+        "range": "30 feet",
+        "components": "S, M (a melee weapon worth at least 1sp)",
+        "duration": "Instantaneous",
+        "classes": "Ranger, Wizard",
+        "text": [
+            "You flourish the weapon used in the casting and then vanish to strike like the wind. Choose up to five creatures you can see within range. Make a melee spell attack against each target. On a hit, a target takes 6d10 force damage.",
+            "",
+            "You can then teleport to an unoccupied space you can see within 5 feet of one of the targets you hit or missed."
+        ]
+    },
+    {
+        "name": "Wrath of Nature",
+        "level": "5th level",
+        "school": "Evocation",
+        "time": "1 action",
+        "range": "120 feet",
+        "components": "V, S",
+        "duration": "Concentration, up to 1 minute",
+        "classes": "Bard, Ranger",
+        "text": [
+            "You call out to the spirits of nature to rouse them against your enemies. Choose a point you can see within range. The spirits cause trees, rocks, and grasses in a 60-foot cube centered on that point to become animated until the spell ends.",
+            "<strong>Grasses and Undergrowth. </strong>Any area of ground in the cube that is covered by grass or undergrowth is difficult terrain for your enemies.",
+            "<strong>Trees.</strong> At the start of each of your turns, each of your enemies within 10 feet of any tree in the cube must succeed on a Dexterity saving throw or take 4d6 slashing damage from whipping branches.",
+            "<strong>Roots and Vines. </strong>At the end of each of your turns, one creature of your choice that is on the ground in the cube must succeed on a Strength saving throw or become restrained until the spell ends. A restrained creature can use an action to make a Strength (Athletics) check against your spell save DC, ending the effect on itself on a success.",
+            "<strong>Rocks. </strong>As a bonus action on your turn, you can cause a loose rock in the cube to launch at a creature you can see in the cube. Make a ranged spell attack against the target. On a hit, the target takes 3d8 nonmagical bludgeoning damage, and it must succeed on a Strength saving throw or fall prone."
+        ]
     },
     {
         "name": "Darkness (Monk)",
@@ -7834,6 +7881,21 @@ var spell = [{
             "You and up to five willing creatures within 5 feet of you instantly teleport to a previously designated sanctuary. You and any creatures that teleport with you appear in the nearest unoccupied space to the spot you designated when you prepared your sanctuary (see below). If you cast this spell without first preparing a sanctuary, the spell has no effect.",
             "",
             "You must designate a sanctuary by casting this spell within a location, such as a temple, dedicated to or strongly linked to your deity. If you attempt to cast the spell in this manner in an area that isn't dedicated to your deity, the spell has no effect."
+        ]
+    },
+    {
+        "name": "Word of Radiance",
+        "level": "Cantrip",
+        "school": "Evocation",
+        "time": "1 action",
+        "range": "5 feet",
+        "components": "V, M (a holy symbol)",
+        "duration": "Instantaneous",
+        "classes": "Cleric",
+        "text": [
+            "You utter a divine word, and burning radiance erupts from you. Each creature of your choice that you can see within range must succeed on a Constitution saving throw or take 1d6 radiant damage.",
+            "",
+            "The spell’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
         ]
     },
     {

@@ -8906,6 +8906,147 @@ var magicItems = [{
         ]
     },
     {
+        "name": "Imbued Wood",
+        "type": "Wondrous Item",
+        "magic": "1",
+        "rarity": "Common",
+        "text": [
+
+            "Requires Attunement",
+            "",
+            "Powerful manifest zones can infuse local trees with planar energies. A gifted artificer can tap into this to create a wand, staff, or rod that is especially effective at channeling a particular type of energy.",
+            "When you cast a spell that deals damage of the type associated with the material your Arcane Focus is made from, the spell gains a +1 bonus to one damage roll of that spell. The materials and their associated damage types are listed below.",
+            "•Fernian ash: Fire damage.<br/>•Irian rosewood: Radiant damage. <br/>•Kythrian manchineel: Acid or poison damage. <br/>•Lamannian oak: Lightning or thunder damage.  <br/>•Mabaran ebony: Necrotic damage.<br/>•Quori beech, Xorian wenge: Psychic damage.<br/>•Risian pine: Cold damage.<br/>•Shavarran birch: Force damage"
+        ]
+    },
+    {
+        "name": "Orb of Shielding",
+        "type": "Wondrous Item",
+        "magic": "1",
+        "rarity": "Common",
+        "text": [
+
+            "Requires Attunement",
+            "",
+            "An orb of shielding is an Arcane Focus made from crystal or stone aligned to one of the planes. While you are holding the orb and take damage of the type associated with the material your orb is made from, you can use your reaction to reduce the damage by 1d4. The materials and their associated damage types are listed below.",
+            "•Fernian basalt: Fire damage<br/>•Irian quartz: Radiant damage  <br/>•Kythrian skarn: Acid or poison damage<br/>•Lamannian flint: Lightning or thunder damage<br/>•Mabaran obsidian: Necrotic damage<br/>•Quori celestine, Xorian marble: Psychic damage<br/>•Risian shale: Cold damage<br/>•Shavaran chert: Force damage"
+        ]
+    },
+    {
+        "name": "Band of Loyalty",
+        "type": "Ring",
+        "magic": "1",
+        "rarity": "Common",
+        "text": [
+
+            "Requires Attunement",
+            "",
+            "If you are reduced to zero hit points while wearing this ring, you instantly die. These rings are favored by spies who can’t afford to fall into enemy hands."
+        ]
+    },
+    {
+        "name": "Cleansing Stone",
+        "type": "Wondrous Item",
+        "magic": "1",
+        "rarity": "Common",
+        "text": [
+            "A cleansing stone is a stone sphere one foot in diameter, engraved with mystic sigils. When touching the stone, you can use an action to activate it and remove dirt and grime from your garments and your person. Cleansing stones are often embedded into pedestals in public squares in Aundair or found in high-end Ghallanda inns."
+        ]
+    },
+    {
+        "name": "Everbright Lantern",
+        "type": "Wondrous Item",
+        "magic": "1",
+        "weight": "2",
+        "rarity": "Common",
+        "text": [
+            "An everbright lantern contains an Eberron dragonshard imbued with the effect of a continual flame spell. This bright light is mounted inside a normal bullseye lantern, allowing the light to be shuttered off. An everbright lantern provides clear illumination in a 60-foot cone and shadowy illumination in a 120-foot cone, just like a mundane bullseye lantern, but its flame never goes out. "
+        ]
+    },
+    {
+        "name": "Feather Token",
+        "type": "Wondrous Item",
+        "magic": "1",
+        "rarity": "Common",
+        "text": [
+            "This small metal disk is inscribed with the image of a feather. When you fall while the token is in your possession, you descend 60 feet per round and take no damage from falling. The token becomes nonmagical after you land. While it’s an expensive form of insurance, frequent airship travelers and citizens of Sharn often appreciate the security it provides."
+        ]
+    },
+    {
+        "name": "Glammerweave",
+        "type": "Wondrous Item",
+        "magic": "1",
+        "rarity": "Common",
+        "text": [
+            "Glamerweave clothing is imbued with cosmetic illusions. Traditionally, these patterns are contained within the cloth, but higher-end glamerweave can have more dramatic effects. You could have a gown that appears to be wreathed in flames, or a hat that’s orbited by illusory butterflies. Regardless of the design, these are cosmetic effects and have no impact on combat."
+        ]
+    },
+    {
+        "name": "Shiftweave",
+        "type": "Wondrous Item",
+        "magic": "1",
+        "rarity": "Common",
+        "text": [
+            "Transmutation magic is woven into the fabric of shiftweave clothing. When a suit of shiftweave is created, up to five different outfits can be embedded into the cloth. While wearing this outfit, you can utter a command word as an action to transform your shiftweave outfit into one of the other designs contained within it. ",
+            "To determine the price of a suit of shiftweave, combine the value of all of the outfits it contains and add 25 gp to that amount.  "
+        ]
+    },
+    {
+        "name": "Spellshard",
+        "type": "Wondrous Item",
+        "magic": "1",
+        "rarity": "Common",
+        "text": [
+            "A spellshard is a polished Eberron dragonshard, sized to fit into the palm of a hand. The shard is imbued with a particular work of literature. By holding the shard and concentrating, you can see its pages in your mind’s eye. Thinking of a particular phrase or topic will draw you to the first section that addresses it, and a simple ritual allows you to add content to the shard. ",
+            "A wizard can use a spellshard instead of a spellbook; the spellshard costs 1 gp per “page” in the shard, and otherwise functions as a mundane spellbook. Spellshards can also be used as diaries or journals. More advanced (and uncommon) shards can require a particular mental passphrase to access the contents of the shard. "
+        ]
+    },
+    {
+        "name": "Armblade",
+        "type": "Melee Weapon",
+        "magic": "1",
+        "rarity": "Common",
+        "text": [
+            "<emph>Warforged Component</emph>",
+            "<em><emph>Any one-handed melee weapon</emph></em>",
+            "Requires attunement by a Warforged",
+            "",
+            "An armblade is a weapon designed to integrate with the forearm of a warforged. If you’re a warforged, you can attach an armblade by attuning to it. An attached armblade cannot be disarmed or removed from you against your will, but while the weapon is attached you cannot use that hand for other actions. You can spend one minute to end the attunement and remove the armblade. ",
+            "An armblade isn’t inherently considered to be a magic weapon for purposes of overcoming damage resistance. However, any sort of magical melee weapon could be created as an armblade, so you could acquire a <em>vicious</em> armblade or a <em>vorpal</em> armblade"
+        ]
+    },
+    {
+        "name": "Docent",
+        "type": "Wondrous Item",
+        "magic": "1",
+        "rarity": "Very Rare",
+        "text": [
+            "<emph>Warforged Component</emph>",
+            "Requires attunement by a Warforged",
+            "",
+            "A Docent is a small metal sphere, approximately 2 inches across, studded with dragonshards. Despite a strong magical aura, it has no obvious abilities. When you attune to a Docent, the sphere becomes embedded in your chest and comes to life — literally. ",
+            "<emph>Sentience. </emph>A Docent is a sentient item of any alignment with an Intelligence of 16, a Wisdom of 14, and a Charisma of 14. It can perceive the world through your senses.    A Docent communicates telepathically with its wielder and can speak, read, and understand Common and Giant.",
+            "<emph>Personality. </emph>A Docent is designed to advise and assist the warforged it’s attached to. One of the simple functions of a Docent is to serve as a translator. The Docent’s properties are under its control, and if you have a bad relationship with your Docent it may refuse to assist you... or simply lie about information that it obtains. However, if you treat your Docent well it could serve as a useful ally.",
+            "<emph>Languages. </emph>All Docents understand Common and Giant, but a Docent knows up to four additional languages. Elvish and Draconic are common options. If a Docent knows less than six languages in total, it can add new languages to its repertoire after encountering them. So a Docent found in Xen’drik may have never encountered a dwarf before... but after spending some time in Khorvaire studying dwarves, it could pick up the Dwarvish language.",
+            "<emph>Properties. </emph>A Docent possesses up to three of the following properties: <br/> • The Docent can cast the <emph>detect magic</emph> spell at will. <br/> • The Docent can cast the <emph>detect evil and good</emph> spell at will. <br/> • The Docent can detect any form of divination or scrying targeting it and its warforged host.<br/> • The Docent has a +7 bonus to Intelligence (Arcana) checks. <br/> • The Docent has a +7 bonus to Intelligence (History) checks. <br/>•TheDocent has a +7 bonus to Intelligence (Investigation) checks. <br/> • The Docent has a +7 bonus to Intelligence (Nature) checks.<br/> • The Docent has a +6 bonus to Wisdom (Insight)checks.<br/> • The Docent has a +6 bonus to Wisdom (Perception) checks.<br/> • The Docent has a +6 bonus to Wisdom (Medicine) checks targeting its warforged host. If the host is rendered unconscious, the Docent will automatically attempt to stabilize them once each turn.",
+            "You can use a bonus action on your turn to request that the Docent use one of its propertieson your behalf."
+        ]
+    },
+    {
+        "name": "Wand Sheath",
+        "type": "Wondrous Item",
+        "magic": "1",
+        "rarity": "Common",
+        "text": [
+            "<emph>Warforged Component</emph>",
+            "Requires attunement by a Warforged",
+            "",
+            "A wand sheath is designed to integrate with the forearm of a warforged. If you’re a warforged, you can attach awand sheath by attuning to it. While the wand sheath is attached, it cannot be removed from you against your will. You can spend one minute to end the attunement and remove the wand sheath. ",
+            "You can insert a wand into the sheath as an action. While the wand is sheathed, you gain the following benefits: ",
+            "• You can retract the wand into your forearm or extend it from your forearm as a bonus action. While it is retracted, it cannot be damaged or removed.<br/><br/> • While the wand is extended, you can use it as if you were holding it, but your hand remains free for other actions. <br/><br/>• If the sheathed wand requires attunement, you must attune to the wand before you can use it. However, the wand sheath and the attached wand only count as a single item for purposes of the maximum number of items you can be attuned to. If you remove the wand from the sheath, you immediately lose your attunement to the wand"
+        ]
+    },
+    {
         "name": "Amulet of Protection from Turning",
         "type": "Wondrous Item",
         "magic": "1",

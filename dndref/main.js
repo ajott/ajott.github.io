@@ -28,6 +28,10 @@ function sumArr(arr) {
     return sum;
 }
 
+function parseRoll(str) {
+    
+}
+
 
 function roll(str, mod = 0, sum = true) {
 
@@ -233,7 +237,11 @@ function addSpellSlotBadges() {
     $("#"+classSelection+"Notice").show();
 
     for (let i = 0; i < classSlots[classSelection][levelSelection].length; i++){
+        if (classSlots[classSelection][levelSelection][i] > 0) {
         $("#"+classSelection+i+"Badge").text(classSlots[classSelection][levelSelection][i]);
+        } else {
+            $("#"+classSelection+i+"Badge").text("");
+        }
     }
 
     if (classSelection == "bard" || classSelection == "ranger" || classSelection == "sorcerer" || classSelection == "warlock" || classSelection == "wizard") {
@@ -371,6 +379,62 @@ function buildFeats() {
     }
 }
 
+function deityFilter() {
+    let pantheons = [".forgotten", ".greyhawk", ".dragonlance", ".eberron", ".nonhuman",".celtic", ".greek", ".egyptian", ".norse"]
+
+    for (let i = 0; i < pantheons.length; i++) {
+        $(pantheons[i]).show();
+    }
+    var input, filter, table, tr, td;
+    input = document.getElementById("deitySearch");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("deityTable");
+    tr = table.getElementsByTagName("tr");
+    theads = table.getElementsByClassName("midHead");
+    if (filter != "") {
+        for (let i = 0; i < theads.length; i++) {
+            theads[i].style.display = "none";
+        }
+    } else {
+        for (let i = 0; i < theads.length; i++) {
+            theads[i].style.display = "";
+        }
+    }
+
+    for (let i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1 && txtValue != null) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+    document.getElementById("deityPantheonSelect").options.selectedIndex = 0;
+}
+
+function deityPantheonSearch() {
+    let selectBox = document.getElementById("deityPantheonSelect")
+
+    let selection = selectBox.options[selectBox.selectedIndex].value;
+
+    let pantheons = [".forgotten", ".greyhawk", ".dragonlance", ".eberron", ".nonhuman",".celtic", ".greek", ".egyptian", ".norse"]
+
+    if (selection == "...") {
+        for (let i = 0; i < pantheons.length; i++) {
+            $(pantheons[i]).show();
+        }
+    } else {
+        for (let i = 0; i < pantheons.length; i++) {
+            $(pantheons[i]).hide();
+            $(selection).show();
+        }
+    }
+
+    $("#deitySearch").val("")
+}
 
 function showMenu() {
     var x = document.getElementById("menu");

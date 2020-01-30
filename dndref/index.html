@@ -33,7 +33,7 @@
                 <p>During a character's turn, they may take an action, move, and take a bonus action. In addition, they
                     have one reaction per round. These are special actions that take place when it is not their turn.
                 </p>
-                <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered" id="combatActionTable">
+                <table class="w3-table w3-striped w3-hoverable w3-bordered" id="combatActionTable">
                     <thead>
                         <tr>
                             <th>Action</th>
@@ -167,7 +167,7 @@
                 <div class="w3-row">
                     <div class="w3-col s12 m12 l5">
                         <h3>Character Advancement</h3>
-                        <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                        <table class="w3-table w3-striped w3-hoverable w3-bordered">
                             <thead>
                                 <tr>
                                     <th>Experience</th>
@@ -284,7 +284,7 @@
                     </div>
                     <div class="w3-col s12 m12 l5">
                         <h3>Ability Score Modifiers</h3>
-                        <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                        <table class="w3-table w3-striped w3-hoverable w3-bordered">
                             <thead>
                                 <tr>
                                     <th>Ability Score</th>
@@ -356,6 +356,173 @@
     </div>
     <div class="w3-row-padding w3-section">
         <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div id="leveling" class="info">
+                <h1>Help! I just leveled up!</h1>
+                <div class="w3-center">
+                    <p>It's okay, take a second to breathe. Follow the general steps and guidelines below if you're advancing your main class. Multiclassing has its own quirks, and is addressed in <a style="color:goldenrod" href="./index.html#multiclass">more detail below</a>.</p>
+                </div>
+                <div class="w3-container">
+                    <div class="advancementCard">
+                        <div class="w3-card-2 w3-round-large">
+                            <div class="w3-row-padding">
+                                <h3>Step 1: Hit Points and Hit Dice</h3><br />
+                            </div>
+                            <div class="w3-row-padding w3-center">
+                                Your Hit Points will increase depending on your class. You roll your Hit Die (or take the average roll + 1) and then add your Constitution modifier. This is your new Hit Point Maximum. Please note that this <emph>does not</emph> increase your Current Hit Points. The table below has hit dice for each class listed, as well as the static value you may take instead of rolling.
+                                <br/>
+                                <br/>
+                                You also gain a new Hit Die, able to be spent during a Short Rest. Please note that you can spend <emph>one or more</emph> Hit Dice during a Short Rest, up to your maximum. Upon finishing a Long Rest, you regain a number of Hit Dice equal to <emph>&frac12; your total number of Hit Dice</emph>. As always, the general rule is to <u>round all fractions down</u>, so it can take up to 3 Long Rests to recover all of your Hit Dice.
+                                <br/>
+                                <br/>
+                                <div class="w3-row">
+                                    <div class="w3-col s0 m2 l3">
+                                        &emsp;
+                                    </div>
+                                    <div class="w3-col s12 m8 l6">
+                                        <h5>Hit Dice by Class</h5>
+                                        <table class="w3-table w3-center">
+                                            <thead>
+                                                <th>Class</th>
+                                                <th>Hit Die</th>
+                                                <th>Static Option</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Barbarian</td>
+                                                    <td>d12</td>
+                                                    <td>7</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Bard</td>
+                                                    <td>d8</td>
+                                                    <td>5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cleric</td>
+                                                    <td>d8</td>
+                                                    <td>5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Druid</td>
+                                                    <td>d8</td>
+                                                    <td>5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Figther</td>
+                                                    <td>d10</td>
+                                                    <td>6</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Monk</td>
+                                                    <td>d8</td>
+                                                    <td>5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Paladin</td>
+                                                    <td>d10</td>
+                                                    <td>6</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Ranger</td>
+                                                    <td>d10</td>
+                                                    <td>6</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Rogue</td>
+                                                    <td>d8</td>
+                                                    <td>5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Sorcerer</td>
+                                                    <td>d6</td>
+                                                    <td>4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Warlock</td>
+                                                    <td>d8</td>
+                                                    <td>5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Wizard</td>
+                                                    <td>d6</td>
+                                                    <td>4</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="w3-col s0 m2 l3">
+                                        &emsp;
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="advancementCard">
+                        <div class="w3-card-2 w3-round-large">
+                            <div class="w3-row-padding">
+                                <h3>Step 2: Proficiency Bonus</h3><br />
+                            </div>
+                            <div class="w3-row-padding w3-center">
+                                Check the character advancement table in the previous section (or your class advancement table) to determine your Proficiency Bonus. This improves at 5th, 9th, 13th, and 17th level.
+                                <br/>
+                                <br/>
+                                Note that this improves based on your Character Level, not your Class Level (if multiclassing)
+                                <br/>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="advancementCard">
+                        <div class="w3-card-2 w3-round-large">
+                            <div class="w3-row-padding">
+                                <h3>Step 3: New Class Features</h3><br />
+                            </div>
+                            <div class="w3-row-padding w3-center">
+                                Check your class information to see if you gained any class features, including those from subclasses/archetypes. These can range from gaining Extra Attacks to improving your ability to Channel Divinity.
+                                <br/>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="advancementCard">
+                        <div class="w3-card-2 w3-round-large">
+                            <div class="w3-row-padding">
+                                <h3>Step 4: Improved Class Features</h3><br />
+                            </div>
+                            <div class="w3-row-padding w3-center">
+                                Some class features (including those granted by subclasses/archetypes) improve at levels beyond that at which you gain them. This includes Spellcasting, detailed separately below.
+                                <br/>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="advancementCard">
+                        <div class="w3-card-2 w3-round-large">
+                            <div class="w3-row-padding">
+                                <h3>Step 5: Spellcasting</h3><br />
+                            </div>
+                            <div class="w3-row-padding w3-center">
+                                If your class has the ability to cast spells, it's likely that this has improved upon leveling up. The most common improvement is an increase in spell slots (and, generally, you gain a higher-level spell slot on odd levels). In addition, if you are a class with a limited number of spells known, you will likely learn at least one new spell per level.
+                                <br/>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+        </div>
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+    </div>
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
             <p></p>
         </div>
         <div class="w3-col s12 m12 l10">
@@ -378,7 +545,7 @@
                     <div class="w3-col s12 m12 l5">
                         <h3>Prerequisites</h3>
                         <p>In order to multiclass into a given class, you must meet the prerequisites, as detailed below.</p>
-                        <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                        <table class="w3-table w3-striped w3-hoverable w3-bordered">
                             <thead>
                                 <tr>
                                     <th>Class</th>
@@ -459,7 +626,7 @@
                     <div class="w3-col s12 m12 l5">
                         <h3>Proficiencies</h3>
                         <p>When you gain a level in a class other than your first, you only gain some of that class's stating proficiencies, as outlined below.</p>
-                        <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                        <table class="w3-table w3-striped w3-hoverable w3-bordered">
                             <thead>
                                 <tr>
                                     <th>Class</th>
@@ -520,7 +687,7 @@
                         <br/>
                         <br/>
                         <h3>Multiclass Spell Slots by Caster Level</h3>
-                        <table class="w3-table w3-striped w3-hoverable w3-bordered w3-centered">
+                        <table class="w3-table w3-striped w3-hoverable w3-bordered">
                             <thead>
                                 <tr>
                                     <th>Lvl.</th>

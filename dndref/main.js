@@ -29,7 +29,7 @@ function sumArr(arr) {
 }
 
 function parseRoll(str) {
-    
+
 }
 
 
@@ -68,14 +68,14 @@ function roll(str, mod = 0, sum = true) {
 
     if (sum) {
         return totals["total"];
-    }else {
+    } else {
         return totals;
     }
-    
+
 }
 
-function rollCrypto(str, mod=0, sum=true) {
-    
+function rollCrypto(str, mod = 0, sum = true) {
+
     if (str == "-") {
         return 1;
     }
@@ -85,13 +85,13 @@ function rollCrypto(str, mod=0, sum=true) {
 
     console.log(str.split(String(diceValue)));
 
-    let result =  [];
+    let result = [];
 
-    for (let i = 0; i < numRolls; i ++) {
+    for (let i = 0; i < numRolls; i++) {
         result.push(window.crypto.getRandomValues(new Uint32Array(1))[0] / 4294967295)
     }
 
-    for (let i = 0; i < result.length; i ++){
+    for (let i = 0; i < result.length; i++) {
         result[i] = Math.floor(result[i] * diceValue) + 1;
     }
 
@@ -116,7 +116,7 @@ function rollCrypto(str, mod=0, sum=true) {
 
     if (sum) {
         return totals["total"];
-    }else {
+    } else {
         return totals;
     }
 }
@@ -136,8 +136,8 @@ function rollDice() {
 
     let htmlString = "";
 
-    result["rolls"].forEach(function(die) {
-        htmlString += ("&emsp;<span>"+die+"</span>&emsp;");
+    result["rolls"].forEach(function (die) {
+        htmlString += ("&emsp;<span>" + die + "</span>&emsp;");
     })
 
 
@@ -154,7 +154,7 @@ function rollDice() {
 $(document).ready(function () {
     buildNavbar();
     setTimeout(
-        toDark(), 250);   
+        toDark(), 250);
 });
 
 function buildSpells() {
@@ -189,7 +189,7 @@ function buildSpells() {
                 htmlString = "<p>" + spell[i]["text"] + "</p>"
             }
         }
-        if (spell[i]["ritual"] == "YES"){
+        if (spell[i]["ritual"] == "YES") {
             $("#spell" + i).children().children().children().children(".ritual").text("Ritual")
         }
         $("#spell" + i).children().children().children(".spellDescription").html(htmlString)
@@ -218,14 +218,14 @@ function buildSpells() {
 
 function addSpellSlotBadges() {
 
-    let classes=["bard","cleric","druid","paladin","ranger","sorcerer","warlock","wizard"];
+    let classes = ["bard", "cleric", "druid", "paladin", "ranger", "sorcerer", "warlock", "wizard"];
 
-    classes.forEach(function(goClass) {
-        for (let i = 0; i < 10; i ++) {
-            $("#"+goClass+i+"Badge").text("")
+    classes.forEach(function (goClass) {
+        for (let i = 0; i < 10; i++) {
+            $("#" + goClass + i + "Badge").text("")
         }
-        $("#"+goClass+"SpellSpan").hide();
-        $("#"+goClass+"Notice").hide();
+        $("#" + goClass + "SpellSpan").hide();
+        $("#" + goClass + "Notice").hide();
     })
 
     let classSelect = document.getElementById("slotClassSelect")
@@ -234,86 +234,278 @@ function addSpellSlotBadges() {
     let classSelection = classSelect.options[classSelect.selectedIndex].value;
     let levelSelection = levelSelect.options[levelSelect.selectedIndex].value;
 
-    $("#"+classSelection+"Notice").show();
+    $("#" + classSelection + "Notice").show();
 
-    for (let i = 0; i < classSlots[classSelection][levelSelection].length; i++){
+    for (let i = 0; i < classSlots[classSelection][levelSelection].length; i++) {
         if (classSlots[classSelection][levelSelection][i] > 0) {
-        $("#"+classSelection+i+"Badge").text(classSlots[classSelection][levelSelection][i]);
+            $("#" + classSelection + i + "Badge").text(classSlots[classSelection][levelSelection][i]);
         } else {
-            $("#"+classSelection+i+"Badge").text("");
+            $("#" + classSelection + i + "Badge").text("");
         }
     }
 
     if (classSelection == "bard" || classSelection == "ranger" || classSelection == "sorcerer" || classSelection == "warlock" || classSelection == "wizard") {
-        $("#"+classSelection+"SpellSpan").show();
-        $("#"+classSelection+"SpellsKnown").text(classSpellsKnown[classSelection][levelSelection]);
+        $("#" + classSelection + "SpellSpan").show();
+        $("#" + classSelection + "SpellsKnown").text(classSpellsKnown[classSelection][levelSelection]);
     }
 }
 
 function levelSliderMove() {
-    $( "#levelSlider" ).slider({
-        create: function() {
-          handle.text( $( this ).slider( "value" ) );
+    $("#levelSlider").slider({
+        create: function () {
+            handle.text($(this).slider("value"));
         },
-        slide: function( event, ui ) {
-          handle.text( ui.value );
+        slide: function (event, ui) {
+            handle.text(ui.value);
         }
-      });
+    });
 }
 
 
-function buildRaces() {
+function buildMonsters() {
     let htmlString = "";
 
-    for (let i = 0; i < race.length; i++) {
-        var $div = $('#defaultRaceCard');
+    for (let i = 0; i < monster.length; i++) {
+        var $div = $('#defaultMonsterCard');
 
-        var $klon = $div.clone().prop('id', 'race' + i);
+        var $klon = $div.clone().prop('id', 'monster' + i);
 
-        if ($("#race" + (i - 1)).length === 0) {
+        if ($("#monster" + (i - 1)).length === 0) {
             $div.after($klon.show());
         } else {
-            $("#race" + (i - 1)).after($klon.show());
+            $("#monster" + (i - 1)).after($klon.show());
         }
 
-        $("#race" + i).children().children().children(".raceName").text(race[i]["name"])
-        
-        if (race[i]["size"] != undefined) {
-            $("#race" + i).children().children().children(".raceSize").html("<emph>Size: </emph>"+race[i]["size"])
+        $("#monster" + i).children().children().children(".monsterName").text(monster[i]["name"])
+
+        if (monster[i]["size"] != undefined) {
+            htmlString += "<em>" + monster[i]["size"];
+        }
+        if (monster[i]["type"] != undefined) {
+            htmlString += " " + monster[i]["type"]
+        }
+        if (monster[i]["alignment"] != undefined) {
+            htmlString += ", " + toTitleCase(monster[i]["alignment"]) + "</em>"
         }
 
-        if (race[i]["speed"] != undefined) {
-            $("#race" + i).children().children().children(".raceSpeed").html("<emph>Speed: </emph>"+race[i]["speed"])
+        $("#monster" + i).children().children().children().children(".monsterSizeTypeAlignment").html(htmlString)
+        htmlString = ""
+
+        if (monster[i]["ac"] != undefined) {
+            $("#monster" + i).children().children().children().children(".monsterAC").html("<emph>AC: </emph>" + monster[i]["ac"])
+        }
+        if (monster[i]["hp"] != undefined) {
+            $("#monster" + i).children().children().children().children(".monsterHP").html("<emph>Hit Points: </emph>" + monster[i]["hp"])
+        }
+        if (monster[i]["speed"] != undefined) {
+            $("#monster" + i).children().children().children().children(".monsterSpeed").html("<emph>Speed: </emph>" + monster[i]["speed"])
         }
 
-        if (race[i]["ability"] != undefined) {
-            $("#race" + i).children().children().children(".raceAbility").html("<emph>Ability Score Modifiers: </emph>"+race[i]["ability"])
+
+        if (monster[i]["str"] != undefined) {
+            $("#monster" + i).children().children().children().children(".monsterStr").html("<emph>Str: </emph>" + monster[i]["str"] + " (" + findStatMod(monster[i]["str"]) + ") &emsp;")
+        }
+        if (monster[i]["dex"] != undefined) {
+            $("#monster" + i).children().children().children().children(".monsterDex").html("<emph>Dex: </emph>" + monster[i]["dex"] + " (" + findStatMod(monster[i]["dex"]) + ") &emsp;")
+        }
+        if (monster[i]["con"] != undefined) {
+            $("#monster" + i).children().children().children().children(".monsterCon").html("<emph>Con: </emph>" + monster[i]["con"] + " (" + findStatMod(monster[i]["con"]) + ") &emsp;")
+        }
+        if (monster[i]["int"] != undefined) {
+            $("#monster" + i).children().children().children().children(".monsterInt").html("<emph>Int: </emph>" + monster[i]["int"] + " (" + findStatMod(monster[i]["int"]) + ") &emsp;")
+        }
+        if (monster[i]["wis"] != undefined) {
+            $("#monster" + i).children().children().children().children(".monsterWis").html("<emph>Wis: </emph>" + monster[i]["wis"] + " (" + findStatMod(monster[i]["wis"]) + ") &emsp;")
+        }
+        if (monster[i]["cha"] != undefined) {
+            $("#monster" + i).children().children().children().children(".monsterCha").html("<emph>Cha: </emph>" + monster[i]["cha"] + " (" + findStatMod(monster[i]["cha"]) + ")")
         }
 
-        if (race[i]["proficiency"] != undefined) {
-            $("#race" + i).children().children().children(".raceProficiency").html("<emph>Proficiency: </emph>"+race[i]["proficiency"])
+        if (monster[i]["save"] != undefined) {
+            $("#monster" + i).children().children().children(".monsterSave").html("<emph>Saves: </emph>" + monster[i]["save"] + "<br/>")
+        }
+
+        if (monster[i]["skill"] != undefined) {
+            $("#monster" + i).children().children().children(".monsterSkill").html("<emph>Skill: </emph>" + monster[i]["skill"] + "<br/>")
+        }
+
+        if (monster[i]["resist"] != undefined) {
+            $("#monster" + i).children().children().children(".monsterResist").html("<emph>Damage Resistances: </emph>" + monster[i]["resist"] + "<br/>")
+        }
+
+        if (monster[i]["immune"] != undefined) {
+            $("#monster" + i).children().children().children(".monsterImmune").html("<emph>Damage Immunities: </emph>" + monster[i]["immune"] + "<br/>")
+        }
+
+        if (monster[i]["conditionImmune"] != undefined) {
+            $("#monster" + i).children().children().children(".monsterCondImmune").html("<emph>Condition Immunities: </emph>" + monster[i]["conditionImmune"] + "<br/>")
+        }
+
+        if (monster[i]["senses"] != undefined) {
+            $("#monster" + i).children().children().children(".monsterSenses").html("<emph>Senses: </emph>" + monster[i]["senses"] + "<br/>")
+        }
+
+        if (monster[i]["passive"] != undefined) {
+            $("#monster" + i).children().children().children(".monsterPassPer").html("<emph>Passive Perception: </emph>" + monster[i]["passive"] + "<br/>")
+        }
+
+        if (monster[i]["languages"] != undefined) {
+            $("#monster" + i).children().children().children(".monsterLanguages").html("<emph>Languages: </emph>" + monster[i]["languages"] + "<br/>")
+        }
+
+        if (monster[i]["cr"] != undefined) {
+            $("#monster" + i).children().children().children(".monsterCR").html("<emph>Challenge: </emph>" + monster[i]["cr"])
         }
 
 
 
-        if (race[i]["trait"] != undefined) {
-            if (typeof (race[i]["trait"]) == "object") {
-                for (let j = 0; j < race[i]["trait"].length; j++) {
-                    htmlString += "<p><emph>" + race[i]["trait"][j]["name"] + ": </emph>" + race[i]["trait"][j]["text"] + "</p>";
+
+        if (monster[i]["trait"] != undefined) {
+            
+            if (typeof monster[i]["trait"][0] != "undefined") {
+                for (let j = 0; j < monster[i]["trait"].length; j++) {
+                    if (monster[i]["trait"][j]["text"] != undefined) {
+                        if (typeof monster[i]["trait"][j]["text"] == "object") {
+                            htmlString += "<p><emph>" + monster[i]["trait"][j]["name"] + ": </emph>" + monster[i]["trait"][j]["text"][0] + "</p>";
+                            for (let k = 1; k < monster[i]["trait"][j]["text"].length; k++) {
+                                if (monster[i]["trait"][j]["text"][k].length != 0 ) {
+                                htmlString += "<p>&emsp;" + monster[i]["trait"][j]["text"][k] + "</p>";
+                            }
+                            }
+                        } else {
+                            htmlString += "<p><emph>" + monster[i]["trait"][j]["name"] + ": </emph>" + monster[i]["trait"][j]["text"] + "</p>";
+                        }
+                    } else {
+                        htmlString += "<p><emph>" + monster[i]["trait"][j]["name"] + "</emph></p>";
+                    }
                 }
             } else {
-                htmlString = "<p>" + race[i]["text"] + "</p>"
+                htmlString += "<p><emph>" + monster[i]["trait"]["name"] + ": </emph>";
+                htmlString += monster[i]["trait"]["text"] + "</p>";
             }
+            
+            
+            
+            
+            $("#monster" + i).children().children().children(".monsterTraits").html(htmlString)
+
+            htmlString = ""
         }
-        
-        $("#race" + i).children().children().children(".raceTrait").html(htmlString)
+
+        if (monster[i]["action"] != undefined) {
+            $("#monster" + i).children().children().children(".monsterActionTitle").html("<h4 style=\"text-align: left !important;\">Actions</h4>")
+            $("#monster" + i).children().children().children(".monsterActionTitle").next().css("border-bottom","1px solid goldenrod")
+            
+            if (typeof monster[i]["action"][0] != "undefined") {
+                for (let j = 0; j < monster[i]["action"].length; j++) {
+                    if (monster[i]["action"][j]["text"] != undefined) {
+                        if (typeof monster[i]["action"][j]["text"] == "object") {
+                            htmlString += "<p><emph>" + monster[i]["action"][j]["name"] + ": </emph>" + monster[i]["action"][j]["text"][0] + "</p>";
+                            for (let k = 1; k < monster[i]["action"][j]["text"].length; k++) {
+                                htmlString += "<p>&emsp;" + monster[i]["action"][j]["text"][k] + "</p>";
+                            }
+                        } else {
+                            htmlString += "<p><emph>" + monster[i]["action"][j]["name"] + ": </emph>" + monster[i]["action"][j]["text"] + "</p>";
+                        }
+                    } else {
+                        htmlString += "<p><emph>" + monster[i]["action"][j]["name"] + "</emph></p>";
+                    }
+                }
+            } else {
+                htmlString += "<p><emph>" + monster[i]["action"]["name"] + ": </emph>";
+                htmlString += monster[i]["action"]["text"] + "</p>";
+            }
+            
+            
+            
+            
+            $("#monster" + i).children().children().children(".monsterActions").html(htmlString)
+
+            htmlString = ""
+        }
+
+        if (monster[i]["legendary"] != undefined) {
+            $("#monster" + i).children().children().children(".monsterLegendaryTitle").html("<h4 style=\"text-align: left !important;\">Legendary Actions</h4><div style=\"border-bottom: 1px solid goldenrod !important\"></div><br/>The "+monster[i]["name"]+" can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time, and only at the end of another creature's turn. The "+ monster[i]["name"] + " regains spent legendary actions at the start of its turn.")
+            
+            
+            if (typeof monster[i]["legendary"][0] != "undefined") {
+                for (let j = 0; j < monster[i]["legendary"].length; j++) {
+                    if (monster[i]["legendary"][j]["text"] != undefined) {
+                        if (typeof monster[i]["legendary"][j]["text"] == "object") {
+                            htmlString += "<p><emph>" + monster[i]["legendary"][j]["name"] + ": </emph>" + monster[i]["legendary"][j]["text"][0] + "</p>";
+                            for (let k = 1; k < monster[i]["legendary"][j]["text"].length; k++) {
+                                htmlString += "<p>&emsp;" + monster[i]["legendary"][j]["text"][k] + "</p>";
+                            }
+                        } else {
+                            htmlString += "<p><emph>" + monster[i]["legendary"][j]["name"] + ": </emph>" + monster[i]["legendary"][j]["text"] + "</p>";
+                        }
+                    } else {
+                        htmlString += "<p><emph>" + monster[i]["legendary"][j]["name"] + "</emph></p>";
+                    }
+                }
+            } else {
+                htmlString += "<p><emph>" + monster[i]["legendary"]["name"] + ": </emph>";
+                htmlString += monster[i]["legendary"]["text"] + "</p>";
+            }
+            
+            
+            
+            
+            $("#monster" + i).children().children().children(".monsterLegendary").html(htmlString)
+
+            htmlString = ""
+        }
+
+
+        $("#monster" + i).addClass("monster-item")
 
         htmlString = "";
     }
 }
 
+function monsterNameFilter() {
+
+    var input = document.getElementById('monsterNameSearch').value.toUpperCase();
+
+
+    if (input != "") {
+        // Filter for monster names that match the input
+        $('.monsterGrid').isotope({
+            filter: function () {
+                // _this_ is the item element. Get text of element's .name
+                var name = $(this).find('.monsterName').text().toUpperCase();
+                // return true to show, false to hide
+                return name.indexOf(input) > -1;
+            }
+        })
+    } else {
+        $('.monsterGrid').isotope({
+            // Clear filter
+            filter: '*'
+        })
+    }
+}
+
+function findStatMod(str) {
+    let mod = Math.floor((Number(str) - 10) / 2)
+
+    if (mod > 0) {
+        mod = "+" + String(mod)
+    } else {
+        mod = String(mod);
+    }
+
+    return mod;
+}
+
+function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function (txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+}
+
 function itemTypeFilter(input) {
-    
+
 
     $("#magicItemNameSearch").val("")
 
@@ -380,7 +572,7 @@ function buildFeats() {
 }
 
 function deityFilter() {
-    let pantheons = [".forgotten", ".greyhawk", ".dragonlance", ".eberron", ".nonhuman",".celtic", ".greek", ".egyptian", ".norse"]
+    let pantheons = [".forgotten", ".greyhawk", ".dragonlance", ".eberron", ".nonhuman", ".celtic", ".greek", ".egyptian", ".norse"]
 
     for (let i = 0; i < pantheons.length; i++) {
         $(pantheons[i]).show();
@@ -420,7 +612,7 @@ function deityPantheonSearch() {
 
     let selection = selectBox.options[selectBox.selectedIndex].value;
 
-    let pantheons = [".forgotten", ".greyhawk", ".dragonlance", ".eberron", ".nonhuman",".celtic", ".greek", ".egyptian", ".norse"]
+    let pantheons = [".forgotten", ".greyhawk", ".dragonlance", ".eberron", ".nonhuman", ".celtic", ".greek", ".egyptian", ".norse"]
 
     if (selection == "...") {
         for (let i = 0; i < pantheons.length; i++) {
@@ -447,7 +639,7 @@ function showMenu() {
 
 
 function dropdownShow(str) {
-    let elements = ["classesDropdown", "spellDropdown", "equipDropdown","raceDropdown"]
+    let elements = ["classesDropdown", "spellDropdown", "equipDropdown", "raceDropdown"]
 
     for (let i = 0; i < elements.length; i++) {
         if (str == elements[i]) {
@@ -489,11 +681,11 @@ function accordion(id) {
 
 function accordionSidebar(id) {
     var x = document.getElementById(id);
-    let sidebarDivs = ["barbsidebar","bardsidebar","clericsidebar","druidsidebar","fightersidebar","monksidebar","paladinsidebar","rangersidebar","roguesidebar","sorcerersidebar","warlocksidebar","wizardsidebar"]
+    let sidebarDivs = ["barbsidebar", "bardsidebar", "clericsidebar", "druidsidebar", "fightersidebar", "monksidebar", "paladinsidebar", "rangersidebar", "roguesidebar", "sorcerersidebar", "warlocksidebar", "wizardsidebar"]
 
-    for (let i = 0; i < sidebarDivs.length; i ++) {
-        if (sidebarDivs[i] != id)   {
-            $("#"+sidebarDivs[i]).removeClass("w3-show")
+    for (let i = 0; i < sidebarDivs.length; i++) {
+        if (sidebarDivs[i] != id) {
+            $("#" + sidebarDivs[i]).removeClass("w3-show")
             document.getElementById(sidebarDivs[i]).previousElementSibling.className = document.getElementById(sidebarDivs[i]).previousElementSibling.className.replace("w3-goldenrod", "");
         }
     }
@@ -529,7 +721,7 @@ var spellLevels = ["CANTRIP", "1ST", "2ND", "3RD", "4TH", "5TH", "6TH", "7TH", "
 function spellFilter(input, mod = 0) {
     $("#spellNameSearch").val("")
 
-    
+
     $this = $(input)
 
     filterText = input.firstChild.textContent.toUpperCase()
@@ -538,9 +730,9 @@ function spellFilter(input, mod = 0) {
 
 
     if (mod == 1) {
-        spellFilters.forEach(function(filter) {
+        spellFilters.forEach(function (filter) {
             if (spellSchools.indexOf(filter) > -1) {
-                spellFilters.splice(spellFilters.indexOf(filter),1)
+                spellFilters.splice(spellFilters.indexOf(filter), 1)
             }
         })
 
@@ -549,9 +741,9 @@ function spellFilter(input, mod = 0) {
     }
 
     if (mod == 2) {
-        spellFilters.forEach(function(filter) {
+        spellFilters.forEach(function (filter) {
             if (spellLevels.indexOf(filter) > -1) {
-                spellFilters.splice(spellFilters.indexOf(filter),1)
+                spellFilters.splice(spellFilters.indexOf(filter), 1)
             }
         })
         $this.parent().children().removeClass("w3-blue").addClass("w3-grey")
@@ -562,8 +754,8 @@ function spellFilter(input, mod = 0) {
         spellFilters.push(filterText);
     } else {
         if (mod != 1 && mod != 2) {
-        spellFilters.splice(spellFilters.indexOf(filterText),1);
-    }
+            spellFilters.splice(spellFilters.indexOf(filterText), 1);
+        }
         $this.removeClass("w3-blue").addClass("w3-grey");
     }
 
@@ -575,7 +767,7 @@ function spellFilter(input, mod = 0) {
 
             let matches = [];
 
-            spellFilters.forEach(function(filterVal) {
+            spellFilters.forEach(function (filterVal) {
                 matches.push(spFilter.indexOf(filterVal) > -1);
             })
 
@@ -604,13 +796,13 @@ function spellNameFilter(exact = 0) {
         "Illusion",
         "Necromancy",
         "Transmutation"
-      ]
+    ]
 
     schoolNames.forEach(function (schoolName) {
         $("#schoolBtn" + schoolName).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
     });
 
-    for (let i = 0; i < 10; i ++) {
+    for (let i = 0; i < 10; i++) {
         $("#levelBtn" + i).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
     }
 
@@ -618,10 +810,10 @@ function spellNameFilter(exact = 0) {
 
     if (input[0] == "\"") {
         exact = 1;
-        if (input[input.length-1] == "\"") {
-            input = input.substring(1,input.length - 1)
+        if (input[input.length - 1] == "\"") {
+            input = input.substring(1, input.length - 1)
         } else {
-            input = input.substring(1,input.length)
+            input = input.substring(1, input.length)
         }
     }
 
@@ -633,7 +825,7 @@ function spellNameFilter(exact = 0) {
                 var name = $(this).find('.spellName').text().toUpperCase();
                 // return true to show, false to hide
                 if (exact == 1) {
-                   return (name == input)
+                    return (name == input)
                 } else {
                     return name.indexOf(input) > -1;
                 }
@@ -674,13 +866,13 @@ function clearSpellFilter() {
         "Illusion",
         "Necromancy",
         "Transmutation"
-      ]
+    ]
 
     schoolNames.forEach(function (schoolName) {
         $("#schoolBtn" + schoolName).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
     });
 
-    for (let i = 0; i < 10; i ++) {
+    for (let i = 0; i < 10; i++) {
         $("#levelBtn" + i).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
     }
 }
@@ -711,7 +903,7 @@ function magicItemNameFilter() {
 
     // types = ["Medium Armor", "Heavy Armor", "Wondrous Item", "Shield", "Ammo", "Melee Weapon", "Ranged Weapon", "Potion", "Light Armor", "Staff", "Rod", "Ring", "Scroll", "General", "Wand"];
 
-    for (let i = 0; i < 14; i ++) {
+    for (let i = 0; i < 14; i++) {
         $("#typeBtn" + i).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
     }
 
@@ -744,7 +936,7 @@ function buildNavbar() {
 
 
 function spellSearchClick(el) {
-    $("#spellNameSearch").val("\""+el.firstChild.textContent+"\"");
+    $("#spellNameSearch").val("\"" + el.firstChild.textContent + "\"");
     spellNameFilter();
     $('html, body').animate({
         scrollTop: ($('#spellNameSearch').offset().top)
@@ -767,7 +959,7 @@ function buildMagicItems() {
 
         $("#item" + i).children().children().children(".itemName").text(magicItems[i]["name"])
         $("#item" + i).children().children().children().children().children(".itemType").text(magicItems[i]["type"])
-        
+
         if (magicItems[i]["weight"]) {
             htmlString = $("#item" + i).children().children().children(".itemAttributes").html()
             htmlString += "<emph>Weight: </emph><span class=\"itemWeight\"></span><br/>"
@@ -807,7 +999,7 @@ function buildMagicItems() {
             htmlString = ""
         }
 
-        
+
 
 
         if (magicItems[i]["text"] != undefined) {

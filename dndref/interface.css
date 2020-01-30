@@ -431,6 +431,16 @@ Generated Maroon theme
     padding-bottom: 5px;
 }
 
+.monster-item {
+    float: left;
+    width: 100%;
+    height: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 .advancementCard {
     padding-top: 5px;
     padding-bottom: 5px;

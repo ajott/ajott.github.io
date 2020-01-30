@@ -1,0 +1,136 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>D&D 5e QuickRef</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="./isotope.pkgd.js"></script>
+</head>
+
+
+<body id="#body">
+    <!-- Empty DIV for the top navbar, which is loaded from navbar.html -->
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad" id="navBarDiv" style="z-index: 100">
+    </div>
+
+    <!-- Main DIV for race information -->
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div class="w3-section w3-row-padding info">
+                <h1>Monsters</h1>
+                <p>This is a list of monsters from the community compendium. This includes statblocks, traits, and actions. If you found this page - congratulations! You probably have a link directly to it. It's not included on the navbar currently, as I wrestle with the ethics of having information primarily meant for the DM available on a reference like this one, which is geared primarily towards players.</p>
+                <p>Obviously this didn't stop me from including a list of Magic Items, but hey. Say one thing for me, say I'm not always consistent. Except when I am.</p>
+            </div>
+            <hr/>
+
+            <div class="w3-row">
+                <div class="w3-col s12 m6 l4">
+                    <input class="w3-input w3-border w3-padding w3-grey w3-round" type="text"
+                        placeholder="Search by name..." id="monsterNameSearch" onkeyup="monsterNameFilter()">
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="monsterGrid">
+                <div class="" id="defaultMonsterCard" style="display:none;">
+                    <div class="w3-card-2 w3-round-large">
+                        <div class="w3-row-padding">
+                            <h2 style="text-align: left !important" class="monsterName"></h2>
+                            <div style="border-top: 2px solid goldenrod; padding-top: 10px;">                                
+                                <span class="monsterSizeTypeAlignment"></span>
+                            </div>
+                            <div style="border-bottom: 1px solid goldenrod; padding-bottom: 10px !important;">
+                                <span class="monsterAC"></span>
+                                <br/>
+                                <span class="monsterHP"></span>
+                                <br/>
+                                <span class="monsterSpeed"></span>
+                                <br/>
+                            </div>
+                            <div style="border-bottom: 1px solid goldenrod; padding-top: 10px !important; padding-bottom: 10px !important;">
+                                <span class="monsterStr"></span>
+                                <span class="monsterDex"></span>
+                                <span class="monsterCon"></span>
+                                <span class="monsterInt"></span>
+                                <span class="monsterWis"></span>
+                                <span class="monsterCha"></span>
+                            </div>
+                            <div style="padding-top: 10px !important;"></div>
+                            <span class="monsterSave"></span>
+                            <span class="monsterSkill"></span>
+                            <span class="monsterResist"></span>
+                            <span class="monsterImmune"></span>
+                            <span class="monsterCondImmune"></span>
+                            <span class="monsterSenses"></span>
+                            <span class="monsterPassPer"></span>
+                            <span class="monsterLanguages"></span>
+                            <span class="monsterCR"></span>
+                            <div style="border-bottom: 1px solid goldenrod; padding-top: 10px !important;"></div>
+                            <span class="monsterTraits"></span>
+                            <br/>
+                            <span class="monsterActionTitle"></span>
+                            <div></div>
+                            <span class="monsterActions"></span>
+                            <br/>
+                            <span class="monsterLegendaryTitle"></span>
+                            <span class="monsterLegendary"></span>
+                        </div>
+                        <div class="w3-row-padding">
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+    </div>
+</body>
+<footer>
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m10 l10">
+            All D&D material is © Wizards of the Coast
+        </div>
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            buildMonsters();
+            $('.monsterGrid').isotope({
+                itemSelector: '.monster-item',
+                masonry: {
+                    columnWidth: 600
+                },
+                getSortData: {
+                    name: '.monsterName'
+                }
+            });
+            $('.monsterGrid').isotope({
+                sortBy: 'name'
+            })
+        });
+        </script>
+</footer>
+
+</html>

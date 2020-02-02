@@ -6,6 +6,17 @@ $('#submit-form').on('click', function (e) {
     var today = new Date();
     $("#saveCharTime").val(today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + ' ' + today.getHours() + ':' + today.getMinutes());
     $('#saveCharString').val(window.btoa(JSON.stringify(character)));
+     let userVal = $('#saveUser').val(); 
+     userVal = userVal.replace(/,/g, '')
+     userVal = userVal.replace(/'/g, '')
+     userVal = userVal.replace(/"/g, '')
+     $('#saveUser').val(userVal); 
+
+     let charVal = $('#saveCharName').val(); 
+     charVal = charVal.replace(/,/g, '')
+     charVal = charVal.replace(/'/g, '')
+     charVal = charVal.replace(/"/g, '')
+     $('#saveCharName').val(charVal); 
     e.preventDefault();
     var jqxhr = $.ajax({
         url: postUrl,

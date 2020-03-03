@@ -447,6 +447,11 @@ Generated Maroon theme
     background-color: rgba(65,65,65) !important;
 }
 
+.featureCard {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 .advancements {
     padding-bottom: 20px !important;
     border: 1px solid #616161;

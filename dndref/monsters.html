@@ -32,10 +32,14 @@
         <div class="w3-col s12 m12 l10">
             <div class="w3-section w3-row-padding info">
                 <h1>Monsters</h1>
-                <p>This is a list of monsters from the community compendium. This includes statblocks, traits, and actions. If you found this page - congratulations! You probably have a link directly to it. It's not included on the navbar currently, as I wrestle with the ethics of having information primarily meant for the DM available on a reference like this one, which is geared primarily towards players.</p>
-                <p>Obviously this didn't stop me from including a list of Magic Items, but hey. Say one thing for me, say I'm not always consistent. Except when I am.</p>
+                <p>This is a list of monsters from the community compendium. This includes statblocks, traits, and
+                    actions. If you found this page - congratulations! You probably have a link directly to it. It's not
+                    included on the navbar currently, as I wrestle with the ethics of having information primarily meant
+                    for the DM available on a reference like this one, which is geared primarily towards players.</p>
+                <p>Obviously this didn't stop me from including a list of Magic Items, but hey. Say one thing for me,
+                    say I'm not always consistent. Except when I am.</p>
             </div>
-            <hr/>
+            <hr />
 
             <div class="w3-row">
                 <div class="w3-col s12 m6 l4">
@@ -43,25 +47,141 @@
                         placeholder="Search by name..." id="monsterNameSearch" onkeyup="monsterNameFilter()">
                 </div>
             </div>
+            <div class="w3-bar" style="padding-top: 4px; padding-bottom: 4px; padding-top: 10px !important">
+                <button id="sizeBtnTiny" class="w3-button w3-grey w3-bar-item sizeBtn" onclick="monsterFilter(this)"
+                    value="size:Tiny">Tiny</button>
+                <button id="sizeBtnSmall" class="w3-button w3-grey w3-bar-item sizeBtn" onclick="monsterFilter(this)"
+                    value="size:Small">Small</button>
+                <button id="sizeBtnMedium" class="w3-button w3-grey w3-bar-item sizeBtn" onclick="monsterFilter(this)"
+                    value="size:Medium">Medium</button>
+                <button id="sizeBtnLarge" class="w3-button w3-grey w3-bar-item sizeBtn" onclick="monsterFilter(this)"
+                    value="size:Large">Large</button>
+                <button id="sizeBtnHuge" class="w3-button w3-grey w3-bar-item sizeBtn" onclick="monsterFilter(this)"
+                    value="size:Huge">Huge</button>
+                <button id="sizeBtnGargantuan" class="w3-button w3-grey w3-bar-item sizeBtn"
+                    onclick="monsterFilter(this)" value="size:Gargantuan">Gargantuan</button>
+            </div>
+
+            <div class="w3-bar" style="padding-top: 4px; padding-bottom: 4px">
+                <button id="typeBtnBeast" class="w3-button w3-grey w3-bar-item typeBtn" onclick="monsterFilter(this, 1)"
+                    value="type:beast">Beast</button>
+                <button id="typeBtnCelestial" class="w3-button w3-grey w3-bar-item typeBtn"
+                    onclick="monsterFilter(this, 1)" value="type:celestial">Celestial</button>
+                <button id="typeBtnConstruct" class="w3-button w3-grey w3-bar-item typeBtn"
+                    onclick="monsterFilter(this, 1)" value="type:construct">Construct</button>
+                <button id="typeBtnDragon" class="w3-button w3-grey w3-bar-item typeBtn"
+                    onclick="monsterFilter(this, 1)" value="type:dragon">Dragon</button>
+                <button id="typeBtnElemental" class="w3-button w3-grey w3-bar-item typeBtn"
+                    onclick="monsterFilter(this, 1)" value="type:elemental">Elemental</button>
+                <button id="typeBtnFey" class="w3-button w3-grey w3-bar-item typeBtn" onclick="monsterFilter(this, 1)"
+                    value="type:fey">Fey</button>
+                <button id="typeBtnFiend" class="w3-button w3-grey w3-bar-item typeBtn" onclick="monsterFilter(this, 1)"
+                    value="type:fiend">Fiend</button>
+                <button id="typeBtnGiant" class="w3-button w3-grey w3-bar-item typeBtn" onclick="monsterFilter(this, 1)"
+                    value="type:giant">Giant</button>
+                <button id="typeBtnHumanoid" class="w3-button w3-grey w3-bar-item typeBtn"
+                    onclick="monsterFilter(this, 1)" value="type:humanoid">Humanoid</button>
+                    <button id="typeBtnMonstrosity" class="w3-button w3-grey w3-bar-item typeBtn"
+                        onclick="monsterFilter(this, 1)" value="type:monstrosity">Monstrosity</button>
+                <button id="typeBtnOoze" class="w3-button w3-grey w3-bar-item typeBtn" onclick="monsterFilter(this, 1)"
+                    value="type:ooze">Ooze</button>
+                <button id="typeBtnPlant" class="w3-button w3-grey w3-bar-item typeBtn" onclick="monsterFilter(this, 1)"
+                    value="type:plant">Plant</button>
+                <button id="typeBtnSwarm" class="w3-button w3-grey w3-bar-item typeBtn" onclick="monsterFilter(this, 1)"
+                    value="type:swarm">Swarm</button>
+                <button id="typeBtnUndead" class="w3-button w3-grey w3-bar-item typeBtn"
+                    onclick="monsterFilter(this, 1)" value="type:undead">Undead</button>
+
+            </div>
+
+            <div style="padding-bottom: 10px !important; padding-top: 10px !important;">
+                Armor Class: 
+            <select id="monsterACSelect" onchange="monsterFilter(this, 2)" class="w3-round w3-large" style="width: 100px !important;">
+                    <option value="" class="w3-goldenrod">Any</option>
+                    <option value="ac:5">5</option>
+                    <option value="ac:6">6</option>
+                    <option value="ac:7">7</option>
+                    <option value="ac:8">8</option>
+                    <option value="ac:9">9</option>
+                    <option value="ac:10">10</option>
+                    <option value="ac:11">11</option>
+                    <option value="ac:12">12</option>
+                    <option value="ac:13">13</option>
+                    <option value="ac:14">14</option>
+                    <option value="ac:15">15</option>
+                    <option value="ac:16">16</option>
+                    <option value="ac:17">17</option>
+                    <option value="ac:18">18</option>
+                    <option value="ac:19">19</option>
+                    <option value="ac:20">20</option>
+                    <option value="ac:21">21</option>
+                    <option value="ac:22">22</option>
+                    <option value="ac:25">25</option>
+                    
+
+                </select>
+                &nbsp;
+                Challenge Rating: 
+                <select id="monsterCRSelect" onchange="monsterFilter(this, 3)" class="w3-round w3-large" style="width: 100px !important;">
+                        <option value="" class="w3-goldenrod">Any</option>
+                        <option value="cr:0">0</option>
+                        <option value="cr:1/8">1/8</option>
+                        <option value="cr:1/4">1/4</option>
+                        <option value="cr:1/2">1/2</option>
+                        <option value="cr:1">1</option>
+                        <option value="cr:2">2</option>
+                        <option value="cr:3">3</option>
+                        <option value="cr:4">4</option>
+                        <option value="cr:5">5</option>
+                        <option value="cr:6">6</option>
+                        <option value="cr:7">7</option>
+                        <option value="cr:8">8</option>
+                        <option value="cr:9">9</option>
+                        <option value="cr:10">10</option>
+                        <option value="cr:11">11</option>
+                        <option value="cr:12">12</option>
+                        <option value="cr:13">13</option>
+                        <option value="cr:14">14</option>
+                        <option value="cr:15">15</option>
+                        <option value="cr:16">16</option>
+                        <option value="cr:17">17</option>
+                        <option value="cr:18">18</option>
+                        <option value="cr:19">19</option>
+                        <option value="cr:20">20</option>
+                        <option value="cr:21">21</option>
+                        <option value="cr:22">22</option>
+                        <option value="cr:23">23</option>
+                        <option value="cr:24">24</option>
+                        <option value="cr:25">25</option>
+                        <option value="cr:26">26</option>
+                        <option value="cr:27">27</option>
+                        <option value="cr:30">30</option>
+                    </select>
+            </div>       
+            <br/>
+            <button id="monsterFilterClear" class="w3-round w3-button w3-orange" onclick="clearMonsterFilter()">Clear
+                Filters</button>
             <br />
-            <br />
+            <br/>
             <div class="monsterGrid">
                 <div class="" id="defaultMonsterCard" style="display:none;">
                     <div class="w3-card-2 w3-round-large">
                         <div class="w3-row-padding">
+                            <span class="monsterFilters" style="display: none !important"></span>
                             <h2 style="text-align: left !important" class="monsterName"></h2>
-                            <div style="border-top: 2px solid goldenrod; padding-top: 10px;">                                
+                            <div style="border-top: 2px solid goldenrod; padding-top: 10px;">
                                 <span class="monsterSizeTypeAlignment"></span>
                             </div>
                             <div style="border-bottom: 1px solid goldenrod; padding-bottom: 10px !important;">
                                 <span class="monsterAC"></span>
-                                <br/>
+                                <br />
                                 <span class="monsterHP"></span>
-                                <br/>
+                                <br />
                                 <span class="monsterSpeed"></span>
-                                <br/>
+                                <br />
                             </div>
-                            <div style="border-bottom: 1px solid goldenrod; padding-top: 10px !important; padding-bottom: 10px !important;">
+                            <div
+                                style="border-bottom: 1px solid goldenrod; padding-top: 10px !important; padding-bottom: 10px !important;">
                                 <span class="monsterStr"></span>
                                 <span class="monsterDex"></span>
                                 <span class="monsterCon"></span>
@@ -81,11 +201,11 @@
                             <span class="monsterCR"></span>
                             <div style="border-bottom: 1px solid goldenrod; padding-top: 10px !important;"></div>
                             <span class="monsterTraits"></span>
-                            <br/>
+                            <br />
                             <span class="monsterActionTitle"></span>
                             <div></div>
                             <span class="monsterActions"></span>
-                            <br/>
+                            <br />
                             <span class="monsterLegendaryTitle"></span>
                             <span class="monsterLegendary"></span>
                         </div>
@@ -95,7 +215,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
         <div class="w3-col s0 m0 l1">
             <p></p>
@@ -130,7 +250,7 @@
                 sortBy: 'name'
             })
         });
-        </script>
+    </script>
 </footer>
 
 </html>

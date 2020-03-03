@@ -270,6 +270,8 @@ function buildMonsters() {
 
         var $klon = $div.clone().prop('id', 'monster' + i);
 
+        let monsterFilterString = "";
+
         if ($("#monster" + (i - 1)).length === 0) {
             $div.after($klon.show());
         } else {
@@ -280,9 +282,11 @@ function buildMonsters() {
 
         if (monster[i]["size"] != undefined) {
             htmlString += "<em>" + monster[i]["size"];
+            monsterFilterString += "size:"+monster[i]["size"] + ", "
         }
         if (monster[i]["type"] != undefined) {
-            htmlString += " " + monster[i]["type"]
+            htmlString += " " + monster[i]["type"]            
+            monsterFilterString += "type:"+monster[i]["type"] + ", "
         }
         if (monster[i]["alignment"] != undefined) {
             htmlString += ", " + toTitleCase(monster[i]["alignment"]) + "</em>"
@@ -292,7 +296,8 @@ function buildMonsters() {
         htmlString = ""
 
         if (monster[i]["ac"] != undefined) {
-            $("#monster" + i).children().children().children().children(".monsterAC").html("<emph>AC: </emph>" + monster[i]["ac"])
+            $("#monster" + i).children().children().children().children(".monsterAC").html("<emph>AC: </emph>" + monster[i]["ac"])            
+            monsterFilterString += "ac:"+monster[i]["ac"] + ", "
         }
         if (monster[i]["hp"] != undefined) {
             $("#monster" + i).children().children().children().children(".monsterHP").html("<emph>Hit Points: </emph>" + monster[i]["hp"])
@@ -354,7 +359,8 @@ function buildMonsters() {
         }
 
         if (monster[i]["cr"] != undefined) {
-            $("#monster" + i).children().children().children(".monsterCR").html("<emph>Challenge: </emph>" + monster[i]["cr"])
+            $("#monster" + i).children().children().children(".monsterCR").html("<emph>Challenge: </emph>" + monster[i]["cr"])            
+            monsterFilterString += "cr:"+monster[i]["cr"] + ", "
         }
 
 
@@ -390,6 +396,7 @@ function buildMonsters() {
             $("#monster" + i).children().children().children(".monsterTraits").html(htmlString)
 
             htmlString = ""
+            
         }
 
         if (monster[i]["action"] != undefined) {
@@ -457,9 +464,11 @@ function buildMonsters() {
         }
 
 
+        $("#monster" + i).children().children().children(".monsterFilters").text(monsterFilterString)
         $("#monster" + i).addClass("monster-item")
 
         htmlString = "";
+        monsterFilterString = ""
     }
 }
 
@@ -467,6 +476,8 @@ function monsterNameFilter() {
 
     var input = document.getElementById('monsterNameSearch').value.toUpperCase();
 
+    $('.sizeBtn').removeClass('w3-blue').addClass('w3-grey')
+    $('.typeBtn').removeClass('w3-blue').addClass('w3-grey')
 
     if (input != "") {
         // Filter for monster names that match the input
@@ -484,6 +495,104 @@ function monsterNameFilter() {
             filter: '*'
         })
     }
+}
+
+var monsterFilters = []
+
+
+function monsterFilter(input, mod=0) {
+    $("#monsterNameSearch").val("")
+
+    $this = $(input)
+
+    if (input.getAttribute("id") == "monsterACSelect") {
+        let selectBox = document.getElementById("monsterACSelect")
+        filterText = selectBox.options[selectBox.selectedIndex].value;
+    } else if (input.getAttribute("id") == "monsterCRSelect") {
+        let selectBox = document.getElementById("monsterCRSelect")
+        filterText = selectBox.options[selectBox.selectedIndex].value;
+    } else {
+        filterText = input.getAttribute("value")
+    }
+
+
+    let duplicate = (monsterFilters.indexOf(filterText) > -1);
+
+    if (mod == 0) {
+        monsterFilters.forEach(function (filter) {
+            if (filter.search("size:") > -1) {
+                monsterFilters.splice(monsterFilters.indexOf(filter), 1)
+            }
+        })
+
+        $this.parent().children().removeClass("w3-blue").addClass("w3-grey")
+    }
+
+    if (mod == 1) {
+        monsterFilters.forEach(function (filter) {
+            if (filter.search("type:") > -1) {
+                monsterFilters.splice(monsterFilters.indexOf(filter), 1)
+            }
+        })
+
+        $this.parent().children().removeClass("w3-blue").addClass("w3-grey")
+    }
+
+    if (mod == 2) {
+        monsterFilters.forEach(function (filter) {
+            if (filter.search("ac:") > -1) {
+                monsterFilters.splice(monsterFilters.indexOf(filter), 1)
+            }
+        })
+    }
+
+    if (!duplicate) {
+        if(mod != 2 && mod != 3) {
+            $this.addClass("w3-blue").removeClass("w3-grey")
+        }
+        monsterFilters.push(filterText);
+    } else {
+        if (mod != 1 && mod != 2) {
+            monsterFilters.splice(monsterFilters.indexOf(filterText), 1);
+        }
+        $this.removeClass("w3-blue").addClass("w3-grey");
+    }
+
+
+    $('.monsterGrid').isotope({
+        filter: function () {
+            // _this_ is the item element. Get text of element's .name
+            var mFilter = $(this).find('.monsterFilters').text()//.toUpperCase();
+
+            let matches = [];
+
+            monsterFilters.forEach(function (filterVal) {
+                matches.push(mFilter.indexOf(filterVal) > -1);
+            })
+
+
+            // return true to show, false to hide
+            return matches.every(filterMatches);
+        }
+    })
+}
+
+function clearMonsterFilter() {
+    monsterFilters = [];
+
+    $("#monsterNameSearch").val("")
+    
+    $('.sizeBtn').removeClass('w3-blue').addClass('w3-grey')
+    $('.typeBtn').removeClass('w3-blue').addClass('w3-grey')
+    $('#monsterCRSelect').prop('selectedIndex',0);
+
+    setTimeout(function(){$('#monsterACSelect').prop('selectedIndex',0)},100)
+
+
+    $('.monsterGrid').isotope({
+        // Clear filter
+        filter: '*'
+    })
 }
 
 function findStatMod(str) {
@@ -779,32 +888,11 @@ function spellFilter(input, mod = 0) {
 }
 
 function spellNameFilter(exact = 0) {
-    let classNames = ["All", "Artificer", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
 
-
-    classNames.forEach(function (className) {
-        $("#classBtn" + className).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
-    });
-
-    let schoolNames = [
-        "All",
-        "Abjuration",
-        "Conjuration",
-        "Divination",
-        "Enchantment",
-        "Evocation",
-        "Illusion",
-        "Necromancy",
-        "Transmutation"
-    ]
-
-    schoolNames.forEach(function (schoolName) {
-        $("#schoolBtn" + schoolName).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
-    });
-
-    for (let i = 0; i < 10; i++) {
-        $("#levelBtn" + i).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
-    }
+    $('.classBtn').removeClass('w3-blue').addClass('w3-grey')
+    $('.schoolBtn').removeClass('w3-blue').addClass('w3-grey')
+    $('.levelBtn').removeClass('w3-blue').addClass('w3-grey')
+    
 
     var input = document.getElementById('spellNameSearch').value.toUpperCase();
 
@@ -850,31 +938,9 @@ function clearSpellFilter() {
         filter: '*'
     })
 
-    let classNames = ["All", "Artificer", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
-
-    classNames.forEach(function (className) {
-        $("#classBtn" + className).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
-    });
-
-    let schoolNames = [
-        "All",
-        "Abjuration",
-        "Conjuration",
-        "Divination",
-        "Enchantment",
-        "Evocation",
-        "Illusion",
-        "Necromancy",
-        "Transmutation"
-    ]
-
-    schoolNames.forEach(function (schoolName) {
-        $("#schoolBtn" + schoolName).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
-    });
-
-    for (let i = 0; i < 10; i++) {
-        $("#levelBtn" + i).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
-    }
+    $('.classBtn').removeClass('w3-blue').addClass('w3-grey')
+    $('.schoolBtn').removeClass('w3-blue').addClass('w3-grey')
+    $('.levelBtn').removeClass('w3-blue').addClass('w3-grey')
 }
 
 function featNameFilter() {

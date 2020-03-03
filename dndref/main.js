@@ -153,8 +153,8 @@ function rollDice() {
 
 $(document).ready(function () {
     buildNavbar();
-    setTimeout(
-        toDark(), 250);
+    setTimeout( function() {
+        toDark()}, 250);
 });
 
 function buildSpells() {
@@ -212,6 +212,8 @@ function buildSpells() {
         sortBy: 'name'
     })
     $('spellGrid').isotope('updateSortData').isotope();
+
+    setTimeout( function() {getFilterCount()},500);
 }
 
 
@@ -470,6 +472,8 @@ function buildMonsters() {
         htmlString = "";
         monsterFilterString = ""
     }
+
+    setTimeout( function() {getFilterCount()},500);
 }
 
 function monsterNameFilter() {
@@ -495,6 +499,8 @@ function monsterNameFilter() {
             filter: '*'
         })
     }
+
+    setTimeout( function() {getFilterCount()},500);
 }
 
 var monsterFilters = []
@@ -575,6 +581,8 @@ function monsterFilter(input, mod=0) {
             return matches.every(filterMatches);
         }
     })
+
+    setTimeout( function() {getFilterCount()},500);
 }
 
 function clearMonsterFilter() {
@@ -593,6 +601,8 @@ function clearMonsterFilter() {
         // Clear filter
         filter: '*'
     })
+
+    setTimeout( function() {getFilterCount()},500);
 }
 
 function findStatMod(str) {
@@ -611,6 +621,25 @@ function toTitleCase(str) {
     return str.replace(/\w\S*/g, function (txt) {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
+}
+
+function getFilterCount() {
+    let objects = document.getElementsByClassName("grid-item");
+    let objectCount = 0;
+    for (let i = 0; i < objects.length; i ++) {
+        if ($("#"+objects[i].id).css("display") != "none"){ 
+            objectCount += 1
+        }
+    }
+
+    let monsters = document.getElementsByClassName("monster-item");
+    for (let i = 0; i < monsters.length; i ++) {
+        if ($("#"+monsters[i].id).css("display") != "none"){ 
+            objectCount += 1
+        }
+    }
+
+    $("#filterCount").text(objectCount);
 }
 
 
@@ -670,6 +699,8 @@ function itemFilter(input, mod=0) {
             return matches.every(filterMatches);
         }
     })
+
+    setTimeout( function() {getFilterCount()},500);
 }
 
 function buildFeats() {
@@ -915,6 +946,9 @@ function spellFilter(input, mod = 0) {
             return matches.every(filterMatches);
         }
     })
+    
+
+    setTimeout( function() {getFilterCount()},500);
 }
 
 function spellNameFilter(exact = 0) {
@@ -955,6 +989,9 @@ function spellNameFilter(exact = 0) {
             filter: '*'
         })
     }
+    
+
+    setTimeout( function() {getFilterCount()},500);
 }
 
 
@@ -993,6 +1030,9 @@ function featNameFilter() {
             filter: '*'
         })
     }
+    
+
+    setTimeout( function() {getFilterCount()},500);
 }
 
 function magicItemNameFilter() {
@@ -1020,6 +1060,8 @@ function magicItemNameFilter() {
             filter: '*'
         })
     }
+
+    setTimeout( function() {getFilterCount()},500);
 }
 
 
@@ -1115,6 +1157,8 @@ function buildMagicItems() {
         htmlString = "";
         itemFilterString = ""
     }
+
+    setTimeout( function() {getFilterCount()},500);
 }
 
 function gearNameFilter() {

@@ -47,42 +47,57 @@
                             placeholder="Search by name..." id="magicItemNameSearch" onkeyup="magicItemNameFilter()">
                     </div>
                 </div>                
+                <div class="w3-bar" style="padding-top: 10px; padding-bottom: 4px">
+                    <button id="typeBtn0" class="w3-button w3-grey w3-bar-item typeBtn" style="padding: 8px !important;"
+                        onclick="itemFilter(this)">Ammo</button>
+                    <button id="typeBtn1" class="w3-button w3-grey w3-bar-item typeBtn" style="padding: 8px !important;"
+                        onclick="itemFilter(this)">Light Armor</button>
+                    <button id="typeBtn2" class="w3-button w3-grey w3-bar-item typeBtn" style="padding: 8px !important;"
+                        onclick="itemFilter(this)">Medium Armor</button>
+                    <button id="typeBtn3" class="w3-button w3-grey w3-bar-item typeBtn" style="padding: 8px !important;"
+                        onclick="itemFilter(this)">Heavy Armor</button>
+                    <button id="typeBtn4" class="w3-button w3-grey w3-bar-item typeBtn" style="padding: 8px !important;"
+                        onclick="itemFilter(this)">Melee Weapon</button>
+                    <button id="typeBtn5" class="w3-button w3-grey w3-bar-item typeBtn" style="padding: 8px !important;"
+                        onclick="itemFilter(this)">Ranged Weapon</button>
+                    <button id="typeBtn6" class="w3-button w3-grey w3-bar-item typeBtn" style="padding: 8px !important;"
+                        onclick="itemFilter(this)">Potion</button>
+                    <button id="typeBtn7" class="w3-button w3-grey w3-bar-item typeBtn" style="padding: 8px !important;"
+                        onclick="itemFilter(this)">Ring</button>
+                        <button id="typeBtn8" class="w3-button w3-grey w3-bar-item typeBtn" style="padding: 8px !important;"
+                            onclick="itemFilter(this)">Rod</button>
+                            <button id="typeBtn9" class="w3-button w3-grey w3-bar-item typeBtn" style="padding: 8px !important;"
+                                onclick="itemFilter(this)">Scroll</button>
+                                <button id="typeBtn10" class="w3-button w3-grey w3-bar-item typeBtn" style="padding: 8px !important;"
+                                    onclick="itemFilter(this)">Shield</button>
+                                    <button id="typeBtn11" class="w3-button w3-grey w3-bar-item typeBtn" style="padding: 8px !important;"
+                                        onclick="itemFilter(this)">Staff</button>
+                                        <button id="typeBtn12" class="w3-button w3-grey w3-bar-item typeBtn" style="padding: 8px !important;"
+                                            onclick="itemFilter(this)">Wand</button>
+                                            <button id="typeBtn13" class="w3-button w3-grey w3-bar-item typeBtn" style="padding: 8px !important;"
+                                                onclick="itemFilter(this)">Wondrous Item</button>
+                </div>             
                 <div class="w3-bar" style="padding-top: 4px; padding-bottom: 4px">
-                    <button id="typeBtn0" class="w3-button w3-grey w3-bar-item" style="padding: 8px !important;"
-                        onclick="itemTypeFilter(this)">Ammo</button>
-                    <button id="typeBtn1" class="w3-button w3-grey w3-bar-item" style="padding: 8px !important;"
-                        onclick="itemTypeFilter(this)">Light Armor</button>
-                    <button id="typeBtn2" class="w3-button w3-grey w3-bar-item" style="padding: 8px !important;"
-                        onclick="itemTypeFilter(this)">Medium Armor</button>
-                    <button id="typeBtn3" class="w3-button w3-grey w3-bar-item" style="padding: 8px !important;"
-                        onclick="itemTypeFilter(this)">Heavy Armor</button>
-                    <button id="typeBtn4" class="w3-button w3-grey w3-bar-item" style="padding: 8px !important;"
-                        onclick="itemTypeFilter(this)">Melee Weapon</button>
-                    <button id="typeBtn5" class="w3-button w3-grey w3-bar-item" style="padding: 8px !important;"
-                        onclick="itemTypeFilter(this)">Ranged Weapon</button>
-                    <button id="typeBtn6" class="w3-button w3-grey w3-bar-item" style="padding: 8px !important;"
-                        onclick="itemTypeFilter(this)">Potion</button>
-                    <button id="typeBtn7" class="w3-button w3-grey w3-bar-item" style="padding: 8px !important;"
-                        onclick="itemTypeFilter(this)">Ring</button>
-                        <button id="typeBtn8" class="w3-button w3-grey w3-bar-item" style="padding: 8px !important;"
-                            onclick="itemTypeFilter(this)">Rod</button>
-                            <button id="typeBtn9" class="w3-button w3-grey w3-bar-item" style="padding: 8px !important;"
-                                onclick="itemTypeFilter(this)">Scroll</button>
-                                <button id="typeBtn10" class="w3-button w3-grey w3-bar-item" style="padding: 8px !important;"
-                                    onclick="itemTypeFilter(this)">Shield</button>
-                                    <button id="typeBtn11" class="w3-button w3-grey w3-bar-item" style="padding: 8px !important;"
-                                        onclick="itemTypeFilter(this)">Staff</button>
-                                        <button id="typeBtn12" class="w3-button w3-grey w3-bar-item" style="padding: 8px !important;"
-                                            onclick="itemTypeFilter(this)">Wand</button>
-                                            <button id="typeBtn13" class="w3-button w3-grey w3-bar-item" style="padding: 8px !important;"
-                                                onclick="itemTypeFilter(this)">Wondrous Item</button>
+                    <button id="rarityBtn0" class="w3-button w3-grey w3-bar-item rarityBtn" style="padding: 8px !important;"
+                        onclick="itemFilter(this, 1)">Common</button>
+                    <button id="rarityBtn1" class="w3-button w3-grey w3-bar-item rarityBtn" style="padding: 8px !important;"
+                        onclick="itemFilter(this, 1)">Uncommon</button>
+                    <button id="rarityBtn2" class="w3-button w3-grey w3-bar-item rarityBtn" style="padding: 8px !important;"
+                        onclick="itemFilter(this, 1)">Rare</button>
+                    <button id="rarityBtn3" class="w3-button w3-grey w3-bar-item rarityBtn" style="padding: 8px !important;"
+                        onclick="itemFilter(this, 1)">Very Rare</button>
+                    <button id="rarityBtn4" class="w3-button w3-grey w3-bar-item rarityBtn" style="padding: 8px !important;"
+                        onclick="itemFilter(this, 1)">Legendary</button>
+                    <button id="rarityBtn5" class="w3-button w3-grey w3-bar-item rarityBtn" style="padding: 8px !important;"
+                        onclick="itemFilter(this, 1)">Artifact</button>
                 </div>
                 <br />
                 <br />
                 <div class="magicItemGrid">
                     <div class="" id="defaultItemCard" style="display:none;">
                         <div class="w3-card-2 w3-round-large">
-                            <div class="w3-row-padding">
+                                <div class="w3-row-padding">
+                                <span style="display: none !important;" class="itemFilters"></span>
                                 <h3 class="itemName"></h3>
                                 <em><h5><span class="itemType"></span></h5></em>
                             </div>

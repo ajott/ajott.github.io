@@ -613,33 +613,63 @@ function toTitleCase(str) {
     });
 }
 
-function itemTypeFilter(input) {
 
+itemFilters = []
 
+function itemFilter(input, mod=0) {
     $("#magicItemNameSearch").val("")
-
-    $('.magicItemGrid').isotope({
-        // Clear filter
-        filter: '*'
-    })
 
     $this = $(input)
 
-    $this.parent().children().removeClass("w3-blue").addClass("w3-grey")
+    if (mod == 0) {
+        filterText = "type:" + input.firstChild.textContent
+    } else {
+        filterText = "rarity:" + input.firstChild.textContent
+    }
 
-    $this.addClass("w3-blue").removeClass("w3-grey");
+    let duplicate = (itemFilters.indexOf(filterText) > -1);
 
-    let type = input.firstChild.textContent.toUpperCase()
+    if (mod == 0) {
+        itemFilters.forEach(function (filter) {
+            if (filter.search("type:") > -1) {
+                itemFilters.splice(itemFilters.indexOf(filter), 1)
+            }
+        })
+
+        $this.parent().children().removeClass("w3-blue").addClass("w3-grey")
+    }
+
+    if (mod == 1) {
+        itemFilters.forEach(function (filter) {
+            if (filter.search("rarity:") > -1) {
+                itemFilters.splice(itemFilters.indexOf(filter), 1)
+            }
+        })
+
+        $this.parent().children().removeClass("w3-blue").addClass("w3-grey")
+    }
+
+    if (!duplicate) {
+            $this.addClass("w3-blue").removeClass("w3-grey")
+        itemFilters.push(filterText);
+    }
 
     $('.magicItemGrid').isotope({
         filter: function () {
             // _this_ is the item element. Get text of element's .name
-            var name = $(this).find('.itemType').text().toUpperCase();
+            var mFilter = $(this).find('.itemFilters').text()//.toUpperCase();
+
+            let matches = [];
+
+            itemFilters.forEach(function (filterVal) {
+                matches.push(mFilter.indexOf(filterVal) > -1);
+            })
+
+
             // return true to show, false to hide
-            return name.indexOf(type) > -1;
+            return matches.every(filterMatches);
         }
     })
-
 }
 
 function buildFeats() {
@@ -966,12 +996,11 @@ function featNameFilter() {
 }
 
 function magicItemNameFilter() {
+    
+    itemFilters = []
 
-    // types = ["Medium Armor", "Heavy Armor", "Wondrous Item", "Shield", "Ammo", "Melee Weapon", "Ranged Weapon", "Potion", "Light Armor", "Staff", "Rod", "Ring", "Scroll", "General", "Wand"];
-
-    for (let i = 0; i < 14; i++) {
-        $("#typeBtn" + i).removeClass('w3-blue').removeClass('w3-grey').addClass('w3-grey');
-    }
+    $('.rarityBtn').removeClass('w3-blue').addClass('w3-grey')
+    $('.typeBtn').removeClass('w3-blue').addClass('w3-grey')
 
     var input = document.getElementById('magicItemNameSearch').value.toUpperCase();
 
@@ -1011,6 +1040,7 @@ function spellSearchClick(el) {
 
 function buildMagicItems() {
     let htmlString = "";
+    let itemFilterString = "";
 
     for (let i = 0; i < magicItems.length; i++) {
         var $div = $('#defaultItemCard');
@@ -1025,6 +1055,7 @@ function buildMagicItems() {
 
         $("#item" + i).children().children().children(".itemName").text(magicItems[i]["name"])
         $("#item" + i).children().children().children().children().children(".itemType").text(magicItems[i]["type"])
+        itemFilterString += "type:" + magicItems[i]["type"] + ", "
 
         if (magicItems[i]["weight"]) {
             htmlString = $("#item" + i).children().children().children(".itemAttributes").html()
@@ -1063,6 +1094,7 @@ function buildMagicItems() {
             $("#item" + i).children().children().children(".itemAttributes").html(htmlString)
             $("#item" + i).children().children().children(".itemAttributes").children(".itemRarity").text(magicItems[i]["rarity"])
             htmlString = ""
+            itemFilterString += "rarity:" + magicItems[i]["rarity"]
         }
 
 
@@ -1079,8 +1111,9 @@ function buildMagicItems() {
         }
         $("#item" + i).children().children().children(".itemDesc").html(htmlString)
         $("#item" + i).addClass("grid-item")
-
+        $("#item" + i).children().children().children(".itemFilters").html(itemFilterString)
         htmlString = "";
+        itemFilterString = ""
     }
 }
 

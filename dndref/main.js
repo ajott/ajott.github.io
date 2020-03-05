@@ -851,7 +851,7 @@ function accordion(id) {
 
 function accordionSidebar(id) {
     var x = document.getElementById(id);
-    let sidebarDivs = ["barbsidebar", "bardsidebar", "clericsidebar", "druidsidebar", "fightersidebar", "monksidebar", "paladinsidebar", "rangersidebar", "roguesidebar", "sorcerersidebar", "warlocksidebar", "wizardsidebar", "artificersidebar", "rangerrevisedsidebar"]
+    let sidebarDivs = ["barbsidebar", "bardsidebar", "clericsidebar", "druidsidebar", "fightersidebar", "monksidebar", "paladinsidebar", "rangersidebar", "roguesidebar", "sorcerersidebar", "warlocksidebar", "wizardsidebar", "artificersidebar"]
 
     for (let i = 0; i < sidebarDivs.length; i++) {
         if (sidebarDivs[i] != id) {

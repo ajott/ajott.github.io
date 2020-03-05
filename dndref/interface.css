@@ -467,6 +467,7 @@ Generated Maroon theme
     clear: both;
 }
 
+
 .advancementButton {
     top: 40px;
     position: -webkit-sticky;
@@ -499,6 +500,12 @@ Generated Maroon theme
 
 .advancementButtonUA + .advancements {
     background-color: rgba(105, 122, 77,.5);
+}
+
+.featureCardUA {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgba(105, 122, 77,.2);
 }
 
 .advancementButtonDMG {

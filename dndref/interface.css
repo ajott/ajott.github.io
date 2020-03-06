@@ -441,6 +441,10 @@ Generated Maroon theme
     padding-bottom: 5px;
 }
 
+.homebrew-card {
+    background-color: rgba(163, 121, 65,.3) !important;
+}
+
 .advancementCard {
     padding-top: 5px;
     padding-bottom: 5px;

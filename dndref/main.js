@@ -280,7 +280,11 @@ function buildMonsters() {
             $("#monster" + (i - 1)).after($klon.show());
         }
 
-        $("#monster" + i).children().children().children(".monsterName").text(monster[i]["name"])
+        if (monster[i]["homebrew"] != undefined) {
+            $("#monster" + i).children().children().children(".monsterName").text(monster[i]["name"] + " (Homebrew)")
+        } else {
+            $("#monster" + i).children().children().children(".monsterName").text(monster[i]["name"])
+        }
 
         if (monster[i]["size"] != undefined) {
             htmlString += "<em>" + monster[i]["size"];
@@ -374,21 +378,21 @@ function buildMonsters() {
                 for (let j = 0; j < monster[i]["trait"].length; j++) {
                     if (monster[i]["trait"][j]["text"] != undefined) {
                         if (typeof monster[i]["trait"][j]["text"] == "object") {
-                            htmlString += "<p><emph>" + monster[i]["trait"][j]["name"] + ": </emph>" + monster[i]["trait"][j]["text"][0] + "</p>";
+                            htmlString += "<p><emph><em>" + monster[i]["trait"][j]["name"] + ": </em></emph>" + monster[i]["trait"][j]["text"][0] + "</p>";
                             for (let k = 1; k < monster[i]["trait"][j]["text"].length; k++) {
                                 if (monster[i]["trait"][j]["text"][k].length != 0 ) {
                                 htmlString += "<p>&emsp;" + monster[i]["trait"][j]["text"][k] + "</p>";
                             }
                             }
                         } else {
-                            htmlString += "<p><emph>" + monster[i]["trait"][j]["name"] + ": </emph>" + monster[i]["trait"][j]["text"] + "</p>";
+                            htmlString += "<p><emph><em>" + monster[i]["trait"][j]["name"] + ": </em></emph>" + monster[i]["trait"][j]["text"] + "</p>";
                         }
                     } else {
-                        htmlString += "<p><emph>" + monster[i]["trait"][j]["name"] + "</emph></p>";
+                        htmlString += "<p><emph><em>" + monster[i]["trait"][j]["name"] + "</em></emph></p>";
                     }
                 }
             } else {
-                htmlString += "<p><emph>" + monster[i]["trait"]["name"] + ": </emph>";
+                htmlString += "<p><emph><em>" + monster[i]["trait"]["name"] + ": </em></emph>";
                 htmlString += monster[i]["trait"]["text"] + "</p>";
             }
             
@@ -409,19 +413,19 @@ function buildMonsters() {
                 for (let j = 0; j < monster[i]["action"].length; j++) {
                     if (monster[i]["action"][j]["text"] != undefined) {
                         if (typeof monster[i]["action"][j]["text"] == "object") {
-                            htmlString += "<p><emph>" + monster[i]["action"][j]["name"] + ": </emph>" + monster[i]["action"][j]["text"][0] + "</p>";
+                            htmlString += "<p><emph><em>" + monster[i]["action"][j]["name"] + ": </em></emph>" + monster[i]["action"][j]["text"][0] + "</p>";
                             for (let k = 1; k < monster[i]["action"][j]["text"].length; k++) {
                                 htmlString += "<p>&emsp;" + monster[i]["action"][j]["text"][k] + "</p>";
                             }
                         } else {
-                            htmlString += "<p><emph>" + monster[i]["action"][j]["name"] + ": </emph>" + monster[i]["action"][j]["text"] + "</p>";
+                            htmlString += "<p><emph><em>" + monster[i]["action"][j]["name"] + ": </em></emph>" + monster[i]["action"][j]["text"] + "</p>";
                         }
                     } else {
-                        htmlString += "<p><emph>" + monster[i]["action"][j]["name"] + "</emph></p>";
+                        htmlString += "<p><emph><em>" + monster[i]["action"][j]["name"] + "</em></emph></p>";
                     }
                 }
             } else {
-                htmlString += "<p><emph>" + monster[i]["action"]["name"] + ": </emph>";
+                htmlString += "<p><emph><em>" + monster[i]["action"]["name"] + ": </em></emph>";
                 htmlString += monster[i]["action"]["text"] + "</p>";
             }
             
@@ -441,19 +445,19 @@ function buildMonsters() {
                 for (let j = 0; j < monster[i]["legendary"].length; j++) {
                     if (monster[i]["legendary"][j]["text"] != undefined) {
                         if (typeof monster[i]["legendary"][j]["text"] == "object") {
-                            htmlString += "<p><emph>" + monster[i]["legendary"][j]["name"] + ": </emph>" + monster[i]["legendary"][j]["text"][0] + "</p>";
+                            htmlString += "<p><emph><em>" + monster[i]["legendary"][j]["name"] + ": </em></emph>" + monster[i]["legendary"][j]["text"][0] + "</p>";
                             for (let k = 1; k < monster[i]["legendary"][j]["text"].length; k++) {
                                 htmlString += "<p>&emsp;" + monster[i]["legendary"][j]["text"][k] + "</p>";
                             }
                         } else {
-                            htmlString += "<p><emph>" + monster[i]["legendary"][j]["name"] + ": </emph>" + monster[i]["legendary"][j]["text"] + "</p>";
+                            htmlString += "<p><emph><em>" + monster[i]["legendary"][j]["name"] + ": </em></emph>" + monster[i]["legendary"][j]["text"] + "</p>";
                         }
                     } else {
-                        htmlString += "<p><emph>" + monster[i]["legendary"][j]["name"] + "</emph></p>";
+                        htmlString += "<p><emph><em>" + monster[i]["legendary"][j]["name"] + "</em></emph></p>";
                     }
                 }
             } else {
-                htmlString += "<p><emph>" + monster[i]["legendary"]["name"] + ": </emph>";
+                htmlString += "<p><emph><em>" + monster[i]["legendary"]["name"] + ": </em></emph>";
                 htmlString += monster[i]["legendary"]["text"] + "</p>";
             }
             
@@ -468,6 +472,10 @@ function buildMonsters() {
 
         $("#monster" + i).children().children().children(".monsterFilters").text(monsterFilterString)
         $("#monster" + i).addClass("monster-item")
+
+        if(monster[i]["homebrew"] != undefined) {
+            $("#monster" + i).children().addClass("homebrew-card")
+        }
 
         htmlString = "";
         monsterFilterString = ""

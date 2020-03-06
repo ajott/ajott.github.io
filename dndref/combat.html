@@ -1,0 +1,343 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>D&D 5e QuickRef</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+
+<body>
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad" id="navBarDiv">
+    </div>
+
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div id="combatActions" class="info">
+                <h1>Combat Actions</h1>
+                <p>A round of combat is 6 seconds in length, so 1 minute of structured time is comprised of 10 rounds.
+                </p>
+                <p>During a character's turn, they may take an action, move, and take a bonus action. In addition, they
+                    have one reaction per round. These are special actions that take place when it is not their turn.
+                </p>
+                <table class="w3-table w3-striped w3-hoverable w3-bordered" id="combatActionTable">
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Time Required</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Attack</td>
+                            <td>Action</td>
+                            <td>Swing a sword, fire a bow, punch a foe, or similar. Some classes gain the <emph>Extra
+                                    Attack</emph> feature, which allows them to attack multiple times in a turn, with
+                                all of the attacks adding up to one action.</td>
+                        </tr>
+                        <tr>
+                            <td>Cast a Spell</td>
+                            <td>Varies; Generally Action</td>
+                            <td>A spellcasting character will often elect to cast one of their spells on their turn. A
+                                majority of spells have a casting time of 1 action, but several can be cast as a bonus
+                                action or a reaction instead.</td>
+                        </tr>
+                        <tr>
+                            <td>Dash</td>
+                            <td>Action</td>
+                            <td>Doubles your movement speed for the current turn, including any modifiers.</td>
+                        </tr>
+                        <tr>
+                            <td>Disengage</td>
+                            <td>Action</td>
+                            <td>Allows you to move without provoking opportunity attacks.</td>
+                        </tr>
+                        <tr>
+                            <td>Dodge</td>
+                            <td>Action</td>
+                            <td>Until the start of your next turn, any attacker you can see has Disadvantage when
+                                attacking you. In addition, you have Advantage on Dexterity saving throws. You lose this
+                                benefit if you are incapacitated, or if your hit points drop to 0.</td>
+                        </tr>
+                        <tr>
+                            <td>Help</td>
+                            <td>Action</td>
+                            <td>Lend aid to an ally, granting them Advantage on the next ability check they make before
+                                the start of your next turn. In addition, you can Help an ally by feinting an attack at
+                                a creature within 5 feet of you, granting an ally Advantage on an attack they make
+                                against that creature, so long as they make the attack before the start of your next
+                                turn.</td>
+                        </tr>
+                        <tr>
+                            <td>Hide</td>
+                            <td>Action</td>
+                            <td>Make a Dexterity (Stealth) check, and consult the DM for the relevant DC to successfully
+                                hide from creatures involved in the combat.</td>
+                        </tr>
+                        <tr>
+                            <td>Ready</td>
+                            <td>Action + Reaction</td>
+                            <td>Choose a specific trigger, and an action you will take when the specified trigger
+                                occurs. If your Ready action is triggered, you can either take your prepared action (as
+                                your reaction for that round) or choose to do nothing.
+                                <br/>
+                                Readied actions are lost at the start of your next turn.
+                                <br />
+                                Spellcasters can Ready spells. A Readied spell is considered to be the focus of
+                                Concentration for the purpose of maintaining or breaking concentration, and is subject
+                                to the same limitation of only one spell being Concentrated upon at a time.
+                                <br />
+                                Because you are considered to have cast the spell upon readying it, the appropriate
+                                spell slot is consumed whether the trigger occurs, or if you choose to release the
+                                spell.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Search</td>
+                            <td>Action</td>
+                            <td>Devote your attention to searching for an object. The DM may require you to make a
+                                Wisdom (Perception) or Intelligence (Investigation) check.</td>
+                        </tr>
+                        <tr>
+                            <td>Use an Object</td>
+                            <td>Action</td>
+                            <td>Some large or complex objects require you to use your action to interact with them. Many
+                                interactions can be done as part of your regular movement or action.</td>
+                        </tr>
+                        <tr>
+                            <td>Move</td>
+                            <td>Move</td>
+                            <td>Traverse a distance up to your Speed. You can split up your movement any way you like,
+                                including moving before and after an attack, or moving between making multiple attacks
+                                with the <emph>Extra Attack</emph> feature, so long as the total distance moved is not
+                                in excess of your speed.
+                                <br />
+                                Some obstacles or terrain may require additional effort; for example, Difficult Terrain
+                                requires 1 additional foot of movement per foot moved.</td>
+                        </tr>
+                        <tr>
+                            <td>Use a Feature</td>
+                            <td>Varies</td>
+                            <td>Many class features grant abilities which may be used in combat; most of these take an
+                                action, but some (such as a Barbarian's <emph>Rage</emph>) can be used as a bonus
+                                action.</td>
+                        </tr>
+                        <tr>
+                            <td>Opportunity Attack</td>
+                            <td>Reaction</td>
+                            <td>If a creature that you can see within melee range of you moves out of range, you may use
+                                your reaction to make a single melee weapon attack against that creature. A creature
+                                that takes the Disengage action does not provoke Opportunity Attacks.</td>
+                        </tr>
+                        <tr>
+                            <td>Talking</td>
+                            <td>Free Action*</td>
+                            <td>Short phrases and shouts can be made without using your action or bonus action. However,
+                                at the DM's discretion, longer discussions will likely consume an action.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr />
+        </div>
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+    </div>
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div id="conditions" class="info">
+                <h1>Conditions</h1>
+                <p>There are a variety of conditions that a creature may suffer. The conditions from the PHB are listed below, along with the mechanical effects thereof.
+                </p>
+                <table class="w3-table w3-striped w3-hoverable w3-bordered" id="conditionsTable">
+                    <thead>
+                        <tr>
+                            <th>Condition</th>
+                            <th>Effects</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Blinded</td>
+                            <td>
+                                <ul>
+                                    <li>A blinded creature can't see, and automatically fails any ability check requiring sight.</li>
+                                    <li>Attack rolls against the creature have Advantage, and attack rolls made by the creature have Disadvantage.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Charmed</td>
+                            <td>
+                                <ul>
+                                    <li>A charmed creature can't attack the charmer, and can't target the charmer with harmful abilities or magical effects.</li>
+                                    <li>The charmer has Advantage on any ability check to interact socially with the creature.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Deafened</td>
+                            <td>
+                                <ul>
+                                    <li>A deafened creature can't hear, and automatically fails any ability check requiring hearing.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Frightened</td>
+                            <td>
+                                <ul>
+                                    <li>A frightened creature has Disadvantage on ability checks and attack rolls while the source of its fear is within line of sight.</li>
+                                    <li>The creature can't willingly move closer to the source of its fear.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Grappled</td>
+                            <td>
+                                <ul>
+                                    <li>A grappled creature's speed becomes 0, and it can't benefit from any bonus to its speed.</li>
+                                    <li>The condition ends if the grappler is Incapacitated (see the condition).</li>
+                                    <li>The condition also ends if an effect removes the grappled creature from the reach of the grappling effect, such as when a creature is hurled away by the <em>thunderwave</em> spell.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Incapacitated</td>
+                            <td>
+                                <ul>
+                                    <li>An incapacitated creature can't take actions or reactions.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Invisible</td>
+                            <td>
+                                <ul>
+                                    <li>An invisible creature is impossible to see without the aid of magic or a special sense.</li>
+                                    <li>For the purpose of hiding, the creature is heavily obscured. The creature's location can be detected by any noise it makes or any tracks it leaves.</li>
+                                    <li>Attack rolls against the creature have Disadvantage, and the creature's attack rolls have Advantage.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Paralyzed</td>
+                            <td>
+                                <ul>
+                                    <li>A paralyzed creature is Incapacitated (see the condition) and can't move or speak.</li>
+                                    <li>The creature automatically fails Strength and Dexterity saving throws.</li>
+                                    <li>Attack rolls against the creature have Advantage.</li>
+                                    <li>Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Petrified</td>
+                            <td>
+                                <ul>
+                                    <li>A petrified creature is transformed, along with any nonmagical object it is wearing or carrying, into a solid inanimate substance (usually stone). Its weight increases by a factor of ten, and it ceases aging.</li>
+                                    <li>The creature is Incapacitated (see the condition), can't move or speak, and is unaware of its surroundings.</li>
+                                    <li>Attack rolls against the creature have Advantage.</li>
+                                    <li>The creature automatically fails Strength and Dexterity saving throws.</li>
+                                    <li>The creature has resistance to all damage.</li>
+                                    <li>The creature is immune to poison and disease, although a poison or disease already in its system is suspended, not neutralized.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Poisoned</td>
+                            <td>
+                                <ul>
+                                    <li>A poisoned creature has Disadvantage on attack rolls and ability checks.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Prone</td>
+                            <td>
+                                <ul>
+                                    <li>A prone creature's only movement option is to crawl, unless it stands up and thereby ends the condition.</li>
+                                    <li>The creature has Disadvantage on attack rolls.</li>
+                                    <li>An attack roll against the creature has Advantage if the attacker is within 5 feet of the creature. Otherwise, the attack roll has Disadvantage.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Restrained</td>
+                            <td>
+                                <ul>
+                                    <li>A restrained creature's speed becomes 0, and it can't benefit from any bonus to its speed.</li>
+                                    <li>Attack rolls against the creature have Advantage, and the creature's attack rolls have Disadvantage.</li>
+                                    <li>The creature has Disadvantage on Dexterity saving throws.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Stunned</td>
+                            <td>
+                                <ul>
+                                    <li>A stunned creature is Incapacitated (see the condition), can't move, and can speak only falteringly</li>
+                                    <li>The creature automatically fails Strength and Dexterity saving throws.</li>
+                                    <li>Attack rolls against the creature have Advantage.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Unconscious</td>
+                            <td>
+                                <ul>
+                                    <li>An unconscious creature is Incapacitated (see the condition), can't move or speak, and is unaware of its surroundings.</li>
+                                    <li>The creature drops whatever it's holding and falls prone.</li>
+                                    <li>The creature automatically fails Strength and Dexterity saving throws.</li>
+                                    <li>Attack rolls against the creature have Advantage.</li>
+                                    <li>Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr />
+        </div>
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+    </div>
+    <div class="w3-col s0 m0 l1">
+        <p></p>
+    </div>
+    </div>
+</body>
+<footer>
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m10 l10">
+            All D&D material is © Wizards of the Coast
+        </div>
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+    </div>
+</footer>
+
+</html>

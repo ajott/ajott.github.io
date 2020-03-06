@@ -171,7 +171,11 @@ function buildSpells() {
             $("#spell" + (i - 1)).after($klon.show().removeClass("w3-hide"));
         }
 
-        $("#spell" + i).children().children().children(".spellName").text(spell[i]["name"])
+        if (spell[i]["homebrew"] != undefined) {
+            $("#spell" + i).children().children().children(".spellName").text(spell[i]["name"] + " (Homebrew)")
+        } else {
+            $("#spell" + i).children().children().children(".spellName").text(spell[i]["name"])
+        }
         $("#spell" + i).children().children().children().children().children(".spellSchool").text(spell[i]["school"])
         $("#spell" + i).children().children().children().children().children(".spellLevel").text(spell[i]["level"])
         $("#spell" + i).children().children().children(".spellFilters").text(spell[i]["school"] + ", " + spell[i]["classes"] + ", " + spell[i]["level"])
@@ -194,6 +198,9 @@ function buildSpells() {
         }
         $("#spell" + i).children().children().children(".spellDescription").html(htmlString)
         $("#spell" + i).addClass("grid-item")
+        if (spell[i]["homebrew"] != undefined) {
+            $("#spell" + i).children().addClass("homebrew-card");
+        } 
 
         htmlString = "";
     }
@@ -733,7 +740,12 @@ function buildFeats() {
             $("#feat" + (i - 1)).after($klon.show());
         }
 
-        $("#feat" + i).children().children().children(".featName").text(feat[i]["name"])
+        if (feat[i]["homebrew"] != undefined) {
+            $("#feat" + i).children().children().children(".featName").text(feat[i]["name"] + " (Homebrew)")
+        } else {
+            $("#feat" + i).children().children().children(".featName").text(feat[i]["name"])
+        }
+        
         if (feat[i]["modifier"]) {
             $("#feat" + i).children().children().children(".modSpan").html("<emph>Modifier: </emph><span class=\"featMod\"></span>")
             $("#feat" + i).children().children().children(".modSpan").children(".featMod").text(feat[i]["modifier"]["text"])
@@ -752,6 +764,9 @@ function buildFeats() {
         }
         $("#feat" + i).children().children().children(".featDesc").html(htmlString)
         $("#feat" + i).addClass("grid-item")
+        if (feat[i]["homebrew"] != undefined) {
+            $("#feat" + i).children().addClass("homebrew-card")
+        }
 
         htmlString = "";
     }
@@ -1097,7 +1112,12 @@ function buildMagicItems() {
             $("#item" + (i - 1)).after($klon.show());
         }
 
-        $("#item" + i).children().children().children(".itemName").text(magicItems[i]["name"])
+        if (magicItems[i]["homebrew"] != undefined) {
+            $("#item" + i).children().children().children(".itemName").text(magicItems[i]["name"] + " (Homebrew)")
+        } else {
+            $("#item" + i).children().children().children(".itemName").text(magicItems[i]["name"])
+        }
+
         $("#item" + i).children().children().children().children().children(".itemType").text(magicItems[i]["type"])
         itemFilterString += "type:" + magicItems[i]["type"] + ", "
 
@@ -1155,6 +1175,9 @@ function buildMagicItems() {
         }
         $("#item" + i).children().children().children(".itemDesc").html(htmlString)
         $("#item" + i).addClass("grid-item")
+        if (magicItems[i]["homebrew"] != undefined) {
+            $("#item" + i).children().addClass("homebrew-card")
+        }
         $("#item" + i).children().children().children(".itemFilters").html(itemFilterString)
         htmlString = "";
         itemFilterString = ""

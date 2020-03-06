@@ -4304,7 +4304,28 @@ var magicItems = [{
         "text": [
 
             "Requires Attunement",
-            "You can use a bonus action to speak this magic sword' command word, causing flames to erupt from the blade. These flames shed bright light in a 40-foot radius and dim light for an additional 40 feet. While the sword is ablaze, it deals an extra 2d6 fire damage to any target it hits. The flames last until you use a bonus action to speak the command word again or until you drop or sheathe the sword.",
+            "You can use a bonus action to speak this magic sword's command word, causing flames to erupt from the blade. These flames shed bright light in a 40-foot radius and dim light for an additional 40 feet. While the sword is ablaze, it deals an extra 2d6 fire damage to any target it hits. The flames last until you use a bonus action to speak the command word again or until you drop or sheathe the sword.",
+            "",
+            "Heavy: Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small creature to use effectively.",
+            "",
+            "Two-Handed: This weapon requires two hands to use."
+        ],
+        "roll": "2d6"
+    },
+    {
+        "name": "Flame Tongue Maul",
+        "type": "Melee Weapon",
+        "magic": "1",
+        "weight": "6",
+        "dmg1": "2d6",
+        "dmgType": "S",
+        "property": "H,2H",
+        "homebrew": "YES",
+        "rarity": "Rare",
+        "text": [
+
+            "Requires Attunement",
+            "You can use a bonus action to speak this magic maul's command word, causing flames to erupt from the head. These flames shed bright light in a 40-foot radius and dim light for an additional 40 feet. While the maul is ablaze, it deals an extra 2d6 fire damage to any target it hits. The flames last until you use a bonus action to speak the command word again or until you drop or stow the maul.",
             "",
             "Heavy: Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small creature to use effectively.",
             "",
@@ -4418,6 +4439,29 @@ var magicItems = [{
             "Requires Attunement",
             "When you hit with an attack using this magic sword, the target takes an extra 1d6 cold damage. In addition, while you hold the sword, you have resistance to fire damage.",
             "In freezing temperatures, the blade sheds bright light in a 10-foot radius and dim light for an additional 10 feet.",
+            "When you draw this weapon, you can extinguish all nonmagical flames within 30 feet of you. This property can be used no more than once per hour.",
+            "",
+            "Heavy: Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small creature to use effectively.",
+            "",
+            "Two-Handed: This weapon requires two hands to use."
+        ],
+        "roll": "1d6"
+    },
+    {
+        "name": "Frost Brand Maul",
+        "type": "Melee Weapon",
+        "magic": "1",
+        "weight": "6",
+        "dmg1": "2d6",
+        "dmgType": "S",
+        "property": "H,2H",
+        "homebrew": "YES",
+        "rarity": "Very Rare",
+        "text": [
+
+            "Requires Attunement",
+            "When you hit with an attack using this magic maul, the target takes an extra 1d6 cold damage. In addition, while you hold the maul, you have resistance to fire damage.",
+            "In freezing temperatures, the head of the maul sheds bright light in a 10-foot radius and dim light for an additional 10 feet.",
             "When you draw this weapon, you can extinguish all nonmagical flames within 30 feet of you. This property can be used no more than once per hour.",
             "",
             "Heavy: Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small creature to use effectively.",

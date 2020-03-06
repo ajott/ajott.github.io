@@ -48,6 +48,33 @@ var feat = [{
         ]
     },
     {
+        "name": "Blunt Force Trauma",
+        "homebrew": "YES",
+        "prerequisite": "Heavy Armor Proficiency",
+        "text": [
+            "While wearing heavy armor, you may add your proficiency bonus to the damage of your unarmed strikes.",
+            "",
+            "Additionally, when wielding a weapon that does Bludgeoning damage, you may choose to make the attack at Disadvantage. If you hit with the attack, you may add your proficiency bonus to the attack's damage."
+        ]
+    },
+    {
+        "name": "Terrible Fate",
+        "homebrew": "YES",
+        "text": [
+            "As a reaction to an effect that causes you and another creature to make a saving throw, you can impose Disadvantage on yourself to give the other creature Advantage."
+        ]
+    },
+    {
+        "name": "Titan Mauler",
+        "homebrew": "YES",
+        "prerequisite": "Strength 15 or higher",
+        "text": [
+            "You may wield weapons meant for a larger creature. If you do so, the weapon does an additional 1d4 damage, as per the spell Enlarge/Reduce. You may not take this option with weapons that have the Heavy property.",
+            "",
+            "Additionally, if you are of a Small race, you may wield Heavy weapons without Disadvantage."
+        ]
+    },
+    {
         "name": "Charger",
         "text": [
             "When you use your action to Dash, you can use a bonus action to make one melee weapon attack or to shove a creature.",

@@ -552,6 +552,14 @@ function monsterFilter(input, mod=0) {
         })
     }
 
+    if (mod == 3) {
+        monsterFilters.forEach(function (filter) {
+            if (filter.search("cr:") > -1) {
+                monsterFilters.splice(monsterFilters.indexOf(filter), 1)
+            }
+        })
+    }
+
     if (!duplicate) {
         if(mod != 2 && mod != 3) {
             $this.addClass("w3-blue").removeClass("w3-grey")

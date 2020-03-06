@@ -843,30 +843,18 @@ window.addEventListener('scroll', function (e) {
 function accordion(id) {
     var x = document.getElementById(id);
     if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
+        $('#'+id).removeClass("w3-hide").addClass("w3-show")
     } else {
-        x.className = x.className.replace(" w3-show", "");
+        $('#'+id).removeClass("w3-show").addClass("w3-hide")
     }
 }
 
 function accordionSidebar(id) {
-    var x = document.getElementById(id);
-    let sidebarDivs = ["barbsidebar", "bardsidebar", "clericsidebar", "druidsidebar", "fightersidebar", "monksidebar", "paladinsidebar", "rangersidebar", "roguesidebar", "sorcerersidebar", "warlocksidebar", "wizardsidebar", "artificersidebar"]
 
-    for (let i = 0; i < sidebarDivs.length; i++) {
-        if (sidebarDivs[i] != id) {
-            $("#" + sidebarDivs[i]).removeClass("w3-show")
-            document.getElementById(sidebarDivs[i]).previousElementSibling.className = document.getElementById(sidebarDivs[i]).previousElementSibling.className.replace("w3-goldenrod", "");
-        }
-    }
+    $('.classNavSidebar').removeClass('w3-show').addClass('w3-hide')
 
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-        x.previousElementSibling.className += " w3-goldenrod";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-        x.previousElementSibling.className = x.previousElementSibling.className.replace("w3-goldenrod", "");
-    }
+    $('#'+id).removeClass('w3-hide').addClass('w3-show');
+
 }
 
 var spellFilters = []
@@ -1063,8 +1051,6 @@ function magicItemNameFilter() {
 
     setTimeout( function() {getFilterCount()},500);
 }
-
-
 
 
 function buildNavbar() {

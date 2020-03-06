@@ -502,6 +502,19 @@ Generated Maroon theme
     background-color: rgba(105, 122, 77,.5);
 }
 
+.advancementButtonHB {
+    top: 40px;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 50;
+    border: 1px solid goldenrod;
+    background-color: rgb(163, 121, 65) !important;
+}
+
+.advancementButtonHB + .advancements {
+    background-color: rgba(163, 121, 65,.5);
+}
+
 .featureCardUA {
     padding-top: 5px;
     padding-bottom: 5px;

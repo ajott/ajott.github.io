@@ -1877,7 +1877,7 @@
                                 <div class="w3-row-padding">
                                     During a short rest, you may play a soothing song. If you, or any friendly
                                     creatures,
-                                    regain hit points during the rest, they regain an extra die (based on your level).
+                                    spend Hit Dice to regain hit points during the rest, they regain an extra die (based on your level).
                                 </div>
                                 <br />
                             </div>
@@ -6610,13 +6610,258 @@
                                     <br />
                                     <br />
                                     <emph>Maneuvers. </emph>You learn three maneuvers of your choice
-                                    from the list at
-                                    the end of this section. You can only use one maneuver per attack.
-                                    <br/>
-                                    You learn two additional maneuvers of your choice at 7th, 10th, and 15th level. Every time you
+                                    from the list below. You can only use one maneuver per attack.
+                                    <br />
+                                    You learn two additional maneuvers of your choice at 7th, 10th, and 15th level.
+                                    Every time you
                                     learn new
                                     maneuvers, you can replace one maneuver you know with a different
                                     one.
+                                    <br />
+                                    <br />
+
+                                    <div class="w3-row">
+                                        <div class="w3-col s0 m1 l2">
+                                            &emsp;
+                                        </div>
+                                        <div class="w3-col s12 m10 l8">
+                                            <button
+                                                class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold w3-round"
+                                                onclick="accordion('battlemastermaneuvers')"><span
+                                                    style="font-size: 1.2em;">List of Maneuvers</span></button>
+                                            <div class="advancements w3-hide w3-container" id="battlemastermaneuvers">
+
+                                                <div class="advancementCard">
+                                                    <div class="w3-card-2 w3-round-large">
+                                                        <br />
+                                                        <div class="w3-row-padding">
+                                                            <emph>Commander's Strike. </emph>When you take the Attack
+                                                            action on
+                                                            your turn, you
+                                                            can forgo one of your attacks and use a bonus action to
+                                                            direct one
+                                                            of your
+                                                            companions to strike. When you do so, choose a friendly
+                                                            creature who
+                                                            can see or hear
+                                                            you and expend one Superiority Die. The creature can
+                                                            immediately use
+                                                            its reaction to
+                                                            make one weapon attack, adding the superiority die to the
+                                                            attack's
+                                                            damage roll.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Disarming Attack. </emph>When you hit a creature with
+                                                            a weapon
+                                                            attack, you can
+                                                            expend one Superiority Die to attempt to disarm the target,
+                                                            forcing
+                                                            it to drop one
+                                                            item of your choosing that it is holding. You add the
+                                                            Superiority
+                                                            Die to the
+                                                            attack's damage roll, and the target suceed on a Strength
+                                                            saving
+                                                            throw or drop the
+                                                            item. The item lands at the creature's feet.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Distracting Strike. </emph>When you hit a creature
+                                                            with a
+                                                            weapon attack, you
+                                                            can expend one Superiority Die to distract the creature,
+                                                            giving your
+                                                            allies an
+                                                            opening. You add the Superiority Die to the attack's damage
+                                                            roll.
+                                                            The next attack
+                                                            roll against the target by an attacker other than you has
+                                                            Advantage
+                                                            if the attack is
+                                                            made before the start of your next turn.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Evasive Footwork. </emph>When you move, you can expend
+                                                            one
+                                                            Superiority Die,
+                                                            adding the die's roll to your AC until you stop moving.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Feinting Attack. </emph>You can expend one Superiority
+                                                            Die and
+                                                            use a bonus
+                                                            action on your turn to feint, choosing one creature within 5
+                                                            feet of
+                                                            you as the
+                                                            target. If you use your action to attack that creature on the same turn, you have Advantage. If that
+                                                            attack roll hits, add the Superiority Die to the attack's
+                                                            damage
+                                                            roll.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Goading Attack. </emph>When you hit a creature with a
+                                                            weapon
+                                                            attack, you can
+                                                            expend one Superiority Die to attempt to goad the target
+                                                            into
+                                                            attacking you. You add
+                                                            the Superiority Die to the attack's damage roll. The target
+                                                            must
+                                                            make a Wisdom
+                                                            saving throw; on a failed save, the target has Disadvantage
+                                                            on all
+                                                            attack rolls
+                                                            against targets other than you until the end of your next
+                                                            turn.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Lunging Attack. </emph>When you make a melee weapon
+                                                            attack on
+                                                            your turn, you
+                                                            can expend one Superiority Die to increase your reach for
+                                                            that
+                                                            attack by 5 feet. If
+                                                            you hit, add the Superiority Die to the attack's damage
+                                                            roll.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Maneuvering Attack. </emph>When you hit a creature
+                                                            with a
+                                                            weapon attack, you
+                                                            can expend one Superiority Die to maneuver one of your
+                                                            comrades into
+                                                            a more
+                                                            advantageous position. You add the Superiority Die to the
+                                                            attack's
+                                                            damage roll, and
+                                                            you choose one friendly creature who can see or hear you.
+                                                            That
+                                                            creature can use its
+                                                            reaction to move up to <emph>&frac12; its speed</emph>
+                                                            without
+                                                            provoking opportunity
+                                                            attacks from the target of your attack.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Menacing Attack. </emph>When you hit a creature with a
+                                                            weapon
+                                                            attack, you can
+                                                            expend one Superiority Die to attempt to frighten the
+                                                            target. You
+                                                            add the
+                                                            Superiority Die to the attack's damage roll. The target must
+                                                            make a
+                                                            Wisdom saving
+                                                            throw; on a failed save, it is frightened of you until the
+                                                            end of
+                                                            your next turn.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Parry. </emph>When another creature damages you with a
+                                                            melee
+                                                            attack, you can
+                                                            use your reaction and expend one Superiority Die to reduce
+                                                            the
+                                                            damage you take by
+                                                            <emph>the number rolled on the Superiority Die + your
+                                                                Dexterity
+                                                                modifier</emph>.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Precision Attack. </emph>When you make a weapon attack
+                                                            roll
+                                                            against a
+                                                            creature, you can expend one Superiority Die to add it to
+                                                            the roll.
+                                                            You can use this
+                                                            maneuver before or after making the roll, but before any
+                                                            effects of
+                                                            the attack are
+                                                            applied.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Pushing Attack. </emph>When you hit a creature with a
+                                                            weapon
+                                                            attack, you can
+                                                            expend one Superiority Die to attempt to drive the target
+                                                            back. You
+                                                            add the
+                                                            Superiority Die to the attack's damage roll. If the target
+                                                            is Large
+                                                            or smaller, it
+                                                            must make a Strength saving throw; on a failed save, you
+                                                            push the
+                                                            target up to 15
+                                                            feet away from you.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Rally. </emph>On your turn, you can use a bonus action
+                                                            and
+                                                            expend one
+                                                            Superiority Die to bolster the resolve of one of your
+                                                            companions.
+                                                            When you do so,
+                                                            choose a friendly creature who can see or hear you. That
+                                                            creature
+                                                            gains temporary
+                                                            hit points equal to <emph>the number rolled on the
+                                                                Superiority Die +
+                                                                your Charisma
+                                                                modifier</emph>.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Riposte. </emph>When a creature misses you with a
+                                                            melee
+                                                            attack, you can use
+                                                            your reaction and expend one Superiority Die to make a melee
+                                                            weapon
+                                                            attack against
+                                                            the creature. If you hit, add the Superiority Die to the
+                                                            attack's
+                                                            damage roll.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Sweeping Attack. </emph>When you hit a creature with a
+                                                            melee
+                                                            weapon attack,
+                                                            you can expend one Superiority Die to attempt to damage
+                                                            another
+                                                            creature with the
+                                                            same attack. Choose another creature within 5 feet of the
+                                                            original
+                                                            target and within
+                                                            your reach. If the original attack roll would hit on the
+                                                            second
+                                                            creature, it takes
+                                                            damage equal to <emph>the number rolled on the Superiority
+                                                                Die
+                                                            </emph>. The damage is
+                                                            of the same type dealt by the original attack.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Trip Attack. </emph>When you hit a creature with a
+                                                            weapon
+                                                            attack, you can
+                                                            expend one Superiority Die to attempt to knock the target
+                                                            down. You
+                                                            add the
+                                                            Superiority Die to the attack's damage roll. If the target
+                                                            is Large
+                                                            or smaller, it
+                                                            must make a Strength saving throw. On a failed save, it is
+                                                            knocked
+                                                            prone.
+                                                        </div>
+                                                        <br />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w3-col s0 m1 l2">
+                                            &emsp;
+                                        </div>
+                                    </div>
                                 </div>
                                 <br />
                             </div>
@@ -6696,174 +6941,6 @@
                                     When you roll initiative and have no Superiority Dice remaining, you
                                     regain 1
                                     Superiority Die.
-                                </div>
-                                <br />
-                            </div>
-                        </div>
-                        <div class="advancementCard">
-                            <div class="w3-card-2 w3-round-large">
-                                <div class="w3-row-padding">
-                                    <h5>Maneuvers</h5><br />
-                                </div>
-                                <div class="w3-row-padding">
-                                    <emph>Commander's Strike. </emph>When you take the Attack action on
-                                    your turn, you
-                                    can forgo one of your attacks and use a bonus action to direct one
-                                    of your
-                                    companions to strike. When you do so, choose a friendly creature who
-                                    can see or hear
-                                    you and expend one Superiority Die. The creature can immediately use
-                                    its reaction to
-                                    make one weapon attack, adding the superiority die to the attack's
-                                    damage roll.
-                                    <br />
-                                    <br />
-                                    <emph>Disarming Attack. </emph>When you hit a creature with a weapon
-                                    attack, you can
-                                    expend one Superiority Die to attempt to disarm the target, forcing
-                                    it to drop one
-                                    item of your choosing that it is holding. You add the Superiority
-                                    Die to the
-                                    attack's damage roll, and the target suceed on a Strength saving
-                                    throw or drop the
-                                    item. The item lands at the creature's feet.
-                                    <br />
-                                    <br />
-                                    <emph>Distracting Strike. </emph>When you hit a creature with a
-                                    weapon attack, you
-                                    can expend one Superiority Die to distract the creature, giving your
-                                    allies an
-                                    opening. You add the Superiority Die to the attack's damage roll.
-                                    The next attack
-                                    roll against the target by an attacker other than you has Advantage
-                                    if the attack is
-                                    made before the start of your next turn.
-                                    <br />
-                                    <br />
-                                    <emph>Evasive Footwork. </emph>When you move, you can expend one
-                                    Superiority Die,
-                                    adding the die's roll to your AC until you stop moving.
-                                    <br />
-                                    <br />
-                                    <emph>Feinting Attack. </emph>You can expend one Superiority Die and
-                                    use a bonus
-                                    action on your turn to feint, choosing one creature within 5 feet of
-                                    you as the
-                                    target. You have advantage on your next attack roll against that
-                                    creature. If that
-                                    attack roll hits, add the Superiority Die to the attack's damage
-                                    roll.
-                                    <br />
-                                    <br />
-                                    <emph>Goading Attack. </emph>When you hit a creature with a weapon
-                                    attack, you can
-                                    expend one Superiority Die to attempt to goad the target into
-                                    attacking you. You add
-                                    the Superiority Die to the attack's damage roll. The target must
-                                    make a Wisdom
-                                    saving throw; on a failed save, the target has Disadvantage on all
-                                    attack rolls
-                                    against targets other than you until the end of your next turn.
-                                    <br />
-                                    <br />
-                                    <emph>Lunging Attack. </emph>When you make a melee weapon attack on
-                                    your turn, you
-                                    can expend one Superiority Die to increase your reach for that
-                                    attack by 5 feet. If
-                                    you hit, add the Superiority Die to the attack's damage roll.
-                                    <br />
-                                    <br />
-                                    <emph>Maneuvering Attack. </emph>When you hit a creature with a
-                                    weapon attack, you
-                                    can expend one Superiority Die to maneuver one of your comrades into
-                                    a more
-                                    advantageous position. You add the Superiority Die to the attack's
-                                    damage roll, and
-                                    you choose one friendly creature who can see or hear you. That
-                                    creature can use its
-                                    reaction to move up to <emph>&frac12; its speed</emph> without
-                                    provoking opportunity
-                                    attacks from the target of your attack.
-                                    <br />
-                                    <br />
-                                    <emph>Menacing Attack. </emph>When you hit a creature with a weapon
-                                    attack, you can
-                                    expend one Superiority Die to attempt to frighten the target. You
-                                    add the
-                                    Superiority Die to the attack's damage roll. The target must make a
-                                    Wisdom saving
-                                    throw; on a failed save, it is frightened of you until the end of
-                                    your next turn.
-                                    <br />
-                                    <br />
-                                    <emph>Parry. </emph>When another creature damages you with a melee
-                                    attack, you can
-                                    use your reaction and expend one Superiority Die to reduce the
-                                    damage you take by
-                                    <emph>the number rolled on the Superiority Die + your Dexterity
-                                        modifier</emph>.
-                                    <br />
-                                    <br />
-                                    <emph>Precision Attack. </emph>When you make a weapon attack roll
-                                    against a
-                                    creature, you can expend one Superiority Die to add it to the roll.
-                                    You can use this
-                                    maneuver before or after making the roll, but before any effects of
-                                    the attack are
-                                    applied.
-                                    <br />
-                                    <br />
-                                    <emph>Pushing Attack. </emph>When you hit a creature with a weapon
-                                    attack, you can
-                                    expend one Superiority Die to attempt to drive the target back. You
-                                    add the
-                                    Superiority Die to the attack's damage roll. If the target is Large
-                                    or smaller, it
-                                    must make a Strength saving throw; on a failed save, you push the
-                                    target up to 15
-                                    feet away from you.
-                                    <br />
-                                    <br />
-                                    <emph>Rally. </emph>On your turn, you can use a bonus action and
-                                    expend one
-                                    Superiority Die to bolster the resolve of one of your companions.
-                                    When you do so,
-                                    choose a friendly creature who can see or hear you. That creature
-                                    gains temporary
-                                    hit points equal to <emph>the number rolled on the Superiority Die +
-                                        your Charisma
-                                        modifier</emph>.
-                                    <br />
-                                    <br />
-                                    <emph>Riposte. </emph>When a creature misses you with a melee
-                                    attack, you can use
-                                    your reaction and expend one Superiority Die to make a melee weapon
-                                    attack against
-                                    the creature. If you hit, add the Superiority Die to the attack's
-                                    damage roll.
-                                    <br />
-                                    <br />
-                                    <emph>Sweeping Attack. </emph>When you hit a creature with a melee
-                                    weapon attack,
-                                    you can expend one Superiority Die to attempt to damage another
-                                    creature with the
-                                    same attack. Choose another creature within 5 feet of the original
-                                    target and within
-                                    your reach. If the original attack roll would hit on the second
-                                    creature, it takes
-                                    damage equal to <emph>the number rolled on the Superiority Die
-                                    </emph>. The damage is
-                                    of the same type dealt by the original attack.
-                                    <br />
-                                    <br />
-                                    <emph>Trip Attack. </emph>When you hit a creature with a weapon
-                                    attack, you can
-                                    expend one Superiority Die to attempt to knock the target down. You
-                                    add the
-                                    Superiority Die to the attack's damage roll. If the target is Large
-                                    or smaller, it
-                                    must make a Strength saving throw. On a failed save, it is knocked
-                                    prone.
                                 </div>
                                 <br />
                             </div>
@@ -8354,7 +8431,7 @@
                                     hold in one hand,
                                     and you have one hand free, you can catch the missile. If you do so,
                                     you may spend 1
-                                    Ki point to make a ranged attack with the missle as part of the same
+                                    Ki point to make a ranged attack (Range: 20/60) with the missle as part of the same
                                     reaction. You
                                     make this attack with proficiency, regardless of the type of missle.
                                 </div>
@@ -8496,7 +8573,7 @@
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
-                                    You become immune to disease and poison.
+                                    You become immune to disease, poison damage, and the poisoned condition.
                                 </div>
                                 <br />
                             </div>
@@ -8723,7 +8800,7 @@
                                     <br />
                                     Additionally, you learn the <emph>Minor Illusion</emph> cantrip if
                                     you don't already
-                                    know it.
+                                    know it, and can cast it without spending Ki Points.
                                 </div>
                                 <br />
                             </div>
@@ -8883,140 +8960,207 @@
                                     of Monk to learn that discipline.
                                     <br />
                                     <br />
-                                    <emph>Breath of Winter (17th Level Required): </emph>You can spend 6
-                                    Ki Points to
-                                    cast <emph>Cone of Cold</emph>
-                                    <br />
-                                    <br />
-                                    <emph>Clench of the North Wind (6th Level Required): </emph>You can
-                                    spend 3 Ki
-                                    Points to cast <emph>Hold Person</emph>
-                                    <br />
-                                    <br />
-                                    <emph>Elemental Attunement (Automatic): </emph>You can use your
-                                    action to briefly
-                                    control elemental forces nearby, causing one of the following
-                                    effects of your
-                                    choice:
-                                    <ul>
-                                        <li>Create a harmless, instantaneous sensory effect related to
-                                            air, earth, fire,
-                                            or water</li>
-                                        <li>Instantaneously light or snuff out a candle, a torch, or a
-                                            small campfire
-                                        </li>
-                                        <li>Chill or warm up to 1 pound of nonliving material for up to
-                                            1 hour</li>
-                                        <li>Cause earth, fire, water, or mist that can fit within a
-                                            1-foot cube to shape
-                                            itself into a crude form you designate for 1 minute</li>
-                                    </ul>
-                                    <br />
-                                    <emph>Eternal Mountain Defense (11th Level Required): </emph>You can
-                                    spend 5 Ki
-                                    Points to cast <emph>Stoneskin</emph>, targeting yourself.
-                                    <br />
-                                    <br />
-                                    <emph>Fangs of the Fire Snake: </emph>When you use the Attack action
-                                    on your turn,
-                                    you can spend 1 Ki Point to cause tendrils of flame to reach out
-                                    from your hands and
-                                    feet. Your reach with your unarmed strikes increases by 10 feet for
-                                    that action, as
-                                    well as the rest of your turn. A hit with such an attack deals Fire
-                                    damage instead
-                                    of Bludgeoning damage; if you spend 1 Ki Point when the attack hits,
-                                    it also deals
-                                    an extra 1d10 Fire damage.
-                                    <br />
-                                    <br />
-                                    <emph>Fist of Four Thunders: </emph>You can spend 2 Ki Points to
-                                    cast <emph>
-                                        Thunderwave</emph>
-                                    <br />
-                                    <br />
-                                    <emph>Fist of Unbroken Air: </emph>As an action, you can spend 2 Ki
-                                    Points and
-                                    choose a creature within 30 feet of you, which must make a Strength
-                                    saving throw. On
-                                    failure, the creature takes 3d10 Bludgeoning damage, plus an extra
-                                    1d10 for each
-                                    additional Ki Point you spend; additionally, you can push the
-                                    creature up to 20 feet
-                                    away and knock it prone. On a successful save, the creature takes
-                                    half as much
-                                    damage, and you don't push it or knock it prone.
-                                    <br />
-                                    <br />
-                                    <emph>Flames of the Phoenix (11th Level Required): </emph>You can
-                                    spend 4 Ki Points
-                                    to cast <emph>Fireball</emph>
-                                    <br />
-                                    <br />
-                                    <emph>Gong of the Summit (6th Level Required): </emph>You can spend
-                                    3 Ki Points to
-                                    cast <emph>Shatter</emph>
-                                    <br />
-                                    <br />
-                                    <emph>Mist Stance (11th Level Required): </emph>You can spend 4 Ki
-                                    Points to cast
-                                    <emph>Gaseous Form</emph>, targeting yourself.
-                                    <br />
-                                    <br />
-                                    <emph>Ride the Wind (11th Level Required): </emph>You can spend 4 Ki
-                                    Points to cast
-                                    <emph>Fly</emph>, targeting yourself.
-                                    <br />
-                                    <br />
-                                    <emph>River of Hungry Flame (17th Level Required): </emph>You can
-                                    spend 5 Ki Points
-                                    to cast <emph>Wall of Fire</emph>
-                                    <br />
-                                    <br />
-                                    <emph>Rush of the Gale Spirits: </emph>You can spend 1 Ki Points to
-                                    cast <emph>Gust
-                                        of Wind</emph>
-                                    <br />
-                                    <br />
-                                    <emph>Shape the Flowing River: </emph>As an action, you can spend 1
-                                    Ki Point to
-                                    choose an area of ice or water no larger than 30 feet on a side,
-                                    within 120 feet of
-                                    you. You can change the water to ice, or vice versa, and you can
-                                    reshape the ice in
-                                    the area in any manner you choose. The extent of any such shaping
-                                    can't exceed half
-                                    the area's largest dimension. You can't shape the ice to trap or
-                                    injure a creature
-                                    in the area.
-                                    <br />
-                                    <br />
-                                    <emph>Sweeping Cinder Strike: </emph>You can spend 2 Ki Points to
-                                    cast <emph>Burning
-                                        Hands</emph>
-                                    <br />
-                                    <br />
-                                    <emph>Water Whip: </emph>You can spend 2 Ki Points as a bonus action
-                                    to create a
-                                    whip of water to unbalance a creature. A creature that you can see
-                                    within 30 feet of
-                                    you must make a Dexterity saving throw; on failure, the creature
-                                    takes 3d10
-                                    Bludgeoning damage, plus an extra 1d10 for each additional Ki Point
-                                    you spend, and
-                                    you can either knock it prone or pull it up to 25 feet closer to
-                                    you; on a
-                                    successful save, the creature takes half as much damage, and you
-                                    don't pull it or
-                                    knock it prone.
-                                    <br />
-                                    <br />
-                                    <emph>Wave of Rolling Earth (17th Level Required): </emph>You can
-                                    spend 6 Ki Points
-                                    to cast <emph>Wall of Stone</emph>
+
+                                    <div class="w3-row">
+                                        <div class="w3-col s0 m1 l2">
+                                            &emsp;
+                                        </div>
+                                        <div class="w3-col s12 m10 l8">
+                                            <button
+                                                class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold w3-round"
+                                                onclick="accordion('fourelementsdisciplines')"><span
+                                                    style="font-size: 1.2em;">List of Disciplines</span></button>
+                                            <div class="advancements w3-hide w3-container" id="fourelementsdisciplines">
+
+                                                <div class="advancementCard">
+                                                    <div class="w3-card-2 w3-round-large">
+                                                        <br />
+                                                        <div class="w3-row-padding">
+                                                            <emph>Breath of Winter (17th Level Required): </emph>You can
+                                                            spend 6
+                                                            Ki Points to
+                                                            cast <emph>Cone of Cold</emph>
+                                                            <br />
+                                                            <br />
+                                                            <emph>Clench of the North Wind (6th Level Required): </emph>
+                                                            You can
+                                                            spend 3 Ki
+                                                            Points to cast <emph>Hold Person</emph>
+                                                            <br />
+                                                            <br />
+                                                            <emph>Elemental Attunement (Automatic): </emph>You can use
+                                                            your
+                                                            action to briefly
+                                                            control elemental forces nearby, causing one of the
+                                                            following
+                                                            effects of your
+                                                            choice:
+                                                            <ul>
+                                                                <li>Create a harmless, instantaneous sensory effect
+                                                                    related to
+                                                                    air, earth, fire,
+                                                                    or water</li>
+                                                                <li>Instantaneously light or snuff out a candle, a
+                                                                    torch, or a
+                                                                    small campfire
+                                                                </li>
+                                                                <li>Chill or warm up to 1 pound of nonliving material
+                                                                    for up to
+                                                                    1 hour</li>
+                                                                <li>Cause earth, fire, water, or mist that can fit
+                                                                    within a
+                                                                    1-foot cube to shape
+                                                                    itself into a crude form you designate for 1 minute
+                                                                </li>
+                                                            </ul>
+                                                            <br />
+                                                            <emph>Eternal Mountain Defense (17th Level Required):
+                                                            </emph>You can
+                                                            spend 5 Ki
+                                                            Points to cast <emph>Stoneskin</emph>, targeting yourself.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Fangs of the Fire Snake: </emph>When you use the
+                                                            Attack action
+                                                            on your turn,
+                                                            you can spend 1 Ki Point to cause tendrils of flame to reach
+                                                            out
+                                                            from your hands and
+                                                            feet. Your reach with your unarmed strikes increases by 10
+                                                            feet for
+                                                            that action, as
+                                                            well as the rest of your turn. A hit with such an attack
+                                                            deals Fire
+                                                            damage instead
+                                                            of Bludgeoning damage; if you spend 1 Ki Point when the
+                                                            attack hits,
+                                                            it also deals
+                                                            an extra 1d10 Fire damage.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Fist of Four Thunders: </emph>You can spend 2 Ki
+                                                            Points to
+                                                            cast <emph>
+                                                                Thunderwave</emph>
+                                                            <br />
+                                                            <br />
+                                                            <emph>Fist of Unbroken Air: </emph>As an action, you can
+                                                            spend 2 Ki
+                                                            Points and
+                                                            choose a creature within 30 feet of you, which must make a
+                                                            Strength
+                                                            saving throw. On
+                                                            failure, the creature takes 3d10 Bludgeoning damage, plus an
+                                                            extra
+                                                            1d10 for each
+                                                            additional Ki Point you spend; additionally, you can push
+                                                            the
+                                                            creature up to 20 feet
+                                                            away and knock it prone. On a successful save, the creature
+                                                            takes
+                                                            half as much
+                                                            damage, and you don't push it or knock it prone.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Flames of the Phoenix (11th Level Required): </emph>
+                                                            You can
+                                                            spend 4 Ki Points
+                                                            to cast <emph>Fireball</emph>
+                                                            <br />
+                                                            <br />
+                                                            <emph>Gong of the Summit (6th Level Required): </emph>You
+                                                            can spend
+                                                            3 Ki Points to
+                                                            cast <emph>Shatter</emph>
+                                                            <br />
+                                                            <br />
+                                                            <emph>Mist Stance (11th Level Required): </emph>You can
+                                                            spend 4 Ki
+                                                            Points to cast
+                                                            <emph>Gaseous Form</emph>, targeting yourself.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Ride the Wind (11th Level Required): </emph>You can
+                                                            spend 4 Ki
+                                                            Points to cast
+                                                            <emph>Fly</emph>, targeting yourself.
+                                                            <br />
+                                                            <br />
+                                                            <emph>River of Hungry Flame (17th Level Required): </emph>
+                                                            You can
+                                                            spend 5 Ki Points
+                                                            to cast <emph>Wall of Fire</emph>
+                                                            <br />
+                                                            <br />
+                                                            <emph>Rush of the Gale Spirits: </emph>You can spend 1 Ki
+                                                            Points to
+                                                            cast <emph>Gust
+                                                                of Wind</emph>
+                                                            <br />
+                                                            <br />
+                                                            <emph>Shape the Flowing River: </emph>As an action, you can
+                                                            spend 1
+                                                            Ki Point to
+                                                            choose an area of ice or water no larger than 30 feet on a
+                                                            side,
+                                                            within 120 feet of
+                                                            you. You can change the water to ice, or vice versa, and you
+                                                            can
+                                                            reshape the ice in
+                                                            the area in any manner you choose. The extent of any such
+                                                            shaping
+                                                            can't exceed half
+                                                            the area's largest dimension. You can't shape the ice to
+                                                            trap or
+                                                            injure a creature
+                                                            in the area.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Sweeping Cinder Strike: </emph>You can spend 2 Ki
+                                                            Points to
+                                                            cast <emph>Burning
+                                                                Hands</emph>
+                                                            <br />
+                                                            <br />
+                                                            <emph>Water Whip: </emph>You can spend 2 Ki Points as an action
+                                                            to create a
+                                                            whip of water to unbalance a creature. A creature that you
+                                                            can see
+                                                            within 30 feet of
+                                                            you must make a Dexterity saving throw; on failure, the
+                                                            creature
+                                                            takes 3d10
+                                                            Bludgeoning damage, plus an extra 1d10 for each additional
+                                                            Ki Point
+                                                            you spend, and
+                                                            you can either knock it prone or pull it up to 25 feet
+                                                            closer to
+                                                            you; on a
+                                                            successful save, the creature takes half as much damage, and
+                                                            you
+                                                            don't pull it or
+                                                            knock it prone.
+                                                            <br />
+                                                            <br />
+                                                            <emph>Wave of Rolling Earth (17th Level Required): </emph>
+                                                            You can
+                                                            spend 6 Ki Points
+                                                            to cast <emph>Wall of Stone</emph>
+                                                        </div>
+                                                        <br />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w3-col s0 m1 l2">
+                                            &emsp;
+                                        </div>
+                                    </div>
                                 </div>
                                 <br />
+
                             </div>
+                            <br />
                         </div>
                     </div>
 
@@ -12292,6 +12436,11 @@
                                     make one weapon attack yourself when you command your beast to take
                                     the Attack
                                     action.
+                                    <br/>
+                                    <br/>
+                                    You never have to spend an action to have your companion use its Reaction (such as for an Opportunity Attack).
+                                    <br/>
+                                    If you die or become incapacitated, your companion will act on its own, doing its best to protect you and itself.
                                     <br />
                                     <br />
                                     While traveling through your favored terrain with only the beast,
@@ -12335,7 +12484,7 @@
                                 <div class="w3-row-padding">
                                     Your beast companion can make two attacks when you command it to
                                     take the Attack
-                                    action.
+                                    action, or it can take the Multiattack action (if it has this action).
                                 </div>
                                 <br />
                             </div>
@@ -14917,7 +15066,7 @@
                                     <br />
                                     You may also convert a spell slot into sorcery points, gaining
                                     sorcery points <emph>
-                                        equal to the level of the spell slot</emph>.
+                                        equal to the level of the spell slot</emph>. The created spell slots vanish at the end of a long rest.
                                     <br />
                                     <br />
                                     <div class="w3-col s0 m2 l3">
@@ -15019,9 +15168,7 @@
                                     <br />
                                     <emph>Twinned Spell: </emph> Spend a number of sorcery points equal
                                     to a spell's
-                                    level (or 1 point if the spell is a cantrip), if the spell targets
-                                    only one
-                                    creature, and doesn't have a range of self, to target a second
+                                    level (or 1 point if the spell is a cantrip), if the spell is incapable of targeting more than one creature, and doesn't have a range of self, to target a second
                                     creature in range
                                     with the same spell.
                                 </div>
@@ -15202,6 +15349,8 @@
                                     When you cast a spell that deals damage of the type associated with
                                     your draconic
                                     ancestry, add your Charisma modifier to the damage.
+                                    <br/>
+                                    If the spell has more than one damage roll, the bonus damage applies only to one of the rolls.
                                     <br />
                                     At the same time, you can spend 1 sorcery point to gain resistance
                                     to that damage
@@ -15284,6 +15433,9 @@
                                     If you roll a 1, roll on the Wild Magic Surge table to create a
                                     random magical
                                     effect.
+                                    <br/>
+                                    <br/>
+                                    If the Wild Magic effect is a spell, it is not able to be affected by Metamagic. In addition, if the Wild Magic spell normally requires Concentration, it does not require Concentration and instead lasts for the maximum duration.
                                     <br />
                                     <br />
                                     The default table, with 50 effects, can be found on <emph>p. 104 PHB
@@ -16288,6 +16440,9 @@
                                     You gain two eldritch invocations of your choice, and more at
                                     certain Warlock
                                     levels.
+                                    <br/>
+                                    <br/>
+                                    If a level is specified as a prerequisite for an eldritch invocation, it refers to Warlock level, not character level.
                                     <br />
                                     <br />
                                     Additionally, when you gain a Warlock level, you can replace any one
@@ -16334,7 +16489,7 @@
                                     <br />
                                     Additionally, when you take the Attack action, you can forgo one of
                                     your own attacks
-                                    to allow your familiar to make an attack of its own.
+                                    to allow your familiar to make an attack of its own. This attack uses your familiar's Reaction.
                                 </div>
                                 <br />
                             </div>
@@ -16382,7 +16537,7 @@
                                 <div class="w3-row-padding">
                                     Gain a grimoire called a Book of Shadows. Choose three cantrips from
                                     any class's
-                                    spell list. While the book is on your person, you can cast those
+                                    spell list. Regardless of the spell list from which you choose the cantrip, it counts as a Warlock cantrip for you. While the book is on your person, you can cast those
                                     cantrips at will.
                                     They don't count against your number of cantrips known.
                                     <br />
@@ -18615,7 +18770,7 @@
                                 <div class="w3-row-padding">
                                     At 1st level, you have a <emph>Spellbook</emph> with 6 1st-level
                                     wizard spells of
-                                    your choice.
+                                    your choice. Your spellbook doesn't contain cantrips.
                                     <br />
                                     <br />
                                     Wizard spells must be prepared out of their spellbook. You may
@@ -18832,12 +18987,13 @@
                                     instead. If
                                     this damage reduces the ward to 0 hit points, you take any remaining
                                     damage.
-                                    <br />
-                                    While the ward has 0 hit points, it can't absorb damage, but its
-                                    magic remains.
+                                    <br/>                                    
                                     Whenever you cast an Abjuration spell of 1st level or higher, the
                                     ward regains hit
                                     points equal to <emph>2&times;Spell level</emph>.
+                                    <br />
+                                    While the ward has 0 hit points, it can't absorb damage, but its
+                                    magic remains.
                                     <br />
                                     <br />
                                     Once you create the ward, you can't create it again until you finish
@@ -19311,7 +19467,7 @@
                                 </div>
                                 <div class="w3-row-padding">
                                     When a creature succeeds on a saving throw against one of your
-                                    cantrips, the
+                                    cantrips which requires a saving throw, the
                                     creature takes half the cantrip's damage (if any) but suffers no
                                     additonal effect
                                     from the cantrip.
@@ -19330,7 +19486,10 @@
                                 <div class="w3-row-padding">
                                     You can add your Intelligence modifier to the damage roll of any
                                     Wizard evocation
-                                    spell you cast.
+                                    spell you cast. 
+                                    <br/>
+                                    <br/>
+                                    If a spell has multiple damage rolls, the bonus damage applies to only one roll.
                                 </div>
                                 <br />
                             </div>
@@ -19344,7 +19503,7 @@
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
-                                    When you cast a Wizard spell of 5th level or lower that deals
+                                    When you use a spell slot to cast a Wizard spell of 5th level or lower that deals
                                     damage, you can deal
                                     maximum damage with that spell.
                                     <br />
@@ -21206,8 +21365,8 @@
                                         block or to take the Dash, Disengage, or Help action.
                                         <br />
                                         <br />
-                                        If the <emph>Mending</emph> spell is cast on it, it regains 2d6 hit points. 
-                                        <br/>
+                                        If the <emph>Mending</emph> spell is cast on it, it regains 2d6 hit points.
+                                        <br />
                                         If it has died within the last hour, you can use your alchemist’s supplies as an
                                         action to revive it, provided you are within 5 feet of it and you expend a spell
                                         slot of 1st level or higher.
@@ -21225,12 +21384,13 @@
                                             <button
                                                 class="w3-button w3-block w3-dark-grey advancementButtonUA w3-hover-gold w3-round"
                                                 onclick="accordion('alchemicalhomunculusdiv')"><span
-                                                    style="font-size: 1.2em;">Alchemical Homunculus Statblock</span></button>
+                                                    style="font-size: 1.2em;">Alchemical Homunculus
+                                                    Statblock</span></button>
                                             <div class="monster-item w3-container w3-hide w3-round"
                                                 id="alchemicalhomunculusdiv"
-                                                style="background-color: rgba(105, 122, 77,.5) !important;">
+                                                >
                                                 <div class="w3-card-2 w3-round-large"
-                                                    style="background-color: rgba(65,65,65,.5) !important;">
+                                                    >
                                                     <div class="w3-row-padding">
                                                         <h2 style="text-align: left !important" class="monsterName">
                                                             Alchemical Homunculus</h2>
@@ -21698,7 +21858,8 @@
                                     You gain the spells shown below at the given levels. They are always prepared, and
                                     they don't count against the total number of spells prepared for the day.
                                     <br />
-                                    If an Artillerist spell isn't naturally an Artificer spell, it counts as an Artificer
+                                    If an Artillerist spell isn't naturally an Artificer spell, it counts as an
+                                    Artificer
                                     spell for you.
                                     <br />
                                     <br />
@@ -21809,9 +21970,9 @@
                                                     style="font-size: 1.2em;">Arcane Turret Statblock</span></button>
                                             <div class="monster-item w3-container w3-hide w3-round"
                                                 id="artilleristturretdiv"
-                                                style="background-color: rgba(105, 122, 77,.5) !important;">
+                                                >
                                                 <div class="w3-card-2 w3-round-large"
-                                                    style="background-color: rgba(65,65,65,.5) !important;">
+                                                    >
                                                     <div class="w3-row-padding">
                                                         <h2 style="text-align: left !important" class="monsterName">
                                                             Arcane Turret</h2>
@@ -22005,324 +22166,353 @@
                         onclick="accordion('artificerbattlesmith')"><span style="font-size: 1.2em;">Battle
                             Smith</span></button>
                     <div class="advancements w3-hide w3-container" id="artificerbattlesmith">
-                            <div class="advancementCard">
-                                <div class="w3-card-2 w3-round-large">
-                                    <div class="w3-row-padding">
-                                        <h5>Battle Smith Spells</h5>
-                                        <em>
-                                            <emph>Level Gained: </emph>1st
-                                        </em><br />
-                                        <em>
-                                            <emph>Levels Improved: </emph>5th, 9th, 13th, 17th
-                                        </em><br /><br />
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Battle Smith Spells</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>1st
+                                    </em><br />
+                                    <em>
+                                        <emph>Levels Improved: </emph>5th, 9th, 13th, 17th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain the spells shown below at the given levels. They are always prepared, and
+                                    they don't count against the total number of spells prepared for the day.
+                                    <br />
+                                    If a Battle Smith spell isn't naturally an Artificer spell, it counts as an
+                                    Artificer
+                                    spell for you.
+                                    <br />
+                                    <br />
+                                    <div class="w3-col s0 m2 l3">
+                                        &emsp;
                                     </div>
-                                    <div class="w3-row-padding">
-                                        You gain the spells shown below at the given levels. They are always prepared, and
-                                        they don't count against the total number of spells prepared for the day.
+                                    <div class="w3-col s12 m8 l6">
+                                        <table class="w3-table w3-small">
+                                            <thead>
+                                                <th>Artificer Level</th>
+                                                <th>Spells</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>3rd</td>
+                                                    <td>Heroism, Searing Smite</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5th</td>
+                                                    <td>Branding Smite, Warding Bond</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>9th</td>
+                                                    <td>Aura of Vitality, Blinding Smite</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>13th</td>
+                                                    <td>Aura of Purity, Staggering Smite</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>17th</td>
+                                                    <td>Banishing Smite, Mass Cure Wounds</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="w3-col s0 m2 l3">
+                                        &emsp;
+                                    </div>
+                                    <br />
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Tools of the Trade</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>3rd
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    <emph>Proficiencies. </emph>You gain proficiency with leatherworker's tools and
+                                    smith's tools, assuming you don’t already have them. You also gain leatherworker's
+                                    tools and smith's tools for free—the result of tinkering you’ve done as you’ve
+                                    prepared for this specialization.
+                                    <br />
+                                    <br />
+                                    <emph>Crafting. </emph>If you craft a magic item in the armor category, it takes
+                                    you a quarter of the normal time, and it costs you half as much of the usual gold.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Battle Ready</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>3rd
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain proficiency with martial weapons.
+                                    <br />
+                                    <br />
+                                    When you attack with a magic weapon, you can use your Intelligence modifier, instead
+                                    of Strength or Dexterity, for the attack and damage rolls.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Iron Defender</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>3rd
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    <p>
+                                        You have a faithful companion. It resembles a hound, a cougar, a bear, or
+                                        another four-legged creature of your choice.
                                         <br />
-                                        If a Battle Smith spell isn't naturally an Artificer spell, it counts as an Artificer
-                                        spell for you.
+                                        It is loyal to you and to your companions, and it obeys your commands.
                                         <br />
                                         <br />
-                                        <div class="w3-col s0 m2 l3">
+                                        In combat, the iron defender shares your initiative count, but takes its turn
+                                        immediately after yours.
+                                        <br />
+                                        It can move and use its reaction on its own, but the only action it takes on its
+                                        turn is the Dodge action, unless you take a bonus action on your turn to command
+                                        it to take one of the actions on its stat block, or the Dash, Disengage, or Help
+                                        actions.
+                                        <br />
+                                        <br />
+                                        If the <emph>Mending</emph> spell is cast on it, it regains 2d6 hit points.
+                                        <br />
+                                        If
+                                        it has died within the last hour, you can use your smith's tools as an
+                                        action to revive it, provided you are within 5 feet of it and you expend a spell
+                                        slot of 1st level or higher. The iron defender returns to life after 1 minute
+                                        with all its hit points restored.
+                                        <br />
+                                        <br />
+                                        At the end of a long rest, you can create a new iron defender if you have your
+                                        smith's tools with you. If you already have an iron defender from this feature,
+                                        the first one immediately perishes.
+                                    </p>
+
+                                    <div class="w3-row">
+
+                                        <div class="w3-col s0 m1 l2">
                                             &emsp;
                                         </div>
-                                        <div class="w3-col s12 m8 l6">
-                                            <table class="w3-table w3-small">
-                                                <thead>
-                                                    <th>Artificer Level</th>
-                                                    <th>Spells</th>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>3rd</td>
-                                                        <td>Heroism, Searing Smite</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>5th</td>
-                                                        <td>Branding Smite, Warding Bond</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>9th</td>
-                                                        <td>Aura of Vitality, Blinding Smite</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>13th</td>
-                                                        <td>Aura of Purity, Staggering Smite</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>17th</td>
-                                                        <td>Banishing Smite, Mass Cure Wounds</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="w3-col s0 m2 l3">
-                                            &emsp;
-                                        </div>
-                                        <br />
-                                    </div>
-                                    <br />
-                                </div>
-                            </div>
-                            <div class="advancementCard">
-                                <div class="w3-card-2 w3-round-large">
-                                    <div class="w3-row-padding">
-                                        <h5>Tools of the Trade</h5>
-                                        <em>
-                                            <emph>Level Gained: </emph>3rd
-                                        </em><br /><br />
-                                    </div>
-                                    <div class="w3-row-padding">
-                                        <emph>Proficiencies. </emph>You gain proficiency with leatherworker's tools and smith's tools, assuming you don’t already have them. You also gain leatherworker's tools and smith's tools for free—the result of tinkering you’ve done as you’ve
-                                        prepared for this specialization.
-                                        <br />
-                                        <br />
-                                        <emph>Crafting. </emph>If you craft a magic item in the armor category, it takes
-                                        you a quarter of the normal time, and it costs you half as much of the usual gold.
-                                    </div>
-                                    <br />
-                                </div>
-                            </div>
-                            <div class="advancementCard">
-                                <div class="w3-card-2 w3-round-large">
-                                    <div class="w3-row-padding">
-                                        <h5>Battle Ready</h5>
-                                        <em>
-                                            <emph>Level Gained: </emph>3rd
-                                        </em><br /><br />
-                                    </div>
-                                    <div class="w3-row-padding">
-                                        You gain proficiency with martial weapons.
-                                        <br/>
-                                        <br/>
-                                        When you attack with a magic weapon, you can use your Intelligence modifier, instead of Strength or Dexterity, for the attack and damage rolls.
-                                    </div>
-                                    <br />
-                                </div>
-                            </div>
-                            <div class="advancementCard">
-                                <div class="w3-card-2 w3-round-large">
-                                    <div class="w3-row-padding">
-                                        <h5>Iron Defender</h5>
-                                        <em>
-                                            <emph>Level Gained: </emph>3rd
-                                        </em><br /><br />
-                                    </div>
-                                    <div class="w3-row-padding">
-                                        <p>
-                                            You have a faithful companion. It resembles a hound, a cougar, a bear, or another four-legged creature of your choice.
-                                            <br/>
-                                            It is loyal to you and to your companions, and it obeys your commands.
-                                            <br />
-                                            <br />
-                                            In combat, the iron defender shares your initiative count, but takes its turn immediately after yours.
-                                            <br/>
-                                            It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take one of the actions on its stat block, or the Dash, Disengage, or Help actions.
-                                            <br/>
-                                            <br/>
-                                            If the <emph>Mending</emph> spell is cast on it, it regains 2d6 hit points. 
-                                            <br/>
-                                            If
-                                            it has died within the last hour, you can use your smith's tools as an
-                                            action to revive it, provided you are within 5 feet of it and you expend a spell
-                                            slot of 1st level or higher. The iron defender returns to life after 1 minute with all its hit points restored.
-                                            <br/>
-                                            <br/>
-                                            At the end of a long rest, you can create a new iron defender if you have your smith's tools with you. If you already have an iron defender from this feature, the first one immediately perishes.
-                                        </p>
-    
-                                        <div class="w3-row">
-    
-                                            <div class="w3-col s0 m1 l2">
-                                                &emsp;
-                                            </div>
-                                            <div class="w3-col s12 m10 l8">
-                                                <button
-                                                    class="w3-button w3-block w3-dark-grey advancementButtonUA w3-hover-gold w3-round"
-                                                    onclick="accordion('battlesmithdefenderdiv')"><span
-                                                        style="font-size: 1.2em;">Iron Defender Statblock</span></button>
-                                                <div class="monster-item w3-container w3-hide w3-round"
-                                                    id="battlesmithdefenderdiv"
-                                                    style="background-color: rgba(105, 122, 77,.5) !important;">
-                                                    <div class="w3-card-2 w3-round-large"
-                                                        style="background-color: rgba(65,65,65,.5) !important;">
-                                                        <div class="w3-row-padding">
-                                                            <h2 style="text-align: left !important" class="monsterName">
-                                                                Iron Defender</h2>
-                                                            <div
-                                                                style="border-top: 2px solid goldenrod; padding-top: 10px;">
-                                                                <span class="monsterSizeTypeAlignment"><em>Medium construct,
-                                                                        Neutral</em></span>
-                                                            </div>
-                                                            <div
-                                                                style="border-bottom: 1px solid goldenrod; padding-bottom: 10px !important;">
-                                                                <span class="monsterAC">
-                                                                    <emph>AC: </emph>15 (natural armor)
-                                                                </span>
-                                                                <br />
-                                                                <span class="monsterHP">
-                                                                    <emph>Hit Points: </emph>(5 &times; your Artificer
-                                                                    level) + your Intelligence modifier + the Iron Defender's Constitution modifier
-                                                                </span>
-                                                                <br />
-                                                                <span class="monsterSpeed">
-                                                                    <emph>Speed: </emph>40 ft.
-                                                                </span>
-                                                                <br />
-                                                            </div>
-                                                            <div
-                                                                style="border-bottom: 1px solid goldenrod; padding-top: 10px !important; padding-bottom: 10px !important;">
-                                                                <span class="monsterStr">
-                                                                    <emph>Str: </emph>14 (+2) &emsp;
-                                                                </span>
-                                                                <span class="monsterDex">
-                                                                    <emph>Dex: </emph>12 (+1) &emsp;
-                                                                </span>
-                                                                <span class="monsterCon">
-                                                                    <emph>Con: </emph>14 (+2) &emsp;
-                                                                </span>
-                                                                <span class="monsterInt">
-                                                                    <emph>Int: </emph>4 (-3) &emsp;
-                                                                </span>
-                                                                <span class="monsterWis">
-                                                                    <emph>Wis: </emph>10 (+0) &emsp;
-                                                                </span>
-                                                                <span class="monsterCha">
-                                                                    <emph>Cha: </emph>6 (-2) &emsp;
-                                                                </span>
-                                                            </div>
-                                                            <div style="padding-top: 10px !important;"></div>
-                                                            <span class="monsterSave"></span>
-                                                            <span class="monsterSkill">
-                                                                <emph>Skills: </emph>Perception +4
-                                                            </span><br />
-                                                            <span class="monsterResist"></span>
-                                                            <span class="monsterImmune">
-                                                                <emph>Damage Immunities: </emph>poison
-                                                            </span><br />
-                                                            <span class="monsterCondImmune">
-                                                                <emph>Condition Immunities: </emph>charmed, exhausted,
-                                                                poisoned
-                                                            </span><br />
-                                                            <span class="monsterSenses">
-                                                                <emph>Senses: </emph>darkvision 60ft.
-                                                            </span><br />
-                                                            <span class="monsterPassPer">
-                                                                <emph>Passive Perception: </emph>10
-                                                            </span><br />
-                                                            <span class="monsterLanguages">
-                                                                <emph>Languages: </emph>understands the languages you speak
-                                                            </span><br />
-                                                            <span class="monsterCR"></span>
-                                                            <div
-                                                                style="border-bottom: 1px solid goldenrod; padding-top: 10px !important;">
-                                                            </div><br />
-                                                            <span class="monsterTraits">
-                                                                <p>
-                                                                    <emph>Might of the Master: </emph>The following numbers
-                                                                increase by 1 when your proficiency bonus increases by 1:
-                                                                the iron defender's skill bonuses, the bonuses to hit and damage of its bite, and the number of hit points restored by its repair action
-                                                                </p>
-                                                                <p>
-                                                                    <emph>Vigilant: </emph>The iron defender can't be surprised
-                                                                </p>
-                                                            </span><br />
-                                                            <br />
-                                                            <span class="monsterActionTitle">
-                                                                <h4 style="text-align: left !important;">Actions (Require
-                                                                    your Bonus Action)</h4>
-                                                            </span>
-                                                            <div
-                                                                style="border-bottom: 1px solid goldenrod; padding-top: 10px !important;">
-                                                            </div>
-                                                            <span class="monsterActions">
-                                                                <p>
-                                                                    <emph>Bite: </emph><em>Melee Weapon Attack:
-                                                                    </em>+4 to hit, reach 5 ft., one target you can see.
-                                                                    <em>Hit: </em>1d8 + 2 piercing damage.
-                                                                </p>
-                                                                <p>
-                                                                        <emph>Repair <em>(3/day)</em>: </emph>The magical mechanisms inside the iron defender restore 2d8+2 hit points to itself or to one construct or object within 5 feet of it.
-                                                                </p>
+                                        <div class="w3-col s12 m10 l8">
+                                            <button
+                                                class="w3-button w3-block w3-dark-grey advancementButtonUA w3-hover-gold w3-round"
+                                                onclick="accordion('battlesmithdefenderdiv')"><span
+                                                    style="font-size: 1.2em;">Iron Defender Statblock</span></button>
+                                            <div class="monster-item w3-container w3-hide w3-round"
+                                                id="battlesmithdefenderdiv"
+                                                >
+                                                <div class="w3-card-2 w3-round-large"
+                                                    >
+                                                    <div class="w3-row-padding">
+                                                        <h2 style="text-align: left !important" class="monsterName">
+                                                            Iron Defender</h2>
+                                                        <div
+                                                            style="border-top: 2px solid goldenrod; padding-top: 10px;">
+                                                            <span class="monsterSizeTypeAlignment"><em>Medium construct,
+                                                                    Neutral</em></span>
+                                                        </div>
+                                                        <div
+                                                            style="border-bottom: 1px solid goldenrod; padding-bottom: 10px !important;">
+                                                            <span class="monsterAC">
+                                                                <emph>AC: </emph>15 (natural armor)
                                                             </span>
                                                             <br />
-                                                            <span class="monsterActionTitle">
-                                                                <h4 style="text-align: left !important;">Reaction</h4>
+                                                            <span class="monsterHP">
+                                                                <emph>Hit Points: </emph>(5 &times; your Artificer
+                                                                level) + your Intelligence modifier + the Iron
+                                                                Defender's Constitution modifier
                                                             </span>
-                                                            <div
-                                                                style="border-bottom: 1px solid goldenrod; padding-top: 10px !important;">
-                                                            </div>
-                                                            <span class="monsterActions">
-                                                                <p>
-                                                                    <emph>Defensive Pounce: </emph>The iron defender imposes Disadvantage on the attack roll of one creature it can see that is within 5 feet of it, provided the attack roll is against a creature other than the iron defender.
-                                                                </p>
+                                                            <br />
+                                                            <span class="monsterSpeed">
+                                                                <emph>Speed: </emph>40 ft.
                                                             </span>
                                                             <br />
                                                         </div>
-                                                        <div class="w3-row-padding">
+                                                        <div
+                                                            style="border-bottom: 1px solid goldenrod; padding-top: 10px !important; padding-bottom: 10px !important;">
+                                                            <span class="monsterStr">
+                                                                <emph>Str: </emph>14 (+2) &emsp;
+                                                            </span>
+                                                            <span class="monsterDex">
+                                                                <emph>Dex: </emph>12 (+1) &emsp;
+                                                            </span>
+                                                            <span class="monsterCon">
+                                                                <emph>Con: </emph>14 (+2) &emsp;
+                                                            </span>
+                                                            <span class="monsterInt">
+                                                                <emph>Int: </emph>4 (-3) &emsp;
+                                                            </span>
+                                                            <span class="monsterWis">
+                                                                <emph>Wis: </emph>10 (+0) &emsp;
+                                                            </span>
+                                                            <span class="monsterCha">
+                                                                <emph>Cha: </emph>6 (-2) &emsp;
+                                                            </span>
                                                         </div>
+                                                        <div style="padding-top: 10px !important;"></div>
+                                                        <span class="monsterSave"></span>
+                                                        <span class="monsterSkill">
+                                                            <emph>Skills: </emph>Perception +4
+                                                        </span><br />
+                                                        <span class="monsterResist"></span>
+                                                        <span class="monsterImmune">
+                                                            <emph>Damage Immunities: </emph>poison
+                                                        </span><br />
+                                                        <span class="monsterCondImmune">
+                                                            <emph>Condition Immunities: </emph>charmed, exhausted,
+                                                            poisoned
+                                                        </span><br />
+                                                        <span class="monsterSenses">
+                                                            <emph>Senses: </emph>darkvision 60ft.
+                                                        </span><br />
+                                                        <span class="monsterPassPer">
+                                                            <emph>Passive Perception: </emph>10
+                                                        </span><br />
+                                                        <span class="monsterLanguages">
+                                                            <emph>Languages: </emph>understands the languages you speak
+                                                        </span><br />
+                                                        <span class="monsterCR"></span>
+                                                        <div
+                                                            style="border-bottom: 1px solid goldenrod; padding-top: 10px !important;">
+                                                        </div><br />
+                                                        <span class="monsterTraits">
+                                                            <p>
+                                                                <emph>Might of the Master: </emph>The following numbers
+                                                                increase by 1 when your proficiency bonus increases by
+                                                                1:
+                                                                the iron defender's skill bonuses, the bonuses to hit
+                                                                and damage of its bite, and the number of hit points
+                                                                restored by its repair action
+                                                            </p>
+                                                            <p>
+                                                                <emph>Vigilant: </emph>The iron defender can't be
+                                                                surprised
+                                                            </p>
+                                                        </span><br />
+                                                        <br />
+                                                        <span class="monsterActionTitle">
+                                                            <h4 style="text-align: left !important;">Actions (Require
+                                                                your Bonus Action)</h4>
+                                                        </span>
+                                                        <div
+                                                            style="border-bottom: 1px solid goldenrod; padding-top: 10px !important;">
+                                                        </div>
+                                                        <span class="monsterActions">
+                                                            <p>
+                                                                <emph>Bite: </emph><em>Melee Weapon Attack:
+                                                                </em>+4 to hit, reach 5 ft., one target you can see.
+                                                                <em>Hit: </em>1d8 + 2 piercing damage.
+                                                            </p>
+                                                            <p>
+                                                                <emph>Repair <em>(3/day)</em>: </emph>The magical
+                                                                mechanisms inside the iron defender restore 2d8+2 hit
+                                                                points to itself or to one construct or object within 5
+                                                                feet of it.
+                                                            </p>
+                                                        </span>
+                                                        <br />
+                                                        <span class="monsterActionTitle">
+                                                            <h4 style="text-align: left !important;">Reaction</h4>
+                                                        </span>
+                                                        <div
+                                                            style="border-bottom: 1px solid goldenrod; padding-top: 10px !important;">
+                                                        </div>
+                                                        <span class="monsterActions">
+                                                            <p>
+                                                                <emph>Defensive Pounce: </emph>The iron defender imposes
+                                                                Disadvantage on the attack roll of one creature it can
+                                                                see that is within 5 feet of it, provided the attack
+                                                                roll is against a creature other than the iron defender.
+                                                            </p>
+                                                        </span>
                                                         <br />
                                                     </div>
+                                                    <div class="w3-row-padding">
+                                                    </div>
+                                                    <br />
                                                 </div>
                                             </div>
-                                            <br />
-    
-    
-                                            <div class="w3-col s0 m1 l2">
-                                                &emsp;
-                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="w3-col s0 m1 l2">
+                                            &emsp;
                                         </div>
                                     </div>
-                                    <br />
                                 </div>
+                                <br />
                             </div>
-                            <div class="advancementCard">
-                                <div class="w3-card-2 w3-round-large">
-                                    <div class="w3-row-padding">
-                                        <h5>Arcane Jolt</h5>
-                                        <em>
-                                            <emph>Level Gained: </emph>6th
-                                        </em><br /><br />
-                                    </div>
-                                    <div class="w3-row-padding">
-                                        <p>
-                                            Your iron defender's bite attack is now considered magical for the purposes of overcoming resistances and immunities.
-                                        </p>
-                                        <p>
-                                            When you or your iron defender hits a target with a magic weapon attack, you can channel magical energy through the strike to create one of the following effects:
-                                            <ul>
-                                                <li>The target takes an extra 2d4 Force damage</li>
-                                                <li>Choose one creature or object you can see within 30 feet of the target. Healing energy flows into the chosen recipient, restoring 2d4 hit points to it.</li>
-                                            </ul>
-                                        </p>
-                                        <p>
-                                            You can channel this magical energy a number of times <emph>equal to your Intelligence modifier</emph> (minimum of once), but you can do so no more than once per turn. 
-                                            <br/>
-                                            You regain all expended uses when you finish a long rest.
-                                        </p>
-                                    </div>
-                                    <br />
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Arcane Jolt</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>6th
+                                    </em><br /><br />
                                 </div>
-                            </div>
-                            <div class="advancementCard">
-                                <div class="w3-card-2 w3-round-large">
-                                    <div class="w3-row-padding">
-                                        <h5>Improved Defender</h5>
-                                        <em>
-                                            <emph>Level Gained: </emph>14th
-                                        </em><br /><br />
-                                    </div>
-                                    <div class="w3-row-padding">
-                                        The extra damage and the healing of your Arcane Jolt both increase to 4d4.
-                                        <br/>
-                                        <br/>
-                                        In addition, whenever your iron defender uses its Defensive Pounce, the attacker takes Force damage equal to <emph>1d4 + your Intelligence modifier</emph>.
-                                    </div>
-                                    <br />
+                                <div class="w3-row-padding">
+                                    <p>
+                                        Your iron defender's bite attack is now considered magical for the purposes of
+                                        overcoming resistances and immunities.
+                                    </p>
+                                    <p>
+                                        When you or your iron defender hits a target with a magic weapon attack, you can
+                                        channel magical energy through the strike to create one of the following
+                                        effects:
+                                        <ul>
+                                            <li>The target takes an extra 2d4 Force damage</li>
+                                            <li>Choose one creature or object you can see within 30 feet of the target.
+                                                Healing energy flows into the chosen recipient, restoring 2d4 hit points
+                                                to it.</li>
+                                        </ul>
+                                    </p>
+                                    <p>
+                                        You can channel this magical energy a number of times <emph>equal to your
+                                            Intelligence modifier</emph> (minimum of once), but you can do so no more
+                                        than once per turn.
+                                        <br />
+                                        You regain all expended uses when you finish a long rest.
+                                    </p>
                                 </div>
+                                <br />
                             </div>
-                       </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Improved Defender</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>14th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    The extra damage and the healing of your Arcane Jolt both increase to 4d4.
+                                    <br />
+                                    <br />
+                                    In addition, whenever your iron defender uses its Defensive Pounce, the attacker
+                                    takes Force damage equal to <emph>1d4 + your Intelligence modifier</emph>.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <br />
             </div>

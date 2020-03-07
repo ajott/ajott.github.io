@@ -1408,7 +1408,7 @@ var spell = [{
         "range": "60 feet",
         "components": "V, S",
         "duration": "Instantaneous",
-        "classes": "Sorcerer, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
+        "classes": "Artificer, Sorcerer, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
         "text": [
             "You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage.",
             "",
@@ -2964,7 +2964,7 @@ var spell = [{
         "range": "60 feet",
         "components": "V, S",
         "duration": "Concentration, up to 1 minute",
-        "classes": "Druid, Sorcerer, Warlock, Wizard, Rogue (Arcane Trickster), Fighter (Eldritch Knight)",
+        "classes": "Artificer, Druid, Sorcerer, Warlock, Wizard, Rogue (Arcane Trickster), Fighter (Eldritch Knight)",
         "text": [
             "You create a bonfire on ground that you can see within range. Until the spells ends, the bonfire fills a 5-foot cube. Any creature in the bonfire's space when you cast the spell must succeed on a Dexterity saving throw or take 1d8 fire damage. A creature must also make the saving throw when it enters the bonfire's space for the first time on a turn or ends its turn there.",
             "",
@@ -3107,7 +3107,7 @@ var spell = [{
         "range": "120 feet",
         "components": "V, S, M",
         "duration": "Concentration, up to 1 minute",
-        "classes": "Bard, Sorcerer, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
+        "classes": "Artificer, Bard, Sorcerer, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
         "text": [
             "You create up to four torch-sized lights within range, making them appear as torches, lanterns, or glowing orbs that hover in the air for the duration. You can also combine the four lights into one glowing vaguely humanoid form of Medium size. Whichever form you choose, each light sheds dim light in a 10-foot radius.",
             "",
@@ -4091,7 +4091,7 @@ var spell = [{
         "range": "120 feet",
         "components": "V, S",
         "duration": "Instantaneous",
-        "classes": "Sorcerer, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
+        "classes": "Artificer, Sorcerer, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
         "text": [
             "You hurl a mote of fire at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 fire damage. A flammable object hit by this spell ignites if it isn't being worn or carried.",
             "",
@@ -4114,7 +4114,7 @@ var spell = [{
         "components": "V, S",
         "homebrew": "YES",
         "duration": "Instantaneous",
-        "classes": "Sorcerer, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
+        "classes": "Artificer, Sorcerer, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
         "text": [
             "You hurl a mote of frost at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 cold damage.",
             "",
@@ -4399,7 +4399,7 @@ var spell = [{
         "range": "60 feet",
         "components": "V, S",
         "duration": "Instantaneous",
-        "classes": "Druid, Sorcerer, Warlock, Wizard, Rogue (Arcane Trickster), Fighter (Eldritch Knight)",
+        "classes": "Artificer, Druid, Sorcerer, Warlock, Wizard, Rogue (Arcane Trickster), Fighter (Eldritch Knight)",
         "text": [
             "You cause numbing frost to form on one creature that you can see within range. The target must make a Constitution saving throw. On a failed save, the target takes 1d6 cold damage, and it has disadvantage on the next weapon attack roll it makes before the end of its next turn.",
             "",
@@ -4717,7 +4717,7 @@ var spell = [{
         "range": "Touch",
         "components": "V, S",
         "duration": "Concentration, up to 1 minute",
-        "classes": "Cleric, Druid",
+        "classes": "Artificer, Cleric, Druid",
         "text": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The spell then ends.",
         "roll": "1d4"
     },
@@ -5492,7 +5492,7 @@ var spell = [{
         "range": "Touch",
         "components": "V, M (a firefly or phosphorescent moss)",
         "duration": "1 hour",
-        "classes": "Bard, Cleric, Sorcerer, Wizard, Fighter (Eldritch Knight)",
+        "classes": "Artificer, Bard, Cleric, Sorcerer, Wizard, Fighter (Eldritch Knight)",
         "text": [
             "You touch one object that is no larger than 10 feet in any dimension. Until the spell ends, the object sheds bright light in a 20-foot radius and dim light for an additional 20 feet. The light can be colored as you like. Completely covering the object with something opaque blocks the light. The spell ends if you cast it again or dismiss it as an action.",
             "",
@@ -5654,7 +5654,7 @@ var spell = [{
         "range": "30 feet",
         "components": "V, S",
         "duration": "1 minute",
-        "classes": "Bard, Sorcerer, Warlock, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
+        "classes": "Artificer, Bard, Sorcerer, Warlock, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
         "text": [
             "A spectral, floating hand appears at a point you choose within range. The hand lasts for the duration or until you dismiss it as an action. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again.",
             "",
@@ -5755,7 +5755,7 @@ var spell = [{
         "range": "Touch",
         "components": "V, S",
         "duration": "1 minute",
-        "classes": "Druid, Warlock",
+        "classes": "Artificer, Druid, Warlock",
         "text": [
             "You touch one to three pebbles and imbue them with magic. You or someone else can make a ranged spell attack with one of the pebbles by throwing it or hurling it with a sling. If thrown, it has a range of 60 feet. If someone else attacks with the pebble, that attacker adds your spellcasting ability modifier, not the attacker's, to the attack roll. On a hit, the target takes bludgeoning damage equal to 1d6 + your spellcasting ability modifier. Hit or miss, the spell then ends on the stone.",
             "",
@@ -5970,7 +5970,7 @@ var spell = [{
         "range": "Touch",
         "components": "V, S, M (two lodestones)",
         "duration": "Instantaneous",
-        "classes": "Bard, Cleric, Druid, Sorcerer, Wizard",
+        "classes": "Artificer, Bard, Cleric, Druid, Sorcerer, Wizard",
         "text": [
             "This spell repairs a single break or tear in an object you touch, such as broken chain link, two halves of a broken key, a torn clack, or a leaking wineskin. As long as the break or tear is no larger than 1 foot in any dimension, you mend it, leaving no trace of the former damage.",
             "",
@@ -5985,7 +5985,7 @@ var spell = [{
         "range": "120 feet",
         "components": "V, S, M (a short piece of copper wire)",
         "duration": "1 round",
-        "classes": "Bard, Sorcerer, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
+        "classes": "Artificer, Bard, Sorcerer, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
         "text": [
             "You point your finger toward a creature within range and whisper a message. The target (and only the target) hears the message and can reply in a whisper that only you can hear.",
             "",
@@ -6534,7 +6534,7 @@ var spell = [{
         "range": "10 feet",
         "components": "V, S",
         "duration": "Instantaneous",
-        "classes": "Druid, Sorcerer, Warlock, Wizard",
+        "classes": "Artificer, Druid, Sorcerer, Warlock, Wizard",
         "text": [
             "You extend your hand toward a creature you can see within range and project a puff of noxious gas from your palm. The creature must succeed on a Constitution saving throw or take 1d12 poison damage.",
             "",
@@ -6629,7 +6629,7 @@ var spell = [{
         "range": "10 feet",
         "components": "V, S",
         "duration": "Up to 1 hour",
-        "classes": "Bard, Sorcerer, Warlock, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
+        "classes": "Artificer, Bard, Sorcerer, Warlock, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
         "text": [
             "This spell is a minor magical trick that novice spellcasters use for practice. You create one of the following magical effects within range.",
             "",
@@ -6925,7 +6925,7 @@ var spell = [{
         "range": "60 feet",
         "components": "V, S",
         "duration": "Instantaneous",
-        "classes": "Sorcerer, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
+        "classes": "Artificer, Sorcerer, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
         "text": [
             "A frigid beam of blue-white light streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, it takes 1d8 cold damage, and its speed is reduced by 10 feet until the start of your next turn.",
             "",
@@ -7026,7 +7026,7 @@ var spell = [{
         "range": "Touch",
         "components": "V, S, M",
         "duration": "Concentration, up to 1 minute",
-        "classes": "Cleric, Druid",
+        "classes": "Artificer, Cleric, Druid",
         "text": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one saving throw of its choice. It can roll the die before or after the saving throw. The spell then ends.",
         "roll": "d4"
     },
@@ -7374,7 +7374,7 @@ var spell = [{
         "range": "Touch",
         "components": "V, S",
         "duration": "Instantaneous",
-        "classes": "Sorcerer, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
+        "classes": "Artificer, Sorcerer, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
         "text": [
             "Lightning springs from your hand to deliver a shock to a creature you try to touch. Make a melee spell attack against the target. You have advantage on the attack roll if the target is wearing armor made of metal. On a hit, the target takes 1d8 lightning damage, and it can't take reactions until the start of its next turn.",
             "",
@@ -7534,7 +7534,7 @@ var spell = [{
         "range": "Touch",
         "components": "V, S",
         "duration": "Instantaneous",
-        "classes": "Cleric",
+        "classes": "Artificer, Cleric",
         "text": "You touch a living creature that has 0 hit points. The creature becomes stable. This spell has no effect on undead or constructs."
     },
     {
@@ -8046,7 +8046,7 @@ var spell = [{
         "range": "30 feet",
         "components": "V, S, M",
         "duration": "Instantaneous",
-        "classes": "Druid",
+        "classes": "Artificer, Druid",
         "text": [
             "You create a long, vine-like whip covered in thorns that lashes out at your command toward a creature in range. Make a melee spell attack against the target. If the attack hits, the creature takes 1d6 piercing damage, and if the creature is Large or smaller, you pull the creature up to 10 feet closer to you.",
             "",
@@ -8068,7 +8068,7 @@ var spell = [{
         "range": "Self (5-foot radius)",
         "components": "S",
         "duration": "Instantaneous",
-        "classes": "Bard, Druid, Sorcerer, Warlock, Wizard, Rogue (Arcane Trickster), Fighter (Eldritch Knight)",
+        "classes": "Artificer, Bard, Druid, Sorcerer, Warlock, Wizard, Rogue (Arcane Trickster), Fighter (Eldritch Knight)",
         "text": [
             "You create a burst of thunderous sound, which can be heard 100 feet away. Each creature other than you within 5 feet of you must make a Constitution saving throw. On a failed save, the creature takes 1d6 thunder damage.",
             "",

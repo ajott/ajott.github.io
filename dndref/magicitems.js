@@ -552,7 +552,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "T,V",
         "range": "20/60",
         "rarity": "Artifact",
@@ -777,7 +777,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Uncommon",
         "text": [
@@ -803,7 +803,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Rare",
         "text": [
@@ -829,7 +829,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Very Rare",
         "text": [
@@ -855,7 +855,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Uncommon",
         "text": [
@@ -982,7 +982,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Rare",
         "text": [
@@ -1011,7 +1011,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "7",
         "dmg1": "1d12",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Rare",
         "text": [
@@ -1042,7 +1042,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "L,T",
         "range": "20/60",
         "rarity": "Rare",
@@ -1119,7 +1119,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Legendary",
         "text": [
@@ -1170,7 +1170,7 @@ var magicItems = [{
         "magic": "1",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "weight": "3",
         "property": "T,V",
         "range": "20/60",
@@ -1187,7 +1187,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "1",
         "dmg1": "1",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,LD",
         "range": "25/100",
         "rarity": "Uncommon",
@@ -1218,7 +1218,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "1",
         "dmg1": "1",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,LD",
         "range": "25/100",
         "rarity": "Rare",
@@ -1249,7 +1249,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "1",
         "dmg1": "1",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,LD",
         "range": "25/100",
         "rarity": "Very Rare",
@@ -1353,7 +1353,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "1",
         "dmg1": "1",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,LD",
         "range": "25/100",
         "rarity": "Uncommon",
@@ -2486,7 +2486,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d4",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "L",
         "rarity": "Uncommon",
         "text": [
@@ -2511,7 +2511,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d4",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "L",
         "rarity": "Rare",
         "text": [
@@ -2536,7 +2536,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d4",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "L",
         "rarity": "Very Rare",
         "text": [
@@ -2561,7 +2561,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d4",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "L",
         "rarity": "Uncommon",
         "text": [
@@ -2797,7 +2797,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "1",
         "dmg1": "1d4",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L,T",
         "range": "20/60",
         "rarity": "Uncommon",
@@ -2829,7 +2829,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "1",
         "dmg1": "1d4",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L,T",
         "range": "20/60",
         "rarity": "Rare",
@@ -2861,7 +2861,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "1",
         "dmg1": "1d4",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L,T",
         "range": "20/60",
         "rarity": "Very Rare",
@@ -2893,7 +2893,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "1",
         "dmg1": "1d4",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L,T",
         "range": "20/60",
         "rarity": "Rare",
@@ -2927,7 +2927,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "1",
         "dmg1": "1d4",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L,T",
         "range": "20/60",
         "rarity": "Uncommon",
@@ -2951,7 +2951,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Very Rare",
         "text": [
@@ -2973,7 +2973,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Very Rare",
         "text": [
@@ -2992,7 +2992,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F",
         "rarity": "Very Rare",
         "text": [
@@ -3011,7 +3011,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Very Rare",
         "text": [
@@ -3032,7 +3032,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L",
         "rarity": "Very Rare",
         "text": [
@@ -3053,7 +3053,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "0.25",
         "dmg1": "1d4",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,T",
         "range": "20/60",
         "rarity": "Uncommon",
@@ -3083,7 +3083,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "0.25",
         "dmg1": "1d4",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,T",
         "range": "20/60",
         "rarity": "Rare",
@@ -3113,7 +3113,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "0.25",
         "dmg1": "1d4",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,T",
         "range": "20/60",
         "rarity": "Very Rare",
@@ -3143,7 +3143,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "0.25",
         "dmg1": "1d4",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,T",
         "range": "20/60",
         "rarity": "Uncommon",
@@ -3166,7 +3166,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,V",
         "text": [
             "Requires attunement by a creature of non-evil alignment",
@@ -3334,7 +3334,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Legendary",
         "text": [
@@ -3364,7 +3364,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Legendary",
         "text": [
@@ -3391,7 +3391,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F",
         "rarity": "Legendary",
         "text": [
@@ -3418,7 +3418,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Legendary",
         "text": [
@@ -3447,7 +3447,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L",
         "rarity": "Legendary",
         "text": [
@@ -3572,7 +3572,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Rare",
         "text": [
@@ -3602,7 +3602,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Rare",
         "text": [
@@ -3629,7 +3629,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F",
         "rarity": "Rare",
         "text": [
@@ -3656,7 +3656,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Rare",
         "text": [
@@ -3685,7 +3685,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L",
         "rarity": "Rare",
         "text": [
@@ -3714,7 +3714,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "1",
         "dmg1": "1d4",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L,T",
         "range": "20/60",
         "text": [
@@ -3760,7 +3760,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T,V",
         "range": "20/60",
         "text": [
@@ -3851,7 +3851,7 @@ var magicItems = [{
         "weight": "2",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "T,V",
         "range": "20/60",
         "rarity": "Very Rare",
@@ -4218,7 +4218,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "rarity": "Uncommon",
         "text": [
 
@@ -4240,7 +4240,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "rarity": "Rare",
         "text": [
 
@@ -4262,7 +4262,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "rarity": "Very Rare",
         "text": [
 
@@ -4284,7 +4284,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "rarity": "Uncommon",
         "text": [
 
@@ -4298,7 +4298,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Rare",
         "text": [
@@ -4318,7 +4318,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "homebrew": "YES",
         "rarity": "Rare",
@@ -4340,7 +4340,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Rare",
         "text": [
@@ -4358,7 +4358,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F",
         "rarity": "Rare",
         "text": [
@@ -4376,7 +4376,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Rare",
         "text": [
@@ -4396,7 +4396,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L",
         "rarity": "Rare",
         "text": [
@@ -4431,7 +4431,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Very Rare",
         "text": [
@@ -4453,7 +4453,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "homebrew": "YES",
         "rarity": "Very Rare",
@@ -4477,7 +4477,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Very Rare",
         "text": [
@@ -4497,7 +4497,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F",
         "rarity": "Very Rare",
         "text": [
@@ -4517,7 +4517,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Very Rare",
         "text": [
@@ -4539,7 +4539,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L",
         "rarity": "Very Rare",
         "text": [
@@ -4620,7 +4620,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Rare",
         "text": [
@@ -4647,7 +4647,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "7",
         "dmg1": "1d12",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Rare",
         "text": [
@@ -4676,7 +4676,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Rare",
         "text": [
@@ -4705,7 +4705,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "L,T",
         "range": "20/60",
         "rarity": "Rare",
@@ -4738,7 +4738,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Rare",
         "text": [
@@ -4765,7 +4765,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F",
         "rarity": "Rare",
         "text": [
@@ -4792,7 +4792,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Rare",
         "text": [
@@ -4821,7 +4821,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L",
         "rarity": "Rare",
         "text": [
@@ -4841,7 +4841,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,R,2H",
         "rarity": "Uncommon",
         "text": [
@@ -4870,7 +4870,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,R,2H",
         "rarity": "Rare",
         "text": [
@@ -4899,7 +4899,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,R,2H",
         "rarity": "Very Rare",
         "text": [
@@ -4928,7 +4928,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,R,2H",
         "rarity": "Uncommon",
         "text": [
@@ -5029,7 +5029,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "7",
         "dmg1": "1d12",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Uncommon",
         "text": [
@@ -5056,7 +5056,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "7",
         "dmg1": "1d12",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Rare",
         "text": [
@@ -5083,7 +5083,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "7",
         "dmg1": "1d12",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Very Rare",
         "text": [
@@ -5110,7 +5110,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "7",
         "dmg1": "1d12",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Uncommon",
         "text": [
@@ -5129,7 +5129,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "10",
         "dmg1": "1d8",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "2H",
         "rarity": "Uncommon",
         "text": [
@@ -5154,7 +5154,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "10",
         "dmg1": "1d8",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "2H",
         "rarity": "Rare",
         "text": [
@@ -5179,7 +5179,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "10",
         "dmg1": "1d8",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "2H",
         "rarity": "Very Rare",
         "text": [
@@ -5204,7 +5204,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "10",
         "dmg1": "1d8",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "2H",
         "rarity": "Uncommon",
         "text": [
@@ -5221,7 +5221,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Uncommon",
         "text": [
@@ -5248,7 +5248,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Rare",
         "text": [
@@ -5275,7 +5275,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Very Rare",
         "text": [
@@ -5302,7 +5302,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Rare",
         "text": [
@@ -5321,7 +5321,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Very Rare",
         "text": [
@@ -5342,7 +5342,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Uncommon",
         "text": [
@@ -5374,7 +5374,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Uncommon",
         "text": [
@@ -5393,7 +5393,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Rare",
         "text": [
@@ -5457,7 +5457,7 @@ var magicItems = [{
         "magic": "1",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "weight": "4",
         "property": "V",
         "text": [
@@ -5478,7 +5478,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "14",
         "dmg1": "3d12",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "text": [
             "This item requires attunement",
@@ -5505,7 +5505,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,R,2H",
         "rarity": "Uncommon",
         "text": [
@@ -5534,7 +5534,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,R,2H",
         "rarity": "Rare",
         "text": [
@@ -5563,7 +5563,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,R,2H",
         "rarity": "Very Rare",
         "text": [
@@ -5592,13 +5592,50 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,R,2H",
         "rarity": "Uncommon",
         "text": [
 
             "Requires Attunement",
             "This magic weapon warns you of danger. While the weapon is on your person, you have advantage on initiative rolls. In addition, you and any of your companions within 30 feet of you can't be surprised, except when incapacitated by something other than nonmagical sleep. The weapon magically awakens you and your companions within range if any of you are sleeping naturally when combat begins.",
+            "",
+            "Heavy: Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small creature to use effectively.",
+            "",
+            "Reach: This weapon adds 5 feet to your reach when you attack with it.",
+            "",
+            "Two-Handed: This weapon requires two hands to use."
+        ]
+    },
+    {
+        "name": "Kanedias' Divider",
+        "type": "Melee Weapon",
+        "magic": "1",
+        "homebrew": "YES",
+        "weight": "6",
+        "dmg1": "1d10",
+        "dmgtype": "Slashing",
+        "property": "H,R,2H",
+        "rarity": "Legendary",
+        "text": [
+
+            "A strange weapon, made by a figure only known as the Master Maker. It looks somewhat like a halberd.",
+            "",
+            "It has a long handle, made from tiny metal tubes, all twisted about each other. At one end there is a scored grip, at the other there is a flat piece of metal, pierced with small holes, a long, thin hook curving out from it.",
+            "",
+            "The weapon has an uncanny connection to the Ethereal Plane, and is lightly pulled like a lodestone towards any hostile creature that is Invisible, or that is nearby in that Plane.",
+            "",
+            "While wielding this weapon, attacks made against you by an Invisible creature are no longer made at Advantage.",
+            "",
+            "When used normally, you gain a +2 bonus to attack and damage rolls made with this magic weapon.",
+            "",
+            "The Divider has 2 charges. You can use an action to expend a charge to accomplish the following:",
+            "",
+            "<emph><em>Ethereal Tear. </em></emph>You use the strange hook to tear open a portal to the Ethereal Plane. This portal remains for 5 rounds (30 seconds), and is large enough for a Large or smaller creature to pass through with ease. If this action is used while in the Ethereal Plane, the DM will roll 1d20. On 1-3, the portal opens to the Shadowfell. On 4-16, the portal opens to the Prime Material Plane. On a 17-20, the portal opens to the Feywild.",
+            "",
+            "<emph><em>Maker's Strike. </em></emph>You strike out with uncanny precision. As part of this action, you may make a melee weapon attack against a nearby Invisible creature with Advantage, ignoring the usual penalty for attacking Invisible creatures.",
+            "",
+            "The Divider recovers 1d4-2 expended charges every day at dawn (minimum of 0 charges recovered). If you expend the last charge, roll 1d20. On a 1, the weapon is sundered with a high keening sound, and the fragments are pulled into the Ethereal Plane. This sundering is treated as a casting of the <em>shatter</em> spell using a 5th-level spell slot. It affects the wielder, and all creatures within a 10-foot-radius sphere centered on the wielder.",
             "",
             "Heavy: Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small creature to use effectively.",
             "",
@@ -5805,7 +5842,7 @@ var magicItems = [{
         "weight": "10",
         "dmg1": "2d6",
         "dmg2": "2d6",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "H,2H",
         "rarity": "Legendary",
         "text": [
@@ -5837,7 +5874,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,L,LD",
         "range": "30/120",
         "rarity": "Uncommon",
@@ -5870,7 +5907,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,L,LD",
         "range": "30/120",
         "rarity": "Rare",
@@ -5903,7 +5940,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,L,LD",
         "range": "30/120",
         "rarity": "Very Rare",
@@ -5931,12 +5968,42 @@ var magicItems = [{
         ]
     },
     {
+        "name": "Togglebolt's Twin Crossbow",
+        "type": "Ranged Weapon",
+        "magic": "1",
+        "homebrew": "YES",
+        "weight": "3",
+        "dmg1": "1d6",
+        "dmgtype": "Piercing",
+        "property": "",
+        "range": "30/120",
+        "rarity": "Legendary",
+        "text": [
+            "You have a +2 bonus to attack and damage rolls made with this weapon.",
+            "",
+            "This hand crossbow does not possess the Ammunition or Loading properties. It magically produces its own ammunition at the time it's fired, unless manually loaded. Magical ammunition produced in this manner vanishes the instant it hits or misses a target.",
+            "",
+            "This cunningly artificed hand crossbow looks somewhat like two hand crossbows stacked one atop another. When fired, the wielder makes two ranged weapon attacks, one for each bolt, as part of the same Attack action.",
+            "",
+            "Range: A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range"
+        ],
+        "modifier": [{
+                "category": "bonus",
+                "text": "ranged attacks +2"
+            },
+            {
+                "category": "bonus",
+                "text": "ranged damage +2"
+            }
+        ]
+    },
+    {
         "name": "Hand Crossbow of Warning",
         "type": "Ranged Weapon",
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,L,LD",
         "range": "30/120",
         "rarity": "Uncommon",
@@ -5994,7 +6061,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "L,T",
         "range": "20/60",
         "rarity": "Uncommon",
@@ -6024,7 +6091,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "L,T",
         "range": "20/60",
         "rarity": "Rare",
@@ -6054,7 +6121,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "L,T",
         "range": "20/60",
         "rarity": "Very Rare",
@@ -6084,7 +6151,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "L,T",
         "range": "20/60",
         "rarity": "Uncommon",
@@ -6118,7 +6185,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "text": [
             "Requires Attunement",
@@ -6168,7 +6235,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "18",
         "dmg1": "1d10",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,H,LD,2H",
         "range": "100/400",
         "rarity": "Uncommon",
@@ -6203,7 +6270,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "18",
         "dmg1": "1d10",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,H,LD,2H",
         "range": "100/400",
         "rarity": "Rare",
@@ -6238,7 +6305,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "18",
         "dmg1": "1d10",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,H,LD,2H",
         "range": "100/400",
         "rarity": "Very Rare",
@@ -6273,7 +6340,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "18",
         "dmg1": "1d10",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,H,LD,2H",
         "range": "100/400",
         "rarity": "Uncommon",
@@ -6559,7 +6626,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Legendary",
         "text": [
@@ -6590,7 +6657,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Legendary",
         "text": [
@@ -6618,7 +6685,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F",
         "rarity": "Legendary",
         "text": [
@@ -6646,7 +6713,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Legendary",
         "text": [
@@ -6676,7 +6743,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L",
         "rarity": "Legendary",
         "text": [
@@ -7335,7 +7402,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "text": [
             "Requires Attunement",
             "",
@@ -7371,7 +7438,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T",
         "range": "30/120",
         "rarity": "Uncommon",
@@ -7399,7 +7466,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T",
         "range": "30/120",
         "rarity": "Rare",
@@ -7427,7 +7494,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T",
         "range": "30/120",
         "rarity": "Very Rare",
@@ -7455,7 +7522,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T",
         "range": "30/120",
         "rarity": "Uncommon",
@@ -7476,7 +7543,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T",
         "range": "30/120",
         "rarity": "Uncommon",
@@ -7508,7 +7575,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d4",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "L",
         "text": [
             "This item requires attunement",
@@ -7540,7 +7607,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "1d12",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "R,S",
         "rarity": "Uncommon",
         "text": [
@@ -7565,7 +7632,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "1d12",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "R,S",
         "rarity": "Rare",
         "text": [
@@ -7590,7 +7657,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "1d12",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "R,S",
         "rarity": "Very Rare",
         "text": [
@@ -7615,7 +7682,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "1d12",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "R,S",
         "rarity": "Uncommon",
         "text": [
@@ -7821,7 +7888,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "5",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,LD,2H",
         "range": "80/320",
         "rarity": "Uncommon",
@@ -7854,7 +7921,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "5",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,LD,2H",
         "range": "80/320",
         "rarity": "Rare",
@@ -7887,7 +7954,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "5",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,LD,2H",
         "range": "80/320",
         "rarity": "Very Rare",
@@ -7920,7 +7987,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "5",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,LD,2H",
         "range": "80/320",
         "rarity": "Uncommon",
@@ -7945,7 +8012,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d4",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "L,T",
         "range": "20/60",
         "rarity": "Uncommon",
@@ -7975,7 +8042,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d4",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "L,T",
         "range": "20/60",
         "rarity": "Rare",
@@ -8005,7 +8072,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d4",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "L,T",
         "range": "20/60",
         "rarity": "Very Rare",
@@ -8035,7 +8102,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d4",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "L,T",
         "range": "20/60",
         "rarity": "Uncommon",
@@ -8072,7 +8139,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,H,2H",
         "range": "150/600",
         "rarity": "Uncommon",
@@ -8105,7 +8172,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,H,2H",
         "range": "150/600",
         "rarity": "Rare",
@@ -8138,7 +8205,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,H,2H",
         "range": "150/600",
         "rarity": "Very Rare",
@@ -8171,7 +8238,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,H,2H",
         "range": "150/600",
         "rarity": "Uncommon",
@@ -8197,7 +8264,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Uncommon",
         "text": [
@@ -8223,7 +8290,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Rare",
         "text": [
@@ -8249,7 +8316,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Very Rare",
         "text": [
@@ -8275,7 +8342,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Rare",
         "text": [
@@ -8293,7 +8360,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Very Rare",
         "text": [
@@ -8313,7 +8380,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Uncommon",
         "text": [
@@ -8344,7 +8411,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Uncommon",
         "text": [
@@ -8362,7 +8429,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Rare",
         "text": [
@@ -8395,7 +8462,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Legendary",
         "text": [
@@ -8432,7 +8499,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Legendary",
         "text": [
@@ -8466,7 +8533,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F",
         "rarity": "Legendary",
         "text": [
@@ -8500,7 +8567,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Legendary",
         "text": [
@@ -8536,7 +8603,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L",
         "rarity": "Legendary",
         "text": [
@@ -8572,7 +8639,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "4",
         "dmg1": "1d6",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "rarity": "Uncommon",
         "text": [
 
@@ -8594,7 +8661,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "4",
         "dmg1": "1d6",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "rarity": "Rare",
         "text": [
 
@@ -8616,7 +8683,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "4",
         "dmg1": "1d6",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "rarity": "Very Rare",
         "text": [
 
@@ -8638,7 +8705,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "4",
         "dmg1": "1d6",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "rarity": "Rare",
         "text": [
 
@@ -8654,7 +8721,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "4",
         "dmg1": "1d6",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "rarity": "Rare",
         "text": [
 
@@ -8677,7 +8744,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "4",
         "dmg1": "1d6",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "rarity": "Rare",
         "text": [
 
@@ -8693,7 +8760,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "4",
         "dmg1": "1d6",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "rarity": "Uncommon",
         "text": [
 
@@ -8976,7 +9043,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "10",
         "dmg1": "2d6",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "H,2H",
         "rarity": "Uncommon",
         "text": [
@@ -9003,7 +9070,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "10",
         "dmg1": "2d6",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "H,2H",
         "rarity": "Rare",
         "text": [
@@ -9030,7 +9097,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "10",
         "dmg1": "2d6",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "H,2H",
         "rarity": "Very Rare",
         "text": [
@@ -9058,7 +9125,7 @@ var magicItems = [{
         "weight": "10",
         "dmg1": "2d6",
         "dmg2": "2d6",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "H,2H",
         "rarity": "Uncommon",
         "text": [
@@ -9100,7 +9167,7 @@ var magicItems = [{
             "Two-Handed: This weapon requires two hands to use.  When not attacking, you may hold the weapon in one hand."
         ],
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "roll": "2d6"
     },
@@ -9118,7 +9185,7 @@ var magicItems = [{
         ],
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "roll": "2d6"
     },
@@ -9135,7 +9202,7 @@ var magicItems = [{
             "Finesse: When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls."
         ],
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F",
         "roll": "2d6"
     },
@@ -9154,7 +9221,7 @@ var magicItems = [{
             "Light: A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons."
         ],
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "roll": "2d6"
     },
@@ -9173,7 +9240,7 @@ var magicItems = [{
             "Light: A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons."
         ],
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L",
         "roll": "2d6"
     },
@@ -9247,7 +9314,7 @@ var magicItems = [{
             "Reach: This weapon adds 5 feet to your reach when you attack with it.  You make opportunity attacks when a creature leaves your reach."
         ],
         "dmg1": "1d4",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,R",
         "roll": "2d4"
     },
@@ -9392,7 +9459,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Legendary",
         "text": [
@@ -9442,7 +9509,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "4",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "rarity": "Uncommon",
         "text": [
 
@@ -9464,7 +9531,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "4",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "rarity": "Rare",
         "text": [
 
@@ -9486,7 +9553,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "4",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "rarity": "Very Rare",
         "text": [
 
@@ -9508,7 +9575,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "4",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "rarity": "Uncommon",
         "text": [
 
@@ -9705,7 +9772,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Very Rare",
         "text": [
@@ -9735,7 +9802,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Very Rare",
         "text": [
@@ -9762,7 +9829,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F",
         "rarity": "Very Rare",
         "text": [
@@ -9789,7 +9856,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Very Rare",
         "text": [
@@ -9818,7 +9885,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L",
         "rarity": "Very Rare",
         "text": [
@@ -9862,7 +9929,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,H,2H",
         "range": "150/600",
         "rarity": "Very Rare",
@@ -9984,7 +10051,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "7",
         "dmg1": "1d12",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "text": [
             "Requires Attunement by a good-aligned dwarf, fighter, or paladin",
@@ -10286,7 +10353,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "18",
         "dmg1": "1d10",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "H,R,2H",
         "rarity": "Uncommon",
         "text": [
@@ -10315,7 +10382,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "18",
         "dmg1": "1d10",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "H,R,2H",
         "rarity": "Rare",
         "text": [
@@ -10344,7 +10411,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "18",
         "dmg1": "1d10",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "H,R,2H",
         "rarity": "Very Rare",
         "text": [
@@ -10373,7 +10440,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "18",
         "dmg1": "1d10",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "H,R,2H",
         "rarity": "Uncommon",
         "text": [
@@ -11208,7 +11275,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "V",
         "rarity": "Uncommon",
         "text": [
@@ -11234,7 +11301,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "V",
         "rarity": "Rare",
         "text": [
@@ -11260,7 +11327,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "V",
         "rarity": "Very Rare",
         "text": [
@@ -11286,7 +11353,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "V",
         "rarity": "Uncommon",
         "text": [
@@ -11315,7 +11382,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F",
         "rarity": "Uncommon",
         "text": [
@@ -11340,7 +11407,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F",
         "rarity": "Rare",
         "text": [
@@ -11365,7 +11432,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F",
         "rarity": "Very Rare",
         "text": [
@@ -11390,7 +11457,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F",
         "rarity": "Rare",
         "text": [
@@ -11407,7 +11474,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F",
         "rarity": "Uncommon",
         "text": [
@@ -11437,7 +11504,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F",
         "rarity": "Uncommon",
         "text": [
@@ -11454,7 +11521,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F",
         "rarity": "Rare",
         "text": [
@@ -12538,7 +12605,7 @@ var magicItems = [{
         "type": "Melee Weapon",
         "magic": "1",
         "dmg1": "1d6",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "weight": "4",
         "text": [
             "This item requires attunement.",
@@ -12773,7 +12840,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Uncommon",
         "text": [
@@ -12800,7 +12867,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Rare",
         "text": [
@@ -12827,7 +12894,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Very Rare",
         "text": [
@@ -12854,7 +12921,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Rare",
         "text": [
@@ -12873,7 +12940,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Very Rare",
         "text": [
@@ -12894,7 +12961,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Very Rare",
         "text": [
@@ -12922,7 +12989,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Uncommon",
         "text": [
@@ -12954,7 +13021,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Uncommon",
         "text": [
@@ -12973,7 +13040,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Rare",
         "text": [
@@ -13074,7 +13141,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "0.25",
         "dmg1": "1d4",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,T",
         "range": "20/60",
         "text": [
@@ -13157,7 +13224,7 @@ var magicItems = [{
         ],
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V"
     },
     {
@@ -13241,7 +13308,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,2H",
         "range": "80/320",
         "rarity": "Uncommon",
@@ -13272,7 +13339,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,2H",
         "range": "80/320",
         "rarity": "Rare",
@@ -13303,7 +13370,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,2H",
         "range": "80/320",
         "rarity": "Very Rare",
@@ -13334,7 +13401,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,2H",
         "range": "80/320",
         "rarity": "Uncommon",
@@ -13357,7 +13424,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L",
         "rarity": "Uncommon",
         "text": [
@@ -13384,7 +13451,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L",
         "rarity": "Rare",
         "text": [
@@ -13411,7 +13478,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L",
         "rarity": "Very Rare",
         "text": [
@@ -13438,7 +13505,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L",
         "rarity": "Rare",
         "text": [
@@ -13457,7 +13524,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L",
         "rarity": "Uncommon",
         "text": [
@@ -13489,7 +13556,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L",
         "rarity": "Uncommon",
         "text": [
@@ -13508,7 +13575,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L",
         "rarity": "Rare",
         "text": [
@@ -13529,7 +13596,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d4",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "L",
         "rarity": "Uncommon",
         "text": [
@@ -13554,7 +13621,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d4",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "L",
         "rarity": "Rare",
         "text": [
@@ -13579,7 +13646,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d4",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "L",
         "rarity": "Very Rare",
         "text": [
@@ -13604,7 +13671,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d4",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "L",
         "rarity": "Uncommon",
         "text": [
@@ -13640,7 +13707,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "0",
         "dmg1": "1d4",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "A",
         "range": "30/120",
         "rarity": "Uncommon",
@@ -13669,7 +13736,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "0",
         "dmg1": "1d4",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "A",
         "range": "30/120",
         "rarity": "Rare",
@@ -13698,7 +13765,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "0",
         "dmg1": "1d4",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "A",
         "range": "30/120",
         "rarity": "Very Rare",
@@ -13800,7 +13867,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "0",
         "dmg1": "1d4",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "A",
         "range": "30/120",
         "rarity": "Uncommon",
@@ -13845,7 +13912,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T,V",
         "range": "20/60",
         "rarity": "Uncommon",
@@ -13876,7 +13943,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T,V",
         "range": "20/60",
         "rarity": "Rare",
@@ -13907,7 +13974,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T,V",
         "range": "20/60",
         "rarity": "Very Rare",
@@ -13938,7 +14005,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T,V",
         "range": "20/60",
         "rarity": "Uncommon",
@@ -15046,7 +15113,7 @@ var magicItems = [{
         "type": "Ranged Weapon",
         "magic": "1",
         "dmg1": "1d4",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "range": "60/120",
         "text": [
             "This boomerang is a ranged weapon carved from griffon bone and etched with the symbol of elemental air. When thrown, it has a range of 60/120 feet, and any creature that is proficient with the javelin is also proficient with this weapon. On a hit, the boomerang deals 1d4 bludgeoning damage and 3d4 thunder damage, and the target must succeed on a DC 10 Constitution saving throw or be stunned until the end of its next turn. On a miss, the boomerang returns to the thrower's hand.",
@@ -15241,7 +15308,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,V",
         "rarity": "Rare",
         "text": [
@@ -15271,7 +15338,7 @@ var magicItems = [{
         "magic": "1",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "weight": "3",
         "property": "F,V",
         "text": [
@@ -15306,7 +15373,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Legendary",
         "text": [
@@ -15335,7 +15402,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Legendary",
         "text": [
@@ -15364,7 +15431,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Legendary",
         "text": [
@@ -15393,7 +15460,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Legendary",
         "text": [
@@ -15422,7 +15489,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Legendary",
         "text": [
@@ -15451,7 +15518,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Legendary",
         "text": [
@@ -15480,7 +15547,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Legendary",
         "text": [
@@ -15509,7 +15576,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Legendary",
         "text": [
@@ -15538,7 +15605,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Legendary",
         "text": [
@@ -15567,7 +15634,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Artifact",
         "text": [
@@ -15675,7 +15742,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "1",
         "dmg1": "1d4",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L,T",
         "range": "20/60",
         "text": [
@@ -15774,7 +15841,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T,V",
         "range": "20/60",
         "rarity": "Uncommon",
@@ -15805,7 +15872,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T,V",
         "range": "20/60",
         "rarity": "Rare",
@@ -15836,7 +15903,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T,V",
         "range": "20/60",
         "rarity": "Very Rare",
@@ -15867,7 +15934,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T,V",
         "range": "20/60",
         "rarity": "Uncommon",
@@ -15890,7 +15957,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T,V",
         "range": "20/60",
         "rarity": "Uncommon",
@@ -15923,7 +15990,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Rare",
         "text": [
@@ -15939,7 +16006,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "1",
         "dmg1": "1",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,LD",
         "range": "25/100",
         "rarity": "Rare",
@@ -15961,7 +16028,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d4",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "L",
         "rarity": "Rare",
         "text": [
@@ -15977,7 +16044,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "1",
         "dmg1": "1d4",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L,T",
         "range": "20/60",
         "rarity": "Rare",
@@ -16000,7 +16067,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "0.25",
         "dmg1": "1d4",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,T",
         "range": "20/60",
         "rarity": "Rare",
@@ -16021,7 +16088,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "rarity": "Rare",
         "text": [
 
@@ -16034,7 +16101,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,R,2H",
         "rarity": "Rare",
         "text": [
@@ -16054,7 +16121,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "7",
         "dmg1": "1d12",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Rare",
         "text": [
@@ -16072,7 +16139,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "10",
         "dmg1": "1d8",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "2H",
         "rarity": "Rare",
         "text": [
@@ -16088,7 +16155,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Rare",
         "text": [
@@ -16106,7 +16173,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,R,2H",
         "rarity": "Rare",
         "text": [
@@ -16126,7 +16193,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,L,LD",
         "range": "30/120",
         "rarity": "Rare",
@@ -16150,7 +16217,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "L,T",
         "range": "20/60",
         "rarity": "Rare",
@@ -16171,7 +16238,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "18",
         "dmg1": "1d10",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,H,LD,2H",
         "range": "100/400",
         "rarity": "Rare",
@@ -16197,7 +16264,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T",
         "range": "30/120",
         "rarity": "Rare",
@@ -16216,7 +16283,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "1d12",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "R,S",
         "rarity": "Rare",
         "text": [
@@ -16232,7 +16299,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "5",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,LD,2H",
         "range": "80/320",
         "rarity": "Rare",
@@ -16256,7 +16323,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d4",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "L,T",
         "range": "20/60",
         "rarity": "Rare",
@@ -16277,7 +16344,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,H,2H",
         "range": "150/600",
         "rarity": "Rare",
@@ -16302,7 +16369,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Rare",
         "text": [
@@ -16318,7 +16385,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "4",
         "dmg1": "1d6",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "rarity": "Rare",
         "text": [
 
@@ -16332,7 +16399,7 @@ var magicItems = [{
         "weight": "10",
         "dmg1": "2d6",
         "dmg2": "2d6",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "H,2H",
         "rarity": "Rare",
         "text": [
@@ -16350,7 +16417,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "4",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "rarity": "Rare",
         "text": [
 
@@ -16363,7 +16430,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "18",
         "dmg1": "1d10",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "H,R,2H",
         "rarity": "Rare",
         "text": [
@@ -16384,7 +16451,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "V",
         "rarity": "Rare",
         "text": [
@@ -16400,7 +16467,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F",
         "rarity": "Rare",
         "text": [
@@ -16416,7 +16483,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Rare",
         "text": [
@@ -16434,7 +16501,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "A,2H",
         "range": "80/320",
         "rarity": "Rare",
@@ -16456,7 +16523,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d6",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "F,L",
         "rarity": "Rare",
         "text": [
@@ -16474,7 +16541,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d4",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "L",
         "rarity": "Rare",
         "text": [
@@ -16490,7 +16557,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "0",
         "dmg1": "1d4",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "A",
         "range": "30/120",
         "rarity": "Rare",
@@ -16511,7 +16578,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T,V",
         "range": "20/60",
         "rarity": "Rare",
@@ -16533,7 +16600,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T,V",
         "range": "20/60",
         "rarity": "Rare",
@@ -16554,7 +16621,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "rarity": "Rare",
         "text": [
 
@@ -16568,7 +16635,7 @@ var magicItems = [{
         "weight": "2",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "V",
         "rarity": "Rare",
         "text": [
@@ -16584,7 +16651,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d4",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,R",
         "rarity": "Rare",
         "text": [
@@ -16602,7 +16669,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "6",
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "rarity": "Legendary",
         "text": [
@@ -16633,7 +16700,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "V",
         "rarity": "Legendary",
         "text": [
@@ -16661,7 +16728,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,L",
         "rarity": "Legendary",
         "text": [
@@ -17058,7 +17125,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "rarity": "Uncommon",
         "text": [
 
@@ -17080,7 +17147,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "rarity": "Rare",
         "text": [
 
@@ -17102,7 +17169,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "rarity": "Very Rare",
         "text": [
 
@@ -17124,7 +17191,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "2",
         "dmg1": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "rarity": "Uncommon",
         "text": [
 
@@ -17139,7 +17206,7 @@ var magicItems = [{
         "weight": "2",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "V",
         "rarity": "Uncommon",
         "text": [
@@ -17165,7 +17232,7 @@ var magicItems = [{
         "weight": "2",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "V",
         "rarity": "Rare",
         "text": [
@@ -17191,7 +17258,7 @@ var magicItems = [{
         "weight": "2",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "V",
         "rarity": "Very Rare",
         "text": [
@@ -17217,7 +17284,7 @@ var magicItems = [{
         "weight": "2",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "V",
         "rarity": "Uncommon",
         "text": [
@@ -17235,7 +17302,7 @@ var magicItems = [{
         "weight": "4",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T,V",
         "range": "20/60",
         "rarity": "Legendary",
@@ -17288,7 +17355,7 @@ var magicItems = [{
             }
         ],
         "dmg1": "2d6",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "H,2H",
         "roll": "2d6"
     },
@@ -17324,7 +17391,7 @@ var magicItems = [{
         "weight": "2",
         "dmg1": "1d8",
         "dmg2": "1d10",
-        "dmgType": "B",
+        "dmgtype": "Bludgeoning",
         "property": "T,V",
         "range": "20/60",
         "rarity": "Legendary",
@@ -17357,7 +17424,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d4",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,R",
         "rarity": "Uncommon",
         "text": [
@@ -17384,7 +17451,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d4",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,R",
         "rarity": "Rare",
         "text": [
@@ -17411,7 +17478,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d4",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,R",
         "rarity": "Very Rare",
         "text": [
@@ -17438,7 +17505,7 @@ var magicItems = [{
         "magic": "1",
         "weight": "3",
         "dmg1": "1d4",
-        "dmgType": "S",
+        "dmgtype": "Slashing",
         "property": "F,R",
         "rarity": "Uncommon",
         "text": [
@@ -17511,7 +17578,7 @@ var magicItems = [{
         "weight": "3",
         "dmg1": "1d6",
         "dmg2": "1d8",
-        "dmgType": "P",
+        "dmgtype": "Piercing",
         "property": "T,V",
         "range": "20/60",
         "text": [

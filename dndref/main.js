@@ -1137,6 +1137,26 @@ function buildMagicItems() {
             htmlString = ""
         }
 
+        if (magicItems[i]["dmg1"]) {
+            htmlString = $("#item" + i).children().children().children(".itemAttributes").html()
+            htmlString += "<emph>Damage: </emph><span class=\"itemDMG\"></span><br/>"
+            $("#item" + i).children().children().children(".itemAttributes").html(htmlString)
+            if (magicItems[i]["dmgtype"]) {
+                $("#item" + i).children().children().children(".itemAttributes").children(".itemDMG").text(magicItems[i]["dmg1"] + " " + magicItems[i]["dmgtype"])
+            } else {
+                $("#item" + i).children().children().children(".itemAttributes").children(".itemDMG").text(magicItems[i]["dmg1"])
+            }            
+            htmlString = ""
+        }
+
+        if (magicItems[i]["range"]) {
+            htmlString = $("#item" + i).children().children().children(".itemAttributes").html()
+            htmlString += "<emph>Range: </emph><span class=\"itemRNG\"></span><br/>"
+            $("#item" + i).children().children().children(".itemAttributes").html(htmlString)
+            $("#item" + i).children().children().children(".itemAttributes").children(".itemRNG").text(magicItems[i]["range"])
+            htmlString = ""
+        }
+
         if (magicItems[i]["strength"]) {
             htmlString = $("#item" + i).children().children().children(".itemAttributes").html()
             htmlString += "<emph>Min Str: </emph><span class=\"itemStrReq\"></span><br/>"

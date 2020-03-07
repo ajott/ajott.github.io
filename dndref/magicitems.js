@@ -5619,7 +5619,7 @@ var magicItems = [{
         "rarity": "Legendary",
         "text": [
 
-            "A strange weapon, made by a figure only known as the Master Maker. It looks somewhat like a halberd.",
+            "A strange weapon, made by a figure known as the Master Maker. It looks somewhat like a halberd.",
             "",
             "It has a long handle, made from tiny metal tubes, all twisted about each other. At one end there is a scored grip, at the other there is a flat piece of metal, pierced with small holes, a long, thin hook curving out from it.",
             "",
@@ -5635,7 +5635,7 @@ var magicItems = [{
             "",
             "<emph><em>Maker's Strike. </em></emph>You strike out with uncanny precision. As part of this action, you may make a melee weapon attack against a nearby Invisible creature with Advantage, ignoring the usual penalty for attacking Invisible creatures.",
             "",
-            "The Divider recovers 1d4-2 expended charges every day at dawn (minimum of 0 charges recovered). If you expend the last charge, roll 1d20. On a 1, the weapon is sundered with a high keening sound, and the fragments are pulled into the Ethereal Plane. This sundering is treated as a casting of the <em>shatter</em> spell using a 5th-level spell slot. It affects the wielder, and all creatures within a 10-foot-radius sphere centered on the wielder.",
+            "The Divider recovers 1d4-2 expended charges every day at dawn (minimum of 0 charges recovered). If you expend the last charge, roll 1d20. On a 1, the weapon is sundered with a high keening sound, and the fragments are pulled into the Ethereal Plane. This sundering is treated as a casting of the <em>shatter</em> spell using a 5th-level spell slot (spell save DC 18). It affects the wielder, and all creatures within a 10-foot-radius sphere centered on the wielder.",
             "",
             "Heavy: Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small creature to use effectively.",
             "",

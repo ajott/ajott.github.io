@@ -2413,6 +2413,27 @@ var magicItems = [{
         ]
     },
     {
+        "name": "Cloak of Billowing",
+        "type": "Wondrous Item",
+        "magic": "1",
+        "rarity": "Common",
+        "text": [
+            "The cloak of billowing can swell and wave dramatically as if under an ominous wind when its command word is spoken by the wearer."
+        ]
+    },
+    {
+        "name": "Charon's Obol",
+        "type": "Wondrous Item",
+        "magic": "1",
+        "homebrew": "YES",
+        "rarity": "Uncommon",
+        "text": [
+            "Whenever you make an attack roll, ability check, or saving throw, you may instead choose to flip this coin. If the result is heads, treat the d20 roll as a critical success. Otherwise, treat it as a critical failure.",
+            "",
+            "The Obol cannot be used in this way again until the next dawn."
+        ]
+    },
+    {
         "name": "Cloak of Elvenkind",
         "type": "Wondrous Item",
         "magic": "1",

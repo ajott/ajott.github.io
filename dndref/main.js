@@ -176,6 +176,11 @@ function buildSpells() {
         } else {
             $("#spell" + i).children().children().children(".spellName").text(spell[i]["name"])
         }
+
+        if (spell[i]["concentration"]) {
+            $("#spell" + i).children().children().children().children(".concentration").text("Concentration")
+        }
+
         $("#spell" + i).children().children().children().children().children(".spellSchool").text(spell[i]["school"])
         $("#spell" + i).children().children().children().children().children(".spellLevel").text(spell[i]["level"])
         $("#spell" + i).children().children().children(".spellFilters").text(spell[i]["school"] + ", " + spell[i]["classes"] + ", " + spell[i]["level"])
@@ -882,9 +887,15 @@ function accordion(id) {
 
 function accordionSidebar(id) {
 
-    $('.classNavSidebar').removeClass('w3-show').addClass('w3-hide')
+    if ($('#'+id).hasClass("w3-show")) {
+        $('#'+id).removeClass('w3-show').addClass('w3-hide')
+    } else {
 
-    $('#'+id).removeClass('w3-hide').addClass('w3-show');
+        $('.classNavSidebar').removeClass('w3-show').addClass('w3-hide')
+    
+        $('#'+id).removeClass('w3-hide').addClass('w3-show');
+
+    }
 
 }
 

@@ -84,6 +84,7 @@ var spell = [{
         "time": "1 Bonus Action",
         "range": "Self",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Artificer",
         "text": [
@@ -101,6 +102,7 @@ var spell = [{
         "time": "1 Action",
         "range": "60 feet",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Warlock, Wizard",
         "text": [
@@ -212,6 +214,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Warlock, Wizard",
         "text": [
@@ -231,6 +234,7 @@ var spell = [{
         "time": "1 Action",
         "range": "60 feet",
         "components": "V, S, M (a sunburst pendant worth at least 100 gp)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric, Wizard",
         "text": [
@@ -248,6 +252,7 @@ var spell = [{
         "time": "1 Bonus Action",
         "range": "Touch",
         "components": "V, S, M (a hot pepper)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Sorcerer, Wizard",
         "text": [
@@ -290,6 +295,7 @@ var spell = [{
         "time": "1 Action",
         "range": "Touch",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Bard, Sorcerer, Wizard",
         "text": [
@@ -305,6 +311,7 @@ var spell = [{
         "time": "1 Action",
         "range": "60 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Sorcerer, Warlock, Wizard",
         "text": [
@@ -322,6 +329,7 @@ var spell = [{
         "time": "1 Bonus Action",
         "range": "Self",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Sorcerer, Warlock, Wizard",
         "text": [
@@ -356,6 +364,7 @@ var spell = [{
         "time": "1 Bonus Action",
         "range": "Self",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid, Ranger",
         "text": [
@@ -373,6 +382,7 @@ var spell = [{
         "time": "1 Action",
         "range": "120 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Sorcerer, Warlock, Wizard",
         "text": [
@@ -388,6 +398,7 @@ var spell = [{
         "time": "1 Bonus Action",
         "range": "60 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid, Ranger",
         "text": [
@@ -407,6 +418,7 @@ var spell = [{
         "time": "1 Action",
         "range": "120 feet",
         "components": "S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Wizard",
         "text": [
@@ -426,6 +438,7 @@ var spell = [{
         "time": "1 minute",
         "range": "90 feet",
         "components": "V, S, M (a ruby worth at least 999 gp)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Warlock, Wizard",
         "text": [
@@ -479,6 +492,7 @@ var spell = [{
         "time": "1 Action",
         "range": "150 feet",
         "components": "V, M (a drop of pitch mixed with a drop of mercury)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Warlock, Wizard",
         "text": [
@@ -494,6 +508,7 @@ var spell = [{
         "time": "1 Action",
         "range": "120 feet",
         "components": "V, S, M (a caterpillar cocoon)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Bard, Sorcerer, Wizard",
         "text": [
@@ -515,6 +530,7 @@ var spell = [{
         "time": "1 Action",
         "range": "60 feet",
         "components": "S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Sorcerer, Warlock, Wizard",
         "text": [
@@ -553,6 +569,7 @@ var spell = [{
         "time": "1 Action",
         "range": "60 feet",
         "components": "S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Sorcerer, Warlock, Wizard",
         "text": [
@@ -628,6 +645,7 @@ var spell = [{
         "time": "1 Bonus Action",
         "range": "Self",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Sorcerer, Warlock, Wizard",
         "text": [
@@ -645,6 +663,7 @@ var spell = [{
         "time": "1 Action",
         "range": "Self",
         "components": "V, S, M (an undead eyeball encased in a gem worth at least 150 gp)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Warlock",
         "text": [
@@ -660,6 +679,7 @@ var spell = [{
         "time": "1 Action",
         "range": "120 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Sorcerer, Warlock, Wizard",
         "text": [
@@ -719,6 +739,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S, M (a vial of blood from a humanoid killed within the past 24 hours)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Warlock, Wizard",
         "text": [
@@ -740,6 +761,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S, M (a vial of blood from a humanoid killed within the past 24 hours)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Warlock, Wizard",
         "text": [
@@ -790,6 +812,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S, M (a few hairs from a bull)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Wizard",
         "text": [
@@ -848,6 +871,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S, M (a hand mirror)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Sorcerer, Warlock, Wizard",
         "text": [
@@ -869,6 +893,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "Self",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Ranger",
         "text": [
@@ -884,6 +909,7 @@ var spell = [{
         "time": "1 Action",
         "range": "Self",
         "components": "V, S, M (a small piece of adamantine worth at least 500 gp, which the spell consumes)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Wizard",
         "text": [
@@ -927,6 +953,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "Touch",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Cleric, Paladin",
         "text": [
@@ -964,6 +991,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Ranger",
         "text": [
@@ -981,6 +1009,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "2 Ki Points",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Monk (Way of Shadow)",
         "text": [
@@ -1043,6 +1072,7 @@ var spell = [{
         "time": "1 Action",
         "range": "Only on Self",
         "components": "5 Ki Points - Cast stoneskin",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Monk (Way of the Four Elements)",
         "text": "This spell turns the flesh of a willing creature you touch as hard as stone. Until the spell ends, the target has resistance to nonmagical bludgeoning, piercing, and slashing damage."
@@ -1174,6 +1204,7 @@ var spell = [{
         "time": "1 Action",
         "range": "self only",
         "components": "4 Ki Points - cast gaseous form (on self)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Monk (Way of the Four Elements)",
         "text": [
@@ -1198,6 +1229,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "2 Ki Points",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Monk (Way of Shadow)",
         "text": "A veil of shadows and silence radiates from you, masking you and your companions from detection. For the duration, each creature you choose within 30 feet of you (including you) has a +10 bonus to Dexterity (Stealth) checks and can't be tracked except by magical means. A creature that receives this bonus leaves behind no tracks or other traces of its passage."
@@ -1230,6 +1262,7 @@ var spell = [{
         "time": "1 Action",
         "range": "self only",
         "components": "4 Ki Points - cast fly (on self)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Monk (Way of the Four Elements)",
         "text": "You gain a flying speed of 60 feet for the duration. When the spell ends, the target falls if it is still aloft, unless it can stop the fall."
@@ -1248,6 +1281,7 @@ var spell = [{
         "time": "1 Action",
         "range": "120 feet",
         "components": "5 Ki Points - cast wall of fire",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Monk (Way of the Four Elements)",
         "text": [
@@ -1267,6 +1301,7 @@ var spell = [{
         "time": "1 Action",
         "range": "Self (60-foot line)",
         "components": "2 Ki Points - cast gust of wind",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Monk (Way of the Four Elements)",
         "text": [
@@ -1297,6 +1332,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "2 Ki Points",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Monk (Way of Shadow)",
         "text": "For the duration, no sound can be created within or pass through a 20-foot-radius sphere centered on a point you choose within range. Any creature or object entirely inside the sphere is immune to thunder damage, and creatures are deafened while entirely inside it. Casting a spell that includes a verbal component is impossible there."
@@ -1350,6 +1386,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "6 Ki Points - cast wall of stone",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Monk (Way of the Four Elements)",
         "text": [
@@ -1479,6 +1516,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Artificer, Sorcerer, Wizard",
         "text": [
@@ -1532,6 +1570,7 @@ var spell = [{
         "time": "1 action",
         "range": "30 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 24 hours",
         "classes": "Druid",
         "text": [
@@ -1568,6 +1607,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Sorcerer, Wizard",
         "text": [
@@ -1601,6 +1641,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self (10-foot radius)",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Cleric (Death), Druid",
         "text": [
@@ -1618,6 +1659,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self (10-foot-radius sphere)",
         "components": "V, S M (a pinch of powdered iron or iron filings)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Cleric, Wizard",
         "text": [
@@ -1668,6 +1710,7 @@ var spell = [{
         "time": "1 action",
         "range": "30 feet",
         "components": "V, S, M (a bit of bat fur)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Artificer, Cleric (Arcana), Cleric (Knowledge), Wizard",
         "text": [
@@ -1685,6 +1728,7 @@ var spell = [{
         "time": "1 action",
         "range": "500 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Sorcerer, Warlock, Wizard",
         "text": [
@@ -1797,6 +1841,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self (30-foot radius)",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Paladin, Warlock (Undying)",
         "text": "Life-preserving energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. Each non-hostile creature in the aura (including you) has resistance to necrotic damage, and its hit point maximum can't be reduced. In addition, a non-hostile, living creature regains 1 hit point when it starts its turn in the aura with 0 hit points."
@@ -1808,6 +1853,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self (30-foot radius)",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Artificer (Battle Smith), Paladin",
         "text": "Purifying energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. Each non-hostile creature in the aura (including you) can't become diseased, has resistance to poison damage, and has advantage on saving throws against effects that cause any of the following conditions - blinded, charmed, deafened, frightened, paralyzed, poisoned, and stunned."
@@ -1819,6 +1865,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self (30-foot radius)",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer (Battle Smith), Paladin, Paladin (Crown)",
         "text": "Healing energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. You can use a bonus action to cause one creature in the aura (including you) to regain 2d6 hit points.",
@@ -1846,6 +1893,7 @@ var spell = [{
         "time": "1 action",
         "range": "30 feet",
         "components": "V, S, M (a drop of blood)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Cleric, Paladin (Vengeance)",
         "text": [
@@ -1861,6 +1909,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "Self",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer (Battle Smith), Paladin",
         "text": "The next time you hit a creature with a weapon attack before this spell ends, your weapon crackles with force, and the attack deals an extra 5d10 force damage to the target. Additionally, if this attack reduces the target to 50 hit points of fewer, you banish it. If the target is native to a different plane of existence than the one you're on, the target disappears, returning to its home plane. If the target is native to the plane you're on, the creature vanishes into a harmless demiplane. While there, the target is incapacitated. It remains there until the spell ends, at which point the tart reappears in the space it left or in the nearest unoccupied space if that space is occupied.",
@@ -1873,6 +1922,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S, M (an item distasteful to the target)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric, Paladin, Paladin (Crown), Paladin (Vengeance), Sorcerer, Warlock, Wizard, Fighter (Eldritch Knight)",
         "text": [
@@ -1892,6 +1942,7 @@ var spell = [{
         "time": "1 action",
         "range": "Touch",
         "components": "V, S, M (a handful of oak bark)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Cleric (Nature), Druid, Druid (Forest), Ranger",
         "text": "You touch a willing creature. Until the spell ends, the target's skin has a rough, bark-like appearance, and the target's AC can't be less than 16, regardless of what kind of armor it is wearing."
@@ -1903,6 +1954,7 @@ var spell = [{
         "time": "1 action",
         "range": "30 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric, Cleric (Life), Paladin (Devotion)",
         "text": "This spell bestows hope and vitality. Choose any number of creatures within range. For the duration, each target has advantage on Wisdom saving throws and death saving throws, and regains the maximum number of hit points possible from any healing."
@@ -1914,6 +1966,7 @@ var spell = [{
         "time": "1 action",
         "range": "Touch",
         "components": "V, S, M (a bit of fur wrapped in a cloth)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Druid, Ranger",
         "text": [
@@ -1930,6 +1983,7 @@ var spell = [{
         "time": "1 action",
         "range": "Touch",
         "components": "S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Druid, Ranger",
         "text": "You touch a willing beast. For the duration of the spell, you can use your action to see through the beast's eyes and hear what it hears, and continue to do so until you use your action to return to your normal senses."
@@ -1941,6 +1995,7 @@ var spell = [{
         "time": "1 action",
         "range": "Touch",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Cleric, Paladin (Oathbreaker), Wizard",
         "text": [
@@ -1966,6 +2021,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S, M (an eggshell and a snakeskin glove)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Wizard",
         "text": [
@@ -1999,6 +2055,7 @@ var spell = [{
         "time": "1 action",
         "range": "90 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Cleric",
         "text": [
@@ -2026,6 +2083,7 @@ var spell = [{
         "time": "1 action",
         "range": "30 feet",
         "components": "V, S, M (a sprinkling of holy water)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric, Cleric (Life), Paladin",
         "text": [
@@ -2061,6 +2119,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "Self",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer (Battle Smith), Paladin",
         "text": [
@@ -2108,6 +2167,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer, Druid (Desert), Sorcerer, Wizard, Rogue (Arcane Trickster)",
         "text": "Your body becomes blurred, shifting and wavering to all who can see you. For the duration, any creature has disadvantage on attack rolls against you. An attacker is immune to this effect if it doesn't rely on sight, as with blindsight, or can see through illusions, as with truesight."
@@ -2158,6 +2218,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "Self",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer (Battle Smith), Paladin",
         "text": [
@@ -2192,6 +2253,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Cleric (Tempest), Druid, Druid (Forest)",
         "text": [
@@ -2212,6 +2274,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Cleric, Warlock (Archfey)",
         "text": [
@@ -2337,6 +2400,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self (30-foot radius)",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Paladin, Paladin (Crown)",
         "text": "Divine energy radiates from you, distorting and diffusing magical energy within 30 feet of you. Until the spell ends, the sphere moves with you, centered on you. For the duration, each friendly creature in the area (including you) has advantage on saving throws against spells and other magical effects. Additionally, when an affected creature succeeds on a saving throw made against a spell or magical effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw."
@@ -2348,6 +2412,7 @@ var spell = [{
         "time": "10 minutes",
         "range": "1 mile",
         "components": "V, S, M (a focus worth at least 100 gp, either a jeweled horn for hearing or a glass eye for scrying)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Bard, Cleric, Sorcerer, Warlock (Great Old One), Wizard",
         "text": [
@@ -2380,6 +2445,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S, M (a sliver of glass)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Sorcerer, Warlock, Wizard",
         "text": [
@@ -2396,6 +2462,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Artificer (Alchemist), Cleric (Death), Druid (Underdark), Sorcerer, Wizard",
         "text": [
@@ -2497,6 +2564,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "30 feet",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Paladin, Paladin (Crown)",
         "text": [
@@ -2528,6 +2596,7 @@ var spell = [{
         "time": "1 action",
         "range": "30 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard",
         "text": [
@@ -2561,6 +2630,7 @@ var spell = [{
         "time": "1 action",
         "range": "90 feet",
         "components": "V, S, M (three nut shells)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Cleric (Knowledge), Druid, Paladin (Oathbreaker), Sorcerer, Wizard, Rogue (Arcane Trickster)",
         "text": [
@@ -2589,6 +2659,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Druid, Ranger",
         "text": [
@@ -2628,6 +2699,7 @@ var spell = [{
         "time": "1 minute",
         "range": "90 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Cleric",
         "text": [
@@ -2645,6 +2717,7 @@ var spell = [{
         "time": "1 minute",
         "range": "90 feet",
         "components": "V, S, M (burning incense for air, soft clay for earth, sulfur and phosphorus for fire, or water and sand for water)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Druid, Druid (Coast), Wizard",
         "text": [
@@ -2664,6 +2737,7 @@ var spell = [{
         "time": "1 minute",
         "range": "90 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Druid, Warlock",
         "text": [
@@ -2683,6 +2757,7 @@ var spell = [{
         "time": "1 minute",
         "range": "90 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Druid, Wizard",
         "text": [
@@ -2722,6 +2797,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S, M (one holly berry per creature summoned)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Druid, Ranger",
         "text": [
@@ -2847,6 +2923,7 @@ var spell = [{
         "time": "1 action",
         "range": "300 feet",
         "components": "V, S, M (a drop of water and a pinch of dust)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Cleric, Cleric (Tempest), Druid, Druid (Coast), Wizard",
         "text": [
@@ -2869,6 +2946,7 @@ var spell = [{
         "time": "10 minutes",
         "range": "Self (5-mile radius)",
         "components": "V, S, M (burning incense and bits of earth and wood mixed in water)",
+        "concentration": "YES",
         "duration": "Concentration, up to 8 hours",
         "classes": "Cleric, Druid, Wizard",
         "text": [
@@ -2909,6 +2987,7 @@ var spell = [{
         "time": "1 action",
         "range": "300 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Druid, Sorcerer, Wizard",
         "text": [
@@ -2963,6 +3042,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer, Druid, Sorcerer, Warlock, Wizard, Rogue (Arcane Trickster), Fighter (Eldritch Knight)",
         "text": [
@@ -3061,6 +3141,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Paladin (Oathbreaker), Sorcerer, Warlock, Wizard, Rogue (Arcane Trickster)",
         "text": [
@@ -3078,6 +3159,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric (War), Paladin",
         "text": "Holy power radiates from you in an aura with a 30-foot radius, awakening boldness in friendly creatures. Until the spell ends, the aura moves with you, centered on you. While in the aura, each non-hostile creature in the aura (including you) deals an extra 1d4 radiant damage when it hits with a weapon attack.",
@@ -3106,6 +3188,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S, M",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer, Bard, Sorcerer, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
         "text": [
@@ -3121,6 +3204,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, M (bat fur and a drop of pitch or piece of coal)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Druid (Swamp), Paladin (Oathbreaker), Sorcerer, Warlock, Wizard, Fighter (Eldritch Knight)",
         "text": [
@@ -3177,6 +3261,7 @@ var spell = [{
         "time": "1 action",
         "range": "150 feet",
         "components": "V, S, M (a tine ball of bat guano and sulfur)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Sorcerer, Wizard",
         "text": [
@@ -3226,6 +3311,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Cleric, Paladin",
         "text": "For the duration, you know if there is an aberration, celestial, elemental, fey, fiend, or undead within 30 feet of you, as well as where the creature is located. Similarly, you know if there is a place of object within 30 feet of you that has been magically consecrated or desecrated. The spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt."
@@ -3238,6 +3324,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Bard, Cleric, Cleric (Arcana), Druid, Paladin, Ranger, Sorcerer, Wizard",
         "text": [
@@ -3253,6 +3340,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S, M (a yew leaf)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Cleric, Druid, Paladin, Ranger",
         "text": [
@@ -3268,6 +3356,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S, M (a copper piece)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer (Archivist), Bard, Sorcerer, Warlock (Great Old One), Wizard",
         "text": [
@@ -3346,6 +3435,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S, M (holy water or powdered silver and iron)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric, Paladin",
         "text": [
@@ -3413,6 +3503,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "Self",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric (War), Paladin",
         "text": "Your prayer empowers you with divine radiance. Until the spell ends, your weapon attacks deal and extra 1d4 radiant damage on a hit."
@@ -3447,6 +3538,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric (Nature), Druid, Sorcerer, Warlock (Archfey), Warlock (Great Old One)",
         "text": [
@@ -3468,6 +3560,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Bard, Sorcerer, Warlock, Wizard, Rogue (Arcane Trickster)",
         "text": [
@@ -3489,6 +3582,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Cleric (Trickery), Paladin (Oathbreaker), Sorcerer, Warlock (Archfey), Warlock (Great Old One), Wizard, Rogue (Arcane Trickster)",
         "text": [
@@ -3571,6 +3665,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S, M (a pinch of dust)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid, Sorcerer, Wizard",
         "text": [
@@ -3611,6 +3706,7 @@ var spell = [{
         "time": "1 action",
         "range": "300 feet",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid, Sorcerer, Warlock, Wizard",
         "text": [
@@ -3626,6 +3722,7 @@ var spell = [{
         "time": "1 action",
         "range": "500 feet",
         "components": "V, S, M (a pinch of dirt, a piece of rock, and a lump of clay)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric, Druid, Sorcerer",
         "text": [
@@ -3674,6 +3771,7 @@ var spell = [{
         "time": "1 action",
         "range": "90 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid, Warlock, Wizard",
         "text": [
@@ -3692,6 +3790,7 @@ var spell = [{
         "time": "1 action",
         "range": "Touch",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Paladin",
         "text": [
@@ -3708,6 +3807,7 @@ var spell = [{
         "time": "1 action",
         "range": "Touch",
         "components": "V, S, M (fur or a feather from a beast)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Artificer, Bard, Cleric, Druid, Sorcerer",
         "text": [
@@ -3735,6 +3835,7 @@ var spell = [{
         "time": "1 action",
         "range": "30 feet",
         "components": "V, S, M (a pinch of powdered iron)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer, Sorcerer, Wizard",
         "text": [
@@ -3754,6 +3855,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "Self",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Paladin (Ancients), Ranger",
         "text": [
@@ -3772,6 +3874,7 @@ var spell = [{
         "time": "1 action",
         "range": "90 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid",
         "text": [
@@ -3841,6 +3944,7 @@ var spell = [{
         "time": "1 action",
         "range": "90 feet",
         "components": "V, S, M (a piece of tentacle from a giant octopus or a giant squid)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Warlock (Great Old One), Wizard",
         "text": [
@@ -3859,6 +3963,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "Self",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Artificer, Sorcerer, Warlock, Wizard",
         "text": "This spell allows you to move at an incredible pace. When you cast this spell, and then as a bonus action on each of your turns until the spell ends, you can take the Dash action."
@@ -3870,6 +3975,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Sorcerer, Warlock, Wizard",
         "text": [
@@ -3906,6 +4012,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Cleric (Light), Druid, Warlock (Archfey)",
         "text": [
@@ -3937,6 +4044,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self (30-foot cone)",
         "components": "V, S, M (a white feather or the heart of a hen)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Sorcerer, Warlock, Wizard, Rogue (Arcane Trickster)",
         "text": [
@@ -4059,6 +4167,7 @@ var spell = [{
         "time": "1 minute",
         "range": "Self",
         "components": "V, S, M (a set of divinatory tools - such as bones, ivory sticks, cards, teeth, or carved runes - worth 100 gp and an object from the location you wish to find)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 day",
         "classes": "Bard, Cleric, Druid",
         "text": [
@@ -4187,6 +4296,7 @@ var spell = [{
         "time": "1 action",
         "range": "Touch",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Druid, Ranger, Sorcerer, Wizard",
         "text": [
@@ -4205,6 +4315,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "Self",
         "components": "V, S, M (leaf of sumac)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Druid",
         "text": [
@@ -4244,6 +4355,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S, M (a bit of tallow, a pinch of brimstone, and a dusting of powdered iron)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric (Light), Druid, Wizard",
         "text": [
@@ -4264,6 +4376,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S, M (a pinch of lime, water, and earth)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Warlock, Wizard",
         "text": [
@@ -4283,6 +4396,7 @@ var spell = [{
         "time": "1 action",
         "range": "Touch",
         "components": "V, S, M (a wing feather from any bird)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Artificer, Sorcerer, Warlock, Wizard",
         "text": [
@@ -4298,6 +4412,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Cleric (Tempest), Druid, Ranger, Sorcerer, Wizard",
         "text": [
@@ -4387,6 +4502,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "S, M",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Sorcerer, Warlock, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
         "text": "For the duration, you have advantage on all Charisma checks directed at one creature of your choice that isn't hostile toward you. When the spell ends, the creature realizes that you used magic to influence its mood and becomes hostile toward you. A creature prone to violence might attack you. Another creature might seek retribution in other ways (at the DM's discretion), depending on the nature of your interaction with it."
@@ -4421,6 +4537,7 @@ var spell = [{
         "time": "1 action",
         "range": "Touch",
         "components": "V, S, M (a bit of gauze and a wisp of smoke)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Artificer, Druid (Underdark), Sorcerer, Warlock, Wizard",
         "text": [
@@ -4438,6 +4555,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S, M (a diamond worth at least 5,000 gp)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric, Sorcerer, Wizard",
         "text": [
@@ -4493,6 +4611,7 @@ var spell = [{
         "time": "1 action",
         "range": "30 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Druid",
         "text": [
@@ -4523,6 +4642,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self (10-foot radius)",
         "components": "V, S, M (a glass or crystal bead that shatters when the spell ends)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Sorcerer, Wizard",
         "text": [
@@ -4583,6 +4703,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "30 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric (Nature), Druid, Ranger",
         "text": [
@@ -4613,6 +4734,7 @@ var spell = [{
         "time": "1 action",
         "range": "Touch",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Druid (Underdark), Sorcerer, Warlock (Archfey), Wizard, Rogue (Arcane Trickster)",
         "text": "You or a creature you touch becomes invisible until the spell ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person."
@@ -4716,6 +4838,7 @@ var spell = [{
         "time": "1 action",
         "range": "Touch",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer, Cleric, Druid",
         "text": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The spell then ends.",
@@ -4768,6 +4891,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self (60-foot line)",
         "components": "V, S, M (a legume seed)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric (Tempest), Druid, Sorcerer, Wizard, Fighter (Eldritch Knight)",
         "text": [
@@ -4787,6 +4911,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "Self",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Ranger",
         "text": [
@@ -4867,6 +4992,7 @@ var spell = [{
         "time": "1 action",
         "range": "30 feet",
         "components": "V, S, M (a shaving of licorice root)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer, Druid (Grassland), Paladin (Vengeance), Sorcerer, Wizard",
         "text": [
@@ -4913,6 +5039,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S, M (a piece of iron and a flame)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Druid",
         "text": [
@@ -4963,6 +5090,7 @@ var spell = [{
         "time": "1 action",
         "range": "Touch",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer (Battle Smith), Bard, Paladin",
         "text": [
@@ -4978,6 +5106,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "90 feet",
         "components": "V, S, M (the petrified eye of a newt)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Warlock",
         "text": [
@@ -4997,6 +5126,7 @@ var spell = [{
         "time": "1 action",
         "range": "90 feet",
         "components": "V, S, M (a small, straight piece of iron)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Cleric (War), Paladin (Vengeance), Sorcerer, Warlock, Wizard, Rogue (Arcane Trickster)",
         "text": [
@@ -5012,6 +5142,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S, M (a small, straight piece of iron)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Cleric, Druid, Druid (Arctic), Paladin (Vengeance), Sorcerer, Warlock, Wizard, Rogue (Arcane Trickster)",
         "text": [
@@ -5027,6 +5158,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S, M (a tiny reliquary worth at least 1,000 gp containing a sacred relic, such as a scrap of cloth from a saint's robe or a piece of parchment from a religious text)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric",
         "text": "Divine light washes out from you and coalesces in a soft radiance in a 30-foot radius around you. Creatures of your choice in that radius when you cast this spell shed dim light in a 5-foot radius and have advantage on all saving throws, and other creatures have disadvantage on attack rolls against them until the spell ends. In addition, when a fiend or an undead hits an affected creature with a melee attack, the aura flashes with brilliant light. The attacker must succeed on a Constitution saving throw or be blinded until the spell ends."
@@ -5038,6 +5170,7 @@ var spell = [{
         "time": "1 action",
         "range": "150 feet",
         "components": "V, S, M (a pickled octopus tentacle)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Warlock",
         "text": [
@@ -5057,6 +5190,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "90 feet",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Paladin (Vengeance), Ranger",
         "text": [
@@ -5072,6 +5206,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "S, M (a glowing stick of incense or a crystal vial filled with phosphorescent material)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer (Archivist), Bard, Sorcerer, Warlock, Wizard, Rogue (Arcane Trickster)",
         "text": [
@@ -5162,6 +5297,7 @@ var spell = [{
         "time": "1 action",
         "range": "90 feet",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Sorcerer, Wizard",
         "text": [
@@ -5224,6 +5360,7 @@ var spell = [{
         "time": "1 action",
         "range": "150 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Sorcerer, Wizard",
         "text": [
@@ -5261,6 +5398,7 @@ var spell = [{
         "time": "1 action",
         "range": "300 feet",
         "components": "V, S, M (a few grains of sugar, some kernels of grain, and a smear of fat)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Cleric, Cleric (Nature), Cleric (Tempest), Druid, Druid (Desert), Druid (Grassland), Druid (Swamp), Druid (Underdark), Sorcerer",
         "text": [
@@ -5279,6 +5417,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Druid, Sorcerer, Warlock, Wizard",
         "text": [
@@ -5301,6 +5440,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Druid, Sorcerer, Warlock, Wizard",
         "text": [
@@ -5324,6 +5464,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Druid, Sorcerer, Warlock, Wizard",
         "text": [
@@ -5345,6 +5486,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Druid, Sorcerer, Warlock, Wizard",
         "text": [
@@ -5367,6 +5509,7 @@ var spell = [{
         "time": "1 action",
         "range": "Touch",
         "components": "V, S, M (an eyelash encased in gum arabic)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Artificer, Bard, Druid (Grassland), Sorcerer, Warlock, Wizard, Rogue (Arcane Trickster)",
         "text": [
@@ -5474,6 +5617,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S, M (either a small leather loop or a piece of golden wire bent into a cup shape with a long shank on one end)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Artificer, Sorcerer, Wizard",
         "text": [
@@ -5506,6 +5650,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "Self",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Ranger",
         "text": [
@@ -5576,6 +5721,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S, M (a bit of fur from a bloodhound)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Artificer (Archivist), Bard, Cleric, Druid, Druid (Swamp), Paladin, Ranger, Wizard",
         "text": [
@@ -5593,6 +5739,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S, M (a forked twig)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Artificer (Archivist), Bard, Cleric, Druid, Paladin, Ranger, Wizard",
         "text": [
@@ -5625,6 +5772,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S, M (paper or leaf in the shape of a funnel)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid",
         "text": [
@@ -5775,6 +5923,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "Touch",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Artificer, Cleric (Arcana), Cleric (War), Paladin, Wizard",
         "text": [
@@ -5790,6 +5939,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S, M (a bit of fleece)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Bard, Sorcerer, Warlock, Wizard, Rogue (Arcane Trickster)",
         "text": [
@@ -5873,6 +6023,7 @@ var spell = [{
         "time": "1 action",
         "range": "30 feet",
         "components": "V, S, M (a miniature hand sculpted from clay)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Sorcerer, Wizard",
         "text": [
@@ -5895,6 +6046,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Wizard",
         "text": [
@@ -5951,6 +6103,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S, M (niter, sulfur, and pine tar formed into a bead)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Sorcerer, Wizard, Fighter (Eldritch Knight)",
         "text": [
@@ -6089,6 +6242,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Bard, Wizard, Rogue (Arcane Trickster)",
         "text": [
@@ -6115,6 +6269,7 @@ var spell = [{
         "time": "1 action",
         "range": "30 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer (Archivist), Bard, Cleric (Trickery), Wizard, Rogue (Arcane Trickster)",
         "text": [
@@ -6161,6 +6316,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S, M (several seeds of any moonseed plant and a piece of opalescent feldspar)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid, Paladin (Ancients)",
         "text": [
@@ -6252,6 +6408,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S, M (a miniature platinum sword with a grip and pommel of copper and zinc, worth 250 gp)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Wizard",
         "text": [
@@ -6271,6 +6428,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S, M (an iron blade and a small bag containing a mixture of soils - clay, loam, and sand)",
+        "concentration": "YES",
         "duration": "Concentration, up to 2 hours",
         "classes": "Druid, Sorcerer, Wizard",
         "text": [
@@ -6342,6 +6500,7 @@ var spell = [{
         "time": "1 action",
         "range": "30 feet",
         "components": "V, S, M (a hemispherical piece of clear crystal and a matching hemispherical piece of gum arabic)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer, Wizard, Fighter (Eldritch Knight)",
         "text": [
@@ -6361,6 +6520,7 @@ var spell = [{
         "time": "1 action",
         "range": "30 feet",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Wizard, Rogue (Arcane Trickster)",
         "text": [
@@ -6376,6 +6536,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S, M (ashes from a burned leaf of mistletoe and a sprig of spruce)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Cleric (Trickery), Druid, Druid (Grassland), Ranger",
         "text": "A veil of shadows and silence radiates from you, masking you and your companions from detection. For the duration, each creature you choose within 30 feet of you (including you) has a +10 bonus to Dexterity (Stealth) checks and can't be tracked except by magical means. A creature that receives this bonus leaves behind no tracks or other traces of its passage."
@@ -6402,6 +6563,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S, M (a bit of fleece)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Sorcerer, Warlock (Archfey), Warlock (Great Old One), Wizard, Rogue (Arcane Trickster)",
         "text": [
@@ -6424,6 +6586,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer (Archivist), Wizard, Rogue (Arcane Trickster)",
         "text": [
@@ -6554,6 +6717,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S, M (a caterpillar cocoon)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Bard, Cleric (Trickery), Druid, Sorcerer, Wizard",
         "text": [
@@ -6655,6 +6819,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid",
         "text": [
@@ -6782,6 +6947,7 @@ var spell = [{
         "time": "1 action",
         "range": "500 miles",
         "components": "V, S, M (a small replica of you made from materials worth at least 5 gp)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 day",
         "classes": "Bard, Wizard, Rogue (Arcane Trickster)",
         "text": [
@@ -6801,6 +6967,7 @@ var spell = [{
         "time": "1 action",
         "range": "Touch",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Artificer, Cleric, Druid, Druid (Desert), Paladin (Ancients), Paladin (Vengeance), Ranger, Sorcerer, Wizard, Fighter (Eldritch Knight)",
         "text": "For the duration, the willing creature you touch has resistance to one damage type of your choice - acid, cold, fire, lightning, or thunder."
@@ -6812,6 +6979,7 @@ var spell = [{
         "time": "1 action",
         "range": "Touch",
         "components": "V, S, M (holy water or powdered silver and iron, which the spell consumes)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Cleric, Paladin, Paladin (Devotion), Warlock, Wizard, Fighter (Eldritch Knight)",
         "text": [
@@ -6908,6 +7076,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric (Death), Warlock, Wizard",
         "text": [
@@ -7025,6 +7194,7 @@ var spell = [{
         "time": "1 action",
         "range": "Touch",
         "components": "V, S, M",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer, Cleric, Druid",
         "text": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one saving throw of its choice. It can roll the die before or after the saving throw. The spell then ends.",
@@ -7058,6 +7228,7 @@ var spell = [{
         "time": "1 action",
         "range": "100 feet",
         "components": "V, S, M (a lodestone and iron filings)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid, Sorcerer, Wizard",
         "text": [
@@ -7162,6 +7333,7 @@ var spell = [{
         "time": "10 minutes",
         "range": "Self",
         "components": "V, S, M (a focus worth at least 1,000 gp, such as a crystal ball, a silver mirror, or a font filled with holy water)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Bard, Cleric, Cleric (Knowledge), Cleric (Light), Druid, Druid (Coast), Druid (Swamp), Paladin (Vengeance), Warlock, Wizard",
         "text": [
@@ -7196,6 +7368,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "Self",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer (Battle Smith), Paladin",
         "text": [
@@ -7300,6 +7473,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S, M (a jade circlet worth at least 1,500 gp, which you must place on your head before you cast the spell)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Druid, Wizard",
         "text": [
@@ -7351,6 +7525,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "60 feet",
         "components": "V, S, M (a small parchment with a bit of holy text written on it)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Artificer, Cleric, Cleric (War), Paladin",
         "text": "A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration."
@@ -7396,6 +7571,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Bard, Cleric, Druid (Desert), Ranger, Warlock (Undying)",
         "text": "For the duration, no sound can be created within or pass through a 20-foot-radius sphere centered on a point you choose within range. Any creature or object entirely inside the sphere is immune to thunder damage, and creatures are deafened while entirely inside it. Casting a spell that includes a verbal component is impossible there."
@@ -7407,6 +7583,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S, M (a bit of fleece)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minute",
         "classes": "Bard, Sorcerer, Wizard, Rogue (Arcane Trickster)",
         "text": [
@@ -7444,6 +7621,7 @@ var spell = [{
         "time": "1 action",
         "range": "Sight",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Bard, Druid, Wizard",
         "text": [
@@ -7479,6 +7657,7 @@ var spell = [{
         "time": "1 action",
         "range": "150 feet",
         "components": "V, S, M (a pinch of dust and a few drops of water)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric (Tempest), Druid, Druid (Arctic), Sorcerer, Wizard",
         "text": [
@@ -7496,6 +7675,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S, M (a drop of molasses)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid (Arctic), Sorcerer, Wizard",
         "text": [
@@ -7592,6 +7772,7 @@ var spell = [{
         "time": "1 action",
         "range": "Touch",
         "components": "V, S, M (a drop of bitumen and a spider)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Artificer, Druid (Forest), Druid (Mountain), Druid (Underdark), Sorcerer, Warlock, Wizard",
         "text": "Until the spell ends, one willing creature you touch gains the ability to move up, down, and across vertical surfaces and upside down along ceilings, while leaving its hands free. The target also gains a climbing speed equal to its walking speed."
@@ -7603,6 +7784,7 @@ var spell = [{
         "time": "1 action",
         "range": "150 feet",
         "components": "V, S, M (seven sharp thorns or seven small twigs, each sharpened to a point)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Cleric (Nature), Druid, Druid (Arctic), Druid (Mountain), Ranger",
         "text": [
@@ -7619,6 +7801,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self (15-foot-radius)",
         "components": "V, S, M (a holy symbol)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Cleric, Cleric (War), Paladin (Crown)",
         "text": [
@@ -7660,6 +7843,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "Self",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer (Battle Smith), Paladin",
         "text": "The next time you hit a creature with a melee weapon attack during this spell's duration, your weapon pierces both body and mind, and the attack deals an extra 4d6 psychic damage to the target. The target must make a Wisdom saving throw. On a failed save, it has disadvantage on attack rolls and ability checks, and can't take reactions, until the end of its next turn.",
@@ -7672,6 +7856,7 @@ var spell = [{
         "time": "1 action",
         "range": "90 feet",
         "components": "V, S, M (a rotten egg or several skunk cabbage leaves)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer (Alchemist), Bard, Druid (Swamp), Druid (Underdark), Sorcerer, Warlock (Fiend), Wizard",
         "text": [
@@ -7700,6 +7885,7 @@ var spell = [{
         "time": "1 action",
         "range": "Touch",
         "components": "V, S, M (diamond dust worth 100 gp, which the spell consumes)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Artificer, Cleric (War), Druid, Druid (Mountain), Paladin (Ancients), Ranger, Sorcerer, Wizard, Fighter (Eldritch Knight)",
         "text": "This spell turns the flesh of a willing creature you touch as hard as stone. Until the spell ends, the target has resistance to nonmagical bludgeoning, piercing, and slashing damage."
@@ -7711,6 +7897,7 @@ var spell = [{
         "time": "1 action",
         "range": "150 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Sorcerer, Wizard, Fighter (Eldritch Knight)",
         "text": [
@@ -7737,6 +7924,7 @@ var spell = [{
         "time": "1 action",
         "range": "Sight",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid",
         "text": [
@@ -7765,6 +7953,7 @@ var spell = [{
         "time": "1 action",
         "range": "30 feet",
         "components": "V, M (a snake's tongue and either a bit of honeycomb or a drop of sweet oil)",
+        "concentration": "YES",
         "duration": "Concentration, up to 8 hours",
         "classes": "Bard, Cleric (Knowledge), Sorcerer, Warlock, Wizard, Rogue (Arcane Trickster)",
         "text": [
@@ -7784,6 +7973,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self (60-foot line)",
         "components": "V, S, M (a magnifying glass)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid, Sorcerer, Wizard",
         "text": [
@@ -7820,6 +8010,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "Touch",
         "components": "V, S, M (a quiver containing at least one piece of ammunition)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Ranger",
         "text": [
@@ -7893,6 +8084,7 @@ var spell = [{
         "time": "1 action",
         "range": "30 feet",
         "components": "V, S, M (tiny tarts and a feather that waved in the air)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Bard, Warlock (Great Old One), Wizard, Rogue (Arcane Trickster)",
         "text": [
@@ -7908,6 +8100,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Sorcerer, Warlock (Great Old One), Wizard",
         "text": [
@@ -8090,6 +8283,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "Self",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Paladin",
         "text": "The first time you hit with a melee weapon attack during this spell's duration, your weapon rings with thunder that is audible within 300 feet of you, and the attack deals an extra 2d6 thunder damage to the target. Additionally, if the target is a creature, it must succeed on a Strength saving throw or be pushed 10 feet away from you and knocked prone.",
@@ -8198,6 +8392,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric (Nature), Druid, Druid (Forest), Paladin (Ancients), Ranger",
         "text": [
@@ -8213,6 +8408,7 @@ var spell = [{
         "time": "1 action",
         "range": "30 feet",
         "components": "V, S, M (a drop of mercury, a dollop of gum arabic, and a wisp of smoke)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Bard, Warlock, Wizard",
         "text": [
@@ -8270,6 +8466,7 @@ var spell = [{
         "time": "1 action",
         "range": "30 feet",
         "components": "S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 round",
         "classes": "Bard, Sorcerer, Warlock, Wizard, Fighter (Eldritch Knight), Rogue (Arcane Trickster)",
         "text": "You extend your hand and point a finger at a target in range. Your magic grants you a brief insight into the target's defenses. On your next turn, you gain advantage on your first attack roll against the target, provided that this spell hasn't ended."
@@ -8281,6 +8478,7 @@ var spell = [{
         "time": "1 minute",
         "range": "Sight",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 6 rounds",
         "classes": "Druid",
         "text": [
@@ -8326,6 +8524,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Cleric (Death), Warlock, Wizard",
         "text": [
@@ -8387,6 +8586,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S, M (a small piece of phosphorus)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer (Artillerist), Cleric (Light), Druid, Sorcerer, Warlock (Fiend), Wizard, Fighter (Eldritch Knight)",
         "text": [
@@ -8407,6 +8607,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S, M (a pinch of powder made by crushing a clear gemstone)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Artificer (Artillerist), Wizard",
         "text": [
@@ -8422,6 +8623,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S, M (a small piece of quartz)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Wizard",
         "text": [
@@ -8445,6 +8647,7 @@ var spell = [{
         "time": "1 action",
         "range": "90 feet",
         "components": "V, S, M (a handful of sand)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Wizard, Fighter (Eldritch Knight)",
         "text": [
@@ -8460,6 +8663,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S, M (a small block of granite)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Druid, Druid (Desert), Druid (Mountain), Sorcerer, Wizard",
         "text": [
@@ -8483,6 +8687,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S, M (a handful of thorns)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Druid",
         "text": [
@@ -8503,6 +8708,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S, M (a drop of water)",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Druid, Sorcerer, Wizard, Fighter (Eldritch Knight)",
         "text": [
@@ -8535,6 +8741,7 @@ var spell = [{
         "time": "1 action",
         "range": "Self",
         "components": "V",
+        "concentration": "YES",
         "duration": "Concentration, up to 10 minutes",
         "classes": "Bard, Druid, Sorcerer",
         "text": [
@@ -8590,6 +8797,7 @@ var spell = [{
         "time": "1 action",
         "range": "90 feet",
         "components": "V, S, M (a droplet of water)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid, Sorcerer, Wizard",
         "text": [
@@ -8613,6 +8821,7 @@ var spell = [{
         "time": "1 action",
         "range": "60 feet",
         "components": "V, S, M (a bit of spider web)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 hour",
         "classes": "Artificer (Alchemist), Druid (Underdark), Sorcerer, Wizard",
         "text": [
@@ -8635,6 +8844,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Wizard, Rogue (Arcane Trickster)",
         "text": "Drawing on the deepest fears of a group of creatures, you create illusory creatures in their minds, visible only to them. Each creature in a 30-foot-radius sphere centered on a point of your choice within range must make a Wisdom saving throw. On a failed save, a creature becomes frightened for the duration. The illusion calls on the creature's deepest fears, manifesting its worst nightmares as an implacable threat. At the end of each of the frightened creature's turns, it must succeed on a Wisdom saving throw or take 4d10 psychic damage. On a successful save, the spell ends for that creature.",
@@ -8647,6 +8857,7 @@ var spell = [{
         "time": "1 action",
         "range": "300 feet",
         "components": "V, M (a piece of straw)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Druid, Wizard",
         "text": [
@@ -8686,6 +8897,7 @@ var spell = [{
         "time": "1 action",
         "range": "120 feet",
         "components": "V, S, M (a tiny fan and a feather of exotic origin)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Artificer (Artillerist), Cleric (Nature), Druid, Ranger",
         "text": [
@@ -8738,6 +8950,7 @@ var spell = [{
         "time": "1 action",
         "range": "30 feet",
         "components": "V, S, M (a twig from a tree that has been struck by lightning)",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Sorcerer, Warlock, Wizard, Fighter (Eldritch Knight)",
         "text": [
@@ -8784,6 +8997,7 @@ var spell = [{
         "time": "1 bonus action",
         "range": "Self",
         "components": "V, S, M",
+        "concentration": "YES",
         "duration": "Concentration, up to 1 minute",
         "classes": "Paladin",
         "text": "The next time you hit with a melee weapon attack during this spell's duration, your attack deals an extra 1d6 psychic damage. Additionally, if the target is a creature, it must make a Wisdom saving throw or be frightened of you until the spell ends. As an action, the creature can make a Wisdom check against your spell save DC to steel its resolve and end this spell."

@@ -12,7 +12,7 @@ h5 {
 }
 
 body {
-    background-color: #353535 !important;
+    background-color: #353535;
     color: white !important;
 }
 
@@ -523,6 +523,14 @@ Generated Maroon theme
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: rgba(105, 122, 77,.2);
+}
+
+.classUA {
+    background-color: rgba(105, 122, 77,.2) !important;
+}
+
+.classHB {
+    background-color: rgba(163, 121, 65,.2) !important;
 }
 
 .advancementButtonDMG {

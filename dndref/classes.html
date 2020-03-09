@@ -217,7 +217,7 @@
                         class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Artificer Specialist</a>
                 </div>
             </div> -->
-            <!-- <div class="w3-darker-grey w3-hide-small" style="background-color: rgb(105, 122, 77) !important;">
+            <div class="w3-darker-grey w3-hide-small" style="background-color: rgb(105, 122, 77) !important;">
                 <button onclick="accordionSidebar('rangerrevisedsidebar')"
                     class="w3-button w3-round-large w3-hover-gold">Ranger (Rev) <i
                         class="fa fa-caret-down"></i></button>
@@ -226,11 +226,10 @@
                         class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Info</a>
                     <a href="./classes.html#rangerrevisedFeatures"
                         class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Features</a>
-                    <a href="./classes.html#artificerSpecialist"
-                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Artificer
-                        Specialist</a>
+                    <a href="./classes.html#rangerrevisedConclaves"
+                        class="w3-bar-item w3-button w3-mobile w3-round-large smallish-padded w3-hover-gold">Ranger Conclaves</a>
                 </div>
-            </div> -->
+            </div>
             <div class="dropdown-divider"></div>
             <div class="w3-darker-grey w3-hide-small" style="background-color: rgb(163, 121, 65) !important;">
                 <button onclick="accordionSidebar('warlordsidebar')"
@@ -20272,7 +20271,7 @@
             <br />
             <hr />
             <!-- ARTIFICER -->
-            <div id="artificer" class="info">
+            <div id="artificer" class="info classUA">
                 <h1>Artificer</h1>
                 <p class="w3-center w3-centered">This is a class from Unearthed Arcana, and has not been rigorously
                     playtested for balance. Please consult your DM before choosing this class.</p>
@@ -22749,8 +22748,1075 @@
             </div>
             <br />
             <hr />
+            <!-- RANGER REVISED -->
+            <div id="rangerrevised" class="info classUA">
+                <h1>Ranger (Revised)</h1>
+                <p class="w3-center w3-centered">This is a class from Unearthed Arcana, and has not been rigorously
+                    playtested for balance. Please consult your DM before choosing this class.</p>
+                <!-- Info -->
+                <div class="w3-row">
+                    <h3>Class Information</h3>
+                    <div class="w3-col s0 m0 l2">
+                        &emsp;
+                    </div>
+                    <div class="w3-col s12 m12 l4" style="padding-right: 10px;">
+                        <div class="w3-card-2 w3-round-large">
+                            <div class="w3-row-padding">
+                                <h5>Hit Points</h5>
+                            </div>
+                            <div class="w3-row-padding">
+                                <emph>Hit Dice: </emph>1d10 per Level
+                                <br />
+                                <emph>Hit Points at 1st Level: </emph>10 + Con modifier
+                                <br />
+                                <emph>Hit Points at Higher Levels: </emph>1d10 (or 6) + your Con
+                                modifier per Ranger
+                                level after 1st
+                            </div>
+                            <br />
+                        </div>
+                        <br />
+                        <div class="w3-card-2 w3-round-large">
+                            <div class="w3-row-padding">
+                                <h5>Proficiencies</h5>
+                            </div>
+                            <div class="w3-row-padding">
+                                <emph>Armor: </emph>Light armor, medium armor, shields
+                                <br />
+                                <emph>Weapons: </emph>Simple weapons, martial weapons
+                                <br />
+                                <emph>Tools: </emph>None
+                                <br />
+                                <emph>Saving Throws: </emph>Strength, Dexterity
+                                <br />
+                                <emph>Skills: </emph>Choose three from: Animal Handling, Athletics,
+                                Insight,
+                                Investigation, Nature, Perception, Stealth, Survival
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="w3-col s12 m12 l4" style="padding-left: 10px">
+                        <div class="w3-card-2 w3-round-large">
+                            <div class="w3-row-padding">
+                                <h5>Equipment</h5>
+                            </div>
+                            <div class="w3-row-padding">
+                                You start with the following equipment, in addition to the equipment
+                                granted by your
+                                background:
+                                <ul>
+                                    <li>Scale mail <emph>OR</emph> leather armor</li>
+                                    <li>Two shortswords <emph>OR</emph> two simple melee weapons</li>
+                                    <li>A dungeoneer's pack <emph>OR</emph> an explorer's pack</li>
+                                    <li>A longbow and a quiver of 20 arrows</li>
+                                </ul>
+                            </div>
+                            <div class="w3-row-padding">
+                                Alternatively, you may start with <emph>5d4&times;10 gp</emph> and
+                                purchase your
+                                starting equipment using these funds.
+                            </div>
+                            <br />
+                            <div class="w3-row-padding">
+                                Additional information: <emph>UA 18 - Revised Ranger</emph>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="w3-col s0 m0 l2">
+                        &emsp;
+                    </div>
+                </div>
+                <!-- Advancement -->
+                <div class="w3-row">
+                    <div class="w3-col s0 m0 l1">
+                        &emsp;
+                    </div>
+                    <div class="w3-col s12 m12 l10">
+                        <h3>Advancement</h3>
+                        <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2" style="vertical-align: middle !important">Level</th>
+                                    <th rowspan="2" style="vertical-align: middle !important">
+                                        Proficiency Bonus</th>
+                                    <th rowspan="2" style="vertical-align: middle !important">Features
+                                    </th>
+                                    <th rowspan="2" style="vertical-align: middle !important">Spells
+                                        Known</th>
+                                    <th colspan="5">-Spell Slots per Spell Level-</th>
+                                </tr>
+                                <tr>
+                                    <th>1st</th>
+                                    <th>2nd</th>
+                                    <th>3rd</th>
+                                    <th>4th</th>
+                                    <th>5th</th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>1st</td>
+                                <td>+2</td>
+                                <td>Favored Enemy, Natural Explorer</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>2nd</td>
+                                <td>+2</td>
+                                <td>Fighting Style, Spellcasting</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>3rd</td>
+                                <td>+2</td>
+                                <td>Primeval Awareness, Ranger Conclave</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>4th</td>
+                                <td>+2</td>
+                                <td>Ability Score Improvement</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>5th</td>
+                                <td>+3</td>
+                                <td>Ranger Conclave feature</td>
+                                <td>4</td>
+                                <td>4</td>
+                                <td>2</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>6th</td>
+                                <td>+3</td>
+                                <td>Greater Favored Enemy</td>
+                                <td>4</td>
+                                <td>4</td>
+                                <td>2</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>7th</td>
+                                <td>+3</td>
+                                <td>Ranger Conclave feature</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>8th</td>
+                                <td>+3</td>
+                                <td>Ability Score Improvement, Fleet of Foot</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>9th</td>
+                                <td>+4</td>
+                                <td>-</td>
+                                <td>6</td>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>2</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>10th</td>
+                                <td>+4</td>
+                                <td>Hide in Plain Sight</td>
+                                <td>6</td>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>2</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>11th</td>
+                                <td>+4</td>
+                                <td>Ranger Conclave feature</td>
+                                <td>7</td>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>12th</td>
+                                <td>+4</td>
+                                <td>Ability Score Improvement</td>
+                                <td>7</td>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>13th</td>
+                                <td>+5</td>
+                                <td>-</td>
+                                <td>8</td>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>14th</td>
+                                <td>+5</td>
+                                <td>Vanish</td>
+                                <td>8</td>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>15th</td>
+                                <td>+5</td>
+                                <td>Ranger Conclave feature</td>
+                                <td>9</td>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>2</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>16th</td>
+                                <td>+5</td>
+                                <td>Ability Score Improvement</td>
+                                <td>9</td>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>2</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>17th</td>
+                                <td>+6</td>
+                                <td>-</td>
+                                <td>10</td>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>18th</td>
+                                <td>+6</td>
+                                <td>Feral Senses</td>
+                                <td>10</td>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>19th</td>
+                                <td>+6</td>
+                                <td>Ability Score Improvement</td>
+                                <td>11</td>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>20th</td>
+                                <td>+6</td>
+                                <td>Foe Slayer</td>
+                                <td>11</td>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>2</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="w3-col s0 m0 l1">
+                        &emsp;
+                    </div>
+                </div>
+                <br />
+                <!-- Features -->
+                <div class="w3-row info" id="rangerrevisedFeatures">
+                    <h3>Class Features</h3>
+                    <div class="featuresUA">
+                        <div class="featureCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Favored Enemy</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>1st
+                                    </em><br />
+                                    <em>
+                                        <emph>Levels Improved: </emph>6th, 14th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    Choose one from: beasts, fey, humanoids, monstrosities, or undead.
+                                    <br />
+                                    <br />
+                                    You gain a +2 bonus to damage rolls with weapon attacks against creatures of the chosen type. 
+                                    <br/>
+                                    Additionally, you have Advantage on Wisdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them.
+                                    <br />
+                                    <br />
+                                    You also learn one language of your choice, typically one spoken by your favored enemy or creatures associated with it. However, you are free to pick any language you wish to learn.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="featureCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Natural Explorer</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>1st
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain the following benefits:
+                                    <ul>
+                                        <li>You ignore difficult terrain.</li>
+                                        <li>You have Advantage on initiative rolls.</li>
+                                        <li>On your first turn during combat, you have Advantage on attack rolls against creatures that have not yet acted.</li>
+                                    </ul>
+                                    <p>
+                                        In addition, you are skilled at navigating the wilderness. You gain the following benefits when traveling for an hour or more:
+                                        <ul>
+                                            <li>Difficult terrain doesn't slow your group's travel.</li>
+                                            <li>Your group can't become lost except by magical means.</li>
+                                            <li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li>
+                                            <li>When you forage, you find twice as much food as you normally would.</li>
+                                            <li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li>
+                                        </ul>
+                                    </p>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="featureCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Fighting Style</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>2nd
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You adopt a particular style of fighting. You can't take a Fighting
+                                    Style option
+                                    more
+                                    than once, even if you later get to choose again.
+                                    <br />
+                                    <br />
+                                    <emph>Archery: </emph>Gain +2 bonus to attack rolls made with ranged
+                                    weapons.
+                                    <br />
+                                    <br />
+                                    <emph>Defense: </emph>Gain +1 bonus to AC while wearing armor.
+                                    <br />
+                                    <br />
+                                    <emph>Dueling: </emph>Gain +2 bonus to damage when using only a
+                                    single melee weapon
+                                    in
+                                    one hand, and no other weapons.
+                                    <br />
+                                    <br />
+                                    <emph>Two-Weapon Fighting: </emph>You may add your ability modifier
+                                    to the damage of
+                                    the
+                                    second attack.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="featureCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Spellcasting</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>2nd
+                                    </em><br />
+                                    <em>
+                                        <emph>Levels Improved: </emph>3rd, 5th, 7th, 9th, 11th, 13th,
+                                        15th, 17th, 19th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    Your spellcasting ability is <emph>Wisdom</emph>.
+                                    <br />
+                                    <br />
+                                    Your spell save DC is <emph>8 + Proficiency mod + Wis mod</emph>,
+                                    and your spell attack modifier is <emph>Proficiency bonus + Wis mod
+                                    </emph>.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="featureCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Primeval Awareness</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>3rd
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    <p>
+                                        Through sounds and gestures, you can communicate simple ideas to a beast as an action, and can read its basic mood and intent. You learn its emotional state, whether it is affected by magic of any sort, its short-term needs (such as food or safety), and actions you can take (if any) to persuade it to not attack.
+                                    </p>
+                                    <p>
+                                        You cannot use this ability against a creature that you have attacked within the past 10 minutes.
+                                    </p>
+                                    <p>
+                                        Additionally, by spending 1 uninterrupted minute in Concentration (as if you were concentrating on a spell), you can sense whether any of your favored enemies are present within 5 miles of you. This feature reveals which of your favored enemies are present, their numbers, and the creatures' general direction and distance (in miles) from you.
+                                    </p>
+                                    <p>
+                                        If there are multiple groups of your favored enemies within range, you learn this information for each group.
+                                    </p>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="featureCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Ranger Conclave</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>3rd
+                                    </em><br />
+                                    <em>
+                                        <emph>Levels Improved: </emph>5th, 7th, 11th, 15th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    Choose a conclave whose ideals and training you strive to emulate. These are found immediately below your
+                                    class features.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="featureCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Ability Score Improvement</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>4th
+                                    </em><br />
+                                    <em>
+                                        <emph>Levels Improved: </emph>8th, 12th, 16th, 19th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    Increase one ability score of your choice by 2, or two ability
+                                    scores of your choice
+                                    by
+                                    1. You may not increase an ability score beyond 20, unless your maximum score for
+                                    that ability has been increased (for example, by a <em>Manual of Bodily
+                                        Health</em>).
+                                    <br />
+                                    <br />
+                                    If playing with the appropriate variant rule, you may choose a
+                                    <emph>Feat</emph>
+                                    instead.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="featureCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Greater Favored Enemy</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>6th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    <p>
+                                        Choose a type of greater favored enemy: aberrations, celestials, constructs, dragons, elementals, fiends, or giants. You gain all the benefits against this chosen enemy that you normally gain against your favored enemy, including an additional language.
+                                    </p>
+                                    <p>
+                                        Your bonus to damage rolls against all favored enemies increases to +4.
+                                    </p>
+                                    <p>
+                                        Additionally, you have Advantage on saving throws against the spells and abilities used by a greater favored enemy.
+                                    </p>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="featureCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Fleet of Foot</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>8th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You can use the Dash action as a bonus action on your turn.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="featureCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Hide in Plain Sight</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>10th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    <p>
+                                        When you attempt to Hide on your turn, you can opt to not move on that turn. If you avoid moving, creatures that attempt to detect you take a -10 penalty to their Wisdom (Perception) checks until the start of your next turn.
+                                        <br/>
+                                        You lose this benefit if you move or fall prone, either voluntarily or because of some external effect. 
+                                        <br/>
+                                        You are still automatically detected if any effect or action causes you to no longer be hidden.
+                                    </p>
+                                    <p>
+                                        If you are still hidden on your next turn, you can continue to remain motionless and gain this benefit unti you are detected.
+                                    </p>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="featureCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Vanish</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>14th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You can use the Hide action as a bonus action on your turn. Also,
+                                    you can't be
+                                    tracked by nonmagical means, unless you choose to leave a trail.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="featureCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Feral Senses</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>18th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    When you attack a creature you can't see, your inability to see it
+                                    doesn't impose
+                                    Disadvantage on your attack rolls.
+                                    <br />
+                                    <br />
+                                    You are also aware of the location of any invisible creature within
+                                    30 feet of ou,
+                                    provided that the creature isn't hidden from you, and you aren't
+                                    blinded or
+                                    deafened.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="featureCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Foe Slayer</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>20th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    Once per turn, you can add your Wisdom modifier to the attack roll or
+                                    damage roll of an
+                                    attack you make.
+                                    <br />
+                                    <br />
+                                    You can choose to use this feature before or after the
+                                    roll, but
+                                    before any effects of the roll are applied.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <!-- Conclaves -->
+                <div class="w3-row info" id="rangerrevisedConclaves">
+                    <h3>Ranger Conclaves</h3>
+                    <br />
+                    <br />
+                    <button class="w3-button w3-block w3-dark-grey advancementButtonUA w3-hover-gold "
+                        onclick="accordion('beastconclave')"><span style="font-size: 1.2em;">Beast Conclave</span></button>
+                    <div class="advancements w3-hide w3-container" id="beastconclave">
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Animal Companion</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>3rd
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    <p>
+                                        With 8 hours of work and the expenditure of 50gp worth of rare herbs and fine food, you call forth an animal from the wilderness to serve as your faithful companion. You normally select your companion from among the following animals: an <emph>ape</emph>, a <emph>black bear</emph>, a <emph>boar</emph>, a <emph>giant badger</emph>, a <emph>giant weasel</emph>, a <emph>mule</emph>, a <emph>panther</emph>, or a <emph>wolf</emph>.
+                                    </p>
+                                    <p>
+                                        At the end of the 8 hours, your animal companion appears and gains all the benefits of your Companion's Bond ability. You can have only one animal companion at a time.
+                                    </p>
+                                    <p>
+                                        If your animal companion is ever slain, the magical bond you share allows you to return it to life. With 8 hours of work and the expenditure of 25 gp worth of rare herbs and fine food, you call forth your companion’s spirit and use your magic to create a new body for it. You can return an animal companion to life in this manner even if you do not possess any part of its body.
+                                    </p>
+                                    <p>
+                                        If you use this ability to return a former animal companion to life while you have a current animal companion, your current companion leaves you and is replaced by the restored companion.
+                                    </p>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Companion's Bond</h5><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    <p>
+                                        Your animal companion loses its Multiattack action, if it has one.
+                                        <br/>
+                                        The companion obeys your commands as best it can. It rolls for initiative like any other creature, but you determine its actions, decisions, attitudes, and so on. If you are incapacitated or absent, your companion acts on its own.
+                                        <br/>
+                                        When using your Natural Explorer feature, you and your animal companion can both move stealthily at a normal pace.
+                                    </p>
+                                    <p>
+                                        Your animal companion has abilities and game statistics determined in part by your level. Your companion uses your proficiency bonus rather than its own. In addition to the areas where it normally uses its proficiency bonus, an animal companion also adds its proficiency bonus to its AC and to its damage rolls.
+                                        <br/>
+                                        Your animal companion gains proficiency in two skills of your choice. It also becomes proficient with all saving throws.
+                                        <br/>
+                                        For each level you gain after 3rd, your animal companion gains an additional hit die and increases its hit points accordingly.
+                                    </p>
+                                    <p>
+                                        Whenever you gain the Ability Score Improvement class feature, your companion’s abilities also improve. Your companion can increase one ability score of your choice by 2, or it can increase two ability scores of your choice by 1. As normal, your companion can’t increase an ability score above 20 using this feature unless its description specifies otherwise.
+                                    </p>
+                                    <p>
+                                        Your animal companion gains the benefits of your Favored Enemy feature, and of your Greater Favored Enemy feature when you gain that feature at 6th level. It uses the favored enemies you selected for those features.
+                                    </p>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Coordinated Attack</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>5th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    When you use the Attack action on your turn, if your companion can see you, it can use its reaction to make a melee attack.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Beast's Defense</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>7th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    While your companion can see you, it has Advantage on all saving throws.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Storm of Claws and Fangs</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>11th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    Your companion can use its action to make a melee attack against each creature of its choice within 5 feet of it, with a separate attack roll for each target.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Superior Beast's Defense</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>15th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    Whenever an attacker that your companion can see hits it with an attack, it can use its reaction to halve the attack's damage against it.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="w3-button w3-block w3-dark-grey advancementButtonUA w3-hover-gold "
+                        onclick="accordion('rangerrevisedHunter')"><span style="font-size: 1.2em;">Hunter Conclave</span></button>
+                    <div class="advancements w3-hide w3-container" id="rangerrevisedHunter">
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Hunter's Prey</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>3rd
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain one of the following features of your choice:
+                                    <br />
+                                    <br />
+                                    <emph>Colossus Slayer. </emph>When you hit a creature with a weapon
+                                    attack, the
+                                    creature takes an extra 1d8 damage if it's below its hit point
+                                    maximum. You can deal
+                                    this extra damage only once per turn.
+                                    <br />
+                                    <br />
+                                    <emph>Giant Killer. </emph>When a Large or larger creature within 5
+                                    feet of you hits
+                                    or misses you with an attack, you can use your reaction to attack
+                                    that creature
+                                    immediately after its attack, provided that you can see the
+                                    creature.
+                                    <br />
+                                    <br />
+                                    <emph>Horde Breaker. </emph>Once on each of your turns when you make
+                                    a weapon
+                                    attack, you can make another attack with the same weapon against a
+                                    different
+                                    creature that is within 5 feet of the original target, and is in
+                                    range of your
+                                    weapon.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Extra Attack</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>5th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You can attack twice, instead of once, whenever you take the attack action on your turn.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Defensive Tactics</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>7th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain one of the following features of your choice:
+                                    <br />
+                                    <br />
+                                    <emph>Escape the Horde. </emph>Opportunity attacks against you are
+                                    made with
+                                    Disadvantage.
+                                    <br />
+                                    <br />
+                                    <emph>Multiattack Defense. </emph>When a creature hits you with an
+                                    attack, you gain
+                                    a +4 bonus to AC against all subsequent attacks made by that
+                                    creature for the rest
+                                    of the turn.
+                                    <br />
+                                    <br />
+                                    <emph>Steel Will. </emph>You have Advantage on saving throws against
+                                    being
+                                    frightened.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Multiattack</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>11th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain one of the following features of your choice:
+                                    <br />
+                                    <br />
+                                    <emph>Volley. </emph>You can use your action to make a ranged attack
+                                    against any
+                                    number of creatures within 10 feet of a point you can see within
+                                    your weapon's
+                                    range. You must have ammunition for each target, as normal, and you
+                                    make a separate
+                                    attack roll for each target.
+                                    <br />
+                                    <br />
+                                    <emph>Whirlwind Attack. </emph>You can use your action to make a
+                                    melee attack
+                                    against any number of creatures within 5 feet of you, with a
+                                    separate attack roll
+                                    for each target.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Superior Hunter's Defense</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>15th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain one of the following features of your choice:
+                                    <br />
+                                    <br />
+                                    <emph>Evasion. </emph>When you are subjected to an effect that
+                                    allows you to make a
+                                    Dexterity saving throw to take half damage, you instead take no
+                                    damage on a
+                                    successful save, or half damage on a failed one.
+                                    <br />
+                                    <br />
+                                    <emph>Stand Against the Tide. </emph>When a hostile creature misses
+                                    you with a melee
+                                    attack, you can use your reaction to force that creature to repeat
+                                    the same attack
+                                    against another creature (but not itself) of your choice.
+                                    <br />
+                                    <br />
+                                    <emph>Uncanny Dodge. </emph>When an attacker that you can see hits
+                                    you with an
+                                    attack, you can use your reaction to halve the attack's damage
+                                    against you.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="w3-button w3-block w3-dark-grey advancementButtonUA w3-hover-gold "
+                        onclick="accordion('deepstalkerconclave')"><span style="font-size: 1.2em;">Deep Stalker Conclave</span></button>
+                    <div class="advancements w3-hide w3-container" id="deepstalkerconclave">
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Underdark Scout</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>3rd
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    On your first turn in combat, you gain a +10 bonus to your speed, and if you use the Attack action, you can make one additional attack.
+                                    <br/>
+                                    <br/>
+                                    You are also adept at evading creatures that rely on darkvision. Such creatures gain no benefit when attempting to detect you in dark and dim conditions. Additionally, when the DM determines if you can hide from a creature, that creature gains no benefit from its darkvision. 
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Deep Stalker Magic</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>3rd
+                                    </em><br />
+                                    <em>
+                                        <emph>Levels Improved: </emph>5th, 9th, 13th, 17th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain darkvision out to a range of 90 feet. If you already have darkvision, its range is increased by 30 feet.
+                                    <br/>
+                                    <br/>
+                                    In addition, you gain the spells shown below at the given levels.
+                                    <br />
+                                    If a spell you gain isn't naturally a Ranger spell, it counts as a Ranger
+                                    spell for you.
+                                    <br/>
+                                    These spells don't count against the number of spells you know.
+                                    <br />
+                                    <br />
+                                    <div class="w3-col s0 m2 l3">
+                                        &emsp;
+                                    </div>
+                                    <div class="w3-col s12 m8 l6">
+                                        <table class="w3-table w3-small">
+                                            <thead>
+                                                <th>Ranger Level</th>
+                                                <th>Spells</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>3rd</td>
+                                                    <td>Disguise Self</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5th</td>
+                                                    <td>Rope Trick</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>9th</td>
+                                                    <td>Glyph of Warding</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>13th</td>
+                                                    <td>Greater Invisibility</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>17th</td>
+                                                    <td>Seeming</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="w3-col s0 m2 l3">
+                                        &emsp;
+                                    </div>
+                                    <br />
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Extra Attack</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>5th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You can attack twice, instead of once, whenever you take the attack action on your turn.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Iron Mind</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>7th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You gain proficiency in Wisdom saving throws.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Stalker's Flurry</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>11th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    Once on each of your turns when you miss with an attack, you can make another attack.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Stalker's Dodge</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>15th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    Whenever a creature attacks you and does not have Advantage, you can use your reaction to impose Disadvantage on the creature's attack roll against you.
+                                    <br/>
+                                    <br/>
+                                    You can use this feature before or after the attack roll is made, but it must be used before the outcome of the roll is determined.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+                <br />
+            </div>
+            <br />
+            <hr />
             <!-- WARLORD -->
-            <div id="warlord" class="info">
+            <div id="warlord" class="info classHB">
                 <h1>Warlord</h1>
                 <p class="w3-center w3-centered">This is a homebrew class from <a
                         href="https://www.reddit.com/r/UnearthedArcana/">the Unearthed Arcana subreddit</a>, by <a href="https://www.reddit.com/u/DaedalusX51">Reddit user DaedalusX51</a>, which can be found at <a

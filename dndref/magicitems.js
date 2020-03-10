@@ -16461,6 +16461,26 @@ var magicItems = [{
         ]
     },
     {
+        "name": "Hard Rock Maul",
+        "type": "Melee Weapon",
+        "magic": "1",
+        "homebrew": "YES",
+        "weight": "10",
+        "dmg1": "2d6",
+        "dmg2": "2d6",
+        "dmgtype": "Bludgeoning",
+        "property": "H,2H",
+        "rarity": "Very Rare",
+        "text": [
+
+            "When you strike a Medium or smaller creature with this maul, they must make a Constitution save (DC: 8 + your Strength modifier + your proficiency bonus) or become stunned for 5 rounds (30 seconds).",
+            "",
+            "Heavy: Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small creature to use effectively.",
+            "",
+            "Two-Handed: This weapon requires two hands to use."
+        ]
+    },
+    {
         "name": "Vicious Morningstar",
         "type": "Melee Weapon",
         "magic": "1",

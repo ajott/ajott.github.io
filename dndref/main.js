@@ -1198,7 +1198,11 @@ function buildMagicItems() {
         if (magicItems[i]["text"] != undefined) {
             if (typeof (magicItems[i]["text"]) == "object") {
                 for (let j = 0; j < magicItems[i]["text"].length; j++) {
-                    htmlString += "<p>" + magicItems[i]["text"][j] + "</p>";
+                    if (magicItems[i]["text"][j] == "Requires Attunement") {
+                        htmlString += "<p><h5>" + magicItems[i]["text"][j] + "</h5></p>";
+                    } else {
+                        htmlString += "<p>" + magicItems[i]["text"][j] + "</p>";
+                    }
                 }
             } else {
                 htmlString = "<p>" + magicItems[i]["text"] + "</p>"

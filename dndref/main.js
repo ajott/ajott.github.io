@@ -1198,7 +1198,7 @@ function buildMagicItems() {
         if (magicItems[i]["text"] != undefined) {
             if (typeof (magicItems[i]["text"]) == "object") {
                 for (let j = 0; j < magicItems[i]["text"].length; j++) {
-                    if (magicItems[i]["text"][j] == "Requires Attunement") {
+                    if (magicItems[i]["text"][j].search("Requires Attunement") != -1) {
                         htmlString += "<p><h5>" + magicItems[i]["text"][j] + "</h5></p>";
                     } else {
                         htmlString += "<p>" + magicItems[i]["text"][j] + "</p>";

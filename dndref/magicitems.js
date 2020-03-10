@@ -155,6 +155,20 @@ var magicItems = [{
         ]
     },
     {
+        "name": "Amulet of Martial Prowess",
+        "type": "Wondrous Item",
+        "magic": "1",
+        "weight": "1",
+        "homebrew": "YES",
+        "rarity": "Legendary",
+        "text": [
+
+            "Requires Attunement by a Barbarian or Fighter",
+            "",
+            "While you wear this amulet, you may add your proficiency bonus to the damage rolls of your melee attacks."
+        ]
+    },
+    {
         "name": "Amulet of Proof Against Detection and Location",
         "type": "Wondrous Item",
         "magic": "1",
@@ -1674,6 +1688,20 @@ var magicItems = [{
             "category": "bonus",
             "text": "ac +3"
         }
+    },
+    {
+        "name": "Plate Armor of the Warden",
+        "type": "Heavy Armor",
+        "magic": "1",
+        "homebrew": "YES",
+        "weight": "65",
+        "ac": "18",
+        "rarity": "Very Rare",
+        "text": [
+            "Requires Attunement",
+            "",
+            "While wearing this ornate plate armor, you may make two Opportunity Attacks without using your Reaction."
+        ]
     },
     {
         "name": "Breastplate of Acid Resistance",

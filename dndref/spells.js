@@ -235,11 +235,10 @@ var spell = [{
         "range": "Self",
         "components": "S",
         "homebrew": "YES",
-        "concentration": "YES",
-        "duration": "Concentration, up to 1 minute",
+        "duration": "1 hour",
         "classes": "Cleric (Nature), Druid, Paladin (Ancients), Ranger",
         "text": [
-            "Splaying out in the sunlight, you regain 1d4 extra hit points during a short or long rest.",
+            "Splaying out in the sunlight, you regain 1d4 extra hit points during a short rest.",
             "",
             "<emph>At Higher Levels. </emph>The extra healing increases by 1d4 at 5th level (2d4), 11th level (3d4), and 17th level (4d4)."
         ]

@@ -251,7 +251,22 @@
             $('.monsterGrid').isotope({
                 sortBy: 'name'
             })
+
+            findURISearch();
         });
+
+        function findURISearch() {
+            let searchParam = $(location).attr('search');
+
+            if (searchParam != "") {
+                searchParam = decodeURIComponent(searchParam)
+                searchParam = searchParam.split("?s=")[1]
+
+                $("#monsterNameSearch").val(searchParam);
+                monsterNameFilter();
+                document.getElementById("#body").scrollIntoView();
+            }
+        }
     </script>
 </footer>
 

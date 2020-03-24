@@ -40552,6 +40552,45 @@ var monster = [
         ]
     }, 
     {
+        "name": "Ratch", 
+        "size": "Small", 
+        "type": "beast", 
+        "alignment": "neutral", 
+        "homebrew": "YES",
+        "ac": "13 (natural armor)", 
+        "hp": "66 (7d12 + 21)", 
+        "speed": "40 ft., burrow 20 ft.", 
+        "str": "19", 
+        "dex": "12", 
+        "con": "17", 
+        "int": "1", 
+        "wis": "13", 
+        "cha": "10", 
+        "senses": "darkvision 60 ft.", 
+        "passive": "11", 
+        "languages": "-", 
+        "cr": "3 (700 xp)", 
+        "action": [
+            {
+                "name": "Lunge", 
+                "text": "The ratch leaps forward up to 15 feet and makes one bite attack."
+            }, 
+            {
+                "name": "Bite", 
+                "text": "Melee Weapon Attack: +6 to hit, reach 5 ft, one target. Hit: 10 (1d12 + 4) piercing damage.", 
+                "attack": "Bite|6|1d12 + 4"
+            }, 
+            {
+                "name": "Cannibalize", 
+                "text": "The ratch feeds on the dead body of another ratch. The ratch regains 30 (4d10 + 8) hit points this turn. At the start of its next turn, it regains another 30 (4d10 + 8) hit points and its AC increases by +1."
+            }, 
+            {
+                "name": "Acid Spit (Recharge 5-6)", 
+                "text": "The ratch spits a gob of acid up to 30 feet. Each creature in a 5-foot radius around the target takes 17 (2d12 + 4) acid damage, or half damage with a successful DC 13 Dexterity saving throw."
+            }
+        ]
+    }, 
+    {
         "name": "Cavelight Moss", 
         "size": "Large", 
         "type": "plant", 

@@ -98,8 +98,10 @@
                 <div class="magicItemGrid">
                     <div class="" id="defaultItemCard" style="display:none;">
                         <div class="w3-card-2 w3-round-large">
-                                <div class="w3-row-padding">
+                            <div class="w3-row-padding">
+                                <div style="text-align: right; margin-bottom: -30px; margin-top: 5px;" onclick="cardNameCopy(this)" id="cardCopy"><i class="fa fa-clone tooltip" aria-hidden="true"><div class="tooltiptext">Copy Link</div></i></div>
                                 <span style="display: none !important;" class="itemFilters"></span>
+                                <div class="copyText w3-hide"></div>
                                 <h3 class="itemName"></h3>
                                 <em><h5><span class="itemType"></span></h5></em>
                             </div>
@@ -150,7 +152,21 @@
             })
             $("#magicItemNameSearch").val("")
             $('.magicItemGrid').isotope('updateSortData').isotope();
+            findURISearch();
         });
+
+        
+
+        function findURISearch() {
+            let searchParam = $(location).attr('search');
+
+            if (searchParam != "") {
+                searchParam = decodeURIComponent(searchParam)
+                searchParam = searchParam.split("?s=")[1]
+                $("#magicItemNameSearch").val(searchParam);
+                magicItemNameFilter();
+            }
+        }
     </script>
 </footer>
 

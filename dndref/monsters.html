@@ -170,6 +170,8 @@
                     <div class="w3-card-2 w3-round-large">
                         <div class="w3-row-padding">
                             <span class="monsterFilters" style="display: none !important"></span>
+                            <div class="copyText w3-hide"></div> 
+                            <div style="text-align: right; margin-bottom: -30px; margin-top: 5px;" onclick="cardNameCopy(this)" id="cardCopy"><i class="fa fa-clone tooltip" aria-hidden="true"><div class="tooltiptext">Copy Link</div></i></div>
                             <h2 style="text-align: left !important" class="monsterName"></h2>
                             <div style="border-top: 2px solid goldenrod; padding-top: 10px;">
                                 <span class="monsterSizeTypeAlignment"></span>
@@ -253,6 +255,7 @@
             })
 
             findURISearch();
+            setTimeout( function() {getFilterCount()},500);
         });
 
         function findURISearch() {

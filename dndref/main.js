@@ -177,6 +177,8 @@ function buildSpells() {
             $("#spell" + i).children().children().children(".spellName").text(spell[i]["name"])
         }
 
+        $("#spell" + i).children().children().children(".copyText").text(String(window.location).split('?s=')[0] + "?s=" + encodeURIComponent(spell[i]["name"]))
+
         if (spell[i]["concentration"]) {
             $("#spell" + i).children().children().children().children(".concentration").text("Concentration")
         }
@@ -296,7 +298,9 @@ function buildMonsters() {
             $("#monster" + i).children().children().children(".monsterName").text(monster[i]["name"] + " (Homebrew)")
         } else {
             $("#monster" + i).children().children().children(".monsterName").text(monster[i]["name"])
-        }
+        }        
+
+        $("#monster" + i).children().children().children(".copyText").text(String(window.location).split('?s=')[0] + "?s=" + encodeURIComponent(monster[i]["name"]))
 
         if (monster[i]["size"] != undefined) {
             htmlString += "<em>" + monster[i]["size"];
@@ -1129,6 +1133,8 @@ function buildMagicItems() {
             $("#item" + i).children().children().children(".itemName").text(magicItems[i]["name"])
         }
 
+        $("#item" + i).children().children().children(".copyText").text(String(window.location).split('?s=')[0] + "?s=" + encodeURIComponent(magicItems[i]["name"]))
+
         $("#item" + i).children().children().children().children().children(".itemType").text(magicItems[i]["type"])
         itemFilterString += "type:" + magicItems[i]["type"] + ", "
 
@@ -1249,4 +1255,24 @@ function gearNameFilter() {
             }
         }
     }
+}
+
+function cardNameCopy(el) {
+
+    const cpEl = document.createElement('textarea');
+    cpEl.value = $(el).siblings()[1].innerText;
+    document.body.appendChild(cpEl);
+    cpEl.select();
+    document.execCommand('copy');
+    document.body.removeChild(cpEl);
+
+    $(".tooltiptext").text("Copied");
+    $(".tooltiptext").css("background-color","goldenrod");
+    $(".tooltiptext").css("color","black");
+
+    setTimeout(function(){ 
+        $(".tooltiptext").text("Copy Link");    
+        $(".tooltiptext").css("background-color","black");
+        $(".tooltiptext").css("color","white");
+    }, 500)
 }

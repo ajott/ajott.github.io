@@ -159,12 +159,20 @@
 
         function findURISearch() {
             let searchParam = $(location).attr('search');
-
+            let hashParam = $(location).attr('hash');
+            
             if (searchParam != "") {
                 searchParam = decodeURIComponent(searchParam)
                 searchParam = searchParam.split("?s=")[1]
                 $("#magicItemNameSearch").val(searchParam);
                 magicItemNameFilter();
+            } else if (hashParam != "") {
+                searchParam = hashParam.split("?s=")[1];
+                if (searchParam != "" && searchParam != undefined) {                    
+                searchParam = decodeURIComponent(searchParam)
+                $("#magicItemNameSearch").val(searchParam);
+                magicItemNameFilter();
+                }
             }
         }
     </script>

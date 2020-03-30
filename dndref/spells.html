@@ -2051,19 +2051,26 @@
             buildSpells();
             clearSpellFilter();
             findURISearch();
-            setTimeout( function() {getFilterCount()},500);
         });   
 
         function findURISearch() {
             let searchParam = $(location).attr('search');
-
+            let hashParam = $(location).attr('hash');
+            
             if (searchParam != "") {
                 searchParam = decodeURIComponent(searchParam)
                 searchParam = searchParam.split("?s=")[1]
-
                 $("#spellNameSearch").val("\""+searchParam+"\"");
                 spellNameFilter();
                 document.getElementById("spellCards").scrollIntoView();
+            } else if (hashParam != "") {
+                searchParam = hashParam.split("?s=")[1];
+                if (searchParam != "" && searchParam != undefined) {                    
+                searchParam = decodeURIComponent(searchParam)
+                $("#spellNameSearch").val("\""+searchParam+"\"");
+                spellNameFilter();
+                document.getElementById("spellCards").scrollIntoView();
+                }
             }
         }
     </script>

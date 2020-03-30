@@ -2061,7 +2061,7 @@
                 searchParam = decodeURIComponent(searchParam)
                 searchParam = searchParam.split("?s=")[1]
 
-                $("#spellNameSearch").val(searchParam);
+                $("#spellNameSearch").val("\""+searchParam+"\"");
                 spellNameFilter();
                 document.getElementById("spellCards").scrollIntoView();
             }

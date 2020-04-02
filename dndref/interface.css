@@ -445,6 +445,10 @@ Generated Maroon theme
     background-color: rgba(163, 121, 65,.3) !important;
 }
 
+.template-card {
+    background-color: rgba(221, 160, 221,.25) !important;
+}
+
 .advancementCard {
     padding-top: 5px;
     padding-bottom: 5px;

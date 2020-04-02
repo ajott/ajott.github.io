@@ -17737,5 +17737,37 @@ var magicItems = [{
             "",
             "Destroying the Throne. The Wyrmskull Throne can be destroyed by breaking at least ﬁve Ruling Scepters of Shanatar simultaneously on it. This fact has never been recorded or sung of among the dwarves or any bards or storytellers, and it can’t be discovered with an ability check. Characters who want to destroy the throne must go on a quest to learn the method for doing so. The throne’s destruction triggers an explosion, as shards of obsidian ﬂy out in all directions. Each creature and object within a 30-foot-radius sphere centered on the throne must succeed on a DC 21 Dexterity saving throw, taking 70 (2Od6) slashing damage on a failed save, or half as much damage on a successful one."
         ]
+    },
+    {
+        "name": "Helm of the Goliath",
+        "type": "Wondrous Item",
+        "magic": "1",
+        "weight": "3",
+        "rarity": "Rare",
+        "homebrew": "YES",
+        "text": [
+            "This bucket helmet can absorb one critical hit made against the wearer, turning it into a normal hit. After it does so, the helmet flies off of the wearer's head and disappears.",
+            "",
+            "Curse: This item is cursed. Once placed on a creature's head, it cannot be removed safely except by using a Wish spell. Should the helmet be removed in any other way, including by absorbing a critical hit, the wearer becomes enraged.",
+            "",
+            "While enraged, the wearer grows larger, as with the Enlarge effect of the Enlarge/Reduce spell; the wearer's Hit Points are restored up to their maximum; the wearer's speed is doubled; and the wearer must use its action on its turn to attack the nearest creature to it. If there are multiple nearby creatures, the target is chosen at random.",
+            "",
+            "The rage continues until the wearer is rendered unconscious."
+        ]
+    },
+    {
+        "name": "Mask of the Insane",
+        "type": "Wondrous Item",
+        "magic": "1",
+        "weight": "1",
+        "rarity": "Uncommon",
+        "homebrew": "YES",
+        "text": [
+            "A thin mask, emblazoned with a strange \"&#581;\" symbol. While worn, the mask grants +1 to attack and damage rolls with melee or thrown weapons.",
+            "",
+            "Curse: This item is cursed. Once placed on a creature's head, it cannot be removed except by using a Wish spell. Each time the wearer critically fails an attack roll, ability check, or saving throw, they must make a DC 15 Wisdom saving throw or go psychotic.",
+            "",
+            "While psychotic, the wearer speaks only in unintelligible gibbering or senseless non-sequiturs; they must move their full speed each turn; and they have Disadvantage on ability checks to interact socially with others. This psychosis lasts for 1 minute, or until the wearer is rendered unconscious."
+        ]
     }
 ];

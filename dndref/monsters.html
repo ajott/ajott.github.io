@@ -12,6 +12,7 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="main.js"></script>
     <script src="monsters.js"></script>
+    <script src="templates.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="interface.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -94,6 +95,14 @@
 
             </div>
 
+            <div class="w3-bar" style="padding-top: 4px; padding-bottom: 4px">
+                <button id="specialBtnHomebrew" class="w3-button w3-grey w3-bar-item typeBtn" style="background-color: rgb(163, 121, 65) !important;" onclick="monsterFilter(this, 4)"
+                    value="special:homebrew">Homebrew</button>
+                <!-- <button id="specialBtnTemplate" class="w3-button w3-grey w3-bar-item typeBtn" style="background-color: rgb(221, 160, 221) !important;"
+                    onclick="monsterFilter(this, 4)" value="special:template">Template</button> -->
+
+            </div>
+
             <div style="padding-bottom: 10px !important; padding-top: 10px !important;">
                 Armor Class: 
             <select id="monsterACSelect" onchange="monsterFilter(this, 2)" class="w3-round w3-large" style="width: 100px !important;">
@@ -159,6 +168,8 @@
                     </select>
             </div>       
             <br/>
+            <div><emph>Current filters: </emph><span id="monsterCurrentFilters"></span></div>
+            <br/>
             <button id="monsterFilterClear" class="w3-round w3-button w3-orange" onclick="clearMonsterFilter()">Clear
                 Filters</button>
             <br />
@@ -173,9 +184,13 @@
                             <div class="copyText w3-hide"></div> 
                             <div style="text-align: right; margin-bottom: -30px; margin-top: 5px;" onclick="cardNameCopy(this)" id="cardCopy"><i class="fa fa-clone tooltip" aria-hidden="true"><div class="tooltiptext">Copy Link</div></i></div>
                             <h2 style="text-align: left !important" class="monsterName"></h2>
-                            <div style="border-top: 2px solid goldenrod; padding-top: 10px;">
-                                <span class="monsterSizeTypeAlignment"></span>
-                            </div>
+                            <select class="w3-round templateSelect" style="margin-bottom: 4px;" onchange="applyTemplate(this)">
+                                <option value="">No Template</option>
+                            </select>
+                            <div style="border-top: 2px solid goldenrod; padding-top: 10px;"></div>
+                                <span class="monsterSize" style="font-style: italic;"></span>
+                                <span class="monsterType" style="font-style: italic;"></span>
+                                <span class="monsterAlignment" style="font-style: italic;"></span>
                             <div style="border-bottom: 1px solid goldenrod; padding-bottom: 10px !important;">
                                 <span class="monsterAC"></span>
                                 <br />
@@ -197,6 +212,7 @@
                             <span class="monsterSave"></span>
                             <span class="monsterSkill"></span>
                             <span class="monsterResist"></span>
+                            <span class="monsterVulnerable"></span>
                             <span class="monsterImmune"></span>
                             <span class="monsterCondImmune"></span>
                             <span class="monsterSenses"></span>

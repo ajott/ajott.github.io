@@ -296,25 +296,36 @@ function buildMonsters() {
 
         if (monster[i]["homebrew"] != undefined) {
             $("#monster" + i).children().children().children(".monsterName").text(monster[i]["name"] + " (Homebrew)")
-        } else {
-            $("#monster" + i).children().children().children(".monsterName").text(monster[i]["name"])
-        }        
+            monsterFilterString += "special:homebrew, "
+        } else if (monster[i]["template"] != undefined) {
+            $("#monster" + i).children().children().children(".monsterName").text(monster[i]["name"] + " (Template)")
+            monsterFilterString += "special:template, "
+        }
+        else {
+            $("#monster" + i).find(".monsterName").text(monster[i]["name"])
+        }
+
+        if (monster[i]["template"] != undefined) {
+            monsterFilterString += "special:template, "
+        }
 
         $("#monster" + i).children().children().children(".copyText").text(String(window.location).split('?s=')[0] + "?s=" + encodeURIComponent(monster[i]["name"]))
 
         if (monster[i]["size"] != undefined) {
             htmlString += "<em>" + monster[i]["size"];
             monsterFilterString += "size:"+monster[i]["size"] + ", "
+            $("#monster" + i).find(".monsterSize").text(monster[i]["size"])
         }
         if (monster[i]["type"] != undefined) {
             htmlString += " " + monster[i]["type"]            
             monsterFilterString += "type:"+monster[i]["type"] + ", "
+            $("#monster" + i).find(".monsterType").text(monster[i]["type"] + ",")
         }
         if (monster[i]["alignment"] != undefined) {
             htmlString += ", " + toTitleCase(monster[i]["alignment"]) + "</em>"
+            $("#monster" + i).find(".monsterAlignment").html(toTitleCase(monster[i]["alignment"]))
         }
 
-        $("#monster" + i).children().children().children().children(".monsterSizeTypeAlignment").html(htmlString)
         htmlString = ""
 
         if (monster[i]["ac"] != undefined) {
@@ -348,16 +359,42 @@ function buildMonsters() {
             $("#monster" + i).children().children().children().children(".monsterCha").html("<emph>Cha: </emph>" + monster[i]["cha"] + " (" + findStatMod(monster[i]["cha"]) + ")")
         }
 
-        if (monster[i]["save"] != undefined) {
-            $("#monster" + i).children().children().children(".monsterSave").html("<emph>Saves: </emph>" + monster[i]["save"] + "<br/>")
+        if (monster[i]["saveObj"] != undefined) {
+            htmlString = "<emph>Saves: </emph>"
+            let saveKeys = Object.keys(monster[i]["saveObj"])
+            for (let j = 0; j < saveKeys.length; j ++) {
+                htmlString += toTitleCase(saveKeys[j]) + " +" + monster[i]["saveObj"][saveKeys[j]]
+                if (j < saveKeys.length-1) {
+                    htmlString += ", "
+                }
+            }
+            htmlString += "<br/>"
+            $("#monster" + i).find(".monsterSave").html(htmlString)
         }
 
-        if (monster[i]["skill"] != undefined) {
-            $("#monster" + i).children().children().children(".monsterSkill").html("<emph>Skill: </emph>" + monster[i]["skill"] + "<br/>")
+        htmlString = ""
+
+        if (monster[i]["skillObj"] != undefined) {
+            htmlString = "<emph>Skill: </emph>"
+            let skillKeys = Object.keys(monster[i]["skillObj"])
+            for (let j = 0; j < skillKeys.length; j ++) {
+                htmlString += skillKeys[j] + " +" + monster[i]["skillObj"][skillKeys[j]]
+                if (j < skillKeys.length-1) {
+                    htmlString += ", "
+                }
+            }
+            htmlString += "<br/>"
+            $("#monster" + i).find(".monsterSkill").html(htmlString)
         }
+
+        htmlString = ""
 
         if (monster[i]["resist"] != undefined) {
             $("#monster" + i).children().children().children(".monsterResist").html("<emph>Damage Resistances: </emph>" + monster[i]["resist"] + "<br/>")
+        }
+
+        if (monster[i]["vulnerable"] != undefined) {
+            $("#monster" + i).children().children().children(".monsterVulnerable").html("<emph>Damage Vulnerabilities: </emph>" + monster[i]["vulnerable"] + "<br/>")
         }
 
         if (monster[i]["immune"] != undefined) {
@@ -486,11 +523,44 @@ function buildMonsters() {
         }
 
 
+
         $("#monster" + i).children().children().children(".monsterFilters").text(monsterFilterString)
         $("#monster" + i).addClass("monster-item")
 
+
+        // Determine allowable templates
+        templateNames = Object.keys(template);
+
+        for (let t = 0; t < templateNames.length; t ++) {
+            // All non-restricted templates first
+            if (template[templateNames[t]]["hasRestriction"] == false) {
+                $("#monster" + i).find(".templateSelect").html($("#monster" + i).find(".templateSelect").html() + "<option>" + templateNames[t] + "</option>")
+            } else {
+                // And here's where the "fun" is...
+                
+                let passesAllChecks = false;
+
+                for (let f = 0; f < template[templateNames[t]]["restrictions"].length; f ++) {
+                    let filterType = template[templateNames[t]]["restrictions"][f].split("%")[0]
+                    let filterCheck = template[templateNames[t]]["restrictions"][f].split("%")[1]
+
+                    try {
+                        passesAllChecks = eval(filterType);
+                    } catch {
+
+                    }
+                }
+
+                if (passesAllChecks) {
+                    $("#monster" + i).find(".templateSelect").html($("#monster" + i).find(".templateSelect").html() + "<option>" + templateNames[t] + "</option>")
+                }
+            }
+        }
+
         if(monster[i]["homebrew"] != undefined) {
             $("#monster" + i).children().addClass("homebrew-card")
+        } else if (monster[i]["template"] != undefined) {
+            $("#monster" + i).children().addClass("template-card")
         }
 
         htmlString = "";
@@ -584,13 +654,21 @@ function monsterFilter(input, mod=0) {
         })
     }
 
+    if (mod == 4) {
+        monsterFilters.forEach(function (filter) {
+            if (filter.search("special:") > -1) {
+                monsterFilters.splice(monsterFilters.indexOf(filter), 1)
+            }
+        })
+    }
+
     if (!duplicate) {
-        if(mod != 2 && mod != 3) {
+        if(mod != 2 && mod != 3 && mod != 4) {
             $this.addClass("w3-blue").removeClass("w3-grey")
         }
         monsterFilters.push(filterText);
     } else {
-        if (mod != 1 && mod != 2) {
+        if (mod != 1 && mod != 2 && mod != 4) {
             monsterFilters.splice(monsterFilters.indexOf(filterText), 1);
         }
         $this.removeClass("w3-blue").addClass("w3-grey");
@@ -614,6 +692,8 @@ function monsterFilter(input, mod=0) {
         }
     })
 
+    $("#monsterCurrentFilters").text(monsterFilters.join(", "))
+
     setTimeout( function() {getFilterCount()},500);
 }
 
@@ -633,6 +713,8 @@ function clearMonsterFilter() {
         // Clear filter
         filter: '*'
     })
+
+    $("#monsterCurrentFilters").text(monsterFilters)
 
     setTimeout( function() {getFilterCount()},500);
 }
@@ -1275,4 +1357,710 @@ function cardNameCopy(el) {
         $(".tooltiptext").css("background-color","black");
         $(".tooltiptext").css("color","white");
     }, 500)
+}
+
+
+function applyTemplate(el) {
+    $this = $(el)
+
+    let currTemp = $this[0].selectedOptions[0]["value"]
+    let monsterID = ($this.parents(".monster-item")[0]["id"]).split("monster")[1]
+    let temp = template[currTemp];
+
+    $monster = $("#monster"+monsterID)
+
+    // Rebuild the monster before doing anything else. This will reset the card to its default, untemplated state.
+    rebuildMonster(monsterID);
+
+    if (currTemp != "") {
+        //Find original proficiency bonus
+        let cr = monster[monsterID]["cr"].split(" ")[0];
+        let prof = 0;
+
+        switch (cr) {
+            case "0":
+            case "1/8":
+            case "1/4":
+            case "1/2":
+            case "1":
+            case "2":
+            case "3":
+            case "4":
+                prof = 2;
+                break;
+            case "5":
+            case "6":
+            case "7":
+            case "8":
+                prof = 3;
+                break;
+            case "9":
+            case "10":
+            case "11":
+            case "12":
+                prof = 4;
+                break;            
+            case "13":
+            case "14":
+            case "15":
+            case "16":
+                prof = 5;
+                break;            
+            case "17":
+            case "18":
+            case "19":
+            case "20":
+                prof = 6;
+                break;            
+            case "21":
+            case "22":
+            case "23":
+            case "24":
+                prof = 7;
+                break;            
+            case "25":
+            case "26":
+            case "27":
+            case "28":
+                prof = 8;
+                break;            
+            case "29":
+            case "30":
+                prof = 9;
+                break;
+            default:
+                prof = 4;
+                break;
+        }
+
+        //Modify name
+        if (temp["displayOrder"] == 0) {
+            $monster.find(".monsterName").text(temp["displayName"] + monster[monsterID]["name"])
+        } else {
+            $monster.find(".monsterName").text(monster[monsterID]["name"] + temp["displayName"])
+        }
+
+        //Modify size
+        if (temp["sizeMod"] != "none") {
+            let monsterSize = monster[monsterID]["size"]
+            let sizes = ["Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan"]
+            let monsterSizeIndex = sizes.indexOf(monsterSize);
+
+            if (typeof(temp["sizeMod"]) == "string") {
+                $monster.find(".monsterSize").text(temp["sizeMod"])
+            } else {
+                $monster.find(".monsterSize").text(sizes[monsterSizeIndex + temp["sizeMod"]])
+            }
+
+        } else {
+            $monster.find(".monsterSize").text(monster[monsterID]["size"])
+        }
+
+        //Modify type
+        if (temp["typeMod"] != "none") {
+            $monster.find(".monsterType").text(temp["typeMod"] + ",")
+        } else {
+            $monster.find(".monsterType").text(monster[monsterID]["type"] + ",")
+        }
+
+        //Modify alignment
+        if (temp["alignmentMod"] != "none") {
+            $monster.find(".monsterAlignment").text(temp["alignmentMod"])
+        } else {
+            $monster.find(".monsterAlignment").text(toTitleCase(monster[monsterID]["alignment"]))
+        }
+
+        //Modify AC
+        if (temp["acModType"] != "none") {
+            if (temp["acModType"] == "mod") {
+            if (monster[monsterID]["ac"].split("(")[1] != undefined) {
+                $monster.find(".monsterAC").html("<emph>AC: </emph>" + (Number(monster[monsterID]["ac"].split("(")[0].split(" ")[0]) + Number(temp["acMod"])) + " (" + monster[monsterID]["ac"].split("(")[1]);
+            } else {
+                $monster.find(".monsterAC").html("<emph>AC: </emph>" + (Number(monster[monsterID]["ac"]) + Number(temp["acMod"])));
+            }
+        } else {
+            $monster.find(".monsterAC").html("<emph>AC: </emph>" + temp["acMod"]);
+        }
+        } else {
+            $monster.find(".monsterAC").html("<emph>AC: </emph>" + monster[monsterID]["ac"]);
+        }
+
+
+        //Modify ability scores
+        let abilities = ["str", "dex", "con", "wis", "int", "cha"];
+        let newAbilityScores = {}
+
+        let oldAbilityMods = {}
+        let newAbilityMods = {}
+
+
+        for (let i = 0; i < abilities.length; i ++) {
+            switch (temp[abilities[i]+"Type"]) {
+                case "set": 
+                    $monster.find(".monster"+toTitleCase(abilities[i])).html("<emph>"+toTitleCase(abilities[i])+": </emph>" + temp[abilities[i]] + " (" + findStatMod(temp[abilities[i]]) + ") &emsp;")
+                    newAbilityScores[abilities[i]] = temp[abilities[i]]
+                    oldAbilityMods[abilities[i]] = findStatMod(Number(monster[monsterID][abilities[i]]))
+                    newAbilityMods[abilities[i]] = findStatMod(Number(newAbilityScores[abilities[i]]))
+                    break;
+                case "mod": 
+                    $monster.find(".monster"+toTitleCase(abilities[i])).html("<emph>"+toTitleCase(abilities[i])+": </emph>" + (Number(monster[monsterID][abilities[i]]) + temp[abilities[i]]) + " (" + findStatMod((Number(monster[monsterID][abilities[i]]) + temp[abilities[i]])) + ") &emsp;")
+                    newAbilityScores[abilities[i]] = Number(monster[monsterID][abilities[i]]) + temp[abilities[i]]                    
+                    oldAbilityMods[abilities[i]] = findStatMod(Number(monster[monsterID][abilities[i]]))
+                    newAbilityMods[abilities[i]] = findStatMod(Number(newAbilityScores[abilities[i]]))
+                    break;
+                case "min": 
+                    $monster.find(".monster"+toTitleCase(abilities[i])).html("<emph>"+toTitleCase(abilities[i])+": </emph>" + Math.min(Number(monster[monsterID][abilities[i]]), temp[abilities[i]]) + " (" + findStatMod(Math.min(Number(monster[monsterID][abilities[i]]), temp[abilities[i]])) + ") &emsp;")
+                    newAbilityScores[abilities[i]] = Math.min(Number(monster[monsterID][abilities[i]]), temp[abilities[i]])
+                    oldAbilityMods[abilities[i]] = findStatMod(Number(monster[monsterID][abilities[i]]))
+                    newAbilityMods[abilities[i]] = findStatMod(Number(newAbilityScores[abilities[i]]))
+                    break;
+                case "max": 
+                    $monster.find(".monster"+toTitleCase(abilities[i])).html("<emph>"+toTitleCase(abilities[i])+": </emph>" + Math.max(Number(monster[monsterID][abilities[i]]), temp[abilities[i]]) + " (" + findStatMod(Math.max(Number(monster[monsterID][abilities[i]]), temp[abilities[i]])) + ") &emsp;")
+                    newAbilityScores[abilities[i]] = Math.max(Number(monster[monsterID][abilities[i]]), temp[abilities[i]])
+                    oldAbilityMods[abilities[i]] = findStatMod(Number(monster[monsterID][abilities[i]]))
+                    newAbilityMods[abilities[i]] = findStatMod(Number(newAbilityScores[abilities[i]]))
+                    break;
+                default:
+                    $monster.find(".monster"+toTitleCase(abilities[i])).html("<emph>"+toTitleCase(abilities[i])+": </emph>" + monster[monsterID][abilities[i]] + " (" + findStatMod(monster[monsterID][abilities[i]]) + ") &emsp;")
+                    newAbilityScores[abilities[i]] = Number( monster[monsterID][abilities[i]])
+                    oldAbilityMods[abilities[i]] = findStatMod(Number(monster[monsterID][abilities[i]]))
+                    newAbilityMods[abilities[i]] = findStatMod(Number(newAbilityScores[abilities[i]]))
+                    break;
+            }
+        }  
+
+
+        let hitDieSizes = ["d2", "d4", "d6", "d8", "d10", "d12", "d20", "d24"];
+        let newHitDie = ""
+        let newHitDice = ""
+
+        //Modify HP
+        if (temp["hpMod"] != "none") {
+
+            if (temp["hitDieMod"] != undefined) {
+                newHitDie = hitDieSizes[hitDieSizes.indexOf(monster[monsterID]["hitDieSize"])+temp["hitDieMod"]]
+                if (newHitDie == undefined) {
+                    newHitDie = monster[monsterID]["hitDieSize"];
+                }
+            }
+            if (temp["hitDiceMod"] != undefined) {
+                newHitDice = String(Number(monster[monsterID]["hitDice"]) + Number(temp["hitDiceMod"]))
+            }
+
+            if (newHitDice == "") {
+                newHitDice = monster[monsterID]["hitDice"]
+            }
+            if (newHitDie == "") {
+                newHitDie = monster[monsterID]["hitDieSize"]
+            }
+            
+            let newConAdd = Number(newHitDice) * findStatMod(newAbilityScores["con"])
+            let newHP = (Math.ceil((Number(newHitDie.split("d")[1]) + 1) / 2 * Number(newHitDice))) + newConAdd
+
+            let conAddString = ""
+
+            if (newConAdd >= 0) {
+                conAddString = "+" + newConAdd
+            } else {
+                conAddString = newConAdd
+            }
+
+            $monster.find(".monsterHP").html("<emph>Hit Points: </emph>" + newHP + " (" + newHitDice + newHitDie + conAddString + ")");
+        } else {
+            $monster.find(".monsterHP").html("<emph>Hit Points: </emph>" + monster[monsterID]["hp"]);
+        }
+        
+
+        //Modify traits
+        if (temp["traitModType"] != "none"){
+                htmlString = ""   
+                
+                    if (typeof temp["trait"][0] != undefined) {
+                        for (let j = 0; j < temp["trait"].length; j++) {
+                            if (temp["trait"][j]["text"] != undefined) {
+                                if (typeof temp["trait"][j]["text"] == "object") {
+                                    htmlString += "<p><emph><em>" + temp["trait"][j]["name"] + ": </em></emph>" + temp["trait"][j]["text"][0] + "</p>";
+                                    for (let k = 1; k < temp["trait"][j]["text"].length; k++) {
+                                        if (temp["trait"][j]["text"][k].length != 0 ) {
+                                        htmlString += "<p>&emsp;" + temp["trait"][j]["text"][k] + "</p>";
+                                    }
+                                    }
+                                } else {
+                                    htmlString += "<p><emph><em>" + temp["trait"][j]["name"] + ": </em></emph>" + temp["trait"][j]["text"] + "</p>";
+                                }
+                            } else {
+                                htmlString += "<p><emph><em>" + temp["trait"][j]["name"] + "</em></emph></p>";
+                            }
+                        }
+                    } else {
+                        htmlString += "<p><emph><em>" + temp["trait"]["name"] + ": </em></emph>";
+                        htmlString += temp["trait"]["text"] + "</p>";
+                    }
+                    
+            if (temp["traitModType"] == "replace") {
+
+                    $monster.find(".monsterTraits").html(htmlString)
+        
+                    htmlString = ""
+    
+            } else if (temp["traitModType"] == "add") {
+                
+
+                $monster.find(".monsterTraits").html($monster.find(".monsterTraits").html() + htmlString)
+        
+                htmlString = ""
+
+            }
+
+        }       
+
+        //Modify senses
+        if (temp["senseModType"] != "none") {
+            if (temp["senseModType"] == "replace") {
+                $monster.find(".monsterSenses").html("<emph>Senses: </emph>" + temp["senses"] + "<br/>")
+            } else if (temp["senseModType"] == "add") {
+                if (monster[monsterID]["senses"] != undefined) {
+                    $monster.find(".monsterSenses").html("<emph>Senses: </emph>" + monster[monsterID]["senses"] + ", " + temp["senses"] + "<br/>")
+                } else {
+                    $monster.find(".monsterSenses").html("<emph>Senses: </emph>" + temp["senses"] + "<br/>")
+                }                
+            }
+        }
+
+        //Modify passive perception
+        if (monster[monsterID]["passive"] != undefined) {
+            $monster.find(".monsterPassPer").html("<emph>Passive Perception: </emph>" + (Number(monster[monsterID]["passive"]) + (findStatMod(newAbilityScores["wis"]) - findStatMod(Number(monster[monsterID]["wis"])))) + "<br/>")
+        }
+
+        //Modify damage resistances 
+        if (temp["dmgResistModType"] != "none") {
+            if (temp["dmgResistModType"] == "add") {
+                if (monster[monsterID]["resist"] != undefined) {
+                    $monster.find(".monsterResist").html("<emph>Damage Resistances: </emph>" + monster[monsterID]["resist"] + ", " + temp["resist"] + "<br/>")
+                } else {
+                    $monster.find(".monsterResist").html("<emph>Damage Resistances: </emph>" + temp["resist"] + "<br/>")
+                }                
+            } else if (temp["dmgResistModType"] == "replace") {                
+                $monster.find(".monsterResist").html("<emph>Damage Resistances: </emph>" + temp["resist"] + "<br/>")
+            }
+        }
+
+        //Modify damage vulnerabilities 
+        if (temp["vulnerableModType"] != "none") {
+            if (temp["vulnerableModType"] == "add") {
+                if (monster[monsterID]["vulnerable"] != undefined) {
+                    $monster.find(".monsterVulnerable").html("<emph>Damage Vulnerabilities: </emph>" + monster[monsterID]["vulnerable"] + ", " + temp["vulnerable"] + "<br/>")
+                } else {
+                    $monster.find(".monsterVulnerable").html("<emph>Damage Vulnerabilities: </emph>" + temp["vulnerable"] + "<br/>")
+                }                
+            } else if (temp["vulnerableModType"] == "replace") {                
+                $monster.find(".monsterVulnerable").html("<emph>Damage Vulnerabilities: </emph>" + temp["vulnerable"] + "<br/>")
+            }
+        }
+
+        //Modify damage immunities 
+        if (temp["dmgImmuneModType"] != "none") {
+            if (temp["dmgImmuneModType"] == "add") {
+                if (monster[monsterID]["immune"] != undefined) {
+                    $monster.find(".monsterImmune").html("<emph>Damage Immunities: </emph>" + monster[monsterID]["immune"] + ", " + temp["immune"] + "<br/>")
+                } else {
+                    $monster.find(".monsterImmune").html("<emph>Damage Immunities: </emph>" + temp["immune"] + "<br/>")
+                }                
+            } else if (temp["dmgImmuneModType"] == "replace") {                
+                $monster.find(".monsterImmune").html("<emph>Damage Immunities: </emph>" + temp["immune"] + "<br/>")
+            }
+        }
+
+        //Modify condition immunities
+        if (temp["condImmuneModType"] != "none") {
+            if (temp["condImmuneModType"] == "add") {
+                if (monster[monsterID]["conditionImmune"] != undefined) {
+                    $monster.find(".monsterCondImmune").html("<emph>Condition Immunities: </emph>" + monster[monsterID]["conditionImmune"] + ", " + temp["conditionImmune"] + "<br/>")
+                } else {
+                    $monster.find(".monsterCondImmune").html("<emph>Condition Immunities: </emph>" + temp["conditionImmune"] + "<br/>")
+                }                
+            } else if (temp["condImmuneModType"] == "replace") {                
+                $monster.find(".monsterCondImmune").html("<emph>Condition Immunities: </emph>" + temp["conditionImmune"] + "<br/>")
+            }
+        }
+
+        //Modify saves
+        if (monster[monsterID]["saveObj"] != undefined) {
+            htmlString = "<emph>Saves: </emph>"
+            let saveKeys = Object.keys(monster[monsterID]["saveObj"])
+            for (let j = 0; j < saveKeys.length; j ++) {
+                htmlString += toTitleCase(saveKeys[j]) + " +" + (Number(monster[monsterID]["saveObj"][saveKeys[j]]) - Number(oldAbilityMods[saveKeys[j]]) + Number(newAbilityMods[saveKeys[j]]))
+                if (j < saveKeys.length-1) {
+                    htmlString += ", "
+                }
+            }
+            htmlString += "<br/>"
+            $monster.find(".monsterSave").html(htmlString)
+        }
+
+        //Modify skills
+        if (monster[monsterID]["skillObj"] != undefined) {
+            htmlString = "<emph>Skill: </emph>"
+            let skillKeys = Object.keys(monster[monsterID]["skillObj"])
+            for (let j = 0; j < skillKeys.length; j ++) {
+                htmlString += skillKeys[j] + " +" + (Number(monster[monsterID]["skillObj"][skillKeys[j]]) - Number(oldAbilityMods[skillAbilities[skillKeys[j]]]) + Number(newAbilityMods[skillAbilities[skillKeys[j]]]))
+                if (j < skillKeys.length-1) {
+                    htmlString += ", "
+                }
+            }
+            htmlString += "<br/>"
+            $monster.find(".monsterSkill").html(htmlString)
+        }
+
+        // Modify speeds
+
+
+        // Modify languages
+
+
+        // Modify legendary
+
+        
+        // "Modify" cr
+        $monster.find(".monsterCR").html($monster.find(".monsterCR").html() + " originally; use your discretion with templates.")
+
+        //Modify actions
+        if (temp["actionModType"] != "none") {
+            htmlString = ""
+            if (temp["action"] != undefined) {
+                $monster.find(".monsterActionTitle").html("<h4 style=\"text-align: left !important;\">Actions</h4>")
+                $monster.find(".monsterActionTitle").next().css("border-bottom","1px solid goldenrod")
+                
+                if (typeof temp["action"][0] != "undefined") {
+                    for (let j = 0; j < temp["action"].length; j++) {
+                        if (temp["action"][j]["text"] != undefined) {
+                            if (typeof temp["action"][j]["text"] == "object") {
+                                htmlString += "<p><emph><em>" + temp["action"][j]["name"] + ": </em></emph>" + temp["action"][j]["text"][0] + "</p>";
+                                for (let k = 1; k < temp["action"][j]["text"].length; k++) {
+                                    htmlString += "<p>&emsp;" + temp["action"][j]["text"][k] + "</p>";
+                                }
+                            } else {
+                                htmlString += "<p><emph><em>" + temp["action"][j]["name"] + ": </em></emph>" + temp["action"][j]["text"] + "</p>";
+                            }
+                        } else {
+                            htmlString += "<p><emph><em>" + temp["action"][j]["name"] + "</em></emph></p>";
+                        }
+                    }
+                } else {
+                    htmlString += "<p><emph><em>" + temp["action"]["name"] + ": </em></emph>";
+                    htmlString += temp["action"]["text"] + "</p>";
+                }
+                
+                
+                if (temp["actionModType"] == "replace") {
+                    $monster.find(".monsterActions").html(htmlString)
+                } else if (temp["actionModType"] == "add") {
+                    $monster.find(".monsterActions").html($monster.find(".monsterActions").html() + htmlString)
+                }
+                
+    
+                htmlString = ""
+            } else {
+                $monster.find(".monsterActionTitle").html("")
+                $monster.find(".monsterActionTitle").next().css("border-bottom","0px solid goldenrod")
+                $monster.find(".monsterActions").html("")
+            }
+        }
+
+
+        $monster.children().addClass("template-card")
+    } else {
+        rebuildMonster(monsterID)
+    }
+
+    $('.monsterGrid').isotope({
+        sortBy: 'name'
+    })
+}
+
+function rebuildMonster(id) {
+    let htmlString = "";
+    let monsterFilterString = "";
+
+        if (monster[id]["homebrew"] != undefined) {
+            $("#monster" + id).find(".monsterName").text(monster[id]["name"] + " (Homebrew)")
+            monsterFilterString += "special:homebrew, "
+        } else {
+            $("#monster" + id).find(".monsterName").text(monster[id]["name"])
+        }
+
+        if (monster[id]["template"] != undefined) {
+            monsterFilterString += "special:template, "
+        }
+
+        $("#monster" + id).find(".copyText").text(String(window.location).split('?s=')[0] + "?s=" + encodeURIComponent(monster[id]["name"]))
+
+        
+        if (monster[id]["size"] != undefined) {
+            htmlString += "<em>" + monster[id]["size"];
+            monsterFilterString += "size:"+monster[id]["size"] + ", "
+            $("#monster" + id).find(".monsterSize").text(monster[id]["size"])
+        }
+        if (monster[id]["type"] != undefined) {
+            htmlString += " " + monster[id]["type"]            
+            monsterFilterString += "type:"+monster[id]["type"] + ", "
+            $("#monster" + id).find(".monsterType").text(monster[id]["type"] + ",")
+        }
+        if (monster[id]["alignment"] != undefined) {
+            htmlString += ", " + toTitleCase(monster[id]["alignment"]) + "</em>"
+            $("#monster" + id).find(".monsterAlignment").html(toTitleCase(monster[id]["alignment"]))
+        }
+
+        htmlString = ""
+
+        if (monster[id]["ac"] != undefined) {
+            $("#monster" + id).find(".monsterAC").html("<emph>AC: </emph>" + monster[id]["ac"])            
+            monsterFilterString += "ac:"+monster[id]["ac"] + ", "
+        }
+        if (monster[id]["hp"] != undefined) {
+            $("#monster" + id).find(".monsterHP").html("<emph>Hit Points: </emph>" + monster[id]["hp"])
+        }
+        if (monster[id]["speed"] != undefined) {
+            $("#monster" + id).find(".monsterSpeed").html("<emph>Speed: </emph>" + monster[id]["speed"])
+        }
+
+
+        if (monster[id]["str"] != undefined) {
+            $("#monster" + id).find(".monsterStr").html("<emph>Str: </emph>" + monster[id]["str"] + " (" + findStatMod(monster[id]["str"]) + ") &emsp;")
+        }
+        if (monster[id]["dex"] != undefined) {
+            $("#monster" + id).find(".monsterDex").html("<emph>Dex: </emph>" + monster[id]["dex"] + " (" + findStatMod(monster[id]["dex"]) + ") &emsp;")
+        }
+        if (monster[id]["con"] != undefined) {
+            $("#monster" + id).find(".monsterCon").html("<emph>Con: </emph>" + monster[id]["con"] + " (" + findStatMod(monster[id]["con"]) + ") &emsp;")
+        }
+        if (monster[id]["int"] != undefined) {
+            $("#monster" + id).find(".monsterInt").html("<emph>Int: </emph>" + monster[id]["int"] + " (" + findStatMod(monster[id]["int"]) + ") &emsp;")
+        }
+        if (monster[id]["wis"] != undefined) {
+            $("#monster" + id).find(".monsterWis").html("<emph>Wis: </emph>" + monster[id]["wis"] + " (" + findStatMod(monster[id]["wis"]) + ") &emsp;")
+        }
+        if (monster[id]["cha"] != undefined) {
+            $("#monster" + id).find(".monsterCha").html("<emph>Cha: </emph>" + monster[id]["cha"] + " (" + findStatMod(monster[id]["cha"]) + ")")
+        }
+
+        if (monster[id]["saveObj"] != undefined) {
+            htmlString = "<emph>Saves: </emph>"
+            let saveKeys = Object.keys(monster[id]["saveObj"])
+            for (let j = 0; j < saveKeys.length; j ++) {
+                htmlString += toTitleCase(saveKeys[j]) + " +" + monster[id]["saveObj"][saveKeys[j]]
+                if (j < saveKeys.length-1) {
+                    htmlString += ", "
+                }
+            }
+            htmlString += "<br/>"
+            $("#monster" + id).find(".monsterSave").html(htmlString)
+        } else {
+            $("#monster" + id).find(".monsterSave").html("")
+        }
+
+        htmlString = ""
+
+        if (monster[id]["skillObj"] != undefined) {
+            htmlString = "<emph>Skill: </emph>"
+            let skillKeys = Object.keys(monster[id]["skillObj"])
+            for (let j = 0; j < skillKeys.length; j ++) {
+                htmlString += skillKeys[j] + " +" + monster[id]["skillObj"][skillKeys[j]]
+                if (j < skillKeys.length-1) {
+                    htmlString += ", "
+                }
+            }
+            htmlString += "<br/>"
+            $("#monster" + id).find(".monsterSkill").html(htmlString)
+        } else {
+            $("#monster" + id).find(".monsterSkill").html("")
+        }
+
+        htmlString = ""
+
+        if (monster[id]["resist"] != undefined) {
+            $("#monster" + id).find(".monsterResist").html("<emph>Damage Resistances: </emph>" + monster[id]["resist"] + "<br/>")
+        }  else {
+            $("#monster" + id).find(".monsterResist").html("")
+        }       
+
+        if (monster[id]["vulnerable"] != undefined) {
+            $("#monster" + id).find(".monsterVulnerable").html("<emph>Damage Vulnerabilities: </emph>" + monster[id]["vulnerable"] + "<br/>")
+        } else {
+            $("#monster" + id).find(".monsterVulnerable").html("")
+        }
+
+        if (monster[id]["immune"] != undefined) {
+            $("#monster" + id).find(".monsterImmune").html("<emph>Damage Immunities: </emph>" + monster[id]["immune"] + "<br/>")
+        } else {
+            $("#monster" + id).find(".monsterImmune").html("")
+        }
+
+        if (monster[id]["conditionImmune"] != undefined) {
+            $("#monster" + id).find(".monsterCondImmune").html("<emph>Condition Immunities: </emph>" + monster[id]["conditionImmune"] + "<br/>")
+        } else {
+            $("#monster" + id).find(".monsterCondImmune").html("")
+        }
+
+        if (monster[id]["senses"] != undefined) {
+            $("#monster" + id).find(".monsterSenses").html("<emph>Senses: </emph>" + monster[id]["senses"] + "<br/>")
+        } else {
+            $("#monster" + id).find(".monsterSenses").html("")
+        }
+
+        if (monster[id]["passive"] != undefined) {
+            $("#monster" + id).find(".monsterPassPer").html("<emph>Passive Perception: </emph>" + monster[id]["passive"] + "<br/>")
+        } else {
+            $("#monster" + id).find(".monsterPassPer").html("")
+        }
+
+        if (monster[id]["languages"] != undefined) {
+            $("#monster" + id).find(".monsterLanguages").html("<emph>Languages: </emph>" + monster[id]["languages"] + "<br/>")
+        } else {
+            $("#monster" + id).find(".monsterLanguages").html("")
+        }
+
+        if (monster[id]["cr"] != undefined) {
+            $("#monster" + id).find(".monsterCR").html("<emph>Challenge: </emph>" + monster[id]["cr"])            
+            monsterFilterString += "cr:"+monster[id]["cr"] + ", "
+        }
+
+
+
+
+        if (monster[id]["trait"] != undefined) {
+            
+            if (typeof monster[id]["trait"][0] != "undefined") {
+                for (let j = 0; j < monster[id]["trait"].length; j++) {
+                    if (monster[id]["trait"][j]["text"] != undefined) {
+                        if (typeof monster[id]["trait"][j]["text"] == "object") {
+                            htmlString += "<p><emph><em>" + monster[id]["trait"][j]["name"] + ": </em></emph>" + monster[id]["trait"][j]["text"][0] + "</p>";
+                            for (let k = 1; k < monster[id]["trait"][j]["text"].length; k++) {
+                                if (monster[id]["trait"][j]["text"][k].length != 0 ) {
+                                htmlString += "<p>&emsp;" + monster[id]["trait"][j]["text"][k] + "</p>";
+                            }
+                            }
+                        } else {
+                            htmlString += "<p><emph><em>" + monster[id]["trait"][j]["name"] + ": </em></emph>" + monster[id]["trait"][j]["text"] + "</p>";
+                        }
+                    } else {
+                        htmlString += "<p><emph><em>" + monster[id]["trait"][j]["name"] + "</em></emph></p>";
+                    }
+                }
+            } else {
+                htmlString += "<p><emph><em>" + monster[id]["trait"]["name"] + ": </em></emph>";
+                htmlString += monster[id]["trait"]["text"] + "</p>";
+            }
+            
+            
+            
+            
+            $("#monster" + id).find(".monsterTraits").html(htmlString)
+
+            htmlString = ""
+            
+        } else {
+            $("#monster" + id).find(".monsterTraits").html("")
+        }
+
+        if (monster[id]["action"] != undefined) {
+            $("#monster" + id).find(".monsterActionTitle").html("<h4 style=\"text-align: left !important;\">Actions</h4>")
+            $("#monster" + id).find(".monsterActionTitle").next().css("border-bottom","1px solid goldenrod")
+            
+            if (typeof monster[id]["action"][0] != "undefined") {
+                for (let j = 0; j < monster[id]["action"].length; j++) {
+                    if (monster[id]["action"][j]["text"] != undefined) {
+                        if (typeof monster[id]["action"][j]["text"] == "object") {
+                            htmlString += "<p><emph><em>" + monster[id]["action"][j]["name"] + ": </em></emph>" + monster[id]["action"][j]["text"][0] + "</p>";
+                            for (let k = 1; k < monster[id]["action"][j]["text"].length; k++) {
+                                htmlString += "<p>&emsp;" + monster[id]["action"][j]["text"][k] + "</p>";
+                            }
+                        } else {
+                            htmlString += "<p><emph><em>" + monster[id]["action"][j]["name"] + ": </em></emph>" + monster[id]["action"][j]["text"] + "</p>";
+                        }
+                    } else {
+                        htmlString += "<p><emph><em>" + monster[id]["action"][j]["name"] + "</em></emph></p>";
+                    }
+                }
+            } else {
+                htmlString += "<p><emph><em>" + monster[id]["action"]["name"] + ": </em></emph>";
+                htmlString += monster[id]["action"]["text"] + "</p>";
+            }
+            
+            
+            
+            
+            $("#monster" + id).find(".monsterActions").html(htmlString)
+
+            htmlString = ""
+        } else {
+            $("#monster" + id).find(".monsterActionTitle").html("")
+            $("#monster" + id).find(".monsterActionTitle").next().css("border-bottom","0px solid goldenrod")
+            $("#monster" + id).find(".monsterActions").html("")
+        }
+
+        if (monster[id]["legendary"] != undefined) {
+            $("#monster" + id).find(".monsterLegendaryTitle").html("<h4 style=\"text-align: left !important;\">Legendary Actions</h4><div style=\"border-bottom: 1px solid goldenrod !important\"></div><br/>The "+monster[id]["name"]+" can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time, and only at the end of another creature's turn. The "+ monster[id]["name"] + " regains spent legendary actions at the start of its turn.")
+            
+            
+            if (typeof monster[id]["legendary"][0] != "undefined") {
+                for (let j = 0; j < monster[id]["legendary"].length; j++) {
+                    if (monster[id]["legendary"][j]["text"] != undefined) {
+                        if (typeof monster[id]["legendary"][j]["text"] == "object") {
+                            htmlString += "<p><emph><em>" + monster[id]["legendary"][j]["name"] + ": </em></emph>" + monster[id]["legendary"][j]["text"][0] + "</p>";
+                            for (let k = 1; k < monster[id]["legendary"][j]["text"].length; k++) {
+                                htmlString += "<p>&emsp;" + monster[id]["legendary"][j]["text"][k] + "</p>";
+                            }
+                        } else {
+                            htmlString += "<p><emph><em>" + monster[id]["legendary"][j]["name"] + ": </em></emph>" + monster[id]["legendary"][j]["text"] + "</p>";
+                        }
+                    } else {
+                        htmlString += "<p><emph><em>" + monster[id]["legendary"][j]["name"] + "</em></emph></p>";
+                    }
+                }
+            } else {
+                htmlString += "<p><emph><em>" + monster[id]["legendary"]["name"] + ": </em></emph>";
+                htmlString += monster[id]["legendary"]["text"] + "</p>";
+            }
+            
+            
+            
+            
+            $("#monster" + id).find(".monsterLegendary").html(htmlString)
+
+            htmlString = ""
+        }
+
+
+        $("#monster" + id).find(".monsterFilters").text(monsterFilterString)
+        
+        $("#monster" + id).children().removeClass("template-card")
+
+        if(monster[id]["homebrew"] != undefined) {
+            $("#monster" + id).children().addClass("homebrew-card")
+        }
+
+        htmlString = "";
+        monsterFilterString = ""
+}
+
+let skillAbilities = {
+    "Acrobatics": "dex",
+    "Animal Handling": "wis",
+    "Arcana": "int",
+    "Athletics": "str",
+    "Deception": "cha",
+    "History": "int",
+    "Insight": "wis",
+    "Intimidation": "cha",
+    "Investigation": "int",
+    "Medicine": "wis",
+    "Nature": "int",
+    "Perception": "wis",
+    "Performance": "cha",
+    "Persuasion": "cha",
+    "Religion": "int",
+    "Sleight of Hand": "dex",
+    "Stealth": "dex",
+    "Survival": "wis"
 }

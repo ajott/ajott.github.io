@@ -14,6 +14,21 @@ var feat = [{
             "category": "ability score",
             "text": "Charisma +1"
         }
+    },{
+        "name": "Actor",
+        "homebrew": "YES",
+        "text": [
+            "Skilled at mimicry and dramatics, you gain the following benefits:",
+            "\u2022 Increase your Charisma score by 1, to a maximum of 20.",
+            "",
+            "\u2022 You have advantage on Charisma (Deception) and Charisma (Performance) checks.",
+            "",
+            "\u2022 You may attempt to create a diversion with either a Charisma (Deception) check or a Charisma (Performance) check; if you do so, choose a number of creatures that can see and hear you up to &frac12; your level. Those creatures make a contested Wisdom (Insight) check to avoid being distracted. If you succeed, the affected creatures have Disadvantage on any Initiative rolls for the next two minutes. If you succeed by 10 or more against any creature, the creature is Surprised at the start of any ensuing encounters, or as determined by the DM."
+        ],
+        "modifier": {
+            "category": "ability score",
+            "text": "Charisma +1"
+        }
     },
     {
         "name": "Alert",
@@ -180,6 +195,19 @@ var feat = [{
         ]
     },
     {
+        "name": "Grappler",
+        "homebrew": "YES",
+        "text": [
+            "You gain the following grappling maneuvers:",
+            "",
+            "<emph>Shoulder Spear.</emph> If you move at least 10 feet in a straight line before making your grapple check, you may use a bonus action to attempt to knock the target creature prone as part of the check. If your grapple check result exceeds the target creature's contested check by 5 or more, they also gain the Restrained condition for one round. Regardless of the success or failure of this check, you are yourself knocked prone.",
+            "",
+            "<emph>Head Smash. </emph>You may use your Attack action to attempt to stun a creature grappled by you. To do so, make another grapple check. If you succeed, the grappled creature must make a Constitution saving throw with a DC equal to <emph>8 + your proficiency bonus + your Strength modifier</emph>. On a failed save, the creature is Stunned for one round.",
+            "",
+            "<emph>Wrist Grab. </emph> Whenever you attempt a grapple check against a creature with humanoid forelimbs, as a bonus action you may attempt to lock their arms with brute strength as part of the check. If you are successful on your grapple check, the creature may not make attacks using the restrained arm(s), including the use of weapons they may be holding or natural attacks with claws or other appendages, for as long as they are grappled. <br/>You may attempt to grab one or two forelimbs with this maneuver; if you attempt to restrain two forelimbs, your target has Advantage on the contested check."
+        ]
+    },
+    {
         "name": "Great Weapon Master",
         "text": [
             "You've learned to put the weight of a weapon to your advantage, letting its momentum empower your strikes. You gain the following benefits:",
@@ -260,6 +288,29 @@ var feat = [{
             "\u2022 You can accurately recall anything you have seen or heard within the past month.",
             "",
             "Source: Player's Handbook, page 167"
+        ],
+        "modifier": {
+            "category": "ability score",
+            "text": "Intelligence +1"
+        }
+    },
+    {
+        "name": "Keen Mind",
+        "homebrew": "YES",
+        "text": [
+            "You have a mind that can track time, direction, and detail with uncanny precision. You gain the following benefits.",
+            "",
+            "\u2022 Increase your Intelligence score by 1, to a maximum of 20.",
+            "",
+            "\u2022 You always know which way is north.",
+            "",
+            "\u2022 You always know the number of hours left before the next sunrise or sunset.",
+            "",
+            "\u2022 You can accurately recall anything you have seen or heard within the past month.",
+            "",
+            "\u2022 You have Advantage on all saving throws against illusion spells, as well as any Intelligence checks to disbelieve an illusion.",
+            "",
+            "\u2022 Choose one of the following skills: Arcana, History, Investigation, Nature, or Religion. Double your proficiency bonus for that skill. If you are not proficient with any of the listed skills, you may instead become proficient in one of the skills."
         ],
         "modifier": {
             "category": "ability score",
@@ -605,6 +656,19 @@ var feat = [{
             "\u2022 You gain proficiency with four simple or martial weapons of your choice.",
             "",
             "Source: Player's Handbook, page 170 and 6/10/2015 errata"
+        ]
+    },
+    {
+        "name": "Weapon Master",
+        "homebrew": "YES",
+        "text": [
+            "You have practiced extensively with a variety of weapons, gaining the following benefits:",
+            "",
+            "\u2022 Increase your Strength or Dexterity score by 1, to a maximum of 20.",
+            "",
+            "\u2022 You gain proficiency with four simple or martial weapons of your choice.",
+            "",
+            "\u2022 Choose two weapons with which you are proficient. If a chosen weapon has the Range or Thrown property, you may ignore partial cover when attacking with that weapon. If a chosen weapon is a melee weapon, you gain a bonus to your damage equal to &frac12; your Strength modifier (if attacking using Strength); or equal to &frac12; your Dexterity modifier, if the weapon has the Finesse property."
         ]
     }
 ];

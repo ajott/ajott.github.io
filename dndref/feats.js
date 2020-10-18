@@ -670,5 +670,208 @@ var feat = [{
             "",
             "\u2022 Choose two weapons with which you are proficient. If a chosen weapon has the Range or Thrown property, you may ignore partial cover when attacking with that weapon. If a chosen weapon is a melee weapon, you gain a bonus to your damage equal to &frac12; your Strength modifier (if attacking using Strength); or equal to &frac12; your Dexterity modifier, if the weapon has the Finesse property."
         ]
+    }, 
+    {
+        "name": "Artificer Initiate (UA72)",
+        "ua": "YES",
+        "text": [
+            "You've learned some of an artificer's inventiveness, granting you the following benefits:",
+            "",
+            "\u2022 You learn one cantrip of your choice from the artificer spell list, and you learn one 1st-level spell of your choice from that list. Intelligence is your spellcasting ability for these spells. Whenever you gain a level, you can replace one of these spells with another spell of the same level from the artificer spell list.",
+            "",
+            "\u2022 You can cast this feat’s 1st-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast the spellusing any spell slots you have.",
+            "",
+            "\u2022 You gain proficiency with one type of artisan’s tools of your choice, and you can use that type of tool as a spellcasting focus for any spell you cast that uses Intelligence as its spellcasting ability."
+        ]
+    }, 
+    {
+        "name": "Chef (UA72)",
+        "ua": "YES",
+        "text": [
+            "Time and effort spent mastering the culinary arts has paid off. You gain the following benefits:",
+            "",
+            "\u2022 Increase your Constitution or Wisdom score by 1, to a maximum of 20.",
+            "",
+            "\u2022 You gain proficiency with cook’s utensils if you don’t already have it.",
+            "",
+            "\u2022 As part of a short rest, you can cook special food, provided you have ingredients and cook’s utensils on hand. You can prepare enough of this food for a number of creatures equal to <emph>4 + your proficiency bonus</emph>. At the end of the short rest, any creature who eats the food and spends one or more Hit Dice to regain hit points regains an extra 1d8 hit points.",
+            "",
+            "\u2022 With one hour of work or when you finisha long rest, you can cook a number of treats <emph>equal to your proficiency bonus</emph>. These special treats last 8 hours after being made. A creature can use a bonus action to eat one of those treats to gain temporary hit points <emph>equal to your proficiency bonus</emph>."
+        ]
+    }, 
+    {
+        "name": "Crusher (UA72)",
+        "ua": "YES",
+        "text": [
+            "You are practiced in the art of crushing your enemies, granting you the following benefits:",
+            "",
+            "\u2022 Increase your Strength or Dexterity by 1, to a maximum of 20.",
+            "",
+            "\u2022 Once per turn, when you hit a creature with an attack that deals bludgeoning damage, you can move it 5 feet to an unoccupied space, provided the target is no more than one size larger than you.",
+            "",
+            "\u2022 When you score a critical hit that deals bludgeoning damage to a creature, attack rolls against that creature are made with advantage until the end of your next turn."
+        ]
+    }, 
+    {
+        "name": "Eldritch Adept (UA72)",
+        "ua": "YES",
+        "prerequisite": "Spellcasting or Pact Magic feature",
+        "text": [
+            "Studying occult lore, you have unlocked eldritch power within yourself: you learn one Eldritch Invocation option of your choice from the warlock class.",
+            "",
+            "If the invocation has a prerequisite, you can choose that invocation only if you’re a warlock and only if you meet the prerequisite.",
+            "",
+            "Whenever you gain a level, you can replace the invocation with another one from the warlock class."
+        ]
+    }, 
+    {
+        "name": "Fey Touched (UA72)",
+        "ua": "YES",
+        "text": [
+            "Your exposure to the Feywild or one of its denizens has left a magical mark on you. You gain the following benefits:",
+            "",
+            "\u2022 Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.",
+            "",
+            "\u2022 You learn the <emph>Misty Step</emph> spell and one 1st-level spell of your choice. The 1st-level spell must be from the divination or enchantment school of magic. You can cast each of these spells without expending a spell slot. Once you cast either of these spells in this way, you can’t cast that spell inthis way again until you finish a long rest. You can also cast these spells using spell slots you have of the appropriate level. The spells’ spellcasting ability is the ability increased by this feat."
+        ]
+    }, 
+    {
+        "name": "Fighting Initiate (UA72)",
+        "ua": "YES",
+        "prerequisite": "Proficiency with a martial weapon",
+        "text": [
+            "Your martial training has helped you develop a particular style of fighting. As a result, you learn one Fighting Style option of your choice from the fighter class. If you already have one or more Fighting Styles, the one you choose with this feat must be different.",
+            "",
+            "Whenever you gain a level, you can replace this feat’s fighting style with another one from the fighter class that you don’t have."
+        ]
+    }, 
+    {
+        "name": "Gunner (UA72)",
+        "ua": "YES",
+        "text": [
+            "You have a quick hand and keen eye when employing firearms, granting you the following benefits:",
+            "",
+            "\u2022 Increase your Dexterity score by 1, to a maximum of 20.",
+            "",
+            "\u2022 You gain proficiency with firearms (see “Firearms,” pp. 267-268 of the <em>Dungeon Master’s Guide</em>).",
+            "",
+            "\u2022 You ignore the loading property of firearms.",
+            "",
+            "\u2022 Being within 5 feet of a hostile creature doesn’t impose disadvantage on your ranged attack rolls."
+        ]
+    }, 
+    {
+        "name": "Metamagic Adept (UA72)",
+        "ua": "YES",
+        "prerequisite": "Spellcasting or Pact Magic feature",
+        "text": [
+            "You’ve learned how to exert your will on your spells to alter how they function. You gain the following benefits:",
+            "",
+            "\u2022 You learn two Metamagic options of your choice from the sorcerer class. You can use only one Metamagic option on a spell when you cast it, unless the option says otherwise. Whenever you gain a level, you can replace one of your Metamagic options with another one from the sorcerer class.",
+            "",
+            "\u2022 You gain 2 sorcery points to spend on Metamagic (these points are added to any sorcery points you have from another source but can be used only on Metamagic). You regain all spent sorcery points when you finish a long rest."
+        ]
+    }, 
+    {
+        "name": "Piercer (UA72)",
+        "ua": "YES",
+        "text": [
+            "You have achieved a penetrating precision in combat, granting you the following benefits:",
+            "",
+            "\u2022 Increase your Strength or Dexterity by 1, to a maximum of 20.",
+            "",
+            "\u2022 Once per turn, when you hit a creature with an attack that deals piercing damage, you can reroll one of the attack’s damage dice, and you must use the new roll.",
+            "",
+            "\u2022 When you score a critical hit that deals piercing damage to a creature, you can roll one additional damage die when determining the extra piercing damage the target takes."
+        ]
+    }, 
+    {
+        "name": "Poisoner (UA72)",
+        "ua": "YES",
+        "text": [
+            "You can prepare and deliver deadly poisons, gaining the following benefits:",
+            "",
+            "\u2022 When you make a damage roll, you ignore resistance to poison damage.",
+            "",
+            "\u2022 You can coat a weapon in poison as a bonus action, instead of an action.",
+            "",
+            "\u2022 You gain proficiency with the poisoner’s kit if you don’t already have it. With one hour of work using a poisoner’s kit and expending 50 gp worth of materials, you can create a number of doses of potent poison <emph>equal to your proficiency bonus</emph>. Once applied, the poison retains potency for 1 minute or until you hit with the weapon. When a weapon coated in this poison deals damage to a creature, that creature must succeed on a DC 14 Constitution saving throw or take 2d8 poison damage and become poisoned until the end of your next turn."
+        ]
+    }, 
+    {
+        "name": "Practiced Expert (UA72)",
+        "ua": "YES",
+        "text": [
+            "You have honed your proficiency with particular skills or tools, gaining the following benefits:",
+            "",
+            "\u2022 Increase one ability score of your choice by 1, to a maximum of 20.",
+            "",
+            "\u2022 You gain proficiency with one skill or tool of your choice.",
+            "",
+            "\u2022 Choose one of your skill or tool proficiencies. Your proficiency bonus is doubled for any ability check you make that uses the chosen proficiency."
+        ]
+    }, 
+    {
+        "name": "Shadow Touched (UA72)",
+        "ua": "YES",
+        "text": [
+            "You learn how to bend shadows from your experience with the Shadowfell. You gain the following benefits:",
+            "",
+            "\u2022 Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.",
+            "",
+            "\u2022 You learn the <emph>darkness</emph> spell and one 1st-level spell of your choice. The 1st-level spell must be from the illusion or necromancy school of magic. You can cast each of these spells without expending a spell slot. Once you cast either of these spells in this way, you can’t cast that spell in this way again until you finish a long rest. You can also cast these spells using spell slots you haveof the appropriate level. The spells’ spellcasting ability is the ability increased by this feat."
+        ]
+    }, 
+    {
+        "name": "Shield Training (UA72)",
+        "ua": "YES",
+        "text": [
+            "You’ve trained in the effective use of shields. You gain the following benefits:",
+            "",
+            "\u2022 Increase your Strength, Dexterity, or Constitution score by 1, to a maximum of 20.",
+            "",
+            "\u2022 You gain proficiency with shields.",
+            "",
+            "\u2022 In combat, you can don or doff a shield as the free object interaction on your turn.",
+            "",
+            "\u2022 If you have the Spellcasting or Pact Magic feature, you can use a shield as a spellcasting focus."
+        ]
+    }, 
+    {
+        "name": "Slasher (UA72)",
+        "ua": "YES",
+        "text": [
+            "You’ve learned where to cut to have the greatest results, granting you the following benefits:",
+            "",
+            "\u2022 Increase your Strength or Dexterity by 1, to a maximum of 20.",
+            "",
+            "\u2022 Once per turn when you hit a creature with an attack that deals slashing damage, you can reduce the speed of the target by 10 feet until the start of your next turn.",
+            "",
+            "\u2022 When you score a critical hit that deals slashing damage to a creature, you grievously wound it. Until the start of your next turn, the target has disadvantage on all attack rolls."
+        ]
+    }, 
+    {
+        "name": "Tandem Tactician (UA72)",
+        "ua": "YES",
+        "text": [
+            "Your presence in a scrap tends to elevate your comrades. You gain the following benefits:",
+            "",
+            "\u2022 You can use the Help action as a bonus action. ",
+            "",
+            "\u2022 When you use the Help action to aid an ally in attacking a creature, increase the range of the Help action by 10 feet. Additionally, you can help two allies targeting the same creature within range when you use the Help action this way."
+        ]
+    }, 
+    {
+        "name": "Tracker (UA72)",
+        "ua": "YES",
+        "text": [
+            "You have spent time hunting creatures and honed your skills, gaining the following benefits:",
+            "",
+            "\u2022 Increase your Wisdom score by 1, to a maximum of 20.",
+            "",
+            "\u2022 You learn the <emph>hunter’s mark</emph> spell. You can cast it once without expending a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast the spell using any spell slots you have. Wisdom is your spellcasting ability for this spell.",
+            "",
+            "\u2022 You have advantage on Wisdom (Survival) checks to track creatures."
+        ]
     }
 ];

@@ -857,6 +857,8 @@ function buildFeats() {
         $("#feat" + i).addClass("grid-item")
         if (feat[i]["homebrew"] != undefined) {
             $("#feat" + i).children().addClass("homebrew-card")
+        } else if (feat[i]["ua"] != undefined) {
+            $("#feat" + i).children().addClass("ua-card")
         }
 
         htmlString = "";

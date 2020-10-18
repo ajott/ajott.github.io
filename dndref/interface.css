@@ -501,6 +501,19 @@ Generated Maroon theme
     background-color: rgba(77, 107, 122,.5);
 }
 
+.advancementButtonMOoT {
+    top: 40px;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 50;
+    border: 1px solid silver;
+    background-color: rgb(139,0,139) !important;
+}
+
+.advancementButtonMOoT + .advancements {
+    background-color: rgba(139,0,139,.5);
+}
+
 .advancementButtonUA {
     top: 40px;
     position: -webkit-sticky;

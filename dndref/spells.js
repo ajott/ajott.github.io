@@ -9048,6 +9048,23 @@ var spell = [{
             "",
             "An affected creature is aware of the spell, but not aware of who cast it, and can thus avoid answering questions to which it would normally respond with the truth. Such creatures can be evasive in its answers as long as it remains outside the boundaries of the truth."
         ]
+    },
+    {
+        "name": "Frost Fingers",
+        "level": "1nd level",
+        "school": "Evocation",
+        "time": "1 action",
+        "range": "Self (15-foot cone)",
+        "components": "V, S",
+        "duration": "Instantaneous",
+        "classes": "Wizard",
+        "text": [
+            "Freezing cold blasts from your fingertips in a 15-foot cone. Each creature in that area must make a Constitution saving throw, taking 2d8 cold damage on a failed save, or half as much on a successful one.",
+            "",
+            "The cold freezes nonmagical liquids in the area that aren't being worn or carried.",
+            "",
+            "<emph>At Higher Levels.</emph> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st."
+        ]
     }
 ];
 

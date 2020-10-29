@@ -446,7 +446,7 @@ Generated Maroon theme
 }
 
 .ua-card {
-    background-color: rgb(105, 122, 77) !important;
+    background-color: rgb(105, 122, 77,.75) !important;
 }
 
 .template-card {

@@ -24,24 +24,39 @@
 	<br/>
 	Hit Number: <span id="hitnumber"></span>
 	<br/>
+	<table id="hittable"><tr><td id="hit0" style="height: 23.5px;"></td><td id="hit1" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit2" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit3" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit4" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit5" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit6" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit7" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit8" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit9" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit10" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit11" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit12" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit13" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit14" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit15" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit16" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit17" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit18" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit19" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit20" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit21" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td><td id="hit22" class="hitnumberbonus" style="display: none;"><img src="sword.svg" style="width: 16px; height: 16px;"/></td></tr></table>
+	<br/>
 	d10 Roll: <span id="d10roll"></span>
 	<br/>
+	<br/>
 	Total Hit Number: <span id="totalhit"></span>
-	<hr/>
+	<br/>
+	<br/>
+	<div id="monster">
+	<strong><span id="monstername"></span></strong>
+	<br/>
 	Monster Hit Number: <span id="monsterhit"></span>
-	<hr/>
+	<br/>
+	</div>
+	<br/>	
 	<div id="hitdiv">
 	<button id="hit" onclick=trytohit()>Hit!</button>
 	</div>
 	<div id="win" style="display:none;">
 		You have slain the Big Bad Boss!
 		<br/>
+		<br/>
 		<button onclick=setupGame()>Retire</button>
 	</div>
 	<div id="slain" style="display: none;">
 		You have died.
 		<br/>
+		<br/>
 		The toughest monster you slew had a hit number of <span id="finalmonsterhit"></span>
+		<br/>
+		<br/>
+		It was: <strong><span id="finalmonsterslain"></span></strong>
+		<br/>
 		<br/>
 		<button onclick=setupGame()>Try Again</button>
 	</div>

@@ -1,0 +1,24 @@
+
+
+button{
+	height: 2.5em;
+	width: 6em;
+}
+
+table{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+
+.greyed{
+	background-color: grey !important;
+}
+
+footer {
+	position:absolute;
+	bottom:0;
+	width:100%;
+	height:60px;
+ }

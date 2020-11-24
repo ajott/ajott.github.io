@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<title>Number Go Up!</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="interface.css" />
+	<!-- JavaScript -->
+	<script type="text/javascript" src="main.js"></script>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+	<h1>You are on an Adventure!</h1>
+	<br/>
+	<br/>
+	<div id="healthdiv">Health Number: <span id="healthnumber"></span></div>
+	<br/>
+	Hit Number: <span id="hitnumber"></span>
+	<br/>
+	d10 Roll: <span id="d10roll"></span>
+	<br/>
+	Total Hit Number: <span id="totalhit"></span>
+	<hr/>
+	Monster Hit Number: <span id="monsterhit"></span>
+	<hr/>
+	<div id="hitdiv">
+	<button id="hit" onclick=trytohit()>Hit!</button>
+	</div>
+	<div id="win" style="display:none;">
+		You have slain the Big Bad Boss!
+		<br/>
+		<button onclick=setupGame()>Retire</button>
+	</div>
+	<div id="slain" style="display: none;">
+		You have died.
+		<br/>
+		The toughest monster you slew had a hit number of <span id="finalmonsterhit"></span>
+		<br/>
+		<button onclick=setupGame()>Try Again</button>
+	</div>
+</body>
+<footer>
+	Inspired by <a href="https://i.imgur.com/Mh4hmM5.png" target=_blank><em>Number Go Up. A Minimalist Hero's Journey</em> by Evoro</a>
+</footer>
+</html>

@@ -13,7 +13,7 @@ function setupGame() {
   hitNumber = 0;
   monsterHit = 4;
   $("#healthnumber").text(healthNumber);
-  $("#healthdiv").css("background-color", "green");
+  $(".health").css("background-color", "green").show();;
   $("#hitnumber").text(hitNumber);
   $("#monsterhit").text(monsterHit);
   $("#d10roll").text("");
@@ -48,16 +48,21 @@ function trytohit() {
   } else {
     healthNumber -= 1;
     if (healthNumber == 4) {
-      $("#healthdiv").css("background-color", "greenyellow");
+      $("#health5").hide();
+      $(".health").css("background-color", "greenyellow");
     } else if (healthNumber == 3) {
-      $("#healthdiv").css("background-color", "yellow");
+      $("#health4").hide();
+      $(".health").css("background-color", "yellow");
     } else if (healthNumber == 2) {
-      $("#healthdiv").css("background-color", "orange");
+      $("#health3").hide();
+      $(".health").css("background-color", "orange");
     } else if (healthNumber == 1) {
-      $("#healthdiv").css("background-color", "red");
+      $("#health2").hide();
+      $(".health").css("background-color", "red");
     }
     $("#healthnumber").text(healthNumber);
-    if (healthNumber == 0) {      
+    if (healthNumber == 0) {     
+      $(".health").hide(); 
       $("#finalmonsterhit").text(monsterHit-1);
       $("#slain").show();
       $("#hit").hide();

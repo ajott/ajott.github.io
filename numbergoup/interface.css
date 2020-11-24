@@ -1,15 +1,18 @@
-
+body {
+	background-color: #16161d;
+	color: white;
+}
 
 button{
 	height: 2.5em;
 	width: 6em;
 }
-
+/* 
 table{
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-}
+} */
 
 
 .greyed{
@@ -21,4 +24,10 @@ footer {
 	bottom:0;
 	width:100%;
 	height:60px;
+ }
+
+
+ .health {
+	 width: 10px;
+	 height: 10px;
  }

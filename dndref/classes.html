@@ -188,8 +188,7 @@
                         Traditions</a>
                 </div>
             </div>
-            <div class="dropdown-divider"></div>
-            <div class="w3-darker-grey w3-hide-small" style="background-color: rgb(105, 122, 77) !important;">
+            <div class="w3-darker-grey w3-hide-small" style="background-color: rgb(11,145,133) !important;">
                 <button onclick="accordionSidebar('artificersidebar')"
                     class="w3-button w3-round-large w3-hover-gold">Artificer <i class="fa fa-caret-down"></i></button>
                 <div class="w3-hide w3-container w3-block w3-dark-grey classNavSidebar" id="artificersidebar">
@@ -205,6 +204,7 @@
                         Specialist</a>
                 </div>
             </div>
+            <div class="dropdown-divider"></div>
             <!-- <div class="w3-darker-grey w3-hide-small" style="background-color: rgb(105, 122, 77) !important;">
                 <button onclick="accordionSidebar('mysticsidebar')"
                     class="w3-button w3-round-large w3-hover-gold">Mystic <i class="fa fa-caret-down"></i></button>
@@ -258,12 +258,12 @@
                 <h1>Information</h1>
                 <div class="w3-center w3-centered">
                     <p>
-                        All classes from the Player's Handbook (PHB) are listed here, as well as some classes from
+                        All classes from the Player's Handbook (PHB) are listed here, as well as Artificer from Tasha's Cauldron of Everything (TCE) some classes from
                         Unearthed Arcana (UA) and Homebrew (HB).
                     </p>
                     <p>
                         In addition, classes will have subclasses from the PHB, the Dungeon Master's Guide (DMG),
-                        Xanathar's Guide to Everything (XGE), Mythic Odysseys of Theros (MOoT), UA, and some HB.
+                        Xanathar's Guide to Everything (XGE), Mythic Odysseys of Theros (MOoT), TCE, UA, and some HB.
                     </p>
                     <p>
                         To tell at a glance, PHB classes and subclasses have no special styling applied.</p>
@@ -271,7 +271,7 @@
                         <span style="background-color: rgb(122, 77, 77) !important;">DMG subclasses have a red
                             background</span>. <span style="background-color: rgb(77, 107, 122) !important;">XGE
                             subclasses have a blue background</span>. <span style="background-color: rgb(160,0,160) !important;">MOoT
-                                subclasses have a purple background</span>. <span
+                                subclasses have a purple background</span>. <span style="background-color: rgb(11,145,133) !important">TCE classes and subclasses have a blue-green background</span>.<br/> <span
                             style=" background-color: rgb(105, 122, 77) !important;">UA classes and subclasses have a
                             green background</span>. <span style="background-color: rgb(163, 121, 65) !important;">HB
                             classes and subclasses have an orange background</span>.
@@ -23021,10 +23021,8 @@
             <br />
             <hr />
             <!-- ARTIFICER -->
-            <div id="artificer" class="info classUA">
+            <div id="artificer" class="info classTCE">
                 <h1>Artificer</h1>
-                <p class="w3-center w3-centered">This is a class from Unearthed Arcana, and has not been rigorously
-                    playtested for balance. Please consult your DM before choosing this class.</p>
                 <!-- Info -->
                 <div class="w3-row">
                     <h3>Class Information</h3>
@@ -23055,7 +23053,7 @@
                             <div class="w3-row-padding">
                                 <emph>Armor: </emph>Light armor, medium armor, shields
                                 <br />
-                                <emph>Weapons: </emph>Simple weapons, hand crossbows, heavy crossbows
+                                <emph>Weapons: </emph>Simple weapons
                                 <br />
                                 <emph>Tools: </emph>Thieves' tools, tinker's tools, one type of artisan's tools of your
                                 choice
@@ -23064,6 +23062,9 @@
                                 <br />
                                 <emph>Skills: </emph>Choose two from: Arcana, History, Investigation, Medicine, Nature,
                                 Perception, Sleight of Hand
+                                <p>
+                                    If your Dungeon Master uses the rules on firearms in the <em>Dungeon Master's Guide</em> and your artificer has been exposed to the operation of such weapons, your artificer is proficient with them. 
+                                </p>
                             </div>
                             <br />
                         </div>
@@ -23078,7 +23079,7 @@
                                 granted by your
                                 background:
                                 <ul>
-                                    <li>Any simple weapon</li>
+                                    <li>Any two simple weapons of your choice</li>
                                     <li>A light crossbow and 20 bolts</li>
                                     <li>Studded leather armor <emph>OR</emph> scale mail</li>
                                     <li>Thieves' tools and a dungeoneer's pack</li>
@@ -23088,10 +23089,6 @@
                                 Alternatively, you may start with <emph>5d4&times;10 gp</emph> and
                                 purchase your
                                 starting equipment using these funds.
-                            </div>
-                            <br />
-                            <div class="w3-row-padding">
-                                Additional information: <emph>UA59 - Artificer Returns</emph>
                             </div>
                             <br />
                         </div>
@@ -23142,7 +23139,7 @@
                                 <td>2nd</td>
                                 <td>+2</td>
                                 <td>Infuse Item</td>
-                                <td>3</td>
+                                <td>4</td>
                                 <td>2</td>
                                 <td>2</td>
                                 <td>2</td>
@@ -23154,8 +23151,8 @@
                             <tr>
                                 <td>3rd</td>
                                 <td>+2</td>
-                                <td>Artificer Specialist, Tool Expertise</td>
-                                <td>3</td>
+                                <td>Artificer Specialist, The Right Tool for the Job</td>
+                                <td>4</td>
                                 <td>2</td>
                                 <td>2</td>
                                 <td>3</td>
@@ -23180,7 +23177,7 @@
                             <tr>
                                 <td>5th</td>
                                 <td>+3</td>
-                                <td>Arcane Armament</td>
+                                <td>Artificer Specialist feature</td>
                                 <td>4</td>
                                 <td>2</td>
                                 <td>2</td>
@@ -23193,8 +23190,8 @@
                             <tr>
                                 <td>6th</td>
                                 <td>+3</td>
-                                <td>Artificer Specialist feature</td>
-                                <td>4</td>
+                                <td>Tool Expertise</td>
+                                <td>6</td>
                                 <td>3</td>
                                 <td>2</td>
                                 <td>4</td>
@@ -23206,8 +23203,8 @@
                             <tr>
                                 <td>7th</td>
                                 <td>+3</td>
-                                <td>-</td>
-                                <td>5</td>
+                                <td>Flash of Genius</td>
+                                <td>6</td>
                                 <td>3</td>
                                 <td>2</td>
                                 <td>4</td>
@@ -23220,7 +23217,7 @@
                                 <td>8th</td>
                                 <td>+3</td>
                                 <td>Ability Score Improvement</td>
-                                <td>5</td>
+                                <td>6</td>
                                 <td>3</td>
                                 <td>2</td>
                                 <td>4</td>
@@ -23232,8 +23229,8 @@
                             <tr>
                                 <td>9th</td>
                                 <td>+4</td>
-                                <td>-</td>
-                                <td>5</td>
+                                <td>Artificer Specialist feature</td>
+                                <td>6</td>
                                 <td>3</td>
                                 <td>2</td>
                                 <td>4</td>
@@ -23245,9 +23242,9 @@
                             <tr>
                                 <td>10th</td>
                                 <td>+4</td>
-                                <td>The Right Cantrip for the Job</td>
-                                <td>5</td>
-                                <td>3</td>
+                                <td>Magic Item Adept</td>
+                                <td>8</td>
+                                <td>4</td>
                                 <td>3</td>
                                 <td>4</td>
                                 <td>3</td>
@@ -23258,8 +23255,8 @@
                             <tr>
                                 <td>11th</td>
                                 <td>+4</td>
-                                <td>-</td>
-                                <td>6</td>
+                                <td>Spell-Storing Item</td>
+                                <td>8</td>
                                 <td>4</td>
                                 <td>3</td>
                                 <td>4</td>
@@ -23272,7 +23269,7 @@
                                 <td>12th</td>
                                 <td>+4</td>
                                 <td>Ability Score Improvement</td>
-                                <td>6</td>
+                                <td>8</td>
                                 <td>4</td>
                                 <td>3</td>
                                 <td>4</td>
@@ -23285,7 +23282,7 @@
                                 <td>13th</td>
                                 <td>+5</td>
                                 <td>-</td>
-                                <td>6</td>
+                                <td>8</td>
                                 <td>4</td>
                                 <td>3</td>
                                 <td>4</td>
@@ -23297,9 +23294,9 @@
                             <tr>
                                 <td>14th</td>
                                 <td>+5</td>
-                                <td>Artificer Specialist feature</td>
-                                <td>6</td>
-                                <td>4</td>
+                                <td>Magic Item Savant</td>
+                                <td>10</td>
+                                <td>5</td>
                                 <td>4</td>
                                 <td>4</td>
                                 <td>3</td>
@@ -23310,9 +23307,9 @@
                             <tr>
                                 <td>15th</td>
                                 <td>+5</td>
-                                <td>-</td>
-                                <td>7</td>
-                                <td>4</td>
+                                <td>Artificer Specialist feature</td>
+                                <td>10</td>
+                                <td>5</td>
                                 <td>4</td>
                                 <td>4</td>
                                 <td>3</td>
@@ -23324,7 +23321,7 @@
                                 <td>16th</td>
                                 <td>+5</td>
                                 <td>Ability Score Improvement</td>
-                                <td>7</td>
+                                <td>10</td>
                                 <td>5</td>
                                 <td>4</td>
                                 <td>4</td>
@@ -23337,7 +23334,7 @@
                                 <td>17th</td>
                                 <td>+6</td>
                                 <td>-</td>
-                                <td>7</td>
+                                <td>10</td>
                                 <td>5</td>
                                 <td>4</td>
                                 <td>4</td>
@@ -23349,9 +23346,9 @@
                             <tr>
                                 <td>18th</td>
                                 <td>+6</td>
-                                <td>Spell-Storing Item</td>
-                                <td>7</td>
-                                <td>5</td>
+                                <td>Magic Item Master</td>
+                                <td>12</td>
+                                <td>6</td>
                                 <td>4</td>
                                 <td>4</td>
                                 <td>3</td>
@@ -23363,8 +23360,8 @@
                                 <td>19th</td>
                                 <td>+6</td>
                                 <td>Ability Score Improvement</td>
-                                <td>8</td>
-                                <td>5</td>
+                                <td>12</td>
+                                <td>6</td>
                                 <td>4</td>
                                 <td>4</td>
                                 <td>3</td>
@@ -23376,8 +23373,8 @@
                                 <td>20th</td>
                                 <td>+6</td>
                                 <td>Soul of Artifice</td>
-                                <td>8</td>
-                                <td>5</td>
+                                <td>12</td>
+                                <td>6</td>
                                 <td>4</td>
                                 <td>4</td>
                                 <td>3</td>
@@ -23475,7 +23472,7 @@
                                     You may cast any Artificer spell as a Ritual, so long as it has the
                                     Ritual tag and you have the spell prepared.
                                     <br />
-                                    You may use any tool with which you're proficient as a spellcasting focus for your
+                                    You may use thieves' tools or any artisan's tool with which you're proficient as a spellcasting focus for your
                                     Artificer
                                     spells. After you gain the Infuse Item feature at 2nd level, you can also use any
                                     item bearing one of your infusions as a spellcasting focus.
@@ -23496,7 +23493,7 @@
                                         <emph>Level Gained: </emph>2nd
                                     </em><br />
                                     <em>
-                                        <emph>Levels Improved: </emph>4th, 6th, 7th, 11th, 15th, 16th, 19th
+                                        <emph>Levels Improved: </emph>6th, 10th, 14th, 18th
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
@@ -23527,10 +23524,12 @@
                                     <br />
                                     <br />
                                     You can infuse more than one nonmagical object at the end of a long rest; the
-                                    maximum number of objects appearsin the Infused Items column of the Artificer table.
+                                    maximum number of objects appears in the Infused Items column of the Artificer table.
                                     You must touch each of the objects, and each of your infusions can be in only one
                                     object at a time. If you try to exceed your maximum number of infusions, the oldest
-                                    infusion immediately ends, and then the new infusion applies.
+                                    infusion immediately ends, and then the new infusion applies. 
+                                    <br/>
+                                    If an infusion ends on an item that contains other things, like a <em>bag of holding</em>, its contents harmlessly appear in and around its space. 
                                 </div>
                                 <br />
                             </div>
@@ -23543,7 +23542,7 @@
                                         <emph>Level Gained: </emph>3rd
                                     </em><br />
                                     <em>
-                                        <emph>Levels Improved: </emph>6th, 14th
+                                        <emph>Levels Improved: </emph>5th, 9th, 15th
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
@@ -23556,14 +23555,13 @@
                         <div class="featureCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
-                                    <h5>Tool Expertise</h5>
+                                    <h5>The Right Tool for the Job</h5>
                                     <em>
                                         <emph>Level Gained: </emph>3rd
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
-                                    Your proficiency bonus is doubled for any ability check you make that uses your
-                                    proficiency with a tool.
+                                    With thieves' tools or artisan's tools in hand, you can magically create one set of artisan's tools in an unoccupied space within 5 feet of you. This cre­ation requires 1 hour of uninterrupted work, which can coincide with a short or long rest. Though the product of magic, the tools are nonmagical, and they vanish when you use this feature again.
                                 </div>
                                 <br />
                             </div>
@@ -23612,17 +23610,13 @@
                         <div class="featureCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
-                                    <h5>Arcane Armament</h5>
+                                    <h5>Tool Expertise</h5>
                                     <em>
-                                        <emph>Level Gained: </emph>5th
+                                        <emph>Level Gained: </emph>6th
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
-                                    You can attack twice, rather than once, whenever you take the Attack action on your
-                                    turn.
-                                    <br />
-                                    <emph>However</emph>, one of the attacks must be made with a magic weapon, the magic
-                                    of which you use to propel the attack.
+                                    Your proficiency bonus is now doubled for any ability check you make that uses your proficiency with a tool.
                                 </div>
                                 <br />
                             </div>
@@ -23630,14 +23624,34 @@
                         <div class="featureCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
-                                    <h5>The Right Cantrip for the Job</h5>
+                                    <h5>Flash of Genius</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>7th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    When you or another creature you can see within 30 feet of you makes an ability check or a   saving throw, you can use your reaction to add your Intelligence modifier to the roll.
+                                    <br/>
+                                    <br/>
+                                    You can use this feature a number of times <emph>equal to your Intelligence modifier</emph> (minimum of once). You regain all expended uses when you finish a long rest.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="featureCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Magic Item Adept</h5>
                                     <em>
                                         <emph>Level Gained: </emph>10th
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
-                                    Whenever you finish a short or long rest, you can replace one of the cantrips you
-                                    know with another cantrip from the Artificer spell list.
+                                    You've achieved a profound understanding of how to use and make magic items. You gain the following benefits:
+                                    <ul>
+                                        <li>You can attune to up to four magic items at once.</li>
+                                        <li>If you craft a magic item with a rarity of com­mon or uncommon, it takes you a quarter of the normal time, and it costs you half as much of the usual gold.</li>
+                                    </ul>
                                 </div>
                                 <br />
                             </div>
@@ -23647,7 +23661,7 @@
                                 <div class="w3-row-padding">
                                     <h5>Spell-Storing Item</h5>
                                     <em>
-                                        <emph>Level Gained: </emph>18th
+                                        <emph>Level Gained: </emph>11th
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
@@ -23657,13 +23671,45 @@
                                     (you don't need to have the spell prepared).
                                     <br />
                                     <br />
-                                    With the object in hand, a creature can take an action to produce the spell's effect
-                                    from it, using <emph>your spellcasting ability modifier</emph>.
+                                    While holding the object, a creature can take an action to produce the spell's effect
+                                    from it, using <emph>your spellcasting ability modifier</emph>. If the spell requires Concentration, the creature must concentrate.
                                     <br />
                                     <br />
                                     The spell stays in the item until it has been used a number of times <emph>equal to
                                         2 &times; your Intelligence modifier</emph> (minimum of twice), or until you use
-                                    this feature again.
+                                    this feature again to store a spell in an object.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="featureCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Magic Item Savant</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>14th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    Your skill with magic items deepens. You gain the following benefits:
+                                    <ul>
+                                        <li>You can attune to up to five magic items at once.</li>
+                                        <li>You ignore all class, race, spell, and level requirements on attuning to or using magic items.</li>
+                                    </ul>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="featureCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Magic Item Master</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>18th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    You can attune to up to six magic items at once.
                                 </div>
                                 <br />
                             </div>
@@ -23677,10 +23723,11 @@
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
-                                    You can attune to up to six magic items at once, rather than the normal three.
-                                    <br />
-                                    In addition, you gain a +1 bonus to all saving throws per magic item you are
-                                    currently attuned to.
+                                    You have developed a mystical connection to your magic items, which you can draw on for protection:
+                                    <ul>
+                                        <li>You gain a +1 bonus to all saving throws per magic item you are currently attuned to.</li>
+                                        <li>If you're reduced to 0 hit points but not killed outright, you can use your reaction to end one of your artificer infusions, causing you to drop to 1 hit point instead.</li>
+                                    </ul>
                                 </div>
                                 <br />
                             </div>
@@ -23691,7 +23738,7 @@
                 <!-- Arcane Infusions -->
                 <div class="w3-row info" id="artificerInfusions">
                     <br />
-                    <button class="w3-button w3-block w3-dark-grey advancementButtonUA w3-hover-gold "
+                    <button class="w3-button w3-block w3-dark-grey advancementButtonTCE w3-hover-gold "
                         onclick="accordion('arcaneinfusions')"><span style="font-size: 1.2em;">Arcane
                             Infusions</span></button>
                     <div class="advancements w3-hide w3-container" id="arcaneinfusions">
@@ -23720,9 +23767,50 @@
                         <div class="advancementCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
+                                    <h5>Arcane Propulsion Armor</h5>
+                                    <em>
+                                        <emph>Prerequisite: </emph>14th-level Artificer
+                                        <br />
+                                        <emph>Item: </emph>A suit of armor (requires attunement)
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    The wearer of this armor gains the following benefits:
+                                    <ul>
+                                        <li>The wearer's walking speed increases by 5 feet.</li>
+                                        <li>The armor includes gauntlets, each of which is a magic melee weapon that can be wielded only when the hand is holding nothing. The wearer is proficient with the gauntlets, and each one deals 1d8 force damage on a hit and has the thrown property, with a normal range of 20 feet and a long range of 60 feet. When thrown, the gauntlet detaches and flies at the attack's target, then im­mediately returns to the wearer and reattaches.</li>
+                                        <li>The armor can't be removed against the wearer's will.</li>
+                                        <li>If the wearer is missing any limbs, the armor replaces those limbs - hands, arms, feet, legs, or similar appendages. The replacements function identically to the body parts they replace.</li>
+                                    </ul>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Armor of Magical Strength</h5>
+                                    <em>
+                                        <emph>Item: </emph>A suit of armor (requires attunement)
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    This armor has 6 charges. The wearer can expend the armor's charges in the following ways:
+                                    <ul>
+                                        <li>When the wearer makes a Strength check or a Strength saving throw, it can expend 1 charge to add a bonus to the roll equal to its Intelli­gence modifier.</li>
+                                        <li>If the creature would be knocked prone, it can use its reaction to expend 1 charge to avoid being knocked prone.</li>
+                                    </ul>
+                                    The armor regains 1d6 expended charges daily at dawn.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
                                     <h5>Boots of the Winding Path</h5>
                                     <em>
-                                        <emph>Prerequisite: </emph>4th-level Artificer
+                                        <emph>Prerequisite: </emph>6th-level Artificer
                                         <br />
                                         <emph>Item: </emph>A pair of boots (requires attunement)
                                     </em><br /><br />
@@ -23731,6 +23819,23 @@
                                     While wearing these boots, a creature can teleport up to 15 feet as a bonus action
                                     to an unoccupied space the creature can see. The creature must have occupied that
                                     space at some point during the current turn.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Enhanced Arcane Focus</h5>
+                                    <em>
+                                        <emph>Item: </emph>A rod, staff, or wand (requires attunement)
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    While holding this item, a creature gains a +1 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack.
+                                    <br />
+                                    <br />
+                                    The bonus increases to +2 when you reach 10th level in this class.
                                 </div>
                                 <br />
                             </div>
@@ -23748,25 +23853,7 @@
                                     infused item.
                                     <br />
                                     <br />
-                                    The bonus increases to +2 when you reach 12th level in this class.
-                                </div>
-                                <br />
-                            </div>
-                        </div>
-                        <div class="advancementCard">
-                            <div class="w3-card-2 w3-round-large">
-                                <div class="w3-row-padding">
-                                    <h5>Enhanced Wand</h5>
-                                    <em>
-                                        <emph>Item: </emph>A wand (requires attunement)
-                                    </em><br /><br />
-                                </div>
-                                <div class="w3-row-padding">
-                                    While holding this wand, a creature gains a +1 bonus to spell attack rolls. In
-                                    addition, the creature ignores half cover when making a spell attack.
-                                    <br />
-                                    <br />
-                                    The bonus increases to +2 when you reach 12th level in this class.
+                                    The bonus increases to +2 when you reach 10th level in this class.
                                 </div>
                                 <br />
                             </div>
@@ -23783,7 +23870,7 @@
                                     This magic weapon grants a +1 bonus to attack and damage rolls made with it.
                                     <br />
                                     <br />
-                                    The bonus increased to +2 when you reach 12th level in this class.
+                                    The bonus increased to +2 when you reach 10th level in this class.
                                 </div>
                                 <br />
                             </div>
@@ -23791,24 +23878,196 @@
                         <div class="advancementCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
-                                    <h5>Many-Handed Pouch</h5>
+                                    <h5>Helm of Awareness</h5>
                                     <em>
-                                        <emph>Prerequisite: </emph>4th-level Artificer
+                                        <emph>Prerequisite: </emph>10th-level Artificer
                                         <br />
-                                        <emph>Item: </emph>2-5 pouches
+                                        <emph>Item: </emph>A helmet (requires attunement)
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
-                                    The infused pouches all share one interdimensional space of the same capacity as a
-                                    single pouch. Thus, reaching into any of the pouches allows access to the same
-                                    storage space.
+                                    While wearing this helmet, a creature has Advantage on initiative rolls. In addition, the creature can't be surprised, provided it isn't incapacitated.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Homunculus Servant</h5>
+                                    <em>
+                                        <emph>Item: </emph>A gem or crystal worth at least 100 gp
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    <p>
+                                        You learn intricate methods for  magically creating a special homunculus that serves you. The item you infuse serves as the creature's heart, around which the creature's body instantly forms.
+                                        <br />
+                                        The homunculus is friendly to you and your companions, and it obeys your
+                                        commands. See this creature’s game statistics in the statblock below, which uses your Proficiency Bonus (PB) in several places.
+                                        <br />
+                                        <br />
+                                        You determine the homunculus’s appearance, which includes wings and bits of
+                                        alchemical equipment. Some alchemists prefer mechanical-looking birds, whereas
+                                        others like winged vials or miniature cauldrons.
+                                    </p>
+                                    <p>
+                                        In combat, the homunculus shares your initiative count, but it takes its turn
+                                        immediately after yours.
+                                        <br />
+                                        The only action it takes on its turn is the Dodge action, unless you take a
+                                        bonus action on your turn to command it to take one of the actions in its stat
+                                        block or some other action.
+                                        <br />
+                                        <br />
+                                        If the <emph>Mending</emph> spell is cast on it, it regains 2d6 hit points.
+                                        <br />
+                                        If you or the homunculus dies, it vanishes, leaving its heart in its space.
+
+                                    </p>
                                     <br />
-                                    A pouch operates as long as it is within 100 miles of another one of the pouches;
-                                    the pouch is otherwise empty and won't accept any contents.
-                                    <br />
-                                    <br />
-                                    If this infusion ends, the items stored in the shared space move into one of the
-                                    pouches, determined at random. The rest of the pouches become empty.
+                                    <div class="w3-row">
+
+                                        <div class="w3-col s0 m1 l2">
+                                            &emsp;
+                                        </div>
+                                        <div class="w3-col s12 m10 l8">
+                                            <button
+                                                class="w3-button w3-block w3-dark-grey advancementButtonTCE w3-hover-gold w3-round"
+                                                onclick="accordion('alchemicalhomunculusdiv')"><span
+                                                    style="font-size: 1.2em;">Homunculus Servant
+                                                    Statblock</span></button>
+                                            <div class="monster-item w3-container w3-hide w3-round"
+                                                id="alchemicalhomunculusdiv">
+                                                <div class="w3-card-2 w3-round-large">
+                                                    <div class="w3-row-padding">
+                                                        <h2 style="text-align: left !important" class="monsterName">
+                                                            Homunculus Servant</h2>
+                                                        <div
+                                                            style="border-top: 2px solid goldenrod; padding-top: 10px;">
+                                                            <span class="monsterSizeTypeAlignment"><em>Tiny construct</em></span>
+                                                        </div>
+                                                        <div
+                                                            style="border-bottom: 1px solid goldenrod; padding-bottom: 10px !important;">
+                                                            <span class="monsterAC">
+                                                                <emph>AC: </emph>13 (natural armor)
+                                                            </span>
+                                                            <br />
+                                                            <span class="monsterHP">
+                                                                <emph>Hit Points: </emph>(5 &times; your Artificer
+                                                                level) + your Intelligence modifier (the homunculus has a number of d4 Hit Dice equal to your Artificer level)
+                                                            </span>
+                                                            <br />
+                                                            <span class="monsterSpeed">
+                                                                <emph>Speed: </emph>20ft., fly 30ft.
+                                                            </span>
+                                                            <br />
+                                                        </div>
+                                                        <div
+                                                            style="border-bottom: 1px solid goldenrod; padding-top: 10px !important; padding-bottom: 10px !important;">
+                                                            <span class="monsterStr">
+                                                                <emph>Str: </emph>4 (-3) &emsp;
+                                                            </span>
+                                                            <span class="monsterDex">
+                                                                <emph>Dex: </emph>15 (+2) &emsp;
+                                                            </span>
+                                                            <span class="monsterCon">
+                                                                <emph>Con: </emph>12 (+1) &emsp;
+                                                            </span>
+                                                            <span class="monsterInt">
+                                                                <emph>Int: </emph>10 (+0) &emsp;
+                                                            </span>
+                                                            <span class="monsterWis">
+                                                                <emph>Wis: </emph>10 (+0) &emsp;
+                                                            </span>
+                                                            <span class="monsterCha">
+                                                                <emph>Cha: </emph>7 (-2) &emsp;
+                                                            </span>
+                                                        </div>
+                                                        <div style="padding-top: 10px !important;"></div>
+                                                        <span class="monsterSave">
+                                                            <emph>Saving Throws: </emph>Dex +2 plus PB
+                                                        </span><br/>
+                                                        <span class="monsterSkill">
+                                                            <emph>Skills: </emph>Perception +0 plus (PB &times; 2), Stealth +2 plus PB
+                                                        </span><br />
+                                                        <span class="monsterResist"></span>
+                                                        <span class="monsterImmune">
+                                                            <emph>Damage Immunities: </emph>poison
+                                                        </span><br />
+                                                        <span class="monsterCondImmune">
+                                                            <emph>Condition Immunities: </emph>exhaustion, poisoned
+                                                        </span><br />
+                                                        <span class="monsterSenses">
+                                                            <emph>Senses: </emph>darkvision 60ft.
+                                                        </span><br />
+                                                        <span class="monsterPassPer">
+                                                            <emph>Passive Perception: </emph>10 + (PB &times; 2)
+                                                        </span><br />
+                                                        <span class="monsterLanguages">
+                                                            <emph>Languages: </emph>understands the languages you speak
+                                                        </span><br />
+                                                        <span class="monsterCR"></span>
+                                                        <div
+                                                            style="border-bottom: 1px solid goldenrod; padding-top: 10px !important;">
+                                                        </div><br />
+                                                        <span class="monsterTraits">
+                                                            <emph>Evasion: </emph>If the homunculus is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails. It can't use this trait if it's in­capacitated. 
+                                                        </span><br />
+                                                        <br />
+                                                        <span class="monsterActionTitle">
+                                                            <h4 style="text-align: left !important;">Actions (Require
+                                                                your Bonus Action)</h4>
+                                                        </span>
+                                                        <div
+                                                            style="border-bottom: 1px solid goldenrod; padding-top: 10px !important;">
+                                                        </div>
+                                                        <span class="monsterActions">
+                                                            <p>
+                                                                <emph>Force Strike: </emph><em>Ranged Weapon Attack:
+                                                                </em>your spell attack modifier to hit, range 30 ft., one target you can see.
+                                                                <em>Hit: </em>1d4 + PB force damage
+                                                            </p>
+                                                        </span>
+                                                        <br />
+                                                        <span class="monsterReactionsTitle"><h4 style="text-align: left !important;">Reactions</h4></span>
+                                                        <div
+                                                            style="border-bottom: 1px solid goldenrod; padding-top: 10px !important;">
+                                                        </div>
+                                                        <span class="monsterReactions">
+                                                            <p>
+                                                                <emph>Channel Magic: </emph>The homunculus delivers a spell you cast that has a range of touch. The homunculus must be within 120 feet of you.
+                                                            </p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="w3-row-padding">
+                                                    </div>
+                                                    <br />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="w3-col s0 m1 l2">
+                                            &emsp;
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Mind Sharpener</h5>
+                                    <em>
+                                        <emph>Item: </emph>A suit of armor or robes
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    The infused item can send a jolt to the wearer to re­focus their mind. The item has 4 charges. When the wearer fails a Constitution saving throw to maintain concentration on a spell, the wearer can use its re­action to expend 1 of the item's charges to succeed instead. 
+                                    <br/>
+                                    <br/>
+                                    The item regains 1d4 expended charges daily at dawn. 
                                 </div>
                                 <br />
                             </div>
@@ -23818,7 +24077,7 @@
                                 <div class="w3-row-padding">
                                     <h5>Radiant Weapon</h5>
                                     <em>
-                                        <emph>Prerequisite: </emph>8th-level Artificer
+                                        <emph>Prerequisite: </emph>6th-level Artificer
                                         <br />
                                         <emph>Item: </emph>A simple or martial weapon (requires attunement)
                                     </em><br /><br />
@@ -23830,13 +24089,12 @@
                                     the light as a bonus action.
                                     <br />
                                     <br />
-                                    As a reaction immediately after being hit by a melee attack, the wielder can cause
+                                    The weapon has 4 charges. As a reaction immediately after being hit by a melee attack, the wielder can expend 1 charge and cause
                                     the attacker to be blinded until the end of the attacker's next turn, unless the
                                     attacker succeeds on a Constitution saving throw against <emph>your spell save DC
                                     </emph>.
                                     <br />
-                                    Once used, this reaction can't be used again until the wielder finishes a short or
-                                    long rest.
+                                    The weapon regains 1d4 expended charges daily at dawn.
                                 </div>
                                 <br />
                             </div>
@@ -23880,8 +24138,10 @@
                                     If a table has a level in its title, you must be of at least that level in this
                                     class to choose an item from the table.
                                     <br />
-                                    In the tables, an item's entry tells you whether the item requires attunement. The
-                                    DM will tell you what type of object is required to make a given magic item.
+                                    In the tables, an item's entry tells you whether the item requires attunement.
+                                    <br/>
+                                    <br/>
+                                    The DM will tell you what type of object is required to make a given magic item.
                                     <br />
                                     <br />
                                     <div class="w3-row">
@@ -23892,7 +24152,7 @@
                                             <button
                                                 class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold w3-round"
                                                 onclick="accordion('1streplicablemagicitems')"><span
-                                                    style="font-size: 1.2em;">Replicable Magic Items</span></button>
+                                                    style="font-size: 1.2em;">Replicable Items (2nd-level Artificer)</span></button>
                                             <div class="advancements w3-hide w3-container" id="1streplicablemagicitems">
                                                 <table class="w3-table w3-small">
                                                     <thead>
@@ -23915,18 +24175,8 @@
                                                             <td>No</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="font-style: italic !important;">Cloak of the
-                                                                manta ray</td>
-                                                            <td>No</td>
-                                                        </tr>
-                                                        <tr>
                                                             <td style="font-style: italic !important;">Goggles of night
                                                             </td>
-                                                            <td>No</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="font-style: italic !important;">Lantern of
-                                                                revealing</td>
                                                             <td>No</td>
                                                         </tr>
                                                         <tr>
@@ -23955,7 +24205,7 @@
                                             <button
                                                 class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold w3-round"
                                                 onclick="accordion('12threplicablemagicitems')"><span
-                                                    style="font-size: 1.2em;">Replicable Magic Items (12th-level
+                                                    style="font-size: 1.2em;">Replicable Items (6th-level
                                                     Artificer)</span></button>
                                             <div class="advancements w3-hide w3-container"
                                                 id="12threplicablemagicitems">
@@ -23970,6 +24220,57 @@
                                                                 elvenkind</td>
                                                             <td>No</td>
                                                         </tr>
+                                                        <tr>
+                                                            <td style="font-style: italic !important;">Cloak of
+                                                                elvenkind</td>
+                                                            <td>Yes</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-style: italic !important;">Cloak of
+                                                                the manta ray</td>
+                                                            <td>No</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-style: italic !important;">Eyes of charming
+                                                            </td>
+                                                            <td>Yes</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-style: italic !important;">Gloves of
+                                                                thievery</td>
+                                                            <td>No</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-style: italic !important;">Lantern of revealing
+                                                            </td>
+                                                            <td>No</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-style: italic !important;">Pipes of haunting
+                                                            </td>
+                                                            <td>No</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-style: italic !important;">Ring of water
+                                                                walking</td>
+                                                            <td>No</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <button
+                                                class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold w3-round"
+                                                onclick="accordion('10threplicablemagicitems')"><span
+                                                    style="font-size: 1.2em;">Replicable Items (10th-level
+                                                    Artificer)</span></button>
+                                            <div class="advancements w3-hide w3-container"
+                                                id="10threplicablemagicitems">
+                                                <table class="w3-table w3-small">
+                                                    <thead>
+                                                        <th>Magic Item</th>
+                                                        <th>Attunement</th>
+                                                    </thead>
+                                                    <tbody>
                                                         <tr>
                                                             <td style="font-style: italic !important;">Boots of striding
                                                                 and springing</td>
@@ -23992,17 +24293,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td style="font-style: italic !important;">Cloak of
-                                                                elvenkind</td>
-                                                            <td>Yes</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="font-style: italic !important;">Cloak of
                                                                 protection</td>
-                                                            <td>Yes</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="font-style: italic !important;">Eyes of charming
-                                                            </td>
                                                             <td>Yes</td>
                                                         </tr>
                                                         <tr>
@@ -24026,11 +24317,6 @@
                                                             <td>Yes</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="font-style: italic !important;">Gloves of
-                                                                thievery</td>
-                                                            <td>No</td>
-                                                        </tr>
-                                                        <tr>
                                                             <td style="font-style: italic !important;">Hat of disguise
                                                             </td>
                                                             <td>Yes</td>
@@ -24051,14 +24337,13 @@
                                                             <td>Yes</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="font-style: italic !important;">Periapt of wound
-                                                                closure</td>
+                                                            <td style="font-style: italic !important;">Necklace of adaptation</td>
                                                             <td>Yes</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="font-style: italic !important;">Pipes of haunting
-                                                            </td>
-                                                            <td>No</td>
+                                                            <td style="font-style: italic !important;">Periapt of wound
+                                                                closure</td>
+                                                            <td>Yes</td>
                                                         </tr>
                                                         <tr>
                                                             <td style="font-style: italic !important;">Pipes of the
@@ -24081,11 +24366,6 @@
                                                             <td>Yes</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="font-style: italic !important;">Ring of water
-                                                                walking</td>
-                                                            <td>Yes</td>
-                                                        </tr>
-                                                        <tr>
                                                             <td style="font-style: italic !important;">Slippers of
                                                                 spider climbing</td>
                                                             <td>Yes</td>
@@ -24100,7 +24380,7 @@
                                             <button
                                                 class="w3-button w3-block w3-dark-grey advancementButton w3-hover-gold w3-round"
                                                 onclick="accordion('16threplicablemagicitems')"><span
-                                                    style="font-size: 1.2em;">Replicable Magic Items (16th-level
+                                                    style="font-size: 1.2em;">Replicable Items (14th-level
                                                     Artificer)</span></button>
                                             <div class="advancements w3-hide w3-container"
                                                 id="16threplicablemagicitems">
@@ -24186,7 +24466,7 @@
                                     <div class="w3-row-padding">
                                         <h5>Repulsion Shield</h5>
                                         <em>
-                                            <emph>Prerequisite: </emph>8th-level Artificer
+                                            <emph>Prerequisite: </emph>6th-level Artificer
                                             <br />
                                             <emph>Item: </emph>A shield (requires attunement)
                                         </em><br /><br />
@@ -24195,11 +24475,10 @@
                                         A creature gains a +1 bonus to AC while wielding this shield.
                                         <br />
                                         <br />
-                                        While holding it, the wielder can use a reaction immediately after being hit
+                                        The shield has 4 charges. While holding it, the wielder can use a reaction and expend 1 of the sheild's charges immediately after being hit
                                         with a melee attack to push the attacker up to 15 feet away.
                                         <br />
-                                        Once used, this reaction can't be used again until the wielder finishes a short
-                                        or long rest.
+                                        The shield regains 1d4 expended charges daily at dawn.
                                     </div>
                                     <br />
                                 </div>
@@ -24209,7 +24488,7 @@
                                     <div class="w3-row-padding">
                                         <h5>Resistant Armor</h5>
                                         <em>
-                                            <emph>Prerequisite: </emph>8th-level Artificer
+                                            <emph>Prerequisite: </emph>6th-level Artificer
                                             <br />
                                             <emph>Item: </emph>A suit of armor (requires attunement)
                                         </em><br /><br />
@@ -24238,6 +24517,25 @@
                                     <br />
                                 </div>
                             </div>
+                            <div class="advancementCard">
+                                <div class="w3-card-2 w3-round-large">
+                                    <div class="w3-row-padding">
+                                        <h5>Spell-Refueling Ring</h5>
+                                        <em>
+                                            <emph>Prerequisite: </emph>6th-level Artificer
+                                            <br />
+                                            <emph>Item: </emph>A ring (requires attunement)
+                                        </em><br /><br />
+                                    </div>
+                                    <div class="w3-row-padding">
+                                        While wearing this ring, the creature can recover one expended spell slot as an action. The recovered slot can be of 3rd level or lower.
+                                        <br/>
+                                        <br/>
+                                        Once used, the ring can't be used again until the next dawn.
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -24248,7 +24546,7 @@
                     <br />
                     <br />
 
-                    <button class="w3-button w3-block w3-dark-grey advancementButtonUA w3-hover-gold "
+                    <button class="w3-button w3-block w3-dark-grey advancementButtonTCE w3-hover-gold "
                         onclick="accordion('artificeralchemist')"><span
                             style="font-size: 1.2em;">Alchemist</span></button>
                     <div class="advancements w3-hide w3-container" id="artificeralchemist">
@@ -24283,15 +24581,15 @@
                                             <tbody>
                                                 <tr>
                                                     <td>3rd</td>
-                                                    <td>Purify Food and Drink, Ray of Sickness</td>
+                                                    <td>Healing Word, Ray of Sickness</td>
                                                 </tr>
                                                 <tr>
                                                     <td>5th</td>
-                                                    <td>Melf's Acid Arrow, Web</td>
+                                                    <td>Flaming Sphere, Melf's Acid Arrow</td>
                                                 </tr>
                                                 <tr>
                                                     <td>9th</td>
-                                                    <td>Create Food and Water, Stinking Cloud</td>
+                                                    <td>Gaseous Form, Mass Healing Word</td>
                                                 </tr>
                                                 <tr>
                                                     <td>13th</td>
@@ -24315,20 +24613,13 @@
                         <div class="advancementCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
-                                    <h5>Tools of the Trade</h5>
+                                    <h5>Tool Proficiency</h5>
                                     <em>
                                         <emph>Level Gained: </emph>3rd
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
-                                    <emph>Proficiencies. </emph>You gain proficiency with alchemist’s supplies and the
-                                    herbalism kit, assuming you don’t already have them. You also gain alchemist’s
-                                    supplies and an herbalism kit for free—the result of tinkering you’ve done as you’ve
-                                    prepared for this specialization.
-                                    <br />
-                                    <br />
-                                    <emph>Crafting. </emph>If you craft a magic item in the potion category, it takes
-                                    you a quarter of the normal time, and it costs you half as much of the usual gold.
+                                    <emph>Proficiencies. </emph>You gain proficiency with alchemist’s supplies. If you already have this proficiency, you gain proficiency with one other type of artisan's tools of your choice.
                                 </div>
                                 <br />
                             </div>
@@ -24336,195 +24627,64 @@
                         <div class="advancementCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
-                                    <h5>Alchemical Homunculus</h5>
+                                    <h5>Experimental Elixer</h5>
                                     <em>
                                         <emph>Level Gained: </emph>3rd
+                                        <br/>
+                                        <emph>Levels Improved: </emph>6th, 15th
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
-                                    <p>
-                                        Whenever you finish a long rest and your alchemist’s supplies are with you, you
-                                        can form an alchemical homunculus in an unoccupied space within 5 feet of you.
-                                        <br />
-                                        If you already have a homunculus from this feature, the first one immediately
-                                        dies.
-                                        <br />
-                                        The homunculus is friendly to you and your companions, and it obeys your
-                                        commands. See this creature’s game statistics in the statblock below.
-                                        <br />
-                                        <br />
-                                        You determine the homunculus’s appearance, which includes wings and bits of
-                                        alchemical equipment. Some alchemists prefer mechanical-looking birds, whereas
-                                        others like winged vials or miniature cauldrons.
-                                    </p>
-                                    <p>
-                                        In combat, the homunculus shares your initiative count, but it takes its turn
-                                        immediately after yours.
-                                        <br />
-                                        The only action it takes on its turn is the Dodge action, unless you take a
-                                        bonus action on your turn to command it to take one of the actions in its stat
-                                        block or to take the Dash, Disengage, or Help action.
-                                        <br />
-                                        <br />
-                                        If the <emph>Mending</emph> spell is cast on it, it regains 2d6 hit points.
-                                        <br />
-                                        If it has died within the last hour, you can use your alchemist’s supplies as an
-                                        action to revive it, provided you are within 5 feet of it and you expend a spell
-                                        slot of 1st level or higher.
-                                        <br />
-                                        The homunculus returns to life with all its hit points restored.
-
-                                    </p>
-                                    <br />
-                                    <div class="w3-row">
-
-                                        <div class="w3-col s0 m1 l2">
-                                            &emsp;
-                                        </div>
-                                        <div class="w3-col s12 m10 l8">
-                                            <button
-                                                class="w3-button w3-block w3-dark-grey advancementButtonUA w3-hover-gold w3-round"
-                                                onclick="accordion('alchemicalhomunculusdiv')"><span
-                                                    style="font-size: 1.2em;">Alchemical Homunculus
-                                                    Statblock</span></button>
-                                            <div class="monster-item w3-container w3-hide w3-round"
-                                                id="alchemicalhomunculusdiv">
-                                                <div class="w3-card-2 w3-round-large">
-                                                    <div class="w3-row-padding">
-                                                        <h2 style="text-align: left !important" class="monsterName">
-                                                            Alchemical Homunculus</h2>
-                                                        <div
-                                                            style="border-top: 2px solid goldenrod; padding-top: 10px;">
-                                                            <span class="monsterSizeTypeAlignment"><em>Tiny construct,
-                                                                    Neutral</em></span>
-                                                        </div>
-                                                        <div
-                                                            style="border-bottom: 1px solid goldenrod; padding-bottom: 10px !important;">
-                                                            <span class="monsterAC">
-                                                                <emph>AC: </emph>13 (natural armor)
-                                                            </span>
-                                                            <br />
-                                                            <span class="monsterHP">
-                                                                <emph>Hit Points: </emph>(5 &times; your Artificer
-                                                                level) + your Intelligence modifier
-                                                            </span>
-                                                            <br />
-                                                            <span class="monsterSpeed">
-                                                                <emph>Speed: </emph>20ft., fly 30ft.
-                                                            </span>
-                                                            <br />
-                                                        </div>
-                                                        <div
-                                                            style="border-bottom: 1px solid goldenrod; padding-top: 10px !important; padding-bottom: 10px !important;">
-                                                            <span class="monsterStr">
-                                                                <emph>Str: </emph>4 (-3) &emsp;
-                                                            </span>
-                                                            <span class="monsterDex">
-                                                                <emph>Dex: </emph>15 (+2) &emsp;
-                                                            </span>
-                                                            <span class="monsterCon">
-                                                                <emph>Con: </emph>11 (+0) &emsp;
-                                                            </span>
-                                                            <span class="monsterInt">
-                                                                <emph>Int: </emph>10 (+0) &emsp;
-                                                            </span>
-                                                            <span class="monsterWis">
-                                                                <emph>Wis: </emph>10 (+0) &emsp;
-                                                            </span>
-                                                            <span class="monsterCha">
-                                                                <emph>Cha: </emph>7 (+0) &emsp;
-                                                            </span>
-                                                        </div>
-                                                        <div style="padding-top: 10px !important;"></div>
-                                                        <span class="monsterSave"></span>
-                                                        <span class="monsterSkill">
-                                                            <emph>Skills: </emph>Perception +4, Stealth +4
-                                                        </span><br />
-                                                        <span class="monsterResist"></span>
-                                                        <span class="monsterImmune">
-                                                            <emph>Damage Immunities: </emph>acid, poison
-                                                        </span><br />
-                                                        <span class="monsterCondImmune">
-                                                            <emph>Condition Immunities: </emph>charmed, exhausted,
-                                                            poisoned
-                                                        </span><br />
-                                                        <span class="monsterSenses">
-                                                            <emph>Senses: </emph>darkvision 60ft.
-                                                        </span><br />
-                                                        <span class="monsterPassPer">
-                                                            <emph>Passive Perception: </emph>10
-                                                        </span><br />
-                                                        <span class="monsterLanguages">
-                                                            <emph>Languages: </emph>understands the languages you speak
-                                                        </span><br />
-                                                        <span class="monsterCR"></span>
-                                                        <div
-                                                            style="border-bottom: 1px solid goldenrod; padding-top: 10px !important;">
-                                                        </div><br />
-                                                        <span class="monsterTraits">
-                                                            <emph>Might of the Master: </emph>The following numbers
-                                                            increase by 1 when your proficiency bonus increases by 1:
-                                                            the homunculus’s skill bonuses and the bonuses to hit and
-                                                            damage of its Acidic Spittle.
-                                                        </span><br />
-                                                        <br />
-                                                        <span class="monsterActionTitle">
-                                                            <h4 style="text-align: left !important;">Actions (Require
-                                                                your Bonus Action)</h4>
-                                                        </span>
-                                                        <div
-                                                            style="border-bottom: 1px solid goldenrod; padding-top: 10px !important;">
-                                                        </div>
-                                                        <span class="monsterActions">
-                                                            <p>
-                                                                <emph>Acidic Spittle: </emph><em>Ranged Weapon Attack:
-                                                                </em>+4 to hit, range 30 ft., one target you can see.
-                                                                <em>Hit: </em>1d6 + 2 acid damage.
-                                                            </p>
-                                                            <p>
-                                                                <emph>Alchemical Salve <em>(3/Day)</em>: </emph>The
-                                                                homunculus produces a salve and touches one creature you
-                                                                designate. The target receives one of the following
-                                                                magical benefits of your choice:
-                                                                <ul>
-                                                                    <li>
-                                                                        <emph>Buoyancy. </emph>The target gains a flying
-                                                                        speed of 10 feet for 10 minutes.
-                                                                    </li>
-                                                                    <li>
-                                                                        <emph>Inspiration. </emph>The target feels giddy
-                                                                        and effective, gaining advantage on certain
-                                                                        ability checks in the next hour. The target
-                                                                        chooses the checks before or after rolling. The
-                                                                        magic runs out after the target has used it on a
-                                                                        number of checks <emph>equal to your
-                                                                            Intelligence modifier</emph> (minimum of 1).
-                                                                    </li>
-                                                                    <li>
-                                                                        <emph>Resilience. </emph>The target gains a
-                                                                        number of temporary hit points <emph>equal to
-                                                                            2d6 + your Intelligence modifier</emp>.
-                                                                    </li>
-                                                                </ul>
-
-                                                            </p>
-                                                        </span>
-                                                        <br />
-                                                        <span class="monsterLegendaryTitle"></span>
-                                                        <span class="monsterLegendary"></span>
-                                                    </div>
-                                                    <div class="w3-row-padding">
-                                                    </div>
-                                                    <br />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br />
-
-
-                                        <div class="w3-col s0 m1 l2">
-                                            &emsp;
-                                        </div>
+                                    Whenever you finish a long rest, you can magi­cally produce an experimental elixir in an empty flask you touch. Roll on the Experimental Elixir table for the elixir's effect, which is triggered when someone drinks the elixir. As an action, a creature can drink the elixir or administer it to an incapaci­tated creature. 
+                                    <br/>
+                                    <br/>
+                                    You can create additional experimental elixirs by expending a spell slot of 1st level or higher for each one. When you do so, you use your action to create the elixir in an empty flask you touch, and you choose the elixir's effect from the Experimental Elixir table. 
+                                    <br/>
+                                    <br/>
+                                    Creating an experimental elixir requires you to have alchemist supplies on your person, and any elixir you create with this feature lasts until it is drunk or until the end of your next long rest. 
+                                    <br/>
+                                    <br/>
+                                    When you reach certain levels in this class, you can make more elixirs at the end of a long rest: two at 6th level and three at 15th level. Roll for each elixir's effect separately. Each elixir requires its own flask.                                    
+                                    <br/>
+                                    <div class="w3-col s0 m2 l3">
+                                        &emsp;
+                                    </div>
+                                    <div class="w3-col s12 m8 l6">
+                                        <table class="w3-table w3-small">
+                                            <thead>
+                                                <th>d6</th>
+                                                <th>Effect</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td><emph>Healing. </emph>The drinker regains a number of hit points equal to 2d4 + your Intelligence modifier.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td><emph>Swiftness. </emph>The drinker's walking speed increases by 10 feet for 1 hour.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td><emph>Resilience. </emph>The drinker gains a +1 bonus to AC for 10 minutes.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td><emph>Boldness. </emph>The drinker can roll a d4 and add the number rolled to every attack roll and saving throw they make for the next minute.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td><emph>Flight. </emph>The drinker gains a flying speed of 10 feet for 10 minutes.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td><emph>Transformation. </emph>The drinker's body is transformed as if by the <em>alter self</em> spell. The drinker determines the transformation caused by the spell, the effects of which last for 10 minutes.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="w3-col s0 m2 l3">
+                                        &emsp;
                                     </div>
                                 </div>
                                 <br />
@@ -24533,23 +24693,14 @@
                         <div class="advancementCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
-                                    <h5>Alchemical Mastery</h5>
+                                    <h5>Alchemical Savant</h5>
                                     <em>
-                                        <emph>Level Gained: </emph>6th
+                                        <emph>Level Gained: </emph>5th
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
                                     <p>
-                                        When you cast a spell using your alchemist’s supplies as the spellcasting focus,
-                                        you gain a bonus to one roll of the spell. That roll must restore hit points or
-                                        be a damage roll that deals acid or poison damage, and the bonus <emph>equals
-                                            your Intelligence modifier</emph> (minimum of +1).
-                                    </p>
-                                    <p>
-                                        In addition, you can cast <emph>lLesser Restoration</emph> without expending a
-                                        spell slot, provided you use alchemist’s supplies as the spellcasting focus. You
-                                        can do so a number of times per day <emph>equal to your Intelligence modifier
-                                        </emph> (minimum of once).
+                                        Whenever you cast a spell using your alchemist's supplies as the spellcasting focus, you gain a bonus to one roll of the spell. That roll must restore hit points or be a damage roll that deals acid, fire, necrotic, or poison damage, and the bonus <emph>equals your Intelligence modifier</emph> (mini­mum of +1)
                                     </p>
                                 </div>
                                 <br />
@@ -24558,23 +24709,38 @@
                         <div class="advancementCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
-                                    <h5>Chemical Savant</h5>
+                                    <h5>Restorative Reagents</h5>
                                     <em>
-                                        <emph>Level Gained: </emph>14th
+                                        <emph>Level Gained: </emph>9th
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
                                     <p>
-                                        You gain resistance to acid damage and poison damage, and you are now immune to
-                                        the poisoned condition.
-
+                                        You can incorporate restorative reagents into some of your works, gaining the following benefits:
+                                        <ul>
+                                            <li>Whenever a creature drinks an experimental elixir you created, the creature gains temporary hit points <emph>equal to 2d6 + your Intelligence modifier</emph> (minimum of 1 temporary hit point). </li>
+                                            <li>You can cast <em>lesser restoration</em> without expend­ing a spell slot and without preparing the spell, provided you use alchemist's supplies as the spell­casting focus. You can do so a number of times <emph>equal to your Intelligence modifier</emph> (minimum of once), and you regain all expended uses when you finish a long rest.</li>
+                                        </ul>
                                     </p>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Chemical Mastery</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>15th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
                                     <p>
-                                        In addition, you can cast <emph>Greater Restoration</emph> once without
-                                        expending a spell slot and without providing the material component, provided
-                                        you use alchemist’s supplies as the spellcasting focus.
-                                        <br />
-                                        You regain the ability to do so when you finish a long rest.
+                                        You have been exposed to so many chemicals that they pose little risk to you, and you can use them to quickly end certain ailments: 
+                                        <ul>
+                                            <li>You gain resistance to acid damage and poison damage, and you are immune to the poisoned condition. </li>
+                                            <li>You can cast <em>greater restoration</em> and <em>heal</em> without expending a spell slot, without preparing the spell, and without material components, provided you use alchemist's supplies as the spellcasting focus. Once you cast either spell with this feature, you can't cast that spell with it again until you finish a long rest. </li>
+                                        </ul>
                                     </p>
                                 </div>
                                 <br />
@@ -24582,14 +24748,14 @@
                         </div>
                     </div>
 
-                    <button class="w3-button w3-block w3-dark-grey advancementButtonUA w3-hover-gold "
-                        onclick="accordion('artificerarchivist')"><span
-                            style="font-size: 1.2em;">Archivist</span></button>
-                    <div class="advancements w3-hide w3-container" id="artificerarchivist">
+                    <button class="w3-button w3-block w3-dark-grey advancementButtonTCE w3-hover-gold "
+                        onclick="accordion('artificerarmorer')"><span
+                            style="font-size: 1.2em;">Armorer</span></button>
+                    <div class="advancements w3-hide w3-container" id="artificerarmorer">
                         <div class="advancementCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
-                                    <h5>Archivist Spells</h5>
+                                    <h5>Armorer Spells</h5>
                                     <em>
                                         <emph>Level Gained: </emph>1st
                                     </em><br />
@@ -24601,7 +24767,7 @@
                                     You gain the spells shown below at the given levels. They are always prepared, and
                                     they don't count against the total number of spells prepared for the day.
                                     <br />
-                                    If an Archivist spell isn't naturally an Artificer spell, it counts as an Artificer
+                                    If an Armorer spell isn't naturally an Artificer spell, it counts as an Artificer
                                     spell for you.
                                     <br />
                                     <br />
@@ -24617,23 +24783,23 @@
                                             <tbody>
                                                 <tr>
                                                     <td>3rd</td>
-                                                    <td>Comprehend Languages, Dissonant Whispers</td>
+                                                    <td>Magic Missile, Thunderwave</td>
                                                 </tr>
                                                 <tr>
                                                     <td>5th</td>
-                                                    <td>Detect Thoughts, Locate Object</td>
+                                                    <td>Mirror Image, Shatter</td>
                                                 </tr>
                                                 <tr>
                                                     <td>9th</td>
-                                                    <td>Hypnotic Pattern, Tongues</td>
+                                                    <td>Hypnotic Pattern, Lightning Bolt</td>
                                                 </tr>
                                                 <tr>
                                                     <td>13th</td>
-                                                    <td>Locate Creature, Phantasmal Killer</td>
+                                                    <td>Fire Shield, Greater Invisibility</td>
                                                 </tr>
                                                 <tr>
                                                     <td>17th</td>
-                                                    <td>Legend Lore, Modify Memory</td>
+                                                    <td>Passwall, Wall of Force</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -24649,132 +24815,23 @@
                         <div class="advancementCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
-                                    <h5>Tools of the Trade</h5>
-                                    <em>
-                                        <emph>Level Gained: </emph>3rd
-                                    </em><br /><br />
-                                </div>
-                                <div class="w3-row-padding">
-                                    <emph>Proficiencies. </emph>You gain proficiency with calligrapher's supplies and
-                                    the forgery kit, assuming you don’t already have them. You also gain calligrapher's
-                                    supplies and a forgery kit for free—the result of tinkering you’ve done as you’ve
-                                    prepared for this specialization.
-                                    <br />
-                                    <br />
-                                    <emph>Crafting. </emph>If you craft a magic item in the scroll category, it takes
-                                    you a quarter of the normal time, and it costs you half as much of the usual gold.
-                                </div>
-                                <br />
-                            </div>
-                        </div>
-                        <div class="advancementCard">
-                            <div class="w3-card-2 w3-round-large">
-                                <div class="w3-row-padding">
-                                    <h5>Artificial Mind</h5>
+                                    <h5>Arcane Armor</h5>
                                     <em>
                                         <emph>Level Gained: </emph>3rd
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
                                     <p>
-                                        Whenever you finish a long rest and your calligrapher's supplies are with you,
-                                        you can magically rouse a keen mind within a Tiny, nonmagical object on which
-                                        you write mystical symbols.
-                                        <br />
-                                        The object is a magic item while the mind is inside it, and you can use it as a
-                                        spellcasting focus.
-                                        <br />
-                                        If you already have an aritficial mind from this feature, the first one
-                                        immediately dissapates
+                                        As an action, you can turn a suit of armor you are wearing into Arcane Armor, provided you have smith's tools in hand. 
                                     </p>
-                                    <p>
-                                        The magic item has the following properties:
-                                        <br />
-                                        <br />
-                                        <emph>Telepathic Advisor. </emph>While the item is on your person, you gain
-                                        proficiency in two skills of your choice. The material from which you create the
-                                        mind determines the list of skills you can choose from, as shown below.
-                                        <br />
-                                        <br />
-                                        <emph>Manifest Mind. </emph>As a bonus action while the item is on your person,
-                                        you can cause the mind to manifest as a Tiny spectral presence, hovering in an
-                                        unoccupied space within 60 feet of you.
-                                        <br />
-                                        This presence is intangible and invulnerable, and it sheds dim light in a
-                                        10-foot radius. You determine its appearance; the table below offers suggestions
-                                        based on the material from which it was created.
-                                        <br />
-                                        While manifested, the spectral mind can hear and see, and it has darkvision with
-                                        a range of 60 feet. As an action, you can hear and see using the mind’s senses,
-                                        instead of your own, until your concentration ends (as if concentrating on a
-                                        spell).
-                                        <br />
-                                        <br />
-                                        As a bonus action, you can cause the spectral mind to hover up to 30 feet to an
-                                        unoccupied space that you or it can see. It can pass through creatures but not
-                                        objects. The spectral mind stops manifesting if it is ever more than 300 feet
-                                        away from its magic item or if you dismiss it as a bonus action.
-                                        <br />
-                                        <br />
-                                        When you cast an artificer spell on your turn, you can cast it as if you were in
-                                        the spectral mind’s space, instead of your own, using its senses. You can do so
-                                        a number of times per day <emph>equal to your Intelligence modifier</emph> (at
-                                        least once), and you regain all expended uses when you finish a long rest.
-                                        <br />
-                                        <br />
-                                        <emph>Information Overload. </emph>As an action while the item is on your
-                                        person, you can try to magically overload the thoughts of one creature you or
-                                        the mind can see that is within 5 feet of the manifested mind.
-                                        <br />
-                                        Unless the target succeeds on an Intelligence saving throw against <emph>your
-                                            spell save DC</emph>, the target takes 1d8 psychic damage, and the next
-                                        attack roll against it before the end of your next turn has advantage.
-                                        <br />
-                                        The damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8),
-                                        and 17th level (4d8) in this class.
-                                        <br />
-                                        Whenever you deal damage with this feature, you can expend a spell slot to deal
-                                        extra damage to the target. The extra damage is 2d8 for a 1st-level spell slot,
-                                        plus 1d8 for each spell level higher than first.
-                                    </p>
-                                    <p>
-                                        <div class="w3-row-padding">
-                                            <div class="w3-col s0 m0 l1">
-                                                &emsp;
-                                            </div>
-                                            <div class="w3-col s12 m12 l10">
-                                                <table class="w3-table w3-small w3-centered">
-                                                    <thead>
-                                                        <th>Main Material</th>
-                                                        <th>Skill Proficiencies</th>
-                                                        <th>Suggested Appearance</th>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Animal (parchment, leather, bone)</td>
-                                                            <td>Animal Handling, Insight, Medicine, Perception, Survival
-                                                            </td>
-                                                            <td>A beast or a humanoid visage with antlers</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Mineral (glass, stone, metal)</td>
-                                                            <td>Deception, Intimidation, Performance, Persuasion</td>
-                                                            <td>A robotic or golem-like face
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Plant (paper, wood)</td>
-                                                            <td>Arcana, History, Investigation, Nature, Religion</td>
-                                                            <td>A bespectacled visage or a treant</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <div class="w3-col s0 m0 l1">
-                                                &emsp;
-                                            </div>
-                                            <br />
-                                        </div>
+                                    <p>You gain the following benefits while wearing this armor:
+                                        <ul>
+                                            <li>If the armor normally has a Strength requirement, the arcane armor lacks this requirement for you.</li>
+                                            <li>You can use the arcane armor as a spellcasting focus for your artificer spells</li>
+                                            <li>The armor attaches to you and can't be removed against your will. It also expands to cover your entire body, although you can retract or deploy the helmet as a bonus action. The armor replaces any missing limbs, functioning identically to a limb it replaces.</li>
+                                            <li>You can doff or don the armor as an action.</li>
+                                        </ul>
+                                        The armor continues to be Arcane Armor until you don another suit of armor or you die.
                                     </p>
                                 </div>
                                 <br />
@@ -24783,23 +24840,41 @@
                         <div class="advancementCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
-                                    <h5>Mind Network</h5>
+                                    <h5>Armor Model</h5>
                                     <em>
-                                        <emph>Level Gained: </emph>6th
+                                        <emph>Level Gained: </emph>3rd
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
                                     <p>
-                                        <emph>Magical Telephony. </emph>While you have your Artificial Mind item on your
-                                        person, you can communicate telepathically with anyone carrying an item bearing
-                                        one of your artificer infusions, as the mind transmits your thoughts to each
-                                        other. That person can also communicate telepathically with you as long as they
-                                        have the item. This two-way communication can even cross planar boundaries.
+                                        You can customize your Arcane Armor. When you do so, choose one of the following armor models: Guardian or Infiltrator. The model you choose gives you special benefits while you wear it. 
+                                        <br/>
+                                        Each model includes a special weapon. When you attack with that weapon, you can add your Intelli­gence modifier, instead of Strength or Dexterity, to the attack and damage rolls. 
+                                        <br/>
+                                        You can change the armor's model whenever you finish a short or long rest, provided you have smith's tools in hand. 
+                                        <br/>
                                     </p>
+                                    <br/>
                                     <p>
-                                        <emph>Psychic Damage. </emph>When you make a psychic damage roll for an
-                                        artificer spell or for Information Overload, you gain a bonus to the damage roll
-                                        <emph>equal to your Intelligence modifier</emph> (minimum bonus of +1).
+                                        <h5>Guardian</h5>You design your armor to be in the front line of combat. It has the following features:
+                                        <br />
+                                        <br />
+                                        <emph>Thunder Gauntlets. </emph>Each of the armor's gauntlets counts as a simple melee weapon while you aren't holding anything in it, and it deals 1d8 Thunder damage on a hit. A creature hit by the gauntlet has Disadvantage on attack rolls against targets other than you until the start of your next turn, as the ar­mor magically emits a distracting pulse when the creature attacks someone else.
+                                        <br />
+                                        <emph>Defensive Field. </emph>As a bonus action, you can gain temporary hit points <emph>equal to your level in this class</emph>, replacing any temporary hit points you al­ready have. You lose these temporary hit points if you doff the armor. You can use this bonus action a number of times <emph>equal to your proficiency bonus</emph>, and you regain all expended uses when you finish a long rest. 
+                                        <br />
+                                        <br/>
+                                        <br/>
+                                        <br />
+                                        <h5>Infiltrator</h5>You customize your armor for subtle undertakings. It has the following features:
+                                        <br />
+                                        <br />
+                                        <emph>Lightning Launcher. </emph>A gemlike node appears on one of your armored fists or on the chest (your choice). It counts as a simple ranged weapon, with a normal range of 90 feet and a long range of 300 feet, and it deals 1d6 Lightning damage on a hit. Once on each of your turns when you hit a crea­ture with it, you can deal an extra 1d6 Lightning damage to that target.
+                                        <br />
+                                        <emph>Powered Steps. </emph>Your walking speed increases by 5 feet.
+                                        <br/>
+                                        <emph>Dampening Field. </emph>you have Advantage on Dexterity (Stealth) checks. If the armor normally imposes Disadvantage on such checks, the Advantage and Disadvantage cancel each other out, as normal.
+
                                     </p>
                                 </div>
                                 <br />
@@ -24808,28 +24883,56 @@
                         <div class="advancementCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
-                                    <h5>Pure Information</h5>
+                                    <h5>Extra Attack</h5>
                                     <em>
-                                        <emph>Level Gained: </emph>14th
+                                        <emph>Level Gained: </emph>5th
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
                                     <p>
-                                        <emph>Mind Overload. </emph>When you expend a spell slot to increase the damage
-                                        of Information Overload, the target must succeed on an Intelligence saving throw
-                                        against <emph>your spell save DC</emph> or be stunned until the end of your next
-                                        turn.
+                                        You can attack twice, rather than once, whenever you take the Attack action on your turn.
+                                    </p>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Armor Modification</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>9th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    <p>
+                                        You learn how to use your artificer infusions to spe­cially modify your Arcane Armor. That armor now counts as separate items for the purposes of your Infuse Items feature: armor (the chest piece), boots, helmet, and the armor's special weapon. Each of those items can bear one of your infusions, and the infusions transfer over if you change your armor's model with the Armor Model feature. 
 
                                     </p>
                                     <p>
-                                        <emph>Infoportation. </emph>As an action while your Artificial Mind magic item
-                                        is on your person, you cause the mind to turn you into pure information,
-                                        teleporting you to the unoccupied space nearest to the spectral mind or to an
-                                        item bearing one of your artificer infusions, where you physically reappear.
-                                        <br />
-                                        You can teleport in this way once for free and must finish a long rest before
-                                        doing so again. You can also use this special ability by expending a spell slot
-                                        of 2nd level or higher.
+                                        In addition, the maximum number of items you can infuse at once increases by 2, but those extra items must be part of your Arcane Armor.
+                                    </p>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Perfected Armor</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>15th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    <p>
+                                        Your Arcane Armor gains additional benefits based on its model, as shown below: 
+                                    </p>
+                                    <p>
+                                        <emph>Guardian. </emph>When a Huge or smaller creature you can see ends its turn within 30 feet of you, you can use your reaction to magically force the creature to make a Strength saving throw against your spell save DC, pulling the creature up to 30 feet toward you to an unoccupied space. If you pull the target to a space within 5 feet of you, you can make a melee weapon attack against it as part of this reaction. You can use this reaction a number of times <emph>equal to your proficiency bonus</emph>, and you regain all ex­pended uses of it when you finish a long rest. 
+                                    </p>
+                                    <p>
+                                        <emph>Infiltrator. </emph>Any creature that takes lightning dam­age from your Lightning Launcher glimmers with magical light until the start of your next turn. The glimmering creature sheds dim light in a 5-foot ra­dius, and it has Disadvantage on attack rolls against you, as the light jolts it if it attacks you. In addition, the next attack roll against it has Advantage, and if that attack hits, the target takes an extra 1d6 Light­ning damage. 
                                     </p>
                                 </div>
                                 <br />
@@ -24838,7 +24941,7 @@
                     </div>
 
 
-                    <button class="w3-button w3-block w3-dark-grey advancementButtonUA w3-hover-gold "
+                    <button class="w3-button w3-block w3-dark-grey advancementButtonTCE w3-hover-gold "
                         onclick="accordion('artificerartillerist')"><span
                             style="font-size: 1.2em;">Artillerist</span></button>
                     <div class="advancements w3-hide w3-container" id="artificerartillerist">
@@ -24906,23 +25009,13 @@
                         <div class="advancementCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
-                                    <h5>Tools of the Trade</h5>
+                                    <h5>Tool Proficiency</h5>
                                     <em>
                                         <emph>Level Gained: </emph>3rd
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
-                                    <emph>Proficiencies. </emph>You gain proficiency with smith's tools and woodcarver's
-                                    tools, assuming you don’t already have them. You also gain smith's tools and
-                                    woodcarver's tools for free—the result of tinkering you’ve done as you’ve
-                                    prepared for this specialization.
-                                    <br />
-                                    In addition, you gain the ability to use rods, staffs, and wands as spellcasting
-                                    focuses for your Artificer spells. You also gan a nonmagical, wooden wand for free.
-                                    <br />
-                                    <br />
-                                    <emph>Crafting. </emph>If you craft a magic item in the wand category, it takes
-                                    you a quarter of the normal time, and it costs you half as much of the usual gold.
+                                    You gain proficiency with woodcarver's tools. If you already have this proficiency, you gain proficiency with one other type of artisan's tools of your choice.
                                 </div>
                                 <br />
                             </div>
@@ -24930,167 +25023,46 @@
                         <div class="advancementCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
-                                    <h5>Arcane Turret</h5>
+                                    <h5>Eldritch Cannon</h5>
                                     <em>
                                         <emph>Level Gained: </emph>3rd
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
-                                    <p>
-                                        With your smith's tools, you can take an action to summon a turret in an
-                                        unoccupied space on a horizontal surface within 5 feet of you.
-                                        <br />
-                                        <br />
-                                        You determine the type of the turret when you summon it.
-                                        <br />
-                                        <br />
-                                        The turret disappears if it reduced to 0 hit points, or after 10 minutes. You
-                                        can dismiss it early as an action.
-                                        <br />
-                                        <br />
-                                        You can summon one turret for free, and must finish a long rest before doing so
-                                        again.
-                                        <br />
-                                        You can also expend a spell slot of 1st-level or higher to summon a turret.
-                                        <br />
-                                        <br />
-                                        If you summon a second turret, the first one immediately disappears.
-                                    </p>
-
-                                    <div class="w3-row">
-
-                                        <div class="w3-col s0 m1 l2">
-                                            &emsp;
-                                        </div>
-                                        <div class="w3-col s12 m10 l8">
-                                            <button
-                                                class="w3-button w3-block w3-dark-grey advancementButtonUA w3-hover-gold w3-round"
-                                                onclick="accordion('artilleristturretdiv')"><span
-                                                    style="font-size: 1.2em;">Arcane Turret Statblock</span></button>
-                                            <div class="monster-item w3-container w3-hide w3-round"
-                                                id="artilleristturretdiv">
-                                                <div class="w3-card-2 w3-round-large">
-                                                    <div class="w3-row-padding">
-                                                        <h2 style="text-align: left !important" class="monsterName">
-                                                            Arcane Turret</h2>
-                                                        <div
-                                                            style="border-top: 2px solid goldenrod; padding-top: 10px;">
-                                                            <span class="monsterSizeTypeAlignment"><em>Medium construct,
-                                                                    Neutral</em></span>
-                                                        </div>
-                                                        <div
-                                                            style="border-bottom: 1px solid goldenrod; padding-bottom: 10px !important;">
-                                                            <span class="monsterAC">
-                                                                <emph>AC: </emph>18 (natural armor)
-                                                            </span>
-                                                            <br />
-                                                            <span class="monsterHP">
-                                                                <emph>Hit Points: </emph>5 &times; your Artificer level
-                                                            </span>
-                                                            <br />
-                                                            <span class="monsterSpeed">
-                                                                <emph>Speed: </emph>15ft. (when activated)
-                                                            </span>
-                                                            <br />
-                                                        </div>
-                                                        <div
-                                                            style="border-bottom: 1px solid goldenrod; padding-top: 10px !important; padding-bottom: 10px !important;">
-                                                            <span class="monsterStr">
-                                                                <emph>Str: </emph>10 (+0) &emsp;
-                                                            </span>
-                                                            <span class="monsterDex">
-                                                                <emph>Dex: </emph>10 (+0) &emsp;
-                                                            </span>
-                                                            <span class="monsterCon">
-                                                                <emph>Con: </emph>10 (+0) &emsp;
-                                                            </span>
-                                                            <span class="monsterInt">
-                                                                <emph>Int: </emph>10 (+0) &emsp;
-                                                            </span>
-                                                            <span class="monsterWis">
-                                                                <emph>Wis: </emph>10 (+0) &emsp;
-                                                            </span>
-                                                            <span class="monsterCha">
-                                                                <emph>Cha: </emph>10 (+0) &emsp;
-                                                            </span>
-                                                        </div>
-                                                        <div style="padding-top: 10px !important;"></div>
-                                                        <span class="monsterImmune">
-                                                            <emph>Damage Immunities: </emph>poison, psychic
-                                                        </span><br />
-                                                        <span class="monsterCondImmune">
-                                                            <emph>Condition Immunities: </emph>all conditions
-                                                        </span><br />
-                                                        <div
-                                                            style="border-bottom: 1px solid goldenrod; padding-top: 10px !important;">
-                                                        </div><br />
-                                                        <span class="monsterTraits">
-                                                            The turret will take no actions unless you use your bonus
-                                                            action to Activate it, or your action to Detonate it. In
-                                                            either case, you must be within 60 feet of the turret.
-                                                        </span><br />
-                                                        <br />
-
-                                                        <span class="monsterActionTitle">
-                                                            <h4 style="text-align: left !important;">Actions</h4>
-                                                        </span>
-                                                        <div
-                                                            style="border-bottom: 1px solid goldenrod; padding-top: 10px !important;">
-                                                        </div>
-                                                        <span class="monsterActions">
-                                                            <p>
-                                                                <emph>Detonate (requires action): </emph>Each creature
-                                                                within 10 feet of the turret must make a Dexterity
-                                                                saving throw against <emph>your spell save DC</emph>,
-                                                                taking 3d6 Force damage on a failed save, or half as
-                                                                much on a successful one.
-                                                            </p>
-                                                            <p>
-                                                                <emph>Activate (requires bonus action): </emph>The
-                                                                turret uses its Flamethrower, Force Ballista, or
-                                                                Defender action below, depending on the type of turret.
-                                                                In addition, it can walk up to 15 feet to an unoccupied
-                                                                space.
-                                                            </p>
-                                                            <p style="padding-left: 5%">
-                                                                <emph>Flamethrower: </emph>Designate a 15-foot cone
-                                                                adjacent to the turret. Each creature in that area must
-                                                                make a Dexterity saving throw against <emph>your spell
-                                                                    save DC</emph>, taking 1d8 Fire damage on a failed
-                                                                save, or half as much on a successful one. The fire
-                                                                ignites any flammable objects in the area that aren't
-                                                                being worn or carried.
-                                                            </p>
-                                                            <p style="padding-left: 5%">
-                                                                <emph>Force Ballista: </emph>Make a ranged spell attack,
-                                                                originating from the turret, at one creature or object
-                                                                within 120 feet of the turret. On a hit, the target
-                                                                takes 2d8 Force damage; if the target is a creature, it
-                                                                is pushed up to 5 feet away from the turret.
-                                                            </p>
-                                                            <p style="padding-left: 5%">
-                                                                <emph>Defender: </emph>The turret emits a burst of
-                                                                positive energy that grants itself and each creature of
-                                                                your choice within 10 feet of it a number of temporary
-                                                                hit points equal to <emph>1d8 + your Intelligence
-                                                                    modifier</emph> (minimum of 1d8+1).
-                                                            </p>
-                                                        </span>
-                                                        <br />
-                                                    </div>
-                                                    <div class="w3-row-padding">
-                                                    </div>
-                                                    <br />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br />
-
-
-                                        <div class="w3-col s0 m1 l2">
-                                            &emsp;
-                                        </div>
+                                        <p>Using woodcarver's tools or smith's tools, you can take an action to magically create a Small or Tiny eldritch cannon in an unoccupied space on a hori­zontal surface within 5 feet of you. A Small eldritch cannon occupies its space, and a Tiny one can be held in one hand. </p>
+                                        <p>Once you create a cannon, you can't do so again until you finish a long rest or until you expend a spell slot to create one. You can have only one can­non at a time and can't create one while your can­non is present. </p>
+                                        <p>The cannon is a magical object. Regardless of size, the cannon has an AC of 18 and a number of hit points <emph>equal to five times your artificer level</emph>. It is immune to poison damage and psychic damage. If it is forced to make an ability check or a saving throw, treat all its ability scores as 10 (+O). If the <em>mending</em> spell is cast on it, it regains 2d6 hit points. It disap­pears if it is reduced to 0 hit points or after 1 hour. You can dismiss it early as an action.</p>
+                                        <p>When you create the cannon, you determine its appearance and whether it has legs. You also de­cide which type it is, choosing from the options on the Eldritch Cannons table. On each of your turns, you can take a bonus action to cause the cannon to activate if you are within 60 feet of it. As part of the same bonus action, you can direct the cannon to walk or climb up to 15 feet to an unoccupied space, provided it has legs. </p>
+                                        
+                                    <div class="w3-col s0 m1 l2">
+                                        &emsp;
                                     </div>
+                                    <div class="w3-col s12 m10 l8">
+                                        <table class="w3-table w3-small">
+                                            <thead>
+                                                <th>Cannon</th>
+                                                <th>Activation</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Flamethrower</td>
+                                                    <td>The cannon exhales fire in an adjacent 15-foot cone that you designate. Each creature in that area must make a Dexter­ity saving throw against your spell save DC, taking 2d8 fire damage on a failed save or half as much damage on a suc­cessful one. The fire ignites any flamma­ble objects in the area that aren't being worn or carried. </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Force Ballista</td>
+                                                    <td>Make a ranged spell attack, originating from the cannon, at one creature or object within 120 feet of it. On a hit, the target takes 2d8 force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Protector</td>
+                                                    <td>The cannon emits a burst of positive en­ergy that grants itself and each creature of your choice within 10 feet of it a num­ber of temporary hit points <emph>equal to 1d8 + your Intelligence modifier</emph> (minimum of +1)</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="w3-col s0 m1 l2">
+                                        &emsp;
+                                    </div>
+                                    <br />
                                 </div>
                                 <br />
                             </div>
@@ -25098,35 +25070,33 @@
                         <div class="advancementCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
-                                    <h5>Wand Prototype</h5>
+                                    <h5>Arcane Firearm</h5>
                                     <em>
-                                        <emph>Level Gained: </emph>6th
-                                    </em><br />
-                                    <em>
-                                        <emph>Level Improved: </emph>14th
+                                        <emph>Level Gained: </emph>5th
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
-                                    Whenever you finish a long rest and your woodcarver's tools are with you, you can
-                                    touch a nonmagical, wooden wand and turn it into a magic item.
-                                    <br />
-                                    When you do so, you invest it with one Artificer cantrip of your choice - even one
-                                    you don't know - that has a casting time of 1 action.
-                                    <br />
-                                    <br />
-                                    As an action, you can use the wand to produce the cantrip, using your spellcasting
-                                    modifier. Other creatures are unable to use the wand's magic.
-                                    <br />
-                                    <br />
-                                    The wand loses this magic when you finish your next long rest.
-                                    <br />
-                                    <br />
-                                    Any damage rolls you make for a cantrip in the wand gains a bonus <emph>equal to
-                                        your Intelligence modifier</emph> (minimum of +1).
-                                    <br />
-                                    <br />
-                                    When you reach 14th level in this class, you can invest the wand with two cantrips
-                                    instead of one.
+                                    <p>When you finish a long rest, you can use woodcarv­er's tools to carve special sigils into a wand, staff, or rod and thereby turn it into your arcane firearm. The sigils disappear from the object if you later carve them on a different item. The sigils otherwise last indefinitely. </p>
+                                    <p>You can use your arcane firearm as a spellcasting focus for your artificer spells. When you cast an ar­tificer spell through the firearm, roll a d8, and you gain a bonus to one of the spell's damage rolls equal to the number rolled. </p>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Explosive Cannon</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>9th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    <p>Every Eldritch Cannon you create is now more destructive: 
+                                        <ul>
+                                            <li>The cannon's damage rolls all increase by 1d8.</li>
+                                            <li>As an action, you can command the cannon to detonate if you are within 60 feet of it. Doing so destroys the cannon and forces each creature within 20 feet of it to make a Dexterity saving throw against your spell save DC, taking 3d8 force damage on a failed save or half as much damage on a successful one. </li>
+                                        </ul>
+                                    </p>
                                 </div>
                                 <br />
                             </div>
@@ -25136,30 +25106,24 @@
                                 <div class="w3-row-padding">
                                     <h5>Fortified Position</h5>
                                     <em>
-                                        <emph>Level Gained: </emph>14th
+                                        <emph>Level Gained: </emph>15th
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
-                                    You and your allies are considered to have Half Cover when within 10 feet of a
-                                    turret you create with your Arcane Turret feature.
-                                    <br />
-                                    <br />
-                                    You can also now summon a second turret for free before finishing a long rest.
-                                    <br />
-                                    <br />
-                                    If you summon the second turret while the first is still present, the first one
-                                    doesn't disappear, and each turret can be of a different type. (However, if you
-                                    summon a third turret, the first one disappears)
-                                    <br />
-                                    <br />
-                                    You can use one bonus action to activate both turrets.
+                                    <p>
+                                        You're a master at forming well-defended emplacements using your Eldritch Cannon:
+                                        <ul>
+                                            <li>You and your allies have half cover while within 10 feet of a cannon you create with Eldritch Can­non, as a result of a shimmering field of magical protection that the cannon emits.</li>
+                                            <li>You can now have two cannons at the same time. You can create two with the same action (but not the same spell slot), and you can activate both of them with the same bonus action. You determine whether the cannons are identical to each other or different. You can't create a third cannon while you have two. </li>
+                                        </ul>
+                                    </p>
                                 </div>
                                 <br />
                             </div>
                         </div>
                     </div>
 
-                    <button class="w3-button w3-block w3-dark-grey advancementButtonUA w3-hover-gold "
+                    <button class="w3-button w3-block w3-dark-grey advancementButtonTCE w3-hover-gold "
                         onclick="accordion('artificerbattlesmith')"><span style="font-size: 1.2em;">Battle
                             Smith</span></button>
                     <div class="advancements w3-hide w3-container" id="artificerbattlesmith">
@@ -25195,7 +25159,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td>3rd</td>
-                                                    <td>Heroism, Searing Smite</td>
+                                                    <td>Heroism, Shield</td>
                                                 </tr>
                                                 <tr>
                                                     <td>5th</td>
@@ -25203,11 +25167,11 @@
                                                 </tr>
                                                 <tr>
                                                     <td>9th</td>
-                                                    <td>Aura of Vitality, Blinding Smite</td>
+                                                    <td>Aura of Vitality, Conjure Barrage</td>
                                                 </tr>
                                                 <tr>
                                                     <td>13th</td>
-                                                    <td>Aura of Purity, Staggering Smite</td>
+                                                    <td>Aura of Purity, Fire Shield</td>
                                                 </tr>
                                                 <tr>
                                                     <td>17th</td>
@@ -25227,20 +25191,13 @@
                         <div class="advancementCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
-                                    <h5>Tools of the Trade</h5>
+                                    <h5>Tool Proficiency</h5>
                                     <em>
                                         <emph>Level Gained: </emph>3rd
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
-                                    <emph>Proficiencies. </emph>You gain proficiency with leatherworker's tools and
-                                    smith's tools, assuming you don’t already have them. You also gain leatherworker's
-                                    tools and smith's tools for free—the result of tinkering you’ve done as you’ve
-                                    prepared for this specialization.
-                                    <br />
-                                    <br />
-                                    <emph>Crafting. </emph>If you craft a magic item in the armor category, it takes
-                                    you a quarter of the normal time, and it costs you half as much of the usual gold.
+                                    You gain proficiency with smith's tools. If you already have this proficiency, you gain proficiency with one other type of artisan's tools of your choice.
                                 </div>
                                 <br />
                             </div>
@@ -25266,42 +25223,25 @@
                         <div class="advancementCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
-                                    <h5>Iron Defender</h5>
+                                    <h5>Steel Defender</h5>
                                     <em>
                                         <emph>Level Gained: </emph>3rd
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
                                     <p>
-                                        You have a faithful companion. It resembles a hound, a cougar, a bear, or
-                                        another four-legged creature of your choice.
-                                        <br />
-                                        It is loyal to you and to your companions, and it obeys your commands.
-                                        <br />
-                                        <br />
-                                        In combat, the iron defender shares your initiative count, but takes its turn
-                                        immediately after yours.
-                                        <br />
-                                        It can move and use its reaction on its own, but the only action it takes on its
-                                        turn is the Dodge action, unless you take a bonus action on your turn to command
-                                        it to take one of the actions on its stat block, or the Dash, Disengage, or Help
-                                        actions.
-                                        <br />
-                                        <br />
-                                        If the <emph>Mending</emph> spell is cast on it, it regains 2d6 hit points.
-                                        <br />
-                                        If
-                                        it has died within the last hour, you can use your smith's tools as an
-                                        action to revive it, provided you are within 5 feet of it and you expend a spell
-                                        slot of 1st level or higher. The iron defender returns to life after 1 minute
-                                        with all its hit points restored.
-                                        <br />
-                                        <br />
-                                        At the end of a long rest, you can create a new iron defender if you have your
-                                        smith's tools with you. If you already have an iron defender from this feature,
-                                        the first one immediately perishes.
+                                        Your tinkering has borne you a companion, a steel defender. It's friendly to you and your companions, and it obeys your commands. See its game statis­tics in the Steel Defender stat block, which uses your proficiency bonus (PB) in several places. You determine the creature's appearance and whether it has two legs or four; your choice has no effect on its game statistics. 
                                     </p>
-
+                                    <p>
+                                        In combat, the defender shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to com­mand it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the defender can take any action of its choice, not just Dodge. 
+                                    </p>
+                                    <p>
+                                        If the <em>mending</em> spell is cast on the defender, it regains 2d6 hit points. If it has died within the last hour, you can use your smith's tools as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The defender returns to life after 1 minute with all its hit points restored. 
+                                    </p>
+                                    <p>
+                                        At the end of a long rest, you can create a new steel defender if you have smith's tools with you. If you already have a defender from this feature, the first one immediately perishes. The defender also perishes if you die.
+                                    </p>
+                                    <br/>
                                     <div class="w3-row">
 
                                         <div class="w3-col s0 m1 l2">
@@ -25309,19 +25249,18 @@
                                         </div>
                                         <div class="w3-col s12 m10 l8">
                                             <button
-                                                class="w3-button w3-block w3-dark-grey advancementButtonUA w3-hover-gold w3-round"
+                                                class="w3-button w3-block w3-dark-grey advancementButtonTCE w3-hover-gold w3-round"
                                                 onclick="accordion('battlesmithdefenderdiv')"><span
-                                                    style="font-size: 1.2em;">Iron Defender Statblock</span></button>
+                                                    style="font-size: 1.2em;">Steel Defender Statblock</span></button>
                                             <div class="monster-item w3-container w3-hide w3-round"
                                                 id="battlesmithdefenderdiv">
                                                 <div class="w3-card-2 w3-round-large">
                                                     <div class="w3-row-padding">
                                                         <h2 style="text-align: left !important" class="monsterName">
-                                                            Iron Defender</h2>
+                                                            Steel Defender</h2>
                                                         <div
                                                             style="border-top: 2px solid goldenrod; padding-top: 10px;">
-                                                            <span class="monsterSizeTypeAlignment"><em>Medium construct,
-                                                                    Neutral</em></span>
+                                                            <span class="monsterSizeTypeAlignment"><em>Medium construct</em></span>
                                                         </div>
                                                         <div
                                                             style="border-bottom: 1px solid goldenrod; padding-bottom: 10px !important;">
@@ -25330,9 +25269,8 @@
                                                             </span>
                                                             <br />
                                                             <span class="monsterHP">
-                                                                <emph>Hit Points: </emph>(5 &times; your Artificer
-                                                                level) + your Intelligence modifier + the Iron
-                                                                Defender's Constitution modifier
+                                                                <emph>Hit Points: </emph>2 + (5 &times; your Artificer
+                                                                level) + your Intelligence modifier (The defender has a number of d8 Hit Dice equal to your Artificer Level)
                                                             </span>
                                                             <br />
                                                             <span class="monsterSpeed">
@@ -25362,23 +25300,25 @@
                                                             </span>
                                                         </div>
                                                         <div style="padding-top: 10px !important;"></div>
-                                                        <span class="monsterSave"></span>
+                                                        <span class="monsterSave">
+                                                            <emph>Saving Throws: </emph>Dex +1 plus PB, Con +2 plus PB
+                                                        </span><br/>
                                                         <span class="monsterSkill">
-                                                            <emph>Skills: </emph>Perception +4
+                                                            <emph>Skills: </emph>Athletics +2 plus PB, Perception +0 plus (PB &times; 2)
                                                         </span><br />
                                                         <span class="monsterResist"></span>
                                                         <span class="monsterImmune">
                                                             <emph>Damage Immunities: </emph>poison
                                                         </span><br />
                                                         <span class="monsterCondImmune">
-                                                            <emph>Condition Immunities: </emph>charmed, exhausted,
+                                                            <emph>Condition Immunities: </emph>charmed, exhaustion,
                                                             poisoned
                                                         </span><br />
                                                         <span class="monsterSenses">
                                                             <emph>Senses: </emph>darkvision 60ft.
                                                         </span><br />
                                                         <span class="monsterPassPer">
-                                                            <emph>Passive Perception: </emph>10
+                                                            <emph>Passive Perception: </emph>10 plus (PB &times; 2)
                                                         </span><br />
                                                         <span class="monsterLanguages">
                                                             <emph>Languages: </emph>understands the languages you speak
@@ -25389,16 +25329,7 @@
                                                         </div><br />
                                                         <span class="monsterTraits">
                                                             <p>
-                                                                <emph>Might of the Master: </emph>The following numbers
-                                                                increase by 1 when your proficiency bonus increases by
-                                                                1:
-                                                                the iron defender's skill bonuses, the bonuses to hit
-                                                                and damage of its bite, and the number of hit points
-                                                                restored by its repair action
-                                                            </p>
-                                                            <p>
-                                                                <emph>Vigilant: </emph>The iron defender can't be
-                                                                surprised
+                                                                <emph>Vigilant: </emph>The defender can't be surprised.
                                                             </p>
                                                         </span><br />
                                                         <br />
@@ -25411,13 +25342,13 @@
                                                         </div>
                                                         <span class="monsterActions">
                                                             <p>
-                                                                <emph>Bite: </emph><em>Melee Weapon Attack:
-                                                                </em>+4 to hit, reach 5 ft., one target you can see.
-                                                                <em>Hit: </em>1d8 + 2 piercing damage.
+                                                                <emph>Force-Empowered Rend: </emph><em>Melee Weapon Attack:
+                                                                </em>your spell attack modifier to hit, reach 5 ft., one target you can see.
+                                                                <em>Hit: </em>1d8 + PB force damage.
                                                             </p>
                                                             <p>
                                                                 <emph>Repair <em>(3/day)</em>: </emph>The magical
-                                                                mechanisms inside the iron defender restore 2d8+2 hit
+                                                                mechanisms inside the defender restore 2d8 + PB hit
                                                                 points to itself or to one construct or object within 5
                                                                 feet of it.
                                                             </p>
@@ -25431,7 +25362,7 @@
                                                         </div>
                                                         <span class="monsterActions">
                                                             <p>
-                                                                <emph>Defensive Pounce: </emph>The iron defender imposes
+                                                                <emph>Deflect Attack: </emph>The iron defender imposes
                                                                 Disadvantage on the attack roll of one creature it can
                                                                 see that is within 5 feet of it, provided the attack
                                                                 roll is against a creature other than the iron defender.
@@ -25457,24 +25388,34 @@
                         <div class="advancementCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
-                                    <h5>Arcane Jolt</h5>
+                                    <h5>Extra Attack</h5>
                                     <em>
-                                        <emph>Level Gained: </emph>6th
+                                        <emph>Level Gained: </emph>5th
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
-                                    <p>
-                                        Your iron defender's bite attack is now considered magical for the purposes of
-                                        overcoming resistances and immunities.
-                                    </p>
+                                    You can attack twice, rather than once, whenever you take the Attack action on your turn.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Arcane Jolt</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>9th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
                                     <p>
                                         When you or your iron defender hits a target with a magic weapon attack, you can
                                         channel magical energy through the strike to create one of the following
                                         effects:
                                         <ul>
-                                            <li>The target takes an extra 2d4 Force damage</li>
+                                            <li>The target takes an extra 2d6 Force damage</li>
                                             <li>Choose one creature or object you can see within 30 feet of the target.
-                                                Healing energy flows into the chosen recipient, restoring 2d4 hit points
+                                                Healing energy flows into the chosen recipient, restoring 2d6 hit points
                                                 to it.</li>
                                         </ul>
                                     </p>
@@ -25498,11 +25439,14 @@
                                     </em><br /><br />
                                 </div>
                                 <div class="w3-row-padding">
-                                    The extra damage and the healing of your Arcane Jolt both increase to 4d4.
-                                    <br />
-                                    <br />
-                                    In addition, whenever your iron defender uses its Defensive Pounce, the attacker
-                                    takes Force damage equal to <emph>1d4 + your Intelligence modifier</emph>.
+                                    <p>
+                                        Your Arcane jolt and steel defender have become more powerful:
+                                        <ul>
+                                            <li>The extra damage and the healing of your Arcane Jolt both increase to 4d6.</li>
+                                            <li>Your steel defender gains a +2 bonus to Armor Class.</li>
+                                            <li>Whenever your steel defender uses its Deflect At­tack, the attacker takes force damage <emph>equal to 1d4 + your Intelligence modifier.</emph></li>
+                                        </ul>
+                                    </p>
                                 </div>
                                 <br />
                             </div>

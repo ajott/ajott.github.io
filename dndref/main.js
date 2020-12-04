@@ -1196,6 +1196,13 @@ function spellSearchClick(el) {
     }, 150);
 }
 
+function exSpellSearch(el) {
+
+
+    //+ "?s=" + encodeURIComponent("\"" + el.firstChild.textContent + "\"")
+
+}
+
 function buildMagicItems() {
     let htmlString = "";
     let itemFilterString = "";

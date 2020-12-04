@@ -501,6 +501,19 @@ Generated Maroon theme
     background-color: rgba(77, 107, 122,.5);
 }
 
+.advancementButtonTCE {
+    top: 40px;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 50;
+    border: 1px solid silver;
+    background-color: rgba(11,145,133,1) !important;
+}
+
+.advancementButtonTCE + .advancements {
+    background-color: rgba(11,145,133,.5) !important;
+}
+
 .advancementButtonMOoT {
     top: 40px;
     position: -webkit-sticky;
@@ -548,6 +561,10 @@ Generated Maroon theme
 
 .classUA {
     background-color: rgba(105, 122, 77,.2) !important;
+}
+
+.classTCE {
+ background-color: rgba(11,145,133,.2) !important;
 }
 
 .classHB {
@@ -613,3 +630,4 @@ Generated Maroon theme
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
+

@@ -449,6 +449,10 @@ Generated Maroon theme
     background-color: rgb(105, 122, 77,.75) !important;
 }
 
+.tce-card {
+    background-color: rgb(11,145,133,.75) !important;
+}
+
 .template-card {
     background-color: rgba(221, 160, 221,.25) !important;
 }
@@ -512,6 +516,12 @@ Generated Maroon theme
 
 .advancementButtonTCE + .advancements {
     background-color: rgba(11,145,133,.5) !important;
+}
+
+.featureCardTCE {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgba(11,145,133,.2);
 }
 
 .advancementButtonMOoT {

@@ -511,6 +511,7 @@
                 <div class="w3-row info" id="barbarianFeatures">
                     <h3>Class Features</h3>
                     <p class="w3-center w3-centered">Please note that there are some feature variants from UA65 included in the list below. As with all playtest and homebrew content, <emph>please consult your DM</emph> before assuming they are valid choices for your game.</p>
+                    <p class="w3-center w3-centered">Additionally, there are some class features from TCE presented below. These features can be selected separately from the regular features; you can use one, both, or neither.</p>
                     <div class="features">
                         <div class="featureCard">
                             <div class="w3-card-2 w3-round-large">
@@ -627,6 +628,23 @@
                             </div>
                         </div>
                         <div class="featureCard">
+                            <div class="w3-card-2 w3-round-large tce-card">
+                                <div class="w3-row-padding">
+                                    <h5>Primal Knowledge</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>3rd
+                                    </em><br />
+                                    <em>
+                                        <emph>Levels Improved: </emph>10th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    When you reach 3rd level and again at 10th level, you gain proficiency in one skill of your choice from the list of skills available to barbarians at 1st level. 
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="featureCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
                                     <h5>Ability Score Improvement</h5>
@@ -720,6 +738,20 @@
                                     incapacitated) at the beginning of combat, you may act normally on your first turn
                                     if
                                     you enter your Rage as your first action.
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="featureCard">
+                            <div class="w3-card-2 w3-round-large tce-card">
+                                <div class="w3-row-padding">
+                                    <h5>Instinctive Pounce</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>7th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    As part of the bonus action you take to enter your rage, you can move up to half your speed.
                                 </div>
                                 <br />
                             </div>
@@ -1313,26 +1345,10 @@
                         </div>
                     </div>
 
-                    <button class="w3-button w3-block w3-dark-grey advancementButtonUA w3-hover-gold "
+                    <button class="w3-button w3-block w3-dark-grey advancementButtonTCE w3-hover-gold "
                         onclick="accordion('pathofthebeast')"><span style="font-size: 1.2em;">Path of the Beast
-                            (UA67)</span></button>
+                            (TCE)</span></button>
                     <div class="advancements w3-hide w3-container" id="pathofthebeast">
-                        <div class="advancementCard">
-                            <div class="w3-card-2 w3-round-large">
-                                <div class="w3-row-padding">
-                                    <h2>Please Note</h2>
-                                    <br />
-                                </div>
-                                <div class="w3-row-padding">
-                                    This class is playtest material from Unearthed Arcana, and has not been rigorously
-                                    tested for balance.
-                                    <br />
-                                    <strong>Please</strong> ask your DM before building a character using playtest
-                                    material.
-                                </div>
-                                <br />
-                            </div>
-                        </div>
                         <div class="advancementCard">
                             <div class="w3-card-2 w3-round-large">
                                 <div class="w3-row-padding">
@@ -1347,18 +1363,18 @@
                                     following options each time you rage:
                                     <br />
                                     <br />
-                                    <emph>Bite. </emph> Your mouth transforms into a bestial snout or great mandibles
+                                    <emph>Bite. </emph> Your mouth transforms into a bestial muzzle or great mandibles
                                     (your choice). Your bite deals 1d8 piercing damage on a hit. Once on each of your
                                     turns when you damage a creature with your bite, you regain a number of hit points
-                                    equal to your Constitution modifier (minimum of 1 hit point).
+                                    <emph>equal to your proficiency bonus</emph>, provided you have less than half your hit points when you hit.
                                     <br />
-                                    <emph>Claws. </emph>Your hands transform into claws, which deal 1d6 slashing damage
+                                    <emph>Claws. </emph>Your hands transform into claws, which you can use as a weapon if it's empty. It deals 1d6 slashing damage
                                     on a hit. When you take the Attack action on your turn and make an attack with your
                                     claws, you can make one additional attack using your claws as part of the same
                                     action.
                                     <br />
-                                    <emph>Tail. </emph>You grow a lashing, spiny tail, which deals 1d12 piercing damage
-                                    on a hit and has the <emph>Reach</emph> property.
+                                    <emph>Tail. </emph>You grow a lashing, spiny tail, which deals 1d8 piercing damage
+                                    on a hit and has the <emph>Reach</emph> property. If a creature you can see within 10 feet of you hits you with an attack roll, you can use your reaction to swipe your tail and roll a d8, applying a bonus to your AC equal to the number you rolled, potentially causing the attack to miss you.
                                 </div>
                                 <br />
                             </div>
@@ -1434,14 +1450,14 @@
                                     within 30 feet of you <emph>equal to your Constitution modifier</emph> (minimum of
                                     one creature).
                                     <br />
-                                    Until your rage ends, the chosen creature(s) gain the <emph>Reckless Attack</emph>
-                                    feature, and you have Advantage on saving throws against being frightened.
+                                    You gain 5 temporary hit points for each creature that accepts this feature.
+                                    <br/>
+                                    <br/>
+                                    Until the rage ends, the chosen creatures can each use the following benefit once on each of their turns: when the creature hits a target with an attack roll and deals damage to it, the creature can roll a d6 and gain a bonus to the dam­age equal to the number rolled. 
                                     <br />
-                                    You also gain 5 temporary hit points for each creature that accepts the benefit.
                                     <br />
-                                    <br />
-                                    You can use this feature a number of times <emph>equal to your Constitution modifier
-                                    </emph> (minimum of once).
+                                    You can use this feature a number of times <emph>equal to your proficiency bonus
+                                    </emph>.
                                     <br />
                                     You regain all expended uses when you finish a long rest.
                                 </div>
@@ -1450,6 +1466,156 @@
                         </div>
                     </div>
 
+                    
+
+                    <button class="w3-button w3-block w3-dark-grey advancementButtonTCE w3-hover-gold "
+                        onclick="accordion('pathofwildmagic')"><span style="font-size: 1.2em;">Path of Wild Magic
+                            (TCE)</span></button>
+                    <div class="advancements w3-hide w3-container" id="pathofwildmagic">
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Magic Awareness</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>3rd
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    <p>
+                                        As an  action, you can open your awareness to the presence of concentrated magic. Until the end of your next turn, you know the location of any spell or magic item within 60 feet of you that isn't behind total cover. When you sense a spell, you learn which school of magic it belongs to.
+                                    </p>
+                                    <p>
+                                        You can use this feature a number of times <emph>equal to your proficiency bonus</emph>, and you regain all ex­pended uses when you finish a long rest. 
+                                    </p>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Wild Surge</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>3rd
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    <p>
+                                        The magical energy roiling inside you sometimes erupts from you. When you enter your rage, roll on the Wild Magic table to determine the magical ef­fect produced.
+                                    </p>
+                                    <p>
+                                        If the effect requires a saving throw, the DC equals <emph>8 + your proficiency bonus + your Constitu­tion modifier</emph>. 
+                                    </p>
+                                    <p>
+                                        <div class="w3-col s0 m1 l2">
+                                            &emsp;
+                                        </div>
+                                        <div class="w3-col s12 m10 l8">
+                                            <table class="w3-table w3-small">
+                                                <thead>
+                                                    <th>d8</th>
+                                                    <th>Magical Effect</th>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Shadowy tendrils lash around you. Each creature of your choice that you can see within 30 feet of you must succeed on a Constitution saving throw or take 1d12 necrotic damage. You also gain 1d12 temporary hit points. </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>You teleport up to 30 feet to an unoccupied space you can see. Until your rage ends, you can use this effect again on  each of your turns as a bonus action.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>An intangible spirit, which looks like a flumph or a pixie (your choice), appears within 5 feet of one creature of your choice that you can see within 30 feet of you. At the end of the current turn, the spirit explodes, and each creature within 5 feet of it must succeed on a Dexterity saving throw or take 1d6 force damage. Until your rage ends, you can use this effect again, summoning another spirit, on each of your turns as a bonus action.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Magic infuses one weapon of your choice that you are holding. Until your rage ends, the weap­on's damage type changes to Force, and it gains the Light and Thrown properties, with a normal range of 20 feet and a long range of 60 feet. If the weapon leaves your hand, the weapon reappears in your hand at the end of the current turn.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5</td>
+                                                        <td>Whenever a creature hits you with an attack roll before your rage ends, that creature takes 1d6 Force damage, as magic lashes out in retribution</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6</td>
+                                                        <td>Until your rage ends, you are surrounded by multicolored, protective lights; you gain a +1 bo­nus to AC, and while within 10 feet of you, your allies gain the same bonus.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>7</td>
+                                                        <td>Flowers and vines temporarily grow around you; until your rage ends, the ground within 15  feet of you is difficult terrain for your enemies.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>8</td>
+                                                        <td>A bolt of light shoots from your chest. Another creature of your choice that you can see within 30 feet of you must succeed on a Constitution saving throw or take 1d6 radiant damage and be blinded until the start of your next turn. Until your rage ends, you can use this effect again on each of your turns as a bonus action.</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="w3-col s0 m1 l2">
+                                            &emsp;
+                                        </div>
+                                        </p>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Bolstering Soul</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>6th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    <p>
+                                        You can harness your wild magic to bolster yourself or a companion. As an action, you can touch one creature (which can be yourself) and confer one of the following benefits of your choice to that creature: 
+                                        <ul>
+                                            <li>For 10 minutes, the creature can roll a d3 when­ever making an attack roll or an ability check and add the number rolled to the d20 roll. </li>
+                                            <li>Roll a d3. The creature regains one expended spell slot, the level of which equals the number rolled or lower (the creature's choice). Once a creature receives this benefit, that creature can't receive it again until after a long rest. </li>
+                                        </ul>
+                                    </p>
+                                    <p>
+                                        You can take this action a number of times <emph>equal to your proficiency bonus</emph>, and you regain all ex­pended uses when you finish a long rest. 
+                                    </p>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Unstable Backlash</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>10th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    <p>
+                                        When you are imperiled during your rage, the magic within you can lash out; immediately after you take damage or fail a saving throw while raging, you can use your reaction to roll on the Wild Magic table and immediately produce the effect rolled. This effect replaces your current Wild Magic effect.
+                                    </p>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="advancementCard">
+                            <div class="w3-card-2 w3-round-large">
+                                <div class="w3-row-padding">
+                                    <h5>Controlled Surge</h5>
+                                    <em>
+                                        <emph>Level Gained: </emph>14th
+                                    </em><br /><br />
+                                </div>
+                                <div class="w3-row-padding">
+                                    <p>
+                                        Whenever you roll on the Wild Magic table, you can roll the die twice and choose which of the two effects to unleash. If you roll the same number on both dice, you can ignore the number and choose any effect on the table. 
+                                    </p>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <br />

@@ -672,8 +672,8 @@ var feat = [{
         ]
     }, 
     {
-        "name": "Artificer Initiate (UA72)",
-        "ua": "YES",
+        "name": "Artificer Initiate (TCE)",
+        "tce": "YES",
         "text": [
             "You've learned some of an artificer's inventiveness, granting you the following benefits:",
             "",
@@ -685,8 +685,8 @@ var feat = [{
         ]
     }, 
     {
-        "name": "Chef (UA72)",
-        "ua": "YES",
+        "name": "Chef (TCE)",
+        "tce": "YES",
         "text": [
             "Time and effort spent mastering the culinary arts has paid off. You gain the following benefits:",
             "",
@@ -700,8 +700,8 @@ var feat = [{
         ]
     }, 
     {
-        "name": "Crusher (UA72)",
-        "ua": "YES",
+        "name": "Crusher (TCE)",
+        "tce": "YES",
         "text": [
             "You are practiced in the art of crushing your enemies, granting you the following benefits:",
             "",
@@ -713,8 +713,8 @@ var feat = [{
         ]
     }, 
     {
-        "name": "Eldritch Adept (UA72)",
-        "ua": "YES",
+        "name": "Eldritch Adept (TCE)",
+        "tce": "YES",
         "prerequisite": "Spellcasting or Pact Magic feature",
         "text": [
             "Studying occult lore, you have unlocked eldritch power within yourself: you learn one Eldritch Invocation option of your choice from the warlock class.",
@@ -725,8 +725,8 @@ var feat = [{
         ]
     }, 
     {
-        "name": "Fey Touched (UA72)",
-        "ua": "YES",
+        "name": "Fey Touched (TCE)",
+        "tce": "YES",
         "text": [
             "Your exposure to the Feywild or one of its denizens has left a magical mark on you. You gain the following benefits:",
             "",
@@ -736,18 +736,18 @@ var feat = [{
         ]
     }, 
     {
-        "name": "Fighting Initiate (UA72)",
-        "ua": "YES",
+        "name": "Fighting Initiate (TCE)",
+        "tce": "YES",
         "prerequisite": "Proficiency with a martial weapon",
         "text": [
             "Your martial training has helped you develop a particular style of fighting. As a result, you learn one Fighting Style option of your choice from the fighter class. If you already have one or more Fighting Styles, the one you choose with this feat must be different.",
             "",
-            "Whenever you gain a level, you can replace this feat’s fighting style with another one from the fighter class that you don’t have."
+            "Whenever you gain a level that grants an Ability Score Improvement, you can replace this feat’s fighting style with another one from the fighter class that you don’t have."
         ]
     }, 
     {
-        "name": "Gunner (UA72)",
-        "ua": "YES",
+        "name": "Gunner (TCE)",
+        "tce": "YES",
         "text": [
             "You have a quick hand and keen eye when employing firearms, granting you the following benefits:",
             "",
@@ -761,20 +761,20 @@ var feat = [{
         ]
     }, 
     {
-        "name": "Metamagic Adept (UA72)",
-        "ua": "YES",
+        "name": "Metamagic Adept (TCE)",
+        "tce": "YES",
         "prerequisite": "Spellcasting or Pact Magic feature",
         "text": [
             "You’ve learned how to exert your will on your spells to alter how they function. You gain the following benefits:",
             "",
-            "\u2022 You learn two Metamagic options of your choice from the sorcerer class. You can use only one Metamagic option on a spell when you cast it, unless the option says otherwise. Whenever you gain a level, you can replace one of your Metamagic options with another one from the sorcerer class.",
+            "\u2022 You learn two Metamagic options of your choice from the sorcerer class. You can use only one Metamagic option on a spell when you cast it, unless the option says otherwise. Whenever you gain a level that grants an Ability Score Improvement, you can replace one of your Metamagic options with another one from the sorcerer class.",
             "",
             "\u2022 You gain 2 sorcery points to spend on Metamagic (these points are added to any sorcery points you have from another source but can be used only on Metamagic). You regain all spent sorcery points when you finish a long rest."
         ]
     }, 
     {
-        "name": "Piercer (UA72)",
-        "ua": "YES",
+        "name": "Piercer (TCE)",
+        "tce": "YES",
         "text": [
             "You have achieved a penetrating precision in combat, granting you the following benefits:",
             "",
@@ -786,12 +786,12 @@ var feat = [{
         ]
     }, 
     {
-        "name": "Poisoner (UA72)",
-        "ua": "YES",
+        "name": "Poisoner (TCE)",
+        "tce": "YES",
         "text": [
             "You can prepare and deliver deadly poisons, gaining the following benefits:",
             "",
-            "\u2022 When you make a damage roll, you ignore resistance to poison damage.",
+            "\u2022 When you make a damage roll that deals poison damage, it ignores resistance to poison damage.",
             "",
             "\u2022 You can coat a weapon in poison as a bonus action, instead of an action.",
             "",
@@ -812,14 +812,14 @@ var feat = [{
         ]
     }, 
     {
-        "name": "Shadow Touched (UA72)",
-        "ua": "YES",
+        "name": "Shadow Touched (TCE)",
+        "tce": "YES",
         "text": [
             "You learn how to bend shadows from your experience with the Shadowfell. You gain the following benefits:",
             "",
             "\u2022 Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.",
             "",
-            "\u2022 You learn the <emph>darkness</emph> spell and one 1st-level spell of your choice. The 1st-level spell must be from the illusion or necromancy school of magic. You can cast each of these spells without expending a spell slot. Once you cast either of these spells in this way, you can’t cast that spell in this way again until you finish a long rest. You can also cast these spells using spell slots you haveof the appropriate level. The spells’ spellcasting ability is the ability increased by this feat."
+            "\u2022 You learn the <emph>darkness</emph> spell and one 1st-level spell of your choice. The 1st-level spell must be from the illusion or necromancy school of magic. You can cast each of these spells without expending a spell slot. Once you cast either of these spells in this way, you can’t cast that spell in this way again until you finish a long rest. You can also cast these spells using spell slots you have of the appropriate level. The spells’ spellcasting ability is the ability increased by this feat."
         ]
     }, 
     {
@@ -838,8 +838,21 @@ var feat = [{
         ]
     }, 
     {
-        "name": "Slasher (UA72)",
-        "ua": "YES",
+        "name": "Skill Expert (TCE)",
+        "tce": "YES",
+        "text": [
+            "You have honed your proficiency with particular skills, granting you the following benefits: ",
+            "",
+            "\u2022 Increase one ability score of your choice by 1, to a maximum of 20.",
+            "",
+            "\u2022 You gain proficiency in one skill of your choice.",
+            "",
+            "\u2022 Choose one skill in which you have proficiency. You gain expertise with that skill, which means your proficiency bonus is doubled for any ability check you make with it. The skill you choose must be one that isn't already benefiting from a feature, such as Expertise, that doubles your profi­ciency bonus."
+        ]
+    }, 
+    {
+        "name": "Slasher (TCE)",
+        "tce": "YES",
         "text": [
             "You’ve learned where to cut to have the greatest results, granting you the following benefits:",
             "",
@@ -859,6 +872,32 @@ var feat = [{
             "\u2022 You can use the Help action as a bonus action. ",
             "",
             "\u2022 When you use the Help action to aid an ally in attacking a creature, increase the range of the Help action by 10 feet. Additionally, you can help two allies targeting the same creature within range when you use the Help action this way."
+        ]
+    }, 
+    {
+        "name": "Telekinetic (TCE)",
+        "tce": "YES",
+        "text": [
+            "You learn to move things with your mind, granting you the following benefits: ",
+            "",
+            "\u2022 Increase your Intelligence, Wisdom, or Charisma score by  1, to a maximum of 20.",
+            "",
+            "\u2022 You learn the <emph>mage hand</emph> cantrip. You can cast it without verbal or somatic components, and you can make the spectral hand invisible. If you al­ready know this spell, its range increases by 30 feet when you cast it. Its spellcasting ability is the ability increased by this feat. ",
+            "",
+            "\u2022 As a bonus action, you can try to telekinetically shove one creature you can see within 30 feet of you. When you do so, the target must succeed on a Strength saving throw (DC 8 + your proficiency bonus + the ability modifier of the score increased by this feat) or be moved 5 feet toward you or away from you. A creature can willingly fail this save."
+        ]
+    }, 
+    {
+        "name": "Telepathic (TCE)",
+        "tce": "YES",
+        "text": [
+            "You awaken the ability to mentally connect with oth­ers, granting you the following benefits:",
+            "",
+            "\u2022 Increase your Intelligence, Wisdom, or Charisma score by 1, to a maximum of 20.",
+            "",
+            "\u2022 You can speak telepathically to any creature you can see within 60 feet of you. Your telepathic utterances are in a language you know, and the creature understands you only if it knows that lan­guage. Your communication doesn't give the crea­ture the ability to respond to you telepathically. ",
+            "",
+            "\u2022 You can cast the <emph>detect thoughts</emph> spell, requiring no spell slot or components, and you must finish a long rest before you can cast it this way again. Your spellcasting ability for the spell is the ability increased by this feat. If you have spell slots of 2nd level or higher, you can cast this spell with them."
         ]
     }, 
     {

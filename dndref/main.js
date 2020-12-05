@@ -859,6 +859,8 @@ function buildFeats() {
             $("#feat" + i).children().addClass("homebrew-card")
         } else if (feat[i]["ua"] != undefined) {
             $("#feat" + i).children().addClass("ua-card")
+        } else if (feat[i]["tce"] != undefined) {
+            $("#feat" + i).children().addClass("tce-card")
         }
 
         htmlString = "";

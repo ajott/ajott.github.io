@@ -22,7 +22,7 @@ function donate(donAmount){
 
 
 function karmaCalc(tD) {
-    karmaTemp = (tD / 1000000);
+    karmaTemp = (tD / 100000);
 
     if (karmaTemp > 0){
         player.resets ++;
@@ -60,7 +60,7 @@ $(function() {
         }
     });
     $( "#reset" ).click(function() {
-        $( "#karmaString").text((player.totalDonated/1000000).toFixed(0).toString());
+        $( "#karmaString").text((player.totalDonated/100000).toFixed(0).toString());
         $( "#resetDialog" ).dialog( "open" );
     });
 });

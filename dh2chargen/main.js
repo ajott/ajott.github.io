@@ -74,7 +74,7 @@ var homeworlds = {
         charMinus: "WP",
         fate: 2,
         blessing: 6,
-        wounds: 7,
+        wounds: 8,
         bonus: "Teeming Masses in Metal Mountains: A Hive World character moves through crowds as if they were open terrain and gains a +20 bonus to Navigate (Surface) Tests in closed spaces. ",
         aptitude: "Perception",
         name: "Hive World"

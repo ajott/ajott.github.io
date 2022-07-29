@@ -173,7 +173,7 @@ var homeworlds = {
     },
     "penal": {
         charPlus: ["T", "Per"],
-        charMinus: "Fel",
+        charMinus: "Inf",
         fate: 3,
         blessing: 8,
         wounds: 10,

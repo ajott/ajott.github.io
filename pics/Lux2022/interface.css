@@ -1,5 +1,5 @@
 body {
-    background: rgb(132, 135, 153);
+    background: rgb(215,215,215)
     /* color: white; */
 }
 
@@ -29,9 +29,11 @@ select {
     position: -webkit-sticky;
     position: sticky;
     z-index: 50;
-    background: rgba(218, 165, 32,.5) !important;
+    background: #af965c !important;
+    border-radius: 5px;
 }
 
 .gallExpand {
     background: rgba(63,63,63, 0.4) !important;
+    border-radius: 5px;
 }

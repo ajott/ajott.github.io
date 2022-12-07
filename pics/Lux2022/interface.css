@@ -15,16 +15,11 @@ select {
     cursor: pointer;
 }
 
-
-.infocard {
-    background: lightgrey;
-}
-
-.rolled {
-    font-weight: bolder;
-    font-size: 1.1em;
-}
-
 .photocard {
     border-radius: 5px;
+}
+
+.photopre {
+    max-height: 250px !important;
+    overflow: clip;
 }

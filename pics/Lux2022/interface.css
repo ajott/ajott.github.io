@@ -23,3 +23,15 @@ select {
     max-height: 250px !important;
     overflow: clip;
 }
+
+.galleryToggle{
+    top: 0px;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 50;
+    background: rgba(218, 165, 32,.5) !important;
+}
+
+.gallExpand {
+    background: rgba(63,63,63, 0.4) !important;
+}

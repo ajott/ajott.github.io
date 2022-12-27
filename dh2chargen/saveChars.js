@@ -1,6 +1,6 @@
 var $form = $('#saveChar');
-var postUrl = 'https://script.google.com/macros/s/AKfycbye3aGgK5tredKN9iJBUuajoCC7Mn1hVTe2eD8_EiEw-lp-ygZe/exec'
-var getURL = 'https://script.google.com/macros/s/AKfycbzdnRMfwTdW9jJ9Sv-8_aJEsoZtUab_mpTKiuUklK_W98acebTy/exec'
+var postUrl = 'https://script.google.com/macros/s/AKfycbxU7jZrXwTFJHuOXF5YV_M6ta6RsJ4FM83-SsJ-3kaM1ISqFrUJ_6_mZo2Wen0m7sTOrA/exec'
+var getURL = 'https://script.google.com/macros/s/AKfycbzMIE9ShqzQ5h-N-VmkWYocZ3ALxNm58Wt7FaVe8CGGJnwo55cXnB8OCrVTcV76Fx6xUw/exec'
 
 $('#submit-form').on('click', function (e) {
     var today = new Date();

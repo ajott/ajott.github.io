@@ -20,6 +20,7 @@ $('#submit-form').on('click', function (e) {
     e.preventDefault();
     var jqxhr = $.ajax({
         url: postUrl,
+        crossDomain: true,
         method: "GET",
         dataType: "json",
         data: $form.serialize()
@@ -34,6 +35,7 @@ function retrieveChar() {
 
     var jqxhr = $.ajax({
         url: getURL,
+        crossDomain: true,
         method: "GET"
     })
 

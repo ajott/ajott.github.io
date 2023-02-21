@@ -1,11 +1,19 @@
 function spellFilter(input) {
+    $('.btn-selected').removeClass('btn-selected')
 
-    $(".grid-item").remove();
+    try {
+        $(".spellGrid").isotope('destroy')
+    } catch (error) {
+        
+    };
+
+    $('.grid-item').remove();
 
     let htmlString = "";
 
     let lore = input;
 
+    $('#loreBtn'+lore).addClass('btn-selected');
 
     for (let i = 0; i < spell.length; i++) {
         if (spell[i]["lore"] == lore) {
@@ -22,14 +30,8 @@ function spellFilter(input) {
             }
 
 
-            $("#spell" + i).children().children().children(".spellName").text(spell[i]["name"])
+            $("#spell" + i).children().children().children(".spellName").html(spell[i]["name"])
 
-
-            // $("#spell" + i).children().children().children(".copyText").text(String(window.location).split('?s=')[0] + "?s=" + encodeURIComponent(spell[i]["name"]))
-
-            // if (spell[i]["concentration"]) {
-            //     $("#spell" + i).children().children().children().children(".concentration").text("Concentration")
-            // }
 
             $("#spell" + i).children().children().children().children().children(".spellLore").text("Lore of " + spell[i]["lore"])
 
@@ -37,7 +39,7 @@ function spellFilter(input) {
             $("#spell" + i).children().children().children(".spellRange").html(spell[i]["range"])
             $("#spell" + i).children().children().children(".spellTarget").html(spell[i]["target"])
             $("#spell" + i).children().children().children(".spellDuration").html(spell[i]["duration"])
-            // $("#spell" + i).children().children().children(".spellClasses").text(spell[i]["classes"])
+
             if (spell[i]["description"] != undefined) {
                 if (typeof (spell[i]["description"]) == "object") {
                     for (let j = 0; j < spell[i]["description"].length; j++) {
@@ -47,33 +49,30 @@ function spellFilter(input) {
                     htmlString = "<p>" + spell[i]["description"] + "</p>"
                 }
             }
-            // if (spell[i]["ritual"] == "YES") {
-            //     $("#spell" + i).children().children().children().children(".ritual").text("Ritual")
-            // }
+            
             $("#spell" + i).children().children().children(".spellDescription").html(htmlString)
             $("#spell" + i).addClass("grid-item")
-            // if (spell[i]["homebrew"] != undefined) {
-            //     $("#spell" + i).children().addClass("homebrew-card");
-            // } 
 
             htmlString = "";
         }
 
-        $('.spellGrid').isotope({
-            itemSelector: '.grid-item',
-            masonry: {
-                columnWidth: 25,
-                horizontalOrder: true
-            },
-            getSortData: {
-                name: '.spellName',
-                CN: '.spellCN'
-            }
-        });
-        $('.spellGrid').isotope({
-            sortBy: 'name'
-        })
-        $('spellGrid').isotope('updateSortData').isotope();
+        setTimeout(() => {
+            $('.spellGrid').isotope({
+                itemSelector: '.grid-item',
+                masonry: {
+                    columnWidth: 25
+                },
+                getSortData: {
+                    name: '.spellName',
+                    CN: '.spellCN',
+                    lore: '.spellLore'
+                }
+            });
+            $('.spellGrid').isotope({
+                sortBy: 'name'
+            })
+            $('spellGrid').isotope('updateSortData').isotope();
+        },150)
 
 
     }
@@ -88,7 +87,7 @@ var spell = [
         "name": "",
         "lore": "",
         "wind": "",
-        "CN": "",
+        "CN": 0,
         "range": "",
         "target": "",
         "duration": "",
@@ -97,7 +96,7 @@ var spell = [
         "name": "Amber Talons",
         "lore": "Beasts",
         "wind": "Ghur",
-        "CN": "6",
+        "CN": 6,
         "range": "You",
         "target": "You",
         "duration": "<eh>Willpower Bonus</eh> Rounds",
@@ -106,7 +105,7 @@ var spell = [
         "name": "Beast Form",
         "lore": "Beasts",
         "wind": "Ghur",
-        "CN": "5",
+        "CN": 5,
         "range": "You",
         "target": "You",
         "duration": "<eh>Willpower</eh> minutes",
@@ -115,7 +114,7 @@ var spell = [
         "name": "Beast Master",
         "lore": "Beasts",
         "wind": "Ghur",
-        "CN": "10",
+        "CN": 10,
         "range": "<eh>Willpower Bonus</eh> yards",
         "target": "1",
         "duration": "<eh>Willpower Bonus</eh> days",
@@ -124,7 +123,7 @@ var spell = [
         "name": "Beast Tongue",
         "lore": "Beasts",
         "wind": "Ghur",
-        "CN": "3",
+        "CN": 3,
         "range": "You",
         "target": "You",
         "duration": "<eh>Willpower</eh> minutes",
@@ -133,7 +132,7 @@ var spell = [
         "name": "Flock of Doom",
         "lore": "Beasts",
         "wind": "Ghur",
-        "CN": "8",
+        "CN": 8,
         "range": "<eh>Willpower</eh> yards",
         "target": "AoE (<eh>Willpower Bonus</eh> yards)",
         "duration": "<eh>Willpower Bonus</eh> rounds",
@@ -142,7 +141,7 @@ var spell = [
         "name": "Hunter's Hide",
         "lore": "Beasts",
         "wind": "Ghur",
-        "CN": "6",
+        "CN": 6,
         "range": "You",
         "target": "You",
         "duration": "<eh>Willpower Bonus</eh> rounds",
@@ -151,7 +150,7 @@ var spell = [
         "name": "The Amber Spear",
         "lore": "Beasts",
         "wind": "Ghur",
-        "CN": "8",
+        "CN": 8,
         "range": "<em>Willpower</em> yards",
         "target": "Special",
         "duration": "Instant",
@@ -160,10 +159,82 @@ var spell = [
         "name": "Wyssan's Wildform",
         "lore": "Beasts",
         "wind": "Ghur",
-        "CN": "8",
+        "CN": 8,
         "range": "You",
         "target": "You",
         "duration": "<eh>Willpower Bonus</eh> rounds",
         "description": "You call on the wild power of <em>Ghur</em> to infuse you, surrendering to its savage delights. Gain the following Creature Traits (see page 338): <em>Arboreal, Armour (2), Belligerent, Big, Bite (Strength Bonus +1), Fear (1), Fury, Magical, Weapon (Strength Bonus +2)</em>. While the spell is in place you are incapable of using any Language or Lore skills."
+    }, {
+        "name": "Caress of Laniph",
+        "lore": "Death",
+        "wind": "Shyish",
+        "CN": 7,
+        "range": "Touch",
+        "target": "Special",
+        "duration": "Instant",
+        "description": "As you reach out your hand, it appears withered, even skeletal, drawing <em>Shyish</em> from your target’s corpus. This counts as a <em>magic missile</em> with a Damage of +6 that ignores Toughness Bonus and Armour Points. For every 2 Wounds inflicted, you may recover 1 Wound."
+    }, {
+        "name": "Dying Words",
+        "lore": "Death",
+        "wind": "Shyish",
+        "CN": 6,
+        "range": "Touch",
+        "target": "1",
+        "duration": "<eh>Willpower Bonus</eh> rounds",
+        "description": "Touching the body of a recently departed soul (one that passed away within the last day), you call its soul back briefly. For the spell’s duration, you can communicate with the dead soul, though it cannot take any action other than talking. It is not compelled to answer you, but the dead do not lie."
+    }, {
+        "name": "Purple Pall of <em>Shyish</em>",
+        "lore": "Death",
+        "wind": "Shyish",
+        "CN": 9,
+        "range": "You",
+        "target": "You",
+        "duration": "<eh>Willpower Bonus</eh> rounds",
+        "description": "You pull about you a pall fashioned from fine strands of purple magic. Gain +<en>Willpower Bonus</en> Armour Points on all locations, and the <em>Fear (1)</em> Creature Trait (see page 339). For every +2 SL you may increase your Fear rating by 1."
+    }, {
+        "name": "Sanctify",
+        "lore": "Death",
+        "wind": "Shyish",
+        "CN": 10,
+        "range": "Touch",
+        "target": "AoE (<eh>Willpower Bonus</eh> rounds)",
+        "duration": "<eh>Willpower</eh> minutes",
+        "description": "Inscribing a magical circle, you ward it with <em>Shyish</em>, forming an impenetrable barrier to the Undead. Creatures with the Undead Creature Trait cannot enter or leave the circle."
+    }, {
+        "name": "Scythe of <em>Shyish</em>",
+        "lore": "Death",
+        "wind": "Shyish",
+        "CN": 6,
+        "range": "You",
+        "target": "You",
+        "duration": "<eh>Willpower Bonus</eh> rounds",
+        "description": "You conjure a magical scythe, which can be wielded in combat, using the Melee (Polearm) Skill. It acts like a normal scythe with a Damage equal to your <eh>Willpower Bonus</eh>+3. Enemies with the <em>Undead</em> Creature Trait do not receive Advantage when Engaged in combat with you."
+    }, {
+        "name": "Soul Vertex",
+        "lore": "Death",
+        "wind": "Shyish",
+        "CN": 8,
+        "range": "<eh>Willpower</eh> yards",
+        "target": "AoE (<eh>Willpower Bonus</eh> yards)",
+        "duration": "Instant",
+        "description": "You hurl a shimmering ball of <em>Shyish</em> which erupts into purple flames, swirling with ghostly faces, mouths agape in silent terror. Targets within the Area of Effect receive +1 <em>Broken</em> Condition. Against targets with the <em>Undead</em> Creature Trait, <em>Soul Vortex</em> is a <em>magic missile</em> with a Damage of +10 that ignores Toughness Bonus and Armour Points."
+    }, {
+        "name": "Steal Life",
+        "lore": "Death",
+        "wind": "Shyish",
+        "CN": 7,
+        "range": "<eh>Willpower</eh> yards",
+        "target": "1",
+        "duration": "Instant",
+        "description": "Thin strands of purple mist connect you briefly to your target, who wastes away before your very eyes. This counts as a <em>magic missile</em> with a Damage of +6 that ignores Armour Points and inflicts +1 <em>Fatigued</em> Condition. Further, you remove all <em>Fatigued</em> Conditions you currently suffer, and may heal yourself up to half the Wounds the target suffers, rounding up."
+    }, {
+        "name": "Swift Passing",
+        "lore": "Death",
+        "wind": "Shyish",
+        "CN": 6,
+        "range": "Touch",
+        "target": "Special",
+        "duration": "Instant",
+        "description": "Your touch brings the release of death to a single mortally wounded target. If you successfully touch a target with 0 wounds remaining and at least 2 Critical Wounds, death swiftly follows. Further, the target cannot be raised as Undead."
     }
 ];

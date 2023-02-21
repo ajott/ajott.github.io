@@ -1,6 +1,6 @@
 var $form = $('#saveChar');
-var postUrl = 'https://script.google.com/macros/s/AKfycbye3aGgK5tredKN9iJBUuajoCC7Mn1hVTe2eD8_EiEw-lp-ygZe/exec'
-var getURL = 'https://script.google.com/macros/s/AKfycbzdnRMfwTdW9jJ9Sv-8_aJEsoZtUab_mpTKiuUklK_W98acebTy/exec'
+var postUrl = 'https://script.google.com/macros/s/AKfycbyRSCbysT47R5r_YeqJ4L8FEuAg9HJwa3NR5rO_-zh4aDkPoMeOnB4ReuF8o-O9AFI1kg/exec';
+var getURL = 'https://script.google.com/macros/s/AKfycbz6J_WmcTcVfKtP72xPKA2GUvvR_SUXWc97VKw9aQfK43QyGsLz_oGAZVmgcq09spgUTw/exec';
 
 $('#submit-form').on('click', function (e) {
     var today = new Date();
@@ -20,6 +20,7 @@ $('#submit-form').on('click', function (e) {
     e.preventDefault();
     var jqxhr = $.ajax({
         url: postUrl,
+        crossDomain: true,
         method: "GET",
         dataType: "json",
         data: $form.serialize()
@@ -34,6 +35,7 @@ function retrieveChar() {
 
     var jqxhr = $.ajax({
         url: getURL,
+        crossDomain: true,
         method: "GET"
     })
 

@@ -1,0 +1,121 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WFRP 4e QuickRef</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <script src="./isotope.pkgd.min.js"></script>
+    <script src="main.js"></script>
+    <script src="spells.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+
+<body>
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad" id="navBarDiv">
+    </div>
+
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div id="spellCards" class="w3-section w3-row-padding info w3-center">
+                <h1>Spell Description Cards</h1>
+                <br />
+                <div class="w3-bar" style="padding-top: 4px; padding-bottom: 4px">
+                    <button id="loreBtnBeasts" class="w3-button w3-blue-grey w3-bar-item loreBtn w3-hover-orange firstBtn"
+                        onclick="spellFilter('Beasts')"><img class="loreIcon" src="img/Ghur.png"><br/>Beasts</button>
+                    <button id="loreBtnDeath" class="w3-button w3-blue-grey w3-bar-item w3-hover-purple loreBtn"
+                        onclick="spellFilter('Death')"><img class="loreIcon" src="img/Shyish.png"><br/>Death</button>
+                    <button id="loreBtnFire" class="w3-button w3-blue-grey w3-bar-item w3-hover-deep-orange loreBtn"
+                        onclick="spellFilter('Fire')"><img class="loreIcon" src="img/Aqshy.png"><br/>Fire</button>
+                    <button id="loreBtnHeavens" class="w3-button w3-blue-grey w3-bar-item w3-hover-light-blue loreBtn"
+                        onclick="spellFilter('Heavens')"><img class="loreIcon" src="img/Azyr.png"><br/>Heavens</button>
+                    <button id="loreBtnMetal" class="w3-button w3-blue-grey w3-bar-item w3-hover-amber loreBtn"
+                        onclick="spellFilter('Metal')"><img class="loreIcon" src="img/Chamon.png"><br/>Metal</button>
+                    <button id="loreBtnLife" class="w3-button w3-blue-grey w3-bar-item w3-hover-green loreBtn"
+                        onclick="spellFilter('Life')"><img class="loreIcon" src="img/Ghyran.png"><br/>Life</button>
+                    <button id="loreBtnLight" class="w3-button w3-blue-grey w3-bar-item w3-hover-white loreBtn"
+                        onclick="spellFilter('Light')"><img class="loreIcon" src="img/Hysh.png"><br/>Light</button>
+                    <button id="loreBtnShadows" class="w3-button w3-blue-grey w3-bar-item loreBtn w3-hover-grey lastBtn"
+                        onclick="spellFilter('Shadows')"><img class="loreIcon" src="img/Ulgu.png"><br/>Shadows</button>
+                </div>
+                <br/>         
+                <div class="w3-bar" style="padding-top: 4px; padding-bottom: 4px">
+                    <button id="loreBtnPetty" class="w3-button w3-blue-grey w3-bar-item loreBtnWide  firstBtn"
+                        onclick="spellFilter('Petty')">Petty</button>
+                        <button id="loreBtnArcane" class="w3-button w3-blue-grey w3-bar-item loreBtnWide "
+                        onclick="spellFilter('Arcane')">Arcane</button>
+                        <button id="loreBtnHedgecraft" class="w3-button w3-blue-grey w3-bar-item loreBtnWide "
+                        onclick="spellFilter('Hedgecraft')">Hedgecraft</button>
+                    <button id="loreBtnWitchcraft" class="w3-button w3-blue-grey w3-bar-item loreBtnWide"
+                        onclick="spellFilter('Witchcraft')">Witchcraft</button>
+                    <button id="loreBtnDaemonology" class="w3-button w3-blue-grey w3-bar-item loreBtnWide"
+                        onclick="spellFilter('Daemonology')">Daemonology</button>
+                    <button id="loreBtnNecromancy" class="w3-button w3-blue-grey w3-bar-item loreBtnWide lastBtn"
+                        onclick="spellFilter('Necromancy')">Necromancy</button>
+                </div>
+                <br />
+                <br />
+                <div class="spellGrid" style="min-height: 500px;">
+                    <div class="w3-hide" id="defaultSpellCard" style="display:none;">
+                        <div class="w3-card-2 w3-round-large grid-card">
+                            <div class="w3-row-padding">
+                                <!-- <div style="text-align: right; margin-bottom: -20px; margin-top: 5px;" onclick="cardNameCopy(this)" id="cardCopy"><i class="fa fa-clone tooltip" aria-hidden="true"><div class="tooltiptext">Copy Link</div></i></div> -->
+                                <h3 class="spellName"></h3>
+                                <!-- <div class="copyText w3-hide"></div>  -->
+                                <h5> <em><span class="spellLore"></span> </em>
+                            </div>
+                            <div class="w3-row-padding">
+                                <emph>Casting Number: </emph><span class="spellCN"></span>
+                                <br />
+                                <emph>Range: </emph><span class="spellRange"></span>
+                                <br />
+                                <emph>Target: </emph><span class="spellTarget"></span>
+                                <br />
+                                <emph>Duration: </emph><span class="spellDuration"></span>
+                            </div>
+                            <div class="w3-row-padding">
+                                <div class="spellDescription"></div>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+
+    </div>
+</body>
+<footer>
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m10 l10">
+            <!-- All D&D material is © Wizards of the Coast -->
+        </div>
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            //buildSpells();
+        });   
+    </script>
+</footer>
+
+</html>

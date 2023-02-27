@@ -23,11 +23,12 @@
     <div class="w3-top w3-darker-grey w3-row-padding bar-pad" id="navBarDiv">
     </div>
 
-    <div class="w3-row-padding w3-section info">
+    <div id="charTop" class="w3-row-padding w3-section info">
         <h1>Character Creation</h1>
         <div class="w3-col s0 m0 l1">
             <p></p>
         </div>
+
         <div class="w3-col s12 m12 l5">
             <p>
                 Character creation is fairly straightforward, and shouldn't be feared. Additionally, just about all of
@@ -41,6 +42,7 @@
                 and talents; trappings (personal property and gear); and a motivation.
             </p>
 
+
         </div>
         <div class="w3-col s12 m12 l5">
             <div id="charPane" class="noteCard w3-round-large w3-card-2>">
@@ -51,7 +53,7 @@
                 <ol>
                     <li><a href="./character.html#species">Species</a> (WFRP p. 24)</li>
                     <li><a href="./character.html#career">Class and Career</a> (WFRP p. 30)</li>
-                    <li><a href="./character.html#attribute">Attributes</a> (WFRP p. 33)</li>
+                    <li><a href="./character.html#attributes">Attributes</a> (WFRP p. 33)</li>
                     <li><a href="./character.html#skills">Skills and Talents</a> (WFRP p. 35)</li>
                     <li><a href="./character.html#trappings">Trappings</a> (WFRP p. 37)</li>
                     <li><a href="./character.html#detail">Adding Detail</a> (WFRP p. 37)</li>
@@ -70,7 +72,7 @@
 
     <hr />
     <div id="species" class="w3-row-padding w3-section info">
-        <h3>Species</h3>
+        <h2>Species</h2>
         <div class="w3-col s0 m0 l1">
             <p></p>
         </div>
@@ -79,10 +81,12 @@
                 <p>You may choose your species yourself; alternatively, you can roll 1d100, consult the Random Species
                     Table, and gain +20 XP if you accept the result.
                 </p>
-                <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                <table class="w3-table table-dark w3-striped w3-hoverable w3-bordered">
                     <thead>
-                        <th>1d100</th>
-                        <th>Species</th>
+                        <tr>
+                            <th>1d100</th>
+                            <th>Species</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
@@ -117,7 +121,7 @@
 
     <hr />
     <div id="career" class="w3-row-padding w3-section info">
-        <h3>Class and Career</h3>
+        <h2>Class and Career</h2>
         <div class="w3-col s0 m0 l1">
             <p></p>
         </div>
@@ -142,10 +146,10 @@
                 </ol>
                 </p>
 
-                <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                <table class="w3-table table-dark tstripe w3-hoverable w3-bordered">
                     <thead>
                         <tr>
-                            <th title="Field #1">Career/Species</th>
+                            <th title="Field #1">Class/Career</th>
                             <th title="Field #2">Human</th>
                             <th title="Field #3">Dwarf</th>
                             <th title="Field #4">Halfling</th>
@@ -698,6 +702,553 @@
             <p></p>
         </div>
 
+    </div>
+
+    <hr />
+    <div id="attributes" class="w3-row-padding w3-section info">
+        <h2>Attributes</h2>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l5">
+            <div>
+                <p>Attributes describe your character’s innate capabilities – how fast
+                    or strong you are, how much damage you can sustain, or how well
+                    you cope with stressful situations. Attributes include Movement,
+                    ten Characteristics, Wounds, Fate, and Resilience.
+                </p>
+                <h3>Characteristics</h3>
+                <p>Your ten Characteristics are used in Tests to determine if you perform an action successfully. The
+                    Human average for these Attributes is 30. Those who are gifted,
+                    or well-practiced, may achieve scores of over 40; only the most
+                    dedicated and experienced will achieve scores over 60. Of course, other Species have their own
+                    strengths and weaknesses, so their
+                    averages are different, sometimes significantly so.</p>
+                <h4>Determining Characteristics</h4>
+                <p>
+                    When determining your Characteristics:
+                </p>
+                <p>
+                    <b>Step 1)</b> Roll 2d10 for each of the ten Characteristics and
+                    make a note of the results. If you feel your Character would be
+                    improved if you swapped round some of the dice roll results
+                    between Characteristics, move to the next step. If you stick with
+                    your random results, add the die rolls to the modifier for each
+                    Characteristic from the Attribute Table, write them on your
+                    Character Sheet and gain +50 XP.
+                </p>
+                <p>
+                    <b>Step 2)</b> Rearrange the ten numbers rolled under step 1, assigning
+                    each to a different Characteristic (and adding its modifier). If
+                    you’re happy with this new mix, record them on your Character
+                    Sheet and gain +25 XP. If not, move to the next step.
+                </p>
+                <p>
+                    <b>Step 3)</b> If you’re still not happy with your results, either roll again
+                    and swap the rolls around with no XP bonus, or you could ignore
+                    the dice completely! Instead, allocate 100 points across the 10
+                    Characteristics as you prefer, with a minimum of 4 and a maximum
+                    of 18 allocated to any single Characteristic. Add the modifiers from
+                    the Attribute Table and record them on your Character Sheet. Like
+                    rolling again, there is no XP bonus for this option.
+                </p>
+                <h4>Advance Characteristics</h4>
+                <p>
+                    Turn to your career in Chapter 3: Class and Careers. Look to
+                    the Advance Scheme and find the three Characteristics marked
+                    <eh>☩</eh> without a brass, silver, or gold background. <b>You can allocate a
+                        total of 5 Advances across these Characteristics as you choose</b>,
+                    and mark them in the Advances box on your Character Sheet.
+                </p>
+            </div>
+        </div>
+        <div class="w3-col s12 m12 l5">
+            <button id="attrBtn" class="w3-btn rulesBtn" onclick="accordion('attrDesc',this)">
+                <h4>Attribute Descriptions</h4>
+            </button>
+            <div id="attrDesc" class="w3-section w3-hide rules-container w3-container">
+                <p>
+                    <b>Weapon Skill (WS): </b>Your skill at fighting hand-to-hand, your ability to land a
+                    measured blow, and effectiveness in the free-for-all of a massed
+                    melee. It is also used for unarmed combat, where your body is
+                    the weapon!
+                </p>
+                <p>
+                    <b>Ballistic Skill (BS): </b>Your effectiveness at hitting with ranged weapons like bows and
+                    throwing knives, and for throwing things generally. It is also used
+                    as the basis for other ranged attacks like Trolls vomiting.
+                </p>
+                <p>
+                    <b>Strength (S): </b>How much damage you do in melee, how much you can lift, and
+                    how good you are at things like swimming and climbing.
+                </p>
+                <p>
+                    <b>Toughness (T): </b>Your physical hardiness. It helps you survive damage in combat
+                    but will also help with things like surviving harsh conditions and
+                    standing up to poison.
+                </p>
+                <p>
+                    <b>Initiative (I): </b>Speed of thought and reaction, especially in the heat of battle and
+                    when under pressure. It determines combat order, and helps you
+                    be the first to react to danger. It also determines your powers of
+                    intuition and perception.
+                </p>
+                <p>
+                    <b>Agility (Ag): </b>Physical coordination and natural athleticism, and the basis for
+                    things like running, riding, and hiding. Agility is also used for
+                    dodging blows in combat.
+                </p>
+                <p>
+                    <b>Dexterity (Dex): </b>Your affinity for performing fine and delicate manual tasks like
+                    playing a musical instrument or skilled manufacturing. It will also
+                    help you with things like sleight of hand and picking pockets.
+                </p>
+                <p>
+                    <b>Intelligence (Int): </b>Your powers of thought, analysis, and understanding. Useful
+                    for healing, evaluating, and general knowledge, and vital for the
+                    understanding and casting of magical spells.
+                </p>
+                <p>
+                    <b>Willpower (WP): </b>General strength of mind, and your ability to shrug off difficulty
+                    and plough on with the job in hand. It helps with resisting all
+                    sorts of influence and coercion, and guards against fear and terror.
+                </p>
+                <p>
+                    <b>Fellowship (Fel): </b>Your ability to get on with people and come across as generally
+                    pleasant and acceptable. It will help you when chatting to locals or
+                    commanding people in battle, charming the guards or attempting
+                    to bribe them, and, for pious characters, communicating with
+                    your deity.
+                </p>
+                <p>
+                    <b>Wounds (W): </b>Your Wounds show how much Damage you can endure based on
+                    your physical power and your force of will to shrug off injury.<br />
+                    Unlike other Attributes, Wounds are derived from your Strength
+                    Bonus, twice your Toughness Bonus, and Willpower Bonus
+                    (abbreviated to SB, TB, and WPB on the Attributes Table). Refer
+                    to the Attributes Table to determine the Characteristic Bonuses
+                    used to calculate your Wounds. Note: Halflings have the Small
+                    Talent automatically and start with fewer Wounds, (see page 341).
+                </p>
+                <p>
+                    <b>Fate and Resilience: </b>You start with a base value for Fate and Resilience, and then have
+                    a number of Extra Points to spread between these two Attributes
+                    as you see fit. The numbers for these are shown in the Attributes
+                    Table. The more points you allocate to Fate, the luckier you are.
+                    By comparison, a higher Resilience shows you can steel through
+                    any situation.
+                    <br />
+                    Your initial Fortune is equal to your Fate. Your initial Resolve
+                    equals your Resilience. Mark all four values on your sheet.
+                </p>
+            </div>
+        </div>
+
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+
+    </div>
+    <div class="w3-row-padding w3-section info">
+        <h2>Attributes Table</h2>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <table class="w3-table w3-striped w3-hoverable w3-bordered table-dark">
+                <thead>
+                    <tr>
+                        <th title="Field #1">Attribute</th>
+                        <th title="Field #2">Human</th>
+                        <th title="Field #3">Dwarf</th>
+                        <th title="Field #4">Halfling</th>
+                        <th title="Field #5">Elf</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Weapon Skill</td>
+                        <td>2d10+20</td>
+                        <td>2d10+30</td>
+                        <td>2d10+10</td>
+                        <td>2d10+30</td>
+                    </tr>
+                    <tr>
+                        <td>Ballistic Skill</td>
+                        <td>2d10+20</td>
+                        <td>2d10+20</td>
+                        <td>2d10+30</td>
+                        <td>2d10+30</td>
+                    </tr>
+                    <tr>
+                        <td>Strength</td>
+                        <td>2d10+20</td>
+                        <td>2d10+20</td>
+                        <td>2d10+10</td>
+                        <td>2d10+20</td>
+                    </tr>
+                    <tr>
+                        <td>Toughness</td>
+                        <td>2d10+20</td>
+                        <td>2d10+30</td>
+                        <td>2d10+20</td>
+                        <td>2d10+20</td>
+                    </tr>
+                    <tr>
+                        <td>Initiative</td>
+                        <td>2d10+20</td>
+                        <td>2d10+20</td>
+                        <td>2d10+20</td>
+                        <td>2d10+40</td>
+                    </tr>
+                    <tr>
+                        <td>Agility</td>
+                        <td>2d10+20</td>
+                        <td>2d10+10</td>
+                        <td>2d10+10</td>
+                        <td>2d10+30</td>
+                    </tr>
+                    <tr>
+                        <td>Dexterity</td>
+                        <td>2d10+20</td>
+                        <td>2d10+30</td>
+                        <td>2d10+30</td>
+                        <td>2d10+30</td>
+                    </tr>
+                    <tr>
+                        <td>Intelligence</td>
+                        <td>2d10+20</td>
+                        <td>2d10+20</td>
+                        <td>2d10+20</td>
+                        <td>2d10+30</td>
+                    </tr>
+                    <tr>
+                        <td>Willpower</td>
+                        <td>2d10+20</td>
+                        <td>2d10+40</td>
+                        <td>2d10+30</td>
+                        <td>2d10+30</td>
+                    </tr>
+                    <tr>
+                        <td>Fellowship</td>
+                        <td>2d10+20</td>
+                        <td>2d10+10</td>
+                        <td>2d10+30</td>
+                        <td>2d10+20</td>
+                    </tr>
+                    <tr>
+                        <td>Wounds</td>
+                        <td>SB + (2 &times; TB) + WBP</td>
+                        <td>SB + (2 &times; TB) + WBP</td>
+                        <td>(2 &times; TB) + WBP</td>
+                        <td>SB + (2 &times; TB) + WBP</td>
+                    </tr>
+                    <tr>
+                        <td>Fate</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Resilience</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Extra Points</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Movement</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+
+    </div>
+
+    <hr />
+    <div id="skills" class="w3-row-padding w3-section info">
+        <h2>Skills and Talents</h2>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l5">
+            <div>
+                <h3>Skill and Talent Rules</h3>
+                <p>
+                    Skills represent areas of trained learning or experience, and
+                    Talents describe special abilities your Character can access. A
+                    list of all Skills and Talents is provided in Chapter 4: Skills
+                    and Talents. The Skills and Talents you have available to you at
+                    character generation are determined by your Species and Career.
+                </p>
+                <p>
+                    When you learn a Skill, note down the number of Advances you
+                    gain in the Advances box of the Skill. If you should learn this
+                    skill again, add the extra Advances to the old total to create a
+                    new number of Advances. If you learn a Talent, record it in your
+                    Talent list on your Character Sheet.
+                </p>
+                <p>
+                    Skills are classified as either Basic or Advanced. Basic Skills
+                    represent common abilities that everyone can perform — you can
+                    use these skills without any Advances in them, at a level equal
+                    to the governing characteristic. Advanced Skills require specialist
+                    knowledge, and you can only use these skills if you have taken at
+                    least one Advance in them.
+                </p>
+                <div class="w3-panel w3-pale-yellow w3-leftbar w3-rightbar w3-border-yellow">
+                    <p>
+                        Note: Some Talents can be learned multiple times. If you have
+                        an opportunity to learn a Talent a second time, check the Talent
+                        entry in Chapter 4: Skills and Talents to see if it can be learned
+                        multiple times, and mark how many times you’ve learned it on
+                        your Character Sheet.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col s12 m12 l5">
+            <h3>Species Skills and Talents</h3>
+            <p>
+                Each Species has a variety of Skills and Talents to choose from.
+                <b>You may choose 3 Skills to gain 5 Advances each, and 3 Skills
+                    to gain 3 Advances each.</b> If a Talent listing presents a choice, you
+                select one Talent from the choices given. Any Random Talents are
+                determined by the Random Talent table. If you roll a Talent you
+                already have, you may reroll. Note: All Characters are assumed to
+                be fluent in Reikspiel,, the language of the Empire, and do not
+                need to take it as a Skill. For more on this, see page 124.
+            </p>
+            <button id="humanSkillBtn" class="w3-btn rulesBtn" onclick="accordion('humanSkillTalents',this)">
+                <h4>Humans (Reiklander)</h4>
+            </button>
+            <div id="humanSkillTalents" class="w3-section w3-hide rules-container w3-container">
+                <p>
+                    <b>Skills: </b>Animal Care, Charm, Cool, Evaluate, Gossip, Haggle,
+                    Language (Bretonnian), Language (Wastelander), Leadership,
+                    Lore (Reikland), Melee (Basic), Ranged (Bow)
+                </p>
+                <p>
+                    <b>Talents: </b>Doomed, Savvy <em>or</em> Suave, 3 Random Talents
+                </p>
+            </div>
+            <button id="dwarfSkillBtn" class="w3-btn rulesBtn" onclick="accordion('dwarfSkillTalents',this)">
+                <h4>Dwarfs</h4>
+            </button>
+            <div id="dwarfSkillTalents" class="w3-section w3-hide rules-container w3-container">
+                <p>
+                    <b>Skills: </b>Consume Alcohol, Cool, Endurance, Entertain
+                    (Storytelling), Evaluate, Intimidate, Language (Khazalid), Lore
+                    (Dwarfs), Lore (Geology), Lore (Metallurgy), Melee (Basic),
+                    Trade (any one)
+                </p>
+                <p>
+                    <b>Talents: </b>Magic Resistance, Night Vision, Read/Write <em>or</em>
+                    Relentless, Resolute <em>or</em> Strong-minded, Sturdy
+                </p>
+            </div>
+            <button id="halflingSkillBtn" class="w3-btn rulesBtn" onclick="accordion('halflingSkillTalents',this)">
+                <h4>Halflings</h4>
+            </button>
+            <div id="halflingSkillTalents" class="w3-section w3-hide rules-container w3-container">
+                <p>
+                    <b>Skills: </b>Charm, Consume Alcohol, Dodge, Gamble, Haggle,
+                    Intuition, Language (Mootish), Lore (Reikland), Perception,
+                    Sleight of Hand, Stealth (Any), Trade (Cook)
+                </p>
+                <p>
+                    <b>Talents: </b>Acute Sense (Taste), Night Vision, Resistance (Chaos),
+                    Small, 2 Random Talents
+                </p>
+            </div>
+            <button id="highElfSkillBtn" class="w3-btn rulesBtn" onclick="accordion('highElfSkillTalents',this)">
+                <h4>High Elves</h4>
+            </button>
+            <div id="highElfSkillTalents" class="w3-section w3-hide rules-container w3-container">
+                <p>
+                    <b>Skills: </b>Cool, Entertain (Sing), Evaluate, Language (Eltharin),
+                    Leadership, Melee (Basic), Navigation, Perception, Play (any
+                    one), Ranged (Bow), Sail, Swim
+                </p>
+                <p>
+                    <b>Talents: </b>Acute Sense (Sight), Coolheaded <em>or</em> Savvy, Night
+                    Vision, Second Sight <em>or</em> Sixth Sense, Read/Write
+                </p>
+            </div>
+            <button id="woodElfSkillBtn" class="w3-btn rulesBtn" onclick="accordion('woodElfSkillTalents',this)">
+                <h4>Wood Elves</h4>
+            </button>
+            <div id="woodElfSkillTalents" class="w3-section w3-hide rules-container w3-container">
+                <p>
+                    <b>Skills: </b>Athletics, Climb, Endurance, Entertain (Sing),
+                    Intimidate, Language (Eltharin), Melee (Basic), Outdoor
+                    Survival, Perception, Ranged (Bow), Stealth (Rural), Track
+                </p>
+                <p>
+                    <b>Talents: </b>Acute Sense (Sight), Hardy <em>or</em> Second Sight, Night
+                    Vision, Read/Write <em>or</em> Very Resilient, Rover
+                </p>
+            </div>
+        </div>
+
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+
+    </div>
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l5">
+            <button id="randomTalentTable" class="w3-btn rulesBtn" onclick="accordion('randTalentTable',this)">
+                <h3>Random Talents Table</h3>
+            </button>
+            <div id="randTalentTable" class="w3-section w3-hide rules-container w3-container">
+                <table class="w3-table w3-striped w3-hoverable w3-bordered table-dark">
+                    <thead>
+                        <tr>
+                            <th>Roll</th>
+                            <th>Description</th>
+                            <th>Roll</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01-03</td>
+                            <td>Acute Sense (any one)</td>
+                            <td>51-52</td>
+                            <td>Noble Blood</td>
+                        </tr>
+                        <tr>
+                            <td>04-06</td>
+                            <td>Ambidextrous</td>
+                            <td>53-55</td>
+                            <td>Orientation</td>
+                        </tr>
+                        <tr>
+                            <td>07-09</td>
+                            <td>Animal Affinity</td>
+                            <td>56-58</td>
+                            <td>Perfect Pitch</td>
+                        </tr>
+                        <tr>
+                            <td>10-12</td>
+                            <td>Artistic</td>
+                            <td>59-62</td>
+                            <td>Pure Soul</td>
+                        </tr>
+                        <tr>
+                            <td>13-15</td>
+                            <td>Attractive</td>
+                            <td>63-65</td>
+                            <td>Read/Write</td>
+                        </tr>
+                        <tr>
+                            <td>16-18</td>
+                            <td>Coolheaded</td>
+                            <td>66-68</td>
+                            <td>Resistance (any one)</td>
+                        </tr>
+                        <tr>
+                            <td>19-21</td>
+                            <td>Craftsman (any one)</td>
+                            <td>69-71</td>
+                            <td>Savvy</td>
+                        </tr>
+                        <tr>
+                            <td>22-24</td>
+                            <td>Flee!</td>
+                            <td>72-74</td>
+                            <td>Sharp</td>
+                        </tr>
+                        <tr>
+                            <td>25-28</td>
+                            <td>Hardy</td>
+                            <td>75-78</td>
+                            <td>Sixth Sense</td>
+                        </tr>
+                        <tr>
+                            <td>29-31</td>
+                            <td>Lightning Reflexes</td>
+                            <td>79-81</td>
+                            <td>Strong Legs</td>
+                        </tr>
+                        <tr>
+                            <td>32-34</td>
+                            <td>Linguistics</td>
+                            <td>82-84</td>
+                            <td>Sturdy</td>
+                        </tr>
+                        <tr>
+                            <td>35-38</td>
+                            <td>Luck</td>
+                            <td>85-87</td>
+                            <td>Suave</td>
+                        </tr>
+                        <tr>
+                            <td>39-41</td>
+                            <td>Marksman</td>
+                            <td>88-91</td>
+                            <td>Super Numerate</td>
+                        </tr>
+                        <tr>
+                            <td>42-44</td>
+                            <td>Mimic</td>
+                            <td>92-94</td>
+                            <td>Very Resilient</td>
+                        </tr>
+                        <tr>
+                            <td>45-47</td>
+                            <td>Night Vision</td>
+                            <td>95-97</td>
+                            <td>Very Strong</td>
+                        </tr>
+                        <tr>
+                            <td>48-50</td>
+                            <td>Nimble Fingered</td>
+                            <td>98-00</td>
+                            <td>Warrior Born</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="w3-col s12 m12 l5">
+            <h3>Career Skills and Talents</h3>
+            <p>
+                Now turn to your career in Chapter 3: Class and Careers. You
+                begin at the first Career level listed in your Career Path. There are
+                8 Skills and 4 Talents listed with that level, and you can choose
+                which of these you are most proficient at. <eh>Allocate 40 Advances
+                    to your eight starting Skills, with no more than 10 Advances
+                    allocated to any single Skill at this stage</eh>. This is enough for you
+                to add 5 Advances to every Career Skill if you wish, which is one
+                of the required steps to complete your Career if you wish to move
+                to a new one (see Changing Career on page 48). <eh>You may also
+                    choose a single Talent to learn.</eh>
+            </p>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
     </div>
 </body>
 <footer>

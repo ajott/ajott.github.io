@@ -22,7 +22,318 @@
 <body>
     <div class="w3-top w3-darker-grey w3-row-padding bar-pad" id="navBarDiv">
     </div>
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div id="spellRules" class="w3-section w3-row-padding info w3-center">
+                <h1>Spellcasting</h1>
+                <div class="w3-row-padding w3-section">
+                    <div class="w3-col s0 m0 l1">
+                        &emsp;
+                    </div>
+                    <div class="w3-col s12 m12 l5">
+                        <h3>Second Sight</h3>
+                        <p>The <em>Second Sight</em> Talent (see page 144) allows you to perceive
+                            the Winds of Magic, and how magic influences the world around
+                            you. Second Sight affects all your senses, and how it manifests
+                            is dependent on individual experience and training: So, where
+                            Aqshy may have a hot, cinnamon odour to one pyromancer, it
+                            could feel like searing ear itches to another.</p>
+                        <p>If you have Second Sight, you may use any appropriate Skills with
+                            your aethyric senses, most commonly your Intuition, Perception,
+                            and Track Skills. For example, a wizard following the trail of a
+                            fleeing witch could make a Track test, following the faint traces
+                            of <em>Dhar</em> in the witch’s path, rather than their literal footsteps. Or
+                            a Witch looking to see what kind of magic had gathered locally
+                            could use Perception to examine the Winds more closely. Like the
+                            mundane senses, Second Sight does not simply switch off, which
+                            is a source of great discomfort to those who would rather have
+                            no truck with the Winds of Magic but cannot help what they
+                            perceive. This means the GM may request Tests, or take Tests
+                            on your behalf, to see if you spot subtle magical details in your
+                            surrounding environment, even if you’re not looking for them.</p>
+                    </div>
+                    <div class="w3-col s12 m12 l5">
+                        <h3>Spells</h3>
+                        <p>There are four types of spell: Petty, Arcane, Lore, and Chaos
+                            spells. Petty spells are simple tricks that use negligible amounts
+                            of magic. Arcane Spells are generic spells open to those studying
+                            any Lore of Magic or Chaos Magic. Lore spells are those you
+                            can only learn if you know that Lore; i.e. to learn spells from the
+                            Lore of Fire, you need the <em>Arcane Magic (Fire)</em> Talent. Chaos
+                            spells are those practiced by those who’ve lost their souls to
+                            Chaos.</p>
+                        <h4>Memorising Spells</h4>
+                        <p>Holding the complex linguistic structures of Language (Magick)
+                            in mind is a challenging task, so simply transcribing a spell into
+                            your grimoire does not allow you learn a spell.</p>
+                        <p>To memorise a spell — and therefore be able to cast it without
+                            access to your grimoire — you typically need to spend the amount
+                            of XP noted in your spellcasting Talent (see Chapter 4: Skills
+                            and Talents). Once a spell has been memorised, a spellcaster
+                            knows it permanently, barring special circumstances.</p>
+                    </div>
+                    <div class="w3-col s0 m0 l1">
+                        &emsp;
+                    </div>
+                </div>
+                <div class="w3-row-padding w3-section">
+                    <div class="w3-col s0 m0 l1">
+                        &emsp;
+                    </div>
+                    <div class="w3-col s12 m12 l5">
+                        <h3>Repelling the Winds</h3>
+                        <p>Wearing colours appropriate to the Wind of Magic you are
+                            manipulating helps attract the magic to you. This is the reason
+                            most wizards choose to dress in the traditional garb of their order.</p>
+                        <p>All Casting and Channelling Tests suffer a –1 SL penalty if you
+                            are dressed inappropriately for the Wind of Magic you are trying
+                            to attract, as determined by the GM. Specifically, metal and
+                            leather armour repel most of the Winds: metal is laden with the
+                            golden wind <em>Chamon</em>, while leather retains traces of the amber
+                            <em>Ghur</em>. As such, spellcasters wearing armour suffer –1 SL penalty
+                            to all Casting and Channelling Tests for every Armour Point
+                            on the location with the most armour. Casters with the <em>Arcane
+                                Magic (Metal)</em> Talent may wear metal armour without penalty;
+                            those with <em>Arcane Magic (Beasts)</em> Talent may ignore penalties
+                            from leather armour.
+                        </p>
+                    </div>
+                    <div class="w3-col s12 m12 l5">
+                        <h3>Dispelling</h3>
+                        <p>If a spell targets you, or a point you can see within Willpower yards,
+                            you may oppose the Casting Test with Language (Magick) as you
+                            chant a counterspell. Make an <b>Opposed Language (Magick) Test</b>.
+                            If you win the Opposed Test, you dispel the incoming spell; if
+                            you lose, the spell uses the SL of the Opposed Test to determine
+                            whether the casting was successful as normal. You may only
+                            attempt to dispel a single spell every Round.</p>
+                        <h4>Dispelling Persistent Spells</h4>
+                        <p>If a spell has a lasting effect, you may attempt to dispel that spell
+                            for your Action. This is done by making an <b>Extended Language
+                                (Magick) Test</b>. When your SL reaches the CN of the ongoing
+                            spell, you successfully dispel it.</p>
+                        <p>Multiple spellcasters attempting to dispel the same spell each roll
+                            separately. If they cast using the same Lore, they may decide to
+                            make an Assisted Test instead.</p>
+                    </div>
+                    <div class="w3-col s0 m0 l1">
+                        &emsp;
+                    </div>
+                </div>
+                <h2 id="casting" class="info">Casting &amp; Channeling</h2>
+                <div class="w3-row-padding w3-section">
+                    <div class="w3-col s0 m0 l1">
+                        &emsp;
+                    </div>
+                    <div class="w3-col s12 m12 l5">
+                        <button id="castBtn" class="w3-btn rulesBtn" onclick="accordion('castingTest',this)">
+                            <h3>Casting Test</h3>
+                        </button>
+                        <div id="castingTest" class="w3-section w3-hide rules-container w3-container">
+                            <h4>Casting a Spell</h4>
+                            <p>To cast a spell, make a <b>Language (Magick) Test</b>. If you succeed,
+                                match your SL to the Casting Number (CN) of the spell (listed in
+                                the individual spell description). If your SL is equal to or higher than
+                                the CN of the spell, it is cast as explained in the spell’s description.
+                                If failed, the spell attempt fails, and nothing else happens.</p>
 
+                            <div class="w3-panel w3-pale-blue w3-leftbar w3-rightbar w3-border-blue">
+                                <h4>Talents</h4>
+                                <p>Reminder: talents which affect a test &mdash; in this case, <em>Instinctive
+                                        Diction</em> and <em>Perfect Pitch</em> &mdash; automatically add +1 SL per rank
+                                    of talent taken.</p>
+                            </div>
+                            <h4>Critical Casting</h4>
+                            <p>If the casting roll is a Critical (see page 159), the Winds of Magic
+                                have flared dangerously high, granting you extra power, but at
+                                a cost. Unless you have the <em>Instinctive Diction</em> Talent, you roll
+                                on the <a href="./spells.html#minorMiscast">Minor Miscast Table</a> as the power moves
+                                beyond your
+                                control, but you may also choose one of the following effects:
+                            <ul>
+                                <li><b>Critical Cast:</b> If the spell causes Damage, it also inflicts a
+                                    Critical Wound. See page 172 for details.</li>
+                                <li><b>Total Power:</b> The spell is cast, no matter its CN and your
+                                    rolled SL, but can be Dispelled.</li>
+                                <li><b>Unstoppable Force:</b> If you scored enough SL to cast your
+                                    spell, it cannot be Dispelled.</li>
+                            </ul>
+                            </p>
+
+                            <h4>Magic Missiles</h4>
+                            <p>Some spells are marked as <em>magic missiles</em>; these are damage-causing
+                                spells that all follow the same rules. When a <em>magic
+                                    missile</em> is successfully cast and targets another character, the Hit
+                                Location struck is determined by reversing the dice rolled on
+                                the Language (Magick) Test and referring to the Hit Location
+                                Table (see page 159). The SL of the Language (Magick) Test is
+                                added to the spell’s listed Damage and your Willpower Bonus to
+                                determine the total inflicted Damage. This Damage is reduced by
+                                the target’s Toughness and Armour Points as normal.</p>
+                            <h4>Touch Spells in Combat</h4>
+                            <p>Certain spells require you to touch the target. If in combat,
+                                or if the target is unwilling to be touched, you must make an
+                                <b>Opposed Melee (Brawling) Test</b> (generally opposed by the
+                                Melee or Dodge Skill) after completing the Casting Test.
+                                If you do this and your spell was a magic missile, the Melee
+                                (Brawling) Test is used to determine Hit Location struck, not
+                                the Language (Magick) Test.
+                            </p>
+
+                            <h4>Ingredients</h4>
+                            <p>Spellcasters may channel their magic through an appropriate
+                                ingredient before unleashing their spells. Doing this offers
+                                protection against Miscasts as the attuned ingredient absorbs the
+                                worst of any magical backlash.</p>
+                            <p>If you use an ingredient when casting, any suffered Major
+                                Miscast becomes a Minor Miscast, and any Minor Miscast
+                                has no effect. If used in this way, the ingredient is consumed or
+                                destroyed by the process, even if no Miscast was rolled.</p>
+                            <p>Ingredients cost the CN in silver shillings for Arcane and Lore
+                                spells. Whenever you purchase a new ingredient, mark on your
+                                character sheet which spell it supports; ingredients only work for
+                                specific spells, not for all spells in your Lore. For those looking
+                                to add character to their ingredients, sample ingredients for each
+                                of the primary Lores of Magic are provided by the individual
+                                spell lists.</p>
+
+
+                            <h4>Limitations</h4>
+                            <p>As spells are spoken, you must be able to speak — not gagged,
+                                strangled, or underwater — to cast. If your voice is inhibited, the
+                                Difficulty of your Language (Magick) Test to cast a spell should
+                                be increased by the GM. Further, the Language of Magick needs
+                                to be spoken (or sung, for those using the Lore of Light) clearly,
+                                and often loudly, to ensure spells work; magic is anything but
+                                subtle. As a loose guide, the higher the CN of a spell, the louder
+                                the spell is chanted.</p>
+                            <p>Each of your spells can only be in effect once, meaning you have
+                                to wait for a cast spell to come to an end, or be dispelled, before
+                                using the same spell again. Further, spells providing bonuses or
+                                penalties do not stack. Instead, the best bonus and worst penalty
+                                is applied from every spell cast upon you. So, if you had a spell
+                                providing a bonus of +20 Willpower, and another providing +10
+                                Willpower, you gain a bonus of +20 Willpower, not +30.</p>
+                            <p>Lastly, unless otherwise specified, you always need to be able to
+                                see — i.e. have Line of Sight — to your target.</p>
+
+                            <h4>Fumbled Casting</h4>
+                            <p>If you lose control of the magical energy you are channelling,
+                                things invariably go awry. If you Fumble your Casting Test, you
+                                suffer a Miscast. Roll 1d100 and consult the <a href="./spells.html#minorMiscast">Minor
+                                    Miscast Table</a> Table.</p>
+                            <h4>Duration</h4>
+                            <p>If a spell is successfully cast, it remains in effect for its Duration
+                                unless it is dispelled. You may not simply end your spells already
+                                in play, but you may attempt to Dispel them.</p>
+                            <h4>Grimoires</h4>
+                            <p>Some spellcasters own a spellbook, or grimoire, in which they
+                                transcribe their spells. Apprentices copy spells from their master,
+                                while experienced wizards will actively seek out new spells from
+                                other wizards, often trading spells for favours. A spellcaster may
+                                cast a spell directly from a grimoire if the spell belongs to a Lore
+                                they possess. Doing so doubles the Casting Number.</p>
+
+                            <div class="w3-panel w3-pale-yellow w3-leftbar w3-rightbar w3-border-yellow">
+                                <p>
+                                    If you start play with a Grimoire, it is up to the GM to
+                                    determine how many spells your master has recorded within
+                                    it. Some Masters are more generous than others, but <b>most
+                                        provide at least four new spells to study, and few provide
+                                        more than eight</b>. If you have a spell Memorised, you do not
+                                    need access to your Grimoire to cast it. If you have not yet
+                                    memorised a spell, you may use your Grimoire to cast it
+                                    using both your hands. This doubles the CN of the spell and
+                                    exposes your Grimoire to possible damage or theft.
+                                </p>
+                            </div>
+                            <h4>Overcasting</h4>
+                            <p>For every +2 SL you achieve in a Casting Test, you may add
+                                additional Range, Area of Effect, Duration, or Targets equal to
+                                the initial value listed in the spell. Spells with a Range and Target
+                                of ‘You’ may only ever target the spellcaster making the Casting
+                                Test. Spells with a Range of ‘Touch’ may not be extended. If the
+                                Spell has no Duration, you cannot extend it.</p>
+                            <p>You may choose the same option more than once. For instance, if
+                                you achieved + 4 SL above your Casting Number on a spell with
+                                a Target of 1, you may now Target 3 individuals. Certain Spells
+                                may have additional, optional benefits for additional SL noted in
+                                their description.</p>
+                        </div>
+                    </div>
+                    <div class="w3-col s12 m12 l5">
+
+                        <button id="channelBtn" class="w3-btn rulesBtn" onclick="accordion('channelingTest',this)">
+                            <h3>Channeling Test</h3>
+                        </button>
+                        <div id="channelingTest" class="w3-section w3-hide rules-container w3-container">
+                            <h4>Channeling a Spell</h4>
+                            <p>Some magical spells require far more magic than can normally
+                                be found ambiently flowing through the world. To power such
+                                spells, it is possible to draw the Winds of Magic and concentrate
+                                them into a more powerful form by using the Channelling Skill.
+                                Channelling the Winds of Magic can be a dangerous procedure,
+                                but it is the only sure way to cast some powerful spells. To channel
+                                magic for a spell, make an Extended Channelling Test.</p>
+                            <p>When your SL reaches the CN of your selected spell, you have
+                                channelled enough magic to cast it. On the next Round, you can
+                                cast your spell using the normal Casting rules, but count the
+                                chosen spell’s Casting Number as 0. If the casting Test fails, you
+                                also lose all your channelled magical energy, and suffer a Minor
+                                Miscast as it all writhes free from your Aethyric grasp.
+                            </p>
+                            <div class="w3-panel w3-pale-blue w3-leftbar w3-rightbar w3-border-blue">
+                                <h4>Talents</h4>
+                                <p>Reminder: talents which affect a test &mdash; in this case, <em>Instinctive
+                                        Diction</em> and <em>Perfect Pitch</em> &mdash; automatically add +1 SL per rank
+                                    of talent taken.</p>
+                            </div>
+                            <h4>Critical Channeling</h4>
+                            <p>If you roll a Critical when Channelling, you have channelled
+                                a mighty flow of magic and can cast your spell next Round
+                                regardless of the SL you’ve scored in the Extended Test so far;
+                                however, so much magic so quickly concentrated in one place
+                                results in some magical backlash: roll 1d100 on the <a
+                                    href="./spells.html#minorMiscast">Minor
+                                    Miscast Table</a> unless you have the Aethyric Attunement Talent
+                                (see page 132).</p>
+                            <h4>Fumble</h4>
+                            <p>
+                                Channelling the Winds of Magic in a large flow is dangerous.
+                                You count any double or any roll ending in a 0 over your Skill as a
+                                Fumble, so, 00, 99, 90, 88, and so on. If you fumble a Channelling
+                                Test, you suffer a Miscast. Roll 1d100 and consult the <a
+                                    href="./spells.html#majorMiscast">Major
+                                    Miscast Table</a>.
+                            </p>
+                            <h4>Interruptions</h4>
+                            <p>Concentration is vital when channelling. If you are distracted
+                                by anything — loud noises, suffering damage, flashing lights,
+                                or similar — you must pass a <b>Hard (–20) Cool Test</b>, or suffer a
+                                Minor Miscast and lose all SL you have accrued in the Extended
+                                Channelling Test so far.
+                            </p>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="w3-col s0 m0 l1">
+                        &emsp;
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+
+    </div>
+    <hr />
     <div class="w3-row-padding w3-section">
         <div class="w3-col s0 m0 l1">
             &emsp;
@@ -39,26 +350,26 @@
                         onclick="spellFilter('Death')"><img class="loreIcon" src="img/Shyish.png"><br />Death</button>
                     <button id="loreBtnFire" class="w3-button w3-blue-grey w3-bar-item w3-hover-deep-orange loreBtn"
                         onclick="spellFilter('Fire')"><img class="loreIcon" src="img/Aqshy.png"><br />Fire</button>
-                    <button id="loreBtnHeavens" class="w3-button w3-blue-grey w3-bar-item w3-hover-light-blue loreBtn"
+                    <button id="loreBtnHeavens" class="w3-disabled w3-button w3-blue-grey w3-bar-item w3-hover-light-blue loreBtn"
                         onclick="spellFilter('Heavens')"><img class="loreIcon" src="img/Azyr.png"><br />Heavens</button>
-                    <button id="loreBtnMetal" class="w3-button w3-blue-grey w3-bar-item w3-hover-amber loreBtn"
+                    <button id="loreBtnMetal" class="w3-disabled w3-button w3-blue-grey w3-bar-item w3-hover-amber loreBtn"
                         onclick="spellFilter('Metal')"><img class="loreIcon" src="img/Chamon.png"><br />Metal</button>
-                    <button id="loreBtnLife" class="w3-button w3-blue-grey w3-bar-item w3-hover-green loreBtn"
+                    <button id="loreBtnLife" class="w3-disabled w3-button w3-blue-grey w3-bar-item w3-hover-green loreBtn"
                         onclick="spellFilter('Life')"><img class="loreIcon" src="img/Ghyran.png"><br />Life</button>
-                    <button id="loreBtnLight" class="w3-button w3-blue-grey w3-bar-item w3-hover-white loreBtn"
+                    <button id="loreBtnLight" class="w3-disabled w3-button w3-blue-grey w3-bar-item w3-hover-white loreBtn"
                         onclick="spellFilter('Light')"><img class="loreIcon" src="img/Hysh.png"><br />Light</button>
-                    <button id="loreBtnShadows" class="w3-button w3-blue-grey w3-bar-item loreBtn w3-hover-grey lastBtn"
+                    <button id="loreBtnShadows" class="w3-disabled w3-button w3-blue-grey w3-bar-item loreBtn w3-hover-grey lastBtn"
                         onclick="spellFilter('Shadows')"><img class="loreIcon" src="img/Ulgu.png"><br />Shadows</button>
                 </div>
                 <br />
                 <div class="w3-bar" style="padding-top: 4px; padding-bottom: 4px">
                     <button id="loreBtnPetty" class="w3-button w3-blue-grey w3-bar-item loreBtnWide firstBtn"
                         onclick="spellFilter('Petty')">Petty</button>
-                    <button id="loreBtnArcane" class="w3-button w3-blue-grey w3-bar-item loreBtnWide "
+                    <button id="loreBtnArcane" class="w3-disabled w3-button w3-blue-grey w3-bar-item loreBtnWide "
                         onclick="spellFilter('Arcane')">Arcane</button>
-                    <button id="loreBtnHedgecraft" class="w3-button w3-blue-grey w3-bar-item loreBtnWide "
+                    <button id="loreBtnHedgecraft" class="w3-disabled w3-button w3-blue-grey w3-bar-item loreBtnWide "
                         onclick="spellFilter('Hedgecraft')">Hedgecraft</button>
-                    <button id="loreBtnWitchcraft" class="w3-button w3-blue-grey w3-bar-item loreBtnWide"
+                    <button id="loreBtnWitchcraft" class="w3-disabled w3-button w3-blue-grey w3-bar-item loreBtnWide"
                         onclick="spellFilter('Witchcraft')">Witchcraft</button>
                     <button id="loreBtnDaemonology" class="w3-button w3-blue-grey w3-bar-item loreBtnWide"
                         onclick="spellFilter('Daemonology')">Daemonology</button>
@@ -67,14 +378,18 @@
                 </div>
                 <br />
                 <div class="w3-row-padding w3-center">
-                    <div class="w3-col s0 m0 l2"><p></p></div>
-                    <div class="w3-col s12 m12 l8">
-                        <div class="loreDesc w3-center"></div>                        
+                    <div class="w3-col s0 m0 l2">
+                        <p></p>
                     </div>
-                    <div class="w3-col s0 m0 l2"><p></p></div>
+                    <div class="w3-col s12 m12 l8">
+                        <div class="loreDesc w3-center"></div>
+                    </div>
+                    <div class="w3-col s0 m0 l2">
+                        <p></p>
+                    </div>
                 </div>
                 <br />
-                <div class="spellGrid w3-row-padding" style="min-height: 500px;">
+                <div class="spellGrid w3-row-padding">
                     <div class="w3-hide" id="defaultSpellCard" style="display:none;">
                         <div class="w3-card-2 w3-round-large grid-card">
                             <div class="w3-row-padding">
@@ -100,6 +415,226 @@
                     </div>
                 </div>
             </div>
+            <hr />
+            <div id="minorMiscast" class="w3-row-padding w3-section info">
+                <h1>Minor Miscasts</h1>
+                <table class="w3-table w3-striped w3-hoverable w3-bordered table-dark">
+                    <thead>
+                        <tr>
+                            <th>1d100</th>
+                            <th>Effect</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01-05</td>
+                            <td><b>Witchsign:</b> The next living creature born within 1 mile is mutated.</td>
+                        </tr>
+                        <tr>
+                            <td>06-10</td>
+                            <td><b>Soured Milk:</b> All milk within 1d100 yards goes sour instantly.</td>
+                        </tr>
+                        <tr>
+                            <td>11-15</td>
+                            <td><b>Blight:</b> Willpower Bonus fields within Willpower Bonus miles suffer a blight, and all crops rot overnight.</td>
+                        </tr>
+                        <tr>
+                            <td>16-20</td>
+                            <td><b>Soulwax:</b> Your ears clog instantly with a thick wax. Gain 1 <em>Deafened</em> Condition, which is not removed until someone
+                                cleans them for you (with a successful use of the Heal Skill).</td>
+                        </tr>
+                        <tr>
+                            <td>21-25</td>
+                            <td><b>Witchlight:</b> You glow with an eerie light related to your Lore, emitting as much light as a large bonfire, which lasts for
+                                1d10 Rounds.</td>
+                        </tr>
+                        <tr>
+                            <td>26-30</td>
+                            <td><b>Fell Whispers:</b> Pass a <b>Routine (+20) Willpower Test</b> or gain 1 Corruption point.</td>
+                        </tr>
+                        <tr>
+                            <td>31-35</td>
+                            <td><b>Rupture:</b> Your nose, eyes, and ears bleed profusely. Gain 1d10 <em>Bleeding</em> Conditions.</td>
+                        </tr>
+                        <tr>
+                            <td>36-40</td>
+                            <td><b>Soulquake:</b> Gain the <em>Prone</em> Condition.</td>
+                        </tr>
+                        <tr>
+                            <td>41-45</td>
+                            <td><b>Unfasten:</b> On your person, every buckle unfastens, and every lace unties, which may cause belts to fall, pouches to
+                                open, bags to fall, and armour to slip.</td>
+                        </tr>
+                        <tr>
+                            <td>46-50</td>
+                            <td><b>Wayward Garb:</b> your clothes seem to writhe with a mind of their own. Receive 1 <em>Entangled</em> Condition with a
+                                Strength of 1d10&times;5 to resist.</td>
+                        </tr>
+                        <tr>
+                            <td>51-55</td>
+                            <td><b>Curse of Temperance:</b> All alcohol within 1d100 yards goes bad, tasting bitter and foul.</td>
+                        </tr>
+                        <tr>
+                            <td>56-60</td>
+                            <td><b>Souldrain:</b> Gain 1 <em>Fatigued</em> Condition, which remains for 1d10 hours.</td>
+                        </tr>
+                        <tr>
+                            <td>61-65</td>
+                            <td><b>Driven to Distraction:</b> If engaged in combat, gain the <em>Surprised</em> Condition. Otherwise, you are completely startled,
+                                your heart racing, and unable to concentrate for a few moments.</td>
+                        </tr>
+                        <tr>
+                            <td>66-70</td>
+                            <td><b>Unholy Visions:</b> Fleeting visions of profane and unholy acts harass you. Receive a <em>Blinded</em> Condition; pass a
+                               <b>Challenging (+0) Cool Test</b> or gain another.</td>
+                        </tr>
+                        <tr>
+                            <td>71-75</td>
+                            <td><b>Cloying Tongue:</b> All Language Tests (including Casting Tests) suffer a –10 penalty for 1d10 Rounds.</td>
+                        </tr>
+                        <tr>
+                            <td>76-80</td>
+                            <td><b>The Horror!:</b> Pass a <b>Hard (–20) Cool Test</b> or gain 1 <em>Broken</em> Condition.</td>
+                        </tr>
+                        <tr>
+                            <td>81-85</td>
+                            <td><b>Curse of Corruption:</b> Gain 1 Corruption point.</td>
+                        </tr>
+                        <tr>
+                            <td>86-90</td>
+                            <td><b>Double Trouble:</b> The effect of the spell you cast occurs elsewhere within 1d10 miles. At the GM’s discretion, where
+                                possible it should have consequences.</td>
+                        </tr>
+                        <tr>
+                            <td>91-95</td>
+                            <td><b>Multiplying Misfortune:</b> Roll twice on this table, rerolling any results between 91-00.</td>
+                        </tr>
+                        <tr>
+                            <td>96-00</td>
+                            <td><b>Cascading Chaos:</b> Roll again on the <b>Major Miscast Table</b>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr/>
+            <div class="w3-row-padding w3-section info">
+                <h1 class="info" id="majorMiscast">Major Miscasts</h1>
+                <table class="w3-table w3-striped w3-hoverable w3-bordered table-dark">
+                    <thead>
+                        <tr>
+                            <th>1d100</th>
+                            <th>Effect</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01-05</td>
+                            <td><b>Ghostly Voices:</b> Everyone within Willpower yards hears darkly seductive whispering of voices emanating from
+                                the Realm of Chaos. All sentient creatures must pass an <b>Average (+20) Cool Test</b> or gain 1 Corruption point.</td>
+                        </tr>
+                        <tr>
+                            <td>06-10</td>
+                            <td><b>Hexeyes:</b> Your eyes turn an unnatural colour associated with your Lore for 1d10 hours. While your eyes are
+                                discoloured, you have 1 <em>Blinded</em> Condition that cannot be resolved by <b>any</b> means.</td>
+                        </tr>
+                        <tr>
+                            <td>11-15</td>
+                            <td><b>Aethyric Shock:</b> You suffer 1d10 wounds, ignoring your Toughness Bonus and Armour Points. Pass an <b>Average
+                                (+20) Endurance Test</b>, or also gain a <em>Stunned</em> Condition.</td>
+                        </tr>
+                        <tr>
+                            <td>16-20</td>
+                            <td><b>Death Walker:</b> Your footsteps leave death in their wake. For the next 1d10 hours, any plant life near you withers
+                                and dies.</td>
+                        </tr>
+                        <tr>
+                            <td>21-25</td>
+                            <td><b>Intestinal Rebellion:</b> Your bowels move uncontrollably, and you soil yourself. Gain 1 <em>Fatigued</em> Condition,
+                                which cannot be removed until you can change your clothes and clean yourself up.</td>
+                        </tr>
+                        <tr>
+                            <td>26-30</td>
+                            <td><b>Soulfire:</b> Gain an <em>Ablaze</em> Condition, as you are wreathed in unholy flames with a colour associated with your
+                                Lore.</td>
+                        </tr>
+                        <tr>
+                            <td>31-35</td>
+                            <td><b>Speak in Tongues:</b> You gabble unintelligibly for 1d10 rounds. During this time, you cannot communicate
+                                verbally, or make any Casting Tests, although you may otherwise act normally.</td>
+                        </tr>
+                        <tr>
+                            <td>36-40</td>
+                            <td><b>Swarmed:</b> You are engaged by a swarm of aethyric Rats, Giant Spiders, Snakes, or similar (GM’s choice). Use
+                                the standard profiles for the relevant creature type, adding the <em>Swarm</em> Creature Trait. After 1d10 rounds, if not
+                                yet destroyed, the swarm retreats.</td>
+                        </tr>
+                        <tr>
+                            <td>41-45</td>
+                            <td><b>Ragdoll:</b> You are flung 1d10 yards through the air in a random direction, taking 1d10 wounds on landing,
+                                ignoring Armour Points, and receiving the <em>Prone</em> Condition.</td>
+                        </tr>
+                        <tr>
+                            <td>46-50</td>
+                            <td><b>Limb Frozen:</b> One limb (randomly determined) is frozen in place for 1d10 hours. The limb is useless, as if it had
+                                been Amputated (see page 180).</td>
+                        </tr>
+                        <tr>
+                            <td>51-55</td>
+                            <td><b>Darkling Sight:</b> You lose the benefit of the <em>Second Sight</em> Talent for 1d10 hours. Channelling Tests also suffer a
+                                penalty of –20 for the duration.</td>
+                        </tr>
+                        <tr>
+                            <td>56-60</td>
+                            <td><b>Chaotic Foresight:</b> Gain a bonus pool of 1d10 Fortune points (this may take you beyond your natural limit).
+                                Every time you spend one of these points, gain 1 Corruption point. Any of these points remaining at the end of
+                                the session are lost.</td>
+                        </tr>
+                        <tr>
+                            <td>61-65</td>
+                            <td><b>Levitation:</b> You are borne aloft on the Winds of Magic, floating 1d10 yards above the ground for 1d10 minutes.
+                                Other characters may forcibly move you, and you may move using spells, wings or similar, but will continually
+                                return to your levitating position if otherwise left alone. Refer to the Falling rules (see page 166) for what
+                                happens when Levitation ends.</td>
+                        </tr>
+                        <tr>
+                            <td>66-70</td>
+                            <td><b>Regurgitation:</b> You spew uncontrollably, throwing up far more foul-smelling vomitus than your body can
+                                possibly contain. Gain the <em>Stunned</em> Condition, which lasts for 1d10 Rounds.</td>
+                        </tr>
+                        <tr>
+                            <td>71-75</td>
+                            <td><b>Chaos Quake:</b> All creatures within 1d100 yards must pass an <b>Average (+20) Athletics Test</b> or gain the <em>Prone</em>
+                                Condition.</td>
+                        </tr>
+                        <tr>
+                            <td>76-80</td>
+                            <td><b>Traitor's Heart:</b> The Dark Gods entice you to commit horrendous perfidy. Should you attack or otherwise
+                                betray an ally to the full extent of your capabilities, regain all Fortune points. If you cause another character to
+                                lose a Fate Point, gain +1 Fate Point.</td>
+                        </tr>
+                        <tr>
+                            <td>81-85</td>
+                            <td><b>Foul Enfeeblement:</b> Gain 1 Corruption point, the <em>Prone</em> Condition, and a <em>Fatigued</em> Condition</td>
+                        </tr>
+                        <tr>
+                            <td>86-90</td>
+                            <td><b>Hellish Stench:</b> You now smell really bad! You gain the <em>Distracting</em> Creature Trait (see page 339), and probably
+                                the enmity of anyone with a sense of smell. This lasts for 1d10 hours.</td>
+                        </tr>
+                        <tr>
+                            <td>91-95</td>
+                            <td><b>Power Drain:</b> You are unable to use the Talent used to cast the spell (usually <em>Arcane Magic</em>, though it could be
+                                <em>Chaos Magic</em>, or a similar Talent), for 1d10 minutes.</td>
+                        </tr>
+                        <tr>
+                            <td>96-00</td>
+                            <td><b>Aethyric Feedback:</b> Everyone within a number of yards equal to your Willpower Bonus &mdash; friend and foe alike
+                                &mdash; suffers 1d10 wounds, ignoring Toughness Bonus and Armour Points, and receives the <em>Prone</em> Condition. If
+                                there are no targets in range, the magic has nowhere to vent, so your head explodes, killing you instantly.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div class="w3-col s0 m0 l1">
             &emsp;
@@ -114,18 +649,16 @@
         </div>
         <div class="w3-col s12 m10 l10">
             <div class="w3-center">
-            All WFRP 4e material is &copy; 2018-<script>document.write(new Date().getFullYear()) </script> Cubicle 7 Games
-        
-        </div>
+                All WFRP 4e material is &copy; 2018-
+                <script>document.write(new Date().getFullYear()) </script> Cubicle 7 Games
+
+            </div>
         </div>
         <div class="w3-col s0 m1 l1">
             <p></p>
         </div>
     </div>
     <script>
-        $(document).ready(function () {
-            //buildSpells();
-        });   
     </script>
 </footer>
 

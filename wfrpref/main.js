@@ -15,18 +15,26 @@ function inRangeInclusive(num, range) {
 
 // function toDark() {
 //     $("table").addClass("table-dark");
-//     $("h3").addClass("headingDark");
-//     $("h4").addClass("headingDark");
-//     $(".psyTooltipLight").addClass("psyTooltipDark").removeClass("psyTooltipLight");
-
-//     $("#sancticDaemonTable").removeClass("table-dark");
-//     $("#maleficDaemonTable").removeClass("table-dark");
 // }
 
 
 $(document).ready(function () {
     buildNavbar();
+    // setTimeout( function() {
+    //     toDark()}, 250);
 });
+
+function accordion(id, el) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        $('#'+id).removeClass("w3-hide").addClass("w3-show")
+    } else {
+        $('#'+id).removeClass("w3-show").addClass("w3-hide")
+    }
+
+    $this = $(el)
+    $this.toggleClass('btn-selected')
+}
 
 function showMenu() {
     var x = document.getElementById("menu");

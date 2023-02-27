@@ -28,6 +28,10 @@ eh {
     color: burlywood !important;
 }
 
+footer {
+    padding-top: 7em;
+}
+
 .noteCard {
     padding: 1em;
     background-color: darkslategrey;

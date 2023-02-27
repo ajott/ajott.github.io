@@ -1,5 +1,6 @@
 function spellFilter(input) {
     $('.btn-selected').removeClass('btn-selected')
+    $('#loreDesc').html("");
 
     try {
         $(".spellGrid").isotope('destroy')
@@ -14,6 +15,8 @@ function spellFilter(input) {
     let lore = input;
 
     $('#loreBtn'+lore).addClass('btn-selected');
+
+    $('.loreDesc').html("<div class=\"w3-card-2 w3-round-large w3-center loreDescDetail\"><img class=\"loreDescIcon\" w3-card src=\"img/" + lores[lore]["wind"] + ".png\"/><h3><em>Lore of "+lore+"</em></h3>"+lores[lore]["desc"]+"</div>");
 
     for (let i = 0; i < spell.length; i++) {
         if (spell[i]["lore"] == lore) {
@@ -33,7 +36,7 @@ function spellFilter(input) {
             $("#spell" + i).children().children().children(".spellName").html(spell[i]["name"])
 
 
-            $("#spell" + i).children().children().children().children().children(".spellLore").text("Lore of " + spell[i]["lore"])
+            // $("#spell" + i).children().children().children().children().children(".spellLore").text("Lore of " + spell[i]["lore"])
 
             $("#spell" + i).children().children().children(".spellCN").text(spell[i]["CN"])
             $("#spell" + i).children().children().children(".spellRange").html(spell[i]["range"])
@@ -78,6 +81,26 @@ function spellFilter(input) {
     }
 
 
+
+}
+
+var lores = {
+    "Beasts": {
+        "desc": "The Amber wind, <em>Ghur</em>, carries with it a chill, primal ferocity, that is unnerving to beasts and sentient creatures alike. Whenever you successfully cast a spell from the Lore of Beasts, you may also gain the <em>Fear (1)</em> Creature Trait (see page 190) for the next 1d10 Rounds. <br/> <strong>Ingredients: </strong>Shamans use animal fur, skin, bone, and pelt, wrapped in sinews and daubed with blood runes to focus the Amber wind. Often claws are scrimshawed, organs dried, and feathers dipped in rare humours, and it’s not uncommon to find excrement, urine, and other excretions also used.",
+        "wind": "Ghur"
+    },
+    "Death": {
+        "desc": "The purple wind of <em>Shyish</em> carries with it dry, dusty winds and the insistent rustling of sand passing through Time’s hourglass. Targets afflicted by spells from the Lore of Death are drained of life, enervated, and listless. You may assign +1 <em>Fatigued</em> Condition to any living target affected by a spell from this lore. A target may only ever have a single <em>Fatigued</em> Condition gained in this manner at any one time. <br/> <strong>Ingredients:</strong> The bones of sentient creatures feature heavily in Amethyst magic, as do the trappings of death, including wood or nails from coffins, embalming fluids, hourglasses, silver coins, and grave dirt, all carefully presented or engraved. Purple gemstones, materials, and flowers (particularly roses) are also common.",
+        "wind": "Shyish"
+    },
+    "Fire": {
+        "desc": "The Lore of Fire, and the Bright wind of <em>Aqshy</em>, is anything but subtle. Its spells are bellowed with fervour and manifest themselves in bombastic fashion, with bright flame and searing heat. You may inflict +1 <em>Ablaze</em> Condition on anyone targeted by spells from the Lore of Fire, unless they also possess the <em>Arcane Magic (Fire)</em> Talent. Every <em>Ablaze</em> condition within <eh>Willpower Bonus</eh> yards adds +10 to attempts to Channel or Cast with <em>Aqshy</em>. <br/> <strong>Ingredients:</strong> Pyromancers use a wide selection of flammable materials as ingredients, which are often immolated as the spell is cast, including coal, oils, fats, and ruddy woods. Trappings immune to fire are also common, such as iron keys, carved sections of fire-grate, and small oven stones.",
+        "wind": "Aqshy"
+    },
+    "Heavens":{
+        "desc":"Arcane spells cast from the Lore of Heavens are accompanied by the crackling of lightning and the smell of ozone. Spells causing Damage ignore Armour Points from metal armour, and will arc to all other targets within 2 yards, except those with the <em>Arcane Magic (Heavens)</em> Talent, inflicting hits with a Damage equal to your <eh>Willpower Bonus</eh>, handled like a <em>magical missile</em>. <br/> <strong>Ingredients:</strong> Astronomical instruments, charts, lenses, and symbols dominate Celestial magic, as do ingredients associated with augury, such as animal innards, mirrors, glass balls, and bird tongues. Some wind-based spells use wings and feathers, where those involving electricity prefer slivers of carved metal.",
+        "wind":"Azyr"
+    }
 
 }
 
@@ -151,7 +174,7 @@ var spell = [
         "lore": "Beasts",
         "wind": "Ghur",
         "CN": 8,
-        "range": "<em>Willpower</em> yards",
+        "range": "<eh>Willpower</eh> yards",
         "target": "Special",
         "duration": "Instant",
         "description": "You hurl a great spear of pure <em>Ghur</em> in a straight line. This is a <em>magic missile</em> with a Damage of +12. It strikes the first creature in its path, ignoring APs from armour made of leather and furs. If the target suffers any Wounds, also inflict +1 <em>Bleeding</em> Condition, after which the spear continues on its path, striking each target in the same manner, but at –1 Damage each time. If the spear fails to inflict any Wounds, its progress is stopped and the spell comes to an end. <em>The Amber Spear</em> only inflicts the minimum 1 Wound (see page 236) on the first target it strikes."

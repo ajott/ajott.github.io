@@ -24,11 +24,9 @@ function inRangeInclusive(num, range) {
 // }
 
 
-// $(document).ready(function () {
-//     buildNavbar();
-//     setTimeout(
-//         toDark(), 250);
-// });
+$(document).ready(function () {
+    buildNavbar();
+});
 
 function showMenu() {
     var x = document.getElementById("menu");

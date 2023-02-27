@@ -1,0 +1,721 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WFRP 4e QuickRef</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="./isotope.pkgd.js"></script>
+    <script src="main.js"></script>
+    <script src="spells.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+
+<body>
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad" id="navBarDiv">
+    </div>
+
+    <div class="w3-row-padding w3-section info">
+        <h1>Character Creation</h1>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l5">
+            <p>
+                Character creation is fairly straightforward, and shouldn't be feared. Additionally, just about all of
+                the mechanical aspects can be randomized; doing so gives an exp bonus that can be spent at the end of
+                character creation.
+            </p>
+            <p>
+                Your character will have a species (Human, Halfling, Dwarf, High Elf, Wood Elf) which determines the
+                careers, endeavours, etc. available to you; a class and career &mdash; <em>e.g.</em> Peasant (Trapper)
+                &mdash; that determines your status, advancements, talents, trappings, income endeavour; a set of skills
+                and talents; trappings (personal property and gear); and a motivation.
+            </p>
+
+        </div>
+        <div class="w3-col s12 m12 l5">
+            <div id="charPane" class="noteCard w3-round-large w3-card-2>">
+                <p>
+                <h5>Step-by-Step Summary:</h5>
+                Page references are to the core WFRP rulebook. Each step is linked to the appropriate section of this
+                page.
+                <ol>
+                    <li><a href="./character.html#species">Species</a> (WFRP p. 24)</li>
+                    <li><a href="./character.html#career">Class and Career</a> (WFRP p. 30)</li>
+                    <li><a href="./character.html#attribute">Attributes</a> (WFRP p. 33)</li>
+                    <li><a href="./character.html#skills">Skills and Talents</a> (WFRP p. 35)</li>
+                    <li><a href="./character.html#trappings">Trappings</a> (WFRP p. 37)</li>
+                    <li><a href="./character.html#detail">Adding Detail</a> (WFRP p. 37)</li>
+                    <li><a href="./character.html#party">Party</a> (WFRP p. 41)</li>
+                    <li><a href="./character.html#toLife">Bringing your Character to Life</a> (WFRP p. 42)</li>
+                    <li><a href="./character.html#advancement">Advancement</a> (WFRP p. 43)</li>
+                </ol>
+                </p>
+            </div>
+
+        </div>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+    </div>
+
+    <hr />
+    <div id="species" class="w3-row-padding w3-section info">
+        <h3>Species</h3>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div>
+                <p>You may choose your species yourself; alternatively, you can roll 1d100, consult the Random Species
+                    Table, and gain +20 XP if you accept the result.
+                </p>
+                <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                    <thead>
+                        <th>1d100</th>
+                        <th>Species</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01-90</td>
+                            <td>Human</td>
+                        </tr>
+                        <tr>
+                            <td>91-94</td>
+                            <td>Halfling</td>
+                        </tr>
+                        <tr>
+                            <td>95-98</td>
+                            <td>Dwarf</td>
+                        </tr>
+                        <tr>
+                            <td>99</td>
+                            <td>High Elf</td>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>Wood Elf</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+
+    </div>
+
+    <hr />
+    <div id="career" class="w3-row-padding w3-section info">
+        <h3>Class and Career</h3>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div>
+                <p>Your Class determines your general place in society. Your Career describes your current job, and
+                    determines your Status, which influences how much money you earn.</p>
+                <p>You can simply choose your Class and Career from the options
+                    below, write them down on your Character Sheet and move on
+                    to step 3. Alternatively, if you are unsure which to choose, or just
+                    want to randomly select for bonus XP:
+                <ol>
+                    <li>Roll 1d100 on the Random Class and Career Table. If you
+                        don’t like the result, move to step 2. If you keep the result,
+                        gain +50 XP</li>
+                    <li>Roll twice more on the table, bringing your total to 3 choices.
+                        If one of the three now suits you, select one and gain +25 XP.
+                        If not, move to Step 3.</li>
+                    <li>Choose your Class and Career, or keep rerolling on the table
+                        until you get something you like. There is no XP bonus for
+                        this.</li>
+                </ol>
+                </p>
+
+                <table class="w3-table w3-striped w3-hoverable w3-bordered">
+                    <thead>
+                        <tr>
+                            <th title="Field #1">Career/Species</th>
+                            <th title="Field #2">Human</th>
+                            <th title="Field #3">Dwarf</th>
+                            <th title="Field #4">Halfling</th>
+                            <th title="Field #5">High Elf</th>
+                            <th title="Field #6">Wood Elf</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th colspan="6" class="midHead" style="text-align: center;">Academics</th>
+                        </tr>
+                        <tr>
+                            <td>Apothecary</td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>01-02</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Engineer</td>
+                            <td>02</td>
+                            <td>02-04</td>
+                            <td>02</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Lawyer</td>
+                            <td>03</td>
+                            <td>05-06</td>
+                            <td>03-04</td>
+                            <td>03-06</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Nun</td>
+                            <td>05-05</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Physician</td>
+                            <td>06</td>
+                            <td>07</td>
+                            <td>05-06</td>
+                            <td>07-08</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Priest</td>
+                            <td>07-11</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Scholar</td>
+                            <td>12-13</td>
+                            <td>08-09</td>
+                            <td>07-08</td>
+                            <td>09-12</td>
+                            <td>01</td>
+                        </tr>
+                        <tr>
+                            <td>Wizard</td>
+                            <td>14</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>13-16</td>
+                            <td>02-05</td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="midHead" style="text-align: center;">Burghers</th>
+                        </tr>
+                        <tr>
+                            <td>Agitator</td>
+                            <td>15</td>
+                            <td>10-11</td>
+                            <td>09-10</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Artisan</td>
+                            <td>16-17</td>
+                            <td>12-17</td>
+                            <td>11-15</td>
+                            <td>17-19</td>
+                            <td>06-10</td>
+                        </tr>
+                        <tr>
+                            <td>Beggar</td>
+                            <td>18-19</td>
+                            <td>18</td>
+                            <td>16-19</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Investigator</td>
+                            <td>20</td>
+                            <td>19-20</td>
+                            <td>20-21</td>
+                            <td>20-21</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Merchant</td>
+                            <td>21</td>
+                            <td>21-24</td>
+                            <td>22-25</td>
+                            <td>22-26</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Rat Catcher</td>
+                            <td>22-23</td>
+                            <td>25</td>
+                            <td>26-28</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Townsman</td>
+                            <td>24-26</td>
+                            <td>26-31</td>
+                            <td>29-31</td>
+                            <td>27-28</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Watchman</td>
+                            <td>27</td>
+                            <td>32-34</td>
+                            <td>32-33</td>
+                            <td>29</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="midHead" style="text-align: center;">Courtiers</th>
+                        </tr>
+                        <tr>
+                            <td>Advisor</td>
+                            <td>28</td>
+                            <td>35-36</td>
+                            <td>34</td>
+                            <td>30-31</td>
+                            <td>11-14</td>
+                        </tr>
+                        <tr>
+                            <td>Artist</td>
+                            <td>29</td>
+                            <td>37</td>
+                            <td>35-36</td>
+                            <td>32</td>
+                            <td>15-18</td>
+                        </tr>
+                        <tr>
+                            <td>Duellist</td>
+                            <td>30</td>
+                            <td>38</td>
+                            <td>-</td>
+                            <td>33-34</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Envoy</td>
+                            <td>31</td>
+                            <td>39-40</td>
+                            <td>37</td>
+                            <td>35-37</td>
+                            <td>19-25</td>
+                        </tr>
+                        <tr>
+                            <td>Noble</td>
+                            <td>32</td>
+                            <td>41</td>
+                            <td>-</td>
+                            <td>38-40</td>
+                            <td>26-31</td>
+                        </tr>
+                        <tr>
+                            <td>Servant</td>
+                            <td>33-35</td>
+                            <td>42</td>
+                            <td>38-43</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Spy</td>
+                            <td>36</td>
+                            <td>43</td>
+                            <td>44</td>
+                            <td>41-43</td>
+                            <td>32-35</td>
+                        </tr>
+                        <tr>
+                            <td>Warden</td>
+                            <td>37</td>
+                            <td>44-45</td>
+                            <td>45-46</td>
+                            <td>44-45</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="midHead" style="text-align: center;">Peasants</th>
+                        </tr>
+                        <tr>
+                            <td>Baliff</td>
+                            <td>38</td>
+                            <td>46-47</td>
+                            <td>47</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Hedge Witch</td>
+                            <td>39</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Herbalist</td>
+                            <td>40</td>
+                            <td>-</td>
+                            <td>48-50</td>
+                            <td>46-47</td>
+                            <td>36-42</td>
+                        </tr>
+                        <tr>
+                            <td>Hunter</td>
+                            <td>41-42</td>
+                            <td>48-49</td>
+                            <td>51-52</td>
+                            <td>48-50</td>
+                            <td>43-52</td>
+                        </tr>
+                        <tr>
+                            <td>Miner</td>
+                            <td>43</td>
+                            <td>50-54</td>
+                            <td>53</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Mystic</td>
+                            <td>44</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>53-57</td>
+                        </tr>
+                        <tr>
+                            <td>Scout</td>
+                            <td>45</td>
+                            <td>55</td>
+                            <td>54</td>
+                            <td>51-56</td>
+                            <td>58-68</td>
+                        </tr>
+                        <tr>
+                            <td>Villager</td>
+                            <td>56-50</td>
+                            <td>56</td>
+                            <td>55-57</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="midHead" style="text-align: center;">Rangers</th>
+                        </tr>
+                        <tr>
+                            <td>Bounty Hunter</td>
+                            <td>51</td>
+                            <td>57-60</td>
+                            <td>58</td>
+                            <td>57-59</td>
+                            <td>69-70</td>
+                        </tr>
+                        <tr>
+                            <td>Coachman</td>
+                            <td>52</td>
+                            <td>61</td>
+                            <td>59-60</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Entertainer</td>
+                            <td>53-54</td>
+                            <td>62-63</td>
+                            <td>61-63</td>
+                            <td>60-62</td>
+                            <td>71-75</td>
+                        </tr>
+                        <tr>
+                            <td>Flagellant</td>
+                            <td>55-56</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Messenger</td>
+                            <td>57</td>
+                            <td>64-65</td>
+                            <td>64-65</td>
+                            <td>63</td>
+                            <td>76-78</td>
+                        </tr>
+                        <tr>
+                            <td>Pedlar</td>
+                            <td>58</td>
+                            <td>66-67</td>
+                            <td>66-67</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Road Warden</td>
+                            <td>59</td>
+                            <td>-</td>
+                            <td>68</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Witch Hunter</td>
+                            <td>60</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="midHead" style="text-align: center;">Riverfolk</th>
+                        </tr>
+                        <tr>
+                            <td>Boatman</td>
+                            <td>61-62</td>
+                            <td>68-69</td>
+                            <td>69</td>
+                            <td>64</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Huffer</td>
+                            <td>63</td>
+                            <td>70</td>
+                            <td>70</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Riverwarden</td>
+                            <td>64-65</td>
+                            <td>-</td>
+                            <td>71</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Riverwoman</td>
+                            <td>66-68</td>
+                            <td>71-72</td>
+                            <td>72-74</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Seaman</td>
+                            <td>69-70</td>
+                            <td>73</td>
+                            <td>75</td>
+                            <td>65-79</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Smuggler</td>
+                            <td>71</td>
+                            <td>74-75</td>
+                            <td>76-79</td>
+                            <td>80</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Stevedore</td>
+                            <td>72-73</td>
+                            <td>76-77</td>
+                            <td>80-82</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Wrecker</td>
+                            <td>74</td>
+                            <td>78</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>79</td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="midHead" style="text-align: center;">Rogues</th>
+                        </tr>
+                        <tr>
+                            <td>Bawd</td>
+                            <td>75-76</td>
+                            <td>-</td>
+                            <td>83-85</td>
+                            <td>81-82</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Charlatan</td>
+                            <td>77</td>
+                            <td>-</td>
+                            <td>86</td>
+                            <td>83-85</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Fence</td>
+                            <td>78</td>
+                            <td>79</td>
+                            <td>87</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Grave Robber</td>
+                            <td>79</td>
+                            <td>-</td>
+                            <td>88</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Outlaw</td>
+                            <td>80-83</td>
+                            <td>80-82</td>
+                            <td>89</td>
+                            <td>86-88</td>
+                            <td>80-85</td>
+                        </tr>
+                        <tr>
+                            <td>Racketeer</td>
+                            <td>84</td>
+                            <td>83</td>
+                            <td>90</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Thief</td>
+                            <td>85-87</td>
+                            <td>84</td>
+                            <td>91-94</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Witch</td>
+                            <td>88</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <th colspan="6" class="midHead" style="text-align: center;">Warriors</th>
+                        </tr>
+                        <tr>
+                            <td>Cavalryman</td>
+                            <td>89-90</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>89-92</td>
+                            <td>86-90</td>
+                        </tr>
+                        <tr>
+                            <td>Guard</td>
+                            <td>91-92</td>
+                            <td>85-87</td>
+                            <td>95-96</td>
+                            <td>93-94</td>
+                            <td>91-92</td>
+                        </tr>
+                        <tr>
+                            <td>Knight</td>
+                            <td>93</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>95</td>
+                            <td>93-94</td>
+                        </tr>
+                        <tr>
+                            <td>Pit Fighter</td>
+                            <td>94</td>
+                            <td>88-90</td>
+                            <td>97</td>
+                            <td>96-97</td>
+                            <td>95-96</td>
+                        </tr>
+                        <tr>
+                            <td>Protagonist</td>
+                            <td>95</td>
+                            <td>91-93</td>
+                            <td>-</td>
+                            <td>98</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Soldier</td>
+                            <td>96-99</td>
+                            <td>94-96</td>
+                            <td>98-100</td>
+                            <td>99-100</td>
+                            <td>97-100</td>
+                        </tr>
+                        <tr>
+                            <td>Slayer</td>
+                            <td>-</td>
+                            <td>97-100</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Warrior Priest</td>
+                            <td>100</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+
+    </div>
+</body>
+<footer>
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m10 l10">
+            <div class="w3-center">
+                All WFRP 4e material is &copy; 2018-
+                <script>document.write(new Date().getFullYear()) </script> Cubicle 7 Games
+
+            </div>
+        </div>
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+    </div>
+</footer>
+
+</html>

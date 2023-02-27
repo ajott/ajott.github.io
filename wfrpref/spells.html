@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        <script src="./isotope.pkgd.js"></script>
+    <script src="./isotope.pkgd.js"></script>
     <script src="main.js"></script>
     <script src="spells.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -32,30 +32,31 @@
                 <h1>Spell Description Cards</h1>
                 <br />
                 <div class="w3-bar" style="padding-top: 4px; padding-bottom: 4px">
-                    <button id="loreBtnBeasts" class="w3-button w3-blue-grey w3-bar-item loreBtn w3-hover-orange firstBtn"
-                        onclick="spellFilter('Beasts')"><img class="loreIcon" src="img/Ghur.png"><br/>Beasts</button>
+                    <button id="loreBtnBeasts"
+                        class="w3-button w3-blue-grey w3-bar-item loreBtn w3-hover-orange firstBtn"
+                        onclick="spellFilter('Beasts')"><img class="loreIcon" src="img/Ghur.png"><br />Beasts</button>
                     <button id="loreBtnDeath" class="w3-button w3-blue-grey w3-bar-item w3-hover-purple loreBtn"
-                        onclick="spellFilter('Death')"><img class="loreIcon" src="img/Shyish.png"><br/>Death</button>
+                        onclick="spellFilter('Death')"><img class="loreIcon" src="img/Shyish.png"><br />Death</button>
                     <button id="loreBtnFire" class="w3-button w3-blue-grey w3-bar-item w3-hover-deep-orange loreBtn"
-                        onclick="spellFilter('Fire')"><img class="loreIcon" src="img/Aqshy.png"><br/>Fire</button>
+                        onclick="spellFilter('Fire')"><img class="loreIcon" src="img/Aqshy.png"><br />Fire</button>
                     <button id="loreBtnHeavens" class="w3-button w3-blue-grey w3-bar-item w3-hover-light-blue loreBtn"
-                        onclick="spellFilter('Heavens')"><img class="loreIcon" src="img/Azyr.png"><br/>Heavens</button>
+                        onclick="spellFilter('Heavens')"><img class="loreIcon" src="img/Azyr.png"><br />Heavens</button>
                     <button id="loreBtnMetal" class="w3-button w3-blue-grey w3-bar-item w3-hover-amber loreBtn"
-                        onclick="spellFilter('Metal')"><img class="loreIcon" src="img/Chamon.png"><br/>Metal</button>
+                        onclick="spellFilter('Metal')"><img class="loreIcon" src="img/Chamon.png"><br />Metal</button>
                     <button id="loreBtnLife" class="w3-button w3-blue-grey w3-bar-item w3-hover-green loreBtn"
-                        onclick="spellFilter('Life')"><img class="loreIcon" src="img/Ghyran.png"><br/>Life</button>
+                        onclick="spellFilter('Life')"><img class="loreIcon" src="img/Ghyran.png"><br />Life</button>
                     <button id="loreBtnLight" class="w3-button w3-blue-grey w3-bar-item w3-hover-white loreBtn"
-                        onclick="spellFilter('Light')"><img class="loreIcon" src="img/Hysh.png"><br/>Light</button>
+                        onclick="spellFilter('Light')"><img class="loreIcon" src="img/Hysh.png"><br />Light</button>
                     <button id="loreBtnShadows" class="w3-button w3-blue-grey w3-bar-item loreBtn w3-hover-grey lastBtn"
-                        onclick="spellFilter('Shadows')"><img class="loreIcon" src="img/Ulgu.png"><br/>Shadows</button>
+                        onclick="spellFilter('Shadows')"><img class="loreIcon" src="img/Ulgu.png"><br />Shadows</button>
                 </div>
-                <br/>         
+                <br />
                 <div class="w3-bar" style="padding-top: 4px; padding-bottom: 4px">
-                    <button id="loreBtnPetty" class="w3-button w3-blue-grey w3-bar-item loreBtnWide  firstBtn"
+                    <button id="loreBtnPetty" class="w3-button w3-blue-grey w3-bar-item loreBtnWide firstBtn"
                         onclick="spellFilter('Petty')">Petty</button>
-                        <button id="loreBtnArcane" class="w3-button w3-blue-grey w3-bar-item loreBtnWide "
+                    <button id="loreBtnArcane" class="w3-button w3-blue-grey w3-bar-item loreBtnWide "
                         onclick="spellFilter('Arcane')">Arcane</button>
-                        <button id="loreBtnHedgecraft" class="w3-button w3-blue-grey w3-bar-item loreBtnWide "
+                    <button id="loreBtnHedgecraft" class="w3-button w3-blue-grey w3-bar-item loreBtnWide "
                         onclick="spellFilter('Hedgecraft')">Hedgecraft</button>
                     <button id="loreBtnWitchcraft" class="w3-button w3-blue-grey w3-bar-item loreBtnWide"
                         onclick="spellFilter('Witchcraft')">Witchcraft</button>
@@ -65,8 +66,15 @@
                         onclick="spellFilter('Necromancy')">Necromancy</button>
                 </div>
                 <br />
+                <div class="w3-row-padding w3-center">
+                    <div class="w3-col s0 m0 l2"><p></p></div>
+                    <div class="w3-col s12 m12 l8">
+                        <div class="loreDesc w3-center"></div>                        
+                    </div>
+                    <div class="w3-col s0 m0 l2"><p></p></div>
+                </div>
                 <br />
-                <div class="spellGrid" style="min-height: 500px;">
+                <div class="spellGrid w3-row-padding" style="min-height: 500px;">
                     <div class="w3-hide" id="defaultSpellCard" style="display:none;">
                         <div class="w3-card-2 w3-round-large grid-card">
                             <div class="w3-row-padding">
@@ -105,7 +113,10 @@
             <p></p>
         </div>
         <div class="w3-col s12 m10 l10">
-            <!-- All D&D material is © Wizards of the Coast -->
+            <div class="w3-center">
+            All WFRP 4e material is &copy; 2018-<script>document.write(new Date().getFullYear()) </script> Cubicle 7 Games
+        
+        </div>
         </div>
         <div class="w3-col s0 m1 l1">
             <p></p>

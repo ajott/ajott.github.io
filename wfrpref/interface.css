@@ -16,6 +16,64 @@ eh {
     color: goldenrod !important;
 }
 
+.navBarContainer {
+    color: blanchedalmond;
+}
+
+.navBarContainer a {
+    color: blanchedalmond;
+}
+
+.navBarContainer a:hover {
+    color: burlywood !important;
+}
+
+.noteCard {
+    padding: 1em;
+    background-color: darkslategrey;
+}
+
+.w3-dropdown-content {
+    border-left: 1px solid blanchedalmond !important;
+    border-right: 1px solid blanchedalmond !important;
+    border-bottom: 1px solid blanchedalmond !important;
+}
+
+/* hr {
+    border-color: blanchedalmond;
+    width: 70% !important;
+    margin-left: 15%;
+} */
+
+hr {
+    font-family: Arial, sans-serif; /* choose the font you like */
+    text-align: center; /* horizontal centering */
+    line-height: 1px; /* vertical centering */
+    height: 1px; /* gap between the lines */
+    font-size: 1em; /* choose font size you like */
+    border-width: 1px 0; /* top and bottom borders */
+    border-style: solid;
+    border-color: blanchedalmond;
+    margin: 20px 10%; /* 20px space above/below, 10px left/right */
+    overflow: visible;
+  
+    /* ensure 1px gap between borders */
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -ms-box-sizing: content-box;
+    -o-box-sizing: content-box;
+    box-sizing: content-box;
+  }
+  
+  hr:after {
+    content: "⚔"; /* Crossed Swords */
+    color: silver;
+    font-size: 2em;
+    display: inline; /* for vertical centering and background knockout */
+    position: relative;
+    /* bottom: 2px; */
+  }
+
 .loreBtn {
     width: 7em !important;
     border: 1px solid blanchedalmond !important;
@@ -30,6 +88,14 @@ eh {
     display: inline-block;
     width:2em;
     height:2em;
+}
+
+/* .top-navbar {
+    border-radius: 5px 5px 0px 0px;
+} */
+
+.bottom-navbar {
+    border-radius: 0px 0px 5px 5px;
 }
 
 
@@ -70,33 +136,25 @@ body {
     color: white !important;
 }
 
-#psykerTab.btn-selected {
-    background: purple !important;
-    border-color: purple !important;
-}
+
 
 #showAll.btn-selected {
     background: darkgreen !important;
     border-color: darkgreen !important;
 }
 
-.psyTooltipLight {
-    color: purple;
-    border-bottom: 1px dotted purple;
-    text-decoration: none;
-}
 
-.psyTooltipDark {
-    color: magenta;
-    border-bottom: 1px dotted magenta;
-    text-decoration: none;
-}
 
 table thead {
     top: 40px;
     position: -webkit-sticky;
     position: sticky;
 }
+
+.midHead {
+    background-color: rgba(47, 79, 79, 0.60) !important;
+}
+
 
 .headingLight {
     color: maroon !important;
@@ -127,49 +185,27 @@ table thead {
     /* border-color:deepskyblue !important; */
 }
 
+.loreDescDetail {
+    /* border-radius: 5px; */
+    background-color:darkslategrey;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+
+.loreDescIcon {
+    width: 5em;
+    height: 6em;
+    padding-top: 1em;
+}
+
 footer {
     padding-bottom: 10px;
 }
 
-.biomancy {
-    background: skyblue;
-    color: black !important;
-}
 
-.divination {
-    background: plum;
-    color: black !important;
-}
-
-.pyromancy {
-    background: orange;
-    color: black !important;
-}
-
-.telekinesis {
-    background: lightblue;
-    color: black !important;
-}
-
-.telepathy {
-    background: turquoise;
-    color: black !important;
-}
-
-.tier1 {
-    background: lightgreen;
-    color: black !important;
-}
-
-.tier2 {
-    background: cyan;
-    ;
-    color: black !important;
-}
-
-.tier3 {
-    background: orangered;
-    color: white;
+.speciesCard {
+    background-color: rgba(255, 255, 255, .1) !important;
 }
 
 td:first-child {
@@ -192,64 +228,12 @@ td:first-child {
     background: rgb(120,120,120) !important;
 }
 
-.table-dark th {
-    background: rgba(128, 0, 0, 1) !important;
-    border-bottom: 1px solid darkgrey;
+th {
+    background: darkslategrey !important;
+    border-bottom: 1px solid blanchedalmond;
 }
 
 
-.sanctic {
-    background: #343a40;
-}
-
-.sanctic tr {
-    border: none !important;
-}
-
-.sanctic tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, .05) !important;
-}
-
-.sanctic td:first-child {
-    background-color: palegoldenrod !important;
-    color: black !important;
-}
-
-.sanctic tbody tr:hover {
-    background: rgb(120,120,120) !important;
-}
-
-.sanctic th {
-    background: rgba(128, 0, 0, 0.65) !important;
-    border-bottom: 1px solid darkgrey;
-}
-
-
-.malefic {
-    background: #343a40;
-}
-
-.malefic tr {
-    border: none !important;
-}
-
-.malefic td:first-child {
-    background-color: orangered !important;
-    color: black !important;
-}
-
-.malefic tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, .05) !important;
-}
-
-.malefic tbody tr:hover {
-    background: rgb(120,120,120) !important;
-}
-
-.malefic th {
-    background: rgba(128, 0, 0, 0.65) !important;
-    border-bottom: 1px solid darkgrey;
-}
 
 
 a:hover {
@@ -260,7 +244,7 @@ a:hover {
 .bar-pad {
     padding-top: 2px;
     padding-bottom: 2px;
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 1px solid blanchedalmond;
 }
 
 
@@ -273,7 +257,7 @@ a:hover {
     height: 0;
     margin: .5rem 0;
     overflow: hidden;
-    border-top: 1px solid #e9ecef
+    border-top: 1px solid blanchedalmond;
 }
 
 .hidden {

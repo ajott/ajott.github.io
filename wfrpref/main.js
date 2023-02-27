@@ -47,7 +47,7 @@ function showMenu() {
 
 
 function dropdownShow(str) {
-    let elements = ["combatDropdown", "critDropdown", "equipDropdown", "weaponDropdown", "armourDropdown", "psykerDropdown", "charDropdown", "effectsDropdown"]
+    let elements = ["charDropdown","magicDropdown"]
 
     for (let i = 0; i < elements.length; i++) {
         if (str == elements[i]) {

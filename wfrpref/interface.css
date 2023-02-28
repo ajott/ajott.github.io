@@ -212,12 +212,26 @@ table thead {
     /* border-color:deepskyblue !important; */
 }
 
+.TooltipLight {
+    color: goldenrod;
+    border-bottom: 1px dotted goldenrod;
+    text-decoration: none;
+}
+
 .loreDescDetail {
     /* border-radius: 5px; */
     background-color:darkslategrey;
     padding-left: 1em;
     padding-right: 1em;
     padding-bottom: 1em;
+}
+
+#skillNameSearch {
+    border-radius: 5px 0px 0px 5px;
+}
+
+#skillNameSearchClear {
+    border-radius: 0px 5px 5px 0px;
 }
 
 .loreDescIcon {
@@ -257,10 +271,12 @@ td:first-child {
 
 th {
     background: darkslategrey !important;
-    border-bottom: 1px solid blanchedalmond;
+    ;
 }
 
-
+.skillDesc table {
+    box-shadow: 2px 2px rgba(20,20,20,.4);
+}
 
 
 a:hover {
@@ -290,6 +306,52 @@ a:hover {
 .hidden {
     width:0px !important;
 }
+
+.advancementCard {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100% !important;
+    /* background-color: rgba(65,65,65) !important; */
+}
+.advancementCard .w3-card-2 {
+    background-color: rgba(270,270,270,.1) !important;
+}
+
+.padCard {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #111111;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 200;
+    width: 120px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
 
 
 .w3-darkslate-l5 {color:#000 !important; background-color:#f1f6f6 !important}

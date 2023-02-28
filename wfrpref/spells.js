@@ -40,15 +40,12 @@ function spellFilter(input) {
             }
 
 
-            $("#spell" + i).children().children().children(".spellName").html(spell[i]["name"])
-
-
-            // $("#spell" + i).children().children().children().children().children(".spellLore").text("Lore of " + spell[i]["lore"])
-
-            $("#spell" + i).children().children().children(".spellCN").text(spell[i]["CN"])
-            $("#spell" + i).children().children().children(".spellRange").html(spell[i]["range"])
-            $("#spell" + i).children().children().children(".spellTarget").html(spell[i]["target"])
-            $("#spell" + i).children().children().children(".spellDuration").html(spell[i]["duration"])
+            $("#spell" + i + " .spellName").html(spell[i]["name"])
+            
+            $("#spell" + i + " .spellCN").text(spell[i]["CN"])
+            $("#spell" + i + " .spellRange").html(spell[i]["range"])
+            $("#spell" + i + " .spellTarget").html(spell[i]["target"])
+            $("#spell" + i + " .spellDuration").html(spell[i]["duration"])
 
             if (spell[i]["description"] != undefined) {
                 if (typeof (spell[i]["description"]) == "object") {
@@ -60,7 +57,7 @@ function spellFilter(input) {
                 }
             }
             
-            $("#spell" + i).children().children().children(".spellDescription").html(htmlString)
+            $("#spell" + i + " .spellDescription").html(htmlString)
             $("#spell" + i).addClass("grid-item")
 
             htmlString = "";

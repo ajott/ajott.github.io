@@ -47,7 +47,7 @@ function showMenu() {
 
 
 function dropdownShow(str) {
-    let elements = ["charDropdown","magicDropdown"]
+    let elements = ["charDropdown","magicDropdown","skillDropdown"]
 
     for (let i = 0; i < elements.length; i++) {
         if (str == elements[i]) {

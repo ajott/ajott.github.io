@@ -37,9 +37,23 @@ footer {
     background-color: darkslategrey;
 }
 
+a {
+    cursor: pointer;
+    color: blanchedalmond !important;
+    text-shadow:black 0px 1px 0px !important;
+    text-decoration: underline 1px dotted blanchedalmond;
+}
+
+a:hover {
+    cursor: pointer;
+    color: goldenrod !important;
+    text-decoration: none !important;
+}
+
 skill {
     cursor: pointer;
     color: blanchedalmond !important;
+    text-shadow:black 0px 1px 0px !important;
     text-decoration: underline 1px dotted blanchedalmond;
 }
 
@@ -52,6 +66,7 @@ skill:hover {
 talent {
     cursor: pointer;
     color: blanchedalmond !important;
+    text-shadow:black 1px 1px 1px !important;
     text-decoration: underline 1px dotted blanchedalmond;
 }
 
@@ -307,9 +322,6 @@ th {
 }
 
 
-a:hover {
-    text-decoration: none !important;
-}
 
 
 .bar-pad {

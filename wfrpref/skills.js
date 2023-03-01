@@ -508,7 +508,9 @@ function talentFilter(char, input) {
 
 function talentNameFilter(exact = 0) {
 
-    $('.talentFilterBtn').removeClass("btn-selected")    
+    $('.talentFilterBtn').removeClass("btn-selected")
+        
+    $("#talentTestSearch").val("")
 
     var input = document.getElementById('talentNameSearch').value.toUpperCase();
 
@@ -546,7 +548,9 @@ function talentNameFilter(exact = 0) {
 
 function talentTestFilter(exact = 0) {
 
-    $('.talentFilterBtn').removeClass("btn-selected")    
+    $('.talentFilterBtn').removeClass("btn-selected")   
+
+    $("#talentNameSearch").val("") 
 
     var input = document.getElementById('talentTestSearch').value.toUpperCase();
 

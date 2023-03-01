@@ -22,7 +22,6 @@
 <body>
     <div class="w3-top w3-darker-grey w3-row-padding bar-pad" id="navBarDiv">
     </div>
-
     <div id="skillTop" class="w3-row-padding w3-section info">
         <h1>Skills</h1>
 
@@ -131,7 +130,6 @@
 
     <div id="skillList" class="w3-row-padding w3-section info">
         <h1>Master Skill List</h1>
-
         <div class="w3-row-padding w3-section">
             <div class="w3-col s0 m0 l2">
                 <p></p>
@@ -192,7 +190,8 @@
                                     onclick="skillNameCopy(this)" id="cardCopy"><i class="fa fa-clone tooltip"
                                         aria-hidden="true">
                                         <div class="tooltiptext">Copy Link</div>
-                                    </i></div><span class="skillName"></span> (<span class="skillChar"></span>)
+                                    </i></div><span style="display: none;" class="skillID"></span><span
+                                    class="skillName"></span> (<span class="skillChar"></span>)
                             </h3>
                         </div>
                         <div class="w3-row-padding">
@@ -244,7 +243,7 @@
                     for what this means written into its description. Further, it may
                     have an associated Skill marked under ‘Tests’ (see Talent Format):
                     if so, <eh><u>for each time you have the Talent, you gain +1 SL on any
-                    successful use of a Skill tied to the Talent</u></eh>.</p>
+                            successful use of a Skill tied to the Talent</u></eh>.</p>
             </div>
             <div class="w3-col s0 m0 l5">
                 <h3>Talent Format</h3>
@@ -282,39 +281,13 @@
             <div class="w3-col s12 m12 l8 w3-display-container">
                 <p>
                 <div class="w3-bar w3-middle" style="padding-top: 4px; padding-bottom: 4px">
-                    <input id="talentNameSearch" class="w3-bar-item" onkeyup="talentNameFilter()"
+                    <input id="talentNameSearch" class="w3-bar-item w3-round-large" onkeyup="talentNameFilter()"
                         placeholder="Search a talent name..." />
-                    <button id="talentNameSearchClear" style="margin-right:1em !important" onclick="clearTalentFilter()"
-                        class="w3-button w3-pale-red w3-bar-item">Clear</button>
-                    <!-- <button id="skillBtn" class="w3-button w3-blue-grey w3-bar-item skillFilterBtn firstBtn"
-                        onclick="skillFilter(this,1)">Basic</button>
-                    <button id="skillBtn" class=" w3-button w3-blue-grey w3-bar-item skillFilterBtn"
-                        onclick="skillFilter(this,1)">Advanced</button>
-                    <button id="skillBtn" style="margin-right:1em !important"
-                        class=" w3-button w3-blue-grey w3-bar-item skillFilterBtn lastBtn"
-                        onclick="skillFilter(this,1)">Grouped</button> -->
-                    <!-- <button id="skillBtn" class=" w3-button w3-blue-grey w3-bar-item skillFilterBtn firstBtn"
-                        onclick="talentFilter('Weapon Skill Bonus', this)">WS</button>
-                    <button id="skillBtn" class=" w3-button w3-blue-grey w3-bar-item skillFilterBtn"
-                        onclick="talentFilter('Ballistic Skill Bonus', this)">BS</button>
-                    <button id="skillBtn" class="w3-button w3-blue-grey w3-bar-item skillFilterBtn"
-                        onclick="talentFilter('Strength Bonus', this)">S</button>
-                    <button id="skillBtn" class="w3-button w3-blue-grey w3-bar-item skillFilterBtn"
-                        onclick="talentFilter('Toughness Bonus', this)">T</button>
-                    <button id="skillBtn" class=" w3-button w3-blue-grey w3-bar-item skillFilterBtn"
-                        onclick="talentFilter('Initiative Bonus', this)">I</button>
-                    <button id="skillBtn" class=" w3-button w3-blue-grey w3-bar-item skillFilterBtn"
-                        onclick="talentFilter('Agility Bonus', this)">Ag</button>
-                    <button id="skillBtn" class="w3-button w3-blue-grey w3-bar-item skillFilterBtn"
-                        onclick="talentFilter('Dexterity Bonus', this)">Dex</button>
-                    <button id="skillBtn" class="w3-button w3-blue-grey w3-bar-item skillFilterBtn"
-                        onclick="talentFilter('Intelligence Bonus', this)">Int</button>
-                    <button id="skillBtn" class="w3-button w3-blue-grey w3-bar-item skillFilterBtn"
-                        onclick="talentFilter('Willpower Bonus', this)">WP</button>
-                    <button id="skillBtn" class="w3-button w3-blue-grey w3-bar-item skillFilterBtn lastBtn"
-                        onclick="talentFilter('Fellowship Bonus', this)">Fel</button>
-                    <button id="talentSearchClear" style="margin-left:1em !important" onclick="clearTalentFilter()"
-                        class="w3-button w3-pale-red w3-bar-item w3-round">Clear</button> -->
+                    <input id="talentTestSearch" style="margin-left: 1em !important;" class="w3-bar-item w3-round-large"
+                        onkeyup="talentTestFilter()" placeholder="Search a test..." />
+                    <button id="talentNameSearchClear" style="margin-left: 1em !important; margin-right:1em !important"
+                        onclick="clearTalentFilter()"
+                        class="w3-button w3-pale-red w3-bar-item w3-round-large">Clear</button>
                 </div>
                 </p>
             </div>
@@ -392,7 +365,7 @@
                                 }, 500)
 
                             } else if (gridParam == "#talentList") {
-                                $("#talentNameSearch").val("\"" + nameParam + "\"");
+                                $("#talentNameSearch").val(nameParam);
                                 talentNameFilter();
                                 setTimeout(function () {
                                     document.getElementById("talentList").scrollIntoView();
@@ -411,7 +384,7 @@
                                     }, 500)
 
                                 } else if (gridParam == "#talentList") {
-                                    $("#talentNameSearch").val("\"" + nameParam + "\"");
+                                    $("#talentNameSearch").val(nameParam);
                                     talentNameFilter();
                                     setTimeout(function () {
                                         document.getElementById("talentList").scrollIntoView();
@@ -430,3 +403,4 @@
 </footer>
 
 </html>
+

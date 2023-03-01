@@ -37,6 +37,30 @@ footer {
     background-color: darkslategrey;
 }
 
+skill {
+    cursor: pointer;
+    color: blanchedalmond !important;
+    text-decoration: underline 1px dotted blanchedalmond;
+}
+
+skill:hover {
+    cursor: pointer;
+    color: goldenrod !important;
+    text-decoration: none !important;
+}
+
+talent {
+    cursor: pointer;
+    color: blanchedalmond !important;
+    text-decoration: underline 1px dotted blanchedalmond;
+}
+
+talent:hover {
+    cursor: pointer;
+    color: goldenrod !important;
+    text-decoration: none !important;
+}
+
 .w3-dropdown-content {
     border-left: 1px solid blanchedalmond !important;
     border-right: 1px solid blanchedalmond !important;
@@ -70,7 +94,7 @@ hr {
   }
   
   hr:after {
-    content: "⚔"; /* Crossed Swords */
+    content: "💀"; /* Crossed Swords */
     color: silver;
     font-size: 2em;
     display: inline; /* for vertical centering and background knockout */
@@ -275,6 +299,10 @@ th {
 }
 
 .skillDesc table {
+    box-shadow: 2px 2px rgba(20,20,20,.4);
+}
+
+.talentDesc table {
     box-shadow: 2px 2px rgba(20,20,20,.4);
 }
 

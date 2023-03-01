@@ -20,8 +20,12 @@ function inRangeInclusive(num, range) {
 
 $(document).ready(function () {
     buildNavbar();
-    // setTimeout( function() {
-    //     toDark()}, 250);
+    setTimeout( function() {
+        $('skill').attr('onclick','outSkillSearch(this)');
+        $('talent').attr('onclick','outTalentSearch(this)');
+    }, 300);
+
+    
 });
 
 function accordion(id, el) {
@@ -62,6 +66,28 @@ function dropdownShow(str) {
             x.className = x.className.replace(" w3-show", "");
         }
     }
+}
+
+function outSkillSearch(el) {
+
+    let baseURI = location.href.split("wfrpref")[0];
+    let pageURI = baseURI + "wfrpref/skills.html#skillList?s=";
+    let skillName = el.innerText.split(' (')[0];
+    let skillURI = encodeURIComponent(skillName)
+
+    let finalURI = pageURI + skillURI
+    window.open(finalURI, '_blank');
+}
+
+function outTalentSearch(el) {
+
+    let baseURI = location.href.split("wfrpref")[0];
+    let pageURI = baseURI + "wfrpref/skills.html#talentList?s=";
+    let talentName = el.innerText.split(' (')[0];
+    let talentURI = encodeURIComponent(talentName)
+
+    let finalURI = pageURI + talentURI
+    window.open(finalURI, '_blank');
 }
 
 

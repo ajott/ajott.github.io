@@ -282,6 +282,37 @@ table thead {
     padding-bottom: 1em;
 }
 
+.cultDescDetail {
+    /* border-radius: 5px; */
+    background-color:darkslategrey;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+
+.cultDescDetail1 {
+    /* border-radius: 5px; */
+    opacity: 1 !important;
+    z-index: 3;
+    position: relative;
+}
+
+.cultImg {
+    padding: 1em !important;
+    opacity: 0.2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+}
+
+.cultDesc {
+    overflow: hidden;
+    position: relative;
+}
+
 #skillNameSearch {
     border-radius: 5px 0px 0px 5px;
 }

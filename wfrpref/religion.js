@@ -22,6 +22,24 @@ function miracleFilter(input) {
         if (miracle[i]["god"] == cult || isBlessing) {
 
 
+            // Cult Description
+            $('.cultImg').attr('src',"./img/"+cult+" Shrine.webp")
+
+            $('.godDesc').html(cults[cult]["title"]);
+            $('.cultSOP').html(cults[cult]["SOP"]);
+            $('.cultHOC').html(cults[cult]["HOC"]);
+            $('.cultOrders').html(cults[cult]["Orders"]);
+            $('.cultFestivals').html(cults[cult]["Festivals"]);
+            $('.cultBooks').html(cults[cult]["Books"]);
+            $('.cultSymbols').html(cults[cult]["Symbols"]);
+            $('.cultGodDesc').html(cults[cult]["GodDesc"]);
+            $('.cultWorshippers').html(cults[cult]["Worshippers"]);
+            $('.cultSites').html(cults[cult]["Sites"]);
+            $('.cultPenances').html(cults[cult]["Penances"]);
+            $('.cultStrictures').html(cults[cult]["Strictures"]);
+            $('.cultDescDetail').show();
+
+
             var $div = $('#defaultMiracleCard');
 
             var $klon = $div.clone().prop('id', 'miracle' + i);
@@ -95,6 +113,37 @@ function miracleFilter(input) {
 
 }
 
+
+var cults = {
+    "Manann": {
+        "title": "Manann, God of the Sea",
+        "SOP": "Marienburg, the Wasteland",
+        "HOC": "Matriarch of the Sea",
+        "Orders": "Order of the Albatross, Order of the Mariner",
+        "Festivals": "Spring Equinox, Autumn Equinox",
+        "Books": "The 1000 Shanties, Tales of the Albatross, Liber Manaan",
+        "Symbols": "Five-tined Crown, Waves, Anchors",
+        "GodDesc": "<p>Volatile Manann, the son of Taal and Rhya, is the capricious King of the Sea, Master of the Maelstroms, and Summoner of Storms. Known for his black moods and erratic temper, folk claim his cult is needed more than any other, for if ever there is a god that must be appeased, it’s Manaan. He’s depicted as an enormous, blackbearded man with seaweed in his hair and a great, five-pointed crown of black iron upon his troubled brow. He’s said to dwell at the bottom of the ocean, the rise and fall of his massive chest forming the waves and tides as the greatest monsters of the deep gather in his court.</p>",
+        "Worshippers": "<p>Manann is worshipped along coasts throughout the Old World, wherever people make their living from the sea or live close enough for storms and floods to threaten their homes. Even those who know little of Manann will throw a coin or other small treasure into the water before beginning a sea voyage in the hope of a smooth crossing.</p><p> The cult has a significant number of orders, mostly monastic, tasked to guard isolated, sacred islands. The Order of the Albatross is largest, comprised of priests who maintain temples across the Old World and bless merchant or naval vessels with their presence. Often accompanying them, the Order of the Mariner is the military arm of Manann, the cult’s templar-marines, sworn protectors of Marienburg.</p><p> Manann’s clerics usually wear robes of dark greenish-blue or blue-grey, trimmed with a white wave-pattern.</p>",
+        "Sites": "<p>Manann’s temples are found in all coastal towns and cities, and in most river ports where seagoing vessels berth. The high temple is in the great port-city of Marienburg: a huge, lavishly decorated complex open to the tides. The Matriarch of the Sea, head of the Order of the Albatross, is based there, a woman who ostensibly leads the entire cult of Manann, although in practice the sea-god’s clerics are as mercurial as their god, and as likely to be stubborn as to serve. The cult also maintains many monasteries and abbeys on small isolated islands, most dedicated to one of Manann’s many saints.</p> ",
+        "Penances": "<p>Penances from Manann often involve hazardous, maritime pilgrimages, tests of sailing skills, or expeditions against the sea-god’s enemies, especially followers of the heretical cult of Stromfels, God of Pirates, Wreckers, and Sharks.</p>",
+        "Strictures": "<li>No whistling or swearing when at sea or on holy ground.</li><li>Never harm an albatross.</li><li>First catch to Manann.</li><li>A silver and fish to every Manannite temple and shrine approached.</li><li>Hunt down the servants of Stromfels wherever they may hide.</li>"
+    },
+    "Verena": {
+        "title": "Verena, Goddess of Wisdom",
+        "SOP": "None",
+        "HOC": "None",
+        "Orders": "The Order of Scalebearers, the Order of Lorekeepers, the Order of Mysteries, the Order of Everlasting Light",
+        "Festivals": "Year Blessing",
+        "Books": "Canticum Verena, Eulogium Verena, The Book of Swords",
+        "Symbols": "Scales of Justice, Owls, Downward-pointing Swords",
+        "GodDesc": "<p>Wise Verena, the Goddess of Learning and Justice, is the wife of dark Morr and the mother of Myrmidia and Shallya. She is generally depicted as a tall, classically beautiful woman, and usually carries a sword and a set of scales. As the patron of justice she is concerned with fairness rather than the letter of the law: she opposes tyranny and oppression as much as crime. </p>",
+        "Worshippers": "<p>Verena is worshipped throughout the Old World, especially in the south. Her devout followers include scholars, lawyers, and magistrates, as well as some wizards of the Colleges of Magic, particularly of the Grey and Light orders.</p> <p> The cult of Verena has no rigid hierarchy: it is said that Verena alone heads the cult, and no mortal intermediary is needed because truth is self-evident and requires no interpretation. Temple priests from the Order of Lorekeepers are tasked to preserve knowledge and communicate it to the community. They keep up a voluminous correspondence with each other, exchanging information and news.</p> <p> Priests from the equally influential Order of Scalebearers are much sought after to act as judges, arbitrators, and go-betweens, because of their famed impartiality and mastery of the law. The Order of Mysteries is much smaller and less well-known, and contains warrior-priests who seek lost and forgotten lore, wherever it may lie. The last major order is the Knights of the Everlasting Light, templars famed for their sword skills, sense of fairness, and legendary bad luck. Verena’s cultists usually wear plain white robes, symbolic of pure truth and impartiality.</p>",
+        "Sites": "<p>Temples to Verena can be found in most cities and larger towns, generally situated in the administrative or university quarters. Most libraries and court-houses include a shrine to the goddess, and smaller shrines can be found in the homes of many scholars and lawyers. Temples usually have colonnaded facades, with symbols of the goddess and allegorical figures of learning presented in low relief. Inside is a large statue of Verena, normally seated with a book in her lap, a pair of scales in her left hand, and her right hand resting on the hilt of a sword. Smaller rooms lead off from the main temple, including a library and chambers for the attendant priests. Each temple has at least one meeting room where negotiations can take place under the eyes of the goddess.</p> ",
+        "Penances": "<p>Penances set by Verena normally involve the recovery or preservation of knowledge, the righting of an injustice, or the resolution of a dispute. Cultists may also be sent to recover a longforgotten book of lore, or to mediate in a difficult quarrel. This could be anything from a farmers’ boundary dispute to unpicking the complicated politics of two realms on the brink of war. </p>",
+        "Strictures": "<li>Never refuse to arbitrate a dispute when asked.</li> <li>Always tell the truth without fear or favour.</li> <li>Protect knowledge at all costs.</li> <li>Combat must be a last resort when all alternative routes are fruitless.</li> <li>Never become a tool of injustice or heresy.</li>"
+    }
+}
 
 
 

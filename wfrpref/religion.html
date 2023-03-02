@@ -31,82 +31,100 @@
         </div>
         <div class="w3-col s12 m12 l10">
             <div id="miracleCards" class="w3-section w3-row-padding info w3-center">
-                    <h1 class="info">Divine Manifestations</h1>
-                    <div class="w3-bar" style="padding-top: 4px; padding-bottom: 4px">
-                        <button id="cultBtnManann"
-                            class="w3-disabled w3-button w3-blue-grey w3-bar-item cultBtn  firstBtn"
-                            onclick="miracleFilter('Manann')">Manann</button>
-                        <button id="cultBtnMorr"
-                            class="w3-disabled w3-button w3-blue-grey w3-bar-item  cultBtn"
-                            onclick="miracleFilter('Morr')">Morr</button>
-                        <button id="cultBtnMyrmidia"
-                            class="w3-disabled w3-button w3-blue-grey w3-bar-item -orange cultBtn"
-                            onclick="miracleFilter('Myrmidia')">Myrmidia</button>
-                        <button id="cultBtnRanald"
-                            class="w3-disabled w3-button w3-blue-grey w3-bar-item -blue cultBtn"
-                            onclick="miracleFilter('Ranald')">Ranald</button>
-                        <button id="cultBtnRhya"
-                            class="w3-disabled w3-button w3-blue-grey w3-bar-item  cultBtn"
-                            onclick="miracleFilter('Rhya')">Rhya</button>
-                        <button id="cultBtnShallya"
-                            class="w3-disabled w3-button w3-blue-grey w3-bar-item  cultBtn"
-                            onclick="miracleFilter('Shallya')">Shallya</button>
-                        <button id="cultBtnSigmar"
-                            class="w3-disabled w3-button w3-blue-grey w3-bar-item  cultBtn"
-                            onclick="miracleFilter('Sigmar')">Sigmar</button>
-                        <button id="cultBtnTaal"
-                            class="w3-disabled w3-button w3-blue-grey w3-bar-item  cultBtn"
-                            onclick="miracleFilter('Taal')">Taal</button>
-                        <button id="cultBtnUlric"
-                            class="w3-disabled w3-button w3-blue-grey w3-bar-item  cultBtn"
-                            onclick="miracleFilter('Ulric')">Ulric</button>
-                        <button id="cultBtnVerena"
-                            class=" w3-button w3-blue-grey w3-bar-item cultBtn  lastBtn"
-                            onclick="miracleFilter('Verena')">Verena</button>
+                <h1 class="info">Divine Manifestations</h1>
+                <div class="w3-bar" style="padding-top: 4px; padding-bottom: 4px">
+                    <button id="cultBtnManann" class="w3-disabled w3-button w3-blue-grey w3-bar-item cultBtn  firstBtn"
+                        onclick="miracleFilter('Manann')">Manann</button>
+                    <button id="cultBtnMorr" class="w3-disabled w3-button w3-blue-grey w3-bar-item  cultBtn"
+                        onclick="miracleFilter('Morr')">Morr</button>
+                    <button id="cultBtnMyrmidia" class="w3-disabled w3-button w3-blue-grey w3-bar-item -orange cultBtn"
+                        onclick="miracleFilter('Myrmidia')">Myrmidia</button>
+                    <button id="cultBtnRanald" class="w3-disabled w3-button w3-blue-grey w3-bar-item -blue cultBtn"
+                        onclick="miracleFilter('Ranald')">Ranald</button>
+                    <button id="cultBtnRhya" class="w3-disabled w3-button w3-blue-grey w3-bar-item  cultBtn"
+                        onclick="miracleFilter('Rhya')">Rhya</button>
+                    <button id="cultBtnShallya" class="w3-disabled w3-button w3-blue-grey w3-bar-item  cultBtn"
+                        onclick="miracleFilter('Shallya')">Shallya</button>
+                    <button id="cultBtnSigmar" class="w3-disabled w3-button w3-blue-grey w3-bar-item  cultBtn"
+                        onclick="miracleFilter('Sigmar')">Sigmar</button>
+                    <button id="cultBtnTaal" class="w3-disabled w3-button w3-blue-grey w3-bar-item  cultBtn"
+                        onclick="miracleFilter('Taal')">Taal</button>
+                    <button id="cultBtnUlric" class="w3-disabled w3-button w3-blue-grey w3-bar-item  cultBtn"
+                        onclick="miracleFilter('Ulric')">Ulric</button>
+                    <button id="cultBtnVerena" class=" w3-button w3-blue-grey w3-bar-item cultBtn  lastBtn"
+                        onclick="miracleFilter('Verena')">Verena</button>
+                </div>
+                <div class="w3-row-padding w3-center">
+                    <div class="w3-col s0 m0 l2">
+                        <p></p>
                     </div>
-                    <div class="w3-row-padding w3-center">
-                        <div class="w3-col s0 m0 l2">
-                            <p></p>
-                        </div>
-                        <div class="w3-col s12 m12 l8">
-                            <div class="cultDesc w3-center"></div>
-                        </div>
-                        <div class="w3-col s0 m0 l2">
-                            <p></p>
-                        </div>
-                    </div>
-                    <br />
-                    <div class="miracleGrid w3-row-padding">
-                        <div class="w3-hide" id="defaultMiracleCard" style="display:none;">
-                            <div class="w3-card-2 w3-round-large grid-card">
-                                <div class="w3-row-padding">
-                                    <!-- <div style="text-align: right; margin-bottom: -20px; margin-top: 5px;" onclick="cardNameCopy(this)" id="cardCopy"><i class="fa fa-clone tooltip" aria-hidden="true"><div class="tooltiptext">Copy Link</div></i></div> -->
-                                    <h3 class="miracleName"></h3>
-                                    <div class="miracleTier w3-hide"></div> 
-                                    <h5> <em><span class="miracleGod"></span> </em>
+                    <div class="w3-col s12 m12 l8">
+                        <div class="cultDesc w3-center">
+                            <div class="w3-card-2 w3-round-large w3-center cultDescDetail" style="text-align: left !important; display: none;">                                
+                            <img src="" class="cultImg"/><div class="cultDescDetail1">
+                                <h3 style="padding-top: 1em !important;"><em class="godDesc"></em></h3>
+                                <p>
+                                    <b>Seat of Power: </b><span class="cultSOP"></span> <br />
+                                    <b>Head of the Cult: </b><span class="cultHOC"></span> <br />
+                                    <b>Primary Orders: </b><span class="cultOrders"></span><br />
+                                    <b>Major Festivals: </b><span class="cultFestivals"></span> <br />
+                                    <b>Popular Holy Books: </b><em class="cultBooks"></em> <br />
+                                    <b>Common Holy Symbols: </b><span class="cultSymbols"></span> <br />
+                                </p>                                
+                                <span class="cultGodDesc"></span>
+                                <h4>Worshippers</h4><span class="cultWorshippers">
+                                </span><h4>Holy Sites</h4><span class="cultSites">
+                                </span>
+                                <h4>Penances</h4><span class="cultPenances">
+                                </span>
+                                <div class="w3-panel w3-pale-yellow w3-leftbar w3-rightbar w3-border-amber">
+                                    <h4>Strictures</h4>
+                                    <p>
+                                    <ul class="cultStrictures">
+                                        
+                                    </ul>
+                                    </p>
                                 </div>
-                                <div class="w3-row-padding">
-                                    <emph>Range: </emph><span class="miracleRange"></span>
-                                    <br />
-                                    <emph>Target: </emph><span class="miracleTarget"></span>
-                                    <br />
-                                    <emph>Duration: </emph><span class="miracleDuration"></span>
                                 </div>
-                                <div class="w3-row-padding">
-                                    <div class="miracleDescription"></div>
-                                </div>
-                                <br />
                             </div>
                         </div>
                     </div>
+                    <div class="w3-col s0 m0 l2">
+                        <p></p>
+                    </div>
                 </div>
+                <br />
+                <div class="miracleGrid w3-row-padding">
+                    <div class="w3-hide" id="defaultMiracleCard" style="display:none;">
+                        <div class="w3-card-2 w3-round-large grid-card">
+                            <div class="w3-row-padding">
+                                <!-- <div style="text-align: right; margin-bottom: -20px; margin-top: 5px;" onclick="cardNameCopy(this)" id="cardCopy"><i class="fa fa-clone tooltip" aria-hidden="true"><div class="tooltiptext">Copy Link</div></i></div> -->
+                                <h3 class="miracleName"></h3>
+                                <div class="miracleTier w3-hide"></div>
+                                <h5> <em><span class="miracleGod"></span> </em>
+                            </div>
+                            <div class="w3-row-padding">
+                                <emph>Range: </emph><span class="miracleRange"></span>
+                                <br />
+                                <emph>Target: </emph><span class="miracleTarget"></span>
+                                <br />
+                                <emph>Duration: </emph><span class="miracleDuration"></span>
+                            </div>
+                            <div class="w3-row-padding">
+                                <div class="miracleDescription"></div>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="w3-col s0 m0 l1">
             &emsp;
         </div>
 
     </div>
-    <hr/>
+    <hr />
 </body>
 <footer>
     <div class="w3-row-padding w3-section">
@@ -151,3 +169,4 @@
 
 
 </html>
+

@@ -21,8 +21,8 @@ function inRangeInclusive(num, range) {
 $(document).ready(function () {
     buildNavbar();
     setTimeout( function() {
-        $('skill').attr('onclick','outSkillSearch(this)');
-        $('talent').attr('onclick','outTalentSearch(this)');
+        //$('skill').attr('onclick','outSkillSearch(this)');
+        // $('talent').attr('onclick','outTalentSearch(this)');
     }, 300);
 
     
@@ -83,7 +83,8 @@ function outTalentSearch(el) {
 
     let baseURI = location.href.split("wfrpref")[0];
     let pageURI = baseURI + "wfrpref/skills.html#talentList?s=";
-    let talentName = el.innerText.split(' (')[0];
+    //let talentName = el.innerText.split(' (')[0];
+    let talentName = el;
     let talentURI = encodeURIComponent(talentName)
 
     let finalURI = pageURI + talentURI

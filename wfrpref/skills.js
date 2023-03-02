@@ -21,6 +21,64 @@ function skillFilter(input, mod = 0) {
     
 }
 
+
+
+
+$(function() {
+    $("#skillDialog").dialog({
+      autoOpen: false,
+      resizable: false,
+      height: "auto",
+      width: "auto",
+      modal: true,
+      buttons: {
+        "Take me there": function() {
+          outSkillSearch(this);
+        },
+        Close: function() {
+            $(this).dialog("close");
+          }
+      }
+    });
+    $("skill").click(function() {
+
+        let srchRslt = skillFuse.search(this.innerHTML)
+        buildSkillLite(srchRslt[0]["item"])
+        
+      $("#skillDialog").dialog("open");
+    });
+  });
+
+
+  $(function() {
+    $("#talentDialog").dialog({
+      autoOpen: false,
+      resizable: false,
+      height: "auto",
+      width: "auto",
+      modal: true,
+      buttons: {
+        "Take me there": function() {            
+          outTalentSearch($("#talentDialog .talentName").html());
+        },
+        Close: function() {
+            $(this).dialog("close");
+          }
+      }
+    });
+    $("talent").click(function() {
+
+        let srchRslt = talentFuse.search(this.innerHTML)
+        buildTalentLite(srchRslt[0]["item"])
+        
+      $("#talentDialog").dialog("open");
+    });
+  });
+
+
+
+
+
 function skillNameFilter(exact = 0) {
 
     $('.skillFilterBtn').removeClass("btn-selected")    
@@ -88,6 +146,45 @@ function skillNameCopy(el) {
         $(".tooltiptext").css("background-color","black");
         $(".tooltiptext").css("color","white");
     }, 500)
+}
+
+function buildSkillLite(skillSearch) {
+
+        $("#skillDialog" + " .skillName").html(skillSearch["name"])
+
+      
+        $("#skillDialog" + " .skillChar").html(skillSearch["char"])
+
+        if (skillSearch["spec"] != "") {
+            $("#skillDialog" + " .skillTier").text(skillSearch["tier"]+", Grouped")
+            $("#skillDialog").addClass("Grouped")
+            $("#skillDialog" + " .skillSpec").html("<b>Example Specialisations: </b>"+skillSearch["spec"])
+        } else {
+            $("#skillDialog" + " .skillTier").text(skillSearch["tier"])
+        }
+
+        $("#skillDialog" + " .skillDesc").html(skillSearch["desc"])
+        
+
+        $("#skillDialog").addClass(skillSearch["tier"]+" "+skillSearch["char"])
+
+        $("#skillDialog").addClass("skill-item")
+
+}
+
+function buildTalentLite(talentSearch) {
+    $("#talentDialog .talentName").html(talentSearch["name"])
+
+      
+    $("#talentDialog .talentMax").html(talentSearch["max"])
+
+    if (talentSearch["test"] != "") {
+       $("#talentDialog .talentTest").html("<b class=\"w3-tooltip TooltipLight\">Test:<span class=\"w3-text w3-tag w3-darkslate-l1 w3-small w3-round\" style=\"position:absolute;left:0;bottom:18px; padding: 1em;\">Gain +1 SL on successful tests with this skill</span></b> "+talentSearch["test"])
+    }
+
+    $("#talentDialog .talentDesc").html(talentSearch["desc"])
+
+    $("#talentDialog").addClass("talent-item")
 }
 
 

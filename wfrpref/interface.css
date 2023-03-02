@@ -357,6 +357,16 @@ th {
     background-color: rgba(270,270,270,.1) !important;
 }
 
+.popupCard {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100% !important;
+    /* background-color: rgba(65,65,65) !important; */
+}
+.popupCard .w3-card-2 {
+    background-color: rgba(270,270,270,.1) !important;
+}
+
 .padCard {
     padding-left: 1em;
     padding-right: 1em;

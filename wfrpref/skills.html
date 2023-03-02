@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="./isotope.pkgd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
     <script src="main.js"></script>
     <script src="skills.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -394,6 +395,15 @@
                         }
                     }
                 </script>
+                <script>$(document).ready(function (){
+                        skillFuse = new Fuse(skill,{
+                    keys: ["name"]
+                    })});
+                    $(document).ready(function (){
+                        talentFuse = new Fuse(talent,{
+                    keys: ["name"]
+                    })});
+                </script>
             </div>
         </div>
         <div class="w3-col s0 m1 l1">
@@ -401,6 +411,56 @@
         </div>
     </div>
 </footer>
+
+
+<div id="skillDialog" title="Description">
+    <div class="popupCard">
+        <div class="w3-card-2 w3-round-large padCard">
+            <div class="w3-row-padding">
+                <h3>
+                    <div style="text-align: right; margin-bottom: -20px; margin-top: 5px;"
+                        onclick="skillNameCopy(this)" id="cardCopy"><i class="fa fa-clone tooltip"
+                            aria-hidden="true">
+                            <div class="tooltiptext">Copy Link</div>
+                        </i></div><span style="display: none;" class="skillID"></span><span
+                        class="skillName"></span> (<span class="skillChar"></span>)
+                </h3>
+            </div>
+            <div class="w3-row-padding">
+                <h4 style="margin-top:-1em !important;"><em><span class="skillTier"></span></em></h4>
+            </div>
+            <div class="w3-row-padding">
+                <div class="skillDesc"></div>
+                <div class="skillSpec"></div>
+            </div>
+            <br />
+        </div>
+    </div>
+</div>
+
+<div id="talentDialog" title="Description">
+    <div class="popupCard" id="defaultTalentCard">
+        <div class="w3-card-2 w3-round-large padCard">
+            <div class="w3-row-padding">
+                <h3>
+                    <div style="text-align: right; margin-bottom: -20px; margin-top: 5px;"
+                        onclick="talentNameCopy(this)" id="cardCopy"><i class="fa fa-clone tooltip"
+                            aria-hidden="true">
+                            <div class="tooltiptext">Copy Link</div>
+                        </i></div><span class="talentName"></span>
+                </h3>
+            </div>
+            <div class="w3-row-padding">
+                <h5 style="text-align: left !important;">Max: <span class="talentMax"></span></h5>
+                <h5 style="text-align: left !important;"><span class="talentTest"></span></h5>
+            </div>
+            <div class="w3-row-padding">
+                <div class="talentDesc"></div>
+            </div>
+            <br />
+        </div>
+    </div>
+</div>
 
 </html>
 

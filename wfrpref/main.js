@@ -22,14 +22,35 @@ $(document).ready(function () {
     buildNavbar();
     setTimeout( function() {
         initializeModals();
+        $('#talentDialog').on('click', function(e) {
+            if (e.target !== this)
+              return;
+            
+            hideTalentModal();
+          });
+          $('#skillDialog').on('click', function(e) {
+              if (e.target !== this)
+                return;
+              
+              hideSkillModal();
+            });
     }, 300);    
 });
 
 function initializeModals () {
     $('skill').attr('onclick','initializeSkillModal(this)');
     $('talent').attr('onclick','initializeTalentModal(this)');
-
 }
+
+function closeModals(e) {
+    if (e.target !== this)
+      return;
+    
+    alert( 'clicked the foobar' );
+}
+
+
+
 
 function accordion(id, el) {
     var x = document.getElementById(id);

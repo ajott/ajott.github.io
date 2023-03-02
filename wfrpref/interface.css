@@ -115,6 +115,15 @@ hr {
     /* bottom: 2px; */
   }
 
+.blessCard .w3-card-2{
+    background-color: slategrey !important;
+}
+
+.cultBtn {
+    width: 7em !important;
+    border: 1px solid blanchedalmond !important;
+}
+
 .loreBtn {
     width: 7em !important;
     border: 1px solid blanchedalmond !important;

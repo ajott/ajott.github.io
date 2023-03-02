@@ -666,5 +666,23 @@ var spell = [
         "target": "Special",
         "duration": "Instant",
         "description": "You manipulate complicated flows of <em>Dhar</em> into your targets, filling them with overwhelming energy. <eh>Intelligence Bonus</eh> targets with the <em>Undead</em> Trait gain a free Move or Action — you choose one or the other to affect all targets — this is taken the moment the spell is cast. For each +2 SL you score, you may invigorate an extra <eh>Intelligence Bonus</eh> targets."
+    }, {
+        "name": "Cerulean Shield",
+        "lore": "Heavens",
+        "wind": "Azyr",
+        "CN": 7,
+        "range": "You",
+        "target": "You",
+        "duration": "<eh>Willpower Bonus</eh> Rounds",
+        "description": "You encase yourself in a crackling cage of sparking electricity and <em>Azyr</em>. For the spell’s duration, gain +SL Armour Points to all locations against melee attacks. If attacked by metal weapons &mdash; such as daggers, swords, and spears with metal tips &mdash; your attacker takes <eh>+Willpower Bonus</eh> Damage."
+    }, {
+        "name": "Comet of Casandora",
+        "lore": "Heavens",
+        "wind": "Azyr",
+        "CN": 10,
+        "range": "Initiative yards",
+        "target": "AoE (Initiative Bonus yards)",
+        "duration": "Special",
+        "description": "<p>You channel all the <em>Azyr</em> you can muster and reach out to the skies, calling down a comet to wreak havoc amongst your foes. Select a target point within range. At the end of the next round, make an <b>Average (+20) Perception Test</b>. For every +SL you achieve, you may move your point of impact by Initiative Bonus yards.</p> <p>For every –SL, the GM will move the point of impact by Initiative Bonus yards in a random direction. Comet of Casandora then acts as a magical missile with Damage +12 that hits all targets in the Area of Effect, who also gain +1 Ablaze and the Prone Condition.</p>"
     }
 ];

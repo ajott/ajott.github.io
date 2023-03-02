@@ -21,12 +21,15 @@ function inRangeInclusive(num, range) {
 $(document).ready(function () {
     buildNavbar();
     setTimeout( function() {
-        $('skill').attr('onclick','initializeSkillModal(this)');
-        $('talent').attr('onclick','initializeTalentModal(this)');
-    }, 300);
-
-    
+        initializeModals();
+    }, 300);    
 });
+
+function initializeModals () {
+    $('skill').attr('onclick','initializeSkillModal(this)');
+    $('talent').attr('onclick','initializeTalentModal(this)');
+
+}
 
 function accordion(id, el) {
     var x = document.getElementById(id);
@@ -51,7 +54,7 @@ function showMenu() {
 
 
 function dropdownShow(str) {
-    let elements = ["charDropdown","magicDropdown","skillDropdown"]
+    let elements = ["charDropdown","magicDropdown", "religionDropdown", "skillDropdown"]
 
     for (let i = 0; i < elements.length; i++) {
         if (str == elements[i]) {

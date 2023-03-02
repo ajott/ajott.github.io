@@ -149,6 +149,8 @@ function buildSkillLite(skillSearch) {
 
         $("#skillDialog" + " .skillDesc").html(skillSearch["desc"])
 
+        initializeModals();
+
 }
 
 function buildTalentLite(talentSearch) {
@@ -161,7 +163,9 @@ function buildTalentLite(talentSearch) {
        $("#talentDialog .talentTest").html("<b class=\"w3-tooltip TooltipLight\">Test:<span class=\"w3-text w3-tag w3-darkslate-l1 w3-small w3-round\" style=\"position:absolute;left:0;bottom:18px; padding: 1em;\">Gain +1 SL on successful tests with this skill</span></b> "+talentSearch["test"])
     }
 
-    $("#talentDialog .talentDesc").html(talentSearch["desc"])
+    $("#talentDialog .talentDesc").html(talentSearch["desc"])    
+
+    initializeModals();
 
 }
 
@@ -204,6 +208,9 @@ function buildSkills() {
         $("#skill" + i).addClass("skill-item")
 
         htmlString = "";
+
+        initializeModals();
+
 
         setTimeout(() => {
             $('.skillGrid').isotope({
@@ -726,6 +733,8 @@ function buildTalents() {
         $("#talent" + i).addClass("talent-item")
 
         htmlString = "";
+
+        initializeModals();
 
         setTimeout(() => {
             $('.talentGrid').isotope({

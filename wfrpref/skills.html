@@ -187,8 +187,8 @@
                     <div class="w3-card-2 w3-round-large padCard">
                         <div class="w3-row-padding">
                             <h3>
-                                <div style="text-align: right; margin-bottom: -20px; margin-top: 5px;"
-                                    onclick="skillNameCopy(this)" id="cardCopy"><i class="fa fa-clone tooltip"
+                                <div style="text-align: right; margin-bottom: -20px; margin-top: 5px; height: 1em !important;"
+                                    onclick="skillNameCopy(this)" id="cardCopy"><i class="fa fa-clone tooltip w3-large"
                                         aria-hidden="true">
                                         <div class="tooltiptext">Copy Link</div>
                                     </i></div><span style="display: none;" class="skillID"></span><span
@@ -332,6 +332,7 @@
     </div>
     <hr />
 
+    
 </body>
 <footer>
     <div class="w3-row-padding w3-section">
@@ -413,53 +414,8 @@
 </footer>
 
 
-<div id="skillDialog" title="Description">
-    <div class="popupCard">
-        <div class="w3-card-2 w3-round-large padCard">
-            <div class="w3-row-padding">
-                <h3>
-                    <div style="text-align: right; margin-bottom: -20px; margin-top: 5px;"
-                        onclick="skillNameCopy(this)" id="cardCopy"><i class="fa fa-clone tooltip"
-                            aria-hidden="true">
-                            <div class="tooltiptext">Copy Link</div>
-                        </i></div><span style="display: none;" class="skillID"></span><span
-                        class="skillName"></span> (<span class="skillChar"></span>)
-                </h3>
-            </div>
-            <div class="w3-row-padding">
-                <h4 style="margin-top:-1em !important;"><em><span class="skillTier"></span></em></h4>
-            </div>
-            <div class="w3-row-padding">
-                <div class="skillDesc"></div>
-                <div class="skillSpec"></div>
-            </div>
-            <br />
-        </div>
-    </div>
-</div>
+<div id="modalPlaceholder">
 
-<div id="talentDialog" title="Description">
-    <div class="popupCard" id="defaultTalentCard">
-        <div class="w3-card-2 w3-round-large padCard">
-            <div class="w3-row-padding">
-                <h3>
-                    <div style="text-align: right; margin-bottom: -20px; margin-top: 5px;"
-                        onclick="talentNameCopy(this)" id="cardCopy"><i class="fa fa-clone tooltip"
-                            aria-hidden="true">
-                            <div class="tooltiptext">Copy Link</div>
-                        </i></div><span class="talentName"></span>
-                </h3>
-            </div>
-            <div class="w3-row-padding">
-                <h5 style="text-align: left !important;">Max: <span class="talentMax"></span></h5>
-                <h5 style="text-align: left !important;"><span class="talentTest"></span></h5>
-            </div>
-            <div class="w3-row-padding">
-                <div class="talentDesc"></div>
-            </div>
-            <br />
-        </div>
-    </div>
 </div>
 
 </html>

@@ -1604,7 +1604,11 @@
             <div class="w3-center">
                 All WFRP 4e material is &copy; 2018-
                 <script>document.write(new Date().getFullYear()) </script> Cubicle 7 Games
-                <script>$(document).ready(function (){
+                <script>
+                    let fsOptions = {
+                        'threshold': 0.6
+                    }
+                    $(document).ready(function (){
                         skillFuse = new Fuse(skill,{
                     keys: ["name"]
                     })});
@@ -1621,53 +1625,8 @@
     </div>
 </footer>
 
-<div id="skillDialog" title="Description">
-    <div class="popupCard">
-        <div class="w3-card-2 w3-round-large padCard">
-            <div class="w3-row-padding">
-                <h3>
-                    <div style="text-align: right; margin-bottom: -20px; margin-top: 5px;"
-                        onclick="skillNameCopy(this)" id="cardCopy"><i class="fa fa-clone tooltip"
-                            aria-hidden="true">
-                            <div class="tooltiptext">Copy Link</div>
-                        </i></div><span style="display: none;" class="skillID"></span><span
-                        class="skillName"></span> (<span class="skillChar"></span>)
-                </h3>
-            </div>
-            <div class="w3-row-padding">
-                <h4 style="margin-top:-1em !important;"><em><span class="skillTier"></span></em></h4>
-            </div>
-            <div class="w3-row-padding">
-                <div class="skillDesc"></div>
-                <div class="skillSpec"></div>
-            </div>
-            <br />
-        </div>
-    </div>
-</div>
+<div id="modalPlaceholder">
 
-<div id="talentDialog" title="Description">
-    <div class="popupCard" id="defaultTalentCard">
-        <div class="w3-card-2 w3-round-large padCard">
-            <div class="w3-row-padding">
-                <h3>
-                    <div style="text-align: right; margin-bottom: -20px; margin-top: 5px;"
-                        onclick="talentNameCopy(this)" id="cardCopy"><i class="fa fa-clone tooltip"
-                            aria-hidden="true">
-                            <div class="tooltiptext">Copy Link</div>
-                        </i></div><span class="talentName"></span>
-                </h3>
-            </div>
-            <div class="w3-row-padding">
-                <h5 style="text-align: left !important;">Max: <span class="talentMax"></span></h5>
-                <h5 style="text-align: left !important;"><span class="talentTest"></span></h5>
-            </div>
-            <div class="w3-row-padding">
-                <div class="talentDesc"></div>
-            </div>
-            <br />
-        </div>
-    </div>
 </div>
 
 </html>

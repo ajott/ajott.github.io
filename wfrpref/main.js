@@ -21,8 +21,8 @@ function inRangeInclusive(num, range) {
 $(document).ready(function () {
     buildNavbar();
     setTimeout( function() {
-        //$('skill').attr('onclick','outSkillSearch(this)');
-        // $('talent').attr('onclick','outTalentSearch(this)');
+        $('skill').attr('onclick','initializeSkillModal(this)');
+        $('talent').attr('onclick','initializeTalentModal(this)');
     }, 300);
 
     
@@ -72,7 +72,7 @@ function outSkillSearch(el) {
 
     let baseURI = location.href.split("wfrpref")[0];
     let pageURI = baseURI + "wfrpref/skills.html#skillList?s=";
-    let skillName = el.innerText.split(' (')[0];
+    let skillName = el.text().split(' (')[0];
     let skillURI = encodeURIComponent(skillName)
 
     let finalURI = pageURI + skillURI
@@ -80,11 +80,10 @@ function outSkillSearch(el) {
 }
 
 function outTalentSearch(el) {
-
     let baseURI = location.href.split("wfrpref")[0];
     let pageURI = baseURI + "wfrpref/skills.html#talentList?s=";
     //let talentName = el.innerText.split(' (')[0];
-    let talentName = el;
+    let talentName = el.text().split(' (')[0];
     let talentURI = encodeURIComponent(talentName)
 
     let finalURI = pageURI + talentURI
@@ -323,7 +322,7 @@ function weaponFilterBook() {
 }
 
 function buildNavbar() {
-
     $('#navBarDiv').load("./navbar.html");
-
+    $('#modalPlaceholder').load('./modals.html')
 }
+

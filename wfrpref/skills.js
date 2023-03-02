@@ -21,62 +21,46 @@ function skillFilter(input, mod = 0) {
     
 }
 
+function initializeSkillModal(el) {
+    let htmlPhrase = el.innerText
+    let srchPhrase = htmlPhrase.split(' (')[0]
+    let srchRslt = skillFuse.search(srchPhrase)
+    buildSkillLite(srchRslt[0]["item"])
+    openSkillModal();
+}
 
+function openSkillModal () {
+    document.getElementById('skillDialog').style.display='block'
 
+}
 
-$(function() {
-    $("#skillDialog").dialog({
-      autoOpen: false,
-      resizable: false,
-      height: "auto",
-      width: "auto",
-      modal: true,
-      buttons: {
-        "Take me there": function() {
-          outSkillSearch(this);
-        },
-        Close: function() {
-            $(this).dialog("close");
-          }
-      }
-    });
-    $("skill").click(function() {
+function hideSkillModal () {
+    document.getElementById('skillDialog').style.display='none'
+}
 
-        let srchRslt = skillFuse.search(this.innerHTML)
-        buildSkillLite(srchRslt[0]["item"])
-        
-      $("#skillDialog").dialog("open");
-    });
-  });
+function skillModalSearch () {
+    outSkillSearch($('#skillDialog .skillName'))
+}
 
+function initializeTalentModal(el) {
+    let htmlPhrase = el.innerText
+    let srchPhrase = htmlPhrase.split(' (')[0]
+    let srchRslt = talentFuse.search(srchPhrase)
+    buildTalentLite(srchRslt[0]["item"])
+    openTalentModal();
+}
 
-  $(function() {
-    $("#talentDialog").dialog({
-      autoOpen: false,
-      resizable: false,
-      height: "auto",
-      width: "auto",
-      modal: true,
-      buttons: {
-        "Take me there": function() {            
-          outTalentSearch($("#talentDialog .talentName").html());
-        },
-        Close: function() {
-            $(this).dialog("close");
-          }
-      }
-    });
-    $("talent").click(function() {
+function openTalentModal () {
+    document.getElementById('talentDialog').style.display='block'
+}
 
-        let srchRslt = talentFuse.search(this.innerHTML)
-        buildTalentLite(srchRslt[0]["item"])
-        
-      $("#talentDialog").dialog("open");
-    });
-  });
+function hideTalentModal () {
+    document.getElementById('talentDialog').style.display='none'
+}
 
-
-
+function talentModalSearch () {
+    outTalentSearch($('#talentDialog .talentName'))
+}
 
 
 function skillNameFilter(exact = 0) {
@@ -164,11 +148,6 @@ function buildSkillLite(skillSearch) {
         }
 
         $("#skillDialog" + " .skillDesc").html(skillSearch["desc"])
-        
-
-        $("#skillDialog").addClass(skillSearch["tier"]+" "+skillSearch["char"])
-
-        $("#skillDialog").addClass("skill-item")
 
 }
 
@@ -184,7 +163,6 @@ function buildTalentLite(talentSearch) {
 
     $("#talentDialog .talentDesc").html(talentSearch["desc"])
 
-    $("#talentDialog").addClass("talent-item")
 }
 
 
@@ -370,7 +348,7 @@ var skill = [
         "tier": "Advanced",
         "char": "Int",
         "spec": "",
-        "desc": "<p>Lets you determine the value of rare artefacts, unusual trade goods, and works of art. Everybody is assumed to know the relative worth of general items, but a successful use of the Evaluate allows you to identify the value of curious and unique items. A successful Evaluate Test may also alert you if the goods (or coins) you are studying are counterfeit — this Test will usually be Opposed by the forger’s SL on their Art or Trade Test. Your GM may apply modifiers based on just how rare or obscure the item is, or on your character’s particular expertise or background.</p>"
+        "desc": "<p>Lets you determine the value of rare artefacts, unusual trade goods, and works of art. Everybody is assumed to know the relative worth of general items, but a successful use of the Evaluate allows you to identify the value of curious and unique items.</p> <p>A successful Evaluate Test may also alert you if the goods (or coins) you are studying are counterfeit — this Test will usually be Opposed by the forger’s SL on their Art or Trade Test. Your GM may apply modifiers based on just how rare or obscure the item is, or on your character’s particular expertise or background.</p>"
     },
     {
         "name": "Gamble",
@@ -482,7 +460,7 @@ var skill = [
         "tier": "Advanced",
         "char": "Dex",
         "spec": "Bagpipe, Lute, Harpsichord, Horn, Violin",
-        "desc": "Your ability to make music with an instrument, hopefully well enough to impress others. A successful Play Test lets you entertain those near enough to see and hear you; the SL indicates the quality of the piece played."
+        "desc": "<p>Your ability to make music with an instrument, hopefully well enough to impress others. A successful Play Test lets you entertain those near enough to see and hear you; the SL indicates the quality of the piece played.</p>"
     },
     {
         "name": "Pray",
@@ -1097,7 +1075,7 @@ var talent = [
         "name": "Flagellant",
         "max": "Toughness Bonus",
         "test": "Any for resisting the Ruinious Powers",
-        "desc": "<p>You have dedicated your pain to the service of your God. Each day, you must spend half a bell (half an hour) praying as you maintain a number of Wounds suffered equal to your level in Flagellent. Until you next sleep, if you have the <talent>Frenzy</talent> Talent you may enter Frenzy immediately without testing.</p> <p>The <talent>Frenzy</talent> Talent is added to the Talent list of any career you are in. Should you fail to flagellate yourself on any given day, or allow your castigated flesh to be healed, you may not spend any Resilience or Resolve until you flagellate yourself again.</p>"
+        "desc": "<p>You have dedicated your pain to the service of your God. Each day, you must spend half a bell (half an hour) praying as you maintain a number of Wounds suffered equal to your level in Flagellent. Until you next sleep, if you have the <em>Frenzy</em> Talent you may enter Frenzy immediately without testing.</p> <p>The <em>Frenzy</em> Talent is added to the Talent list of any career you are in. Should you fail to flagellate yourself on any given day, or allow your castigated flesh to be healed, you may not spend any Resilience or Resolve until you flagellate yourself again.</p>"
     },
     {
         "name": "Flee!",
@@ -1205,7 +1183,7 @@ var talent = [
         "name": "Invoke (Divine Lore)",
         "max": "1",
         "test": "",
-        "desc": "<p>You are blessed by one of the Gods and can empower one of your Cult’s Miracles. Further, you may purchase extra miracles for 100 XP per miracle you currently know. So, if you already know 3 miracles, your next miracle costs 300 XP to purchase. Full rules for learning new miracles are provided in Chapter 7: Religion and Belief. Under normal circumstances, you may not learn more than one Invoke (Divine Lore) Talent. Further, you may not learn the <talent>Petty Magic</talent> or <talent>Arcane Magic</talent> Talents when you have the Invoke Talent. You can unlearn this Talent for 100 XP, but will lose all of your miracles if you do so, and will also garner the extreme disfavour of your God, with effects determined by your GM.</p>"
+        "desc": "<p>You are blessed by one of the Gods and can empower one of your Cult’s Miracles. Further, you may purchase extra miracles for 100 XP per miracle you currently know. So, if you already know 3 miracles, your next miracle costs 300 XP to purchase. Full rules for learning new miracles are provided in Chapter 7: Religion and Belief. Under normal circumstances, you may not learn more than one Invoke (Divine Lore) Talent. Further, you may not learn the <em>Petty Magic</em> or <em>Arcane Magic</em> Talents when you have the Invoke Talent. You can unlearn this Talent for 100 XP, but will lose all of your miracles if you do so, and will also garner the extreme disfavour of your God, with effects determined by your GM.</p>"
     },
     {
         "name": "Iron Jaw",
@@ -1229,7 +1207,7 @@ var talent = [
         "name": "Kingpin",
         "max": "1",
         "test": "",
-        "desc": "<p>You have earned an air of respectability despite your nefarious ways. You may ignore the Status loss of the <talent>Criminal</talent> Talent.</p>"
+        "desc": "<p>You have earned an air of respectability despite your nefarious ways. You may ignore the Status loss of the <em>Criminal</em> Talent.</p>"
     },
     {
         "name": "Lightning Reflexes",
@@ -1265,7 +1243,7 @@ var talent = [
         "name": "Magic Resistance",
         "max": "Toughness Bonus",
         "test": "",
-        "desc": "<p>You are resistant to magic. The SL of any spell affecting you is reduced by 2 per point you have in this Talent. The SL of a spell is only modified by the highest Magic Resistance Talent within its target area. Further, you may never learn the <talent>Arcane Magic</talent>, <talent>Bless</talent>, <talent>Invoke</talent>, <talent>Petty Magic</talent>, or <talent>Witch!</talent> Talents.</p>"
+        "desc": "<p>You are resistant to magic. The SL of any spell affecting you is reduced by 2 per point you have in this Talent. The SL of a spell is only modified by the highest Magic Resistance Talent within its target area. Further, you may never learn the <em>Arcane Magic</em>, <em>Bless</em>, <em>Invoke</em>, <em>Petty Magic</em>, or <em>Witch!</em> Talents.</p>"
     },
     {
         "name": "Magnum Opus",
@@ -1769,6 +1747,6 @@ var talent = [
         "name": "Witch!",
         "max": "Willpower Bonus",
         "test": "",
-        "desc": "<p>You have learned magic through trial and error. Add <skill>Language (Magick)</skill> to any Career you enter; if it is already in your Career, you may purchase the Skill for 5 XP fewer per Advance. Further, you may spend 1 Resilience point to immediately cast any spell as if it were one of your Arcane Lore spells; you also instantly memorise that spell as one of your Arcane Lore spells for 0 XP. You can do this a number of times equal to your level in this Talent.</p>"
+        "desc": "<p>You have learned magic through trial and error. Add <em>Language (Magick)</em> to any Career you enter; if it is already in your Career, you may purchase the Skill for 5 XP fewer per Advance. Further, you may spend 1 Resilience point to immediately cast any spell as if it were one of your Arcane Lore spells; you also instantly memorise that spell as one of your Arcane Lore spells for 0 XP. You can do this a number of times equal to your level in this Talent.</p>"
     }
 ]

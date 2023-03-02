@@ -51,27 +51,25 @@ a:hover {
 }
 
 skill {
-    cursor: pointer;
+    cursor: help;
     color: blanchedalmond !important;
-    text-shadow:black 0px 1px 0px !important;
     text-decoration: underline 1px dotted blanchedalmond;
 }
 
 skill:hover {
-    cursor: pointer;
+    cursor: help;
     color: goldenrod !important;
     text-decoration: none !important;
 }
 
 talent {
-    cursor: pointer;
+    cursor: help;
     color: blanchedalmond !important;
-    text-shadow:black 1px 1px 1px !important;
     text-decoration: underline 1px dotted blanchedalmond;
 }
 
 talent:hover {
-    cursor: pointer;
+    cursor: help;
     color: goldenrod !important;
     text-decoration: none !important;
 }
@@ -159,6 +157,16 @@ hr {
     padding-top: 5px;
     padding-bottom: 5px;
    
+}
+
+.w3-panel talent {
+    color: #212141 !important;
+    text-decoration: underline 1px dotted #212141 !important;
+}
+
+.w3-panel skill {
+    color: #212141 !important;
+    text-decoration: underline 1px dotted #212141 !important;
 }
 
 .tstripe tbody tr:nth-child(even){background-color:rgba(241, 241, 241,.1);}
@@ -343,8 +351,15 @@ th {
     border-top: 1px solid blanchedalmond;
 }
 
+.popupCard {
+    width: 90% !important;
+    max-width: 650px !important;
+    margin:auto;
+}
+
 .hidden {
     width:0px !important;
+
 }
 
 .advancementCard {
@@ -357,14 +372,9 @@ th {
     background-color: rgba(270,270,270,.1) !important;
 }
 
-.popupCard {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    width: 100% !important;
-    /* background-color: rgba(65,65,65) !important; */
-}
+
 .popupCard .w3-card-2 {
-    background-color: rgba(270,270,270,.1) !important;
+    background-color: #202020 !important;
 }
 
 .padCard {
@@ -426,3 +436,49 @@ th {
 .w3-hover-darkslate:hover {color:#fff !important; background-color:#2f4f4f !important}
 .w3-hover-text-darkslate:hover {color:#2f4f4f !important}
 .w3-hover-border-darkslate:hover {border-color:#2f4f4f !important}
+
+.w3-deep-red-l5 {color:#000 !important; background-color:#ffe5e5 !important}
+.w3-deep-red-l4 {color:#000 !important; background-color:#ffa7a7 !important}
+.w3-deep-red-l3 {color:#fff !important; background-color:#ff5050 !important}
+.w3-deep-red-l2 {color:#fff !important; background-color:#f70000 !important}
+.w3-deep-red-l1 {color:#fff !important; background-color:#9f0000 !important}
+.w3-deep-red-d1 {color:#fff !important; background-color:#400000 !important}
+.w3-deep-red-d2 {color:#fff !important; background-color:#390000 !important}
+.w3-deep-red-d3 {color:#fff !important; background-color:#320000 !important}
+.w3-deep-red-d4 {color:#fff !important; background-color:#2b0000 !important}
+.w3-deep-red-d5 {color:#fff !important; background-color:#240000 !important}
+
+.w3-deep-red-light {color:#000 !important; background-color:#ffe5e5 !important}
+.w3-deep-red-dark {color:#fff !important; background-color:#240000 !important}
+.w3-deep-red-action {color:#fff !important; background-color:#240000 !important}
+
+.w3-deep-red {color:#fff !important; background-color:#470000 !important}
+.w3-text-deep-red {color:#470000 !important}
+.w3-border-deep-red {border-color:#470000 !important}
+
+.w3-hover-deep-red:hover {color:#fff !important; background-color:#470000 !important}
+.w3-hover-text-deep-red:hover {color:#470000 !important}
+.w3-hover-border-deep-red:hover {border-color:#470000 !important}
+
+.w3-deep-amber-l5 {color:#000 !important; background-color:#fffae9 !important}
+.w3-deep-amber-l4 {color:#000 !important; background-color:#ffedb7 !important}
+.w3-deep-amber-l3 {color:#000 !important; background-color:#ffdb6e !important}
+.w3-deep-amber-l2 {color:#000 !important; background-color:#ffc926 !important}
+.w3-deep-amber-l1 {color:#fff !important; background-color:#dca500 !important}
+.w3-deep-amber-d1 {color:#fff !important; background-color:#856400 !important}
+.w3-deep-amber-d2 {color:#fff !important; background-color:#765900 !important}
+.w3-deep-amber-d3 {color:#fff !important; background-color:#684e00 !important}
+.w3-deep-amber-d4 {color:#fff !important; background-color:#594300 !important}
+.w3-deep-amber-d5 {color:#fff !important; background-color:#4a3700 !important}
+
+.w3-deep-amber-light {color:#000 !important; background-color:#fffae9 !important}
+.w3-deep-amber-dark {color:#fff !important; background-color:#4a3700 !important}
+.w3-deep-amber-action {color:#fff !important; background-color:#4a3700 !important}
+
+.w3-deep-amber {color:#fff !important; background-color:#967000 !important}
+.w3-text-deep-amber {color:#967000 !important}
+.w3-border-deep-amber {border-color:#967000 !important}
+
+.w3-hover-deep-amber:hover {color:#fff !important; background-color:#967000 !important}
+.w3-hover-text-deep-amber:hover {color:#967000 !important}
+.w3-hover-border-deep-amber:hover {border-color:#967000 !important}

@@ -141,9 +141,9 @@ function buildSkillLite(skillSearch) {
 
         if (skillSearch["spec"] != "") {
             $("#skillDialog" + " .skillTier").text(skillSearch["tier"]+", Grouped")
-            $("#skillDialog").addClass("Grouped")
             $("#skillDialog" + " .skillSpec").html("<b>Example Specialisations: </b>"+skillSearch["spec"])
         } else {
+            $("#skillDialog" + " .skillSpec").html("")
             $("#skillDialog" + " .skillTier").text(skillSearch["tier"])
         }
 

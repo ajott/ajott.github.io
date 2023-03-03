@@ -17,7 +17,13 @@ eh {
 }
 
 .navBarContainer {
+    position: relative;
     color: blanchedalmond;
+}
+
+#navBarDiv {
+    
+    z-index: 8 !important;
 }
 
 .navBarContainer a {
@@ -445,7 +451,7 @@ th {
 
     /* Position the tooltip text - see examples below! */
     position: absolute;
-    z-index: 1;
+    z-index: 8;
   }
   
   /* Show the tooltip text when you mouse over the tooltip container */

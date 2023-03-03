@@ -421,11 +421,22 @@ th {
 
 .popupCard .w3-card-2 {
     background-color: #202020 !important;
+    
+    box-shadow: 0 0 2px 2px blanchedalmond;
+}
+
+.w3-card-2 {
+    border: 1px solid rgba(255, 235, 205,.4) !important;
 }
 
 .padCard {
     padding-left: 1em;
     padding-right: 1em;
+}
+
+
+.w3-modal {
+    background-color: rgba(0,0,0,.75) !important;
 }
 
 .tooltip {

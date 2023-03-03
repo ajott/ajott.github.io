@@ -31,7 +31,7 @@
         </div>
         <div class="w3-col s12 m12 l10">
             <div id="miracleCards" class="w3-section w3-row-padding info w3-center">
-                <h1 class="info">Divine Manifestations</h1>
+                <h1 class="info">Gods, Cults, and Miracles</h1>
                 <div class="w3-bar" style="padding-top: 4px; padding-bottom: 4px">
                     <button id="cultBtnManann" class=" w3-button w3-blue-grey w3-bar-item cultBtn  firstBtn"
                         onclick="miracleFilter('Manann')">Manann</button>
@@ -116,6 +116,146 @@
                             <br />
                         </div>
                     </div>
+                </div>
+                <hr />
+                <div id="wrathOfGods" class="w3-row-padding w3-section info">
+                    <h1>Wrath of the Gods</h1><div class="w3-row-padding w3-section">
+                        <div class="w3-col s0 m0 l3"><p></p></div>
+                    <div class="w3-col s12 m12 l6">
+                        <p>The Wrath of Gods table is referenced whenever you Fumble a Pray Test, or when the units die of a Pray Test is equal or lower than your current Sin points. The GM may also use it, or pluck results from it, whenever you foolishly insult any of the gods. When rolling on the Wrath of the Gods table, add +10 to the roll for each Sin Point you have accrued. After rolling and applying the result, reduce your Sin points by 1, to a minimum of 0.</p>
+                    </div>
+                    <div class="w3-col s0 m0 l3"><p></p></div>
+                </div>
+                    <table class="w3-table w3-striped w3-hoverable w3-bordered table-dark">
+                        <thead><tr>
+                            <th>Percentile Roll</th>
+                            <th>Result</th>
+                        </tr></thead>
+                        <tbody><tr>
+                            <td>01-05</td>
+                            <td>Holy Visions: Visions of your god plague your senses. Attempt an Average (+20) Endurance Test. If you fail gain one Stunned Condition. The GM determines what the visions may be.</td>
+                        </tr>
+                        <tr>
+                            <td>06-10</td>
+                            <td>Think Over Your Deeds: Any successful Pray test cannot achieve more than +0 SL for the next week.</td>
+                        </tr>
+                        <tr>
+                            <td>11-15</td>
+                            <td>Heed My Lessons: You suffer a penalty of –10 to your Pray Skill for the next 1d10+Sin points Rounds.</td>
+                        </tr>
+                        <tr>
+                            <td>16-20</td>
+                            <td>Prove Your Devotion: Gain the Prone Condition. This Condition is not removed until you score a Success with an Average (+20) Pray Test.</td>
+                        </tr>
+                        <tr>
+                            <td>21-25</td>
+                            <td>You Try My Patience: You cannot enact any Pray Tests for 1d10 Rounds.</td>
+                        </tr>
+                        <tr>
+                            <td>26-30</td>
+                            <td>You Do Not Understand My Intent: You suffer a penalty of –10 to any Skills associated with your deity (as determined by the GM) for the next 1d10+Sin points hours.</td>
+                        </tr>
+                        <tr>
+                            <td>31-35</td>
+                            <td>I Find Your Lack Of Faith Disturbing: You cannot enact any Pray Tests for 1d10+Sin points Rounds.</td>
+                        </tr>
+                        <tr>
+                            <td>36-40</td>
+                            <td>Share My Pain: You suffer 1+Sin points Wounds, ignoring Toughness Bonus and APs. Also attempt an Average (+20) Endurance Test. If you fail gain one Stunned Condition.</td>
+                        </tr>
+                        <tr>
+                            <td>41-45</td>
+                            <td>Your Cause Is Unworthy: Your targets gain the Prone condition. Any Blessings or Miracles of your deity targeting them automatically fail for the next 1d10+Sin points days.</td>
+                        </tr>
+                        <tr>
+                            <td>46-50</td>
+                            <td>Cease Your Prattling: You cannot enact any Pray Tests for the next 2d10+Sin points rounds.</td>
+                        </tr>
+                        <tr>
+                            <td>51-55</td>
+                            <td>Feel My Wrath: You suffer 1d10+Sin points Wounds. Also attempt a Challenging (+0) Endurance Test. If you fail gain one Stunned Condition.</td>
+                        </tr>
+                        <tr>
+                            <td>56-60</td>
+                            <td>I Shall Not Aid You: You suffer a penalty of –10 to a Skill associated with your deity (as determined by the GM) for the next 1d10+Sin Points days.</td>
+                        </tr>
+                        <tr>
+                            <td>61-65</td>
+                            <td>Divine Wounds: Gain 1+Sin points Bleeding conditions.</td>
+                        </tr>
+                        <tr>
+                            <td>66-70</td>
+                            <td>Struck Blind: Gain the Prone Condition. Gain 1+Sin point Blinded Conditions, which can only be removed by passing a Challenging (+0) Pray Test, with Success removing 1 + SL Blinded Conditions. </td>
+                        </tr>
+                        <tr>
+                            <td>71-75</td>
+                            <td>What Will You Sacrifice?: You suffer 1d10+Sin points Wounds, ignoring Toughness Bonus and APs. Also attempt a Difficult (–10) Endurance Test. If you fail gain one Stunned Condition.</td>
+                        </tr>
+                        <tr>
+                            <td>76-80</td>
+                            <td>You Have Sinned Against Me: Your god is extremely annoyed and forces you to you enact Pray Tests as your Action for the next 1d10+Sin Points Rounds as a penance.</td>
+                        </tr>
+                        <tr>
+                            <td>81-87</td>
+                            <td>Purge the Flesh: You suffer 2d10+Sin points Wounds, ignoring Toughness Bonus and APs. Also attempt a Hard (–20) Endurance Test. If you fail gain one Stunned Condition. If you fail with –4 SL or fewer, gain an Unconscious Condition that lasts a minimum of 1d10 Rounds.</td>
+                        </tr>
+                        <tr>
+                            <td>88</td>
+                            <td>Daemonic Interference: The Dark Gods answer your pleas instead of your patron. 1d10 Lesser Daemons appear within 2d10 yards of your position, and attack the nearest targets.</td>
+                        </tr>
+                        <tr>
+                            <td>89-95</td>
+                            <td>Fear my Wrath: Gain 1+Sin points Broken Conditions.</td>
+                        </tr>
+                        <tr>
+                            <td>96-100</td>
+                            <td>Go On Penance: You must go on a Penance.</td>
+                        </tr>
+                        <tr>
+                            <td>101-105</td>
+                            <td>Castigation: You are reduced to 0 Wounds (if you are not there already) then gain an Unconscious Condition, which cannot be removed until you regain at least 1 Wound.</td>
+                        </tr>
+                        <tr>
+                            <td>106-110</td>
+                            <td>Do Not Use My Name In Vain: You lose the Bless and Invoke Talents for the next 1d10+Sin points days.</td>
+                        </tr>
+                        <tr>
+                            <td>111-115</td>
+                            <td>Rely Not Upon Your Vanities: You have all of your trappings removed, leaving you naked. For each Penance you complete, you will have one taken Magical Item returned to you, should you have any.</td>
+                        </tr>
+                        <tr>
+                            <td>116-120</td>
+                            <td>You Abuse My Mercy: You lose the Invoke and Bless Talents for the next 2d10+Sin points days.</td>
+                        </tr>
+                        <tr>
+                            <td>121-125</td>
+                            <td>Behold Your Wickedness: You suffer excruciating visions of all your failures, which seem to take an eternity, but are over in a moment. Discuss with your GM to build a custom Psychology (see page 190) to reflect your character dealing with the traumatic experience.</td>
+                        </tr>
+                        <tr>
+                            <td>126-130</td>
+                            <td>Thunderbolts and Lightning: Your god smites you. You are reduced to 0 Wounds (if you are not there already) and gain the Ablaze condition.</td>
+                        </tr>
+                        <tr>
+                            <td>131-135</td>
+                            <td>Suffer As I Suffer: You gain 1+Sin points Bleeding conditions every morning, until you have performed a Penance.</td>
+                        </tr>
+                        <tr>
+                            <td>136-140</td>
+                            <td>Excommunication: You lose the Invoke and Bless Talents until you perform 2 Penances; the first Penance returns the Bless Talent, and the second returns the Invoke Talent. All cultists of your god are automatically aware of your circumstance; all Tests to interact with them are automatically Very Hard (–30), and may not be positively modified above this.</td>
+                        </tr>
+                        <tr>
+                            <td>141-145</td>
+                            <td>Prove Your Worth: A Divine Servant of your deity appears within d100 yards and attacks, intervenes, berates, or similar according to the nature of the offended god. </td>
+                        </tr>
+                        <tr>
+                            <td>146-150</td>
+                            <td>I Cast You Out: You are abandoned by your god. You permanently lose the Bless and Invoke Talents, and lose all Pray Advances. Further, all cultists of your god are automatically aware of your circumstance; all Tests to interact with them are automatically Very Hard (–30), and may not be positively modified above this.</td>
+                        </tr>
+                        <tr>
+                            <td>151+</td>
+                            <td>Called To Account: You are summoned before your god to face final judgement. Unless you have a Fate Point, you never return. If you spend a Fate Point, you are returned at a point of the GM’s choosing, and also suffer the effects of I Cast You Out.</td>
+                        </tr></tbody>
+                    </table>
                 </div>
             </div>
         </div>

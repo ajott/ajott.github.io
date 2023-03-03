@@ -191,7 +191,7 @@ hr {
 }
 
 .grid-card {
-    background-color: darkslategrey;
+    background-color: rgba(47, 79, 79,.4);
 
 }
 
@@ -212,7 +212,7 @@ hr {
 }
 
 body {
-    background-color: #202020 !important;
+    background-color: #16161d !important;
     color: white !important;
 }
 
@@ -282,7 +282,7 @@ table thead {
 
 .loreDescDetail {
     /* border-radius: 5px; */
-    background-color:darkslategrey;
+    background-color:rgb(47, 79, 79,.4);
     padding-left: 1em;
     padding-right: 1em;
     padding-bottom: 1em;
@@ -290,7 +290,7 @@ table thead {
 
 .cultDescDetail {
     /* border-radius: 5px; */
-    background-color:darkslategrey;
+    background-color:rgb(47, 79, 79,.4);
     padding-left: 1em;
     padding-right: 1em;
     padding-bottom: 1em;
@@ -347,7 +347,7 @@ td:first-child {
 }
 
 .table-dark {
-    background: #303030;
+    background: #222229;
 }
 
 .table-dark tr {
@@ -363,7 +363,7 @@ td:first-child {
 }
 
 th {
-    background: darkslategrey !important;
+    background: rgb(47, 79, 79,.7) !important;
     ;
 }
 

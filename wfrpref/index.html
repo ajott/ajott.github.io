@@ -14,6 +14,7 @@
     <script src="main.js"></script>
     <script src="spells.js"></script>
     <script src="skills.js"></script>
+    <script src="data.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="interface.css">
@@ -1014,7 +1015,7 @@
                     knowledge, and you can only use these skills if you have taken at
                     least one Advance in them.
                 </p>
-                <div class="w3-panel w3-pale-yellow w3-leftbar w3-rightbar w3-border-yellow">
+                <div class="w3-round-large w3-panel w3-light-blue w3-leftbar w3-rightbar w3-border-blue">
                     <p>
                         Note: Some Talents can be learned multiple times. If you have
                         an opportunity to learn a Talent a second time, check the Talent
@@ -1497,7 +1498,7 @@
                     taken in that Talent.</b>
             </p>
             <p>
-            <div class="w3-panel w3-pale-yellow w3-leftbar w3-rightbar w3-border-yellow">
+            <div class="w3-round-large w3-panel w3-light-blue w3-leftbar w3-rightbar w3-border-blue">
                 Note: Not all Talents can be purchased multiple times. Check
                 the Talent listing for any limitations.
             </div>
@@ -1615,6 +1616,11 @@
                         talentFuse = new Fuse(talent,{
                     keys: ["name"]
                     })});
+                    $(document).ready(function () {
+                        conditionFuse = new Fuse(condition, {
+                            keys: ["name"]
+                        })
+                    });
                 </script>
             </div>
         </div>

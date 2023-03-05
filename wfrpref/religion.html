@@ -16,6 +16,7 @@
     <script src="spells.js"></script>
     <script src="skills.js"></script>
     <script src="religion.js"></script>
+    <script src="data.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="interface.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -30,29 +31,163 @@
             &emsp;
         </div>
         <div class="w3-col s12 m12 l10">
-            <div id="miracleCards" class="w3-section w3-row-padding info w3-center">
-                <h1 class="info">Gods, Cults, and Miracles</h1>
+            <div id="prayers" class="w3-section w3-row-padding info w3-center">
+                <h1>Prayers</h1>
+                <div class="w3-row-padding w3-section">
+                    <div class="w3-col s0 m0 l1">
+                        &emsp;
+                    </div>
+                    <div class="w3-col s12 m12 l5">
+                        <h3>The Blessed</h3>
+                        <p>
+                            A small number of the faithful stand apart from their peers, seemingly able to appeal for their deity’s direct intervention in the form of miracles. Those who perform such feats are known by many names in different parts of the Old World — including: Living Saints, Gods’ Servants, The Hallowed, Divine Wills, Anointed Ones — but, in the Empire, they are most commonly referred to as ‘Blessed’, which is often used as a title. So, if Sister Anna where to be Blessed by Sigmar — i.e. granted Sigmar’s grace, able to have her prayers answered — she would become ‘Blessed Anna’, or, in full, ‘Blessed Anna, Sister of Sigmar’.
+                        </p>
+                        <p>
+                            There are two Talents that specifically mark out those Blessed by the gods: <talent>Bless</talent> and <talent>Invoke</talent>. Characters with the <talent>Bless</talent> Talent may enact Blessings, which are minor manifestations of divine will, while the <talent>Invoke</talent> Talent allows the Blessed to call on their gods for more powerful Miracles. For more on these Talents, see Chapter 4: Skills and Talents.
+                        </p>
+                        <h3>Blessings and Miracles</h3>
+                        <p>
+                            Blessing and Miracles are prayers spoken by one of the Blessed, and then empowered by a god. To enact a Blessing or Miracle, make a <b>Challenging (+0) Pray Test</b>. If you score a Success, your Blessing or Miracle manifests according to its rules, and a high SL will give you bonus effects. If you score a Failure, your words are spoken, but your god, for whatever reason, refuses to listen. If you Fumble the Pray Test, you have offended your god and must roll on the Wrath of the Gods table.
+                        </p>
+                        <h4>Limitations</h4>
+                        <p>
+                            You must be able to speak to intone the required prayer, rite, chant, or song to enact a Blessing or Miracle. Each of your Blessings or Miracles can only be in effect once, meaning you have to wait for an existing one to come to an end before using the same prayer again. 
+                        </p>
+                        <p>
+                            Multiple invocations of the same prayer by different individuals do not offer cumulative bonuses. Thus, intoning two <divineman>Blessings of Finesse</divineman> will only provide a bonus of +10 to Dexterity.
+                        </p>
+                    </div>
+                    <div class="w3-col s12 m12 l5">
+                        <h3>Sin Points</h3>
+                        <p>
+                            The Blessed are watched closely by the gods, and risk gaining the disfavour of their deities if they should act contrary to their gods’ will. In game, this is represented with Sin points.
+                        </p>
+                        <p>
+                            If you violate any of the Cult Strictures listed under your god, the GM will award one or more Sin Points. Every time you receive a Sin point, it is added it to your running total. There is no maximum to the number of Sin points you can earn. The more points you have, the more upset your god is likely to be should you call upon divine aid.
+                        </p>
+                        <h4>Sin and Wrath</h4>
+                        <p>
+                            Appealing to your deity when you have been acting contrary to the god’s wishes is risky. Whenever you make a Pray Test, if the units die of the result is equal to or less than your current Sin point total, then you will suffer the <a href="./religion.html#wrathOfGods">Wrath of the Gods</a>, even if the Pray Test is successful.
+                        </p>
+                        <h4>Penance</h4>
+                        <p>
+                            Some Wrath of the Gods results require penance. The GM can decide upon a suitable penance depending on your misdeed, or they may prefer you to choose your own penance, with further punishment awaiting if you are insufficiently penitent. Examples of typical penances are listed in each cult description. Penances may come in the form of a vision, divine inspiration or, very rarely, by direct communication from your deity. If you are not worthy of such contact, a penance may be conveyed through another member of your cult. Alternatively, a Divine Servant of the cult could manifest — this could be a dead teacher, a figure of legend, or an appropriate animal — and inform you what is required. The GM should consider the sins involved, and how the god in question would likely react to these.
+                        </p>
+                    </div>
+                    <div class="w3-col s0 m0 l1">
+                        &emsp;
+                    </div>
+                </div>
+                <h2 id="divman" class="info">Divine Manifestations</h2>
+                <div class="w3-row-padding w3-section">
+                    <div class="w3-col s0 m0 l1">
+                        &emsp;
+                    </div>
+                    <div class="w3-col s12 m12 l5">
+                        <h3>Appearance</h3>
+                        <p>
+                            Blessings are subtle, completely imperceptible to those without the <talent>Holy Visions</talent> Talent, their manifestation usually indistinguishable to good fortune. In this way, Clerics of the Old World without the <talent>Blessing</talent> Talent often appear to be as effective as those with it. 
+                        </p>
+                        <p>
+                            By comparison, Miracles are overtly manifest, always accompanied by holy signs and portents, which should reflect the circumstances and relevant deity. For instance, an Ulrican Miracle may be accompanied by a chill wind and the spectral howl of wolves, while those receiving a Miracle of Manann may find themselves drenched in saltwater. 
+                        </p>
+                        <h3>Blessings</h3>
+                        <p>
+                            Blessings are minor manifestations of divine will; a character with the <talent>Bless</talent> Talent receives all six Blessings for their cult as listed in Blessings by Cult.
+                        </p>
+                        <h4>Success Levels</h4>
+                        <p>
+                            For every +2 SL you score in a Pray Test when attempting a Blessing, you may choose one of the following benefits:
+                            <ul>
+                                <li><b>Range: </b>+6 yards</li>
+                                <li><b>Targets: </b>+1</li>
+                                <li><b>Duration: </b>+6 Rounds</li>
+                            </ul>
+                            If the Blessing in question has a Duration of ‘Instant’, you may not extend the Duration. You may choose the same option more than once. For instance, if you rolled +4 SL on a <divineman>Blessing of Healing</divineman>, you could heal three targets you were touching, two targets up to 6 yards away, or one target up to 12 yards away. 
+                        </p>
+                    </div>
+                    <div class="w3-col s12 m12 l5">
+                        <h3>Miracles</h3>
+                        <p>
+                            Miracles are major manifestations of a god’s will, awe-inspiring events everyone will notice; a character with the Invoke Talent can empower one of the Miracles for their cult from the following lists. 
+                        </p>
+                        <h4>Success Levels</h4>
+                        <p>
+                            For every 2 Success Levels you achieve in a Miracle Pray test, you may add additional range, duration or targets equal to the initial value listed in the Miracle. So, a Miracle with a range of 50 yards could be increased by an extra +50 yards for every +2 SL scored. 
+                        </p>
+                        <p>
+                            Miracles with a Range and Target of ‘You’ may only target the Blessed Priest making the Pray Test, and can never have the range or targets increased. Similarly, if the Miracle has no duration, there is no benefit in choosing to extend its duration.
+                        </p>
+                        <p>
+                            Certain Miracles may have additional, optional, benefits for additional SL written into their descriptions.
+                        </p>
+                        <h3>Names</h3>
+                        <p>
+                            Each Cult has unique names for every Blessing and Miracle — sometimes more than one name. For instance, the Cult of Sigmar may refer to the <divineman>Blessing of Battle</divineman> as ‘The Litany of Sigmar’s Wrath’, while the Cult of Ulric may call it ‘The Sharp Bite of Winter’. The words spoken will be different, but the end effect will be the same. 
+                        </p>
+                        <div class="w3-panel w3-light-blue w3-leftbar w3-rightbar w3-border-blue w3-round-large">
+                            <h4>Options: Preach It, Sister!</h4>
+                            <p>Each of the gods have different styles of prayers, designed to be intoned in different ways. Whether these are the warcries of Ulric, the shanties of Manaan, or the threnodies of Morr, each requires the words be spoken (or sung) firmly, and with conviction. </p>
+                            <p>To represent this, the GM may require that any Pray Tests that are intoned quietly or without confidence have a higher Difficulty.</p>
+                        </div>
+                    </div>
+
+                    <div class="w3-col s0 m0 l1">
+                        &emsp;
+                    </div>
+                </div>
+                <div class="w3-row-padding w3-section">
+                    <div class="w3-col s0 m0 l1">
+                        &emsp;
+                    </div>
+                    <div class="w3-col s12 m12 l10">
+                        <h3>Blessings by Cult</h3>
+                        <table class="w3-table w3-striped w3-hoverable w3-bordered table-dark">
+                            <tbody  id="blessTable">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="w3-col s0 m0 l1">
+                        &emsp;
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+
+    </div>
+    <hr />
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div id="miracleCards" class="w3-section w3-row info w3-center">
+                <h1>Gods, Cults, and Miracles</h1>
                 <div class="w3-bar" style="padding-top: 4px; padding-bottom: 4px">
                     <button id="cultBtnManann" class=" w3-button w3-blue-grey w3-bar-item cultBtn  firstBtn"
-                        onclick="miracleFilter('Manann')">Manann</button>
+                        onclick="miracleFilter(this,'Manann')">Manann</button>
                     <button id="cultBtnMorr" class=" w3-button w3-blue-grey w3-bar-item  cultBtn"
-                        onclick="miracleFilter('Morr')">Morr</button>
+                        onclick="miracleFilter(this,'Morr')">Morr</button>
                     <button id="cultBtnMyrmidia" class=" w3-button w3-blue-grey w3-bar-item -orange cultBtn"
-                        onclick="miracleFilter('Myrmidia')">Myrmidia</button>
+                        onclick="miracleFilter(this,'Myrmidia')">Myrmidia</button>
                     <button id="cultBtnRanald" class=" w3-button w3-blue-grey w3-bar-item -blue cultBtn"
-                        onclick="miracleFilter('Ranald')">Ranald</button>
+                        onclick="miracleFilter(this,'Ranald')">Ranald</button>
                     <button id="cultBtnRhya" class=" w3-button w3-blue-grey w3-bar-item  cultBtn"
-                        onclick="miracleFilter('Rhya')">Rhya</button>
+                        onclick="miracleFilter(this,'Rhya')">Rhya</button>
                     <button id="cultBtnShallya" class=" w3-button w3-blue-grey w3-bar-item  cultBtn"
-                        onclick="miracleFilter('Shallya')">Shallya</button>
+                        onclick="miracleFilter(this,'Shallya')">Shallya</button>
                     <button id="cultBtnSigmar" class=" w3-button w3-blue-grey w3-bar-item  cultBtn"
-                        onclick="miracleFilter('Sigmar')">Sigmar</button>
+                        onclick="miracleFilter(this,'Sigmar')">Sigmar</button>
                     <button id="cultBtnTaal" class=" w3-button w3-blue-grey w3-bar-item  cultBtn"
-                        onclick="miracleFilter('Taal')">Taal</button>
+                        onclick="miracleFilter(this,'Taal')">Taal</button>
                     <button id="cultBtnUlric" class=" w3-button w3-blue-grey w3-bar-item  cultBtn"
-                        onclick="miracleFilter('Ulric')">Ulric</button>
+                        onclick="miracleFilter(this,'Ulric')">Ulric</button>
                     <button id="cultBtnVerena" class=" w3-button w3-blue-grey w3-bar-item cultBtn  lastBtn"
-                        onclick="miracleFilter('Verena')">Verena</button>
+                        onclick="miracleFilter(this,'Verena')">Verena</button>
                 </div>
                 <div class="w3-row-padding w3-center">
                     <div class="w3-col s0 m0 l2">
@@ -117,7 +252,16 @@
                         </div>
                     </div>
                 </div>
-                <hr />
+            </div>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+    </div>
+    <hr/>
+        <div class="w3-row-padding w3-section">
+            <div class="w3-col s0 m0 l1">&nbsp;</div>
+            <div class="w3-col s12 m12 l10">                
                 <div id="wrathOfGods" class="w3-row-padding w3-section info">
                     <h1>Wrath of the Gods</h1><div class="w3-row-padding w3-section">
                         <div class="w3-col s0 m0 l3"><p></p></div>
@@ -133,136 +277,133 @@
                         </tr></thead>
                         <tbody><tr>
                             <td>01-05</td>
-                            <td>Holy Visions: Visions of your god plague your senses. Attempt an Average (+20) Endurance Test. If you fail gain one Stunned Condition. The GM determines what the visions may be.</td>
+                            <td><b>Holy Visions: </b>Visions of your god plague your senses. Attempt an <b>Average (+20) Endurance Test</b>. If you fail gain one <condition>Stunned</condition> Condition. The GM determines what the visions may be.</td>
                         </tr>
                         <tr>
                             <td>06-10</td>
-                            <td>Think Over Your Deeds: Any successful Pray test cannot achieve more than +0 SL for the next week.</td>
+                            <td><b>Think Over Your Deeds: </b>Any successful Pray test cannot achieve more than +0 SL for the next week.</td>
                         </tr>
                         <tr>
                             <td>11-15</td>
-                            <td>Heed My Lessons: You suffer a penalty of –10 to your Pray Skill for the next 1d10+Sin points Rounds.</td>
+                            <td><b>Heed My Lessons: </b>You suffer a penalty of –10 to your <skill>Pray</skill> Skill for the next 1d10+Sin points Rounds.</td>
                         </tr>
                         <tr>
                             <td>16-20</td>
-                            <td>Prove Your Devotion: Gain the Prone Condition. This Condition is not removed until you score a Success with an Average (+20) Pray Test.</td>
+                            <td><b>Prove Your Devotion: </b>Gain the <condition>Prone</condition> Condition. This Condition is not removed until you score a Success with an Average (+20) Pray Test.</td>
                         </tr>
                         <tr>
                             <td>21-25</td>
-                            <td>You Try My Patience: You cannot enact any Pray Tests for 1d10 Rounds.</td>
+                            <td><b>You Try My Patience: </b>You cannot enact any Pray Tests for 1d10 Rounds.</td>
                         </tr>
                         <tr>
                             <td>26-30</td>
-                            <td>You Do Not Understand My Intent: You suffer a penalty of –10 to any Skills associated with your deity (as determined by the GM) for the next 1d10+Sin points hours.</td>
+                            <td><b>You Do Not Understand My Intent: </b>You suffer a penalty of –10 to any Skills associated with your deity (as determined by the GM) for the next 1d10+Sin points hours.</td>
                         </tr>
                         <tr>
                             <td>31-35</td>
-                            <td>I Find Your Lack Of Faith Disturbing: You cannot enact any Pray Tests for 1d10+Sin points Rounds.</td>
+                            <td><b>I Find Your Lack Of Faith Disturbing: </b>You cannot enact any Pray Tests for 1d10+Sin points Rounds.</td>
                         </tr>
                         <tr>
                             <td>36-40</td>
-                            <td>Share My Pain: You suffer 1+Sin points Wounds, ignoring Toughness Bonus and APs. Also attempt an Average (+20) Endurance Test. If you fail gain one Stunned Condition.</td>
+                            <td><b>Share My Pain: </b>You suffer 1+Sin points Wounds, ignoring Toughness Bonus and APs. Also attempt an <b>Average (+20) Endurance</b> Test. If you fail gain one <condition>Stunned</condition> Condition.</td>
                         </tr>
                         <tr>
                             <td>41-45</td>
-                            <td>Your Cause Is Unworthy: Your targets gain the Prone condition. Any Blessings or Miracles of your deity targeting them automatically fail for the next 1d10+Sin points days.</td>
+                            <td><b>Your Cause Is Unworthy: </b>Your targets gain the <condition>Prone</condition> condition. Any Blessings or Miracles of your deity targeting them automatically fail for the next 1d10+Sin points days.</td>
                         </tr>
                         <tr>
                             <td>46-50</td>
-                            <td>Cease Your Prattling: You cannot enact any Pray Tests for the next 2d10+Sin points rounds.</td>
+                            <td><b>Cease Your Prattling: </b>You cannot enact any Pray Tests for the next 2d10+Sin points rounds.</td>
                         </tr>
                         <tr>
                             <td>51-55</td>
-                            <td>Feel My Wrath: You suffer 1d10+Sin points Wounds. Also attempt a Challenging (+0) Endurance Test. If you fail gain one Stunned Condition.</td>
+                            <td><b>Feel My Wrath: </b>You suffer 1d10+Sin points Wounds. Also attempt a <b>Challenging (+0) Endurance</b> Test. If you fail gain one <condition>Stunned</condition> Condition.</td>
                         </tr>
                         <tr>
                             <td>56-60</td>
-                            <td>I Shall Not Aid You: You suffer a penalty of –10 to a Skill associated with your deity (as determined by the GM) for the next 1d10+Sin Points days.</td>
+                            <td><b>I Shall Not Aid You: </b>You suffer a penalty of –10 to a Skill associated with your deity (as determined by the GM) for the next 1d10+Sin Points days.</td>
                         </tr>
                         <tr>
                             <td>61-65</td>
-                            <td>Divine Wounds: Gain 1+Sin points Bleeding conditions.</td>
+                            <td><b>Divine Wounds: </b>Gain 1+Sin points <condition>Bleeding</condition> conditions.</td>
                         </tr>
                         <tr>
                             <td>66-70</td>
-                            <td>Struck Blind: Gain the Prone Condition. Gain 1+Sin point Blinded Conditions, which can only be removed by passing a Challenging (+0) Pray Test, with Success removing 1 + SL Blinded Conditions. </td>
+                            <td><b>Struck Blind: </b>Gain the <condition>Prone</condition> Condition. Gain 1+Sin point <condition>Blinded</condition> Conditions, which can only be removed by passing a Challenging (+0) Pray Test, with Success removing 1 + SL <condition>Blinded</condition> Conditions. </td>
                         </tr>
                         <tr>
                             <td>71-75</td>
-                            <td>What Will You Sacrifice?: You suffer 1d10+Sin points Wounds, ignoring Toughness Bonus and APs. Also attempt a Difficult (–10) Endurance Test. If you fail gain one Stunned Condition.</td>
+                            <td><b>What Will You Sacrifice?: </b>You suffer 1d10+Sin points Wounds, ignoring Toughness Bonus and APs. Also attempt a <b>Difficult (–10) Endurance Test</b>. If you fail gain one <condition>Stunned</condition> Condition.</td>
                         </tr>
                         <tr>
                             <td>76-80</td>
-                            <td>You Have Sinned Against Me: Your god is extremely annoyed and forces you to you enact Pray Tests as your Action for the next 1d10+Sin Points Rounds as a penance.</td>
+                            <td><b>You Have Sinned Against Me: </b>Your god is extremely annoyed and forces you to you enact Pray Tests as your Action for the next 1d10+Sin Points Rounds as a penance.</td>
                         </tr>
                         <tr>
                             <td>81-87</td>
-                            <td>Purge the Flesh: You suffer 2d10+Sin points Wounds, ignoring Toughness Bonus and APs. Also attempt a Hard (–20) Endurance Test. If you fail gain one Stunned Condition. If you fail with –4 SL or fewer, gain an Unconscious Condition that lasts a minimum of 1d10 Rounds.</td>
+                            <td><b>Purge the Flesh: </b>You suffer 2d10+Sin points Wounds, ignoring Toughness Bonus and APs. Also attempt a <b>Hard (–20) Endurance Test</b>. If you fail gain one <condition>Stunned</condition> Condition. If you fail with –4 SL or fewer, gain an Unconscious Condition that lasts a minimum of 1d10 Rounds.</td>
                         </tr>
                         <tr>
                             <td>88</td>
-                            <td>Daemonic Interference: The Dark Gods answer your pleas instead of your patron. 1d10 Lesser Daemons appear within 2d10 yards of your position, and attack the nearest targets.</td>
+                            <td><b>Daemonic Interference: </b>The Dark Gods answer your pleas instead of your patron. 1d10 Lesser Daemons appear within 2d10 yards of your position, and attack the nearest targets.</td>
                         </tr>
                         <tr>
                             <td>89-95</td>
-                            <td>Fear my Wrath: Gain 1+Sin points Broken Conditions.</td>
+                            <td><b>Fear my Wrath: </b>Gain 1+Sin points <condition>Broken</condition> Conditions.</td>
                         </tr>
                         <tr>
                             <td>96-100</td>
-                            <td>Go On Penance: You must go on a Penance.</td>
+                            <td><b>Go On Penance: </b>You must go on a Penance.</td>
                         </tr>
                         <tr>
                             <td>101-105</td>
-                            <td>Castigation: You are reduced to 0 Wounds (if you are not there already) then gain an Unconscious Condition, which cannot be removed until you regain at least 1 Wound.</td>
+                            <td><b>Castigation: </b>You are reduced to 0 Wounds (if you are not there already) then gain an <condition>Unconscious</condition> Condition, which cannot be removed until you regain at least 1 Wound.</td>
                         </tr>
                         <tr>
                             <td>106-110</td>
-                            <td>Do Not Use My Name In Vain: You lose the Bless and Invoke Talents for the next 1d10+Sin points days.</td>
+                            <td><b>Do Not Use My Name In Vain: </b>You lose the <talent>Bless</talent> and <talent>Invoke</talent> Talents for the next 1d10+Sin points days.</td>
                         </tr>
                         <tr>
                             <td>111-115</td>
-                            <td>Rely Not Upon Your Vanities: You have all of your trappings removed, leaving you naked. For each Penance you complete, you will have one taken Magical Item returned to you, should you have any.</td>
+                            <td><b>Rely Not Upon Your Vanities: </b>You have all of your trappings removed, leaving you naked. For each Penance you complete, you will have one taken Magical Item returned to you, should you have any.</td>
                         </tr>
                         <tr>
                             <td>116-120</td>
-                            <td>You Abuse My Mercy: You lose the Invoke and Bless Talents for the next 2d10+Sin points days.</td>
+                            <td><b>You Abuse My Mercy: </b>You lose the <talent>Invoke</talent> and Bless <talent>Talents</talent> for the next 2d10+Sin points days.</td>
                         </tr>
                         <tr>
                             <td>121-125</td>
-                            <td>Behold Your Wickedness: You suffer excruciating visions of all your failures, which seem to take an eternity, but are over in a moment. Discuss with your GM to build a custom Psychology (see page 190) to reflect your character dealing with the traumatic experience.</td>
+                            <td><b>Behold Your Wickedness: </b>You suffer excruciating visions of all your failures, which seem to take an eternity, but are over in a moment. Discuss with your GM to build a custom Psychology (see page 190) to reflect your character dealing with the traumatic experience.</td>
                         </tr>
                         <tr>
                             <td>126-130</td>
-                            <td>Thunderbolts and Lightning: Your god smites you. You are reduced to 0 Wounds (if you are not there already) and gain the Ablaze condition.</td>
+                            <td><b>Thunderbolts and Lightning: </b>Your god smites you. You are reduced to 0 Wounds (if you are not there already) and gain the <condition>Ablaze</condition> condition.</td>
                         </tr>
                         <tr>
                             <td>131-135</td>
-                            <td>Suffer As I Suffer: You gain 1+Sin points Bleeding conditions every morning, until you have performed a Penance.</td>
+                            <td><b>Suffer As I Suffer: </b>You gain 1+Sin points <condition>Bleeding</condition> conditions every morning, until you have performed a Penance.</td>
                         </tr>
                         <tr>
                             <td>136-140</td>
-                            <td>Excommunication: You lose the Invoke and Bless Talents until you perform 2 Penances; the first Penance returns the Bless Talent, and the second returns the Invoke Talent. All cultists of your god are automatically aware of your circumstance; all Tests to interact with them are automatically Very Hard (–30), and may not be positively modified above this.</td>
+                            <td><b>Excommunication: </b>You lose the <talent>Invoke</talent> and <talent>Bless</talent> Talents until you perform 2 Penances; the first Penance returns the <talent>Bless</talent> Talent, and the second returns the <talent>Invoke</talent> Talent. All cultists of your god are automatically aware of your circumstance; all Tests to interact with them are automatically Very Hard (–30), and may not be positively modified above this.</td>
                         </tr>
                         <tr>
                             <td>141-145</td>
-                            <td>Prove Your Worth: A Divine Servant of your deity appears within d100 yards and attacks, intervenes, berates, or similar according to the nature of the offended god. </td>
+                            <td><b>Prove Your Worth: </b>A Divine Servant of your deity appears within d100 yards and attacks, intervenes, berates, or similar according to the nature of the offended god. </td>
                         </tr>
                         <tr>
                             <td>146-150</td>
-                            <td>I Cast You Out: You are abandoned by your god. You permanently lose the Bless and Invoke Talents, and lose all Pray Advances. Further, all cultists of your god are automatically aware of your circumstance; all Tests to interact with them are automatically Very Hard (–30), and may not be positively modified above this.</td>
+                            <td><b>I Cast You Out: </b>You are abandoned by your god. You permanently lose the <talent>Bless</talent> and <talent>Invoke</talent> Talents, and lose all Pray Advances. Further, all cultists of your god are automatically aware of your circumstance; all Tests to interact with them are automatically Very Hard (–30), and may not be positively modified above this.</td>
                         </tr>
                         <tr>
                             <td>151+</td>
-                            <td>Called To Account: You are summoned before your god to face final judgement. Unless you have a Fate Point, you never return. If you spend a Fate Point, you are returned at a point of the GM’s choosing, and also suffer the effects of I Cast You Out.</td>
+                            <td><b>Called To Account: </b>You are summoned before your god to face final judgement. Unless you have a Fate Point, you never return. If you spend a Fate Point, you are returned at a point of the GM’s choosing, and also suffer the effects of <b>I Cast You Out</b>.</td>
                         </tr></tbody>
                     </table>
                 </div>
             </div>
+            <div class="w3-col s0 m0 l1">&nbsp;</div>
         </div>
-        <div class="w3-col s0 m0 l1">
-            &emsp;
-        </div>
-
     </div>
     <hr />
 </body>
@@ -287,6 +428,11 @@
                     });
                     $(document).ready(function () {
                         miracleFuse = new Fuse(miracle, {
+                            keys: ["name"]
+                        })
+                    });
+                    $(document).ready(function () {
+                        conditionFuse = new Fuse(condition, {
                             keys: ["name"]
                         })
                     });

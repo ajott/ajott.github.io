@@ -30,23 +30,23 @@ $(document).ready(function () {
           });
           $('#skillDialog').on('click', function(e) {
               if (e.target !== this)
-                return;
+                return;0
               
               hideSkillModal();
             });
+            $('#conditionDialog').on('click', function(e) {
+                if (e.target !== this)
+                  return;
+                
+                hideConditionModal();
+              });
     }, 300);    
 });
 
 function initializeModals () {
     $('skill').attr('onclick','initializeSkillModal(this)');
     $('talent').attr('onclick','initializeTalentModal(this)');
-}
-
-function closeModals(e) {
-    if (e.target !== this)
-      return;
-    
-    alert( 'clicked the foobar' );
+    $('condition').attr('onclick','initializeConditionModal(this)');
 }
 
 
@@ -343,6 +343,37 @@ function weaponFilterBook() {
     $("#weaponSearch").val("")
     document.getElementById("weaponFamilySelect").options.selectedIndex = 0;
     document.getElementById("weaponClassSelect").options.selectedIndex = 0;
+}
+
+function initializeConditionModal(el) {
+    let htmlPhrase = el.innerText
+    let srchPhrase = htmlPhrase.split(' (')[0]
+    let srchRslt = conditionFuse.search(srchPhrase)
+    buildConditionLite(srchRslt[0]["item"])
+    openConditionModal();
+}
+
+function buildConditionLite(conditionSearch) {
+
+    $("#conditionDialog" + " .conditionName").html(conditionSearch["name"])
+    
+    $("#conditionDialog" + " .conditionDesc").html(conditionSearch["desc"])
+
+    initializeModals();
+
+}
+
+function openConditionModal () {
+    document.getElementById('conditionDialog').style.display='block'
+
+}
+
+function hideConditionModal () {
+    document.getElementById('conditionDialog').style.display='none'
+}
+
+function conditionModalSearch () {
+    outConditionSearch($('#conditionDialog .conditionName'))
 }
 
 function buildNavbar() {

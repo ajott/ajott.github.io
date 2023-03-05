@@ -80,6 +80,32 @@ talent:hover {
     text-decoration: none !important;
 }
 
+divineman {
+    /* cursor: help;
+    color: blanchedalmond !important;
+    text-decoration: underline 1px dotted blanchedalmond; */
+    font-style: italic !important;
+}
+
+/* divineman:hover {
+    cursor: help;
+    color: goldenrod !important;
+    text-decoration: none !important;
+} */
+
+condition {
+    cursor: help;
+    color: blanchedalmond !important;
+    text-decoration: underline 1px dotted blanchedalmond;
+    font-style: italic !important;
+}
+
+condition:hover {
+    cursor: help;
+    color: goldenrod !important;
+    text-decoration: none !important;
+}
+
 .w3-dropdown-content {
     border-left: 1px solid blanchedalmond !important;
     border-right: 1px solid blanchedalmond !important;
@@ -181,6 +207,18 @@ hr {
 
 .w3-panel skill {
     color: #212141 !important;
+    text-decoration: underline 1px dotted #212141 !important;
+}
+
+.w3-panel condition {
+    color: #212141 !important;
+    font-style: italic !important;
+    text-decoration: underline 1px dotted #212141 !important;
+}
+
+.w3-panel a {
+    color: #212141 !important;
+    text-shadow: none !important;
     text-decoration: underline 1px dotted #212141 !important;
 }
 
@@ -363,7 +401,7 @@ td:first-child {
 }
 
 th {
-    background: rgb(47, 79, 79,.7) !important;
+    background: #2b4143 !important;
     ;
 }
 

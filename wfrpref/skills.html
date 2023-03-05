@@ -14,6 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
     <script src="main.js"></script>
     <script src="skills.js"></script>
+    <script src="data.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="interface.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -404,6 +405,11 @@
                         talentFuse = new Fuse(talent,{
                     keys: ["name"]
                     })});
+                    $(document).ready(function () {
+                        conditionFuse = new Fuse(condition, {
+                            keys: ["name"]
+                        })
+                    });
                 </script>
             </div>
         </div>

@@ -15,6 +15,7 @@
     <script src="main.js"></script>
     <script src="spells.js"></script>
     <script src="skills.js"></script>
+    <script src="data.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="interface.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -142,7 +143,7 @@
                                 the CN of the spell, it is cast as explained in the spell’s description.
                                 If failed, the spell attempt fails, and nothing else happens.</p>
 
-                            <div class="w3-panel w3-pale-blue w3-leftbar w3-rightbar w3-border-blue">
+                            <div class="w3-round-large w3-panel w3-light-blue w3-leftbar w3-rightbar w3-border-blue">
                                 <h4>Talents</h4>
                                 <p>Reminder: talents which affect a test &mdash; in this case, <talent>Instinctive
                                         Diction</talent> and <talent>Perfect Pitch</talent> &mdash; automatically add +1 SL per rank
@@ -239,7 +240,7 @@
                                 cast a spell directly from a grimoire if the spell belongs to a Lore
                                 they possess. Doing so doubles the Casting Number.</p>
 
-                            <div class="w3-panel w3-pale-yellow w3-leftbar w3-rightbar w3-border-yellow">
+                            <div class="w3-round-large w3-panel w3-light-blue w3-leftbar w3-rightbar w3-border-yellow">
                                 <p>
                                     If you start play with a Grimoire, it is up to the GM to
                                     determine how many spells your master has recorded within
@@ -287,7 +288,7 @@
                                 also lose all your channelled magical energy, and suffer a Minor
                                 Miscast as it all writhes free from your Aethyric grasp.
                             </p>
-                            <div class="w3-panel w3-pale-blue w3-leftbar w3-rightbar w3-border-blue">
+                            <div class="w3-round-large w3-panel w3-light-blue w3-leftbar w3-rightbar w3-border-blue">
                                 <h4>Talents</h4>
                                 <p>Reminder: talents which affect a test &mdash; in this case, <talent>Instinctive
                                         Diction</talent> and <talent>Perfect Pitch</talent> &mdash; automatically add +1 SL per rank
@@ -318,7 +319,7 @@
                                 Minor Miscast and lose all SL you have accrued in the Extended
                                 Channelling Test so far.
                             </p>
-                            <div class="w3-panel w3-pale-yellow w3-leftbar w3-rightbar w3-border-yellow">
+                            <div class="w3-round-large w3-panel w3-light-blue w3-leftbar w3-rightbar w3-border-blue">
                                 <h4>Option: Risky Channeling</h4>
                                 <p>As written, channeling a spell with a high CN can take several rounds, and the spell can only be cast the round after the cumulative SL of the <b>Extended Channeling Test</b> has met or exceeded the CN of the spell.</p>
                                 <p>An optional variant is to allow for a <b>Casting &ndash; Language (Magic) &ndash; Test </b> in place of the Channeling test, with the CN of the spell reduced by the cumulative SL on the <b>Extended Channeling Test</b>.</p>
@@ -432,7 +433,7 @@
             <hr />
             <div id="minorMiscast" class="w3-row-padding w3-section info">
                 <h1>Minor Miscasts</h1>
-                <table class="w3-table w3-striped w3-hoverable w3-bordered table-dark">
+                <table id="miscastMinor" class="w3-table w3-striped w3-hoverable w3-bordered table-dark">
                     <thead>
                         <tr>
                             <th>1d100</th>
@@ -455,7 +456,7 @@
                         </tr>
                         <tr>
                             <td>16-20</td>
-                            <td><b>Soulwax:</b> Your ears clog instantly with a thick wax. Gain 1 <em>Deafened</em>
+                            <td><b>Soulwax:</b> Your ears clog instantly with a thick wax. Gain 1 <condition>Deafened</condition>
                                 Condition, which is not removed until someone
                                 cleans them for you (with a successful use of the Heal Skill).</td>
                         </tr>
@@ -472,12 +473,12 @@
                         </tr>
                         <tr>
                             <td>31-35</td>
-                            <td><b>Rupture:</b> Your nose, eyes, and ears bleed profusely. Gain 1d10 <em>Bleeding</em>
+                            <td><b>Rupture:</b> Your nose, eyes, and ears bleed profusely. Gain 1d10 <condition>Bleeding</condition>
                                 Conditions.</td>
                         </tr>
                         <tr>
                             <td>36-40</td>
-                            <td><b>Soulquake:</b> Gain the <em>Prone</em> Condition.</td>
+                            <td><b>Soulquake:</b> Gain the <condition>Prone</condition> Condition.</td>
                         </tr>
                         <tr>
                             <td>41-45</td>
@@ -488,7 +489,7 @@
                         <tr>
                             <td>46-50</td>
                             <td><b>Wayward Garb:</b> your clothes seem to writhe with a mind of their own. Receive 1
-                                <em>Entangled</em> Condition with a
+                                <condition>Entangled</condition> Condition with a
                                 Strength of 1d10&times;5 to resist.</td>
                         </tr>
                         <tr>
@@ -498,18 +499,18 @@
                         </tr>
                         <tr>
                             <td>56-60</td>
-                            <td><b>Souldrain:</b> Gain 1 <em>Fatigued</em> Condition, which remains for 1d10 hours.</td>
+                            <td><b>Souldrain:</b> Gain 1 <condition>Fatigued</condition> Condition, which remains for 1d10 hours.</td>
                         </tr>
                         <tr>
                             <td>61-65</td>
-                            <td><b>Driven to Distraction:</b> If engaged in combat, gain the <em>Surprised</em>
+                            <td><b>Driven to Distraction:</b> If engaged in combat, gain the <condition>Surprised</condition>
                                 Condition. Otherwise, you are completely startled,
                                 your heart racing, and unable to concentrate for a few moments.</td>
                         </tr>
                         <tr>
                             <td>66-70</td>
                             <td><b>Unholy Visions:</b> Fleeting visions of profane and unholy acts harass you. Receive a
-                                <em>Blinded</em> Condition; pass a
+                                <condition>Blinded</condition> Condition; pass a
                                 <b>Challenging (+0) Cool Test</b> or gain another.
                             </td>
                         </tr>
@@ -520,7 +521,7 @@
                         </tr>
                         <tr>
                             <td>76-80</td>
-                            <td><b>The Horror!:</b> Pass a <b>Hard (–20) Cool Test</b> or gain 1 <em>Broken</em>
+                            <td><b>The Horror!:</b> Pass a <b>Hard (–20) Cool Test</b> or gain 1 <condition>Broken</condition>
                                 Condition.</td>
                         </tr>
                         <tr>
@@ -567,14 +568,14 @@
                             <td>06-10</td>
                             <td><b>Hexeyes:</b> Your eyes turn an unnatural colour associated with your Lore for 1d10
                                 hours. While your eyes are
-                                discoloured, you have 1 <em>Blinded</em> Condition that cannot be resolved by <b>any</b>
+                                discoloured, you have 1 <condition>Blinded</condition> Condition that cannot be resolved by <b>any</b>
                                 means.</td>
                         </tr>
                         <tr>
                             <td>11-15</td>
                             <td><b>Aethyric Shock:</b> You suffer 1d10 wounds, ignoring your Toughness Bonus and Armour
                                 Points. Pass an <b>Average
-                                    (+20) Endurance Test</b>, or also gain a <em>Stunned</em> Condition.</td>
+                                    (+20) Endurance Test</b>, or also gain a <condition>Stunned</condition> Condition.</td>
                         </tr>
                         <tr>
                             <td>16-20</td>
@@ -585,12 +586,12 @@
                         <tr>
                             <td>21-25</td>
                             <td><b>Intestinal Rebellion:</b> Your bowels move uncontrollably, and you soil yourself.
-                                Gain 1 <em>Fatigued</em> Condition,
+                                Gain 1 <condition>Fatigued</condition> Condition,
                                 which cannot be removed until you can change your clothes and clean yourself up.</td>
                         </tr>
                         <tr>
                             <td>26-30</td>
-                            <td><b>Soulfire:</b> Gain an <em>Ablaze</em> Condition, as you are wreathed in unholy flames
+                            <td><b>Soulfire:</b> Gain an <condition>Ablaze</condition> Condition, as you are wreathed in unholy flames
                                 with a colour associated with your
                                 Lore.</td>
                         </tr>
@@ -604,7 +605,7 @@
                             <td>36-40</td>
                             <td><b>Swarmed:</b> You are engaged by a swarm of aethyric Rats, Giant Spiders, Snakes, or
                                 similar (GM’s choice). Use
-                                the standard profiles for the relevant creature type, adding the <em>Swarm</em> Creature
+                                the standard profiles for the relevant creature type, adding the <condition>Swarm</condition> Creature
                                 Trait. After 1d10 rounds, if not
                                 yet destroyed, the swarm retreats.</td>
                         </tr>
@@ -612,7 +613,7 @@
                             <td>41-45</td>
                             <td><b>Ragdoll:</b> You are flung 1d10 yards through the air in a random direction, taking
                                 1d10 wounds on landing,
-                                ignoring Armour Points, and receiving the <em>Prone</em> Condition.</td>
+                                ignoring Armour Points, and receiving the <condition>Prone</condition> Condition.</td>
                         </tr>
                         <tr>
                             <td>46-50</td>
@@ -648,12 +649,12 @@
                             <td>66-70</td>
                             <td><b>Regurgitation:</b> You spew uncontrollably, throwing up far more foul-smelling
                                 vomitus than your body can
-                                possibly contain. Gain the <em>Stunned</em> Condition, which lasts for 1d10 Rounds.</td>
+                                possibly contain. Gain the <condition>Stunned</condition> Condition, which lasts for 1d10 Rounds.</td>
                         </tr>
                         <tr>
                             <td>71-75</td>
                             <td><b>Chaos Quake:</b> All creatures within 1d100 yards must pass an <b>Average (+20)
-                                    Athletics Test</b> or gain the <em>Prone</em>
+                                    Athletics Test</b> or gain the <condition>Prone</condition>
                                 Condition.</td>
                         </tr>
                         <tr>
@@ -666,12 +667,12 @@
                         </tr>
                         <tr>
                             <td>81-85</td>
-                            <td><b>Foul Enfeeblement:</b> Gain 1 Corruption point, the <em>Prone</em> Condition, and a
-                                <em>Fatigued</em> Condition</td>
+                            <td><b>Foul Enfeeblement:</b> Gain 1 Corruption point, the <condition>Prone</condition> Condition, and a
+                                <condition>Fatigued</condition> Condition</td>
                         </tr>
                         <tr>
                             <td>86-90</td>
-                            <td><b>Hellish Stench:</b> You now smell really bad! You gain the <em>Distracting</em>
+                            <td><b>Hellish Stench:</b> You now smell really bad! You gain the <condition>Distracting</condition>
                                 Creature Trait (see page 339), and probably
                                 the enmity of anyone with a sense of smell. This lasts for 1d10 hours.</td>
                         </tr>
@@ -687,7 +688,7 @@
                             <td><b>Aethyric Feedback:</b> Everyone within a number of yards equal to your Willpower
                                 Bonus &mdash; friend and foe alike
                                 &mdash; suffers 1d10 wounds, ignoring Toughness Bonus and Armour Points, and receives
-                                the <em>Prone</em> Condition. If
+                                the <condition>Prone</condition> Condition. If
                                 there are no targets in range, the magic has nowhere to vent, so your head explodes,
                                 killing you instantly.</td>
                         </tr>
@@ -718,6 +719,11 @@
                     talentFuse = new Fuse(talent,{
                 keys: ["name"]
                 })});
+                    $(document).ready(function () {
+                        conditionFuse = new Fuse(condition, {
+                            keys: ["name"]
+                        })
+                    });
             </script>
             </div>
         </div>

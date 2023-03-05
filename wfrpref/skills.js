@@ -161,6 +161,8 @@ function buildTalentLite(talentSearch) {
 
     if (talentSearch["test"] != "") {
        $("#talentDialog .talentTest").html("<b class=\"w3-tooltip TooltipLight\">Test:<span class=\"w3-text w3-tag w3-darkslate-l1 w3-small w3-round\" style=\"position:absolute;left:0;bottom:18px; padding: 1em;\">Gain +1 SL on successful tests with this skill</span></b> "+talentSearch["test"])
+    } else {
+        $("#talentDialog .talentTest").html("")
     }
 
     $("#talentDialog .talentDesc").html(talentSearch["desc"])    

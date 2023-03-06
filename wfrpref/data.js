@@ -755,6 +755,8 @@ var blessByCult = {
     "Verena": ["Conscience", "Courage", "Fortune", "Righteousness", "Wisdom", "Wit"],
 }
 
+var blessings = ["Battle","Breath","Charisma","Conscience","Courage","Finesse","Fortune","Grace","Hardiness","Healing","The Hunt","Might","Protection","Recuperation","Righteousness","Savagery","Tenacity","Wisdom","Wit"]
+
 var miracle = [
     {
         "name": "",
@@ -2301,6 +2303,10 @@ var condition = [
         "desc": "<p>Whether caused by a loud noise or a blow to the head, you are unable to hear properly. You suffer a –10 penalty to all Tests involving hearing, and any opponent attacking you in close combat from the flank or rear gains an extra bonus of +10 to hit you (this bonus does not increase with multiple Deafened Conditions). One Deafened condition is removed at the end of every other Round and is often replaced with tinnitus.</p>"
     },
     {
+        "name": "Engaged",
+        "desc": "<p>Whenever you attack an opponent, or are attacked, in melee combat, you count as Engaged. This means you are tussling with each other in a fight, and other rules (due to Talents, Skills, etc.) for being Engaged might apply. If you don't attack each other for a full Round, you are no longer Engaged.</p>"
+    },
+    {
         "name": "Entangled",
         "desc": "<p>You are wrapped in something restricting your movement; it could be ropes, spider’s webbing, or an opponent’s bulging biceps. On your turn, you may not Move, and all your actions involving movement of any kind suffer a penalty of –10 (including Grappling; see page 163). For your Action, you can remove an Entangled Condition if you win an Opposed Strength Test against the source of the entanglement, with each SL removing an extra Entangled Condition. </p>"
     },
@@ -2327,5 +2333,122 @@ var condition = [
     {
         "name": "Unconscious",
         "desc": "<p>You are knocked out, asleep, or otherwise insensible. You can do nothing on your turn and are completely unaware of your surroundings. An attacker targeting you gains the benefit of the I Will Not Fail rule on page 171 without having to spend a Resilience point. Or, if the GM prefers, any close combat hit simply kills you. Any ranged combat hit automatically does the same if the shooter is at Point Blank range.</p><p>The Unconscious Condition does not stack — you are either Unconscious , or you are not — so you do not collect multiple Unconscious Conditions.</p><p>Recovering from unconsciousness requires different circumstances depending upon why you fell unconscious. Refer to Injury on page 172 for more on this. If you spend a Resolve point to remove an Unconscious condition, but have not resolved the cause of the incapacitation, you gain another Unconscious Condition at the end of the round. When you lose the Unconscious Condition, you gain the Prone and Fatigued Conditions.</p>"
+    }
+]
+
+var weaponQual = [
+    {
+        "name": "Accurate",
+        "desc": "The weapon is accurate an easy to hit with. Gain a bonus of +10 to any Test when firing this weapon."
+    },
+    {
+        "name": "Blackpowder",
+        "desc": "The crack of gunfire followed by gouts of smoke and confusion can be terrifying. If you are targeted by a Blackpowder weapon, you must pass an <b>Average (+20) Cool Test</b> or take a <em>Broken</em> Condition, even if the shot misses."
+    },
+    {
+        "name": "Blast (Rating)",
+        "desc": "All Characters within <mono>(Rating)</mono> yards of the struck target point take <mono>SL+Weapon Damage</mono>, and suffer any Conditions the weapon inflicts."
+    },
+    {
+        "name": "Damaging",
+        "desc": "A Damaging weapon can use the higher score from either the units die or the SL to determine the Damage caused from a successful hit. For example, if you roll 34 in your attack Test and the target number was 52, you can choose to use the SL (which in this case is 2) or the units die result, which is 4. An Undamaging weapon can never also be Damaging (Undamaging takes precedent)."
+    },
+    {
+        "name": "Defensive",
+        "desc": "Defensive weapons are designed to parry incoming attacks. If you are wielding such a weapon, gain a bonus of +1 SL to any Melee Test when you oppose an incoming attack."
+    },
+    {
+        "name": "Distract",
+        "desc": "Distracting weapons can be used to drive an opponent back due to their dangerous or whip-like natures. Instead of causing Damage, a successful attack with a Distracting weapon can force an opponent back 1 yard per SL by which you win the Opposed Test."
+    },
+    {
+        "name": "Entangle",
+        "desc": "Your weapon wraps around your opponents, entangling them. Any opponent successfully hit by your weapon gains the Entangled Condition with a Strength value equal to your Strength Characteristic. When Entangling an opponent, you cannot otherwise use the weapon to hit. You can end the Entangling whenever you wish."
+    },
+    {
+        "name": "Fast",
+        "desc": "Fast weapons are designed to strike out with such speed that parrying is not an option, leaving an opponent skewered before they can react. A wielder of a Fast weapon can choose to attack with the Fast weapon outside of the normal Initiative sequence, either striking first, last, or somewhere in between as desired. <br/><br/>Further, all Melee Tests to defend against Fast weapons suffer a penalty of –10 if your opponent is using a weapon without the Fast Quality; other Skills defend as normal. Two opponents with Fast weapons fight in Initiative order (relative to each other) as normal. A Fast weapon may never also be Slow (Slow takes precedent)."
+    },
+    {
+        "name": "Hack",
+        "desc": "Hacking weapons have heavy blades that can hack through armour with horrific ease. If you hit an opponent, you Damage a struck piece of armour or shield by 1 point as well as wounding the target."
+    },
+    {
+        "name": "Impact",
+        "desc": "Some weapons are just huge or cause terrible damage due to their weight or design. On a successful hit, add the result of the units die of the attack roll to any Damage caused by an Impact weapon. An Undamaging weapon can never also have Impact (Undamaging takes precedent)."
+    },
+    {
+        "name": "Impale",
+        "desc": "Impale weapons can kill with a single clean blow. Impale weapons cause a Critical Hit on any number divisible by 10 (i.e.: 10, 20, 30, etc.) as well as on doubles (i.e.: 11, 22, 33) rolled equal or under an appropriate Test in combat."
+    },
+    {
+        "name": "Impale",
+        "desc": "Impale weapons can kill with a single clean blow. Impale weapons cause a Critical Hit on any number divisible by 10 (i.e.: 10, 20, 30, etc.) as well as on doubles (i.e.: 11, 22, 33) rolled equal or under an appropriate Test in combat.<br/><br/>If the impale comes from a ranged weapon, the ammunition used has firmly lodged itself in the target’s body. Arrows and bolts require a successful <b>Challenging (+0) Heal Test</b> to remove — bullets require a surgeon (see the <talent>Surgery</talent> Talent). You cannot heal 1 of your Wounds for each unremoved arrow or bullet."
+    },
+    {
+        "name": "Penetrating",
+        "desc": "The weapon is highly effective at penetrating armour. Non-metal APs are ignored, and the first point of all other armour is ignored."
+    },
+    {
+        "name": "Pistol",
+        "desc": "You can use this weapon to attack in Close Combat."
+    },
+    {
+        "name": "Precise",
+        "desc": "The weapon is easy to get on target. Gain a bonus of +1 SL to any successful Test when attacking with this weapon."
+    },
+    {
+        "name": "Pummel",
+        "desc": "Pummel weapons are especially good at battering foes into submission. If you score a Head hit with a Pummel weapon, attempt an Opposed Strength/Endurance test against the struck opponent. If you win the test, your opponent gains a <condition>Stunned</condition> Condition."
+    },
+    {
+        "name": "Repeater (Rating)",
+        "desc": "Your weapon holds <mono>(Rating)</mono> shots, automatically reloading after each time you fire. When you use all your shots, you must fully reload the weapon using the normal rules."
+    },
+    {
+        "name": "Shield (Rating)",
+        "desc": "If you use this weapon to oppose an incoming attack, you count as having <mono>(Rating)</mono> Armour Points on all locations of your body. If your weapon has a Shield Rating of 2 or higher (so: Shield 2 or Shield 3), you may also Oppose incoming missile shots in your Line of Sight."
+    },
+    {
+        "name": "Trap Blade",
+        "desc": "Some weapons are designed to trap other weapons, and sometimes even break them. If you score a Critical when defending against an attack from a bladed weapon you can choose to trap it instead of causing a Critical Hit. <br/><br/>If you choose to do this, enact an Opposed Strength Test, adding your SL from the previous Melee Test. If you succeed, your opponent drops the blade as it is yanked free. If you score an Astounding Success, you not only disarm your opponent, but the force of your maneuver breaks their blade unless it has the Unbreakable quality. If you fail the Test, your opponent frees the blade and may fight on as normal."
+    },
+    {
+        "name": "Unbreakable",
+        "desc": "The weapon is exquisitely well-made or constructed from an especially strong material. Under almost all circumstances, this weapon will not break, corrode, or lose its edge."
+    },
+    {
+        "name": "Wrap",
+        "desc": "Wrap weapons typically have long chains with weights at the end, making it very difficult to parry them effectively. Melee Tests opposing an attack from a Wrap weapon suffer a penalty of –1 SL, as parried strikes wrap over the top of shields, or around blades."
+    },
+    {
+        "name": "Dangerous",
+        "flaw": true,
+        "desc": "Some weapons are almost as likely to hurt you as your opponent. Any failed test including an 9 on either 10s or units die results in a Fumble (see Chapter 5: Rules for more on Fumbles)."
+    },
+    {
+        "name": "Imprecise",
+        "flaw": true,
+        "desc": "Imprecise weapons are difficult to bring to bear as they are unwieldy or hard to aim. Suffer a penalty of –1 SL when using the weapon to attack. An Imprecise Weapon can never be Precise (Imprecise takes precedent)."
+    },
+    {
+        "name": "Reload (Rating)",
+        "flaw": true,
+        "desc": "The weapon is slow to reload. An unloaded weapon with this flaw requires an Extended Ranged Test for the appropriate Weapon Group scoring <mono>(Rating)</mono> SL to reload. If you are interrupted while reloading, you must start again from scratch."
+    },
+    {
+        "name": "Slow",
+        "flaw": true,
+        "desc": "Slow weapons are unwieldy and heavy, making them difficult to use properly. Characters using Slow weapons always strike last in a Round, regardless of Initiative order. Further, opponents gain a bonus of +1 SL to any Test to defend against your attacks."
+    },
+    {
+        "name": "Tiring",
+        "flaw": true,
+        "desc": "The weapon is fatiguing to use or difficult to bring to bear. You only gain the benefit of the Impact and Damaging Weapon Traits on a Turn you Charge."
+    },
+    {
+        "name": "Undamaging",
+        "flaw": true,
+        "desc": "Some weapons are not very good at penetrating armour. All APs are doubled against Undamaging weapons. Further, you do not automatically inflict a minimum of 1 Wound on a successful hit in combat."
     }
 ]

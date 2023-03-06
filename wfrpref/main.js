@@ -20,44 +20,95 @@ function inRangeInclusive(num, range) {
 
 $(document).ready(function () {
     buildNavbar();
-    setTimeout( function() {
+    setTimeout(function () {
         initializeModals();
-        $('#talentDialog').on('click', function(e) {
+        $('#talentDialog').on('click', function (e) {
             if (e.target !== this)
-              return;
-            
+                return;
+
             hideTalentModal();
-          });
-          $('#skillDialog').on('click', function(e) {
-              if (e.target !== this)
-                return;0
-              
-              hideSkillModal();
-            });
-            $('#conditionDialog').on('click', function(e) {
-                if (e.target !== this)
-                  return;
-                
-                hideConditionModal();
-              });
-    }, 300);    
+        });
+        $('#skillDialog').on('click', function (e) {
+            if (e.target !== this)
+                return; 0
+
+            hideSkillModal();
+        });
+        $('#conditionDialog').on('click', function (e) {
+            if (e.target !== this)
+                return;
+
+            hideConditionModal();
+        });
+        $('#qualDialog').on('click', function (e) {
+            if (e.target !== this)
+                return;
+
+            hideQualityModal();
+        });
+        $('#miracleDialog').on('click', function (e) {
+            if (e.target !== this)
+                return;
+
+            hideMiracleModal();
+        });
+    }, 300);
 });
 
-function initializeModals () {
-    $('skill').attr('onclick','initializeSkillModal(this)');
-    $('talent').attr('onclick','initializeTalentModal(this)');
-    $('condition').attr('onclick','initializeConditionModal(this)');
+function initializeModals() {
+    $('skill').attr('onclick', 'initializeSkillModal(this)');
+    $('talent').attr('onclick', 'initializeTalentModal(this)');
+    $('condition').attr('onclick', 'initializeConditionModal(this)');
+    $('weaponqual').attr('onclick', 'initializeQualityModal(this)');
+    $('divineman').attr('onclick', 'initializeQualityModal(this)');
 }
 
+
+
+
+function masterSearch() {
+    $('#masterSearchOptions').html("")
+    let searchType = $('input[name="masterSearch"]:checked').val()
+    let searchTxt = $('#masterSearchBox').val()
+
+    let searchEl = document.getElementById('masterSearchBox')
+    let y = searchEl.getBoundingClientRect().top + window.pageYOffset - 100
+    window.scrollTo({ top: y, behavior: 'smooth' });
+
+    let fuses = {
+        "skill": skillFuse,
+        "talent": talentFuse,
+        "condition": conditionFuse,
+        // "spell": spellFuse,
+        "miracle": miracleFuse,
+        "weaponQual": qualFuse,
+    }
+
+    let modals = {
+        "skill": 'initializeSkillModal(this)',
+        "talent": 'initializeTalentModal(this)',
+        "condition": 'initializeConditionModal(this)',
+        "weaponQual": 'initializeQualityModal(this)',
+        "miracle": 'initializeMiracleModal(this)'
+    }
+
+    let srchRslt = fuses[searchType].search(searchTxt)
+
+    
+
+    srchRslt.forEach(result => {
+        $('#masterSearchOptions').append("<div class=\"masterSearchResult w3-blue-grey w3-hover-grey\" onclick=\"" + modals[searchType] + "\">" + result["item"]["name"] + "</div>")
+    });
+}
 
 
 
 function accordion(id, el) {
     var x = document.getElementById(id);
     if (x.className.indexOf("w3-show") == -1) {
-        $('#'+id).removeClass("w3-hide").addClass("w3-show")
+        $('#' + id).removeClass("w3-hide").addClass("w3-show")
     } else {
-        $('#'+id).removeClass("w3-show").addClass("w3-hide")
+        $('#' + id).removeClass("w3-show").addClass("w3-hide")
     }
 
     $this = $(el)
@@ -75,7 +126,7 @@ function showMenu() {
 
 
 function dropdownShow(str) {
-    let elements = ["charDropdown","magicDropdown", "religionDropdown", "skillDropdown"]
+    let elements = ["charDropdown", "magicDropdown", "religionDropdown", "skillDropdown", "combatDropdown"]
 
     for (let i = 0; i < elements.length; i++) {
         if (str == elements[i]) {
@@ -356,24 +407,55 @@ function initializeConditionModal(el) {
 function buildConditionLite(conditionSearch) {
 
     $("#conditionDialog" + " .conditionName").html(conditionSearch["name"])
-    
+
     $("#conditionDialog" + " .conditionDesc").html(conditionSearch["desc"])
 
     initializeModals();
 
 }
 
-function openConditionModal () {
-    document.getElementById('conditionDialog').style.display='block'
+function openConditionModal() {
+    document.getElementById('conditionDialog').style.display = 'block'
 
 }
 
-function hideConditionModal () {
-    document.getElementById('conditionDialog').style.display='none'
+function hideConditionModal() {
+    document.getElementById('conditionDialog').style.display = 'none'
 }
 
-function conditionModalSearch () {
+function conditionModalSearch() {
     outConditionSearch($('#conditionDialog .conditionName'))
+}
+
+function initializeQualityModal(el) {
+    let htmlPhrase = el.innerText
+    let srchPhrase = htmlPhrase.split(' (')[0]
+    let srchRslt = qualFuse.search(srchPhrase)
+    buildQualityLite(srchRslt[0]["item"])
+    openQualityModal();
+}
+
+function buildQualityLite(qualSearch) {
+
+    $("#qualDialog" + " .qualName").html(qualSearch["name"])
+
+    $("#qualDialog" + " .qualDesc").html(qualSearch["desc"])
+
+    initializeModals();
+
+}
+
+function openQualityModal() {
+    document.getElementById('qualDialog').style.display = 'block'
+
+}
+
+function hideQualityModal() {
+    document.getElementById('qualDialog').style.display = 'none'
+}
+
+function qualModalSearch() {
+    outQualitySearch($('#qualDialog .qualName'))
 }
 
 function buildNavbar() {

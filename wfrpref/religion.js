@@ -150,3 +150,58 @@ function buildBlessByCultTable() {
 }
 
 
+function buildMiracleLite(miracleSearch) {
+
+    let isBlessing = (blessings.includes(miracleSearch["name"]))
+
+        if (isBlessing) {
+            $("#miracleDialog .miracleName").html("Blessing of " + miracleSearch["name"])
+        } else {
+            $("#miracleDialog .miracleName").html(miracleSearch["name"])
+        }
+
+        if (isBlessing) {
+            $("#miracleDialog  .miracleGod").text("")
+        } else {
+            $("#miracleDialog  .miracleGod").text(miracleSearch["god"])
+        }
+
+        $("#miracleDialog .miracleRange").html(miracleSearch["range"])
+        $("#miracleDialog .miracleTarget").html(miracleSearch["target"])
+        $("#miracleDialog .miracleDuration").html(miracleSearch["duration"])
+
+        if (miracleSearch["desc"] != undefined) {
+            if (typeof (miracleSearch["desc"]) == "object") {
+                for (let j = 0; j < miracleSearch["desc"].length; j++) {
+                    htmlString += "<p>" + miracleSearch["desc"][j] + "</p>";
+                }
+            } else {
+                htmlString = "<p>" + miracleSearch["desc"] + "</p>"
+            }
+        }
+
+        $("#miracleDialog .miracleDescription").html(htmlString)
+
+        htmlString = "";
+    
+
+    initializeModals();
+
+}
+
+function initializeMiracleModal(el) {
+    let htmlPhrase = el.innerText
+    let srchPhrase = htmlPhrase.split(' (')[0]
+    let srchRslt = miracleFuse.search(srchPhrase)
+    buildMiracleLite(srchRslt[0]["item"])
+    openMiracleModal();
+}
+
+function openMiracleModal() {
+    document.getElementById('miracleDialog').style.display = 'block'
+
+}
+
+function hideMiracleModal() {
+    document.getElementById('miracleDialog').style.display = 'none'
+}

@@ -1,0 +1,463 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WFRP 4e QuickRef</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="./isotope.pkgd.js"></script>
+    <script src="main.js"></script>
+    <script src="spells.js"></script>
+    <script src="skills.js"></script>
+    <script src="data.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <link href="../libs/jquery/jquery-ui.css" rel="stylesheet">
+    <script src="../libs/jquery/jquery-1.10.2.js"></script>
+    <script src="../libs/jquery/jquery-ui.js"></script>
+</head>
+
+
+<body>
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad" id="navBarDiv">
+    </div>
+
+    <div id="combTop" class="w3-row-padding w3-section info">
+        <h1>Combat</h1>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l5">
+            <h3>Summary</h3>
+            <p>Combat follows these steps:
+            <ol>
+                <li><b>Determine Surprise: </b>Generally characters would only be <condition>Surprised</condition> in
+                    the first round of combat.</li>
+                <li><b>Round Begins: </b>If a rule states that something happens "at the start of the Round," it happens
+                    now.</li>
+                <li><b>Characters take Turns: </b>Each combatant takes a Turn in Initiative order, starting with the
+                    highest Initiative. <eh>Each Character can usually perform one Move and one Action per Turn</eh>.
+                </li>
+                <li><b>Round Ends: </b>The Round ends when all characters have taken their turns. If a rule states that
+                    something happens "at the end of the Round," it happens now.</li>
+                <li><b>Repeat 2-5 As Required: </b>Continue to play through Rounds until the combat is resolved.</li>
+            </ol>
+            </p>
+            <h3>Initiative Order</h3>
+            <p>Characters act in Initiative order during Rounds, with the highest Initiative acting first. If multiple
+                characters have the same Initiative Characteristic, Agility is used as a tiebreaker. If they have the
+                same Agility, roll an <b>Opposed Agility Test</b>, with the winner choosing who among the tied
+                combatants goes first.</p>
+
+        </div>
+        <div class="w3-col s12 m12 l5">
+            <h3>Surprise</h3>
+            <p>Taking an enemy by surprise provides a big advantage. If one side is planning an attack, they can attempt
+                to harness the element of surprise by:
+            <ul>
+                <li><b>Hiding: </b>Make a successful Stealth Test in appropriate cover.</li>
+                <li><b>Sneaky Tactics: </b>Attack from behind, in the dark, through heavy fog, or from above.</li>
+                <li><b>Distractions: </b>Loud bangs, milling crowds, and an especially engaging sermon could harbour a
+                    surprise attack!</li>
+                <li><b>Unprepared Defenders: </b>If the enemy are particularly unwary, the attackers automatically
+                    surprise their targets.</li>
+                <li><b>Something Else: </b>Other sneaky and ingenious plans concocted by cunning players.</li>
+            </ul>
+            If there is a chance that the ambushers will be detected, the GM may call for an <b>Opposed Stealth vs
+                Perception Test</b>, usually with the character with the worst <skill>Stealth</skill> opposing all
+            potential spotters. If the ambusher wins, each defeated character gains the <condition>Surprised</condition>
+            Condition.
+            </p>
+            <p>If anyone is surpised, they can use a Resolve point to remove the <condition>Surprised</condition>
+                Condition.</p>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+    </div>
+    <hr />
+
+    <div id="takingTurn" class="w3-row-padding w3-section info">
+        <h1>Taking Your Turn</h1>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m12 l5">
+            <h3>Summary</h3>
+            <p>
+                Characters generally have one Move and one Action per turn, and can take them in any order - often,
+                you'll be doing both at once. Skipping one or the other will not cause it to carry over to another
+                Round, however.
+            </p>
+            <h3>Action</h3>
+            <p>
+                The most common use of an Action in combat will be to Attack, though several Skills and Talents may have
+                relevant Actions associated with them.
+            </p>
+            <p>
+                <b>Melee: </b>To make an attack, perform an <b>Opposed <skill>Melee</skill> Test</b> vs. your opponent; whomever scores
+                the highest SL wins. If you win the test, you hit your oppenent and gain +1 Advantage. If you lose the
+                Opposed Test, your opponent gains +1 Advantage and your Action is finished.
+            </p>
+            <p>
+                <b>Ranged: </b>Roll a <b><skill>Ranged</skill> Test</b> for the weapon you're using. Remember, if you Move before
+                shooting, the test may be more difficult. If you are successful, you hit your opponent and gain +1
+                Advantage. If you fail, your Action is over. Your opponent doesn't gain Advantage in ranged combat.
+            </p>
+            <h4>Criticals and Fumbles</h4>
+            <p>
+                <b>Criticals and Fumbles: </b>When making a Test for an Attack, rolling doubles causes a Critical (if
+                you succeeded on the Test) or a Fumble (if you failed).
+                <br />If you score a critical on a Melee Test, you automatically cause a Critical Wound to your
+                opponent; this occurs even if you were the defender in the attack. Beyond that, damage is calculated as
+                normal.
+                <br />If you fumble, your attack has failed and you also roll on the <b>Oops! Table</b> (WFRP p. 160) to
+                determine what very unfortunate thing has occurred to you.
+            <div class="w3-round-large w3-panel w3-light-blue w3-leftbar w3-rightbar w3-border-blue">
+                <h5>Misfires</h5>
+                <p>If you are using a <b>Blackpowder</b>, <b>Engineering</b>, or <b>Explosive</b> weapon and suffer a
+                    Fumble that is also an even number (for example, 00 or 88), you suffer a Misfire as your weapon
+                    explodes in your hand.</p>
+                <p>Take full Damage to your Primary Arm location, using the units die as an effective SL for the hit.
+                    Additionally, your weapon is destroyed.</p>
+            </div>
+            </p>
+            <h5>Ranged Combat</h5>
+            <p>
+                Ranged combat has some additional rules that don't apply to melee combat:
+                <li>Ranged attacks cannot be opposed with melee Skills unless the target has a large enough shield, or
+                    if the shot is taken at Point Blank range. Shots at Point Blank range can also be dodged.</li>
+                <li>You cannot make Ranged attacks whilst <condition>Engaged</condition>, unless your weapon has the
+                    <weaponqual>Pistol</weaponqual> Quality.</li>
+                <li>If you use your <skill>Ranged</skill> Skill when you are <condition>Engaged</condition> with your
+                    target, the target may Oppose your attack with any Melee skill.</li>
+            </p>
+
+        </div>
+        <div class="w3-col s12 m12 l5">
+            <h3>Movement</h3>
+            <p>
+                Your movement distance (in yards) is calculated based on your Movement Characteristic. If you don't
+                already have it calculated, your <b>Walk</b> speed is Movement &times; 2, and your <b>Run</b> speed is
+                Movement &times; 4. In combat, you can move up to your Run speed without making a test. Moving beyond
+                your Walk speed may cause penalties to Tests at the GM's discretion &mdash; this could include
+                attempting to run stealthily, for example.
+            </p>
+            <h4>Charging</h4>
+            <p>
+                If you are not <condition>Engaged</condition> in combat already, you can use your Move to Charge. If you
+                Charge, your Action must be a <skill>Melee</skill> Test to attack an opponent. If your opponent is at
+                least your Move characteristic in yards away before you Charge, but within your Run range, you will also
+                gain +1 Advantage as you barrel into your opponent.
+            </p>
+            <h4>Disengaging</h4>
+            <p>
+                If you are <condition>Engaged</condition> in combat and no longer wish to be, you have the following two
+                options for leaving safely:
+            </p>
+            <p>
+                <b>Use Advantage: </b>If you have more Advantage than your opponents, you may choose to drop your
+                Advantage to 0 and move away without penalty.
+            </p>
+            <p>
+                <b>Use Dodge: </b>If you have lower or equal Advantage to your opponents, or do not wish to spend your
+                Advantage, you are pinned in place. If you wish to escape, you must make an <b>Opposed <skill>Dodge
+                    </skill>/<skill>Melee</skill> Test</b>. If you succeed, you gain +1 Advantage and can use your Move
+                as normal. If you fail, each opponent defeating you gains +1 Advantage and makes it impossible to escape
+                without a blow to your back.
+            </p>
+            <h5>Fleeing</h5>
+            <p>
+                If you cannot escape otherwise, you can turn your back and flee from your opponents. This is often
+                involuntary, caused by <trait>Terror</trait> or Magic.
+            </p>
+            <p>
+                If you flee, your opponent immediately gains +1 Advantage and may attempt a free attack. The free attack
+                is an <u>unopposed</u> Melee Test using whatever weapon is currently held, using the SL to Damage you as
+                normal. Melee Tests made to hit a Fleeing character gain a +20 bonus.
+                <br />If you are hit, your opponent gains +1 Advantage and you must perform a <b>Challenging (+0)
+                    <skill>Cool</skill> Test</b>. If you fail this test, you gain +1 <condition>Broken</condition>
+                Condition, and a further +1 Broken Condition per SL below 0.
+            </p>
+            <p>
+                Once the free attack is resolved, you may move up to your Run speed directly away from your opponent,
+                assuming you're still capable of such an act.
+            </p>
+            <h4>Running (Sprinting)</h4>
+            <p>
+                You may use your Action to sprint. Perform an <b>Average (+20) <skill>Athletics</skill> Test</b>, and
+                add the SL to 2 &times; Run speed.
+            <div class="w3-round-large w3-panel w3-light-blue w3-leftbar w3-rightbar w3-border-blue">
+                <b>Example: </b>If your Movement characteristic is 4, your Run speed is 16 yards. If you scored -2 SL on
+                your Athletics Test, your total Sprint speed would be <b><mono>(16 &times; 2) - 2 = 30</mono></b> yards.
+            </div>
+            </p>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            <p></p>
+        </div>
+    </div>
+    <hr />
+
+    <div id="combatDifficulty" class="w3-section info">
+        <div class="w3-row-padding">
+            <h1>Combat Difficulty</h1>
+            <div class="w3-col s0 m0 l1">
+                <p></p>
+            </div>
+            <div class="w3-col s12 m12 l5">
+                <h3>Overview</h3>
+                <p>
+                    As with any other Tests, those made in combat are modified to reflect the effects of terrain, the
+                    weather, and other factors. Below is a table with common difficulty examples; remember, the GM has
+                    final say about the difficulty of any Test.
+                </p>
+                <h4>Helpless Targets</h4>
+                <p>
+                    Melee tests to hit a sleeping, <condition>Unconscious</condition>, or otherwise helpless target
+                    automatically succeed.
+                </p>
+                <h4>Shooting into a Group</h4>
+                <p>
+                    <skill>Ranged</skill> Tests made to hit a group of targets are easier, so long as the shooter
+                    doesn't care whom they hit. Any successful hits are randomised between all targets at the GM's
+                    discretion. If the modifier allows you to hit when otherwise you would have failed, you succeed with
+                    +0 SL.
+                </p>
+                <h4>Outnumbering</h4>
+                <p>
+                    Attacking a target whom you outnumber confers a bonus; additionally, at the end of every Round, all
+                    outnumbered opponents lose 1 Advantage. Outnumbering is generally determined by how many Characters
+                    are <condition>Engaged</condition> with each other.
+                </p>
+            </div>
+            <div class="w3-col s12 m12 l5">
+                <h3>Size</h3>
+                <p>
+                    Size is an important factor when shooting at a target: it is far easier to hit a barn door than an
+                    apple.
+                <table class="w3-table table-dark w3-striped w3-hoverable w3-bordered">
+                    <thead>
+                        <tr>
+                            <th>Size</th>
+                            <th>Height or Length</th>
+                            <th>Examples</th>
+                            <th>Modifier</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tiny</td>
+                            <td>Less than a foot</td>
+                            <td>Butterfly, Mouse, Pigeon</td>
+                            <td>-30</td>
+                        </tr>
+                        <tr>
+                            <td>Little</td>
+                            <td>Up to 2 feet</td>
+                            <td>Cat, Hawk, Human Baby</td>
+                            <td>-20</td>
+                        </tr>
+                        <tr>
+                            <td>Small</td>
+                            <td>Up to 4 feet</td>
+                            <td>Giant Rat, Halfling, Human Child</td>
+                            <td>-10</td>
+                        </tr>
+                        <tr>
+                            <td>Average</td>
+                            <td>Up to 7 feet</td>
+                            <td>Dwarf, Elf, Human</td>
+                            <td>+0</td>
+                        </tr>
+                        <tr>
+                            <td>Large</td>
+                            <td>Up to 12 feet</td>
+                            <td>Horse, Ogre, Troll</td>
+                            <td>+20</td>
+                        </tr>
+                        <tr>
+                            <td>Enormous</td>
+                            <td>Up to 20 feet</td>
+                            <td>Griffon, Wyvern, Manticore</td>
+                            <td>+40</td>
+                        </tr>
+                        <tr>
+                            <td>Monstrous</td>
+                            <td>20 feet+</td>
+                            <td>Dragon, Giant, Daemon Prince</td>
+                            <td>+60</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </p>
+                <p>
+                    If this modifier allows you to hit when the Test would otherwise have failed, you succeed with +0
+                    SL.
+                </p>
+            </div>
+            <div class="w3-col s0 m0 l1">
+                <p></p>
+            </div>
+        </div>
+        <div id="diffExample" class="w3-row-padding info">
+            <h1>Difficulty Examples</h1>
+            <div class="w3-col s0 m0 l1">
+                <p></p>
+            </div>
+            <div class="w3-col s12 m12 l10">
+                <table id="diffTable" class="w3-table table-dark w3-striped w3-hoverable w3-bordered">
+                    <thead>
+                        <tr>
+                            <th>Difficulty</th>
+                            <th>Modifier</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Very Easy</td>
+                            <td>+60</td>
+                            <td>
+                                <li>Shooting a Monstrous target (Giant size)</li>
+                                <li>Shooting into a crowd (13+ targets)</li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Easy</td>
+                            <td>+40</td>
+                            <td>
+                                <li>Shooting a target at Point Blank Range</li>
+                                <li>Shooting an Enormous target (Griffon size)</li>
+                                <li>Attacking an opponent you outnumber 3 to 1</li>
+                                <li>Shooting at a Large group (7-12 targets)</li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Average</td>
+                            <td>+20</td>
+                            <td>
+                                <li>Shooting a Large target (Ogre size)</li>
+                                <li>Shooting at Short Range: less than half weapon range</li>
+                                <li>Shooting at a Small group (3-6 targets)</li>
+                                <li>Shooting when you spent your last Action aiming (no Test to aim required)</li>
+                                <li>Attacking an Engaged opponent in the sides or rear</li>
+                                <li>Attacking an opponent you outnumber 2 to 1</li>
+                                <li>Attacking a target with the <condition>Prone</condition> Condition</li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Challenging</td>
+                            <td>+0</td>
+                            <td>
+                                <li>A standard attack</li>
+                                <li>Shooting an Average target (Human size)</li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Difficult</td>
+                            <td>-10</td>
+                            <td>
+                                <li>Attacking whilst you have the <condition>Prone</condition> Condition, or are
+                                    otherwise beneath your target</li>
+                                <li>Attacking whilst in the mud, heavy rain, or difficult terrain</li>
+                                <li>Shooting at Long Range: up to double weapon range</li>
+                                <li>Shooting on a Round where you also use your Move</li>
+                                <li>Shooting a Small target (Child size)</li>
+                                <li>Target in soft cover (behind a hedge, for example)</li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Hard</td>
+                            <td>-20</td>
+                            <td>
+                                <li>A called shot to a specific Hit Location: if you succeed, you hit that location</li>
+                                <li>Fighting in an enclosed space with a weapon with a Length longer than Average</li>
+                                <li>Shooting targets concealed by fog, mist, or shadow</li>
+                                <li>Attacking in a monsoon, hurricane, thick blizzard, or other extreme weather</li>
+                                <li>Dodging when you have the <condition>Prone</condition> Condition, or are mounted
+                                </li>
+                                <li>Close combat in darkness</li>
+                                <li>Shooting a Little target (Cat size)</li>
+                                <li>Using a weapon in your off hand</li>
+                                <li>Target in medium cover (behind a wooden fence, for example)</li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Very Hard</td>
+                            <td>-30</td>
+                            <td>
+                                <li>Attacking or dodging in the deep snow, water, or other arduous terrain</li>
+                                <li>Shooting a Tiny target (Mouse size)</li>
+                                <li>Shooting at Extreme range: up to triple weapon range</li>
+                                <li>Shooting in darkness</li>
+                                <li>Target in hard cover (behind a stone wall, for example)</li>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="w3-col s0 m0 l1">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <hr />
+
+
+</body>
+<footer>
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m10 l10">
+            <div class="w3-center">
+                All WFRP 4e material is &copy; 2018-
+                <script>document.write(new Date().getFullYear()) </script> Cubicle 7 Games
+                <script>
+                    let fsOptions = {
+                        'threshold': 0.6
+                    }
+                    $(document).ready(function () {
+                        skillFuse = new Fuse(skill, {
+                            keys: ["name"]
+                        })
+                    });
+                    $(document).ready(function () {
+                        talentFuse = new Fuse(talent, {
+                            keys: ["name"]
+                        })
+                    });
+                    $(document).ready(function () {
+                        conditionFuse = new Fuse(condition, {
+                            keys: ["name"]
+                        })
+                    });
+                    $(document).ready(function () {
+                        qualFuse = new Fuse(weaponQual, {
+                            keys: ["name"]
+                        })
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+    </div>
+</footer>
+
+<div id="modalPlaceholder">
+
+</div>
+
+</html>

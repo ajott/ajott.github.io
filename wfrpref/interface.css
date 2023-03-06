@@ -16,6 +16,10 @@ eh {
     color: goldenrod !important;
 }
 
+mono {
+    font-family: monospace !important;
+}
+
 .navBarContainer {
     position: relative;
     color: blanchedalmond;
@@ -52,7 +56,7 @@ a {
 
 a:hover {
     cursor: pointer;
-    color: goldenrod !important;
+    color: goldenrod;
     text-decoration: none !important;
 }
 
@@ -106,11 +110,51 @@ condition:hover {
     text-decoration: none !important;
 }
 
+weaponqual {
+    cursor: help;
+    color: blanchedalmond !important;
+    text-decoration: underline 1px dotted blanchedalmond;
+}
+
+weaponqual:hover {
+    cursor: help;
+    color: goldenrod !important;
+    text-decoration: none !important;
+}
+
+trait {
+    /* cursor: help;
+    color: blanchedalmond !important;
+    text-decoration: underline 1px dotted blanchedalmond; */
+    font-style: italic !important;
+}
+
+/* weaponqual:hover {
+    cursor: help;
+    color: goldenrod !important;
+    text-decoration: none !important;
+} */
+
 .w3-dropdown-content {
     border-left: 1px solid blanchedalmond !important;
     border-right: 1px solid blanchedalmond !important;
     border-bottom: 1px solid blanchedalmond !important;
 }
+
+
+.masterSearchResult {
+    background-color: lightgrey;
+    color: black;
+    padding: 1em !important;
+    font-weight: bolder !important;
+}
+
+/*
+.masterSearchResult:hover {
+    background-color: grey;
+    color: white;
+    font-weight: bold;
+} */
 
 /* hr {
     border-color: blanchedalmond;
@@ -189,6 +233,10 @@ hr {
     border-radius: 0px 5px 5px 0px;
 }
 
+#diffTable td {
+    vertical-align: middle;
+}
+
 .grid-item {
     float: left;
     width: 375px;
@@ -225,6 +273,10 @@ hr {
 .tstripe tbody tr:nth-child(even){background-color:rgba(241, 241, 241,.1);}
 
 .w3-panel h4 {
+    color: black !important
+}
+
+.w3-panel h5 {
     color: black !important
 }
 

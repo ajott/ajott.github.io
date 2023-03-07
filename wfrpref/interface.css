@@ -25,6 +25,7 @@ eh {
 
 mono {
     font-family: monospace !important;
+    background-color: black !important;
 }
 
 .navBarContainer {

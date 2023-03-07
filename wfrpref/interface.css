@@ -16,6 +16,8 @@ footer {
     bottom: 0px;
     font-size: small;
     z-index: -1 !important;
+    border-top: 1px solid blanchedalmond;
+    box-shadow: inset 0 8px 15px -6px black;
 }
 
 
@@ -46,9 +48,6 @@ mono {
     color: burlywood !important;
 }
 
-footer {
-    padding-top: 7em;
-}
 
 .noteCard {
     padding: 1em;

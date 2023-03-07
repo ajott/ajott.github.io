@@ -1,3 +1,15 @@
+// var dictDirect = {
+//     "lore": lores,
+//     "spell": spell,
+//     "cults": cults,
+//     "miracle": miracle,
+//     "talent": talent,
+//     "skill": skill,
+//     "condition": condition,
+//     "weaponQual": weaponQual
+// }
+
+
 var lores = {
     "Beasts": {
         "desc": "The Amber wind, <em>Ghur</em>, carries with it a chill, primal ferocity, that is unnerving to beasts and sentient creatures alike. Whenever you successfully cast a spell from the Lore of Beasts, you may also gain the <em>Fear (1)</em> Creature Trait (see page 190) for the next 1d10 Rounds. <br/><p> <b>Ingredients: </b>Shamans use animal fur, skin, bone, and pelt, wrapped in sinews and daubed with blood runes to focus the Amber wind. Often claws are scrimshawed, organs dried, and feathers dipped in rare humours, and it’s not uncommon to find excrement, urine, and other excretions also used.</p>",

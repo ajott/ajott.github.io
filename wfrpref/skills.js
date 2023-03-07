@@ -148,6 +148,13 @@ function buildSkillLite(skillSearch) {
         }
 
         $("#skillDialog" + " .skillDesc").html(skillSearch["desc"])
+        
+        $('#skillDialog').on('click', function (e) {
+            if (e.target !== this)
+                return; 0
+
+            hideSkillModal();
+        });
 
         initializeModals();
 
@@ -166,6 +173,13 @@ function buildTalentLite(talentSearch) {
     }
 
     $("#talentDialog .talentDesc").html(talentSearch["desc"])    
+
+    $('#talentDialog').on('click', function (e) {
+        if (e.target !== this)
+            return;
+
+        hideTalentModal();
+    });
 
     initializeModals();
 

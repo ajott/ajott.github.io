@@ -17,42 +17,31 @@ function inRangeInclusive(num, range) {
 //     $("table").addClass("table-dark");
 // }
 
+var dictDirect = {}
 
 $(document).ready(function () {
     buildNavbar();
     setTimeout(function () {
         initializeModals();
-        $('#talentDialog').on('click', function (e) {
-            if (e.target !== this)
-                return;
-
-            hideTalentModal();
-        });
-        $('#skillDialog').on('click', function (e) {
-            if (e.target !== this)
-                return; 0
-
-            hideSkillModal();
-        });
-        $('#conditionDialog').on('click', function (e) {
-            if (e.target !== this)
-                return;
-
-            hideConditionModal();
-        });
-        $('#qualDialog').on('click', function (e) {
-            if (e.target !== this)
-                return;
-
-            hideQualityModal();
-        });
-        $('#miracleDialog').on('click', function (e) {
-            if (e.target !== this)
-                return;
-
-            hideMiracleModal();
-        });
     }, 300);
+
+    // dictDirect = [lores, spell, cults, miracle, talent, skill, condition, weaponQual]
+
+    // dictDirect = {
+    //     "lore": lores,
+    //     "spell": spell,
+    //     "cults": cults,
+    //     "miracle": miracle,
+    //     "talent": talent,
+    //     skill,
+    //     condition,
+    //     "weaponQual": weaponQual
+    // }
+
+    // dictFuse = new Fuse(dictDirect, {
+    //     keys:[['skill','name'],['talent','name']]
+    // })
+    
 });
 
 function initializeModals() {
@@ -409,6 +398,13 @@ function buildConditionLite(conditionSearch) {
     $("#conditionDialog" + " .conditionName").html(conditionSearch["name"])
 
     $("#conditionDialog" + " .conditionDesc").html(conditionSearch["desc"])
+    
+    $('#conditionDialog').on('click', function (e) {
+        if (e.target !== this)
+            return;
+
+        hideConditionModal();
+    });
 
     initializeModals();
 
@@ -440,6 +436,13 @@ function buildQualityLite(qualSearch) {
     $("#qualDialog" + " .qualName").html(qualSearch["name"])
 
     $("#qualDialog" + " .qualDesc").html(qualSearch["desc"])
+
+    $('#qualDialog').on('click', function (e) {
+        if (e.target !== this)
+            return;
+
+        hideQualityModal();
+    });
 
     initializeModals();
 

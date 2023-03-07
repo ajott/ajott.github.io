@@ -183,6 +183,13 @@ function buildMiracleLite(miracleSearch) {
         $("#miracleDialog .miracleDescription").html(htmlString)
 
         htmlString = "";
+        
+        $('#miracleDialog').on('click', function (e) {
+            if (e.target !== this)
+                return;
+
+            hideMiracleModal();
+        });
     
 
     initializeModals();

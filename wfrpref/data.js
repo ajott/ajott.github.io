@@ -11,7 +11,7 @@
 
 var currYear = new Date().getFullYear()
 
-var CRNotice = "Warhammer Fantasy Roleplay 4th Edition &copy; Copyright Games Workshop Limited 2018-"+currYear+". Warhammer Fantasy Roleplay 4th Edition, the Warhammer Fantasy Roleplay 4th Edition logo, GW, Games Workshop, Warhammer, The Game of Fantasy Battles, the twin-tailed comet logo, and all associated logos, illustrations, images, names, creatures, races, vehicles, locations, weapons, characters, and the distinctive likeness thereof, are either &reg; or &trade;, and/or &copy; Games Workshop Limited, variably registered around the world. Cubicle 7 Entertainment and the Cubicle 7 Entertainment logo are trademarks of Cubicle 7 Entertainment Limited."
+var CRNotice = "Warhammer Fantasy Roleplay 4th Edition &copy; Copyright Games Workshop and Cubicle 7 Games Limited 2018-"+currYear
 
 var modals = {
     "skill": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span style=\"display: none;\" class=\"skillID\"></span><span class=\"skillName\"></span> (<span class=\"skillChar\"></span>)</h3></div><div class=\"w3-row-padding\"><h4 style=\"margin-top:-1em !important;\"><em><span class=\"skillTier\"></span></em></h4></div><div class=\"w3-row-padding\"><div class=\"skillDesc\"></div><div class=\"skillSpec\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"skillModalSearch()\" class=\"w3-button w3-deep-amber firstBtn\">Skill List</button><button onclick=\"hideModal(this)\"class=\"w3-button w3-deep-red-l1 w3-round-large lastBtn\">Close</button></div></div></div>",

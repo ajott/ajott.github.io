@@ -54,8 +54,10 @@ function initializeModals() {
 }
 
 function buildModal(el, type) {
+    // Used for building individual modal IDs
     modalCount++
 
+    // Temporary until an overall fuse/dictionary can be attained
     let fuses = {
         "skill": skillFuse,
         "talent": talentFuse,
@@ -66,19 +68,22 @@ function buildModal(el, type) {
     }
 
     let htmlPhrase = el.innerText
-    let srchPhrase = htmlPhrase.split(' (')[0]
+    let srchPhrase = htmlPhrase.split(' (')[0] // Get rid of specializations, such as Art (Engraving)
     let srchRslt = fuses[type].search(srchPhrase)
+
+    // Get the first result, which should be the closest match
     let dataRslt = srchRslt[0]["item"]
+
+        
+    var $div = $('#default-modal');
+
+    var $klon = $div.clone().prop('id', 'modal' + modalCount).appendTo("#modalPlaceholder");
+
+    $("#modal" + modalCount).html(modals[type])
+
 
     switch (type) {
         case 'skill':
-
-            var $div = $('#default-modal');
-
-            var $klon = $div.clone().prop('id', 'modal' + modalCount).appendTo("#modalPlaceholder");
-
-            $("#modal" + modalCount).html(modals[type])
-
 
             $("#modal" + modalCount + " .skillName").html(dataRslt["name"])
 
@@ -95,23 +100,8 @@ function buildModal(el, type) {
 
             $("#modal" + modalCount + " .skillDesc").html(dataRslt["desc"])
 
-            $('#modal' + modalCount).on('click', function (e) {
-                if (e.target !== this)
-                    return; 0
-
-                hideModal(this);
-            });
-
-            $("#modal" + modalCount).show();
             break;
         case "talent":
-
-            var $div = $('#default-modal');
-
-            var $klon = $div.clone().prop('id', 'modal' + modalCount).appendTo("#modalPlaceholder");
-
-            $("#modal" + modalCount).html(modals[type])
-
 
             $("#modal" + modalCount + " .talentName").html(dataRslt["name"])
 
@@ -126,69 +116,22 @@ function buildModal(el, type) {
 
             $("#modal" + modalCount + " .talentDesc").html(dataRslt["desc"])
 
-            $("#modal" + modalCount).on('click', function (e) {
-                if (e.target !== this)
-                    return;
-
-                hideModal(this);
-            });
-
-            $("#modal" + modalCount).show();
-
             break;
         case "condition":
-
-            var $div = $('#default-modal');
-
-            var $klon = $div.clone().prop('id', 'modal' + modalCount).appendTo("#modalPlaceholder");
-
-            $("#modal" + modalCount).html(modals[type])
-
 
             $("#modal" + modalCount + " .conditionName").html(dataRslt["name"])
 
             $("#modal" + modalCount + " .conditionDesc").html(dataRslt["desc"])
 
-            $("#modal" + modalCount).on('click', function (e) {
-                if (e.target !== this)
-                    return;
-
-                hideModal(this);
-            });
-
-            $("#modal" + modalCount).show();
-
             break;
         case "qual":
-
-            var $div = $('#default-modal');
-
-            var $klon = $div.clone().prop('id', 'modal' + modalCount).appendTo("#modalPlaceholder");
-
-            $("#modal" + modalCount).html(modals[type])
-
 
             $("#modal" + modalCount + " .qualName").html(dataRslt["name"])
 
             $("#modal" + modalCount + " .qualDesc").html(dataRslt["desc"])
 
-            $("#modal" + modalCount).on('click', function (e) {
-                if (e.target !== this)
-                    return;
-
-                hideModal(this);
-            });
-
-            $("#modal" + modalCount).show();
-
             break;
         case "miracle":
-
-            var $div = $('#default-modal');
-
-            var $klon = $div.clone().prop('id', 'modal' + modalCount).appendTo("#modalPlaceholder");
-
-            $("#modal" + modalCount).html(modals[type])
 
             let isBlessing = (blessings.includes(dataRslt["name"]))
 
@@ -222,23 +165,8 @@ function buildModal(el, type) {
 
             htmlString = "";
 
-            $('#modal' + modalCount).on('click', function (e) {
-                if (e.target !== this)
-                    return;
-                hideModal(this)
-            });
-
-            $("#modal" + modalCount).show();
-
             break;
         case "spell":
-
-            var $div = $('#default-modal');
-
-            var $klon = $div.clone().prop('id', 'modal' + modalCount).appendTo("#modalPlaceholder");
-
-            $("#modal" + modalCount).html(modals[type])
-
 
             $("#modal" + modalCount + " .spellName").html(dataRslt["name"])
 
@@ -267,16 +195,16 @@ function buildModal(el, type) {
 
             htmlString = "";
 
-            $('#modal' + modalCount).on('click', function (e) {
-                if (e.target !== this)
-                    return;
-                hideModal(this)
-            });
-
-            $("#modal" + modalCount).show();
-
             break;
-    }
+    }    
+
+    $('#modal' + modalCount).on('click', function (e) {
+        if (e.target !== this)
+            return;
+        hideModal(this)
+    });
+
+    $("#modal" + modalCount).show();
 
     initializeModals();
 }
@@ -292,11 +220,20 @@ function hideModal(el) {
     }
 }
 
+var searchType = "skill"
 
+function changeSearch(type) {
+    searchType = type;
+
+    $('.searchBtn').removeClass('btn-selected')
+
+    $('#masterSearch-'+type).addClass('btn-selected')
+    masterSearch();
+}
 
 function masterSearch() {
     $('#masterSearchOptions').html("")
-    let searchType = $('input[name="masterSearch"]:checked').val()
+    
     let searchTxt = $('#masterSearchBox').val()
 
     let searchEl = document.getElementById('masterSearchBox')

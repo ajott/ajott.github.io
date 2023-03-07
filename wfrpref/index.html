@@ -32,18 +32,23 @@
         </div>
         <div class="w3-col s0 m0 l8">
             <h1>Master Search</h1>
-            <input type="radio" class="w3-radio w3-blue-grey" name="masterSearch" value="skill" checked>
-            <label style="padding-right: 1em !important;">Skills</label>
-            <input type="radio" class="w3-radio w3-blue-grey" name="masterSearch" value="talent">
-            <label style="padding-right: 1em !important;">Talents</label>
-            <input type="radio" class="w3-radio w3-blue-grey" name="masterSearch" value="condition">
-            <label style="padding-right: 1em !important;">Conditions</label>
-            <input type="radio" class="w3-radio w3-blue-grey" name="masterSearch" value="spell">
-            <label style="padding-right: 1em !important;">Spells</label>
-            <input type="radio" class="w3-radio w3-blue-grey" name="masterSearch" value="miracle">
-            <label style="padding-right: 1em !important;">Divine Manifestations</label>
-            <input type="radio" class="w3-radio w3-blue-grey" name="masterSearch" value="weaponQual">
-            <label style="padding-right: 1em !important;">Weapon Qualities/Flaws</label>
+            <div class="w3-row">
+                <div class="w3-center">
+                <div class="w3-bar" style="padding-top: 4px; padding-bottom: 4px">
+                    <button id="masterSearch-skill" class="w3-button searchBtn w3-blue-grey w3-bar-item firstBtn btn-selected"
+                        onclick="changeSearch('skill')">Skills</button>
+                    <button id="masterSearch-talent" class="w3-button searchBtn w3-blue-grey w3-bar-item "
+                        onclick="changeSearch('talent')">Talents</button>
+                    <button id="masterSearch-condition" class="w3-button searchBtn w3-blue-grey w3-bar-item "
+                        onclick="changeSearch('condition')">Conditions</button>
+                    <button id="masterSearch-spell" class="w3-button searchBtn w3-blue-grey w3-bar-item"
+                        onclick="changeSearch('spell')">Spells</button>
+                    <button id="masterSearch-miracle" class="w3-button searchBtn w3-blue-grey w3-bar-item"
+                        onclick="changeSearch('miracle')">Divine Manifestations</button>
+                    <button id="masterSearch-weaponQual" class="w3-button searchBtn w3-blue-grey w3-bar-item lastBtn"
+                        onclick="changeSearch('weaponQual')">Weapon Qualities/Flaws</button>
+                </div></div>
+            </div>
             <br />
             <br />
             <input class="w3-input" type="text" placeholder="Search here..." id="masterSearchBox"

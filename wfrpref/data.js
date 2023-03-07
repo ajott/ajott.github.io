@@ -9,6 +9,18 @@
 //     "weaponQual": weaponQual
 // }
 
+var currYear = new Date().getFullYear()
+
+var CRNotice = "Warhammer Fantasy Roleplay 4th Edition &copy; Copyright Games Workshop Limited 2018-"+currYear+". Warhammer Fantasy Roleplay 4th Edition, the Warhammer Fantasy Roleplay 4th Edition logo, GW, Games Workshop, Warhammer, The Game of Fantasy Battles, the twin-tailed comet logo, and all associated logos, illustrations, images, names, creatures, races, vehicles, locations, weapons, characters, and the distinctive likeness thereof, are either &reg; or &trade;, and/or &copy; Games Workshop Limited, variably registered around the world. Cubicle 7 Entertainment and the Cubicle 7 Entertainment logo are trademarks of Cubicle 7 Entertainment Limited."
+
+var modals = {
+    "skill": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span style=\"display: none;\" class=\"skillID\"></span><span class=\"skillName\"></span> (<span class=\"skillChar\"></span>)</h3></div><div class=\"w3-row-padding\"><h4 style=\"margin-top:-1em !important;\"><em><span class=\"skillTier\"></span></em></h4></div><div class=\"w3-row-padding\"><div class=\"skillDesc\"></div><div class=\"skillSpec\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"skillModalSearch()\" class=\"w3-button w3-deep-amber firstBtn\">Skill List</button><button onclick=\"hideModal(this)\"class=\"w3-button w3-deep-red-l1 w3-round-large lastBtn\">Close</button></div></div></div>",
+    "talent": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"talentName\"></span></h3></div><div class=\"w3-row-padding\"><h5 style=\"text-align: left !important;\">Max: <span class=\"talentMax\"></span></h5><h5 style=\"text-align: left !important;\"><span class=\"talentTest\"></span></h5></div><div class=\"w3-row-padding\"><div class=\"talentDesc\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"talentModalSearch()\" class=\"w3-button w3-deep-amber firstBtn\">Talent List</button><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large lastBtn\">Close</button></div></div></div>",
+    "miracle": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3 class=\"miracleName\"></h3><div class=\"miracleTier w3-hide\"></div><h5> <em><span class=\"miracleGod\"></span> </em></h5></div><div class=\"w3-row-padding\"><emph>Range: </emph><span class=\"miracleRange\"></span><br /><emph>Target: </emph><span class=\"miracleTarget\"></span><br /><emph>Duration: </emph><span class=\"miracleDuration\"></span></div><div class=\"w3-row-padding\"><div class=\"miracleDescription\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
+    "condition": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"conditionName\"></span></h3></div><div class=\"w3-row-padding\"><div class=\"conditionDesc\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
+    "qual": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"qualName\"></span></h3></div><div class=\"w3-row-padding\"><div class=\"qualDesc\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
+    "spell": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large grid-card\"><div class=\"w3-row-padding\"><h3 class=\"spellName\"></h3><h5> <em><span class=\"spellLore\"></span> </em></div><div class=\"w3-row-padding\"><emph>Casting Number: </emph><span class=\"spellCN\"></span><br /><emph>Range: </emph><span class=\"spellRange\"></span><br /><emph>Target: </emph><span class=\"spellTarget\"></span><br /><emph>Duration: </emph><span class=\"spellDuration\"></span></div><div class=\"w3-row-padding\"><div class=\"spellDescription\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>"
+}
 
 var lores = {
     "Beasts": {
@@ -2300,7 +2312,7 @@ var condition = [
     },
     {
         "name": "Bleeding",
-        "desc": "<p>You are bleeding badly. Lose 1 Wound at the end of every Round, ignoring all modifiers. Further, suffer a penalty of –10 to any Tests to resist Festering Wounds, Minor Infection, or Blood Rot (see page 186). If you reach 0 Wounds, you no longer lose Wounds and instead fall immediately unconscious (gain the Unconscious Condition). At the end of Round, you have a 10% chance of dying per <em>Bleeding</em> Condition you have; so, if you had 3 <em>Bleeding</em> Conditions, you would die from blood loss on a roll of 0–30. If a double is scored on this roll, your wound clots a little: lose 1 <em>Bleeding</em> Condition. You cannot regain consciousness until all <em>Bleeding</em> Conditions are removed (see Injury on page 172).</p><p>A <em>Bleeding</em> Condition can be removed with: a successful Heal Test, with each SL removing an extra <em>Bleeding</em> Condition; or with any spell or prayer that heals Wounds, with one Condition removed per Wound healed.</p><p>Once all <em>Bleeding</em> Conditions are removed, gain one <em>Fatigued</em> Condition.</p>"
+        "desc": "<p>You are bleeding badly. Lose 1 Wound at the end of every Round, ignoring all modifiers. Further, suffer a penalty of –10 to any Tests to resist Festering Wounds, Minor Infection, or Blood Rot (see page 186). If you reach 0 Wounds, you no longer lose Wounds and instead fall immediately unconscious (gain the <condition>Unconscious</condition> Condition). At the end of Round, you have a 10% chance of dying per <em>Bleeding</em> Condition you have; so, if you had 3 <em>Bleeding</em> Conditions, you would die from blood loss on a roll of 0–30. If a double is scored on this roll, your wound clots a little: lose 1 <em>Bleeding</em> Condition. You cannot regain consciousness until all <em>Bleeding</em> Conditions are removed (see Injury on page 172).</p><p>A <em>Bleeding</em> Condition can be removed with: a successful <skill>Heal</skill> Test, with each SL removing an extra <em>Bleeding</em> Condition; or with any spell or prayer that heals Wounds, with one Condition removed per Wound healed.</p><p>Once all <em>Bleeding</em> Conditions are removed, gain one <condition>Fatigued</condition> Condition.</p>"
     },
     {
         "name": "Blinded",
@@ -2308,7 +2320,7 @@ var condition = [
     },
     {
         "name": "Broken",
-        "desc": "<p>You are terrified, defeated, panicked, or otherwise convinced you are going to die. On your turn, your Move and Action must be used to run away as fast as possible until you are in a good hiding place beyond the sight of any enemy; then you can use your Action on a Skill that allows you to hide more effectively. You also receive a penalty of –10 to all Tests not involving running and hiding.</p><p>You cannot Test to rally from being Broken if you are Engaged with an enemy (see page 159). If you are unengaged, at the end of each Round, you may attempt a Cool Test to remove a Broken Condition, with each SL removing an extra Broken Condition, and the Difficulty determined by the circumstances you currently find yourself: it is much easier to rally when hiding behind a barrel down an alleyway far from danger (Average +20) than it is when three steps from a slavering Daemon screaming for your blood (Very Hard –30).</p><p>If you spend a full Round in hiding out of line-of-sight of any enemy, you remove 1 Broken Condition.</p><p>Once all Broken Conditions are removed, gain 1 Fatigued Condition.</p>"
+        "desc": "<p>You are terrified, defeated, panicked, or otherwise convinced you are going to die. On your turn, your Move and Action must be used to run away as fast as possible until you are in a good hiding place beyond the sight of any enemy; then you can use your Action on a Skill that allows you to hide more effectively. You also receive a penalty of –10 to all Tests not involving running and hiding.</p><p>You cannot Test to rally from being Broken if you are <condition>Engaged</condition> with an enemy (see page 159). If you are unengaged, at the end of each Round, you may attempt a <skill>Cool</skill> Test to remove a Broken Condition, with each SL removing an extra Broken Condition, and the Difficulty determined by the circumstances you currently find yourself: it is much easier to rally when hiding behind a barrel down an alleyway far from danger (Average +20) than it is when three steps from a slavering Daemon screaming for your blood (Very Hard –30).</p><p>If you spend a full Round in hiding out of line-of-sight of any enemy, you remove 1 Broken Condition.</p><p>Once all Broken Conditions are removed, gain 1 <condition>Fatigued</condition> Condition.</p>"
     },
     {
         "name": "Deafened",
@@ -2320,7 +2332,7 @@ var condition = [
     },
     {
         "name": "Entangled",
-        "desc": "<p>You are wrapped in something restricting your movement; it could be ropes, spider’s webbing, or an opponent’s bulging biceps. On your turn, you may not Move, and all your actions involving movement of any kind suffer a penalty of –10 (including Grappling; see page 163). For your Action, you can remove an Entangled Condition if you win an Opposed Strength Test against the source of the entanglement, with each SL removing an extra Entangled Condition. </p>"
+        "desc": "<p>You are wrapped in something restricting your movement; it could be ropes, spider’s webbing, or an opponent’s bulging biceps. On your turn, you may not Move, and all your actions involving movement of any kind suffer a penalty of –10 (including Grappling; see page 163). For your Action, you can remove an Entangled Condition if you win an Opposed Strength Test against the source of the entanglement, with each SL removing an extra Entangled Condition.</p>"
     },
     {
         "name": "Fatigued",
@@ -2328,7 +2340,7 @@ var condition = [
     },
     {
         "name": "Poisoned",
-        "desc": "<p>You have been poisoned or injected with venom. All Tests to remove poison have their difficulty determined by the poison or venom suffered. At the end of each Round, lose 1 Wound, ignoring all modifiers. Also, suffer a penalty of –10 to all Tests.</p><p>If you reach 0 Wounds when Poisoned , you cannot heal any Wounds until all Poisoned conditions are removed. If you fall Unconscious when Poisoned, make an Endurance Test after a number of Rounds equal to your Toughness Bonus or die horribly. See Injury on page 172 for more on this.</p><p>At the end of each Round, you may attempt an Endurance Test. If successful, remove a Poisoned Condition, with each SL removing an extra Poisoned Condition. A Heal Test provides the same results. Once all Poisoned Conditions are removed, gain 1 Fatigued Condition.</p>"
+        "desc": "<p>You have been poisoned or injected with venom. All Tests to remove poison have their difficulty determined by the poison or venom suffered. At the end of each Round, lose 1 Wound, ignoring all modifiers. Also, suffer a penalty of –10 to all Tests.</p><p>If you reach 0 Wounds when Poisoned, you cannot heal any Wounds until all Poisoned conditions are removed. If you fall <condition>Unconscious</condition> when Poisoned, make an Endurance Test after a number of Rounds equal to your Toughness Bonus or die horribly. See Injury on page 172 for more on this.</p><p>At the end of each Round, you may attempt an Endurance Test. If successful, remove a Poisoned Condition, with each SL removing an extra Poisoned Condition. A <skill>Heal</skill> Test provides the same results. Once all Poisoned Conditions are removed, gain 1 <condition>Fatigued</condition> Condition.</p>"
     },
     {
         "name": "Prone",
@@ -2336,7 +2348,7 @@ var condition = [
     },
     {
         "name": "Stunned",
-        "desc": "<p>You have been struck about the head or otherwise disorientated or confused; your ears are likely ringing, and little makes sense. </p><p>You are incapable of taking an Action on your turn but are capable of half your normal movement. You can defend yourself in opposed Tests — but not with Language (Magick). You also suffer a –10 penalty to all Tests. If you have any Stunned Conditions, any opponent trying to strike you in Melee Combat gains +1 Advantage before rolling the attack.</p><p>At the end of each Round, you may attempt a Challenging (+0) Endurance Test. If successful, remove a Stunned Condition, with each SL removing an extra Stunned Condition.</p><p>Once all Stunned Conditions are removed, gain 1 Fatigued Condition if you don’t already have one.</p>"
+        "desc": "<p>You have been struck about the head or otherwise disorientated or confused; your ears are likely ringing, and little makes sense. </p><p>You are incapable of taking an Action on your turn but are capable of half your normal movement. You can defend yourself in opposed Tests — but not with <skill>Language (Magick)</skill>. You also suffer a –10 penalty to all Tests. If you have any Stunned Conditions, any opponent trying to strike you in Melee Combat gains +1 Advantage before rolling the attack.</p><p>At the end of each Round, you may attempt a Challenging (+0) Endurance Test. If successful, remove a Stunned Condition, with each SL removing an extra Stunned Condition.</p><p>Once all Stunned Conditions are removed, gain 1 <condition>Fatigued</condition> Condition if you don’t already have one.</p>"
     },
     {
         "name": "Surprised",
@@ -2344,7 +2356,7 @@ var condition = [
     },
     {
         "name": "Unconscious",
-        "desc": "<p>You are knocked out, asleep, or otherwise insensible. You can do nothing on your turn and are completely unaware of your surroundings. An attacker targeting you gains the benefit of the I Will Not Fail rule on page 171 without having to spend a Resilience point. Or, if the GM prefers, any close combat hit simply kills you. Any ranged combat hit automatically does the same if the shooter is at Point Blank range.</p><p>The Unconscious Condition does not stack — you are either Unconscious , or you are not — so you do not collect multiple Unconscious Conditions.</p><p>Recovering from unconsciousness requires different circumstances depending upon why you fell unconscious. Refer to Injury on page 172 for more on this. If you spend a Resolve point to remove an Unconscious condition, but have not resolved the cause of the incapacitation, you gain another Unconscious Condition at the end of the round. When you lose the Unconscious Condition, you gain the Prone and Fatigued Conditions.</p>"
+        "desc": "<p>You are knocked out, asleep, or otherwise insensible. You can do nothing on your turn and are completely unaware of your surroundings. An attacker targeting you gains the benefit of the I Will Not Fail rule on page 171 without having to spend a Resilience point. Or, if the GM prefers, any close combat hit simply kills you. Any ranged combat hit automatically does the same if the shooter is at Point Blank range.</p><p>The Unconscious Condition does not stack — you are either Unconscious , or you are not — so you do not collect multiple Unconscious Conditions.</p><p>Recovering from unconsciousness requires different circumstances depending upon why you fell unconscious. Refer to Injury on page 172 for more on this. If you spend a Resolve point to remove an Unconscious condition, but have not resolved the cause of the incapacitation, you gain another Unconscious Condition at the end of the round. When you lose the Unconscious Condition, you gain the <condition>Prone</condition> and <condition>Fatigued</condition> Conditions.</p>"
     }
 ]
 
@@ -2355,7 +2367,7 @@ var weaponQual = [
     },
     {
         "name": "Blackpowder",
-        "desc": "The crack of gunfire followed by gouts of smoke and confusion can be terrifying. If you are targeted by a Blackpowder weapon, you must pass an <b>Average (+20) Cool Test</b> or take a <em>Broken</em> Condition, even if the shot misses."
+        "desc": "The crack of gunfire followed by gouts of smoke and confusion can be terrifying. If you are targeted by a Blackpowder weapon, you must pass an <b>Average (+20) <skill>Cool</skill> Test</b> or take a <condition>Broken</condition> Condition, even if the shot misses."
     },
     {
         "name": "Blast (Rating)",
@@ -2363,11 +2375,11 @@ var weaponQual = [
     },
     {
         "name": "Damaging",
-        "desc": "A Damaging weapon can use the higher score from either the units die or the SL to determine the Damage caused from a successful hit. For example, if you roll 34 in your attack Test and the target number was 52, you can choose to use the SL (which in this case is 2) or the units die result, which is 4. An Undamaging weapon can never also be Damaging (Undamaging takes precedent)."
+        "desc": "A Damaging weapon can use the higher score from either the units die or the SL to determine the Damage caused from a successful hit. For example, if you roll 34 in your attack Test and the target number was 52, you can choose to use the SL (which in this case is 2) or the units die result, which is 4. An <weaponqual>Undamaging</weaponqual> weapon can never also be Damaging (Undamaging takes precedent)."
     },
     {
         "name": "Defensive",
-        "desc": "Defensive weapons are designed to parry incoming attacks. If you are wielding such a weapon, gain a bonus of +1 SL to any Melee Test when you oppose an incoming attack."
+        "desc": "Defensive weapons are designed to parry incoming attacks. If you are wielding such a weapon, gain a bonus of +1 SL to any <skill>Melee</skill> Test when you oppose an incoming attack."
     },
     {
         "name": "Distract",
@@ -2375,11 +2387,11 @@ var weaponQual = [
     },
     {
         "name": "Entangle",
-        "desc": "Your weapon wraps around your opponents, entangling them. Any opponent successfully hit by your weapon gains the Entangled Condition with a Strength value equal to your Strength Characteristic. When Entangling an opponent, you cannot otherwise use the weapon to hit. You can end the Entangling whenever you wish."
+        "desc": "Your weapon wraps around your opponents, entangling them. Any opponent successfully hit by your weapon gains the <condition>Entangled</condition> Condition with a Strength value equal to your Strength Characteristic. When Entangling an opponent, you cannot otherwise use the weapon to hit. You can end the Entangling whenever you wish."
     },
     {
         "name": "Fast",
-        "desc": "Fast weapons are designed to strike out with such speed that parrying is not an option, leaving an opponent skewered before they can react. A wielder of a Fast weapon can choose to attack with the Fast weapon outside of the normal Initiative sequence, either striking first, last, or somewhere in between as desired. <br/><br/>Further, all Melee Tests to defend against Fast weapons suffer a penalty of –10 if your opponent is using a weapon without the Fast Quality; other Skills defend as normal. Two opponents with Fast weapons fight in Initiative order (relative to each other) as normal. A Fast weapon may never also be Slow (Slow takes precedent)."
+        "desc": "Fast weapons are designed to strike out with such speed that parrying is not an option, leaving an opponent skewered before they can react. A wielder of a Fast weapon can choose to attack with the Fast weapon outside of the normal Initiative sequence, either striking first, last, or somewhere in between as desired. <br/><br/>Further, all <skill>Melee</skill> Tests to defend against Fast weapons suffer a penalty of –10 if your opponent is using a weapon without the Fast Quality; other Skills defend as normal. Two opponents with Fast weapons fight in Initiative order (relative to each other) as normal. A Fast weapon may never also be <weaponqual>Slow</weaponqual> (Slow takes precedent)."
     },
     {
         "name": "Hack",
@@ -2387,15 +2399,11 @@ var weaponQual = [
     },
     {
         "name": "Impact",
-        "desc": "Some weapons are just huge or cause terrible damage due to their weight or design. On a successful hit, add the result of the units die of the attack roll to any Damage caused by an Impact weapon. An Undamaging weapon can never also have Impact (Undamaging takes precedent)."
+        "desc": "Some weapons are just huge or cause terrible damage due to their weight or design. On a successful hit, add the result of the units die of the attack roll to any Damage caused by an Impact weapon. An <weaponqual>Undamaging</weaponqual> weapon can never also have Impact (Undamaging takes precedent)."
     },
     {
         "name": "Impale",
         "desc": "Impale weapons can kill with a single clean blow. Impale weapons cause a Critical Hit on any number divisible by 10 (i.e.: 10, 20, 30, etc.) as well as on doubles (i.e.: 11, 22, 33) rolled equal or under an appropriate Test in combat."
-    },
-    {
-        "name": "Impale",
-        "desc": "Impale weapons can kill with a single clean blow. Impale weapons cause a Critical Hit on any number divisible by 10 (i.e.: 10, 20, 30, etc.) as well as on doubles (i.e.: 11, 22, 33) rolled equal or under an appropriate Test in combat.<br/><br/>If the impale comes from a ranged weapon, the ammunition used has firmly lodged itself in the target’s body. Arrows and bolts require a successful <b>Challenging (+0) Heal Test</b> to remove — bullets require a surgeon (see the <talent>Surgery</talent> Talent). You cannot heal 1 of your Wounds for each unremoved arrow or bullet."
     },
     {
         "name": "Penetrating",
@@ -2423,7 +2431,7 @@ var weaponQual = [
     },
     {
         "name": "Trap Blade",
-        "desc": "Some weapons are designed to trap other weapons, and sometimes even break them. If you score a Critical when defending against an attack from a bladed weapon you can choose to trap it instead of causing a Critical Hit. <br/><br/>If you choose to do this, enact an Opposed Strength Test, adding your SL from the previous Melee Test. If you succeed, your opponent drops the blade as it is yanked free. If you score an Astounding Success, you not only disarm your opponent, but the force of your maneuver breaks their blade unless it has the Unbreakable quality. If you fail the Test, your opponent frees the blade and may fight on as normal."
+        "desc": "Some weapons are designed to trap other weapons, and sometimes even break them. If you score a Critical when defending against an attack from a bladed weapon you can choose to trap it instead of causing a Critical Hit. <br/><br/>If you choose to do this, enact an Opposed Strength Test, adding your SL from the previous Melee Test. If you succeed, your opponent drops the blade as it is yanked free. If you score an Astounding Success, you not only disarm your opponent, but the force of your maneuver breaks their blade unless it has the <weaponqual>Unbreakable</weaponqual> quality. If you fail the Test, your opponent frees the blade and may fight on as normal."
     },
     {
         "name": "Unbreakable",
@@ -2431,7 +2439,7 @@ var weaponQual = [
     },
     {
         "name": "Wrap",
-        "desc": "Wrap weapons typically have long chains with weights at the end, making it very difficult to parry them effectively. Melee Tests opposing an attack from a Wrap weapon suffer a penalty of –1 SL, as parried strikes wrap over the top of shields, or around blades."
+        "desc": "Wrap weapons typically have long chains with weights at the end, making it very difficult to parry them effectively. <skill>Melee</skill> Tests opposing an attack from a Wrap weapon suffer a penalty of –1 SL, as parried strikes wrap over the top of shields, or around blades."
     },
     {
         "name": "Dangerous",
@@ -2441,12 +2449,12 @@ var weaponQual = [
     {
         "name": "Imprecise",
         "flaw": true,
-        "desc": "Imprecise weapons are difficult to bring to bear as they are unwieldy or hard to aim. Suffer a penalty of –1 SL when using the weapon to attack. An Imprecise Weapon can never be Precise (Imprecise takes precedent)."
+        "desc": "Imprecise weapons are difficult to bring to bear as they are unwieldy or hard to aim. Suffer a penalty of –1 SL when using the weapon to attack. An Imprecise Weapon can never be <weaponqual>Precise</weaponqual> (Imprecise takes precedent)."
     },
     {
         "name": "Reload (Rating)",
         "flaw": true,
-        "desc": "The weapon is slow to reload. An unloaded weapon with this flaw requires an Extended Ranged Test for the appropriate Weapon Group scoring <mono>(Rating)</mono> SL to reload. If you are interrupted while reloading, you must start again from scratch."
+        "desc": "The weapon is slow to reload. An unloaded weapon with this flaw requires an Extended <skill>Ranged</skill> Test for the appropriate Weapon Group scoring <mono>(Rating)</mono> SL to reload. If you are interrupted while reloading, you must start again from scratch."
     },
     {
         "name": "Slow",
@@ -2456,7 +2464,7 @@ var weaponQual = [
     {
         "name": "Tiring",
         "flaw": true,
-        "desc": "The weapon is fatiguing to use or difficult to bring to bear. You only gain the benefit of the Impact and Damaging Weapon Traits on a Turn you Charge."
+        "desc": "The weapon is fatiguing to use or difficult to bring to bear. You only gain the benefit of the <weaponqual>Impact</weaponqual> and <weaponqual>Damaging</weaponqual> Weapon Qualities on a Turn you Charge."
     },
     {
         "name": "Undamaging",

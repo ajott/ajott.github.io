@@ -12,11 +12,11 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="./isotope.pkgd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-    <script src="main.js"></script>
     <script src="spells.js"></script>
     <script src="skills.js"></script>
     <script src="religion.js"></script>
     <script src="data.js"></script>
+    <script src="main.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="interface.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -33,17 +33,17 @@
         <div class="w3-col s0 m0 l8">
             <h1>Master Search</h1>
             <input type="radio" class="w3-radio w3-blue-grey" name="masterSearch" value="skill" checked>
-            <label>Skills</label>
+            <label style="padding-right: 1em !important;">Skills</label>
             <input type="radio" class="w3-radio w3-blue-grey" name="masterSearch" value="talent">
-            <label>Talents</label>
+            <label style="padding-right: 1em !important;">Talents</label>
             <input type="radio" class="w3-radio w3-blue-grey" name="masterSearch" value="condition">
-            <label>Conditions</label>
-            <!-- <input type="radio" class="w3-radio w3-blue-grey" name="masterSearch" value="spell">
-            <label>Spells</label> -->
+            <label style="padding-right: 1em !important;">Conditions</label>
+            <input type="radio" class="w3-radio w3-blue-grey" name="masterSearch" value="spell">
+            <label style="padding-right: 1em !important;">Spells</label>
             <input type="radio" class="w3-radio w3-blue-grey" name="masterSearch" value="miracle">
-            <label>Divine Manifestations</label>
+            <label style="padding-right: 1em !important;">Divine Manifestations</label>
             <input type="radio" class="w3-radio w3-blue-grey" name="masterSearch" value="weaponQual">
-            <label>Weapon Qualities/Flaws</label>
+            <label style="padding-right: 1em !important;">Weapon Qualities/Flaws</label>
             <br />
             <br />
             <input class="w3-input" type="text" placeholder="Search here..." id="masterSearchBox"
@@ -56,44 +56,15 @@
             &nbsp;
         </div>
     </div>
-    <hr />
 </body>
 <footer>
+    <hr/>
     <div class="w3-row-padding w3-section">
         <div class="w3-col s0 m1 l1">
             <p></p>
         </div>
         <div class="w3-col s12 m10 l10">
-            <div class="w3-center">
-                All WFRP 4e material is &copy;
-                <script>document.write("2018-" + new Date().getFullYear())</script> Cubicle 7 Games
-
-                <script>$(document).ready(function () {
-                        skillFuse = new Fuse(skill, {
-                            keys: ["name"]
-                        })
-                    });
-                    $(document).ready(function () {
-                        talentFuse = new Fuse(talent, {
-                            keys: ["name"]
-                        })
-                    });
-                    $(document).ready(function () {
-                        miracleFuse = new Fuse(miracle, {
-                            keys: ["name"]
-                        })
-                    });
-                    $(document).ready(function () {
-                        conditionFuse = new Fuse(condition, {
-                            keys: ["name"]
-                        })
-                    });
-                    $(document).ready(function () {
-                        qualFuse = new Fuse(weaponQual, {
-                            keys: ["name"]
-                        })
-                    });
-                </script>
+            <div class="w3-center" id="copyrightText">
             </div>
         </div>
         <div class="w3-col s0 m1 l1">
@@ -106,5 +77,4 @@
 <div id="modalPlaceholder">
 
 </div>
-
 </html>

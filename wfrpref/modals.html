@@ -1,120 +1,12 @@
 <html lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
-<div id="skillDialog" class="w3-modal" style="display:none;">
-    <div class="popupCard" id="skillDialogCard">
-        <div class="w3-card-2 w3-round-large padCard">
-            <div class="w3-row-padding">
-                
-                <h3>
-                    <span style="display: none;" class="skillID"></span><span class="skillName"></span> (<span
-                        class="skillChar"></span>)
-                </h3>
-            </div>
-            <div class="w3-row-padding">
-                <h4 style="margin-top:-1em !important;"><em><span class="skillTier"></span></em></h4>
-            </div>
-            <div class="w3-row-padding">
-                <div class="skillDesc"></div>
-                <div class="skillSpec"></div>
-            </div>
-            <br />
-            <div class="w3-center" style="padding-bottom: 1em !important;">
-                <button onclick="skillModalSearch()" class="w3-button w3-deep-amber firstBtn">Skill List</button><button onclick="hideSkillModal()"
-                    class="w3-button w3-deep-red-l1 w3-round-large lastBtn">Close</button>
-            </div>
-        </div>
-    </div>
+<div id="default-modal" class="w3-modal resultModal" style="display:none;">
+
 </div>
 
-<div id="talentDialog" class="w3-modal" style="display:none;">
-    <div class="popupCard">
-        <div class="w3-card-2 w3-round-large padCard">
-            <div class="w3-row-padding">
-                <h3><span class="talentName"></span>
-                </h3>
-            </div>
-            <div class="w3-row-padding">
-                <h5 style="text-align: left !important;">Max: <span class="talentMax"></span></h5>
-                <h5 style="text-align: left !important;"><span class="talentTest"></span></h5>
-            </div>
-            <div class="w3-row-padding">
-                <div class="talentDesc"></div>
-            </div>
-            <br />
-            <div class="w3-center" style="padding-bottom: 1em !important;">
-                <button onclick="talentModalSearch()" class="w3-button w3-deep-amber firstBtn">Talent List</button><button onclick="hideTalentModal()"
-                    class="w3-button w3-deep-red-l1 w3-round-large lastBtn">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="conditionDialog" class="w3-modal" style="display:none;">
-    <div class="popupCard">
-        <div class="w3-card-2 w3-round-large padCard">
-            <div class="w3-row-padding">
-                <h3><span class="conditionName"></span>
-                </h3>
-            </div>
-            <div class="w3-row-padding">
-                <div class="conditionDesc"></div>
-            </div>
-            <br />
-            <div class="w3-center" style="padding-bottom: 1em !important;">
-                <button onclick="hideConditionModal()"
-                    class="w3-button w3-deep-red-l1 w3-round-large ">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="qualDialog" class="w3-modal" style="display:none;">
-    <div class="popupCard">
-        <div class="w3-card-2 w3-round-large padCard">
-            <div class="w3-row-padding">
-                <h3><span class="qualName"></span>
-                </h3>
-            </div>
-            <div class="w3-row-padding">
-                <div class="qualDesc"></div>
-            </div>
-            <br />
-            <div class="w3-center" style="padding-bottom: 1em !important;">
-                <button onclick="hideQualityModal()"
-                    class="w3-button w3-deep-red-l1 w3-round-large ">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="miracleDialog" class="w3-modal" style="display:none;">
-    <div class="popupCard">
-        <div class="w3-card-2 w3-round-large padCard">
-            <div class="w3-row-padding">
-                <h3 class="miracleName"></h3>
-                <div class="miracleTier w3-hide"></div>
-                <h5> <em><span class="miracleGod"></span> </em></h5>
-            </div>
-            <div class="w3-row-padding">
-                <emph>Range: </emph><span class="miracleRange"></span>
-                <br />
-                <emph>Target: </emph><span class="miracleTarget"></span>
-                <br />
-                <emph>Duration: </emph><span class="miracleDuration"></span>
-            </div>
-            <div class="w3-row-padding">
-                <div class="miracleDescription"></div>
-            </div>
-            <br />
-            <div class="w3-center" style="padding-bottom: 1em !important;">
-                <button onclick="hideMiracleModal()"
-                    class="w3-button w3-deep-red-l1 w3-round-large ">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
 </html>

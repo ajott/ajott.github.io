@@ -21,41 +21,8 @@ function skillFilter(input, mod = 0) {
     
 }
 
-function initializeSkillModal(el) {
-    let htmlPhrase = el.innerText
-    let srchPhrase = htmlPhrase.split(' (')[0]
-    let srchRslt = skillFuse.search(srchPhrase)
-    buildSkillLite(srchRslt[0]["item"])
-    openSkillModal();
-}
-
-function openSkillModal () {
-    document.getElementById('skillDialog').style.display='block'
-
-}
-
-function hideSkillModal () {
-    document.getElementById('skillDialog').style.display='none'
-}
-
 function skillModalSearch () {
     outSkillSearch($('#skillDialog .skillName'))
-}
-
-function initializeTalentModal(el) {
-    let htmlPhrase = el.innerText
-    let srchPhrase = htmlPhrase.split(' (')[0]
-    let srchRslt = talentFuse.search(srchPhrase)
-    buildTalentLite(srchRslt[0]["item"])
-    openTalentModal();
-}
-
-function openTalentModal () {
-    document.getElementById('talentDialog').style.display='block'
-}
-
-function hideTalentModal () {
-    document.getElementById('talentDialog').style.display='none'
 }
 
 function talentModalSearch () {
@@ -118,7 +85,6 @@ function skillNameCopy(el) {
 
     navigator.clipboard.writeText(cpLink)
     
-    //document.execCommand('copy');
     document.body.removeChild(cpEl);
 
     $(".tooltiptext").text("Copied");
@@ -132,58 +98,6 @@ function skillNameCopy(el) {
     }, 500)
 }
 
-function buildSkillLite(skillSearch) {
-
-        $("#skillDialog" + " .skillName").html(skillSearch["name"])
-
-      
-        $("#skillDialog" + " .skillChar").html(skillSearch["char"])
-
-        if (skillSearch["spec"] != "") {
-            $("#skillDialog" + " .skillTier").text(skillSearch["tier"]+", Grouped")
-            $("#skillDialog" + " .skillSpec").html("<b>Example Specialisations: </b>"+skillSearch["spec"])
-        } else {
-            $("#skillDialog" + " .skillSpec").html("")
-            $("#skillDialog" + " .skillTier").text(skillSearch["tier"])
-        }
-
-        $("#skillDialog" + " .skillDesc").html(skillSearch["desc"])
-        
-        $('#skillDialog').on('click', function (e) {
-            if (e.target !== this)
-                return; 0
-
-            hideSkillModal();
-        });
-
-        initializeModals();
-
-}
-
-function buildTalentLite(talentSearch) {
-    $("#talentDialog .talentName").html(talentSearch["name"])
-
-      
-    $("#talentDialog .talentMax").html(talentSearch["max"])
-
-    if (talentSearch["test"] != "") {
-       $("#talentDialog .talentTest").html("<b class=\"w3-tooltip TooltipLight\">Test:<span class=\"w3-text w3-tag w3-darkslate-l1 w3-small w3-round\" style=\"position:absolute;left:0;bottom:18px; padding: 1em;\">Gain +1 SL on successful tests with this skill</span></b> "+talentSearch["test"])
-    } else {
-        $("#talentDialog .talentTest").html("")
-    }
-
-    $("#talentDialog .talentDesc").html(talentSearch["desc"])    
-
-    $('#talentDialog').on('click', function (e) {
-        if (e.target !== this)
-            return;
-
-        hideTalentModal();
-    });
-
-    initializeModals();
-
-}
 
 
 
@@ -378,7 +292,6 @@ function talentNameCopy(el) {
 
     navigator.clipboard.writeText(cpLink)
     
-    //document.execCommand('copy');
     document.body.removeChild(cpEl);
 
     $(".tooltiptext").text("Copied");
@@ -413,8 +326,6 @@ function buildTalents() {
 
       
         $("#talent" + i + " .talentMax").html(talent[i]["max"])
-
-        //$("#talent" + i).addClass(talent[i]["max"])
 
         if (talent[i]["test"] != "") {
             $("#talent" + i + " .talentTest").html("<b class=\"w3-tooltip TooltipLight\">Test:<span class=\"w3-text w3-tag w3-darkslate-l1 w3-small w3-round\" style=\"position:absolute;left:0;bottom:18px; padding: 1em;\">Gain +1 SL on successful tests with this skill</span></b> "+talent[i]["test"])

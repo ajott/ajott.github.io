@@ -311,6 +311,8 @@ hr {
 body {
     background-color: #16161d !important;
     color: white !important;
+    height: 100%;
+    min-height: 100%;
 }
 
 .dropdown-toggle {

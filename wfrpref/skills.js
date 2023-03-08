@@ -1,38 +1,38 @@
 function skillFilter(input, mod = 0) {
     let $this = $(input)
 
-    if ($this.hasClass("btn-selected")){        
+    if ($this.hasClass("btn-selected")) {
         $this.removeClass("btn-selected")
 
-        $(".skillGrid").isotope({filter: '*'})
+        $(".skillGrid").isotope({ filter: '*' })
 
     } else {
 
         $('.skillFilterBtn').removeClass("btn-selected")
 
         $("#skillNameSearch").val("")
-    
-        let filterText = "."+ $this.html();
-    
-        $(".skillGrid").isotope({filter: filterText})
-    
+
+        let filterText = "." + $this.html();
+
+        $(".skillGrid").isotope({ filter: filterText })
+
         $this.addClass("btn-selected")
     }
-    
+
 }
 
-function skillModalSearch () {
+function skillModalSearch() {
     outSkillSearch($('#skillDialog .skillName'))
 }
 
-function talentModalSearch () {
+function talentModalSearch() {
     outTalentSearch($('#talentDialog .talentName'))
 }
 
 
 function skillNameFilter(exact = 0) {
 
-    $('.skillFilterBtn').removeClass("btn-selected")    
+    $('.skillFilterBtn').removeClass("btn-selected")
 
     var input = document.getElementById('skillNameSearch').value.toUpperCase();
 
@@ -65,7 +65,7 @@ function skillNameFilter(exact = 0) {
             filter: '*'
         })
     }
-    
+
 }
 
 function clearSkillFilter() {
@@ -84,17 +84,17 @@ function skillNameCopy(el) {
     let cpLink = (location.href.split("#")[0]) + "#skillList?s=" + encodeURIComponent(cpEl.value)
 
     navigator.clipboard.writeText(cpLink)
-    
+
     document.body.removeChild(cpEl);
 
     $(".tooltiptext").text("Copied");
-    $(".tooltiptext").css("background-color","darkslategrey");
-    $(".tooltiptext").css("color","white");
+    $(".tooltiptext").css("background-color", "darkslategrey");
+    $(".tooltiptext").css("color", "white");
 
-    setTimeout(function(){ 
-        $(".tooltiptext").text("Copy Link");    
-        $(".tooltiptext").css("background-color","black");
-        $(".tooltiptext").css("color","white");
+    setTimeout(function () {
+        $(".tooltiptext").text("Copy Link");
+        $(".tooltiptext").css("background-color", "black");
+        $(".tooltiptext").css("color", "white");
     }, 500)
 }
 
@@ -118,22 +118,22 @@ function buildSkills() {
 
         $("#skill" + i + " .skillName").html(skill[i]["name"])
 
-      
+
         $("#skill" + i + " .skillChar").html(skill[i]["char"])
 
         if (skill[i]["spec"] != "") {
-            $("#skill" + i + " .skillTier").text(skill[i]["tier"]+", Grouped")
+            $("#skill" + i + " .skillTier").text(skill[i]["tier"] + ", Grouped")
             $("#skill" + i).addClass("Grouped")
-            $("#skill" + i + " .skillSpec").html("<b>Example Specialisations: </b>"+skill[i]["spec"])
+            $("#skill" + i + " .skillSpec").html("<b>Example Specialisations: </b>" + skill[i]["spec"])
         } else {
             $("#skill" + i + " .skillTier").text(skill[i]["tier"])
         }
 
         $("#skill" + i + " .skillDesc").html(skill[i]["desc"])
-        
+
         $("#skill" + i + " .skillID").html(i);
 
-        $("#skill" + i).addClass(skill[i]["tier"]+" "+skill[i]["char"])
+        $("#skill" + i).addClass(skill[i]["tier"] + " " + skill[i]["char"])
 
         $("#skill" + i).addClass("skill-item")
 
@@ -150,7 +150,7 @@ function buildSkills() {
                     name: '.skillName',
                     tier: '.skillTier',
                     char: '.skillChar',
-                    ID: function(itemElem) {
+                    ID: function (itemElem) {
                         let skill_ID = $(itemElem).find('.skillID').text();
                         return parseInt(skill_ID)
                     }
@@ -168,36 +168,35 @@ function buildSkills() {
 
 
 
-
 function talentFilter(char, input) {
     let $this = $(input)
 
-    if ($this.hasClass("btn-selected")){        
+    if ($this.hasClass("btn-selected")) {
         $this.removeClass("btn-selected")
 
-        $(".talentGrid").isotope({filter: '*'})
+        $(".talentGrid").isotope({ filter: '*' })
 
     } else {
 
         $('.talentFilterBtn').removeClass("btn-selected")
 
         $("#talentNameSearch").val("")
-        
+
         $("#talentTestSearch").val("")
-    
-        let filterText = "."+char;
-    
-        $(".talentGrid").isotope({filter: filterText})
-    
+
+        let filterText = "." + char;
+
+        $(".talentGrid").isotope({ filter: filterText })
+
         $this.addClass("btn-selected")
     }
-    
+
 }
 
 function talentNameFilter(exact = 0) {
 
     $('.talentFilterBtn').removeClass("btn-selected")
-        
+
     $("#talentTestSearch").val("")
 
     var input = document.getElementById('talentNameSearch').value.toUpperCase();
@@ -231,14 +230,14 @@ function talentNameFilter(exact = 0) {
             filter: '*'
         })
     }
-    
+
 }
 
 function talentTestFilter(exact = 0) {
 
-    $('.talentFilterBtn').removeClass("btn-selected")   
+    $('.talentFilterBtn').removeClass("btn-selected")
 
-    $("#talentNameSearch").val("") 
+    $("#talentNameSearch").val("")
 
     var input = document.getElementById('talentTestSearch').value.toUpperCase();
 
@@ -271,7 +270,7 @@ function talentTestFilter(exact = 0) {
             filter: '*'
         })
     }
-    
+
 }
 
 function clearTalentFilter() {
@@ -291,17 +290,17 @@ function talentNameCopy(el) {
     let cpLink = (location.href.split("#")[0]) + "#talentList?s=" + encodeURIComponent(cpEl.value)
 
     navigator.clipboard.writeText(cpLink)
-    
+
     document.body.removeChild(cpEl);
 
     $(".tooltiptext").text("Copied");
-    $(".tooltiptext").css("background-color","darkslategrey");
-    $(".tooltiptext").css("color","white");
+    $(".tooltiptext").css("background-color", "darkslategrey");
+    $(".tooltiptext").css("color", "white");
 
-    setTimeout(function(){ 
-        $(".tooltiptext").text("Copy Link");    
-        $(".tooltiptext").css("background-color","black");
-        $(".tooltiptext").css("color","white");
+    setTimeout(function () {
+        $(".tooltiptext").text("Copy Link");
+        $(".tooltiptext").css("background-color", "black");
+        $(".tooltiptext").css("color", "white");
     }, 500)
 }
 
@@ -324,11 +323,11 @@ function buildTalents() {
 
         $("#talent" + i + " .talentName").html(talent[i]["name"])
 
-      
+
         $("#talent" + i + " .talentMax").html(talent[i]["max"])
 
         if (talent[i]["test"] != "") {
-            $("#talent" + i + " .talentTest").html("<b class=\"w3-tooltip TooltipLight\">Test:<span class=\"w3-text w3-tag w3-darkslate-l1 w3-small w3-round\" style=\"position:absolute;left:0;bottom:18px; padding: 1em;\">Gain +1 SL on successful tests with this skill</span></b> "+talent[i]["test"])
+            $("#talent" + i + " .talentTest").html("<b class=\"w3-tooltip TooltipLight\">Test:<span class=\"w3-text w3-tag w3-darkslate-l1 w3-small w3-round\" style=\"position:absolute;left:0;bottom:18px; padding: 1em;\">Gain +1 SL on successful tests with this skill</span></b> " + talent[i]["test"])
         }
 
         $("#talent" + i + " .talentDesc").html(talent[i]["desc"])

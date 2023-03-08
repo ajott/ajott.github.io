@@ -1,13 +1,17 @@
-// var dictDirect = {
-//     "lore": lores,
-//     "spell": spell,
-//     "cults": cults,
-//     "miracle": miracle,
-//     "talent": talent,
-//     "skill": skill,
-//     "condition": condition,
-//     "weaponQual": weaponQual
-// }
+var masterDict = []
+var masterFuse = []
+
+$(document).ready(function() {
+    let lists = [skill, talent, spell, miracle, condition, weaponQual]
+    let listTypes = ["skill", "talent", "spell", "miracle", "condition", "qual"]
+    for (let j = 0; j < lists.length; j ++) {
+        for (let i = 0; i < lists[j].length; i ++) {
+            masterDict.push({"name": lists[j][i]["name"], "type": listTypes[j]})
+        }
+    };
+
+    masterFuse = new Fuse(masterDict, {keys: ["name"]})
+});
 
 var currYear = new Date().getFullYear()
 

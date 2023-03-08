@@ -53,7 +53,7 @@ function initializeModals() {
     $('divineman').attr('onclick', 'buildModal(this,\'miracle\')');
 }
 
-function buildModal(el, type) {
+function buildModal(el, type, mast = 0) {
     // Used for building individual modal IDs
     modalCount++
 
@@ -67,8 +67,12 @@ function buildModal(el, type) {
         "spell": spellFuse
     }
 
-    let htmlPhrase = el.innerText
-    let srchPhrase = htmlPhrase.split(' (')[0] // Get rid of specializations, such as Art (Engraving)
+    if (mast == 1) {
+        srchPhrase = el
+    } else {
+        let htmlPhrase = el.innerText
+        let srchPhrase = htmlPhrase.split(' (')[0] // Get rid of specializations, such as Art (Engraving)
+    }
     let srchRslt = fuses[type].search(srchPhrase)
 
     // Get the first result, which should be the closest match
@@ -220,16 +224,16 @@ function hideModal(el) {
     }
 }
 
-var searchType = "skill"
+// var searchType = "skill"
 
-function changeSearch(type) {
-    searchType = type;
+// function changeSearch(type) {
+//     searchType = type;
 
-    $('.searchBtn').removeClass('btn-selected')
+//     $('.searchBtn').removeClass('btn-selected')
 
-    $('#masterSearch-'+type).addClass('btn-selected')
-    masterSearch();
-}
+//     $('#masterSearch-'+type).addClass('btn-selected')
+//     masterSearch();
+// }
 
 function masterSearch() {
     $('#masterSearchOptions').html("")
@@ -258,13 +262,21 @@ function masterSearch() {
         "spell": 'buildModal(this, \'spell\')'
     }
 
-    let srchRslt = fuses[searchType].search(searchTxt)
-
+    let srchRslt = masterFuse.search(searchTxt)
     srchRslt.length = 10;
-
     srchRslt.forEach(result => {
-        $('#masterSearchOptions').append("<div class=\"masterSearchResult w3-blue-grey w3-hover-grey\" onclick=\"" + modals[searchType] + "\">" + result["item"]["name"] + "</div>")
+        let rsltName = result["item"]["name"]
+        let rsltType = result["item"]["type"]
+        $('#masterSearchOptions').append("<div class=\"masterSearchResult w3-blue-grey w3-hover-grey\" onclick=\"buildModal(\'" + rsltName+ "\',\'" + rsltType + "\',1)\">" + result["item"]["name"] + "&emsp; <em style=\"color: lightgrey;\">" + rsltType + "</em></div>")
     });
+
+    // let srchRslt = fuses[searchType].search(searchTxt)
+
+    // srchRslt.length = 10;
+
+    // srchRslt.forEach(result => {
+    //     $('#masterSearchOptions').append("<div class=\"masterSearchResult w3-blue-grey w3-hover-grey\" onclick=\"" + modals[searchType] + "\">" + result["item"]["name"] + "</div>")
+    // });
 }
 
 

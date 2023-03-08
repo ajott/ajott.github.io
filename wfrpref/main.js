@@ -244,22 +244,13 @@ function masterSearch() {
     let y = searchEl.getBoundingClientRect().top + window.pageYOffset - 100
     window.scrollTo({ top: y, behavior: 'smooth' });
 
-    let fuses = {
-        "skill": skillFuse,
-        "talent": talentFuse,
-        "condition": conditionFuse,
-        "spell": spellFuse,
-        "miracle": miracleFuse,
-        "weaponQual": qualFuse,
-    }
-
-    let modals = {
-        "skill": 'buildModal(this,\'skill\')',
-        "talent": 'buildModal(this,\'talent\')',
-        "condition": 'buildModal(this,\'condition\')',
-        "weaponQual": 'buildModal(this,\'qual\')',
-        "miracle": 'buildModal(this,\'miracle\')',
-        "spell": 'buildModal(this, \'spell\')'
+    let typeTexts = {
+        "skill": "Skill",
+        "talent": "Talent",
+        "condition": "Condition",
+        "spell": "Spell",
+        "miracle": "Divine Manifestation",
+        "qual": "Weapon Quality/Flaw",
     }
 
     let srchRslt = masterFuse.search(searchTxt)
@@ -267,7 +258,7 @@ function masterSearch() {
     srchRslt.forEach(result => {
         let rsltName = result["item"]["name"]
         let rsltType = result["item"]["type"]
-        $('#masterSearchOptions').append("<div class=\"masterSearchResult w3-blue-grey w3-hover-grey\" onclick=\"buildModal(\'" + rsltName+ "\',\'" + rsltType + "\',1)\">" + result["item"]["name"] + "&emsp; <em style=\"color: lightgrey;\">" + rsltType + "</em></div>")
+        $('#masterSearchOptions').append("<div class=\"masterSearchResult w3-blue-grey w3-hover-grey\" onclick=\"buildModal(\'" + rsltName+ "\',\'" + rsltType + "\',1)\">" + result["item"]["name"] + "&emsp; <em class=\"w3-small\" style=\"color: lightgrey;\">(" + typeTexts[rsltType] + ")</em></div>")
     });
 
     // let srchRslt = fuses[searchType].search(searchTxt)

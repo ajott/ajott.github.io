@@ -56,7 +56,7 @@ function initializeModals() {
 function buildModal(el, type, mast = 0) {
     // Used for building individual modal IDs
     modalCount++
-
+    let srchPhrase = "";
     // Temporary until an overall fuse/dictionary can be attained
     let fuses = {
         "skill": skillFuse,
@@ -71,7 +71,7 @@ function buildModal(el, type, mast = 0) {
         srchPhrase = el
     } else {
         let htmlPhrase = el.innerText
-        let srchPhrase = htmlPhrase.split(' (')[0] // Get rid of specializations, such as Art (Engraving)
+        srchPhrase = htmlPhrase.split(' (')[0] // Get rid of specializations, such as Art (Engraving)
     }
     let srchRslt = fuses[type].search(srchPhrase)
 
@@ -297,8 +297,10 @@ function showMenu() {
     var x = document.getElementById("menu");
     if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
+        $("#mobileMenuBtn").html("&times;")
     } else {
         x.className = x.className.replace(" w3-show", "");
+        $("#mobileMenuBtn").html("&#9776;")
     }
 }
 
@@ -480,3 +482,24 @@ $(document).ready(function () {
         keys: ["name"]
     })
 });
+
+
+$(document).ready(function () {
+    buildConditionTable();
+
+});
+
+function buildConditionTable() {
+    let htmlString = ""
+
+    Object.entries(condition).forEach(cond => {
+        htmlString += "<tr>"
+        htmlString += "<td>" + cond[1]["name"] + "</td>"
+        htmlString += "<td>" + cond[1]["desc"] + "</td>"
+
+        htmlString += "</tr>"
+    });
+
+    $("#conditionTable").html(htmlString)
+}
+

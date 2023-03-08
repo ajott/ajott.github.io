@@ -497,6 +497,7 @@ th {
     width: 90% !important;
     max-width: 650px !important;
     margin:auto;
+    margin-top: 100px !important
 }
 
 .hidden {

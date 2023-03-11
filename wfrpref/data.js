@@ -2,15 +2,15 @@ var masterDict = []
 var masterFuse = []
 
 $(document).ready(function() {
-    let lists = [skill, talent, spell, miracle, condition, weaponQual]
-    let listTypes = ["skill", "talent", "spell", "miracle", "condition", "qual"]
+    let lists = [skill, talent, spell, miracle, condition, weapon, trait, weaponQual]
+    let listTypes = ["skill", "talent", "spell", "miracle", "condition", "weapon", "trait", "qual"]
     for (let j = 0; j < lists.length; j ++) {
         for (let i = 0; i < lists[j].length; i ++) {
             masterDict.push({"name": lists[j][i]["name"], "type": listTypes[j]})
         }
     };
 
-    masterFuse = new Fuse(masterDict, {keys: ["name"]})
+    masterFuse = new Fuse(masterDict, {keys: ["name"], threshold: 0.3})
 });
 
 var currYear = new Date().getFullYear()
@@ -22,8 +22,10 @@ var modals = {
     "talent": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"talentName\"></span></h3></div><div class=\"w3-row-padding\"><h5 style=\"text-align: left !important;\">Max: <span class=\"talentMax\"></span></h5><h5 style=\"text-align: left !important;\"><span class=\"talentTest\"></span></h5></div><div class=\"w3-row-padding\"><div class=\"talentDesc\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"talentModalSearch()\" class=\"w3-button w3-deep-amber firstBtn\">Talent List</button><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large lastBtn\">Close</button></div></div></div>",
     "miracle": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3 class=\"miracleName\"></h3><div class=\"miracleTier w3-hide\"></div><h5> <em><span class=\"miracleGod\"></span> </em></h5></div><div class=\"w3-row-padding\"><emph>Range: </emph><span class=\"miracleRange\"></span><br /><emph>Target: </emph><span class=\"miracleTarget\"></span><br /><emph>Duration: </emph><span class=\"miracleDuration\"></span></div><div class=\"w3-row-padding\"><div class=\"miracleDescription\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     "condition": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"conditionName\"></span></h3></div><div class=\"w3-row-padding\"><div class=\"conditionDesc\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
+    "trait": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"traitName\"></span></h3></div><div class=\"w3-row-padding\"><div class=\"traitDesc\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     "qual": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"qualName\"></span></h3></div><div class=\"w3-row-padding\"><div class=\"qualDesc\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
-    "spell": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large grid-card\"><div class=\"w3-row-padding\"><h3 class=\"spellName\"></h3><h5> <em><span class=\"spellLore\"></span> </em></div><div class=\"w3-row-padding\"><emph>Casting Number: </emph><span class=\"spellCN\"></span><br /><emph>Range: </emph><span class=\"spellRange\"></span><br /><emph>Target: </emph><span class=\"spellTarget\"></span><br /><emph>Duration: </emph><span class=\"spellDuration\"></span></div><div class=\"w3-row-padding\"><div class=\"spellDescription\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>"
+    "spell": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large grid-card\"><div class=\"w3-row-padding\"><h3 class=\"spellName\"></h3><h5> <em><span class=\"spellLore\"></span> </em></div><div class=\"w3-row-padding\"><emph>Casting Number: </emph><span class=\"spellCN\"></span><br /><emph>Range: </emph><span class=\"spellRange\"></span><br /><emph>Target: </emph><span class=\"spellTarget\"></span><br /><emph>Duration: </emph><span class=\"spellDuration\"></span></div><div class=\"w3-row-padding\"><div class=\"spellDescription\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
+    "weapon": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"weapName\"></span></h3></div><div class=\"w3-row-padding\"><h5 style=\"margin-top: -1em !important;\"><em><div class=\"weapGroup\"></div></em></h5><div class=\"weapPrice\"></div><div class=\"weapEnc\"></div><div class=\"weapAvail\"></div><div class=\"weapDamage\"></div><div class=\"weapReach\"></div><div class=\"weapQuals\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>"
 }
 
 var lores = {
@@ -56,14 +58,14 @@ var lores = {
         "wind": "Hysh"
     },
     "Shadows":{
-        "desc":"Spells cast from the Lore of Shadows are surreptitious and sly, and so the <em>lingua praestantia</em> may be muttered stealthily. Any protective spells you may cast wreath you in shadows and billow smoke, making your body insubstantial, possibly even allowing blades to pass through you seemingly without harm. Further, all spells cast from the Lore of Shadows inflicting Damage ignore all non-magical Armour Points. <br/> <p><b>Ingredients:</b> Anything used to hide, shroud, or conceal is repurposed as Grey ingredients, including cosmetics, scents, scarfs, spectacles, mirrors, and wigs. Items drawn from professions steeped in intrigue and wisdom are also common, with diplomatic artefacts, symbols of rank, and the ultimate expression of power &ndash; a blade &ndash; prevalent.</p>",
+        "desc":"Spells cast from the Lore of Shadows are surreptitious and sly, and so the <special>lingua praestantia</special> may be muttered stealthily. Any protective spells you may cast wreath you in shadows and billow smoke, making your body insubstantial, possibly even allowing blades to pass through you seemingly without harm. Further, all spells cast from the Lore of Shadows inflicting Damage ignore all non-magical Armour Points. <br/> <p><b>Ingredients:</b> Anything used to hide, shroud, or conceal is repurposed as Grey ingredients, including cosmetics, scents, scarfs, spectacles, mirrors, and wigs. Items drawn from professions steeped in intrigue and wisdom are also common, with diplomatic artefacts, symbols of rank, and the ultimate expression of power &ndash; a blade &ndash; prevalent.</p>",
         "wind": "Ulgu"
     },
     "Petty": {
         "desc": "For the few Humans blessed — or cursed, depending upon your point of view — with the spark of magic, it generally manifests around puberty, and almost always before 25 summers have passed. The first indications of impending witchery are often little tricks, knacks, cantrips, or similar, showing the wizard-to-be should probably be trained for everyone else’s safety. <br/> For Elves, this is just a part of growing up, and those with interest in magic are schooled to develop their burgeoning talents. For Humans, assuming they avoid being lynched, it likely means years of training as an apprentice to a wizard from one of the Eight Colleges of Magic, after which they should never use the little tricks they learned when young again. But most do. <br/> As Petty spells are not formally codified, they have many different names. Players are encouraged to devise their own, more characterful names, reflecting their personality.<br/><br/> Petty spells are learned when taking the <talent>Petty Magic</talent> Talent, which may be available to your Career. Additional Petty spells can be learned for an XP cost"
     },
     "Arcane":{
-        "desc": "The Arcane spells represent common formulations of the <em>lingua praestantia</em>. How these spells manifest in practice will depend on your <talent>Arcane Magic</talent> Talent. For instance, a spellcaster with the <talent>Arcane Magic (Fire)</talent> Talent casting Drop may cause the object to overheat, while one with <talent>Arcane Magic (Shadows)</talent> may make it slightly insubstantial, causing the object to literally slip between the target’s fingers. <br/> Treat Arcane spells as extra options for every Lore of Magic, including Witch, Dark, and Chaos Lores. They are counted as Lore spells in all ways, meaning they get all the benefits of Lore spells, and can only be learned from and taught to those sharing the same Arcane Magic Talent. <br/> <p><b>Note: </b>Any spell marked with a ‘+’ at the end of the Duration gains the following extra text: When the spell should end, you may make a <em>Willpower</em> Test to extend the Duration for +1 round.</p>"
+        "desc": "The Arcane spells represent common formulations of the <special>lingua praestantia</special>. How these spells manifest in practice will depend on your <talent>Arcane Magic</talent> Talent. For instance, a spellcaster with the <talent>Arcane Magic (Fire)</talent> Talent casting <spell>Drop</spell> may cause the object to overheat, while one with <talent>Arcane Magic (Shadows)</talent> may make it slightly insubstantial, causing the object to literally slip between the target’s fingers. <br/> Treat Arcane spells as extra options for every Lore of Magic, including Witch, Dark, and Chaos Lores. They are counted as Lore spells in all ways, meaning they get all the benefits of Lore spells, and can only be learned from and taught to those sharing the same Arcane Magic Talent. <br/> <p><b>Note: </b>Any spell marked with a ‘&plus;’ at the end of the Duration gains the following extra text: When the spell should end, you may make a <em>Willpower</em> Test to extend the Duration for +1 round.</p>"
     },
     "Hedgecraft":{
         "desc": "The Hedgefolk believe their Lore is a gift from the Gods, referring to their spellcasters as the Blessed Few. Due to their ancient traditions and ingrained belief, their spells cannot be cast without ingredients, which are an integral part of their spellcasting process. <br/> Fortunately, the ingredients they use are easily found on the fringes of settlements and are usually herbs or plants. You receive 1 + SL ingredients on a successful foraging roll, using <em>Lore (Herbalism)</em>, as described under Gathering Food and Herbs on page 127, or you can buy them for 5 brass pennies each. <br/> <p><b>Ingredients:</b> Hedgefolk use easily sourced local materials prepared to exacting standards using special tools. So, ingredients may include things such as the wings of a dragonfly killed with a silver pin, rods of poplar polished with beeswax on Sonnstill, or bones buried beneath a hedgerow for a winter’s month.</p>"
@@ -622,6 +624,213 @@ var spell = [
         "target": "AoE (Initiative Bonus yards)",
         "duration": "Special",
         "description": "<p>You channel all the <em>Azyr</em> you can muster and reach out to the skies, calling down a comet to wreak havoc amongst your foes. Select a target point within range. At the end of the next round, make an <b>Average (+20) Perception Test</b>. For every +SL you achieve, you may move your point of impact by Initiative Bonus yards.</p> <p>For every –SL, the GM will move the point of impact by Initiative Bonus yards in a random direction. Comet of Casandora then acts as a magical missile with Damage +12 that hits all targets in the Area of Effect, who also gain +1 <condition>Ablaze</condition> and the <condition>Prone</condition> Condition.</p>"
+    }, {
+        "name": "Aethyric Armour",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 2,
+        "range": "You",
+        "target": "You",
+        "duration": "Willpower Bonus Rounds&plus;",
+        "description": "<p>You gain +1 Armour Point to all Hit Locations as you wrap yourself in a protective swathe of magic.</p>"
+    }, {
+        "name": "Aethyric Arms",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 2,
+        "range": "You",
+        "target": "You",
+        "duration": "Willpower Bonus Rounds&plus;",
+        "description": "<p>You create a melee weapon with a Damage equal to your Willpower Bonus. This may take any form, and so use any <skill>Melee</skill> Skill you may possess. The weapon counts as <weaponqual>Magical</weaponqual>.</p>"
+    }, {
+        "name": "Arrow Shield",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 3,
+        "range": "You",
+        "target": "AoE (Willpower Bonus yards)",
+        "duration": "Willpower Bonus Rounds&plus;",
+        "description": "<p>Any missiles containing organic matter, such as arrows with wooden shafts, are automatically destroyed if they pass within the Area of Effect, causing no damage to their target. Missiles comprising only inorganic matter, such as throwing knives or pistol shots, are unaffected.</p>"
+    }, {
+        "name": "Blast",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 4,
+        "range": "Willpower ards",
+        "target": "AoE (Willpower Bonus yards)",
+        "duration": "Instant",
+        "description": "<p>You channel magic into an explosive blast. This is a <em>magic missile</em> with Damage +3 that targets everyone in the Area of Effect.</p>"
+    }, {
+        "name": "Bolt",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 4,
+        "range": "Willpower ards",
+        "target": "1",
+        "duration": "Instant",
+        "description": "<p>You channel magic into a damaging bolt. Bolt is a <em>magic missile</em> with a Damage of +4. </p>"
+    }, {
+        "name": "Breath",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 6,
+        "range": "1 yard",
+        "target": "Special",
+        "duration": "Instant",
+        "description": "<p>You immediately make a Breath attack, as if you had spent 2 Advantage to activate the <trait>Breath</trait> Creature Trait (see page 338). Breath is a <em>magic missile</em> with a Damage equal to your Toughness Bonus. The GM decides which type of Breath attack best suits your <talent>Arcane Magic</talent> Talent. </p>"
+    }, {
+        "name": "Bridge",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 4,
+        "range": "Willpower yards",
+        "target": "AoE (see description)",
+        "duration": "Willpower Bonus Rounds&times;",
+        "description": "<p>You create a bridge of magical energy, with a maximum length and breadth of your Willpower Bonus in yards. For every +2 SL you may increase length or breadth by your Willpower Bonus in yards.</p>"
+    }, {
+        "name": "Chain Attack",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 6,
+        "range": "Willpower yards",
+        "target": "Special",
+        "duration": "Instant",
+        "description": "<p>You channel a twisting spur of rupturing magic into your target. This is a <em>magic missile</em> with a Damage of +4. If Chain Attack reduces a target to 0 Wounds, it leaps to another target within the spell’s initial range, and within Willpower Bonus yards of the previous target, inflicting the same Damage again. It may leap a maximum number of times equal to your Willpower Bonus. For every +2 SL achieved, it may chain to an additional target.</p>"
+    }, {
+        "name": "Corrosive Blood",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 4,
+        "range": "You",
+        "target": "You",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>You infuse yourself with magic, lending your blood a fearsome potency. You gain the <trait>Corrosive Blood</trait> Creature Trait (see page 339).</p>"
+    }, {
+        "name": "Dark Vision",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 1,
+        "range": "You",
+        "target": "You",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>You boost your <talent>Second Sight</talent> to assist your mundane senses. While the spell is active, gain the <trait>Dark Vision</trait> Creature Trait (see page 339).</p>"
+    }, {
+        "name": "Distracting",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 4,
+        "range": "You",
+        "target": "You",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>You wreathe yourself in magic, which swirls around you, distracting your foes. While the spell is active, gain the <trait>Distracting</trait> Creature Trait (see page 339). </p>"
+    }, {
+        "name": "Dome",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 7,
+        "range": "You",
+        "target": "AoE (Willpower Bonus yards)",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>You create a dome of magical energy overhead, blocking incoming attacks. Anyone within the Area of Effect gains the <trait>Ward (6+)</trait> Creature Trait (see page 343) against magical or ranged attacks originating outside the dome. Those within may attack out of the dome as normal, and the dome does not impede movement. </p>"
+    }, {
+        "name": "Drop",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 1,
+        "range": "Willpower yards",
+        "target": "1",
+        "duration": "Instant",
+        "description": "<p>You channel magic into an object being held by an opponent. This could be a weapon, a rope, or someone’s hand. Unless a Challenging (+0) Dexterity Test is passed, the item is dropped. For every +2 SL you may impose an additional –10 on the Dexterity Test.</p>"
+    }, {
+        "name": "Entangle",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 3,
+        "range": "Willpower yards",
+        "target": "1",
+        "duration": "Special",
+        "description": "<p>Using magic, you entrap your target, wrapping them in whatever suits your Lore: vines, shadows, their own clothing… Your target gains one <condition>Entangled</condition> Condition with a Strength equal to your Intelligence. For every +2 SL, you may give the target +1 additional <condition>Entangled</condition> Condition. The spell lasts until all <condition>Entangled</condition> Conditions are removed.</p>"
+    }, {
+        "name": "Fearsome",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 3,
+        "range": "You",
+        "target": "You",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>Shrouding yourself in magic, you become fearsome and intimidating. Gain <trait>Fear 1</trait>. For every +3 SL, you may increase your Fear value by one.</p>"
+    }, {
+        "name": "Flight",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 8,
+        "range": "You",
+        "target": "You",
+        "duration": "Willpower Bonus Rounds&plus;",
+        "description": "<p>You can fly, whether by sprouting wings, ascending on a pillar of magical light, or some other method. Gain the <trait>Flight (Agility)</trait> Creature Trait (see page 339).</p>"
+    }, {
+        "name": "Magic Shield",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 4,
+        "range": "You",
+        "target": "You",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>You encase yourself in bands of protective magic. While the spell is active, add +Willpower Bonus SL to any dispel attempts you make. </p>"
+    }, {
+        "name": "Move Object",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 4,
+        "range": "Willpower Yards",
+        "target": "1",
+        "duration": "1 Round",
+        "description": "<p>Using magic, you grab hold of an non-sentient object no larger than you, moving it with the sheer force of your will, which is considered to have a Strength equal to your Willpower. You may move the object up to Willpower Bonus yards. If anyone attempts to impede the object’s movement, make an <b>Opposed Willpower/Strength Test</b>. For every +2 SL you may increase the distance the object is moved by Willpower Bonus yards. </p>"
+    }, {
+        "name": "Mundane Aura",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 4,
+        "range": "You",
+        "target": "You",
+        "duration": "Willpower minutes",
+        "description": "<p>You drain all the Winds of Magic from within your body and your possessions, removing any magical aura. For the duration of the spell you appear mundane to the <talent>Magical Sense</talent> Talent and similar. You effectively have no magical ability and your magical nature cannot be detected by any means. While this spell is in effect, you cannot cast any other spells. Mundane Aura is immediately dispelled if you make a <skill>Channelling</skill> Test. </p>"
+    }, {
+        "name": "Push",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 6,
+        "range": "You",
+        "target": "You",
+        "duration": "Instant",
+        "description": "<p>All living creatures within Willpower Bonus yards are pushed back your Willpower Bonus in yards and gain the <condition>Prone</condition> Condition. If this brings them into contact with a wall or other large obstacle, they take Damage equal to the distance travelled in yards. For every +2 SL, you may push creatures back another Willpower Bonus in yards.</p>"
+    }, {
+        "name": "Teleport",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 5,
+        "range": "You",
+        "target": "You",
+        "duration": "Instant",
+        "description": "<p>Using magic, you can teleport up to your Willpower Bonus in yards. This movement allows you to traverse gaps, avoid perils and pitfalls, and ignore obstacles. For every +2 SL you may increase the distance travelled by your Willpower Bonus in yards. </p>"
+    }, {
+        "name": "Terrifying",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 7,
+        "range": "You",
+        "target": "You",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>You gain the <trait>Terror (1)</trait> Creature Trait (see page 191).</p>"
+    }, {
+        "name": "Ward",
+        "lore": "Arcane",
+        "wind": "",
+        "CN": 5,
+        "range": "You",
+        "target": "You",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>You wrap yourself in protective magic, gaining the <trait>Ward (9+)</trait> Creature Trait (see page 343). </p>"
     }
 ];
 
@@ -897,7 +1106,7 @@ var miracle = [
         "range": "6 yards",
         "target": "1",
         "duration": "6 rounds",
-        "desc": "<p>Your target's weapon counts as Magical.</p>"
+        "desc": "<p>Your target's weapon counts as <weaponqual>Magical</weaponqual>.</p>"
     },
     {
         "name": "Savagery",
@@ -957,7 +1166,7 @@ var miracle = [
         "range": "You",
         "target": "You",
         "duration": "Fellowship Bonus Rounds",
-        "desc": "<p>You pray to Verena to guide your blade to strike down the unjust. If wielding a sword, it ignores APs, and counts as Magical. Further, if struck opponents are criminals (as determined by the GM), they must make an <b>Average (+20) Endurance Test</b> or suffer an <em>Unconscious</em> Condition that lasts for at least Fellowship Bonus Rounds. If any crime is perpetrated on the unconscious opponents, you suffer +1 Sin point per crime.</p>"
+        "desc": "<p>You pray to Verena to guide your blade to strike down the unjust. If wielding a sword, it ignores APs, and counts as <weaponqual>Magical</weaponqual>. Further, if struck opponents are criminals (as determined by the GM), they must make an <b>Average (+20) Endurance Test</b> or suffer an <em>Unconscious</em> Condition that lasts for at least Fellowship Bonus Rounds. If any crime is perpetrated on the unconscious opponents, you suffer +1 Sin point per crime.</p>"
     },
     {
         "name": "Truth Will Out",
@@ -2371,11 +2580,15 @@ var weaponQual = [
     },
     {
         "name": "Blackpowder",
-        "desc": "The crack of gunfire followed by gouts of smoke and confusion can be terrifying. If you are targeted by a Blackpowder weapon, you must pass an <b>Average (+20) <skill>Cool</skill> Test</b> or take a <condition>Broken</condition> Condition, even if the shot misses."
+        "desc": "The crack of gunfire followed by gouts of smoke and confusion can be terrifying. If you are targeted by a Blackpowder weapon, you must pass an <b>Average (+20) <skill>Cool</skill> Test</b> or take a <condition>Broken</condition> Condition, even if the shot misses. <br/>Those with <skill>Ranged</skill> (Engineering) can use Blackpowder and Explosive weapons without penalty."
     },
     {
         "name": "Blast (Rating)",
         "desc": "All Characters within <mono>(Rating)</mono> yards of the struck target point take <mono>SL+Weapon Damage</mono>, and suffer any Conditions the weapon inflicts."
+    },
+    {
+        "name": "Crossbow/Throwing",
+        "desc": "Crossbows and Thrown weapons are relatively simple to use. You can attempt a <skill>Ranged</skill> (Crossbow) or <skill>Ranged</skill> (Throwing) Test using your Ballistic Skill, but the weapon loses all Qualities whilst retaining its Flaws."
     },
     {
         "name": "Damaging",
@@ -2390,8 +2603,16 @@ var weaponQual = [
         "desc": "Distracting weapons can be used to drive an opponent back due to their dangerous or whip-like natures. Instead of causing Damage, a successful attack with a Distracting weapon can force an opponent back 1 yard per SL by which you win the Opposed Test."
     },
     {
+        "name": "Engineering",
+        "desc": "All Engineering weapons can be used by characters with <skill>Ranged</skill> (Blackpowder), but the weapons lose all Weapon Qualities whilst retaining their flaws."
+    },
+    {
         "name": "Entangle",
         "desc": "Your weapon wraps around your opponents, entangling them. Any opponent successfully hit by your weapon gains the <condition>Entangled</condition> Condition with a Strength value equal to your Strength Characteristic. When Entangling an opponent, you cannot otherwise use the weapon to hit. You can end the Entangling whenever you wish."
+    },
+    {
+        "name": "Explosive",
+        "desc": "Those with <skill>Ranged</skill> (Engineering) can use Blackpowder and Explosive weapons without penalty."
     },
     {
         "name": "Fast",
@@ -2408,6 +2629,14 @@ var weaponQual = [
     {
         "name": "Impale",
         "desc": "Impale weapons can kill with a single clean blow. Impale weapons cause a Critical Hit on any number divisible by 10 (i.e.: 10, 20, 30, etc.) as well as on doubles (i.e.: 11, 22, 33) rolled equal or under an appropriate Test in combat."
+    },
+    {
+        "name": "Incendiary",
+        "desc": "Incendiary weapons give every affected target <mono>1+SL</mono> <condition>Ablaze</condition> Conditions."
+    },
+    {
+        "name": "Magical",
+        "desc": "This weapon can harm creatures that are only susceptible to magical attacks."
     },
     {
         "name": "Penetrating",
@@ -2434,7 +2663,7 @@ var weaponQual = [
         "desc": "If you use this weapon to oppose an incoming attack, you count as having <mono>(Rating)</mono> Armour Points on all locations of your body. If your weapon has a Shield Rating of 2 or higher (so: Shield 2 or Shield 3), you may also Oppose incoming missile shots in your Line of Sight."
     },
     {
-        "name": "Trap Blade",
+        "name": "Trap-blade",
         "desc": "Some weapons are designed to trap other weapons, and sometimes even break them. If you score a Critical when defending against an attack from a bladed weapon you can choose to trap it instead of causing a Critical Hit. <br/><br/>If you choose to do this, enact an Opposed Strength Test, adding your SL from the previous Melee Test. If you succeed, your opponent drops the blade as it is yanked free. If you score an Astounding Success, you not only disarm your opponent, but the force of your maneuver breaks their blade unless it has the <weaponqual>Unbreakable</weaponqual> quality. If you fail the Test, your opponent frees the blade and may fight on as normal."
     },
     {
@@ -2456,6 +2685,11 @@ var weaponQual = [
         "desc": "Imprecise weapons are difficult to bring to bear as they are unwieldy or hard to aim. Suffer a penalty of –1 SL when using the weapon to attack. An Imprecise Weapon can never be <weaponqual>Precise</weaponqual> (Imprecise takes precedent)."
     },
     {
+        "name": "Lance",
+        "flaw": true,
+        "desc": "Lances count as Improvised Weapons if used on a round where you have not Charged."
+    },
+    {
         "name": "Reload (Rating)",
         "flaw": true,
         "desc": "The weapon is slow to reload. An unloaded weapon with this flaw requires an Extended <skill>Ranged</skill> Test for the appropriate Weapon Group scoring <mono>(Rating)</mono> SL to reload. If you are interrupted while reloading, you must start again from scratch."
@@ -2474,5 +2708,688 @@ var weaponQual = [
         "name": "Undamaging",
         "flaw": true,
         "desc": "Some weapons are not very good at penetrating armour. All APs are doubled against Undamaging weapons. Further, you do not automatically inflict a minimum of 1 Wound on a successful hit in combat."
+    }
+]
+
+var weapon = [
+    {
+        "name": "",
+        "group": "",
+        "price": "",
+        "enc": "",
+        "avail": "",
+        "reach": "",
+        "damage": "",
+        "qual": ""
+    },
+    {
+        "name": "Hand Weapon",
+        "group": "Basic",
+        "price": "1GC",
+        "enc": "1",
+        "avail": "Common",
+        "reach": "Average",
+        "damage": "+SB+4",
+        "qual": ""
+    },
+    {
+        "name": "Improvised Weapon",
+        "group": "Basic",
+        "price": "N/A",
+        "enc": "Varies",
+        "avail": "N/A",
+        "reach": "Varies",
+        "damage": "+SB+1",
+        "qual": "<weaponqual>Undamaging</weaponqual>"
+    },
+    {
+        "name": "Dagger",
+        "group": "Basic",
+        "price": "16/&ndash;",
+        "enc": "0",
+        "avail": "Common",
+        "reach": "Very Short",
+        "damage": "+SB+2",
+        "qual": ""
+    },
+    {
+        "name": "Knife",
+        "group": "Basic",
+        "price": "8/&ndash;",
+        "enc": "0",
+        "avail": "Common",
+        "reach": "Very Short",
+        "damage": "+SB+1",
+        "qual": "<weaponqual>Undamaging</weaponqual>"
+    },
+    {
+        "name": "Shield (Buckler)",
+        "group": "Basic",
+        "price": "18/2",
+        "enc": "0",
+        "avail": "Common",
+        "reach": "Personal",
+        "damage": "+SB+1",
+        "qual": "<weaponqual>Shield 1</weaponqual>, <weaponqual>Defensive</weaponqual>, <weaponqual>Undamaging</weaponqual>"
+    },
+    {
+        "name": "Shield",
+        "group": "Basic",
+        "price": "2GC",
+        "enc": "1",
+        "avail": "Common",
+        "reach": "Very Short",
+        "damage": "+SB+2",
+        "qual": "<weaponqual>Shield 2</weaponqual>, <weaponqual>Defensive</weaponqual>, <weaponqual>Undamaging</weaponqual>"
+    },
+    {
+        "name": "Shield (Large)",
+        "group": "Basic",
+        "price": "3GC",
+        "enc": "3",
+        "avail": "Common",
+        "reach": "Very Short",
+        "damage": "+SB+3",
+        "qual": "<weaponqual>Shield 3</weaponqual>, <weaponqual>Defensive</weaponqual>, <weaponqual>Undamaging</weaponqual>"
+    },
+    {
+        "name": "Cavalry Hammer",
+        "2h": "2h",
+        "group": "Cavalry",
+        "price": "3GC",
+        "enc": "3",
+        "avail": "Scarce",
+        "reach": "Long",
+        "damage": "+SB+5",
+        "qual": "<weaponqual>Pummel</weaponqual>"
+    },
+    {
+        "name": "Lance",
+        "group": "Cavalry",
+        "price": "1GC",
+        "enc": "3",
+        "avail": "Rare",
+        "reach": "Very Long",
+        "damage": "+SB+6",
+        "qual": "<weaponqual>Impact</weaponqual>, <weaponqual>Impale</weaponqual>, <weaponqual>Lance</weaponqual>"
+    },
+    {
+        "name": "Foil",
+        "group": "Fencing",
+        "price": "5GC",
+        "enc": "1",
+        "avail": "Scarce",
+        "reach": "Medium",
+        "damage": "+SB+3",
+        "qual": "<weaponqual>Fast</weaponqual>, <weaponqual>Impale</weaponqual>, <weaponqual>Precise</weaponqual>, <weaponqual>Undamaging</weaponqual>"
+    },
+    {
+        "name": "Rapier",
+        "group": "Fencing",
+        "price": "5GC",
+        "enc": "1",
+        "avail": "Scarce",
+        "reach": "Long",
+        "damage": "+SB+4",
+        "qual": "<weaponqual>Fast</weaponqual>, <weaponqual>Impale</weaponqual>"
+    },
+    {
+        "name": "Unarmed",
+        "group": "Brawling",
+        "price": "N/A",
+        "enc": "0",
+        "avail": "&ndash;",
+        "reach": "Personal",
+        "damage": "+SB+0",
+        "qual": "<weaponqual>Undamaging</weaponqual>"
+    },
+    {
+        "name": "Knuckledusters",
+        "group": "Brawling",
+        "price": "2/6",
+        "enc": "0",
+        "avail": "Common",
+        "reach": "Personal",
+        "damage": "+SB+2",
+        "qual": ""
+    },
+    {
+        "name": "Grain Flail",
+        "group": "Flail",
+        "price": "10/&ndash;",
+        "enc": "1",
+        "avail": "Common",
+        "reach": "Average",
+        "damage": "+SB+3",
+        "qual": "<weaponqual>Distract</weaponqual>, <weaponqual>Imprecise</weaponqual>, <weaponqual>Wrap</weaponqual>"
+    },
+    {
+        "name": "Flail",
+        "group": "Flail",
+        "price": "2GC",
+        "enc": "1",
+        "avail": "Scarce",
+        "reach": "Average",
+        "damage": "+SB+5",
+        "qual": "<weaponqual>Distract</weaponqual>, <weaponqual>Wrap</weaponqual>"
+    },
+    {
+        "name": "Military Flail",
+        "2h": "2h",
+        "group": "Flail",
+        "price": "3GC",
+        "enc": "2",
+        "avail": "Rare",
+        "reach": "Long",
+        "damage": "+SB+6",
+        "qual": "<weaponqual>Distract</weaponqual>, <weaponqual>Impact</weaponqual>, <weaponqual>Tiring</weaponqual>, <weaponqual>Wrap</weaponqual>"
+    },
+    {
+        "name": "Main Gauche",
+        "group": "Parry",
+        "price": "1GC",
+        "enc": "0",
+        "avail": "Rare",
+        "reach": "Very Short",
+        "damage": "+SB+2",
+        "qual": "<weaponqual>Defensive</weaponqual>"
+    },
+    {
+        "name": "Swordbreaker",
+        "group": "Parry",
+        "price": "1GC 2/6",
+        "enc": "1",
+        "avail": "Scarce",
+        "reach": "Short",
+        "damage": "+SB+3",
+        "qual": "<weaponqual>Defensive</weaponqual>, <weaponqual>Trap-blade</weaponqual>"
+    },
+    {
+        "name": "Halberd",
+        "2h": "2h",
+        "group": "Polearm",
+        "price": "2GC",
+        "enc": "3",
+        "avail": "Common",
+        "reach": "Long",
+        "damage": "+SB+4",
+        "qual": "<weaponqual>Defensive</weaponqual>, <weaponqual>Hack</weaponqual>, <weaponqual>Impale</weaponqual>"
+    },
+    {
+        "name": "Spear",
+        "2h": "2h",
+        "group": "Polearm",
+        "price": "15/&ndash;",
+        "enc": "2",
+        "avail": "Common",
+        "reach": "Very Long",
+        "damage": "+SB+4",
+        "qual": "<weaponqual>Impale</weaponqual>"
+    },
+    {
+        "name": "Pike",
+        "2h": "2h",
+        "group": "Polearm",
+        "price": "18/&ndash;",
+        "enc": "4",
+        "avail": "Rare",
+        "reach": "Massive",
+        "damage": "+SB+4",
+        "qual": "<weaponqual>Impale</weaponqual>"
+    },
+    {
+        "name": "Quarter Staff",
+        "2h": "2h",
+        "group": "Polearm",
+        "price": "3/&ndash;",
+        "enc": "2",
+        "avail": "Common",
+        "reach": "Long",
+        "damage": "+SB+4",
+        "qual": "<weaponqual>Defensive</weaponqual>, <weaponqual>Pummel</weaponqual>"
+    },
+    {
+        "name": "Bastard Sword",
+        "2h": "2h",
+        "group": "Two-Handed",
+        "price": "8GC",
+        "enc": "3",
+        "avail": "Scarce",
+        "reach": "Long",
+        "damage": "+SB+5",
+        "qual": "<weaponqual>Damaging</weaponqual>, <weaponqual>Defensive</weaponqual>"
+    },
+    {
+        "name": "Great Axe",
+        "2h": "2h",
+        "group": "Two-Handed",
+        "price": "4GC",
+        "enc": "3",
+        "avail": "Scarce",
+        "reach": "Long",
+        "damage": "+SB+6",
+        "qual": "<weaponqual>Hack</weaponqual>, <weaponqual>Impact</weaponqual>, <weaponqual>Tiring</weaponqual>"
+    },
+    {
+        "name": "Great Axe",
+        "2h": "2h",
+        "group": "Two-Handed",
+        "price": "4GC",
+        "enc": "3",
+        "avail": "Scarce",
+        "reach": "Long",
+        "damage": "+SB+6",
+        "qual": "<weaponqual>Hack</weaponqual>, <weaponqual>Impact</weaponqual>, <weaponqual>Tiring</weaponqual>"
+    },
+    {
+        "name": "Pick",
+        "2h": "2h",
+        "group": "Two-Handed",
+        "price": "9/&ndash;",
+        "enc": "3",
+        "avail": "Common",
+        "reach": "Average",
+        "damage": "+SB+5",
+        "qual": "<weaponqual>Damaging</weaponqual>, <weaponqual>Impale</weaponqual>, <weaponqual>Slow</weaponqual>"
+    },
+    {
+        "name": "Warhammer",
+        "2h": "2h",
+        "group": "Two-Handed",
+        "price": "3GC",
+        "enc": "3",
+        "avail": "Common",
+        "reach": "Average",
+        "damage": "+SB+6",
+        "qual": "<weaponqual>Damaging</weaponqual>, <weaponqual>Pummel</weaponqual>, <weaponqual>Slow</weaponqual>"
+    },
+    {
+        "name": "Zweihänder",
+        "2h": "2h",
+        "group": "Two-Handed",
+        "price": "10GC",
+        "enc": "3",
+        "avail": "Scarce",
+        "reach": "Long",
+        "damage": "+SB+5",
+        "qual": "<weaponqual>Damaging</weaponqual>, <weaponqual>Hack</weaponqual>"
+    },
+    {
+        "name": "Blunderbuss",
+        "2h": "2h",
+        "group": "Blackpowder",
+        "price": "2GC",
+        "enc": "1",
+        "avail": "Scarce",
+        "reach": "20",
+        "damage": "+8",
+        "qual": "<weaponqual>Blackpowder</weaponqual>, <weaponqual>Blast 3</weaponqual>, <weaponqual>Dangerous</weaponqual>, <weaponqual>Reload 2</weaponqual>"
+    },
+    {
+        "name": "Hochland Long Rifle",
+        "2h": "2h",
+        "group": "Blackpowder",
+        "price": "100GC",
+        "enc": "3",
+        "avail": "Exotic",
+        "reach": "100",
+        "damage": "+9",
+        "qual": "<weaponqual>Accurate</weaponqual>, <weaponqual>Blackpowder</weaponqual>, <weaponqual>Precise</weaponqual>, <weaponqual>Reload 4</weaponqual>"
+    },
+    {
+        "name": "Handgun",
+        "2h": "2h",
+        "group": "Blackpowder",
+        "price": "4GC",
+        "enc": "2",
+        "avail": "Scarce",
+        "reach": "50",
+        "damage": "+9",
+        "qual": "<weaponqual>Blackpowder</weaponqual>, <weaponqual>Dangerous</weaponqual>, <weaponqual>Reload 3</weaponqual>"
+    },
+    {
+        "name": "Pistol",
+        "group": "Blackpowder",
+        "price": "8GC",
+        "enc": "0",
+        "avail": "Rare",
+        "reach": "20",
+        "damage": "+8",
+        "qual": "<weaponqual>Blackpowder</weaponqual>, <weaponqual>Pistol</weaponqual>, <weaponqual>Reload 1</weaponqual>"
+    }
+]
+
+var trait = [
+    {
+        "name": "",
+        "desc": ""
+    },
+    {
+        "name": "Afraid (Target)",
+        "desc": "<p>The creature gains <trait>Fear (0)</trait> to the target. See page 190 for Fear rules.</p>"
+    },
+    {
+        "name": "Amphibious",
+        "desc": "<p>The creature is at home in water. It can add its Agility Bonus to the SL of all <skill>Swim</skill> Tests and move at full Movement through water.</p>"
+    },
+    {
+        "name": "Arboreal",
+        "desc": "<p>The creature is at home in the forests. In the woodlands, it adds its Agility Bonus to the SL of all <skill>Climb</skill> and <skill>Stealth</skill> Tests.</p>"
+    },
+    {
+        "name": "Animosity (Target)",
+        "desc": "<p>You harbour an enmity for the Target, which will normally be a group of people or creatures, such as ‘Nordlanders’, ‘Beastmen’, or ‘Nobles’. You must attempt a Psychology Test whenever you encounter the group. If you pass, you may grumble and spit, but only suffer a penalty of –20 to all Fellowship Tests towards that group. Should you fail you are subject to Animosity.</p><p>At the end of every subsequent Round, you may attempt another Psychology test to bring the Animosity to an end. If you do not, the effects of Animosity naturally come to an end when all members of the specified group in your line of sight are utterly pacified or gone, or you gain the <condition>Stunned</condition> or <condition>Unconscious</condition> Condition, or you become subject to another Psychology.</p><p>When subject to Animosity , you must immediately attack the disagreeable creatures, either socially (insults, jibes, and similar) or physically (most commonly with fists), as appropriate. You also gain a bonus of +1 SL on any attempts to socially or mentally attack the group. Animosity is over-ridden by <trait>Fear</trait> and <trait>Terror</trait>.</p>"
+    },
+    {
+        "name": "Armour (Rating)",
+        "desc": "<p>The creature is protected by armour or thick hide.  It has <mono>Rating</mono> Armour Points on all Hit Locations. </p>"
+    },
+    {
+        "name": "Belligerent",
+        "desc": "<p>The creature loves to win a fight. As long as it has more Advantage than its opponent, it is Immune to Psychology.</p>"
+    },
+    {
+        "name": "Bestial",
+        "desc": "<p>The creature has no rational thought or language. It shies away from fire and gains a <condition>Broken</condition> Condition if struck by it. In defence, it only uses the <skill>Dodge</skill> Skill. If it loses more than half its Wounds, it will attempt to Flee unless protecting its young or cornered, or unless it has the <trait>Territorial</trait> Trait. If so, it enters Frenzy (see page 190). Bestial creatures have no Fellowship characteristic.</p>"
+    },
+    {
+        "name": "Big",
+        "desc": "<p>The creature is a large example of its species. It receives +10 Strength and Toughness, and –5 Agility.</p>"
+    },
+    {
+        "name": "Bite (Rating)",
+        "desc": "<p>On its turn, the creature may make a Free Attack by spending 1 Advantage. The Damage of the attack equals <mono>Rating</mono> and includes the creature’s Strength Bonus already.</p>"
+    },
+    {
+        "name": "Blessed (Various)",
+        "desc": "<p>The creature is Blessed and can enact Blessings; the relevant deity is indicated in brackets. </p>"
+    },
+    {
+        "name": "Bounce",
+        "desc": "<p>The creature can bounce high, perhaps with powerful limbs, magic, or stubby wings. When Charging or Running, it doubles its Movement Characteristic, and can ignore all intervening terrain and characters as it leap over them.</p>"
+    },
+    {
+        "name": "Breath (Rating) [Type]",
+        "desc": "<p>The creature’s breath is a powerful weapon. On its turn, for the cost of 2 Advantage, it can activate its Breath as a Free Attack.</p><p>Choose 1 target it can see within 20+Toughness Bonus yards. All characters within Strength Bonus yards of that target are struck, as are all characters between the creature and the target. Perform an <b>Opposed Ballistic Skill/<skill>Dodge</skill> Test</b> against all affected targets (the creature’s single roll opposed by each individual target).</p><p>All targets that fail take Damage equal to the attack’s <mono>Rating</mono>. Further, if the Trait is marked with any of the following types in brackets, apply the associated rules.</p><p><ul><li><b>Cold: </b>Targets gain a <condition>Stunned</condition> Condition for every full 5 Wounds suffered (minimum of 1).</li><li><b>Corrosion:</b> All Armour and Weapons carried by affected targets suffer 1 Damage.</li><li><b>Fire: </b>Any Wounds caused ignore Armour Points. Targets gain an <condition>Ablaze</condition> Condition.</li><li><b>Electricity:</b> Any Wounds caused ignore Armour Points. Targets gain a <condition>Stunned</condition> Condition.</li><li><b>Poison: </b>Any Wounds caused ignore Armour Points. Targets gain a <condition>Poisoned</condition> Condition.</li><li><b>Smoke: </b>The area fills with smoke, blocking Line of Sight for Toughness Bonus Rounds.</li></ul></p><p>The creature is immune to its own Breath. This attack is <weaponqual>Magical</weaponqual>.</p>"
+    },
+    {
+        "name": "Brute",
+        "desc": "<p>The creature is heavy and brutish. It receives –1 Movement, –10 Agility, and +10  Strength and Toughness.</p>"
+    },
+    {
+        "name": "Champion",
+        "desc": "<p>The creature is an extraordinarily skilled warrior. If it wins an Opposed Test when defending in melee combat, it can cause Damage just as if it was the attacker. </p>"
+    },
+    {
+        "name": "Chill Grasp",
+        "desc": "<p>The creature’s touch chills its enemy’s souls. For the cost of 2 Advantage and its Action, it can attempt an <b>Opposed Weapon Skill/<skill>Melee</skill> or <skill>Dodge</skill> Test</b>. If it wins, its target loses <mono>1d10 + SL</mono> Wounds with no modification for Toughness Bonus or Armour Points. This attack is <weaponqual>Magical</weaponqual>.</p>"
+    },
+    {
+        "name": "Clever",
+        "desc": "<p>The creature is particularly sharp-minded. It receives +20 Intelligence and +10 Initiative.</p>"
+    },
+    {
+        "name": "Cold-Blooded",
+        "desc": "<p>The creature is cold-blooded and slow to react. It can reverse all failed Willpower Tests.</p>"
+    },
+    {
+        "name": "Constrictor",
+        "desc": "<p>The creature can squeeze and crush its prey. Any successful roll to hit gives the target an <condition>Entangled</condition> Condition. The creature may then enter a Grapple if it wishes. See page 163.</p>"
+    },
+    {
+        "name": "Construct",
+        "desc": "<p>The creature is a construct of magic, quite mindless, bound together with magical sinews. It has no Intelligence, Willpower, or Fellowship Characteristics, and need never Test them. If it has no wizard controlling it, or does not possess the <trait>Territorial</trait> Trait, it meanders mindlessly, following flows of ambient magic.</p><p>For the purposes of calculating its Wounds, it uses its Strength Bonus whenever Willpower Bonus is required. All its attacks are <weaponqual>Magical</weaponqual>.</p>"
+    },
+    {
+        "name": "Corrosive Blood",
+        "desc": "<p>The creature’s blood is corrosive. Every time its is Wounded, blood splashes free, and all targets <condition>Engaged</condition> with it take 1d10 Wounds modified by Toughness Bonus and Armour Points, to a minimum of 1.</p>"
+    },
+    {
+        "name": "Corruption (Strength)",
+        "desc": "<p>The creature is tainted by Chaos, or perhaps suffused with Dark Magics. The Strength of the Corruption is marked in brackets &mdash; Minor, Moderate, or Major. See page 182.</p>"
+    },
+    {
+        "name": "Cunning",
+        "desc": "<p>The creature is exceptionally cunning. It receives +10 Fellowship, Intelligence, and Initiative.</p>"
+    },
+    {
+        "name": "Dark Vision",
+        "desc": "<p>The creature can see in the dark as daylight.</p>"
+    },
+    {
+        "name": "Daemonic (Target)",
+        "desc": "<p>The creature’s essence is raw magic, and unholy ichor pumps through what passes for its veins. Daemonic creatures do not require the normal prerequisites for life: food, water, air…</p><p>All its attacks are <weaponqual>Magical</weaponqual>. Roll 1d10 after any blow is received; if the creature rolls the <mono>Target</mono> number or higher, the blow is ignored, even if it is a critical. Should the creature be reduced to 0 Wounds, its soul returns to the Realms of Chaos immediately, removing it from play.</p>"
+    },
+    {
+        "name": "Die Hard",
+        "desc": "<p>No matter how hard the creature is hit, it gets back up. All Critical Wounds not resulting in death can be healed; just attach the requisite body parts to the correct places, perhaps with staples or large spikes to hold them in place, and it’s good to go. Even ‘death’ may be ‘healed’ if the appropriate parts, such as a lost head, are attached to the body. If death occurs and all parts are in place, it may attempt a <b>Challenging (+0) Endurance Test</b> requiring an SL of 6 at the start of every round for Toughness Bonus Rounds after death. If a Test is successful, the creature chokes back to life with 1 Wound.</p>"
+    },
+    {
+        "name": "Disease (Type)",
+        "desc": "<p>The creature carries the disease listed. Others will have to Test as appropriate for Contraction. See page 186.</p>"
+    },
+    {
+        "name": "Distracting",
+        "desc": "<p>The creature distracts or confuse foes, possibly exuding a soporific musk or nauseating reek, or maybe its appearance is bizarrely horrifying. All living targets within a number of yards equal to its Toughness Bonus suffer a penalty of –20 to all Tests. A target can only suffer this penalty once, no matter how many Distracting foes there are.</p>"
+    },
+    {
+        "name": "Elite",
+        "desc": "<p>The creature is a hard-nosed veteran. It receives +20 to Weapon Skill, Ballistic Skill, and Willpower.</p>"
+    },
+    {
+        "name": "Ethereal",
+        "desc": "<p>The creature’s form is insubstantial, allowing it to pass through solid objects. It can only be harmed by <weaponqual>Magical</weaponqual> attacks.</p>"
+    },
+    {
+        "name": "Fast",
+        "desc": "<p>The creature moves unexpectedly fast. It receives +1 Movement and +10 Agility.</p>"
+    },
+    {
+        "name": "Fear (Rating)",
+        "desc": "<p>The creature causes supernatural Fear in other creatures, with a rating equal to its <mono>Rating</mono>.</p><p>The Fear trait represents an extreme aversion to something. Creatures that cause Fear have a <mono>Fear Rating</mono>; this value reflects the SL you are required to pass on an <b>Extended Cool Test</b> to overcome your Fear. You may continue to Test at the end of every round until your SL equals or surpasses the creature’s Fear rating. Until you do this, you are subject to Fear.</p><p>When subject to Fear, you suffer –1 SL on all Tests to affect the source of your fear. You may not move closer to whatever is causing Fear without passing a <b>Challenging (+0) Cool Test</b>. If it comes closer to you, you must pass a <b>Challenging (+0) Cool Test</b>, or gain a <condition>Broken</condition> Condition.</p>"
+    },
+    {
+        "name": "Flight (Rating)",
+        "desc": "<p>As the creature’s Move, it can fly up to <mono>Rating</mono> yards. When flying, it ignores all intervening terrain, obstacles, or characters. At the end of the move, it decides whether it has landed or is still flying. It can use this move to Charge. If it starts its turn flying, it must choose to Fly for its Move. If it cannot do this, the GM decides how far the creature falls (see page 166).</p><p>When targeting it, measure horizontal distance as normal, then increase range by 1 step. So, a Long Range shot would become Extreme Range, and if it was at Extreme Range it could not be shot at all.</p><p>When flying, it suffers a penalty of –20 to all ranged combat attempts as it swoops and wheels in the sky.</p>"
+    },
+    {
+        "name": "Frenzy",
+        "desc": "<p>The creature can Frenzy.</p><p>With a Willpower Test, you can work yourself into a state of frenzy by psyching yourself up, howling, biting your shield, or similar.  If you succeed, you become subject to Frenzy.</p><p>While subject to Frenzy you are immune to all other psychology, and will not flee or retreat for any reason; indeed you must always move at full rate towards the closest enemy you can see in order to attack. Generally, the only Action you may take is a Weapon Skill Test or an <skill>Athletics</skill> Test to reach an enemy more quickly. Further, you may take a Free Action <skill>Melee</skill> Test each Round as you are throwing everything you have into your attacks. Lastly, you gain a bonus of +1 Strength Bonus, such is your ferocity. You remain in Frenzy until all enemies in your line of sight are pacified, or you receive the <condition>Stunned</condition> or <condition>Unconscious</condition> condition. After your Frenzy is over you immediately receive a <condition>Fatigued</condition> condition. </p>"
+    },
+    {
+        "name": "Fury",
+        "desc": "<p>The creature can work itself into an all-consuming rage. It can spend all of its Advantage (minimum of 1) to become subject to Hatred to close combat opponents. If the creature has at least 3 Advantage, it may instead expend all of its Advantage to become subject to <trait>Frenzy</trait>. See page 190.</p>"
+    },
+    {
+        "name": "Ghostly Howl",
+        "desc": "<p>The creature can emit a chilling howl, capable of killing those who hear it. On its turn the creature can spend all its Advantage (minimum of 2), to unleash a hideous scream as a Free Attack.</p><p>All living targets within a number of yards equal to the creature’s Initiative immediately gain 3 <condition>Deafened</condition> Conditions and suffer 1d10 Wounds ignoring Toughness Bonus and Armour Points. Those affected must also pass a <b>Average (+20) Endurance Test</b> or gain a <condition>Broken</condition> Condition. </p>"
+    },
+    {
+        "name": "Hardy",
+        "desc": "<p>The creature can sustain more damage than most. Increase its Wounds by a number equal to its Toughness Bonus (applied before any Size modifiers).</p>"
+    },
+    {
+        "name": "Hatred (Target)",
+        "desc": "<p>The creature really hates the Target.</p><p>You are consumed with Hatred for the Target, which is normally a group of people or creatures, such as ‘Hochlanders’, ‘Bog Octopuses’, or ‘Slavers’. You will never socially interact with someone or something you hate in this manner. On encountering the object of your Hatred, you must attempt a Psychology Test. If failed, you are subject to Hatred. At the end of every subsequent Round, you may attempt another Psychology Test to bring the Hatred to an end. If you do or not, the effects of Hatred naturally come to an end when all members of the specified group in your line of sight are dead or gone, or you gain the <condition>Unconscious</condition> condition. While subject to Hatred, you must immediately attempt to destroy the hated group by the fastest and most deadly means possible. You gain a bonus of +1 SL on all combat Tests against the specified group, and are immune to <trait>Fear</trait> and <skill>Intimidate</skill> (but not <trait>Terror</trait>) caused by your hated foe. </p>"
+    },
+    {
+        "name": "Horns (Rating) [Feature]",
+        "desc": "<p>The creature has horns or some other sharp appendage (if its Horns Trait represents a different feature it will be noted in brackets). When the creature gains an Advantage for Charging, it may make a Free Attack with its Horns, performed as normal, using <mono>Rating</mono> to calculate Damage (its Strength Bonus is already included).</p>"
+    },
+    {
+        "name": "Hungry",
+        "desc": "<p>The creature is always hungry for fresh meat. If it kills or incapacitates a living opponent (or encounters a fresh body), it must pass an <b>Average (+20) Willpower Test</b> or feast, losing its next Action and Move.</p>"
+    },
+    {
+        "name": "Immunity (Type)",
+        "desc": "<p>The creature is completely immune to a certain type of Damage, such as poison, magic, or electricity. All Damage of that type, including from a Critical Wound, is ignored.</p>"
+    },
+    {
+        "name": "Immunity to Psychology",
+        "desc": "<p>Whether brave, exceedingly stupid, or just caught up in the moment, the creature is utterly fearless. It ignores the Psychology rules. See page 190.</p>"
+    },
+    {
+        "name": "Infected",
+        "desc": "<p>The creature, or its weapon, carries a nasty infection. If it causes a living opponent to lose Wounds, it must pass an Easy (+40) Endurance Test or contract a Festering Wound (see page 187).</p>"
+    },
+    {
+        "name": "Infestation",
+        "desc": "<p>The creature’s hide is infested with biting fleas or similar. All opponents suffer a penalty of –10 to hit it in melee combat as the parasites distract and overwhelm them.</p>"
+    },
+    {
+        "name": "Leader",
+        "desc": "<p>The creature is a practiced leader. It receives a bonus of +10 to Fellowship and Willpower. Note: this Trait cannot be taken by creatures with the <trait>Bestial</trait> Trait.</p>"
+    },
+    {
+        "name": "Magical",
+        "desc": "<p>The creature is wreathed in magic. All its attacks count as Magical, meaning it can harm creatures only susceptible to magical attacks.</p>"
+    },
+    {
+        "name": "Magic Resistance (Rating)",
+        "desc": "<p>Magic has a reduced effect on the creature. The SL of any spell affecting it is reduced by the <mono>Rating</mono> given. So, Magic Resistance 2 would reduce the SL by 2.</p>"
+    },
+    {
+        "name": "Mental Corruption",
+        "desc": "<p>The creature has Chaos on the mind. Roll on the Mental Corruption Table found on page 185.</p>"
+    },
+    {
+        "name": "Miracles (Various)",
+        "desc": "<p>The creature can enact Miracles; the relevant deity is indicated in brackets. </p>"
+    },
+    {
+        "name": "Mutation",
+        "desc": "<p>The creature is ‘blessed’ with a Mutation. Roll on the Physical Corruption Table found on page 184.</p>"
+    },
+    {
+        "name": "Night Vision",
+        "desc": "<p>The creature has the <talent>Night Vision</talent> Talent.</p>"
+    },
+    {
+        "name": "Painless",
+        "desc": "<p>The creature feels no pain or can ignore it. All non-amputation penalties suffered from Critical Wounds are ignored, although Conditions are suffered as normal.</p>"
+    },
+    {
+        "name": "Petrifying Gaze",
+        "desc": "<p>The creature’s gaze can turn flesh to stone. For its Action, it can spend all its Advantage to unleash its gaze (minimum of 1). The creature performs an <b>Opposed Ballistic Skill/Initiative Test</b>, adding 1 SL per Advantage spent. Its opponent gains 1 <condition>Stunned</condition> status per 2 SL by which it wins. If it wins by at least 6 SL, its target is permanently turned to stone.</p><p>If the target is a spellcaster, the test can be Opposed with <skill>Language (Magick)</skill> instead of Initiative as counter spells are cast.</p>"
+    },
+    {
+        "name": "Prejudice (Target)",
+        "desc": "<p>The creature just doesn’t like the Target.</p><p>You really dislike the Target , which is normally a group of people or creatures such as ‘Ostlanders’, ‘Elves’, or ‘Wizards’. You must attempt a Psychology Test whenever you encounter the group against which you are prejudiced. If you pass, you may frown a lot, but will otherwise act normally, only suffering a penalty of –10 to all Fellowship Tests towards that group. Should you fail you are subject to Prejudice . At the end of every subsequent Round, you may attempt another Psychology test to bring the Prejudice to an end. If you do not, the effects of Prejudice naturally come to an end when all members of the specified group in your line of sight are gone, or you gain the Stunned or Unconscious Condition, or you become subject to another Psychology.</p><p>When subject to Prejudice , you must immediately insult the target of your prejudice. Loudly.</p>"
+    },
+    {
+        "name": "Ranged (Rating) [Range]",
+        "desc": "<p>The creature has a ranged weapon. The weapon does Damage equal to the <mono>Rating</mono> and the range in yards is marked in brackets.</p>"
+    },
+    {
+        "name": "Rear",
+        "desc": "<p>For its Move, the creature may make a Stomp attack if it is larger than its opponent (see Size).</p>"
+    },
+    {
+        "name": "Regenerate",
+        "desc": "<p>The creature is capable of healing at an extraordinary rate, even regrowing severed parts. At the start of each round, if it has more than 0 Wounds remaining, it will automatically regenerate 1d10 Wounds. If it has 0 Wounds remaining, it will regenerate a single Wound on a 1d10 roll of 8+. If it ever rolls a 10 for regenerating, it also fully regenerates a Critical Wound, losing all penalties and Conditions associated with it. Any Critical Wounds or Wounds caused by Fire may not be regenerated and should be recorded separately.</p>"
+    },
+    {
+        "name": "Size (Various)",
+        "desc": "<p>This trait represents creatures whose size differ from the game standard (i.e. roughly human sized). There are seven steps of Size, ranging from Tiny to Monstrous.</p><p><h5>Size Combat Modifiers</h5><b>If larger:</b><li>Its weapons gain the <weaponqual>Damaging</weaponqual> Quality if the creature is one step larger, and <weaponqual>Impact</weaponqual> if two or more steps larger.</li><li>It multiplies any Damage caused by the number of steps larger it is (so, 2 steps = &times;2, 3 steps = &times;3, and so on); this multiplication is calculated after all modifiers are applied.</li><li>All successful strikes against smaller targets activate the Deathblow rule, even if the target survives (see page 160).</li><br/><br/><b>If smaller:</b><li>It gains a bonus of +10 to hit.</li></p>"
+    },
+    {
+        "name": "Size (Various)",
+        "desc": "<p>This trait represents creatures whose size differ from the game standard (i.e. roughly human sized). There are seven steps of Size, ranging from Tiny to Monstrous.</p><p>See page 341 for full rules surrounding disparate sizes.</p>"
+    },
+    {
+        "name": "Skittish",
+        "desc": "<p>The creature is easily scared by magic or loud noises. If such occurs, it receives +3 <condition>Broken</condition> Conditions.</p>"
+    },
+    {
+        "name": "Spellcaster (Various)",
+        "desc": "<p>The creature can cast spells; the specific Lore of Magic will be indicated in brackets. </p>"
+    },
+    {
+        "name": "Stealthy",
+        "desc": "<p>The creature is especially stealthy. It adds a number equal to its Agility Bonus to the SL of all <skill>Stealth</skill> Tests.</p>"
+    },
+    {
+        "name": "Stride",
+        "desc": "<p>The creature has a long stride, perhaps because it is a quadruped or has especially long legs. Multiply Run Movement by 1.5 when Running.</p>"
+    },
+    {
+        "name": "Stupid",
+        "desc": "<p>While not entirely devoid of self-awareness (and so lacking the <trait>Bestial</trait> trait), the creature is stupid. If it is near any allies without the Stupid Trait, they guide it and nothing happens. Otherwise, it must pass an <b>Easy (+40) Intelligence Test</b> at the start of each round, or become very confused. Should this occur it will drool, perhaps sitting down or picking its nose, doing little of use, losing both its Move and Action for that Turn.</p>"
+    },
+    {
+        "name": "Swamp-strider",
+        "desc": "<p>The creature is at home in a swamp. It suffers no Movement penalties for moving through boggy ground.</p>"
+    },
+    {
+        "name": "Swarm",
+        "desc": "<p>Swarms are large numbers of the same creature acting as one. The swarm counts as a single Creature that ignores the Psychology rules (see page 190), and can ignore the Engaged rules when using its Move. If the Swarm successfully strikes an opponent it activates the Deathblow rule (even if it has not killed its opponent — see page 160). All opponents <condition>Engaged</condition> with a Swarm automatically lose 1 Wound at the end of every Round as the Swarm overwhelms anything close. The Swarm has five times the Wounds of a normal example of the creature and gains +10 Weapon Skill. Any attempts to shoot the Swarm gain a bonus of +40 to hit. Swarms ignore all the <trait>Size</trait> Creature Trait rules.</p>"
+    },
+    {
+        "name": "Tail Attack (Rating)",
+        "desc": "<p>The creature’s tail is capable of sweeping foes from their feet. On its turn, it may make a Free Attack by spending 1 Advantage. The Tail does <mono>Rating</mono> Damage, which includes its Strength Bonus already. Opponents with a smaller Size than the creature, that suffer any Wounds from the attack, also gain the <condition>Prone</condition> Condition.</p>"
+    },
+    {
+        "name": "# Tentacles (Rating)",
+        "desc": "<p>The creature has a number of tentacles equal to <mono>#</mono>. It gains one Free Attack Action per tentacle. Each tentacle’s attack does <mono>Rating</mono> Damage, which includes its Strength Bonus already. If it causes Damage, it can also give its opponent an <condition>Entangled</condition> Condition, which will initiate a Grapple between the target and that tentacle. If a tentacle is Grappling, use the tentacle’s Free Attack Action to resolve that Grapple, not the creature’s Action (see page 338).</p>"
+    },
+    {
+        "name": "Territorial",
+        "desc": "<p>This creature is protective of a particular area or location. It will fight to the death to protect it and will not normally pursue enemies if they flee this area. </p>"
+    },
+    {
+        "name": "Terror (Rating)",
+        "desc": "<p>The creature supernaturally causes bone-chilling Terror in other creatures, at the <mono>Rating</mono> given.</p><p>When you first encounter a creature causing Terror, make a <skill>Cool</skill> Test. If you pass, you suffer no further effects of Terror; if you fail, you receive a number of <condition>Broken</condition> conditions equal to the creature’s Terror <mono>Rating</mono>, plus the number of SL below 0. </p><p>After resolving the Psychology Test, the creature causes <trait>Fear</trait>, with a Fear <mono>Rating</mono> equal to its Terror Rating.</p>"
+    },
+    {
+        "name": "Trained (Trained Skills)",
+        "desc": "<p>This trait represents animals that have been trained through the <skill>Animal Training</skill> Skill. The skills the animal knows is marked in the brackets. Feel free to create your own trained skills. </p><p><ul><li><b>Broken: </b>The animal is trained to ignore its <trait>Bestial</trait> trait. It receives 2d10 Fellowship.</li><li><b>Drive: </b>The animal is trained to pull a coach, cart, plough, buggy, or similar.</li><li><b>Entertain: </b>The animal is trained to entertain others. It adds a +10 bonus to appropriate <skill>Entertain</skill>, <skill>Perform</skill>, or <skill>Play</skill> Tests.</li><li><b>Fetch: </b>The animal is trained to fetch. This is normal reserved for Dogs and similar.</li><li><b>Guard: </b>The animal is trained to stay in one place or prowl around as a guard, granting it the <trait>Territorial</trait> Trait.</li><li><b>Home: </b>The animal is trained to return home if it is released or lost. </li><li><b>Magic: </b>The animal is trained to ignore <trait>Skittish</trait> when it comes to magic, which is required for most horses used by Wizards. </li><li><b>Mount: </b>The animal will accept a rider. Some creatures are especially belligerent, and will not accept a rider without the correct skill. So, to ride a Griffon, you need the <skill>Ride (Griffon)</skill> skill.</li><li><b>War: </b>The animal is trained for war, gaining +10 Weapon Skill. It can also ignore <trait>Skittish</trait> for loud noises.</li></ul></p>"
+    },
+    {
+        "name": "Tongue Attack (Rating) [Range]",
+        "desc": "<p>The creature’s prehensile tongue can wrap itself around prey, dragging it to a grisly end. On its turn, it may make a Free Attack by spending 1 Advantage. This is a ranged attack that does Damage equal to its <mono>Rating</mono> (the range is in brackets). If the attack hits, the target receives 1 <condition>Entangled</condition> Condition and, if a smaller Size, is dragged towards the creature, and is <condition>Engaged</condition> in melee combat. The creature can then choose whether to release the target, perform a Free Attack using its Weapon Trait, or to keep the target wrapped in its tongue, initiating a Grapple (see page 163).</p>"
+    },
+    {
+        "name": "Tough",
+        "desc": "<p>The creature is more resistant to damage than normal, and unlikely to back down. It receives +10 Toughness and Willpower.</p>"
+    },
+    {
+        "name": "Tracker",
+        "desc": "<p>Trackers are adept at following their prey, generally through scent or hearing. They add SL equal to their Initiative Bonus to all <skill>Track</skill> Tests.</p>"
+    },
+    {
+        "name": "Undead",
+        "desc": "<p>The Undead are neither living, nor dead, meaning they are not reliant on the usual prerequisites for life: air, food, water… This Trait most commonly come into use when spells, miracles, or other abilities affect Undead only.</p>"
+    },
+    {
+        "name": "Unstable",
+        "desc": "<p>The creature’s corpus is maintained by foul magics that are inherently unstable in the material realm. Whenever it ends a Round engaged with any opponents with higher Advantage, the creature is driven back, and the magics holding it together weaken. It loses as many Wounds as the difference between its Advantage, and the highest Advantage engaged with it. So, if the creature had 1 Advantage, and its opponent had 3, the creature would lose 2 Wounds. If the creature ever reach 0 Wounds, the magics holding it in place collapse, and it ‘dies’.</p>"
+    },
+    {
+        "name": "Vampiric",
+        "desc": "<p>The creature feeds on blood and draws great physical strength from this act. Whenever it performs a successful Bite attack against an appropriate opponent, it heals as many Wounds as its opponent loses. Drinking blood in this way is the only way it can heal.</p>"
+    },
+    {
+        "name": "Venom (Difficulty)",
+        "desc": "<p>The creature’s attacks are poisoned or envenomed. When it causes Wounds, its opponent gains a <condition>Poisoned</condition> Condition. If no Difficulty is marked to resist the Venom, it is assumed to be Challenging. See page 169.</p>"
+    },
+    {
+        "name": "Vomit",
+        "desc": "<p>The creature can spew a stream of corrosive corruption, dowsing its opponents in foul, semi-digested filth. On its turn, by spending 3 Advantage, the creature can activate its Vomit as a Free Attack. The creature chooses 1 target it can see within Toughness Bonus yards and lets loose; all targets within two yards are also hit.</p><p>The creature performs an <b>Opposed Ballistic Skill/Dodge Test</b> against all affected targets (its single roll opposed by each individual target). The Test is typically Easy (+40) for the vomiting creature, due to the close range, and Challenging (+0) for opponents. All losing targets suffer a hit with a Weapon Damage of the creature’s Toughness Bonus +4 and receive a <condition>Stunned</condition> condition.</p><p>All Armour and Weapons carried by affected targets suffer 1 Damage as the acidic vomit corrodes it away.</p>"
+    },
+    {
+        "name": "Ward (Rating)",
+        "desc": "<p>Perhaps because they are magical, wear a special talisman, or are just plain lucky, some blows just seem to miss. Roll 1d10 after any blow is received, if the creature rolls <mono>Rating</mono> or higher, the blow is ignored, even if it is a critical.</p>"
+    },
+    {
+        "name": "Wallcrawler",
+        "desc": "<p>The creature can effortlessly scale vertical surfaces and even traverse ceilings, ready to drop on unwary prey. It moves at full Movement across any appropriate surface and automatically passes all <skill>Climb</skill> tests.</p>"
+    },
+    {
+        "name": "Weapon (Rating)",
+        "desc": "<p>The creature carries a melee weapon, or uses teeth, claws, or similar in combat.</p><p>The weapon causes Damage equal to its <mono>Rating</mono> which already includes the creature’s Strength Bonus. Typically it will be <mono>4 + its Strength Bonus</mono> (representing a Hand Weapon).</p>"
+    },
+    {
+        "name": "Web (Rating)",
+        "desc": "<p>The creature can create webbing to trap unwary foes. Whenever it successfully hits, opponents gain 1 <condition>Entangled</condition> status, with a Strength of the <mono>Rating</mono> given. See page 168.</p>"
     }
 ]

@@ -51,6 +51,7 @@ function initializeModals() {
     $('condition').attr('onclick', 'buildModal(this,\'condition\')');
     $('weaponqual').attr('onclick', 'buildModal(this,\'qual\')');
     $('divineman').attr('onclick', 'buildModal(this,\'miracle\')');
+    $('trait').attr('onclick', 'buildModal(this,\'trait\')');
 }
 
 function buildModal(el, type, mast = 0) {
@@ -64,7 +65,9 @@ function buildModal(el, type, mast = 0) {
         "miracle": miracleFuse,
         "condition": conditionFuse,
         "qual": qualFuse,
-        "spell": spellFuse
+        "spell": spellFuse,
+        "weapon": weaponFuse,
+        "trait": traitFuse
     }
 
     if (mast == 1) {
@@ -78,7 +81,7 @@ function buildModal(el, type, mast = 0) {
     // Get the first result, which should be the closest match
     let dataRslt = srchRslt[0]["item"]
 
-        
+
     var $div = $('#default-modal');
 
     var $klon = $div.clone().prop('id', 'modal' + modalCount).appendTo("#modalPlaceholder");
@@ -174,7 +177,7 @@ function buildModal(el, type, mast = 0) {
 
             $("#modal" + modalCount + " .spellName").html(dataRslt["name"])
 
-             if (dataRslt["lore"] == "Petty" || dataRslt["lore"] == "Arcane") {
+            if (dataRslt["lore"] == "Petty" || dataRslt["lore"] == "Arcane") {
                 $("#modal" + modalCount + " .spellLore").text(dataRslt["lore"] + " Magic");
             } else {
                 $("#modal" + modalCount + " .spellLore").text("Lore of " + dataRslt["lore"]);
@@ -194,13 +197,42 @@ function buildModal(el, type, mast = 0) {
                     htmlString = "<p>" + dataRslt["description"] + "</p>"
                 }
             }
-            
+
             $("#modal" + modalCount + " .spellDescription").html(htmlString)
 
             htmlString = "";
 
             break;
-    }    
+        case "weapon":
+            if (dataRslt["2h"] != undefined) {
+                $("#modal" + modalCount + " .weapName").html(dataRslt["name"] + " (2H)")
+            } else {
+                $("#modal" + modalCount + " .weapName").html(dataRslt["name"])
+            }
+            $("#modal" + modalCount + " .weapGroup").html(dataRslt["group"])
+
+            $("#modal" + modalCount + " .weapPrice").html("Price: " + dataRslt["price"])
+
+            $("#modal" + modalCount + " .weapEnc").html("Encumbrance: " + dataRslt["enc"])
+
+            $("#modal" + modalCount + " .weapAvail").html("Availability: " + dataRslt["avail"])
+
+            $("#modal" + modalCount + " .weapReach").html("Reach/Range: " + dataRslt["reach"])
+
+            $("#modal" + modalCount + " .weapDamage").html("Damage: " + dataRslt["damage"])
+
+            if (dataRslt["qual"] != "") {
+                $("#modal" + modalCount + " .weapQuals").html("Qualities/Flaws: " + dataRslt["qual"])
+            }
+            break;
+        case "trait":
+
+            $("#modal" + modalCount + " .traitName").html(dataRslt["name"])
+
+            $("#modal" + modalCount + " .traitDesc").html(dataRslt["desc"])
+
+            break;
+    }
 
     $('#modal' + modalCount).on('click', function (e) {
         if (e.target !== this)
@@ -224,21 +256,23 @@ function hideModal(el) {
     }
 }
 
-// var searchType = "skill"
-
-// function changeSearch(type) {
-//     searchType = type;
-
-//     $('.searchBtn').removeClass('btn-selected')
-
-//     $('#masterSearch-'+type).addClass('btn-selected')
-//     masterSearch();
-// }
+function clearMasterSearch() {
+    $('#masterSearchBox').val("")
+    masterSearch()
+}
 
 function masterSearch() {
     $('#masterSearchOptions').html("")
-    
+
     let searchTxt = $('#masterSearchBox').val()
+
+    if (searchTxt == "") {
+        $("#masterClearButton").hide()
+        $("#masterSearchOptions").hide()
+    } else {
+        $("#masterClearButton").show()
+        $("#masterSearchOptions").show()
+    }
 
     let searchEl = document.getElementById('masterSearchBox')
     let y = searchEl.getBoundingClientRect().top + window.pageYOffset - 100
@@ -251,23 +285,19 @@ function masterSearch() {
         "spell": "Spell",
         "miracle": "Divine Manifestation",
         "qual": "Weapon Quality/Flaw",
+        "weapon": "Weapon",
+        "trait": "Creature Trait"
     }
 
     let srchRslt = masterFuse.search(searchTxt)
     srchRslt.length = 10;
+    let rsltNum = 1
     srchRslt.forEach(result => {
         let rsltName = result["item"]["name"]
         let rsltType = result["item"]["type"]
-        $('#masterSearchOptions').append("<div class=\"masterSearchResult w3-blue-grey w3-hover-grey\" onclick=\"buildModal(\'" + rsltName+ "\',\'" + rsltType + "\',1)\">" + result["item"]["name"] + "&emsp; <em class=\"w3-small\" style=\"color: lightgrey;\">(" + typeTexts[rsltType] + ")</em></div>")
+        $('#masterSearchOptions').append("<div class=\"masterSearchResult w3-blue-grey w3-hover-grey\" tabindex=\"" + rsltNum + "\" onclick=\"buildModal(\'" + rsltName + "\',\'" + rsltType + "\',1)\">" + result["item"]["name"] + "&emsp; <em class=\"w3-small\" style=\"color: lightgrey;\">(" + typeTexts[rsltType] + ")</em></div>")
+        rsltNum++
     });
-
-    // let srchRslt = fuses[searchType].search(searchTxt)
-
-    // srchRslt.length = 10;
-
-    // srchRslt.forEach(result => {
-    //     $('#masterSearchOptions').append("<div class=\"masterSearchResult w3-blue-grey w3-hover-grey\" onclick=\"" + modals[searchType] + "\">" + result["item"]["name"] + "</div>")
-    // });
 }
 
 
@@ -470,6 +500,16 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
     spellFuse = new Fuse(spell, {
+        keys: ["name"]
+    })
+});
+$(document).ready(function () {
+    weaponFuse = new Fuse(weapon, {
+        keys: ["name"]
+    })
+});
+$(document).ready(function () {
+    traitFuse = new Fuse(trait, {
         keys: ["name"]
     })
 });

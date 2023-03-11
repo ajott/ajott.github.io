@@ -26,9 +26,17 @@ eh {
     color: goldenrod !important;
 }
 
+special {
+    font-family: Sofia, sans-serif;
+    font-style: italic;
+}
+
 mono {
-    font-family: monospace !important;
+    font-family: Azeret Mono, monospace !important;
     background-color: black !important;
+    color: #ebebeb !important;
+    padding-left: 3px !important;
+    padding-right: 3px !important;
 }
 
 .navBarContainer {
@@ -87,6 +95,18 @@ talent {
 }
 
 talent:hover {
+    cursor: help;
+    color: goldenrod !important;
+    text-decoration: none !important;
+}
+
+trait {
+    cursor: help;
+    color: blanchedalmond !important;
+    text-decoration: underline 1px dotted blanchedalmond;
+}
+
+trait:hover {
     cursor: help;
     color: goldenrod !important;
     text-decoration: none !important;
@@ -155,6 +175,28 @@ trait {
     color: black;
     padding: 1em !important;
     font-weight: bolder !important;
+}
+
+.masterSearchResult:first-of-type {
+    border-radius: 4px 4px 0px 0px !important;
+}
+
+.masterSearchResult:last-of-type {
+    border-radius: 0px 0px 4px 4px !important;
+}
+
+.masterSearchResult:only-of-type {
+    border-radius: 4px !important;
+}
+
+#masterSearchBox {
+    width: 100% !important;
+}
+
+#masterClearButton {
+    z-index: 2;
+    width: 5em;
+    margin-left: -5em !important;
 }
 
 /*
@@ -311,7 +353,7 @@ hr {
 
 body {
     background-color: #16161d !important;
-    color: white !important;
+    color: rgb(235, 235, 235) !important;
     height: 100%;
     min-height: 100%;
 }
@@ -497,7 +539,7 @@ th {
     width: 90% !important;
     max-width: 650px !important;
     margin:auto;
-    margin-top: 100px !important
+    /* margin-top: 70px !important */
 }
 
 .hidden {
@@ -531,9 +573,19 @@ th {
     padding-right: 1em;
 }
 
-
-.w3-modal {
+#modalPlaceholder:first-child {
     background-color: rgba(0,0,0,.75) !important;
+}
+
+.well {
+    min-height: 20px;
+    padding: 19px;
+    padding-top: 0px !important;
+    margin-bottom: 20px;
+    background-color: rgb(245, 245, 245,0.02);
+    border: 1px solid rgb(227, 227, 227,0.01);
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(255,235,205,.1);
 }
 
 .tooltip {

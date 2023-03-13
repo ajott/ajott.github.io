@@ -32,6 +32,11 @@ function parseRoll(str) {
 
 }
 
+$(document).ready(function () {
+    spellFuse = new Fuse(spell, {keys: ['name']});
+
+})
+
 
 function roll(str, mod = 0, sum = true) {
 

@@ -2,8 +2,8 @@ var masterDict = []
 var masterFuse = []
 
 $(document).ready(function() {
-    let lists = [skill, talent, spell, miracle, condition, weapon, trait, weaponQual]
-    let listTypes = ["skill", "talent", "spell", "miracle", "condition", "weapon", "trait", "qual"]
+    let lists = [skill, talent, spell, miracle, condition, weapon, career, trait, weaponQual]
+    let listTypes = ["skill", "talent", "spell", "miracle", "condition", "weapon", "career", "trait", "qual"]
     for (let j = 0; j < lists.length; j ++) {
         for (let i = 0; i < lists[j].length; i ++) {
             masterDict.push({"name": lists[j][i]["name"], "type": listTypes[j]})
@@ -25,7 +25,8 @@ var modals = {
     "trait": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"traitName\"></span></h3></div><div class=\"w3-row-padding\"><div class=\"traitDesc\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     "qual": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"qualName\"></span></h3></div><div class=\"w3-row-padding\"><div class=\"qualDesc\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     "spell": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large grid-card\"><div class=\"w3-row-padding\"><h3 class=\"spellName\"></h3><h5> <em><span class=\"spellLore\"></span> </em></div><div class=\"w3-row-padding\"><emph>Casting Number: </emph><span class=\"spellCN\"></span><br /><emph>Range: </emph><span class=\"spellRange\"></span><br /><emph>Target: </emph><span class=\"spellTarget\"></span><br /><emph>Duration: </emph><span class=\"spellDuration\"></span></div><div class=\"w3-row-padding\"><div class=\"spellDescription\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
-    "weapon": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"weapName\"></span></h3></div><div class=\"w3-row-padding\"><h5 style=\"margin-top: -1em !important;\"><em><div class=\"weapGroup\"></div></em></h5><div class=\"weapPrice\"></div><div class=\"weapEnc\"></div><div class=\"weapAvail\"></div><div class=\"weapDamage\"></div><div class=\"weapReach\"></div><div class=\"weapQuals\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>"
+    "weapon": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"weapName\"></span></h3></div><div class=\"w3-row-padding\"><h5 style=\"margin-top: -1em !important;\"><em><div class=\"weapGroup\"></div></em></h5><div class=\"weapPrice\"></div><div class=\"weapEnc\"></div><div class=\"weapAvail\"></div><div class=\"weapDamage\"></div><div class=\"weapReach\"></div><div class=\"weapQuals\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
+    "career": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large grid-card\"><div class=\"w3-row-padding\"><h3 class=\"careerName\"></h3><h5><span class=\"careerClass\"></span></h5><div class=\"w3-center\"><span class=\"careerRaces\"></span></div><div class=\"w3-center\"><em class=\"careerDesc\"></em></div></div><div class=\"w3-row-padding w3-center\"><h6>Advance Scheme</h6><div><table class=\"centerTable w3-table table-dark\"><thead><tr><th class=\"careerAttr\">WS</th><th class=\"careerAttr\">BS</th><th class=\"careerAttr\">S</th><th class=\"careerAttr\">T</th><th class=\"careerAttr\">I</th><th class=\"careerAttr\">Agi</th><th class=\"careerAttr\">Dex</th><th class=\"careerAttr\">Int</th><th class=\"careerAttr\">WP</th><th class=\"careerAttr\">Fel</th></tr></thead><tbody><tr><td class=\"careerAttr careerWS\"></td><td class=\"careerAttr careerBS\"></td><td class=\"careerAttr careerS\"></td><td class=\"careerAttr careerT\"></td><td class=\"careerAttr careerI\"></td><td class=\"careerAttr careerAgi\"></td><td class=\"careerAttr careerDex\"></td><td class=\"careerAttr careerInt\"></td><td class=\"careerAttr careerWP\"></td><td class=\"careerAttr careerFel\"></td></tr></tbody></table></div></div><br/><div class=\"w3-row-padding w3-center\"><b>Income Skill: </b><em class=\"careerIncome\"></em></div><br/><div class=\"w3-row-padding well\"><div class=\"careerpath1\"><h5 class=\"path1name\"></h5><p><b>Skills: </b><span class=\"path1skills\"></span></p><p><b>Talents: </b><span class=\"path1talents\"></span></p><p><b>Trappings: </b><span class=\"path1trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath2\"><h5 class=\"path2name\"></h5><p><b>Skills: </b><span class=\"path2skills\"></span></p><p><b>Talents: </b><span class=\"path2talents\"></span></p><p><b>Trappings: </b><span class=\"path2trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath3\"><h5 class=\"path3name\"></h5><p><b>Skills: </b><span class=\"path3skills\"></span></p><p><b>Talents: </b><span class=\"path3talents\"></span></p><p><b>Trappings: </b><span class=\"path3trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath4\"><h5 class=\"path4name\"></h5><p><b>Skills: </b><span class=\"path4skills\"></span></p><p><b>Talents: </b><span class=\"path4talents\"></span></p><p><b>Trappings: </b><span class=\"path4trappings\"></span></p></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large\">Close</button></div></div></div>"
 }
 
 var lores = {
@@ -1887,7 +1888,7 @@ var talent = [
         "name": "Savant (Lore)",
         "max": "Intelligence Bonus",
         "test": "Lore (chosen Lore)",
-        "desc": "<p>You are exceptionally learned, and have a significant degree of specialised knowledge in a single field of study. You automatically know a number of pieces of correct information equal to you Savant (Lore) level about a relevant issue without having to test your Lore Skill. Testing, as always, will provide yet more information as normal as determined by the GM.</p>"
+        "desc": "<p>You are exceptionally learned, and have a significant degree of specialised knowledge in a single field of study. You automatically know a number of pieces of correct information equal to your Savant (Lore) level about a relevant issue without having to test your Lore Skill. Testing, as always, will provide yet more information as normal as determined by the GM.</p>"
     },
     {
         "name": "Savvy",
@@ -3391,5 +3392,116 @@ var trait = [
     {
         "name": "Web (Rating)",
         "desc": "<p>The creature can create webbing to trap unwary foes. Whenever it successfully hits, opponents gain 1 <condition>Entangled</condition> status, with a Strength of the <mono>Rating</mono> given. See page 168.</p>"
+    }
+]
+
+
+var career = [
+    {
+        "name": "",
+        "desc": "",
+        "path1": {
+            "name": "",
+            "skills": [],
+            "talents": [],
+            "trappings": [],
+            "status": ""
+        },
+        "path2": {
+            "name": "",
+            "skills": [],
+            "talents": [],
+            "trappings": [],
+            "status": ""
+        },
+        "path3": {
+            "name": "",
+            "skills": [],
+            "talents": [],
+            "trappings": [],
+            "status": ""
+        },
+        "path4": {
+            "name": "",
+            "skills": [],
+            "talents": [],
+            "trappings": [],
+            "status": ""
+        },
+        "advances": [],
+        "incomeSkill": "",
+        "races": ""
+    },
+    {
+        "name": "Apothecary",
+        "class": "Academics",
+        "desc": "Skilled in chemistry and concoctions, you create and sell medicine of all kinds.",
+        "path1": {
+            "name": "Apothecary's Apprentice",
+            "skills": ["Consume Alcohol", "Heal", "Language (Classical)", "Lore (Chemistry)", "Lore (Medicine)", "Lore (Plants)", "Trade (Apothecary)", "Trade (Poisoner)"],
+            "talents": ["Concoct", "Craftsman (Apothecary)", "Etiquette (Scholar)", "Read/Write"],
+            "trappings": ["Book (Blank)", "Healing Draught", "Leather Jerkin", "Pestle and Mortar"],
+            "status": "Brass 3"
+        },
+        "path2": {
+            "name": "Apothecary",
+            "skills": ["Charm", "Haggle", "Lore (Science)", "Gossip", "Language (Guilder)", "Perception"],
+            "talents": ["Criminal", "Dealmaker", "Etiquette (Guilder)", "Pharmacist"],
+            "trappings": ["Guild License", "Trade Tools"],
+            "status": "Silver 1"
+        },
+        "path3": {
+            "name": "Master Apothecary",
+            "skills": ["Intuition", "Leadership", "Research", "Secret Signs (Guilder)"],
+            "talents": ["Bookish", "Master Tradesman (Apothecary)", "Resistance (Poison)", "Savvy"],
+            "trappings": ["Book (Apothecary)","Apprentice", "Workshop"],
+            "status": "Silver 3"
+        },
+        "path4": {
+            "name": "Apothecary-General",
+            "skills": ["Intimidate", "Ride (Horse)"],
+            "talents": ["Acute Sense (Taste)", "Coolheaded", "Master Tradesman (Poisoner)", "Savant (Apothecary)"],
+            "trappings": ["Commission Papers", "Large Workshop"],
+            "status": "Gold 1"
+        },
+        "advances": ["T", "Dex", "Int", "Fel", "I", "WP"],
+        "incomeSkill": "Trade (Apothecary)",
+        "races": "Dwarf, Halfling, High Elf, Human"
+    },
+    {
+        "name": "Engineer",
+        "class": "Academics",
+        "desc": "You create machines and constructions both useful and bizarre, and often downright deadly.",
+        "path1": {
+            "name": "Student Engineer",
+            "skills": ["Consume Alcohol", "Cool", "Endurance", "Language (Classical)", "Lore (Engineer)", "Perception", "Ranged (Blackpowder)", "Trade (Engineer)"],
+            "talents": ["Artistic", "Gunner", "Read/Write", "Tinker"],
+            "trappings": ["Book (Engineer)", "Hammer and Spikes"],
+            "status": "Brass 4"
+        },
+        "path2": {
+            "name": "Engineer",
+            "skills": ["Drive", "Dodge", "Navigation", "Ranged (Engineering)", "Research", "Language (Guilder)"],
+            "talents": ["Craftsman (Engineer)", "Etiquette (Guilder)", "Marksman", "Orientation"],
+            "trappings": ["Guild License", "Trade Tools"],
+            "status": "Silver 2"
+        },
+        "path3": {
+            "name": "Master Engineer",
+            "skills": ["Language (Khazalid)", "Leadership", "Ride (Horse)", "Secret Signs (Guilder)"],
+            "talents": ["Etiquette (Scholar)", "Master Tradesman (Engineering)", "Sniper", "Supernumerate"],
+            "trappings": ["Workshop"],
+            "status": "Silver 4"
+        },
+        "path4": {
+            "name": "Chartered Engineer",
+            "skills": ["Language (Any)", "Lore (Any)"],
+            "talents": ["Magnum Opus", "Rapid Reload", "Savant (Engineering)", "Unshakeable"],
+            "trappings": ["Guild License", "Library (Engineer)", "Quality Trade Tools (Engineer)", "Large Workshop (Engineer)"],
+            "status": "Gold 1"
+        },
+        "advances": ["BS", "Dex", "Int", "I", "T", "WP"],
+        "incomeSkill": "Trade (Engineer)",
+        "races": "Dwarf, Halfling, Human"
     }
 ]

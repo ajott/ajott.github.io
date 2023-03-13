@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="interface.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-	<link href="../libs/jquery/jquery-ui.css" rel="stylesheet">
+    <link href="../libs/jquery/jquery-ui.css" rel="stylesheet">
     <script src="../libs/jquery/jquery-1.10.2.js"></script>
     <script src="../libs/jquery/jquery-ui.js"></script>
 </head>
@@ -148,7 +148,6 @@
                         this.</li>
                 </ol>
                 </p>
-
                 <table class="w3-table table-dark tstripe w3-hoverable w3-bordered">
                     <thead>
                         <tr>
@@ -165,7 +164,7 @@
                             <th colspan="6" class="midHead" style="text-align: center;">Academics</th>
                         </tr>
                         <tr>
-                            <td>Apothecary</td>
+                            <td><career>Apothecary</career></td>
                             <td>01</td>
                             <td>01</td>
                             <td>01</td>
@@ -173,7 +172,7 @@
                             <td>-</td>
                         </tr>
                         <tr>
-                            <td>Engineer</td>
+                            <td><career>Engineer</career></td>
                             <td>02</td>
                             <td>02-04</td>
                             <td>02</td>
@@ -997,7 +996,8 @@
                     Skills represent areas of trained learning or experience, and
                     Talents describe special abilities your Character can access. A
                     list of all Skills and Talents is provided in Chapter 4: Skills
-                    and Talents, or on the <a href="./skills.html">Skills and Talents</a> page. The Skills and Talents you have available to you at
+                    and Talents, or on the <a href="./skills.html">Skills and Talents</a> page. The Skills and Talents
+                    you have available to you at
                     character generation are determined by your Species and Career.
                 </p>
                 <p>
@@ -1043,12 +1043,17 @@
             </button>
             <div id="humanSkillTalents" class="w3-section w3-hide rules-container w3-container">
                 <p>
-                    <b>Skills: </b><skill>Animal Care</skill>, <skill>Charm</skill>, <skill>Cool</skill>, <skill>Evaluate</skill>, <skill>Gossip</skill>, <skill>Haggle</skill>,
-                    <skill>Language (Bretonnian)</skill>, <skill>Language (Wastelander)</skill>, <skill>Leadership</skill>,
+                    <b>Skills: </b>
+                    <skill>Animal Care</skill>, <skill>Charm</skill>, <skill>Cool</skill>, <skill>Evaluate</skill>,
+                    <skill>Gossip</skill>, <skill>Haggle</skill>,
+                    <skill>Language (Bretonnian)</skill>, <skill>Language (Wastelander)</skill>, <skill>Leadership
+                    </skill>,
                     <skill>Lore (Reikland)</skill>, <skill>Melee (Basic)</skill>, <skill>Ranged (Bow)</skill>
                 </p>
                 <p>
-                    <b>Talents: </b><talent>Doomed</talent>, <talent>Savvy</talent> <em>or</em> <talent>Suave</talent>, 3 Random Talents
+                    <b>Talents: </b>
+                    <talent>Doomed</talent>, <talent>Savvy</talent> <em>or</em>
+                    <talent>Suave</talent>, 3 Random Talents
                 </p>
             </div>
             <button id="dwarfSkillBtn" class="w3-btn rulesBtn" onclick="accordion('dwarfSkillTalents',this)">
@@ -1056,14 +1061,20 @@
             </button>
             <div id="dwarfSkillTalents" class="w3-section w3-hide rules-container w3-container">
                 <p>
-                    <b>Skills: </b><skill>Consume Alcohol</skill>, <skill>Cool</skill>, <skill>Endurance</skill>, <skill>Entertain
-                    (Storytelling)</skill>, <skill>Evaluate</skill>, <skill>Intimidate</skill>, <skill>Language (Khazalid)</skill>, <skill>Lore
-                    (Dwarfs)</skill>, <skill>Lore (Geology)</skill>, <skill>Lore (Metallurgy)</skill>, <skill>Melee (Basic)</skill>,
+                    <b>Skills: </b>
+                    <skill>Consume Alcohol</skill>, <skill>Cool</skill>, <skill>Endurance</skill>, <skill>Entertain
+                        (Storytelling)</skill>, <skill>Evaluate</skill>, <skill>Intimidate</skill>, <skill>Language
+                        (Khazalid)</skill>, <skill>Lore
+                        (Dwarfs)</skill>, <skill>Lore (Geology)</skill>, <skill>Lore (Metallurgy)</skill>, <skill>Melee
+                        (Basic)</skill>,
                     <skill>Trade (any one)</skill>
                 </p>
                 <p>
-                    <b>Talents: </b><talent>Magic Resistance</talent>, <talent>Night Vision</talent>, <talent>Read/Write</talent> <em>or</em>
-                    <talent>Relentless</talent>, <talent>Resolute</talent> <em>or</em> <talent>Strong-minded</talent>, <talent>Sturdy</talent>
+                    <b>Talents: </b>
+                    <talent>Magic Resistance</talent>, <talent>Night Vision</talent>, <talent>Read/Write</talent>
+                    <em>or</em>
+                    <talent>Relentless</talent>, <talent>Resolute</talent> <em>or</em>
+                    <talent>Strong-minded</talent>, <talent>Sturdy</talent>
                 </p>
             </div>
             <button id="halflingSkillBtn" class="w3-btn rulesBtn" onclick="accordion('halflingSkillTalents',this)">
@@ -1071,12 +1082,17 @@
             </button>
             <div id="halflingSkillTalents" class="w3-section w3-hide rules-container w3-container">
                 <p>
-                    <b>Skills: </b><skill>Charm</skill>, <skill>Consume Alcohol</skill>, <skill>Dodge</skill>, <skill>Gamble</skill>, <skill>Haggle</skill>,
-                    <skill>Intuition</skill>, <skill>Language (Mootish)</skill>, <skill>Lore (Reikland)</skill>, <skill>Perception</skill>,
+                    <b>Skills: </b>
+                    <skill>Charm</skill>, <skill>Consume Alcohol</skill>, <skill>Dodge</skill>, <skill>Gamble</skill>,
+                    <skill>Haggle</skill>,
+                    <skill>Intuition</skill>, <skill>Language (Mootish)</skill>, <skill>Lore (Reikland)</skill>, <skill>
+                        Perception</skill>,
                     <skill>Sleight of Hand</skill>, <skill>Stealth (Any)</skill>, <skill>Trade (Cook)</skill>
                 </p>
                 <p>
-                    <b>Talents: </b><talent>Acute Sense (Taste)</talent>, <talent>Night Vision</talent>, <talent>Resistance (Chaos)</talent>,
+                    <b>Talents: </b>
+                    <talent>Acute Sense (Taste)</talent>, <talent>Night Vision</talent>, <talent>Resistance (Chaos)
+                    </talent>,
                     <talent>Small</talent>, 2 Random Talents
                 </p>
             </div>
@@ -1085,13 +1101,19 @@
             </button>
             <div id="highElfSkillTalents" class="w3-section w3-hide rules-container w3-container">
                 <p>
-                    <b>Skills: </b><skill>Cool</skill>, <skill>Entertain (Sing)</skill>, <skill>Evaluate</skill>, <skill>Language (Eltharin)</skill>,
-                    <skill>Leadership</skill>, <skill>Melee (Basic)</skill>, <skill>Navigation</skill>, <skill>Perception</skill>, <skill>Play (any
-                    one)</skill>, <skill>Ranged (Bow)</skill>, <skill>Sail</skill>, <skill>Swim</skill>
+                    <b>Skills: </b>
+                    <skill>Cool</skill>, <skill>Entertain (Sing)</skill>, <skill>Evaluate</skill>, <skill>Language
+                        (Eltharin)</skill>,
+                    <skill>Leadership</skill>, <skill>Melee (Basic)</skill>, <skill>Navigation</skill>, <skill>
+                        Perception</skill>, <skill>Play (any
+                        one)</skill>, <skill>Ranged (Bow)</skill>, <skill>Sail</skill>, <skill>Swim</skill>
                 </p>
                 <p>
-                    <b>Talents: </b><talent>Acute Sense (Sight)</talent>, <talent>Coolheaded</talent> <em>or</em> <talent>Savvy</talent>, <talent>Night
-                    Vision</talent>, <talent>Second Sight</talent> <em>or</em> <talent>Sixth Sense</talent>, <talent>Read/Write</talent>
+                    <b>Talents: </b>
+                    <talent>Acute Sense (Sight)</talent>, <talent>Coolheaded</talent> <em>or</em>
+                    <talent>Savvy</talent>, <talent>Night
+                        Vision</talent>, <talent>Second Sight</talent> <em>or</em>
+                    <talent>Sixth Sense</talent>, <talent>Read/Write</talent>
                 </p>
             </div>
             <button id="woodElfSkillBtn" class="w3-btn rulesBtn" onclick="accordion('woodElfSkillTalents',this)">
@@ -1099,13 +1121,20 @@
             </button>
             <div id="woodElfSkillTalents" class="w3-section w3-hide rules-container w3-container">
                 <p>
-                    <b>Skills: </b><skill>Athletics</skill>, <skill>Climb</skill>, <skill>Endurance</skill>, <skill>Entertain (Sing)</skill>,
-                    <skill>Intimidate</skill>, <skill>Language (Eltharin)</skill>, <skill>Melee (Basic)</skill>, <skill>Outdoor
-                    Survival</skill>, <skill>Perception</skill>, <skill>Ranged (Bow)</skill>, <skill>Stealth (Rural)</skill>, <skill>Track</skill>
+                    <b>Skills: </b>
+                    <skill>Athletics</skill>, <skill>Climb</skill>, <skill>Endurance</skill>, <skill>Entertain (Sing)
+                    </skill>,
+                    <skill>Intimidate</skill>, <skill>Language (Eltharin)</skill>, <skill>Melee (Basic)</skill>, <skill>
+                        Outdoor
+                        Survival</skill>, <skill>Perception</skill>, <skill>Ranged (Bow)</skill>, <skill>Stealth (Rural)
+                    </skill>, <skill>Track</skill>
                 </p>
                 <p>
-                    <b>Talents: </b><talent>Acute Sense (Sight)</talent>, <talent>Hardy</talent> <em>or</em> <talent>Second Sight</talent>, <talent>Night
-                    Vision</talent>, <talent>Read/Write</talent> <em>or</em> <talent>Very Resilient</talent>, <talent>Rover</talent>
+                    <b>Talents: </b>
+                    <talent>Acute Sense (Sight)</talent>, <talent>Hardy</talent> <em>or</em>
+                    <talent>Second Sight</talent>, <talent>Night
+                        Vision</talent>, <talent>Read/Write</talent> <em>or</em>
+                    <talent>Very Resilient</talent>, <talent>Rover</talent>
                 </p>
             </div>
         </div>
@@ -1136,99 +1165,163 @@
                     <tbody>
                         <tr>
                             <td>01-03</td>
-                            <td><talent>Acute Sense (any one)</talent></td>
+                            <td>
+                                <talent>Acute Sense (any one)</talent>
+                            </td>
                             <td>51-52</td>
-                            <td><talent>Noble Blood</talent></td>
+                            <td>
+                                <talent>Noble Blood</talent>
+                            </td>
                         </tr>
                         <tr>
                             <td>04-06</td>
-                            <td><talent>Ambidextrous</talent></td>
+                            <td>
+                                <talent>Ambidextrous</talent>
+                            </td>
                             <td>53-55</td>
-                            <td><talent>Orientation</talent></td>
+                            <td>
+                                <talent>Orientation</talent>
+                            </td>
                         </tr>
                         <tr>
                             <td>07-09</td>
-                            <td><talent>Animal Affinity</talent></td>
+                            <td>
+                                <talent>Animal Affinity</talent>
+                            </td>
                             <td>56-58</td>
-                            <td><talent>Perfect Pitch</talent></td>
+                            <td>
+                                <talent>Perfect Pitch</talent>
+                            </td>
                         </tr>
                         <tr>
                             <td>10-12</td>
-                            <td><talent>Artistic</talent></td>
+                            <td>
+                                <talent>Artistic</talent>
+                            </td>
                             <td>59-62</td>
-                            <td><talent>Pure Soul</talent></td>
+                            <td>
+                                <talent>Pure Soul</talent>
+                            </td>
                         </tr>
                         <tr>
                             <td>13-15</td>
-                            <td><talent>Attractive</talent></td>
+                            <td>
+                                <talent>Attractive</talent>
+                            </td>
                             <td>63-65</td>
-                            <td><talent>Read/Write</talent></td>
+                            <td>
+                                <talent>Read/Write</talent>
+                            </td>
                         </tr>
                         <tr>
                             <td>16-18</td>
-                            <td><talent>Coolheaded</talent></td>
+                            <td>
+                                <talent>Coolheaded</talent>
+                            </td>
                             <td>66-68</td>
-                            <td><talent>Resistance (any one)</talent></td>
+                            <td>
+                                <talent>Resistance (any one)</talent>
+                            </td>
                         </tr>
                         <tr>
                             <td>19-21</td>
-                            <td><talent>Craftsman (any one)</talent></td>
+                            <td>
+                                <talent>Craftsman (any one)</talent>
+                            </td>
                             <td>69-71</td>
-                            <td><talent>Savvy</talent></td>
+                            <td>
+                                <talent>Savvy</talent>
+                            </td>
                         </tr>
                         <tr>
                             <td>22-24</td>
-                            <td><talent>Flee!</talent></td>
+                            <td>
+                                <talent>Flee!</talent>
+                            </td>
                             <td>72-74</td>
-                            <td><talent>Sharp</talent></td>
+                            <td>
+                                <talent>Sharp</talent>
+                            </td>
                         </tr>
                         <tr>
                             <td>25-28</td>
-                            <td><talent>Hardy</talent></td>
+                            <td>
+                                <talent>Hardy</talent>
+                            </td>
                             <td>75-78</td>
-                            <td><talent>Sixth Sense</talent></td>
+                            <td>
+                                <talent>Sixth Sense</talent>
+                            </td>
                         </tr>
                         <tr>
                             <td>29-31</td>
-                            <td><talent>Lightning Reflexes</talent></td>
+                            <td>
+                                <talent>Lightning Reflexes</talent>
+                            </td>
                             <td>79-81</td>
-                            <td><talent>Strong Legs</talent></td>
+                            <td>
+                                <talent>Strong Legs</talent>
+                            </td>
                         </tr>
                         <tr>
                             <td>32-34</td>
-                            <td><talent>Linguistics</talent></td>
+                            <td>
+                                <talent>Linguistics</talent>
+                            </td>
                             <td>82-84</td>
-                            <td><talent>Sturdy</talent></td>
+                            <td>
+                                <talent>Sturdy</talent>
+                            </td>
                         </tr>
                         <tr>
                             <td>35-38</td>
-                            <td><talent>Luck</talent></td>
+                            <td>
+                                <talent>Luck</talent>
+                            </td>
                             <td>85-87</td>
-                            <td><talent>Suave</talent></td>
+                            <td>
+                                <talent>Suave</talent>
+                            </td>
                         </tr>
                         <tr>
                             <td>39-41</td>
-                            <td><talent>Marksman</talent></td>
+                            <td>
+                                <talent>Marksman</talent>
+                            </td>
                             <td>88-91</td>
-                            <td><talent>Super Numerate</talent></td>
+                            <td>
+                                <talent>Super Numerate</talent>
+                            </td>
                         </tr>
                         <tr>
                             <td>42-44</td>
-                            <td><talent>Mimic</talent></td>
+                            <td>
+                                <talent>Mimic</talent>
+                            </td>
                             <td>92-94</td>
-                            <td><talent>Very Resilient</talent></td>
+                            <td>
+                                <talent>Very Resilient</talent>
+                            </td>
                         </tr>
                         <tr>
                             <td>45-47</td>
-                            <td><talent>Night Vision</talent></td>
+                            <td>
+                                <talent>Night Vision</talent>
+                            </td>
                             <td>95-97</td>
-                            <td><talent>Very Strong</talent></td>
+                            <td>
+                                <talent>Very Strong</talent>
+                            </td>
                         </tr>
                         <tr>
                             <td>48-50</td>
-                            <td><talent>Nimble Fingered</talent></td>
+                            <td>
+                                <talent>Nimble Fingered</talent>
+                            </td>
                             <td>98-00</td>
-                            <td><talent>Warrior Born</talent></td>
+                            <td>
+                                <talent>Warrior Born</talent>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -1615,4 +1708,5 @@
 <div id="modalPlaceholder">
 
 </div>
+
 </html>

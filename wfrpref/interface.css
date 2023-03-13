@@ -11,6 +11,11 @@ h5 {
     color: blanchedalmond;
 }
 
+h6 {
+    color: blanchedalmond;
+    font-weight: bold;
+}
+
 footer {
     position: relative;
     bottom: 0px;
@@ -163,6 +168,18 @@ trait {
     text-decoration: none !important;
 } */
 
+career {
+    cursor: help;
+    color: blanchedalmond !important;
+    text-decoration: underline 1px dotted blanchedalmond;
+}
+
+career:hover {
+    cursor: help;
+    color: goldenrod !important;
+    text-decoration: none !important;
+}
+
 .w3-dropdown-content {
     border-left: 1px solid blanchedalmond !important;
     border-right: 1px solid blanchedalmond !important;
@@ -199,6 +216,36 @@ trait {
     margin-left: -5em !important;
 }
 
+.careerAttr {
+    width: 3em !important;
+    text-align: center !important;
+    padding: none;
+}
+
+.attrImg {
+    max-width: 2em !important;
+}
+
+/* .attr1 {
+    background-color: #e0eaea !important;
+} */
+
+.attr2 {
+    background-color: #C48359 !important;
+}
+
+.attr3 {
+    background-color: silver !important;
+}
+
+.attr4 {
+    background-color: #ffd700 !important;
+}
+
+.careerClass {
+    font-style: italic;
+}
+
 /*
 .masterSearchResult:hover {
     background-color: grey;
@@ -233,7 +280,7 @@ hr {
   }
   
   hr:after {
-    content: "💀"; /* Crossed Swords */
+    content: "💀"; /* Skull */
     color: silver;
     font-size: 2em;
     display: inline; /* for vertical centering and background knockout */
@@ -688,3 +735,26 @@ th {
 .w3-hover-deep-amber:hover {color:#fff !important; background-color:#967000 !important}
 .w3-hover-text-deep-amber:hover {color:#967000 !important}
 .w3-hover-border-deep-amber:hover {border-color:#967000 !important}
+
+.w3-blanched-almond-l5 {color:#000 !important; background-color:#fffefc !important}
+.w3-blanched-almond-l4 {color:#000 !important; background-color:#fffbf5 !important}
+.w3-blanched-almond-l3 {color:#000 !important; background-color:#fff7eb !important}
+.w3-blanched-almond-l2 {color:#000 !important; background-color:#fff3e0 !important}
+.w3-blanched-almond-l1 {color:#000 !important; background-color:#ffefd6 !important}
+.w3-blanched-almond-d1 {color:#000 !important; background-color:#ffd89e !important}
+.w3-blanched-almond-d2 {color:#000 !important; background-color:#ffc670 !important}
+.w3-blanched-almond-d3 {color:#000 !important; background-color:#ffb442 !important}
+.w3-blanched-almond-d4 {color:#000 !important; background-color:#ffa114 !important}
+.w3-blanched-almond-d5 {color:#fff !important; background-color:#e68a00 !important}
+
+.w3-blanched-almond-light {color:#000 !important; background-color:#fffefc !important}
+.w3-blanched-almond-dark {color:#fff !important; background-color:#e68a00 !important}
+.w3-blanched-almond-action {color:#fff !important; background-color:#e68a00 !important}
+
+.w3-blanched-almond {color:#000 !important; background-color:#ffebcd !important}
+.w3-text-blanched-almond {color:#ffebcd !important}
+.w3-border-blanched-almond {border: 1px solid; border-color:#ffebcd !important}
+
+.w3-hover-blanched-almond:hover {color:#000 !important; background-color:#ffebcd !important}
+.w3-hover-text-blanched-almond:hover {color:#ffebcd !important}
+.w3-hover-border-blanched-almond:hover {border-color:#ffebcd !important}

@@ -52,6 +52,7 @@ function initializeModals() {
     $('weaponqual').attr('onclick', 'buildModal(this,\'qual\')');
     $('divineman').attr('onclick', 'buildModal(this,\'miracle\')');
     $('trait').attr('onclick', 'buildModal(this,\'trait\')');
+    $('career').attr('onclick', 'buildModal(this,\'career\')');
 }
 
 function buildModal(el, type, mast = 0) {
@@ -67,7 +68,8 @@ function buildModal(el, type, mast = 0) {
         "qual": qualFuse,
         "spell": spellFuse,
         "weapon": weaponFuse,
-        "trait": traitFuse
+        "trait": traitFuse,
+        "career": careerFuse
     }
 
     if (mast == 1) {
@@ -232,6 +234,71 @@ function buildModal(el, type, mast = 0) {
             $("#modal" + modalCount + " .traitDesc").html(dataRslt["desc"])
 
             break;
+        case "career":
+            let htmlString = ""
+            $("#modal" + modalCount + " .careerName").text(dataRslt["name"])
+            $("#modal" + modalCount + " .careerClass").text(dataRslt["class"])
+            $("#modal" + modalCount + " .careerDesc").html("&ldquo;" + dataRslt["desc"] + "&rdquo;")
+            $("#modal" + modalCount + " .careerRaces").html("<eh>" + dataRslt["races"] + "</eh>")
+
+            $("#modal" + modalCount + " .career" + dataRslt["advances"][0]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>")
+            $("#modal" + modalCount + " .career" + dataRslt["advances"][1]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>")
+            $("#modal" + modalCount + " .career" + dataRslt["advances"][2]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>")
+
+            $("#modal" + modalCount + " .career" + dataRslt["advances"][3]).addClass("attr2").html("<img class=\"attrImg\" src=\"./img/axes_64.png\"></img>")
+            $("#modal" + modalCount + " .career" + dataRslt["advances"][4]).addClass("attr3").html("<img class=\"attrImg\" src=\"./img/skull_64.png\"></img>")
+            $("#modal" + modalCount + " .career" + dataRslt["advances"][5]).addClass("attr4").html("<img class=\"attrImg\" src=\"./img/shield_64.png\"></img>")
+
+            $("#modal" + modalCount + " .careerIncome").html("<skill>" + dataRslt["incomeSkill"] + "</skill>")
+
+
+            for (let k = 1; k < 5; k++) {
+                $("#modal" + modalCount + " .careerpath" + k + " .path" + k + "name").html(dataRslt["path" + k]["name"] + " &mdash; " + dataRslt["path" + k]["status"])
+
+                for (let i = 0; i < dataRslt["path" + k]["skills"].length; i++) {
+                    if (i == 0) {
+                        htmlString += "<skill>"
+                    } else {
+                        htmlString += ", <skill>"
+                    }
+                    htmlString += dataRslt["path" + k]["skills"][i]
+                    htmlString += "</skill>"
+                }
+
+                $("#modal" + modalCount + " .careerpath" + k + " .path" + k + "skills").html(htmlString)
+
+                htmlString = ""
+
+                for (let i = 0; i < dataRslt["path" + k]["talents"].length; i++) {
+                    if (i == 0) {
+                        htmlString += "<talent>"
+                    } else {
+                        htmlString += ", <talent>"
+                    }
+                    htmlString += dataRslt["path" + k]["talents"][i]
+                    htmlString += "</talent>"
+                }
+
+                $("#modal" + modalCount + " .careerpath" + k + " .path" + k + "talents").html(htmlString)
+
+                htmlString = ""
+
+                for (let i = 0; i < dataRslt["path" + k]["trappings"].length; i++) {
+                    if (i == 0) {
+                        htmlString += "<b>"
+                    } else {
+                        htmlString += ", <b>"
+                    }
+                    htmlString += dataRslt["path" + k]["trappings"][i]
+                    htmlString += "</b>"
+                }
+
+                $("#modal" + modalCount + " .careerpath" + k + " .path" + k + "trappings").html(htmlString)
+
+                htmlString = ""
+            }
+
+            break;
     }
 
     $('#modal' + modalCount).on('click', function (e) {
@@ -284,6 +351,7 @@ function masterSearch() {
         "condition": "Condition",
         "spell": "Spell",
         "miracle": "Divine Manifestation",
+        "career": "Career",
         "qual": "Weapon Quality/Flaw",
         "weapon": "Weapon",
         "trait": "Creature Trait"
@@ -473,6 +541,75 @@ function buildNavbar() {
 }
 
 
+function buildCareerCard() {
+    let htmlString = ""
+
+    $("#careerCard .careerName").text(career[1]["name"])
+    $("#careerCard .careerClass").text(career[1]["class"])
+    $("#careerCard .careerDesc").html("&ldquo;" + career[1]["desc"] + "&rdquo;")
+    $("#careerCard .careerRaces").html("<eh>" + career[1]["races"] + "</eh>")
+
+    $("#careerCard .career" + career[1]["advances"][0]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>")
+    $("#careerCard .career" + career[1]["advances"][1]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>")
+    $("#careerCard .career" + career[1]["advances"][2]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>")
+
+    $("#careerCard .career" + career[1]["advances"][3]).addClass("attr2").html("<img class=\"attrImg\" src=\"./img/axes_64.png\"></img>")
+    $("#careerCard .career" + career[1]["advances"][4]).addClass("attr3").html("<img class=\"attrImg\" src=\"./img/skull_64.png\"></img>")
+    $("#careerCard .career" + career[1]["advances"][5]).addClass("attr4").html("<img class=\"attrImg\" src=\"./img/shield_64.png\"></img>")
+
+    $("#careerCard .careerIncome").html("<skill>" + career[1]["incomeSkill"] + "</skill>")
+
+
+    for (let k = 1; k < 5; k++) {
+        $("#careerCard .careerpath" + k + " .path" + k + "name").html(career[1]["path" + k]["name"] + " &mdash; " + career[1]["path" + k]["status"])
+
+        for (let i = 0; i < career[1]["path" + k]["skills"].length; i++) {
+            if (i == 0) {
+                htmlString += "<skill>"
+            } else {
+                htmlString += ", <skill>"
+            }
+            htmlString += career[1]["path" + k]["skills"][i]
+            htmlString += "</skill>"
+        }
+
+        $("#careerCard .careerpath" + k + " .path" + k + "skills").html(htmlString)
+
+        htmlString = ""
+
+        for (let i = 0; i < career[1]["path" + k]["talents"].length; i++) {
+            if (i == 0) {
+                htmlString += "<talent>"
+            } else {
+                htmlString += ", <talent>"
+            }
+            htmlString += career[1]["path" + k]["talents"][i]
+            htmlString += "</talent>"
+        }
+
+        $("#careerCard .careerpath" + k + " .path" + k + "talents").html(htmlString)
+
+        htmlString = ""
+
+        for (let i = 0; i < career[1]["path" + k]["trappings"].length; i++) {
+            if (i == 0) {
+                htmlString += "<em>"
+            } else {
+                htmlString += ", <em>"
+            }
+            htmlString += career[1]["path" + k]["trappings"][i]
+            htmlString += "</em>"
+        }
+
+        $("#careerCard .careerpath" + k + " .path" + k + "trappings").html(htmlString)
+
+        htmlString = ""
+    }
+
+
+}
+
+
 $(document).ready(function () {
     skillFuse = new Fuse(skill, {
         keys: ["name"]
@@ -510,6 +647,11 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
     traitFuse = new Fuse(trait, {
+        keys: ["name"]
+    })
+});
+$(document).ready(function () {
+    careerFuse = new Fuse(career, {
         keys: ["name"]
     })
 });

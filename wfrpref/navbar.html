@@ -1,192 +1,201 @@
 <!DOCTYPE html>
 <html>
 
-<div id="headTitle">
-
+<div id="headTitle" class="w3-hide-small">
     <span class="header-large w3-bar-item" style="color: blanchedalmond">WFRP 4e Quick Reference</span>
     <br />
 </div>
 <div class="navBarContainer">
-<div id="menu" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
-    <div class="w3-mobile">        
-        <button onclick="window.open('./index.html','_self');" class="w3-button w3-round-large w3-hover-blue-grey">Master Search</button>
-    </div>
-    <div class="w3-dropdown-click w3-mobile">
-        <button onclick="dropdownShow('charDropdown')" class="w3-button w3-round-large w3-hover-blue-grey">Character <i
-                class="fa fa-caret-down"></i></button>
-        <div id="charDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-            <a href="./character.html#charTop"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Character</a>
-            <a href="./character.html#species"
-                class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Species</a>
-            <a href="./character.html#career"
-                class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Class &amp; Career</a>
-                <a href="./character.html#attributes"
-                    class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Attributes</a>
-            <a href="./character.html#skills"
-                class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Skills &amp; Talents</a>
-                <a href="./character.html#trappings"
-                    class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Trappings</a>
-                    <a href="./character.html#advancement"
-                        class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Advancement</a>
-        </div>
-    </div>
-    <div class="w3-dropdown-click w3-mobile">
-        <button onclick="dropdownShow('combatDropdown')" class="w3-button w3-round-large w3-hover-blue-grey">Combat <i
-                class="fa fa-caret-down"></i></button>
-        <div id="combatDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-            <a href="./combat.html#combTop"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Combat</a>
-                <a href="./combat.html#takingTurn"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Taking Your Turn</a>
-                <div class="dropdown-divider"></div>
-            <a href="./combat.html#combatDifficulty"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Combat Difficulty</a>
-                <div class="dropdown-divider"></div>
-                <a href="./combat.html#diffExample"
-                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Difficulty Examples</a>
-        </div>
-    </div> 
-    <div class="w3-dropdown-click w3-mobile">
-        <button onclick="dropdownShow('magicDropdown')" class="w3-button w3-round-large w3-hover-blue-grey">Magic <i
-                class="fa fa-caret-down"></i></button>
-        <div id="magicDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-            <a href="./spells.html#spellRules"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Spellcasting</a>
-            <a href="./spells.html#casting"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Casting &amp; Channeling</a>
-            <div class="dropdown-divider"></div>  
-            <a href="./spells.html#spellCards"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Lores &amp; Spells</a>
-            <div class="dropdown-divider"></div>            
-            <a href="./spells.html#minorMiscast"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Minor Miscasts</a>
-            <a href="./spells.html#majorMiscast"
-                class="w3-bar-item w3-button w3-mobile bottom-navbar w3-hover-blue-grey">Major Miscasts</a>
-        </div>
-    </div> 
-    <div class="w3-dropdown-click w3-mobile">
-        <button onclick="dropdownShow('religionDropdown')" class="w3-button w3-round-large w3-hover-blue-grey">Religion <i
-                class="fa fa-caret-down"></i></button>
-        <div id="religionDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-            <a href="./religion.html#prayers"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Prayers</a>
-                <a href="./religion.html#divman"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Divine Manifestations</a>
-                <div class="dropdown-divider"></div>
-            <a href="./religion.html#miracleCards"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Gods, Cults, &amp; Miracles</a>
-                <div class="dropdown-divider"></div>
-                <a href="./religion.html#wrathOfGods"
-                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Wrath of the Gods</a>
-        </div>
-    </div> 
-    <div class="w3-dropdown-click w3-mobile">
-        <button onclick="dropdownShow('skillDropdown')" class="w3-button w3-round-large w3-hover-blue-grey">Skills &amp; Talents <i
-                class="fa fa-caret-down"></i></button>
-        <div id="skillDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-            <a href="./skills.html#skillTop"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Skills Rules</a>
-                <a href="./skills.html#skillList"
-                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Skill List</a>
-                    <a href="./skills.html#talentTop"
-                        class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Talent Rules</a>
-                        <a href="./skills.html#talentList"
-                            class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Talent List</a>
-        </div>
-    </div> 
-</div>
-<div class="w3-bar">
-    <button onclick="window.open('./index.html','_self');" class="w3-bar-item w3-hover-blue-grey w3-button w3-hide-small w3-round-large">Master Search</button>    
-    <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-        <button class="w3-button w3-round-large w3-hover-blue-grey"
-            onclick="window.location='./character.html'">Character Creation <i class="fa fa-caret-down"></i></button>
-        <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-            <a href="./character.html#charTop"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Character</a>
-            <a href="./character.html#species"
-                class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Species</a>
-            <a href="./character.html#career"
-                class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Class &amp; Career</a>
-                <a href="./character.html#attributes"
-                    class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Attributes</a>
-            <a href="./character.html#skills"
-                class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Skills &amp; Talents</a>
-                <a href="./character.html#trappings"
-                    class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Trappings</a>
-                    <a href="./character.html#advancement"
-                        class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Advancement</a>
-        </div>
-    </div>
-    <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-        <button class="w3-button w3-round-large w3-hover-blue-grey"
-            onclick="window.location='./combat.html'">Combat <i class="fa fa-caret-down"></i></button>
-        <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-            <a href="./combat.html#combTop"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Combat</a>
-                <a href="./combat.html#takingTurn"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Taking Your Turn</a>
-                <div class="dropdown-divider"></div>
-            <a href="./combat.html#combatDifficulty"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Combat Difficulty</a>
-                <div class="dropdown-divider"></div>
-                <a href="./combat.html#diffExample"
-                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Difficulty Examples</a>
-        </div>
-    </div>
-    <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-        <button class="w3-button w3-round-large w3-hover-blue-grey"
-            onclick="window.location='./spells.html'">Magic <i class="fa fa-caret-down"></i></button>
-        <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-            <a href="./spells.html#spellRules"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Spellcasting</a>
-            <a href="./spells.html#casting"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Casting &amp; Channeling</a>
-            <div class="dropdown-divider"></div>  
-            <a href="./spells.html#spellCards"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Lores &amp; Spells</a>
-            <div class="dropdown-divider"></div>            
-            <a href="./spells.html#minorMiscast"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Minor Miscasts</a>
-            <a href="./spells.html#majorMiscast"
-                class="w3-bar-item w3-button w3-mobile bottom-navbar w3-hover-blue-grey">Major Miscasts</a>
-        </div>
-    </div>
-    <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-        <button class="w3-button w3-round-large w3-hover-blue-grey"
-            onclick="window.location='./religion.html'">Religion <i class="fa fa-caret-down"></i></button>
-        <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-            <a href="./religion.html#prayers"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Prayers</a>
-                <a href="./religion.html#divman"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Divine Manifestations</a>
-                <div class="dropdown-divider"></div>
-            <a href="./religion.html#miracleCards"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Gods, Cults, &amp; Miracles</a>
-                <div class="dropdown-divider"></div>
-                <a href="./religion.html#wrathOfGods"
-                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Wrath of the Gods</a>
-        </div>
-    </div>
-    <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-        <button class="w3-button w3-round-large w3-hover-blue-grey"
-            onclick="window.location='./skills.html'">Skills &amp; Talents <i class="fa fa-caret-down"></i></button>
-        <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
-            <a href="./skills.html#skillTop"
-                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Skills Rules</a>
-                <a href="./skills.html#skillList"
-                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Skill List</a>
-                    <div class="dropdown-divider"></div>  
-                    <a href="./skills.html#talentTop"
-                        class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Talent Rules</a>
-                        <a href="./skills.html#talentList"
-                            class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Talent List</a>
-        </div>
-    </div>
-    
-    
-    <a href="javascript:void(0)" class="w3-darkslate w3-bar-item w3-button w3-top-left w3-hide-large w3-hide-medium"
+    <a href="javascript:void(0)" id="mobileMenuBtn" class="w3-darker-grey w3-button w3-round w3-top-left w3-hide-large w3-hide-medium" 
         onclick="showMenu()">&#9776;</a>
+    <div id="menu" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
+        <div class="w3-mobile">
+            <button onclick="window.open('./index.html','_self');"
+                class="w3-button w3-round-large w3-hover-blue-grey">Master Search</button>
+        </div>
+        <div class="w3-dropdown-click w3-mobile">
+            <button onclick="dropdownShow('charDropdown')" class="w3-button w3-round-large w3-hover-blue-grey">Character
+                <i class="fa fa-caret-down"></i></button>
+            <div id="charDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                <a href="./character.html#charTop"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Character</a>
+                <a href="./character.html#species"
+                    class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Species</a>
+                <a href="./character.html#career"
+                    class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Class &amp; Career</a>
+                <a href="./character.html#attributes"
+                    class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Attributes</a>
+                <a href="./character.html#skills"
+                    class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Skills &amp; Talents</a>
+                <a href="./character.html#trappings"
+                    class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Trappings</a>
+                <a href="./character.html#advancement"
+                    class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Advancement</a>
+            </div>
+        </div>
+        <div class="w3-dropdown-click w3-mobile">
+            <button onclick="dropdownShow('combatDropdown')" class="w3-button w3-round-large w3-hover-blue-grey">Combat
+                <i class="fa fa-caret-down"></i></button>
+            <div id="combatDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                <a href="./combat.html#combTop"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Combat</a>
+                <a href="./combat.html#takingTurn"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Taking Your Turn</a>
+                <div class="dropdown-divider"></div>
+                <a href="./combat.html#combatDifficulty"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Combat Difficulty</a>
+                <div class="dropdown-divider"></div>
+                <a href="./combat.html#diffExample"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Difficulty Examples</a>
+                <div class="dropdown-divider"></div>
+                <a href="./combat.html#conditions"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Conditions</a>
+            </div>
+        </div>
+        <div class="w3-dropdown-click w3-mobile">
+            <button onclick="dropdownShow('magicDropdown')" class="w3-button w3-round-large w3-hover-blue-grey">Magic <i
+                    class="fa fa-caret-down"></i></button>
+            <div id="magicDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                <a href="./spells.html#spellRules"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Spellcasting</a>
+                <a href="./spells.html#casting"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Casting &amp; Channeling</a>
+                <div class="dropdown-divider"></div>
+                <a href="./spells.html#spellCards"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Lores &amp; Spells</a>
+                <div class="dropdown-divider"></div>
+                <a href="./spells.html#minorMiscast"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Minor Miscasts</a>
+                <a href="./spells.html#majorMiscast"
+                    class="w3-bar-item w3-button w3-mobile bottom-navbar w3-hover-blue-grey">Major Miscasts</a>
+            </div>
+        </div>
+        <div class="w3-dropdown-click w3-mobile">
+            <button onclick="dropdownShow('religionDropdown')"
+                class="w3-button w3-round-large w3-hover-blue-grey">Religion <i class="fa fa-caret-down"></i></button>
+            <div id="religionDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                <a href="./religion.html#prayers"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Prayers</a>
+                <a href="./religion.html#divman"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Divine Manifestations</a>
+                <div class="dropdown-divider"></div>
+                <a href="./religion.html#miracleCards"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Gods, Cults, &amp;
+                    Miracles</a>
+                <div class="dropdown-divider"></div>
+                <a href="./religion.html#wrathOfGods"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Wrath of the Gods</a>
+            </div>
+        </div>
+        <div class="w3-dropdown-click w3-mobile">
+            <button onclick="dropdownShow('skillDropdown')" class="w3-button w3-round-large w3-hover-blue-grey">Skills
+                &amp; Talents <i class="fa fa-caret-down"></i></button>
+            <div id="skillDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                <a href="./skills.html#skillTop"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Skills Rules</a>
+                <a href="./skills.html#skillList"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Skill List</a>
+                <a href="./skills.html#talentTop"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Talent Rules</a>
+                <a href="./skills.html#talentList"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Talent List</a>
+            </div>
+        </div>
+    </div>
+    <div class="w3-bar">
+        <button onclick="window.open('./index.html','_self');"
+            class="w3-bar-item w3-hover-blue-grey w3-button w3-hide-small w3-round-large">Master Search</button>
+        <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+            <button class="w3-button w3-round-large w3-hover-blue-grey"
+                onclick="window.location='./character.html'">Character Creation <i
+                    class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                <a href="./character.html#charTop"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Character</a>
+                <a href="./character.html#species"
+                    class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Species</a>
+                <a href="./character.html#career"
+                    class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Class &amp; Career</a>
+                <a href="./character.html#attributes"
+                    class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Attributes</a>
+                <a href="./character.html#skills"
+                    class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Skills &amp; Talents</a>
+                <a href="./character.html#trappings"
+                    class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Trappings</a>
+                <a href="./character.html#advancement"
+                    class="w3-bar-item w3-button w3-mobile middle-navbar w3-hover-blue-grey">Advancement</a>
+            </div>
+        </div>
+        <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+            <button class="w3-button w3-round-large w3-hover-blue-grey" onclick="window.location='./combat.html'">Combat
+                <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                <a href="./combat.html#combTop"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Combat</a>
+                <a href="./combat.html#takingTurn"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Taking Your Turn</a>
+                <div class="dropdown-divider"></div>
+                <a href="./combat.html#combatDifficulty"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Combat Difficulty</a>
+                <div class="dropdown-divider"></div>
+                <a href="./combat.html#diffExample"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Difficulty Examples</a>
+                <div class="dropdown-divider"></div>
+                <a href="./combat.html#conditions"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Conditions</a>
+            </div>
+        </div>
+        <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+            <button class="w3-button w3-round-large w3-hover-blue-grey" onclick="window.location='./spells.html'">Magic
+                <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                <a href="./spells.html#spellRules"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Spellcasting</a>
+                <a href="./spells.html#casting"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Casting &amp; Channeling</a>
+                <div class="dropdown-divider"></div>
+                <a href="./spells.html#spellCards"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Lores &amp; Spells</a>
+                <div class="dropdown-divider"></div>
+                <a href="./spells.html#minorMiscast"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Minor Miscasts</a>
+                <a href="./spells.html#majorMiscast"
+                    class="w3-bar-item w3-button w3-mobile bottom-navbar w3-hover-blue-grey">Major Miscasts</a>
+            </div>
+        </div>
+        <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+            <button class="w3-button w3-round-large w3-hover-blue-grey"
+                onclick="window.location='./religion.html'">Religion <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                <a href="./religion.html#prayers"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Prayers</a>
+                <a href="./religion.html#divman"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Divine Manifestations</a>
+                <div class="dropdown-divider"></div>
+                <a href="./religion.html#miracleCards"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Gods, Cults, &amp;
+                    Miracles</a>
+                <div class="dropdown-divider"></div>
+                <a href="./religion.html#wrathOfGods"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Wrath of the Gods</a>
+            </div>
+        </div>
+        <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+            <button class="w3-button w3-round-large w3-hover-blue-grey" onclick="window.location='./skills.html'">Skills
+                &amp; Talents <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                <a href="./skills.html#skillTop"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Skills Rules</a>
+                <a href="./skills.html#skillList"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Skill List</a>
+                <div class="dropdown-divider"></div>
+                <a href="./skills.html#talentTop"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Talent Rules</a>
+                <a href="./skills.html#talentList"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Talent List</a>
+            </div>
+        </div>
+    </div>
 </div>
-</div>
+
 </html>

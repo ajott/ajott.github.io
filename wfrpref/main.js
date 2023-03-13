@@ -51,12 +51,13 @@ function initializeModals() {
     $('condition').attr('onclick', 'buildModal(this,\'condition\')');
     $('weaponqual').attr('onclick', 'buildModal(this,\'qual\')');
     $('divineman').attr('onclick', 'buildModal(this,\'miracle\')');
+    $('trait').attr('onclick', 'buildModal(this,\'trait\')');
 }
 
-function buildModal(el, type) {
+function buildModal(el, type, mast = 0) {
     // Used for building individual modal IDs
     modalCount++
-
+    let srchPhrase = "";
     // Temporary until an overall fuse/dictionary can be attained
     let fuses = {
         "skill": skillFuse,
@@ -64,17 +65,23 @@ function buildModal(el, type) {
         "miracle": miracleFuse,
         "condition": conditionFuse,
         "qual": qualFuse,
-        "spell": spellFuse
+        "spell": spellFuse,
+        "weapon": weaponFuse,
+        "trait": traitFuse
     }
 
-    let htmlPhrase = el.innerText
-    let srchPhrase = htmlPhrase.split(' (')[0] // Get rid of specializations, such as Art (Engraving)
+    if (mast == 1) {
+        srchPhrase = el
+    } else {
+        let htmlPhrase = el.innerText
+        srchPhrase = htmlPhrase.split(' (')[0] // Get rid of specializations, such as Art (Engraving)
+    }
     let srchRslt = fuses[type].search(srchPhrase)
 
     // Get the first result, which should be the closest match
     let dataRslt = srchRslt[0]["item"]
 
-        
+
     var $div = $('#default-modal');
 
     var $klon = $div.clone().prop('id', 'modal' + modalCount).appendTo("#modalPlaceholder");
@@ -170,7 +177,7 @@ function buildModal(el, type) {
 
             $("#modal" + modalCount + " .spellName").html(dataRslt["name"])
 
-             if (dataRslt["lore"] == "Petty" || dataRslt["lore"] == "Arcane") {
+            if (dataRslt["lore"] == "Petty" || dataRslt["lore"] == "Arcane") {
                 $("#modal" + modalCount + " .spellLore").text(dataRslt["lore"] + " Magic");
             } else {
                 $("#modal" + modalCount + " .spellLore").text("Lore of " + dataRslt["lore"]);
@@ -190,13 +197,42 @@ function buildModal(el, type) {
                     htmlString = "<p>" + dataRslt["description"] + "</p>"
                 }
             }
-            
+
             $("#modal" + modalCount + " .spellDescription").html(htmlString)
 
             htmlString = "";
 
             break;
-    }    
+        case "weapon":
+            if (dataRslt["2h"] != undefined) {
+                $("#modal" + modalCount + " .weapName").html(dataRslt["name"] + " (2H)")
+            } else {
+                $("#modal" + modalCount + " .weapName").html(dataRslt["name"])
+            }
+            $("#modal" + modalCount + " .weapGroup").html(dataRslt["group"])
+
+            $("#modal" + modalCount + " .weapPrice").html("Price: " + dataRslt["price"])
+
+            $("#modal" + modalCount + " .weapEnc").html("Encumbrance: " + dataRslt["enc"])
+
+            $("#modal" + modalCount + " .weapAvail").html("Availability: " + dataRslt["avail"])
+
+            $("#modal" + modalCount + " .weapReach").html("Reach/Range: " + dataRslt["reach"])
+
+            $("#modal" + modalCount + " .weapDamage").html("Damage: " + dataRslt["damage"])
+
+            if (dataRslt["qual"] != "") {
+                $("#modal" + modalCount + " .weapQuals").html("Qualities/Flaws: " + dataRslt["qual"])
+            }
+            break;
+        case "trait":
+
+            $("#modal" + modalCount + " .traitName").html(dataRslt["name"])
+
+            $("#modal" + modalCount + " .traitDesc").html(dataRslt["desc"])
+
+            break;
+    }
 
     $('#modal' + modalCount).on('click', function (e) {
         if (e.target !== this)
@@ -220,50 +256,47 @@ function hideModal(el) {
     }
 }
 
-var searchType = "skill"
-
-function changeSearch(type) {
-    searchType = type;
-
-    $('.searchBtn').removeClass('btn-selected')
-
-    $('#masterSearch-'+type).addClass('btn-selected')
-    masterSearch();
+function clearMasterSearch() {
+    $('#masterSearchBox').val("")
+    masterSearch()
 }
 
 function masterSearch() {
     $('#masterSearchOptions').html("")
-    
+
     let searchTxt = $('#masterSearchBox').val()
+
+    if (searchTxt == "") {
+        $("#masterClearButton").hide()
+        $("#masterSearchOptions").hide()
+    } else {
+        $("#masterClearButton").show()
+        $("#masterSearchOptions").show()
+    }
 
     let searchEl = document.getElementById('masterSearchBox')
     let y = searchEl.getBoundingClientRect().top + window.pageYOffset - 100
     window.scrollTo({ top: y, behavior: 'smooth' });
 
-    let fuses = {
-        "skill": skillFuse,
-        "talent": talentFuse,
-        "condition": conditionFuse,
-        "spell": spellFuse,
-        "miracle": miracleFuse,
-        "weaponQual": qualFuse,
+    let typeTexts = {
+        "skill": "Skill",
+        "talent": "Talent",
+        "condition": "Condition",
+        "spell": "Spell",
+        "miracle": "Divine Manifestation",
+        "qual": "Weapon Quality/Flaw",
+        "weapon": "Weapon",
+        "trait": "Creature Trait"
     }
 
-    let modals = {
-        "skill": 'buildModal(this,\'skill\')',
-        "talent": 'buildModal(this,\'talent\')',
-        "condition": 'buildModal(this,\'condition\')',
-        "weaponQual": 'buildModal(this,\'qual\')',
-        "miracle": 'buildModal(this,\'miracle\')',
-        "spell": 'buildModal(this, \'spell\')'
-    }
-
-    let srchRslt = fuses[searchType].search(searchTxt)
-
+    let srchRslt = masterFuse.search(searchTxt)
     srchRslt.length = 10;
-
+    let rsltNum = 1
     srchRslt.forEach(result => {
-        $('#masterSearchOptions').append("<div class=\"masterSearchResult w3-blue-grey w3-hover-grey\" onclick=\"" + modals[searchType] + "\">" + result["item"]["name"] + "</div>")
+        let rsltName = result["item"]["name"]
+        let rsltType = result["item"]["type"]
+        $('#masterSearchOptions').append("<div class=\"masterSearchResult w3-blue-grey w3-hover-grey\" tabindex=\"" + rsltNum + "\" onclick=\"buildModal(\'" + rsltName + "\',\'" + rsltType + "\',1)\">" + result["item"]["name"] + "&emsp; <em class=\"w3-small\" style=\"color: lightgrey;\">(" + typeTexts[rsltType] + ")</em></div>")
+        rsltNum++
     });
 }
 
@@ -285,8 +318,10 @@ function showMenu() {
     var x = document.getElementById("menu");
     if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
+        $("#mobileMenuBtn").html("&times;")
     } else {
         x.className = x.className.replace(" w3-show", "");
+        $("#mobileMenuBtn").html("&#9776;")
     }
 }
 
@@ -468,3 +503,34 @@ $(document).ready(function () {
         keys: ["name"]
     })
 });
+$(document).ready(function () {
+    weaponFuse = new Fuse(weapon, {
+        keys: ["name"]
+    })
+});
+$(document).ready(function () {
+    traitFuse = new Fuse(trait, {
+        keys: ["name"]
+    })
+});
+
+
+$(document).ready(function () {
+    buildConditionTable();
+
+});
+
+function buildConditionTable() {
+    let htmlString = ""
+
+    Object.entries(condition).forEach(cond => {
+        htmlString += "<tr>"
+        htmlString += "<td>" + cond[1]["name"] + "</td>"
+        htmlString += "<td>" + cond[1]["desc"] + "</td>"
+
+        htmlString += "</tr>"
+    });
+
+    $("#conditionTable").html(htmlString)
+}
+

@@ -19,11 +19,14 @@
     <script src="main.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="interface.css">
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Azeret Mono' rel='stylesheet'>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
     <div class="w3-top w3-darker-grey w3-row-padding bar-pad" id="navBarDiv">
+
     </div>
 
     <div class="w3-row-padding w3-section info">
@@ -32,28 +35,13 @@
         </div>
         <div class="w3-col s0 m0 l8">
             <h1>Master Search</h1>
-            <div class="w3-row">
-                <div class="w3-center">
-                <div class="w3-bar" style="padding-top: 4px; padding-bottom: 4px">
-                    <button id="masterSearch-skill" class="w3-button searchBtn w3-blue-grey w3-bar-item firstBtn btn-selected"
-                        onclick="changeSearch('skill')">Skills</button>
-                    <button id="masterSearch-talent" class="w3-button searchBtn w3-blue-grey w3-bar-item "
-                        onclick="changeSearch('talent')">Talents</button>
-                    <button id="masterSearch-condition" class="w3-button searchBtn w3-blue-grey w3-bar-item "
-                        onclick="changeSearch('condition')">Conditions</button>
-                    <button id="masterSearch-spell" class="w3-button searchBtn w3-blue-grey w3-bar-item"
-                        onclick="changeSearch('spell')">Spells</button>
-                    <button id="masterSearch-miracle" class="w3-button searchBtn w3-blue-grey w3-bar-item"
-                        onclick="changeSearch('miracle')">Divine Manifestations</button>
-                    <button id="masterSearch-weaponQual" class="w3-button searchBtn w3-blue-grey w3-bar-item lastBtn"
-                        onclick="changeSearch('weaponQual')">Weapon Qualities/Flaws</button>
-                </div></div>
-            </div>
             <br />
             <br />
-            <input class="w3-input" type="text" placeholder="Search here..." id="masterSearchBox"
+            <div class="w3-bar w3-center" style="width: 100% !important;">
+            <input class="w3-input w3-round-large w3-bar-item" type="text" placeholder="Search here..." id="masterSearchBox" tabindex="0"
                 onkeyup="masterSearch()">
-            <div id="masterSearchOptions" class="w3-container">
+            <button id="masterClearButton" onclick="clearMasterSearch()" class="w3-btn w3-bar-item w3-pale-red lastBtn">Clear</button></div>
+            <div id="masterSearchOptions" class="w3-container well">
 
             </div>
         </div>
@@ -76,9 +64,13 @@
         </div>
     </div>
     <script>
+        $(document).ready(function () {
+            clearMasterSearch();
+        });
     </script>
 </footer>
 <div id="modalPlaceholder">
 
 </div>
+
 </html>

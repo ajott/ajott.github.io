@@ -2,8 +2,8 @@ var masterDict = []
 var masterFuse = []
 
 $(document).ready(function () {
-    let lists = [skill, talent, spell, miracle, condition, weapon, career, trait, weaponQual]
-    let listTypes = ["skill", "talent", "spell", "miracle", "condition", "weapon", "career", "trait", "qual"]
+    let lists = [career, skill, talent, spell, miracle, condition, weapon, trait, weaponQual]
+    let listTypes = ["career", "skill", "talent", "spell", "miracle", "condition", "weapon", "trait", "qual"]
     for (let j = 0; j < lists.length; j++) {
         for (let i = 0; i < lists[j].length; i++) {
             masterDict.push({ "name": lists[j][i]["name"], "type": listTypes[j] })
@@ -26,7 +26,7 @@ var modals = {
     "qual": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"qualName\"></span></h3></div><div class=\"w3-row-padding\"><div class=\"qualDesc\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     "spell": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large grid-card\"><div class=\"w3-row-padding\"><h3 class=\"spellName\"></h3><h5> <em><span class=\"spellLore\"></span> </em></div><div class=\"w3-row-padding\"><emph>Casting Number: </emph><span class=\"spellCN\"></span><br /><emph>Range: </emph><span class=\"spellRange\"></span><br /><emph>Target: </emph><span class=\"spellTarget\"></span><br /><emph>Duration: </emph><span class=\"spellDuration\"></span></div><div class=\"w3-row-padding\"><div class=\"spellDescription\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     "weapon": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"weapName\"></span></h3></div><div class=\"w3-row-padding\"><h5 style=\"margin-top: -1em !important;\"><em><div class=\"weapGroup\"></div></em></h5><div class=\"weapPrice\"></div><div class=\"weapEnc\"></div><div class=\"weapAvail\"></div><div class=\"weapDamage\"></div><div class=\"weapReach\"></div><div class=\"weapQuals\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
-    "career": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large grid-card\"><div class=\"w3-row-padding\"><h3 class=\"careerName\"></h3><h5><span class=\"careerClass\"></span></h5><div class=\"w3-center\"><span class=\"careerRaces\"></span></div><div class=\"w3-center\"><em class=\"careerDesc\"></em></div></div><div class=\"w3-row-padding w3-center\"><h6>Advance Scheme</h6><div><table class=\"centerTable w3-table \"><thead><tr><th style=\"display:none;\" class=\"careerAttr careerWSth\">WS</th><th style=\"display:none;\" class=\"careerAttr careerBSth\">BS</th><th style=\"display:none;\" class=\"careerAttr careerSth\">S</th><th style=\"display:none;\" class=\"careerAttr careerTth\">T</th><th style=\"display:none;\" class=\"careerAttr careerIth\">I</th><th style=\"display:none;\" class=\"careerAttr careerAgith\">Agi</th><th style=\"display:none;\" class=\"careerAttr careerDexth\">Dex</th><th style=\"display:none;\" class=\"careerAttr careerIntth\">Int</th><th style=\"display:none;\" class=\"careerAttr careerWPth\">WP</th><th style=\"display:none;\" class=\"careerAttr careerFelth\">Fel</th></tr></thead><tbody><tr><td style=\"display:none;\" class=\"careerAttr careerWS\"></td><td style=\"display:none;\" class=\"careerAttr careerBS\"></td><td style=\"display:none;\" class=\"careerAttr careerS\"></td><td style=\"display:none;\" class=\"careerAttr careerT\"></td><td style=\"display:none;\" class=\"careerAttr careerI\"></td><td style=\"display:none;\" class=\"careerAttr careerAgi\"></td><td style=\"display:none;\" class=\"careerAttr careerDex\"></td><td style=\"display:none;\" class=\"careerAttr careerInt\"></td><td style=\"display:none;\" class=\"careerAttr careerWP\"></td><td style=\"display:none;\" class=\"careerAttr careerFel\"></td></tr></tbody></table></div></div><br/><div class=\"w3-row-padding w3-center\"><b>Income Skill: </b><em class=\"careerIncome\"></em></div><br/><div class=\"w3-row-padding well\"><div class=\"careerpath1\"><h5 class=\"path1name\"></h5><p><b>Skills: </b><span class=\"path1skills\"></span></p><p><b>Talents: </b><span class=\"path1talents\"></span></p><p><b>Trappings: </b><span class=\"path1trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath2\"><h5 class=\"path2name\"></h5><p><b>Skills: </b><span class=\"path2skills\"></span></p><p><b>Talents: </b><span class=\"path2talents\"></span></p><p><b>Trappings: </b><span class=\"path2trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath3\"><h5 class=\"path3name\"></h5><p><b>Skills: </b><span class=\"path3skills\"></span></p><p><b>Talents: </b><span class=\"path3talents\"></span></p><p><b>Trappings: </b><span class=\"path3trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath4\"><h5 class=\"path4name\"></h5><p><b>Skills: </b><span class=\"path4skills\"></span></p><p><b>Talents: </b><span class=\"path4talents\"></span></p><p><b>Trappings: </b><span class=\"path4trappings\"></span></p></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large\">Close</button></div></div></div>"
+    "career": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large grid-card\"><div class=\"w3-row-padding\"><h3 class=\"careerName\"></h3><h5><span class=\"careerClass\"></span></h5><div class=\"w3-center\"><span class=\"careerRaces\"></span></div><div class=\"w3-center\"><em class=\"careerDesc\"></em></div></div><div class=\"w3-row-padding w3-center\"><h6>Advance Scheme</h6><div><table class=\"centerTable attrTable \"><thead><tr><th style=\"display:none;\" class=\"careerAttr careerWSth\">WS</th><th style=\"display:none;\" class=\"careerAttr careerBSth\">BS</th><th style=\"display:none;\" class=\"careerAttr careerSth\">S</th><th style=\"display:none;\" class=\"careerAttr careerTth\">T</th><th style=\"display:none;\" class=\"careerAttr careerIth\">I</th><th style=\"display:none;\" class=\"careerAttr careerAgith\">Agi</th><th style=\"display:none;\" class=\"careerAttr careerDexth\">Dex</th><th style=\"display:none;\" class=\"careerAttr careerIntth\">Int</th><th style=\"display:none;\" class=\"careerAttr careerWPth\">WP</th><th style=\"display:none;\" class=\"careerAttr careerFelth\">Fel</th></tr></thead><tbody><tr><td style=\"display:none;\" class=\"careerAttr careerWS\"></td><td style=\"display:none;\" class=\"careerAttr careerBS\"></td><td style=\"display:none;\" class=\"careerAttr careerS\"></td><td style=\"display:none;\" class=\"careerAttr careerT\"></td><td style=\"display:none;\" class=\"careerAttr careerI\"></td><td style=\"display:none;\" class=\"careerAttr careerAgi\"></td><td style=\"display:none;\" class=\"careerAttr careerDex\"></td><td style=\"display:none;\" class=\"careerAttr careerInt\"></td><td style=\"display:none;\" class=\"careerAttr careerWP\"></td><td style=\"display:none;\" class=\"careerAttr careerFel\"></td></tr></tbody></table></div></div><br/><div class=\"w3-row-padding w3-center\"><b>Income Skill: </b><em class=\"careerIncome\"></em></div><br/><div class=\"w3-row-padding well\"><div class=\"careerpath1\"><h5 class=\"path1name\"></h5><p><b>Skills: </b><span class=\"path1skills\"></span></p><p><b>Talents: </b><span class=\"path1talents\"></span></p><p><b>Trappings: </b><span class=\"path1trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath2\"><h5 class=\"path2name\"></h5><p><b>Skills: </b><span class=\"path2skills\"></span></p><p><b>Talents: </b><span class=\"path2talents\"></span></p><p><b>Trappings: </b><span class=\"path2trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath3\"><h5 class=\"path3name\"></h5><p><b>Skills: </b><span class=\"path3skills\"></span></p><p><b>Talents: </b><span class=\"path3talents\"></span></p><p><b>Trappings: </b><span class=\"path3trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath4\"><h5 class=\"path4name\"></h5><p><b>Skills: </b><span class=\"path4skills\"></span></p><p><b>Talents: </b><span class=\"path4talents\"></span></p><p><b>Trappings: </b><span class=\"path4trappings\"></span></p></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large\">Close</button></div></div></div>"
 }
 
 var lores = {
@@ -4037,5 +4037,219 @@ var career = [
         "advances": ["S", "T", "Dex", "BS", "I", "Int"],
         "incomeSkill": "Outdoor Survival",
         "races": "Dwarf, Halfling, High Elf, Human, Wood Elf"
+    },
+    {
+        "name": "Flagellant",
+        "class": "Rangers",
+        "desc": "Just when you abandoned all hope, your suffering and the righteousness of Sigmar saved you!",
+        "path1": {
+            "name": "Zealot",
+            "skills":
+                [
+                    "Dodge",
+                    "Endurance",
+                    "Heal",
+                    "Intimidate",
+                    "Intuition",
+                    "Lore (Sigmar)",
+                    "Melee (Flail)",
+                    "Outdoor Survival"
+                ],
+            "talents":
+                [
+                    "Berserk Charge",
+                    "Frenzy",
+                    "Read/Write",
+                    "Stone Soup"
+                ],
+            "trappings":
+                [
+                    "<weapon>Flail</weapon>",
+                    "Tattered Robes"
+                ],
+            "status": "Brass 0"
+        },
+        "path2": {
+            "name": "Flagellant",
+            "skills":
+                [
+                    "Art (Icons)",
+                    "Athletics",
+                    "Cool",
+                    "Language (Classical)",
+                    "Lore (The Empire)",
+                    "Ranged (Sling)"
+                ],
+            "talents":
+                [
+                    "Hardy",
+                    "Hatred (Heretics)",
+                    "Flagellant",
+                    "Implacable"
+                ],
+            "trappings":
+                [
+                    "Placard",
+                    "Religious Symbol",
+                    "<weapon>Sling</weapon>"
+                ],
+            "status": "Brass 0"
+        },
+        "path3": {
+            "name": "Penitent",
+            "skills":
+                [
+                    "Charm",
+                    "Language (Any)",
+                    "Lore (Theology)",
+                    "Perception"
+                ],
+            "talents":
+                [
+                    "Field Dressing",
+                    "Furious Assault",
+                    "Menacing",
+                    "Seasoned Traveller"
+                ],
+            "trappings":
+                [
+                    "Religious Relic"
+                ],
+            "status": "Brass 0"
+        },
+        "path4": {
+            "name": "Prophet of Doom",
+            "skills":
+                [
+                    "Entertain (Speeches)",
+                    "Leadership"
+                ],
+            "talents":
+                [
+                    "Battle Rage",
+                    "Fearless (Heretics)",
+                    "Frightening",
+                    "Impassioned Zeal"
+                ],
+            "trappings":
+                [
+                    "Book (Religion)",
+                    "Followers (including Penitents, Flagellants, and Zealots"
+                ],
+            "status": "Brass 0"
+        },
+        "advances": ["WS", "S", "T", "WP", "I", "Fel"],
+        "incomeSkill": "Melee (Flail)",
+        "races": "Human"
+    },
+    {
+        "name": "Road Warden",
+        "class": "Rangers",
+        "desc": "With a wary eye and ready weapon, you tour the highways of the Empire enforcing the law.",
+        "path1": {
+            "name": "Toll Keeper",
+            "skills":
+                [
+                    "Bribery",
+                    "Consume Alcohol",
+                    "Gamble",
+                    "Gossip",
+                    "Haggle",
+                    "Melee (Basic)",
+                    "Perception",
+                    "Ranged (Crossbow)"
+                ],
+            "talents":
+                [
+                    "Coolheaded",
+                    "Embezzle",
+                    "Marksman",
+                    "Numismatics"
+                ],
+            "trappings":
+                [
+                    "<weapon>Crossbow</weapon> with 10 Bolts",
+                    "Leather Jack"
+                ],
+            "status": "Brass 5"
+        },
+        "path2": {
+            "name": "Road Warden",
+            "skills":
+                [
+                    "Animal Care",
+                    "Endurance",
+                    "Intimidate",
+                    "Intuition",
+                    "Outdoor Survival",
+                    "Ride (Horse)"
+                ],
+            "talents":
+                [
+                    "Crack the Whip",
+                    "Criminal",
+                    "Roughrider",
+                    "Seasoned Traveller"
+                ],
+            "trappings":
+                [
+                    "<weapon>Hand Weapon</weapon>",
+                    "Mail Shirt",
+                    "Riding Horse with Saddle and Harness",
+                    "Rope"
+                ],
+            "status": "Silver 2"
+        },
+        "path3": {
+            "name": "Road Sergeant",
+            "skills":
+                [
+                    "Athletics",
+                    "Charm",
+                    "Leadership",
+                    "Ranged (Blackpowder)"
+                ],
+            "talents":
+                [
+                    "Etiquette (Soldiers)",
+                    "Fearless (Outlaws)",
+                    "Hatred (Any)",
+                    "Nose for Trouble"
+                ],
+            "trappings":
+                [
+                    "Squad of Road Wardens",
+                    "<weapon>Pistol</weapon> with 10 Shots",
+                    "<weapon>Shield</weapon>",
+                    "Symbol of Rank"
+                ],
+            "status": "Silver 4"
+        },
+        "path4": {
+            "name": "Road Captain",
+            "skills":
+                [
+                    "Lore (Empire)",
+                    "Navigation"
+                ],
+            "talents":
+                [
+                    "Combat Aware",
+                    "Commanding Presence",
+                    "Kingpin",
+                    "Public Speaker"
+                ],
+            "trappings":
+                [
+                    "Light Warhorse",
+                    "<weapon>Pistol</weapon> with 10 Shots",
+                    "Quality Hat and Cloak",
+                    "Unit of Road Wardens"
+                ],
+            "status": "Gold 1"
+        },
+        "advances": ["BS", "T", "I", "WS", "Fel", "Int"],
+        "incomeSkill": "Perception",
+        "races": "Halfling, Human"
     }
 ]

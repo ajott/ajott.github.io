@@ -263,7 +263,7 @@ function buildModal(el, type, mast = 0) {
 
             for (let k = 1; k < 5; k++) {
                 let imgSrcs = ["./img/cross_64.png","./img/axes_64_light.png","./img/skull_64_light.png","./img/shield_64_light.png"]
-                $("#modal" + modalCount + " .careerpath" + k + " .path" + k + "name").html("<img src=\"" + imgSrcs[k-1] + "\" class=\"oneemimg\"></img> " + dataRslt["path" + k]["name"] + " &mdash; " + dataRslt["path" + k]["status"])
+                $("#modal" + modalCount + " .careerpath" + k + " .path" + k + "name").html("<img src=\"" + imgSrcs[k-1] + "\" class=\"oneemimg\"></img><br/>" + dataRslt["path" + k]["name"] + " &mdash; " + dataRslt["path" + k]["status"])
 
                 for (let i = 0; i < dataRslt["path" + k]["skills"].length; i++) {
                     if (i == 0) {

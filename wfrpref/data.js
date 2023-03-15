@@ -1,21 +1,21 @@
 var masterDict = []
 var masterFuse = []
 
-$(document).ready(function() {
+$(document).ready(function () {
     let lists = [skill, talent, spell, miracle, condition, weapon, career, trait, weaponQual]
     let listTypes = ["skill", "talent", "spell", "miracle", "condition", "weapon", "career", "trait", "qual"]
-    for (let j = 0; j < lists.length; j ++) {
-        for (let i = 0; i < lists[j].length; i ++) {
-            masterDict.push({"name": lists[j][i]["name"], "type": listTypes[j]})
+    for (let j = 0; j < lists.length; j++) {
+        for (let i = 0; i < lists[j].length; i++) {
+            masterDict.push({ "name": lists[j][i]["name"], "type": listTypes[j] })
         }
     };
 
-    masterFuse = new Fuse(masterDict, {keys: ["name"], threshold: 0.3})
+    masterFuse = new Fuse(masterDict, { keys: ["name"], threshold: 0.3 })
 });
 
 var currYear = new Date().getFullYear()
 
-var CRNotice = "Warhammer Fantasy Roleplay 4th Edition &copy; Copyright Games Workshop and Cubicle 7 Games Limited 2018-"+currYear
+var CRNotice = "Warhammer Fantasy Roleplay 4th Edition &copy; Copyright Games Workshop and Cubicle 7 Games Limited 2018-" + currYear
 
 var modals = {
     "skill": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span style=\"display: none;\" class=\"skillID\"></span><span class=\"skillName\"></span> (<span class=\"skillChar\"></span>)</h3></div><div class=\"w3-row-padding\"><h4 style=\"margin-top:-1em !important;\"><em><span class=\"skillTier\"></span></em></h4></div><div class=\"w3-row-padding\"><div class=\"skillDesc\"></div><div class=\"skillSpec\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"skillModalSearch()\" class=\"w3-button w3-deep-amber firstBtn\">Skill List</button><button onclick=\"hideModal(this)\"class=\"w3-button w3-deep-red-l1 w3-round-large lastBtn\">Close</button></div></div></div>",
@@ -26,7 +26,7 @@ var modals = {
     "qual": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"qualName\"></span></h3></div><div class=\"w3-row-padding\"><div class=\"qualDesc\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     "spell": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large grid-card\"><div class=\"w3-row-padding\"><h3 class=\"spellName\"></h3><h5> <em><span class=\"spellLore\"></span> </em></div><div class=\"w3-row-padding\"><emph>Casting Number: </emph><span class=\"spellCN\"></span><br /><emph>Range: </emph><span class=\"spellRange\"></span><br /><emph>Target: </emph><span class=\"spellTarget\"></span><br /><emph>Duration: </emph><span class=\"spellDuration\"></span></div><div class=\"w3-row-padding\"><div class=\"spellDescription\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     "weapon": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"weapName\"></span></h3></div><div class=\"w3-row-padding\"><h5 style=\"margin-top: -1em !important;\"><em><div class=\"weapGroup\"></div></em></h5><div class=\"weapPrice\"></div><div class=\"weapEnc\"></div><div class=\"weapAvail\"></div><div class=\"weapDamage\"></div><div class=\"weapReach\"></div><div class=\"weapQuals\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
-    "career": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large grid-card\"><div class=\"w3-row-padding\"><h3 class=\"careerName\"></h3><h5><span class=\"careerClass\"></span></h5><div class=\"w3-center\"><span class=\"careerRaces\"></span></div><div class=\"w3-center\"><em class=\"careerDesc\"></em></div></div><div class=\"w3-row-padding w3-center\"><h6>Advance Scheme</h6><div><table class=\"centerTable w3-table table-dark\"><thead><tr><th class=\"careerAttr\">WS</th><th class=\"careerAttr\">BS</th><th class=\"careerAttr\">S</th><th class=\"careerAttr\">T</th><th class=\"careerAttr\">I</th><th class=\"careerAttr\">Agi</th><th class=\"careerAttr\">Dex</th><th class=\"careerAttr\">Int</th><th class=\"careerAttr\">WP</th><th class=\"careerAttr\">Fel</th></tr></thead><tbody><tr><td class=\"careerAttr careerWS\"></td><td class=\"careerAttr careerBS\"></td><td class=\"careerAttr careerS\"></td><td class=\"careerAttr careerT\"></td><td class=\"careerAttr careerI\"></td><td class=\"careerAttr careerAgi\"></td><td class=\"careerAttr careerDex\"></td><td class=\"careerAttr careerInt\"></td><td class=\"careerAttr careerWP\"></td><td class=\"careerAttr careerFel\"></td></tr></tbody></table></div></div><br/><div class=\"w3-row-padding w3-center\"><b>Income Skill: </b><em class=\"careerIncome\"></em></div><br/><div class=\"w3-row-padding well\"><div class=\"careerpath1\"><h5 class=\"path1name\"></h5><p><b>Skills: </b><span class=\"path1skills\"></span></p><p><b>Talents: </b><span class=\"path1talents\"></span></p><p><b>Trappings: </b><span class=\"path1trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath2\"><h5 class=\"path2name\"></h5><p><b>Skills: </b><span class=\"path2skills\"></span></p><p><b>Talents: </b><span class=\"path2talents\"></span></p><p><b>Trappings: </b><span class=\"path2trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath3\"><h5 class=\"path3name\"></h5><p><b>Skills: </b><span class=\"path3skills\"></span></p><p><b>Talents: </b><span class=\"path3talents\"></span></p><p><b>Trappings: </b><span class=\"path3trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath4\"><h5 class=\"path4name\"></h5><p><b>Skills: </b><span class=\"path4skills\"></span></p><p><b>Talents: </b><span class=\"path4talents\"></span></p><p><b>Trappings: </b><span class=\"path4trappings\"></span></p></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large\">Close</button></div></div></div>"
+    "career": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large grid-card\"><div class=\"w3-row-padding\"><h3 class=\"careerName\"></h3><h5><span class=\"careerClass\"></span></h5><div class=\"w3-center\"><span class=\"careerRaces\"></span></div><div class=\"w3-center\"><em class=\"careerDesc\"></em></div></div><div class=\"w3-row-padding w3-center\"><h6>Advance Scheme</h6><div><table class=\"centerTable w3-table \"><thead><tr><th style=\"display:none;\" class=\"careerAttr careerWSth\">WS</th><th style=\"display:none;\" class=\"careerAttr careerBSth\">BS</th><th style=\"display:none;\" class=\"careerAttr careerSth\">S</th><th style=\"display:none;\" class=\"careerAttr careerTth\">T</th><th style=\"display:none;\" class=\"careerAttr careerIth\">I</th><th style=\"display:none;\" class=\"careerAttr careerAgith\">Agi</th><th style=\"display:none;\" class=\"careerAttr careerDexth\">Dex</th><th style=\"display:none;\" class=\"careerAttr careerIntth\">Int</th><th style=\"display:none;\" class=\"careerAttr careerWPth\">WP</th><th style=\"display:none;\" class=\"careerAttr careerFelth\">Fel</th></tr></thead><tbody><tr><td style=\"display:none;\" class=\"careerAttr careerWS\"></td><td style=\"display:none;\" class=\"careerAttr careerBS\"></td><td style=\"display:none;\" class=\"careerAttr careerS\"></td><td style=\"display:none;\" class=\"careerAttr careerT\"></td><td style=\"display:none;\" class=\"careerAttr careerI\"></td><td style=\"display:none;\" class=\"careerAttr careerAgi\"></td><td style=\"display:none;\" class=\"careerAttr careerDex\"></td><td style=\"display:none;\" class=\"careerAttr careerInt\"></td><td style=\"display:none;\" class=\"careerAttr careerWP\"></td><td style=\"display:none;\" class=\"careerAttr careerFel\"></td></tr></tbody></table></div></div><br/><div class=\"w3-row-padding w3-center\"><b>Income Skill: </b><em class=\"careerIncome\"></em></div><br/><div class=\"w3-row-padding well\"><div class=\"careerpath1\"><h5 class=\"path1name\"></h5><p><b>Skills: </b><span class=\"path1skills\"></span></p><p><b>Talents: </b><span class=\"path1talents\"></span></p><p><b>Trappings: </b><span class=\"path1trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath2\"><h5 class=\"path2name\"></h5><p><b>Skills: </b><span class=\"path2skills\"></span></p><p><b>Talents: </b><span class=\"path2talents\"></span></p><p><b>Trappings: </b><span class=\"path2trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath3\"><h5 class=\"path3name\"></h5><p><b>Skills: </b><span class=\"path3skills\"></span></p><p><b>Talents: </b><span class=\"path3talents\"></span></p><p><b>Trappings: </b><span class=\"path3trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath4\"><h5 class=\"path4name\"></h5><p><b>Skills: </b><span class=\"path4skills\"></span></p><p><b>Talents: </b><span class=\"path4talents\"></span></p><p><b>Trappings: </b><span class=\"path4trappings\"></span></p></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large\">Close</button></div></div></div>"
 }
 
 var lores = {
@@ -42,42 +42,42 @@ var lores = {
         "desc": "The Lore of Fire, and the Bright wind of <em>Aqshy</em>, is anything but subtle. Its spells are bellowed with fervour and manifest themselves in bombastic fashion, with bright flame and searing heat. You may inflict +1 <condition>Ablaze</condition> Condition on anyone targeted by spells from the Lore of Fire, unless they also possess the <talent>Arcane Magic (Fire)</talent> Talent. Every <condition>Ablaze</condition> condition within <eh>Willpower Bonus</eh> yards adds +10 to attempts to Channel or Cast with <em>Aqshy</em>. <br/> <p><b>Ingredients:</b> Pyromancers use a wide selection of flammable materials as ingredients, which are often immolated as the spell is cast, including coal, oils, fats, and ruddy woods. Trappings immune to fire are also common, such as iron keys, carved sections of fire-grate, and small oven stones.</p>",
         "wind": "Aqshy"
     },
-    "Heavens":{
-        "desc":"Arcane spells cast from the Lore of Heavens are accompanied by the crackling of lightning and the smell of ozone. Spells causing Damage ignore Armour Points from metal armour, and will arc to all other targets within 2 yards, except those with the <talent>Arcane Magic (Heavens)</talent> Talent, inflicting hits with a Damage equal to your <eh>Willpower Bonus</eh>, handled like a <condition>magical missile</condition>. <br/> <p><b>Ingredients:</b> Astronomical instruments, charts, lenses, and symbols dominate Celestial magic, as do ingredients associated with augury, such as animal innards, mirrors, glass balls, and bird tongues. Some wind-based spells use wings and feathers, where those involving electricity prefer slivers of carved metal.</p>",
-        "wind":"Azyr"
+    "Heavens": {
+        "desc": "Arcane spells cast from the Lore of Heavens are accompanied by the crackling of lightning and the smell of ozone. Spells causing Damage ignore Armour Points from metal armour, and will arc to all other targets within 2 yards, except those with the <talent>Arcane Magic (Heavens)</talent> Talent, inflicting hits with a Damage equal to your <eh>Willpower Bonus</eh>, handled like a <condition>magical missile</condition>. <br/> <p><b>Ingredients:</b> Astronomical instruments, charts, lenses, and symbols dominate Celestial magic, as do ingredients associated with augury, such as animal innards, mirrors, glass balls, and bird tongues. Some wind-based spells use wings and feathers, where those involving electricity prefer slivers of carved metal.</p>",
+        "wind": "Azyr"
     },
-    "Metal":{
-        "desc":"The wind of <em>Chamon</em> is very dense, and quickly attaches itself to metallic substances. Spells from this lore are accompanied with golden light and heat, and are especially effective against foes foolish enough to encase themselves in metal. Spells inflicting Damage ignore Armour Points from metal armour, and inflict bonus Damage equal to the number of Armour Points of metal armour being worn on any Hit Location struck. So, if your spell hit an Arm location protected by 2 Armour Points of metal armour, it would cause an additional +2 Damage and ignore the Armour Points. <br/> <p><b>Ingredients:</b> Heavy metals of all types, esoterically inlaid or carved, comprise the majority of Gold ingredients, though many spells also use trappings associated with a forge, including sections of a bellows marked with mathematical formula, inscribed chunks of an anvil, or fragments of a furnace.</p>",
+    "Metal": {
+        "desc": "The wind of <em>Chamon</em> is very dense, and quickly attaches itself to metallic substances. Spells from this lore are accompanied with golden light and heat, and are especially effective against foes foolish enough to encase themselves in metal. Spells inflicting Damage ignore Armour Points from metal armour, and inflict bonus Damage equal to the number of Armour Points of metal armour being worn on any Hit Location struck. So, if your spell hit an Arm location protected by 2 Armour Points of metal armour, it would cause an additional +2 Damage and ignore the Armour Points. <br/> <p><b>Ingredients:</b> Heavy metals of all types, esoterically inlaid or carved, comprise the majority of Gold ingredients, though many spells also use trappings associated with a forge, including sections of a bellows marked with mathematical formula, inscribed chunks of an anvil, or fragments of a furnace.</p>",
         "wind": "Chamon"
     },
-    "Life":{
-        "desc":"Spells cast with <em>Ghyran</em>, the Jade Wind, are suffused with life, tending to manifest with a vibrant green light, and are often accompanied by natural phenomena given supernatural qualities. Vines, undergrowth, trees, and rivers all bend to the Druids’ wills. <br/> Receive a +10 bonus to <em>Casting</em> and <em>Channelling</em> rolls when in a rural or wilderness environment. Living creatures — e.g. those without the <em>Daemonic</em> or <em>Undead</em> Creature Traits — targeted by Arcane Spells from the Lore of Life have all <condition>Fatigued</condition> and <condition>Bleeding</condition> Conditions removed after any other effects have been applied as life magic floods through them. Creatures with the <em>Undead Creature</em> Trait, on the other hand, suffer additional Damage equal to your <eh>Willpower Bonus</eh>, ignoring Toughness Bonus and Armour Points, if affected by any spell cast with the Lore of Life. <br/><p> <b>Ingredients: </b>Druids use a wide variety of naturally occurring ingredients, ranging from rare seeds and nuts, humours gathered from sentient creatures in the flush of life, uncommon tree saps, fertile loam, spring waters, and a variety of living ingredients, including plants and smaller animals.</p>",
+    "Life": {
+        "desc": "Spells cast with <em>Ghyran</em>, the Jade Wind, are suffused with life, tending to manifest with a vibrant green light, and are often accompanied by natural phenomena given supernatural qualities. Vines, undergrowth, trees, and rivers all bend to the Druids’ wills. <br/> Receive a +10 bonus to <em>Casting</em> and <em>Channelling</em> rolls when in a rural or wilderness environment. Living creatures — e.g. those without the <em>Daemonic</em> or <em>Undead</em> Creature Traits — targeted by Arcane Spells from the Lore of Life have all <condition>Fatigued</condition> and <condition>Bleeding</condition> Conditions removed after any other effects have been applied as life magic floods through them. Creatures with the <em>Undead Creature</em> Trait, on the other hand, suffer additional Damage equal to your <eh>Willpower Bonus</eh>, ignoring Toughness Bonus and Armour Points, if affected by any spell cast with the Lore of Life. <br/><p> <b>Ingredients: </b>Druids use a wide variety of naturally occurring ingredients, ranging from rare seeds and nuts, humours gathered from sentient creatures in the flush of life, uncommon tree saps, fertile loam, spring waters, and a variety of living ingredients, including plants and smaller animals.</p>",
         "wind": "Ghyran"
     },
-    "Light":{
-        "desc":"Arcane Spells sung from the Lore of Light tend to emit dazzling rays of blinding white light, or shroud the caster in shimmering waves of radiant purity. You may inflict one <condition>Blinded</condition> Condition on those targeted by Lore of Light spells, unless they possess the <talent>Arcane Magic (Light)</talent> Talent. <br/> If a target has the <em>Daemonic</em> or <em>Undead</em> Creature Traits, spells also inflict an additional hit with Damage equal to your <eh>Intelligence Bonus</eh> that ignores Toughness Bonus and Armour Points. <br/> <p><b>Ingredients:</b> Hierophants of the Lore of Light use many artefacts associated with holiness and holy places, supplemented by crystals, glass, pyramidions, and small statues, all carved with sacred symbols, twisting snakes, and moral tales. White candles, silver carvings, and bleached paper are also common.</p>",
+    "Light": {
+        "desc": "Arcane Spells sung from the Lore of Light tend to emit dazzling rays of blinding white light, or shroud the caster in shimmering waves of radiant purity. You may inflict one <condition>Blinded</condition> Condition on those targeted by Lore of Light spells, unless they possess the <talent>Arcane Magic (Light)</talent> Talent. <br/> If a target has the <em>Daemonic</em> or <em>Undead</em> Creature Traits, spells also inflict an additional hit with Damage equal to your <eh>Intelligence Bonus</eh> that ignores Toughness Bonus and Armour Points. <br/> <p><b>Ingredients:</b> Hierophants of the Lore of Light use many artefacts associated with holiness and holy places, supplemented by crystals, glass, pyramidions, and small statues, all carved with sacred symbols, twisting snakes, and moral tales. White candles, silver carvings, and bleached paper are also common.</p>",
         "wind": "Hysh"
     },
-    "Shadows":{
-        "desc":"Spells cast from the Lore of Shadows are surreptitious and sly, and so the <special>lingua praestantia</special> may be muttered stealthily. Any protective spells you may cast wreath you in shadows and billow smoke, making your body insubstantial, possibly even allowing blades to pass through you seemingly without harm. Further, all spells cast from the Lore of Shadows inflicting Damage ignore all non-magical Armour Points. <br/> <p><b>Ingredients:</b> Anything used to hide, shroud, or conceal is repurposed as Grey ingredients, including cosmetics, scents, scarfs, spectacles, mirrors, and wigs. Items drawn from professions steeped in intrigue and wisdom are also common, with diplomatic artefacts, symbols of rank, and the ultimate expression of power &ndash; a blade &ndash; prevalent.</p>",
+    "Shadows": {
+        "desc": "Spells cast from the Lore of Shadows are surreptitious and sly, and so the <special>lingua praestantia</special> may be muttered stealthily. Any protective spells you may cast wreath you in shadows and billow smoke, making your body insubstantial, possibly even allowing blades to pass through you seemingly without harm. Further, all spells cast from the Lore of Shadows inflicting Damage ignore all non-magical Armour Points. <br/> <p><b>Ingredients:</b> Anything used to hide, shroud, or conceal is repurposed as Grey ingredients, including cosmetics, scents, scarfs, spectacles, mirrors, and wigs. Items drawn from professions steeped in intrigue and wisdom are also common, with diplomatic artefacts, symbols of rank, and the ultimate expression of power &ndash; a blade &ndash; prevalent.</p>",
         "wind": "Ulgu"
     },
     "Petty": {
         "desc": "For the few Humans blessed — or cursed, depending upon your point of view — with the spark of magic, it generally manifests around puberty, and almost always before 25 summers have passed. The first indications of impending witchery are often little tricks, knacks, cantrips, or similar, showing the wizard-to-be should probably be trained for everyone else’s safety. <br/> For Elves, this is just a part of growing up, and those with interest in magic are schooled to develop their burgeoning talents. For Humans, assuming they avoid being lynched, it likely means years of training as an apprentice to a wizard from one of the Eight Colleges of Magic, after which they should never use the little tricks they learned when young again. But most do. <br/> As Petty spells are not formally codified, they have many different names. Players are encouraged to devise their own, more characterful names, reflecting their personality.<br/><br/> Petty spells are learned when taking the <talent>Petty Magic</talent> Talent, which may be available to your Career. Additional Petty spells can be learned for an XP cost"
     },
-    "Arcane":{
+    "Arcane": {
         "desc": "The Arcane spells represent common formulations of the <special>lingua praestantia</special>. How these spells manifest in practice will depend on your <talent>Arcane Magic</talent> Talent. For instance, a spellcaster with the <talent>Arcane Magic (Fire)</talent> Talent casting <spell>Drop</spell> may cause the object to overheat, while one with <talent>Arcane Magic (Shadows)</talent> may make it slightly insubstantial, causing the object to literally slip between the target’s fingers. <br/> Treat Arcane spells as extra options for every Lore of Magic, including Witch, Dark, and Chaos Lores. They are counted as Lore spells in all ways, meaning they get all the benefits of Lore spells, and can only be learned from and taught to those sharing the same Arcane Magic Talent. <br/> <p><b>Note: </b>Any spell marked with a ‘&plus;’ at the end of the Duration gains the following extra text: When the spell should end, you may make a <em>Willpower</em> Test to extend the Duration for +1 round.</p>"
     },
-    "Hedgecraft":{
+    "Hedgecraft": {
         "desc": "The Hedgefolk believe their Lore is a gift from the Gods, referring to their spellcasters as the Blessed Few. Due to their ancient traditions and ingrained belief, their spells cannot be cast without ingredients, which are an integral part of their spellcasting process. <br/> Fortunately, the ingredients they use are easily found on the fringes of settlements and are usually herbs or plants. You receive 1 + SL ingredients on a successful foraging roll, using <em>Lore (Herbalism)</em>, as described under Gathering Food and Herbs on page 127, or you can buy them for 5 brass pennies each. <br/> <p><b>Ingredients:</b> Hedgefolk use easily sourced local materials prepared to exacting standards using special tools. So, ingredients may include things such as the wings of a dragonfly killed with a silver pin, rods of poplar polished with beeswax on Sonnstill, or bones buried beneath a hedgerow for a winter’s month.</p>"
     },
-    "Witchcraft":{
+    "Witchcraft": {
         "desc": "Spells from the Lore of Witchcraft draw on whichever winds of magic are available, without care or concern for mingling the winds and the potentially horrific results. Each time practitioners of Witchcraft roll on a Miscast table, they also gain 1 Corruption point. Further, you may inflict one Bleeding Condition on anyone targeted by spells from the Lore of Witchcraft. Lastly, channelling or casting spells from this Lore automatically require a roll on the Minor Miscast table unless cast with an ingredient, where the ingredient provides no further protection should you roll a Miscast. Fortunately, ingredients for the Lore of Witchcraft are cheap and readily available: body parts of small animals for the most part. Ingredients cost a spell’s CN in brass pennies, instead of silver shillings, to purchase. Alternatively, a Witch may forage for parts, using the Outdoor Survival skill: a successful foraging roll receives 1 + SL ingredients, as described under Gathering Food and Herbs on page 127. <br/> <p><b>Ingredients:</b> Witches use a horrific mixture of animal body parts, often harvested when a creature is still alive. It is not uncommon to find them clutching lizard eyes, dog toes, donkey gizzard, or much, much worse in their bloody hands as they cast their foul magics.</p>"
     },
-    "Daemonology":{
+    "Daemonology": {
         "desc": "The forbidden Lore of Daemonology is concerned with summoning, binding, and controlling Daemons, typically to empower the spellcaster. It is horrifically dangerous, usually leading to the Daemonologist’s downfall as their soul is taken by the Ruinous Powers and a new Chaos Sorcerer is born."
     },
-    "Necromancy":{
+    "Necromancy": {
         "desc": "Necromancy is an ancient and bloody magic art concerned with mastering death and seeking immortality, often by carving up rotting corpses. Considered one of the foulest and most heretical of magics, few take to studying its fell secrets lightly, for the horrors of the dead, and the undead, cannot be underestimated."
     }
 
@@ -140,7 +140,7 @@ var spell = [
         "duration": "<eh>Willpower Bonus</eh> Rounds",
         "description": "You call down a murder of crows or similar local birds to assail your foes. The flock attacks everyone in the Area of Effect who does not possess the <talent>Arcane Magic (Beasts)</talent> Talent ferociously, inflicting a +7 Damage hit at the end of the Round. The flock remains in play for the duration of the spell. For your Action you may make an <b>Average (+20) Charm Animal</b> Test to move the flock to another target within range. While within the Area of Effect, all creatures gain +1 <condition>Blinded</condition> Condition."
     }, {
-        "name": "Hunter's Hide",
+        "name": "Hunter’s Hide",
         "lore": "Beasts",
         "wind": "Ghur",
         "CN": 6,
@@ -158,7 +158,7 @@ var spell = [
         "duration": "Instant",
         "description": "You hurl a great spear of pure <em>Ghur</em> in a straight line. This is a <em>magic missile</em> with a Damage of +12. It strikes the first creature in its path, ignoring APs from armour made of leather and furs. If the target suffers any Wounds, also inflict +1 <condition>Bleeding</condition> Condition, after which the spear continues on its path, striking each target in the same manner, but at –1 Damage each time. If the spear fails to inflict any Wounds, its progress is stopped and the spell comes to an end. <em>The Amber Spear</em> only inflicts the minimum 1 Wound (see page 236) on the first target it strikes."
     }, {
-        "name": "Wyssan's Wildform",
+        "name": "Wyssan’s Wildform",
         "lore": "Beasts",
         "wind": "Ghur",
         "CN": 8,
@@ -239,7 +239,7 @@ var spell = [
         "duration": "Instant",
         "description": "Your touch brings the release of death to a single mortally wounded target. If you successfully touch a target with 0 wounds remaining and at least 2 Critical Wounds, death swiftly follows. Further, the target cannot be raised as Undead."
     }, {
-        "name": "Aqshy\'s Aegis",
+        "name": "Aqshy’s Aegis",
         "lore": "Fire",
         "wind": "Aqshy",
         "CN": 5,
@@ -284,7 +284,7 @@ var spell = [
         "duration": "<eh>Willpower Bonus</eh> Rounds",
         "description": "You channel a fiery streak of <em>Aqshy</em>, creating a wall of flame. The Firewall is <eh>Willpower Bonus</eh> yards wide, and 1 yard deep. <br/> For every +2 SL you may extend the length of the Firewall by <eh>+Willpower Bonus</eh> yards. Anyone crossing the firewall gains 1 <condition>Ablaze</condition> condition and suffers a hit with a Damage equal to your <eh>Willpower Bonus</eh>, handled like a <em>magical missile</em>."
     }, {
-        "name": "Great Fires of U\'Zhul",
+        "name": "Great Fires of U’Zhul",
         "lore": "Fire",
         "wind": "Aqshy",
         "CN": 10,
@@ -599,7 +599,7 @@ var spell = [
         "duration": "Instant",
         "description": "You shriek the high-pitched words of the spell and a large, black skull wreathed with greenish-purple fire forms before you, then flies forwards, screaming and cackling as it goes. The skull moves in a straight line for the spell range, following the contours of the land, passing through any obstacles in its way. <em>Screaming Skull</em> is a <em>magic missile</em> that only affects targets without the <em>Undead</em> Creature Trait, and has a Damage equal to your <eh>Willpower Bonus</eh>. Any suffering Wounds from the spell must pass a <b>Challenging (+0) Cool Test</b> or also take a <condition>Broken</condition> Condition."
     }, {
-        "name": "Vanhel\'s Call",
+        "name": "Vanhel’s Call",
         "lore": "Necromancy",
         "wind": "",
         "CN": 6,
@@ -993,7 +993,7 @@ var blessByCult = {
     "Verena": ["Conscience", "Courage", "Fortune", "Righteousness", "Wisdom", "Wit"],
 }
 
-var blessings = ["Battle","Breath","Charisma","Conscience","Courage","Finesse","Fortune","Grace","Hardiness","Healing","The Hunt","Might","Protection","Recuperation","Righteousness","Savagery","Tenacity","Wisdom","Wit"]
+var blessings = ["Battle", "Breath", "Charisma", "Conscience", "Courage", "Finesse", "Fortune", "Grace", "Hardiness", "Healing", "The Hunt", "Might", "Protection", "Recuperation", "Righteousness", "Savagery", "Tenacity", "Wisdom", "Wit"]
 
 var miracle = [
     {
@@ -1585,7 +1585,7 @@ var talent = [
         "desc": "<p>You clearly see the great works of the Gods all around you. You automatically know when you enter Holy Ground, and may take an Intuition Test to receive visions (often obscure, and seen through the paradigm of your cult or individual belief-system) regarding the local area if significant events have occurred there in the past.</p>"
     },
     {
-        "name": "Hunter\'s Eye",
+        "name": "Hunter’s Eye",
         "max": "Initiative Bonus",
         "test": "Any Test to trail or capture game",
         "desc": "<p>You are a skilled hunter and know all the best techniques to find game. When travelling through well-stocked lands, you are automatically assumed to be able to hunt down enough game to feed yourself and a number of others equal to your level in Hunter’s Eye, so long as you have time and the correct equipment. You may secure more food in addition to this using the normal rules for foraging (see page 127).</p>"
@@ -2269,7 +2269,7 @@ var skill = [
         "tier": "Basic",
         "char": "T",
         "spec": "",
-        "desc": "<p>Your ability to handle alcohol without letting it cloud your judgment or render you senseless.</p> <p>After each alcoholic drink make a Consume Alcohol Test, modified by the strength of the drink. For each Test you fail, you suffer a –10 penalty to WS, BS, Ag, Dex, and Int, to a maximum of –30 per Characteristic. After you fail a number of Tests equal to your Toughness Bonus, you are Stinking Drunk. Roll on the following table to see what happens:</p><p> <table class=\"w3-table table-dark w3-striped w3-hoverable w3-bordered\"> <thead> <tr> <th>1d10</th> <th>Stinking Drunk</th> </tr> </thead> <tbody> <tr> <td>1-2</td> <td><b>\'Marienburgher\'s Courage!\': </b>Gain a bonus of +20 to your Cool skill.</td> </tr> <tr> <td>3-4</td> <td><b>\'You\'re my Besht Mate!\': </b>Ignore all your existing <em>Prejudices</em> and <em>Animosities</em> (see page 190).</td> </tr> <tr> <td>5-6</td> <td><b>\'Why\'s Everything Wobbling!\': </b>On your Turn, you can either Move or take an Action, but not both (see page 157).</td> </tr> <tr> <td>7-8</td> <td><b>\'I\'ll Take Yer All On!\': </b>Gain Animostity (Everybody) (see page 190).</td> </tr> <tr> <td>9-10</td> <td><b>\'How Did I Get Here?\': </b>You wake up the next day, massively hungover, with little memory of what transpired. The GM and other players with you will fill in the embarrassing gaps if you investigate. Pass a <b>Consume Alcohol Test</b> or also gain a Poisoned Condition (see page 169).</td> </tr> </tbody> </table> </p> <p>After not drinking for an hour, enact a Challenging (+0) Consume Alcohol Test. The effects of being drunk will wear off after 10–SL hours, with any Characteristic modifiers for being drunk lost over that time. After all effects wear off, enact another Challenging (+0) Consume Alcohol Test. You now gain a hangover, which is an Fatigued Condition that cannot be removed for 5–SL hours.</p> <p>You may expend 1 Resolve point to ignore the negative modifiers of being drunk until the end of the next round (see page 171).</p>"
+        "desc": "<p>Your ability to handle alcohol without letting it cloud your judgment or render you senseless.</p> <p>After each alcoholic drink make a Consume Alcohol Test, modified by the strength of the drink. For each Test you fail, you suffer a –10 penalty to WS, BS, Ag, Dex, and Int, to a maximum of –30 per Characteristic. After you fail a number of Tests equal to your Toughness Bonus, you are Stinking Drunk. Roll on the following table to see what happens:</p><p> <table class=\"w3-table table-dark w3-striped w3-hoverable w3-bordered\"> <thead> <tr> <th>1d10</th> <th>Stinking Drunk</th> </tr> </thead> <tbody> <tr> <td>1-2</td> <td><b>\'Marienburgher’s Courage!\': </b>Gain a bonus of +20 to your Cool skill.</td> </tr> <tr> <td>3-4</td> <td><b>\'You\'re my Besht Mate!\': </b>Ignore all your existing <em>Prejudices</em> and <em>Animosities</em> (see page 190).</td> </tr> <tr> <td>5-6</td> <td><b>\'Why’s Everything Wobbling!\': </b>On your Turn, you can either Move or take an Action, but not both (see page 157).</td> </tr> <tr> <td>7-8</td> <td><b>\'I\'ll Take Yer All On!\': </b>Gain Animostity (Everybody) (see page 190).</td> </tr> <tr> <td>9-10</td> <td><b>\'How Did I Get Here?\': </b>You wake up the next day, massively hungover, with little memory of what transpired. The GM and other players with you will fill in the embarrassing gaps if you investigate. Pass a <b>Consume Alcohol Test</b> or also gain a Poisoned Condition (see page 169).</td> </tr> </tbody> </table> </p> <p>After not drinking for an hour, enact a Challenging (+0) Consume Alcohol Test. The effects of being drunk will wear off after 10–SL hours, with any Characteristic modifiers for being drunk lost over that time. After all effects wear off, enact another Challenging (+0) Consume Alcohol Test. You now gain a hangover, which is an Fatigued Condition that cannot be removed for 5–SL hours.</p> <p>You may expend 1 Resolve point to ignore the negative modifiers of being drunk until the end of the next round (see page 171).</p>"
     },
     {
         "name": "Cool",
@@ -2516,7 +2516,7 @@ var skill = [
         "spec": "Apothecary, Calligrapher, Chandler, Carpenter, Cook, Embalmer, Smith, Tanner",
         "desc": "<p>Most folk of the Reikland follow a trade; even adventurers often have a more reliable, or respectable career to fall back on, between bouts of hair-raising, bowel-loosening excitement.</p>  <p>The Trade Skill represents your ability to create something or provide a service, as well as your knowledge of the relevant lore surrounding your trade.</p> <p>Having the Skill is enough to automatically perform the tasks associated with your trade, assuming you have the correct resources and tools. You need only Test your Trade Skill if you are seeking to create something quickly, conditions are adverse, or you are seeking to invent or create a high-quality item. Often Trade Tests of this type are extended Test, with the SL and time required depending upon the scope or scale of what is being produced; a quick meal with Trade (Cook) to impress a local lord will take far less time than constructing a warship with Trade (Shipwright).</p> <p>You may also make a Trade Test as a Lore Skill, to determine information relevant to the trade in question. In such circumstances, the GM may prefer to use Int over Dex as the base Characteristic, though often this is ignored to keep play simple. While most Trade Skills have little function in combat, there are as many Trade Skills as there are trades, and some may be of use depending upon the circumstances. For example, a successful Trade (Apothecary) Test may be useful if fighting in an Apothecary’s shop as you identify some astringent chemicals to hurl at your foes.</p> <p>The Trade Skill is also used for enacting a Crafting Endeavour (see page 197).</p>"
     }
-] 
+]
 
 
 var condition = [
@@ -3057,6 +3057,224 @@ var weapon = [
         "reach": "20",
         "damage": "+8",
         "qual": "<weaponqual>Blackpowder</weaponqual>, <weaponqual>Pistol</weaponqual>, <weaponqual>Reload 1</weaponqual>"
+    },
+    {
+        "name": "Elf Bow",
+        "2h": "2h",
+        "group": "Bow",
+        "price": "10GC",
+        "enc": "2",
+        "avail": "Exotic",
+        "reach": "150",
+        "damage": "+SB+4",
+        "qual": "<weaponqual>Damaging</weaponqual>, <weaponqual>Precise</weaponqual>"
+    },
+    {
+        "name": "Longbow",
+        "2h": "2h",
+        "group": "Bow",
+        "price": "5GC",
+        "enc": "3",
+        "avail": "Scarce",
+        "reach": "100",
+        "damage": "+SB+4",
+        "qual": "<weaponqual>Damaging</weaponqual>"
+    },
+    {
+        "name": "Bow",
+        "2h": "2h",
+        "group": "Bow",
+        "price": "4GC",
+        "enc": "2",
+        "avail": "Common",
+        "reach": "50",
+        "damage": "+SB+3",
+        "qual": ""
+    },
+    {
+        "name": "Shortbow",
+        "2h": "2h",
+        "group": "Bow",
+        "price": "3GC",
+        "enc": "1",
+        "avail": "Common",
+        "reach": "20",
+        "damage": "+SB+2",
+        "qual": ""
+    },
+    {
+        "name": "Crossbow Pistol",
+        "group": "Crossbow",
+        "price": "6GC",
+        "enc": "0",
+        "avail": "Scarce",
+        "reach": "10",
+        "damage": "+7",
+        "qual": "<weaponqual>Pistol</weaponqual>"
+    },
+    {
+        "name": "Heavy Crossbow",
+        "2h": "2h",
+        "group": "Crossbow",
+        "price": "7GC",
+        "enc": "3",
+        "avail": "Rare",
+        "reach": "100",
+        "damage": "+9",
+        "qual": "<weaponqual>Damaging</weaponqual>, <weaponqual>Reload 2</weaponqual>"
+    },
+    {
+        "name": "Crossbow",
+        "2h": "2h",
+        "group": "Crossbow",
+        "price": "5GC",
+        "enc": "2",
+        "avail": "Common",
+        "reach": "60",
+        "damage": "+9",
+        "qual": "<weaponqual>Reload 1</weaponqual>"
+    },
+    {
+        "name": "Repeater Handgun",
+        "2h": "2h",
+        "group": "Engineering",
+        "price": "10GC",
+        "enc": "3",
+        "avail": "Rare",
+        "reach": "30",
+        "damage": "+9",
+        "qual": "<weaponqual>Dangerous</weaponqual>, <weaponqual>Engineering</weaponqual>, <weaponqual>Reload 5</weaponqual>, <weaponqual>Repeater 4</weaponqual>"
+    },
+    {
+        "name": "Repeater Pistol",
+        "group": "Engineering",
+        "price": "15GC",
+        "enc": "1",
+        "avail": "Rare",
+        "reach": "10",
+        "damage": "+8",
+        "qual": "<weaponqual>Dangerous</weaponqual>, <weaponqual>Engineering</weaponqual>, <weaponqual>Pistol</weaponqual>, <weaponqual>Reload 4</weaponqual>, <weaponqual>Repeater 4</weaponqual>"
+    },
+    {
+        "name": "Lasso",
+        "group": "Entangling",
+        "price": "6/&ndash;",
+        "enc": "0",
+        "avail": "Common",
+        "reach": "SB&times;2",
+        "damage": "&ndash;",
+        "qual": "<weaponqual>Entangle</weaponqual>"
+    },
+    {
+        "name": "Whip",
+        "group": "Entangling",
+        "price": "5/&ndash;",
+        "enc": "0",
+        "avail": "Common",
+        "reach": "6",
+        "damage": "+SB+2",
+        "qual": "<weaponqual>Entangle</weaponqual>"
+    },
+    {
+        "name": "Bomb",
+        "group": "Explosives",
+        "price": "3GC",
+        "enc": "0",
+        "avail": "Rare",
+        "reach": "SB",
+        "damage": "+12",
+        "qual": "<weaponqual>Blast 5</weaponqual>, <weaponqual>Dangerous</weaponqual>, <weaponqual>Explosive</weaponqual>, <weaponqual>Impact</weaponqual>"
+    },
+    {
+        "name": "Incendiary",
+        "group": "Explosives",
+        "price": "1GC",
+        "enc": "0",
+        "avail": "Scarce",
+        "reach": "SB",
+        "damage": "<weaponqual>Incendiary</weaponqual>",
+        "qual": "<weaponqual>Blast 4</weaponqual>, <weaponqual>Dangerous</weaponqual>"
+    },
+    {
+        "name": "Sling",
+        "group": "Sling",
+        "price": "1/&ndash;",
+        "enc": "0",
+        "avail": "Common",
+        "reach": "60",
+        "damage": "+6",
+        "qual": ""
+    },
+    {
+        "name": "Staff Sling",
+        "2h": "2h",
+        "group": "Sling",
+        "price": "4/&ndash;",
+        "enc": "2",
+        "avail": "Scarce",
+        "reach": "100",
+        "damage": "+7",
+        "qual": ""
+    },
+    {
+        "name": "Bolas",
+        "group": "Throwing",
+        "price": "10/&ndash;",
+        "enc": "0",
+        "avail": "Rare",
+        "reach": "SB&times;3",
+        "damage": "+SB",
+        "qual": "<weaponqual>Entangle</weaponqual>"
+    },
+    {
+        "name": "Dart",
+        "group": "Throwing",
+        "price": "2/&ndash;",
+        "enc": "0",
+        "avail": "Scarce",
+        "reach": "SB&times;2",
+        "damage": "+SB+1",
+        "qual": "<weaponqual>Impale</weaponqual>"
+    },
+    {
+        "name": "Javelin",
+        "group": "Throwing",
+        "price": "10/6",
+        "enc": "1",
+        "avail": "Scarce",
+        "reach": "SB&times;3",
+        "damage": "+SB+3",
+        "qual": "<weaponqual>Impale</weaponqual>"
+    },
+    {
+        "name": "Rock",
+        "group": "Throwing",
+        "price": "&ndash;",
+        "enc": "0",
+        "avail": "Common",
+        "reach": "SB&times;3",
+        "damage": "+SB",
+        "qual": ""
+    },
+    {
+        "name": "Throwing Axe",
+        "group": "Throwing",
+        "price": "1GC",
+        "enc": "1",
+        "avail": "Common",
+        "reach": "SB&times;2",
+        "damage": "+SB+3",
+        "qual": "<weaponqual>Hack</weaponqual>"
+    },
+    {
+        "name": "Throwing Knife",
+        "group": "Throwing",
+        "price": "18/&ndash;",
+        "enc": "0",
+        "avail": "Common",
+        "reach": "SB&times;2",
+        "damage": "+SB+2",
+        "qual": ""
     }
 ]
 
@@ -3437,7 +3655,7 @@ var career = [
         "class": "Academics",
         "desc": "Skilled in chemistry and concoctions, you create and sell medicine of all kinds.",
         "path1": {
-            "name": "Apothecary's Apprentice",
+            "name": "Apothecary&apos;s Apprentice",
             "skills": ["Consume Alcohol", "Heal", "Language (Classical)", "Lore (Chemistry)", "Lore (Medicine)", "Lore (Plants)", "Trade (Apothecary)", "Trade (Poisoner)"],
             "talents": ["Concoct", "Craftsman (Apothecary)", "Etiquette (Scholar)", "Read/Write"],
             "trappings": ["Book (Blank)", "Healing Draught", "Leather Jerkin", "Pestle and Mortar"],
@@ -3454,7 +3672,7 @@ var career = [
             "name": "Master Apothecary",
             "skills": ["Intuition", "Leadership", "Research", "Secret Signs (Guilder)"],
             "talents": ["Bookish", "Master Tradesman (Apothecary)", "Resistance (Poison)", "Savvy"],
-            "trappings": ["Book (Apothecary)","Apprentice", "Workshop"],
+            "trappings": ["Book (Apothecary)", "Apprentice", "Workshop"],
             "status": "Silver 3"
         },
         "path4": {
@@ -3503,5 +3721,321 @@ var career = [
         "advances": ["BS", "Dex", "Int", "I", "T", "WP"],
         "incomeSkill": "Trade (Engineer)",
         "races": "Dwarf, Halfling, Human"
+    },
+    {
+        "name": "Priest",
+        "class": "Academics",
+        "desc": "You carry the word of your god, tending to the spiritual needs of the masses.",
+        "path1": {
+            "name": "Initiate",
+            "skills":
+                [
+                    "Athletics",
+                    "Cool",
+                    "Endurance",
+                    "Intuition",
+                    "Lore (Theology)",
+                    "Perception",
+                    "Pray",
+                    "Research"
+                ],
+            "talents":
+                [
+                    "Bless (Any)",
+                    "Holy Visions",
+                    "Read/Write",
+                    "Suave"
+                ],
+            "trappings":
+                [
+                    "Religious Symbol",
+                    "Robes"
+                ],
+            "status": "Brass 2"
+        },
+        "path2": {
+            "name": "Priest",
+            "skills":
+                [
+                    "Charm",
+                    "Entertain (Storytelling)",
+                    "Gossip",
+                    "Heal",
+                    "Intimidate",
+                    "Melee (Basic)"
+                ],
+            "talents":
+                [
+                    "Blather",
+                    "Bookish",
+                    "Etiquette (Cultists)",
+                    "Invoke (Any)"
+                ],
+            "trappings":
+                [
+                    "Book (Religion)",
+                    "Ceremonial Robes"
+                ],
+            "status": "Silver 1"
+        },
+        "path3": {
+            "name": "High Priest",
+            "skills":
+                [
+                    "Art (Writing)",
+                    "Entertain (Speeches)",
+                    "Leadership",
+                    "Lore (Heraldry)"
+                ],
+            "talents":
+                [
+                    "Acute Sense (Any)",
+                    "Hatred (Any)",
+                    "Impassioned Zeal",
+                    "Strong-minded"
+                ],
+            "trappings":
+                [
+                    "Quality Robes",
+                    "Religious Relic",
+                    "Subordinate Priests",
+                    "Temple"
+                ],
+            "status": "Gold 1"
+        },
+        "path4": {
+            "name": "Lector",
+            "skills":
+                [
+                    "Language (Any)",
+                    "Lore (Politics)"
+                ],
+            "talents":
+                [
+                    "Master Orator",
+                    "Pure Soul",
+                    "Resistance (Any)",
+                    "Savant (Theology)"
+                ],
+            "trappings":
+                [
+                    "Library (Theology)",
+                    "Subordinate High Priests"
+                ],
+            "status": "Gold 2"
+        },
+        "advances": ["T", "Agi", "WP", "Fel", "Int", "I"],
+        "incomeSkill": "Pray",
+        "races": "Human"
+    },
+    {
+        "name": "Artist",
+        "class": "Courtiers",
+        "desc": "You possess an artistic gift, one that transcends daily life and uplifts the souls of others.",
+        "path1": {
+            "name": "Artist&apos;s Apprentice",
+            "skills":
+                [
+                    "Art (Any)",
+                    "Cool",
+                    "Consume Alcohol",
+                    "Evaluate",
+                    "Endurance",
+                    "Gossip",
+                    "Perception",
+                    "Stealth (Urban)"
+                ],
+            "talents":
+                [
+                    "Artistic",
+                    "Sharp",
+                    "Strong Back",
+                    "Tenacious"
+                ],
+            "trappings":
+                [
+                    "Brush <em>or</em> Chisel <em>or</em> Quill Pen"
+                ],
+            "status": "Silver 1"
+        },
+        "path2": {
+            "name": "Artist",
+            "skills":
+                [
+                    "Climb",
+                    "Gamble",
+                    "Haggle",
+                    "Intuition",
+                    "Language (Classical)",
+                    "Trade (Art Supplies)"
+                ],
+            "talents":
+                [
+                    "Carouser",
+                    "Criminal",
+                    "Gregarious",
+                    "Nimble Fingered"
+                ],
+            "trappings":
+                [
+                    "Sling Bag containing Trade Tools (Artist)"
+                ],
+            "status": "Silver 3"
+        },
+        "path3": {
+            "name": "Master Artist",
+            "skills":
+                [
+                    "Charm",
+                    "Leadership",
+                    "Lore (Art)",
+                    "Lore (Heraldry)"
+                ],
+            "talents":
+                [
+                    "Acute Sense (Any)",
+                    "Dealmaker",
+                    "Etiquette (Any)",
+                    "Nose for Trouble"
+                ],
+            "trappings":
+                [
+                    "Apprentices",
+                    "Patron",
+                    "Workshop (Artist)"
+                ],
+            "status": "Silver 5"
+        },
+        "path4": {
+            "name": "Maestro",
+            "skills":
+                [
+                    "Research",
+                    "Ride (Horse)"
+                ],
+            "talents":
+                [
+                    "Ambidextrous",
+                    "Kingpin",
+                    "Magnum Opus",
+                    "Read/Write"
+                ],
+            "trappings":
+                [
+                    "Large Workshop (Artist)",
+                    "Library (Art)",
+                    "3 Apprentices"
+                ],
+            "status": "Gold 2"
+        },
+        "advances": ["S", "I", "Dex", "Fel", "WP", "Int"],
+        "incomeSkill": "Art",
+        "races": "Dwarf, Halfling, High Elf, Human, Wood Elf"
+    },
+    {
+        "name": "Hunter",
+        "class": "Peasants",
+        "desc": "Tough, independent killers who make a living off the fur and flesh of wild creatures.",
+        "path1": {
+            "name": "Trapper",
+            "skills":
+                [
+                    "Charm Animal",
+                    "Climb",
+                    "Endurance",
+                    "Lore (Beasts)",
+                    "Outdoor Survival",
+                    "Perception",
+                    "Ranged (Sling)",
+                    "Set Trap"
+                ],
+            "talents":
+                [
+                    "Hardy",
+                    "Rover",
+                    "Strider (Any)",
+                    "Trapper"
+                ],
+            "trappings":
+                [
+                    "Selection of Animal Traps",
+                    "<weapon>Hand Weapon</weapon>",
+                    "<weapon>Sling</weapon> with 10 Stone Bullets",
+                    "Sturdy Boots and Cloak"
+                ],
+            "status": "Brass 2"
+        },
+        "path2": {
+            "name": "Hunter",
+            "skills":
+                [
+                    "Cool",
+                    "Intuition",
+                    "Melee (Basic)",
+                    "Ranged (Bow)",
+                    "Secret Signs (Hunter)",
+                    "Stealth (Rural)"
+                ],
+            "talents":
+                [
+                    "Accurate Shot",
+                    "Fast Shot",
+                    "Hunter&apos;s Eye",
+                    "Marksman"
+                ],
+            "trappings":
+                [
+                    "<weapon>Bow</weapon> with 10 arrows"
+                ],
+            "status": "Brass 4"
+        },
+        "path3": {
+            "name": "Tracker",
+            "skills":
+                [
+                    "Navigation",
+                    "Ride (Horse)",
+                    "Swim",
+                    "Track"
+                ],
+            "talents":
+                [
+                    "Acute Sense (Any)",
+                    "Deadeye Shot",
+                    "Fearless (Animals)",
+                    "Sharpshooter"
+                ],
+            "trappings":
+                [
+                    "Backpack",
+                    "Bedroll",
+                    "Tent"
+                ],
+            "status": "Silver 1"
+        },
+        "path4": {
+            "name": "Huntsmaster",
+            "skills":
+                [
+                    "Animal Care",
+                    "Animal Training (Any)"
+                ],
+            "talents":
+                [
+                    "Fearless (Monsters)",
+                    "Robust",
+                    "Sniper",
+                    "Sure Shot"
+                ],
+            "trappings":
+                [
+                    "Riding Horse with Saddle and Tack",
+                    "Kennel of Hunting Dogs"
+                ],
+            "status": "Gold 2"
+        },
+        "advances": ["S", "T", "Dex", "BS", "I", "Int"],
+        "incomeSkill": "Outdoor Survival",
+        "races": "Dwarf, Halfling, High Elf, Human, Wood Elf"
     }
 ]

@@ -49,6 +49,7 @@ function initializeModals() {
     $('skill').attr('onclick', 'buildModal(this,\'skill\')');
     $('talent').attr('onclick', 'buildModal(this,\'talent\')');
     $('condition').attr('onclick', 'buildModal(this,\'condition\')');
+    $('weapon').attr('onclick', 'buildModal(this,\'weapon\')');
     $('weaponqual').attr('onclick', 'buildModal(this,\'qual\')');
     $('divineman').attr('onclick', 'buildModal(this,\'miracle\')');
     $('trait').attr('onclick', 'buildModal(this,\'trait\')');
@@ -72,6 +73,7 @@ function buildModal(el, type, mast = 0) {
         "career": careerFuse
     }
 
+
     if (mast == 1) {
         srchPhrase = el
     } else {
@@ -89,6 +91,8 @@ function buildModal(el, type, mast = 0) {
     var $klon = $div.clone().prop('id', 'modal' + modalCount).appendTo("#modalPlaceholder");
 
     $("#modal" + modalCount).html(modals[type])
+
+    let htmlString = ""
 
 
     switch (type) {
@@ -235,25 +239,31 @@ function buildModal(el, type, mast = 0) {
 
             break;
         case "career":
-            let htmlString = ""
             $("#modal" + modalCount + " .careerName").text(dataRslt["name"])
             $("#modal" + modalCount + " .careerClass").text(dataRslt["class"])
             $("#modal" + modalCount + " .careerDesc").html("&ldquo;" + dataRslt["desc"] + "&rdquo;")
             $("#modal" + modalCount + " .careerRaces").html("<eh>" + dataRslt["races"] + "</eh>")
 
-            $("#modal" + modalCount + " .career" + dataRslt["advances"][0]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>")
-            $("#modal" + modalCount + " .career" + dataRslt["advances"][1]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>")
-            $("#modal" + modalCount + " .career" + dataRslt["advances"][2]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>")
+            $("#modal" + modalCount + " .career" + dataRslt["advances"][0] + "th").show()
+            $("#modal" + modalCount + " .career" + dataRslt["advances"][0]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>").show()
+            $("#modal" + modalCount + " .career" + dataRslt["advances"][1] + "th").show()
+            $("#modal" + modalCount + " .career" + dataRslt["advances"][1]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>").show()
+            $("#modal" + modalCount + " .career" + dataRslt["advances"][2] + "th").show()
+            $("#modal" + modalCount + " .career" + dataRslt["advances"][2]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>").show()
 
-            $("#modal" + modalCount + " .career" + dataRslt["advances"][3]).addClass("attr2").html("<img class=\"attrImg\" src=\"./img/axes_64.png\"></img>")
-            $("#modal" + modalCount + " .career" + dataRslt["advances"][4]).addClass("attr3").html("<img class=\"attrImg\" src=\"./img/skull_64.png\"></img>")
-            $("#modal" + modalCount + " .career" + dataRslt["advances"][5]).addClass("attr4").html("<img class=\"attrImg\" src=\"./img/shield_64.png\"></img>")
+            $("#modal" + modalCount + " .career" + dataRslt["advances"][3] + "th").show()
+            $("#modal" + modalCount + " .career" + dataRslt["advances"][3]).addClass("attr2").html("<img class=\"attrImg\" src=\"./img/axes_64.png\"></img>").show()
+            $("#modal" + modalCount + " .career" + dataRslt["advances"][4] + "th").show()
+            $("#modal" + modalCount + " .career" + dataRslt["advances"][4]).addClass("attr3").html("<img class=\"attrImg\" src=\"./img/skull_64.png\"></img>").show()
+            $("#modal" + modalCount + " .career" + dataRslt["advances"][5] + "th").show()
+            $("#modal" + modalCount + " .career" + dataRslt["advances"][5]).addClass("attr4").html("<img class=\"attrImg\" src=\"./img/shield_64.png\"></img>").show()
 
             $("#modal" + modalCount + " .careerIncome").html("<skill>" + dataRslt["incomeSkill"] + "</skill>")
 
 
             for (let k = 1; k < 5; k++) {
-                $("#modal" + modalCount + " .careerpath" + k + " .path" + k + "name").html(dataRslt["path" + k]["name"] + " &mdash; " + dataRslt["path" + k]["status"])
+                let imgSrcs = ["./img/cross_64.png","./img/axes_64_light.png","./img/skull_64_light.png","./img/shield_64_light.png"]
+                $("#modal" + modalCount + " .careerpath" + k + " .path" + k + "name").html("<img src=\"" + imgSrcs[k-1] + "\" class=\"oneemimg\"></img> " + dataRslt["path" + k]["name"] + " &mdash; " + dataRslt["path" + k]["status"])
 
                 for (let i = 0; i < dataRslt["path" + k]["skills"].length; i++) {
                     if (i == 0) {

@@ -180,6 +180,11 @@ career:hover {
     text-decoration: none !important;
 }
 
+.oneemimg {
+    width: 1em !important;
+    height: 1em !important;
+}
+
 .w3-dropdown-content {
     border-left: 1px solid blanchedalmond !important;
     border-right: 1px solid blanchedalmond !important;
@@ -217,7 +222,7 @@ career:hover {
 }
 
 .careerAttr {
-    width: 3em !important;
+    width: 2em !important;
     text-align: center !important;
     padding: none;
 }
@@ -423,7 +428,7 @@ body {
 
 
 
-table thead {
+.table-dark thead {
     top: 40px;
     position: -webkit-sticky;
     position: sticky;
@@ -535,15 +540,15 @@ td:first-child {
     background: #222229;
 }
 
-.table-dark tr {
+.w3-table tr {
     border: none !important;
 }
 
-.table-dark tr:nth-child(even) {
+.w3-table tr:nth-child(even) {
     background-color: rgba(255, 255, 255, .05) !important;
 }
 
-.table-dark tbody tr:hover {
+.w3-table tbody tr:hover {
     background: rgba(120,120,120,.7) !important;
 }
 
@@ -586,7 +591,13 @@ th {
     width: 90% !important;
     max-width: 650px !important;
     margin:auto;
+    overflow-y: initial !important;
     /* margin-top: 70px !important */
+}
+
+.popupCard .w3-card-2 {
+    max-height: 80vh;
+    overflow-y: auto !important;
 }
 
 .hidden {

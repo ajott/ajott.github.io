@@ -118,17 +118,17 @@ trait:hover {
 }
 
 divineman {
-    /* cursor: help;
+    cursor: help;
     color: blanchedalmond !important;
-    text-decoration: underline 1px dotted blanchedalmond; */
+    text-decoration: underline 1px dotted blanchedalmond;
     font-style: italic !important;
 }
 
-/* divineman:hover {
+divineman:hover {
     cursor: help;
     color: goldenrod !important;
     text-decoration: none !important;
-} */
+}
 
 condition {
     cursor: help;

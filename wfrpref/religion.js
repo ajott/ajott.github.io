@@ -140,7 +140,7 @@ function buildBlessByCultTable() {
         htmlString += "<td>" + god[0] + "</td>"
 
         god[1].forEach(blessing => {
-            htmlString += "<td>" + blessing + "</td>"
+            htmlString += "<td><divineman>" + blessing + "</divineman></td>"
         });
 
         htmlString += "</tr>"

@@ -673,6 +673,16 @@ th {
     box-shadow: inset 0 1px 1px rgba(255,235,205,.1);
 }
 
+.well-s {
+    min-height: 20px;
+    padding-top: 0px !important;
+    padding-bottom: 10px !important;
+    background-color: rgb(245, 245, 245,0.02);
+    border: 1px solid rgb(227, 227, 227,0.01);
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(255,235,205,.1);
+}
+
 
 .tooltip {
     position: relative;

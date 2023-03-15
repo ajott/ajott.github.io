@@ -295,12 +295,12 @@ function buildModal(el, type, mast = 0) {
 
                 for (let i = 0; i < dataRslt["path" + k]["trappings"].length; i++) {
                     if (i == 0) {
-                        htmlString += "<b>"
+                        htmlString += "<span>"
                     } else {
-                        htmlString += ", <b>"
+                        htmlString += ", <span>"
                     }
                     htmlString += dataRslt["path" + k]["trappings"][i]
-                    htmlString += "</b>"
+                    htmlString += "</span>"
                 }
 
                 $("#modal" + modalCount + " .careerpath" + k + " .path" + k + "trappings").html(htmlString)

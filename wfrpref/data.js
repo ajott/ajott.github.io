@@ -4251,5 +4251,110 @@ var career = [
         "advances": ["BS", "T", "I", "WS", "Fel", "Int"],
         "incomeSkill": "Perception",
         "races": "Halfling, Human"
+    },
+    {
+        "name": "Warrior Priest",
+        "class": "Warriors",
+        "desc": "You bring divinity to the thick of battle, slaying the enemies of the Empire with righteous fury.",
+        "path1": {
+            "name": "Novitiate",
+            "skills":
+                [
+                    "Cool",
+                    "Dodge",
+                    "Endurance",
+                    "Heal",
+                    "Leadership",
+                    "Lore (Theology)",
+                    "Melee (Any)",
+                    "Pray"
+                ],
+            "talents":
+                [
+                    "Bless (Any)",
+                    "Etiquette (Cultists)",
+                    "Read/Write",
+                    "Strong-minded"
+                ],
+            "trappings":
+                [
+                    "Book (Religion)",
+                    "Leather Jerkin",
+                    "Religious Symbol",
+                    "Robes",
+                    "Weapon (Any Melee)"
+                ],
+            "status": "Brass 2"
+        },
+        "path2": {
+            "name": "Warrior Priest",
+            "skills":
+                [
+                    "Charm",
+                    "Entertain (Speeches)",
+                    "Intimidate",
+                    "Language (Battle)",
+                    "Melee (Any)",
+                    "Ranged (Any)"
+                ],
+            "talents":
+                [
+                    "Dual Wielder",
+                    "Inspiring",
+                    "Invoke (Any)",
+                    "Seasoned Traveller"
+                ],
+            "trappings":
+                [
+                    "Breastplate",
+                    "Weapon (Any)"
+                ],
+            "status": "Silver 2"
+        },
+        "path3": {
+            "name": "Priest Sergeant",
+            "skills":
+                [
+                    "Animal Care",
+                    "Intuition",
+                    "Perception",
+                    "Ride (Horse)"
+                ],
+            "talents":
+                [
+                    "Combat Aware",
+                    "Holy Visions",
+                    "Pure Soul",
+                    "Stout-hearted"
+                ],
+            "trappings":
+                [
+                    "Light Warhorse with Saddle and Tack"
+                ],
+            "status": "Silver 3"
+        },
+        "path4": {
+            "name": "Priest Captain",
+            "skills":
+                [
+                    "Consume Alcohol",
+                    "Lore (Warfare)"
+                ],
+            "talents":
+                [
+                    "Fearless (Any)",
+                    "Furious Assault",
+                    "Holy Hatred",
+                    "Warleader"
+                ],
+            "trappings":
+                [
+                    "Religious Relic"
+                ],
+            "status": "Silver 4"
+        },
+        "advances": ["WS", "T", "WP", "S", "I", "Fel"],
+        "incomeSkill": "Leadership",
+        "races": "Human"
     }
 ]

@@ -1184,6 +1184,438 @@ var miracle = [
         "target": "You",
         "duration": "Fellowship Bonus Rounds",
         "desc": "<p>You call on Verena to instil you with her wisdom and knowledge. You gain a bonus of +20 on all Intelligence Tests while this Miracle is in effect. Further, your pupils dilate widely, and your gaze becomes piercing and unsettling: gain +1 Menacing and <talent>Acute Sense (Sight)</talent> Talent.</p>"
+    },
+    {
+        "name": "Blazing Sun",
+        "god": "Myrmidia",
+        "range": "You",
+        "target": "Area of Effect",
+        "duration": "Instant",
+        "desc": "You call on Myrmidia to scour the battlefield of dishonourable foes, and a blinding flash of golden light bursts forth. All non- Myrmidians looking in your direction receive 1 <condition>Blinded</condition> Condition. For every +2 SL, they receive +1 <condition>Blinded</condition> Condition."
+    },
+    {
+        "name": "Eagle&apos;s Eye",
+        "god": "Myrmidia",
+        "range": "Fellowship yards",
+        "target": "You",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "You call on Myrmidia to send a Divine Servant to grant you knowledge of your enemies. A spectral Eagle manifests, soaring into the sky above. The eagle looks like and has the capabilities of a normal eagle, but cannot physically affect the world, or be harmed in any way. While the Miracle is in effect, you can see through the eagle’s eyes and control its flight, surveying the battlefield and spying upon your enemies. Your vision is acute, but you do not have access to any of your own sense-enhancing Talents such as <talent>Night Vision</talent>. While looking through the eagle’s eyes, you cannot see through your own eyes, leaving you potentially vulnerable."
+    },
+    {
+        "name": "Fury&apos;s Call",
+        "god": "Myrmidia",
+        "range": "Fellowship yards",
+        "target": "Intelligence Bonus allies",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "Your passionate prayers instil your allies with a furious disdain for their foes. All allies affected receive the <em>Hatred</em> Psychology towards any engaging them in combat."
+    },
+    {
+        "name": "Inspiring",
+        "god": "Myrmidia",
+        "range": "Fellowship yards",
+        "target": "Intelligence Bonus allies",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "Your rousing prayers inspire discipline and coordination within the ranks. Affected targets gain the +1 <talent>Drilled</talent> Talent."
+    },
+    {
+        "name": "Shield of Myrmidia",
+        "god": "Myrmidia",
+        "range": "Fellowship yards",
+        "target": "Intelligence Bonus allies",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "Your stalwart prayers incite Myrmidia to shield your allies in glittering, gossamer strands of light, warding enemy blows. All those affected gain +1 AP on all locations."
+    },
+    {
+        "name": "Spear of Myrmidia",
+        "god": "Myrmidia",
+        "range": "You",
+        "target": "You",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "If wielding a spear, it gains the <weaponqual>Impact</weaponqual> Quality, and counts as <weaponqual>Magical</weaponqual>."
+    },
+    {
+        "name": "Becalm",
+        "god": "Manann",
+        "range": "Initiative Bonus miles",
+        "target": "1 sailing vessel within Line of Sight",
+        "duration": "1 hour",
+        "desc": "You steal the wind from the sails of a ship or boat. It is completely becalmed. Even in stormy weather an area of eerie calm and smooth waters surrounds the vessel while gales, lashing rains and towering crests surge and crash around it. This area of calm extends for Initiative yards from the vessel, and if the ship is propelled by some other method, such as oars, the area of calm travels with it."
+    },
+    {
+        "name": "Drowned Man&apos;s Face",
+        "god": "Manann",
+        "range": "Fellowship yards",
+        "target": "1",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "You implore Manann to drown your foes. Your targets’ lungs continuously fill with saltwater while the Miracle is active, and their hair floats around their head as if submerged. Your targets gains a <condition>Fatigued</condition> Condition, and are subject to the rules for Drowning and Suffocation (page 181) while the Miracle is in effect. When the Miracle ends, your targets must attempt a <b>Challenging (–20) Endurance Test</b>. If a Failure is scored, also inflict a <condition>Prone</condition> Condition."
+    },
+    {
+        "name": "Fair Winds",
+        "god": "Manann",
+        "range": "Initiative Bonus miles",
+        "target": "1 sailing vessel within Line of Sight",
+        "duration": "1 Hour",
+        "desc": "The target vessels’ sails fill with favourable winds, speeding them safely towards their destination. While this Miracle is active, the sailing vessel moves at top speed, no matter the prevailing wind, tide, or current, and all Tests made to steer the vessel gain a bonus of +10."
+    },
+    {
+        "name": "Manann&apos;s Bounty",
+        "god": "Manann",
+        "range": "Touch",
+        "target": "1",
+        "duration": "Instant",
+        "desc": "You implore Manann to provide you with sustenance. Reaching into a body of water you catch enough fish to feed 1 person; if you reach into the sea, you provide enough fish for 2 people. For every +2 SL, you may feed another person."
+    },
+    {
+        "name": "Sea Legs",
+        "god": "Manann",
+        "range": "Fellowship yards",
+        "target": "1",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "Your targets are immediately drenched in saltwater, and reel as if on the rolling deck of a tempest-tossed vessel. Their hair is whipped by spectral winds, and a torrent of spray lashes their skin. They gain one each of the <condition>Blinded</condition>, <condition>Deafened</condition>, and <condition>Fatigued</condition> Conditions, and must attempt an <b>Average (+20) Agility Test</b> to use their Move. If they fail, they also gain a <condition>Prone</condition> Condition."
+    },
+    {
+        "name": "Waterwalk",
+        "god": "Manann",
+        "range": "You",
+        "target": "You",
+        "duration": "Fellowship Bonus minutes",
+        "desc": "You call on Manann to allow you to cross a stretch of open water as if it were solid ground. This only works on larger bodies of water that are at least 10 yards wide. Anything smaller is too far removed from Manann’s domain for it to be noticed."
+    },
+    {
+        "name": "Death Mask",
+        "god": "Morr",
+        "range": "You",
+        "target": "You",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "Morr works through you, piercing the Portal to make his presence known to your foes. Your visage takes on a cadaverous mien, and you gain <trait>Fear 1</trait>."
+    },
+    {
+        "name": "Destroy Undead",
+        "god": "Morr",
+        "range": "You",
+        "target": "Area of Effect",
+        "duration": "Instant",
+        "desc": "You call the power of Morr to smite all Undead. A black fire ripples forth from your body in a perfect circle for Fellowship Bonus yards. All potential targets with the <trait>Undead</trait> Creature Trait lose 1d10 Wounds, ignoring Toughness Bonus and AP. Any Undead destroyed by this Miracle can never be raised with Necromancy again under normal conditions. For every +2 SL, you may increase the area of effect by +Fellowship Bonus yards."
+    },
+    {
+        "name": "Dooming",
+        "god": "Morr",
+        "range": "Touch",
+        "target": "1",
+        "duration": "Instant",
+        "desc": "Gazing deeply into your target’s eyes while muttering a threnody to Morr, you are granted a vision of the target’s Doom, a glimpse of what the future holds. This is almost always related to the target’s death. This Miracle may only be performed on a character once, after which the <talent>Doomed</talent> Talent may be purchased with XP as if it were in the target’s Career."
+    },
+    {
+        "name": "Last Rites",
+        "god": "Morr",
+        "range": "1 yard",
+        "target": "1",
+        "duration": "Instant",
+        "desc": "You chant a solemn requiem over a corpse. This miracle ensures that the soul is sent through the portal to Morr’s realm, and guarantees the cadaver may not be targeted by any Necromantic spells. If the Miracle targets a foe with the <trait>Undead</trait> and <trait>Construct</trait> Creature Traits, it will be destroyed."
+    },
+    {
+        "name": "Portal&apos;s Threshold",
+        "god": "Morr",
+        "range": "Touch",
+        "target": "Area of Effect",
+        "duration": "Special",
+        "desc": "You draw a line up to 8 yards long on the ground while incanting a dirge to Morr. Upon enacting the Miracle, an indistinct, shadowy portal seems to manifest to the hoarse croaking of ravens. Creatures with the <trait>Undead</trait> Creature Trait must pass a <b>Challenging (+0) Willpower Test</b> to cross the line. Creatures with both <trait>Undead</trait> and <trait>Construct</trait> simply cannot cross the line. The Miracle remains in effect until dawn."
+    },
+    {
+        "name": "Stay Morr&apos;s Hand",
+        "god": "Morr",
+        "range": "Touch",
+        "target": "1",
+        "duration": "Fellowship Bonus Hours (Special)",
+        "desc": "You touch the eyes of someone close to death and request Morr guide the soul within, but not take it. The target must have 0 Wounds and be willing. For the duration of the Miracle, the target gains the <condition>Unconscious</condition> Condition and will not deteriorate until the Miracle ends, staving off disease, ignoring critical wounds and poisons, and similar. This miracle comes to an end should appropriate healing be provided, or should you perform the last rites. If you do this, which takes about a minute, the target’s soul will pass through Morr’s portal upon death, and the resulting corpse may never be targeted by Necromancy."
+    },
+    {
+        "name": "An Invitation",
+        "god": "Ranald",
+        "range": "1 yard",
+        "target": "1",
+        "duration": "Instant",
+        "desc": "You spin one of Ranald’s riddles concerning portals, and whether they exist if closed. A door, window, or hatch you target has one method of securing it undone — a lock unlocks, a latch unlatches, a rope unties. For every +2 SL you may target another method of securing the door, window, or hatch."
+    },
+    {
+        "name": "Cat&apos;s Eyes",
+        "god": "Ranald",
+        "range": "Fellowship yards",
+        "target": "1",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "Does anything exist that cannot be seen? You riddle with Ranald, who sends a Divine Servant in the form of a cat as an answer. The cat looks like and has the capabilities of a normal cat, but cannot be harmed in any way. While the Miracle is in effect, you perceive everything the cat perceives &mdash; sight, sound, touch &mdash; and control its movement. Your senses are as sharp as a cat’s, but you do not have access to any of your own sense-enhancing Talents such as <talent>Night Vision</talent>. While the Miracle is in effect, you cannot perceive anything through your own senses, leaving you vulnerable."
+    },
+    {
+        "name": "Ranald&apos;s Grace",
+        "god": "Ranald",
+        "range": "Touch",
+        "target": "1",
+        "duration": "Agility Bonus Rounds",
+        "desc": "You call on Ranald to let your target negotiate the riddles of reality. Your target gains +10 Agility, +10 Stealth, and +1 <talent>Catfall</talent> Talent for the duration of the Miracle."
+    },
+    {
+        "name": "Rich Man, Poor Man, Beggar Man, Thief",
+        "god": "Ranald",
+        "range": "1 yard",
+        "target": "1",
+        "duration": "Fellowship Bonus minutes",
+        "desc": "You smile at Ranald as you cheekily ask others what, exactly, is wealth? For each target affected, choose one option: <ul> <li>the target’s purse appears empty</li> <li>the target’s purse appears full</li> <li>the target’s attire appears cheap and unremarkable</li> <li>the target’s attire appears rich and finely crafted</li> <li>a single valuable item is impossible to perceive</li> </ul> For every +2 SL you may select an additional effect for one of your targets."
+    },
+    {
+        "name": "Stay Lucky",
+        "god": "Ranald",
+        "range": "You",
+        "target": "You",
+        "duration": "Special",
+        "desc": "Crossing your fingers, you pose Ranald’s enigma and ask what, exactly, is luck? Gain +1 Fortune point. For every +2 SL you may gain an extra +1 Fortune point, which may take you beyond your normal maximum. You may not invoke this Miracle again until you reach 0 Fortune points."
+    },
+    {
+        "name": "You Ain&apos;t Seen Me, Right?",
+        "god": "Ranald",
+        "range": "Fellowship yards",
+        "target": "1",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "You spin a complex conundrum concerning the reality of that which is unperceived. Targets affected by this Miracle may pass unnoticed and remarked, providing they do nothing to draw attention to themselves, such as touching, attacking, calling out to someone, casting a spell, or making a loud noise. You may only invoke this Miracle if no-one is looking directly at you."
+    },
+    {
+        "name": "Rhya&apos;s Children",
+        "god": "Rhya",
+        "range": "You",
+        "target": "Area of Effect",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "Laying hands on the earth, you chant a prayer to Rhya appealing for her aid in understanding her Realm. This Miracle may only be invoked outdoors, outside settlements. You sense the presence and passing of all sentient creatures within Fellowship yards. Each +2 SL extents the area of effect by +Fellowship yards."
+    },
+    {
+        "name": "Rhya&apos;s Harvest",
+        "god": "Rhya",
+        "range": "Touch",
+        "target": "You",
+        "duration": "1 Round",
+        "desc": "You chant to Rhya, and life springs forth. Edible fruit, vegetables, and fungi grow at the point where you touch. For each round in which the Miracle is in effect, you cause enough food to feed 1 person to grow. The type of food depends on your location: in a cavern you may grow mushrooms, while outdoors you may cause many different fruits and vegetables to spring forth."
+    },
+    {
+        "name": "Rhya&apos;s Shelter",
+        "god": "Rhya",
+        "range": "You",
+        "target": "You",
+        "duration": "Special",
+        "desc": "You sing one of Rhya’s hymns concerning shelter and safety. You may only invoke this Miracle outdoors and outside settlements. You discover a perfect natural shelter. Some combination of earth, and trees has formed a perfect location to camp for the night. The spot is protected from all naturally occurring wind and rain, and lasts as long as you remain camped there. The shelter is large enough for 1 person. For every +2 SL it fits another individual. When you break camp, the shelter cannot be rediscovered, as though it only existed through your goddess’s will."
+    },
+    {
+        "name": "Rhya&apos;s Succour",
+        "god": "Rhya",
+        "range": "Fellowship yards",
+        "target": "Fellowship Bonus allies",
+        "duration": "Instant",
+        "desc": "You chant Rhya’s song of revitalisation. All affected targets have 1 Condition removed. If this removes all suffered Conditions, the targets feel as refreshed as if they had just awoken from a good night’s sleep, and gain a bonus of +10 to any tests on their next Turn."
+    },
+    {
+        "name": "Rhya&apos;s Touch",
+        "god": "Rhya",
+        "range": "Touch",
+        "target": "1",
+        "duration": "Special",
+        "desc": "You lay hands upon an injured or diseased target as you sing your prayers. Choose one of the following effects: <ul><li>Heal Fellowship Bonus wounds</li> <li>Cure 1 naturally occuring disease</li></ul> For every + 2 SL, you may choose another effect, and may choose the same effect repeatedly. This Miracle is slow, with the effects taking at least 10 minutes to manifest. If interrupted, the Miracle will need to be attempted again."
+    },
+    {
+        "name": "Rhya&apos;s Union",
+        "god": "Rhya",
+        "range": "Touch",
+        "target": "Special",
+        "duration": "Fellowship Bonus hours",
+        "desc": "You bless and consecrate the union between two souls. While the Miracle is in effect, if biologically possible, the couple will conceive a child."
+    },
+    {
+        "name": "Anchorite&apos;s Endurance",
+        "god": "Shallya",
+        "range": "Fellowship yards",
+        "target": "1",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "Your earnest prayers appeal to Shallya to grant the target the strength to endure. The target feels no pain, and suffers no penalties caused by Conditions."
+    },
+    {
+        "name": "Balm to a Wounded Mind",
+        "god": "Shallya",
+        "range": "Touch",
+        "target": "1",
+        "duration": "Fellowship Bonus minutes",
+        "desc": "You call on Shallya to calm the troubled mind of your targets. All Psychology traits are removed for the duration, and afterwards the targets enter deep and restful slumbers that last until next sunrise, assuming they are not disturbed. Unwilling targets may make a <b>Challenging (+0) Cool Test</b> to resist sleeping."
+    },
+    {
+        "name": "Bitter Catharsis",
+        "god": "Shallya",
+        "range": "Touch",
+        "target": "1",
+        "duration": "Instant",
+        "desc": "In answer to your heartfelt prayers, Shallya draws a poison or disease into you and purges it, completely removing it from your target’s system. For every +2 SL you may purge another disease or poison. For each poison removed or disease cured in this manner, you suffer Wounds equal to 1d10 – your Fellowship Bonus, not modified for Toughness Bonus or Armour Points."
+    },
+    {
+        "name": "Martyr",
+        "god": "Shallya",
+        "range": "Fellowship yards",
+        "target": "1",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "You intone prayers concerning Shallya’s need to take on the world’s pain. Any Damage taken by your targets are instead suffered by you. If you suffer any Damage because of this Miracle, your Toughness Bonus is doubled for the purposes of calculating the Wounds suffered from that Damage."
+    },
+    {
+        "name": "Shallya&apos;s Tears",
+        "god": "Shallya",
+        "range": "Touch",
+        "target": "1",
+        "duration": "Special",
+        "desc": "You passionately appeal to Shallya to spare a poor, wounded soul as tears flow freely down your cheeks. You pray for 10 – your Fellowship Bonus Rounds, at which point you heal the target of 1 Critical Wound. For every +2 SL you may heal another Critical Wound. If your prayer is interrupted, the target receives no benefit. This Miracle cannot reattach amputated body parts."
+    },
+    {
+        "name": "Unblemished Innocence",
+        "god": "Shallya",
+        "range": "Touch",
+        "target": "1",
+        "duration": "Instant",
+        "desc": "Laying hands on the afflicted, you beg Shallya to rid them of recently acquired corruption. The target loses 1 Corruption point, and can lose another per +2 SL scored. However, the Ruinous Powers do not like to be so directly opposed. Should an attempt to invoke the Miracle Fumble, you and the target both gain 1d10 Corruption points on top of any other effects. This Miracle must be enacted within an hour of the target gaining a Corruption point."
+    },
+    {
+        "name": "Beacon of Righteous Virtue",
+        "god": "Sigmar",
+        "range": "You",
+        "target": "Area of Effect",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "As you bellow prayers in Sigmar’s name, you become infused with holy fire of righteousness. All allies with Line of Sight to you instantaneously remove all <condition>Broken</condition> Conditions, and gain the <talent>Fearless</talent> Talent while the Miracle is in effect and they remain in your Line of Sight. Any Greenskins with Line of Sight to you are subject to <trait>Fear 1</trait>."
+    },
+    {
+        "name": "Heed Not the Witch",
+        "god": "Sigmar",
+        "range": "You",
+        "target": "Area of Effect",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "You call on Sigmar to protect those close to you from the fell influence of Chaos. Any spells that target anyone or anywhere within Fellowship Bonus yards suffer a penalty of –20 to Language (Magick) Tests, in addition to any other penalties. For every +2 SL, you may increase the area of effect by your Fellowship Bonus in yards."
+    },
+    {
+        "name": "Sigmar&apos;s Fiery Hammer",
+        "god": "Sigmar",
+        "range": "You",
+        "target": "You",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "You chant benedictions of Sigmar’s might. If wielding a warhammer, it counts as <weaponqual>Magical</weaponqual>, deals +Fellowship Bonus Damage, and any target struck receives the <condition>Ablaze</condition> and <condition>Prone</condition> Conditions."
+    },
+    {
+        "name": "Soulfire",
+        "god": "Sigmar",
+        "range": "You",
+        "target": "Area of Effect",
+        "duration": "Instant",
+        "desc": "You call the power of Sigmar to smite the enemies of the Empire. A holy fire explodes from your body blasting outwards for Fellowship Bonus yards. All targets within range take 1d10 Wounds ignoring Toughness Bonus and APs. Targets with the <trait>Undead</trait> and <trait>Daemon</trait> Creature Traits also gain the <condition>Ablaze</condition> Condition. For every +2 SL, you may increase the area of effect by +Fellowship Bonus yards, or cause an extra +2 Damage to any Greenskins, Undead, or servants of the Ruinous Powers affected."
+    },
+    {
+        "name": "Twin-tailed Comet",
+        "god": "Sigmar",
+        "range": "Fellowship yards",
+        "target": "Area of Effect",
+        "duration": "Instant",
+        "desc": "You invoke litanies to Sigmar, calling on him to smite his foes. A twin-tailed comet, blazing a trail of fire in its wake, plummets from the heavens to strike a point within Line of Sight and range. Everything within Fellowship Bonus yards of the point of impact suffers 1d10 + SL Damage, ignoring Toughness Bonus and Armour Points, and gains the <condition>Ablaze</condition> condition. The target location must be outdoors, and may only target those Sigmar would deem an enemy."
+    },
+    {
+        "name": "Vanquish the Unrighteous",
+        "god": "Sigmar",
+        "range": "Fellowship yards",
+        "target": "Fellowship Bonus allies",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "Your prayers instil your chosen allies with a furious disdain for the enemies of Sigmar. All allies affected receive the Hatred Psychology towards Greenskins, Undead, and any associated with Chaos."
+    },
+    {
+        "name": "Animal Instincts",
+        "god": "Taal",
+        "range": "Touch",
+        "target": "1",
+        "duration": "Fellowship Bonus hours",
+        "desc": "You intone chants describing Taal’s extraordinary senses, and calling upon him for aid. While the Miracle is in effect, you gain +1 <talent>Acute Sense (choose one)</talent> Talent and, if you rest, you will automatically awaken should any threats come within Initiative yards."
+    },
+    {
+        "name": "King of the Wild",
+        "god": "Taal",
+        "range": "Fellowship yards",
+        "target": "1",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "You chant a low prayer, and Taal answers with a wild animal appropriate for the surrounding area, which will act according to your wishes for the duration of the Miracle. See <b>The Beasts of the Reikland</b> on page 314 for sample animals that may be summoned."
+    },
+    {
+        "name": "Leaping Stag",
+        "god": "Taal",
+        "range": "You",
+        "target": "You",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "You chant to Father Taal, and he grants you his favour, imbuing you with speed and agility. You gain +1 Movement and +1 <talent>Strong Legs</talent> Talent. Further, you automatically pass all Athletics Tests to jump with at least +0 SL; should you score lower, increase the SL to 0."
+    },
+    {
+        "name": "Lord of the Hunt",
+        "god": "Taal",
+        "range": "You",
+        "target": "You",
+        "duration": "Fellowship Bonus Hours",
+        "desc": "You call on Taal to guide you in the hunt for your quarry, which must be an animal you have seen, or an individual you know (as limited by the GM). While the Miracle is in effect, you cannot lose your quarry’s trail save by supernatural means. Should your quarry enter a settlement, the trail ends there. You also receive +10 bonus to all Tests regarding your quarry while under the influence of the Miracle."
+    },
+    {
+        "name": "Tooth and Claw",
+        "god": "Taal",
+        "range": "You",
+        "target": "You",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "You call on Taal to grant you the ferocious might of his kingdom. Gain the <trait>Bite (<mono>Strength Bonus+3</mono>)</trait> and <trait>Weapon (<mono>Strength Bonus+4</mono>)</trait> Creature Traits. These attacks are <weaponqual>Magical</weaponqual>."
+    },
+    {
+        "name": "Tanglefoot",
+        "god": "Taal",
+        "range": "Fellowship yards",
+        "target": "Area of Effect",
+        "duration": "Instant",
+        "desc": "You call on Taal, chanting prayers to protect his wild places. Roots, vines, and creepers wrap themselves around your foes. All targets within Fellowship Bonus yards of the target point gain an <condition>Entangled</condition> Condition. For every +2 SL you may increase the area of effect by your Fellowship Bonus in yards, or inflict an extra <condition>Entangled</condition> Condition. Tanglefoot has a Strength equal to your Willpower for the purposes of breaking free."
+    },
+    {
+        "name": "Hoarfrost&apos;s Chill",
+        "god": "Ulric",
+        "range": "You",
+        "target": "Area of Effect",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "You scream angry prayers, and cold Ulric answers. Your eyes gain a steely blue glint and the air around you grows unnaturally cold. You cause <trait>Fear (<mono>1</mono>)</trait> (see page 190) in all enemies, and all within your Fellowship yards range lose –1 Advantage at the start of each Round, as they are chilled to the bone."
+    },
+    {
+        "name": "Howl of the Wolf",
+        "god": "Ulric",
+        "range": "Fellowship yards",
+        "target": "Special",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "You howl for Ulric’s aid, and he sends a minor Divine Servant in the form of a White Wolf. The wolf fights your enemies for the duration of the Miracle, before vanishing to Ulric’s Hunting Grounds with a spectral, blood-chilling howl. The White Wolves have the statistics of a Wolf (see page 317) with the <trait>Frenzy</trait>, <trait>Magical</trait>, and <trait>Size (<mono>Large</mono>)</trait> Creature Traits."
+    },
+    {
+        "name": "Ulric&apos;s Fury",
+        "god": "Ulric",
+        "range": "Fellowship yards",
+        "target": "1",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "You chant furious prayers, and Ulric’s ferocity spreads. Targets gain the Frenzy psychology."
+    },
+    {
+        "name": "Pelt of the Winter Wolf",
+        "god": "Ulric",
+        "range": "Touch",
+        "target": "1",
+        "duration": "Fellowship Bonus hours",
+        "desc": "Your bellowed prayers bring Ulric’s attention, allowing your targets to survive the bite of his realm. While targets still feel the pain and discomfort caused by cold and wintry weather, they suffer no mechanical penalties."
+    },
+    {
+        "name": "The Snow King&apos;s Judgement",
+        "god": "Ulric",
+        "range": "Fellowship yards",
+        "target": "1",
+        "duration": "Instant",
+        "desc": "You call on Ulric to make manifest his disdain for the weak, the cowardly and the deceitful. The target suffers 1d10 wounds ignoring Toughness Bonus and Armour Points. If the GM rules that the target is neither weak, cowardly, or deceitful, you suffer the effects instead."
+    },
+    {
+        "name": "Winter&apos;s Bite",
+        "god": "Ulric",
+        "range": "You",
+        "target": "You",
+        "duration": "Fellowship Bonus Rounds",
+        "desc": "You roar prayers concerning <em>Blitzbeil</em>, Ulric’s ever-thirsty axe. If wielding an axe, it counts as <weaponqual>Magical</weaponqual>, causes an additional + SL Damage, and any living targets struck must make a <b>Challenging (+0) Endurance Test</b> or gain a <condition>Stunned</condition> Condition. Further, struck targets lose any <condition>Bleeding</condition> Conditions as their blood freezes; similarly, attacks from your axe cannot cause any <condition>Bleeding</condition> Conditions."
     }
 ]
 
@@ -3721,6 +4153,111 @@ var career = [
         "advances": ["BS", "Dex", "Int", "I", "T", "WP"],
         "incomeSkill": "Trade (Engineer)",
         "races": "Dwarf, Halfling, Human"
+    },
+    {
+        "name": "Lawyer",
+        "class": "Academics",
+        "desc": "You navigate treacherous legal systems, defending clients and prosecuting the guilty.",
+        "path1": {
+            "name": "Student Lawyer",
+            "skills":
+                [
+                    "Consume Alcohol",
+                    "Endurance",
+                    "Haggle",
+                    "Language (Classical)",
+                    "Lore (Law)",
+                    "Lore (Theology)",
+                    "Perception",
+                    "Research"
+                ],
+            "talents":
+                [
+                    "Blather",
+                    "Etiquette (Scholar)",
+                    "Read/Write",
+                    "Speedreader"
+                ],
+            "trappings":
+                [
+                    "Book (Law)",
+                    "Magnifying Glass"
+                ],
+            "status": "Brass 4"
+        },
+        "path2": {
+            "name": "Lawyer",
+            "skills":
+                [
+                    "Bribery",
+                    "Charm",
+                    "Gossip",
+                    "Intuition",
+                    "Language (Guilder)",
+                    "Secret Signs (Guilder)"
+                ],
+            "talents":
+                [
+                    "Argumentative",
+                    "Criminal",
+                    "Etiquette (Guilder)",
+                    "Suave"
+                ],
+            "trappings":
+                [
+                    "Court Robes",
+                    "Guild License",
+                    "Writing Kit"
+                ],
+            "status": "Silver 3"
+        },
+        "path3": {
+            "name": "Barrister",
+            "skills":
+                [
+                    "Art (Writing)",
+                    "Entertain (Speeches)",
+                    "Intimidate",
+                    "Lore (Any)"
+                ],
+            "talents":
+                [
+                    "Bookish",
+                    "Cat-Tongued",
+                    "Impassioned Zeal",
+                    "Savvy"
+                ],
+            "trappings":
+                [
+                    "Office",
+                    "Assistant (Student or Servant)"
+                ],
+            "status": "Gold 1"
+        },
+        "path4": {
+            "name": "Judge",
+            "skills":
+                [
+                    "Cool",
+                    "Lore (Any)"
+                ],
+            "talents":
+                [
+                    "Commanding Presence",
+                    "Kingpin",
+                    "Savant (Law)",
+                    "Wealthy"
+                ],
+            "trappings":
+                [
+                    "Gavel",
+                    "Ostentatious Wig"
+                ],
+            "status": "Gold 2"
+        },
+        "advances": ["I", "Dex", "Int", "Fel", "WP", "T"],
+        "incomeSkill": "Lore (Law)",
+        "races": "Dwarf, Halfling, High Elf, Human"
     },
     {
         "name": "Priest",

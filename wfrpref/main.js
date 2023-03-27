@@ -24,23 +24,6 @@ $(document).ready(function () {
 
     $("#copyrightText").html(CRNotice)
 
-    // dictDirect = [lores, spell, cults, miracle, talent, skill, condition, weaponQual]
-
-    // dictDirect = {
-    //     "lore": lores,
-    //     "spell": spell,
-    //     "cults": cults,
-    //     "miracle": miracle,
-    //     "talent": talent,
-    //     skill,
-    //     condition,
-    //     "weaponQual": weaponQual
-    // }
-
-    // dictFuse = new Fuse(dictDirect, {
-    //     keys:[['skill','name'],['talent','name']]
-    // })
-
 });
 
 var modalCount = 0;
@@ -50,10 +33,12 @@ function initializeModals() {
     $('talent').attr('onclick', 'buildModal(this,\'talent\')');
     $('condition').attr('onclick', 'buildModal(this,\'condition\')');
     $('weapon').attr('onclick', 'buildModal(this,\'weapon\')');
+    $('armour').attr('onclick', 'buildModal(this,\'armour\')');
     $('weaponqual').attr('onclick', 'buildModal(this,\'qual\')');
     $('divineman').attr('onclick', 'buildModal(this,\'miracle\')');
     $('trait').attr('onclick', 'buildModal(this,\'trait\')');
     $('career').attr('onclick', 'buildModal(this,\'career\')');
+    $('armourqual').attr('onclick', 'buildModal(this,\'armQual\')');
 }
 
 function buildModal(el, type, mast = 0) {
@@ -69,8 +54,10 @@ function buildModal(el, type, mast = 0) {
         "qual": qualFuse,
         "spell": spellFuse,
         "weapon": weaponFuse,
+        "armour": armourFuse,
         "trait": traitFuse,
-        "career": careerFuse
+        "career": careerFuse,
+        "armQual": armourQualFuse
     }
 
 
@@ -138,6 +125,13 @@ function buildModal(el, type, mast = 0) {
 
             break;
         case "qual":
+
+            $("#modal" + modalCount + " .qualName").html(dataRslt["name"])
+
+            $("#modal" + modalCount + " .qualDesc").html(dataRslt["desc"])
+
+            break;
+        case "armQual":
 
             $("#modal" + modalCount + " .qualName").html(dataRslt["name"])
 
@@ -231,6 +225,24 @@ function buildModal(el, type, mast = 0) {
                 $("#modal" + modalCount + " .weapQuals").html("Qualities/Flaws: " + dataRslt["qual"])
             }
             break;
+        case "armour":
+            $("#modal" + modalCount + " .weapName").html(dataRslt["name"])
+            $("#modal" + modalCount + " .weapGroup").html(dataRslt["group"])
+
+            $("#modal" + modalCount + " .weapPrice").html("Price: " + dataRslt["price"])
+
+            $("#modal" + modalCount + " .weapEnc").html("Encumbrance: " + dataRslt["enc"])
+
+            $("#modal" + modalCount + " .weapAvail").html("Availability: " + dataRslt["avail"])
+
+            $("#modal" + modalCount + " .weapReach").html("Locations: " + dataRslt["loc"])
+
+            $("#modal" + modalCount + " .weapDamage").html("APs: " + dataRslt["aps"])
+
+            if (dataRslt["qual"] != "") {
+                $("#modal" + modalCount + " .weapQuals").html("Qualities/Flaws: " + dataRslt["qual"])
+            }
+            break;
         case "trait":
 
             $("#modal" + modalCount + " .traitName").html(dataRslt["name"])
@@ -262,8 +274,8 @@ function buildModal(el, type, mast = 0) {
 
 
             for (let k = 1; k < 5; k++) {
-                let imgSrcs = ["./img/cross_64.png","./img/axes_64_light.png","./img/skull_64_light.png","./img/shield_64_light.png"]
-                $("#modal" + modalCount + " .careerpath" + k + " .path" + k + "name").html("<img src=\"" + imgSrcs[k-1] + "\" class=\"oneemimg\"></img><br/>" + dataRslt["path" + k]["name"] + " &mdash; " + dataRslt["path" + k]["status"])
+                let imgSrcs = ["./img/cross_64.png", "./img/axes_64_light.png", "./img/skull_64_light.png", "./img/shield_64_light.png"]
+                $("#modal" + modalCount + " .careerpath" + k + " .path" + k + "name").html("<img src=\"" + imgSrcs[k - 1] + "\" class=\"oneemimg\"></img><br/>" + dataRslt["path" + k]["name"] + " &mdash; " + dataRslt["path" + k]["status"])
 
                 for (let i = 0; i < dataRslt["path" + k]["skills"].length; i++) {
                     if (i == 0) {
@@ -363,7 +375,9 @@ function masterSearch() {
         "miracle": "Divine Manifestation",
         "career": "Career",
         "qual": "Weapon Quality/Flaw",
+        "armQual": "Armour Quality/Flaw",
         "weapon": "Weapon",
+        "armour": "Armour",
         "trait": "Creature Trait"
     }
 
@@ -377,8 +391,6 @@ function masterSearch() {
         rsltNum++
     });
 }
-
-
 
 function accordion(id, el) {
     var x = document.getElementById(id);
@@ -662,6 +674,16 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
     careerFuse = new Fuse(career, {
+        keys: ["name"]
+    })
+});
+$(document).ready(function () {
+    armourFuse = new Fuse(armour, {
+        keys: ["name"]
+    })
+});
+$(document).ready(function () {
+    armourQualFuse = new Fuse(armourQual, {
         keys: ["name"]
     })
 });

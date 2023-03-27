@@ -2,8 +2,8 @@ var masterDict = []
 var masterFuse = []
 
 $(document).ready(function () {
-    let lists = [career, skill, talent, spell, miracle, condition, weapon, trait, weaponQual]
-    let listTypes = ["career", "skill", "talent", "spell", "miracle", "condition", "weapon", "trait", "qual"]
+    let lists = [career, skill, talent, spell, miracle, condition, weapon, armour, trait, weaponQual, armourQual]
+    let listTypes = ["career", "skill", "talent", "spell", "miracle", "condition", "weapon", "armour", "trait", "qual", "armQual"]
     for (let j = 0; j < lists.length; j++) {
         for (let i = 0; i < lists[j].length; i++) {
             masterDict.push({ "name": lists[j][i]["name"], "type": listTypes[j] })
@@ -24,8 +24,10 @@ var modals = {
     "condition": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"conditionName\"></span></h3></div><div class=\"w3-row-padding\"><div class=\"conditionDesc\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     "trait": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"traitName\"></span></h3></div><div class=\"w3-row-padding\"><div class=\"traitDesc\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     "qual": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"qualName\"></span></h3></div><div class=\"w3-row-padding\"><div class=\"qualDesc\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
+    "armQual": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"qualName\"></span></h3></div><div class=\"w3-row-padding\"><div class=\"qualDesc\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     "spell": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large grid-card\"><div class=\"w3-row-padding\"><h3 class=\"spellName\"></h3><h5> <em><span class=\"spellLore\"></span> </em></div><div class=\"w3-row-padding\"><emph>Casting Number: </emph><span class=\"spellCN\"></span><br /><emph>Range: </emph><span class=\"spellRange\"></span><br /><emph>Target: </emph><span class=\"spellTarget\"></span><br /><emph>Duration: </emph><span class=\"spellDuration\"></span></div><div class=\"w3-row-padding\"><div class=\"spellDescription\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     "weapon": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"weapName\"></span></h3></div><div class=\"w3-row-padding\"><h5 style=\"margin-top: -1em !important;\"><em><div class=\"weapGroup\"></div></em></h5><div class=\"weapPrice\"></div><div class=\"weapEnc\"></div><div class=\"weapAvail\"></div><div class=\"weapDamage\"></div><div class=\"weapReach\"></div><div class=\"weapQuals\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
+    "armour": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"weapName\"></span></h3></div><div class=\"w3-row-padding\"><h5 style=\"margin-top: -1em !important;\"><em><div class=\"weapGroup\"></div></em></h5><div class=\"weapPrice\"></div><div class=\"weapEnc\"></div><div class=\"weapAvail\"></div><div class=\"weapDamage\"></div><div class=\"weapReach\"></div><div class=\"weapQuals\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     "career": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large grid-card\"><div class=\"w3-row-padding\"><h3 class=\"careerName\"></h3><h5><span class=\"careerClass\"></span></h5><div class=\"w3-center\"><span class=\"careerRaces\"></span></div><div class=\"w3-center\"><em class=\"careerDesc\"></em></div></div><div class=\"w3-row-padding w3-center\"><br/><div class=\"well-s\"><h6>Advance Scheme</h6><table class=\"centerTable attrTable \"><thead><tr><th style=\"display:none;\" class=\"careerAttr careerWSth\">WS</th><th style=\"display:none;\" class=\"careerAttr careerBSth\">BS</th><th style=\"display:none;\" class=\"careerAttr careerSth\">S</th><th style=\"display:none;\" class=\"careerAttr careerTth\">T</th><th style=\"display:none;\" class=\"careerAttr careerIth\">I</th><th style=\"display:none;\" class=\"careerAttr careerAgith\">Agi</th><th style=\"display:none;\" class=\"careerAttr careerDexth\">Dex</th><th style=\"display:none;\" class=\"careerAttr careerIntth\">Int</th><th style=\"display:none;\" class=\"careerAttr careerWPth\">WP</th><th style=\"display:none;\" class=\"careerAttr careerFelth\">Fel</th></tr></thead><tbody><tr><td style=\"display:none;\" class=\"careerAttr careerWS\"></td><td style=\"display:none;\" class=\"careerAttr careerBS\"></td><td style=\"display:none;\" class=\"careerAttr careerS\"></td><td style=\"display:none;\" class=\"careerAttr careerT\"></td><td style=\"display:none;\" class=\"careerAttr careerI\"></td><td style=\"display:none;\" class=\"careerAttr careerAgi\"></td><td style=\"display:none;\" class=\"careerAttr careerDex\"></td><td style=\"display:none;\" class=\"careerAttr careerInt\"></td><td style=\"display:none;\" class=\"careerAttr careerWP\"></td><td style=\"display:none;\" class=\"careerAttr careerFel\"></td></tr></tbody></table></div></div><br/><div class=\"w3-row-padding w3-center\"><b>Income Skill: </b><em class=\"careerIncome\"></em></div><br/><div class=\"w3-row-padding well\"><div class=\"careerpath1\"><h5 class=\"path1name\"></h5><p><b>Skills: </b><span class=\"path1skills\"></span></p><p><b>Talents: </b><span class=\"path1talents\"></span></p><p><b>Trappings: </b><span class=\"path1trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath2\"><h5 class=\"path2name\"></h5><p><b>Skills: </b><span class=\"path2skills\"></span></p><p><b>Talents: </b><span class=\"path2talents\"></span></p><p><b>Trappings: </b><span class=\"path2trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath3\"><h5 class=\"path3name\"></h5><p><b>Skills: </b><span class=\"path3skills\"></span></p><p><b>Talents: </b><span class=\"path3talents\"></span></p><p><b>Trappings: </b><span class=\"path3trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath4\"><h5 class=\"path4name\"></h5><p><b>Skills: </b><span class=\"path4skills\"></span></p><p><b>Talents: </b><span class=\"path4talents\"></span></p><p><b>Trappings: </b><span class=\"path4trappings\"></span></p></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large\">Close</button></div></div></div>"
 }
 
@@ -2990,7 +2992,7 @@ var condition = [
     },
     {
         "name": "Prone",
-        "desc": "<p>You have fallen to the ground, possibly because you have run out of Wounds, you’ve tripped, or because you’ve been hit by something rather large. On your turn, your Move can only be used to stand up or crawl at half your Movement in yards (note: if you have 0 Wounds remaining, you can only crawl). You suffer a –20 penalty to all Tests involving movement of any kind, and any opponent trying to strike you in Melee Combat gains +20 to hit you.</p><p>Unlike most other conditions, Prone does not stack — you are either Prone, or you are not. You lose the Prone Condition when you stand up.</p>"
+        "desc": "<p>You have fallen to the ground, possibly because you have run out of Wounds, you’ve tripped, or because you’ve been hit by something rather large. On your turn, your Move can only be used to stand up or crawl at half your Movement in yards (note: if you have 0 Wounds remaining, you can only crawl). You suffer a –20 penalty to all Tests involving movement of any kind, and any opponent trying to strike you in Melee Combat gains +20 to hit you.</p><p>Unlike most other conditions, Prone does not stack — you are either Prone , or you are not. You lose the Prone Condition when you stand up.</p>"
     },
     {
         "name": "Stunned",
@@ -3002,7 +3004,7 @@ var condition = [
     },
     {
         "name": "Unconscious",
-        "desc": "<p>You are knocked out, asleep, or otherwise insensible. You can do nothing on your turn and are completely unaware of your surroundings. An attacker targeting you gains the benefit of the I Will Not Fail rule on page 171 without having to spend a Resilience point. Or, if the GM prefers, any close combat hit simply kills you. Any ranged combat hit automatically does the same if the shooter is at Point Blank range.</p><p>The Unconscious Condition does not stack — you are either Unconscious, or you are not — so you do not collect multiple Unconscious Conditions.</p><p>Recovering from unconsciousness requires different circumstances depending upon why you fell unconscious. Refer to Injury on page 172 for more on this. If you spend a Resolve point to remove an Unconscious condition, but have not resolved the cause of the incapacitation, you gain another Unconscious Condition at the end of the round. When you lose the Unconscious Condition, you gain the <condition>Prone</condition> and <condition>Fatigued</condition> Conditions.</p>"
+        "desc": "<p>You are knocked out, asleep, or otherwise insensible. You can do nothing on your turn and are completely unaware of your surroundings. An attacker targeting you gains the benefit of the I Will Not Fail rule on page 171 without having to spend a Resilience point. Or, if the GM prefers, any close combat hit simply kills you. Any ranged combat hit automatically does the same if the shooter is at Point Blank range.</p><p>The Unconscious Condition does not stack — you are either Unconscious , or you are not — so you do not collect multiple Unconscious Conditions.</p><p>Recovering from unconsciousness requires different circumstances depending upon why you fell unconscious. Refer to Injury on page 172 for more on this. If you spend a Resolve point to remove an Unconscious condition, but have not resolved the cause of the incapacitation, you gain another Unconscious Condition at the end of the round. When you lose the Unconscious Condition, you gain the <condition>Prone</condition> and <condition>Fatigued</condition> Conditions.</p>"
     }
 ]
 
@@ -3707,6 +3709,86 @@ var weapon = [
         "reach": "SB&times;2",
         "damage": "+SB+2",
         "qual": ""
+    },
+    {
+        "name": "Bullet and Powder (12)",
+        "group": "Blackpowder &amp; Engineering Ammunition",
+        "price": "3/3",
+        "enc": "0",
+        "avail": "Common",
+        "reach": "As weapon",
+        "damage": "+1",
+        "qual": "<weaponqual>Impale</weaponqual>, <weaponqual>Penetrating</weaponqual>"
+    },
+    {
+        "name": "Improvised Shot and Powder",
+        "group": "Blackpowder &amp; Engineering Ammunition",
+        "price": "3d",
+        "enc": "0",
+        "avail": "Common",
+        "reach": "Half weapon",
+        "damage": "&ndash;",
+        "qual": ""
+    },
+    {
+        "name": "Small Shot &amp; Powder",
+        "group": "Blackpowder &amp; Engineering Ammunition",
+        "price": "3/3",
+        "enc": "0",
+        "avail": "Common",
+        "reach": "As weapon",
+        "damage": "&ndash;",
+        "qual": "<weaponqual>Blast +1</weaponqual>"
+    },
+    {
+        "name": "Arrow (12)",
+        "group": "Bow Ammunition",
+        "price": "5/&ndash;",
+        "enc": "0",
+        "avail": "Common",
+        "reach": "As weapon",
+        "damage": "&ndash;",
+        "qual": "<weaponqual>Impale</weaponqual>"
+    },
+    {
+        "name": "Elf Arrow",
+        "group": "Bow Ammunition",
+        "price": "6/&ndash;",
+        "enc": "0",
+        "avail": "Exotic",
+        "reach": "+50",
+        "damage": "+1",
+        "qual": "<weaponqual>Accurate</weaponqual>, <weaponqual>Impale</weaponqual>, <weaponqual>Penetrating</weaponqual>"
+    },
+    {
+        "name": "Bolt (12)",
+        "group": "Crossbow Ammunition",
+        "price": "5/&ndash;",
+        "enc": "0",
+        "avail": "Common",
+        "reach": "As weapon",
+        "damage": "&ndash;",
+        "qual": "<weaponqual>Impale</weaponqual>"
+    },
+    {
+        "name": "Lead Bullet (12)",
+        "group": "Sling Ammunition",
+        "price": "4d",
+        "enc": "0",
+        "avail": "Common",
+        "reach": "-10",
+        "damage": "+1",
+        "qual": "<weaponqual>Pummel</weaponqual>"
+    },
+    {
+        "name": "Stone Bullet (12)",
+        "group": "Sling Ammunition",
+        "price": "2d",
+        "enc": "0",
+        "avail": "Common",
+        "reach": "As weapon",
+        "damage": "&ndash;",
+        "qual": "<weaponqual>Pummel</weaponqual>"
     }
 ]
 
@@ -3729,7 +3811,7 @@ var trait = [
     },
     {
         "name": "Animosity (Target)",
-        "desc": "<p>You harbour an enmity for the Target, which will normally be a group of people or creatures, such as ‘Nordlanders’, ‘Beastmen’, or ‘Nobles’. You must attempt a Psychology Test whenever you encounter the group. If you pass, you may grumble and spit, but only suffer a penalty of –20 to all Fellowship Tests towards that group. Should you fail you are subject to Animosity.</p><p>At the end of every subsequent Round, you may attempt another Psychology test to bring the Animosity to an end. If you do not, the effects of Animosity naturally come to an end when all members of the specified group in your line of sight are utterly pacified or gone, or you gain the <condition>Stunned</condition> or <condition>Unconscious</condition> Condition, or you become subject to another Psychology.</p><p>When subject to Animosity, you must immediately attack the disagreeable creatures, either socially (insults, jibes, and similar) or physically (most commonly with fists), as appropriate. You also gain a bonus of +1 SL on any attempts to socially or mentally attack the group. Animosity is over-ridden by <trait>Fear</trait> and <trait>Terror</trait>.</p>"
+        "desc": "<p>You harbour an enmity for the Target, which will normally be a group of people or creatures, such as ‘Nordlanders’, ‘Beastmen’, or ‘Nobles’. You must attempt a Psychology Test whenever you encounter the group. If you pass, you may grumble and spit, but only suffer a penalty of –20 to all Fellowship Tests towards that group. Should you fail you are subject to Animosity.</p><p>At the end of every subsequent Round, you may attempt another Psychology test to bring the Animosity to an end. If you do not, the effects of Animosity naturally come to an end when all members of the specified group in your line of sight are utterly pacified or gone, or you gain the <condition>Stunned</condition> or <condition>Unconscious</condition> Condition, or you become subject to another Psychology.</p><p>When subject to Animosity , you must immediately attack the disagreeable creatures, either socially (insults, jibes, and similar) or physically (most commonly with fists), as appropriate. You also gain a bonus of +1 SL on any attempts to socially or mentally attack the group. Animosity is over-ridden by <trait>Fear</trait> and <trait>Terror</trait>.</p>"
     },
     {
         "name": "Armour (Rating)",
@@ -3925,7 +4007,7 @@ var trait = [
     },
     {
         "name": "Prejudice (Target)",
-        "desc": "<p>The creature just doesn’t like the Target.</p><p>You really dislike the Target, which is normally a group of people or creatures such as ‘Ostlanders’, ‘Elves’, or ‘Wizards’. You must attempt a Psychology Test whenever you encounter the group against which you are prejudiced. If you pass, you may frown a lot, but will otherwise act normally, only suffering a penalty of –10 to all Fellowship Tests towards that group. Should you fail you are subject to Prejudice . At the end of every subsequent Round, you may attempt another Psychology test to bring the Prejudice to an end. If you do not, the effects of Prejudice naturally come to an end when all members of the specified group in your line of sight are gone, or you gain the Stunned or Unconscious Condition, or you become subject to another Psychology.</p><p>When subject to Prejudice, you must immediately insult the target of your prejudice. Loudly.</p>"
+        "desc": "<p>The creature just doesn’t like the Target.</p><p>You really dislike the Target , which is normally a group of people or creatures such as ‘Ostlanders’, ‘Elves’, or ‘Wizards’. You must attempt a Psychology Test whenever you encounter the group against which you are prejudiced. If you pass, you may frown a lot, but will otherwise act normally, only suffering a penalty of –10 to all Fellowship Tests towards that group. Should you fail you are subject to Prejudice . At the end of every subsequent Round, you may attempt another Psychology test to bring the Prejudice to an end. If you do not, the effects of Prejudice naturally come to an end when all members of the specified group in your line of sight are gone, or you gain the Stunned or Unconscious Condition, or you become subject to another Psychology.</p><p>When subject to Prejudice , you must immediately insult the target of your prejudice. Loudly.</p>"
     },
     {
         "name": "Ranged (Rating) [Range]",
@@ -4090,7 +4172,7 @@ var career = [
             "name": "Apothecary&apos;s Apprentice",
             "skills": ["Consume Alcohol", "Heal", "Language (Classical)", "Lore (Chemistry)", "Lore (Medicine)", "Lore (Plants)", "Trade (Apothecary)", "Trade (Poisoner)"],
             "talents": ["Concoct", "Craftsman (Apothecary)", "Etiquette (Scholar)", "Read/Write"],
-            "trappings": ["Book (Blank)", "Healing Draught", "Leather Jerkin", "Pestle and Mortar"],
+            "trappings": ["Book (Blank)", "Healing Draught", "<armour>Leather Jerkin</armour>", "Pestle and Mortar"],
             "status": "Brass 3"
         },
         "path2": {
@@ -4497,7 +4579,7 @@ var career = [
                 [
                     "Selection of Animal Traps",
                     "<weapon>Hand Weapon</weapon>",
-                    "<weapon>Sling</weapon> with 10 Stone Bullets",
+                    "<weapon>Sling</weapon> with 10 <weapon>Stone Bullets</weapon>",
                     "Sturdy Boots and Cloak"
                 ],
             "status": "Brass 2"
@@ -4522,7 +4604,7 @@ var career = [
                 ],
             "trappings":
                 [
-                    "<weapon>Bow</weapon> with 10 arrows"
+                    "<weapon>Bow</weapon> with 10 <weapon>arrows</weapon>"
                 ],
             "status": "Brass 4"
         },
@@ -4705,8 +4787,8 @@ var career = [
                 ],
             "trappings":
                 [
-                    "<weapon>Crossbow</weapon> with 10 Bolts",
-                    "Leather Jack"
+                    "<weapon>Crossbow</weapon> with 10 <weapon>Bolts</weapon>",
+                    "<armour>Leather Jack</armour>"
                 ],
             "status": "Brass 5"
         },
@@ -4731,7 +4813,7 @@ var career = [
             "trappings":
                 [
                     "<weapon>Hand Weapon</weapon>",
-                    "Mail Shirt",
+                    "<armour>Mail Shirt</armour>",
                     "Riding Horse with Saddle and Harness",
                     "Rope"
                 ],
@@ -4756,7 +4838,7 @@ var career = [
             "trappings":
                 [
                     "Squad of Road Wardens",
-                    "<weapon>Pistol</weapon> with 10 Shots",
+                    "<weapon>Pistol</weapon> with 10 <weapon>Bullets</weapon>",
                     "<weapon>Shield</weapon>",
                     "Symbol of Rank"
                 ],
@@ -4779,7 +4861,7 @@ var career = [
             "trappings":
                 [
                     "Light Warhorse",
-                    "<weapon>Pistol</weapon> with 10 Shots",
+                    "<weapon>Pistol</weapon> with 10 <weapon>Bullets</weapon>",
                     "Quality Hat and Cloak",
                     "Unit of Road Wardens"
                 ],
@@ -4893,5 +4975,211 @@ var career = [
         "advances": ["WS", "T", "WP", "S", "I", "Fel"],
         "incomeSkill": "Leadership",
         "races": "Human"
+    }
+]
+
+var armour = [
+    {
+        "name": "",
+        "group": "",
+        "price": "",
+        "enc": "",
+        "avail": "",
+        "penalty": "",
+        "loc": "",
+        "aps": "",
+        "qual": ""
+    },
+    {
+        "name": "Leather Jack",
+        "group": "Soft Leather",
+        "price": "12/&ndash;",
+        "enc": "1",
+        "avail": "Common",
+        "penalty": "&ndash;",
+        "loc": "Arms, Body",
+        "aps": "1",
+        "qual": "<armourqual>Soft Leather</armourqual>"
+    },
+    {
+        "name": "Leather Jerkin",
+        "group": "Soft Leather",
+        "price": "10/&ndash;",
+        "enc": "1",
+        "avail": "Common",
+        "penalty": "&ndash;",
+        "loc": "Body",
+        "aps": "1",
+        "qual": "<armourqual>Soft Leather</armourqual>"
+    },
+    {
+        "name": "Leather Leggings",
+        "group": "Soft Leather",
+        "price": "14/&ndash;",
+        "enc": "1",
+        "avail": "Common",
+        "penalty": "&ndash;",
+        "loc": "Legs",
+        "aps": "1",
+        "qual": "<armourqual>Soft Leather</armourqual>"
+    },
+    {
+        "name": "Leather Skullcap",
+        "group": "Soft Leather",
+        "price": "8/&ndash;",
+        "enc": "0",
+        "avail": "Common",
+        "penalty": "&ndash;",
+        "loc": "Head",
+        "aps": "1",
+        "qual": "<armourqual>Soft Leather</armourqual>, <armourqual>Partial</armourqual>"
+    },
+    {
+        "name": "Breastplate (Leather)",
+        "group": "Boiled Leather",
+        "price": "18/&ndash;",
+        "enc": "2",
+        "avail": "Scarce",
+        "penalty": "&ndash;",
+        "loc": "Body",
+        "aps": "2",
+        "qual": "<armourqual>Weakpoints</armourqual>"
+    },
+    {
+        "name": "Mail Chausses",
+        "group": "Mail",
+        "price": "2GC",
+        "enc": "3",
+        "avail": "Scarce",
+        "penalty": "&ndash;",
+        "loc": "Legs",
+        "aps": "2",
+        "qual": "<armourqual>Flexible</armourqual>, <armourqual>Mail/Plate</armourqual>"
+    },
+    {
+        "name": "Mail Coat",
+        "group": "Mail",
+        "price": "3GC",
+        "enc": "3",
+        "avail": "Common",
+        "penalty": "&ndash;",
+        "loc": "Arms, Body",
+        "aps": "2",
+        "qual": "<armourqual>Flexible</armourqual>, <armourqual>Mail/Plate</armourqual>"
+    },
+    {
+        "name": "Mail Coif",
+        "group": "Mail",
+        "price": "1GC",
+        "enc": "2",
+        "avail": "Scarce",
+        "penalty": "-10% Perception",
+        "loc": "Head",
+        "aps": "2",
+        "qual": "<armourqual>Flexible</armourqual>, <armourqual>Mail/Plate</armourqual>, <armourqual>Partial</armourqual>"
+    },
+    {
+        "name": "Mail Shirt",
+        "group": "Mail",
+        "price": "2GC",
+        "enc": "2",
+        "avail": "Scarce",
+        "penalty": "&ndash;",
+        "loc": "Body",
+        "aps": "2",
+        "qual": "<armourqual>Flexible</armourqual>, <armourqual>Mail/Plate</armourqual>"
+    },
+    {
+        "name": "Breastplate (Plate)",
+        "group": "Plate",
+        "price": "10GC",
+        "enc": "3",
+        "avail": "Scarce",
+        "penalty": "&ndash;",
+        "loc": "Body",
+        "aps": "2",
+        "qual": "<armourqual>Flexible</armourqual>, <armourqual>Mail/Plate</armourqual>, <armourqual>Weakpoints</armourqual>"
+    },
+    {
+        "name": "Open Helm",
+        "group": "Plate",
+        "price": "2GC",
+        "enc": "1",
+        "avail": "Common",
+        "penalty": "-10% Perception",
+        "loc": "Head",
+        "aps": "2",
+        "qual": "<armourqual>Mail/Plate</armourqual>, <armourqual>Partial</armourqual>"
+    },
+    {
+        "name": "Bracers",
+        "group": "Plate",
+        "price": "8GC",
+        "enc": "3",
+        "avail": "Rare",
+        "penalty": "&ndash;",
+        "loc": "Arms",
+        "aps": "2",
+        "qual": "<armourqual>Impenetrable</armourqual>, <armourqual>Mail/Plate</armourqual>, <armourqual>Weakpoints</armourqual>"
+    },
+    {
+        "name": "Plate Leggings",
+        "group": "Plate",
+        "price": "10GC",
+        "enc": "3",
+        "avail": "Rare",
+        "penalty": "-10 Stealth",
+        "loc": "Legs",
+        "aps": "2",
+        "qual": "<armourqual>Impenetrable</armourqual>, <armourqual>Mail/Plate</armourqual>, <armourqual>Weakpoints</armourqual>"
+    },
+    {
+        "name": "Helm",
+        "group": "Plate",
+        "price": "3GC",
+        "enc": "2",
+        "avail": "Rare",
+        "penalty": "-20% Perception",
+        "loc": "Head",
+        "aps": "2",
+        "qual": "<armourqual>Impenetrable</armourqual>, <armourqual>Mail/Plate</armourqual>, <armourqual>Weakpoints</armourqual>"
+    }
+]
+
+var armourQual = [
+    {
+        "name": "",
+        "desc": "",
+        "flaw": false
+    },
+    {
+        "name": "Flexible",
+        "desc": "Flexible armour can be worn under a layer of non-Flexible armour if you wish. If you do so, you gain the benefit of both.",
+        "flaw": false
+    },
+    {
+        "name": "Impenetrable",
+        "desc": "The armour is especially resilient, meaning most attacks simply cannot penetrate it. All Critical Wounds caused by an odd number to hit you, such as 11 or 33, are ignored.",
+        "flaw": false
+    },
+    {
+        "name": "Soft Leather",
+        "desc": "Soft Leather Armour can be worn without penalty under any other Armour",
+        "flaw": false
+    },
+    {
+        "name": "Mail/Plate",
+        "desc": "Wearing any Mail or Plate confers a Penalty of -10 to <skill>Stealth</skill> each.",
+        "flaw": true
+    },
+    {
+        "name": "Partial",
+        "desc": "The armour does not cover the entire hit location. An opponent that rolls an even number to hit, or rolls a Critical Hit, ignores the partial armour's APs.",
+        "flaw": true
+    },
+    {
+        "name": "Weakpoints",
+        "desc": "The armour has small weakpoints where a blade can slip in if your opponent is successfully skilled or lucky. If your opponent has a weapon with the <weaponqual>Impale</weaponqual> Quality and scores a Critical, the APs of your armour are ignored.",
+        "flaw": true
     }
 ]

@@ -1,0 +1,1451 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WFRP 4e QuickRef</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="./isotope.pkgd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+    <script src="spells.js"></script>
+    <script src="skills.js"></script>
+    <script src="religion.js"></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Azeret Mono' rel='stylesheet'>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad" id="navBarDiv">
+
+    </div>
+
+    <div id="meleeWeap" class="w3-row-padding w3-section info">
+        <div class="w3-col s0 m0 l2">
+            &nbsp;
+        </div>
+        <div class="w3-col s0 m0 l8">
+            <h1>Melee Weapons</h1>
+            <table class="w3-table table-dark tstripe w3-hoverable w3-bordered">
+                <thead>
+                    <tr>
+                        <th>Weapon</th>
+                        <th>Price</th>
+                        <th>Enc</th>
+                        <th>Availablility</th>
+                        <th>Reach</th>
+                        <th>Damage</th>
+                        <th>Qualities and Flaws</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Basic</th>
+                    </tr>
+                    <tr>
+                        <td>Hand Weapon</td>
+                        <td>1GC</td>
+                        <td>1</td>
+                        <td>Common</td>
+                        <td>Average</td>
+                        <td>+SB+4</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Improvised Weapon</td>
+                        <td>N/A</td>
+                        <td>Varies</td>
+                        <td>N/A</td>
+                        <td>Varies</td>
+                        <td>+SB+1</td>
+                        <td>
+                            <weaponqual>Undamaging</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dagger</td>
+                        <td>16/–</td>
+                        <td>0</td>
+                        <td>Common</td>
+                        <td>Very Short</td>
+                        <td>+SB+2</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Knife</td>
+                        <td>8/–</td>
+                        <td>0</td>
+                        <td>Common</td>
+                        <td>Very Short</td>
+                        <td>+SB+1</td>
+                        <td>
+                            <weaponqual>Undamaging</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Shield (Buckler)</td>
+                        <td>18/2</td>
+                        <td>0</td>
+                        <td>Common</td>
+                        <td>Personal</td>
+                        <td>+SB+1</td>
+                        <td>
+                            <weaponqual>Shield 1</weaponqual>, <weaponqual>Defensive</weaponqual>, <weaponqual>
+                                Undamaging</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Shield</td>
+                        <td>2GC</td>
+                        <td>1</td>
+                        <td>Common</td>
+                        <td>Very Short</td>
+                        <td>+SB+2</td>
+                        <td>
+                            <weaponqual>Shield 2</weaponqual>, <weaponqual>Defensive</weaponqual>, <weaponqual>
+                                Undamaging</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Shield (Large)</td>
+                        <td>3GC</td>
+                        <td>3</td>
+                        <td>Common</td>
+                        <td>Very Short</td>
+                        <td>+SB+3</td>
+                        <td>
+                            <weaponqual>Shield 3</weaponqual>, <weaponqual>Defensive</weaponqual>, <weaponqual>
+                                Undamaging</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Cavalry</th>
+                    </tr>
+                    <tr>
+                        <td>Cavalry Hammer</td>
+                        <td>3GC</td>
+                        <td>3</td>
+                        <td>Scarce</td>
+                        <td>Long</td>
+                        <td>+SB+5</td>
+                        <td>
+                            <weaponqual>Pummel</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Lance</td>
+                        <td>1GC</td>
+                        <td>3</td>
+                        <td>Rare</td>
+                        <td>Very Long</td>
+                        <td>+SB+6</td>
+                        <td>
+                            <weaponqual>Impact</weaponqual>, <weaponqual>Impale</weaponqual>, <weaponqual>Lance
+                            </weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Fencing</th>
+                    </tr>
+                    <tr>
+                        <td>Foil</td>
+                        <td>5GC</td>
+                        <td>1</td>
+                        <td>Scarce</td>
+                        <td>Medium</td>
+                        <td>+SB+3</td>
+                        <td>
+                            <weaponqual>Fast</weaponqual>, <weaponqual>Impale</weaponqual>, <weaponqual>Precise
+                            </weaponqual>, <weaponqual>Undamaging</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Rapier</td>
+                        <td>5GC</td>
+                        <td>1</td>
+                        <td>Scarce</td>
+                        <td>Long</td>
+                        <td>+SB+4</td>
+                        <td>
+                            <weaponqual>Fast</weaponqual>, <weaponqual>Impale</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Brawling</th>
+                    </tr>
+                    <tr>
+                        <td>Unarmed</td>
+                        <td>N/A</td>
+                        <td>0</td>
+                        <td>–</td>
+                        <td>Personal</td>
+                        <td>+SB+0</td>
+                        <td>
+                            <weaponqual>Undamaging</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Knuckledusters</td>
+                        <td>2/6</td>
+                        <td>0</td>
+                        <td>Common</td>
+                        <td>Personal</td>
+                        <td>+SB+2</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Flail</th>
+                    </tr>
+                    <tr>
+                        <td>Grain Flail</td>
+                        <td>10/–</td>
+                        <td>1</td>
+                        <td>Common</td>
+                        <td>Average</td>
+                        <td>+SB+3</td>
+                        <td>
+                            <weaponqual>Distract</weaponqual>, <weaponqual>Imprecise</weaponqual>, <weaponqual>Wrap
+                            </weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Flail</td>
+                        <td>2GC</td>
+                        <td>1</td>
+                        <td>Scarce</td>
+                        <td>Average</td>
+                        <td>+SB+5</td>
+                        <td>
+                            <weaponqual>Distract</weaponqual>, <weaponqual>Wrap</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Military Flail</td>
+                        <td>3GC</td>
+                        <td>2</td>
+                        <td>Rare</td>
+                        <td>Long</td>
+                        <td>+SB+6</td>
+                        <td>
+                            <weaponqual>Distract</weaponqual>, <weaponqual>Impact</weaponqual>, <weaponqual>Tiring
+                            </weaponqual>, <weaponqual>Wrap</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Parry</th>
+                    </tr>
+                    <tr>
+                        <td>Main Gauche</td>
+                        <td>1GC</td>
+                        <td>0</td>
+                        <td>Rare</td>
+                        <td>Very Short</td>
+                        <td>+SB+2</td>
+                        <td>
+                            <weaponqual>Defensive</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Swordbreaker</td>
+                        <td>1GC 2/6</td>
+                        <td>1</td>
+                        <td>Scarce</td>
+                        <td>Short</td>
+                        <td>+SB+3</td>
+                        <td>
+                            <weaponqual>Defensive</weaponqual>, <weaponqual>Trap-blade</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Polearm</th>
+                    </tr>
+                    <tr>
+                        <td>Halberd</td>
+                        <td>2GC</td>
+                        <td>3</td>
+                        <td>Common</td>
+                        <td>Long</td>
+                        <td>+SB+4</td>
+                        <td>
+                            <weaponqual>Defensive</weaponqual>, <weaponqual>Hack</weaponqual>, <weaponqual>Impale
+                            </weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Spear</td>
+                        <td>15/–</td>
+                        <td>2</td>
+                        <td>Common</td>
+                        <td>Very Long</td>
+                        <td>+SB+4</td>
+                        <td>
+                            <weaponqual>Impale</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pike</td>
+                        <td>18/–</td>
+                        <td>4</td>
+                        <td>Rare</td>
+                        <td>Massive</td>
+                        <td>+SB+4</td>
+                        <td>
+                            <weaponqual>Impale</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Quarter Staff</td>
+                        <td>3/–</td>
+                        <td>2</td>
+                        <td>Common</td>
+                        <td>Long</td>
+                        <td>+SB+4</td>
+                        <td>
+                            <weaponqual>Defensive</weaponqual>, <weaponqual>Pummel</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Two-Handed</th>
+                    </tr>
+                    <tr>
+                        <td>Bastard Sword</td>
+                        <td>8GC</td>
+                        <td>3</td>
+                        <td>Scarce</td>
+                        <td>Long</td>
+                        <td>+SB+5</td>
+                        <td>
+                            <weaponqual>Damaging</weaponqual>, <weaponqual>Defensive</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Great Axe</td>
+                        <td>4GC</td>
+                        <td>3</td>
+                        <td>Scarce</td>
+                        <td>Long</td>
+                        <td>+SB+6</td>
+                        <td>
+                            <weaponqual>Hack</weaponqual>, <weaponqual>Impact</weaponqual>, <weaponqual>Tiring
+                            </weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Great Axe</td>
+                        <td>4GC</td>
+                        <td>3</td>
+                        <td>Scarce</td>
+                        <td>Long</td>
+                        <td>+SB+6</td>
+                        <td>
+                            <weaponqual>Hack</weaponqual>, <weaponqual>Impact</weaponqual>, <weaponqual>Tiring
+                            </weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pick</td>
+                        <td>9/–</td>
+                        <td>3</td>
+                        <td>Common</td>
+                        <td>Average</td>
+                        <td>+SB+5</td>
+                        <td>
+                            <weaponqual>Damaging</weaponqual>, <weaponqual>Impale</weaponqual>, <weaponqual>Slow
+                            </weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Warhammer</td>
+                        <td>3GC</td>
+                        <td>3</td>
+                        <td>Common</td>
+                        <td>Average</td>
+                        <td>+SB+6</td>
+                        <td>
+                            <weaponqual>Damaging</weaponqual>, <weaponqual>Pummel</weaponqual>, <weaponqual>Slow
+                            </weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Zweihänder</td>
+                        <td>10GC</td>
+                        <td>3</td>
+                        <td>Scarce</td>
+                        <td>Long</td>
+                        <td>+SB+5</td>
+                        <td>
+                            <weaponqual>Damaging</weaponqual>, <weaponqual>Hack</weaponqual>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="w3-col s0 m0 l2">
+            &nbsp;
+        </div>
+    </div>
+    <hr />
+    <div id="rangedWeap" class="w3-row-padding w3-section info">
+        <div class="w3-col s0 m0 l2">
+            &nbsp;
+        </div>
+        <div class="w3-col s12 m12 l8">
+            <h1>Ranged Weapons</h1>
+            <p>
+                Ranged weapons are assumed to be fired from a distance. If a test has specific effects depending upon
+                the range band (such as the <talent>Sniper</talent> Talent), use the following guidance:
+            <div class="w3-row">
+                <div class="w3-col s1 m1 l4">
+                    &nbsp;
+                </div>
+                <div class="w3-col s10 m10 l4">
+
+                    <table class="w3-table table-dark tstripe w3-hoverable w3-bordered">
+                        <thead>
+                            <th>Band</th>
+                            <th>Calculation</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Point Blank</td>
+                                <td>Range &div; 10</td>
+                            </tr>
+                            <tr>
+                                <td>Short</td>
+                                <td>Range &div; 2</td>
+                            </tr>
+                            <tr>
+                                <td>Long</td>
+                                <td>Range &times; 2</td>
+                            </tr>
+                            <tr>
+                                <td>Extreme</td>
+                                <td>Range &times; 3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="w3-col s1 m1 l4">
+                    &nbsp;
+                </div>
+            </div>
+            </p>
+            <table class="w3-table table-dark tstripe w3-hoverable w3-bordered">
+                <thead>
+                    <tr>
+                        <th>Weapon</th>
+                        <th>Price</th>
+                        <th>Enc</th>
+                        <th>Availablility</th>
+                        <th>Range</th>
+                        <th>Damage</th>
+                        <th>Qualities and Flaws</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Blackpowder</th>
+                    </tr>
+                    <tr>
+                        <td>Blunderbuss</td>
+                        <td>2GC</td>
+                        <td>1</td>
+                        <td>Scarce</td>
+                        <td>20</td>
+                        <td>+8</td>
+                        <td>
+                            <weaponqual>Blackpowder</weaponqual>, <weaponqual>Blast 3</weaponqual>, <weaponqual>
+                                Dangerous</weaponqual>, <weaponqual>Reload 2</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hochland Long Rifle</td>
+                        <td>100GC</td>
+                        <td>3</td>
+                        <td>Exotic</td>
+                        <td>100</td>
+                        <td>+9</td>
+                        <td>
+                            <weaponqual>Accurate</weaponqual>, <weaponqual>Blackpowder</weaponqual>, <weaponqual>Precise
+                            </weaponqual>, <weaponqual>Reload 4</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Handgun</td>
+                        <td>4GC</td>
+                        <td>2</td>
+                        <td>Scarce</td>
+                        <td>50</td>
+                        <td>+9</td>
+                        <td>
+                            <weaponqual>Blackpowder</weaponqual>, <weaponqual>Dangerous</weaponqual>, <weaponqual>Reload
+                                3</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pistol</td>
+                        <td>8GC</td>
+                        <td>0</td>
+                        <td>Rare</td>
+                        <td>20</td>
+                        <td>+8</td>
+                        <td>
+                            <weaponqual>Blackpowder</weaponqual>, <weaponqual>Pistol</weaponqual>, <weaponqual>Reload 1
+                            </weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Bow</th>
+                    </tr>
+                    <tr>
+                        <td>Elf Bow</td>
+                        <td>10GC</td>
+                        <td>2</td>
+                        <td>Exotic</td>
+                        <td>150</td>
+                        <td>+SB+4</td>
+                        <td>
+                            <weaponqual>Damaging</weaponqual>, <weaponqual>Precise</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Longbow</td>
+                        <td>5GC</td>
+                        <td>3</td>
+                        <td>Scarce</td>
+                        <td>100</td>
+                        <td>+SB+4</td>
+                        <td>
+                            <weaponqual>Damaging</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bow</td>
+                        <td>4GC</td>
+                        <td>2</td>
+                        <td>Common</td>
+                        <td>50</td>
+                        <td>+SB+3</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Shortbow</td>
+                        <td>3GC</td>
+                        <td>1</td>
+                        <td>Common</td>
+                        <td>20</td>
+                        <td>+SB+2</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Crossbow</th>
+                    </tr>
+                    <tr>
+                        <td>Crossbow Pistol</td>
+                        <td>6GC</td>
+                        <td>0</td>
+                        <td>Scarce</td>
+                        <td>10</td>
+                        <td>+7</td>
+                        <td>
+                            <weaponqual>Pistol</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Heavy Crossbow</td>
+                        <td>7GC</td>
+                        <td>3</td>
+                        <td>Rare</td>
+                        <td>100</td>
+                        <td>+9</td>
+                        <td>
+                            <weaponqual>Damaging</weaponqual>, <weaponqual>Reload 2</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Crossbow</td>
+                        <td>5GC</td>
+                        <td>2</td>
+                        <td>Common</td>
+                        <td>60</td>
+                        <td>+9</td>
+                        <td>
+                            <weaponqual>Reload 1</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Engineering</th>
+                    </tr>
+                    <tr>
+                        <td>Repeater Handgun</td>
+                        <td>10GC</td>
+                        <td>3</td>
+                        <td>Rare</td>
+                        <td>30</td>
+                        <td>+9</td>
+                        <td>
+                            <weaponqual>Dangerous</weaponqual>, <weaponqual>Engineering</weaponqual>, <weaponqual>Reload
+                                5</weaponqual>, <weaponqual>Repeater 4</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Repeater Pistol</td>
+                        <td>15GC</td>
+                        <td>1</td>
+                        <td>Rare</td>
+                        <td>10</td>
+                        <td>+8</td>
+                        <td>
+                            <weaponqual>Dangerous</weaponqual>, <weaponqual>Engineering</weaponqual>, <weaponqual>Pistol
+                            </weaponqual>, <weaponqual>Reload 4</weaponqual>, <weaponqual>Repeater 4</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Entangling</th>
+                    </tr>
+                    <tr>
+                        <td>Lasso</td>
+                        <td>6/–</td>
+                        <td>0</td>
+                        <td>Common</td>
+                        <td>SB×2</td>
+                        <td>–</td>
+                        <td>
+                            <weaponqual>Entangle</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Whip</td>
+                        <td>5/–</td>
+                        <td>0</td>
+                        <td>Common</td>
+                        <td>6</td>
+                        <td>+SB+2</td>
+                        <td>
+                            <weaponqual>Entangle</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Explosives</th>
+                    </tr>
+                    <tr>
+                        <td>Bomb</td>
+                        <td>3GC</td>
+                        <td>0</td>
+                        <td>Rare</td>
+                        <td>SB</td>
+                        <td>+12</td>
+                        <td>
+                            <weaponqual>Blast 5</weaponqual>, <weaponqual>Dangerous</weaponqual>, <weaponqual>Explosive
+                            </weaponqual>, <weaponqual>Impact</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Incendiary</td>
+                        <td>1GC</td>
+                        <td>0</td>
+                        <td>Scarce</td>
+                        <td>SB</td>
+                        <td>
+                            <weaponqual>Incendiary</weaponqual>
+                        </td>
+                        <td>
+                            <weaponqual>Blast 4</weaponqual>, <weaponqual>Dangerous</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Sling</th>
+                    </tr>
+                    <tr>
+                        <td>Sling</td>
+                        <td>1/–</td>
+                        <td>0</td>
+                        <td>Common</td>
+                        <td>60</td>
+                        <td>+6</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Staff Sling</td>
+                        <td>4/–</td>
+                        <td>2</td>
+                        <td>Scarce</td>
+                        <td>100</td>
+                        <td>+7</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Throwing</th>
+                    </tr>
+                    <tr>
+                        <td>Bolas</td>
+                        <td>10/–</td>
+                        <td>0</td>
+                        <td>Rare</td>
+                        <td>SB×3</td>
+                        <td>+SB</td>
+                        <td>
+                            <weaponqual>Entangle</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dart</td>
+                        <td>2/–</td>
+                        <td>0</td>
+                        <td>Scarce</td>
+                        <td>SB×2</td>
+                        <td>+SB+1</td>
+                        <td>
+                            <weaponqual>Impale</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Javelin</td>
+                        <td>10/6</td>
+                        <td>1</td>
+                        <td>Scarce</td>
+                        <td>SB×3</td>
+                        <td>+SB+3</td>
+                        <td>
+                            <weaponqual>Impale</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Rock</td>
+                        <td>–</td>
+                        <td>0</td>
+                        <td>Common</td>
+                        <td>SB×3</td>
+                        <td>+SB</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Throwing Axe</td>
+                        <td>1GC</td>
+                        <td>1</td>
+                        <td>Common</td>
+                        <td>SB×2</td>
+                        <td>+SB+3</td>
+                        <td>
+                            <weaponqual>Hack</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Throwing Knife</td>
+                        <td>18/–</td>
+                        <td>0</td>
+                        <td>Common</td>
+                        <td>SB×2</td>
+                        <td>+SB+2</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="w3-col s0 m0 l2">
+            &nbsp;
+        </div>
+    </div>
+    <div id="ammo" class="w3-row-padding w3-section info">
+        <div class="w3-col s0 m0 l2">
+            &nbsp;
+        </div>
+        <div class="w3-col s12 m12 l8">
+            <h2>Ammunition</h2>
+            <table class="w3-table table-dark tstripe w3-hoverable w3-bordered">
+                <thead>
+                    <tr>
+                        <th>Weapon</th>
+                        <th>Price</th>
+                        <th>Enc</th>
+                        <th>Availablility</th>
+                        <th>Range</th>
+                        <th>Damage</th>
+                        <th>Qualities and Flaws</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Blackpowder &amp; Engineering</th>
+                    </tr>
+                    <tr>
+                        <td>Bullet and Powder (12)</td>
+                        <td>3/3</td>
+                        <td>0</td>
+                        <td>Common</td>
+                        <td>As weapon</td>
+                        <td>+1</td>
+                        <td>
+                            <weaponqual>Impale</weaponqual>, <weaponqual>Penetrating</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Improvised Shot and Powder</td>
+                        <td>3d</td>
+                        <td>0</td>
+                        <td>Common</td>
+                        <td>Half weapon</td>
+                        <td>–</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Small Shot &amp; Powder</td>
+                        <td>3/3</td>
+                        <td>0</td>
+                        <td>Common</td>
+                        <td>As weapon</td>
+                        <td>–</td>
+                        <td>
+                            <weaponqual>Blast +1</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Bow</th>
+                    </tr>
+                    <tr>
+                        <td>Arrow (12)</td>
+                        <td>5/–</td>
+                        <td>0</td>
+                        <td>Common</td>
+                        <td>As weapon</td>
+                        <td>–</td>
+                        <td>
+                            <weaponqual>Impale</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Elf Arrow</td>
+                        <td>6/–</td>
+                        <td>0</td>
+                        <td>Exotic</td>
+                        <td>+50</td>
+                        <td>+1</td>
+                        <td>
+                            <weaponqual>Accurate</weaponqual>, <weaponqual>Impale</weaponqual>, <weaponqual>Penetrating
+                            </weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Crossbow</th>
+                    </tr>
+                    <tr>
+                        <td>Bolt (12)</td>
+                        <td>5/–</td>
+                        <td>0</td>
+                        <td>Common</td>
+                        <td>As weapon</td>
+                        <td>–</td>
+                        <td>
+                            <weaponqual>Impale</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="7" class="midHead" style="text-align: center;">Sling</th>
+                    </tr>
+                    <tr>
+                        <td>Lead Bullet (12)</td>
+                        <td>4d</td>
+                        <td>0</td>
+                        <td>Common</td>
+                        <td>-10</td>
+                        <td>+1</td>
+                        <td>
+                            <weaponqual>Pummel</weaponqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Stone Bullet (12)</td>
+                        <td>2d</td>
+                        <td>0</td>
+                        <td>Common</td>
+                        <td>As weapon</td>
+                        <td>–</td>
+                        <td>
+                            <weaponqual>Pummel</weaponqual>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="w3-col s0 m0 l2">
+            &nbsp;
+        </div>
+    </div>
+    <hr />
+    <div id="weapQualFlaw" class="w3-row-padding w3-section info">
+        <div class="w3-col s0 m0 l2">
+            &nbsp;
+        </div>
+        <div class="w3-col s12 m12 l8">
+            <h1>Weapon Qualities/Flaws</h1>
+            <table class="w3-table table-dark tstripe w3-hoverable w3-bordered">
+
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th colspan="2" class="midHead" style="text-align: center;">Qualities</th>
+                    </tr>
+                    <tr>
+                        <td>Accurate</td>
+                        <td>The weapon is accurate an easy to hit with. Gain a bonus of +10 to any Test when firing this
+                            weapon.</td>
+                    </tr>
+                    <tr>
+                        <td>Blackpowder</td>
+                        <td>The crack of gunfire followed by gouts of smoke and confusion can be terrifying. If you are
+                            targeted by a Blackpowder weapon, you must pass an <b>Average (+20) <skill>Cool</skill>
+                                Test</b> or take a <condition>Broken</condition> Condition, even if the shot misses.
+                            <br />
+                            Those with <skill>Ranged</skill> (Engineering) can use Blackpowder and Explosive weapons
+                            without penalty.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Blast (Rating)</td>
+                        <td>All Characters within <mono>(Rating)</mono> yards of the struck target point take <mono>
+                                SL+Weapon Damage</mono>, and suffer any Conditions the weapon inflicts.</td>
+                    </tr>
+                    <tr>
+                        <td>Crossbow/Throwing</td>
+                        <td>Crossbows and Thrown weapons are relatively simple to use. You can attempt a <skill>Ranged
+                            </skill> (Crossbow) or <skill>Ranged</skill> (Throwing) Test using your Ballistic Skill, but
+                            the weapon loses all Qualities whilst retaining its Flaws.</td>
+                    </tr>
+                    <tr>
+                        <td>Damaging</td>
+                        <td>A Damaging weapon can use the higher score from either the units die or the SL to determine
+                            the Damage caused from a successful hit. For example, if you roll 34 in your attack Test and
+                            the target number was 52, you can choose to use the SL (which in this case is 2) or the
+                            units die result, which is 4. <br />An <weaponqual>Undamaging</weaponqual> weapon can never
+                            also
+                            be Damaging (Undamaging takes precedent).</td>
+                    </tr>
+                    <tr>
+                        <td>Defensive</td>
+                        <td>Defensive weapons are designed to parry incoming attacks. If you are wielding such a weapon,
+                            gain a bonus of +1 SL to any <skill>Melee</skill> Test when you oppose an incoming attack.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Distract</td>
+                        <td>Distracting weapons can be used to drive an opponent back due to their dangerous or
+                            whip-like natures. Instead of causing Damage, a successful attack with a Distracting weapon
+                            can force an opponent back 1 yard per SL by which you win the Opposed Test.</td>
+                    </tr>
+                    <tr>
+                        <td>Engineering</td>
+                        <td>All Engineering weapons can be used by characters with <skill>Ranged</skill> (Blackpowder),
+                            but the weapons lose all Weapon Qualities whilst retaining their flaws.</td>
+                    </tr>
+                    <tr>
+                        <td>Entangle</td>
+                        <td>Your weapon wraps around your opponents, entangling them. Any opponent successfully hit by
+                            your weapon gains the <condition>Entangled</condition> Condition with a Strength value equal
+                            to your Strength Characteristic. <br />When Entangling an opponent, you cannot otherwise use
+                            the
+                            weapon to hit. You can end the Entangling whenever you wish.</td>
+                    </tr>
+                    <tr>
+                        <td>Explosive</td>
+                        <td>Those with <skill>Ranged</skill> (Engineering) can use Blackpowder and Explosive weapons
+                            without penalty.</td>
+                    </tr>
+                    <tr>
+                        <td>Fast</td>
+                        <td>Fast weapons are designed to strike out with such speed that parrying is not an option,
+                            leaving an opponent skewered before they can react. A wielder of a Fast weapon can choose to
+                            attack with the Fast weapon outside of the normal Initiative sequence, either striking
+                            first, last, or somewhere in between as desired. <br />Further, all <skill>Melee</skill>
+                            Tests to
+                            defend against Fast weapons suffer a penalty of –10 if your opponent is using a weapon
+                            without the Fast Quality; other Skills defend as normal. Two opponents with Fast weapons
+                            fight in Initiative order (relative to each other) as normal. A Fast weapon may never also
+                            be <weaponqual>Slow</weaponqual> (Slow takes precedent).</td>
+                    </tr>
+                    <tr>
+                        <td>Hack</td>
+                        <td>Hacking weapons have heavy blades that can hack through armour with horrific ease. If you
+                            hit an opponent, you Damage a struck piece of armour or shield by 1 point as well as
+                            wounding the target.</td>
+                    </tr>
+                    <tr>
+                        <td>Impact</td>
+                        <td>Some weapons are just huge or cause terrible damage due to their weight or design. On a
+                            successful hit, add the result of the units die of the attack roll to any Damage caused by
+                            an Impact weapon. <br />An <weaponqual>Undamaging</weaponqual> weapon can never also have
+                            Impact
+                            (Undamaging takes precedent).</td>
+                    </tr>
+                    <tr>
+                        <td>Impale</td>
+                        <td>Impale weapons can kill with a single clean blow. Impale weapons cause a Critical Hit on any
+                            number divisible by 10 (i.e.: 10, 20, 30, etc.) as well as on doubles (i.e.: 11, 22, 33)
+                            rolled equal or under an appropriate Test in combat.</td>
+                    </tr>
+                    <tr>
+                        <td>Incendiary</td>
+                        <td>Incendiary weapons give every affected target <mono>1+SL</mono>
+                            <condition>Ablaze</condition> Conditions.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Magical</td>
+                        <td>This weapon can harm creatures that are only susceptible to magical attacks.</td>
+                    </tr>
+                    <tr>
+                        <td>Penetrating</td>
+                        <td>The weapon is highly effective at penetrating armour. Non-metal APs are ignored, and the
+                            first point of all other armour is ignored.</td>
+                    </tr>
+                    <tr>
+                        <td>Pistol</td>
+                        <td>You can use this weapon to attack in Close Combat.</td>
+                    </tr>
+                    <tr>
+                        <td>Precise</td>
+                        <td>The weapon is easy to get on target. Gain a bonus of +1 SL to any successful Test when
+                            attacking with this weapon.</td>
+                    </tr>
+                    <tr>
+                        <td>Pummel</td>
+                        <td>Pummel weapons are especially good at battering foes into submission. If you score a Head
+                            hit with a Pummel weapon, attempt an Opposed Strength/Endurance test against the struck
+                            opponent. If you win the test, your opponent gains a <condition>Stunned</condition>
+                            Condition.</td>
+                    </tr>
+                    <tr>
+                        <td>Repeater (Rating)</td>
+                        <td>Your weapon holds <mono>(Rating)</mono> shots, automatically reloading after each time you
+                            fire. When you use all your shots, you must fully reload the weapon using the normal rules.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Shield (Rating)</td>
+                        <td>If you use this weapon to oppose an incoming attack, you count as having <mono>(Rating)
+                            </mono> Armour Points on all locations of your body. If your weapon has a Shield Rating of 2
+                            or higher (so: Shield 2 or Shield 3), you may also Oppose incoming missile shots in your
+                            Line of Sight.</td>
+                    </tr>
+                    <tr>
+                        <td>Trap-blade</td>
+                        <td>Some weapons are designed to trap other weapons, and sometimes even break them. If you score
+                            a Critical when defending against an attack from a bladed weapon you can choose to trap it
+                            instead of causing a Critical Hit. <br />If you choose to do this, enact an Opposed Strength
+                            Test,
+                            adding your SL from the previous Melee Test. If you succeed, your opponent drops the blade
+                            as it is yanked free. If you score an Astounding Success, you not only disarm your opponent,
+                            but the force of your maneuver breaks their blade unless it has the <weaponqual>Unbreakable
+                            </weaponqual> quality. If you fail the Test, your opponent frees the blade and may fight on
+                            as normal.</td>
+                    </tr>
+                    <tr>
+                        <td>Unbreakable</td>
+                        <td>The weapon is exquisitely well-made or constructed from an especially strong material. Under
+                            almost all circumstances, this weapon will not break, corrode, or lose its edge.</td>
+                    </tr>
+                    <tr>
+                        <td>Wrap</td>
+                        <td>Wrap weapons typically have long chains with weights at the end, making it very difficult to
+                            parry them effectively. <skill>Melee</skill> Tests opposing an attack from a Wrap weapon
+                            suffer a penalty of –1 SL, as parried strikes wrap over the top of shields, or around
+                            blades.</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" class="midHead" style="text-align: center;">Flaws</th>
+                    </tr>
+                    <tr>
+                        <td>Dangerous</td>
+                        <td>Some weapons are almost as likely to hurt you as your opponent. Any failed test including an
+                            9 on either 10s or units die results in a Fumble (see Chapter 5: Rules for more on Fumbles).
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Imprecise</td>
+                        <td>Imprecise weapons are difficult to bring to bear as they are unwieldy or hard to aim. Suffer
+                            a penalty of –1 SL when using the weapon to attack. <br />An Imprecise Weapon can never be
+                            <weaponqual>Precise</weaponqual> (Imprecise takes precedent).
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Lance</td>
+                        <td>Lances count as Improvised Weapons if used on a round where you have not Charged.</td>
+                    </tr>
+                    <tr>
+                        <td>Reload (Rating)</td>
+                        <td>The weapon is slow to reload. An unloaded weapon with this flaw requires an Extended <skill>
+                                Ranged</skill> Test for the appropriate Weapon Group scoring <mono>(Rating)</mono> SL to
+                            reload. If you are interrupted while reloading, you must start again from scratch.</td>
+                    </tr>
+                    <tr>
+                        <td>Slow</td>
+                        <td>Slow weapons are unwieldy and heavy, making them difficult to use properly. Characters using
+                            Slow weapons always strike last in a Round, regardless of Initiative order. Further,
+                            opponents gain a bonus of +1 SL to any Test to defend against your attacks.</td>
+                    </tr>
+                    <tr>
+                        <td>Tiring</td>
+                        <td>The weapon is fatiguing to use or difficult to bring to bear. You only gain the benefit of
+                            the <weaponqual>Impact</weaponqual> and <weaponqual>Damaging</weaponqual> Weapon Qualities
+                            on a Turn you Charge.</td>
+                    </tr>
+                    <tr>
+                        <td>Undamaging</td>
+                        <td>Some weapons are not very good at penetrating armour. All APs are doubled against Undamaging
+                            weapons. Further, you do not automatically inflict a minimum of 1 Wound on a successful hit
+                            in combat.</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <div class="w3-col s0 m0 l2">
+            &nbsp;
+        </div>
+    </div>
+    <hr />
+    <div id="armour" class="w3-row-padding w3-section info">
+        <div class="w3-col s0 m0 l2">
+            &nbsp;
+        </div>
+        <div class="w3-col s12 m12 l8">
+            <h1>Armour</h1>
+            <div class="w3-row">
+                <div class="w3-col s12 m12 l5">
+                    <h3>Armour Damage</h3>
+                    <p>
+                        As blows rains down on your armour, it can be damaged, possibly
+                        permanently. Whenever you are instructed to damage a piece of
+                        armour, the APs in the location damaged are reduced by 1.
+                    </p>
+                    <p>
+                        If this lowers the APs to 0 in that location, the armour there is
+                        rendered useless.
+                    </p>
+                    <p>
+                        Armour is generally damaged in one of two ways:
+                    <ul>
+                        <li>A special ability triggers, such as a spell or Talent, damaging a piece of armour</li>
+                        <li>A Critical Wound is deflected</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="w3-col s0 m0 l2">
+                    &nbsp;
+                </div>
+                <div class="w3-col s12 m12 l5">
+                    <h3>Critical Deflection</h3>
+                    <p>This only occurs should you choose it to. If you suffer a Critical
+                        Wound from an incoming attack on a location protected by
+                        armour, you can choose to let your armour be damaged by 1AP in
+                        order to ignore the Critical Wound.
+                    </p>
+                    <p>
+                        You still suffer all normal Wounds (and given your APs are now
+                        1 point lower, you probably suffer an extra Wound), but you avoid
+                        the Critical Wound effects as the blow is absorbed by your now-damaged
+                        armour.
+                    </p>
+                </div>
+            </div>
+            <br/>
+            <table class="w3-table table-dark tstripe w3-hoverable w3-bordered">
+                <thead>
+                    <tr>
+                        <th>Armour</th>
+                        <th>Price</th>
+                        <th>Enc</th>
+                        <th>Availablility</th>
+                        <th>Penalty</th>
+                        <th>Locations</th>
+                        <th>APs</th>
+                        <th>Qualities and Flaws</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th colspan="8" class="midHead" style="text-align: center;">Soft Leather*</th>
+                    </tr>
+                    <tr>
+                        <td>Leather Jack</td>
+                        <td>12/–</td>
+                        <td>1</td>
+                        <td>Common</td>
+                        <td>–</td>
+                        <td>Arms, Body</td>
+                        <td>1</td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Leather Jerkin</td>
+                        <td>10/–</td>
+                        <td>1</td>
+                        <td>Common</td>
+                        <td>–</td>
+                        <td>Body</td>
+                        <td>1</td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Leather Leggings</td>
+                        <td>14/–</td>
+                        <td>1</td>
+                        <td>Common</td>
+                        <td>–</td>
+                        <td>Legs</td>
+                        <td>1</td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Leather Skullcap</td>
+                        <td>8/–</td>
+                        <td>0</td>
+                        <td>Common</td>
+                        <td>–</td>
+                        <td>Head</td>
+                        <td>1</td>
+                        <td>
+                            <armourqual>Partial</armourqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="8" class="midHead" style="text-align: center;">Boiled Leather</th>
+                    </tr>
+                    <tr>
+                        <td>Breastplate (Leather)</td>
+                        <td>18/–</td>
+                        <td>2</td>
+                        <td>Scarce</td>
+                        <td>–</td>
+                        <td>Body</td>
+                        <td>2</td>
+                        <td>
+                            <armourqual>Weakpoints</armourqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="8" class="midHead" style="text-align: center;">Mail**</th>
+                    </tr>
+                    <tr>
+                        <td>Mail Chausses</td>
+                        <td>2GC</td>
+                        <td>3</td>
+                        <td>Scarce</td>
+                        <td>–</td>
+                        <td>Legs</td>
+                        <td>2</td>
+                        <td>
+                            <armourqual>Flexible</armourqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mail Coat</td>
+                        <td>3GC</td>
+                        <td>3</td>
+                        <td>Common</td>
+                        <td>–</td>
+                        <td>Arms, Body</td>
+                        <td>2</td>
+                        <td>
+                            <armourqual>Flexible</armourqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mail Coif</td>
+                        <td>1GC</td>
+                        <td>2</td>
+                        <td>Scarce</td>
+                        <td>-10% Perception</td>
+                        <td>Head</td>
+                        <td>2</td>
+                        <td>
+                            <armourqual>Flexible</armourqual>, <armourqual>Partial
+                            </armourqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mail Shirt</td>
+                        <td>2GC</td>
+                        <td>2</td>
+                        <td>Scarce</td>
+                        <td>–</td>
+                        <td>Body</td>
+                        <td>2</td>
+                        <td>
+                            <armourqual>Flexible</armourqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="8" class="midHead" style="text-align: center;">Plate**</th>
+                    </tr>
+                    <tr>
+                        <td>Breastplate (Plate)</td>
+                        <td>10GC</td>
+                        <td>3</td>
+                        <td>Scarce</td>
+                        <td>–</td>
+                        <td>Body</td>
+                        <td>2</td>
+                        <td>
+                            <armourqual>Flexible</armourqual>, <armourqual>
+                                Weakpoints</armourqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Open Helm</td>
+                        <td>2GC</td>
+                        <td>1</td>
+                        <td>Common</td>
+                        <td>-10% Perception</td>
+                        <td>Head</td>
+                        <td>2</td>
+                        <td>
+                            <armourqual>Partial</armourqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bracers</td>
+                        <td>8GC</td>
+                        <td>3</td>
+                        <td>Rare</td>
+                        <td>–</td>
+                        <td>Arms</td>
+                        <td>2</td>
+                        <td>
+                            <armourqual>Impenetrable</armourqual>, <armourqual>
+                                Weakpoints</armourqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Plate Leggings</td>
+                        <td>10GC</td>
+                        <td>3</td>
+                        <td>Rare</td>
+                        <td>-10 Stealth</td>
+                        <td>Legs</td>
+                        <td>2</td>
+                        <td>
+                            <armourqual>Impenetrable</armourqual>, <armourqual>
+                                Weakpoints</armourqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Helm</td>
+                        <td>3GC</td>
+                        <td>2</td>
+                        <td>Rare</td>
+                        <td>-20% Perception</td>
+                        <td>Head</td>
+                        <td>2</td>
+                        <td>
+                            <armourqual>Impenetrable</armourqual>, <armourqual>
+                                Weakpoints</armourqual>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="8" class="midHead" style="text-align: left;">* Soft Leather can be worn without penalty under any other Armour.</th>
+                    </tr>
+                    <tr>
+                        <td colspan="8" class="midHead" style="text-align: left;">** Wearing any Mail or Plate confers a Penalty of -10 <skill>Stealth</skill> each.</th>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <div class="w3-col s0 m0 l2">
+            &nbsp;
+        </div>
+    </div>
+    <hr />
+    <div id="armourQualFlaw" class="w3-row-padding w3-section info">
+        <div class="w3-col s0 m0 l2">
+            &nbsp;
+        </div>
+        <div class="w3-col s12 m12 l8">
+            <h1>Armour Qualities/Flaws</h1>
+            <table class="w3-table table-dark tstripe w3-hoverable w3-bordered">
+
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th colspan="2" class="midHead" style="text-align: center;">Qualities</th>
+                    </tr>
+                    <tr>
+                        <td>Flexible</td>
+                        <td>Flexible armour can be worn under a layer of non-Flexible armour if you wish. If you do so,
+                            you gain the benefit of both.</td>
+                    </tr>
+                    <tr>
+                        <td>Impenetrable</td>
+                        <td>The armour is especially resilient, meaning most attacks simply cannot penetrate it. All
+                            Critical Wounds caused by an odd number to hit you, such as 11 or 33, are ignored.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" class="midHead" style="text-align: center;">Flaws</th>
+                    </tr>
+                    <tr>
+                        <td>Partial</td>
+                        <td>The armour does not cover the entire hit location. An opponent that rolls an even number to
+                            hit, or rolls a Critical Hit, ignores the partial armour's APs.</td>
+                    </tr>
+                    <tr>
+                        <td>Weakpoints</td>
+                        <td>The armour has small weakpoints where a blade can slip in if your opponent is successfully
+                            skilled or lucky. If your opponent has a weapon with the Impale Quality and scores a
+                            Critical, the APs of your armour are ignored.
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <div class="w3-col s0 m0 l2">
+            &nbsp;
+        </div>
+    </div>
+    <hr />
+</body>
+<footer>
+    <div class="w3-row w3-section">
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m10 l10">
+            <div class="w3-center" id="copyrightText">
+            </div>
+        </div>
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+    </div>
+    <script>
+    </script>
+</footer>
+<div id="modalPlaceholder">
+
+</div>
+
+</html>

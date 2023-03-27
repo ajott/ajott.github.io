@@ -667,22 +667,22 @@ $(document).ready(function () {
 });
 
 
-$(document).ready(function () {
-    buildConditionTable();
+// $(document).ready(function () {
+//     buildConditionTable();
 
-});
+// });
 
-function buildConditionTable() {
-    let htmlString = ""
+// function buildConditionTable() {
+//     let htmlString = ""
 
-    Object.entries(condition).forEach(cond => {
-        htmlString += "<tr>"
-        htmlString += "<td>" + cond[1]["name"] + "</td>"
-        htmlString += "<td>" + cond[1]["desc"] + "</td>"
+//     Object.entries(condition).forEach(cond => {
+//         htmlString += "<tr>"
+//         htmlString += "<td>" + cond[1]["name"] + "</td>"
+//         htmlString += "<td>" + cond[1]["desc"] + "</td>"
 
-        htmlString += "</tr>"
-    });
+//         htmlString += "</tr>"
+//     });
 
-    $("#conditionTable").html(htmlString)
-}
+//     $("#conditionTable").html(htmlString)
+// }
 

@@ -876,7 +876,7 @@ var cults = {
         "Worshippers": "<p>Myrmidia grants generals the insight to win battles with minimal losses, and soldiers the skill-at-arms to defeat enemies quickly and without significant losses. Because of this, her cult is steadily growing among the armies and garrisons of the Empire, especially in the Reikland, Averland, and Wissenland. In the Empire, the cult has three orders of significance. The Order of the Eagle tends to the temples and their surrounding communities, and is led from Nuln by the ‘Eagle of the North’, the most powerful Myrmidian north of the Vaults. The templar Order of the Righteous Spear has a chapterhouse attached to each of these temples, each commanded by the local high priest. A second templar order, the Order of the Blazing Sun, is the oldest Myrmidian order in the Empire, and works independently of the Order of the Eagle.</p><p>Myrmidia’s clerics in the Empire normally wear blue cowls over white robes with red edging, with her symbol either sewn onto the left breast or worn as a cloak-clasp.</p>",
         "Sites": "<p>Most of Myrmidia’s holy sites are found in Estalia and Tilea, and are associated with the goddess’s campaigns across those realms when she manifested as a mortal over two-thousand years ago. In the Empire, the goddess has much less of a presence, with temples only in major towns and cities, and only a single monastic order cloistered in the Monastery of the Black Maiden in Wissenland. Temples to Myrmidia tend to follow the architectural styles of Tilea and Estalia, with domed roofs covering square or rectangular halls. Their exteriors are often carved with low reliefs showing battle scenes or tableaux of weapons and shields. Shrines may take the form of miniature temples, statues of the goddess, or free-standing sculptures of stacked weapons, shields, and armour. Myrmidia’s holy sites are also known for their scandalous depictions of the goddess and her saints, who are often presented wearing little more than scarves about their waists, which many Sigmarites find completely unacceptable.</p>",
         "Penances": "<p>Penances from Myrmidia are usually military in nature. A cultist may be ordered to defeat an enemy champion in single combat, or to train a group of peasants and lead them in the defence of their village. Protecting pilgrimage routes to sites of importance to Myrmidia are also not uncommon.</p>",
-        "Strictures": " <li>Act with honour and dignity in all matters.</li> <li>Respect prisoners of war, and never kill an enemy who</li> <li>rrenders.</li> <li>Show no mercy to the unrepentant enemies of Humanity.</li> <li>Obey all honourable orders.</li> <li>Preserve the weak from the horrors of war.</li>"
+        "Strictures": " <li>Act with honour and dignity in all matters.</li> <li>Respect prisoners of war, and never kill an enemy who surrenders.</li> <li>Show no mercy to the unrepentant enemies of Humanity.</li> <li>Obey all honourable orders.</li> <li>Preserve the weak from the horrors of war.</li>"
     },
     "Ranald": {
         "title": "Ranald, God of Trickery",
@@ -2990,7 +2990,7 @@ var condition = [
     },
     {
         "name": "Prone",
-        "desc": "<p>You have fallen to the ground, possibly because you have run out of Wounds, you’ve tripped, or because you’ve been hit by something rather large. On your turn, your Move can only be used to stand up or crawl at half your Movement in yards (note: if you have 0 Wounds remaining, you can only crawl). You suffer a –20 penalty to all Tests involving movement of any kind, and any opponent trying to strike you in Melee Combat gains +20 to hit you.</p><p>Unlike most other conditions, Prone does not stack — you are either Prone , or you are not. You lose the Prone Condition when you stand up.</p>"
+        "desc": "<p>You have fallen to the ground, possibly because you have run out of Wounds, you’ve tripped, or because you’ve been hit by something rather large. On your turn, your Move can only be used to stand up or crawl at half your Movement in yards (note: if you have 0 Wounds remaining, you can only crawl). You suffer a –20 penalty to all Tests involving movement of any kind, and any opponent trying to strike you in Melee Combat gains +20 to hit you.</p><p>Unlike most other conditions, Prone does not stack — you are either Prone, or you are not. You lose the Prone Condition when you stand up.</p>"
     },
     {
         "name": "Stunned",
@@ -3002,7 +3002,7 @@ var condition = [
     },
     {
         "name": "Unconscious",
-        "desc": "<p>You are knocked out, asleep, or otherwise insensible. You can do nothing on your turn and are completely unaware of your surroundings. An attacker targeting you gains the benefit of the I Will Not Fail rule on page 171 without having to spend a Resilience point. Or, if the GM prefers, any close combat hit simply kills you. Any ranged combat hit automatically does the same if the shooter is at Point Blank range.</p><p>The Unconscious Condition does not stack — you are either Unconscious , or you are not — so you do not collect multiple Unconscious Conditions.</p><p>Recovering from unconsciousness requires different circumstances depending upon why you fell unconscious. Refer to Injury on page 172 for more on this. If you spend a Resolve point to remove an Unconscious condition, but have not resolved the cause of the incapacitation, you gain another Unconscious Condition at the end of the round. When you lose the Unconscious Condition, you gain the <condition>Prone</condition> and <condition>Fatigued</condition> Conditions.</p>"
+        "desc": "<p>You are knocked out, asleep, or otherwise insensible. You can do nothing on your turn and are completely unaware of your surroundings. An attacker targeting you gains the benefit of the I Will Not Fail rule on page 171 without having to spend a Resilience point. Or, if the GM prefers, any close combat hit simply kills you. Any ranged combat hit automatically does the same if the shooter is at Point Blank range.</p><p>The Unconscious Condition does not stack — you are either Unconscious, or you are not — so you do not collect multiple Unconscious Conditions.</p><p>Recovering from unconsciousness requires different circumstances depending upon why you fell unconscious. Refer to Injury on page 172 for more on this. If you spend a Resolve point to remove an Unconscious condition, but have not resolved the cause of the incapacitation, you gain another Unconscious Condition at the end of the round. When you lose the Unconscious Condition, you gain the <condition>Prone</condition> and <condition>Fatigued</condition> Conditions.</p>"
     }
 ]
 
@@ -3729,7 +3729,7 @@ var trait = [
     },
     {
         "name": "Animosity (Target)",
-        "desc": "<p>You harbour an enmity for the Target, which will normally be a group of people or creatures, such as ‘Nordlanders’, ‘Beastmen’, or ‘Nobles’. You must attempt a Psychology Test whenever you encounter the group. If you pass, you may grumble and spit, but only suffer a penalty of –20 to all Fellowship Tests towards that group. Should you fail you are subject to Animosity.</p><p>At the end of every subsequent Round, you may attempt another Psychology test to bring the Animosity to an end. If you do not, the effects of Animosity naturally come to an end when all members of the specified group in your line of sight are utterly pacified or gone, or you gain the <condition>Stunned</condition> or <condition>Unconscious</condition> Condition, or you become subject to another Psychology.</p><p>When subject to Animosity , you must immediately attack the disagreeable creatures, either socially (insults, jibes, and similar) or physically (most commonly with fists), as appropriate. You also gain a bonus of +1 SL on any attempts to socially or mentally attack the group. Animosity is over-ridden by <trait>Fear</trait> and <trait>Terror</trait>.</p>"
+        "desc": "<p>You harbour an enmity for the Target, which will normally be a group of people or creatures, such as ‘Nordlanders’, ‘Beastmen’, or ‘Nobles’. You must attempt a Psychology Test whenever you encounter the group. If you pass, you may grumble and spit, but only suffer a penalty of –20 to all Fellowship Tests towards that group. Should you fail you are subject to Animosity.</p><p>At the end of every subsequent Round, you may attempt another Psychology test to bring the Animosity to an end. If you do not, the effects of Animosity naturally come to an end when all members of the specified group in your line of sight are utterly pacified or gone, or you gain the <condition>Stunned</condition> or <condition>Unconscious</condition> Condition, or you become subject to another Psychology.</p><p>When subject to Animosity, you must immediately attack the disagreeable creatures, either socially (insults, jibes, and similar) or physically (most commonly with fists), as appropriate. You also gain a bonus of +1 SL on any attempts to socially or mentally attack the group. Animosity is over-ridden by <trait>Fear</trait> and <trait>Terror</trait>.</p>"
     },
     {
         "name": "Armour (Rating)",
@@ -3925,7 +3925,7 @@ var trait = [
     },
     {
         "name": "Prejudice (Target)",
-        "desc": "<p>The creature just doesn’t like the Target.</p><p>You really dislike the Target , which is normally a group of people or creatures such as ‘Ostlanders’, ‘Elves’, or ‘Wizards’. You must attempt a Psychology Test whenever you encounter the group against which you are prejudiced. If you pass, you may frown a lot, but will otherwise act normally, only suffering a penalty of –10 to all Fellowship Tests towards that group. Should you fail you are subject to Prejudice . At the end of every subsequent Round, you may attempt another Psychology test to bring the Prejudice to an end. If you do not, the effects of Prejudice naturally come to an end when all members of the specified group in your line of sight are gone, or you gain the Stunned or Unconscious Condition, or you become subject to another Psychology.</p><p>When subject to Prejudice , you must immediately insult the target of your prejudice. Loudly.</p>"
+        "desc": "<p>The creature just doesn’t like the Target.</p><p>You really dislike the Target, which is normally a group of people or creatures such as ‘Ostlanders’, ‘Elves’, or ‘Wizards’. You must attempt a Psychology Test whenever you encounter the group against which you are prejudiced. If you pass, you may frown a lot, but will otherwise act normally, only suffering a penalty of –10 to all Fellowship Tests towards that group. Should you fail you are subject to Prejudice . At the end of every subsequent Round, you may attempt another Psychology test to bring the Prejudice to an end. If you do not, the effects of Prejudice naturally come to an end when all members of the specified group in your line of sight are gone, or you gain the Stunned or Unconscious Condition, or you become subject to another Psychology.</p><p>When subject to Prejudice, you must immediately insult the target of your prejudice. Loudly.</p>"
     },
     {
         "name": "Ranged (Rating) [Range]",
@@ -4788,5 +4788,110 @@ var career = [
         "advances": ["BS", "T", "I", "WS", "Fel", "Int"],
         "incomeSkill": "Perception",
         "races": "Halfling, Human"
+    },
+    {
+        "name": "Warrior Priest",
+        "class": "Warriors",
+        "desc": "You bring divinity to the thick of battle, slaying the enemies of the Empire with righteous fury.",
+        "path1": {
+            "name": "Novitiate",
+            "skills":
+                [
+                    "Cool",
+                    "Dodge",
+                    "Endurance",
+                    "Heal",
+                    "Leadership",
+                    "Lore (Theology)",
+                    "Melee (Any)",
+                    "Pray"
+                ],
+            "talents":
+                [
+                    "Bless (Any)",
+                    "Etiquette (Cultists)",
+                    "Read/Write",
+                    "Strong-minded"
+                ],
+            "trappings":
+                [
+                    "Book (Religion)",
+                    "Leather Jerkin",
+                    "Religious Symbol",
+                    "Robes",
+                    "Weapon (Any Melee)"
+                ],
+            "status": "Brass 2"
+        },
+        "path2": {
+            "name": "Warrior Priest",
+            "skills":
+                [
+                    "Charm",
+                    "Entertain (Speeches)",
+                    "Intimidate",
+                    "Language (Battle)",
+                    "Melee (Any)",
+                    "Ranged (Any)"
+                ],
+            "talents":
+                [
+                    "Dual Wielder",
+                    "Inspiring",
+                    "Invoke (Any)",
+                    "Seasoned Traveller"
+                ],
+            "trappings":
+                [
+                    "Breastplate",
+                    "Weapon (Any)"
+                ],
+            "status": "Silver 2"
+        },
+        "path3": {
+            "name": "Priest Sergeant",
+            "skills":
+                [
+                    "Animal Care",
+                    "Intuition",
+                    "Perception",
+                    "Ride (Horse)"
+                ],
+            "talents":
+                [
+                    "Combat Aware",
+                    "Holy Visions",
+                    "Pure Soul",
+                    "Stout-hearted"
+                ],
+            "trappings":
+                [
+                    "Light Warhorse with Saddle and Tack"
+                ],
+            "status": "Silver 3"
+        },
+        "path4": {
+            "name": "Priest Captain",
+            "skills":
+                [
+                    "Consume Alcohol",
+                    "Lore (Warfare)"
+                ],
+            "talents":
+                [
+                    "Fearless (Any)",
+                    "Furious Assault",
+                    "Holy Hatred",
+                    "Warleader"
+                ],
+            "trappings":
+                [
+                    "Religious Relic"
+                ],
+            "status": "Silver 4"
+        },
+        "advances": ["WS", "T", "WP", "S", "I", "Fel"],
+        "incomeSkill": "Leadership",
+        "races": "Human"
     }
 ]

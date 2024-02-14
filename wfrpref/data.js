@@ -4550,7 +4550,7 @@ var career = [
         "advances": ["Dex", "Int", "Fel", "WP", "I", "T"],
         "incomeSkill": "Lore (Theology)",
         "races": "Human"
-    },,
+    },
     {
         "name": "Physician",
         "class": "Academics",

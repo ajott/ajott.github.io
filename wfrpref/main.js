@@ -39,9 +39,10 @@ function initializeModals() {
     $('trait').attr('onclick', 'buildModal(this,\'trait\')');
     $('career').attr('onclick', 'buildModal(this,\'career\')');
     $('armourqual').attr('onclick', 'buildModal(this,\'armQual\')');
+    $('test').attr('onclick', 'buildModal(this, \'skill\',0,1)');
 }
 
-function buildModal(el, type, mast = 0) {
+function buildModal(el, type, mast = 0, isTest=0) {
     // Used for building individual modal IDs
     modalCount++
     let srchPhrase = "";
@@ -63,8 +64,12 @@ function buildModal(el, type, mast = 0) {
 
     if (mast == 1) {
         srchPhrase = el
-    } else {
-        let htmlPhrase = el.innerText
+    } else if (isTest == 1) {
+        let htmlPhrase = el.innerText;
+        let tstSplt = htmlPhrase.split(') ')[1].split(' (')[0] // eg "Challenging (+0) Perception Test" evaluates to "Perception Test" which then gets split to just "Perception"
+    }
+    else {
+        let htmlPhrase = el.innerText;
         srchPhrase = htmlPhrase.split(' (')[0] // Get rid of specializations, such as Art (Engraving)
     }
     let srchRslt = fuses[type].search(srchPhrase)
@@ -255,6 +260,10 @@ function buildModal(el, type, mast = 0) {
             $("#modal" + modalCount + " .careerClass").text(dataRslt["class"])
             $("#modal" + modalCount + " .careerDesc").html("&ldquo;" + dataRslt["desc"] + "&rdquo;")
             $("#modal" + modalCount + " .careerRaces").html("<eh>" + dataRslt["races"] + "</eh>")
+
+
+            $("#modal" + modalCount + " .attrTable th").show();
+            $("#modal" + modalCount + " .attrTable td").show();
 
             $("#modal" + modalCount + " .career" + dataRslt["advances"][0] + "th").show()
             $("#modal" + modalCount + " .career" + dataRslt["advances"][0]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>").show()
@@ -570,7 +579,6 @@ function buildCareerCard() {
     $("#careerCard .careerClass").text(career[1]["class"])
     $("#careerCard .careerDesc").html("&ldquo;" + career[1]["desc"] + "&rdquo;")
     $("#careerCard .careerRaces").html("<eh>" + career[1]["races"] + "</eh>")
-
     $("#careerCard .career" + career[1]["advances"][0]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>")
     $("#careerCard .career" + career[1]["advances"][1]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>")
     $("#careerCard .career" + career[1]["advances"][2]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>")

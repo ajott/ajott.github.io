@@ -131,7 +131,7 @@ var spell = [
         "range": "You",
         "target": "You",
         "duration": "<eh>Willpower</eh> minutes",
-        "description": "You can commune with all creatures possessing the Bestial Trait. <em>Ghur</em> clogs your throat, and your language comes out as snarls, hisses, and roars as befits the beasts to whom you talk. While the creatures are not compelled to answer you, or do as you bid, most will be curious enough to hear you out. You gain +20 on all <b>Charm Animal</b> and <b>Animal Training</b> Tests While this spell is active, you may only speak with beasts &mdash; you may not speak any civilised tongues, and can only communicate with your party using gestures or Language (Battle). Note, this also means you cannot cast any spells, or dispel, while Beast Tongue is active."
+        "description": "You can commune with all creatures possessing the Bestial Trait. <em>Ghur</em> clogs your throat, and your language comes out as snarls, hisses, and roars as befits the beasts to whom you talk. While the creatures are not compelled to answer you, or do as you bid, most will be curious enough to hear you out. You gain +20 on all <skill>Charm Animal</skill> and <skill>Animal Training</skill> Tests While this spell is active, you may only speak with beasts &mdash; you may not speak any civilised tongues, and can only communicate with your party using gestures or Language (Battle). Note, this also means you cannot cast any spells, or dispel, while Beast Tongue is active."
     }, {
         "name": "Flock of Doom",
         "lore": "Beasts",
@@ -140,7 +140,7 @@ var spell = [
         "range": "<eh>Willpower</eh> yards",
         "target": "AoE (<eh>Willpower Bonus</eh> yards)",
         "duration": "<eh>Willpower Bonus</eh> Rounds",
-        "description": "You call down a murder of crows or similar local birds to assail your foes. The flock attacks everyone in the Area of Effect who does not possess the <talent>Arcane Magic (Beasts)</talent> Talent ferociously, inflicting a +7 Damage hit at the end of the Round. The flock remains in play for the duration of the spell. For your Action you may make an <b>Average (+20) Charm Animal</b> Test to move the flock to another target within range. While within the Area of Effect, all creatures gain +1 <condition>Blinded</condition> Condition."
+        "description": "You call down a murder of crows or similar local birds to assail your foes. The flock attacks everyone in the Area of Effect who does not possess the <talent>Arcane Magic (Beasts)</talent> Talent ferociously, inflicting a +7 Damage hit at the end of the Round. The flock remains in play for the duration of the spell. For your Action you may make an <test>Average (+20) Charm Animal Test</test> to move the flock to another target within range. While within the Area of Effect, all creatures gain +1 <condition>Blinded</condition> Condition."
     }, {
         "name": "Hunter’s Hide",
         "lore": "Beasts",
@@ -257,7 +257,7 @@ var spell = [
         "range": "Touch",
         "target": "1",
         "duration": "Instant",
-        "description": "Channelling <em>Aqshy</em> through your hands you lay them on an ally\’s wounds. Immediately heal 1d10 Wounds and remove all <condition>Bleeding</condition> Conditions. Further, the wounds will not become infected. <br/> Targets without the <talent>Arcane Magic (Fire)</talent> Talent, must pass a <b>Challenging (+0) Cool</b> Test or scream in agony. If Failed by –6 or more SL, the target gains the <condition>Unconscious</condition> Condition and is permanently scarred, waking up 1d10 hours later."
+        "description": "Channelling <em>Aqshy</em> through your hands you lay them on an ally\’s wounds. Immediately heal 1d10 Wounds and remove all <condition>Bleeding</condition> Conditions. Further, the wounds will not become infected. <br/> Targets without the <talent>Arcane Magic (Fire)</talent> Talent, must pass a <test>Challenging (+0) Cool Test</test> or scream in agony. If Failed by –6 or more SL, the target gains the <condition>Unconscious</condition> Condition and is permanently scarred, waking up 1d10 hours later."
     }, {
         "name": "Crown of Flame",
         "lore": "Fire",
@@ -616,8 +616,8 @@ var spell = [
         "CN": 7,
         "range": "You",
         "target": "You",
-        "duration": "<eh>Willpower Bonus</eh> Rounds",
-        "description": "You encase yourself in a crackling cage of sparking electricity and <em>Azyr</em>. For the spell’s duration, gain +SL Armour Points to all locations against melee attacks. If attacked by metal weapons &mdash; such as daggers, swords, and spears with metal tips &mdash; your attacker takes <eh>+Willpower Bonus</eh> Damage."
+        "duration": "Willpower Bonus Rounds",
+        "description": "You encase yourself in a crackling cage of sparking electricity and <em>Azyr</em>. For the spell’s duration, gain +SL Armour Points to all locations against melee attacks. If attacked by metal weapons &mdash; such as daggers, swords, and spears with metal tips &mdash; your attacker takes +Willpower Bonus Damage."
     }, {
         "name": "Comet of Casandora",
         "lore": "Heavens",
@@ -627,6 +627,348 @@ var spell = [
         "target": "AoE (Initiative Bonus yards)",
         "duration": "Special",
         "description": "<p>You channel all the <em>Azyr</em> you can muster and reach out to the skies, calling down a comet to wreak havoc amongst your foes. Select a target point within range. At the end of the next round, make an <b>Average (+20) Perception Test</b>. For every +SL you achieve, you may move your point of impact by Initiative Bonus yards.</p> <p>For every –SL, the GM will move the point of impact by Initiative Bonus yards in a random direction. Comet of Casandora then acts as a magical missile with Damage +12 that hits all targets in the Area of Effect, who also gain +1 <condition>Ablaze</condition> and the <condition>Prone</condition> Condition.</p>"
+    }, {
+        "name": "Fate's Fickle Fingers",
+        "lore": "Heavens",
+        "wind": "Azyr",
+        "CN": 6,
+        "range": "You",
+        "target": "AoE (Initiative Bonus yards)",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>All allies within the Area of Effect, excluding those with the <talent>Arcane Magic (Heavens)</talent> Talent, create a single pool for their Fortune Points. All may draw on the pool, first come, first served. When the spell ends, you reallocate any remaining Fortune Points as fairly as possible. </p>"
+    }, {
+        "name": "Starcrossed",
+        "lore": "Heavens",
+        "wind": "Azyr",
+        "CN": 7,
+        "range": "Willpower yards",
+        "target": "1",
+        "duration": "Initiative Bonus Rounds",
+        "description": "<p>While this spell is active, you can spend Fortune Points to force an opponent to reroll Tests. </p>"
+    }, {
+        "name": "T'Essla's Arc",
+        "lore": "Heavens",
+        "wind": "Azyr",
+        "CN": 7,
+        "range": "Willpower yards",
+        "target": "1",
+        "duration": "Instant",
+        "description": "<p>A crackling bolt of lightning shoots from your fingertips, striking your target. This is a magic missile with Damage +10 that inflicts +1 <condition>Blinded</condition> condition. </p>"
+    }, {
+        "name": "The First Portent of Amul",
+        "lore": "Heavens",
+        "wind": "Azyr",
+        "CN": 3,
+        "range": "You",
+        "target": "You",
+        "duration": "Initiative Bonus Rounds",
+        "description": "<p>Gain +1 Fortune Point. For every +2 SL, gain +1 more. Any of these points unused at the end of the Duration are lost.</p>"
+    }, {
+        "name": "The Second Portent of Amul",
+        "lore": "Heavens",
+        "wind": "Azyr",
+        "CN": 6,
+        "range": "You",
+        "target": "You",
+        "duration": "Initiative Bonus Rounds",
+        "description": "<p>Gain +SL Fortune Points. For every +2 SL, gain +1 additional Fortune point. Any unused points at the end of the Duration are lost.</p>"
+    }, {
+        "name": "The Third Portent of Amul",
+        "lore": "Heavens",
+        "wind": "Azyr",
+        "CN": 12,
+        "range": "You",
+        "target": "You",
+        "duration": "Initiative Bonus Rounds",
+        "description": "<p>Gain +1 Fate Point. If the Fate point is not used by the end of the Duration, it is lost.</p>"
+    }, {
+        "name": "Crucible of <em>Chamon</em>",
+        "lore": "Metal",
+        "wind": "Chamon",
+        "CN": 7,
+        "range": "Willpower Bonus yards",
+        "target": "1",
+        "duration": "Instant",
+        "description": "<p>You channel <em>Chamon</em> into a single non-magical, metallic object, such as a weapon or piece of armour. The item melts, dripping to the floor as molten metal, cooling almost immediately. If held, the item is dropped. If worn, the wearer takes a hit like a magic missile with Damage equal to your Willpower Bonus that ignores Toughness Bonus. While the object is destroyed, the metal retains its base value, and may be used by a smith as raw material. </p>"
+    }, {
+        "name": "Enchant Weapon",
+        "lore": "Metal",
+        "wind": "Chamon",
+        "CN": 6,
+        "range": "Touch",
+        "target": "Special",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>You encase a single non-magical weapon with heavy bands of <em>Chamon</em>, enhancing its potency. For the duration of the spell it counts as magical, gains a bonus to Damage equal to your Willpower Bonus, and gains the <weaponQual>Unbreakable</weaponQual> Quality (see page 298). For every +3 SL you may also add 1 Quality or remove 1 Flaw from the weapon, while the spell is in effect.</p>"
+    }, {
+        "name": "Feather of Lead",
+        "lore": "Metal",
+        "wind": "Chamon",
+        "CN": 5,
+        "range": "Willpower yards",
+        "target": "AoE (Willpower Bonus yards)",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>Calling on the golden wind, you alter the density of your target’s belongings, raising or lowering their weight. For the duration of the spell, choose one effect for everyone within the area of effect:<ul><li>Count as two steps more Overburdened</li><li>Do not count as Overburdened</li></ul></p><p>See page 293 for details on Encumbrance.</p>"
+    }, {
+        "name": "Fool's Gold",
+        "lore": "Metal",
+        "wind": "Chamon",
+        "CN": 4,
+        "range": "Touch",
+        "target": "1",
+        "duration": "Willpower minutes",
+        "description": "<p>You weave <em>Chamon</em> into a non-magical object made of metal, fundamentally altering its alchemical nature. For the duration of the spell, all metal in the object becomes gold. This is not an illusion: it has actually transformed into gold. When the spell ends, the item reverts to its original metal. This spell can ruin good weapons, make armour too heavy to wear, and turn lead coins into something much more appealing. Spot effects arising from this spell are left in the hands of the GM.</p>"
+    }, {
+        "name": "Forge of <em>Chamon</em>",
+        "lore": "Metal",
+        "wind": "Chamon",
+        "CN": 9,
+        "range": "Willpower Bonus yards",
+        "target": "Special",
+        "duration": "Willpower minutes",
+        "description": "<p>You alter the quality of a single item made of metal. You may add 1 Quality or remove 1 Flaw. For every +2 SL, you may add another Quality or remove another Flaw.</p>"
+    }, {
+        "name": "Glittering Robe",
+        "lore": "Metal",
+        "wind": "Chamon",
+        "CN": 5,
+        "range": "You",
+        "target": "You",
+        "duration": "Toughness Bonus Rounds",
+        "description": "<p>Wild flurries of <em>Chamon</em> whirl around you, deflecting blows and intercepting missiles and magical attacks. Gain the <trait>Ward (9+)</trait> Creature Trait (see page 343) against all attacks and spells targeting you. Each hit successfully saved increases the Ward’s effectiveness by 1, to a maximum of Ward (3+). </p>"
+    }, {
+        "name": "Mutable Metal",
+        "lore": "Metal",
+        "wind": "Chamon",
+        "CN": 5,
+        "range": "Touch",
+        "target": "1",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>You touch a non-magical object made of metal, which instantly becomes warm to the touch as you squeeze <em>Chamon</em> into it. You may bend and mangle the object with an <strong>Average (+20) Strength Test</strong>. If you wish to make a more complex alteration, you may attempt an <strong>Average (+20) <skill>Trade (Smith, or similar)</skill> Test</strong> instead. </p>"
+    }, {
+        "name": "Transmutation of <em>Chamon</em>",
+        "lore": "Metal",
+        "wind": "Chamon",
+        "CN": 12,
+        "range": "Willpower yards",
+        "target": "AoE (Willpower Bonus yards)",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>You wrench <em>Chamon</em> from the metals worn by your foes, and the earth itself, briefly transforming the flesh of your enemies into metal. This is a magic missile affecting all in the Area of Effect, with a Damage equal to your Willpower Bonus; the spell ignores Toughness Bonus and inflicts +1 <condition>Blinded</condition>, <condition>Deafened</condition>, and <condition>Stunned</condition> Condition, all of which last for the duration of the spell. All affected targets gain +1 Armour Point from the gold wrapped about their bodies, but also suffer from Suffocation (see page 181). If targets die while the spell is in effect, they are permanently encased in a shell of base metals, a macabre reminder of the risks of sorcery.</p>"
+    }, {
+        "name": "Barkskin",
+        "lore": "Life",
+        "wind": "Ghyran",
+        "CN": 3,
+        "range": "Touch",
+        "target": "1",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>You cause the target’s skin to become hard and rough like the bark of a tree. While affected by the spell, add +2 to the target’s Toughness Bonus, but suffer a penalty of –10 to Agility and Dexterity. </p>"
+    }, {
+        "name": "Earthblood",
+        "lore": "Life",
+        "wind": "Ghyran",
+        "CN": 6,
+        "range": "You",
+        "target": "AoE (Willpower Bonus yards)",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>To cast this spell, you must be in direct contact with the earth. Standing barefoot counts. For the duration of the spell, any creatures in direct contact with the earth within AoE heal Wounds equal to your Willpower Bonus at the start of every Round. </p>"
+    }, {
+        "name": "Earthpool",
+        "lore": "Life",
+        "wind": "Ghyran",
+        "CN": 8,
+        "range": "You",
+        "target": "You",
+        "duration": "Instant",
+        "description": "<p>On casting the spell, you immediately disappear into the ground in a wild torrent of <em>Ghyran</em>. You appear at the start of the next Round at any point within your Willpower in yards, erupting from the earth violently. For every +2 SL you may increase the distance travelled by your Willpower in yards. Any enemies engaged by you on your appearance gain the <condition>Surprised</condition> Condition. This spell will not allow you to move through stone but will allow you to move through water.</p>"
+    }, {
+        "name": "Fat of the Land",
+        "lore": "Life",
+        "wind": "Ghyran",
+        "CN": 4,
+        "range": "Touch",
+        "target": "1",
+        "duration": "Willpower Bonus days",
+        "description": "<p>You flood the target’s body with nourishing <em>Ghyran</em>. The target need not eat or drink, but will still excrete as normal, though any leavings will be verdant green.</p>"
+    }, {
+        "name": "Forest of Thorns",
+        "lore": "Life",
+        "wind": "Ghyran",
+        "CN": 6,
+        "range": "Willpower yards",
+        "target": "AoE (Willpower Bonus yards)",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>This spell may only target a patch of earth (though the patch can be very small). You cause a dense knot of wickedly spiked brambles and tangled vines to burst upwards, covering the Area of Effect.</p><p>While the spell is active, anyone attempting to traverse the area on foot without the <talent>Arcane Magic (Life)</talent> Talent must make a <strong>Hard (–20) Agility Test</strong>. Failure means they gain 1 <condition>Bleeding</condition> Condition, and 1 <condition>Entangled</condition> Condition, with your Willpower used for its Strength. After the spell concludes, the growth remains, but loses its preternatural properties.</p>"
+    }, {
+        "name": "Lie of the Land",
+        "lore": "Life",
+        "wind": "Ghyran",
+        "CN": 5,
+        "range": "Initiative Bonus miles",
+        "target": "You",
+        "duration": "Special",
+        "description": "<p>Touching the earth, your senses flow through the <em>Ghyran</em> tracing the nearby area. After communing for 1 minute, you receive a detailed mental map of all-natural features — land, forests, rivers, but not settlements — within range. Settlements may be alluded to — areas of clear terrain, or dug trenches, for example. Each time you increase the range with SL increases the time taken communing with the land by +1 minute. </p>"
+    }, {
+        "name": "Lifebloom",
+        "lore": "Life",
+        "wind": "Ghyran",
+        "CN": 8,
+        "range": "Willpower Bonus yards",
+        "target": "Special",
+        "duration": "Special",
+        "description": "<p>You cause <em>Ghyran</em> to flood an area that is blighted or desolate. You may target either a dry riverbed, well, field, or a domestic animal. If you successfully cast the spell, the target bursts to life: <ul><li>A dry river begins to flow once again</li><li>A dry of polluted well becomes clean and fresh</li><li>A planted field, vineyard, or orchard bursts into life, with all crops immediately reaching full ripeness</li><li>A sick or unproductive animal becomes healthy. The affected beast is now healthily productive (cows produce milk, hens lay eggs, coats and hides of sheep and cows are healthy and lustrous) and any diseases are cured.</li></ul></p>"
+    }, {
+        "name": "Regenerate",
+        "lore": "Life",
+        "wind": "Ghyran",
+        "CN": 6,
+        "range": "Touch",
+        "target": "1",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>Your target gains the <trait>Regenerate</trait> Creature Trait (see page 341).</p>"
+    }, {
+        "name": "Banishment",
+        "lore": "Light",
+        "wind": "Hysh",
+        "CN": 12,
+        "range": "You",
+        "target": "AoE (Willpower Bonus yards)",
+        "duration": "Instant",
+        "description": "<p>You send a cleansing halo of <em>Hysh</em> out from your hands, affecting all creatures within the Area of Effect whose Toughness is lower than your Willpower. Targets with the <trait>Undead</trait> and <trait>Daemonic</trait> Creature Traits gain the <trait>Unstable</trait> Creature Trait (see page 343). If they already have the <trait>Unstable</trait> Trait, they are reduced to 0 Wounds. </p>"
+    }, {
+        "name": "Blinding Light",
+        "lore": "Light",
+        "wind": "Hysh",
+        "CN": 5,
+        "range": "Willpower yards",
+        "target": "You",
+        "duration": "Instant",
+        "description": "<p>You emit a bright, blinding flash of light from your hand or staff. Everyone looking at you, unless they possess the <talent>Arcane Magic (Light)</talent> Talent, receives +SL <condition>Blinded</condition> Conditions.</p>"
+    }, {
+        "name": "Clarity of Thought",
+        "lore": "Light",
+        "wind": "Hysh",
+        "CN": 6,
+        "range": "Touch",
+        "target": "1",
+        "duration": "Intelligence minutes",
+        "description": "<p>You calm your target’s mind, allowing them to think clearly. All negative modifiers on their thinking processes — from Conditions, Mental Mutations, Psychologies, or any other source — are ignored while the spell is in effect. </p>"
+    }, {
+        "name": "Daemonbane",
+        "lore": "Light",
+        "wind": "Hysh",
+        "CN": 10,
+        "range": "Willpower Bonus yards",
+        "target": "1",
+        "duration": "Instant",
+        "description": "<p>You summon a blast of <em>Hysh</em> that passes through the border between the Realm of Chaos and the material world. The <skill>Casting</skill> Test is Opposed by the target making a Willpower Test. If you win, you obliterate a target with the <trait>Daemonic</trait> Creature Trait with a blinding white light, sending it back whence it came. If the spell successfully banishes a Daemon, everyone looking at your target, unless they possess the <talent>Arcane Magic (Light)</talent> Talent, receives +SL <condition>Blinded</condition> Conditions.</p>"
+    }, {
+        "name": "Healing Light",
+        "lore": "Light",
+        "wind": "Hysh",
+        "CN": 9,
+        "range": "Willpower Bonus yards",
+        "target": "1",
+        "duration": "Instant",
+        "description": "<p>Your target glows with a bright, cleansing light (equivalent light to a campfire), healing Intelligence Bonus + Willpower Bonus Wounds. If the Target passes a <test>Very Hard (–20) Endurance Test</test>, 1 Corruption point gained in the last hour is also lost. </p>"
+    }, {
+        "name": "Net of Amyntok",
+        "lore": "Light",
+        "wind": "Hysh",
+        "CN": 8,
+        "range": "Intelligence Bonus yards",
+        "target": "1",
+        "duration": "Target's Intelligence Bonus Rounds",
+        "description": "<p>You cast a delicate net woven from strands of <em>Hysh</em> over your targets, whose minds are overcome with conundrums and puzzles, leaving them paralysed with indecision. Targets gain +1 <condition>Stunned</condition> Condition, which they cannot lose while the spell is in effect. When recovering from the Condition, targets test their Intelligence instead of the Endurance Skill. Targets with the <trait>Bestial</trait> Creature Trait are immune to this spell.</p>"
+    }, {
+        "name": "Phâ's Protection",
+        "lore": "Light",
+        "wind": "Hysh",
+        "CN": 10,
+        "range": "You",
+        "target": "AoE (Willpower Bonus yards)",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>You summon a protective aura of pure, holy light. Profane creatures — those with the <trait>Undead</trait> or <trait>Daemonic</trait> Creature Trait, those with mutations, and those with more Corruption than their Willpower Bonus and Toughness Bonus combined — cannot enter the Area of Effect. Any already within the Area gain the <condition>Broken</condition> Condition until they leave. Creatures within the Area cannot gain any Corruption points while the spell is active. </p>"
+    }, {
+        "name": "Speed of Thought",
+        "lore": "Light",
+        "wind": "Hysh",
+        "CN": 8,
+        "range": "You",
+        "target": "You",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>A lattice of <em>Hysh</em> overlays your mind, allowing you to think rapidly. Gain a bonus of +20 to Intelligence and Initiative.</p>"
+    }, {
+        "name": "Choking Shadows",
+        "lore": "Shadows",
+        "wind": "Ulgu",
+        "CN": 6,
+        "range": "Willpower Bonus yards",
+        "target": "1",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>You wrap shadowy tendrils of <em>Ulgu</em> around your foes’ necks. Assuming they need to breathe, they gain +1 <condition>Fatigued</condition> Condition, cannot talk, and are subject to rules for Suffocation (see page 181).</p>"
+    }, {
+        "name": "Doppelganger",
+        "lore": "Shadows",
+        "wind": "Ulgu",
+        "CN": 10,
+        "range": "You",
+        "target": "You",
+        "duration": "Intelligence Bonus minutes",
+        "description": "<p>You weave a mask and cloak of <em>Ulgu</em> around your form, assuming the likeness of another humanoid creature with whom you are familiar (as determined by the GM). Your appearance will automatically fool anyone without the <talent>Second Sight</talent> Talent, though some may note if any of your mannerisms are incorrect. Those with that Talent must pass a <test>Difficult (–10) Perception Test</test> to notice you are disguising your form. This does not let them see through the spell. They must dispel it to do so. </p>"
+    }, {
+        "name": "Illusion",
+        "lore": "Shadows",
+        "wind": "Ulgu",
+        "CN": 8,
+        "range": "Willpower yards",
+        "target": "AoE (Initiative Bonus yards)",
+        "duration": "Willpower minutes",
+        "description": "<p>You spin a web of intricate strands of <em>Ulgu</em>, obfuscating the Area of Effect with an illusory image of your choosing. You will automatically fool anyone without the <talent>Second Sight</talent> Talent. Those with that Talent must pass a <test>Difficult (–10) Perception Test</test> to notice the illusion. This does not let them see through the spell. They must dispel it to do so. </p><p>The illusion is, by default, static. For your Action, you may make a <test>Hard (–20) Channelling Test</test> to make the illusion move for that Round. </p>"
+    }, {
+        "name": "Mindslip",
+        "lore": "Shadows",
+        "wind": "Ulgu",
+        "CN": 6,
+        "range": "1 yard",
+        "target": "1",
+        "duration": "Willpower minutes",
+        "description": "<p>You conjure delicate threads of <em>Ulgu</em> in your Target’s mind, causing all prior memory of you to disappear for the spell’s duration. Once the spell is over, the Target must pass an <strong>Average (+20) Intelligence Test</strong>, or the memory loss becomes permanent until dispelled.</p>"
+    }, {
+        "name": "Mystifying Miasma",
+        "lore": "Shadows",
+        "wind": "Ulgu",
+        "CN": 6,
+        "range": "Willpower yard",
+        "target": "AoE (Willpower Bonus yards)",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>You conjure forth a swirling mass of mist shot through with roiling shadow that flits and confounds the senses. Anyone within the mist who does not possess the <talent>Arcane Magic (Shadows)</talent> Talent is affected by the Miasma, gaining +1 <condition>Blinded</condition>, <condition>Deafened</condition>, and <condition>Fatigued</condition> Condition, which remain for the spell’s duration. Anyone affected attempting to move must pass a <test>Challenging (+0) Perception Test</test>, or gain the <condition>Prone</condition> Condition. If the spell is dispelled once in play, anyone affected by the spell must make a <strong>Routine (+40) Initiative Test</strong>, or gain the <condition>Stunned</condition> Condition. </p>"
+    }, {
+        "name": "Shadowsteed",
+        "lore": "Shadows",
+        "wind": "Ulgu",
+        "CN": 6,
+        "range": "Willpower Bonus yards",
+        "target": "1",
+        "duration": "Until the next sunrise",
+        "description": "<p>You summon forth a shadowy steed. The creature’s unnatural flesh is black as midnight, and at times it appears to be both solid and insubstantial. Use the rules for a riding horse. When the Shadowsteed is out of sunlight, it also gains the following Creature Traits: <trait>Dark Vision</trait>, <trait>Ethereal</trait>, <trait>Magical</trait>, <trait>Painless</trait>, <trait>Stealthy</trait>, <trait>Stride</trait>, <trait>Fear (1)</trait> and <trait>Ward (+9)</trait> .</p><p>Even when insubstantial, Shadowsteeds may be ridden. Riders with the <talent>Arcane Magic (Shadow)</talent> Talent do so with a bonus of +20 to <skill>Ride</skill> Tests. Those without suffer a penalty of –20 to Ride Tests. Shadowsteeds are tireless, so need no rest (though their unsettled riders might!). As the first rays of dawn break over the horizon the steeds melt into insubstantial mist. If still being ridden when the spell ends, or when dispelled, the rider will suffer Falling Damage (see page 166).</p>"
+    }, {
+        "name": "Shadowstep",
+        "lore": "Shadows",
+        "wind": "Ulgu",
+        "CN": 8,
+        "range": "Willpower yards",
+        "target": "You",
+        "duration": "Instant",
+        "description": "<p>You create a shadowy portal of <em>Ulgu</em> through the aethyr. You disappear from your current location and immediately appear up to your Willpower yards away. Any enemies <condition>Engaged</condition> by you on your disappearance or reappearance gain the <condition>Surprised</condition> Condition.</p>"
+    }, {
+        "name": "Shroud of Invisibility",
+        "lore": "Shadows",
+        "wind": "Ulgu",
+        "CN": 8,
+        "range": "Touch",
+        "target": "1",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>You wrap the target in a shroud of <em>Ulgu</em>. The Target becomes invisible and cannot be perceived by mundane senses. The spell will automatically fool anyone without the <talent>Second Sight</talent> Talent. Those with the Talent must pass a <test>Challenging (+0) Perception Test</test> to notice that someone is nearby, though they will not be able to pin down the precise location. They must dispel the <em>Shroud of Invisibility</em> to do so . You are still perceptible to the other senses, and the spell will come to an end if you bring attention to yourself by making large noises or attacking someone.</p>"
     }, {
         "name": "Aethyric Armour",
         "lore": "Arcane",
@@ -743,7 +1085,7 @@ var spell = [
         "range": "Willpower yards",
         "target": "1",
         "duration": "Instant",
-        "description": "<p>You channel magic into an object being held by an opponent. This could be a weapon, a rope, or someone’s hand. Unless a Challenging (+0) Dexterity Test is passed, the item is dropped. For every +2 SL you may impose an additional –10 on the Dexterity Test.</p>"
+        "description": "<p>You channel magic into an object being held by an opponent. This could be a weapon, a rope, or someone’s hand. Unless a <strong>Challenging (+0) Dexterity Test</strong> is passed, the item is dropped. For every +2 SL you may impose an additional –10 on the Dexterity Test.</p>"
     }, {
         "name": "Entangle",
         "lore": "Arcane",
@@ -834,6 +1176,114 @@ var spell = [
         "target": "You",
         "duration": "Willpower Bonus Rounds",
         "description": "<p>You wrap yourself in protective magic, gaining the <trait>Ward (9+)</trait> Creature Trait (see page 343). </p>"
+    }, {
+        "name": "Goodwill",
+        "lore": "Hedgecraft",
+        "wind": "",
+        "CN": 0,
+        "range": "You",
+        "target": "AoE (Fellowship Bonus yards)",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>You create an atmosphere conducive to friendliness and good spirits.  All Fellowship Tests within the Area of Effect receive a bonus of +10, and <trait>Animosity</trait> and <trait>Hatred</trait> Psychologies have no effect.</p>"
+    }, {
+        "name": "Mirkride",
+        "lore": "Hedgecraft",
+        "wind": "",
+        "CN": 0,
+        "range": "You",
+        "target": "You",
+        "duration": "Willpower Bonus minutes",
+        "description": "<p>Speaking ancient words of magic, your spirit leaves your body, stepping into the Hedge, the dark space between the material world and the spirit realm. For the duration, your stand apart from the world, able to witness it invisibly, but not affect it in any way. Physical barriers are no impediment to you, and you may walk through non-magical obstacles at will. Your body remains in place, immobile and insensate. </p><p>At the end of the spell you will be pulled suddenly back to your body. If your body is killed while you are walking the Hedge, your spirit will wander aimlessly for eternity. </p>"
+    }, {
+        "name": "Nepenthe",
+        "lore": "Hedgecraft",
+        "wind": "",
+        "CN": 0,
+        "range": "Touch",
+        "target": "Special",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>You mutter words of power over a premade potion of herbs, magically transforming it into a potent philtre. If drunk while the spell is in effect, the target may choose to completely forget one individual, permanently. </p>"
+    }, {
+        "name": "Nostrum",
+        "lore": "Hedgecraft",
+        "wind": "",
+        "CN": 0,
+        "range": "Touch",
+        "target": "Special",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>You incant a spell over an already prepared draught, imbuing it with magical power. If drunk while the spell is in effect, the target immediately heals your Willpower Bonus in Wounds and is cured of one disease. For every +2 SL you may cure an extra disease. </p>"
+    }, {
+        "name": "Part the Branches",
+        "lore": "Hedgecraft",
+        "wind": "",
+        "CN": 0,
+        "range": "You",
+        "target": "You",
+        "duration": "Willpower minutes",
+        "description": "<p>Your pupils dilate as you complete your incantation, and you are able to see into the Spirit world. This allows you to perceive invisible creatures, spirits, and Daemons, even those marked as impossible to see.</p>"
+    }, {
+        "name": "Protective Charm",
+        "lore": "Hedgecraft",
+        "wind": "",
+        "CN": 0,
+        "range": "Touch",
+        "target": "Special",
+        "duration": "Willpower Bonus days",
+        "description": "<p>You imbue a protective charm with a spell of protection. Those bearing the charm gain the <talent>Magic Resistance</talent> Talent. If they already have that Talent, the charm does nothing more.</p>"
+    }, {
+        "name": "Blight",
+        "lore": "Witchcraft",
+        "wind": "",
+        "CN": 14,
+        "range": "Willpower Bonus yards",
+        "target": "Special",
+        "duration": "Special",
+        "description": "<p>You may target either a well, a field, or a domestic animal. If you successfully cast the spell, the target suffers from a blight: <ul><li>A blighted well becomes instantly brackish and stagnant</li><li>Any crops currently planted in a blighted field rot overnight</li><li>A blighted animal sickens.  The afflicted beast no longer produces anything (cows produce no milk, hens produce no eggs, coats and hides grow mangy and unusable) and will die in 10-SL days.</li></ul></p>"
+    }, {
+        "name": "Creeping Menace",
+        "lore": "Witchcraft",
+        "wind": "",
+        "CN": 6,
+        "range": "Willpower yards",
+        "target": "1",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>You summon a swarm of creeping, slithering creatures to harass your foes. Each target affected is immediately engaged by a swarm of Giant Rats, Giant Spiders, or Snakes. Use the standard profiles for the relevant creature type, adding the Swarm Trait. For your Action you may make a <test>Challenging (+0) Charm Animal Test</test> to direct 1 or more swarms to attack a different target. </p><p>When the spell ends, any remaining swarms disappear into the shadows. </p>"
+    }, {
+        "name": "Curse of Crippling Pain",
+        "lore": "Witchcraft",
+        "wind": "",
+        "CN": 10,
+        "range": "Willpower yards",
+        "target": "1",
+        "duration": "Willpower Bonus Rounds",
+        "description": "<p>Stabbing a crude representation of your target — a doll or puppet — you inflict crippling pain. When successfully cast, choose which hit location to stab: <ul><li><strong>Leg: </strong>Leg becomes useless, as if it was Amputated (see page 180). If running, the target also gains the <condition>Prone</condition> Condition and takes falling Damage.</li><li><strong>Arm: </strong>Arm becomes useless, as if it was Amputated (see page 180). If target was holding anything in that hand, it is automatically dropped. </li><li><strong>Body: </strong>Target doubles up in agony, gaining +1 <condition>Fatigued</condition> Condition, and must pass a <test>Hard (–20) Endurance Test</test> or gain the <condition>Prone</condition> Condition.</li><li><strong>Head: </strong>Target gains the <condition>Stunned</condition> Condition, and must pass an <test>Average (+20) Endurance Test</test> or gain the <condition>Unconscious</condition> Condition for the Duration.</li></ul></p><p>While the spell is in effect, for your Action you may make a Channelling Test, stabbing the doll again, to affect a different location.</p>"
+    }, {
+        "name": "Curse of Ill-Fortune",
+        "lore": "Witchcraft",
+        "wind": "",
+        "CN": 8,
+        "range": "Willpower Bonus miles",
+        "target": "1",
+        "duration": "Willpower Bonus days",
+        "description": "<p>The ingredient for this spell is something belonging to the target, either a personal possession or a strand of hair. For the duration, your target suffers bad luck. Laces snap, chairs break, and other minor narrative effects inconvenience them. The target suffers a penalty of –10 to all Tests, in addition to any other modifiers, and may not spend Fortune points.</p>"
+    }, {
+        "name": "Haunting Horror",
+        "lore": "Witchcraft",
+        "wind": "",
+        "CN": 8,
+        "range": "Touch",
+        "target": "AoE (a single location)",
+        "duration": "Willpower days",
+        "description": "<p>You target a single location, such as a house or clearing, and inflict haunting dreams and waking nightmares on any who enter there. Those entering while the spell is in effect are unnerved by eerie sensations, flitting shadows, and whispered voices lurking on the threshold of hearing. Unless they possess the <talent>Arcane Magic (Witchcraft)</talent> Talent, they gain +1 <condition>Fatigued</condition> Condition. Then, unless they pass an <test>Challenging (+0) Cool Test</test>, they gain another +1 <condition>Fatigued</condition> Condition and the <condition>Broken</condition> Condition, both of which are only removed upon leaving the location.</p>"
+    }, {
+        "name": "The Evil Eye",
+        "lore": "Witchcraft",
+        "wind": "",
+        "CN": 6,
+        "range": "Willpower yards",
+        "target": "Special",
+        "duration": "Instant",
+        "description": "<p>You lock eyes with a single target, who must be looking at you. Perform an <strong>Opposed <skill>Intimidate</skill>/<skill>Cool</skill> Test</strong>, adding any SL from your casting roll to your result. Your opponent gains 1 <condition>Fatigued</condition> Condition per +2 SL by which you win. If you win by 6+ SL, your opponent gains the <condition>Broken</condition> Condition.</p>"
     }
 ];
 
@@ -1650,7 +2100,7 @@ var talent = [
         "name": "Alley Cat",
         "max": "Initiative Bonus",
         "test": "Stealth (Urban)",
-        "desc": "<p>You are at home in shadowy backstreets. When using Stealth (Urban), you may reverse the dice of any failed Test if this will score a Success.</p>"
+        "desc": "<p>You are at home in shadowy backstreets. When using <skill>Stealth (Urban)</skill>, you may reverse the dice of any failed Test if this will score a Success.</p>"
     },
     {
         "name": "Ambidextrous",
@@ -2659,7 +3109,7 @@ var skill = [
     {
         "name": "Athletics",
         "tier": "Basic",
-        "char": "Ag",
+        "char": "Agi",
         "spec": "",
         "desc": "<p>Your ability to run, jump and move with speed or grace, and to perform any general physical activity. Refer to Moving (see page 164) for details on using Athletics in combat movement.</p>"
     },
@@ -2715,14 +3165,14 @@ var skill = [
     {
         "name": "Dodge",
         "tier": "Basic",
-        "char": "Ag",
+        "char": "Agi",
         "spec": "",
         "desc": "<p>Dodge is your ability to avoid things, through ducking, diving, and moving quickly, and is used extensively to sidestep falling rocks, incoming weapons, unexpected traps, and the like.</p> <p>In combat, Dodge is generally used to resist attacks or avoid damage. Refer to Chapter 5: Rules for more on this.</p>"
     },
     {
         "name": "Drive",
         "tier": "Basic",
-        "char": "Ag",
+        "char": "Agi",
         "spec": "",
         "desc": "<p>Drive lets you guide vehicles — most commonly simple carts and lumbering coaches, not to mention the more ‘experimental’ creations of the Imperial Engineers — along the roads of the Empire with as little incident as possible.</p> <p>Under normal circumstances, if you possess the Drive Skill, there is no need to Test. If conditions are less than ideal — perhaps the road is in poor condition, or the weather is terrible — a Drive Test will be required. If you do not possess the Drive Skill, you may be required to make a Test to carry out even basic manoeuvres. An Astounding Failure (-6) on a Drive Test means something bad has happened. Roll on the following table:</p> <p> <table class=\"w3-table table-dark w3-striped w3-hoverable w3-bordered\"> <thead> <tr> <th>1d10</th> <th>Result</th> </tr> </thead> <tbody> <tr> <td>1-2</td> <td><b>Snapped Harness: </b>One horse (or equivalent) breaks free; reduce speed accordingly.</td> </tr> <tr> <td>3-5</td> <td><b>Jolted Carriage: </b>Passengers suffer 1 Wound and fragile cargos might be damaged.</td> </tr> <tr> <td>6-8</td> <td><b>Broken Wheel: </b>Pass a Drive Test every round to avoid Crashing. Two-wheeled vehicles with a Broken Wheel Crash automatically.</td> </tr> <tr> <td>9-10</td> <td><b>Broken Axle: </b>The vehicle goes out of control and Crashes.</td> </tr> </tbody> </table> </p> <p><b>Crashing:</b> Occupants of Crashing vehicles usually suffer 2d10 Wounds modified by Toughness Bonus and Armour Points unless the vehicle was moving slowly (as determined by the GM). Crashed vehicles must be repaired by someone with an appropriate Trade Skill, such as Trade (Carpenter) or Trade (Cartwright). Spare wheels can be installed by anyone with a Drive Test or with an appropriate Trade Test.</p> <p>In combat, Drive may be used if circumstances allow — for instance, if the party is in a coach being raided by outlaws, and you wish to ram an enemy, or outrun them (see page 165).</p>"
     },
@@ -2841,7 +3291,7 @@ var skill = [
     {
         "name": "Perform",
         "tier": "Advanced",
-        "char": "Ag",
+        "char": "Agi",
         "spec": "Acrobatics, Clowning, Dancing, Firebreathing, Juggling, Miming, Rope Walking",
         "desc": "<p>You’ve learned a physically demanding art, perhaps as a way of making a living, maybe as a street entertainer or as part of a travelling carnival. A successful use of the Perform Skill allows you to entertain all patrons close enough to see and hear you; the SL indicate how well you have done.</p> <p>In combat, certain physical Perform specialisations may give you an edge. With your GM’s permission, Perform (Acrobatics) may be used in lieu of Dodge. Other Perform Skills may be useful in distracting foes, perhaps gaining you an Advantage if you can come up with a creative way to do so. And some Perform skills can be directly used as a weapon if you have the correct trappings, such as Perform (Firebreathing)!</p>"
     },
@@ -2883,7 +3333,7 @@ var skill = [
     {
         "name": "Ride",
         "tier": "Basic",
-        "char": "Ag",
+        "char": "Agi",
         "spec": "Demigryph, Great Wolf, Griffon, Horse, Pegasus",
         "desc": "<p>How proficient you are at riding a particular group of animals; Ride (Horse), for example, will let you ride Horses, Mules, Donkeys, and similar. You’ll only need to make a Test when doing something out of the ordinary, such as racing, dressage, traversing dangerous terrain, or charging into combat. Otherwise, if you have at least one Advance in the Skill, you are presumed to be able to ride around without need of a Test.</p> <p>If mounted on a steed, you move using the steed’s Movement statistic; if you wish to run, jump, or leap, you use your Ride Skill, not Athletics. An extended Ride Test may be needed if you are racing somewhere, the target SL depending on the length of the journey, the number of Tests indicating how long you take to arrive. A Ride Test may be modified by environmental conditions, and the temperament of your mount. For more information on mounts, see Chapter 12: Bestiary.</p> <p>The Ride skill can be used extensively in combat. See Chapter 5: Rules, for more on mounted combat.</p>"
     },
@@ -2897,7 +3347,7 @@ var skill = [
     {
         "name": "Sail",
         "tier": "Advanced",
-        "char": "Ag",
+        "char": "Agi",
         "spec": "Barge, Caravel, Cog, Frigate, Warship",
         "desc": "<p>Your ability to operate and manoeuvre a sailing vessel — including knotwork, steering, gauging the wind, and more. Assuming you have enough trained crew for your vessel, you only use the Sail Skill when you must push your vessel to perform, either by racing, navigating particularly dangerous shoals, struggling against bad weather, or similar difficulties. Simply sailing with a gentle wind, or guiding a ship downriver, doesn’t require a Test for those with Sail. The skill can also be used for sailing-related activities like tying knots, or tying others up in knots.</p> <p>As sailing one ship is not so different to sailing another, having any Sail Speciality makes all other Sail Specialities Basic Skills for you.</p>"
     },
@@ -2920,12 +3370,12 @@ var skill = [
         "tier": "Advanced",
         "char": "Dex",
         "spec": "",
-        "desc": "<p>Lets you pick pockets, palm objects, and perform minor tricks of prestidigitation, as well as cheating with games of chance. This Skill is typically Opposed by the Perception Skill of your target; success means you have palmed the object, picked the pocket, or swapped the cards, while a Marginal Success (+0 to +1) may suggest that your nefarious misdeeds have left your opponent suspicious.</p> <p>You can also use Sleight of Hand to ‘help’ your Gamble Skill when playing appropriate games of chance. Before any round (or similar, depending upon the game at hand) you can attempt a <b>Sleight of Hand Test</b> (which will be opposed if others suspect). If successful, you may reverse your Gamble Test for the round if this will score a Success. If failed, your opponents may not be best pleased…</p> <p>Sleight of Hand and combat rarely mix, though inventive players may be able to conjure an impressive distraction with GM approval, perhaps even gaining Advantage by making a Dagger seemingly appear from nowhere, surprising a superstitious foe.</p>"
+        "desc": "<p>Lets you pick pockets, palm objects, and perform minor tricks of prestidigitation, as well as cheating with games of chance. This Skill is typically Opposed by the Perception Skill of your target; success means you have palmed the object, picked the pocket, or swapped the cards, while a Marginal Success (+0 to +1) may suggest that your nefarious misdeeds have left your opponent suspicious.</p> <p>You can also use Sleight of Hand to ‘help’ your Gamble Skill when playing appropriate games of chance. Before any round (or similar, depending upon the game at hand) you can attempt a <skill>Sleight of Hand</skill> Test (which will be opposed if others suspect). If successful, you may reverse your Gamble Test for the round if this will score a Success. If failed, your opponents may not be best pleased…</p> <p>Sleight of Hand and combat rarely mix, though inventive players may be able to conjure an impressive distraction with GM approval, perhaps even gaining Advantage by making a Dagger seemingly appear from nowhere, surprising a superstitious foe.</p>"
     },
     {
         "name": "Stealth",
         "tier": "Basic",
-        "char": "Ag",
+        "char": "Agi",
         "spec": "Rural, Underground, Urban",
         "desc": "<p>Allows you to creep quietly and conceal yourself in shadows more readily than most. Stealth is generally Opposed by an opponent’s Perception Skill, and Tests will be modified by how dark or well concealed your route is, as well as how circumspectly you are dressed. An Impressive or Astounding Failure on a Stealth Test will likely draw the immediate attention of the enemies you were trying to avoid in the first place.</p> <p>Stealth has many potential applications in combat, most usefully to hide oneself in preparation for an Ambush, or to creep around an opponent in order to attack from behind. See Chapter 5: Rules for the implications of this. Of course, you can also use the Skill to escape a conflict unseen…</p>"
     },
@@ -3015,7 +3465,7 @@ var weaponQual = [
     },
     {
         "name": "Blackpowder",
-        "desc": "The crack of gunfire followed by gouts of smoke and confusion can be terrifying. If you are targeted by a Blackpowder weapon, you must pass an <b>Average (+20) <skill>Cool</skill> Test</b> or take a <condition>Broken</condition> Condition, even if the shot misses. <br/>Those with <skill>Ranged</skill> (Engineering) can use Blackpowder and Explosive weapons without penalty."
+        "desc": "The crack of gunfire followed by gouts of smoke and confusion can be terrifying. If you are targeted by a Blackpowder weapon, you must pass an <test>Average (+20) Cool Test</test> or take a <condition>Broken</condition> Condition, even if the shot misses. <br/>Those with <skill>Ranged (Engineering)</skill> can use Blackpowder and Explosive weapons without penalty."
     },
     {
         "name": "Blast (Rating)",
@@ -3843,7 +4293,7 @@ var trait = [
     },
     {
         "name": "Breath (Rating) [Type]",
-        "desc": "<p>The creature’s breath is a powerful weapon. On its turn, for the cost of 2 Advantage, it can activate its Breath as a Free Attack.</p><p>Choose 1 target it can see within 20+Toughness Bonus yards. All characters within Strength Bonus yards of that target are struck, as are all characters between the creature and the target. Perform an <b>Opposed Ballistic Skill/<skill>Dodge</skill> Test</b> against all affected targets (the creature’s single roll opposed by each individual target).</p><p>All targets that fail take Damage equal to the attack’s <mono>Rating</mono>. Further, if the Trait is marked with any of the following types in brackets, apply the associated rules.</p><p><ul><li><b>Cold: </b>Targets gain a <condition>Stunned</condition> Condition for every full 5 Wounds suffered (minimum of 1).</li><li><b>Corrosion:</b> All Armour and Weapons carried by affected targets suffer 1 Damage.</li><li><b>Fire: </b>Any Wounds caused ignore Armour Points. Targets gain an <condition>Ablaze</condition> Condition.</li><li><b>Electricity:</b> Any Wounds caused ignore Armour Points. Targets gain a <condition>Stunned</condition> Condition.</li><li><b>Poison: </b>Any Wounds caused ignore Armour Points. Targets gain a <condition>Poisoned</condition> Condition.</li><li><b>Smoke: </b>The area fills with smoke, blocking Line of Sight for Toughness Bonus Rounds.</li></ul></p><p>The creature is immune to its own Breath. This attack is <weaponqual>Magical</weaponqual>.</p>"
+        "desc": "<p>The creature’s breath is a powerful weapon. On its turn, for the cost of 2 Advantage, it can activate its Breath as a Free Attack.</p><p>Choose 1 target it can see within 20+Toughness Bonus yards. All characters within Strength Bonus yards of that target are struck, as are all characters between the creature and the target. Perform an <strong>Opposed <skill>Ballistic Skill</skill>/<skill>Dodge</skill> Test</strong> against all affected targets (the creature’s single roll opposed by each individual target).</p><p>All targets that fail take Damage equal to the attack’s <mono>Rating</mono>. Further, if the Trait is marked with any of the following types in brackets, apply the associated rules.</p><p><ul><li><b>Cold: </b>Targets gain a <condition>Stunned</condition> Condition for every full 5 Wounds suffered (minimum of 1).</li><li><b>Corrosion:</b> All Armour and Weapons carried by affected targets suffer 1 Damage.</li><li><b>Fire: </b>Any Wounds caused ignore Armour Points. Targets gain an <condition>Ablaze</condition> Condition.</li><li><b>Electricity:</b> Any Wounds caused ignore Armour Points. Targets gain a <condition>Stunned</condition> Condition.</li><li><b>Poison: </b>Any Wounds caused ignore Armour Points. Targets gain a <condition>Poisoned</condition> Condition.</li><li><b>Smoke: </b>The area fills with smoke, blocking Line of Sight for Toughness Bonus Rounds.</li></ul></p><p>The creature is immune to its own Breath. This attack is <weaponqual>Magical</weaponqual>.</p>"
     },
     {
         "name": "Brute",
@@ -3895,7 +4345,7 @@ var trait = [
     },
     {
         "name": "Die Hard",
-        "desc": "<p>No matter how hard the creature is hit, it gets back up. All Critical Wounds not resulting in death can be healed; just attach the requisite body parts to the correct places, perhaps with staples or large spikes to hold them in place, and it’s good to go. Even ‘death’ may be ‘healed’ if the appropriate parts, such as a lost head, are attached to the body. If death occurs and all parts are in place, it may attempt a <b>Challenging (+0) Endurance Test</b> requiring an SL of 6 at the start of every round for Toughness Bonus Rounds after death. If a Test is successful, the creature chokes back to life with 1 Wound.</p>"
+        "desc": "<p>No matter how hard the creature is hit, it gets back up. All Critical Wounds not resulting in death can be healed; just attach the requisite body parts to the correct places, perhaps with staples or large spikes to hold them in place, and it’s good to go. Even ‘death’ may be ‘healed’ if the appropriate parts, such as a lost head, are attached to the body. If death occurs and all parts are in place, it may attempt a <test>Challenging (+0) Endurance Test</test> requiring an SL of 6 at the start of every round for Toughness Bonus Rounds after death. If a Test is successful, the creature chokes back to life with 1 Wound.</p>"
     },
     {
         "name": "Disease (Type)",
@@ -3919,7 +4369,7 @@ var trait = [
     },
     {
         "name": "Fear (Rating)",
-        "desc": "<p>The creature causes supernatural Fear in other creatures, with a rating equal to its <mono>Rating</mono>.</p><p>The Fear trait represents an extreme aversion to something. Creatures that cause Fear have a <mono>Fear Rating</mono>; this value reflects the SL you are required to pass on an <b>Extended Cool Test</b> to overcome your Fear. You may continue to Test at the end of every round until your SL equals or surpasses the creature’s Fear rating. Until you do this, you are subject to Fear.</p><p>When subject to Fear, you suffer –1 SL on all Tests to affect the source of your fear. You may not move closer to whatever is causing Fear without passing a <b>Challenging (+0) Cool Test</b>. If it comes closer to you, you must pass a <b>Challenging (+0) Cool Test</b>, or gain a <condition>Broken</condition> Condition.</p>"
+        "desc": "<p>The creature causes supernatural Fear in other creatures, with a rating equal to its <mono>Rating</mono>.</p><p>The Fear trait represents an extreme aversion to something. Creatures that cause Fear have a <mono>Fear Rating</mono>; this value reflects the SL you are required to pass on an Extended <skill>Cool</skill> Test to overcome your Fear. You may continue to Test at the end of every round until your SL equals or surpasses the creature’s Fear rating. Until you do this, you are subject to Fear.</p><p>When subject to Fear, you suffer –1 SL on all Tests to affect the source of your fear. You may not move closer to whatever is causing Fear without passing a <test>Challenging (+0) Cool Test</test>. If it comes closer to you, you must pass a <test>Challenging (+0) Cool Test</test>, or gain a <condition>Broken</condition> Condition.</p>"
     },
     {
         "name": "Flight (Rating)",
@@ -3927,7 +4377,7 @@ var trait = [
     },
     {
         "name": "Frenzy",
-        "desc": "<p>The creature can Frenzy.</p><p>With a Willpower Test, you can work yourself into a state of frenzy by psyching yourself up, howling, biting your shield, or similar.  If you succeed, you become subject to Frenzy.</p><p>While subject to Frenzy you are immune to all other psychology, and will not flee or retreat for any reason; indeed you must always move at full rate towards the closest enemy you can see in order to attack. Generally, the only Action you may take is a Weapon Skill Test or an <skill>Athletics</skill> Test to reach an enemy more quickly. Further, you may take a Free Action <skill>Melee</skill> Test each Round as you are throwing everything you have into your attacks. Lastly, you gain a bonus of +1 Strength Bonus, such is your ferocity. You remain in Frenzy until all enemies in your line of sight are pacified, or you receive the <condition>Stunned</condition> or <condition>Unconscious</condition> condition. After your Frenzy is over you immediately receive a <condition>Fatigued</condition> condition. </p>"
+        "desc": "<p>The creature can Frenzy.</p><p>With a Willpower Test, you can work yourself into a state of frenzy by psyching yourself up, howling, biting your shield, or similar.  If you succeed, you become subject to Frenzy.</p><p>While subject to Frenzy you are immune to all other psychology, and will not flee or retreat for any reason; indeed you must always move at full rate towards the closest enemy you can see in order to attack. Generally, the only Action you may take is a <skill>Weapon Skill</skill> Test or an <skill>Athletics</skill> Test to reach an enemy more quickly. Further, you may take a Free Action <skill>Melee</skill> Test each Round as you are throwing everything you have into your attacks. Lastly, you gain a bonus of +1 Strength Bonus, such is your ferocity. You remain in Frenzy until all enemies in your line of sight are pacified, or you receive the <condition>Stunned</condition> or <condition>Unconscious</condition> condition. After your Frenzy is over you immediately receive a <condition>Fatigued</condition> condition. </p>"
     },
     {
         "name": "Fury",
@@ -3935,7 +4385,7 @@ var trait = [
     },
     {
         "name": "Ghostly Howl",
-        "desc": "<p>The creature can emit a chilling howl, capable of killing those who hear it. On its turn the creature can spend all its Advantage (minimum of 2), to unleash a hideous scream as a Free Attack.</p><p>All living targets within a number of yards equal to the creature’s Initiative immediately gain 3 <condition>Deafened</condition> Conditions and suffer 1d10 Wounds ignoring Toughness Bonus and Armour Points. Those affected must also pass a <b>Average (+20) Endurance Test</b> or gain a <condition>Broken</condition> Condition. </p>"
+        "desc": "<p>The creature can emit a chilling howl, capable of killing those who hear it. On its turn the creature can spend all its Advantage (minimum of 2), to unleash a hideous scream as a Free Attack.</p><p>All living targets within a number of yards equal to the creature’s Initiative immediately gain 3 <condition>Deafened</condition> Conditions and suffer 1d10 Wounds ignoring Toughness Bonus and Armour Points. Those affected must also pass a <test>Average (+20) Endurance Test</test> or gain a <condition>Broken</condition> Condition. </p>"
     },
     {
         "name": "Hardy",
@@ -3951,7 +4401,7 @@ var trait = [
     },
     {
         "name": "Hungry",
-        "desc": "<p>The creature is always hungry for fresh meat. If it kills or incapacitates a living opponent (or encounters a fresh body), it must pass an <b>Average (+20) Willpower Test</b> or feast, losing its next Action and Move.</p>"
+        "desc": "<p>The creature is always hungry for fresh meat. If it kills or incapacitates a living opponent (or encounters a fresh body), it must pass an <strong>Average (+20) Willpower Test</strong> or feast, losing its next Action and Move.</p>"
     },
     {
         "name": "Immunity (Type)",
@@ -3963,7 +4413,7 @@ var trait = [
     },
     {
         "name": "Infected",
-        "desc": "<p>The creature, or its weapon, carries a nasty infection. If it causes a living opponent to lose Wounds, it must pass an Easy (+40) Endurance Test or contract a Festering Wound (see page 187).</p>"
+        "desc": "<p>The creature, or its weapon, carries a nasty infection. If it causes a living opponent to lose Wounds, it must pass an <test>Easy (+40) Endurance Test</test> or contract a Festering Wound (see page 187).</p>"
     },
     {
         "name": "Infestation",
@@ -4003,7 +4453,7 @@ var trait = [
     },
     {
         "name": "Petrifying Gaze",
-        "desc": "<p>The creature’s gaze can turn flesh to stone. For its Action, it can spend all its Advantage to unleash its gaze (minimum of 1). The creature performs an <b>Opposed Ballistic Skill/Initiative Test</b>, adding 1 SL per Advantage spent. Its opponent gains 1 <condition>Stunned</condition> status per 2 SL by which it wins. If it wins by at least 6 SL, its target is permanently turned to stone.</p><p>If the target is a spellcaster, the test can be Opposed with <skill>Language (Magick)</skill> instead of Initiative as counter spells are cast.</p>"
+        "desc": "<p>The creature’s gaze can turn flesh to stone. For its Action, it can spend all its Advantage to unleash its gaze (minimum of 1). The creature performs an Opposed <skill>Ballistic Skill</skill>/Initiative Test, adding 1 SL per Advantage spent. Its opponent gains 1 <condition>Stunned</condition> status per 2 SL by which it wins. If it wins by at least 6 SL, its target is permanently turned to stone.</p><p>If the target is a spellcaster, the test can be Opposed with <skill>Language (Magick)</skill> instead of Initiative as counter spells are cast.</p>"
     },
     {
         "name": "Prejudice (Target)",
@@ -4023,7 +4473,7 @@ var trait = [
     },
     {
         "name": "Size (Various)",
-        "desc": "<p>This trait represents creatures whose size differ from the game standard (i.e. roughly human sized). There are seven steps of Size, ranging from Tiny to Monstrous.</p><p><h5>Size Combat Modifiers</h5><b>If larger:</b><li>Its weapons gain the <weaponqual>Damaging</weaponqual> Quality if the creature is one step larger, and <weaponqual>Impact</weaponqual> if two or more steps larger.</li><li>It multiplies any Damage caused by the number of steps larger it is (so, 2 steps = &times;2, 3 steps = &times;3, and so on); this multiplication is calculated after all modifiers are applied.</li><li>All successful strikes against smaller targets activate the Deathblow rule, even if the target survives (see page 160).</li><br/><br/><b>If smaller:</b><li>It gains a bonus of +10 to hit.</li></p>"
+        "desc": "<p>This trait represents creatures whose size differ from the game standard (i.e. roughly human sized). There are seven steps of Size, ranging from Tiny to Monstrous.</p><p><h5>Size Combat Modifiers</h5><strong>If larger:</strong><li>Its weapons gain the <weaponqual>Damaging</weaponqual> Quality if the creature is one step larger, and <weaponqual>Impact</weaponqual> if two or more steps larger.</li><li>It multiplies any Damage caused by the number of steps larger it is (so, 2 steps = &times;2, 3 steps = &times;3, and so on); this multiplication is calculated after all modifiers are applied.</li><li>All successful strikes against smaller targets activate the Deathblow rule, even if the target survives (see page 160).</li><br/><br/><strong>If smaller:</strong><li>It gains a bonus of +10 to hit.</li></p>"
     },
     {
         "name": "Size (Various)",
@@ -4047,7 +4497,7 @@ var trait = [
     },
     {
         "name": "Stupid",
-        "desc": "<p>While not entirely devoid of self-awareness (and so lacking the <trait>Bestial</trait> trait), the creature is stupid. If it is near any allies without the Stupid Trait, they guide it and nothing happens. Otherwise, it must pass an <b>Easy (+40) Intelligence Test</b> at the start of each round, or become very confused. Should this occur it will drool, perhaps sitting down or picking its nose, doing little of use, losing both its Move and Action for that Turn.</p>"
+        "desc": "<p>While not entirely devoid of self-awareness (and so lacking the <trait>Bestial</trait> trait), the creature is stupid. If it is near any allies without the Stupid Trait, they guide it and nothing happens. Otherwise, it must pass an <strong>Easy (+40) Intelligence Test</strong> at the start of each round, or become very confused. Should this occur it will drool, perhaps sitting down or picking its nose, doing little of use, losing both its Move and Action for that Turn.</p>"
     },
     {
         "name": "Swamp-strider",
@@ -4075,7 +4525,7 @@ var trait = [
     },
     {
         "name": "Trained (Trained Skills)",
-        "desc": "<p>This trait represents animals that have been trained through the <skill>Animal Training</skill> Skill. The skills the animal knows is marked in the brackets. Feel free to create your own trained skills. </p><p><ul><li><b>Broken: </b>The animal is trained to ignore its <trait>Bestial</trait> trait. It receives 2d10 Fellowship.</li><li><b>Drive: </b>The animal is trained to pull a coach, cart, plough, buggy, or similar.</li><li><b>Entertain: </b>The animal is trained to entertain others. It adds a +10 bonus to appropriate <skill>Entertain</skill>, <skill>Perform</skill>, or <skill>Play</skill> Tests.</li><li><b>Fetch: </b>The animal is trained to fetch. This is normal reserved for Dogs and similar.</li><li><b>Guard: </b>The animal is trained to stay in one place or prowl around as a guard, granting it the <trait>Territorial</trait> Trait.</li><li><b>Home: </b>The animal is trained to return home if it is released or lost. </li><li><b>Magic: </b>The animal is trained to ignore <trait>Skittish</trait> when it comes to magic, which is required for most horses used by Wizards. </li><li><b>Mount: </b>The animal will accept a rider. Some creatures are especially belligerent, and will not accept a rider without the correct skill. So, to ride a Griffon, you need the <skill>Ride (Griffon)</skill> skill.</li><li><b>War: </b>The animal is trained for war, gaining +10 Weapon Skill. It can also ignore <trait>Skittish</trait> for loud noises.</li></ul></p>"
+        "desc": "<p>This trait represents animals that have been trained through the <skill>Animal Training</skill> Skill. The skills the animal knows is marked in the brackets. Feel free to create your own trained skills. </p><p><ul><li><strong>Broken: </strong>The animal is trained to ignore its <trait>Bestial</trait> trait. It receives 2d10 Fellowship.</li><li><strong>Drive: </strong>The animal is trained to pull a coach, cart, plough, buggy, or similar.</li><li><strong>Entertain: </strong>The animal is trained to entertain others. It adds a +10 bonus to appropriate <skill>Entertain</skill>, <skill>Perform</skill>, or <skill>Play</skill> Tests.</li><li><strong>Fetch: </strong>The animal is trained to fetch. This is normal reserved for Dogs and similar.</li><li><strong>Guard: </strong>The animal is trained to stay in one place or prowl around as a guard, granting it the <trait>Territorial</trait> Trait.</li><li><strong>Home: </strong>The animal is trained to return home if it is released or lost. </li><li><strong>Magic: </strong>The animal is trained to ignore <trait>Skittish</trait> when it comes to magic, which is required for most horses used by Wizards. </li><li><strong>Mount: </strong>The animal will accept a rider. Some creatures are especially belligerent, and will not accept a rider without the correct skill. So, to ride a Griffon, you need the <skill>Ride (Griffon)</skill> skill.</li><li><strong>War: </strong>The animal is trained for war, gaining +10 Weapon Skill. It can also ignore <trait>Skittish</trait> for loud noises.</li></ul></p>"
     },
     {
         "name": "Tongue Attack (Rating) [Range]",
@@ -4107,7 +4557,7 @@ var trait = [
     },
     {
         "name": "Vomit",
-        "desc": "<p>The creature can spew a stream of corrosive corruption, dowsing its opponents in foul, semi-digested filth. On its turn, by spending 3 Advantage, the creature can activate its Vomit as a Free Attack. The creature chooses 1 target it can see within Toughness Bonus yards and lets loose; all targets within two yards are also hit.</p><p>The creature performs an <b>Opposed Ballistic Skill/Dodge Test</b> against all affected targets (its single roll opposed by each individual target). The Test is typically Easy (+40) for the vomiting creature, due to the close range, and Challenging (+0) for opponents. All losing targets suffer a hit with a Weapon Damage of the creature’s Toughness Bonus +4 and receive a <condition>Stunned</condition> condition.</p><p>All Armour and Weapons carried by affected targets suffer 1 Damage as the acidic vomit corrodes it away.</p>"
+        "desc": "<p>The creature can spew a stream of corrosive corruption, dowsing its opponents in foul, semi-digested filth. On its turn, by spending 3 Advantage, the creature can activate its Vomit as a Free Attack. The creature chooses 1 target it can see within Toughness Bonus yards and lets loose; all targets within two yards are also hit.</p><p>The creature performs an <strong>Opposed <skill>Ballistic Skill</skill>/<skill>Dodge</skill> Test</strong> against all affected targets (its single roll opposed by each individual target). The Test is typically Easy (+40) for the vomiting creature, due to the close range, and Challenging (+0) for opponents. All losing targets suffer a hit with a Weapon Damage of the creature’s Toughness Bonus +4 and receive a <condition>Stunned</condition> condition.</p><p>All Armour and Weapons carried by affected targets suffer 1 Damage as the acidic vomit corrodes it away.</p>"
     },
     {
         "name": "Ward (Rating)",
@@ -5725,6 +6175,109 @@ var career = [
         }
     },
     {
+        "name": "Advisor",
+        "class": "Courtiers",
+        "desc": "Wise and well-informed, you provide advice and guidance so your employer prospers.",
+        "advances": ["T", "I", "Agi", "Fel", "Int", "WP"],
+        "incomeSkill": "Lore (Politics)",
+        "races": "Dwarf, Halfling, High Elf, Human, Wood Elf",
+        "path1": {
+            "name": "Aide",
+            "status": "Silver 2",
+            "skills":
+                [
+                    "Bribery",
+                    "Consume Alcohol",
+                    "Endurance",
+                    "Gossip",
+                    "Haggle",
+                    "Language (Classical)",
+                    "Lore (Politics)",
+                    "Perception"
+                ],
+            "talents":
+                [
+                    "Beneath Notice",
+                    "Etiquette (Any)",
+                    "Gregarious",
+                    "Read/Write"
+                ],
+            "trappings":
+                [
+                    "Writing Kit"
+                ]
+        },
+        "path2": {
+            "name": "Advisor",
+            "status": "Silver 4",
+            "skills":
+                [
+                    "Charm",
+                    "Cool",
+                    "Evaluate",
+                    "Gamble",
+                    "Intuition",
+                    "Lore (Local)"
+                ],
+            "talents":
+                [
+                    "Blather",
+                    "Criminal",
+                    "Schemer",
+                    "Supportive"
+                ],
+            "trappings":
+                [
+                    "Livery"
+                ]
+        },
+        "path3": {
+            "name": "Counsellor",
+            "status": "Gold 1",
+            "skills":
+                [
+                    "Entertain (Storytelling)",
+                    "Language (Any)",
+                    "Leadership",
+                    "Lore (Any)"
+                ],
+            "talents":
+                [
+                    "Argumentative",
+                    "Briber",
+                    "Carouser",
+                    "Cat-tongued"
+                ],
+            "trappings":
+                [
+                    "Quality Clothing",
+                    "Aide"
+                ]
+        },
+        "path4": {
+            "name": "Chancellor",
+            "status": "Gold 3",
+            "skills":
+                [
+                    "Lore (Heraldry)",
+                    "Ride (Horse)"
+                ],
+            "talents":
+                [
+                    "Commanding Presence",
+                    "Embezzle",
+                    "Kingpin",
+                    "Suave"
+                ],
+            "trappings":
+                [
+                    "Riding Horse with Saddle and Harness",
+                    "Quality Courtly Garb",
+                    "Staff of Advisors and Aides"
+                ]
+        }
+    },
+    {
         "name": "Artist",
         "class": "Courtiers",
         "desc": "You possess an artistic gift, one that transcends daily life and uplifts the souls of others.",
@@ -5827,6 +6380,869 @@ var career = [
         "advances": ["S", "I", "Dex", "Fel", "WP", "Int"],
         "incomeSkill": "Art",
         "races": "Dwarf, Halfling, High Elf, Human, Wood Elf"
+    },
+    {
+        "name": "Duelist",
+        "class": "Courtiers",
+        "desc": "Your blade is an instrument of justice, bound by long tradition and employed with deadly precision.",
+        "advances": ["WS", "I", "Agi", "BS", "S", "WP"],
+        "incomeSkill": "Melee (Any)",
+        "races": "Dwarf, High Elf, Human",
+        "path1": {
+            "name": "Fencer",
+            "status": "Silver 3",
+            "skills":
+                [
+                    "Athletics",
+                    "Dodge",
+                    "Endurance",
+                    "Heal",
+                    "Intuition",
+                    "Language (Classical)",
+                    "Melee (Any)",
+                    "Perception"
+                ],
+            "talents":
+                [
+                    "Beat Blade",
+                    "Distract",
+                    "Feint",
+                    "Step Aside"
+                ],
+            "trappings":
+                [
+                    "Hand Weapon or Rapier",
+                    "Sling Bag containing Clothing and <mono>1d10</mono> bandages"
+                ]
+        },
+        "path2": {
+            "name": "Duellist",
+            "status": "Silver 5",
+            "skills":
+                [
+                    "Charm",
+                    "Cool",
+                    "Gamble",
+                    "Melee (Parry)",
+                    "Ranged (Blackpowder)",
+                    "Trade (Gunsmith)"
+                ],
+            "talents":
+                [
+                    "Combat Reflexes",
+                    "Etiquette (Any)",
+                    "Fast Shot",
+                    "Reversal"
+                ],
+            "trappings":
+                [
+                    "Main Gauche or Swordbreaker",
+                    "Pistol with Gunpowder and Ammunition"
+                ]
+        },
+        "path3": {
+            "name": "Duelmaster",
+            "status": "Gold 1",
+            "skills":
+                [
+                    "Intimidate",
+                    "Leadership",
+                    "Melee (Basic)",
+                    "Perform (Acrobatics)"
+                ],
+            "talents":
+                [
+                    "Ambidextrous",
+                    "Disarm",
+                    "Dual Wielder",
+                    "Riposte"
+                ],
+            "trappings":
+                [
+                    "Quality Rapier",
+                    "Hand Weapon",
+                    "Trusty Second",
+                    "2 Wooden Training Swords"
+                ]
+        },
+        "path4": {
+            "name": "Judicial Champion",
+            "status": "Gold 3",
+            "skills":
+                [
+                    "Lore (Law)",
+                    "Melee (Any)"
+                ],
+            "talents":
+                [
+                    "Combat Master",
+                    "Menacing",
+                    "Reaction Strike",
+                    "Strike to Injure"
+                ],
+            "trappings":
+                [
+                    "2 Quality Weapons"
+                ]
+        }
+    },
+    {
+        "name": "Envoy",
+        "class": "Courtiers",
+        "desc": "An articulate emissary, you travel far and wide, negotiating favourable pacts and treaties.",
+        "advances": ["T", "Fel", "Agi", "Int", "I", "WP"],
+        "incomeSkill": "Charm",
+        "races": "Dwarf, Halfling, High Elf, Human, Wood Elf",
+        "path1": {
+            "name": "Herald",
+            "status": "Silver 2",
+            "skills":
+                [
+                    "Athletics",
+                    "Charm",
+                    "Drive",
+                    "Dodge",
+                    "Endurance",
+                    "Intuition",
+                    "Ride (Horse)",
+                    "Row"
+                ],
+            "talents":
+                [
+                    "Blather",
+                    "Etiquette (Nobles)",
+                    "Read/Write",
+                    "Suave"
+                ],
+            "trappings":
+                [
+                    "Leather Jack",
+                    "Livery",
+                    "Scroll Case"
+                ]
+        },
+        "path2": {
+            "name": "Envoy",
+            "status": "Silver 4",
+            "skills":
+                [
+                    "Art (Writing)",
+                    "Bribery",
+                    "Cool",
+                    "Gossip",
+                    "Haggle",
+                    "Lore (Politics)"
+                ],
+            "talents":
+                [
+                    "Attractive",
+                    "Cat-tongued",
+                    "Etiquette (Any)",
+                    "Seasoned Traveler"
+                ],
+            "trappings":
+                [
+                    "Quill and Ink",
+                    "10 sheets of Parchment"
+                ]
+        },
+        "path3": {
+            "name": "Diplomat",
+            "status": "Gold 2",
+            "skills":
+                [
+                    "Intimidate",
+                    "Language (Any)",
+                    "Leadership",
+                    "Navigation"
+                ],
+            "talents":
+                [
+                    "Carouser",
+                    "Dealmaker",
+                    "Gregarious",
+                    "Schemer"
+                ],
+            "trappings":
+                [
+                    "Aide",
+                    "Quality Clothes",
+                    "Map"
+                ]
+        },
+        "path4": {
+            "name": "Ambassador",
+            "status": "Gold 5",
+            "skills":
+                [
+                    "Language (Any)",
+                    "Lore (Any)"
+                ],
+            "talents":
+                [
+                    "Briber",
+                    "Commanding Presence",
+                    "Noble Blood",
+                    "Savvy"
+                ],
+            "trappings":
+                [
+                    "Aide",
+                    "Best Quality Courtly Clothes",
+                    "Staff of Diplomats",
+                    "Herald"
+                ]
+        }
+    },
+    {
+        "name": "Noble",
+        "class": "Courtiers",
+        "desc": "As the scion of a noble bloodline, you stand proudly from the common rabble.",
+        "advances": ["WS", "I", "Dex", "Fel", "Int", "WP"],
+        "incomeSkill": "Leadership",
+        "races": "Dwarf, High Elf, Human, Wood Elf",
+        "path1": {
+            "name": "Scion",
+            "status": "Gold 1",
+            "skills":
+                [
+                    "Bribery",
+                    "Consume Alcohol",
+                    "Gamble",
+                    "Intimidate",
+                    "Leadership",
+                    "Lore (Heraldry)",
+                    "Melee (Fencing)",
+                    "Play (Any)"
+                ],
+            "talents":
+                [
+                    "Etiquette (Nobles)",
+                    "Luck",
+                    "Noble Blood",
+                    "Read/Write"
+                ],
+            "trappings":
+                [
+                    "Courtly Garb",
+                    "Foil <em>or</em> Hand Mirror",
+                    "Jewellery worth <mono>3d10</mono> GC",
+                    "Personal Servant"
+                ]
+        },
+        "path2": {
+            "name": "Noble",
+            "status": "Gold 3",
+            "skills":
+                [
+                    "Charm",
+                    "Gossip",
+                    "Language (Classical)",
+                    "Lore (Local)",
+                    "Ride (Horse)",
+                    "Melee (Parry)"
+                ],
+            "talents":
+                [
+                    "Attractive",
+                    "Briber",
+                    "Carouser",
+                    "Suave"
+                ],
+            "trappings":
+                [
+                    "4 Household Servants",
+                    "Quality Courtly Garb",
+                    "Courtly Garb",
+                    "Riding Horse with Saddle and Harness <em>or</em> Coach",
+                    "Main Gauche <em>or</em> Quality Cloak",
+                    "Jewellery worth 50 GC"
+                ]
+        },
+        "path3": {
+            "name": "Magnate",
+            "status": "Gold 5",
+            "skills":
+                [
+                    "Language (Any)",
+                    "Intuition",
+                    "Lore (Politics)",
+                    "Perception"
+                ],
+            "talents":
+                [
+                    "Coolheaded",
+                    "Dealmaker",
+                    "Public Speaker",
+                    "Schemer"
+                ],
+            "trappings":
+                [
+                    "2 sets of Quality Courtly Garb",
+                    "200 GC",
+                    "Fiefdom",
+                    "Jewellery worth 200 GC",
+                    "Signet Ring"
+                ]
+        },
+        "path4": {
+            "name": "Noble Lord",
+            "status": "Gold 7",
+            "skills":
+                [
+                    "Lore (Any)",
+                    "Track"
+                ],
+            "talents":
+                [
+                    "Commanding Presence",
+                    "Iron Will",
+                    "Warleader",
+                    "Wealthy"
+                ],
+            "trappings":
+                [
+                    "4 sets of Best Quality Courtly Garb",
+                    "Quality Foil <em>or</em> Hand Mirror",
+                    "500 GC",
+                    "Jewellery worth 500 GC",
+                    "Province"
+                ]
+        }
+    },
+    {
+        "name": "Servant",
+        "class": "Courtiers",
+        "desc": "You serve the great and the good, performing tasks in support of your employer.",
+        "advances": ["S", "T", "Agi", "I", "Int", "Fel"],
+        "incomeSkill": "Endurance",
+        "races": "Dwarf, Halfling, Human",
+        "path1": {
+            "name": "Menial",
+            "status": "Silver 1",
+            "skills":
+                [
+                    "Athletics",
+                    "Climb",
+                    "Drive",
+                    "Dodge",
+                    "Endurance",
+                    "Intuition",
+                    "Perception",
+                    "Stealth (Any)"
+                ],
+            "talents":
+                [
+                    "Beneath Notice",
+                    "Strong Back",
+                    "Strong-minded",
+                    "Sturdy"
+                ],
+            "trappings":
+                [
+                    "Floor Brush"
+                ]
+        },
+        "path2": {
+            "name": "Servant",
+            "status": "Silver 3",
+            "skills":
+                [
+                    "Animal Care",
+                    "Consume Alcohol",
+                    "Evaluate",
+                    "Gamble",
+                    "Gossip",
+                    "Haggle"
+                ],
+            "talents":
+                [
+                    "Etiquette (Servants)",
+                    "Shadow",
+                    "Tenacious",
+                    "Well-prepared"
+                ],
+            "trappings":
+                [
+                    "Livery"
+                ]
+        },
+        "path3": {
+            "name": "Attendant",
+            "status": "Silver 5",
+            "skills":
+                [
+                    "Charm",
+                    "Cool",
+                    "Initimidate",
+                    "Lore (Local)"
+                ],
+            "talents":
+                [
+                    "Embezzle",
+                    "Resistance (Poison)",
+                    "Suave",
+                    "Supportive"
+                ],
+            "trappings":
+                [
+                    "Quality Livery",
+                    "Storm Lantern",
+                    "Tinderbox",
+                    "Lamp Oil"
+                ]
+        },
+        "path4": {
+            "name": "Steward",
+            "status": "Gold 1",
+            "skills":
+                [
+                    "Leadership",
+                    "Melee (Basic)"
+                ],
+            "talents":
+                [
+                    "Etiquette (Any)",
+                    "Numismatics",
+                    "Read/Write",
+                    "Savvy"
+                ],
+            "trappings":
+                [
+                    "Hand Weapon",
+                    "Fine Clothes",
+                    "Servant"
+                ]
+        }
+    },
+    {
+        "name": "Spy",
+        "class": "Courtiers",
+        "desc": "You are the eyes and ears of another, exposing secrets and spreading lies.",
+        "advances": ["Agi", "WP", "Fel", "WS", "I", "Int"],
+        "incomeSkill": "Gossip",
+        "races": "Dwarf, Halfling, High Elf, Human, Wood Elf",
+        "path1": {
+            "name": "Informer",
+            "status": "Brass 3",
+            "skills":
+                [
+                    "Bribery",
+                    "Charm",
+                    "Cool",
+                    "Gamble",
+                    "Gossip",
+                    "Haggle",
+                    "Perception",
+                    "Stealth (Any)"
+                ],
+            "talents":
+                [
+                    "Blather",
+                    "Carouser",
+                    "Gregarious",
+                    "Shadow"
+                ],
+            "trappings":
+                [
+                    "Charcoal stick",
+                    "Sling Bag containing 2 different sets of Clothing and Hooded Cloak"
+                ]
+        },
+        "path2": {
+            "name": "Spy",
+            "status": "Silver 3",
+            "skills":
+                [
+                    "Climb",
+                    "Entertain (Act)",
+                    "Intuition",
+                    "Melee (Basic)",
+                    "Secret Signs (Any)",
+                    "Sleight of Hand"
+                ],
+            "talents":
+                [
+                    "Etiquette (Any)",
+                    "Lip Reading",
+                    "Read/Write",
+                    "Secret Identity"
+                ],
+            "trappings":
+                [
+                    "Informer",
+                    "Hand Weapon",
+                    "Disguise Kit",
+                    "Ring of Informers",
+                    "Telescope"
+                ]
+        },
+        "path3": {
+            "name": "Agent",
+            "status": "Gold 1",
+            "skills":
+                [
+                    "Animal Care",
+                    "Animal Training (Pigeon)",
+                    "Language (Any)",
+                    "Leadership"
+                ],
+            "talents":
+                [
+                    "Attractive",
+                    "Cat-tongued",
+                    "Master of Disguise",
+                    "Mimic"
+                ],
+            "trappings":
+                [
+                    "Book (Cryptography)",
+                    "Ring of Spies and Informers",
+                    "Loft of Homing Pigeons",
+                    "Quill and Ink"
+                ]
+        },
+        "path4": {
+            "name": "Spymaster",
+            "status": "Gold 4",
+            "skills":
+                [
+                    "Research",
+                    "Lore (Any)"
+                ],
+            "talents":
+                [
+                    "Briber",
+                    "Schemer",
+                    "Suave",
+                    "Tower of Memories"
+                ],
+            "trappings":
+                [
+                    "Office and Staff",
+                    "Large Spy Ring of Agents, Spies, and Informers"
+                ]
+        }
+    },
+    {
+        "name": "Warden",
+        "class": "Courtiers",
+        "desc": "You oversee another's territory, ensuring it is porperly maintained and, if necessary, protected.",
+        "advances": ["S", "T", "WP", "WS", "Fel", "Int"],
+        "incomeSkill": "Perception",
+        "races": "Dwarf, Halfling, High Elf, Human",
+        "path1": {
+            "name": "Custodian",
+            "status": "Silver 1",
+            "skills":
+                [
+                    "Athletics",
+                    "Charm Animal",
+                    "Consume Alcohol",
+                    "Cool",
+                    "Endurance",
+                    "Intuition",
+                    "Lore (Local)",
+                    "Perception"
+                ],
+            "talents":
+                [
+                    "Menacing",
+                    "Night Vision",
+                    "Sharp",
+                    "Strike to Stun"
+                ],
+            "trappings":
+                [
+                    "Keys",
+                    "Lantern and Lamp Oil",
+                    "Livery"
+                ]
+        },
+        "path2": {
+            "name": "Warden",
+            "status": "Silver 3",
+            "skills":
+                [
+                    "Animal Care",
+                    "Melee (Basic)",
+                    "Outdoor Survival",
+                    "Ranged (Bow)",
+                    "Ride (Horse)",
+                    "Swim"
+                ],
+            "talents":
+                [
+                    "Animal Affinity",
+                    "Etiquette (Servants)",
+                    "Strider (Any)",
+                    "Rover"
+                ],
+            "trappings":
+                [
+                    "Hand Weapon <em>or</em> Bow with 10 Arrows",
+                    "Riding Horse with Saddle and Harness",
+                    "Leather Jack"
+                ]
+        },
+        "path3": {
+            "name": "Seneschal",
+            "status": "Gold 1",
+            "skills":
+                [
+                    "Bribery",
+                    "Charm",
+                    "Gossip",
+                    "Leadership"
+                ],
+            "talents":
+                [
+                    "Embezzle",
+                    "Numismatics",
+                    "Read/Write",
+                    "Supportive"
+                ],
+            "trappings":
+                [
+                    "Breastplate",
+                    "Ceremonial Staff of Office",
+                    "Staff of Wardens and Custodians"
+                ]
+        },
+        "path4": {
+            "name": "Governor",
+            "status": "Gold 3",
+            "skills":
+                [
+                    "Evaluate",
+                    "Language (Any)"
+                ],
+            "talents":
+                [
+                    "Commanding Presence",
+                    "Etiquette (Any)",
+                    "Savant (Local)",
+                    "Suave"
+                ],
+            "trappings":
+                [
+                    "Aide",
+                    "Governor's Residence",
+                    "Servant"
+                ]
+        }
+    },
+    {
+        "name": "Baliff",
+        "class": "Peasants",
+        "desc": "You are an official trusted by local rulers to administer their lands efficiently and firmly.",
+        "advances": ["WS", "I", "WP", "Fel", "Agi", "Int"],
+        "incomeSkill": "Intimidate",
+        "races": "Dwarf, Halfling, Human",
+        "path1": {
+            "name": "Tax Collector",
+            "status": "Silver 1",
+            "skills":
+                [
+                    "Cool",
+                    "Dodge",
+                    "Endurance",
+                    "Gossip",
+                    "Haggle",
+                    "Intimidate",
+                    "Melee (Basic)",
+                    "Perception"
+                ],
+            "talents":
+                [
+                    "Embezzle",
+                    "Numismatics",
+                    "Strong Back",
+                    "Tenacious"
+                ],
+            "trappings":
+                [
+                    "Hand Weapon",
+                    "Small Lock Box and Key"
+                ]
+        },
+        "path2": {
+            "name": "Baliff",
+            "status": "Silver 5",
+            "skills":
+                [
+                    "Bribery",
+                    "Charm",
+                    "Evaluate",
+                    "Intuition",
+                    "Leadership",
+                    "Lore (Local)"
+                ],
+            "talents":
+                [
+                    "Break and Enter",
+                    "Criminal",
+                    "Public Speaking",
+                    "Strike to Stun"
+                ],
+            "trappings":
+                [
+                    "Leather Jack",
+                    "3 Tax Collectors"
+                ]
+        },
+        "path3": {
+            "name": "Reeve",
+            "status": "Gold 1",
+            "skills":
+                [
+                    "Animal Care",
+                    "Lore (Heraldry)",
+                    "Navigation",
+                    "Ride (Horse)"
+                ],
+            "talents":
+                [
+                    "Kingpin",
+                    "Menacing",
+                    "Nose for Trouble",
+                    "Read/Write"
+                ],
+            "trappings":
+                [
+                    "Horse with Saddle and Tack",
+                    "Breastplate",
+                    "Baliff"
+                ]
+        },
+        "path4": {
+            "name": "Magistrate",
+            "status": "Gold 3",
+            "skills":
+                [
+                    "Language (Classical)",
+                    "Lore (Law)"
+                ],
+            "talents":
+                [
+                    "Commanding Presence",
+                    "Iron Will",
+                    "Savvy",
+                    "Schemer"
+                ],
+            "trappings":
+                [
+                    "Library (Law)",
+                    "Quality Robes",
+                    "Seal of Office"
+                ]
+        }
+    },
+    {
+        "name": "Hedge Witch",
+        "class": "Peasants",
+        "desc": "Wise and secretive, you guide your community using ancient magic handed down for generations.",
+        "advances": ["T", "I", "Dex", "Int", "Fel", "WP"],
+        "incomeSkill": "Intuition",
+        "races": "Human",
+        "path1": {
+            "name": "Hedge Apprentice",
+            "status": "Brass 1",
+            "skills":
+                [
+                    "Channelling",
+                    "Endurance",
+                    "Intuition",
+                    "Language (Magick)",
+                    "Lore (Folklore)",
+                    "Lore (Herbs)",
+                    "Outdoor Survival",
+                    "Perception"
+                ],
+            "talents":
+                [
+                    "Fast Hands",
+                    "Petty Magic",
+                    "Rover",
+                    "Strider (Woodlands)"
+                ],
+            "trappings":
+                [
+                    "<mono>1d10</mono> Lucky Charms",
+                    "Quarterstaff",
+                    "Backpack"
+                ]
+        },
+        "path2": {
+            "name": "Hedge Witch",
+            "status": "Brass 2",
+            "skills":
+                [
+                    "Cool",
+                    "Gossip",
+                    "Heal",
+                    "Lore (Local)",
+                    "Trade (Charms)",
+                    "Trade (Herbalist)"
+                ],
+            "talents":
+                [
+                    "Aethyric Attunement",
+                    "Animal Affinity",
+                    "Arcane Magic (Hedgecraft)",
+                    "Sixth Sense"
+                ],
+            "trappings":
+                [
+                    "Antitoxin Kit",
+                    "Healing Poultice",
+                    "Trade Tools (Herbalist)"
+                ]
+        },
+        "path3": {
+            "name": "Hedge Master",
+            "status": "Brass 3",
+            "skills":
+                [
+                    "Haggle",
+                    "Lore (Genealogy)",
+                    "Lore (Magic)",
+                    "Lore (Spirits)"
+                ],
+            "talents":
+                [
+                    "Craftsman (Herbalist)",
+                    "Magical Sense",
+                    "Pure Soul",
+                    "Resistance (Disease)"
+                ],
+            "trappings":
+                [
+                    "Isolated Hut",
+                    "Apprentice"
+                ]
+        },
+        "path4": {
+            "name": "Hedgewise",
+            "status": "Brass 5",
+            "skills":
+                [
+                    "Intimidate",
+                    "Pray"
+                ],
+            "talents":
+                [
+                    "Acute Sense (Any)",
+                    "Master Craftsman (Herbalist)",
+                    "Night Vision",
+                    "Strong-minded"
+                ],
+            "trappings":
+                [
+                    "Assortment of Animal Skulls",
+                    "Ceremonial Cloak and Garland"
+                ]
+        }
     },
     {
         "name": "Hunter",
@@ -6149,6 +7565,857 @@ var career = [
         "races": "Halfling, Human"
     },
     {
+        "name": "Boatman",
+        "class": "Riverfolk",
+        "desc": "You ply the dangerous waters of the Old World, transporting people, goods, and the latest news.",
+        "advances": ["S", "T", "Agi", "I", "Dex", "Int"],
+        "incomeSkill": "Sail",
+        "races": "Dwarf, Halfling, High Elf, Human",
+        "path1": {
+            "name": "Boat-hand",
+            "status": "Silver 1",
+            "skills":
+                [
+                    "Consume Alcohol",
+                    "Dodge",
+                    "Endurance",
+                    "Gossip",
+                    "Melee (Brawling)",
+                    "Row",
+                    "Sail",
+                    "Swim"
+                ],
+            "talents":
+                [
+                    "Dirty Fighting",
+                    "Fisherman",
+                    "Strong Back",
+                    "Strong Swimmer"
+                ],
+            "trappings":
+                [
+                    "Hand Weapon (Boat Hook)",
+                    "Leather Jack",
+                    "Pole"
+                ]
+        },
+        "path2": {
+            "name": "Boatman",
+            "status": "Silver 2",
+            "skills":
+                [
+                    "Athletics",
+                    "Entertain (Storytelling)",
+                    "Haggle",
+                    "Intuition",
+                    "Lore (Riverways)",
+                    "Perception"
+                ],
+            "talents":
+                [
+                    "Etiquette (Guilder)",
+                    "Seasoned Traveller",
+                    "Very Strong",
+                    "Waterman"
+                ],
+            "trappings":
+                [
+                    "Rope",
+                    "Rowboat"
+                ]
+        },
+        "path3": {
+            "name": "Bargeswain",
+            "status": "Silver 3",
+            "skills":
+                [
+                    "Climb",
+                    "Entertain (Singing)",
+                    "Heal",
+                    "Trade (Boatbuilding)"
+                ],
+            "talents":
+                [
+                    "Dealmaker",
+                    "Embezzle",
+                    "Nose for Trouble",
+                    "Strike Mighty Blow"
+                ],
+            "trappings":
+                [
+                    "Backpack",
+                    "Trade Tools (Carpenter)"
+                ]
+        },
+        "path4": {
+            "name": "Barge Master",
+            "status": "Silver 5",
+            "skills":
+                [
+                    "Leadership",
+                    "Navigation"
+                ],
+            "talents":
+                [
+                    "Menacing",
+                    "Orientation",
+                    "Pilot",
+                    "Public Speaker"
+                ],
+            "trappings":
+                [
+                    "Hat",
+                    "Riverboat and Crew"
+                ]
+        }
+    },
+    {
+        "name": "Huffer",
+        "class": "Riverfolk",
+        "desc": "You pilot ships and boats through the most treacherous waters of the Old World.",
+        "advances": ["WS", "T", "I", "WP", "Int", "Fel"],
+        "incomeSkill": "Lore (Riverways)",
+        "races": "Dwarf, Halfling, Human",
+        "path1": {
+            "name": "Riverguide",
+            "status": "Brass 4",
+            "skills":
+                [
+                    "Consume Alcohol",
+                    "Gossip",
+                    "Intuition",
+                    "Lore (Local)",
+                    "Lore (Riverways)",
+                    "Perception",
+                    "Row",
+                    "Swim"
+                ],
+            "talents":
+                [
+                    "Fisherman",
+                    "Night Vision",
+                    "Orientation",
+                    "Waterman"
+                ],
+            "trappings":
+                [
+                    "Hand Weapon (Boat Hook)",
+                    "Storm Lantern and Oil"
+                ]
+        },
+        "path2": {
+            "name": "Huffer",
+            "status": "Silver 2",
+            "skills":
+                [
+                    "Charm",
+                    "Cool",
+                    "Entertain (Storytelling)",
+                    "Language (Any)",
+                    "Melee (Basic)",
+                    "Navigation"
+                ],
+            "talents":
+                [
+                    "Dealmaker",
+                    "Etiquette (Guilder)",
+                    "Nose for Trouble",
+                    "River Guide"
+                ],
+            "trappings":
+                [
+                    "Leather Jerkin",
+                    "Rope",
+                    "Rowboat"
+                ]
+        },
+        "path3": {
+            "name": "Pilot",
+            "status": "Silver 3",
+            "skills":
+                [
+                    "Haggle",
+                    "Intimidate",
+                    "Lore (Local)",
+                    "Lore (Wrecks)"
+                ],
+            "talents":
+                [
+                    "Acute Sense (Sight)",
+                    "Pilot",
+                    "Sea Legs",
+                    "Very Strong"
+                ],
+            "trappings":
+                [
+                    "Pole",
+                    "Storm Lantern and Oil"
+                ]
+        },
+        "path4": {
+            "name": "Master Pilot",
+            "status": "Silver 5",
+            "skills":
+                [
+                    "Leadership",
+                    "Sail"
+                ],
+            "talents":
+                [
+                    "Sixth Sense",
+                    "Sharp",
+                    "Strong Swimmer",
+                    "Tenacious"
+                ],
+            "trappings":
+                [
+                    "Boathand",
+                    "Small Riverboat"
+                ]
+        }
+    },
+    {
+        "name": "Riverwarden",
+        "class": "Riverfolk",
+        "desc": "Strong-backed and sure, you patrol the riverways in pursuit of lawbreakers and troublemakers.",
+        "advances": ["BS", "S", "Fel", "WS", "I", "Int"],
+        "incomeSkill": "Melee (Basic)",
+        "races": "Halfling, Human",
+        "path1": {
+            "name": "River Recruit",
+            "status": "Silver 1",
+            "skills":
+                [
+                    "Athletics",
+                    "Dodge",
+                    "Endurance",
+                    "Melee (Basic)",
+                    "Perception",
+                    "Row",
+                    "Sail",
+                    "Swim"
+                ],
+            "talents":
+                [
+                    "Strong Swimmer",
+                    "Strong Back",
+                    "Very Strong",
+                    "Waterman"
+                ],
+            "trappings":
+                [
+                    "Hand Weapon (Sword)",
+                    "Leather Jack",
+                    "Uniform"
+                ]
+        },
+        "path2": {
+            "name": "Riverwarden",
+            "status": "Silver 2",
+            "skills":
+                [
+                    "Bribery",
+                    "Charm",
+                    "Intimidate",
+                    "Gossip",
+                    "Lore (Riverways)",
+                    "Ranged (Blackpowder)"
+                ],
+            "talents":
+                [
+                    "Criminal",
+                    "Gunner",
+                    "Fisherman",
+                    "Seasoned Traveller"
+                ],
+            "trappings":
+                [
+                    "Lantern and Oil",
+                    "Pistol with 10 shot",
+                    "Shield"
+                ]
+        },
+        "path3": {
+            "name": "Shipsword",
+            "status": "Silver 4",
+            "skills":
+                [
+                    "Climb",
+                    "Cool",
+                    "Intuition",
+                    "Leadership"
+                ],
+            "talents":
+                [
+                    "Fearless (Wreckers)",
+                    "Hatred (Any)",
+                    "Pilot",
+                    "Sea Legs"
+                ],
+            "trappings":
+                [
+                    "Grappling Hook",
+                    "Helmet",
+                    "Mail Shirt"
+                ]
+        },
+        "path4": {
+            "name": "Shipsword Master",
+            "status": "Gold 1",
+            "skills":
+                [
+                    "Lore (Law)",
+                    "Navigation"
+                ],
+            "talents":
+                [
+                    "Commanding Presence",
+                    "Kingpin",
+                    "Menacing",
+                    "Orientation"
+                ],
+            "trappings":
+                [
+                    "Patrol Boats and Crew",
+                    "Symbol of Rank"
+                ]
+        }
+    },
+    {
+        "name": "Riverwoman",
+        "class": "Riverfolk",
+        "desc": "Rivers carry the Old World's traffic, and you stand in the heart of that excitement.",
+        "advances": ["T", "Agi", "Dex", "WS", "I", "Fel"],
+        "incomeSkill": "Endurance",
+        "races": "Dwarf, Halfling, Human",
+        "path1": {
+            "name": "Greenfish",
+            "status": "Brass 2",
+            "skills":
+                [
+                    "Athletics",
+                    "Consume Alcohol",
+                    "Dodge",
+                    "Endurance",
+                    "Gossip",
+                    "Outdoor Survival",
+                    "Row",
+                    "Swim"
+                ],
+            "talents":
+                [
+                    "Fisherman",
+                    "Gregarious",
+                    "Strider (Marshes)",
+                    "Strong Swimmer"
+                ],
+            "trappings":
+                [
+                    "Bucket",
+                    "Fishing Rod and Bait",
+                    "Leather Leggings"
+                ]
+        },
+        "path2": {
+            "name": "Riverwoman",
+            "status": "Brass 3",
+            "skills":
+                [
+                    "Gamble",
+                    "Lore (Local)",
+                    "Lore (Riverways)",
+                    "Ranged (Entangling)",
+                    "Ranged (Throwing)",
+                    "Set Trap"
+                ],
+            "talents":
+                [
+                    "Craftsman (Boatbuilder)",
+                    "Rover",
+                    "Strong Back",
+                    "Waterman"
+                ],
+            "trappings":
+                [
+                    "Eel Trap",
+                    "Leather Jerkin",
+                    "Net",
+                    "Spear"
+                ]
+        },
+        "path3": {
+            "name": "Riverwise",
+            "status": "Brass 5",
+            "skills":
+                [
+                    "Charm",
+                    "Intuition",
+                    "Melee (Polearm)",
+                    "Perception"
+                ],
+            "talents":
+                [
+                    "Savant (Riverways)",
+                    "Stout-hearted",
+                    "Tenacious",
+                    "Very Strong"
+                ],
+            "trappings":
+                [
+                    "Row Boat",
+                    "Storm Lantern and Oil"
+                ]
+        },
+        "path4": {
+            "name": "River Elder",
+            "status": "Silver 2",
+            "skills":
+                [
+                    "Entertain (Storytelling)",
+                    "Lore (Folklore)"
+                ],
+            "talents":
+                [
+                    "Master Craftsman (Boatbuilder)",
+                    "Public Speaker",
+                    "Sharp",
+                    "Strong-minded"
+                ],
+            "trappings":
+                [
+                    "Hut <em>or</em> Riverboat"
+                ]
+        }
+    },
+    {
+        "name": "Seaman",
+        "class": "Riverfolk",
+        "desc": "A life on the ocean waves calls to you, though many Reiklander Seamen never see the sea&hellip;",
+        "advances": ["Agi", "Fel", "Dex", "WS", "I", "Int"],
+        "incomeSkill": "Sail",
+        "races": "Dwarf, Halfling, High Elf, Human",
+        "path1": {
+            "name": "Landsman",
+            "status": "Silver 1",
+            "skills":
+                [
+                    "Climb",
+                    "Consume Alcohol",
+                    "Gamble",
+                    "Gossip",
+                    "Row",
+                    "Melee (Brawling)",
+                    "Sail",
+                    "Swim"
+                ],
+            "talents":
+                [
+                    "Fisherman",
+                    "Strider (Coastal)",
+                    "Strong Back",
+                    "Strong Swimmer"
+                ],
+            "trappings":
+                [
+                    "Bucket",
+                    "Brush",
+                    "Mop"
+                ]
+        },
+        "path2": {
+            "name": "Seaman",
+            "status": "Silver 3",
+            "skills":
+                [
+                    "Athletics",
+                    "Dodge",
+                    "Endurance",
+                    "Entertain (Singing)",
+                    "Language (Any)",
+                    "Melee (Basic)"
+                ],
+            "talents":
+                [
+                    "Catfall",
+                    "Sea Legs",
+                    "Seasoned Traveller",
+                    "Strong Legs"
+                ],
+            "trappings":
+                [
+                    "Hand Weapon (Boat Hook)",
+                    "Leather Jerkin"
+                ]
+        },
+        "path3": {
+            "name": "Boatswain",
+            "status": "Silver 5",
+            "skills":
+                [
+                    "Cool",
+                    "Leadership",
+                    "Perception",
+                    "Trade (Carpenter)"
+                ],
+            "talents":
+                [
+                    "Old Salt",
+                    "Strike Mighty Blow",
+                    "Tenacious",
+                    "Very Strong"
+                ],
+            "trappings":
+                [
+                    "Trade Tools (Carpenter)"
+                ]
+        },
+        "path4": {
+            "name": "Ship's Master",
+            "status": "Gold 2",
+            "skills":
+                [
+                    "Charm",
+                    "Navigation"
+                ],
+            "talents":
+                [
+                    "Orientation",
+                    "Pilot",
+                    "Public Speaking",
+                    "Savvy"
+                ],
+            "trappings":
+                [
+                    "Shipping Charts",
+                    "Sailing Ship and Crew",
+                    "Sextant",
+                    "Spyglass"
+                ]
+        }
+    },
+    {
+        "name": "Smuggler",
+        "class": "Riverfolk",
+        "desc": "You smuggle cargo, avoiding taxes and risking riverwarden inspections to secure maximum profit.",
+        "advances": ["Agi", "WP", "Dex", "I", "Int", "Fel"],
+        "incomeSkill": "Stealth (Rural or Urban)",
+        "races": "Dwarf, Halfling, High Elf, Human",
+        "path1": {
+            "name": "River Runner",
+            "status": "Brass 2",
+            "skills":
+                [
+                    "Athletics",
+                    "Bribery",
+                    "Cool",
+                    "Consume Alcohol",
+                    "Row",
+                    "Stealth (Rural or Urban)",
+                    "Sail",
+                    "Swim"
+                ],
+            "talents":
+                [
+                    "Criminal",
+                    "Strider (Marshes)",
+                    "Fisherman",
+                    "Strong Back"
+                ],
+            "trappings":
+                [
+                    "Large Sack",
+                    "Mask <em>or</em> Scarves",
+                    "Tinderbox",
+                    "Storm Lantern and Oil"
+                ]
+        },
+        "path2": {
+            "name": "Smuggler",
+            "status": "Brass 3",
+            "skills":
+                [
+                    "Haggle",
+                    "Gossip",
+                    "Lore (Local)",
+                    "Melee (Basic)",
+                    "Perception",
+                    "Secret Signs (Smuggler)"
+                ],
+            "talents":
+                [
+                    "Dealmaker",
+                    "Etiquette (Criminals)",
+                    "Waterman",
+                    "Very Strong"
+                ],
+            "trappings":
+                [
+                    "2 Barrels",
+                    "Hand Weapon",
+                    "Leather Jack",
+                    "Row Boat"
+                ]
+        },
+        "path3": {
+            "name": "Master Smuggler",
+            "status": "Brass 5",
+            "skills":
+                [
+                    "Evaluate",
+                    "Intimidate",
+                    "Intuition",
+                    "Lore (Riverways)"
+                ],
+            "talents":
+                [
+                    "Briber",
+                    "Fearless (Riverwardens)",
+                    "Pilot",
+                    "Strong Swimmer"
+                ],
+            "trappings":
+                [
+                    "River Runner",
+                    "Speedy Riverboat"
+                ]
+        },
+        "path4": {
+            "name": "Smuggler King",
+            "status": "Silver 2",
+            "skills":
+                [
+                    "Language (Any)",
+                    "Leadership"
+                ],
+            "talents":
+                [
+                    "Kingpin",
+                    "Savvy",
+                    "Strider (Coastal)",
+                    "Sea Legs"
+                ],
+            "trappings":
+                [
+                    "Disguise Kit",
+                    "Small Fleet of Riverboats"
+                ]
+        }
+    },
+    {
+        "name": "Stevedore",
+        "class": "Riverfolk",
+        "desc": "You may officially load cargo for coin, but everyone knows the Stevedores rule the docklands.",
+        "advances": ["WS", "T", "I", "S", "WP", "Int"],
+        "incomeSkill": "Endurance",
+        "races": "Dwarf, Halfling, Human",
+        "path1": {
+            "name": "Dockhand",
+            "status": "Brass 3",
+            "skills":
+                [
+                    "Athletics",
+                    "Climb",
+                    "Consume Alcohol",
+                    "Dodge",
+                    "Endurance",
+                    "Gossip",
+                    "Melee (Basic)",
+                    "Swim"
+                ],
+            "talents":
+                [
+                    "Dirty Fighting",
+                    "Strong Back",
+                    "Sturdy",
+                    "Very Strong"
+                ],
+            "trappings":
+                [
+                    "Hand Weapon (Boat Hook)",
+                    "Leather Gloves"
+                ]
+        },
+        "path2": {
+            "name": "Stevedore",
+            "status": "Silver 1",
+            "skills":
+                [
+                    "Bribery",
+                    "Entertain (Storytelling)",
+                    "Gamble",
+                    "Intimidate",
+                    "Perception",
+                    "Stealth (Urban)"
+                ],
+            "talents":
+                [
+                    "Criminal",
+                    "Etiquette (Guilders)",
+                    "Strong Legs",
+                    "Tenacious"
+                ],
+            "trappings":
+                [
+                    "Guild License",
+                    "Leather Jerkin",
+                    "Pipe and Tobacco",
+                    "Porter Cap"
+                ]
+        },
+        "path3": {
+            "name": "Foreman",
+            "status": "Silver 3",
+            "skills":
+                [
+                    "Cool",
+                    "Evaluate",
+                    "Intuition",
+                    "Leadership"
+                ],
+            "talents":
+                [
+                    "Dealmaker",
+                    "Embezzle",
+                    "Etiquette (Criminals)",
+                    "Public Speaking"
+                ],
+            "trappings":
+                [
+                    "Gang of Stevedores",
+                    "Whistle"
+                ]
+        },
+        "path4": {
+            "name": "Dock Master",
+            "status": "Silver 5",
+            "skills":
+                [
+                    "Charm",
+                    "Lore (Taxes)"
+                ],
+            "talents":
+                [
+                    "Kingpin",
+                    "Menacing",
+                    "Numismatics",
+                    "Read/Write"
+                ],
+            "trappings":
+                [
+                    "Office and Staff",
+                    "Writing Kit"
+                ]
+        }
+    },
+    {
+        "name": "Wrecker",
+        "class": "Riverfolk",
+        "desc": "You lure vessels into a watery doom and make off with their cargo.",
+        "advances": ["WS", "S", "I", "WP", "BS", "Fel"],
+        "incomeSkill": "Melee (Basic)",
+        "races": "Dwarf, Human, Wood Elf",
+        "path1": {
+            "name": "Cargo Scavenger",
+            "status": "Brass 2",
+            "skills":
+                [
+                    "Climb",
+                    "Consume Alcohol",
+                    "Dodge",
+                    "Endurance",
+                    "Row",
+                    "Melee (Basic)",
+                    "Outdoor Survival",
+                    "Swim"
+                ],
+            "talents":
+                [
+                    "Break and Enter",
+                    "Criminal",
+                    "Fisherman",
+                    "Strong Back"
+                ],
+            "trappings":
+                [
+                    "Crowbar",
+                    "Large Sack",
+                    "Leather Gloves"
+                ]
+        },
+        "path2": {
+            "name": "Wrecker",
+            "status": "Brass 3",
+            "skills":
+                [
+                    "Bribery",
+                    "Cool",
+                    "Intuition",
+                    "Navigation",
+                    "Perception",
+                    "Set Trap"
+                ],
+            "talents":
+                [
+                    "Flee!",
+                    "Rover",
+                    "Strong Swimmer",
+                    "Trapper"
+                ],
+            "trappings":
+                [
+                    "Hand Weapon (Boat Hook)",
+                    "Leather Jack",
+                    "Storm Lantern and Oil"
+                ]
+        },
+        "path3": {
+            "name": "River Pirate",
+            "status": "Brass 5",
+            "skills":
+                [
+                    "Gossip",
+                    "Intimidate",
+                    "Ranged (Crossbow)",
+                    "Stealth (Rural)"
+                ],
+            "talents":
+                [
+                    "Dirty Fighting",
+                    "Etiquette (Criminals)",
+                    "Menacing",
+                    "Waterman"
+                ],
+            "trappings":
+                [
+                    "Crossbow with 10 Bolts",
+                    "Grappling Hook and Rope",
+                    "Riverboat"
+                ]
+        },
+        "path4": {
+            "name": "Wrecker Captain",
+            "status": "Silver 2",
+            "skills":
+                [
+                    "Leadership",
+                    "Lore (Riverways)"
+                ],
+            "talents":
+                [
+                    "Furious Assault",
+                    "In-fighter",
+                    "Pilot",
+                    "Warrior Born"
+                ],
+            "trappings":
+                [
+                    "Fleet of Riverboats and Wrecker Crew",
+                    "Keg of Ale",
+                    "Manacles"
+                ]
+        }
+    },
+    {
         "name": "Warrior Priest",
         "class": "Warriors",
         "desc": "You bring divinity to the thick of battle, slaying the enemies of the Empire with righteous fury.",
@@ -6458,5 +8725,65 @@ var armourQual = [
         "name": "Weakpoints",
         "desc": "The armour has small weakpoints where a blade can slip in if your opponent is successfully skilled or lucky. If your opponent has a weapon with the <weaponqual>Impale</weaponqual> Quality and scores a Critical, the APs of your armour are ignored.",
         "flaw": true
+    }
+]
+
+var endeavours = [
+    {
+        "name": "With Great Power...",
+        "type": "Duties & Responsibilities",
+        "flavor": "The common folk will never understand my burdens. The sheer weight of the duties I bear. The guilty will not judge themselves and there are always so many villages to cleanse, for our enemies are legion.",
+        "appelation": "Lothar Metzger, Witch Hunter",
+        "description": ["As you climb the ranks of your career, you accrue expectations and responsibilities that cannot be avoided. Noble Lords must see to the affairs of their estates, Guildmasters must oversee their guild’s work, and Watch Captains must watch their watchmen. Ifyou neglect your responsibilities, you will soon lose status amongst your peers.",
+        "If you have attained one of the top two tiers of your Career Path and do not undertake the Income Endeavour, which reflects taking care of your obligations, you drop one level within your Career; reverting from the fourth level to the third, or the third to the second. This costs no Experience Points, acting as a free Career change, albeit downwards.",
+        "With this step backwards in your Career Path, you will now have a lower Status, and will earn less money should you perform future Income Endeavours. See Chapter 3: Class and Careers for more about Status. The loss in status does not remove any Advances acquired while you were in your previous Career.",
+         "If you wish to reclaim your lost Career level, you must once again pay the XP cost to re-enter the higher level of your Career and retake your ‘proper’ place in society. "]
+    },
+    {
+        "name": "Elf Improvement",
+        "type": "Duties & Responsibilities",
+        "flavor": "There are times when I can barely stand Altdorf. It is not the stench — though that is abhorrent — it is not the noise, either — it is just that you are all so very ugly to look upon, I feel that I must gaze at something beautiful for a time or I know that I shall start screaming, and never stop.",
+        "appelation": "Irlianmaris Ellarel, Asur Envoy",
+        "description": ["Elves, even those resident within the borders of Empire, do not consider themselves citizens of the Empire. There are High Elves with diplomatic positions in Karl-Franz I’s court, as well as traders and merchant princes in many of the great cities of the Empire, but the majority of the Asur avoid entanglements with Humans (not to mention Dwarfs) and few would call a Reiklander ‘friend’. ",
+        "The Wood Elves are even more removed; nearly mythical, rarely seen, and when they do appear they always have their own concerns that they rarely share with others.",
+        "With this step backwards in your Career Path, you will now have a lower Status, and will earn less money should you perform future Income Endeavours. Between adventures, all Elven characters must undertake one Endeavour maintaining contact with their own kind, seeing to their responsibilities to their people. High Elves commonly give reports on interesting things they’ve learned to agents of Ulthuan in either Altdorf or Marienburg, whereas Asrai do the same with the spies from their arboreal homes. This Endeavour offers no advantage beyond the inherent advantage of being an Elf. Note: Elves only lose an Endeavour if the Between Adventures section is at least 3 weeks long, thus the Elves have at least 3 Endeavours to complete.",
+        "If you wish to reclaim your lost Career level, you must once again pay the XP cost to re-enter the higher level of your Career and retake your ‘proper’ place in society. "]
+    },
+    {
+        "name": "Animal Training",
+        "type": "General Endeavours",
+        "description": ["You spend time training one of your animals. Make an Average (+20) Animal Training Test. If successful, add one skill to your animal from the <trait>Trained</trait> Creature Trait (see page 342)."]
+    },
+    {
+        "name": "Banking",
+        "type": "General Endeavours",
+        "description": ["This Endeavour allows you to store funds for future use. As noted in Money to Burn, all coin remaining at the end of your ‘Between Adventures’ phase is lost before the next adventure begins unless it is saved with this Endeavour. So, if you have a lot of money spare it may be worth a trip to the bank. If you are using a Banking Endeavour to retain your money, you must first decide whether to save your money by investing it with a reputable banking institution, or to stash it somewhere less secure.",
+            "<strong>Investing:</strong> You must be of the Gold and Silver social tiers to save with a banking house. Your money will be reasonably safe and it should accrue interest. When undertaking a Banking Endeavour to deposit money in a bank, determine the interest rate of your account, by choosing a number between 1 and 10 (alternatively you may simply roll 1d10). This is the rate of interest you will accrue, and also how risky the investment is. Withdrawing funds requires another Banking Endeavour. This may take place immediately after the initial Endeavour, or after subsequent adventures have occurred. Roll 1d100: if you roll equal to or less than your rate of interest, the venture has gone bankrupt and you have lost all of your money. If you roll over the interest rate, you receive your initial funds, plus the interest accrued. ",
+            "<strong>Stashing: </strong>All characters may choose to stash their loot. This is a risky strategy, involving hiding it on your person, in your mattress, or burying it somewhere. Stashed money never accrues any interest. Players may withdraw money from a stash before the start of an adventure, without undertaking an Endeavour. Roll 1d100: if you roll 10 or lower, your stash has been found and you have lost all your money, otherwise you recieve your initial funds. ",
+            "If you successfully withdraw your funds they will be available for you when you start your next adventure, in addition to any funds secured via an Income Endeavour. "
+        ]
+    },
+    {
+        "name": "Changing Career",
+        "type": "General Endeavours",
+        "description": ["In a society as rigidly hierarchical as the Empire, changing Careers may require grit and perseverance. Taking time to forge the right connections, and learn what is expected of you, can help,  significantly. Assuming you GM agrees, and you have completed you current Career, you can move to any Career Level that fits the story of your Character for free. If you have not completed your current Career, the change costs 100 XP. The time spent on this Endeavour represents making the appropriate introductions, doling out bribes, acquiring permits and licences, advertising, and similar activities."]
+    },
+    {
+        "name": "Commission",
+        "type": "General Endeavours",
+        "description": ["So, you wish to own one of Von Meinkopt’s legendary repeating pistols? Or a custom helm, with a personalised crest representing your epic victories? The Commission Endeavour allows you to acquire unusual or highly specialized items that are never simply ‘stocked’ in the shops of the Empire. It also allows for you to arrange for the creation of unique items. Such things take time, though…",
+                        "If you are seeking an item with an Exotic rarity and know a source capable of acquiring or manufacturing it, then undertake this Endeavour, spend the necessary funds, and place your order. The item will then be ready for collection after your next adventure.  A character can only commission a single Exotic item per Endeavour; acquiring further items, will require undertaking further Commission Endeavours. If you are unaware of an appropriate source for their item, you will first have to undertake the Consult an Expert Endeavour."
+    ]
+    },
+    {
+        "name": "Consult an Expert",
+        "type": "General Endeavours",
+        "description": ["The Old World is replete with ancient and arcane knowledge, yet this information is not readily available on some magical box in your pocket. If you want to seek out some piece of obscure arcana, you must first seek out an expert. You may undertake the Consult an Expert Endeavour either to facilitate another Endeavour for example: Commission, Training , or Unusual Learning Endeavours), or to secure a piece of specific knowledge.",
+            "There are two stages to this Endeavour: locating the expert, then consulting. ",
+            "First, you must locate your expert (this stage may be skipped with the GM’s permission if you have already identified an appropriate expert during your adventures).  Attempt a <test>Challenging (+0) Gossip Test</test> (the Difficulty of this Test will vary according to the size of the settlement where your character is currently living). If you succeed, you have located your expert. If you fail, you have located the loudest self-proclaimed specialist in your location, and the GM is given free rein to vary the quality or accuracy of the advice procured. You can of course refuse to deal with this somewhat suspect source, but you never know if you might have found a diamond in the rough. GMs are contrary like that sometimes.",
+            "Once successfully locate an expert, you then need to convince them to talk with you. Depending on what you wish to know, this may require no more than a Simple Charm Test or a modest donation to the local Temple of Verena. In more extreme cases, you may have to commit to performing one or more Favours (see Do Me A Favour! ) which may be called in during a future adventure, or ‘bought off ’ by spending Endeavours between future adventures. The level of Favour owed depends on the complexity — and danger — of the information you want as determined by the GM.",
+            "The precise nature of the information gleaned depends on the expert consulted and what you seek to know. Academics will know the origins and full history on a subject with which they are familiar; wizards of the Colleges of Magic in Altdorf understand the history of magic and various mystical objects, particularly aspects relevant to their own order; an Apothecary General can identify even the rarest poison; a Verenan scholar may have information relating to any number of historical incidents. In short, the expert’s background will influence how the knowledge is presented, and with which biases.",
+            "In addition to any specific information the GM imparts to their player, a successful Consult an Expert Endeavour used to seek out knowledge (and not to facilitate another Endeavour) gives you an Expert Reroll (mark this on your character sheet under Notes). This reroll may only be used on a Test specifically relating to the lore revealed and must be used before the end of your next adventure."
+    ]
     }
 ]

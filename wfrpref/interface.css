@@ -216,6 +216,20 @@ career:hover {
     text-decoration: none !important;
 }
 
+test {
+    cursor: help;
+    color: blanchedalmond !important;
+    font-weight: bold !important;
+    text-decoration: underline 1px dotted blanchedalmond;
+}
+
+test:hover {
+    cursor: help;
+    color: goldenrod !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+}
+
 .oneemimg {
     width: 1em !important;
     height: 1em !important;
@@ -284,6 +298,10 @@ career:hover {
 
 .careerClass {
     font-style: italic;
+}
+
+.attrTable th {
+    width: 10% !important;
 }
 
 /*

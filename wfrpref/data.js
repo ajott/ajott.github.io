@@ -4581,38 +4581,110 @@ var trait = [
 var career = [
     {
         "name": "",
+        "class": "",
+        "races": "",
         "desc": "",
+        "advances": ["", "", "", "", "", ""],
+        "incomeSkill": "",        
         "path1": {
             "name": "",
-            "skills": [],
-            "talents": [],
-            "trappings": [],
-            "status": ""
+            "status": "",
+            "skills":
+                [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+            "talents":
+                [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+            "trappings":
+                [
+                    "",
+                    "",
+                    ""
+                ]
         },
         "path2": {
             "name": "",
-            "skills": [],
-            "talents": [],
-            "trappings": [],
-            "status": ""
+            "status": "",
+            "skills":
+                [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+            "talents":
+                [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+            "trappings":
+                [
+                    "",
+                    "",
+                    ""
+                ]
         },
         "path3": {
             "name": "",
-            "skills": [],
-            "talents": [],
-            "trappings": [],
-            "status": ""
+            "status": "",
+            "skills":
+                [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+            "talents":
+                [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+            "trappings":
+                [
+                    "",
+                    "",
+                    "",
+                    ""
+                ]
         },
         "path4": {
             "name": "",
-            "skills": [],
-            "talents": [],
-            "trappings": [],
-            "status": ""
-        },
-        "advances": [],
-        "incomeSkill": "",
-        "races": ""
+            "status": "",
+            "skills":
+                [
+                    "",
+                    ""
+                ],
+            "talents":
+                [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+            "trappings":
+                [
+                    ""
+                ]
+        }
     },
     {
         "name": "Apothecary",
@@ -7245,6 +7317,113 @@ var career = [
         }
     },
     {
+        "name": "Herbalist",
+        "class": "Peasants",
+        "races": "Halfling, High Elf, Human, Wood Elf",
+        "desc": "Skilled botanists who use Rhya's bounty to create cures for many ailments.",
+        "advances": ["T", "I", "Agi", "Dex", "Fel", "Int"],
+        "incomeSkill": "Trade (Herbalist)",        
+        "path1": {
+            "name": "Herb Gatherer",
+            "status": "Brass 2",
+            "skills":
+                [
+                    "Charm Animal",
+                    "Climb",
+                    "Endurance",
+                    "Lore (Herbs)",
+                    "Outdoor Survival",
+                    "Perception",
+                    "Swim",
+                    "Trade (Herbalist)"
+                ],
+            "talents":
+                [
+                    "Acute Sense (Taste)",
+                    "Orientation",
+                    "Rover",
+                    "Strider (Any)"
+                ],
+            "trappings":
+                [
+                    "Boots",
+                    "Cloak",
+                    "Sling Bag containing Assortment of Herbs"
+                ]
+        },
+        "path2": {
+            "name": "Herbalist",
+            "status": "Brass 4",
+            "skills":
+                [
+                    "Consume Alcohol",
+                    "Cool",
+                    "Gossip",
+                    "Haggle",
+                    "Heal",
+                    "Lore (Local)"
+                ],
+            "talents":
+                [
+                    "Dealmaker",
+                    "Nimble Fingered",
+                    "Sharp",
+                    "Sturdy"
+                ],
+            "trappings":
+                [
+                    "Hand Weapon (Sickle)",
+                    "Healing Poultice",
+                    "Trade Tools (Herbalist)"
+                ]
+        },
+        "path3": {
+            "name": "Herb Master",
+            "status": "Silver 1",
+            "skills":
+                [
+                    "Intuition",
+                    "Leadership",
+                    "Lore (Medicine)",
+                    "Trade (Poisons)"
+                ],
+            "talents":
+                [
+                    "Craftsman (Herbalist)",
+                    "Field Dressing",
+                    "Hardy",
+                    "Savvy"
+                ],
+            "trappings":
+                [
+                    "Herb Gatherer",
+                    "3 Healing Poultices",
+                    "Healing Draught",
+                    "Workshop (Herbalist)"
+                ]
+        },
+        "path4": {
+            "name": "Herbwise",
+            "status": "Silver 3",
+            "skills":
+                [
+                    "Drive",
+                    "Navigation"
+                ],
+            "talents":
+                [
+                    "Concoct",
+                    "Master Tradesman (Herbalist)",
+                    "Resistance (Poison)",
+                    "Savant (Herbs)"
+                ],
+            "trappings":
+                [
+                    "Pony and Cart"
+                ]
+        }
+    },
+    {
         "name": "Hunter",
         "class": "Peasants",
         "desc": "Tough, independent killers who make a living off the fur and flesh of wild creatures.",
@@ -7349,6 +7528,448 @@ var career = [
         "advances": ["S", "T", "Dex", "BS", "I", "Int"],
         "incomeSkill": "Outdoor Survival",
         "races": "Dwarf, Halfling, High Elf, Human, Wood Elf"
+    }, {
+        "name": "Miner",
+        "class": "Peasants",
+        "races": "Dwarf, Halfling, Human",
+        "desc": "A hewer of stone, you pursue back-breaking work in the darkest depths of the world.",
+        "advances": ["S", "T", "WP", "WS", "I", "Fel"],
+        "incomeSkill": "Melee (Two-Handed)",        
+        "path1": {
+            "name": "Prospector",
+            "status": "Brass 2",
+            "skills":
+                [
+                    "Cool",
+                    "Endurance",
+                    "Intuition",
+                    "Lore (Local)",
+                    "Melee (Two-Handed)",
+                    "Outdoor Survival",
+                    "Perception",
+                    "Swim"
+                ],
+            "talents":
+                [
+                    "Rover",
+                    "Strider (Rocky)",
+                    "Sturdy",
+                    "Tenacious"
+                ],
+            "trappings":
+                [
+                    "Charcoal Stick",
+                    "Crude Map",
+                    "Pan",
+                    "Spade"
+                ]
+        },
+        "path2": {
+            "name": "Miner",
+            "status": "Brass 4",
+            "skills":
+                [
+                    "Climb",
+                    "Consume Alcohol",
+                    "Evaluate",
+                    "Melee (Basic)",
+                    "Secret Signs (Miners)",
+                    "Trade (Explosives)"
+                ],
+            "talents":
+                [
+                    "Night Vision",
+                    "Strike Mighty Blow",
+                    "Strong Back",
+                    "Very Strong"
+                ],
+            "trappings":
+                [
+                    "Davrich Lamp",
+                    "Hand Weapon (Pick)",
+                    "Lamp Oil",
+                    "Leather Jack"
+                ]
+        },
+        "path3": {
+            "name": "Master Miner",
+            "status": "Brass 5",
+            "skills":
+                [
+                    "Gossip",
+                    "Lore (Geology)",
+                    "Stealth (Underground)",
+                    "Trade (Engineer)"
+                ],
+            "talents":
+                [
+                    "Careful Strike",
+                    "Craftsman (Explosives)",
+                    "Tinker",
+                    "Tunnel Rat"
+                ],
+            "trappings":
+                [
+                    "Great Weapon (Two-handed Pick)",
+                    "Helmet",
+                    "Trade Tools (Engineer)"
+                ]
+        },
+        "path4": {
+            "name": "Mine Foreman",
+            "status": "Silver 4",
+            "skills":
+                [
+                    "Charm",
+                    "Leadership"
+                ],
+            "talents":
+                [
+                    "Argumentative",
+                    "Strong-minded",
+                    "Embezzle",
+                    "Read/Write"
+                ],
+            "trappings":
+                [
+                    "Crew of Miners",
+                    "Writing Kit"
+                ]
+        }
+    }, {
+        "name": "Mystic",
+        "class": "Peasants",
+        "races": "Human, Wood Elf",
+        "desc": "You have a talent for divining the future, or for convincing others you can&hellip;",
+        "advances": 
+                [
+                    "I", 
+                    "Dex", 
+                    "Fel", 
+                    "WP", 
+                    "Agi", 
+                    "Int"
+                ],
+        "incomeSkill": "Intuition",        
+        "path1": {
+            "name": "Fortune Teller",
+            "status": "Brass 1",
+            "skills":
+                [
+                    "Charm",
+                    "Entertain (Fortune Telling)",
+                    "Dodge",
+                    "Gossip",
+                    "Haggle",
+                    "Intuition",
+                    "Perception",
+                    "Sleight of Hand"
+                ],
+            "talents":
+                [
+                    "Attractive",
+                    "Luck",
+                    "Second Sight",
+                    "Suave"
+                ],
+            "trappings":
+                [
+                    "Deck of Cards <em>or</em> Dice",
+                    "Cheap Jewellery"
+                ]
+        },
+        "path2": {
+            "name": "Mystic",
+            "status": "Brass 2",
+            "skills":
+                [
+                    "Bribery",
+                    "Cool",
+                    "Entertain (Prophecy)",
+                    "Evaluate",
+                    "Intimidate",
+                    "Lore (Astrology)"
+                ],
+            "talents":
+                [
+                    "Detect Artefact",
+                    "Holy Visions",
+                    "Sixth Sense",
+                    "Well-prepared"
+                ],
+            "trappings":
+                [
+                    "Selection of Amulets"
+                ]
+        },
+        "path3": {
+            "name": "Sage",
+            "status": "Brass 3",
+            "skills":
+                [
+                    "Art (Writing)",
+                    "Charm Animal",
+                    "Entertain (Storytelling)",
+                    "Language (Any)"
+                ],
+            "talents":
+                [
+                    "Nose for Trouble",
+                    "Petty Magic",
+                    "Read/Write",
+                    "Witch!"
+                ],
+            "trappings":
+                [
+                    "Trade Tools (Writing)"
+                ]
+        },
+        "path4": {
+            "name": "Seer",
+            "status": "Brass 4",
+            "skills":
+                [
+                    "Lore (Prophecy)",
+                    "Channelling (Azyr)"
+                ],
+            "talents":
+                [
+                    "Arcane Magic (Heavens)",
+                    "Magical Sense",
+                    "Menacing",
+                    "Strong-minded"
+                ],
+            "trappings":
+                [
+                    "Trade Tools (Astrology)"
+                ]
+        }
+    }, {
+        "name": "Scout",
+        "class": "Peasants",
+        "races": "Dwarf, Halfling, High Elf, Human, Wood Elf",
+        "desc": "Intrepid and resourceful, you guide others through the dangers wilds of the Old World.",
+        "advances": 
+                [
+                    "T", 
+                    "I", 
+                    "Agi", 
+                    "BS", 
+                    "Int", 
+                    "Dex"
+                ],
+        "incomeSkill": "Perception",        
+        "path1": {
+            "name": "Guide",
+            "status": "Brass 3",
+            "skills":
+                [
+                    "Charm Animal",
+                    "Climb",
+                    "Endurance",
+                    "Gossip",
+                    "Lore (Local)",
+                    "Melee (Basic)",
+                    "Outdoor Survival",
+                    "Perception"
+                ],
+            "talents":
+                [
+                    "Orientation",
+                    "Rover",
+                    "Sharp",
+                    "Strider (Any)"
+                ],
+            "trappings":
+                [
+                    "Hand Weapon",
+                    "Leather Jack",
+                    "Sturdy Boots and Cloak",
+                    "Rope"
+                ]
+        },
+        "path2": {
+            "name": "Scout",
+            "status": "Brass 5",
+            "skills":
+                [
+                    "Athletics",
+                    "Navigation",
+                    "Ranged (Bow)",
+                    "Ride (Horse)",
+                    "Stealth (Rural)",
+                    "Track"
+                ],
+            "talents":
+                [
+                    "Combat Aware",
+                    "Night Vision",
+                    "Nose for Trouble",
+                    "Seasoned Traveller"
+                ],
+            "trappings":
+                [
+                    "Bow and 10 Arrows",
+                    "Mail Shirt"
+                ]
+        },
+        "path3": {
+            "name": "Pathfinder",
+            "status": "Silver 1",
+            "skills":
+                [
+                    "Animal Care",
+                    "Haggle",
+                    "Secret Signs (Hunter)",
+                    "Swim"
+                ],
+            "talents":
+                [
+                    "Acute Sense (Sight)",
+                    "Sixth Sense",
+                    "Strong Legs",
+                    "Very Resilient"
+                ],
+            "trappings":
+                [
+                    "Map",
+                    "Riding Horse with Saddle and Tack",
+                    "Saddlebags with 2 weeks' Rations",
+                    "Tent"
+                ]
+        },
+        "path4": {
+            "name": "Explorer",
+            "status": "Silver 5",
+            "skills":
+                [
+                    "Language (Any)",
+                    "Trade (Cartographer)"
+                ],
+            "talents":
+                [
+                    "Hardy",
+                    "Linguistics",
+                    "Savant (Local)",
+                    "Tenacious"
+                ],
+            "trappings":
+                [
+                    "Selection of Maps",
+                    "Trade Tools (Cartographer)"
+                ]
+        }
+    }, {
+        "name": "Villager",
+        "class": "Peasants",
+        "races": "Dwarf, Halfling, Human",
+        "desc": "You are the beating heart of rural life, working the countryside to feed civilisation.",
+        "advances": 
+                [
+                    "T", 
+                    "S", 
+                    "Agi", 
+                    "WS", 
+                    "Fel", 
+                    "Int"
+                ],
+        "incomeSkill": "Endurance",        
+        "path1": {
+            "name": "Peasant",
+            "status": "Brass 2",
+            "skills":
+                [
+                    "Animal Care",
+                    "Athletics",
+                    "Consume Alcohol",
+                    "Endurance",
+                    "Gossip",
+                    "Melee (Brawling)",
+                    "Lore (Local)",
+                    "Outdoor Survival"
+                ],
+            "talents":
+                [
+                    "Rover",
+                    "Strong Back",
+                    "Strong-minded",
+                    "Stone Soup"
+                ],
+            "trappings":
+                [
+                    "None"
+                ]
+        },
+        "path2": {
+            "name": "Villager",
+            "status": "Brass 3",
+            "skills":
+                [
+                    "Dodge",
+                    "Drive",
+                    "Entertain (Storytelling)",
+                    "Haggle",
+                    "Melee (Basic)",
+                    "Trade (Any)"
+                ],
+            "talents":
+                [
+                    "Animal Affinity",
+                    "Hardy",
+                    "Tenacious",
+                    "Very Strong"
+                ],
+            "trappings":
+                [
+                    "Leather Jerkin",
+                    "Hand Weapon (Axe)",
+                    "Trade Tools (as Trade)"
+                ]
+        },
+        "path3": {
+            "name": "Councillor",
+            "status": "Brass 4",
+            "skills":
+                [
+                    "Bribery",
+                    "Charm",
+                    "Intimidate",
+                    "Leadership"
+                ],
+            "talents":
+                [
+                    "Craftsman (Any)",
+                    "Dealmaker",
+                    "Stout-hearted",
+                    "Very Resilient"
+                ],
+            "trappings":
+                [
+                    "Mule and Cart",
+                    "Village Home",
+                    "Workshop (as Trade)"
+                ]
+        },
+        "path4": {
+            "name": "Village Elder",
+            "status": "Silver 2",
+            "skills":
+                [
+                    "Intuition",
+                    "Lore (History)"
+                ],
+            "talents":
+                [
+                    "Master Tradesman (as Trade)",
+                    "Nimble Fingered",
+                    "Public Speaker",
+                    "Savant (Local)"
+                ],
+            "trappings":
+                [
+                    "The Respect of the Village"
+                ]
+        }
     },
     {
         "name": "Flagellant",

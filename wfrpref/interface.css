@@ -216,6 +216,30 @@ career:hover {
     text-decoration: none !important;
 }
 
+status {
+    cursor: help;
+}
+
+status:hover {
+    cursor: help;
+    text-decoration: none !important;
+}
+
+.statusBrass {
+    color: #b5a642 !important;
+    text-decoration: underline 1px dotted #b5a642;
+}
+
+.statusSilver {
+    color: silver !important;
+    text-decoration: underline 1px dotted silver;
+}
+
+.statusGold {
+    color: gold !important;
+    text-decoration: underline 1px dotted gold;
+}
+
 test {
     cursor: help;
     color: blanchedalmond !important;
@@ -456,6 +480,33 @@ hr {
     background-color: rgba(47, 79, 79,.4);
 }
 
+.classButton {
+    width: 100% !important;
+    background-color: rgba(47, 79, 79,.2);
+}
+
+.classButton:hover {
+    background-color: rgba(47, 79, 79,.4) !important;
+    color: white !important;
+}
+
+.classButton p {
+    font-size: 1rem;
+    white-space: normal;
+}
+
+.careerButton {
+    top: 40px;
+    position: -webkit-sticky;
+    position: sticky;
+    width: 100% !important;
+    background-color: #1b2227;
+}
+
+.careerButton:hover {
+    background-color: rgba(47, 79, 79,.4) !important;
+    color: white !important;
+}
 body {
     background-color: #16161d !important;
     color: rgb(235, 235, 235) !important;

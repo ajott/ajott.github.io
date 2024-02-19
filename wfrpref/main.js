@@ -41,6 +41,7 @@ function initializeModals() {
     $('armourqual').attr('onclick', 'buildModal(this,\'armQual\')');
     $('test').attr('onclick', 'buildModal(this, \'skill\',0,1)');
     $('endeavour').attr('onclick', 'buildModal(this,\'endeavour\')');
+    $('status').attr('onclick', 'buildModal(\'Income\',\'endeavour\',1)');
 }
 
 function buildModal(el, type, mast = 0, isTest = 0) {
@@ -86,7 +87,7 @@ function buildModal(el, type, mast = 0, isTest = 0) {
 
     $("#modal" + modalCount).html(modals[type])
 
-    
+
 
 
     switch (type) {
@@ -447,7 +448,7 @@ function showMenu() {
 
 
 function dropdownShow(str) {
-    let elements = ["charDropdown", "magicDropdown", "religionDropdown", "skillDropdown", "combatDropdown", "equipDropdown","careerDropdown"]
+    let elements = ["charDropdown", "magicDropdown", "religionDropdown", "skillDropdown", "combatDropdown", "equipDropdown", "careerDropdown"]
 
     for (let i = 0; i < elements.length; i++) {
         if (str == elements[i]) {
@@ -596,118 +597,121 @@ function buildNavbar() {
 function buildCareerCards() {
     let htmlString = ""
 
-    let careerClasses = ["Academics","Burghers","Courtiers","Peasants","Rangers","Riverfolk","Rogues","Warriors"]
+    let careerClasses = ["Academics", "Burghers", "Courtiers", "Peasants", "Rangers", "Riverfolk", "Rogues", "Warriors"]
 
 
-    let careerEntry = career[1]
+    //let careerEntry = career[1]
 
     for (let i = 1; i < career.length; i++) {
         let careerEntry = career[i]
 
-        
-    let $div = $('#templateCareerSection');
 
-    let $klon = $div.clone().prop('id', 'career' + i).appendTo("#careerWrapper");
+        let $div = $('#templateCareerSection');
 
+        let $klon = $div.clone().prop('id', 'career' + i).appendTo("#"+career[i]["class"]+"Careers");
 
-    $("#career"+i+" .careerName").text(careerEntry["name"])
-    $("#career"+i+" .careerClass").text(careerEntry["class"])
-    $("#career"+i+" .careerDesc").html("&ldquo;" + careerEntry["desc"] + "&rdquo;")
-    $("#career"+i+" .careerRaces").html("<eh>" + careerEntry["races"] + "</eh>")
-
-
-    $("#career"+i+" .attrTable th").show();
-    $("#career"+i+" .attrTable td").show();
-
-    $("#career"+i+" .career" + careerEntry["advances"][0] + "th").show()
-    $("#career"+i+" .career" + careerEntry["advances"][0]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>").show()
-    $("#career"+i+" .career" + careerEntry["advances"][1] + "th").show()
-    $("#career"+i+" .career" + careerEntry["advances"][1]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>").show()
-    $("#career"+i+" .career" + careerEntry["advances"][2] + "th").show()
-    $("#career"+i+" .career" + careerEntry["advances"][2]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>").show()
-
-    $("#career"+i+" .career" + careerEntry["advances"][3] + "th").show()
-    $("#career"+i+" .career" + careerEntry["advances"][3]).addClass("attr2").html("<img class=\"attrImg\" src=\"./img/axes_64.png\"></img>").show()
-    $("#career"+i+" .career" + careerEntry["advances"][4] + "th").show()
-    $("#career"+i+" .career" + careerEntry["advances"][4]).addClass("attr3").html("<img class=\"attrImg\" src=\"./img/skull_64.png\"></img>").show()
-    $("#career"+i+" .career" + careerEntry["advances"][5] + "th").show()
-    $("#career"+i+" .career" + careerEntry["advances"][5]).addClass("attr4").html("<img class=\"attrImg\" src=\"./img/shield_64.png\"></img>").show()
-
-    $("#career"+i+" .careerIncome").html("<skill>" + careerEntry["incomeSkill"] + "</skill>")
+        $("#career" + i + " .careerButton").attr('onclick','accordion(\''+ careerEntry["name"] +'Container\')')
+        $("#career" + i + " .careerContainer").attr('id', careerEntry["name"] +'Container')
+        $("#career" + i + " .careerName").text(careerEntry["name"])
+        $("#career" + i + " .careerClass").text(careerEntry["class"])
+        $("#career" + i + " .careerDesc").html("&ldquo;" + careerEntry["desc"] + "&rdquo;")
+        $("#career" + i + " .careerRaces").html("<eh>" + careerEntry["races"] + "</eh>")
 
 
-    for (let k = 1; k < 5; k++) {
-        let imgSrcs = ["./img/cross_64.png", "./img/axes_64_light.png", "./img/skull_64_light.png", "./img/shield_64_light.png"]
-        $("#career"+i+" .careerpath" + k + " .path" + k + "name").html("<img src=\"" + imgSrcs[k - 1] + "\" class=\"oneemimg\"></img><br/>" + careerEntry["path" + k]["name"] + " &mdash; " + "<status>" + careerEntry["path" + k]["status"] + "</status>")
+        $("#career" + i + " .attrTable th").show();
+        $("#career" + i + " .attrTable td").show();
 
-        for (let i = 0; i < careerEntry["path" + k]["skills"].length; i++) {
-            if (i == 0) {
-                htmlString += "<skill>"
-            } else {
-                htmlString += ", <skill>"
+        $("#career" + i + " .career" + careerEntry["advances"][0] + "th").show()
+        $("#career" + i + " .career" + careerEntry["advances"][0]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>").show()
+        $("#career" + i + " .career" + careerEntry["advances"][1] + "th").show()
+        $("#career" + i + " .career" + careerEntry["advances"][1]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>").show()
+        $("#career" + i + " .career" + careerEntry["advances"][2] + "th").show()
+        $("#career" + i + " .career" + careerEntry["advances"][2]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>").show()
+
+        $("#career" + i + " .career" + careerEntry["advances"][3] + "th").show()
+        $("#career" + i + " .career" + careerEntry["advances"][3]).addClass("attr2").html("<img class=\"attrImg\" src=\"./img/axes_64.png\"></img>").show()
+        $("#career" + i + " .career" + careerEntry["advances"][4] + "th").show()
+        $("#career" + i + " .career" + careerEntry["advances"][4]).addClass("attr3").html("<img class=\"attrImg\" src=\"./img/skull_64.png\"></img>").show()
+        $("#career" + i + " .career" + careerEntry["advances"][5] + "th").show()
+        $("#career" + i + " .career" + careerEntry["advances"][5]).addClass("attr4").html("<img class=\"attrImg\" src=\"./img/shield_64.png\"></img>").show()
+
+        $("#career" + i + " .careerIncome").html("<skill>" + careerEntry["incomeSkill"] + "</skill>")
+
+
+        for (let k = 1; k < 5; k++) {
+            let imgSrcs = ["./img/cross_64.png", "./img/axes_64_light.png", "./img/skull_64_light.png", "./img/shield_64_light.png"]
+            $("#career" + i + " .careerpath" + k + " .path" + k + "name").html("<img src=\"" + imgSrcs[k - 1] + "\" class=\"oneemimg\"></img><br/>" + careerEntry["path" + k]["name"] + " &mdash; " + "<status class='status" + careerEntry["path" + k]["status"].split(" ")[0] + "'>" + careerEntry["path" + k]["status"] + "</status>")
+
+            for (let i = 0; i < careerEntry["path" + k]["skills"].length; i++) {
+                if (i == 0) {
+                    htmlString += "<skill>"
+                } else {
+                    htmlString += ", <skill>"
+                }
+                htmlString += careerEntry["path" + k]["skills"][i]
+                htmlString += "</skill>"
             }
-            htmlString += careerEntry["path" + k]["skills"][i]
-            htmlString += "</skill>"
+
+            $("#career" + i + " .careerpath" + k + " .path" + k + "skills").html(htmlString)
+
+            htmlString = ""
+
+            for (let i = 0; i < careerEntry["path" + k]["talents"].length; i++) {
+                if (i == 0) {
+                    htmlString += "<talent>"
+                } else {
+                    htmlString += ", <talent>"
+                }
+                htmlString += careerEntry["path" + k]["talents"][i]
+                htmlString += "</talent>"
+            }
+
+            $("#career" + i + " .careerpath" + k + " .path" + k + "talents").html(htmlString)
+
+            htmlString = ""
+
+            for (let i = 0; i < careerEntry["path" + k]["trappings"].length; i++) {
+                if (i == 0) {
+                    htmlString += "<span>"
+                } else {
+                    htmlString += ", <span>"
+                }
+                htmlString += careerEntry["path" + k]["trappings"][i]
+                htmlString += "</span>"
+            }
+
+            $("#career" + i + " .careerpath" + k + " .path" + k + "trappings").html(htmlString)
+
+            htmlString = ""
+
+            if (careerEntry["flavour"] != undefined) {
+
+                careerEntry["flavour"].forEach(flavText => {
+                    htmlString += "<p>" + flavText + "</p>"
+                })
+
+                $("#career" + i + " .careerFlavour").html(htmlString);
+
+                htmlString = ""
+            }
+
+            if (careerEntry["quotes"] != undefined) {
+                careerEntry["quotes"].forEach(quot => {
+                    htmlString += "<p><blockquote class='w3-panel'><p><em>&ldquo;" + quot["quote"] + "&rdquo;</em></p><p style='text-align: right !important;'>&mdash;" + quot["author"] + "</p></blockquote></p>"
+                })
+                $("#career" + i + " .careerQuotes").html(htmlString);
+
+                htmlString = ""
+            }
+
+
+            $klon.show();
         }
 
-        $("#career"+i+" .careerpath" + k + " .path" + k + "skills").html(htmlString)
 
-        htmlString = ""
-
-        for (let i = 0; i < careerEntry["path" + k]["talents"].length; i++) {
-            if (i == 0) {
-                htmlString += "<talent>"
-            } else {
-                htmlString += ", <talent>"
-            }
-            htmlString += careerEntry["path" + k]["talents"][i]
-            htmlString += "</talent>"
-        }
-
-        $("#career"+i+" .careerpath" + k + " .path" + k + "talents").html(htmlString)
-
-        htmlString = ""
-
-        for (let i = 0; i < careerEntry["path" + k]["trappings"].length; i++) {
-            if (i == 0) {
-                htmlString += "<span>"
-            } else {
-                htmlString += ", <span>"
-            }
-            htmlString += careerEntry["path" + k]["trappings"][i]
-            htmlString += "</span>"
-        }
-
-        $("#career"+i+" .careerpath" + k + " .path" + k + "trappings").html(htmlString)
-
-        htmlString = ""
-
-        if (careerEntry["flavour"] != undefined){
-
-        careerEntry["flavour"].forEach(flavText => {
-            htmlString += "<p>" + flavText + "</p>"
-        })
-
-        $("#career"+i+" .careerFlavour").html(htmlString);
-
-        htmlString = ""}
-
-        if (careerEntry["quotes"] != undefined){
-        careerEntry["quotes"].forEach(quot => {
-            htmlString += "<p><blockquote class='w3-panel'><p><em>&ldquo;"+quot["quote"]+"&rdquo;</em></p><p style='text-align: right !important;'>&mdash;"+quot["author"]+"</p></blockquote></p>"
-        })
-        $("#career"+i+" .careerQuotes").html(htmlString);
-
-        htmlString = ""}
-        
-
-        $klon.show();
     }
 
 
-    }
-
-    
 
 
 }

@@ -34,112 +34,209 @@
             &nbsp;
         </div>
         <div class="w3-col s0 m12 l10" id="careerWrapper">
-            <div id="templateCareerSection" style="display:none;" class="w3-row-padding w3-section">
-                <div class="w3-card-2 w3-round-large">
+            <h2>Careers</h2>
+            <p>Careers are what your character does, and partially informs who they are.  There are 64 Careers, each a part of 1 of 8 Classes.</p>
+            <p>A summary of each Class is found in Chapter 2: Character on page 30. Classes organise Careers into easily referenced groups. They also impact character development, provide different starting Trappings during Character Creation (see page 37), and influence how you can change Career (see Changing Career on page 48). Some Classes have access to different Endeavours — activities you can take between adventures; for more on this, see Chapter 6: Between Adventures.</p>
+            <p>For information on progressing through and changing your Career, see the <a href="./character.html#advancement">Advancement</a> section of the Character Creation page.</p>
+            <hr/>
+            <p class="w3-center">Clicking a Class below will show the Careers that comprise it; clicking a Career will expand the full details.</p>
+            <div id="templateCareerSection" style="display:none;" class="w3-row">
+                <div class="w3-round-large">
                     <div class="w3-row-padding">
-                        <h3 class="careerName"></h3>
-                        <h5><span class="careerClass"></span></h5>
-                        <div class="w3-center"><span class="careerRaces"></span></div>
-                        <div class="w3-center"><em class="careerDesc"></em></div>
-                        <div class="w3-row-padding w3-center"><br />
-                            <div class="w3-row-padding w3-center"><b>Income Skill: </b><em class="careerIncome"></em>
+                        <span class="w3-button careerButton" onclick=""><span style="font-size: 1.2em;">
+                                <h4 class="careerName"></h4>
+                            </span></span>
+                        <div class="w3-hide careerContainer w3-card-2 w3-round">
+                            <h5><span class="careerClass"></span></h5>
+                            <div class="w3-center"><span class="careerRaces"></span></div>
+                            <div class="w3-center"><em class="careerDesc"></em></div>
+                            <div class="w3-row-padding w3-center"><br />
+                                <div class="w3-row-padding w3-center"><b>Income Skill: </b><em
+                                        class="careerIncome"></em>
+                                </div>
+                                <br />
+                                <div class="w3-col s0 m3 l4">&nbsp;</div>
+                                <div class="w3-col s12 m6 l4 well-s">
+                                    <h6>Advance Scheme</h6>
+                                    <table class="centerTable attrTable ">
+                                        <thead>
+                                            <tr>
+                                                <th style="display:none;" class="careerAttr careerWSth">WS</th>
+                                                <th style="display:none;" class="careerAttr careerBSth">BS</th>
+                                                <th style="display:none;" class="careerAttr careerSth">S</th>
+                                                <th style="display:none;" class="careerAttr careerTth">T</th>
+                                                <th style="display:none;" class="careerAttr careerIth">I</th>
+                                                <th style="display:none;" class="careerAttr careerAgith">Agi</th>
+                                                <th style="display:none;" class="careerAttr careerDexth">Dex</th>
+                                                <th style="display:none;" class="careerAttr careerIntth">Int</th>
+                                                <th style="display:none;" class="careerAttr careerWPth">WP</th>
+                                                <th style="display:none;" class="careerAttr careerFelth">Fel</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="display:none;" class="careerAttr careerWS"></td>
+                                                <td style="display:none;" class="careerAttr careerBS"></td>
+                                                <td style="display:none;" class="careerAttr careerS"></td>
+                                                <td style="display:none;" class="careerAttr careerT"></td>
+                                                <td style="display:none;" class="careerAttr careerI"></td>
+                                                <td style="display:none;" class="careerAttr careerAgi"></td>
+                                                <td style="display:none;" class="careerAttr careerDex"></td>
+                                                <td style="display:none;" class="careerAttr careerInt"></td>
+                                                <td style="display:none;" class="careerAttr careerWP"></td>
+                                                <td style="display:none;" class="careerAttr careerFel"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="w3-col s0 m3 l4">&nbsp;</div>
                             </div>
-                            <br/>
-                            <div class="w3-col s0 m3 l4">&nbsp;</div>
-                            <div class="w3-col s12 m6 l4 well-s">
-                                <h6>Advance Scheme</h6>
-                                <table class="centerTable attrTable ">
-                                    <thead>
-                                        <tr>
-                                            <th style="display:none;" class="careerAttr careerWSth">WS</th>
-                                            <th style="display:none;" class="careerAttr careerBSth">BS</th>
-                                            <th style="display:none;" class="careerAttr careerSth">S</th>
-                                            <th style="display:none;" class="careerAttr careerTth">T</th>
-                                            <th style="display:none;" class="careerAttr careerIth">I</th>
-                                            <th style="display:none;" class="careerAttr careerAgith">Agi</th>
-                                            <th style="display:none;" class="careerAttr careerDexth">Dex</th>
-                                            <th style="display:none;" class="careerAttr careerIntth">Int</th>
-                                            <th style="display:none;" class="careerAttr careerWPth">WP</th>
-                                            <th style="display:none;" class="careerAttr careerFelth">Fel</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td style="display:none;" class="careerAttr careerWS"></td>
-                                            <td style="display:none;" class="careerAttr careerBS"></td>
-                                            <td style="display:none;" class="careerAttr careerS"></td>
-                                            <td style="display:none;" class="careerAttr careerT"></td>
-                                            <td style="display:none;" class="careerAttr careerI"></td>
-                                            <td style="display:none;" class="careerAttr careerAgi"></td>
-                                            <td style="display:none;" class="careerAttr careerDex"></td>
-                                            <td style="display:none;" class="careerAttr careerInt"></td>
-                                            <td style="display:none;" class="careerAttr careerWP"></td>
-                                            <td style="display:none;" class="careerAttr careerFel"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <div class="w3-row-padding">
+                            <div class="w3-col s12 m12 l6">
+
+                                <br />
+                                <div class="w3-row-padding well">
+                                    <div class="careerpath1">
+                                        <h5 class="path1name"></h5>
+                                        <p><b>Skills: </b><span class="path1skills"></span></p>
+                                        <p><b>Talents: </b><span class="path1talents"></span></p>
+                                        <p><b>Trappings: </b><span class="path1trappings"></span></p>
+                                    </div>
+                                </div>
+                                <div class="w3-row-padding well">
+                                    <div class="careerpath2">
+                                        <h5 class="path2name"></h5>
+                                        <p><b>Skills: </b><span class="path2skills"></span></p>
+                                        <p><b>Talents: </b><span class="path2talents"></span></p>
+                                        <p><b>Trappings: </b><span class="path2trappings"></span></p>
+                                    </div>
+                                </div>
+                                <div class="w3-row-padding well">
+                                    <div class="careerpath3">
+                                        <h5 class="path3name"></h5>
+                                        <p><b>Skills: </b><span class="path3skills"></span></p>
+                                        <p><b>Talents: </b><span class="path3talents"></span></p>
+                                        <p><b>Trappings: </b><span class="path3trappings"></span></p>
+                                    </div>
+                                </div>
+                                <div class="w3-row-padding well">
+                                    <div class="careerpath4">
+                                        <h5 class="path4name"></h5>
+                                        <p><b>Skills: </b><span class="path4skills"></span></p>
+                                        <p><b>Talents: </b><span class="path4talents"></span></p>
+                                        <p><b>Trappings: </b><span class="path4trappings"></span></p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="w3-col s0 m3 l4">&nbsp;</div>
+                            <!-- <div class="w3-col s0 m0 l2">&nbsp;</div> -->
+                            <div class="w3-col s12 m12 l6">
+                                <br />
+                                <div class="w3-row-padding well"><br />
+                                    <div>
+                                        <h5>Description</h5>
+                                        <div class="careerFlavour"></div>
+                                    </div>
+                                </div>
+                                <div class="w3-row-padding well"><br />
+                                    <h5>The People Say&hellip;</h5>
+                                    <div class="careerQuotes"></div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="w3-row-padding">
-                        <div class="w3-col s12 m12 l6">
-                            
-                            <br />
-                            <div class="w3-row-padding well">
-                                <div class="careerpath1">
-                                    <h5 class="path1name"></h5>
-                                    <p><b>Skills: </b><span class="path1skills"></span></p>
-                                    <p><b>Talents: </b><span class="path1talents"></span></p>
-                                    <p><b>Trappings: </b><span class="path1trappings"></span></p>
-                                </div>
-                            </div>
-                            <div class="w3-row-padding well">
-                                <div class="careerpath2">
-                                    <h5 class="path2name"></h5>
-                                    <p><b>Skills: </b><span class="path2skills"></span></p>
-                                    <p><b>Talents: </b><span class="path2talents"></span></p>
-                                    <p><b>Trappings: </b><span class="path2trappings"></span></p>
-                                </div>
-                            </div>
-                            <div class="w3-row-padding well">
-                                <div class="careerpath3">
-                                    <h5 class="path3name"></h5>
-                                    <p><b>Skills: </b><span class="path3skills"></span></p>
-                                    <p><b>Talents: </b><span class="path3talents"></span></p>
-                                    <p><b>Trappings: </b><span class="path3trappings"></span></p>
-                                </div>
-                            </div>
-                            <div class="w3-row-padding well">
-                                <div class="careerpath4">
-                                    <h5 class="path4name"></h5>
-                                    <p><b>Skills: </b><span class="path4skills"></span></p>
-                                    <p><b>Talents: </b><span class="path4talents"></span></p>
-                                    <p><b>Trappings: </b><span class="path4trappings"></span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="w3-col s0 m0 l2">&nbsp;</div> -->
-                        <div class="w3-col s12 m12 l6">
-                            <br/>
-                            <div class="w3-row-padding well"><br />
-                                <div>
-                                    <h5>Description</h5>
-                                    <div class="careerFlavour"></div></div>
-                                </div>
-                                    <div class="w3-row-padding well"><br/>
-                                        <h5>The People Say&hellip;</h5>
-                                    <div class="careerQuotes"></div></div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="w3-col s0 m0 l1">
-                &nbsp;
+            <button class="w3-button classButton w3-round-large" onclick="accordion('AcademicsCareers')"><span
+                    style="font-size: 1.2em;">
+                    <h3>Academics</h3>
+                    <p>
+                        Learned people who use their education to make a living. Often, Academics are the only characters who can read and write. They start with low Status but can secure important positions if they advance through the ranks.
+                    </p>
+                </span></button>
+                <br/>
+                <br/>
+            <div id="AcademicsCareers" class="well" style="display:none;">
             </div>
+            <button class="w3-button classButton w3-round-large" onclick="accordion('BurghersCareers')"><span
+                    style="font-size: 1.2em;">
+                    <h3>Burghers</h3>
+                    <p>Generally law-abiding townsfolk who live and work in the many towns and cities of the Empire. Many Burghers are middle class and earn a decent living.</p>
+                </span></button>
+                <br/>
+                <br/>
+            <div id="BurghersCareers" class="well" style="display:none;"></div>
+            <button class="w3-button classButton w3-round-large" onclick="accordion('CourtiersCareers')"><span
+                    style="font-size: 1.2em;">
+                    <h3>Courtiers</h3>
+                    <p>Those who rule or who provide specialist services to
+                        those who rule. Even lowly born Courtiers have higher Status
+                        than most, and all have an opportunity to secure positions of
+                        significant influence.</p>
+                </span></button>
+                <br/>
+                <br/>
+            <div id="CourtiersCareers" class="well" style="display:none;"></div>
+            <button class="w3-button classButton w3-round-large" onclick="accordion('PeasantsCareers')"><span
+                    style="font-size: 1.2em;">
+                    <h3>Peasants</h3>
+                    <p>People who live and work in the farms, villages, and
+                        countryside. Peasants are all lower class, though it’s possible
+                        to secure significant influence locally.</p>
+                </span></button>
+                <br/>
+                <br/>
+            <div id="PeasantsCareers" class="well" style="display:none;"></div>
+            <button class="w3-button classButton w3-round-large" onclick="accordion('RangersCareers')"><span style="font-size: 1.2em;">
+                    <h3>Rangers</h3>
+                    <p>Roving folk who make a living on the open roads,
+                        travelling far beyond their home towns and villages. Most Rangers
+                        are lower class, but some can secure positions of high Status if
+                        they persevere.</p>
+                </span></button>
+                <br/>
+                <br/>
+            <div id="RangersCareers" class="well" style="display:none;"></div>
+            <button class="w3-button classButton w3-round-large" onclick="accordion('RiverfolkCareers')"><span
+                    style="font-size: 1.2em;">
+                    <h3>Riverfolk</h3>
+                    <p>People who live and work on the rivers and waterways
+                        that wind through the Reikland and beyond. Riverfolk all begin
+                        with low Status, but some have opportunities that can lead to a very
+                        comfortable life.</p>
+                </span></button>
+                <br/>
+                <br/>
+            <div id="RiverfolkCareers" class="well" style="display:none;"></div>
+            <button class="w3-button classButton w3-round-large" onclick="accordion('RoguesCareers')"><span style="font-size: 1.2em;">
+                    <h3>Rogues</h3>
+                    <p>Mostly town and city folk, these people make a living by
+                        acts considered illegal, or at least unsavoury, by most law-abiding
+                        citizens. Rogues are usually lower class, but some can make a lot
+                        of money, though they may not secure a high Status when doing
+                        so.</p>
+                </span></button>
+                <br/>
+                <br/>
+            <div id="RoguesCareers" class="well" style="display:none;"></div>
+            <button class="w3-button classButton w3-round-large" onclick="accordion('WarriorsCareers')"><span
+                    style="font-size: 1.2em;">
+                    <h3>Warriors</h3>
+                    <p>Relying on their physical prowess, these people are
+                        all trained fighters, although they are not necessarily from the
+                        military. Warriors come from many backgrounds, both high and
+                        low Status, and all can carve out a position of influence if they live
+                        long enough.</p>
+                </span></button>
+                <br/>
+                <br/>
+            <div id="WarriorsCareers" class="well" style="display:none;"></div>
         </div>
-        <div class="w3-col s0 m0 l1"></div>
+        <div class="w3-col s0 m0 l1">
+            &nbsp;
+        </div>
+    </div>
+    <div class="w3-col s0 m0 l1"></div>
 </body>
 <footer>
     <div class="w3-row w3-section">

@@ -7970,6 +7970,346 @@ var career = [
                     "The Respect of the Village"
                 ]
         }
+    }, {
+        "name": "Bounty Hunter",
+        "class": "Rangers",
+        "races": "Dwarf, Halfling, High Elf, Human, Wood Elf",
+        "desc": "Ruthless and determined, you pursue your quarry to the bitter end: for justice, or for money.",
+        "advances": 
+                [
+                    "T", 
+                    "WS", 
+                    "Agi", 
+                    "BS", 
+                    "S", 
+                    "Int"
+                ],
+        "incomeSkill": "Melee (Basic)",        
+        "path1": {
+            "name": "Thief Taker",
+            "status": "Silver 1",
+            "skills":
+                [
+                    "Bribery",
+                    "Charm",
+                    "Gossip",
+                    "Haggle",
+                    "Intuition",
+                    "Melee (Basic)",
+                    "Outdoor Survival",
+                    "Perception"
+                ],
+            "talents":
+                [
+                    "Break and Enter",
+                    "Shadow",
+                    "Strike to Stun",
+                    "Suave"
+                ],
+            "trappings":
+                [
+                    "Hand Weapon",
+                    "Leather Jerkin",
+                    "Rope"
+                ]
+        },
+        "path2": {
+            "name": "Bounty Hunter",
+            "status": "Silver 3",
+            "skills":
+                [
+                    "Athletics",
+                    "Endurance",
+                    "Intimidate",
+                    "Ranged (Crossbow)",
+                    "Ranged (Entangling)",
+                    "Track"
+                ],
+            "talents":
+                [
+                    "Marksman",
+                    "Relentless",
+                    "Seasoned Traveller",
+                    "Strong Back"
+                ],
+            "trappings":
+                [
+                    "Crossbow and 10 Bolts",
+                    "Leather Skullcap",
+                    "Manacles",
+                    "Net",
+                    "Warrant Paper"
+                ]
+        },
+        "path3": {
+            "name": "Master Bounty Hunter",
+            "status": "Silver 5",
+            "skills":
+                [
+                    "Animal Care",
+                    "Climb",
+                    "Ride (Horse)",
+                    "Swim"
+                ],
+            "talents":
+                [
+                    "Accurate Shot",
+                    "Careful Strike",
+                    "Dual Wielder",
+                    "Sprinter"
+                ],
+            "trappings":
+                [
+                    "Mail Shirt",
+                    "Riding Horse and Saddle"
+                ]
+        },
+        "path4": {
+            "name": "Bounty Hunter General",
+            "status": "Gold 1",
+            "skills":
+                [
+                    "Drive",
+                    "Lore (Law)"
+                ],
+            "talents":
+                [
+                    "Deadeye Shot",
+                    "Fearless (Bounties)",
+                    "Hardy",
+                    "Sure Shot"
+                ],
+            "trappings":
+                [
+                    "Draught Horse and Cart",
+                    "Mail Shirt",
+                    "4 Pairs of Manacles"
+                ]
+        }
+    }, {
+        "name": "Coachman",
+        "class": "Rangers",
+        "races": "Dwarf, Halfling, Human",
+        "desc": "Determined and rugged, you deliver passengers safely by coach despite the daily dangers you face.",
+        "advances": 
+                [
+                    "BS", 
+                    "T", 
+                    "WP", 
+                    "Agi", 
+                    "WS", 
+                    "I"
+                ],
+        "incomeSkill": "Drive",        
+        "path1": {
+            "name": "Postilion",
+            "status": "Silver 1",
+            "skills":
+            [
+                "Animal Care",
+                "Charm Animal",
+                "Climb",
+                "Drive",
+                "Endurance",
+                "Perception",
+                "Ranged (Entangling)",
+                "Ride (Horse)"
+              ],
+            "talents":
+            [
+                "Animal Affinity",
+                "Seasoned Traveller",
+                "Trick-Riding",
+                "Tenacious"
+              ],
+            "trappings":
+                [
+                    "Warm Coat and Gloves",
+                    "Whip"
+                ]
+        },
+        "path2": {
+            "name": "Coachman",
+            "status": "Silver 2",
+            "skills":
+            [
+                "Consume Alcohol",
+                "Gossip",
+                "Intuition",
+                "Lore (Local)",
+                "Navigation",
+                "Ranged (Blackpowder)"
+              ],
+            "talents":
+            [
+                "Coolheaded",
+                "Crack the Whip",
+                "Gunner",
+                "Strong-minded"
+              ],
+            "trappings":
+            [
+                "Blunderbuss with 10 Shots",
+                "Coach Horn",
+                "Leather Jack",
+                "Hat"
+              ]
+        },
+        "path3": {
+            "name": "Coach Master",
+            "status": "Silver 3",
+            "skills":
+            [
+                "Animal Training (Horse)",
+                "Intimidation",
+                "Language (Any)",
+                "Lore (Routes) "
+              ],
+            "talents":
+            [
+                "Accurate Shot",
+                "Dealmaker",
+                "Fearless (Outlaws)",
+                "Nose for Trouble "
+              ],
+            "trappings":
+            [
+                "Mail Shirt",
+                "Pistol",
+                "Quality Cloak"
+              ]
+        },
+        "path4": {
+            "name": "Route Master",
+            "status": "Silver 5",
+            "skills":
+                [
+                    "Charm",
+                    "Leadership"
+                ],
+            "talents":
+                [
+                    "Fearless (Beastmen)",
+                    "Marksman",
+                    "Orientation",
+                    "Rapid Reload"
+                ],
+            "trappings":
+                [
+                    "Fleet of Coaches and Horses",
+                    "Maps"
+                ]
+        }
+    }, {
+        "name": "Entertainer",
+        "class": "Rangers",
+        "races": "Dwarf, Halfling, High Elf, Human, Wood Elf",
+        "desc": "Whether high-born or low-brow, you distract people from the harsh realities of life.",
+        "advances": 
+                [
+                    "Agi", 
+                    "Dex", 
+                    "Fel", 
+                    "WS", 
+                    "BS", 
+                    "T"
+                ],
+        "incomeSkill": "Entertain (Any)",        
+        "path1": {
+            "name": "Busker",
+            "status": "Brass 3",
+            "skills":
+            [
+                "Athletics",
+                "Charm",
+                "Entertain (Any)",
+                "Gossip",
+                "Haggle",
+                "Perform (Any)",
+                "Play (any)",
+                "Sleight of Hand "
+              ],
+            "talents":
+            [
+                "Attractive",
+                "Mimic",
+                "Public-Speaking",
+                "Suave "
+              ],
+            "trappings":
+            [
+                "Bowl",
+                "Instrument"
+              ]
+        },
+        "path2": {
+            "name": "Entertainer",
+            "status": "Brass 5",
+            
+                "skills": [
+                  "Entertain (Any)",
+                  "Ride (Any)",
+                  "Melee (Basic)",
+                  "Perform (Any)",
+                  "Play (Any) Ranged (Throwing) "
+                ],
+                "talents": [
+                  "Contortionist",
+                  "Jump Up",
+                  "Sharpshooter",
+                  "Trick Riding "
+                ],
+                "trappings": [
+                  "Costume",
+                  "Instrument",
+                  "Selection of Scripts (that you can't yet read)",
+                  "Throwing Weapons"
+                ]
+              
+        },
+        "path3": {
+            "name": "Troubadour",
+            "status": "Silver 3",
+            
+                "skills": [
+                  "Animal Care",
+                  "Animal Training (Any)",
+                  "Art (Writing)",
+                  "Language (Any) "
+                ],
+                "talents": [
+                  "Blather",
+                  "Master of Disguise",
+                  "Perfect Pitch",
+                  "Read/Write "
+                ],
+                "trappings": [
+                  "Trained Animal",
+                  "Writing Kit"
+                ]
+              
+        },
+        "path4": {
+            "name": "Troupe Leader",
+            "status": "Gold 1",
+            
+                "skills": [
+                  "Drive",
+                  "Leadership "
+                ],
+                "talents": [
+                  "Dealmaker",
+                  "Etiquette (Any)",
+                  "Seasoned Traveller",
+                  "Sharp "
+                ],
+                "trappings": [
+                  "Draught Horses and Wagon (Stage)",
+                  "Wardrobe of Costumes and Props",
+                  "Troupe of Entertainers"
+                ]
+              
+        }
     },
     {
         "name": "Flagellant",
@@ -8074,6 +8414,225 @@ var career = [
         "advances": ["WS", "S", "T", "WP", "I", "Fel"],
         "incomeSkill": "Melee (Flail)",
         "races": "Human"
+    }, {
+        "name": "Messenger",
+        "class": "Rangers",
+        "races": "Dwarf, Halfling, High Elf, Human, Wood Elf",
+        "desc": "Swift and sure-footed, nothing stops you delivering your messages on time.",
+        "advances": 
+                [
+                    "Agi", 
+                    "T", 
+                    "I", 
+                    "WS", 
+                    "WP", 
+                    "Fel"
+                ],
+        "incomeSkill": "Endurance",        
+        "path1": {
+            "name": "Runner",
+            "status": "Brass 3",
+            
+                "skills": [
+                  "Athletics",
+                  "Climb",
+                  "Dodge",
+                  "Endurance ",
+                  "Gossip",
+                  "Navigation",
+                  "Perception",
+                  "Melee (Brawling) "
+                ],
+                "talents": [
+                  "Flee!",
+                  "Fleet Footed",
+                  "Sprinter",
+                  "Step Aside "
+                ],
+                "trappings": [
+                  "Scroll Case"
+                ]
+              
+        },
+        "path2": {
+            "name": "Messenger",
+            "status": "Silver 1",
+            
+            
+                "skills": [
+                  "Animal Care",
+                  "Charm",
+                  "Cool",
+                  "Lore (Local)",
+                  "Melee (Basic)",
+                  "Ride (Horse) "
+                ],
+                "talents": [
+                  "Crack the Whip",
+                  "Criminal",
+                  "Orientation",
+                  "Seasoned Traveller "
+                ],
+                "trappings": [
+                  "Hand Weapon",
+                  "Leather Jack",
+                  "Riding Horse with Saddle and Tack"
+                ]
+              
+              
+        },
+        "path3": {
+            "name": "Courier",
+            "status": "Silver 3",
+            
+            
+                "skills": [
+                  "Charm Animal",
+                  "Bribery",
+                  "Consume Alcohol",
+                  "Outdoor Survival "
+                ],
+                "talents": [
+                  "Nose for Trouble",
+                  "Relentless",
+                  "Tenacious",
+                  "Trick Rider "
+                ],
+                "trappings": [
+                  "Backpack",
+                  "Saddlebags",
+                  "Shield"
+                ]
+              
+              
+        },
+        "path4": {
+            "name": "Courier-Captain",
+            "status": "Silver 5",
+            
+            
+                "skills": [
+                  "Intimidate",
+                  "Leadership "
+                ],
+                "talents": [
+                  "Dealmaker",
+                  "Hatred (Outlaws)",
+                  "Kingpin",
+                  "Very Resilient "
+                ],
+                "trappings": [
+                  "Couriers",
+                  "Mail Shirt",
+                  "Writing Kit"
+                ]
+              
+              
+        }
+    }, {
+        "name": "Pedlar",
+        "class": "Rangers",
+        "races": "Dwarf, Halfling, Human",
+        "desc": "Worldly-wise and free of interference, you wander the Empire selling your wares where you will.",
+        "advances": 
+                [
+                    "T", 
+                    "Dex", 
+                    "WP", 
+                    "Fel", 
+                    "I", 
+                    "Int"
+                ],
+        "incomeSkill": "Haggle",        
+        "path1": {
+            "name": "Vagabond",
+            "status": "Brass 1",
+            "skills": [
+              "Charm",
+              "Endurance",
+              "Entertain (Storytelling)",
+              "Gossip",
+              "Haggle ",
+              "Intuition",
+              "Outdoor Survival",
+              "Stealth (Rural or Urban) "
+            ],
+            "talents": [
+              "Fisherman",
+              "Flee!",
+              "Rover",
+              "Tinker "
+            ],
+            "trappings": [
+              "Backpack",
+              "Bedroll",
+              "Goods worth 2d10 Brass",
+              "Tent"
+            ]
+          },
+        "path2": {
+            "name": "Pedlar",
+            "status": "Brass 4 ",
+            "skills": [
+              "Animal Care",
+              "Charm Animal",
+              "Consume Alcohol",
+              "Evaluate",
+              "Ride (Horse)",
+              "Trade (Tinker)"
+            ],
+            "talents": [
+              "Dealmaker",
+              "Orientation",
+              "Seasoned Traveller",
+              "Strong Back"
+            ],
+            "trappings": [
+              "Mule and Saddlebags",
+              "Goods worth <mono>2d10</mono> Silver",
+              "Selection of Pots and Pans",
+              "Trade Tools (Tinker)"
+            ]
+          },
+        "path3": {
+            "name": "Master Pedlar",
+            "status": "Silver 1",
+            "skills": [
+              "Drive",
+              "Intimidate",
+              "Language (any)",
+              "Perception "
+            ],
+            "talents": [
+              "Numismatics",
+              "Sturdy",
+              "Well-prepared",
+              "Very Resilient "
+            ],
+            "trappings": [
+              "Cart",
+              "Goods worth at least <mono>2d10</mono> Gold"
+            ]
+          },
+        "path4": {
+            "name": "Wandering Trader",
+            "status": "Silver 3",
+            "skills": [
+              "Lore (Local)",
+              "Lore (Geography)"
+            ],
+            "talents": [
+              "Cat-tongued",
+              "Strong-minded",
+              "Suave",
+              "Tenacious"
+            ],
+            "trappings": [
+              "Draught Horse and Wagon",
+              "Goods worth at least 5d10 Gold",
+              "50 Silver in Coin"
+            ]
+          }
     },
     {
         "name": "Road Warden",
@@ -8184,6 +8743,109 @@ var career = [
         "advances": ["BS", "T", "I", "WS", "Fel", "Int"],
         "incomeSkill": "Perception",
         "races": "Halfling, Human"
+    }, {
+        "name": "Witch Hunter",
+        "class": "Rangers",
+        "races": "Human",
+        "desc": "You hunt the illegal witches plaguing the Empire by any and all means necessary. ",
+        "advances": 
+                [
+                    "WS", 
+                    "T", 
+                    "WP", 
+                    "BS", 
+                    "Fel", 
+                    "Int"
+                ],
+        "incomeSkill": "Intimidate",        
+        "path1": {
+            "name": "Interrogator",
+            "status": "Silver 1",
+            "skills": [
+              "Charm",
+              "Consume Alcohol",
+              "Heal",
+              "Intimidate ",
+              "Intuition",
+              "Lore (Torture)",
+              "Melee (Brawling)",
+              "Perception "
+            ],
+            "talents": [
+              "Coolheaded",
+              "Menacing",
+              "Read/Write",
+              "Resolute "
+            ],
+            "trappings": [
+              "Hand Weapon",
+              "Instruments of Torture"
+            ]
+          },
+        "path2": {
+            "name": "Witch Hunter",
+            "status": "Silver 3",
+            "skills": [
+              "Cool",
+              "Gossip",
+              "Melee (Basic)",
+              "Lore (Witches)",
+              "Ranged (Any)",
+              "Ride (Horse)"
+            ],
+            "talents": [
+              "Dual Wielder",
+              "Marksman",
+              "Seasoned Traveller",
+              "Shadow"
+            ],
+            "trappings": [
+              "Crossbow Pistol or Pistol",
+              "Hat (Henin)",
+              "Leather Jack",
+              "Riding Horse with Saddle and Tack",
+              "Rope",
+              "Silvered Sword"
+            ]
+          },
+        "path3": {
+            "name": "Inquisitor",
+            "status": "Silver 5",
+            "skills": [
+              "Endurance",
+              "Leadership",
+              "Lore (Law)",
+              "Lore (Local) "
+            ],
+            "talents": [
+              "Fearless (Witches)",
+              "Nose for Trouble",
+              "Relentless",
+              "Strong-minded"
+            ],
+            "trappings": [
+              "Quality Clothing",
+              "Subordinate Interrogators"
+            ]
+          },
+        "path4": {
+            "name": "Witchfinder General",
+            "status": "Gold 1",
+            "skills": [
+              "Lore (Chaos)",
+              "Lore (Politics)"
+            ],
+            "talents": [
+              "Frightening",
+              "Iron Will",
+              "Magical Sense",
+              "Pure Soul "
+            ],
+            "trappings": [
+              "Best Quality Courtly Garb",
+              "Subordinate Witch Hunters"
+            ]
+          }
     },
     {
         "name": "Boatman",
@@ -9035,6 +9697,476 @@ var career = [
                     "Manacles"
                 ]
         }
+    }, {
+        "name": "Bawd",
+        "class": "Rogues",
+        "races": "Halfling, High Elf, Human",
+        "desc": "Street-wise and mercenary, you make a living selling illicit goods in the seedier side of town.",
+        "advances": 
+                [
+                    "Agi", 
+                    "Dex", 
+                    "Fel", 
+                    "I", 
+                    "WP", 
+                    "Int"
+                ],
+        "incomeSkill": "Charm",        
+        "path1": {
+            "name": "Hustler",
+            "status": "Brass 1",
+            "skills": [
+              "Bribery",
+              "Charm ",
+              "Consume Alcohol",
+              "Entertain (Any)",
+              "Gamble",
+              "Gossip",
+              "Haggle",
+              "Intimidate"
+            ],
+            "talents": [
+              "Attractive",
+              "Alley Cat",
+              "Blather",
+              "Gregarious "
+            ],
+            "trappings": [
+              "Flask of Spirits"
+            ]
+          },
+        "path2": {
+            "name": "Bawd",
+            "status": "Brass 3",
+            "skills": [
+              "Dodge",
+              "Endurance",
+              "Intuition",
+              "Lore (Local)",
+              "Melee (Basic)",
+              "Perception"
+            ],
+            "talents": [
+              "Ambidextrous",
+              "Carouser",
+              "Criminal",
+              "Resistant (Disease)"
+            ],
+            "trappings": [
+              "Dose of Weirdroot",
+              "Quality Clothing"
+            ]
+          },
+        "path3": {
+            "name": "Procurer",
+            "status": "Silver 1",
+            "skills": [
+              "Cool",
+              "Evaluate",
+              "Language (any)",
+              "Lore (Law) "
+            ],
+            "talents": [
+              "Dealmaker",
+              "Embezzle",
+              "Etiquette (Any)",
+              "Suave "
+            ],
+            "trappings": [
+              "A Ring of Hustlers"
+            ]
+          },
+        "path4": {
+            "name": "Ringleader",
+            "status": "Silver 3",
+            "skills": [
+              "Leadership",
+              "Lore (Heraldry)"
+            ],
+            "talents": [
+              "Briber",
+              "Kingpin",
+              "Numismatics",
+              "Savvy "
+            ],
+            "trappings": [
+              "Townhouse with Discreet Back Entrance",
+              "a Ring of Bawds"
+            ]
+          }
+    }, {
+        "name": "Charlatan",
+        "class": "Rogues",
+        "races": "Halfling, High Elf, Human",
+        "desc": "Unscrupulous and charming, you separate fools from their money; thankfully, there is no shortage of fools&hellip;",
+        "advances": 
+                [
+                    "I", 
+                    "Dex", 
+                    "Fel", 
+                    "WP", 
+                    "Agi", 
+                    "Int"
+                ],
+        "incomeSkill": "Charm",        
+        "path1": {
+            "name": "Swindler",
+            "status": "Brass 3",
+            "skills": [
+              "Bribery",
+              "Consume Alcohol",
+              "Charm ",
+              "Entertain (Storytelling)",
+              "Gamble",
+              "Gossip",
+              "Haggle",
+              "Sleight of Hand "
+            ],
+            "talents": [
+              "Cardsharp",
+              "Diceman",
+              "Etiquette (Any)",
+              "Luck "
+            ],
+            "trappings": [
+              "Backpack",
+              "2 Sets of Clothing",
+              "Deck of Cards",
+              "Dice"
+            ]
+          },
+        "path2": {
+            "name": "Charlatan",
+            "status": "Brass 5",
+            "skills": [
+              "Cool",
+              "Dodge",
+              "Entertain (Acting)",
+              "Evaluate",
+              "Intuition",
+              "Perception"
+            ],
+            "talents": [
+              "Blather",
+              "Criminal",
+              "Fast Hands",
+              "Secret Identity "
+            ],
+            "trappings": [
+              "1 Forged Document",
+              "2 Sets of Quality Clothing",
+              "Selection of Coloured Powders and Water",
+              "Selection of Trinkets and Charms"
+            ]
+          },
+        "path3": {
+            "name": "Con Artist",
+            "status": "Silver 2",
+            "skills": [
+              "Language (Thief )",
+              "Lore (Heraldry)",
+              "Pick Lock",
+              "Secret Signs (Thief )"
+            ],
+            "talents": [
+              "Attractive",
+              "Cat-tongued",
+              "Dealmaker",
+              "Read/Write "
+            ],
+            "trappings": [
+              "Disguise Kit",
+              "Lock Picks",
+              "Multiple Forged Documents"
+            ]
+          },
+        "path4": {
+            "name": "Scoundrel",
+            "status": "Silver 4",
+            "skills": [
+              "Lore (Genealogy)",
+              "Research"
+            ],
+            "talents": [
+              "Gregarious",
+              "Master of Disguise",
+              "Nose for Trouble",
+              "Suave"
+            ],
+            "trappings": [
+              "Forged Seal",
+              "Writing Kit"
+            ]
+          }
+    }, {
+        "name": "Fence",
+        "class": "Rogues",
+        "races": "Dwarf, Halfling, Human",
+        "desc": "A shrewd assessor of valuables, you’ll buy anything, legal or not, and turn it around for a tidy profit.",
+        "advances": 
+                [
+                    "I", 
+                    "Agi", 
+                    "Fel", 
+                    "Dex", 
+                    "Int", 
+                    "WP"
+                ],
+        "incomeSkill": "Evaluate",        
+        "path1": {
+            "name": "Broker",
+            "status": "Silver 1",
+            "skills": [
+              "Charm",
+              "Consume Alcohol",
+              "Dodge",
+              "Evaluate ",
+              "Gamble",
+              "Gossip",
+              "Haggle",
+              "Melee (Basic)"
+            ],
+            "talents": [
+              "Alley Cat",
+              "Cardsharp",
+              "Dealmaker",
+              "Gregarious "
+            ],
+            "trappings": [
+              "Hand Weapon",
+              "Stolen Goods worth 3d10 Shillings"
+            ]},
+        "path2": {"name":"Fence","status":"Silver 2","skills":["Cool","Intimidate","Intuition","Perception","Secret Signs (Thief )","Trade (Engraver)"],"talents":["Criminal","Etiquette (Criminals)","Numismatics","Savvy"],"trappings":["Eye-glass","Trade Tools (Engraver)","Writing Kit"]},
+        "path3": {"name":"Master Fence","status":"Silver 3","skills":["Bribery","Entertain (Storytelling)","Lore (Art)","Lore (Local)"],"talents":["Kingpin","Strike to Stun","Suave","Super Numerate"],"trappings":["Pawnbroker’s Shop"]},
+        "path4": {"name":"Black Marketeer","status":"Silver 4","skills":["Lore (Heraldry)","Research"],"talents":["Dirty Fighting","Iron Will","Menacing","Briber "],"trappings":["Hired Muscle","Network of Informants","Warehouse"]}
+    }, {
+        "name": "Grave Robber",
+        "class": "Rogues",
+        "races": "Halfling, Human",
+        "desc": "You brave the threat of necromancy, stealing from the dead to line your own pockets.",
+        "advances": 
+                [
+                    "S", 
+                    "I", 
+                    "WP", 
+                    "WS", 
+                    "Dex", 
+                    "Int"
+                ],
+        "incomeSkill": "Stealth (Any)",        
+        "path1": {"name":"Body Snatcher","status":"Brass 2","skills":["Climb","Cool","Dodge","Endurance","Gossip","Intuition","Perception","Stealth (Any)"],"talents":["Alley Cat","Criminal","Flee!","Strong Back "],"trappings":["Crowbar","Handcart","Hooded Cloak","Tarpaulin"]},
+        "path2": {"name":"Grave Robber","status":"Brass 3","skills":["Bribery","Drive","Evaluate","Haggle","Lore (Medicine)","Melee (Basic)"],"talents":["Break and Enter","Night Vision","Resistance (Disease)","Very Strong"],"trappings":["Backpack","Hand Weapon","Spade","Storm Lantern and Oil"]},
+        "path3": {"name":"Tomb Robber","status":"Silver 1","skills":["Lore (History)","Pick Lock","Research","Set Trap "],"talents":["Read/Write","Strike Mighty Blow","Tenacious","Tunnel Rat"],"trappings":["Hand Weapon (Pick)","Horse and Cart","Leather Jack","Rope","Trade Tools (Thief)"]},
+        "path4": {"name":"Treasure Hunter","status":"Silver 5","skills":["Navigation","Trade (Engineer)"],"talents":["Fearless (Undead)","Sixth Sense","Strong-minded","Trapper"],"trappings":["Bedroll","Maps","Tent","Trade Tools (Engineer)","Writing Kit"]}
+    }, {
+        "name": "Outlaw",
+        "class": "Rogues",
+        "races": "Dwarf, Halfling, High Elf, Human, Wood Elf",
+        "desc": "You prey upon travellers, extracting a toll from the vulnerable and the unsuspecting.",
+        "advances": 
+                [
+                    "WS", 
+                    "S", 
+                    "T", 
+                    "BS", 
+                    "I", 
+                    "Fel"
+                ],
+        "incomeSkill": "Intimidate",        
+        "path1": {"name":"Brigand","status":"Brass 1 ","skills":["Athletics","Consume Alcohol","Cool","Endurance","Gamble","Intimidate ","Melee (Basic)","Outdoor Survival "],"talents":["Combat Aware","Criminal","Rover","Flee!"],"trappings":["Bedroll","Hand Weapon","Leather Jerkin","Tinderbox"]},
+        "path2": {"name":"Outlaw","status":"Brass 2 ","skills":["Dodge","Heal","Lore (Local)","Perception","Ranged  (Bow)","Stealth (Rural) "],"talents":["Dirty Fighting","Marksman","Strike to Stun","Trapper "],"trappings":["Bow with 10 Arrows","Shield","Tent"]},
+        "path3": {"name":"Outlaw Chief","status":"Brass 4 ","skills":["Gossip","Intuition","Leadership","Ride (Horse) "],"talents":["Rapid Reload","Roughrider","Menacing","Very Resilient "],"trappings":["Helmet","Riding Horse with Saddle and Tack","Sleeved Mail Shirt","Band of Outlaws"]},
+        "path4": {"name":"Bandit King","status":"Silver 2 ","skills":["Charm","Lore (Empire) "],"talents":["Deadeye Shot","Fearless (Road Wardens)","Iron Will","Robust "],"trappings":["‘Fiefdom’ of Outlaw Chiefs","Lair"]}
+    }, {
+        "name": "Racketeer",
+        "class": "Rogues",
+        "races": "Dwarf, Halfling, Human",
+        "desc": "You are part of an organised criminal gang, collecting debts and extorting money from the weak.",
+        "advances": 
+                [
+                    "WS", 
+                    "S", 
+                    "T", 
+                    "Fel", 
+                    "WP", 
+                    "Int"
+                ],
+        "incomeSkill": "Intimidate",        
+        "path1": {"name":"Thug","status":"Brass 3 ","skills":["Consume Alcohol","Cool","Dodge","Endurance"," Intimidate ","Lore (Local)","Melee (Brawling)","Stealth (Urban) "],"talents":["Criminal","Etiquette (Criminals)","Menacing","Strike Mighty Blow "],"trappings":[" Knuckledusters","Leather Jack"]},
+        "path2": {"name":"Racketeer","status":"Brass 5 ","skills":["Bribery","Charm","Evaluate","Gossip","Language (Estalian or Tilean)","Melee (Basic) "],"talents":["Dirty Fighting","Embezzle","Strike to Stun","Warrior Born "],"trappings":["Hand Weapon","Hat","Mail Shirt"]},
+        "path3": {"name":"Gang Boss","status":"Silver 3 ","skills":["Intuition","Leadership","Perception","Ranged (Crossbow) "],"talents":["Fearless (Watchmen)","Iron Will","Resistance (Poison)","Robust "],"trappings":["Crossbow Pistol with 10 Bolts","Gang of Thugs and Racketeers","Lair"]},
+        "path4": {"name":"Crime Lord","status":"Silver 5 ","skills":["Lore (Law)","Lore (Politics) "],"talents":["Commanding Presence","Kingpin","Frightening","Wealthy "],"trappings":["Network of Informers","Quality Clothing and Hat","Subordinate Gang Bosses"]}
+    }, {
+        "name": "Thief",
+        "class": "Rogues",
+        "races": "Dwarf, Halfling, Human",
+        "desc": "You steal from others in order to line your own pockets, and you’re rather good at it.",
+        "advances": 
+                [
+                    "I", 
+                    "Agi", 
+                    "WP", 
+                    "Dex", 
+                    "S", 
+                    "Fel"
+                ],
+        "incomeSkill": "Stealth (Urban)",        
+        "path1": {"name":"Prowler","status":"Brass 1 ","skills":["Athletics","Climb","Cool","Dodge","Endurance","Intuition","Perception","Stealth (Urban) "],"talents":["Alley Cat","Criminal","Flee!","Strike to Stun "],"trappings":["Crowbar","Leather Jerkin","Sack"]},
+        "path2": {"name":"Thief","status":"Brass 3 ","skills":["Evaluate","Gossip","Lore (Local)","Pick Lock","Secret Signs (Thief)","Sleight of Hand "],"talents":["Break and Enter","Etiquette (Criminals)","Fast Hands","Shadow "],"trappings":["Trade Tools (Thief)","Rope"]},
+        "path3": {"name":"Master Thief","status":"Brass 5 ","skills":["Bribery","Gamble","Intimidate","Ranged (Crossbow) "],"talents":["Night Vision","Nimble Fingered","Step Aside","Trapper "],"trappings":["Crossbow Pistol with 10 Bolts"]},
+        "path4": {"name":"Cat Burglar","status":"Silver 3 ","skills":["Charm","Set Trap "],"talents":["Catfall","Scale Sheer Surface","Strong Legs","Wealthy "],"trappings":["Dark Clothing","Grappling Hook","Mask or Scarves"]}
+    }, {
+        "name": "Witch",
+        "class": "Rogues",
+        "races": "Human",
+        "desc": "Wilful and ambitious, you strive to master magic without an officially sanctioned licence to operate.",
+        "advances": 
+                [
+                    "WS", 
+                    "T", 
+                    "WP", 
+                    "I", 
+                    "Fel", 
+                    "Int"
+                ],
+        "incomeSkill": "Language (Magick)",        
+        "path1": {"name":"Hexer","status":"Brass 1 ","skills":["Channelling","Cool","Endurance","Gossip","Intimidate","Language (Magick)","Sleight of Hand","Stealth (Rural) "],"talents":["Criminal","Instinctive Diction","Menacing","Petty Magic "],"trappings":["Candles","Chalk","Doll","Pins"]},
+        "path2": {"name":"Witch","status":"Brass 2 ","skills":["Charm Animal","Dodge","Intuition","Melee (Polearm)","Perception","Trade (Herbalist) "],"talents":["Arcane Magic (Witchery)","Attractive","Second Sight","Witch! "],"trappings":["Quarterstaff","Sack","Selection of Herbs","Trade Tools (Herbalist)"]},
+        "path3": {"name":"Wyrd","status":"Brass 3 ","skills":["Bribery","Charm","Haggle","Lore (Dark Magic) "],"talents":["Animal Affinity","Fast Hands","Frightening","Magical Sense "],"trappings":["Backpack","Cloak with Several Pockets","Lucky Charm"]},
+        "path4": {"name":"Warlock","status":"Brass 5 ","skills":["Lore (Daemonology)","Lore (Magic) "],"talents":["Aethyric Attunement","Luck","Strong-minded","Very Resilient "],"trappings":["Robes","Skull"]}
+    }, {
+        "name": "Cavalryman",
+        "class": "Warriors",
+        "races": "High Elf, Human, Wood Elf",
+        "desc": "A dashing and fearless rider, you bring speed, versatility, and skill-at-arms to the battlefield.",
+        "advances": 
+                [
+                    "WS", 
+                    "S", 
+                    "Agi", 
+                    "BS", 
+                    "I", 
+                    "Fel"
+                ],
+        "incomeSkill": "Ride (Horse)",        
+        "path1": {"name":"Horseman","status":"Silver 2 ","skills":["Animal Care","Charm Animal","Endurance","Language (Battle)","Melee (Basic)","Outdoor Survival","Perception","Ride (Horse) "],"talents":["Combat Aware","Crack the Whip","Lightning Reflexes","Roughrider "],"trappings":["Leather Jack","Riding Horse with Saddle and Tack"]},
+        "path2": {"name":"Cavalryman","status":"Silver 4 ","skills":["Charm","Consume Alcohol","Cool","Gossip","Melee (Cavalry)","Ranged (Blackpowder) "],"talents":["Etiquette (Soldiers)","Gunner","Seasoned Traveller","Trick Riding "],"trappings":["Breastplate","Helmet","Light Warhorse with Saddle and Tack","Pistol with 10 Shots","Shield"]},
+        "path3": {"name":"Cavalry Sergeant","status":"Gold 1 ","skills":["Intimidate","Intuition","Leadership","Lore (Warfare) "],"talents":["Combat Reflexes","Fast Shot","Hatred (Any)","Warleader "],"trappings":["Sash"]},
+        "path4": {"name":"Cavalry Officer","status":"Gold 2 ","skills":["Gamble","Lore (Heraldry) "],"talents":["Accurate Shot","Inspiring","Reaction Strike","Robust "],"trappings":["Deck of Cards","Quality Clothing"]}
+    }, {
+        "name": "Guard",
+        "class": "Warriors",
+        "races": "Dwarf, Halfling, High Elf, Human, Wood Elf",
+        "desc": "Your job is simple: keep undesirables out.",
+        "advances": 
+                [
+                    "WS", 
+                    "T", 
+                    "Agi", 
+                    "I", 
+                    "S", 
+                    "Int"
+                ],
+        "incomeSkill": "Perception",        
+        "path1": {"name":"Sentry","status":"Silver 1 ","skills":["Consume Alcohol","Endurance","Entertain  (Storytelling)","Gamble","Gossip","Intuition","Melee (Basic)","Perception "],"talents":["Diceman","Etiquette (Servants)","Strike to Stun","Tenacious "],"trappings":["Buckler","Leather Jerkin","Storm Lantern with Oil"]},
+        "path2": {"name":"Guard","status":"Silver 2 ","skills":["Athletics","Cool","Dodge","Intimidate","Melee (Polearm)","Ranged (Bow) "],"talents":["Relentless","Reversal","Shieldsman","Strike Mighty Blow "],"trappings":["Bow with 10 Arrows","Sleeved Mail Shirt","Shield","Spear"]},
+        "path3": {"name":"Honour Guard","status":"Silver 3 ","skills":["Heal","Language (Battle)","Lore (Etiquette)","Melee (Two-handed) "],"talents":["Fearless (Intruders)","Jump Up","Stout-hearted","Unshakeable "],"trappings":["Great Weapon or Halberd","Helmet","Uniform"]},
+        "path4": {"name":"Guard Officer","status":"Silver 5 ","skills":["Leadership","Lore (Warfare) "],"talents":["Combat Master","Furious Assault","Iron Will","Robust "],"trappings":["Breastplate"]}
+    }, {
+        "name": "Knight",
+        "class": "Warriors",
+        "races": "High Elf, Human, Wood Elf",
+        "desc": "Thundering into battle on a heavy charger, you dominate the field, spreading fear in your wake.",
+        "advances": 
+                [
+                    "S", 
+                    "I", 
+                    "Agi", 
+                    "WS", 
+                    "WP", 
+                    "Fel"
+                ],
+        "incomeSkill": "Melee (Cavalry)",        
+        "path1": {"name":"Squire","status":"Silver 3 ","skills":["Athletics","Animal Care","Charm Animal","Heal","Lore (Heraldry)","Melee (Cavalry) ","Ride (Horse)","Trade (Farrier) "],"talents":["Etiquette (any)","Roughrider","Sturdy","Warrior Born "],"trappings":["Leather Jack","Mail Shirt","Riding Horse with Saddle and Tack","Shield","Trade Tools (Farrier)"]},
+        "path2": {"name":"Knight","status":"Silver 5 ","skills":["Cool","Dodge","Endurance","Intimidate","Language (Battle)","Melee (Any) "],"talents":["Menacing","Seasoned Traveller","Shieldsman","Strike Mighty Blow "],"trappings":["Destrier with Saddle and Tack","Melee Weapon (Any)","Lance","Plate Armour and Helm"]},
+        "path3": {"name":"First Knight","status":"Gold 2 ","skills":["Charm","Consume Alcohol","Leadership","Lore (Warfare) "],"talents":["Fearless (Any)","Stout-hearted","Unshakeable","Warleader "],"trappings":["Barding","Small Unit of Knights"]},
+        "path4": {"name":"Knight of the Inner Circle","status":"Gold 4 ","skills":["Lore (Any)","Secret Signs (Knightly Order) "],"talents":["Disarm","Inspiring","Iron Will","Strike to Injure "],"trappings":["Plumed Great Helm","Squire","Large Unit of Knights or Several Small Units of Knights"]}
+    }, {
+        "name": "Pit Fighter",
+        "class": "Warriors",
+        "races": "Dwarf, Halfling, High Elf, Human, Wood Elf",
+        "desc": "You fight for money, for glory, and for the entertainment of the masses.",
+        "advances": 
+                [
+                    "WS", 
+                    "T", 
+                    "S", 
+                    "I", 
+                    "Agi", 
+                    "Fel"
+                ],
+        "incomeSkill": "Melee (Any)",        
+        "path1": {"name":"Pugilist","status":"Brass 4 ","skills":["Athletics","Cool","Dodge","Endurance","Gamble","Intimidate","Melee (Any) ","Melee (Brawling) "],"talents":["Dirty Fighting","In-fighter","Iron Jaw","Reversal "],"trappings":["Bandages","Knuckledusters","Leather Jack"]},
+        "path2": {"name":"Pit Fighter","status":"Silver 2 ","skills":["Haggle","Intuition","Melee (Basic)","Melee (Flail or Two-handed)","Perception","Ranged (Entangling) "],"talents":["Ambidextrous","Combat Reflexes","Dual Wielder","Shieldsman "],"trappings":["Flail or Great Weapon","Hand Weapon","Net or Whip","Shield or Buckler"]},
+        "path3": {"name":"Pit Champion","status":"Silver 5 ","skills":["Consume Alcohol","Gossip","Lore (Anatomy)","Perform (Fight) "],"talents":["Combat Master","Disarm","Menacing","Robust "],"trappings":["Breast Plate","Helmet"]},
+        "path4": {"name":"Pit Legend","status":"Gold 2 ","skills":["Charm","Ranged (Any) "],"talents":["Frightening","Furious Assault","Implacable","Reaction Strike "],"trappings":["Quality Helmet"]}
+    }, {
+        "name": "Protagonist",
+        "class": "Warriors",
+        "races": "Dwarf, High Elf, Human",
+        "desc": "A strong-arm for hire, you bully, fight, and maybe even kill for coin.",
+        "advances": 
+                [
+                    "WS", 
+                    "T", 
+                    "Agi", 
+                    "I", 
+                    "BS", 
+                    "Fel"
+                ],
+        "incomeSkill": "Melee (Any)",        
+        "path1": {"name":"Braggart","status":"Brass 2 ","skills":["Athletics","Dodge","Endurance","Entertain (Taunt)","Gossip","Haggle","Intimidate","Melee (Any) "],"talents":["In-fighter","Dirty Fighting","Menacing","Warrior Born "],"trappings":["Hood or Mask","Knuckledusters","Leather Jack"]},
+        "path2": {"name":"Protagonist","status":"Silver 1 ","skills":["Bribery","Charm","Intuition","Melee (Basic)","Perception","Ride (Horse) "],"talents":["Combat Reflexes","Criminal","Reversal","Strike to Stun "],"trappings":["Hand Weapon","Mail Shirt","Riding Horse with Saddle and Tack","Shield"]},
+        "path3": {"name":"Hitman","status":"Silver 4 ","skills":["Climb","Cool","Navigation","Ranged (Thrown) "],"talents":["Careful Strike","Disarm","Marksman","Relentless "],"trappings":["Cloak","Garotte","Poison","Throwing Knives"]},
+        "path4": {"name":"Assassin","status":"Gold 1 ","skills":["Entertain (Acting)","Ranged (Crossbow) "],"talents":["Accurate Shot","Ambidextrous","Furious Assault","Strike to Injure "],"trappings":["Crossbow with 10 shots","Disguise Kit"]}
+    }, {
+        "name": "Slayer",
+        "class": "Warriors",
+        "races": "Dwarf",
+        "desc": "You are rage and shame incarnate, seeking a worthy death to reclaim your lost honour.",
+        "advances": 
+                [
+                    "WS", 
+                    "S", 
+                    "WP", 
+                    "T", 
+                    "Agi", 
+                    "I"
+                ],
+        "incomeSkill": "Melee (Basic)",        
+        "path1": {"name":"Troll Slayer","status":"Brass 2 ","skills":["Consume Alcohol","Cool","Dodge","Endurance","Gamble","Heal","Lore (Trolls)","Melee (Basic) "],"talents":["Dual Wielder","Fearless (Everything)","Frenzy","Slayer "],"trappings":["Axe","Flask of Spirits","Shame","Tattoos"]},
+        "path2": {"name":"Giant Slayer","status":"Brass 2 ","skills":["Evaluate","Intimidate","Language (Battle)","Lore (Giants)","Melee (Two-handed)","Outdoor Survival "],"talents":["Hardy","Implacable","Menacing","Reversal "],"trappings":["Great Axe","Jewellery","Troll’s Head"]},
+        "path3": {"name":"Dragon Slayer","status":"Brass 2 ","skills":["Entertain (Storytelling)","Lore (Dragons)","Perception","Ranged (Thrown) "],"talents":["Ambidextrous","Furious Assault","Relentless","Robust "],"trappings":["Giant’s Head","Throwing Axes"]},
+        "path4": {"name":"Daemon Slayer","status":"Brass 2 ","skills":["Intuition","Lore (Chaos) "],"talents":["Combat Master","Frightening","Strike Mighty Blow","Very Strong "],"trappings":["Dragon’s Head"]}
+    }, {
+        "name": "Soldier",
+        "class": "Warriors",
+        "races": "Dwarf, Halfling, High Elf, Human, Wood Elf",
+        "desc": "You are paid to train, be disciplined, and, when the need comes, go to war.",
+        "advances": 
+                [
+                    "WS", 
+                    "T", 
+                    "WP", 
+                    "BS", 
+                    "I", 
+                    "Fel"
+                ],
+        "incomeSkill": "Melee (Basic)",        
+        "path1": {"name":"Recruit","status":"Silver 1 ","skills":["Athletics","Climb","Cool","Dodge","Endurance","Language (Battle)","Melee (Basic) ","Play (Drum or Fife) "],"talents":["Diceman","Marksman","Strong Back","Warrior Born "],"trappings":["Dagger","Leather Breastplate","Uniform"]},
+        "path2": {"name":"Soldier","status":"Silver 3 ","skills":[" Consume Alcohol","Gamble","Gossip","Melee (Any)","Ranged (Any)","Outdoor Survival "],"talents":["Drilled","Etiquette (Soldiers)","Rapid Reload","Shieldsman "],"trappings":["Breastplate","Helmet","Weapon (Any)"]},
+        "path3": {"name":"Sergeant","status":"Silver 5 ","skills":["Heal","Intuition","Leadership","Perception "],"talents":["Combat Aware","Enclosed Fighter","Unshakeable","Warleader "],"trappings":["Symbol of Rank","Unit of Troops"]},
+        "path4": {"name":"Officer","status":"Gold 1 ","skills":["Lore (Warfare)","Navigation "],"talents":["Inspiring","Public Speaking","Seasoned Traveller","Stout􀀀hearted "],"trappings":["Letter of Commission","Light Warhorse with Saddle and Tack","Map","Orders","Unit of Soldiers","Quality Uniform","Symbol of Rank"]}
     },
     {
         "name": "Warrior Priest",
@@ -9405,6 +10537,17 @@ var endeavours = [
             "Once successfully locate an expert, you then need to convince them to talk with you. Depending on what you wish to know, this may require no more than a Simple Charm Test or a modest donation to the local Temple of Verena. In more extreme cases, you may have to commit to performing one or more Favours (see Do Me A Favour! ) which may be called in during a future adventure, or ‘bought off ’ by spending Endeavours between future adventures. The level of Favour owed depends on the complexity — and danger — of the information you want as determined by the GM.",
             "The precise nature of the information gleaned depends on the expert consulted and what you seek to know. Academics will know the origins and full history on a subject with which they are familiar; wizards of the Colleges of Magic in Altdorf understand the history of magic and various mystical objects, particularly aspects relevant to their own order; an Apothecary General can identify even the rarest poison; a Verenan scholar may have information relating to any number of historical incidents. In short, the expert’s background will influence how the knowledge is presented, and with which biases.",
             "In addition to any specific information the GM imparts to their player, a successful Consult an Expert Endeavour used to seek out knowledge (and not to facilitate another Endeavour) gives you an Expert Reroll (mark this on your character sheet under Notes). This reroll may only be used on a Test specifically relating to the lore revealed and must be used before the end of your next adventure."
+    ]
+    },
+    {
+        "name": "Crafting",
+        "type": "General Endeavours",
+        "description": ["Rather than browse shops or commissioning someone else to do the hard work, you can fashion your own trappings. Crafting allows you to make any trapping from Chapter 11: Consumers’ Guide (or anything else the GM allows) if you have the correct Trade Skills. To do this, you require appropriate Trade Tools, raw materials, and access to an appropriate workshop. In general, the raw materials to create the trapping of your choice will cost a quarter of the trapping’s list price, and must be purchased before Crafting begins (with an Availability as determined by the GM); the GM may rule the raw materials are cheaper or more expensive according to the trapping to be created, and the nature of the raw materials required.",
+            "To craft the trapping, attempt an Extended Trade Test, with a Difficulty set by the GM, typically using the Trapping’s Availability as a loose guide.",
+            "<table class='w3-table table-dark w3-striped w3-hoverable w3-bordered'><thead><tr><th>Availability</th><th>Difficulty</th></tr></thead><tbody><tr><td>Common</td><td>Average (+20)</td></tr><tr><td>Scarce</td><td>Challenging (+0)</td></tr><tr><td>Rare</td><td>Difficult (-10)</td></tr><tr><td>Exotic</td><td>Very Hard (-30)</td></tr></tbody></table>",
+            "The number of SL required to succeed at the Test is also set by the GM, using the listed price for the trapping in the Consumers’ Guide as a reference. An item with a price in Brass Pennies usually requires about 5 SL, Silver requires about 10 SL, and Gold items require at least 15 SL.",
+            "The SL required is further modified by the Qualities or Flaws you work into the trapping. Each Flaw halves the SL required, and each Quality adds +5 (worked out after halving for Flaws).",
+            "Each Endeavour you spend Crafting allows you to make one roll towards your Extended Test. Unfinished work can be kept in whatever you have that amounts to lodgings, or carried around with you as you adventure, should that be possible."
     ]
     }
 ]

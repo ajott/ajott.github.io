@@ -716,3 +716,46 @@ $(document).ready(function () {
 //     $("#conditionTable").html(htmlString)
 // }
 
+
+function proc() {
+
+    let str = $('#procIn').val()
+    // Take the input box value
+
+    let procObj = {}
+
+    let prName = str.split(" — ")[0]
+    // The name is followed by an emdash
+
+    procObj["name"] = prName
+
+    let prStanding = str.split(" — ")[1].split("Skills")[0]
+    // Between the emdash and 'Skills:' is the status
+
+    procObj["status"] = prStanding;
+
+    let pr1 = str.split('Talents: ')[0]
+    let skillArr = pr1.split("Skills: ")[1].split(", ")
+    // Get everything between 'Skills' and 'Talents'
+
+    procObj["skills"] = skillArr
+    
+
+    let pr2 = str.split('Talents: ')[1].split("Trappings: ")[0].split(", ")
+    // Everything between 'talents' and 'trappings'
+
+    procObj["talents"] = pr2
+    
+    let pr3 = str.split('Trappings: ')[1].split(", ")
+    // Everything else - aka the trappings
+
+    procObj["trappings"] = pr3
+
+    $("#procOut").val(JSON.stringify(procObj)+",")
+    // Set the output box value to the post-process template
+}
+
+function copyProc() {
+    navigator.clipboard.writeText($("#procOut").val())
+    // We need user input to write to the clipboard.  Thanks, "security" experts
+}

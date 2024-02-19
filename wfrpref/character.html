@@ -41,6 +41,12 @@
                 the mechanical aspects can be randomized; doing so gives an exp bonus that can be spent at the end of
                 character creation.
             </p>
+            <!-- <p>
+                <input id="procIn" onclick="$('#procIn').val('')"/><button id="procClick" onclick="proc()">Process</button>
+            </p>
+            <p>
+                <input id="procOut" onclick="copyProc()"/>
+            </p> -->
             <p>
                 Your character will have a species (Human, Halfling, Dwarf, High Elf, Wood Elf) which determines the
                 careers, endeavours, etc. available to you; a class and career &mdash; <em>e.g.</em> Peasant (Trapper)
@@ -438,7 +444,7 @@
                             <th colspan="6" class="midHead" style="text-align: center;">Rangers</th>
                         </tr>
                         <tr>
-                            <td>Bounty Hunter</td>
+                            <td><career>Bounty Hunter</career></td>
                             <td>51</td>
                             <td>57-60</td>
                             <td>58</td>
@@ -446,7 +452,7 @@
                             <td>69-70</td>
                         </tr>
                         <tr>
-                            <td>Coachman</td>
+                            <td><career>Coachman</career></td>
                             <td>52</td>
                             <td>61</td>
                             <td>59-60</td>
@@ -454,7 +460,7 @@
                             <td>-</td>
                         </tr>
                         <tr>
-                            <td>Entertainer</td>
+                            <td><career>Entertainer</career></td>
                             <td>53-54</td>
                             <td>62-63</td>
                             <td>61-63</td>
@@ -470,7 +476,7 @@
                             <td>-</td>
                         </tr>
                         <tr>
-                            <td>Messenger</td>
+                            <td><career>Messenger</career></td>
                             <td>57</td>
                             <td>64-65</td>
                             <td>64-65</td>
@@ -478,7 +484,7 @@
                             <td>76-78</td>
                         </tr>
                         <tr>
-                            <td>Pedlar</td>
+                            <td><career>Pedlar</career></td>
                             <td>58</td>
                             <td>66-67</td>
                             <td>66-67</td>
@@ -494,7 +500,7 @@
                             <td>-</td>
                         </tr>
                         <tr>
-                            <td>Witch Hunter</td>
+                            <td><career>Witch Hunter</career></td>
                             <td>60</td>
                             <td>-</td>
                             <td>-</td>
@@ -572,7 +578,7 @@
                             <th colspan="6" class="midHead" style="text-align: center;">Rogues</th>
                         </tr>
                         <tr>
-                            <td>Bawd</td>
+                            <td><career>Bawd</career></td>
                             <td>75-76</td>
                             <td>-</td>
                             <td>83-85</td>
@@ -580,7 +586,7 @@
                             <td>-</td>
                         </tr>
                         <tr>
-                            <td>Charlatan</td>
+                            <td><career>Charlatan</career></td>
                             <td>77</td>
                             <td>-</td>
                             <td>86</td>
@@ -588,7 +594,7 @@
                             <td>-</td>
                         </tr>
                         <tr>
-                            <td>Fence</td>
+                            <td><career>Fence</career></td>
                             <td>78</td>
                             <td>79</td>
                             <td>87</td>
@@ -596,7 +602,7 @@
                             <td>-</td>
                         </tr>
                         <tr>
-                            <td>Grave Robber</td>
+                            <td><career>Grave Robber</career></td>
                             <td>79</td>
                             <td>-</td>
                             <td>88</td>
@@ -604,7 +610,7 @@
                             <td>-</td>
                         </tr>
                         <tr>
-                            <td>Outlaw</td>
+                            <td><career>Outlaw</career></td>
                             <td>80-83</td>
                             <td>80-82</td>
                             <td>89</td>
@@ -612,7 +618,7 @@
                             <td>80-85</td>
                         </tr>
                         <tr>
-                            <td>Racketeer</td>
+                            <td><career>Racketeer</career></td>
                             <td>84</td>
                             <td>83</td>
                             <td>90</td>
@@ -620,7 +626,7 @@
                             <td>-</td>
                         </tr>
                         <tr>
-                            <td>Thief</td>
+                            <td><career>Thief</career></td>
                             <td>85-87</td>
                             <td>84</td>
                             <td>91-94</td>
@@ -628,7 +634,7 @@
                             <td>-</td>
                         </tr>
                         <tr>
-                            <td>Witch</td>
+                            <td><career>Witch</career></td>
                             <td>88</td>
                             <td>-</td>
                             <td>-</td>
@@ -639,7 +645,7 @@
                             <th colspan="6" class="midHead" style="text-align: center;">Warriors</th>
                         </tr>
                         <tr>
-                            <td>Cavalryman</td>
+                            <td><career>Cavalryman</career></td>
                             <td>89-90</td>
                             <td>-</td>
                             <td>-</td>
@@ -647,7 +653,7 @@
                             <td>86-90</td>
                         </tr>
                         <tr>
-                            <td>Guard</td>
+                            <td><career>Guard</career></td>
                             <td>91-92</td>
                             <td>85-87</td>
                             <td>95-96</td>
@@ -655,7 +661,7 @@
                             <td>91-92</td>
                         </tr>
                         <tr>
-                            <td>Knight</td>
+                            <td><career>Knight</career></td>
                             <td>93</td>
                             <td>-</td>
                             <td>-</td>
@@ -663,7 +669,7 @@
                             <td>93-94</td>
                         </tr>
                         <tr>
-                            <td>Pit Fighter</td>
+                            <td><career>Pit Fighter</career></td>
                             <td>94</td>
                             <td>88-90</td>
                             <td>97</td>
@@ -671,7 +677,7 @@
                             <td>95-96</td>
                         </tr>
                         <tr>
-                            <td>Protagonist</td>
+                            <td><career>Protagonist</career></td>
                             <td>95</td>
                             <td>91-93</td>
                             <td>-</td>
@@ -679,20 +685,20 @@
                             <td>-</td>
                         </tr>
                         <tr>
-                            <td>Soldier</td>
+                            <td><career>Slayer</career></td>
+                            <td>-</td>
+                            <td>97-100</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><career>Soldier</career></td>
                             <td>96-99</td>
                             <td>94-96</td>
                             <td>98-100</td>
                             <td>99-100</td>
                             <td>97-100</td>
-                        </tr>
-                        <tr>
-                            <td>Slayer</td>
-                            <td>-</td>
-                            <td>97-100</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
                         </tr>
                         <tr>
                             <td><career>Warrior Priest</career></td>

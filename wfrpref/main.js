@@ -86,7 +86,7 @@ function buildModal(el, type, mast = 0, isTest = 0) {
 
     $("#modal" + modalCount).html(modals[type])
 
-    let htmlString = ""
+    
 
 
     switch (type) {
@@ -146,7 +146,7 @@ function buildModal(el, type, mast = 0, isTest = 0) {
 
             break;
         case "miracle":
-
+            let miracleHTML = ""
             let isBlessing = (blessings.includes(dataRslt["name"]))
 
             if (isBlessing) {
@@ -168,20 +168,20 @@ function buildModal(el, type, mast = 0, isTest = 0) {
             if (dataRslt["desc"] != undefined) {
                 if (typeof (dataRslt["desc"]) == "object") {
                     for (let j = 0; j < dataRslt["desc"].length; j++) {
-                        htmlString += "<p>" + dataRslt["desc"][j] + "</p>";
+                        miracleHTML += "<p>" + dataRslt["desc"][j] + "</p>";
                     }
                 } else {
-                    htmlString = "<p>" + dataRslt["desc"] + "</p>"
+                    miracleHTML = "<p>" + dataRslt["desc"] + "</p>"
                 }
             }
 
-            $("#modal" + modalCount + " .miracleDescription").html(htmlString)
+            $("#modal" + modalCount + " .miracleDescription").html(miracleHTML)
 
-            htmlString = "";
+            miracleHTML = "";
 
             break;
         case "spell":
-
+            let spellHTML = ""
             $("#modal" + modalCount + " .spellName").html(dataRslt["name"])
 
             if (dataRslt["lore"] == "Petty" || dataRslt["lore"] == "Arcane") {
@@ -198,16 +198,16 @@ function buildModal(el, type, mast = 0, isTest = 0) {
             if (dataRslt["description"] != undefined) {
                 if (typeof (dataRslt["description"]) == "object") {
                     for (let j = 0; j < dataRslt["description"].length; j++) {
-                        htmlString += "<p>" + dataRslt["description"][j] + "</p>";
+                        spellHTML += "<p>" + dataRslt["description"][j] + "</p>";
                     }
                 } else {
-                    htmlString = "<p>" + dataRslt["description"] + "</p>"
+                    spellHTML = "<p>" + dataRslt["description"] + "</p>"
                 }
             }
 
-            $("#modal" + modalCount + " .spellDescription").html(htmlString)
+            $("#modal" + modalCount + " .spellDescription").html(spellHTML)
 
-            htmlString = "";
+            spellHTML = "";
 
             break;
         case "weapon":
@@ -285,6 +285,7 @@ function buildModal(el, type, mast = 0, isTest = 0) {
 
 
             for (let k = 1; k < 5; k++) {
+                let htmlString = ""
                 let imgSrcs = ["./img/cross_64.png", "./img/axes_64_light.png", "./img/skull_64_light.png", "./img/shield_64_light.png"]
                 $("#modal" + modalCount + " .careerpath" + k + " .path" + k + "name").html("<img src=\"" + imgSrcs[k - 1] + "\" class=\"oneemimg\"></img><br/>" + dataRslt["path" + k]["name"] + " &mdash; " + "<status>" + dataRslt["path" + k]["status"] + "</status>")
 
@@ -334,20 +335,19 @@ function buildModal(el, type, mast = 0, isTest = 0) {
             break;
 
         case "endeavour":
-
             $("#modal" + modalCount + " .endeavourName").html(dataRslt["name"])
 
             $("#modal" + modalCount + " .endeavourType").html(dataRslt["type"])
 
-            let htmlString = ""
+            let endeavourHTML = ""
 
             dataRslt["description"].forEach((para) => {
-                htmlString += "<p>" + para + "</p>"
+                endeavourHTML += "<p>" + para + "</p>"
             }
             )
-            $("#modal" + modalCount + " .endeavourDesc").html(htmlString)
+            $("#modal" + modalCount + " .endeavourDesc").html(endeavourHTML)
 
-            htmlString = "";
+            endeavourHTML = "";
 
             break;
     }
@@ -593,69 +593,121 @@ function buildNavbar() {
 }
 
 
-function buildCareerCard() {
+function buildCareerCards() {
     let htmlString = ""
 
-    $("#careerCard .careerName").text(career[1]["name"])
-    $("#careerCard .careerClass").text(career[1]["class"])
-    $("#careerCard .careerDesc").html("&ldquo;" + career[1]["desc"] + "&rdquo;")
-    $("#careerCard .careerRaces").html("<eh>" + career[1]["races"] + "</eh>")
-    $("#careerCard .career" + career[1]["advances"][0]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>")
-    $("#careerCard .career" + career[1]["advances"][1]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>")
-    $("#careerCard .career" + career[1]["advances"][2]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>")
+    let careerClasses = ["Academics","Burghers","Courtiers","Peasants","Rangers","Riverfolk","Rogues","Warriors"]
 
-    $("#careerCard .career" + career[1]["advances"][3]).addClass("attr2").html("<img class=\"attrImg\" src=\"./img/axes_64.png\"></img>")
-    $("#careerCard .career" + career[1]["advances"][4]).addClass("attr3").html("<img class=\"attrImg\" src=\"./img/skull_64.png\"></img>")
-    $("#careerCard .career" + career[1]["advances"][5]).addClass("attr4").html("<img class=\"attrImg\" src=\"./img/shield_64.png\"></img>")
 
-    $("#careerCard .careerIncome").html("<skill>" + career[1]["incomeSkill"] + "</skill>")
+    let careerEntry = career[1]
+
+    for (let i = 1; i < career.length; i++) {
+        let careerEntry = career[i]
+
+        
+    let $div = $('#templateCareerSection');
+
+    let $klon = $div.clone().prop('id', 'career' + i).appendTo("#careerWrapper");
+
+
+    $("#career"+i+" .careerName").text(careerEntry["name"])
+    $("#career"+i+" .careerClass").text(careerEntry["class"])
+    $("#career"+i+" .careerDesc").html("&ldquo;" + careerEntry["desc"] + "&rdquo;")
+    $("#career"+i+" .careerRaces").html("<eh>" + careerEntry["races"] + "</eh>")
+
+
+    $("#career"+i+" .attrTable th").show();
+    $("#career"+i+" .attrTable td").show();
+
+    $("#career"+i+" .career" + careerEntry["advances"][0] + "th").show()
+    $("#career"+i+" .career" + careerEntry["advances"][0]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>").show()
+    $("#career"+i+" .career" + careerEntry["advances"][1] + "th").show()
+    $("#career"+i+" .career" + careerEntry["advances"][1]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>").show()
+    $("#career"+i+" .career" + careerEntry["advances"][2] + "th").show()
+    $("#career"+i+" .career" + careerEntry["advances"][2]).addClass("attr1").html("<img class=\"attrImg\" src=\"./img/cross_64.png\"></img>").show()
+
+    $("#career"+i+" .career" + careerEntry["advances"][3] + "th").show()
+    $("#career"+i+" .career" + careerEntry["advances"][3]).addClass("attr2").html("<img class=\"attrImg\" src=\"./img/axes_64.png\"></img>").show()
+    $("#career"+i+" .career" + careerEntry["advances"][4] + "th").show()
+    $("#career"+i+" .career" + careerEntry["advances"][4]).addClass("attr3").html("<img class=\"attrImg\" src=\"./img/skull_64.png\"></img>").show()
+    $("#career"+i+" .career" + careerEntry["advances"][5] + "th").show()
+    $("#career"+i+" .career" + careerEntry["advances"][5]).addClass("attr4").html("<img class=\"attrImg\" src=\"./img/shield_64.png\"></img>").show()
+
+    $("#career"+i+" .careerIncome").html("<skill>" + careerEntry["incomeSkill"] + "</skill>")
 
 
     for (let k = 1; k < 5; k++) {
-        $("#careerCard .careerpath" + k + " .path" + k + "name").html(career[1]["path" + k]["name"] + " &mdash; " + career[1]["path" + k]["status"])
+        let imgSrcs = ["./img/cross_64.png", "./img/axes_64_light.png", "./img/skull_64_light.png", "./img/shield_64_light.png"]
+        $("#career"+i+" .careerpath" + k + " .path" + k + "name").html("<img src=\"" + imgSrcs[k - 1] + "\" class=\"oneemimg\"></img><br/>" + careerEntry["path" + k]["name"] + " &mdash; " + "<status>" + careerEntry["path" + k]["status"] + "</status>")
 
-        for (let i = 0; i < career[1]["path" + k]["skills"].length; i++) {
+        for (let i = 0; i < careerEntry["path" + k]["skills"].length; i++) {
             if (i == 0) {
                 htmlString += "<skill>"
             } else {
                 htmlString += ", <skill>"
             }
-            htmlString += career[1]["path" + k]["skills"][i]
+            htmlString += careerEntry["path" + k]["skills"][i]
             htmlString += "</skill>"
         }
 
-        $("#careerCard .careerpath" + k + " .path" + k + "skills").html(htmlString)
+        $("#career"+i+" .careerpath" + k + " .path" + k + "skills").html(htmlString)
 
         htmlString = ""
 
-        for (let i = 0; i < career[1]["path" + k]["talents"].length; i++) {
+        for (let i = 0; i < careerEntry["path" + k]["talents"].length; i++) {
             if (i == 0) {
                 htmlString += "<talent>"
             } else {
                 htmlString += ", <talent>"
             }
-            htmlString += career[1]["path" + k]["talents"][i]
+            htmlString += careerEntry["path" + k]["talents"][i]
             htmlString += "</talent>"
         }
 
-        $("#careerCard .careerpath" + k + " .path" + k + "talents").html(htmlString)
+        $("#career"+i+" .careerpath" + k + " .path" + k + "talents").html(htmlString)
 
         htmlString = ""
 
-        for (let i = 0; i < career[1]["path" + k]["trappings"].length; i++) {
+        for (let i = 0; i < careerEntry["path" + k]["trappings"].length; i++) {
             if (i == 0) {
-                htmlString += "<em>"
+                htmlString += "<span>"
             } else {
-                htmlString += ", <em>"
+                htmlString += ", <span>"
             }
-            htmlString += career[1]["path" + k]["trappings"][i]
-            htmlString += "</em>"
+            htmlString += careerEntry["path" + k]["trappings"][i]
+            htmlString += "</span>"
         }
 
-        $("#careerCard .careerpath" + k + " .path" + k + "trappings").html(htmlString)
+        $("#career"+i+" .careerpath" + k + " .path" + k + "trappings").html(htmlString)
 
         htmlString = ""
+
+        if (careerEntry["flavour"] != undefined){
+
+        careerEntry["flavour"].forEach(flavText => {
+            htmlString += "<p>" + flavText + "</p>"
+        })
+
+        $("#career"+i+" .careerFlavour").html(htmlString);
+
+        htmlString = ""}
+
+        if (careerEntry["quotes"] != undefined){
+        careerEntry["quotes"].forEach(quot => {
+            htmlString += "<p><blockquote class='w3-panel'><p><em>&ldquo;"+quot["quote"]+"&rdquo;</em></p><p style='text-align: right !important;'>&mdash;"+quot["author"]+"</p></blockquote></p>"
+        })
+        $("#career"+i+" .careerQuotes").html(htmlString);
+
+        htmlString = ""}
+        
+
+        $klon.show();
     }
+
+
+    }
+
+    
 
 
 }

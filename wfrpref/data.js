@@ -4692,6 +4692,15 @@ var career = [
         "name": "Apothecary",
         "class": "Academics",
         "desc": "Skilled in chemistry and concoctions, you create and sell medicine of all kinds.",
+        "flavour": ["Apothecaries specialise in preparing pharmaceutical medication — commonly pills, draughts, and ointments — for sale to patients and doktors alike. Their workshops are filled with a dazzling array of bubbling alembics, overflowing beakers, worn mortar and pestles, and other physic-making paraphernalia. Some Apothecaries supplement their income selling illicit substances — from stimulants for desperate students, to hallucinogenic weirdroot for bored nobles or shady commissions from even shadier groups. Supplying these is lucrative, but also dangerous. Rare ingredients are expensive, so Apothecaries frequently have cash flow problems, and journey the wilds to collect their own ingredients. Many take temporary employment with expeditions, mercenaries, or the military for extra coin.",
+        "Due to Physician Guild pressure, most towns ban Apothecaries from formally practicing medicine, but during play Apothecaries can easily fill the role of a healer. Indeed, they are versatile in this role because they can also identify dangerous and unusual substances the party may encounter, and even turn some into useful medicine."],
+        "quotes": [
+            {"quote": "Look for this sigil: white mortar, black pestle. Don’t ask for our order without it or you’ll be reported to the Watch. And lad, don’t ever short our Apothecary; you’ll spend the rest of your days wondering if the next drink will be your last.",
+            "author": "Kathe the Unseen, Assassin"
+        },
+        {"quote":"Human chemistry? As shoddy as their architecture! And just as likely to kill you! I asked for tonic after a hard night’s drinking. Had the flux for a week!",
+        "author": "Thorica Norrasdotr, Dwarf Merchant"}
+        ],
         "path1": {
             "name": "Apothecary&apos;s Apprentice",
             "skills": ["Consume Alcohol", "Heal", "Language (Classical)", "Lore (Chemistry)", "Lore (Medicine)", "Lore (Plants)", "Trade (Apothecary)", "Trade (Poisoner)"],
@@ -4728,6 +4737,16 @@ var career = [
         "name": "Engineer",
         "class": "Academics",
         "desc": "You create machines and constructions both useful and bizarre, and often downright deadly.",
+        "flavour": ["Engineers design and build mechanical devices or structures such as bridges, canals, or fortifications. Most are educated, Dwarfs at the hide-bound Dwarf Engineers Guild, Humans at forward-thinking establishments such as the Imperial Engineers’ School at Altdorf, though self-taught prodigies are not unknown. Human Engineers value innovation and discovery, whereas Dwarfs favour traditional, tried-and-tested designs passed down for generations. Mining company engineers are well-paid; less so the State Army Engineers who maintain the Imperial war machines and act as sappers and bridge-builders. Master Engineers often find themselves leading teams on ambitious construction projects. Chartered Engineers are the most trusted in the Empire, called upon to design, test, and build such prestigious Imperial Commissions like the complex Steam Wheel Locks, which have revolutionised the speed of travel in the canals of the Vorbergland.",
+    "Some Engineers are drawn to investigate ancient Dwarf Holds, most now abandoned, for entombed within are the secrets of the master builders of old. Those who dare their depths may find millennia-old marvels, many of which are repurposed by Goblins and Skaven for their own nefarious purposes. Equally enticing are the stone sky bridges soaring above the Holds, some stretching for many miles, true wonders of bygone engineering that once connected thriving Dwarf settlements, forts, and farmlands."],
+        "quotes": [{
+            "quote": "What will it do? Well, it’s supposed to pluck the chicken, Smallnose. Stand well back!",
+            "author": "Wolfgang Kugelschreiber, Inventor"
+        },
+    {
+        "quote": "Master Engineer Volker von Meinkopt found inspiration watching students reloading at the Imperial Gunnery School. He had a revelation: more barrels = more shots = more lethality. He soon produced the first repeating handgun, ‘Von Meinkopt’s Whirling Cavalcade of Death’, and pistol, ‘Von Meinkopt’s Micro-mainspring of Multitudinous Precipitation of Pernicious Lead’. Not content to rest on those laurels, he then created the enormous nine-barrelled cannon, the Helblaster Volley Gun, which is utterly lethal to enemies and, all too often, its crew.",
+        "author": "<em>‘Great Engineers of the Empire’</em>,<br/> Lady Theodora Holzenauer, Engineer and Journalist"
+    }],
         "path1": {
             "name": "Student Engineer",
             "skills": ["Consume Alcohol", "Cool", "Endurance", "Language (Classical)", "Lore (Engineer)", "Perception", "Ranged (Blackpowder)", "Trade (Engineer)"],
@@ -4764,6 +4783,18 @@ var career = [
         "name": "Lawyer",
         "class": "Academics",
         "desc": "You navigate treacherous legal systems, defending clients and prosecuting the guilty.",
+        "flavour": ["Lawyers give legal counsel, interpret the law, and argue on behalf of their clients before the courts. They are often specialists in the laws of the province in which they practice, or in ecclesiastical law. Most are university educated and therefore rich and well-connected, although gifted individuals of low birth are sometimes apprenticed. Cult lawyers learn from their venerable peers, with those trained by the Cults of Verena and Sigmar especially well-regarded. Some Lawyers are hired as mediators, settling informal disputes outside costly courts, a practice favoured by Halflings. Others work for criminal gangs, exploiting legal loopholes to free their always-guilty clients. At the top end of society, Barristers are the only lawyers allowed to address higher appeal courts in the city-states, charging exorbitant prices for their services.",
+    "Lawyers excel at getting people out of trouble, while adventurers excel at getting into it. They can use their knowledge of obscure local laws to avoid problems by suggesting unusual approaches to solve thorny dilemmas. After all, tying up a local thug in court is just as valuable, and arguably much safer, than tying one up in a basement."],
+    "quotes": [
+        {
+            "quote": "Sharks! No, worse! Leeches! But not the good kind that suck out bad humours, oh no. They’re leeches that drain your coffers and leave you nothing to show for it.",
+            "author": "Stefan Bachler, Merchant"
+        },
+        {
+            "quote": "It is not what the lawyer says I may do that concerns me, but what is right by reason and justice. Such matters need then be the basis of our new law.",
+            "author": "Lector Agatha von Böhrn, Supreme Law Lord of the Empire"
+        }
+    ],
         "path1": {
             "name": "Student Lawyer",
             "skills":

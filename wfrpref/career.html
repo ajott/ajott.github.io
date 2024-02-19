@@ -1,0 +1,167 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WFRP 4e QuickRef</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="./isotope.pkgd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+    <script src="spells.js"></script>
+    <script src="skills.js"></script>
+    <script src="religion.js"></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="interface.css">
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Azeret Mono' rel='stylesheet'>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad" id="navBarDiv">
+
+    </div>
+
+    <div class="w3-row-padding w3-section info">
+        <div class="w3-col s0 m0 l1">
+            &nbsp;
+        </div>
+        <div class="w3-col s0 m12 l10" id="careerWrapper">
+            <div id="templateCareerSection" style="display:none;" class="w3-row-padding w3-section">
+                <div class="w3-card-2 w3-round-large">
+                    <div class="w3-row-padding">
+                        <h3 class="careerName"></h3>
+                        <h5><span class="careerClass"></span></h5>
+                        <div class="w3-center"><span class="careerRaces"></span></div>
+                        <div class="w3-center"><em class="careerDesc"></em></div>
+                        <div class="w3-row-padding w3-center"><br />
+                            <div class="w3-row-padding w3-center"><b>Income Skill: </b><em class="careerIncome"></em>
+                            </div>
+                            <br/>
+                            <div class="w3-col s0 m3 l4">&nbsp;</div>
+                            <div class="w3-col s12 m6 l4 well-s">
+                                <h6>Advance Scheme</h6>
+                                <table class="centerTable attrTable ">
+                                    <thead>
+                                        <tr>
+                                            <th style="display:none;" class="careerAttr careerWSth">WS</th>
+                                            <th style="display:none;" class="careerAttr careerBSth">BS</th>
+                                            <th style="display:none;" class="careerAttr careerSth">S</th>
+                                            <th style="display:none;" class="careerAttr careerTth">T</th>
+                                            <th style="display:none;" class="careerAttr careerIth">I</th>
+                                            <th style="display:none;" class="careerAttr careerAgith">Agi</th>
+                                            <th style="display:none;" class="careerAttr careerDexth">Dex</th>
+                                            <th style="display:none;" class="careerAttr careerIntth">Int</th>
+                                            <th style="display:none;" class="careerAttr careerWPth">WP</th>
+                                            <th style="display:none;" class="careerAttr careerFelth">Fel</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="display:none;" class="careerAttr careerWS"></td>
+                                            <td style="display:none;" class="careerAttr careerBS"></td>
+                                            <td style="display:none;" class="careerAttr careerS"></td>
+                                            <td style="display:none;" class="careerAttr careerT"></td>
+                                            <td style="display:none;" class="careerAttr careerI"></td>
+                                            <td style="display:none;" class="careerAttr careerAgi"></td>
+                                            <td style="display:none;" class="careerAttr careerDex"></td>
+                                            <td style="display:none;" class="careerAttr careerInt"></td>
+                                            <td style="display:none;" class="careerAttr careerWP"></td>
+                                            <td style="display:none;" class="careerAttr careerFel"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="w3-col s0 m3 l4">&nbsp;</div>
+                        </div>
+                    </div>
+                    <div class="w3-row-padding">
+                        <div class="w3-col s12 m12 l6">
+                            
+                            <br />
+                            <div class="w3-row-padding well">
+                                <div class="careerpath1">
+                                    <h5 class="path1name"></h5>
+                                    <p><b>Skills: </b><span class="path1skills"></span></p>
+                                    <p><b>Talents: </b><span class="path1talents"></span></p>
+                                    <p><b>Trappings: </b><span class="path1trappings"></span></p>
+                                </div>
+                            </div>
+                            <div class="w3-row-padding well">
+                                <div class="careerpath2">
+                                    <h5 class="path2name"></h5>
+                                    <p><b>Skills: </b><span class="path2skills"></span></p>
+                                    <p><b>Talents: </b><span class="path2talents"></span></p>
+                                    <p><b>Trappings: </b><span class="path2trappings"></span></p>
+                                </div>
+                            </div>
+                            <div class="w3-row-padding well">
+                                <div class="careerpath3">
+                                    <h5 class="path3name"></h5>
+                                    <p><b>Skills: </b><span class="path3skills"></span></p>
+                                    <p><b>Talents: </b><span class="path3talents"></span></p>
+                                    <p><b>Trappings: </b><span class="path3trappings"></span></p>
+                                </div>
+                            </div>
+                            <div class="w3-row-padding well">
+                                <div class="careerpath4">
+                                    <h5 class="path4name"></h5>
+                                    <p><b>Skills: </b><span class="path4skills"></span></p>
+                                    <p><b>Talents: </b><span class="path4talents"></span></p>
+                                    <p><b>Trappings: </b><span class="path4trappings"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="w3-col s0 m0 l2">&nbsp;</div> -->
+                        <div class="w3-col s12 m12 l6">
+                            <br/>
+                            <div class="w3-row-padding well"><br />
+                                <div>
+                                    <h5>Description</h5>
+                                    <div class="careerFlavour"></div></div>
+                                </div>
+                                    <div class="w3-row-padding well"><br/>
+                                        <h5>The People Say&hellip;</h5>
+                                    <div class="careerQuotes"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col s0 m0 l1">
+                &nbsp;
+            </div>
+        </div>
+        <div class="w3-col s0 m0 l1"></div>
+</body>
+<footer>
+    <div class="w3-row w3-section">
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m10 l10">
+            <div class="w3-center" id="copyrightText">
+            </div>
+        </div>
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            buildCareerCards();
+        });
+    </script>
+</footer>
+<div id="modalPlaceholder">
+
+</div>
+
+</html>

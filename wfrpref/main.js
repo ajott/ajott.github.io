@@ -447,7 +447,7 @@ function showMenu() {
 
 
 function dropdownShow(str) {
-    let elements = ["charDropdown", "magicDropdown", "religionDropdown", "skillDropdown", "combatDropdown", "equipDropdown"]
+    let elements = ["charDropdown", "magicDropdown", "religionDropdown", "skillDropdown", "combatDropdown", "equipDropdown","careerDropdown"]
 
     for (let i = 0; i < elements.length; i++) {
         if (str == elements[i]) {

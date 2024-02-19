@@ -2,8 +2,8 @@ var masterDict = []
 var masterFuse = []
 
 $(document).ready(function () {
-    let lists = [career, skill, talent, spell, miracle, condition, weapon, armour, trait, weaponQual, armourQual]
-    let listTypes = ["career", "skill", "talent", "spell", "miracle", "condition", "weapon", "armour", "trait", "qual", "armQual"]
+    let lists = [career, skill, talent, spell, miracle, condition, weapon, armour, trait, weaponQual, armourQual, endeavour]
+    let listTypes = ["career", "skill", "talent", "spell", "miracle", "condition", "weapon", "armour", "trait", "qual", "armQual", "endeavour"]
     for (let j = 0; j < lists.length; j++) {
         for (let i = 0; i < lists[j].length; i++) {
             masterDict.push({ "name": lists[j][i]["name"], "type": listTypes[j] })
@@ -28,7 +28,9 @@ var modals = {
     "spell": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large grid-card\"><div class=\"w3-row-padding\"><h3 class=\"spellName\"></h3><h5> <em><span class=\"spellLore\"></span> </em></div><div class=\"w3-row-padding\"><emph>Casting Number: </emph><span class=\"spellCN\"></span><br /><emph>Range: </emph><span class=\"spellRange\"></span><br /><emph>Target: </emph><span class=\"spellTarget\"></span><br /><emph>Duration: </emph><span class=\"spellDuration\"></span></div><div class=\"w3-row-padding\"><div class=\"spellDescription\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     "weapon": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"weapName\"></span></h3></div><div class=\"w3-row-padding\"><h5 style=\"margin-top: -1em !important;\"><em><div class=\"weapGroup\"></div></em></h5><div class=\"weapPrice\"></div><div class=\"weapEnc\"></div><div class=\"weapAvail\"></div><div class=\"weapDamage\"></div><div class=\"weapReach\"></div><div class=\"weapQuals\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     "armour": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"weapName\"></span></h3></div><div class=\"w3-row-padding\"><h5 style=\"margin-top: -1em !important;\"><em><div class=\"weapGroup\"></div></em></h5><div class=\"weapPrice\"></div><div class=\"weapEnc\"></div><div class=\"weapAvail\"></div><div class=\"weapDamage\"></div><div class=\"weapReach\"></div><div class=\"weapQuals\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
+    "endeavour": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"endeavourName\"></span></h3></div><div class=\"w3-row-padding\"><h4><span class=\"endeavourType\"></span></h4></div><div class=\"w3-row-padding\"><div class=\"endeavourDesc\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\"class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     "career": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large grid-card\"><div class=\"w3-row-padding\"><h3 class=\"careerName\"></h3><h5><span class=\"careerClass\"></span></h5><div class=\"w3-center\"><span class=\"careerRaces\"></span></div><div class=\"w3-center\"><em class=\"careerDesc\"></em></div></div><div class=\"w3-row-padding w3-center\"><br/><div class=\"well-s\"><h6>Advance Scheme</h6><table class=\"centerTable attrTable \"><thead><tr><th style=\"display:none;\" class=\"careerAttr careerWSth\">WS</th><th style=\"display:none;\" class=\"careerAttr careerBSth\">BS</th><th style=\"display:none;\" class=\"careerAttr careerSth\">S</th><th style=\"display:none;\" class=\"careerAttr careerTth\">T</th><th style=\"display:none;\" class=\"careerAttr careerIth\">I</th><th style=\"display:none;\" class=\"careerAttr careerAgith\">Agi</th><th style=\"display:none;\" class=\"careerAttr careerDexth\">Dex</th><th style=\"display:none;\" class=\"careerAttr careerIntth\">Int</th><th style=\"display:none;\" class=\"careerAttr careerWPth\">WP</th><th style=\"display:none;\" class=\"careerAttr careerFelth\">Fel</th></tr></thead><tbody><tr><td style=\"display:none;\" class=\"careerAttr careerWS\"></td><td style=\"display:none;\" class=\"careerAttr careerBS\"></td><td style=\"display:none;\" class=\"careerAttr careerS\"></td><td style=\"display:none;\" class=\"careerAttr careerT\"></td><td style=\"display:none;\" class=\"careerAttr careerI\"></td><td style=\"display:none;\" class=\"careerAttr careerAgi\"></td><td style=\"display:none;\" class=\"careerAttr careerDex\"></td><td style=\"display:none;\" class=\"careerAttr careerInt\"></td><td style=\"display:none;\" class=\"careerAttr careerWP\"></td><td style=\"display:none;\" class=\"careerAttr careerFel\"></td></tr></tbody></table></div></div><br/><div class=\"w3-row-padding w3-center\"><b>Income Skill: </b><em class=\"careerIncome\"></em></div><br/><div class=\"w3-row-padding well\"><div class=\"careerpath1\"><h5 class=\"path1name\"></h5><p><b>Skills: </b><span class=\"path1skills\"></span></p><p><b>Talents: </b><span class=\"path1talents\"></span></p><p><b>Trappings: </b><span class=\"path1trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath2\"><h5 class=\"path2name\"></h5><p><b>Skills: </b><span class=\"path2skills\"></span></p><p><b>Talents: </b><span class=\"path2talents\"></span></p><p><b>Trappings: </b><span class=\"path2trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath3\"><h5 class=\"path3name\"></h5><p><b>Skills: </b><span class=\"path3skills\"></span></p><p><b>Talents: </b><span class=\"path3talents\"></span></p><p><b>Trappings: </b><span class=\"path3trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath4\"><h5 class=\"path4name\"></h5><p><b>Skills: </b><span class=\"path4skills\"></span></p><p><b>Talents: </b><span class=\"path4talents\"></span></p><p><b>Trappings: </b><span class=\"path4trappings\"></span></p></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large\">Close</button></div></div></div>"
+    
 }
 
 var lores = {
@@ -10481,7 +10483,7 @@ var armourQual = [
     }
 ]
 
-var endeavours = [
+var endeavour = [
     {
         "name": "With Great Power...",
         "type": "Duties & Responsibilities",
@@ -10499,8 +10501,8 @@ var endeavours = [
         "appelation": "Irlianmaris Ellarel, Asur Envoy",
         "description": ["Elves, even those resident within the borders of Empire, do not consider themselves citizens of the Empire. There are High Elves with diplomatic positions in Karl-Franz I’s court, as well as traders and merchant princes in many of the great cities of the Empire, but the majority of the Asur avoid entanglements with Humans (not to mention Dwarfs) and few would call a Reiklander ‘friend’. ",
         "The Wood Elves are even more removed; nearly mythical, rarely seen, and when they do appear they always have their own concerns that they rarely share with others.",
-        "With this step backwards in your Career Path, you will now have a lower Status, and will earn less money should you perform future Income Endeavours. Between adventures, all Elven characters must undertake one Endeavour maintaining contact with their own kind, seeing to their responsibilities to their people. High Elves commonly give reports on interesting things they’ve learned to agents of Ulthuan in either Altdorf or Marienburg, whereas Asrai do the same with the spies from their arboreal homes. This Endeavour offers no advantage beyond the inherent advantage of being an Elf. Note: Elves only lose an Endeavour if the Between Adventures section is at least 3 weeks long, thus the Elves have at least 3 Endeavours to complete.",
-        "If you wish to reclaim your lost Career level, you must once again pay the XP cost to re-enter the higher level of your Career and retake your ‘proper’ place in society. "]
+        "Between adventures, all Elven characters must undertake one Endeavour maintaining contact with their own kind, seeing to their responsibilities to their people. High Elves commonly give reports on interesting things they’ve learned to agents of Ulthuan in either Altdorf or Marienburg, whereas Asrai do the same with the spies from their arboreal homes. This Endeavour offers no advantage beyond the inherent advantage of being an Elf. Note: Elves only lose an Endeavour if the Between Adventures section is at least 3 weeks long, thus the Elves have at least 3 Endeavours to complete."
+        ]
     },
     {
         "name": "Animal Training",
@@ -10548,6 +10550,44 @@ var endeavours = [
             "The number of SL required to succeed at the Test is also set by the GM, using the listed price for the trapping in the Consumers’ Guide as a reference. An item with a price in Brass Pennies usually requires about 5 SL, Silver requires about 10 SL, and Gold items require at least 15 SL.",
             "The SL required is further modified by the Qualities or Flaws you work into the trapping. Each Flaw halves the SL required, and each Quality adds +5 (worked out after halving for Flaws).",
             "Each Endeavour you spend Crafting allows you to make one roll towards your Extended Test. Unfinished work can be kept in whatever you have that amounts to lodgings, or carried around with you as you adventure, should that be possible."
+    ]
+    },
+    {
+        "name": "Income",
+        "type": "General Endeavours",
+        "description": ["This Endeavour covers the many ways you can make money between your bouts of adventuring. The majority will most likely work in a recognized profession — bounty hunters hunt bounties, riverwardens ward rivers, troll slayers slay Trolls — others may rely on a lucrative skill. Wealthier characters, such as Nobles and Merchants, might collect a stipend by (briefly) indulging their family, or collecting interest on their investments and business ventures. Roguish types have any number of means to acquire funds, though it’s best not to ask for any details. ",
+            "You should briefly narrate exactly how your character makes money. This is intended more for fun background detail than to have any direct consequences, though GMs may well gather useful or sinister ideas for future use depending on what you describe. You then acquire the income you’ll start your next adventure with, which is your standard income determined by your Status (see page 51). Certain results on the Events Table on page 193 may directly affect your income. The money you get from an Income Endeavour is given to you after your money from the last adventure is spent (see Money to Burn ). ",
+            "In addition to acquiring funds for later use, if you are in the third or fourth level of a Career and undertake this Endeavour, you automatically maintain your standing in your career. See With Great Power… on page 195 for details. ",
+            "<table class='w3-table table-dark w3-striped w3-hoverable w3-bordered'><thead><tr><th>Tier</th><th>Amount Earned per Standing</th></tr></thead><tbody><tr><td>Brass</td><td>2d10 Brass Pennies</td></tr><tr><td>Silver</td><td>1d10 Silver Shillings</td></tr><tr><td>Gold</td><td>1 Gold Crown</td></tr></tbody></table>"
+            
+    ]
+    },
+    {
+        "name": "Invent!",
+        "type": "General Endeavours",
+        "description": ["Invent allows you to invent new trappings. This is done in two stages: Plan and Build. To Plan your new trapping, you first decide the trappings you wish to combine to create your invention. As examples, Pistols have been combined with other Pistols to create Repeating Pistols, and Pigeons and been combined with Bombs to create Pigeon Bombs. Let your imagination go wild. Once you have your plan, it’s time to make the blueprints, which costs 1 Endeavour to attempt. Take a Trade (Engineer) Test, with a Difficulty set by how outlandish your proposed trapping combination is as determined by the GM. If you succeed, you are ready to start Building. Each SL scored adds +1 SL to the attempt to build your invention, as the plans are well laid out and easy to follow.",
+            "To Build the invention, you must either undertake a Crafting or Commission Endeavour. If it’s Crafting , you are building the item yourself, and you must have the appropriate Skills to do so for the trappings being combined; so, if you were combining Pigeons with Bombs, you would need Animal Training and Trade (Explosives). The Difficulty to craft the invention is always Very Hard (–30), and the SL is set as normal. The raw materials needed to build the invention cost twice the listed price for the trappings being combined, and have an Availability rating equal to the most scarce of the trappings used in your invention. If you Commission the invention, you will likely need to undertake a Consult an Expert Endeavour first to find someone with the required Skills. That done, follow the Commission Endeavour as normal; it costs six times the listed price for the trappings to be combined to commission the work. The exact rules for your new invention are left to your GM to finalise."
+            
+            
+    ]
+    },
+    {
+        "name": "Training",
+        "type": "General Endeavours",
+        "description": ["The Training Endeavour allows you to train in a Skill or Characteristic outside of your Career, treating it as if it were in􀀀 Career. In addition to the normal XP cost, you must also pay money to the tutor. Training for Basic Skills and all Characteristics costs XP+1d10 brass pennies , where XP is the number of XP it costs to buy the Advance. Tutoring in all Advanced Skills costs double that amount. For more, see Advances, see page 43.",
+            "You should be able to find a tutor for most skills, certainly in a city􀀀state like Altdorf, but some particularly unusual skills may require you seek out the right instructor, likely by using the Consult an Expert Endeavour — ‘Professionals’ who can teach you how to properly pick a lock generally don’t advertise, after all. Other skills, especially Lore Skills, often require an institution of learning, and some are flat out forbidden in the Empire. Finding a tutor capable (and willing) to instruct someone in proscribed matters — such as those relating to the Ruinous Powers or Necromancy — may be particularly dangerous, and perhaps an adventure to even source such an individual. Such tutors will also ask for far more than the ‘going rate’ for tutoring and will likely require a Significant Favour (see Do Me A Favour!).",
+            "In addition to acquiring funds for later use, if you are in the third or fourth level of a Career and undertake this Endeavour, you automatically maintain your standing in your career. See With Great Power… on page 195 for details. ",
+            "<table class='w3-table table-dark w3-striped w3-hoverable w3-bordered'><thead><tr><th>Tier</th><th>Amount Earned per Standing</th></tr></thead><tbody><tr><td>Brass</td><td>2d10 Brass Pennies</td></tr><tr><td>Silver</td><td>1d10 Silver Shillings</td></tr><tr><td>Gold</td><td>1 Gold Crown</td></tr></tbody></table>"
+            
+    ]
+    },
+    {
+        "name": "Unusual Learning",
+        "type": "General Endeavours",
+        "description": ["It is one thing to pick up a Skill that can be readily practised, quite another to learn something for which one may have no aptitude at all. This Endeavour allows you to attempt to learn a Talent outside of your Career. There is no guarantee this attempt will be successful, meaning there is a good chance you will fail to learn the Talent you hope to acquire, expending XP and money to no avail. ",
+            "You can only learn a Talent if you have an appropriate tutor. In most big cities, this will not be a problem, but if the Talent is particularly obscure, or you are far from a large city, the GM may require you complete a Consult an Expert Endeavour first. ",
+            "Once you have acquired a tutor, the fee to train the Talent is 2d10 shillings per 100 XP it costs to purchase the Talent. If you pay this fee, attempt a Hard (-20) Test using the Characteristic or Skill most relevant to the Talent as determined by the GM. If you succeed, you have learned the Talent. If not, you have failed this time but can try again with a future Endeavour and gain a +10 modifier for each failed attempt."
+            
     ]
     }
 ]

@@ -40,9 +40,10 @@ function initializeModals() {
     $('career').attr('onclick', 'buildModal(this,\'career\')');
     $('armourqual').attr('onclick', 'buildModal(this,\'armQual\')');
     $('test').attr('onclick', 'buildModal(this, \'skill\',0,1)');
+    $('endeavour').attr('onclick', 'buildModal(this,\'endeavour\')');
 }
 
-function buildModal(el, type, mast = 0, isTest=0) {
+function buildModal(el, type, mast = 0, isTest = 0) {
     // Used for building individual modal IDs
     modalCount++
     let srchPhrase = "";
@@ -58,7 +59,8 @@ function buildModal(el, type, mast = 0, isTest=0) {
         "armour": armourFuse,
         "trait": traitFuse,
         "career": careerFuse,
-        "armQual": armourQualFuse
+        "armQual": armourQualFuse,
+        "endeavour": endeavourFuse
     }
 
 
@@ -284,7 +286,7 @@ function buildModal(el, type, mast = 0, isTest=0) {
 
             for (let k = 1; k < 5; k++) {
                 let imgSrcs = ["./img/cross_64.png", "./img/axes_64_light.png", "./img/skull_64_light.png", "./img/shield_64_light.png"]
-                $("#modal" + modalCount + " .careerpath" + k + " .path" + k + "name").html("<img src=\"" + imgSrcs[k - 1] + "\" class=\"oneemimg\"></img><br/>" + dataRslt["path" + k]["name"] + " &mdash; " + "<status>" +dataRslt["path" + k]["status"]+ "</status>")
+                $("#modal" + modalCount + " .careerpath" + k + " .path" + k + "name").html("<img src=\"" + imgSrcs[k - 1] + "\" class=\"oneemimg\"></img><br/>" + dataRslt["path" + k]["name"] + " &mdash; " + "<status>" + dataRslt["path" + k]["status"] + "</status>")
 
                 for (let i = 0; i < dataRslt["path" + k]["skills"].length; i++) {
                     if (i == 0) {
@@ -328,6 +330,24 @@ function buildModal(el, type, mast = 0, isTest=0) {
 
                 htmlString = ""
             }
+
+            break;
+
+        case "endeavour":
+
+            $("#modal" + modalCount + " .endeavourName").html(dataRslt["name"])
+
+            $("#modal" + modalCount + " .endeavourType").html(dataRslt["type"])
+
+            let htmlString = ""
+
+            dataRslt["description"].forEach((para) => {
+                htmlString += "<p>" + para + "</p>"
+            }
+            )
+            $("#modal" + modalCount + " .endeavourDesc").html(htmlString)
+
+            htmlString = "";
 
             break;
     }
@@ -387,7 +407,8 @@ function masterSearch() {
         "armQual": "Armour Quality/Flaw",
         "weapon": "Weapon",
         "armour": "Armour",
-        "trait": "Creature Trait"
+        "trait": "Creature Trait",
+        "endeavour": "Endeavour"
     }
 
     let srchRslt = masterFuse.search(searchTxt)
@@ -695,6 +716,11 @@ $(document).ready(function () {
         keys: ["name"]
     })
 });
+$(document).ready(function () {
+    endeavourFuse = new Fuse(endeavour, {
+        keys: ["name"]
+    })
+});
 
 
 // $(document).ready(function () {
@@ -739,19 +765,19 @@ function proc() {
     // Get everything between 'Skills' and 'Talents'
 
     procObj["skills"] = skillArr
-    
+
 
     let pr2 = str.split('Talents: ')[1].split("Trappings: ")[0].split(", ")
     // Everything between 'talents' and 'trappings'
 
     procObj["talents"] = pr2
-    
+
     let pr3 = str.split('Trappings: ')[1].split(", ")
     // Everything else - aka the trappings
 
     procObj["trappings"] = pr3
 
-    $("#procOut").val(JSON.stringify(procObj)+",")
+    $("#procOut").val(JSON.stringify(procObj) + ",")
     // Set the output box value to the post-process template
 }
 

@@ -610,12 +610,12 @@ function buildCareerCards() {
 
         let $klon = $div.clone().prop('id', 'career' + i).appendTo("#"+career[i]["class"]+"Careers");
 
-        $("#career" + i + " .careerButton").attr('onclick','accordion(\''+ careerEntry["name"] +'Container\')')
-        $("#career" + i + " .careerContainer").attr('id', careerEntry["name"] +'Container')
+        $("#career" + i + " .careerButton").attr('onclick','accordion(\''+ careerEntry["name"].replace(" ","") +'Container\')')
+        $("#career" + i + " .careerContainer").attr('id', careerEntry["name"].replace(" ","") +'Container')
         $("#career" + i + " .careerName").text(careerEntry["name"])
-        $("#career" + i + " .careerClass").text(careerEntry["class"])
         $("#career" + i + " .careerDesc").html("&ldquo;" + careerEntry["desc"] + "&rdquo;")
-        $("#career" + i + " .careerRaces").html("<eh>" + careerEntry["races"] + "</eh>")
+        $("#career" + i + " .careerRaces").html("Races: <eh>" + careerEntry["races"] + "</eh>")
+
 
 
         $("#career" + i + " .attrTable th").show();

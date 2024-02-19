@@ -645,6 +645,7 @@ thead {
 
 .attrTable {
     width: 100% !important;
+    min-width: 40%;
 }
 
 .attrTable th, td {

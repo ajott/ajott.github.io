@@ -480,20 +480,27 @@ hr {
     background-color: rgba(47, 79, 79,.4);
 }
 
-.classButton {
+.classHeader {
     width: 100% !important;
-    background-color: rgba(47, 79, 79,.2);
+    text-align: center;
+    background-color: #2b4143; 
+    padding-left: 8rem;
+    padding-right: 8rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
 }
 
-.classButton:hover {
+
+
+/* .classButton:hover {
     background-color: rgba(47, 79, 79,.4) !important;
     color: white !important;
-}
+} */
 
-.classButton p {
+/* .classButton p {
     font-size: 1rem;
     white-space: normal;
-}
+} */
 
 .careerButton {
     top: 40px;
@@ -501,6 +508,7 @@ hr {
     position: sticky;
     width: 100% !important;
     background-color: #1b2227;
+    border: 1px solid rgba(255, 235, 205,.1)
 }
 
 .careerButton:hover {

@@ -608,10 +608,12 @@ function buildCareerCards() {
 
         let $div = $('#templateCareerSection');
 
+        let cleanedName = careerEntry["name"].replace(" ","")
+
         let $klon = $div.clone().prop('id', 'career' + i).appendTo("#"+career[i]["class"]+"Careers");
 
-        $("#career" + i + " .careerButton").attr('onclick','accordion(\''+ careerEntry["name"].replace(" ","") +'Container\')')
-        $("#career" + i + " .careerContainer").attr('id', careerEntry["name"].replace(" ","") +'Container')
+        $("#career" + i + " .careerButton").attr('onclick','accordion(\''+ cleanedName +'Container\')').prop('id', cleanedName)
+        $("#career" + i + " .careerContainer").attr('id', cleanedName +'Container')
         $("#career" + i + " .careerName").text(careerEntry["name"])
         $("#career" + i + " .careerDesc").html("&ldquo;" + careerEntry["desc"] + "&rdquo;")
         $("#career" + i + " .careerRaces").html("Races: <eh>" + careerEntry["races"] + "</eh>")
@@ -778,25 +780,58 @@ $(document).ready(function () {
     })
 });
 
+$(document).ready(function (){
+    setTimeout(function(){
+        scrollToDiv();
+    } ,200);
+});
 
-// $(document).ready(function () {
-//     buildConditionTable();
+function scrollToDiv(uri=undefined) {
+    if (uri == undefined) {
+        uri = String(document.location)        
+    }
 
-// });
+    let divTarget = uri.split("#")[1]
 
-// function buildConditionTable() {
-//     let htmlString = ""
+    if (divTarget != undefined){
 
-//     Object.entries(condition).forEach(cond => {
-//         htmlString += "<tr>"
-//         htmlString += "<td>" + cond[1]["name"] + "</td>"
-//         htmlString += "<td>" + cond[1]["desc"] + "</td>"
+        let targetDiv = String("#"+divTarget) // put the pound sign back
 
-//         htmlString += "</tr>"
-//     });
 
-//     $("#conditionTable").html(htmlString)
-// }
+
+        try {
+            targetOffset = $(targetDiv).offset().top; // top of the target div
+        } catch (e) {
+            targetOffset = undefined;
+        }
+
+        let windowPad = ($(window).height() * 0.10) // 10% of the viewport height
+
+        if (targetOffset != undefined){ // Undefined if the element isn't found
+            $('html, body').animate({
+                scrollTop: (targetOffset - windowPad)
+            }, 300);
+            setTimeout(
+                animateHighlight($(targetDiv),"rgba(255, 255, 156,0.2)", 1000),
+                400
+            )
+        }
+    }
+
+}
+
+$.fn.animateHighlight = function(highlightColor, duration) {
+    
+};
+
+function animateHighlight(div, highlightColor, duration) {
+    var highlightBg = highlightColor || "#FFFF9C";
+    var animateMs = duration || 1500;
+    var originalBg = div.css("backgroundColor");
+        div.stop().css("background-color", highlightBg)
+            .animate({backgroundColor: originalBg}, animateMs);
+        setTimeout( function() { notLocked = true; }, animateMs);
+}
 
 
 function proc() {

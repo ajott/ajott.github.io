@@ -616,7 +616,7 @@ function buildCareerCards() {
         $("#career" + i + " .careerContainer").attr('id', cleanedName +'Container')
         $("#career" + i + " .careerName").text(careerEntry["name"])
         $("#career" + i + " .careerDesc").html("&ldquo;" + careerEntry["desc"] + "&rdquo;")
-        $("#career" + i + " .careerRaces").html("Races: <eh>" + careerEntry["races"] + "</eh>")
+        $("#career" + i + " .careerRaces").html("<eh>" + careerEntry["races"] + "</eh>")
 
 
 

@@ -12489,3 +12489,166 @@ var endeavour = [
     ]
     }
 ]
+
+var betweenAdventureEvents = [
+    {
+        "name": "",
+        "roll": "",
+        "desc": ""
+    },
+    {
+        "name": "Accused Ally",
+        "roll": "01-03",
+        "desc": "One of your allies (GM’s choice) is implicated in a terrible crime. A character with a Law Guild Licence can spend an Endeavour to free the ally with a successful <strong>Average (+20) <skill>Lore (Law)</skill> Test</strong>. Otherwise, 3 Endeavours spent by the party will exonerate their ally (or, if guilty, manufacture an alibi). If the ally is freed, gain a Major Favour (see Do Me a Favour Endeavour on page 198) for future use. If not, their ally hangs!"
+    },
+    {
+        "name": "Arcane Auction",
+        "roll": "04-06",
+        "desc": "The belongings of a recently deceased neighbour are auctioned, including a dusty, old book of unknown origin. If you are able to pay the 10 GC asking price, the book is yours! Beyond any other advantage the book may bring as determined by the GM, any Academic characters attempting the Research Lore Endeavour gains +20 on the Test."
+    },
+    {
+        "name": "Betrayed!",
+        "roll": "07-10",
+        "desc": "A friend, family member, or ally turns on you, the ramifications of which will impact your next adventure. If you have no friends, family, or allies, your time between adventures is blissfully uneventful though somewhat dull."
+    },
+    {
+        "name": "Bolt from the Blue",
+        "roll": "11-14",
+        "desc": "A lazy ostler didn’t lock the stable door, and your mount bolted! If you succeed at an <strong>Average (+20) <skill>Animal Training (Horse)</skill> Test</strong>, your well-trained beast returns to the hand that feeds it. If you fail, your steed is gone, unlikely to be ever seen again. If you don’t have a mount, you have developed a painful new blister on your foot. "
+    },
+    {
+        "name": "Oi! You spilled my pint!",
+        "roll": "15-18",
+        "desc": "A petty argument in the local area has developed into a feud – the GM decides who you offended and how. This person will not pass up an opportunity for petty revenge, probably during the next adventure..."
+    },
+    {
+        "name": "Crime Crackdown",
+        "roll": "19-21",
+        "desc": "The Watch is cracking down on crime hard. Rogues can get no funds from the Income Endeavour, and if Rogues undertake a Banking Endeavour, they may only select a High-risk deposit, as legitimate banking houses won’t handle dirty money. "
+    },
+    {
+        "name": "The Exciseman Cometh",
+        "roll": "22-25",
+        "desc": "An unexpected visit by the tax collector (with several soldiers in tow) sweeps through your local settlement. All characters lose 30% of their funds before any can be spent on Endeavours."
+    },
+    {
+        "name": "False Silver",
+        "roll": "26-29",
+        "desc": "To the horror of the merchants, a run of counterfeit coins plagues the characters’ locale. A fifth of all coins are affected. Characters who undertake the Banking Endeavour will lose 20% of money banked, and characters undertaking the Income Endeavour similarly reduce any money earned by 20%. "
+    },
+    {
+        "name": "Flowing Profit",
+        "roll": "30-33",
+        "desc": "Business is particularly good for folk involved in river trade. All Riverfolk make an additional 50% from any Income Endeavour pursued during the next batch of Endeavours."
+    },
+    {
+        "name": "Forewarned is Forearmed",
+        "roll": "34-36",
+        "desc": "You are given a cryptic omen by a dream, Strigany mystic, or Celestial wizard you encounter on the street. During your next adventure, your maximum Fortune points are increased by 1."
+    },
+    {
+        "name": "Festivities",
+        "roll": "37-40",
+        "desc": "A celebration is called! Decide the nature of the event with the GM. Possibilities include a local wedding, a bountiful harvest, or a public execution! You are caught up in the event (and its aftermath) and lose an Endeavour."
+    },
+    {
+        "name": "Inclement Weather",
+        "roll": "41-44",
+        "desc": "Particularly bad weather arrives. For the next adventure, all social Skill Tests suffer a penalty of –10 (everyone is in a foul mood) and food prices increase by 20% (due to spoiling of stored provender)."
+    },
+    {
+        "name": "Glorious Weather",
+        "roll": "45-48",
+        "desc": "Beautiful conditions inspire you and give you cheer. You can add a new Short-term Ambition. When it’s concluded, you do not replace it with a new one."
+    },
+    {
+        "name": "Local Crop Failure",
+        "roll": "49-52",
+        "desc": "Food becomes exceedingly scarce and many folk suffer terribly. Characters from the Peasant class cannot undertake the Income Endeavour, and food prices are doubled in the area for the duration of the next adventure. "
+    },
+    {
+        "name": "Malicious Malady",
+        "roll": "53-56",
+        "desc": "The Bloody Flux sweeps through town. Make an <strong>Easy (+40) Toughness Test</strong>. On a success, the Flux passes by. On a failure, you and the Washers Guild are soon to know each other very well. Contract the Bloody Flux see page 186."
+    },
+    {
+        "name": "Monstrous Complications",
+        "roll": "57-60",
+        "desc": "A monster (chosen by the GM from Chapter 12: Bestiary) is causing panic among the locals. The Income Endeavour provides no funds until the beast is dealt with. The characters can choose to each sacrifice one Endeavour to deal with the menace (and this encounter should be roleplayed). If you succeed, you gain a free Income Endeavour to represent their individual rewards, and a feast is held in their honour. If not, or if the party chooses to ignore the creature, it will move on or be killed by a local rival."
+    },
+    {
+        "name": "Morr's Embrace",
+        "roll": "61-63",
+        "desc": "One of the character’s relatives, friends, or allies dies. It could be of natural causes, an accident, or the beginning of something sinister… "
+    },
+    {
+        "name": "New Moon",
+        "roll": "64-65",
+        "desc": "The nights are particularly dark. All Rogue characters undertaking the Income Endeavour receive a +20% bonus to their monies earned. "
+    },
+    {
+        "name": "Old Debts",
+        "roll": "66-67",
+        "desc": "You have a Major or Significant Favour called in. Dealing with the favour will be part of your next adventure and you lose one Endeavour in preparation for what is to come."
+    },
+    {
+        "name": "Opportunity Saunters Through",
+        "roll": "68-69",
+        "desc": "Passing soldiers, well-heeled merchants, or vacationing nobles pass through the area, and characters willing to suck up reap the benefits. Burgher and Peasant Class characters gain +50% money from the Income Endeavour. "
+    },
+    {
+        "name": "Peace and Quiet",
+        "roll": "70-71",
+        "desc": "It’s times like these that remind you what life is all about: good sleep and fine cheese. Be smugly content at the start of your next adventure."
+    },
+    {
+        "name": "Pedlar",
+        "roll": "72-73",
+        "desc": "A wizened, well-travelled pedlar who likes a gossip passes through. For the price of a flagon of ale — 3d — you receive a +10 bonus to any Latest News Endeavours you attempt. "
+    },
+    {
+        "name": "Pestilential Pet",
+        "roll": "74-76",
+        "desc": "One of your animals falls ill; make a <strong>Challenging (+0) <skill>Animal Care</skill> Test</strong>. If successful, your beast pulls through. If not, the unfortunate creature dies. If you have no animals, you are troubled by ill omens of the GM’s creation."
+    },
+    {
+        "name": "Ransacked",
+        "roll": "77-79",
+        "desc": "Before you can undertake a Banking Endeavour, your stash is raided, and all your money is taken. If your money amounts to less than 1 GC, the thieves also steal your most highly-valued trapping."
+    },
+    {
+        "name": "Riots",
+        "roll": "80-82",
+        "desc": "The common folk are furious at the high and mighty! Characters of the Courtier Class cannot take the Income Endeavour as, no matter how many bodyguards they hire, it isn’t even vaguely safe for them to be abroad on business. Further, any deposits at reputable banks (see page 196) must immediately check to see if the violence and disruption has caused their bank to go out of business. However, players attempting a Foment Dissent Endeavour receive +10 bonus to all related Tests."
+    },
+    {
+        "name": "Sticky Fingers",
+        "roll": "83-85",
+        "desc": "Your purse is cut! You lose half of the money you ended the last adventure with. "
+    },
+    {
+        "name": "Suspicion of Heresy",
+        "roll": "86-88",
+        "desc": "You fall foul of a Witch Hunter who suspects you have been consorting with Mutants, Cultists, or worse on your so-called ‘adventures’. It takes a <strong>Very Hard (-30) <skill>Charm</skill> Test</strong> to convince the hunter you are innocent. Failure to do this means you have earned an implacable nemesis who is certain to cause trouble in the future… "
+    },
+    {
+        "name": "Under Suspicion",
+        "roll": "89-91",
+        "desc": "The party’s irregular movements and sudden wealth has drawn suspicion. All characters must forfeit one Endeavour laying low or proving their innocence. Characters in the Rogue class cannot use the Income Endeavour until after their next adventure.  "
+    },
+    {
+        "name": "Uneventful",
+        "roll": "92-94",
+        "desc": "Little of interest occurs, perhaps leaving you with a boredom-inspired appetite for taking risks!"
+    },
+    {
+        "name": "Unexpected Esteem",
+        "roll": "95-97",
+        "desc": "Someone you helped in the past has a chance to repay your efforts. The precise nature of the reward should be appropriate to your past deeds, and the NPCs you have assisted during play or in your back story. The tokens of gratitude may vary from a single high-quality item, to a purse of silver (which will be available at the start of the next adventure). Of course, all that glitters is not gold, and not all gifts are what they appear…"
+    },
+    {
+        "name": "Unusual Mercenaries",
+        "roll": "98-00",
+        "desc": "One or more rare mercenaries turn up in a nearby settlement looking for work: a Tilean Duellist of great repute, the so-called Birdmen of Catrazza, unemployed Ogres under the command of a Halfling captain, or other unlikely bands. The mercenaries will gladly train any character in any martial Skills or Talents, at a 20% reduction in costs, should the characters undertake a Training or Unusual Learning Endeavour. Additionally, any characters undertaking a Combat Training Endeavour gain a +20 bonus to any relevant Test."
+    }
+]

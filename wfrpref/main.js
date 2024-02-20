@@ -638,6 +638,15 @@ function buildCareerCards() {
         $("#career" + i + " .career" + careerEntry["advances"][5] + "th").show()
         $("#career" + i + " .career" + careerEntry["advances"][5]).addClass("attr4").html("<img class=\"attrImg\" src=\"./img/shield_64.png\"></img>").show()
 
+        let attr = ["WS","BS","S","T","I","Agi","Dex","Int","WP","Fel"]
+
+        attr.forEach(characteristic => {
+            if (careerEntry["advances"].includes(characteristic) == false){
+                $("#career" + i + " .attrTable .career" + characteristic + "th").addClass('w3-hide-small w3-hide-medium')
+                $("#career" + i + " .career" + characteristic).addClass('w3-hide-small w3-hide-medium');
+            }
+        })
+
         $("#career" + i + " .careerIncome").html("<skill>" + careerEntry["incomeSkill"] + "</skill>")
 
 

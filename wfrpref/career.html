@@ -232,7 +232,7 @@
         $(document).ready(function () {
             buildCareerCards();
             let targetDiv = String(document.location).split("#")[1]
-            if (targetDiv != undefined){
+            if (targetDiv != undefined && (!targetDiv.includes("Header"))){
                 let targetContainer = targetDiv + "Container"
             setTimeout(function(){
                 accordion(targetContainer)

@@ -265,7 +265,6 @@ test:hover {
     border-bottom: 1px solid blanchedalmond !important;
 }
 
-
 .masterSearchResult {
     background-color: lightgrey;
     color: black;
@@ -298,6 +297,13 @@ test:hover {
 .careerAttr {
     text-align: center !important;
     padding: none;
+}
+
+.careerQuote {
+    background-color: rgba(255, 235, 205,0.7) !important;
+    color: black !important;
+    font-family: Atma, sans-serif;
+    font-size: 1.5 rem;
 }
 
 .attrImg {

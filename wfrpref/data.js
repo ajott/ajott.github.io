@@ -5714,17 +5714,15 @@ var career = [
       "incomeSkill": "Charm",
       "races": "Dwarf, Halfling, Human",
       "flavour": [
-        "",
-        ""
+        "Agitators lobby for political causes using print, protest, and public speaking. They muster the down-trodden populace’s sympathy and support but must be wary of drawing the attention of Sigmarites or Dwarfs interested in maintaining established traditions. The most dangerous Agitators have destabilised the rule of nobles, towns, and even entire provinces. Pamphleteers nail signs to billboards, or distribute them in market squares, though often those they seek to reach cannot read. ",
+        "Religious Agitators can make a good living as street preachers, receiving donations from pious devotees and attracting flagellants and zealots as followers. Agitators who survive long enough to become Demagogues are often supported by powerful, hidden allies pursuing change for their own motives.",
+        "Agitators often move around, in search of larger crowds or fleeing the authorities. They may become leaders of motley groups of the restless and disaffected, exhorting — or even extorting — them to fight for a greater cause.",
+        "Altdorf has a legendary reputation for deep fogs and riots. Perhaps this happens because Altdorf is the Imperial Capital, or maybe its because the Grey College draws swathes of treacherous Ulgu , the Grey Wind of Magic, to the city. Whatever the case, it seems that whenever the fog draws in from the Altdorf Flats, mobs rise in the streets, and woe betide any watchmen who try to silence their right to be heard. "
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
-        },
-        {
-          "quote": "",
-          "author": ""
+          "quote": "Mark my words, if you’re looking to root out the agents of the Spinner of Fate, follow the clamouring in the streets. They can’t resist it. They’ll surface, sooner or later.",
+          "author": "Adrian Hoven, Cleric-Captain, Knights of the Fiery Heart"
         }
       ]
     },
@@ -5828,17 +5826,19 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Artisans produce goods, ranging from everyday necessities sold by Bakers and Chandlers, to weapons and riverboats crafted by Smiths and Shipwrights. The Empire’s larger towns and cities have guilds to protect local Artisans from fraudsters, as an Artisan’s entire livelihood can be jeopardised by unskilled competitors hawking cheap low-quality merchandise. Guild Artisans observe strict quality standards, with those failing to meet them blackballed and forbidden to trade locally.  ",
+        "Artisans work at all levels of society not just producing goods, but also repairing them. They are employed by navies to maintain vessels, by armies to manage war machines and siegeworks, and by merchant houses of all sizes to transform raw materials into sellable goods.",
+        "Artisans in training can be sent to practice under other masters. The constant pressure to achieve perfection is so stifling that young Artisans sometimes take a break to pursue more liberating enterprises, sometimes supporting the army or navy.",
+        "Dwarf Guilds don’t usually admit Humans, and Dwarfs are traditionally allowed to practice their trade in Imperial cities without joining a local Guild. This can cause conflict as the Guilds are rarely pleased with skilled competition. Halflings are not so particular, and most will happily join Human Guilds (if admitted) and allow Humans to join their Guilds. Elves do not have Artisan’s Guilds, and though they could join one it is unlikely they would lower themselves to do so. "
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": " Sorry, mistress, all the shoes are gone! I forgot to put the milk out last night. The Spite must have taken them.",
+          "author": "Wiebke, Cobbler’s Apprentice and Thief"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "You must understand, my boy, that Wurtbad’s wine has a reputation. This bottle looks like it was blown through a Hochland long rifle. Simply unacceptable.",
+          "author": "Frau Glasmeister, Glassblowers’ Guildmaster"
         }
       ]
     },
@@ -5942,17 +5942,22 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "The countryside rumour that Altdorf ’s streets are lined with gold is a cruel taunt to its Beggars. They rely upon the generosity of strangers and scraps scavenged from the mud and detritus of city life, though posturing dandies will happily dispose of a few pfennigs to make them go away. The law affords them little protection and the watch has no sympathy for loiterers.",
+        "Paupers often land on the streets as orphans and have been in and out of Mercy Houses all their lives. Once the basic skills of scrounging and panhandling are learned, Beggars can advance their techniques using disguises and sympathy ploys. Other Paupers are not destitute but simply employed in some of the worst occupations, on the lowest rung of the social ladder, like Gong Farmers, Bone Pickers, and Rag and Bone Men. ",
+        "The only direction from rock-bottom is upward. Some Beggars will eagerly leave the gutter behind for adventuring opportunities, so long as they aren’t being exploited as battle-fodder. Those unable to afford a porter might hire a Beggar instead, and a Beggar’s savvy is useful when penniless and hungry. And, if it all goes wrong, it’s easy to return to the begging life."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "Please, frau, I beg humbly for enough coppers to buy bread tonight. Even a pfennig would do — Gutbäcker is selling day-olds.",
+          "author": "Elsie, Halfling Panhandler"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "I lost my leg in the Battle of Bögenwasser. Both hands were eaten by a Squig when Goblins ambushed our patrol near Bögenauer. All to protect the Reikland and our Emperor.",
+          "author": "Klaas, Veteran Soldier"
+        },
+        {
+            "quote": "You can have Königplatz next week — I need you loud and dirty on Luitpoldstrasse today. For why? Best not ask, all you need to know is the Cutters want the Watch distracted. I make it my business not to offend the Cutters, and if you want a prosperous career you’ll follow my example.",
+            "author": "‘The Kaiser’, Altdorf Beggar-King"
         }
       ]
     },
@@ -6059,17 +6064,22 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Most Investigators pursue cases involving stolen property, missing persons, or murders, although some research stories for the emerging newssheets, or even blackmail crime suspects for ‘hush money’. Investigative techniques include footprint tracking, cross-examination, deductive reasoning and — if necessary — breaking and entry. Where secular investigators operate on the edge of the law or for an institution like the watch of a Merchant House, religious investigators — most commonly serving Sigmar and Verena —  follow stricter ethical codes. ",
+        "Some experienced Investigators cultivate matter-of-fact airs of sophistication to improve their credibility. While Master Investigators often sell themselves as ‘observation specialists’ possessing skills they claim cannot be learned. Considerable self-promotion is required to become one of the famous Detectives who receive job offers from across the Old World. ",
+        "Investigators are sometimes hired to solve mysteries far too dangerous to tackle alone, which can be the informal creation of an adventuring party. Of course, the very nature of mysteries can result in each solved case leading to yet another mystery. Investigators may therefore enjoy steady employment, provided they’re able to identify willing customers for every new mystery they uncover. "
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "I regret to inform you that your husband is buried in Frau Kohl’s vegetable garden, beneath the turnips. That will be 6 shillings and 4 pence, please.",
+          "author": "Hemlock Surelight, Elven Sleuth"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "We can deduce from this splintered door the thief exited with assistance from a very large creature. But said creature couldn’t have descended the narrow stairwell. This leaves only two possible conclusions. Either it materialised from thin air, or else our thief is a shape-changer&hellip;",
+          "author": "Zavant Konniger, ‘Sage-Detective’ "
+        },
+        {
+          "quote": "As I am sure you know, I am the world’s greatest detective.  You ’ave ’eard of Alphonse, no?",
+          "author": "Alphonse Hercules de Gascoigne, Diminutive Bretonnian Detective"
         }
       ]
     },
@@ -6179,17 +6189,18 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Most Merchants trade in simple goods such as alcohol, textiles, woodcraft, and pottery. For the ambitious, rare exotic goods such as Dwarf gromril or Eastern spices command higher profits, but risk longer transport routes and require strong foreign contacts. Merchants cannot sell in most towns without approval from (and payments to) a Merchants’ Guild, powerful institutions rivalling the noble courts in political influence. Local commerce is managed by Traders who ship goods between backwater villages and nearby towns. ",
+        "Traders can join guilds by apprenticing under Master Merchants as junior business partners. Powerful Merchant Princes owning warehouses and sales offices in multiple cities enjoy the same status as minor nobles. In addition to trading, some Merchants also branch out into banking, moneylending, and investing.",
+        "Merchants share a certain kinship with adventurers, often hiring them over professional caravan guards. Adventurers are adaptable and enterprising by nature, making them ideal candidates for partnership in a trading company, bringing Merchants into contact with all manner of colourful characters."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "If Nuln wants trade wars, so be it, I’ll see their river blockaded and raise taxes on guns. After all, the Emperor owes me a few favours&hellip;",
+          "author": "Leo van Haagen, Marienburg Merchant Prince"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "How did I become a millionaire? Well, when I was a girl with only a pfennig to my name, I went to the local farmer and bought an apple. Then I walked to the market and sold the apple for two pfennigs. The next day I bought two apples from the farmer and walked to the market again and sold the apples for four pfennigs. And so it went on, every day; I walked to the farm bought some apples, and then walked to the market to sell them at a profit. And by the time I was twenty-five years old, my grandfather died and left me a million crowns.",
+          "author": "Johanna Sainzburg, Fresh Fruit Magnate"
         }
       ]
     },
@@ -6295,17 +6306,18 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Rat Catchers patrol every town and city, and for good reason. The Empire’s streets are clogged with food scraps and foulness, perfect breeding grounds for vermin. Rat Catchers earn their crusts by killing these rats, clearing their nests from cellars, and by delving the Empire’s hopelessly infested sewer systems… provided they’re brave enough to face the other things down there. When apprenticed, Rat Catchers usually adopt a stray puppy that they train for ratting. The toughest Rat Catchers are hired by towns as Sewer Jacks to hunt giant rats and other subterranean nasties. On rare occasions, entire towns are overrun and later reclaimed with the aid of Exterminators.",
+        "Rat Catchers move to new towns when the rats become ‘too big’ or ‘too clever’, or when competition becomes fierce. When journeying, they may befriend those who welcome help from a streetwise slinger, and Rat Catchers are willing to venture into places normal people won’t.",
+        "If you want to play a character who may be aware of the ‘too big’ and ‘too clever’ Skaven (see page 336), Rat Catcher is for you. However, the Skaven frequently assassinate any who spread rumours of their existence. Because of this, wise Ratcatchers are unlikely to admit what they know, some even using their professional opinion to actively discredit ‘tall tales’ of ‘rat men’. "
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "See there by the midden-heap, Otmar? There’s a big one! Make sure it’s dead before you pick it up. It’ll bite yer hand with its poisonous teeth.",
+          "author": "Annaliese Rattenfänger, Sewer Jack"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "Sorry, mate. The rest of the guild deal with the rats. Me and me mates deal with the bigger ones in the sewers. Tide of them down there, there is...",
+          "author": "Mårten Stormdal, Ubersreik Exterminator"
         }
       ]
     },
@@ -6411,17 +6423,14 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Townsmen meet these thriving centres of trade and commerce’s demand for workers. They fill various roles for private artisans or municipal councils: Bankers, Clerks, Hawkers, Innkeepers, Newspaper Vendors, Ostlers, Shopkeepers, Toll-keepers, Washers, and many more. Pay rates vary; some can haggle for extra commission, whereas civil employees such as lamplighters and toll-keepers are paid fixed salaries. There is little opportunity for promotion, but those with determination, savvy, and luck might eventually own property or a business. ",
+        "The most successful Townsmen often join local councils overseeing civic matters, with Burgomeisters — the most important municipal leaders — often enjoying the same social status as Merchant Princes and Guildmasters.",
+        "Townsmen are part of a growing class of citizen with both time and money at their disposal. Many take one or two days off a week and can easily fit in a life of adventure between shifts or after closing time. Some may wish to go even further afield, and if the Townsman has some money put aside, it should be simple to negotiate some time off with an employer. It’s very common for citizens of the Empire to go on pilgrimages for weeks or months at a time. Skilled workers are always in demand, and there will likely be a role waiting when they come home.  "
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
-        },
-        {
-          "quote": "",
-          "author": ""
+          "quote": "I'm afraid you’ll have to remove your backpacks in this shop and leave polearms at the door. The owner deducts broken ceramics from me wage.’",
+          "author": "Frida, Part-time Shopkeeper"
         }
       ]
     },
@@ -6529,17 +6538,18 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Watchmen are employed by local authorities to patrol streets throughout the Empire. Most are little more than well-meaning keepers of the peace, and few know the laws they’re supposed to enforce. Corruption is rampant, and many Watchmen enlist purely for the authority to hurt people or to support local criminal gangs. Some can earn triple their wages by turning a blind eye. ",
+        "Only a few towns and cities have professional Watchmen paid to understand and uphold the law; instead, the Emperor’s Peace is normally maintained by the local State Army, who man walls, guard gates, and patrol the streets according to the instructions of their superiors. ",
+        "Not every Watchman is crooked, but those with morals are soon jaded by the corruption inherent in the system. By joining adventuring parties, principled Watchmen can champion justice on their own terms. Experience of the street makes Watchmen effective combatants in a small party, and their presence can help legitimise a wandering band of ne’er-do-wells."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "So I go up to Middenheim, Ulric’s own country, and what did I find? I swear more than half of their City Watch are women! I would have stayed up there for the rest of my career if I could’ve.’",
+          "author": "Jana Tennisohn, Chief Inspektor (retired), Nuln City Watch"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "Sorry, sir, I’ve got a Halfling killer, a Weirdroot smuggling ring, a gang war, and a noble threatening to have me arrested by my own Station. Your missing cat will have to wait until tomorrow.’",
+          "author": "Sergeant Harri Makkenpieser, Altdorf City Watch"
         }
       ]
     },
@@ -11969,7 +11979,7 @@ var career = [
           "Inspiring",
           "Public Speaking",
           "Seasoned Traveller",
-          "Stout􀀀hearted "
+          "Stout-hearted "
         ],
         "trappings": [
           "Letter of Commission",
@@ -12411,8 +12421,8 @@ var endeavour = [
     {
         "name": "Training",
         "type": "General Endeavours",
-        "description": ["The Training Endeavour allows you to train in a Skill or Characteristic outside of your Career, treating it as if it were in􀀀 Career. In addition to the normal XP cost, you must also pay money to the tutor. Training for Basic Skills and all Characteristics costs XP+1d10 brass pennies , where XP is the number of XP it costs to buy the Advance. Tutoring in all Advanced Skills costs double that amount. For more, see Advances, see page 43.",
-            "You should be able to find a tutor for most skills, certainly in a city􀀀state like Altdorf, but some particularly unusual skills may require you seek out the right instructor, likely by using the Consult an Expert Endeavour — ‘Professionals’ who can teach you how to properly pick a lock generally don’t advertise, after all. Other skills, especially Lore Skills, often require an institution of learning, and some are flat out forbidden in the Empire. Finding a tutor capable (and willing) to instruct someone in proscribed matters — such as those relating to the Ruinous Powers or Necromancy — may be particularly dangerous, and perhaps an adventure to even source such an individual. Such tutors will also ask for far more than the ‘going rate’ for tutoring and will likely require a Significant Favour (see Do Me A Favour!)."
+        "description": ["The Training Endeavour allows you to train in a Skill or Characteristic outside of your Career, treating it as if it were in your Career. In addition to the normal XP cost, you must also pay money to the tutor. Training for Basic Skills and all Characteristics costs XP+1d10 brass pennies , where XP is the number of XP it costs to buy the Advance. Tutoring in all Advanced Skills costs double that amount. For more, see Advances, see page 43.",
+            "You should be able to find a tutor for most skills, certainly in a city-state like Altdorf, but some particularly unusual skills may require you seek out the right instructor, likely by using the Consult an Expert Endeavour — ‘Professionals’ who can teach you how to properly pick a lock generally don’t advertise, after all. Other skills, especially Lore Skills, often require an institution of learning, and some are flat out forbidden in the Empire. Finding a tutor capable (and willing) to instruct someone in proscribed matters — such as those relating to the Ruinous Powers or Necromancy — may be particularly dangerous, and perhaps an adventure to even source such an individual. Such tutors will also ask for far more than the ‘going rate’ for tutoring and will likely require a Significant Favour (see Do Me A Favour!)."
             
             
     ]

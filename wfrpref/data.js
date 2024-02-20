@@ -8484,17 +8484,13 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Bounty Hunters track down fugitives and outlaws for coin. Most are legally appointed by provincial courts and receive warrant papers granting licence to seize or sometimes kill the target. While some are motivated by Verena’s justice, most are more concerned by the rewards, often finding the ‘dead’ in ‘dead or alive’ to be the most convenient route to their fortune. Many Bounty Hunters start as Thief-Takers, those hired by crime victims to retrieve stolen goods. Over time, those with an established reputation may find permanent work from a merchant or noble house, guild, or cult, or may build a company of Bounty Hunters, working as a group to collect the largest rewards. ",
+        "In their pursuit of wanted criminals, Bounty Hunters often stumble into unplanned adventures. As independent operatives, Bounty Hunters are perfectly suited to dropping their day job to pursue whatever business is afoot. Further, given their broad base of skills are always in demand, it is not uncommon to see Bounty Hunters turning their hand to adventuring full-time, hiring their skills out in return for payments. Bounty Hunters are a perfect starting career as they present a solid mixture of social and combat skills allowing you to contribute no matter the circumstances. "
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
-        },
-        {
-          "quote": "",
-          "author": ""
+          "quote": "It’s amazing just how many boys will wrap themselves in manacles if you smile sweetly enough. And if that doesn’t work, it’s out with the knives!",
+          "author": "Anke Dorflinger, Bounty Hunter"
         }
       ]
     },
@@ -8600,17 +8596,17 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "For many, the coach is the only way to get from one town to the next. The wild places between teem with Beastmen, Bandits, and worse, but with just a team of fresh horses and a blunderbuss, brave and hardworking Coachmen make travel possible. To help evade danger, most coaching companies relentlessly pursue speed, and their employees have a reputation for ruthlessness towards other travellers on the roads, never trusting anyone. Coachmen often start as Postilions, riding the lead horse of the team through wind and rain. Instead of transporting passengers, some Coachmen deliver mail, work as chauffeurs for nobles, drive cabs or goods wagons, or the big omnibuses of the great cities, or even become a getaway driver.",
+        "Good Coachmen are always in demand for unusual, dangerous or illegal jobs. A Coachman looking for a change may find winter is a good time to take a break, as cross-country services are greatly reduced. Coaching companies are always ready to snap up experienced coachmen, so returning to work is usually simple."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "Get ‘em fed in a quarter bell. No second portions. We ain’t paid for that. Coach Mistress eats last but save ‘er the best. One minute longer than the quarter and I take a pfennig off you, the Mistress takes a shilling off me, and Castle Rock Coaches will be in here as quick as silver.",
+          "author": "Bettina Hoch, Innkeeper"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "Three days I was stuck in Weissbruck during the storms. Not a single thing came in and out. Then just when I thought I’d miss my appointment in Bogenhafen there appeared three coaches coming up the frozen track, all together. Bloody typical! You wait days for a coach, and then three come along at once.",
+          "author": "Stelle Grabbe, Merchant"
         }
       ]
     },
@@ -8715,17 +8711,22 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Entertainers crop up all over the Old World, and many wander the Reikland’s roads, earning their crust. Some stay put at a single theatre, some work as individuals, some as part of a troupe. The worst are little more than itinerant beggars, the best lauded in the company of counts and princes. It is not an easy life and the people will not tolerate poor acts, running them out of town pelted with rotten vegetables. ",
+        "The most common Entertainers are the perennial crowd-pleasers like jesters, singers, actors, musicians, acrobats, dancers, and jugglers, but the Old World is also home to more obscure and bizarre acts. ",
+        "The open road, a new village every night, the smell of greasepaint and the roar of the crowd — life itself can be an adventure for the Entertainer as they bring excitement to the humdrum, everyday reality of those they captivate. Given their existence on the edge of respectable society, curious Entertainers all-too-often find real adventures of their own. "
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "A wandering minstrel I,<br/>A thing of shreds and patches,<br/> Of ballads, songs, and snatches,<br/> And dreamy lullaby!",
+          "author": "Libretto from The Emperor of Nippon, by Guillibert and Solomon"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "How do you get to the Luitpold Theatre? Practise!",
+          "author": "Well known Altdorf joke"
+        },
+        {
+          "quote": "Musician and prodigy, Vladimira Tchaikofiev, toured the courts of the Empire performing her compositions for the great and good. On her triumphant return to her native Kislev, during the reign of Bloody Katerin, she premiered her first opera, “The Vampire Counts of Stirland” based on her travels in Sylvania. Unconventionally, she always chose to conduct with a silver baton.",
+          "author": "‘A Defence Against Necromancy’, Patriarch Felip Iyrtu, 2415IC,<br/>from the 1st year required reading list, Amethyst College"
         }
       ]
     },
@@ -8828,17 +8829,22 @@ var career = [
       "incomeSkill": "Melee (Flail)",
       "races": "Human",
       "flavour": [
-        "",
-        ""
+        "Forgiveness does not come easily, only through struggle, pain, and doing Sigmar’s will. Flagellants travel the Empire, flogging themselves in penance for their sins, and the sins of others. They are determined to serve Sigmar until the end of the world, something they believe is imminent. All good folk are expected to welcome, help, and feed them, and to pray with them.  ",
+        "Most Flagellants wander in large groups, guided by a Prophet of Doom who interprets Sigmar’s will. Some follow armies, whipping themselves into a frenzy as battle is joined and fighting without any thought for their own safety. Others wander by themselves, believing they best serve Sigmar by righting the wrongs he guides them towards.",
+        "It’s not hard for Flagellants to stumble upon an adventure, especially involving recognised foes of Sigmar. Flagellants can continue their lifestyle as they adventure, relying on the honest folk of the Empire to offer them food, drink and shelter as they trudge ever onwards to the end of all things."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "We strike this flesh and spill this blood, for his Empire, in the name of Sigmar!",
+          "author": "Viktorina Schwefel, Flagellant"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "We had some flagellants going through the village a couple of months back. Terrible they were: the agony, the pain, the suffering, and that was just watching them. We knew what to do. We knew we had to open our doors and feed them and pray with them. But in the end, we just hid in the cellar until they’d gone. Scary folk.",
+          "author": "Wulfrum Barth, villager"
+        },
+        {
+          "quote": "The Ende is Nigh!",
+          "author": "Common placard carried by Flagellants"
         }
       ]
     },
@@ -8943,17 +8949,18 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "When the postal service is unsecure or too slow, people send a Messenger. Several courier companies provide express services, competing to show they are the fastest and safest. Most Messengers take their duties very seriously, guarding their packages with their lives. Some courier companies have arrangements with coaching houses allowing their Messengers to swap tired horses for fresh ones, for top-speed delivery.",
+        "Runners are employed to carry urgent messages in cities. Many larger settlements host competitions to celebrate the fastest, with the winners taking prizes and lucrative job contracts. Messengers can also be found working for the military, noble houses, large merchant houses, and for criminal gangs seeking to maintain their privacy.",
+        "Messages can contain all sorts of information, and some lead to adventure should they be intercepted. The easiest way for any villain (or innocent party) to get hold of such information will be to waylay a Messenger. If this happens, it will be the Messenger’s duty to follow things through until the message is recovered. As Messengers are usually freelance, paid per package delivered, it is simple enough to drop everything then pick-up work when they return."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "Are you Herr Schmidt of Hochplatz, Kemperbad? Erm, do you know a Herr Schmidt of Hochplatz, Kemperbad? Erm, do you know a Hochplatz? Kemperbad?",
+          "author": "Willi Winkle, Messenger on his first day"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "It looked like an interesting package, if you know what I mean. I thought I’d just have a quick peek. Thought it was to his girlfriend. Thought it might be a bit, you know, juicy. How was I to know it was all that boring spying stuff. Where’s Bretonnia, anyway?",
+          "author": "Rufus Drucht, Messenger who single-handedly busted the Bloody Bretonnian spy ring, then lost his job."
         }
       ]
     },
@@ -9061,17 +9068,14 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Pedlars traipse from village to hamlet, selling goods and services such as knife sharpening, mending, and tinkering. Most carry cheap stock readily available in larger towns, including small luxuries such as ribbons and hair pins. Pedlars are always welcome as even suspicious folk like to treat themselves to baubles and knickknacks.",
+        "Some Pedlars also take on messenger work; others act as de facto town criers, bringing news and gossip to the quietest corners of the Empire in exchange for bed-and-board. Given the dangers on the road, some Pedlars prefer to keep a stall at a regular town marketplace. It is also common to find them on pilgrim routes making a living selling relics to the devout. ",
+        "Hearing of profits to be made in far-off lands and listening to the stories of well-travelled merchants is always going to whet the appetite of an ambitious Pedlar. Being self-reliant, they can follow up on any adventure, making a decent profit along the way. They can also gain access to strongholds and settlements without awkward questions."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
-        },
-        {
-          "quote": "",
-          "author": ""
+          "quote": "This here is an absolutely unique, one-of-a-kind, only-one-in-existence, work of art. If you want more, don’t worry, I’ve got another couple of dozen on the back of the cart.",
+          "author": "Delberz Trötte, Trader"
         }
       ]
     },
@@ -9180,17 +9184,17 @@ var career = [
       "incomeSkill": "Perception",
       "races": "Halfling, Human",
       "flavour": [
-        "",
-        ""
+        "Road Wardens protect travellers from the bandits, Greenskins, Beastmen and other dangers that threaten the Empire’s highways. The Wardens are supported by a system of tolls, taxes they often collect personally. Successful Road Wardens are well-received and respected, and often have bunks in each inn along their route. Most main-road Road Wardens are part of the State Army, patrolling primary thoroughfares during peace time, so are well-trained and resplendent in neat uniforms. Less-travelled roads make do with local equivalents, some of whom take advantage of their position and lack of supervision for their own gain. Some Wardens prefer sitting in their safe, fortified toll stations to clearing the roads, but travellers often balk at handing over coin when the roads are dangerous and in disrepair. ",
+        "Road Wardens frequently find adventure. Anything untoward happening in the countryside is often close to a well-patrolled roadside. When trouble occurs, Road Wardens are summoned to resolve any problems. If they follow up and become involved in an investigation, they are simply doing their job, and might even secure extra pay for their time, even if the resulting adventure takes them far from their regular beat."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "What can I say, it’s a pfennig a leg. Them’s the rules. Nothing I can do about it. Perhaps you should try to find a different route to get your bees to Grünburg.",
+          "author": "Andreas Muller, jobsworth Toll Keeper"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "So, I was stopped by a road warden t’other day. She said I should beware an unscrupulous character out patrolling the roads and charging hapless travellers a thruppence to let them pass. I thanked the warden for the valuable advice. “Taal guide you,” she said, “that will be thruppence.”",
+          "author": "Ullrich the Pedlar"
         }
       ]
     },
@@ -9297,17 +9301,17 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "There are few so feared and respected as the Witch Hunter, and they are given extraordinary leeway in performing their duties. Typically armed with silvered blades and a brace of pistols — for lead is not so easily dispelled — they stalk all corners of the Old World ready to dispense judgement on any witch they find, or any who would harbour them. Most Witch Hunters in the Empire are attached to the Cult of Sigmar. Secular Witch Hunters are sometimes employed by provincial government, though these are little more than specialist bounty hunters. The Colleges of Magic also have Witch Hunters called Wizards Vigilant who pursue rogue wizards, necromancers, and daemonologists — they believe it is wisest to set a witch to catch a witch.",
+        "A Witch Hunter’s existence is one of constant adventure, often ranging the length and breadth of the grand provinces. They are called upon whenever the foul influence of unsanctioned magic emerges, and are expected to hunt it down. The bigger the reputation a Witch Hunter earns, the more dangerous the foes assigned, and the greater the adventures that follow.  If you play a Witch Hunter, it is worth while making sure others aren’t playing a Hedge Witch or Witch as this may immediately bring the party into conflict."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "I ain’t met a witch yet that won’t catch fire.",
+          "author": "Father Linken Donatus, Priest of Sigmar<br/>(murdered by a rogue pyromancer)"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "If you’re not a witch, you have nothing to fear.",
+          "author": "Walter Keller, Witch Hunter Captain<br/>said the night before the burning of Almshof"
         }
       ]
     },

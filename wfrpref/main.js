@@ -469,7 +469,7 @@ function outSkillSearch(el) {
 
     let baseURI = location.href.split("wfrpref")[0];
     let pageURI = baseURI + "wfrpref/skills.html#skillList?s=";
-    let skillName = el.text().split(' (')[0];
+    let skillName = el.split(' (')[0];
     let skillURI = encodeURIComponent(skillName)
 
     let finalURI = pageURI + skillURI
@@ -480,7 +480,7 @@ function outTalentSearch(el) {
     let baseURI = location.href.split("wfrpref")[0];
     let pageURI = baseURI + "wfrpref/skills.html#talentList?s=";
     //let talentName = el.innerText.split(' (')[0];
-    let talentName = el.text().split(' (')[0];
+    let talentName = el.split(' (')[0];
     let talentURI = encodeURIComponent(talentName)
 
     let finalURI = pageURI + talentURI
@@ -705,16 +705,18 @@ function buildCareerCards() {
 
                 htmlString = ""
             }
-
-
             $klon.show();
         }
-
-
     }
+}
 
+function careerModalSearch(el) {
+    let parentModal = "#" + $(el).parents('.resultModal').prop('id')
+    let careerCleanName = $(parentModal + " .careerName").text().replace(" ","")
 
-
+    let baseURI = location.href.split("wfrpref")[0];
+    let pageURI = baseURI + "wfrpref/career.html#"+careerCleanName;
+    window.open(pageURI, '_blank');
 
 }
 
@@ -792,8 +794,11 @@ function scrollToDiv(uri=undefined) {
     }
 
     let divTarget = uri.split("#")[1]
+    
 
     if (divTarget != undefined){
+
+        divTarget = divTarget.split("?")[0] // remove any search parameters being passed
 
         let targetDiv = String("#"+divTarget) // put the pound sign back
 

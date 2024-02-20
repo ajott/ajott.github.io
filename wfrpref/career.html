@@ -230,6 +230,13 @@
     <script>
         $(document).ready(function () {
             buildCareerCards();
+            let targetDiv = String(document.location).split("#")[1]
+            if (targetDiv != undefined){
+                let targetContainer = targetDiv + "Container"
+            setTimeout(function(){
+                accordion(targetContainer)
+                animateHighlight($("#"+targetContainer),"rgba(255, 255, 156,0.2)", 1000)
+            }, 310)}
         });
     </script>
 </footer>

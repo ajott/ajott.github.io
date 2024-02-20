@@ -21,12 +21,16 @@ function skillFilter(input, mod = 0) {
 
 }
 
-function skillModalSearch() {
-    outSkillSearch($('#skillDialog .skillName'))
+function skillModalSearch(el) {
+    let parentModal = $(el).parents('.resultModal').prop('id')
+    let targetSkill = $('#' + parentModal + ' .skillName').text();
+    outSkillSearch(targetSkill)
 }
 
-function talentModalSearch() {
-    outTalentSearch($('#talentDialog .talentName'))
+function talentModalSearch(el) {
+    let parentModal = $(el).parents('.resultModal').prop('id')
+    let targetTalent = $('#' + parentModal + ' .talentName').html();
+    outTalentSearch(targetTalent)
 }
 
 

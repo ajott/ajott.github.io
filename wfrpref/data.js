@@ -11169,7 +11169,7 @@ var career = [
       ],
       "quotes": [
         {
-          "quote": "Do you think only wizards can wield magic? Think again! I, too, have such understanding, and I refuse to become a slave to the so􀀀called Colleges.",
+          "quote": "Do you think only wizards can wield magic? Think again! I, too, have such understanding, and I refuse to become a slave to the so-called Colleges.",
           "author": "Apprentice Franz Zimmel of the Gold Order,<br/>3 months before being captured by a Witch Hunter "
         }
       ]
@@ -11275,17 +11275,17 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Whether it’s units of Pistoliers, Outriders, Demilancers, Horse Archers, or similar, Cavalrymen are deployed for maximum strategic advantage. On campaign, that means scouting, raiding, harassing the enemy lines, or defending foragers. On the battlefield, they are also particularly versatile, able to strike quickly and melt away. For speed of movement, scouting, versatility, and sheer élan, Cavalrymen cannot be rivalled. Swift, lightly-armoured cavalry is employed by most armies, including forces of the cults and less formal armed bands including mercenaries or private armies. Bretonnian armies make use of mounted men at arms, while Wood Elf Gladeriders are some of the most feared light cavalry in the Old World. ",
+        "A cavalryman currently in the State Army is not just going to drop everything on a whim. Should they have something they wish to personally pursue, they will require permission from senior officers, perhaps buy out their commission if they have one, or go absent without leave. As an alternative, they could be ordered to investigate matters of importance by their superiors? Mercenary cavalrymen have more flexibility to strike out adventuring, being little more than hired swords. "
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "Any pistolier not dead by thirty is a scoundrel.",
+          "author": "General Lasaal, Reikland’s 5th Regiment of Cavalry"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "An outrider came by yesterday, checking to see if we were safe. Gosh, he was so handsome and dashing, who wouldn’t want to go outriding with him? He grabbed my buns and was off like the wind. Never paid for them, mind.",
+          "author": "Lena Fluffe, Walfenburg baker"
         }
       ]
     },
@@ -11391,17 +11391,17 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "The best way to keep something safe is to post a guard. Guarding looks easy enough, it’s usually standing around doing very little. Guards live and die, quite literally, by how they behave during that one moment when they are required to spring into action. The best can command high wages and are entrusted with the lives of the Empire’s finest personages and most valuable items. Guards are everywhere, from the Imperial palace down to bouncers who stand outside taverns all night, ready to throw drunkards into the street. They also include grave wardens — those who defend Morr’s Gardens in the dead of night, watchful for grave robbers — and temple guards who defend holy sites and important priests. Merchants often employ many Guards to defend their valuable stock. Some claim bodyguards have it best because they stay close to their esteemed employers, and often partake of a life far beyond that which their station would normally allow.",
+        "Guards can find adventure when their guardianship is compromised. Any guard worth his salt would wish to follow up and investigate those who have thwarted them, and get whatever they were guarding back to its true owner. This could easily turn into an exciting adventure. Many of those going on expeditions will require guards to accompany them, to adventure, profit or an untimely demise."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "I stood outside the shrine for thirty days and thirty nights, without fail. No-one got in and no-one got out. Of course, it turned out I was stood outside the wrong door.",
+          "author": "Ernst Bluchard, Ex-Temple Guard of Manann"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "If you’re not on the list, you’re not coming in!",
+          "author": "Anonymous Altdorf guard to the Grand Theogonist<br/>at the coronation of Karl-Franz I, apocryphal"
         }
       ]
     },
@@ -11510,17 +11510,17 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Many believe heavy cavalry are the pre-eminent warriors of the Old World. A massed charge is an awesome sight, but even alone a Knight can stand as a one-person army. There are many Knightly Orders in the Empire, the most famous including the Reiksguard, the White Wolves, the Knights Panther, and the Knights Griffon, each of which have their own gloried history and mighty heroes. Most Empire Knights belong to secular knightly orders, partly because training heavy lancers is too prohibitively expensive for most nobles. The templar orders, those dedicated to the service of a single deity are just as common but are somewhat more independent. Alongside these are an uncounted number of free-lances, mercenary knights, and disgraced knights, most of whom sell their lance to the highest bidder.",
+        "Knights might be asked to venture out to fulfil a duty on behalf of their Order or be sought out by nobles and employed to accompany a restless heir around the Empire. Similarly, templars will have responsibility to do their god’s will. All of these provide perfect opportunities for Knights looking to adventure. By comparison, a free-lance is just that, and a life of adventure is what they follow by default."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "The knight demanded I get out of his way. “Why?” I asked. “I am in the service of the people,” he replied. “Well, I’m the people,” I said, “so I don’t have to get out of your way.” He didn’t have an answer to that, of course. So he punched me in the face!",
+          "author": "Holger Kass, 1st Bögenhafen Halberdiers"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "Lady Myrmaelia Jaeke is the finest knight in the Order of the Blazing Sun. How can I be so sure? Well, I used to hold that title, and she bested me.",
+          "author": "Birgitte van der Hoogenband, Abbess-General of the Monastery<br/>of the Black Maiden, former Knight of the Blazing Sun. "
         }
       ]
     },
@@ -11625,17 +11625,17 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Watching fights is a popular pastime. In the cities, organised fights take place every night. There is money to be made charging spectators, and even more in gambling on the result. Winners earn coin and are celebrated as local heroes. Losers are hurt or killed. Because pit fighting is officially frowned upon, the fights are often controlled by criminal gangs, but the rich love to slum it on occasion, especially if it involves a little bloodshed.  The gladiators of Tilea are the most renowned pit fighters, though the chain-fighters of Marienburg and bear-wrestlers of Kislev draw a crowd. Pugilists and wrestlers might work a travelling fair, challenging the public to survive three minutes in the ring with them, or they might fight a celebrated opponent in front of cheering crowds. Knives, clubs, chains, boxing, wrestling, there is an almost endless variation of styles and codes a Pit Fighter might adopt.",
+        "Many Pit Fighters fall into their sport because they have the talent and they simply need the money. Some would jump at the chance to leave their seedy world behind and put their talents to a slightly better use. Fortunately, Pit fighters are generally free to use their time as they will, provided they turn up on time for the next big fight, and even if they don’t, there is always another pit…"
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "It was my big chance. The biggest fight of my life. Then the Hooks came and told me to go down in the fourth or they’d chop off my hand. Well, you know me, of course I went and won anyway. And I’ve no regrets. After all, there are lots of things you can do with one hand.",
+          "author": "Sigurda the Bull, Arm Wrestler"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "Roll up! Roll up! Dare you face the might of Gosser Papa? Could you last three minutes with Resige Heuhaufer!",
+          "author": "Raimund Heenan, Ring Announcer"
         }
       ]
     },
@@ -11743,17 +11743,17 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Protagonists live by their wits and their muscles and are not generally fussy about the sort of work they take on. A merchant might want to frighten their business rival. An employer might decide his workers need a bit of encouragement to get a job done quicker. A noble might want his daughter’s no-good suitor to be frightened off. Protagonists are the ones they turn to, and those with the worst reputation get the best jobs. A Protagonist could be the brute in the local bar everyone knows will bully for coin, or with the reputation for unflinching violence. Some Protagonists have their own code of what they will or won’t do; others care for nothing but the coin. Some are simple bullies who resort to picking arguments and fights with likely looking targets to see if they can score any money from the situation.",
+        "On the face of it, Protagonists are always up for an adventure because they’re always up for a fight. But they will usually expect to get paid for services rendered. Whether they will join others without a guarantee of payment is a question they will need to ask themselves. Could a hardened protagonist find a cause they will voluntarily pursue? Perhaps they could even turn over a new leaf?"
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "Remember Thommy Two Knives? I’m not saying he crossed me. I’m just saying you don’t see him walking round town no more, do you?",
+          "author": "Gilly Three Knives, Protagonist"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "Yeah, Big Yuri came round and destroyed all my merchandise. Said this town was only big enough for one lotus dealer, and that was that. I completely agreed, so I doubled his pay and sent him back to White Tiger’s den. And that was the end of that.",
+          "author": "Toni Miragliano, Lotus Dealer"
         }
       ]
     },
@@ -11858,17 +11858,23 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "When Dwarfs suffer an unacceptable shame and lose their honour, they take the Slayer’s Oath and walk the path of Grimnir, their ancestral god of warriors. Covering their bodies in tattoos, shaving the sides of their head, dying their remaining hair a brilliant orange, and spiking it with animal grease, they set off into the world, axe in hand, seeking a glorious death.",
+        "Slayers wander the Old World hunting deadly beasts, such as Trolls, Giants, or Dragons. Because of the shame they carry, many suffer from bouts of depression, glutting themselves on food, alcohol, or stronger stimulants. The more foes Slayers face and survive, the more dangerous and crazed they become, hunting progressively deadlier creatures in the hopes of finding something that can kill them. ",
+        "Till they fall in battle, a Slayer’s life is one of adventure — they seek out opportunities to face powerful foes in battle. Slayers will occasionally take other odd jobs, for drinking money or to finance their travels, but will seek death along the way. All Slayers previously had a life and a career, so there is more to them than simply being a warrior with a deathwish.",
+        "Playing a Slayer is a unique experience because your character wants to die. Embrace this. Seek a mighty doom. Reclaim your honour. Die well. "
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "We avoid them, if given the choice. They are outcasts and have no honour, only the hope of reclaiming such. Still, we’ll feed them, and give them a place to rest. They are Grimnir’s Chosen, now…",
+          "author": "Dimrond Zindrisson, Miner"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "Herwig didn’t mean nothing by it, honest. He just asked why the Dwarf had them strange tattoos. It happened so fast, I didn’t even see the Dwarf move, just Herwig hitting the floor.",
+          "author": "Regimius, Stevedore"
+        },
+        {
+          "quote": "We’re all going to die, manling. It’s the manner of our going that counts.",
+          "author": "Gotrek Gurnisson, Slayer"
         }
       ]
     },
@@ -11978,17 +11984,17 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "By the command of Emperor Magnus the Pious after the Great War Against Chaos, all provinces of the Empire had to maintain a standing State Army. Soldiers are the mainstay of these armies, trained to fight as part of a larger group with individual skill supplemented by strength in numbers. Rarely encouraged to think for themselves, Soldiers are famous for their stoic fatalism as they are ordered from pillar to post in the service of their betters. Soldiers could be archers, crossbowmen, halberdiers, handgunners, swordsmen, or spearmen, and that’s just in a typical State regiment. Dwarfs employ soldiers like Hammerers and Thunderers, while Elven rank and file are usually archers and spearmen. There are many other Soldiers, such as Mercenaries, local Militias (which are rarely better than Recruits), private armies, cult forces, and more. ",
+        "Soldiers have little free time, but they still have adventuring opportunities. Outside campaigning season, many receive extended periods of leave. Officers of the State Armies can also command small bands of Soldiers to investigate unusual happenings in their regiment’s ‘territory’ and some officers view this kind of adventuring as excellent training to keep their Soldiers sharp.  Non-human Soldiers will often be on missions in the Empire that are adventures by their very nature."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "Go down to the bottom of the hill, the captain told us. So we did, and the general told us to go up to the top of the hill and await further orders. Then the captain told us we were wanted at the bottom.",
+          "author": "Holger Kass, 1st Bögenhafen Halberdiers"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "Though Lords and Ladies come and go, <br/>A soldier’s life is all I know, <br/>Karl-Franz commands, and we obey, <br/>O’er the hills and far away. ",
+          "author": "Marching Song, Reikland 118th Regiment of Foot,<br/>‘The Greenbacks’"
         }
       ]
     },
@@ -12092,17 +12098,13 @@ var career = [
       "incomeSkill": "Leadership",
       "races": "Human",
       "flavour": [
-        "",
-        ""
+        "Some cults of the Empire have clerics trained for war. In the Reikland, the Warrior Priests of Sigmar are the most common example of this, and most armies of the Empire are accompanied by hammer-bearing priests encouraging the soldiers in the name of Sigmar. But other cults, especially those of Myrmidia, Ulric, Taal, and Morr, have Warrior Priests of their own, each with their unique views as to how war should be conducted. Away from the battlefield, Warrior Priests are also expected to administer to soldiers’ spiritual wellbeing, as well as making sure morale stays high and discipline is ordered. Some orders of Warrior Priests swear oaths to roam the Empire, seeking heresy wherever it lies, helping where they can. Others prefer not to join armies, but lead them…",
+        "While many Warrior Priests stay with the army, some serve their cult in missionary work, and others wander the Empire as they will. As such, Warrior Priests can be natural adventurers. Of course, to pursue leads to the ends of the Empire they might require the permission of their cult, and perhaps their commanders."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
-        },
-        {
-          "quote": "",
-          "author": ""
+          "quote": "Surrounded, we were, Greenskins on all sides. They knew we were done. Then the priest raises his hammer towards the sky and bellows his prayer. And as the words echoed to silence, the lightning struck. And we were all unharmed, I swear to Sigmar. But the Goblins? All dead.",
+          "author": "Holger Kass, 1st Bögenhafen Halberdiers"
         }
       ]
     }

@@ -10329,17 +10329,18 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Bawds guide folk to establishments offering a variety of illegal and immoral services. Though many Humans and Dwarfs have objections to such activities, most Halflings and High Elves are quite matter-of-fact about drug-dens, brothels, or other houses of vice. ",
+        "Bawds include drug-dealers, dancers, hustlers and artists’ models. Many famous masterpieces of the modern era have been posed for by Bawds plucked from the street. Traveling armies are followed by camp followers, with Bawds among them looking to make coin in any way they can. Ringleaders, proprietors of establishments where Bawds gather, can accrue significant empires providing services to all types of rogues, from fences who need discreet access to rich clients, to providing safe bolt-holes for gang bosses and crime lords.",
+        "Bawds living in urban areas sometimes travel to flee plagues and religious persecutions, the latter of which crop up all-too-frequently in areas dominated by Sigmar worship. Others, such as those who rove with entertainers, consider travel as part and parcel of their occupation. Those who secure a patron might have significant lengths of time left to their own devices."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "Come to the Hammer and Bucket, home of the best music and entertainment in old Altdorf town! You will not be disappointed!",
+          "author": "Raynald Schmid, Bawd"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "Scoff all you like, but those clothes cost money. For a lad born ’neath the dung heap, he lives a life of luxury.",
+          "author": "Hertel Netzhoch, Innkeep"
         }
       ]
     },
@@ -10447,17 +10448,18 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "A Charlatan traffics in trust, yet profits from treachery. By preying on emotions and psychological weaknesses, Charlatans offer their ‘mark’ a prize that is too good to be true. Social privilege provides no protection, and even the loftiest citizens can fall victim to a skilled Charlatan. In addition to a knack for lying, a lack of conscience is also of benefit to Charlatans.",
+        "Charlatans include Swindlers, Con Artists, Gamblers, and other Scoundrels seeking to prey on the gullible. Halflings often operate distraction cons in small family groups. Young High Elves, slumming it with Humans, treat their cons as one big game, not motivated by profit, but to prove their superiority. Some experienced Charlatans work with artists, who forge documentation for a cut of any profits.",
+        "To avoid rousing suspicion, Charlatans rarely stay in one area for long. Few Swindlers openly admit to their calling, preferring instead to masquerade as anyone other than themselves. Because of this, there is little stopping Charlatans from pursuing side-matters of interests; equally, afterwards, they can return to grafting anywhere with rich fools willing to part with coin on naught but a promise."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "I’ve carried this across countless leagues from the highest towers of the Elves. See how it sparkles in the moonlight? Only magic can cause this inner light! Unbelievable as it may be, I must grudgingly part with it. For such power, any price is but a trifle!",
+          "author": "Wolmar Rotte, Con Man"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "The last living heir of Lord Schwalb, you say? Hogwash! You’re the fifth ‘heir’ to call this afternoon! How much did you pay for that scrap of paper? Better yet, who’s the swindler what sold it to you?",
+          "author": "Gerold Behn, Irritated Butler"
         }
       ]
     },
@@ -10561,17 +10563,17 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "A Fence buys thieves’ spoils and sells it on for profit, often to those unaware the goods are stolen. Successful Fences sometimes operate as pawn brokers, importers, or other merchants. Others prefer to remain mobile, trafficking only in portable items. Though the average Fence deals in goods and valuables, there are also well-informed specialists who focus on information and forbidden knowledge. Some Fences move stolen items across the Empire. A painting stolen in Altdorf is easier to sell in Talabheim to an audience unaware of the theft. When high profile items vanish, Fences are also the first individuals to be consulted by those looking to acquire them. Some Fences even take commissions from clients, connecting them with those who can steal to order.",
+        "The search for buyers and sellers, or the need to escape a terrible situation, can take a Fence anywhere. They can be found across the Empire and in many regions beyond its borders. Up-and-coming Brokers transport illicit goods between Old World cities in search of buyers. Others, looking to make a name for themselves elsewhere, attempt to make their own niches in existing city underworlds. Given that their interests often collide, Fences and merchants make occasional bedfellows, as well. With all of this criminal activity and movement, trouble often follows."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "I know it’s stolen. You know it’s stolen. Even old Sigmar knows it’s stolen. So when I ask you if it’s stolen, don’t insult me by telling me it isn’t stolen. Lucky for you, I deal in stolen, so stop panicking.",
+          "author": "Elene Weslach, Mover"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "Why am I called a Fence? Well, it’s because I provide you with some de-fence from being caught, innit. So, you go thief, and I’ll make sure you don’t have to worry about how to shift the merchandise. Think of me like your partner-in-crime.",
+          "author": "‘Boil’ Vakram, Fence"
         }
       ]
     },
@@ -10684,17 +10686,21 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Trafficking in bodies and body parts is lucrative, with high demand from universities and physicians for fresh cadavers. As well as the scholarly market, corpses sometimes interred with all manner of valuables can be found beneath the ravenstones in the tombs of Morr’s Gardens. Because their labours are obvious, illegal, and sacrilegious, Grave Robbers usually work under cover of darkness. Body Snatchers have been known to cut out the middle man and take beggars or other unfortunates straight off the streets. Tomb Robbers avoid the legal dangers of looting the recently dead, and instead journey to ancient ruins and barrows, risking the restless dead and brigands alike. Peculiarly, some  successful Treasure Hunters find themselves celebrated as heroes, their treasures sold to, and displayed by, the aristocracy. It’s even rumoured that the great wealth of one of the Knightly Orders came from a group of their members plundering a foreign tomb.",
+        "Grave Robbers easily take to the adventuring life, especially if their nocturnal sojourns are discovered by unsympathetic authorities. They may also be sought out by antiquarians who wish to engage their expert services in the excavation of a tomb, or perhaps they will feel compelled to track down a suspected necromancer who is using corpses for nefarious purposes. "
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "You can’t take it with you... but I can certainly take it with me.",
+          "author": "Symon Schreiber, Grave Robber"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "It’s not just the jewels, Herbert. Look at all the bones! There’s professors in Altdorf who’d pay good money for these!",
+          "author": "Tyle ‘the Ghoul’ Grubsch, Body Snatcher"
+        },
+        {
+          "quote": "The nightmares of Khemri still haunt me. The curses cast by those long-dead tyrants have sealed my fate. I only hope Morr can put a stop to the necromancy that rots my bones and blackens my heart.",
+          "author": "Lady Estelle Hauptleiter, Treasure Hunter (deceased)"
         }
       ]
     },
@@ -10802,17 +10808,17 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Outlaws ply the roads of the Old World in search of vulnerable travellers and merchant caravans. They lead dangerous and often hardscrabble lives. Many do not see themselves as criminals, but as oppressed groups trying to live their lives free from outside constraints. Many Wood Elf outlaws fit this description, pushing back against the Humans proliferating at the edge of the forests, willing to take more drastic action than others of their kind. Particularly savvy and brutal Outlaws may form bands of their own, sometimes even uniting several bands under a single banner. Such Bandit Kings are feared and reviled by noble and peasant alike. Though few Outlaws discriminate in choosing their prey, some claim to protect the common man. These do-gooders focus their larceny on greedy nobles and, in return, locals may provide them with food, information, and safe harbour. ",
+        "Outlaw bands are not all wild mobs, so many can be reasoned with if approached correctly. An Outlaw might be asked to accompany a group of adventurers as a guide or to protect them, especially if the group are trying to stop unholy activity in a Bandit King’s domain. Individual Outlaws may find it simple to join an adventuring band, although they may need to disguise themselves if they go anywhere the Outlaw is wanted. "
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "They were children, not brigands. Starving, filthy, sickly. They held us under the sight of their arrows and we stood fast… my son’s age, they were. Children. Killed six of us…",
+          "author": "Valentin Behr, Road Warden"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "...and he says, “Titus, why d’you carry them shears?” And I says, “These?” And he says, “Aye, those’re the only shears I see.” So I laughed and answered: “Sometimes they don’t want to take off their rings like I ask ’em to. When I show ’em the shears, most of ’ em change their tune right quick. And if they don’t…’’   Hehehe.",
+          "author": "Titus Widmann, Outlaw"
         }
       ]
     },
@@ -10918,17 +10924,21 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Racketeers extort money from law-abiding citizens and merchants, providing ‘protection’ or some similar fraudulent ‘service’. If the ‘fees’ are not paid on time, the victims, their families, and their livelihoods are at considerable risk. Large gangs bribe or intimidate local authorities to ignore their activities; their Thugs are always willing to kill — or worse — to keep business running smoothly. Thugs are employed to collect debts of all kind, especially those incurred through gambling losses or high-interest-rate loans. In a world brimming with poverty, the promise of easy wealth is an allure countless fools are unable to ignore. The more organised the graft, the larger and more complex the organisations running them become. While the smallest rackets are run by small gangs with limited territory beyond a building or two, the largest can span cities or even entire provinces, and the Crime Lords who run them can wield extraordinary power. ",
+        "Thugs and Racketeers are always willing to resort to threats and violence, making them valuable members of any party that expects to face aggressive opposition. Gang Bosses might even take their business on the road, looking to expand their territory or explore new opportunities for intrigue and profit. Given the competitive nature of such rackets, even the most powerful Crime Lords might find themselves deposed by opponents or treachery. Forced to hide or flee, such experienced crooks can seek to use a group of experienced adventurers to their advantage."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "I hope you have Hazelmann’s money because I really hate the sound of breaking fingers.",
+          "author": "Claus Betelhof, Well-Mannered Racketeer"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "IF YOU CAN’T PAE THE DEBT, DON’T MAKE THE BET.",
+          "author": "Sign in Bosco’s Bones (Altdorf gambling house)"
+        },
+        {
+          "quote": "or bosco wil brake ya legs",
+          "author": "Bosco’s Bones Sign Addendum scrawled in chalk"
         }
       ]
     },
@@ -11032,17 +11042,21 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Thieves steal all manner of wealth and goods from their fellow man. From the lowliest footpad to the wiliest burglar, the thought of an honest day’s work in return for a respectable wage is little more than a bad joke. Thieves often organize themselves into gangs alongside charlatans, racketeers, and fences to further their mutual wealth. Bitter feuds between such illicit organisations have been known to last for years or even decades. The lowliest Thieves target individuals, picking pockets or waylaying victims in rat-infested alleyways. Burglars avoid confrontation by breaking into businesses and residences, carrying off portable valuables. More ambitious thieves scope out their targets for days or weeks, even going so far as to infiltrate their target locations to get a more precise lay of the land. Working with other professional burglars, such experts can organise heists of which their lesser peers can only dream.",
+        "Thieves who run afoul of the law are obliged to hide or flee from justice, putting many would-be inmates on the run. Sometimes the very items stolen by Thieves are of such exorbitant value or supernatural quality they seem to attract trouble like a mouldering corpse draws flies, which can lead them into all sorts of unexpected adventures. Of course, a Burglar’s talents are always valuable to adventurers, and reliable examples can expect to be well-compensated for their skills."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "One creaky floorboard in the whole place and I’m the one to find it…",
+          "author": "Alette Zimmermann, Thief, Jailed"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "What the...? Those aren’t dogs... they’re bears!",
+          "author": "Marx the Mauled, Unlucky Thief"
+        },
+        {
+          "quote": "No, the list of charges does not include, “Stealing the magistrate’s heart away.” You must have me confused with a magistrate who has a heart.",
+          "author": "Leonora Nithardt, Magistrate"
         }
       ]
     },
@@ -11150,17 +11164,13 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Any with the rare talent to wield magic must, by law, be trained by wizards of the College of Magic. Not everyone accepts such a fate; some hide their powers or go on the run. Such folk are called Witches. They risk insanity and damnation as magic burns through them without correct tutelage, and rarely understand the nature of the forces in which they dabble. Others embrace their burgeoning powers wholeheartedly, accepting the risks. Witches come in all varieties, with the talent to wield magic playing no favourites. Some are benign figures simply seeking freedom. Others are nobles refusing to accept they are Witches, for to do so is to be disinherited. Yet others are terrified of what they may become, so run away. Whatever the case, few will admit what they are, as all risk burning by over-zealous Sigmarites. ",
+        "Witches lead dangerous lives. Though some pose as wizards, such deceptions are easily discerned by anyone with any knowledge of magic. Nevertheless, bands of adventurers — especially those without unwavering faith or moral qualms — rarely care for the specifics of a Witch’s education so long as the methods used are effective and have no truck with the Dark Gods. Although unsanctioned witchery is illegal — carrying the death penalty — most wizards have a brief experience as a Witch before entering the Colleges of Magic. This is acknowledged by both the Colleges and the cults, so a Witch, if discovered, should submit to the authorities. Training in the Colleges could be covered as time between adventures, meaning the Witch can return at a later date in the Wizard career, or it could become the focus of a new adventure."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
-        },
-        {
-          "quote": "",
-          "author": ""
+          "quote": "Do you think only wizards can wield magic? Think again! I, too, have such understanding, and I refuse to become a slave to the so􀀀called Colleges.",
+          "author": "Apprentice Franz Zimmel of the Gold Order,<br/>3 months before being captured by a Witch Hunter "
         }
       ]
     },

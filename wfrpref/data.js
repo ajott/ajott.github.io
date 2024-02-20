@@ -9415,17 +9415,17 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Boats and barges travel the Empire’s waterways, bringing goods from the remotest corners of the provinces to the greatest cities. These shallow-drafted vessels can travel much further upriver than larger ships, and a comprehensive network of canals adds to their reach. Barge Masters are expert river sailors and have an exhaustive knowledge of their rivers. A Boat-hand is the dogsbody, but will learn the ropes swiftly. Boatmen crew merchant barges carrying cargo to and from markets, either working for themselves or for a larger Merchant House. Many Boatmen are also ferrymen, taking passengers across rivers, or to and from towns. In large towns, some also crew rivertaxis, sail pleasure vessels, or otherwise pilot boats on the behalf of others.",
+        "A boatman will not need to seek out adventure, for more than likely adventure will come to them. Boats are useful to nearly everyone, and therefore useful to almost any adventure plot; they also make an excellent base of operations. Boatmen will not need to worry about following investigation and adventure if the plot stays on or close to the river. Even if the plot leaves the river, they could still easily allow a talented Boathand to look after their business while they take a break from river life."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "Someday a real rain will come. So, don’t forget your hat, madam.",
+          "author": "Travis Binckel, Rivertaxi"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "Beware of forking. I say this as an experienced bargeswain. If you approach a dangerous rock or other river hazard be sure to go astarboard and stay astarboard while laying astarboard, or go alarboard and stay alarboard while laying alarboard. Or you will fork, and you might sink. And no-one wants to sink their forking barge.",
+          "author": "Jacob Walles, Bargeswain who sank his forking barge"
         }
       ]
     },
@@ -9529,17 +9529,14 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Huffers are specialist river guides with expert knowledge of local river systems. They are a common sight near the most dangerous stretches of the Empire’s rivers and can command significant wages for what many view as easy work. Others view it as cheap compared to the potential cost of lost cargo. ",
+        "Many Huffers specialise in a single, notorious stretch of water, while others make their money at certain times of the year when the waters are at their worst. Other Huffers have broader knowledge and will guide vessels for their entire journey, effectively acting as navigators. This is especially true of merchant ships with particularly valuable cargo at difficult times of the year.",
+        "As an expert for hire, Huffers are often hired by wealthy patrons, frequently brought in as specialists on journeys of discovery. Even when travelling into the unknown, Huffers are useful for their broad range of knowledge concerning river conditions and piloting. Because of the regional and seasonal nature of the work, many Huffers are ready to drop everything and travel to where they’re needed. This freedom transfers well to the adventuring lifestyle, and also suits those seeking to return to Huffing should adventuring not supply their needs."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
-        },
-        {
-          "quote": "",
-          "author": ""
+          "quote": "A great big ship came in from Marienburg, low in the water and packed to the gunwales. I said that it would cost them a crown to take them through the Furdienst. Steep, yes, but it was a big ship. The arrogant Wastelander scoffed, said he’d do it himself. But sure enough, they drifted right into the shallows and were holed. They lost a good part of their cargo and it took them a week to repair the damage. Reckon it cost them a bit more than a crown.",
+          "author": "Ilsa Dasche, Huffer"
         }
       ]
     },
@@ -9645,17 +9642,14 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "A clarion call across the waterways heralds the arrival of the Imperial River Patrol, a river-borne police force known as much for its harassing thugs as for its good work. Most riverside villages and inns set aside moorings for them as, without them, worse criminals would rule the waters. The overworked patrols concentrate on egregious crimes, resolving petty misdemeanours with spot fines. On major trade-routes, the patrols have larger vessels manned by ‘Shipswords’ trained to tackle larger threats like Greenskins or Trolls.",
+        "Some Riverwardens rarely see the water, instead manning remote outposts overlooking strategically important waters. Others crew fast riverboats charged to intercept smugglers in the night. The largest Riverwarden vessels are effectively sea-worthy warships, bristling with cannon and mortars, ready for almost any eventuality.",
+        "A diligent Riverwarden, searching vessels and following up leads, might stumble across any sort of nefarious plot or sinister cargo. Riverwardens typically work month-long shifts, but this means they also have months off. This structure is ideal for adventuring: as a Riverwarden need not desert their post to pursue private matters, or even have to persuade their Sergeant that it is their duty to follow up crimes. They can head off, investigate, and be back long before their next cycle begins. "
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
-        },
-        {
-          "quote": "",
-          "author": ""
+          "quote": " So back in the day, when I was a riverwarden, Big Willi came round to tell me I had to leave a certain shipment alone. He said I should just let it through and everything would be alright. Of course, I was young, wasn’t I? I told the ship’s Master all about it. And was I rewarded for my honesty? Nah, Big Willi came round and beat me up, and the next day I was drummed out of the river patrol. They were all in it together, weren’t they?",
+          "author": "Nikki Schnelling, ex-riverwarden"
         }
       ]
     },
@@ -9760,17 +9754,17 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "The fertile banks of the great rivers of the Empire are densely populated, and the folk working day-in, day-out in the nearby waters and marshes provide much of the fresh fish, eels, and crustaceans feeding the towns and cities. Unlike the inland villages, those on the great rivers frequently receive outsiders who trade and restock, meaning Riverwomen are somewhat more open and diverse, and often the first with news from distant lands. There are any number of diverse jobs supported by the river. Many harvest the Reik’s bounty: fisherfolk (using rod, spear, or net), eelers (using traps or pots), or diggers for shellfish. Many live in riverside villages labouring, dredging, or lugging, and maintaining the Reik’s many thousands of vessels. ",
+        "A Riverwoman will feel at home on any stretch of water, and their skills ensure they can drop everything, confident that they will be able to find work elsewhere should they need to. A Riverwoman is well-placed to get the lowdown on the more iniquitous side of river life and may have contacts among the river’s lowlifes. With their knowledge and experience they can make all the difference to a water-based expedition or investigation."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "If I drop this branch in the water now, it will eventually get to Marienburg. Unless it sticks in the mud, of course.",
+          "author": "Jemima the Greenfish"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "They say the whole Empire will eventually float by if you sit by the Reik long enough. Well, I’ve sat here, rod in hand, for twenty years, watching the flow downriver. The things I could tell you. I’ve seen war and I’ve seen peace. I’ve seen good times and bad. I’ve seen happiness and sorrow.  And in all that time, I can honestly say, I’ve not caught a single bloody fish.",
+          "author": "Thys Lange, the Reikland’s worst Fisherman"
         }
       ]
     },
@@ -9875,17 +9869,18 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Seamen sail the high seas in the Imperial Navy or for one of the Merchant houses. The Reikland may have no coast, but the River Reik from the Wasteland to Altdorf is miles wide and full of ocean-going vessels. The Imperial First Fleet that patrols these waters rarely sees the open sea, because the taxes to pass warships through Marienburg are exorbitantly high. ",
+        "Seamen can always find work, whether as cabin staff on an Imperial battleship or on the crew of a small trading sloop. Some Seamen travel the world by working to pay their passage. The Reik also houses many ‘Missions’, buildings provided by the Imperial Navy for their staff, many of which employ Seamen.",
+        "Beyond Marienburg, the whole world awaits a Seaman: the perilous Sea of Claws, the unfathomable Great Ocean, the exotic Thousand Islands, the Southern Sea, the Black Gulf. And at home, a Seaman can spend a whole life plying the Reik’s waters and never have the same day twice. "
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "I can see the Sea!",
+          "author": "Marian Zelman, Optimistic Reiklander Sailor"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "Yeah, I’ve sailed through Marienburg. Bloody Wastelanders made it as difficult as possible for us to get out to sea. I swear the huffer took us three times round the islands just for fun before we even smelled salt water. And they taxed us twice for everything. Even the ship’s cat got taxed. Glad to be home, to be honest.",
+          "author": "Thom Wesserbrug, Boatswain"
         }
       ]
     },
@@ -9992,17 +9987,14 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Most trade is legally taxed by local lords, as well as illegally taxed by bandits and protection rackets. Smugglers see themselves as charitable helpers: merchants make more profit, customers pay less coin, morally flexible Riverwardens take a cut, outlaws are avoided, and more besides. It takes experience and ingenuity to circumvent all the bailiffs, custom officials, excisemen, and busy bodies keen to stop them, but Smugglers dare the risks to support themselves and their families. ",
+        "Smugglers come in many forms, perhaps transporting tiny, high-value goods for nobles, or large cargoes for shady merchants. Some Smugglers also deal in illicit goods, a crime that will incur significantly more repercussions than a burned finger or smugglers’ brand.",
+        "Smugglers find adventure, even though they usually want things to stay quiet and uneventful. Any number of things can go wrong on a smuggling mission, and even if things go right, there will always be the lure of the next job, likely bigger and better than the last. Whole adventures can be played out solely on smuggling missions. Similarly, it will be easy for a smuggler to find gainful employment away from their usual work. Someone with a trick up their sleeve, an eye for detail, and a cool head when things get hot is always going to be a desirable companion on dangerous expeditions and adventures."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
-        },
-        {
-          "quote": "",
-          "author": ""
+          "quote": "See, this is where the bottle of best Bordeleaux goes. The river wardens will search behind here, and find it, and confiscate it. That’s what we want because it means they don’t find the twelve bottles we have hidden under here. And if they find those, all is not lost, because they will be so pleased with themselves they won’t even bother searching over there where there’s twenty-four bottles.",
+          "author": "Hansel Solomon, Smuggler"
         }
       ]
     },
@@ -10107,17 +10099,18 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "With their sole right to load and unload vessels, Stevedore Guilds can slow or even stop trade. This grants power, with many docksides effectively ruled by the guilds. In larger towns, several gangs might violently compete for supremacy. Scowling Foremen deal with guild matters and blow their whistles to summon their gangs from riverside inns, either for fresh work or to defend their territory. ",
+        "A Stevedore might work alone in a riverside village, or in a large gang on a busy, chaotic city dockside. Sometimes they might be part of a criminal gang that just moves a bit of cargo on the side to cover their tracks. Some Stevedores are enforcers, making sure everyone else is working hard.",
+        "Amid the humdrum and repetition of the dockside there are good opportunities for adventure as a Stevedore. Stevedore gangs are virtually a law unto themselves, and they fight for every foot of riverside that they command. Stevedores are useful characters to have around, able to handle themselves, and deal with lowlifes. "
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "Look, I know we specialise in coal, but don’t fence us in, we’ll port anything if the coin’s good. So, let’s do it afore the deal porters arrive; anything goes here, mate.",
+          "author": "Albert Pförtner, Coal Porter"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "Listen, boy. Don’t think them dockers have it easy. It’s dangerous, claustrophobic work, with heavy goods and high stacks, and if it’s done wrong, the cargo may overbalance, perhaps even capsizing the boat. What I’m saying is, pay the Stevedores right — and if you want a boat to sink, pay them extra.",
+          "author": "Aleida Fuchs, Merchant"
         }
       ]
     },
@@ -10224,17 +10217,18 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Sometimes the gods send riverfolk an unexpected windfall as goods wash up from an ill-fated vessel. Sometimes the gods need a helping hand: that’s where Wreckers come in. Laying devious traps and sending disorienting signals, Wreckers lure unwary river traffic onto sand banks and rocks, then loot the wreck, no matter how any surviving crew may protest.",
+        "Some Wreckers pride themselves on their clever traps, making any wreck seem like an accident, and keeping a plausible distance from the actual looters. Some board ships by force and throw its crew overboard, expert at spotting under-armed boats with valuable cargo. These River Pirates are hunted by road and riverwardens, constantly moving to evade the authorities.",
+        "A well-planned and executed wrecking is an adventure in itself: avoiding the authorities, disposing of the goods, keeping people’s mouths shut, and spending the ill-gotten gains all present their own opportunities and dangers. And who knows what cargo they will find, and who may come pursuing those who stole it. Wreckers who come across such adventure will have no trouble leaving their old lives behind or returning to them again when times are lean."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "We spied this juicy ripe sloop on its way to Carroburg just as night was falling, and lit some fires on the left bank to make them think the village was a few hundred yards closer. They tacked to starboard just like we planned and hit the sand bank dead on. Sweet as. How were we to know the boat was transporting a company of pistoliers?",
+          "author": "Greta Lachsmann, shortly before her hanging"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "Look, if we let the crew live, they’ll tell the wardens where we operate, so the only sensible thing is to kill ’em all.",
+          "author": "Mandel Stein, Pragmatic River Pirate"
         }
       ]
     },

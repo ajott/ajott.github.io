@@ -700,7 +700,7 @@ function buildCareerCards() {
 
             if (careerEntry["quotes"] != undefined) {
                 careerEntry["quotes"].forEach(quot => {
-                    htmlString += "<p><blockquote class='w3-panel w3-round-large careerQuote w3-leftbar w3-border-dark-gray'><p><em><span style='font-size: 1.5rem; font-family: Sophia, sans-serif; line-height: 0'>&ldquo;</span>" + quot["quote"] + "<span style='font-size: 1.5rem; font-family: Sophia, sans-serif; line-height: 0;'>&rdquo;</span></em></p><p style='text-align: right !important; line-height: 0; white-space:normal;'>&mdash;" + quot["author"] + "</p></blockquote></p>"
+                    htmlString += "<p><blockquote class='w3-panel w3-round-large careerQuote w3-leftbar w3-border-dark-gray'><p><em><span style='font-size: 1.5rem; font-family: Sophia, sans-serif; line-height: 0'>&ldquo;</span>" + quot["quote"] + "<span style='font-size: 1.5rem; font-family: Sophia, sans-serif; line-height: 0;'>&rdquo;</span></em></p><p style='text-align: right !important; white-space:normal;'>&mdash;" + quot["author"] + "</p></blockquote></p>"
                 })
                 $("#career" + i + " .careerQuotes").html(htmlString);
 

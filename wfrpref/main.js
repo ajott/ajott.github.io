@@ -42,6 +42,7 @@ function initializeModals() {
     $('test').attr('onclick', 'buildModal(this, \'skill\',0,1)');
     $('endeavour').attr('onclick', 'buildModal(this,\'endeavour\')');
     $('status').attr('onclick', 'buildModal(\'Income\',\'endeavour\',1)');
+    $('a').attr('onclick','processAClick(this)')
 }
 
 function buildModal(el, type, mast = 0, isTest = 0) {
@@ -880,4 +881,20 @@ function proc() {
 function copyProc() {
     navigator.clipboard.writeText($("#procOut").val())
     // We need user input to write to the clipboard.  Thanks, "security" experts
+}
+
+function processAClick(el) {
+    let targetAttr = $(el).attr('href');
+
+    let targetURI = targetAttr.split("#")[0]
+
+    let targetEl = targetAttr.split('#')[1]
+
+    let currURI = '.'+String(document.location).split("#")[0].split('wfrpref')[1]
+
+    if (targetURI == currURI && targetEl != undefined) {
+        scrollToDiv(targetAttr)
+    }
+
+
 }

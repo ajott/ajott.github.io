@@ -62,7 +62,8 @@ function buildModal(el, type, mast = 0, isTest = 0) {
         "trait": traitFuse,
         "career": careerFuse,
         "armQual": armourQualFuse,
-        "endeavour": endeavourFuse
+        "endeavour": endeavourFuse,
+        "betweenAdventureEvent": betweenAdventureEventFuse
     }
 
 
@@ -352,6 +353,17 @@ function buildModal(el, type, mast = 0, isTest = 0) {
             endeavourHTML = "";
 
             break;
+
+            case "betweenAdventureEvent":
+                $("#modal" + modalCount + " .eventName").html(dataRslt["name"])
+    
+                $("#modal" + modalCount + " .eventRoll").html(dataRslt["roll"])
+    
+    
+                $("#modal" + modalCount + " .eventDesc").html(dataRslt["desc"])
+    
+    
+                break;
     }
 
     $('#modal' + modalCount).on('click', function (e) {
@@ -410,7 +422,8 @@ function masterSearch() {
         "weapon": "Weapon",
         "armour": "Armour",
         "trait": "Creature Trait",
-        "endeavour": "Endeavour"
+        "endeavour": "Endeavour",
+        "betweenAdventureEvent": "Between-Adventures Event"
     }
 
     let srchRslt = masterFuse.search(searchTxt)
@@ -788,6 +801,12 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
     endeavourFuse = new Fuse(endeavour, {
+        keys: ["name"]
+    })
+});
+
+$(document).ready(function () {
+    betweenAdventureEventFuse = new Fuse(betweenAdventureEvent, {
         keys: ["name"]
     })
 });

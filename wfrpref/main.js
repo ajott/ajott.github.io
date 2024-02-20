@@ -352,6 +352,10 @@ function buildModal(el, type, mast = 0, isTest = 0) {
 
             endeavourHTML = "";
 
+            if (dataRslt["classes"] != undefined) {
+                $("#modal" + modalCount + " .endeavourClasses").html(dataRslt["classes"])
+            }
+
             break;
 
             case "betweenAdventureEvent":

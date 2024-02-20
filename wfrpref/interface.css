@@ -216,6 +216,18 @@ career:hover {
     text-decoration: none !important;
 }
 
+endeavour {
+    cursor: help;
+    color: blanchedalmond !important;
+    text-decoration: underline 1px dotted blanchedalmond;
+}
+
+endeavour:hover {
+    cursor: help;
+    color: goldenrod !important;
+    text-decoration: none !important;
+}
+
 status {
     cursor: help;
 }

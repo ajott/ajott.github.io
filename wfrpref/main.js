@@ -42,7 +42,8 @@ function initializeModals() {
     $('test').attr('onclick', 'buildModal(this, \'skill\',0,1)');
     $('endeavour').attr('onclick', 'buildModal(this,\'endeavour\')');
     $('status').attr('onclick', 'buildModal(\'Income\',\'endeavour\',1)');
-    $('a').attr('onclick','processAClick(this)')
+    $('a').attr('onclick','processAClick(this)');
+    $('endeavour').attr('onclick', 'buildModal(this,\'endeavour\')');
 }
 
 function buildModal(el, type, mast = 0, isTest = 0) {
@@ -353,7 +354,7 @@ function buildModal(el, type, mast = 0, isTest = 0) {
             endeavourHTML = "";
 
             if (dataRslt["classes"] != undefined) {
-                $("#modal" + modalCount + " .endeavourClasses").html(dataRslt["classes"])
+                $("#modal" + modalCount + " .endeavourClasses").html('('+dataRslt["classes"]+')')
             }
 
             break;

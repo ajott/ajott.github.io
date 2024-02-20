@@ -7468,7 +7468,7 @@ var career = [
       ],
       "quotes": [
         {
-          "quote": "Yes, m’lord, the duke has been a􀀀bed this last decade. And, yes, m’lord, I am running his estate. No, m’lord, I don’t see that changing any time soon. After all, in Penzkirchen, my word is now law… Arrest him!",
+          "quote": "Yes, m’lord, the duke has been a-bed this last decade. And, yes, m’lord, I am running his estate. No, m’lord, I don’t see that changing any time soon. After all, in Penzkirchen, my word is now law… Arrest him!",
           "author": "W. Edvart Kurtz, Governor of Penzkirchen"
         }
       ]
@@ -7574,17 +7574,18 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Nobles entrust Bailiffs to gather dues from their lands. Some Bailiffs are respected and upstanding, attending throng at the temple of Sigmar every week. Others are bullies, happy to enforce their lord’s rights over property and possessions with threats and violence. Long-serving bailiffs often become trusted servants of the local noble family and enjoy considerable perks. Reeves have a broader reach and greater responsibility. They keep order and maintain the borders of the lord’s lands, resolving disputes with neighbouring estates. ",
+        "Some magistrates are lay-members of the cult of Verena, seeking guidance and wisdom from blind Justice on any difficult cases they judge. However, most provincial magistrates simply find themselves arbitrating a series of petty disputes over livestock and farmland borders.",
+        "Most Bailiffs have a degree of autonomy, granting them ample opportunity to turn their attention to private matters, or to hire others to do so on their behalf. As many also have broad authority in the areas they influence, they are frequently sent by their employers to resolve problems, which can often lead to unexpected places."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "Aye, it’s been a poor harvest, but dues are dues. I’ll take half now and half on Marktag. How’s that? It’s the best I can offer, can’t say fairer than that.",
+          "author": "Lena Sauer, Bailiff"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "I’ll go up and have a look at the grazing land in question myself. Until then, I want no trouble from any of your boisterous offspring, do I make myself clear, Bauer, Meier? And you will pay equal shares for the damage to the inn, or you will forfeit any claim you might, or might not have, on the land.",
+          "author": "Lorenz Schulte, Reeve of Elster Vale"
         }
       ]
     },
@@ -7689,17 +7690,14 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Witch Hunters use the term ‘Hedge Witch’ for any illegal spellcaster, but this was not always so. Once Hedge Witches were respected members of rural communities, practising magics older than the forests. But decades of persecution since the founding of the Colleges of Magic have left the few surviving Hedge Witches disparate and broken. They hide in the quietest corners of the Old World, their smoky huts and creaking hovels standing astride the boundary between civilisation and the trackless wilds.  Most Hedge Witches are solitary to protect themselves from prying strangers, but their talents are often known to locals. Their knowledge of warding evil is usually secret, but their herbalism, midwifery, and healing arts are quickly sought in times of need.",
+        "A Hedge Witch is often the first to notice supernatural foul play. The subsequent investigations often lead to all sorts of dangers and adventure. When Witch Hunters come to town, Hedge Witches often take a leave of absence, lying low or travelling elsewhere until danger is passed.",
+        "The Hedgefolk are known by many names across the Empire, but have one thing in common: the goal of preserving their ancient traditions from destruction. Hedge Witches have little love for the Colleges of Magic, knowing any child taken by them will likely never return to serve their community, instead pressed into service in some far-off war. Whenever possible they hide children they consider ‘blessed’ from passing wizards, although occasionally one will be sent to the Colleges — as a sacrifice or a spy, who can say?"
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
-        },
-        {
-          "quote": "",
-          "author": ""
+          "quote": "We tell the folk that the offering o’ fish is for Grandfather Reik, ‘cause it makes them feel safer than having to explain the river is home to an ‘ungry spirit. It keeps the spirit safe, too.",
+          "author": "Alt Zaunreiter, Hedgewise"
         }
       ]
     },
@@ -7805,17 +7803,13 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Medicines from apothecaries are expensive and rarely available in the Reikland’s hinterlands, so peasants rely on the healing power of plants gathered, doctored, and administered by Herbalists. Most Herbalists’ lore is verbally passed down from master to apprentice, so names for illnesses and treatments often vary from village to village. The most experienced Herbwises are sent for in cases of mysterious or stubborn sicknesses. Herbalists dedicate time to visiting the sick, diagnosing their ailments and searching for herbs to treat them with. Some Herbalists ply a darker trade, sought out by those who can pay a high price for the illicit substances they offer. Although an untrue stereotype, it’s a standing joke in the trade that Halfling Herbalists are only interested in pipeweed and wyrdroot.",
+        "With knowledge of poultices and potions, Herbalists can easily find a place with a band of travellers or mercenaries. When particularly virulent diseases take hold, Herbwises often send their apprentices to far off places in search of rarer herbs, and some find themselves in all manner of unexpected trouble. The Wood Elves’ knowledge of plants and herbs is legendary. In the Grey Mountains it is said that The Goddess Shallya wandered Athel Loren to learn their lore when Ranald was dying of an affliction she could not cure. High Elves who study the art of herbalism follow Lileath the Maiden’s teachings, and it’s rumoured there is an ancient elven library in Marienburg which records the medicinal use of every plant in the Old World, although no Human has yet been granted access. "
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
-        },
-        {
-          "quote": "",
-          "author": ""
+          "quote": "This is beyond my skill to heal. The wound’s been infected and it’s tainting his blood; he needs a doctor, or Shallya’s aid. I can give you something to make sure he’s comfortable on the journey to town. And something for you, too, to calm your nerves.",
+          "author": "Kurtis Schwarz, Herbalist"
         }
       ]
     },
@@ -7920,17 +7914,18 @@ var career = [
       "incomeSkill": "Outdoor Survival",
       "races": "Dwarf, Halfling, High Elf, Human, Wood Elf",
       "flavour": [
-        "",
-        ""
+        "‘Taal’s Bounty’ is a common greeting in Hochland, where locals proclaim a proud hunting heritage that goes back to the time of Sigmar. Most in the Empire hunt, either as a hobby, a profession, or a necessity, and many Hunters turn to poaching when times are lean. ",
+        "Particularly skilled Hunters might be engaged as a noble’s Huntsmaster, granting access to fine weapons, horses, and falcons. Elves and Dwarfs have little care for the boundaries of men and will occasionally venture deep into Human territory tracking a challenging prize. Stories of the Wood Elves’ Wild Hunt petrify children of the Grey Mountains, and not without cause, for if any intruder strays too close to Elven lands, then the hunters quickly become the hunted.",
+        "A common punishment for hunter caught poaching is to lose two fingers. Faced with being unable to draw a bow, many will cut and run before the punishment can be administered, preferring to take a chance in the forests.  Around the fertile villages of the Suden Vorbergland, Hunters are losing ground to farmers as the trees are cut back and nobles reserve what hunting is left for sport.  The Imperial Army is always on the lookout for reliable, local hunters to support their army as they march, acting as support archers or scouts. A life of adventure awaits any Hunter willing to take the Emperor’s Shilling."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "My lord, those tracks… we’re not following a stag. There are Turnskins in these woods.’",
+          "author": "Gundred Maynir, Huntsmaster"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "Are you trying to tell me hunting’s not a sport because both sides don’t know they’re playing? Might I suggest you’d been hunting the wrong game.",
+          "author": "Graf Bernard Leutze von Holthausen"
         }
       ]
     },
@@ -8038,17 +8033,14 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Many prospectors are tempted by stories of gold in the Skaag Hills, but real mining is hard work down dark, dangerous tunnels. Adept at constructing supports and assessing mineral ores for their value, Miners are alert to unexpected dangers from explosive gas to tunnelling Greenskins, and are notoriously tough, both physically and mentally. Prospectors usually work on commission, with a license to prospect in return for sharing finds with the local lord. Some noble houses’ fortunes are built on the rich mines in their lands, and often Miners in these pits will be criminals or debtors pressed into service. Quarrymen hewing open-face stone ostensibly have a safer job than those underground, but accidents are common and Beastman attack from the forest is an ever-present danger. ",
+        "Many independent Miners find themselves thrust into peril when set upon by Goblins or other subterranean horrors. Some find the rewards of this life more lucrative, if not less dangerous, than slaving away for a mine owner for a pittance. Prospectors have many opportunities for adventure and can easily pull together a band of like-minded folk eager for riches and glory.",
+        "To Dwarfs, mining is not an occupation limited to commoners. Rather, they are considered artisans of great skill and are well-respected amongst the Dawi. Possessed of a keen sense for stone, Dwarfs are drawn to valuable seams and seemingly have a sixth-sense for when to shore up passages. Some Dwarf clans hold such pride in their mining ability that they march to war armed with picks rather than axes."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
-        },
-        {
-          "quote": "",
-          "author": ""
+          "quote": "After your supplies from the store are deducted, and your load of sixteen tons added, you made… let me see… no, you actually owe us two for today. Another day older and deeper in debt, boy.",
+          "author": "Frederika, Victualler of the Delfgruber Minehead."
         }
       ]
     },
@@ -8148,17 +8140,17 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Searching for meaning in a dangerous world, people turn to Mystics for a glimpse of their future. Wandering caravans of Strigany are a common sight in Reikland, and locals scrape together coin to hear their fortune, and buy charms and love potions. Most Mystics are perceptive and intuitive, able to divine their customers’ hopes and fears and give readings just specific enough to be believable. Mystics must be careful, and walk a fine line between accusations of trickery and heretical witchery. Mystics demonstrate their talent in a wide variety of ways: palmists and card readers are common amongst the Strigany, while a Wood Elf is more likely to interpret the signs and symbols to be found around them in nature, or to be inspired by dreams and visions. Many cults also have their own Seers and Sages, each prophesising the future through the paradigm of their beliefs.",
+        "Mystics might seek a life of adventure if their insights draw the attention of priests and witch hunters. Dreams and visions also provide an incentive to join a band of adventurers: perhaps the Mystic foresees a terrible future ahead if action is not taken? No matter their motivation, once on the road, Mystics can easily ply their trade wherever they should travel."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "I’ll tell you for why we have wheels on our houses: it’s because no-one likes to hear the cold truth of Morr a-coming, and if there’s one thing for sure, Morr is always a-coming. So, it ain’t because we’re cheaters, but because we are honest folk!",
+          "author": "Honest Chupra, Strigany Pedlar"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "I never met a Priest who could tell me what the future holds. Well, unless you count the Priest of Morr who Doomed me for thruppence, but don’t they say that death and taxes are the only things we can be certain of?",
+          "author": "Sylvestr Jutzenbach, Ostermarker Noble"
         }
       ]
     },
@@ -8265,17 +8257,13 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Among an illiterate populace where maps are rare, local knowledge can mean the difference between life and death for travellers. Scouts are experts at finding safe paths through the backwoods and muddy roads of the Empire. Local guides will accompany their clients, warning of upcoming dangers, sharing village gossip or showing the best places to forage. Experienced Scouts will barely be seen by their employers as they explore the trails ahead and keep a watchful eye out for hidden dangers.  While most Scouts keep to familiar territory, some specialise in safely navigating unmapped terrain. Explorers might venture even further into treacherous and hostile territory, filling in the blank spaces on their maps. Most Scouts do not tackle dangers themselves, preferring to slip away quietly to warn their companions and enable their employers to avoid potential hazards completely.",
+        "Scouts can be invaluable to a group of adventurers, especially those venturing out from a city for the first time to find their fortune. Reliable and knowledgeable Guides may find themselves asked to stay on and act as Scouts, although many still act the loner, slipping in and out of the woods to protect the group from ambush or warn of enemies ahead."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
-        },
-        {
-          "quote": "",
-          "author": ""
+          "quote": "You don’t want to be going off the road down by the bluff without a guide.􀀁There’s man-traps in them woods what the reeve put down to catch poachers. Almost ’ad old Billi’s leg off last week it did.",
+          "author": "Gwyn, Scout"
         }
       ]
     },
@@ -8378,17 +8366,17 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Sigmar’s bountiful Empire provides an abundant harvest of crops, livestock, and other marketable goods, so there is always plenty of work to be found in the countryside. Villagers make up most of the Empire’s population and perform a variety of valuable roles, including Farmers, Charcoal Burners, Woodsmen, Millers, Herders, and many more.  Most villages fall under the domain of a noble family, where day-to-day administration of the estate is overseen by a bailiff. Village affairs are usually managed by a village council of local tradesmen and farmers led by an Elder. A village Councillor or Elder can hold significant local influence overseeing many decisions concerning the surrounding land.",
+        "The pastoral safety of a sheltered village is an unspeakable bore for some young Villagers who listen avidly to the tales of faraway lands. Of course, the stories they hear from wandering Pedlars and Strigany, all fuelling schemes to escape, bear little relation to the harsh reality of Empire life. During winter, when food is short, and the fields do not need tending, young folk venturing to nearby towns and cities for work often never return, soon caught in the net of civilisation’s excitement and adventure."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "It’s a hard life, for sure, but it’s a good one. Every year the lady from the manor sends out her guard to clear out the forest and drive off the beastmen and the like. The family keep us safe, we keep their flocks. It’s a fair trade most of the time.",
+          "author": "Gunni Ackermann, Shepherdess"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "Look, you can sneer at me all you want, but Konrad the Hero his-bloomin’-self was from a village just like mine, so don’t you be talking us down, you hear! Us villagers are good folk!",
+          "author": "Erika Bauer, Farmer"
         }
       ]
     },

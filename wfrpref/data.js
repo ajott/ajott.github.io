@@ -6651,17 +6651,14 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Advisors provide counsel to those they serve. Well-versed in the political and social conditions of their employer’s domain, they are privy to confidential and sensitive information. While many Advisors are born into their positions, others actively seek noble patronage as a path to wealth and power. Some young royals pick their university or childhood friends as their first Aide, trusting them to say what no-one else will. ",
+        "Long years at court or in service to a lesser noble pave the way to the loftier heights of their careers. Many Advisors do not serve the nobility at all, instead lending their extensive capabilities to criminals, warlords, merchants, cults, or guilds.",
+        "If there is something peculiar or dangerous happening within their employer’s domain, then an Advisor is well-placed to investigate. At the higher levels of the career, a Counsellor or Chancellor will have their own trusted staff they can rely on to look after matters if they take a short leave of absence. Advisors can approach different classes of people, including the most difficult to access, and they are already in a position where they are expected to ask questions on behalf of their employer."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
-        },
-        {
-          "quote": "",
-          "author": ""
+          "quote": "Sigmar votes with Reikland for three. The dead Emperor, Mootland, and Reikland will vote the same way, taking Reikland to six. As you know, you need seven votes to become emperor. Given Ar’Ulric always votes for Middenheim, it’s highly unlikely the Imperial seat will return to Nuln while the House of Third Wilhelm flourishes. Best hope for a daughter, your Grace. A marriageable one.",
+          "author": "Krammond, Advisor to the Elector Count of Nuln, 2475 IC"
         }
       ]
     },
@@ -6764,17 +6761,14 @@ var career = [
       "incomeSkill": "Art",
       "races": "Dwarf, Halfling, High Elf, Human, Wood Elf",
       "flavour": [
-        "",
-        ""
+        "Artists use their talents — for painting, sculpting, writing and similar — to create works of fine art. Often their careers begin as Apprentices to experienced Master Artists, though some are simply prodigies. The best can attract a patron, and some end up teaching, forming their own schools of art and attracting the wealthiest of benefactors to their fashionable salons.  ",
+        "Sadly, most Artists spend their lives in a vain attempt to prove their value to a society that rarely appreciates them. Some make ends meet through different means: satirising nobles and politicians in cartoons for the Altdorf broadsheets, sketching suspects for watch captains, writing social commentary, or even forging the work of more renowned artists. ",
+        "Attracting suitable patrons is not always a simple matter, so Artists of all stripes find themselves traveling abroad in search of one. Even those who have the means to support themselves take to the road in search of new sights to paint, sculpt, or inspire them. Holy frescos and reliefs dedicated to the gods are often commissioned in faraway temples, churches, and abbeys. "
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
-        },
-        {
-          "quote": "",
-          "author": ""
+          "quote": "Please remain still, my lord. It is rather difficult to capture the majesty of your countenance if you continue to scratch yourself so. Perfect! Now hold that pose for just a few seconds more if you please. And there you’ve gone and done it again. Might I suggest you pay a visit to the apothecary? He may have several effective remedies for lice, especially if you find your incessant squirming as bothersome as I do...",
+          "author": "Gottlieb Toman, Painter, prior to his execution"
         }
       ]
     },
@@ -6878,17 +6872,21 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Duellists fight on behalf of others — settling matters of honour between organisations or individuals — or as surrogates for the law, representing the accused or the accuser in trials by combat. For some Duellists the act of fighting is reward enough for the considerable risks they face. Training is dangerous, leaving some apprentices crippled or scarred for life. Those who live long enough to learn from their mistakes can aspire to the fame of a Blademaster, teaching their techniques to eager students. Judicial Champions duel on behalf of governments and nobles, and their blades can determine the fates of nations. Some modern Duellists, especially hot-headed Altdorf students, favour pistols. This is regarded by the older generation as dishonourable and foolhardy. ",
+        "Both inexperienced and esteemed Duellists alike travel the Empire in search of opponents with which to bolster their reputations. For others, the hunt for a veteran instructor drives them to explore the furthest flung of the Old World’s locales. Masters of foreign techniques are also sought by Duellists who wish to add unique styles of fighting to their repertoires. As skilled combatants, Duellists often augment their livelihood with mercenary work, even acting as guards for caravans and riverboats in a pinch. Although Dwarfs have no interest in fencing with flimsy swords and the frippery of the duelling scene, they have long traditions of using combat to resolve bitter disputes, and will travel far to enhance their skills. "
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "First blood, ye fool! First blood! And here ye’ve gone ’n run ’im through!",
+          "author": "Ortolf Ehardt, Burgher"
         },
         {
-          "quote": "",
-          "author": ""
+            "quote": "In my defence, sir, he was the first to do any sort of bleeding.",
+            "author": "Rosabel Viernau, Duellist"
+        },
+        {
+          "quote": "Always make sure you have Doktor Schuller on site. Deniability? Good question. Pay her in advance, treat her with civility, and she’ll turn around. Then she sees nothing until the duel is over, one way or another.",
+          "author": "Blademaster Aleksandr Amblestadt’s advice to his students"
         }
       ]
     },
@@ -6995,17 +6993,18 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Experts in negotiation and social interaction, Envoys act as agents serving the interests of the Empire, a regional estate, a foreign entity, or a merchant house. Intrigue abounds in courtly circles, and such a career choice is a risky proposition that only grows more perilous at the highest levels of government. Even when granted some manner of immunity against foreign laws or customs, Ambassadors must tread carefully. ",
+        "Envoys must first prove their abilities in a lesser capacity as a Herald, assisting Diplomats in hammering out the tedious minutiae of deals, or representing merchants, guilds, or cults, building their reputations with each pact they establish. Some Envoys find employ with Mercenary Companies; the best of these can secure a profit for their employers without shedding a drop of blood. ",
+        "Envoys travel a great deal, meeting countless individuals from all walks of life, cultivating contacts across the Old World. They are sometimes expected to get their hands dirty to ensure their master’s wishes are fulfilled. If failure doesn’t lead to their immediate death, they might find themselves on the run from their own employers."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "Watch that one. She’s got a tongue like a snake and nary a scruple. Still, she’s got a weakness for Elven wine and handsome young footmen. I’m sure you can arrange something... scandalous.",
+          "author": "Odmar Horst, Guild Envoy"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "My advice to his Imperial Majesty to ensure we maintain our vital trade link with Karak Ziflin: grow a beard and keep your promises.",
+          "author": "Letter to the High Lord of the Chair, from Ambassador Willemijna von Kotzdam"
         }
       ]
     },
@@ -7120,17 +7119,14 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "The blood of highborn ancestors courses through the veins of the nobility, granting Nobles the power to rule, make laws, and dispense justice. Nobles often inherit vast wealth and holdings, although only those with a direct line of succession can expect to wield any genuine power. Many spend their lives consolidating this wealth and power through business, politics, and conquest. Those without substantial inheritance must make their own way in the world, joining the State Army or navy as a commissioned officer, or commit to service of one of the gods. It is common to find Nobles working for more powerful noble houses, such as sending their daughters to serve as hand maidens to royalty.",
+        "Many Nobles serve their families abroad in the hopes they can advance their station and earn acclaim amongst their peers. Others, bored by pampered living, search for excitement as adventurers and would-be heroes. Scions with few prospects sometimes seek their fortunes far from courtly intrigue and betrayal, taking up other occupations to expand their options. ",
+        "The GM should consider carefully whether to allow players to choose the Noble career. It comes with a lot of trappings and temporal power, especially at the higher levels of the career. "
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
-        },
-        {
-          "quote": "",
-          "author": ""
+          "quote": "Everyone thinks that Nobles have it easy, but it’s a treacherous life and you’re always standing in someone’s way. I’d rather take my chances out here with you lot than risk assassins back home. Give me a herd of Beastmen any day.",
+          "author": "‘Lugner’ Rodziner, Tenth of his Line"
         }
       ]
     },
@@ -7234,17 +7230,18 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Most who serve the nobility come from peasant stock, grateful to escape the beleaguered masses tending the fields. Servants are taught comportment along with the skills necessary to cook, clean, buttle, and groom on behalf of their betters. They are provided with room, board, and a wage, but the quality of a Servant’s life depends on how well treated they are. Some Servants dress their employer, cook or serve meals, manage stores of wine and other consumables, or tend to the grounds. ",
+        "Experienced Servants can aspire to the role of personal Attendant, or even Steward, managing the domestic affairs of their employer and overseeing other Servants. Those directly serving royalty are often drawn from noble stock rather than the peasantry.",
+        "A Servant may be required to accompany their employer, travelling from winter to summer domains, or visiting the great cities. This can provide opportunities for adventures around the Empire. Bored heirs, closeted by over-protective parents, might treat their young Servants more like friends, providing them with encouragement and funds to seek out adventures, living vicariously through them when they report back with tales of derring-do. Favoured Servants are, on occasion, entrusted with duties that take them beyond their familiar surroundings, or even loaned to other family members or peers."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
+          "quote": "Only a fool mistreats those entrusted to cook food and pour wine. Believe me, there’s no end of damage a spiteful servant can wreak upon the unwise.",
+          "author": "Baron Gerber Jochutzmann"
         },
         {
-          "quote": "",
-          "author": ""
+          "quote": "Why she insists on takin’ that blasted cat with her is beyond me. Between her wardrobes, her travelling library, and her damned butterfly collection, I’m at my wit’s end! And when it gets lost — oh, it will, believe me — she’ll expect me to find her a new one. Sigmar! Where does one find a leopard kitten in Ubersreik?",
+          "author": "Reynald, Lady Kirstin Gottlieb’s Porter"
         }
       ]
     },
@@ -7352,17 +7349,13 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Spies are brave (or foolhardy) individuals who secretly gather information for their clients. A well-placed Spy is an asset to anyone desiring knowledge of an opponent’s activities.  Many take months, even years, cultivating an unremarkable identity with ties to one or more groups or individuals. Their actions are risky. If caught, Spies are rarely executed quickly and often tortured at length.  Many Informers are forced into spying via blackmail or other threats. A skilled Spy will earn well, but extrication from such activities can be more perilous than the activities themselves. Given Spies avoid undue attention, they aren’t typically known by their reputations unless those reputations are as anonymous as they are.",
+        "Spies are found throughout the Old World and in service to many prominent organisations. During their investigations, Spies are easily embroiled in plots both sinister and benign. They are often forced to flee when their identities or allegiances are exposed. These individuals use their abilities to disguise their true nature and avoid capture. Joining a group of unwitting heroes under false pretences as part of an escape attempt has led more than one Spy to an adventuring career."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
-        },
-        {
-          "quote": "",
-          "author": ""
+          "quote": "Treason? That’s it? For the love of... why didn’t I qualify for high treason? I’ve done plenty of other terrible things. Should I list them off for you? What’s that? It’s not personal? Well, it is now, you prig-powdered gaff",
+          "author": "Sieben Dietmund, Accused of Treason and Contempt"
         }
       ]
     },
@@ -7469,17 +7462,14 @@ var career = [
         ]
       },
       "flavour": [
-        "",
-        ""
+        "Wardens see to the care and stewardship of their employer’s holdings. Failure to improve — or, at the very least, maintain — an employer’s lands or provisions is often met with disfavour. In some instances, multiple wardens work together to keep their employer’s estate in correct order. ",
+        "A Warden’s oversight can cover a variety of duties: ensuring the upkeep of a grand estate, overseeing a lord’s hunting grounds, or caring for a rarely-visited holidaying home. Wardens might keep watch over forested or agricultural lands, or see to the maintenance of lakes, rivers, or ponds. Those in the employ of the richest and most powerful can rise to immensely powerful positions themselves. ",
+        "Wardens rarely travel unless their duties call for it. That said, even those assigned to oversee an estate’s lands or hunting grounds must make regular patrols to assess the property’s condition and to discourage poachers. When between jobs, Wardens often find work as guides or hunters, and such activities can lead to much excitement or terror. Wardens with a grudge against former masters might even be inclined to provide enemies with confidential information regarding their old estates."
       ],
       "quotes": [
         {
-          "quote": "",
-          "author": ""
-        },
-        {
-          "quote": "",
-          "author": ""
+          "quote": "Yes, m’lord, the duke has been a􀀀bed this last decade. And, yes, m’lord, I am running his estate. No, m’lord, I don’t see that changing any time soon. After all, in Penzkirchen, my word is now law… Arrest him!",
+          "author": "W. Edvart Kurtz, Governor of Penzkirchen"
         }
       ]
     },

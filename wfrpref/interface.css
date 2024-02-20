@@ -301,11 +301,10 @@ test:hover {
 
 .careerQuote {
     background-color: rgba(255, 235, 205,0.7) !important;
-    color: black !important;
+    color: #16161d !important;
     font-family: Atma, sans-serif;
     font-size: 1.5 rem;
 }
-
 .attrImg {
     max-width: 2em !important;
 }

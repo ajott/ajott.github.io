@@ -6,7 +6,8 @@
     <br />
 </div>
 <div class="navBarContainer">
-    <button href="javascript:void(0)" id="mobileMenuBtn" class="w3-darker-grey w3-button w3-round w3-top-left w3-hide-large w3-hide-medium" 
+    <button href="javascript:void(0)" id="mobileMenuBtn"
+        class="w3-darker-grey w3-button w3-round w3-top-left w3-hide-large w3-hide-medium"
         onclick="showMenu()">&#9776;</button>
     <div id="menu" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
         <div class="w3-mobile">
@@ -44,8 +45,8 @@
                 <div class="dropdown-divider"></div>
                 <a href="./combat.html#combatDifficulty"
                     class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Combat Difficulty</a>
-                    <a href="./combat.html#diffExample"
-                        class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Difficulty Examples</a>
+                <a href="./combat.html#diffExample"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Difficulty Examples</a>
                 <div class="dropdown-divider"></div>
                 <a href="./combat.html#fateResil"
                     class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Fate &amp; Resilience</a>
@@ -55,47 +56,91 @@
             </div>
         </div>
         <div class="w3-dropdown-click w3-mobile">
+            <button onclick="dropdownShow('adventuringDropdown')"
+                class="w3-button w3-round-large w3-hover-blue-grey">Adventuring
+                <i class="fa fa-caret-down"></i></button>
+            <div id="adventuringDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                <a href="./adventuring.html"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Adventuring</a>
+                    <a href="./adventuring.html#healing"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Healing &amp; Other Damage</a>
+                    <div class="dropdown-divider"></div>
+                <a href="./adventuring.html#travel"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Travel</a>
+                    <a href="./adventuring.html#weather"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Weather</span></a>
+                        <a href="./adventuring.html#travelEndeavours"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Travel Endeavours</span></a>
+                        <a href="./adventuring.html#travelEncounters"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Encounters</span></a>
+                        <div class="dropdown-divider"></div>
+                <a href="./adventuring.html#betweenAdventures"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span>Between
+                        Adventures</span></a>
+                <a href="./adventuring.html#events"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Events</span></a>
+                <a href="./adventuring.html#endeavours"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Endeavours</span></a>
+            </div>
+        </div>
+        <div class="w3-dropdown-click w3-mobile">
             <button onclick="dropdownShow('careerDropdown')" class="w3-button w3-round-large w3-hover-blue-grey">Careers
                 <i class="fa fa-caret-down"></i></button>
             <div id="careerDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
                 <a href="./career.html"
                     class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Careers</a>
-                    <a href="./career.html#AcademicsHeader"
-                        class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span style="margin-left: 2em !important;">Academics</span></a>
-                        <a href="./career.html#BurghersHeader"
-                            class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span style="margin-left: 2em !important;">Burghers</span></a>
-                            <a href="./career.html#CourtiersHeader"
-                                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span style="margin-left: 2em !important;">Courtiers</span></a>
-                                <a href="./career.html#PeasantsHeader"
-                                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span style="margin-left: 2em !important;">Peasants</span></a>
-                                    <a href="./career.html#RangersHeader"
-                                        class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span style="margin-left: 2em !important;">Rangers</span></a>
-                                        <a href="./career.html#RiverfolkHeader"
-                                            class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span style="margin-left: 2em !important;">Riverfolk</span></a>
-                                            <a href="./career.html#RoguesHeader"
-                                                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span style="margin-left: 2em !important;">Rogues</span></a>
-                                                <a href="./career.html#WarriorsHeader"
-                                                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span style="margin-left: 2em !important;">Warriors</span></a>
+                <a href="./career.html#AcademicsHeader"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Academics</span></a>
+                <a href="./career.html#BurghersHeader"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Burghers</span></a>
+                <a href="./career.html#CourtiersHeader"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Courtiers</span></a>
+                <a href="./career.html#PeasantsHeader"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Peasants</span></a>
+                <a href="./career.html#RangersHeader"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Rangers</span></a>
+                <a href="./career.html#RiverfolkHeader"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Riverfolk</span></a>
+                <a href="./career.html#RoguesHeader"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Rogues</span></a>
+                <a href="./career.html#WarriorsHeader"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Warriors</span></a>
             </div>
         </div>
         <div class="w3-dropdown-click w3-mobile">
-            <button onclick="dropdownShow('equipDropdown')" class="w3-button w3-round-large w3-hover-blue-grey">Equipment
+            <button onclick="dropdownShow('equipDropdown')"
+                class="w3-button w3-round-large w3-hover-blue-grey">Equipment
                 <i class="fa fa-caret-down"></i></button>
-                <div id="equipDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
-                    <a href="./equip.html#meleeWeap"
-                        class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Melee Weapons</a>
-                    <a href="./equip.html#rangedWeap"
-                        class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Ranged Weapons</a>
-                        <a href="./equip.html#ammo"
-                            class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span style="margin-left: 2em !important;">Ammunition</span></a>
-                        <a href="./equip.html#weapQualFlaw"
-                            class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Weapon Qualities &amp; Flaws</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="./equip.html#armour"
-                        class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Armour</a>
-                    <a href="./equip.html#armourQualFlaw"
-                        class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Armour Qualities &amp; Flaws</a>
-                </div>
+            <div id="equipDropdown" class="w3-dropdown-content w3-bar-block w3-black w3-round-large">
+                <a href="./equip.html#meleeWeap"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Melee Weapons</a>
+                <a href="./equip.html#rangedWeap"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Ranged Weapons</a>
+                <a href="./equip.html#ammo" class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Ammunition</span></a>
+                <a href="./equip.html#weapQualFlaw"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Weapon Qualities &amp;
+                    Flaws</a>
+                <div class="dropdown-divider"></div>
+                <a href="./equip.html#armour"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Armour</a>
+                <a href="./equip.html#armourQualFlaw"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Armour Qualities &amp;
+                    Flaws</a>
+            </div>
         </div>
         <div class="w3-dropdown-click w3-mobile">
             <button onclick="dropdownShow('magicDropdown')" class="w3-button w3-round-large w3-hover-blue-grey">Magic <i
@@ -182,57 +227,100 @@
                 <div class="dropdown-divider"></div>
                 <a href="./combat.html#combatDifficulty"
                     class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Combat Difficulty</a>
-                    <a href="./combat.html#diffExample"
-                        class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Difficulty Examples</a>
+                <a href="./combat.html#diffExample"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Difficulty Examples</a>
                 <div class="dropdown-divider"></div>
-                    <a href="./combat.html#fateResil"
-                        class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Fate &amp; Resilience</a>
+                <a href="./combat.html#fateResil"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Fate &amp; Resilience</a>
                 <div class="dropdown-divider"></div>
                 <a href="./combat.html#conditions"
                     class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Conditions</a>
             </div>
         </div>
         <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-            <button class="w3-button w3-round-large w3-hover-blue-grey" onclick="window.location='./career.html'">Careers
+            <button class="w3-button w3-round-large w3-hover-blue-grey"
+                onclick="window.location='./adventuring.html'">Adventuring
+                <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
+                <a href="./adventuring.html#healing"
+                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Healing &amp; Other Damage</a>
+                <div class="dropdown-divider"></div>
+                <a href="./adventuring.html#travel"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Travel</a>
+                    <a
+                    href="./adventuring.html#weather"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Weather</span></a>
+                        <a href="./adventuring.html#travelEndeavours"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Travel Endeavours</span></a>
+                        <a href="./adventuring.html#travelEncounters"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Encounters</span></a>
+                <div class="dropdown-divider"></div>
+                <a href="./adventuring.html#betweenAdventures"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Between Adventures</a>
+                <a href="./adventuring.html#events"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Events</span></a>
+                <a href="./adventuring.html#endeavours"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Endeavours</span></a>
+            </div>
+        </div>
+        <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
+            <button class="w3-button w3-round-large w3-hover-blue-grey"
+                onclick="window.location='./career.html'">Careers
                 <i class="fa fa-caret-down"></i></button>
             <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
                 <a href="./career.html"
                     class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Careers</a>
-                    <a href="./career.html#AcademicsHeader"
-                        class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span style="margin-left: 2em !important;">Academics</span></a>
-                        <a href="./career.html#BurghersHeader"
-                            class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span style="margin-left: 2em !important;">Burghers</span></a>
-                            <a href="./career.html#CourtiersHeader"
-                                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span style="margin-left: 2em !important;">Courtiers</span></a>
-                                <a href="./career.html#PeasantsHeader"
-                                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span style="margin-left: 2em !important;">Peasants</span></a>
-                                    <a href="./career.html#RangersHeader"
-                                        class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span style="margin-left: 2em !important;">Rangers</span></a>
-                                        <a href="./career.html#RiverfolkHeader"
-                                            class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span style="margin-left: 2em !important;">Riverfolk</span></a>
-                                            <a href="./career.html#RoguesHeader"
-                                                class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span style="margin-left: 2em !important;">Rogues</span></a>
-                                                <a href="./career.html#WarriorsHeader"
-                                                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span style="margin-left: 2em !important;">Warriors</span></a>
+                <a href="./career.html#AcademicsHeader"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Academics</span></a>
+                <a href="./career.html#BurghersHeader"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Burghers</span></a>
+                <a href="./career.html#CourtiersHeader"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Courtiers</span></a>
+                <a href="./career.html#PeasantsHeader"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Peasants</span></a>
+                <a href="./career.html#RangersHeader"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Rangers</span></a>
+                <a href="./career.html#RiverfolkHeader"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Riverfolk</span></a>
+                <a href="./career.html#RoguesHeader"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Rogues</span></a>
+                <a href="./career.html#WarriorsHeader"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Warriors</span></a>
             </div>
         </div>
         <div class="w3-dropdown-hover w3-mobile  w3-hide-small">
-            <button class="w3-button w3-round-large w3-hover-blue-grey" onclick="window.location='./equip.html'">Equipment
+            <button class="w3-button w3-round-large w3-hover-blue-grey"
+                onclick="window.location='./equip.html'">Equipment
                 <i class="fa fa-caret-down"></i></button>
             <div class="w3-dropdown-content w3-bar-block w3-darker-grey w3-round-large">
                 <a href="./equip.html#meleeWeap"
                     class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Melee Weapons</a>
                 <a href="./equip.html#rangedWeap"
                     class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Ranged Weapons</a>
-                    <a href="./equip.html#ammo"
-                        class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span style="margin-left: 2em !important;">Ammunition</span></a>
-                    <a href="./equip.html#weapQualFlaw"
-                        class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Weapon Qualities &amp; Flaws</a>
+                <a href="./equip.html#ammo" class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey"><span
+                        style="margin-left: 2em !important;">Ammunition</span></a>
+                <a href="./equip.html#weapQualFlaw"
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Weapon Qualities &amp;
+                    Flaws</a>
                 <div class="dropdown-divider"></div>
                 <a href="./equip.html#armour"
                     class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Armour</a>
                 <a href="./equip.html#armourQualFlaw"
-                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Armour Qualities &amp; Flaws</a>
+                    class="w3-bar-item w3-button w3-mobile top-navbar w3-hover-blue-grey">Armour Qualities &amp;
+                    Flaws</a>
             </div>
         </div>
         <div class="w3-dropdown-hover w3-mobile  w3-hide-small">

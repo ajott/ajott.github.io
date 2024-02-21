@@ -42,7 +42,7 @@ function initializeModals() {
     $('test').attr('onclick', 'buildModal(this, \'skill\',0,1)');
     $('endeavour').attr('onclick', 'buildModal(this,\'endeavour\')');
     $('status').attr('onclick', 'buildModal(\'Income\',\'endeavour\',1)');
-    $('a').attr('onclick','processAClick(this)');
+    $('a').attr('onclick', 'processAClick(this)');
     $('endeavour').attr('onclick', 'buildModal(this,\'endeavour\')');
 }
 
@@ -354,21 +354,21 @@ function buildModal(el, type, mast = 0, isTest = 0) {
             endeavourHTML = "";
 
             if (dataRslt["classes"] != undefined) {
-                $("#modal" + modalCount + " .endeavourClasses").html('('+dataRslt["classes"]+')')
+                $("#modal" + modalCount + " .endeavourClasses").html('(' + dataRslt["classes"] + ')')
             }
 
             break;
 
-            case "betweenAdventureEvent":
-                $("#modal" + modalCount + " .eventName").html(dataRslt["name"])
-    
-                $("#modal" + modalCount + " .eventRoll").html(dataRslt["roll"])
-    
-    
-                $("#modal" + modalCount + " .eventDesc").html(dataRslt["desc"])
-    
-    
-                break;
+        case "betweenAdventureEvent":
+            $("#modal" + modalCount + " .eventName").html(dataRslt["name"])
+
+            $("#modal" + modalCount + " .eventRoll").html(dataRslt["roll"])
+
+
+            $("#modal" + modalCount + " .eventDesc").html(dataRslt["desc"])
+
+
+            break;
     }
 
     $('#modal' + modalCount).on('click', function (e) {
@@ -467,21 +467,7 @@ function showMenu() {
 
 
 function dropdownShow(str) {
-    let elements = ["charDropdown", "magicDropdown", "religionDropdown", "skillDropdown", "combatDropdown", "equipDropdown", "careerDropdown"]
-
-    for (let i = 0; i < elements.length; i++) {
-        if (str == elements[i]) {
-            let x = document.getElementById(elements[i]);
-            if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show";
-            } else {
-                x.className = x.className.replace(" w3-show", "");
-            }
-        } else {
-            let x = document.getElementById(elements[i]);
-            x.className = x.className.replace(" w3-show", "");
-        }
-    }
+    $("#"+str).toggleClass('w3-show')
 }
 
 function outSkillSearch(el) {
@@ -627,12 +613,12 @@ function buildCareerCards() {
 
         let $div = $('#templateCareerSection');
 
-        let cleanedName = careerEntry["name"].replace(" ","")
+        let cleanedName = careerEntry["name"].replace(" ", "")
 
-        let $klon = $div.clone().prop('id', 'career' + i).appendTo("#"+career[i]["class"]+"Careers");
+        let $klon = $div.clone().prop('id', 'career' + i).appendTo("#" + career[i]["class"] + "Careers");
 
-        $("#career" + i + " .careerButton").attr('onclick','accordion(\''+ cleanedName +'Container\')').prop('id', cleanedName)
-        $("#career" + i + " .careerContainer").attr('id', cleanedName +'Container')
+        $("#career" + i + " .careerButton").attr('onclick', 'accordion(\'' + cleanedName + 'Container\')').prop('id', cleanedName)
+        $("#career" + i + " .careerContainer").attr('id', cleanedName + 'Container')
         $("#career" + i + " .careerName").text(careerEntry["name"])
         $("#career" + i + " .careerDesc").html("&ldquo;" + careerEntry["desc"] + "&rdquo;")
         $("#career" + i + " .careerRaces").html("<eh>" + careerEntry["races"] + "</eh>")
@@ -656,10 +642,10 @@ function buildCareerCards() {
         $("#career" + i + " .career" + careerEntry["advances"][5] + "th").show()
         $("#career" + i + " .career" + careerEntry["advances"][5]).addClass("attr4").html("<img class=\"attrImg\" src=\"./img/shield_64.png\"></img>").show()
 
-        let attr = ["WS","BS","S","T","I","Agi","Dex","Int","WP","Fel"]
+        let attr = ["WS", "BS", "S", "T", "I", "Agi", "Dex", "Int", "WP", "Fel"]
 
         attr.forEach(characteristic => {
-            if (careerEntry["advances"].includes(characteristic) == false){
+            if (careerEntry["advances"].includes(characteristic) == false) {
                 $("#career" + i + " .attrTable .career" + characteristic + "th").addClass('w3-hide-small w3-hide-medium')
                 $("#career" + i + " .career" + characteristic).addClass('w3-hide-small w3-hide-medium');
             }
@@ -740,10 +726,10 @@ function buildCareerCards() {
 
 function careerModalSearch(el) {
     let parentModal = "#" + $(el).parents('.resultModal').prop('id')
-    let careerCleanName = $(parentModal + " .careerName").text().replace(" ","")
+    let careerCleanName = $(parentModal + " .careerName").text().replace(" ", "")
 
     let baseURI = location.href.split("wfrpref")[0];
-    let pageURI = baseURI + "wfrpref/career.html#"+careerCleanName;
+    let pageURI = baseURI + "wfrpref/career.html#" + careerCleanName;
     window.open(pageURI, '_blank');
 
 }
@@ -816,25 +802,25 @@ $(document).ready(function () {
     })
 });
 
-$(document).ready(function (){
-    setTimeout(function(){
+$(document).ready(function () {
+    setTimeout(function () {
         scrollToDiv();
-    } ,200);
+    }, 200);
 });
 
-function scrollToDiv(uri=undefined) {
+function scrollToDiv(uri = undefined) {
     if (uri == undefined) {
-        uri = String(document.location)        
+        uri = String(document.location)
     }
 
     let divTarget = uri.split("#")[1]
-    
 
-    if (divTarget != undefined){
+
+    if (divTarget != undefined) {
 
         divTarget = divTarget.split("?")[0] // remove any search parameters being passed
 
-        let targetDiv = String("#"+divTarget) // put the pound sign back
+        let targetDiv = String("#" + divTarget) // put the pound sign back
 
 
 
@@ -846,12 +832,12 @@ function scrollToDiv(uri=undefined) {
 
         let windowPad = ($(window).height() * 0.10) // 10% of the viewport height
 
-        if (targetOffset != undefined){ // Undefined if the element isn't found
+        if (targetOffset != undefined) { // Undefined if the element isn't found
             $('html, body').animate({
                 scrollTop: (targetOffset - windowPad)
             }, 300);
             setTimeout(
-                animateHighlight($(targetDiv),"rgba(255, 255, 156,0.2)", 1000),
+                animateHighlight($(targetDiv), "rgba(255, 255, 156,0.2)", 1000),
                 400
             )
         }
@@ -859,17 +845,314 @@ function scrollToDiv(uri=undefined) {
 
 }
 
-$.fn.animateHighlight = function(highlightColor, duration) {
+function buildEventTable() {
+    let trHTML = ""
+
+    betweenAdventureEvent.forEach(ev => {
+
+        if (ev["name"] != "") {
+
+            trHTML += "<tr>"
+
+            trHTML += "<td>" + ev["roll"] + "</td>"
+
+            trHTML += "<td><strong>" + ev["name"] + ": </strong>" + ev["desc"] + "</td>"
+
+            trHTML += "</tr>"
+
+            $('#eventTableBody:last-child').append(trHTML);
+        }
+
+        trHTML = ""
+    })
+}
+
+function toggleDesc(el) {
+    let innerTxt = $(el).text();
+    if (innerTxt.includes("Show")) {
+        $(el).html("&#9650;<br/>Hide Description")
+    } else {
+        $(el).html("Show Description<br/>&#9660")
+    }
+    $(el).siblings('.well-desc').toggleClass('w3-hide');
+}
+
+function buildEndeavours() {
+    let $div = $('#endeavPrefab');
+    let endvHTML = "";
+    let endID = ""
+
+    let DR = []
+    let gen = []
+    let cls = []
+    let trav = []
+
+    for (let i = 0; i < endeavour.length; i++) {
+        let endv = endeavour[i]
+
+        if (endv["name"] != "") {
+
+            switch (endv["type"]) {
+                case "Duties & Responsibilities":
+                    DR.push(endv)
+                    break;
+
+                case "General Endeavours":
+                    gen.push(endv)
+                    break;
+
+                case "Class Endeavours":
+                    cls.push(endv)
+                    break;
+                
+                case "Travel Endeavours":
+                    trav.push(endv);
+                    break;
+            }
+
+        }
+    }
+
+
+    DR.forEach(DRendv => {
+        endID = DRendv["cleanName"];
+
+        if (DR.indexOf(DRendv) % 2 == 0) {
+            endvHTML += "<div class='w3-row-padding'><div class='w3-col s12 m12 l6'>"
+
+            endvHTML += "<div id="+endID+"><div class='w3-card-2 w3-round-large grid-card padCard'><div class='w3-row-padding'><h4><span class='endeavourName'>"
+            
+            endvHTML += DRendv["name"];
+
+            endvHTML += "</span></h4></div>"
+
+            endvHTML += "<p><blockquote class='w3-panel w3-round-large careerQuote w3-leftbar w3-border-dark-gray'><p><em><span style='font-size: 1.5rem; font-family: Sophia, sans-serif; line-height: 0'>&ldquo;</span>" + DRendv["flavor"] + "<span style='font-size: 1.5rem; font-family: Sophia, sans-serif; line-height: 0;'>&rdquo;</span></em></p><p style='text-align: right !important; white-space:normal;'>&mdash;" + DRendv["appelation"] + "</p></blockquote></p>"
+            
+            endvHTML += "<div class='w3-row-padding'><div class='endeavourDesc w3-hide well well-desc'>"
+            
+            DRendv["description"].forEach(para => {
+                endvHTML += "<p>" + para + "</p>"
+            })
+
+            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Description<br/>&#9660;</h6></div><br /></div></div></div>"
+
+        } else {
+            endvHTML += "<div class='w3-col s12 m12 l6'>"
+
+            endvHTML += "<div id="+endID+"><div class='w3-card-2 w3-round-large grid-card padCard'><div class='w3-row-padding'><h4><span class='endeavourName'>"
+            
+            endvHTML += DRendv["name"];
+
+            endvHTML += "</span></h4></div>"
+
+            endvHTML += "<p><blockquote class='w3-panel w3-round-large careerQuote w3-leftbar w3-border-dark-gray'><p><em><span style='font-size: 1.5rem; font-family: Sophia, sans-serif; line-height: 0'>&ldquo;</span>" + DRendv["flavor"] + "<span style='font-size: 1.5rem; font-family: Sophia, sans-serif; line-height: 0;'>&rdquo;</span></em></p><p style='text-align: right !important; white-space:normal;'>&mdash;" + DRendv["appelation"] + "</p></blockquote></p>"
+            
+            endvHTML += "<div class='w3-row-padding'><div class='endeavourDesc w3-hide well well-desc'>"
+            
+            DRendv["description"].forEach(para => {
+                endvHTML += "<p>" + para + "</p>"
+            })
+
+            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Description<br/>&#9660;</h6></div><br /></div></div></div></div>"
+
+
+        }
+
+    })
+
+    $(endvHTML).appendTo("#dutiesEndeav")
+
+    endvHTML = ""
+
+
+    gen.forEach(GENendv => {
+        endID = GENendv["cleanName"];
+
+        if (gen.indexOf(GENendv) % 2 == 0) {
+            endvHTML += "<div class='w3-row-padding'><div class='w3-col s12 m12 l6'>"
+
+            endvHTML += "<div id="+endID+"><div class='w3-card-2 w3-round-large grid-card padCard'><div class='w3-row-padding'><h4><span class='endeavourName'>"
+            
+            endvHTML += GENendv["name"];
+
+            endvHTML += "</span></h4></div><div class='w3-row-padding'><div class='endeavourDesc w3-hide well well-desc'>"
+            
+            GENendv["description"].forEach(para => {
+                endvHTML += "<p>" + para + "</p>"
+            })
+
+            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Description<br/>&#9660;</h6></div><br /></div></div></div>"
+
+        } else {
+            endvHTML += "<div class='w3-col s12 m12 l6'>"
+
+            endvHTML += "<div id="+endID+"><div class='w3-card-2 w3-round-large grid-card padCard'><div class='w3-row-padding'><h4><span class='endeavourName'>"
+            
+            endvHTML += GENendv["name"];
+
+            endvHTML += "</span></h4></div><div class='w3-row-padding'><div class='endeavourDesc w3-hide well well-desc'>"
+            
+            GENendv["description"].forEach(para => {
+                endvHTML += "<p>" + para + "</p>"
+            })
+
+            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Description<br/>&#9660;</h6></div><br /></div></div></div></div><br/>"
+
+
+        }
+    })
     
-};
+    $(endvHTML).appendTo("#genEndeav")
+
+    endvHTML = ""
+
+
+    cls.forEach(CLSendv => {
+        endID = CLSendv["cleanName"];
+
+        if (cls.indexOf(CLSendv) % 2 == 0) {
+            endvHTML += "<div class='w3-row-padding'><div class='w3-col s12 m12 l6'>"
+
+            endvHTML += "<div id="+endID+"><div class='w3-card-2 w3-round-large grid-card padCard'><div class='w3-row-padding'><h4><span class='endeavourName'>"
+            
+            endvHTML += CLSendv["name"];
+
+            endvHTML += "</span></h4></div>"
+            
+            endvHTML += "<div class='w3-row-padding w3-center'><div class='endeavourClasses'><eh>" + CLSendv["classes"] + "</eh></div></div>"
+            
+            endvHTML += "<div class='w3-row-padding'><div class='endeavourDesc w3-hide well well-desc'>"
+            
+            CLSendv["description"].forEach(para => {
+                endvHTML += "<p>" + para + "</p>"
+            })
+
+            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Description<br/>&#9660;</h6></div><br /></div></div></div>"
+
+        } else {
+            endvHTML += "<div class='w3-col s12 m12 l6'>"
+
+            endvHTML += "<div id="+endID+"><div class='w3-card-2 w3-round-large grid-card padCard'><div class='w3-row-padding'><h4><span class='endeavourName'>"
+            
+            endvHTML += CLSendv["name"];
+
+            endvHTML += "</span></h4></div>"
+            
+            endvHTML += "<div class='w3-row-padding w3-center'><div class='endeavourClasses'><eh>" + CLSendv["classes"] + "</eh></div></div>"
+            
+            endvHTML += "<div class='w3-row-padding'><div class='endeavourDesc w3-hide well well-desc'>"
+            
+            CLSendv["description"].forEach(para => {
+                endvHTML += "<p>" + para + "</p>"
+            })
+
+            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Description<br/>&#9660;</h6></div><br /></div></div></div></div><br/>"
+
+
+        }
+    })
+    
+    $(endvHTML).appendTo("#classEndeav")
+
+    endvHTML = ""
+
+    trav.forEach(travEndv => {
+        if (trav.indexOf(travEndv) % 2 == 0) {
+            endvHTML += "<div class='w3-row-padding'><div class='w3-col s12 m12 l6'>"
+
+            endvHTML += "<div id="+endID+"><div class='w3-card-2 w3-round-large grid-card padCard'><div class='w3-row-padding'><h4><span class='endeavourName'>"
+            
+            endvHTML += travEndv["name"];
+
+            endvHTML += "</span></h4></div>"
+            
+            endvHTML += "<div class='w3-row-padding'><div class='endeavourDesc w3-hide well well-desc'>"
+            
+            travEndv["description"].forEach(para => {
+                endvHTML += "<p>" + para + "</p>"
+            })
+
+            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Description<br/>&#9660;</h6></div><br /></div></div></div>"
+
+        } else {
+            endvHTML += "<div class='w3-col s12 m12 l6'>"
+
+            endvHTML += "<div id="+endID+"><div class='w3-card-2 w3-round-large grid-card padCard'><div class='w3-row-padding'><h4><span class='endeavourName'>"
+            
+            endvHTML += travEndv["name"];
+
+            endvHTML += "</span></h4></div>"
+            
+            endvHTML += "<div class='w3-row-padding'><div class='endeavourDesc w3-hide well well-desc'>"
+            
+            travEndv["description"].forEach(para => {
+                endvHTML += "<p>" + para + "</p>"
+            })
+
+            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Description<br/>&#9660;</h6></div><br /></div></div></div></div><br/>"
+        }
+    })
+
+    $(endvHTML).appendTo("#travelEndeavours")
+
+    endvHTML = ""
+
+}
+
+function buildTravelEncounters() {
+    travelEncounter.forEach(encounter => {
+        let encounterHTML = ""
+        
+        encounterHTML += "<tr><td>"
+
+        encounterHTML += encounter["roll"]
+
+        encounterHTML += "</td><td>"
+
+        encounterHTML += "<eh>" + encounter["name"] + ": </eh>" + encounter["desc"] + "</td>"
+
+        switch (encounter["type"]){
+            case "Positive":
+                $(encounterHTML).appendTo('#positiveEncounterBody')
+                break;
+                case "Coincidental":
+                    $(encounterHTML).appendTo('#coincidentalEncounterBody')
+                    break;
+                    case "Harmful":
+                        $(encounterHTML).appendTo('#harmfulEncounterBody')
+                        break;
+        }
+    })
+}
+
+function toggleEncounters(el) {
+    $(el).parents().children('button').removeClass('btn-selected')
+    $(el).addClass('btn-selected')
+    if ($(el).text().includes("Positive")) {
+        $("#positiveEncounterBody").show();
+        $("#coincidentalEncounterBody").hide();
+        $("#harmfulEncounterBody").hide();
+    } else if ($(el).text().includes("Coincidental")) {
+        $("#positiveEncounterBody").hide();
+        $("#coincidentalEncounterBody").show();
+        $("#harmfulEncounterBody").hide();
+
+    } else if ($(el).text().includes("Harmful")) {
+        $("#positiveEncounterBody").hide();
+        $("#coincidentalEncounterBody").hide();
+        $("#harmfulEncounterBody").show();
+
+    }
+}
+
 
 function animateHighlight(div, highlightColor, duration) {
     var highlightBg = highlightColor || "#FFFF9C";
     var animateMs = duration || 1500;
     var originalBg = div.css("backgroundColor");
-        div.stop().css("background-color", highlightBg)
-            .animate({backgroundColor: originalBg}, animateMs);
-        setTimeout( function() { notLocked = true; }, animateMs);
+    div.stop().css("background-color", highlightBg)
+        .animate({ backgroundColor: originalBg }, animateMs);
+    setTimeout(function () { notLocked = true; }, animateMs);
 }
 
 
@@ -923,7 +1206,7 @@ function processAClick(el) {
 
     let targetEl = targetAttr.split('#')[1]
 
-    let currURI = '.'+String(document.location).split("#")[0].split('wfrpref')[1]
+    let currURI = '.' + String(document.location).split("#")[0].split('wfrpref')[1]
 
     if (targetURI == currURI && targetEl != undefined) {
         scrollToDiv(targetAttr)

@@ -764,6 +764,15 @@ th {
 
 }
 
+.well-desc {
+    background-color: #1b2227 !important;
+}
+
+.descExpando {
+    cursor: pointer;
+    color: lightgrey !important;
+}
+
 .advancementCard {
     padding-top: 5px;
     padding-bottom: 5px;

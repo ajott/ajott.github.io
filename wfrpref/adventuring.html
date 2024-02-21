@@ -1,0 +1,439 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WFRP 4e QuickRef</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="./isotope.pkgd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+    <script src="main.js"></script>
+    <script src="spells.js"></script>
+    <script src="skills.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Atma' rel='stylesheet'>
+    <link rel="stylesheet" href="interface.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+
+<body>
+    <div class="w3-top w3-darker-grey w3-row-padding bar-pad" id="navBarDiv">
+    </div>
+    <div id="healing" class="w3-row-padding w3-section info">
+        <h1>Healing & Other Damage</h1>
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <h2>Healing</h2>
+            <div class="w3-row-padding">
+                <div class="w3-col s12 m12 l6">
+                    <h4>Healing Wounds</h4>
+                    <p>Without medical attention, you can attempt an <strong>Average (+20) Endurance Test</strong> after a good sleep once a day. You Heal Wounds equal to the <mono>SL + your Toughness Bonus</mono>. For each day you spend taking it easy, you also heal an extra number of Wounds equal to your Toughness Bonus. </p>
+                    <p>If you wish to Heal more Wounds than this, then you need to be attended by someone with the <skill>Heal</skill> skill or you’ll need bandages, a healing poultice, or similar.</p>
+                    <p>There is no penalty for being wounded. Lost Wounds are considered to be small cuts, bruises, and other easily ignored injuries.</p>
+                    <h4>Healing Critical Wounds</h4>
+                    <p>If you have received any Critical Wounds, you are said to be Critically Wounded. Critical Wounds can be very serious. Refer to the appropriate Critical Table to see exactly what penalties you suffer for any Critical Wounds sustained. Critical Wounds do not count as healed until all conditions they inflict are removed, and all non-permanent negative modifiers are resolved. When you are Critically Wounded, you may still heal your Wounds using the normal rules.</p>
+                    
+                </div>
+                <div class="w3-col s12 m12 l6">
+                    <h4>Medical Attention</h4>
+                    <p>Several Critical Wound results and conditions cannot be resolved until you receive medical attention. This includes, but is not limited to, the following:
+                        <ul>
+                            <li>Successful use of the <skill>Heal</skill> skill.</li>
+                            <li>Application of a bandage, healing poultice, or similar.</li>
+                            <li>Successful use of a spell or prayer that heals Wounds.</li>
+                        </ul>
+                    </p>
+                    <h5>Surgery</h5>
+                    <p>Some wounds are beyond simple stitching and foul-smelling poultices. If you suffer a Critical Wound where surgery is required to attend to it (it will be marked: Surgery), you suffer the marked penalties until you visit an appropriately trained doctor or barber-surgeon, or somehow source a magical or divine surgery equivalent.</p>
+                    <p>Further, if you suffer an amputated body part, you cannot heal 1 of the suffered Wounds until a surgeon successfully treats it with a <skill>Heal</skill> Test. For more information on surgery, refer to the <talent>Surgery</talent> talent.</p>
+                </div>
+            </div>
+            <br/>
+            <h2 id="otherDamage">Other Damage</h2>
+            <div class="w3-row-padding">
+                <div class="w3-col s12 m12 l6">
+                    <h4>Drowning & Suffocation</h4>
+                    <p>If prepared, you can hold your breath for <mono>Toughness Bonus x 10</mono> seconds without a Test. After that, you may start to suffocate or drown. If you are unprepared and suddenly deprived of air, you will start to suffocate immediately.</p>
+                    <p>Each Round you are being suffocated you lose 1 Wound. Should you reach 0 Wounds, you immediately receive the <condition>Unconscious</condition> Condition. After that, you will die of suffocation or drowning in Toughness Bonus Rounds.</p>
+                    <h4>Exposure</h4>
+                    <p>Every 4 hours spent in a difficult environment — such as sub-zero temperatures, a hot desert, or a howling storm — requires you take an Endurance Test. Extreme environments require a Test every 2 hours.</p>
+                    <p><eh>Cold:</eh> Your first failure causes a penalty of –10 <strong>Ballistic Skill</strong>, <strong>Agility</strong> and <strong>Dexterity</strong>. The second failure reduces all other Characteristics by –10. Third and subsequent failures cause <mono>1d10</mono> Damage not modified by Armour Points, with a minimum of 1 Wound lost. If you reach zero Wounds, you immediately take an Unconscious condition. Certain Trappings provide bonuses and penalties to these Tests.</p>
+                    <p><eh>Heat:</eh> Your first failure causes a penalty of –10 to <strong>Intelligence</strong> and <strong>Willpower</strong>, and adds a <condition>Fatigued</condition> Condition. The second failure reduces all other Characteristics by –10%, and adds another <condition>Fatigued</condition> Condition. Third and subsequent failures cause <mono>1d10</mono> Damage not modified by Armour Points, with a minimum of 1 Wound lost. Stripping off heavy Trappings cancels 1 failed test.</p>                    
+                </div>
+                <div class="w3-col s12 m12 l6">
+                    <h4>Thirst & Starvation</h4>
+                    <p>Running out of provisions can be bad. Running out of water is worse. Endurance Tests to withstand thirst and hunger become increasingly difficult (cumulative –10 for every test). Characters without food and water cannot heal Wounds or recover Fatigue naturally.</p>
+                    <p><eh>Water:</eh> Every day without water requires you make an Endurance test. The first failed Test causes a penalty of –10 <strong>Intelligence</strong>, <strong>Willpower</strong>, and <strong>Fellowship</strong>. Second and subsequent failures reduce all Characteristics by –10 and cause <mono>1d10</mono> Damage not modified by Armour Points, with a minimum of 1 Wound lost.</p>
+                    <p><eh>Food:</eh> Every 2 days without food require an Endurance Test. The first failed Tests causes a penalty of –10 <strong>Strength</strong> and <strong>Toughness</strong>. Second and subsequent failures reduce all other Characteristics by –10 and cause <mono>1d10</mono> Damage not modified by Armour Points, with a minimum of 1 Wound lost.</p>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+
+    </div>
+    <br/>
+    <hr/>
+    <div id="travel" class="w3-row-padding w3-section info">
+        <h1>Travel</h1>
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <div class="w3-row-padding">
+                <div class="w3-col s12 m12 l6">
+                    <h4>Setting Out</h4>
+                    <p>To begin, the Characters must determine their destination or direction. With a destination in
+                        mind, the GM can determine how long the journey will take, dividing the travel time into Stages.
+                        During each Stage of a journey, the GM rolls for the Weather, the Characters may engage in
+                        Travel Endeavours, and any Travel Events that take place are resolved. The Arrival Phase occurs
+                        as the characters reach their destination — hopefully not too much worse for wear.</p>
+                    <h4>Destination & Directions</h4>
+                    <p>Before setting off on a journey, the Characters must determine where they are going or, at least,
+                        what direction they are going in. If the Characters have a map of the location, they should have
+                        a reasonable idea of where they're headed and how long it will take, though maps of the Empire
+                        are notoriously inaccurate. Without a map, the Characters are reliant on directions from others
+                        — perhaps making <skill>Gossip</skill> Tests whenever they stop in a coaching inn — and on the
+                        even-more-unreliable road signs that dot the landscape.</p>
+                </div>
+                <div class="w3-col s12 m12 l6">
+                    <h4>Travel Stages</h4>
+                    <p>A journey is divided into a number of Travel Stages. The number of Stages is up to GM discretion,
+                        with longer journeys having more Stages. The GM should feel free to adjust the number of Stages
+                        based on the Players’ preferences. For some groups, detailed journeys with a plethora of random
+                        encounters and challenges can become an exciting, memorable part of their Character’s adventure.
+                        For other groups, a brief description of the journey with one or two complications to add some
+                        spice is more than enough.</p>
+                    <p>Once the number of Stages is determined, it is modified by the lowest Movement among the
+                        Characters, whether on foot, mounted, or in a vehicle. If this is 3 or less, the journey should
+                        be increased by 1–2 stages. If the Characters are all lucky enough to possess mounts with a
+                        Movement of 6 or more, the total number of Stages is halved to a minimum of 1.</p>
+                    <p>Characters may attempt to reduce this number further with a <strong>Challenging (+0) <skill>
+                                Navigation</skill> or a <skill>Lore</skill> Test</strong>. The Test must be relevant to
+                        the location, such as <skill>Lore (Reikland)</skill>. Having a proper map of the route makes the
+                        Test Average (+20). A success reduces the number of Stages by 1, to a minimum of 1.</p>
+                </div>
+            </div>
+            <br />
+            <div class="w3-row-padding" id="weather">
+                <h2>Weather</h2>
+                <div class="w3-row-padding">
+                    <div class="w3-col s0 m0 l3">
+                        &nbsp;
+                    </div>
+                    <div class="w3-col s12 m12 l6">
+                        <p class="w3-center">Bad weather is the greatest enemy of travellers (other than actual enemies
+                            of travellers, particularly those armed with blunderbusses, crossbows, and loose morals).
+                            The GM should roll 1d100 for Weather at the beginning of each Stage, with the result
+                            depending on the season.</p>
+                    </div>
+                    <div class="w3-col s0 m0 l3">
+                        &nbsp;
+                    </div>
+                </div>
+                <div class=w3-row-padding>
+                    <div class="w3-col s0 m0 l2">
+                        &nbsp;
+                    </div>
+                    <div class="w3-col s12 m12 l8">
+                        <table class="w3-table table-dark w3-striped w3-hoverable w3-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Weather</th>
+                                    <th>Spring</th>
+                                    <th>Summer</th>
+                                    <th>Autumn</th>
+                                    <th>Winter</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Dry</td>
+                                    <td>01-10</td>
+                                    <td>01-40</td>
+                                    <td>01-30</td>
+                                    <td>&mdash;</td>
+                                </tr>
+                                <tr>
+                                    <td>Fair</td>
+                                    <td>11-30</td>
+                                    <td>41-70</td>
+                                    <td>31-60</td>
+                                    <td>01-10</td>
+                                </tr>
+                                <tr>
+                                    <td>Rain</td>
+                                    <td>31-90</td>
+                                    <td>71-95</td>
+                                    <td>61-90</td>
+                                    <td>11-60</td>
+                                </tr>
+                                <tr>
+                                    <td>Downpour</td>
+                                    <td>91-95</td>
+                                    <td>96-00</td>
+                                    <td>91-98</td>
+                                    <td>61-65</td>
+                                </tr>
+                                <tr>
+                                    <td>Snow</td>
+                                    <td>96-00</td>
+                                    <td>&mdash;</td>
+                                    <td>99-00</td>
+                                    <td>66-90</td>
+                                </tr>
+                                <tr>
+                                    <td>Blizzard</td>
+                                    <td>&mdash;</td>
+                                    <td>&mdash;</td>
+                                    <td>&mdash;</td>
+                                    <td>91-00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="w3-col s0 m0 l2">
+                        &nbsp;
+                    </div>
+
+                </div>
+                <br />
+                <div class="w3-row-padding">
+                    <div class="w3-col s12 m12 l6">
+                        <h4>Dry</h4>
+                        <p>Prolonged dry weather causes curtains of dust to blow across the road at the slightest
+                            breeze, obscuring vision and parching throats. Travel is easy, if uncomfortable, but
+                            <endeavour>Forage</endeavour> Endeavours are at a −10 as the weather makes finding water
+                            harder.</p>
+                        <h4>Fair</h4>
+                        <p>For once, the weather is being kind. There are no weather-related hazards.</p>
+                        <h4>Rain</h4>
+                        <p>Rain can last anywhere from a few hours to a few days. The ‘spring showers’ so beloved of
+                            poets can sometimes last up to a week, proving that poets spend remarkably little time
+                            outdoors away from wine and warmth. Rain reduces visibility to 75 ft or less. Additionally,
+                            ranged weapons suffer a –10 penalty to use due to driving wind and rain. </p>
+                    </div>
+                    <div class="w3-col s12 m12 l6">
+                        <h4>Downpour</h4>
+                        <p>Terrible storms reduce visibility to near zero, making any sound below a shout impossible to
+                            hear and imposing a –10 penalty on all physical Tests. Everything and everyone not under
+                            cover is soaked through within minutes. Water streams off the road, carving deep gullies so
+                            that the road is churned to little more than a bog. Ranged weapons suffer a –20 penalty to
+                            use due to the terrible weather, and exposed gunpowder is immediately ruined. Animals with
+                            the <trait>Skittish</trait> Trait may also become spooked by sudden jolts of lightning
+                            during bad storms.</p>
+                        <h4>Snow</h4>
+                        <p>A gentle snow covers the world in a blanket of white, making everything seem new and clean.
+                            It is undoubtedly beautiful, until one has to move through it. Snow reduces visibility to
+                            150 ft, and makes movement faster than Walking impossible. Characters travelling in Snow
+                            must make an <strong>Average (+20) Endurance Test</strong> or gain a <condition>Fatigued
+                            </condition> Condition.</p>
+                        <h4>Blizzard</h4>
+                        <p>Snow turns everything into a sightless white hell. The road disappears beneath a
+                            fast-accumulating blanket of snow, leaving only trees to steer by. Visibility is close to
+                            zero. Movement faster than Walking is impossible. Ranged weapons are useless in these
+                            conditions. Characters travelling in a Blizzard must make a <strong>Challenging (+0)
+                                Endurance Test</strong> or gain a <condition>Fatigued</condition> Condition.</p>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="w3-row-padding" id="travelEndeavours">
+                <h2>Travel Endeavours</h2>
+            </div>
+            <br />
+            <div class="w3-row-padding" id="travelEncounters">
+                <h2>Travel Encounters</h2>
+                <div class="w3-row-padding">
+                    <div class="w3-col s12 m12 l6">
+                        <p>Travel encounters come in three flavours: Positive, Coincidental, and Harmful.</p>
+                        <p>
+                            <eh>Positive Encounters</eh> are generally beneficial to your party, though many groups find
+                            a way to turn any situation against them! Positive Encounters may be triggered by an
+                            Impressive success or better on a Travel Endeavour, or simply if the GM wishes to reward the
+                            Characters for being particularly clever or well prepared.
+                        </p>
+                        <p>
+                            <eh>Coincidental Encounters</eh> are neither harmful nor beneficial to the Character, they
+                            are simply the sort of thing travellers in the Old World run into as a matter of course.
+                            These Encounters can be used if the Characters have rolled neither an Impressive success or
+                            failure on a Travel Endeavour, or simply because the GM wishes to add some local colour.
+                        </p>
+                        <p>
+                            <eh>Harmful Encounters</eh> are unfortunately common; The Empire is fraught with danger, and
+                            an unwary or simply unlucky traveller can fall afoul of any number of hazards. Should one of
+                            the Characters fumble a Travel Endeavour, or the majority of characters fail in their Travel
+                            Endeavours, any of these misadventures may befall them.
+                        </p>
+                    </div>
+                    <div class="w3-col s12 m12 l6 w3-center">
+                        <div class="w3-bar" style="padding-top: 4px; padding-bottom: 4px;">
+                            <button onclick="toggleEncounters(this)"
+                                class="w3-button w3-blue-grey w3-bar-item firstBtn btn-selected">Positive
+                                Encounters</button>
+                            <button onclick="toggleEncounters(this)"
+                                class="w3-button w3-blue-grey w3-bar-item">Coincidental Encounters</button>
+                            <button onclick="toggleEncounters(this)"
+                                class="w3-button w3-blue-grey w3-bar-item lastBtn">Harmful Encounters</button>
+                        </div>
+                        <div>
+                            <table class="w3-table table-dark w3-striped w3-hoverable w3-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>1d100</th>
+                                        <th>Encounter</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="positiveEncounterBody">
+
+                                </tbody>
+                                <tbody id="coincidentalEncounterBody" style="display:none;">
+
+                                </tbody>
+                                <tbody id="harmfulEncounterBody" style="display:none;">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+        </div>
+
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+
+    </div>
+    <hr />
+    <div id="betweenAdventures" class="w3-row-padding w3-section info">
+        <h1>Between Adventures</h1>
+
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+        <div class="w3-col s12 m12 l5">
+            <h4>Events</h4>
+            <p>Before Endeavours are selected for the adventuring break, each character rolls <mono>1d100</mono> on the
+                <a href="./adventuring.html#events">Events Table</a>. Some Events may only affect the character making
+                the roll, while others have broader implications for the party as a whole.
+            </p>
+            <h4>Endeavours</h4>
+            <p>After the Events are determined, each character may undertake Endeavours. The number of Endeavours will
+                vary depending on the length of the break; a maximum of one Endeavour may be undertaken for each week
+                you are not adventuring, and <em>no more than three</em> Endeavours in total, regardless of how long the
+                break is.</p>
+            <p>While most of these Endeavours can be attempted by anyone, some are better suited to a particular Class
+                or Career.</p>
+        </div>
+        <div class="w3-col s12 m12 l5">
+            <h4>Money to Burn</h4>
+            <p>After you’ve rolled on the Event Table, you can spend the money earned during your last adventures using
+                the normal rules. Then, after completing your Endeavours, all money held by your character is considered
+                spent. All of it. The silver lifted from a Burgher’s purse? Gone. The booty liberated from pirates? Also
+                gone. That Troll hoard you raided? Gone, too. All of it.</p>
+            <p>What happened to it? It was spent, stolen, drunk, gambled, used for repairs, to pay off debts or taxes,
+                given as a charitable donations or votive offerings, spent on bribes, or used in whatever other way you
+                prefer. You should concoct the best story for what happens to those funds, as it explains a lot about
+                your character.</p>
+            <p>If you want to keep some of your hard-won coin to use in the future, you should undertake the <endeavour>
+                    Banking</endeavour> Endeavour. If you want money at the beginning of the next adventure — honestly,
+                or otherwise, depending on your Career — you should undertake the <endeavour>Income</endeavour>
+                Endeavour.</p>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+
+    </div>
+    <hr />
+    <div id="events" class="w3-row-padding w3-section info">
+        <h2>Events</h2>
+        <div class="w3-col s0 m0 l2">
+            &emsp;
+        </div>
+        <div class="w3-col s12 m12 l8">
+            <p></p>
+            <table class="w3-table table-dark w3-striped w3-hoverable w3-bordered">
+                <thead>
+                    <tr>
+                        <th>1d100</th>
+                        <th>Event</th>
+                    </tr>
+                </thead>
+                <tbody id="eventTableBody">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="w3-col s0 m0 l2">
+            &emsp;
+        </div>
+
+    </div>
+    <hr />
+    <div id="endeavours" class="w3-row-padding w3-section info">
+        <h2>Endeavours</h2>
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+        <div class="w3-col s12 m12 l10">
+            <!-- <p>There are three types of between-adventure Endeavours: Duties & Responsibilities (which may not be applicable to characters), General Endeavours (which can be undertaken by anyone), and Class Endeavours (which are limited to specific classes).</p> -->
+            <div id="dutiesEndeav" class="w3-row-padding">
+                <h3>Duties & Responsibilities</h3>
+            </div>
+            <br />
+            <div id="genEndeav" class="w3-row-padding">
+                <h3>General Endeavours</h3>
+
+            </div>
+            <br />
+            <div id="classEndeav" class="w3-row-padding">
+                <h3>Class Endeavours</h3>
+
+            </div>
+        </div>
+        <div class="w3-col s0 m0 l1">
+            &emsp;
+        </div>
+
+    </div>
+</body>
+<footer>
+    <div class="w3-row w3-section">
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+        <div class="w3-col s12 m10 l10">
+            <div class="w3-center" id="copyrightText">
+            </div>
+        </div>
+        <div class="w3-col s0 m1 l1">
+            <p></p>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            buildEventTable();
+            buildEndeavours();
+            buildTravelEncounters();
+        })
+    </script>
+</footer>
+<div id="modalPlaceholder">
+
+</div>
+
+</html>

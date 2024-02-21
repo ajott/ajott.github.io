@@ -12777,3 +12777,142 @@ var betweenAdventureEvent = [
         "desc": "One or more rare mercenaries turn up in a nearby settlement looking for work: a Tilean Duellist of great repute, the so-called Birdmen of Catrazza, unemployed Ogres under the command of a Halfling captain, or other unlikely bands. The mercenaries will gladly train any character in any martial Skills or Talents, at a 20% reduction in costs, should the characters undertake a <endeavour>Training</endeavour> or <endeavour>Unusual Learning</endeavour> Endeavour. Additionally, any characters undertaking a <endeavour>Combat Training</endeavour> Endeavour gain a +20 bonus to any relevant Test."
     }
 ]
+
+var travelEncounter = [
+    {
+        "name": "",
+        "roll": "",
+        "type": "",
+        "desc": ""
+    }, {
+        "name": "Good Company",
+        "roll": "01-25",
+        "type": "Positive",
+        "desc": "A chance encounter on the road with other travellers serves to remind the Characters that there are still decent folks abroad. Of course, if they themselves are not decent people, they may look to take advantage of the situation."
+    }, {
+        "name": "Now That’s Useful!",
+        "roll": "26-45",
+        "type": "Positive",
+        "desc": "The Characters find out something relevant to their adventure — gossip, a lost message, a sight they weren’t meant to witness, or similar."
+    }, {
+        "name": "Wondeful Accommodation",
+        "roll": "46-60",
+        "type": "Positive",
+        "desc": "The Characters pass by a comfortable coaching inn, and if they’re willing to spend a few coins, they find their minds at ease, their bellies full, and their bodies healed of any lingering Conditions."
+    }, {
+        "name": "Idle Time",
+        "roll": "61-75",
+        "type": "Positive",
+        "desc": "The journey is so relaxed and unhindered that the Characters find themselves with spare time on their hands. Each Character may perform an extra Travel Endeavour."
+    }, {
+        "name": "A Kind Word",
+        "roll": "76-90",
+        "type": "Positive",
+        "desc": "A simple act of goodwill on the part of the Characters leaves a fellow traveller delighted — good word of the Characters deed spreads to their destination, and at least one NPC they meet there will have a good opinion of the Characters."
+    }, {
+        "name": "Short Cut!",
+        "roll": "91-95",
+        "type": "Positive",
+        "desc": "Rechecking maps or soliciting local advice, the Characters discover a shortcut through the region. They may skip the next Stage of their journey."
+    }, {
+        "name": "Restful Journey",
+        "roll": "96-00",
+        "type": "Positive",
+        "desc": "The journey is blessedly uneventful, the Characters get good rest, the scenery is particularly inspiring, and perhaps they meet an NPC healer or helpful priest. The Characters can heal all Wounds and recover all <condition>Fatigued</condition> Conditions."
+    }, {
+        "name": "Suspicious Surroundings",
+        "roll": "01-10",
+        "type": "Coincidental",
+        "desc": "Something feels off about the day’s travel — the road is curiously quiet, local game is scant, what few travellers are met give sideways glances before scampering on. Something is wrong… Or maybe it’s just your imagination."
+    }, {
+        "name": "Battlefield",
+        "roll": "11-20",
+        "type": "Coincidental",
+        "desc": "The Characters come across the site of a recent battle. Was it a massacre by Greenskins, a highway robbery, a skirmish with bandits, or something worse? Few scavengers have picked over the bodies, yet, and there is much left to take… But how far away are the culprits, and how will they react to the Characters picking over their leavings."
+    }, {
+        "name": "Huddled Masses",
+        "roll": "21-30",
+        "type": "Coincidental",
+        "desc": "The Characters pass by a procession of huddled and down-trodden individuals. Are they refugees, penitents, lepers, or something more insidious? Whatever the nature of the main group, they may hide additional threats: pestilence, criminals, mutants, or worse."
+    }, {
+        "name": "Not Them Again!",
+        "roll": "31-40",
+        "type": "Coincidental",
+        "desc": "A rival or other source of annoyance plagues the Characters on their journey. Play this for laughs but make them genuinely annoying and a recurring bane of the Characters’ lives."
+    }, {
+        "name": "Temptations on the Road",
+        "roll": "41-50",
+        "type": "Coincidental",
+        "desc": "Something out of the ordinary catches the Characters’ eyes — a sumptuous and inviting coaching inn in the middle of nowhere, an unattended campfire with a roasting and mouth-watering boar, the sounds of a travelling circus troupe. Do the Characters take a detour from their journey to investigate and indulge? What hidden dangers surround these temptations?"
+    }, {
+        "name": "Bad Influence!",
+        "roll": "51-65",
+        "type": "Coincidental",
+        "desc": "The Characters manage to wrong a fellow traveller on the road — be it a perceived slight, an accidental collision, or an intentional insult. Regardless, the traveller chooses to spread ill and potentially untrue rumours about the group at their destination."
+    }, {
+        "name": "Toll Road",
+        "roll": "66-75",
+        "type": "Coincidental",
+        "desc": "A local noble, a business interest, or a 'private enterprise' has established a toll ahead of the Characters. Do they pay the extortionate fees — in proportion to their Social Status — or do they attempt to evade the authorities?"
+    }, {
+        "name": "The Thing That Should Not Be",
+        "roll": "76-80",
+        "type": "Coincidental",
+        "desc": "There is something here that shouldn’t be — a black stone obelisk in the middle of a verdant forest, strange runes carved on the trunks of trees, a shimmering cold light just beyond the campfire’s glow. Whatever it is, others have seen it too, and rumours abound at their destination."
+    }, {
+        "name": "Providence",
+        "roll": "81-90",
+        "type": "Coincidental",
+        "desc": "The gods send the Characters a message — a revelation about the past, a reading on the present, or a warning of the future. But the gods do not speak as mortals, and instead work signs in nature and circumstance. A raven with a scorpion twitching in its beak. A stag speared through the sternum by a flowering branch. A <skill>Lore (Theology)</skill> Test can be made to gather more information, but the symbols should be obvious to all citizens of the Empire."
+    }, {
+        "name": "A Friend in Need",
+        "roll": "91-00",
+        "type": "Coincidental",
+        "desc": "Another traveller, or group of travellers, needs help from the Characters. Perhaps their cart has broken down, or they are being harassed by wolves. If the Characters dean to escort them to their destination, they may express their gratitude on arriving safely."
+    }, {
+        "name": "Tiring Journey!",
+        "roll": "01-10",
+        "type": "Harmful",
+        "desc": "The route is blocked. A bridge could be down, a river blocked or road flooded, or some other insurmountable obstacle. One Character makes an <strong>Average (+20) <skill>Outdoor Survival</skill> Test</strong> to find a good alternate route, otherwise everyone just pushes on, gaining a <condition>Fatigued</condition> Condition."
+    }, {
+        "name": "Thieves!",
+        "roll": "11-20",
+        "type": "Harmful",
+        "desc": "Somehow the Characters get robbed. Perhaps it was someone travelling with them, sharing their campfire for the night or just a brief conversation on the road. They quickly lose sight of the thief, but during the arrival phase they catch a glimpse of them just ahead, ill gotten gains still in hand."
+    }, {
+        "name": "Unfriendly Territory",
+        "roll": "21-30",
+        "type": "Harmful",
+        "desc": "As the Characters travel, it becomes apparent to them that the region is home to bandits, monsters, or worse. They can risk moving through the territory, requiring a successful <test>Challenging (+0) Stealth (Rural) Test</test> from each Character, or be ambushed, or they can find another way around, gaining a <condition>Fatigued</condition> Condition from the arduous travel."
+    }, {
+        "name": "Poisoned Earth",
+        "roll": "31-40",
+        "type": "Harmful",
+        "desc": "The region the Characters are travelling through has been fouled by old industry, war, or dark magic. On the surface, everything seems normal, but the rivers hold a sickness, the animals are tainted, and disease hangs in the air. Any Characters who attempt a <endeavour>Forage</endeavour> Endeavour, take goods from this region, or spend too much time here, will have to contend with poisons, sickness, and perhaps even Corruption."
+    }, {
+        "name": "Even Nature Hates You!",
+        "roll": "41-50",
+        "type": "Harmful",
+        "desc": "The Characters find themselves in danger from nature. Deadly animals, lightning storms, disease, insects, you name it. This could result in violence, or in them receiving a Condition, or in a small but vicious encounter when they choose the wrong shepherd’s hut as a shelter. "
+    }, {
+        "name": "Terrible Weather",
+        "roll": "51-70",
+        "type": "Harmful",
+        "desc": "As the Characters set up camp, the sky turns dark, the wind picks up, and the weather changes unexpectedly in the night. For the next Weather roll you make, add +40. If this is the final stage of the journey, the terrible weather wracks their destination instead, leaving everyone there in a foul mood."
+    }, {
+        "name": "Damaged Essentials",
+        "roll": "71-80",
+        "type": "Harmful",
+        "desc": "Weather due to a bumpy road, a lost pack or a ripped tent, some vital part of the Characters travelling gear is lost or destroyed. This could be a fine oilskin coat, a tent, or the cracked wheel of a cart. Repairs might be required, or the Character may have to brave the elements, risking Exposure."
+    }, {
+        "name": "Filthy Conditions!",
+        "roll": "81-90",
+        "type": "Harmful",
+        "desc": "Whether an unfortunate campsite, or an infested inn, the Characters have all exposed themselves to the terrible Packer’s Pox!"
+    }, {
+        "name": "Bolted Mount!",
+        "roll": "91-00",
+        "type": "Harmful",
+        "desc": "In the night, one of the Characters mounts bolts from the campsite or stable. A Character must gain a <condition>Fatigued</condition> Condition if they wish to recover the wayward beast, and additionally must Test for Exposure if searching by night in the Rain, a Downpour, Snow, or a Blizzard."
+    }
+]

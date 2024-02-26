@@ -28,7 +28,7 @@ var modals = {
     "spell": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large grid-card\"><div class=\"w3-row-padding\"><h3 class=\"spellName\"></h3><h5> <em><span class=\"spellLore\"></span> </em></div><div class=\"w3-row-padding\"><emph>Casting Number: </emph><span class=\"spellCN\"></span><br /><emph>Range: </emph><span class=\"spellRange\"></span><br /><emph>Target: </emph><span class=\"spellTarget\"></span><br /><emph>Duration: </emph><span class=\"spellDuration\"></span></div><div class=\"w3-row-padding\"><div class=\"spellDescription\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     "weapon": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"weapName\"></span></h3></div><div class=\"w3-row-padding\"><h5 style=\"margin-top: -1em !important;\"><em><div class=\"weapGroup\"></div></em></h5><div class=\"weapPrice\"></div><div class=\"weapEnc\"></div><div class=\"weapAvail\"></div><div class=\"weapDamage\"></div><div class=\"weapReach\"></div><div class=\"weapQuals\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     "armour": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"weapName\"></span></h3></div><div class=\"w3-row-padding\"><h5 style=\"margin-top: -1em !important;\"><em><div class=\"weapGroup\"></div></em></h5><div class=\"weapPrice\"></div><div class=\"weapEnc\"></div><div class=\"weapAvail\"></div><div class=\"weapDamage\"></div><div class=\"weapReach\"></div><div class=\"weapQuals\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\" class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
-    "endeavour": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"endeavourName\"></span></h3></div><div class=\"w3-row-padding\"><h4><span class=\"endeavourType\"></span></h4></div><div class=\"w3-row-padding w3-center\"><eh><span class=\"endeavourClasses\"></span></eh></div><div class=\"w3-row-padding\"><div class=\"endeavourDesc\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\"class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
+    "endeavour": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\"><h3><span class=\"endeavourName\"></span></h3></div><div class=\"w3-row-padding\"><h4><span class=\"endeavourType\"></span></h4></div><div class=\"w3-row-padding w3-center\"><eh><span class=\"endeavourClasses\"></span></eh></div><div class=\"w3-panel w3-center\"><p class=\"endeavourShortDesc\"></p></div><div class=\"w3-row-padding\"><div class=\"endeavourDesc\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\"class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     "career": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large grid-card\"><div class=\"w3-row-padding\"><h3 class=\"careerName\"></h3><h5><span class=\"careerClass\"></span></h5><div class=\"w3-center\"><span class=\"careerRaces\"></span></div><div class=\"w3-center\"><em class=\"careerDesc\"></em></div></div><div class=\"w3-row-padding w3-center\"><br/><div class=\"well-s\"><h6>Advance Scheme</h6><table class=\"centerTable attrTable \"><thead><tr><th style=\"display:none;\" class=\"careerAttr careerWSth\">WS</th><th style=\"display:none;\" class=\"careerAttr careerBSth\">BS</th><th style=\"display:none;\" class=\"careerAttr careerSth\">S</th><th style=\"display:none;\" class=\"careerAttr careerTth\">T</th><th style=\"display:none;\" class=\"careerAttr careerIth\">I</th><th style=\"display:none;\" class=\"careerAttr careerAgith\">Agi</th><th style=\"display:none;\" class=\"careerAttr careerDexth\">Dex</th><th style=\"display:none;\" class=\"careerAttr careerIntth\">Int</th><th style=\"display:none;\" class=\"careerAttr careerWPth\">WP</th><th style=\"display:none;\" class=\"careerAttr careerFelth\">Fel</th></tr></thead><tbody><tr><td style=\"display:none;\" class=\"careerAttr careerWS\"></td><td style=\"display:none;\" class=\"careerAttr careerBS\"></td><td style=\"display:none;\" class=\"careerAttr careerS\"></td><td style=\"display:none;\" class=\"careerAttr careerT\"></td><td style=\"display:none;\" class=\"careerAttr careerI\"></td><td style=\"display:none;\" class=\"careerAttr careerAgi\"></td><td style=\"display:none;\" class=\"careerAttr careerDex\"></td><td style=\"display:none;\" class=\"careerAttr careerInt\"></td><td style=\"display:none;\" class=\"careerAttr careerWP\"></td><td style=\"display:none;\" class=\"careerAttr careerFel\"></td></tr></tbody></table></div></div><br/><div class=\"w3-row-padding w3-center\"><b>Income Skill: </b><em class=\"careerIncome\"></em></div><br/><div class=\"w3-row-padding well\"><div class=\"careerpath1\"><h5 class=\"path1name\"></h5><p><b>Skills: </b><span class=\"path1skills\"></span></p><p><b>Talents: </b><span class=\"path1talents\"></span></p><p><b>Trappings: </b><span class=\"path1trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath2\"><h5 class=\"path2name\"></h5><p><b>Skills: </b><span class=\"path2skills\"></span></p><p><b>Talents: </b><span class=\"path2talents\"></span></p><p><b>Trappings: </b><span class=\"path2trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath3\"><h5 class=\"path3name\"></h5><p><b>Skills: </b><span class=\"path3skills\"></span></p><p><b>Talents: </b><span class=\"path3talents\"></span></p><p><b>Trappings: </b><span class=\"path3trappings\"></span></p></div></div><div class=\"w3-row-padding well\"><div class=\"careerpath4\"><h5 class=\"path4name\"></h5><p><b>Skills: </b><span class=\"path4skills\"></span></p><p><b>Talents: </b><span class=\"path4talents\"></span></p><p><b>Trappings: </b><span class=\"path4trappings\"></span></p></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"careerModalSearch(this)\" class=\"w3-button w3-deep-amber firstBtn\">Career List</button><button onclick=\"hideModal(this)\"class=\"w3-button w3-deep-red-l1 w3-round-large lastBtn\">Close</button></div></div></div>",
     "betweenAdventureEvent": "<div class=\"popupCard\"><div class=\"w3-card-2 w3-round-large padCard\"><div class=\"w3-row-padding\" style='padding-bottom: 0 !important;'><h3><span class=\"eventName\"></span></h3></div><div class=\"w3-row-padding\"  style='padding-top: 0 !important; line-height: 0 !important;'><h4><img src='img/d10_almond_32.png' style='height: 1em !important;'/> <span class=\"eventRoll\"></span> <img src='img/d10_almond_32.png' style='height: 1em !important;'/></h4></div><div class=\"w3-row-padding\"><div class=\"eventDesc\"></div></div><br /><div class=\"w3-center\" style=\"padding-bottom: 1em !important;\"><button onclick=\"hideModal(this)\"class=\"w3-button w3-deep-red-l1 w3-round-large \">Close</button></div></div></div>",
     
@@ -12388,6 +12388,7 @@ var endeavour = [
         "type": "Duties & Responsibilities",
         "flavor": "The common folk will never understand my burdens. The sheer weight of the duties I bear. The guilty will not judge themselves and there are always so many villages to cleanse, for our enemies are legion.",
         "appelation": "Lothar Metzger, Witch Hunter",
+        "shortDesc": "Characters in the top 2 levels of their career must spend at least 1 Endeavour on <endeavour>Income</endeavour>, or lose status.",
         "description": ["As you climb the ranks of your career, you accrue expectations and responsibilities that cannot be avoided. Noble Lords must see to the affairs of their estates, Guildmasters must oversee their guild’s work, and Watch Captains must watch their watchmen. Ifyou neglect your responsibilities, you will soon lose status amongst your peers.",
         "If you have attained one of the top two tiers of your Career Path and do not undertake the Income Endeavour, which reflects taking care of your obligations, you drop one level within your Career; reverting from the fourth level to the third, or the third to the second. This costs no Experience Points, acting as a free Career change, albeit downwards.",
         "With this step backwards in your Career Path, you will now have a lower Status, and will earn less money should you perform future Income Endeavours. See Chapter 3: Class and Careers for more about Status. The loss in status does not remove any Advances acquired while you were in your previous Career.",
@@ -12399,6 +12400,7 @@ var endeavour = [
         "type": "Duties & Responsibilities",
         "flavor": "There are times when I can barely stand Altdorf. It is not the stench — though that is abhorrent — it is not the noise, either — it is just that you are all so very ugly to look upon, I feel that I must gaze at something beautiful for a time or I know that I shall start screaming, and never stop.",
         "appelation": "Irlianmaris Ellarel, Asur Envoy",
+        "shortDesc": "If the Between Adventures section has at least 3 Endeavours, elves must spend 1 to maintain contact with their kind.",
         "description": ["Elves, even those resident within the borders of Empire, do not consider themselves citizens of the Empire. There are High Elves with diplomatic positions in Karl-Franz I’s court, as well as traders and merchant princes in many of the great cities of the Empire, but the majority of the Asur avoid entanglements with Humans (not to mention Dwarfs) and few would call a Reiklander ‘friend’. ",
         "The Wood Elves are even more removed; nearly mythical, rarely seen, and when they do appear they always have their own concerns that they rarely share with others.",
         "Between adventures, all Elven characters must undertake one Endeavour maintaining contact with their own kind, seeing to their responsibilities to their people. High Elves commonly give reports on interesting things they’ve learned to agents of Ulthuan in either Altdorf or Marienburg, whereas Asrai do the same with the spies from their arboreal homes. This Endeavour offers no advantage beyond the inherent advantage of being an Elf. Note: Elves only lose an Endeavour if the Between Adventures section is at least 3 weeks long, thus the Elves have at least 3 Endeavours to complete."
@@ -12408,12 +12410,14 @@ var endeavour = [
         "name": "Animal Training",
         "cleanName": "AnimalTraining",
         "type": "General Endeavours",
+        "shortDesc": "Make an <skill>Animal Training</skill> test to give your creature a skill from the <trait>Trained</trait> trait.",
         "description": ["You spend time training one of your animals. Make an Average (+20) Animal Training Test. If successful, add one skill to your animal from the <trait>Trained</trait> Creature Trait (see page 342)."]
     },
     {
         "name": "Banking",
         "cleanName": "Banking",
         "type": "General Endeavours",
+        "shortDesc": "Invest or stash your funds; otherwise all carried-over money is lost or spent between adventures.",
         "description": ["This Endeavour allows you to store funds for future use. As noted in Money to Burn, all coin remaining at the end of your ‘Between Adventures’ phase is lost before the next adventure begins unless it is saved with this Endeavour. So, if you have a lot of money spare it may be worth a trip to the bank. If you are using a Banking Endeavour to retain your money, you must first decide whether to save your money by investing it with a reputable banking institution, or to stash it somewhere less secure.",
             "<strong>Investing:</strong> You must be of the Gold and Silver social tiers to save with a banking house. Your money will be reasonably safe and it should accrue interest. When undertaking a Banking Endeavour to deposit money in a bank, determine the interest rate of your account, by choosing a number between 1 and 10 (alternatively you may simply roll 1d10). This is the rate of interest you will accrue, and also how risky the investment is. Withdrawing funds requires another Banking Endeavour. This may take place immediately after the initial Endeavour, or after subsequent adventures have occurred. Roll 1d100: if you roll equal to or less than your rate of interest, the venture has gone bankrupt and you have lost all of your money. If you roll over the interest rate, you receive your initial funds, plus the interest accrued. ",
             "<strong>Stashing: </strong>All characters may choose to stash their loot. This is a risky strategy, involving hiding it on your person, in your mattress, or burying it somewhere. Stashed money never accrues any interest. Players may withdraw money from a stash before the start of an adventure, without undertaking an Endeavour. Roll 1d100: if you roll 10 or lower, your stash has been found and you have lost all your money, otherwise you recieve your initial funds. ",
@@ -12424,12 +12428,14 @@ var endeavour = [
         "name": "Changing Career",
         "cleanName": "ChangingCareer",
         "type": "General Endeavours",
+        "shortDesc": "Spend 100 XP to move from a completed Career to a new one.",
         "description": ["In a society as rigidly hierarchical as the Empire, changing Careers may require grit and perseverance. Taking time to forge the right connections, and learn what is expected of you, can help,  significantly. Assuming you GM agrees, and you have completed you current Career, you can move to any Career Level that fits the story of your Character for free. If you have not completed your current Career, the change costs 100 XP. The time spent on this Endeavour represents making the appropriate introductions, doling out bribes, acquiring permits and licences, advertising, and similar activities."]
     },
     {
         "name": "Commission",
         "cleanName": "Commission",
         "type": "General Endeavours",
+        "shortDesc": "Pay up front for an Exotic item to be made for you, which will be ready at the next Between Adventures section.",
         "description": ["So, you wish to own one of Von Meinkopt’s legendary repeating pistols? Or a custom helm, with a personalised crest representing your epic victories? The Commission Endeavour allows you to acquire unusual or highly specialized items that are never simply ‘stocked’ in the shops of the Empire. It also allows for you to arrange for the creation of unique items. Such things take time, though…",
                         "If you are seeking an item with an Exotic rarity and know a source capable of acquiring or manufacturing it, then undertake this Endeavour, spend the necessary funds, and place your order. The item will then be ready for collection after your next adventure.  A character can only commission a single Exotic item per Endeavour; acquiring further items, will require undertaking further Commission Endeavours. If you are unaware of an appropriate source for their item, you will first have to undertake the Consult an Expert Endeavour."
     ]
@@ -12438,6 +12444,7 @@ var endeavour = [
         "name": "Consult an Expert",
         "cleanName": "ConsultAnExpert",
         "type": "General Endeavours",
+        "shortDesc": "Make contacts or gain knowledge from an expert in a given field.",
         "description": ["The Old World is replete with ancient and arcane knowledge, yet this information is not readily available on some magical box in your pocket. If you want to seek out some piece of obscure arcana, you must first seek out an expert. You may undertake the Consult an Expert Endeavour either to facilitate another Endeavour for example: Commission, Training , or Unusual Learning Endeavours), or to secure a piece of specific knowledge.",
             "There are two stages to this Endeavour: locating the expert, then consulting. ",
             "First, you must locate your expert (this stage may be skipped with the GM’s permission if you have already identified an appropriate expert during your adventures).  Attempt a <test>Challenging (+0) Gossip Test</test> (the Difficulty of this Test will vary according to the size of the settlement where your character is currently living). If you succeed, you have located your expert. If you fail, you have located the loudest self-proclaimed specialist in your location, and the GM is given free rein to vary the quality or accuracy of the advice procured. You can of course refuse to deal with this somewhat suspect source, but you never know if you might have found a diamond in the rough. GMs are contrary like that sometimes.",
@@ -12450,6 +12457,7 @@ var endeavour = [
         "name": "Crafting",
         "cleanName": "Crafting",
         "type": "General Endeavours",
+        "shortDesc": "Use an appropriate <skill>Trade</skill> skill to create an item.",
         "description": ["Rather than browse shops or commissioning someone else to do the hard work, you can fashion your own trappings. Crafting allows you to make any trapping from Chapter 11: Consumers’ Guide (or anything else the GM allows) if you have the correct Trade Skills. To do this, you require appropriate Trade Tools, raw materials, and access to an appropriate workshop. In general, the raw materials to create the trapping of your choice will cost a quarter of the trapping’s list price, and must be purchased before Crafting begins (with an Availability as determined by the GM); the GM may rule the raw materials are cheaper or more expensive according to the trapping to be created, and the nature of the raw materials required.",
             "To craft the trapping, attempt an Extended Trade Test, with a Difficulty set by the GM, typically using the Trapping’s Availability as a loose guide.",
             "<table class='w3-table table-dark w3-striped w3-hoverable w3-bordered'><thead><tr><th>Availability</th><th>Difficulty</th></tr></thead><tbody><tr><td>Common</td><td>Average (+20)</td></tr><tr><td>Scarce</td><td>Challenging (+0)</td></tr><tr><td>Rare</td><td>Difficult (-10)</td></tr><tr><td>Exotic</td><td>Very Hard (-30)</td></tr></tbody></table>",
@@ -12462,6 +12470,7 @@ var endeavour = [
         "name": "Do Me A Favour!",
         "cleanName": "DoMeAFavour",
         "type": "General Endeavours",
+        "shortDesc": "Call in a Favour from someone who is indebted to you.",
         "description": ["A Favour is a future burden you take on in return for immediate assistance of some sort. In the Old World, breaking one’s sworn word is considered bad form and carries significant social ramifications. No-one trusts oath breakers, meaning your Status is reduced by 1 (see page 49). Powerful and dangerous folks tend to take it very, very poorly if someone refuses a Favour owed them, so bloody consequences may follow.",
             "The powerful often find it is far more useful to have various individuals owing them Favours than merely soliciting money in return for their help. What’s more, it can be an investment: help a student today, call in a favour from a successful Lawyer years later. Favours may be referred to as ‘boons’, ‘services’, or ‘obligations’ by different folk, but in the end, they all amount to the same.",
             "Favours come in three levels: Minor, Major, and Significant. Regardless of a Favour’s level, in almost all cases, the person owed the Favour will take into account the capabilities and sensibilities of the person they’re asking. There’s no point in demanding that a Priestess of Shallya assassinate a merchant, for example, even if she does owe you a Significant Favour. That being said, Favours are ripe for NPCs to exploit in order to put pressure on your moral compass. ",
@@ -12474,6 +12483,7 @@ var endeavour = [
         "name": "Income",
         "cleanName": "Income",
         "type": "General Endeavours",
+        "shortDesc": "Gain funds based on your Status and Standing, collected after Money to Burn",
         "description": ["This Endeavour covers the many ways you can make money between your bouts of adventuring. The majority will most likely work in a recognized profession — bounty hunters hunt bounties, riverwardens ward rivers, troll slayers slay Trolls — others may rely on a lucrative skill. Wealthier characters, such as Nobles and Merchants, might collect a stipend by (briefly) indulging their family, or collecting interest on their investments and business ventures. Roguish types have any number of means to acquire funds, though it’s best not to ask for any details. ",
             "You should briefly narrate exactly how your character makes money. This is intended more for fun background detail than to have any direct consequences, though GMs may well gather useful or sinister ideas for future use depending on what you describe. You then acquire the income you’ll start your next adventure with, which is your standard income determined by your Status. ",
             "<table class='w3-table table-dark w3-striped w3-hoverable w3-bordered'><thead><tr><th>Status</th><th>Amount Earned per Standing</th></tr></thead><tbody><tr style='background-color: #b5a642 !important; color: black !important;'><td>Brass</td><td>2d10 Brass Pennies</td></tr><tr style='background-color: silver !important; color: black !important;'><td>Silver</td><td>1d10 Silver Shillings</td></tr><tr style='background-color: gold !important; color: black !important;'><td>Gold</td><td>1 Gold Crown</td></tr></tbody></table>",
@@ -12487,6 +12497,7 @@ var endeavour = [
         "name": "Invent!",
         "cleanName": "Invent",
         "type": "General Endeavours",
+        "shortDesc": "Devise a new creation, and either <endeavour>Craft</endeavour> it or <endeavour>Commission</endeavour> its construction.",
         "description": ["Invent allows you to invent new trappings. This is done in two stages: Plan and Build. To Plan your new trapping, you first decide the trappings you wish to combine to create your invention. As examples, Pistols have been combined with other Pistols to create Repeating Pistols, and Pigeons and been combined with Bombs to create Pigeon Bombs. Let your imagination go wild. Once you have your plan, it’s time to make the blueprints, which costs 1 Endeavour to attempt. Take a Trade (Engineer) Test, with a Difficulty set by how outlandish your proposed trapping combination is as determined by the GM. If you succeed, you are ready to start Building. Each SL scored adds +1 SL to the attempt to build your invention, as the plans are well laid out and easy to follow.",
             "To Build the invention, you must either undertake a Crafting or Commission Endeavour. If it’s Crafting , you are building the item yourself, and you must have the appropriate Skills to do so for the trappings being combined; so, if you were combining Pigeons with Bombs, you would need Animal Training and Trade (Explosives). The Difficulty to craft the invention is always Very Hard (–30), and the SL is set as normal. The raw materials needed to build the invention cost twice the listed price for the trappings being combined, and have an Availability rating equal to the most scarce of the trappings used in your invention. If you Commission the invention, you will likely need to undertake a Consult an Expert Endeavour first to find someone with the required Skills. That done, follow the Commission Endeavour as normal; it costs six times the listed price for the trappings to be combined to commission the work. The exact rules for your new invention are left to your GM to finalise."
             
@@ -12497,6 +12508,7 @@ var endeavour = [
         "name": "Training",
         "cleanName": "Training",
         "type": "General Endeavours",
+        "shortDesc": "Gain advances in a Basic skill for the standard XP cost and <mono>1d10</mono> brass pennies.  Advanced skills required <mono>2d210</mono> brass pennies.",
         "description": ["The Training Endeavour allows you to train in a Skill or Characteristic outside of your Career, treating it as if it were in your Career. In addition to the normal XP cost, you must also pay money to the tutor. Training for Basic Skills and all Characteristics costs XP+1d10 brass pennies , where XP is the number of XP it costs to buy the Advance. Tutoring in all Advanced Skills costs double that amount. For more, see Advances, see page 43.",
             "You should be able to find a tutor for most skills, certainly in a city-state like Altdorf, but some particularly unusual skills may require you seek out the right instructor, likely by using the Consult an Expert Endeavour — ‘Professionals’ who can teach you how to properly pick a lock generally don’t advertise, after all. Other skills, especially Lore Skills, often require an institution of learning, and some are flat out forbidden in the Empire. Finding a tutor capable (and willing) to instruct someone in proscribed matters — such as those relating to the Ruinous Powers or Necromancy — may be particularly dangerous, and perhaps an adventure to even source such an individual. Such tutors will also ask for far more than the ‘going rate’ for tutoring and will likely require a Significant Favour (see Do Me A Favour!)."
             
@@ -12507,6 +12519,7 @@ var endeavour = [
         "name": "Unusual Learning",
         "cleanName": "UnusualLearning",
         "type": "General Endeavours",
+        "shortDesc": "Receive tutelage in a Talent by paying <mono>2d10</mono> shillings per 100XP cost.  Test to see if you've learned it successfully.",
         "description": ["It is one thing to pick up a Skill that can be readily practised, quite another to learn something for which one may have no aptitude at all. This Endeavour allows you to attempt to learn a Talent outside of your Career. There is no guarantee this attempt will be successful, meaning there is a good chance you will fail to learn the Talent you hope to acquire, expending XP and money to no avail. ",
             "You can only learn a Talent if you have an appropriate tutor. In most big cities, this will not be a problem, but if the Talent is particularly obscure, or you are far from a large city, the GM may require you complete a Consult an Expert Endeavour first. ",
             "Once you have acquired a tutor, the fee to train the Talent is 2d10 shillings per 100 XP it costs to purchase the Talent. If you pay this fee, attempt a Hard (-20) Test using the Characteristic or Skill most relevant to the Talent as determined by the GM. If you succeed, you have learned the Talent. If not, you have failed this time but can try again with a future Endeavour and gain a +10 modifier for each failed attempt."
@@ -12518,6 +12531,7 @@ var endeavour = [
         "cleanName": "CombatTraining",
         "type": "Class Endeavours",
         "classes": "Rangers, Warriors",
+        "shortDesc": "Make a Melee or Ranged test and, if successful, you may reverse a dice roll when testing the same skill in the next adventure.",
         "description": ["Warriors too long from the field can find their fighting skills lose their edge. Hard regular training not only mitigates this, it can add an extra advantage when the time comes. If you undertake this Endeavour, you spend your days training with the weapons you know, honing your skills for the day when it matters most. ",
             "After undertaking this Endeavour, attempt a <strong>Challenging (+0) Test</strong> using either a Melee or Ranged Skill. If you succeed, you may reverse a Test with the associated Skill once during your next adventure. Note this on your character sheet. You can enact this Endeavour multiple times if you wish. "
             
@@ -12528,6 +12542,7 @@ var endeavour = [
         "cleanName": "FomentDissent",
         "type": "Class Endeavours",
         "classes": "Burghers, Peasants",
+        "shortDesc": "Spend 2 Endeavours to make contact with appropriate groups and rouse anger.",
         "description": ["If you are looking to sow civil unrest, undertake the Foment Dissent Endeavour. By talking with local citizens, leading meetings, and involving yourself, you can direct conversations to slowly feed anger and resentment towards a specific individual, group, or institution. But this takes time, so Fomenting Dissent takes two Endeavours to attempt (and will also count as an Income Endeavour if you are in the Agitator career).",
             "To undertake the Endeavour, you must first attempt an Average (+20) Gossip Test to understand the local movers and shakers. If you succeed, attempt a Charm Test with the Difficulty determined by how unpopular the target may be. Rousing anger against an oppressive noble may be an Easy (+40) test, while raising a mob to protest the good work of a Shallyan hospice may be Hard (–20). If you fail either of these tests, the Endeavour fails. ",
             "If successful, you will find it easier to invoke the wrath of crowds upon your chosen target. During your next adventure, you can attempt a Charm Test to gather a rioting mob to accost the target, with the difficulty determined by the GM according to how well-planned the mob-to-be is. ",
@@ -12541,7 +12556,8 @@ var endeavour = [
         "name": "The Latest News",
         "cleanName": "TheLatestNews",
         "type": "Class Endeavours",
-        "classes": "Rangers, Riverfolkd",
+        "classes": "Rangers, Riverfolk",
+        "shortDesc": "Make a <skill>Gossip</skill> test to learn rumours.",
         "description": ["This Endeavour allows you to learn the latest news from afar. Attempt a Challenging (+0) Gossip Test. If you succeed, you learn an interesting rumour; each SL adds another rumour, and they may even be connected to your upcoming adventure. If you fail particularly badly (an Impressive Failure) you learn something false you are convinced is true; to allow this, the GM may make this roll in secret on your behalf."
             
     ]
@@ -12551,6 +12567,7 @@ var endeavour = [
         "cleanName": "Reputation",
         "type": "Class Endeavours",
         "classes": "Academics, Burghers, Courtiers",
+        "shortDesc": "Spend an amount determined by your <endeavour>Income</endeavour> to increase your Standing by +1 for the next adventure.",
         "description": ["Money talks, as they say. If you are looking to exert your influence and elevate your Status, you had best be willing to spread your wealth around. Any boost to your reputation will fade once the coins stop flowing, so you should exploit this advantage while it lasts.  ",
         "Characters can spend money to increase their Standing by +1 for the next adventure, after which the bonus fades. This costs your maximum Earning income (see page 52) — so, if you would normally earn 4d10 pennies, it costs 40d — and requires a <strong>Challenging (+0) Career Skill Test</strong>. If you succeed, your Standing increases by +1. If you score an Astounding Success (+6), it increases by +2. If you fail, you have just wasted your money. If you score an Astounding Failure (–6), your toadying has so infuriated your peers, your standing decreases by -1 (to a minimum of 0) for the entire duration of your next adventure."            
     ]
@@ -12560,6 +12577,7 @@ var endeavour = [
         "cleanName": "ResearchLore",
         "type": "Class Endeavours",
         "classes": "Academics",
+        "shortDesc": "Make a <skill>Lore</skill> or Intelligence test to learn relevant information.",
         "description": ["This Endeavour allows you to seek greater knowledge concerning a specific subject, such as the site of a battle, a famed historical event, or an individual. The character must have access to an appropriate storehouse of lore, such as a library, the annals of a Dwarf Hold, the records of a Guild, or a Temple of Verena.",
         "Attempt an Average (+20) Lore Test, using the appropriate Lore Specialisation for the knowledge you seek. If you do not have the correct Lore Specialisation and are literate, you can still attempt to learn something, but it will take a Difficult (–10) Intelligence Test. If you succeed, you learn one piece of interesting, useful, or hidden knowledge about the subject researched; each SL adds another piece of relevant information. If you fail particularly badly (an Impressive or Astounding Failure)) you learn something false that you are convinced is true; to facilitate this, the GM may want to make this role in secret on your behalf. "            
     ]
@@ -12569,6 +12587,7 @@ var endeavour = [
         "cleanName": "StudyaMark",
         "type": "Class Endeavours",
         "classes": "Rogues",
+        "shortDesc": "Make a <skill>Perception</skill> test and, if successful, you may reverse a dice roll concerning the Mark in the next adventure.",
         "description": ["You use this Endeavour to observe a potential target and gain advantages during future criminal enterprises. A Charlatan may study a merchant in order to better impersonate them during a future scam, or a Grave Robber may linger about a Temple of Morr, watching the coming and going of the priests to get an idea of their practices and their Garden of Morr’s layout.",
         "Attempt a Challenging (+0) Perception Test, though the difficulty may be modified for especially easy or difficult marks. If you succeed, you may reverse a Test concerning your mark once during your next adventure. Note this on your character sheet. You can enact this Endeavour multiple times if you wish. Further, the GM should provide information (or disinformation!) concerning your mark according to the SL you scored."            
     ]
@@ -12577,6 +12596,7 @@ var endeavour = [
         "name": "Woodcraft",
         "cleanName": "Woodcraft",
         "type": "Travel Endeavours",
+        "shortDesc": "Ply your <skill>Outdoor Survival</skill> skills to prevent <a href='./adventuring.html#exposure'>Exposure</a>.",
         "description": ["Through a canny understanding of the land and a good nose for the weather, you may alleviate the worst of any harsh weather you encounter. Attempt a Challenging (+0) Outdoor Survival Test, modified by –10 per step the weather is away from Fair (see page 32). On a success, you and your companions do not need to Test for Exposure due to inclement weather."
     ]
     },
@@ -12584,13 +12604,15 @@ var endeavour = [
         "name": "Forage",
         "cleanName": "Forage",
         "type": "Travel Endeavours",
-        "description": ["It is often impossible to carry all the food and water needed for a long journey, and resupplying as the journey continues can become prohibitively expensive. Most travellers supplement their rations with food and water gathered from the land, whether by hunting, trapping, or foraging. Perform an Outdoor Survival Test as directed on page 126–7 of Warhammer Fantasy Roleplay, taking note of the Gathering Food and Herbs optional rule."
+        "shortDesc": "Test <skill>Outdoor Survival</skill> to gather food and water.",
+        "description": ["It is often impossible to carry all the food and water needed for a long journey, and resupplying as the journey continues can become prohibitively expensive. Most travellers supplement their rations with food and water gathered from the land, whether by hunting, trapping, or foraging. Perform an <skill>Outdoor Survival</skill> Test; a success provides enough food for 1 person, and every additional SL can feed an additional person."
     ]
     },
     {
         "name": "Gather Information",
         "cleanName": "GatherInformation",
         "type": "Travel Endeavours",
+        "shortDesc": "Make a <skill>Gossip</skill> test to ask questions or learn rumours.",
         "description": ["Whilst the Empire does have a messenger corps, most news moves via word of mouth. A Character can choose to spend their time gossiping for news, and asking questions in coaching inns, if the route has enough traffic to allow it. Perform a Challenging (+0) Gossip Test, and ask the GM as many questions as SL scored, which the GM must answer as truthfully as the people in that part of the world would know. Alternatively, the Character may wish to hear what rumours are currently circulating — see page 15 of Enemy in Shadows for a selection of rumours circulating in the Empire."
     ]
     },
@@ -12598,6 +12620,7 @@ var endeavour = [
         "name": "Keep Watch",
         "cleanName": "KeepWatch",
         "type": "Travel Endeavours",
+        "shortDesc": "Test <skill>Perception</skill> to prevent the party from being <condition>Surprised</condition> on this Stage.",
         "description": ["Whilst any traveller in the Empire worth their salt retains an awareness of their surroundings, you forgo other activities to remain vigilant at all times — sleeping less, not engaging in idle chatter, scouting ahead, and so on. With a successful Challenging (+0) Perception Test, the Characters may not be Surprised during that stage of their journey."
     ]
     },
@@ -12605,6 +12628,7 @@ var endeavour = [
         "name": "Map the Route",
         "cleanName": "MaptheRoute",
         "type": "Travel Endeavours",
+        "shortDesc": "Use <skill>Trade (Cartography)</skill> or <skill>Art (Drawing)</skill> to make a map, which may then be sold.",
         "description": ["Often the long hours on the road are tedium for academic types, who are otherwise unsuited to the physical tasks of travel. However, future travelling can be made significantly easier by creating a map, and with sufficient materials — paper, quills, and ink — such an effort is possible. To create a map of the route, a Character must begin an Extended Trade (Cartography) or Art (Drawing) Test, with a required number of SL equal to twice the number of Stages in the journey. This Test may be continued every time this Endeavour is undertaken.",
         "A proper map of a region makes any Lore or Navigation Tests when setting out on a journey Average (+20), rather than Challenging (+0) (page 31). Maps may fetch anywhere from 1/– for poorly scratched lines, all the way to tens or hundreds of Crowns for particularly fine works of art, (though these are unlikely to be completed whilst travelling)."
     ]
@@ -12613,6 +12637,7 @@ var endeavour = [
         "name": "Practice a Skill",
         "cleanName": "PracticeaSkill",
         "type": "Travel Endeavours",
+        "shortDesc": "Test a travel-related skill and, if successful, you may reverse the dice roll when using the same skill in the next Adventure or subsequent Travel Stages.",
         "description": ["The monotony of travel represents the perfect time for many Characters to practise their Skills for their coming trials. A Character may perform a Challenging (+0) Test against a single Skill that would be possible to practise whilst travelling — Navigation, Trade (Herbalism), Language (Wastelander), and so on. Success means that the Character may reverse the result of one Test using that Skill during the following adventure, or any subsequent Stages of travel."
     ]
     },
@@ -12620,14 +12645,16 @@ var endeavour = [
         "name": "Recuperate",
         "cleanName": "Recuperate",
         "type": "Travel Endeavours",
-        "description": ["Travel is generally inimical to rest: hiking through forests and over mountain paths, sleeping under the stars in biting cold and burning heat, and hiding from monsters and other terrible threats. These are not situations often prescribed by attending physicians. However, you have made special efforts to ensure you do not overly exert yourself. You may count this Stage as if it were ‘taking it easy’ for the purposes of Healing Wounds, as per page 181 of Warhammer Fantasy Roleplay. You may not choose this Endeavour if, for any reason, you suffered a Fatigue Condition during this Stage of the journey."
+        "shortDesc": "Test Endurance, regaining wounds equal to <mono>SL+(2 &times; TB)</mono>.  May not be taken if you've gained <condition>Fatigued</condition> this Stage.",
+        "description": ["Travel is generally inimical to rest: hiking through forests and over mountain paths, sleeping under the stars in biting cold and burning heat, and hiding from monsters and other terrible threats. These are not situations often prescribed by attending physicians. However, you have made special efforts to ensure you do not overly exert yourself. You may count this Stage as if it were ‘taking it easy’ for the purposes of Healing Wounds, regaining an extra <mono>TB</mono> wounds when healing. You may not choose this Endeavour if, for any reason, you suffered a Fatigue Condition during this Stage of the journey."
     ]
     },
     {
         "name": "Make Camp",
         "cleanName": "MakeCamp",
         "type": "Travel Endeavours",
-        "description": ["Often travellers will focus too much on the destination, and not enough on the journey itself; upon arrival they are haggard, exhausted, and ill-prepared for what they are about to face. Anyone can pitch a tent or unfurl a bedroll. Seasoned travellers, however, take the time to make themselves comfortable at night — choosing a good location, gathering firewood, preparing water, and so on. Perform a Challenging (+0) Outdoor Survival Test or a Challenging (+0) Heal Test. Each SL from either Test may be spent to remove SL Fatigued Conditions from a Character, or heal a Character (see page 123 of WFRP)."
+        "shortDesc": "Test <skill>Outdoor Survival</skill> or <skill>Heal</skill>, and spend SL to remove <condition>Fatigued</condition> conditions or heal a character per the skill.",
+        "description": ["Often travellers will focus too much on the destination, and not enough on the journey itself; upon arrival they are haggard, exhausted, and ill-prepared for what they are about to face. Anyone can pitch a tent or unfurl a bedroll. Seasoned travellers, however, take the time to make themselves comfortable at night — choosing a good location, gathering firewood, preparing water, and so on. Perform a Challenging (+0) Outdoor Survival Test or a Challenging (+0) Heal Test. Each SL from either Test may be spent to remove SL Fatigued Conditions from a Character, or <skill>Heal</skill> a Character."
     ]
     }
 ]

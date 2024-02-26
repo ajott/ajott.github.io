@@ -343,6 +343,8 @@ function buildModal(el, type, mast = 0, isTest = 0) {
 
             $("#modal" + modalCount + " .endeavourType").html(dataRslt["type"])
 
+            $("#modal" + modalCount + " .endeavourShortDesc").html(dataRslt["shortDesc"])
+
             let endeavourHTML = ""
 
             dataRslt["description"].forEach((para) => {
@@ -927,6 +929,8 @@ function buildEndeavours() {
             endvHTML += "</span></h4></div>"
 
             endvHTML += "<p><blockquote class='w3-panel w3-round-large careerQuote w3-leftbar w3-border-dark-gray'><p><em><span style='font-size: 1.5rem; font-family: Sophia, sans-serif; line-height: 0'>&ldquo;</span>" + DRendv["flavor"] + "<span style='font-size: 1.5rem; font-family: Sophia, sans-serif; line-height: 0;'>&rdquo;</span></em></p><p style='text-align: right !important; white-space:normal;'>&mdash;" + DRendv["appelation"] + "</p></blockquote></p>"
+
+            endvHTML += "<div class='w3-padding-small w3-center'><p>" + DRendv["shortDesc"] + "</p></div>"    
             
             endvHTML += "<div class='w3-row-padding'><div class='endeavourDesc w3-hide well well-desc'>"
             
@@ -934,7 +938,7 @@ function buildEndeavours() {
                 endvHTML += "<p>" + para + "</p>"
             })
 
-            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Description<br/>&#9660;</h6></div><br /></div></div></div>"
+            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Full Description<br/>&#9660;</h6></div><br /></div></div></div>"
 
         } else {
             endvHTML += "<div class='w3-col s12 m12 l6'>"
@@ -943,9 +947,11 @@ function buildEndeavours() {
             
             endvHTML += DRendv["name"];
 
-            endvHTML += "</span></h4></div>"
+            endvHTML += "</span></h4></div>"         
 
             endvHTML += "<p><blockquote class='w3-panel w3-round-large careerQuote w3-leftbar w3-border-dark-gray'><p><em><span style='font-size: 1.5rem; font-family: Sophia, sans-serif; line-height: 0'>&ldquo;</span>" + DRendv["flavor"] + "<span style='font-size: 1.5rem; font-family: Sophia, sans-serif; line-height: 0;'>&rdquo;</span></em></p><p style='text-align: right !important; white-space:normal;'>&mdash;" + DRendv["appelation"] + "</p></blockquote></p>"
+
+            endvHTML += "<div class='w3-padding-small w3-center'><p>" + DRendv["shortDesc"] + "</p></div>"    
             
             endvHTML += "<div class='w3-row-padding'><div class='endeavourDesc w3-hide well well-desc'>"
             
@@ -953,7 +959,7 @@ function buildEndeavours() {
                 endvHTML += "<p>" + para + "</p>"
             })
 
-            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Description<br/>&#9660;</h6></div><br /></div></div></div></div>"
+            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Full Description<br/>&#9660;</h6></div><br /></div></div></div></div>"
 
 
         }
@@ -973,30 +979,34 @@ function buildEndeavours() {
 
             endvHTML += "<div id="+endID+"><div class='w3-card-2 w3-round-large grid-card padCard'><div class='w3-row-padding'><h4><span class='endeavourName'>"
             
-            endvHTML += GENendv["name"];
+            endvHTML += GENendv["name"] + "</span></h4>";
 
-            endvHTML += "</span></h4></div><div class='w3-row-padding'><div class='endeavourDesc w3-hide well well-desc'>"
+            endvHTML += "<div class='w3-padding-small w3-center'><p>" + GENendv["shortDesc"] + "</p></div>"    
+
+            endvHTML += "</div><div class='w3-row-padding'><div class='endeavourDesc w3-hide well well-desc'>"
             
             GENendv["description"].forEach(para => {
                 endvHTML += "<p>" + para + "</p>"
             })
 
-            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Description<br/>&#9660;</h6></div><br /></div></div></div>"
+            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Full Description<br/>&#9660;</h6></div><br /></div></div></div>"
 
         } else {
             endvHTML += "<div class='w3-col s12 m12 l6'>"
 
             endvHTML += "<div id="+endID+"><div class='w3-card-2 w3-round-large grid-card padCard'><div class='w3-row-padding'><h4><span class='endeavourName'>"
             
-            endvHTML += GENendv["name"];
+            endvHTML += GENendv["name"] + "</span></h4>";
 
-            endvHTML += "</span></h4></div><div class='w3-row-padding'><div class='endeavourDesc w3-hide well well-desc'>"
+            endvHTML += "<div class='w3-padding-small w3-center'><p>" + GENendv["shortDesc"] + "</p></div>"    
+
+            endvHTML += "</div><div class='w3-row-padding'><div class='endeavourDesc w3-hide well well-desc'>"
             
             GENendv["description"].forEach(para => {
                 endvHTML += "<p>" + para + "</p>"
             })
 
-            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Description<br/>&#9660;</h6></div><br /></div></div></div></div><br/>"
+            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Full Description<br/>&#9660;</h6></div><br /></div></div></div></div><br/>"
 
 
         }
@@ -1018,6 +1028,8 @@ function buildEndeavours() {
             endvHTML += CLSendv["name"];
 
             endvHTML += "</span></h4></div>"
+
+            endvHTML += "<div class='w3-padding-small w3-center'><p>" + CLSendv["shortDesc"] + "</p></div>"    
             
             endvHTML += "<div class='w3-row-padding w3-center'><div class='endeavourClasses'><eh>" + CLSendv["classes"] + "</eh></div></div>"
             
@@ -1027,7 +1039,7 @@ function buildEndeavours() {
                 endvHTML += "<p>" + para + "</p>"
             })
 
-            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Description<br/>&#9660;</h6></div><br /></div></div></div>"
+            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Full Description<br/>&#9660;</h6></div><br /></div></div></div>"
 
         } else {
             endvHTML += "<div class='w3-col s12 m12 l6'>"
@@ -1037,6 +1049,8 @@ function buildEndeavours() {
             endvHTML += CLSendv["name"];
 
             endvHTML += "</span></h4></div>"
+
+            endvHTML += "<div class='w3-padding-small w3-center'><p>" + CLSendv["shortDesc"] + "</p></div>"    
             
             endvHTML += "<div class='w3-row-padding w3-center'><div class='endeavourClasses'><eh>" + CLSendv["classes"] + "</eh></div></div>"
             
@@ -1046,7 +1060,7 @@ function buildEndeavours() {
                 endvHTML += "<p>" + para + "</p>"
             })
 
-            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Description<br/>&#9660;</h6></div><br /></div></div></div></div><br/>"
+            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Full Description<br/>&#9660;</h6></div><br /></div></div></div></div><br/>"
 
 
         }
@@ -1065,6 +1079,8 @@ function buildEndeavours() {
             endvHTML += travEndv["name"];
 
             endvHTML += "</span></h4></div>"
+
+            endvHTML += "<div class='w3-padding-small w3-center'><p>" + travEndv["shortDesc"] + "</p></div>"    
             
             endvHTML += "<div class='w3-row-padding'><div class='endeavourDesc w3-hide well well-desc'>"
             
@@ -1072,7 +1088,7 @@ function buildEndeavours() {
                 endvHTML += "<p>" + para + "</p>"
             })
 
-            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Description<br/>&#9660;</h6></div><br /></div></div></div>"
+            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Full Description<br/>&#9660;</h6></div><br /></div></div></div>"
 
         } else {
             endvHTML += "<div class='w3-col s12 m12 l6'>"
@@ -1082,6 +1098,8 @@ function buildEndeavours() {
             endvHTML += travEndv["name"];
 
             endvHTML += "</span></h4></div>"
+
+            endvHTML += "<div class='w3-padding-small w3-center'><p>" + travEndv["shortDesc"] + "</p></div>"    
             
             endvHTML += "<div class='w3-row-padding'><div class='endeavourDesc w3-hide well well-desc'>"
             
@@ -1089,7 +1107,7 @@ function buildEndeavours() {
                 endvHTML += "<p>" + para + "</p>"
             })
 
-            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Description<br/>&#9660;</h6></div><br /></div></div></div></div><br/>"
+            endvHTML += "</div><h6 class='w3-center descExpando' onclick='toggleDesc(this)'>Show Full Description<br/>&#9660;</h6></div><br /></div></div></div></div><br/>"
         }
     })
 
